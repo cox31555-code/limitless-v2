@@ -159,6 +159,33 @@
   }
 }
 
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 24px rgba(3, 136, 255, 0.3), 0 0 0 0 rgba(3, 136, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.5), 0 0 0 10px rgba(3, 136, 255, 0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateY(-3px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+}
+
+@keyframes slideArrow {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
 .quoteBtn {
   display: flex;
   align-items: center;
@@ -201,8 +228,8 @@
 }
 
 .quoteBtn:hover {
-  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.4);
-  transform: translateY(-3px);
+  animation: rotate 0.6s ease-in-out infinite, pulse 1.5s ease-in-out infinite;
+  transform: translateY(-3px) scale(1.05);
 }
 
 .quoteBtn:hover::before {
@@ -214,8 +241,16 @@
   animation: shimmer 0.6s ease-in-out;
 }
 
+.quoteBtn img {
+  transition: transform 0.3s ease;
+}
+
+.quoteBtn:hover img {
+  animation: slideArrow 0.6s ease-in-out infinite;
+}
+
 .quoteBtn:active {
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(0.98);
 }
 
 .chatIcon {
