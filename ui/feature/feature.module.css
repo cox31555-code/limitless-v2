@@ -210,8 +210,17 @@
 /* Small mobile */
 @media screen and (max-width: 480px) {
   .container {
+    border: 2px solid rgba(4, 156, 255, 0.15);
     padding: 1.4rem 1.4rem;
     gap: 1rem;
+  }
+
+  .container::before {
+    border: 2px solid rgba(255, 255, 255, 0);
+  }
+
+  .container:hover::before {
+    border: 2px solid rgba(255, 255, 255, 0.6);
   }
 
   .title {
