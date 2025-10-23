@@ -15,29 +15,32 @@ export default function Home() {
     {
       img: {
         src: "/svg/home-feature-1.svg",
-        alt: "feature1",
-        width: 42,
-        height: 43,
+        alt: "insurance types",
+        width: 48,
+        height: 48,
       },
-      title: "Get insured for Impound, Teamp or Delivery insurance",
+      title: "Multiple Insurance Types",
+      description: "Get covered for Impound, Temporary, or Delivery insurance",
     },
     {
       img: {
         src: "/svg/home-feature-2.svg",
-        alt: "feature1",
-        width: 41,
-        height: 41,
+        alt: "age eligibility",
+        width: 48,
+        height: 48,
       },
-      title: "Available to drivers aged 18-75",
+      title: "All Ages Welcome",
+      description: "Available to drivers aged 18-75 years old",
     },
     {
       img: {
         src: "/svg/home-feature-3.svg",
-        alt: "feature3",
-        width: 40,
-        height: 50,
+        alt: "vehicle eligibility",
+        width: 48,
+        height: 48,
       },
-      title: "Eligible for cars, vans, scooters or motor-homes",
+      title: "Any Vehicle Type",
+      description: "Cars, vans, scooters, motor-homes and more",
     },
   ];
   const benifits = [
