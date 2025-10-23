@@ -41,41 +41,70 @@
   border-radius: 1rem;
 }
 
+@keyframes circleDrawing {
+  0% {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 0%, 100% 0%, 50% 0%, 50% 0%);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 100% 100%, 50% 100%, 50% 0%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%, 0% 100%, 0% 0%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 0% 0%);
+  }
+}
+
 .menuLink {
   color: #ffffff;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 124%;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem 0.8rem;
   position: relative;
+  border-radius: 50%;
+}
+
+.menuLink::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 2px solid #049cff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .menuLink::after {
   content: "";
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #049cff;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  inset: -6px;
+  border: 2px solid #049cff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: none;
 }
 
 .menuLink:hover {
   color: #049cff;
 }
 
-.menuLink:hover::after {
-  width: 100%;
+.menuLink:hover::before {
+  opacity: 1;
+  animation: circleDrawing 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .activeMenuLink {
   color: #049cff !important;
 }
 
-.activeMenuLink::after {
-  width: 100%;
+.activeMenuLink::before {
+  opacity: 1;
 }
 
 /* Buttons Container */
