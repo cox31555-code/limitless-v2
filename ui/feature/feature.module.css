@@ -51,7 +51,7 @@
 .container:hover::after {
   opacity: 1;
   border-color: rgba(255, 255, 255, 0.6);
-  animation: drawBorderClockwise 0.8s ease-in-out forwards;
+  animation: drawBorderClockwise 4s ease-in-out forwards;
 }
 
 .img {
