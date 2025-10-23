@@ -113,8 +113,17 @@
 /* Tablet */
 @media screen and (max-width: 1200px) {
   .container {
+    border: 2px solid rgba(4, 156, 255, 0.15);
     padding: 2rem 2.4rem;
     gap: 1.8rem;
+  }
+
+  .container::before {
+    border: 2px solid rgba(255, 255, 255, 0);
+  }
+
+  .container:hover::before {
+    border: 2px solid rgba(255, 255, 255, 0.6);
   }
 
   .title {
