@@ -1,9 +1,11 @@
-@keyframes drawBorder {
+@keyframes strokeDraw {
   0% {
-    background-position: 0% 0%;
+    stroke-dashoffset: 1000;
+    opacity: 1;
   }
   100% {
-    background-position: 100% 100%;
+    stroke-dashoffset: 0;
+    opacity: 1;
   }
 }
 
@@ -23,26 +25,31 @@
   overflow: visible;
 }
 
-.container::after {
-  content: "";
+.borderSvg {
   position: absolute;
   inset: -2px;
-  border-radius: 1.2rem;
-  background: conic-gradient(from 0deg at 0% 0%, rgba(255, 255, 255, 0.6) 0deg, rgba(255, 255, 255, 0.6) 1deg, transparent 1deg);
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  padding: 2px;
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
   pointer-events: none;
+}
+
+.borderSvg rect {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: none;
 }
 
 .container:hover {
   background: rgba(7, 16, 45, 0.65);
 }
 
-.container:hover::after {
+.container:hover .borderSvg {
   opacity: 1;
-  animation: drawBorder 4s linear forwards;
+}
+
+.container:hover .borderSvg rect {
+  animation: strokeDraw 4s linear forwards;
 }
 
 .img {
