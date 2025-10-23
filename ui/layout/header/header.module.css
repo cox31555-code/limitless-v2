@@ -590,8 +590,8 @@
   }
 
   .quoteBtn:hover {
-    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.4);
-    transform: translateY(-2px);
+    animation: rotate 0.6s ease-in-out infinite, pulse 1.5s ease-in-out infinite;
+    transform: translateY(-2px) scale(1.05);
   }
 
   .quoteBtn:hover::before {
@@ -603,7 +603,15 @@
     animation: shimmer 0.6s ease-in-out;
   }
 
+  .quoteBtn img {
+    transition: transform 0.3s ease;
+  }
+
+  .quoteBtn:hover img {
+    animation: slideArrow 0.6s ease-in-out infinite;
+  }
+
   .quoteBtn:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.98);
   }
 }
