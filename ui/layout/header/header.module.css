@@ -134,12 +134,11 @@
 }
 
 .quoteBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.4);
+  box-shadow: 0 6px 24px rgba(3, 136, 255, 0.25);
 }
 
 .quoteBtn:hover::before {
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .quoteBtn:active {
