@@ -11,7 +11,6 @@ const GetQuote = () => {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [registrationNumber, setRegistrationNumber] = useState("");
-  const [countryCode, setCountryCode] = useState("GB");
   const [quickSelection, setQuickSelection] = useState("");
   const [customDurationType, setCustomDurationType] = useState("");
   const [customDurationValue, setCustomDurationValue] = useState("");
