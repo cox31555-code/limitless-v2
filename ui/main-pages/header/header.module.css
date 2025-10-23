@@ -66,33 +66,15 @@
 
 .squares {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  right: 0;
-  display: none;
-}
-
-.squares::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+  top: -10rem;
+  right: 0rem;
+  width: 150vw;
+  height: 150vh;
   background-image:
-    linear-gradient(90deg, rgba(3, 136, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(3, 136, 255, 0.08) 1px, transparent 1px);
-  background-size: 80px 80px;
-  animation: movingLinesHorizontal 15s linear infinite;
-}
-
-.squares::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(45deg, rgba(0, 212, 255, 0.06) 1px, transparent 1px);
-  background-size: 120px 120px;
-  animation: movingLinesDiagonal 20s linear infinite;
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(3, 136, 255, 0.1) 79px, rgba(3, 136, 255, 0.1) 80px),
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(3, 136, 255, 0.08) 79px, rgba(3, 136, 255, 0.08) 80px),
+    repeating-linear-gradient(45deg, transparent, transparent 113px, rgba(0, 212, 255, 0.06) 113px, rgba(0, 212, 255, 0.06) 114px);
+  animation: movingLinesVertical 25s linear infinite;
 }
 
 .contact {
