@@ -17,39 +17,39 @@ const manrope = Manrope({
 const reviewsData = [
   {
     id: 1,
-    text: "Swift Wheels made our family vacation unforgettable. The car was clean, comfortable, and the booking process was so simple. Highly recommend!",
-    name: "John Doe",
-    date: "2021-05-15",
+    text: "Best temporary car insurance I've found. Quick quote, instant cover, and genuinely affordable. No hassle, no hidden fees. Absolutely brilliant service!",
+    name: "Marcus Thompson",
+    date: "2024-11-20",
   },
   {
     id: 2,
-    text: "Excellent service and great value for money. The staff was professional and the car was in perfect condition. Will definitely use again.",
-    name: "Sarah Johnson",
-    date: "2021-06-22",
+    text: "Needed cover for a week and Limitless Cover came through perfectly. Easy to use platform, fair pricing, and responsive customer support. Would definitely use again.",
+    name: "Jennifer Hayes",
+    date: "2024-10-18",
   },
   {
     id: 3,
-    text: "Amazing experience! Quick booking, clean vehicles, and competitive prices. Swift Wheels exceeded all my expectations.",
-    name: "Mike Wilson",
-    date: "2021-07-10",
+    text: "Excellent for short-term insurance needs. The process was straightforward and they delivered exactly what was promised. Very impressed with the whole experience.",
+    name: "Anthony Clarke",
+    date: "2024-10-05",
   },
   {
     id: 4,
-    text: "Professional service from start to finish. The car was delivered on time and in excellent condition. Highly recommended!",
-    name: "Emma Davis",
-    date: "2021-08-05",
+    text: "Top-notch service from start to finish. Got my temporary cover sorted in minutes, great rates, and the claims process was smooth and efficient.",
+    name: "Victoria Rodriguez",
+    date: "2024-09-28",
   },
   {
     id: 5,
-    text: "Great customer service and reliable cars. Made our business trip smooth and hassle-free. Thank you Swift Wheels!",
-    name: "David Brown",
-    date: "2021-09-18",
+    text: "Really pleased with Limitless Cover. Competitive pricing for temporary cover, no complicated forms, and they actually respond to queries promptly.",
+    name: "Michael Brown",
+    date: "2024-09-12",
   },
   {
     id: 6,
-    text: "Outstanding quality and service. The booking process was seamless and the car exceeded our expectations. Five stars!",
-    name: "Lisa Anderson",
-    date: "2021-10-12",
+    text: "Outstanding experience! Got insured for a weekend trip without any complications. Professional, reliable, and genuinely good value. Highly recommend!",
+    name: "Sophie Williams",
+    date: "2024-08-30",
   },
 ];
 
@@ -88,12 +88,12 @@ const Reviews = () => {
         <div className={styles.starsContainer}>
           <Image
             className={styles.star1}
-            src={`/svg/google-icon.png`}
-            alt="star"
+            src={`/svg/trustpilot-icon.svg`}
+            alt="trustpilot"
             width={24}
             height={24}
           />
-          <p className={`${styles.rating} ${manrope.className}`}>5</p>
+          <p className={`${styles.rating} ${manrope.className}`}>4.8</p>
           <div className={styles.stars}>
             {[1, 2, 3, 4, 5].map((item) => (
               <Image
@@ -107,7 +107,7 @@ const Reviews = () => {
             ))}
           </div>
           <p className={`${styles.reviewsCount} ${manrope.className}`}>
-            134 Reviews
+            892 Reviews
           </p>
         </div>
       </div>
