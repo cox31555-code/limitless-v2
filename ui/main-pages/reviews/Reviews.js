@@ -134,104 +134,90 @@ const Reviews = () => {
           </div>
         </div>
       </div>
-      <div className={styles.reviews}>
-        {/* Desktop version - unchanged */}
-        <div className={styles.desktopReviews}>
-          <div className={styles.reviewContainer}>
-            {reviewsData.slice(0, 3).map((review) => (
-              <div className={styles.review} key={review.id}>
-                <p className={styles.text}>{review.text}</p>
-                <div className={styles.bottom}>
-                  <div className={styles.author}>
-                    <p className={styles.name}>{review.name}</p>
-                    <p className={styles.date}>{review.date}</p>
-                  </div>
-                  <div className={styles.stars}>
-                    {[1, 2, 3, 4, 5].map((item) => (
-                      <Image
-                        className={styles.star}
-                        src={`/svg/star.svg`}
-                        alt="star"
-                        width={18}
-                        height={18}
-                        key={item}
-                      />
-                    ))}
-                  </div>
+      <div className={styles.reviewsGrid}>
+        {/* Desktop version - 3 column grid */}
+        <div className={styles.desktopGrid}>
+          {reviewsData.map((review) => (
+            <div className={styles.reviewCard} key={review.id}>
+              <div className={styles.cardHeader}>
+                <div className={styles.starsRow}>
+                  {Array(review.rating).fill(0).map((_, i) => (
+                    <span key={i} className={styles.filledStar}>★</span>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-          <div className={styles.reviewContainer}>
-            {reviewsData.slice(3, 6).map((review) => (
-              <div className={styles.review} key={review.id}>
-                <p className={styles.text}>{review.text}</p>
-                <div className={styles.bottom}>
-                  <div className={styles.author}>
-                    <p className={styles.name}>{review.name}</p>
-                    <p className={styles.date}>{review.date}</p>
-                  </div>
-                  <div className={styles.stars}>
-                    {[1, 2, 3, 4, 5].map((item) => (
-                      <Image
-                        className={styles.star}
-                        src={`/svg/star.svg`}
-                        alt="star"
-                        width={18}
-                        height={18}
-                        key={item}
-                      />
-                    ))}
-                  </div>
+              <p className={`${styles.reviewText} ${inter.className}`}>
+                {review.text}
+              </p>
+              <div className={styles.cardFooter}>
+                <div className={styles.authorInfo}>
+                  <p className={`${styles.authorName} ${inter.className}`}>
+                    {review.name}
+                  </p>
+                  <p className={`${styles.reviewDate} ${manrope.className}`}>
+                    {new Date(review.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  </p>
                 </div>
+                {review.verified && (
+                  <div className={styles.verifiedBadge}>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M8 0L10.39 6.26H17L11.81 10.04L14.2 16L8 12.22L1.8 16L4.19 10.04L-1 6.26H6.61L8 0Z" fill="#00B5A1" />
+                    </svg>
+                    <span>Verified</span>
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* Mobile version - smooth horizontal slide */}
-        <div className={styles.mobileReviews}>
-          <div className={styles.slideContainer}>
-            <div className={styles.mainReviews} key={currentSlide}>
-              {getVisibleReviews().map((review, index) => (
-                <div className={styles.review} key={`main-${review.id}-${currentSlide}`}>
-                  <p className={styles.text}>{review.text}</p>
-                  <div className={styles.bottom}>
-                    <div className={styles.author}>
-                      <p className={styles.name}>{review.name}</p>
-                      <p className={styles.date}>{review.date}</p>
-                    </div>
-                    <div className={styles.stars}>
-                      {[1, 2, 3, 4, 5].map((item) => (
-                        <Image
-                          className={styles.star}
-                          src={`/svg/star.svg`}
-                          alt="star"
-                          width={18}
-                          height={18}
-                          key={item}
-                        />
-                      ))}
-                    </div>
+        {/* Mobile version - carousel */}
+        <div className={styles.mobileCarousel}>
+          <div className={styles.carouselTrack}>
+            {getVisibleReviews().map((review, index) => (
+              <div className={styles.reviewCard} key={`slide-${review.id}-${currentSlide}`}>
+                <div className={styles.cardHeader}>
+                  <div className={styles.starsRow}>
+                    {Array(review.rating).fill(0).map((_, i) => (
+                      <span key={i} className={styles.filledStar}>★</span>
+                    ))}
                   </div>
                 </div>
-              ))}
-            </div>
+                <p className={`${styles.reviewText} ${inter.className}`}>
+                  {review.text}
+                </p>
+                <div className={styles.cardFooter}>
+                  <div className={styles.authorInfo}>
+                    <p className={`${styles.authorName} ${inter.className}`}>
+                      {review.name}
+                    </p>
+                    <p className={`${styles.reviewDate} ${manrope.className}`}>
+                      {new Date(review.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    </p>
+                  </div>
+                  {review.verified && (
+                    <div className={styles.verifiedBadge}>
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 0L10.39 6.26H17L11.81 10.04L14.2 16L8 12.22L1.8 16L4.19 10.04L-1 6.26H6.61L8 0Z" fill="#00B5A1" />
+                      </svg>
+                      <span>Verified</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Slide indicators */}
-          <div className={styles.indicators}>
-            {Array.from({ length: Math.ceil(reviewsData.length / 2) }).map(
-              (_, index) => (
-                <div
-                  key={index}
-                  className={`${styles.indicator} ${
-                    Math.floor(currentSlide / 2) === index ? styles.active : ""
-                  }`}
-                  onClick={() => setCurrentSlide(index * 2)}
-                />
-              )
-            )}
+          {/* Mobile pagination dots */}
+          <div className={styles.paginationDots}>
+            {Array.from({ length: Math.ceil(reviewsData.length / 1) }).map((_, index) => (
+              <button
+                key={index}
+                className={`${styles.dot} ${currentSlide === index ? styles.activeDot : ""}`}
+                onClick={() => setCurrentSlide(index)}
+                aria-label={`Go to review ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
