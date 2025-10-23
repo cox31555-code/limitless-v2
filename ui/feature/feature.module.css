@@ -143,10 +143,19 @@
 /* Tablet - smaller */
 @media screen and (max-width: 900px) {
   .container {
+    border: 2px solid rgba(4, 156, 255, 0.15);
     padding: 1.8rem 2rem;
     gap: 1.6rem;
     flex-direction: column;
     text-align: center;
+  }
+
+  .container::before {
+    border: 2px solid rgba(255, 255, 255, 0);
+  }
+
+  .container:hover::before {
+    border: 2px solid rgba(255, 255, 255, 0.6);
   }
 
   .title {
