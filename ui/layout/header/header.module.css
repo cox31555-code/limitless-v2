@@ -400,27 +400,26 @@
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 124%;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0.8rem 1.6rem;
     border-radius: 0.8rem;
     position: relative;
-    background: transparent;
   }
 
   .menuLink::before {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: -4px;
+    left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #0388ff, #00d4ff);
-    transform: translateX(-50%);
-    transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: #0388ff;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .menuLink:hover {
     color: #0388ff;
+    background: rgba(3, 136, 255, 0.08);
   }
 
   .menuLink:hover::before {
