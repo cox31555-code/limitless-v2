@@ -16,7 +16,6 @@ const GetQuote = () => {
   const [customDurationType, setCustomDurationType] = useState("");
   const [customDurationValue, setCustomDurationValue] = useState("");
   const [errors, setErrors] = useState({});
-  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleContinue = () => {
     setErrors({});
@@ -87,10 +86,6 @@ const GetQuote = () => {
     }
   };
 
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   const goBack = () => {
     setStep(1);
     setQuickSelection("");
@@ -125,58 +120,19 @@ const GetQuote = () => {
               </p>
             </div>
 
-            <div className={styles.regInputWithCountry}>
-              <div className={styles.countryCodeWrapper}>
-                <button
-                  type="button"
-                  className={styles.countryCodeButton}
-                  onClick={toggleExpanded}
-                >
-                  <span className={styles.countryCodeText}>{countryCode}</span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path
-                      d="M13 6L8 11L3 6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-                {isExpanded && (
-                  <div className={styles.countryDropdown}>
-                    {["GB", "EU", "NI"].map((code) => (
-                      <button
-                        key={code}
-                        type="button"
-                        className={`${styles.countryOption} ${
-                          countryCode === code ? styles.selected : ""
-                        }`}
-                        onClick={() => {
-                          setCountryCode(code);
-                          setIsExpanded(false);
-                        }}
-                      >
-                        {code}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className={styles.regInputField}>
-                <FormTextInput
-                  label="Registration Number"
-                  placeholder="e.g., AB51 ABC"
-                  reg={true}
-                  value={registrationNumber}
-                  onChange={handleRegistrationChange}
-                  error={
-                    errors.registrationNumber
-                      ? { message: errors.registrationNumber }
-                      : null
-                  }
-                />
-              </div>
+            <div className={styles.regInputField}>
+              <FormTextInput
+                label="Registration Number"
+                placeholder="e.g., AB51 ABC"
+                reg={true}
+                value={registrationNumber}
+                onChange={handleRegistrationChange}
+                error={
+                  errors.registrationNumber
+                    ? { message: errors.registrationNumber }
+                    : null
+                }
+              />
             </div>
 
             <button
