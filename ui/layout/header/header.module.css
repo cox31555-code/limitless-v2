@@ -52,7 +52,8 @@
 
 .menuLink:hover {
   color: #049cff;
-  text-shadow: 0 0 8px rgba(4, 156, 255, 0.3);
+  text-shadow: 0 0 4px rgba(4, 156, 255, 0.15);
+  transition: all 0.2s ease;
 }
 
 .activeMenuLink {
