@@ -102,6 +102,17 @@
   letter-spacing: 0.64px;
   margin-bottom: 1rem;
 }
+@keyframes drawLine {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 100;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
 .curvedBorder {
   position: absolute;
   bottom: -10px;
@@ -109,6 +120,8 @@
   transform: translateX(-50%);
   width: 100%;
   height: auto;
+  animation: drawLine 1.5s ease-out forwards;
+  filter: drop-shadow(0 2px 4px rgba(4, 156, 255, 0.3));
 }
 
 .features {
