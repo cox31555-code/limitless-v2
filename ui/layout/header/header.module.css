@@ -93,9 +93,8 @@
 }
 
 .loginBtn:hover {
-  background: rgba(4, 156, 255, 0.15);
+  background: rgba(4, 156, 255, 0.1);
   color: #049cff;
-  transform: translateY(-2px);
 }
 
 .loginBtn:active {
