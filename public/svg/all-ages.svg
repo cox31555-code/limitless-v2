@@ -1,0 +1,25 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="people-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0388ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#049cff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Young person (left) -->
+  <circle cx="12" cy="8" r="3" fill="url(#people-grad)"/>
+  <path d="M10 12H14V18H10Z" fill="url(#people-grad)"/>
+  <path d="M9 18H15L14 24H11Z" fill="url(#people-grad)"/>
+  
+  <!-- Adult (center) -->
+  <circle cx="24" cy="6" r="4" fill="url(#people-grad)"/>
+  <path d="M21 12H27V20H21Z" fill="url(#people-grad)"/>
+  <path d="M19 20H29L27 28H21Z" fill="url(#people-grad)"/>
+  
+  <!-- Older person (right) -->
+  <circle cx="36" cy="8" r="3" fill="url(#people-grad)"/>
+  <path d="M34 12H38V18H34Z" fill="url(#people-grad)"/>
+  <path d="M33 18H39L38 24H35Z" fill="url(#people-grad)"/>
+  
+  <!-- Age range indicator -->
+  <text x="24" y="40" font-size="12" font-weight="bold" text-anchor="middle" fill="url(#people-grad)">18-75</text>
+</svg>
