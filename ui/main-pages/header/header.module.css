@@ -160,12 +160,14 @@
     height: 246px;
     top: -7.5rem;
     right: -29rem;
+    animation: gridPulse 6s ease-in-out infinite, float 8s ease-in-out infinite;
   }
   .contact {
     width: 378.906px;
     height: 502.617px;
     top: 35rem;
     right: -10rem;
+    animation: floatSlow 7s ease-in-out infinite;
   }
   .wrapper {
     padding: 3.9rem 6% 3.4rem;
