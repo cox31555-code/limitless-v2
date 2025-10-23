@@ -1,20 +1,14 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0388ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#049cff;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Primary Shield (center, prominent) -->
-  <path d="M24 6L36 11V22C36 30 24 40 24 40C24 40 12 30 12 22V11L24 6Z" fill="url(#grad1)" opacity="0.95"/>
+  <!-- Large shield -->
+  <path d="M32 8L52 18V36C52 48 32 60 32 60C32 60 12 48 12 36V18L32 8Z" fill="url(#shieldGrad)" stroke="url(#shieldGrad)" stroke-width="1.5"/>
   
-  <!-- Secondary Shield (right, slightly overlapping) -->
-  <path d="M32 10L40 14V23C40 29.5 32 36.5 32 36.5C32 36.5 24 29.5 24 23V14L32 10Z" fill="url(#grad1)" opacity="0.7"/>
-  
-  <!-- Tertiary Shield (left, slightly overlapping) -->
-  <path d="M16 10L8 14V23C8 29.5 16 36.5 16 36.5C16 36.5 24 29.5 24 23V14L16 10Z" fill="url(#grad1)" opacity="0.7"/>
-  
-  <!-- Center checkmark for verification -->
-  <path d="M20 24L22.5 27L28 20" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <!-- Checkmark inside shield -->
+  <path d="M26 36L30 40L40 28" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
