@@ -57,7 +57,6 @@ body {
   animation: driftHorizontal 12s linear infinite, driftDiagonal 20s linear infinite;
   border-radius: 20px;
   pointer-events: none;
-  z-index: 1;
 }
 .dashboard-content {
   margin: 0 auto;
