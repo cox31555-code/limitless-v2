@@ -1,312 +1,395 @@
+.wrapper {
+  width: 100%;
+  background: linear-gradient(135deg, #f8f9fb 0%, #f0f4f8 100%);
+  padding: 6rem 0;
+}
+
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 4.8rem;
   width: 100%;
   padding: 0 3.4%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
-.starsContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.rating {
-  color: #000822;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 100%; /* 16px */
-  margin-left: 0.6rem;
-}
-.reviewsCount {
-  color: #717584;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 100%; /* 16px */
-  margin-left: 0.6rem;
-}
-.first {
+
+.headerSection {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
+
 .title {
   color: #000822;
-  font-size: 5.8rem;
+  font-size: 4.8rem;
   font-weight: 700;
-  line-height: 100%; /* 58px */
-}
-.title span {
-  color: #049cff;
-}
-.reviews {
-  display: flex;
-  gap: 2.6rem;
-}
-.reviewContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 2.6rem;
-  /* Desktop scrollable container */
-  height: 85rem; /* Approximately 2.5 reviews (31.6rem each + gaps) */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  padding-right: 1rem; /* Space for custom scrollbar */
-  position: relative;
-  /* Grabbable cursor */
-  cursor: grab;
+  line-height: 120%;
+  letter-spacing: -0.5px;
 }
 
-.reviewContainer:active {
-  cursor: grabbing;
+.subtitle {
+  color: #5a6b7d;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 140%;
 }
 
-.review {
-  width: 40.4rem;
-  height: 31.6rem;
-  border-radius: 1.8rem;
-  background: #fff;
-  padding: 2.6rem;
+.badgeSection {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
-}
-.text {
-  color: #000822;
-  font-size: 1.6rem;
-  font-weight: 300;
-  line-height: 118%; /* 18.88px */
-}
-.bottom {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.author {
+.trustpilotBadge {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 2.4rem 3.2rem;
+  box-shadow: 0 2px 12px rgba(0, 8, 34, 0.08);
+  border: 1px solid #e8ecf1;
+  display: inline-block;
+}
+
+.badgeContent {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.badgeInfo {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.name {
-  color: #000822;
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 100%; /* 18px */
-}
-.date {
-  color: rgba(0, 8, 34, 0.54);
-  font-size: 1.6rem;
-  font-weight: 300;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-}
-.stars {
+.ratingDisplay {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 1rem;
 }
 
-/* Custom scrollbar styling for desktop */
-.reviewContainer::-webkit-scrollbar {
-  width: 0;
+.ratingNumber {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #000822;
+  line-height: 100%;
 }
 
-.reviewContainer::-webkit-scrollbar-track {
-  background: rgba(0, 8, 34, 0.05);
-  border-radius: 3px;
-}
-
-.reviewContainer::-webkit-scrollbar-thumb {
-  background: rgba(4, 156, 255, 0.3);
-  border-radius: 3px;
-  transition: background-color 0.3s ease;
-}
-
-.reviewContainer::-webkit-scrollbar-thumb:hover {
-  background: rgba(4, 156, 255, 0.5);
-}
-
-/* Smooth hover animations for review cards */
-.review {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.review:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 8, 34, 0.12);
-}
-@media screen and (max-width: 1300) {
-  .container {
-    gap: 2rem;
-  }
-}
-@media screen and (max-width: 1300) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 4rem;
-  }
-  .first {
-    gap: 2.2rem;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .reviews {
-    width: 100%;
-  }
-  .review,
-  .reviewContainer {
-    flex: 1;
-    width: 100%;
-  }
-}
-/* Desktop and Mobile Review Containers */
-.desktopReviews {
+.starsRow {
   display: flex;
-  gap: 2.6rem;
+  gap: 0.3rem;
 }
 
-.mobileReviews {
+.starsRow .star {
+  color: #ffc107;
+  font-size: 1.8rem;
+  line-height: 100%;
+}
+
+.filledStar {
+  color: #ffc107;
+  font-size: 1.4rem;
+}
+
+.reviewCount {
+  color: #5a6b7d;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.reviewsGrid {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+
+.desktopGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+  width: 100%;
+}
+
+.mobileCarousel {
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+.reviewCard {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  border: 1px solid #e8ecf1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.reviewCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 8, 34, 0.12);
+  border-color: #00b5a1;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.reviewText {
+  color: #2a3640;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 160%;
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #e8ecf1;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.authorName {
+  color: #000822;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.reviewDate {
+  color: #8a94a6;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.verifiedBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #f0fffe;
+  border: 1px solid #d4f1ed;
+  border-radius: 0.8rem;
+  padding: 0.6rem 1rem;
+  flex-shrink: 0;
+}
+
+.verifiedBadge span {
+  color: #00b5a1;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
   .container {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 3.8rem;
-    width: 100%;
+    padding: 0 3.4%;
+    gap: 4rem;
   }
-  .starsContainer {
-    gap: 0.6rem;
-  }
-  .rating {
-    font-size: 1.4rem;
-  }
-  .reviewsCount {
-    font-size: 1.4rem;
-  }
-  .first {
-    gap: 2.2rem;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-  }
+
   .title {
-    font-size: 3.4rem;
-    flex-direction: column;
-    text-align: center;
-    gap: 0.3rem;
-  }
-  .reviews {
-    width: 100%;
-    position: relative;
+    font-size: 3.6rem;
   }
 
-  /* Hide desktop reviews on mobile */
-  .desktopReviews {
-    display: none;
+  .desktopGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    padding: 4.8rem 0;
   }
 
-  /* Show mobile slideshow */
-  .mobileReviews {
-    display: block;
-    width: 100%;
-    position: relative;
+  .container {
+    padding: 0 4%;
+    gap: 3.6rem;
   }
 
-  .slideContainer {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-start;
+  .headerSection {
+    max-width: 100%;
   }
 
-  .mainReviews {
-    display: flex;
-    flex-direction: column;
-    gap: 2.2rem;
-    width: 100%;
-    animation: slideInFromRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  .title {
+    font-size: 2.8rem;
   }
 
-  @keyframes slideInFromRight {
-    0% {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .review {
-    width: auto;
-    height: auto;
-    padding: 3rem 2.9rem 3rem 2.6rem;
-    transform: none;
-    box-shadow: none;
-  }
-
-  .review:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  .text {
-    font-size: 1.4rem;
-  }
-
-  .author {
-    gap: 0.8rem;
-  }
-
-  .name {
+  .subtitle {
     font-size: 1.6rem;
   }
 
-  .date {
+  .badgeSection {
+    justify-content: center;
+  }
+
+  .trustpilotBadge {
+    padding: 2rem 2.4rem;
+  }
+
+  .badgeContent {
+    flex-direction: column;
+    gap: 1.6rem;
+    text-align: center;
+  }
+
+  .logoWrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .ratingNumber {
+    font-size: 2.8rem;
+  }
+
+  .desktopGrid {
+    display: none;
+  }
+
+  .mobileCarousel {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    width: 100%;
+  }
+
+  .carouselTrack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    animation: slideInMobile 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes slideInMobile {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reviewCard {
+    padding: 2.4rem;
+  }
+
+  .reviewText {
     font-size: 1.4rem;
   }
 
-  .stars {
-    gap: 0.2rem;
+  .authorName {
+    font-size: 1.5rem;
   }
 
-  /* Slide Indicators */
-  .indicators {
+  .paginationDots {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 3rem;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
   }
 
-  .indicator {
-    width: 12px;
-    height: 12px;
+  .dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: rgba(4, 156, 255, 0.3);
+    background: #e8ecf1;
+    border: none;
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 0;
   }
 
-  .indicator.active {
-    background: #049cff;
+  .dot:hover {
+    background: #00b5a1;
+    transform: scale(1.1);
+  }
+
+  .dot.activeDot {
+    background: #00b5a1;
     transform: scale(1.2);
   }
+}
 
-  .indicator:hover {
-    background: rgba(4, 156, 255, 0.6);
+@media screen and (max-width: 600px) {
+  .wrapper {
+    padding: 3.6rem 0;
   }
 
+  .container {
+    padding: 0 4%;
+    gap: 2.8rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .trustpilotBadge {
+    padding: 1.6rem 2rem;
+    width: 100%;
+  }
+
+  .badgeContent {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .ratingDisplay {
+    gap: 0.8rem;
+  }
+
+  .ratingNumber {
+    font-size: 2.4rem;
+  }
+
+  .reviewCard {
+    padding: 2rem;
+  }
+
+  .reviewText {
+    font-size: 1.3rem;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .verifiedBadge {
+    width: 100%;
+    justify-content: center;
+  }
 }
