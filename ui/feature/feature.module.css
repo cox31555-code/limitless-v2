@@ -1,6 +1,24 @@
+@keyframes circleBorder {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
 .container {
   border-radius: 1.2rem;
-  border: 1px solid rgba(4, 156, 255, 0.15);
+  border: 2px solid rgba(4, 156, 255, 0.15);
   background: rgba(7, 16, 45, 0.5);
   backdrop-filter: blur(20px);
   padding: 2.2rem 2.8rem;
@@ -12,6 +30,25 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 2px solid rgba(255, 255, 255, 0);
+  border-radius: 1.2rem;
+  background: linear-gradient(90deg, transparent, transparent);
+  opacity: 0;
+  animation: none;
+  pointer-events: none;
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+}
+
+.container:hover::before {
+  opacity: 1;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  animation: circleBorder 0.8s ease-in-out forwards;
 }
 
 .container:hover {
