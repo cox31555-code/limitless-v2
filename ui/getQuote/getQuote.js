@@ -93,25 +93,75 @@ const GetQuote = () => {
     setErrors({});
   };
 
+  const progressPercentage = (step / 2) * 100;
+
   return (
     <div className={styles.container}>
-      {/* Step Indicator */}
-      <div className={styles.stepIndicator}>
-        <div className={`${styles.step} ${step >= 1 ? styles.active : ""}`}>
-          <span className={styles.stepNumber}>1</span>
-          <span className={styles.stepLabel}>Registration</span>
+      {/* Modern Progress & Tab Navigation */}
+      <div className={styles.navigationWrapper}>
+        {/* Animated Progress Bar */}
+        <div className={styles.progressBar}>
+          <div 
+            className={styles.progressFill} 
+            style={{ width: `${progressPercentage}%` }}
+          />
         </div>
-        <div className={`${styles.stepLine} ${step >= 2 ? styles.active : ""}`} />
-        <div className={`${styles.step} ${step >= 2 ? styles.active : ""}`}>
-          <span className={styles.stepNumber}>2</span>
-          <span className={styles.stepLabel}>Duration</span>
+
+        {/* Tab-Style Navigation */}
+        <div className={styles.navigationTabs}>
+          {/* Step 1 */}
+          <button
+            type="button"
+            onClick={() => step === 2 && setStep(1)}
+            className={`${styles.navTab} ${step === 1 ? styles.active : ""} ${step === 2 ? styles.completed : ""}`}
+            disabled={step === 1}
+          >
+            <div className={styles.tabIcon}>
+              {step > 1 ? (
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              ) : (
+                <span className={styles.stepNum}>1</span>
+              )}
+            </div>
+            <div className={styles.tabContent}>
+              <span className={styles.tabLabel}>Registration</span>
+              {step > 1 && registrationNumber && (
+                <span className={styles.tabValue}>{registrationNumber}</span>
+              )}
+            </div>
+          </button>
+
+          <div className={styles.tabDivider} />
+
+          {/* Step 2 */}
+          <button
+            type="button"
+            onClick={() => step > 1 && setStep(2)}
+            className={`${styles.navTab} ${step === 2 ? styles.active : ""}`}
+            disabled={step === 1}
+          >
+            <div className={styles.tabIcon}>
+              <span className={styles.stepNum}>2</span>
+            </div>
+            <div className={styles.tabContent}>
+              <span className={styles.tabLabel}>Duration</span>
+              {step > 1 && (quickSelection || customDurationValue) && (
+                <span className={styles.tabValue}>
+                  {quickSelection || `${customDurationValue} ${customDurationType}`}
+                </span>
+              )}
+            </div>
+          </button>
         </div>
       </div>
 
-      <div className={styles.contentContainer}>
+      {/* Accordion-Style Content */}
+      <div className={styles.contentWrapper}>
         {/* Step 1: Registration */}
         {step === 1 && (
-          <div className={`${styles.stepContent} ${styles.fadeIn}`}>
+          <div className={`${styles.accordionContent} ${styles.expanded}`}>
             <div className={styles.stepHeader}>
               <h3 className={styles.stepTitle}>What's your vehicle registration?</h3>
               <p className={styles.stepDescription}>
@@ -161,7 +211,7 @@ const GetQuote = () => {
 
         {/* Step 2: Duration */}
         {step === 2 && (
-          <div className={`${styles.stepContent} ${styles.fadeIn}`}>
+          <div className={`${styles.accordionContent} ${styles.expanded}`}>
             <div className={styles.stepHeader}>
               <h3 className={styles.stepTitle}>How long do you need cover?</h3>
               <p className={styles.stepDescription}>
