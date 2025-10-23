@@ -76,31 +76,8 @@
 /* Tablet */
 @media screen and (max-width: 1200px) {
   .container {
-    padding: 2.8rem 2.8rem;
-    gap: 2rem;
-  }
-
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .description {
-    font-size: 1.3rem;
-  }
-
-  .img {
-    width: 5.6rem;
-    height: 5.6rem;
-  }
-}
-
-/* Tablet - smaller */
-@media screen and (max-width: 900px) {
-  .container {
-    padding: 2.4rem 2.4rem;
+    padding: 2rem 2.4rem;
     gap: 1.8rem;
-    flex-direction: column;
-    text-align: center;
   }
 
   .title {
@@ -115,6 +92,29 @@
     width: 5.2rem;
     height: 5.2rem;
   }
+}
+
+/* Tablet - smaller */
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 1.8rem 2rem;
+    gap: 1.6rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .img {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
 
   .content {
     gap: 0.4rem;
@@ -124,8 +124,8 @@
 /* Mobile */
 @media screen and (max-width: 640px) {
   .container {
-    padding: 2rem 2rem;
-    gap: 1.4rem;
+    padding: 1.6rem 1.8rem;
+    gap: 1.2rem;
     flex-direction: column;
   }
 
@@ -138,16 +138,16 @@
   }
 
   .img {
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 4.4rem;
+    height: 4.4rem;
   }
 }
 
 /* Small mobile */
 @media screen and (max-width: 480px) {
   .container {
-    padding: 1.8rem 1.6rem;
-    gap: 1.2rem;
+    padding: 1.4rem 1.4rem;
+    gap: 1rem;
   }
 
   .title {
@@ -159,7 +159,7 @@
   }
 
   .img {
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 4rem;
+    height: 4rem;
   }
 }
