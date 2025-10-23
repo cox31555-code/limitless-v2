@@ -14,7 +14,7 @@ export default function Home() {
   const features = [
     {
       img: {
-        src: "/svg/home-feature-1.svg",
+        src: "/svg/insurance-types.svg",
         alt: "insurance types",
         width: 48,
         height: 48,
@@ -24,7 +24,7 @@ export default function Home() {
     },
     {
       img: {
-        src: "/svg/home-feature-2.svg",
+        src: "/svg/all-ages.svg",
         alt: "age eligibility",
         width: 48,
         height: 48,
@@ -34,7 +34,7 @@ export default function Home() {
     },
     {
       img: {
-        src: "/svg/home-feature-3.svg",
+        src: "/svg/vehicle-types.svg",
         alt: "vehicle eligibility",
         width: 48,
         height: 48,
