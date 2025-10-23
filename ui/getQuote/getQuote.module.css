@@ -544,10 +544,17 @@
 
   .valueInputRow {
     flex-direction: column;
+    gap: 1.2rem;
   }
 
   .moreOptionsDropdown {
     width: 100%;
+    min-width: auto;
+  }
+
+  .durationValueGroup {
+    padding: 2rem;
+    gap: 1.6rem;
   }
 }
 
@@ -573,6 +580,22 @@
     padding: 1.2rem 1.2rem;
     margin-bottom: 0.6rem;
     font-size: 0.95rem;
+  }
+
+  .durationValueGroup {
+    padding: 1.6rem;
+    gap: 1.4rem;
+    border-radius: 1rem;
+  }
+
+  .valueInputRow {
+    gap: 1rem;
+  }
+
+  .moreOptionsDropdown > div > select,
+  .moreOptionsDropdown > div > div {
+    font-size: 1.2rem;
+    border-radius: 0.8rem;
   }
 
   .tabIcon {
