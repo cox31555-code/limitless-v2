@@ -9,8 +9,6 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
-  // Disable automatic font optimization to prevent Google Fonts connection errors
-  optimizeFonts: false,
   // Allow external images from builder.io
   images: {
     remotePatterns: [
