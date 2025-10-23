@@ -275,6 +275,9 @@ const GetQuote = () => {
               {/* Duration Value Selection */}
               {customDurationType && (
                 <div className={`${styles.durationValueGroup} ${styles.slideIn}`}>
+                  <div className={styles.sectionLabel}>
+                    Select the duration of your cover
+                  </div>
                   <div className={styles.valueInputRow}>
                     <Selection1
                       items={
