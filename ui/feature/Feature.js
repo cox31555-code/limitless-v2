@@ -12,7 +12,7 @@ const Feature = ({ img, title, description }) => {
   return (
     <div className={styles.container}>
       <svg className={styles.borderSvg} viewBox="0 0 400 120" preserveAspectRatio="none">
-        <rect x="1" y="1" width="398" height="118" rx="12" ry="12" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <rect x="1" y="1" width="398" height="118" rx="12" ry="12" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2"/>
       </svg>
       <Image
         src={img.src}
