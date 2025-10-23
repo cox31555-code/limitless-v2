@@ -32,6 +32,21 @@
   /* height: 6.4rem; */
   height: 5.73rem;
 }
+.gbContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.ukFlag {
+  width: auto;
+  height: 2.2rem;
+  object-fit: contain;
+  border-radius: 0.3rem;
+}
+
 .inputSpan {
   width: 4.4rem;
   height: 4.4rem;
