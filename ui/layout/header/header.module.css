@@ -484,61 +484,53 @@
     align-items: center;
     gap: 1rem;
     border-radius: 0.8rem;
-    background: linear-gradient(135deg, #0388ff 0%, #049cff 50%, #0388ff 100%);
-    background-size: 200% 100%;
-    background-position: 0% 0;
-    box-shadow: 0 4px 24px rgba(3, 136, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+    box-shadow: 0 4px 24px rgba(3, 136, 255, 0.3);
     color: #fff;
     border: none;
     cursor: pointer;
     font-weight: 600;
     line-height: 124%;
     font-size: 1.4rem;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .quoteBtn::before {
     content: "";
     position: absolute;
-    inset: -2px;
-    border-radius: 0.8rem;
-    background: linear-gradient(90deg, #00d4ff, #0388ff, #049cff, #00d4ff);
-    background-size: 300% 100%;
-    background-position: 300% 0;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
     opacity: 0;
-    transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: -1;
+    transition: opacity 0.3s ease;
   }
 
   .quoteBtn::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background-size: 200% 100%;
     opacity: 0;
-    border-radius: 0.8rem;
-    transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: none;
   }
 
   .quoteBtn:hover {
-    background-position: 100% 0;
-    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.4);
     transform: translateY(-2px);
   }
 
   .quoteBtn:hover::before {
-    opacity: 0.6;
-    animation: shimmer 2s ease-in-out infinite;
+    opacity: 1;
   }
 
   .quoteBtn:hover::after {
     opacity: 1;
+    animation: shimmer 0.6s ease-in-out;
   }
 
   .quoteBtn:active {
     transform: translateY(0);
-    box-shadow: 0 4px 16px rgba(3, 136, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 }
