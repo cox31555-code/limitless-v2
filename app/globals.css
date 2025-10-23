@@ -37,6 +37,17 @@ body {
   /* height: 884px; */
   border-radius: 20px;
   background: #000822;
+  margin: calc(-1.1% - 7.8rem) 1.1% 0;
+  padding: calc(1.1% + 14.5rem) 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.headerContainer::before,
+.headerDashboardContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image:
     repeating-linear-gradient(90deg, rgba(3, 136, 255, 0.08) 0px, rgba(3, 136, 255, 0.08) 1px, transparent 1px, transparent 80px),
     repeating-linear-gradient(0deg, rgba(3, 136, 255, 0.06) 0px, rgba(3, 136, 255, 0.06) 1px, transparent 1px, transparent 80px),
@@ -44,10 +55,9 @@ body {
   background-size: 200px 200px, 200px 200px, 150px 150px;
   background-position: 0 0, 0 0, 0 0;
   animation: driftHorizontal 12s linear infinite, driftDiagonal 20s linear infinite;
-  margin: calc(-1.1% - 7.8rem) 1.1% 0;
-  padding: calc(1.1% + 14.5rem) 0 0;
-  position: relative;
-  overflow: hidden;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 1;
 }
 .dashboard-content {
   margin: 0 auto;
