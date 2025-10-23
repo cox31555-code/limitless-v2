@@ -11,6 +11,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const Feature = ({ img, title, description }) => {
   return (
     <div className={styles.container}>
+      <svg className={styles.borderSvg} viewBox="0 0 400 120" preserveAspectRatio="none">
+        <rect x="1" y="1" width="398" height="118" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
       <Image
         src={img.src}
         alt={img.alt}
