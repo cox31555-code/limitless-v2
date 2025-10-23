@@ -123,7 +123,6 @@ const GetQuote = () => {
               <FormTextInput
                 label="Registration Number"
                 placeholder="e.g., AB51 ABC"
-                reg={true}
                 value={registrationNumber}
                 onChange={handleRegistrationChange}
                 error={
