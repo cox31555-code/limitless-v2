@@ -11,6 +11,16 @@ const nextConfig = {
   },
   // Disable automatic font optimization to prevent Google Fonts connection errors
   optimizeFonts: false,
+  // Allow external images from builder.io
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.builder.io',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
