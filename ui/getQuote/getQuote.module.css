@@ -40,20 +40,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: 3.8rem;
+  height: 3.8rem;
   border-radius: 50%;
-  background: #f0f4f8;
+  background: transparent;
   color: #8a94a6;
-  font-size: 1.8rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 1.7rem;
+  font-weight: 700;
+  border: 2px solid #e8ecf1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .step.active .stepNumber {
-  background: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  border-color: #0388ff;
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
+  transform: scale(1.08);
 }
 
 .stepLabel {
