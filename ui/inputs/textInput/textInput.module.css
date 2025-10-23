@@ -105,6 +105,12 @@
     max-width: 4.2rem;
     max-height: 4.2rem;
   }
+  .ukFlag {
+    height: 1.8rem;
+  }
+  .gbContainer {
+    gap: 0.3rem;
+  }
   .label {
     font-size: 1.4rem;
   }
