@@ -40,22 +40,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.4rem;
-  height: 4.4rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  background: #e8f4ff;
-  color: #0388ff;
+  background: #f0f4f8;
+  color: #8a94a6;
   font-size: 1.8rem;
   font-weight: 600;
-  border: 2px solid #0388ff;
   transition: all 0.3s ease;
 }
 
 .step.active .stepNumber {
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  background: #0388ff;
   color: white;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
-  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 .stepLabel {
@@ -150,108 +148,12 @@
   margin: 0;
 }
 
-/* Registration Input with Country Code */
-.regInputWithCountry {
-  display: flex;
-  gap: 1.2rem;
-  width: 100%;
-  align-items: flex-end;
-}
-
-.countryCodeWrapper {
-  position: relative;
-  flex-shrink: 0;
-}
-
-.countryCodeButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  height: 5.6rem;
-  padding: 1.2rem 1.6rem;
-  border-radius: 1.2rem;
-  background: white;
-  border: 1px solid #e8ecf1;
-  color: #000822;
-  font-size: 1.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 7.2rem;
-}
-
-.countryCodeButton:hover {
-  border-color: #0388ff;
-  background: #f8fbff;
-  transform: translateY(-2px);
-}
-
-.countryCodeButton:active {
-  transform: translateY(0);
-}
-
-.countryCodeText {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.countryDropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  margin-top: 0.6rem;
-  background: white;
-  border: 1px solid #e8ecf1;
-  border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 8, 34, 0.12);
-  overflow: hidden;
-  z-index: 10;
-  animation: dropdownSlide 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes dropdownSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.countryOption {
-  display: block;
-  width: 100%;
-  padding: 1rem 1.6rem;
-  background: transparent;
-  border: none;
-  color: #5a6b7d;
-  font-size: 1.4rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.2s ease;
-}
-
-.countryOption:hover {
-  background: #f0f4f8;
-  color: #0388ff;
-}
-
-.countryOption.selected {
-  background: #e8f4ff;
-  color: #0388ff;
-  font-weight: 600;
-}
+/* Registration Input */
 
 .regInputField {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 /* Duration Section */
@@ -465,19 +367,6 @@
     font-size: 1.3rem;
   }
 
-  .regInputWithCountry {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .countryCodeButton {
-    width: 100%;
-    min-width: auto;
-  }
-
-  .regInputField {
-    width: 100%;
-  }
 
   .quickOptions {
     grid-template-columns: repeat(2, 1fr);
@@ -510,9 +399,9 @@
   }
 
   .stepNumber {
-    width: 3.6rem;
-    height: 3.6rem;
-    font-size: 1.5rem;
+    width: 3.4rem;
+    height: 3.4rem;
+    font-size: 1.4rem;
   }
 
   .stepLabel {
