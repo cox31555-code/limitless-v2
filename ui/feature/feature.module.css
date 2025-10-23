@@ -114,14 +114,6 @@
     text-align: center;
   }
 
-  .container::before {
-    border: 2px solid rgba(255, 255, 255, 0);
-  }
-
-  .container:hover::before {
-    border: 2px solid rgba(255, 255, 255, 0.6);
-  }
-
   .title {
     font-size: 1.5rem;
   }
