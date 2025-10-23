@@ -1,14 +1,20 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0388ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#049cff;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <!-- Shield 1 -->
-  <path d="M12 8L12 18C12 24 16 29 20 32C24 29 28 24 28 18V8L20 4L12 8Z" fill="url(#shield-grad)" opacity="0.8"/>
-  <!-- Shield 2 -->
-  <path d="M24 10L24 20C24 26 28 31 32 34C36 31 40 26 40 20V10L32 6L24 10Z" fill="url(#shield-grad)" opacity="0.9"/>
-  <!-- Shield 3 -->
-  <path d="M8 22L8 32C8 38 12 43 16 46C20 43 24 38 24 32V22L16 18L8 22Z" fill="url(#shield-grad)" opacity="0.7"/>
+  
+  <!-- Primary Shield (center, prominent) -->
+  <path d="M24 6L36 11V22C36 30 24 40 24 40C24 40 12 30 12 22V11L24 6Z" fill="url(#grad1)" opacity="0.95"/>
+  
+  <!-- Secondary Shield (right, slightly overlapping) -->
+  <path d="M32 10L40 14V23C40 29.5 32 36.5 32 36.5C32 36.5 24 29.5 24 23V14L32 10Z" fill="url(#grad1)" opacity="0.7"/>
+  
+  <!-- Tertiary Shield (left, slightly overlapping) -->
+  <path d="M16 10L8 14V23C8 29.5 16 36.5 16 36.5C16 36.5 24 29.5 24 23V14L16 10Z" fill="url(#grad1)" opacity="0.7"/>
+  
+  <!-- Center checkmark for verification -->
+  <path d="M20 24L22.5 27L28 20" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
 </svg>

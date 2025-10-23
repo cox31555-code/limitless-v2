@@ -1,25 +1,26 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="people-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0388ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#049cff;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <!-- Young person (left) -->
-  <circle cx="12" cy="8" r="3" fill="url(#people-grad)"/>
-  <path d="M10 12H14V18H10Z" fill="url(#people-grad)"/>
-  <path d="M9 18H15L14 24H11Z" fill="url(#people-grad)"/>
   
-  <!-- Adult (center) -->
-  <circle cx="24" cy="6" r="4" fill="url(#people-grad)"/>
-  <path d="M21 12H27V20H21Z" fill="url(#people-grad)"/>
-  <path d="M19 20H29L27 28H21Z" fill="url(#people-grad)"/>
+  <!-- Person 1 (Young) - Left -->
+  <circle cx="12" cy="10" r="3.5" fill="url(#grad2)" opacity="0.8"/>
+  <path d="M9 15H15V20H9Z" fill="url(#grad2)" opacity="0.8"/>
+  <path d="M8 20.5H16L15 28H9Z" fill="url(#grad2)" opacity="0.8"/>
   
-  <!-- Older person (right) -->
-  <circle cx="36" cy="8" r="3" fill="url(#people-grad)"/>
-  <path d="M34 12H38V18H34Z" fill="url(#people-grad)"/>
-  <path d="M33 18H39L38 24H35Z" fill="url(#people-grad)"/>
+  <!-- Person 2 (Middle age) - Center -->
+  <circle cx="24" cy="8" r="4.5" fill="url(#grad2)" opacity="1"/>
+  <path d="M20 15H28V22H20Z" fill="url(#grad2)" opacity="1"/>
+  <path d="M18.5 22.5H29.5L27.5 32H20.5Z" fill="url(#grad2)" opacity="1"/>
   
-  <!-- Age range indicator -->
-  <text x="24" y="40" font-size="12" font-weight="bold" text-anchor="middle" fill="url(#people-grad)">18-75</text>
+  <!-- Person 3 (Senior) - Right -->
+  <circle cx="36" cy="10" r="3.5" fill="url(#grad2)" opacity="0.8"/>
+  <path d="M33 15H39V20H33Z" fill="url(#grad2)" opacity="0.8"/>
+  <path d="M32 20.5H40L39 28H33Z" fill="url(#grad2)" opacity="0.8"/>
+  
+  <!-- Age range label -->
+  <text x="24" y="40" font-family="Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="url(#grad2)">18-75</text>
 </svg>
