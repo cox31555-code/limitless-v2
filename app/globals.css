@@ -13,12 +13,37 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@keyframes driftHorizontal {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+@keyframes driftDiagonal {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 150px 150px;
+  }
+}
+
 .headerContainer,
 .headerDashboardContainer {
   width: calc(100% - 2.2%);
   /* height: 884px; */
   border-radius: 20px;
   background: #000822;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(3, 136, 255, 0.08) 0px, rgba(3, 136, 255, 0.08) 1px, transparent 1px, transparent 80px),
+    repeating-linear-gradient(0deg, rgba(3, 136, 255, 0.06) 0px, rgba(3, 136, 255, 0.06) 1px, transparent 1px, transparent 80px),
+    repeating-linear-gradient(45deg, rgba(0, 212, 255, 0.05) 0px, rgba(0, 212, 255, 0.05) 1px, transparent 1px, transparent 100px);
+  background-size: 200px 200px, 200px 200px, 150px 150px;
+  background-position: 0 0, 0 0, 0 0;
+  animation: driftHorizontal 12s linear infinite, driftDiagonal 20s linear infinite;
   margin: calc(-1.1% - 7.8rem) 1.1% 0;
   padding: calc(1.1% + 14.5rem) 0 0;
   position: relative;
