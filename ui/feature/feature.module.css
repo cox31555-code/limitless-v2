@@ -53,7 +53,7 @@
 }
 
 .container:hover .borderSvg rect {
-  animation: strokeDraw 1s linear forwards;
+  animation: strokeDraw 0.4s linear forwards;
 }
 
 .img {
