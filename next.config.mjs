@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: 'cdn.builder.io',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'api.builder.io',
+        pathname: '/**',
+      },
     ],
   },
 };
