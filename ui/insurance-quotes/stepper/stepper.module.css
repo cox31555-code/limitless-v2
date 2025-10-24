@@ -1,15 +1,17 @@
 .stepper {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 72rem;
+  max-width: 80rem;
+  gap: 2.4rem;
 }
 .stepperItem {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 2rem;
   position: relative;
   flex: 1;
 }
@@ -18,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 .stepperLine,
 .stepperLine2 {
@@ -26,28 +28,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2px;
-  margin-top: 2.2rem;
+  height: 3px;
+  background: linear-gradient(90deg, #0388ff 0%, transparent 100%);
+  position: relative;
 }
 .stepperLine svg,
 .stepperLine2 svg {
-  width: 100%;
-  height: 100%;
+  display: none;
 }
 .stepperNumber {
-  color: #0388ff;
-  font-size: 1.1rem;
+  color: #fff;
+  font-size: 1.2rem;
   font-weight: 700;
-  line-height: 120%;
-  letter-spacing: 0.4px;
+  line-height: 130%;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
 }
 .stepperTitle {
   color: #fff;
-  font-size: 2.2rem;
-  font-weight: 800;
+  font-size: 2.4rem;
+  font-weight: 900;
   line-height: 110%;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
 }
 
 @media screen and (max-width: 900px) {
