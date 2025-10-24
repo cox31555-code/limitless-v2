@@ -177,7 +177,7 @@ const VehicleDetailsForm = ({
 
     try {
       const response = await fetch(
-        `${API_BASE_URL}/api/vehicle-models/options?${queryString}`
+        `/api/vehicle-models/options?${queryString}`
       );
 
       if (!response.ok) {
