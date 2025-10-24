@@ -81,17 +81,18 @@
 .rows {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2.8rem;
   margin-top: 3.2rem;
 }
 
 .row {
   display: flex;
-  gap: 1.8rem;
+  gap: 2rem;
 }
 
 .row > div {
   flex: 1;
+  min-width: 0;
 }
 
 /* Cover Details Styles */
