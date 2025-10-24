@@ -29,6 +29,7 @@ const getIconForTitle = (title) => {
 const ComponentWrapper = ({ children, title, icon }) => {
   const iconSrc = getIconForTitle(title);
   const isVehicleIcon = title?.toLowerCase().includes("vehicle");
+  const isCoverIcon = title?.toLowerCase().includes("cover");
 
   return (
     <div className={styles.container}>
@@ -36,7 +37,14 @@ const ComponentWrapper = ({ children, title, icon }) => {
         {isVehicleIcon ? (
           <div className={styles.icon}>
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm11 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM5 11l1.5-4.5h11L19 11H5z" fill="white"/>
+              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm11 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM5 11l1.5-4.5h11L19 11H5z" fill="rgba(255,255,255,0.7)"/>
+            </svg>
+          </div>
+        ) : isCoverIcon ? (
+          <div className={styles.icon}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 1L3 5v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/>
+              <path d="M10.5 16.5l-3-3 1.41-1.41L10.5 13.68l5.59-5.59L17.5 9.5l-7 7z" fill="#0388ff"/>
             </svg>
           </div>
         ) : (
