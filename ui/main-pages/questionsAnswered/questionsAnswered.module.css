@@ -48,8 +48,9 @@
   gap: 4rem;
   position: relative;
   z-index: 2;
-  max-width: 140rem;
+  max-width: 95rem;
   width: 100%;
+  margin: 0 auto;
 }
 
 .question1 {
