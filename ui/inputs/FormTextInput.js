@@ -18,14 +18,14 @@ const FormTextInput = ({
       <div className={styles.wrapper}>
         <div className={`${styles.inputContainer} ${error ? styles.error : ""}`}>
           {reg && (
-            <div className={styles.gbContainer}>
+            <span className={styles.inputSpan}>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fc3966e857ea74e3ba58cc72094f4df38?format=webp&width=800"
                 alt="UK Flag"
                 className={styles.ukFlag}
               />
-              <span className={styles.inputSpan}>GB</span>
-            </div>
+              <span className={styles.gbText}>GB</span>
+            </span>
           )}
           <input
             type={type}
