@@ -56,29 +56,71 @@
 .cardsContainer > div {
   height: 100%;
 }
+@media screen and (max-width: 1200px) {
+  .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.8rem;
+  }
+
+  .title {
+    font-size: 4.8rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
     gap: 6.8rem;
     width: 100%;
-    padding: 5.4rem 4.4% 3.1rem;
+    padding: 7rem 4.4% 6rem;
   }
+
+  .top {
+    gap: 2.4rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 3.4rem;
+    line-height: 120%;
+  }
+
+  .description {
+    font-size: 1.3rem;
+    line-height: 150%;
+  }
+
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 5.2rem;
+    padding: 5.2rem 2.4% 4.8rem;
+  }
+
   .top {
     gap: 1.8rem;
-    max-width: 30rem;
-    margin: 0 auto;
   }
+
   .title {
-    font-size: 3.15rem;
+    font-size: 2.6rem;
   }
+
   .description {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
+
   .cardsContainer {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 2.2rem;
-    width: 90%;
-    margin: 0 auto;
+    gap: 1.8rem;
   }
 }
