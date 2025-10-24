@@ -143,7 +143,7 @@ const Header = () => {
             height={66}
           />
         </div>
-        {!isDashboard && (
+        {!isDashboard && mounted && (
           <menu className={styles.menu}>
             <li
               className={styles.menuItem}
