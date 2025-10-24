@@ -32,57 +32,63 @@ const CheckIcon = () => (
 
 const insuranceData = [
   {
-    title: "Learner driver insurance",
-    icon: "learner",
-    features: [
-      "Cover from only 80p* a day.",
-      "Cover on your own car.",
-      "Start earning your No Claims Bonus.",
-    ],
-  },
-  {
-    title: "Young driver insurance",
-    icon: "young",
-    features: [
-      "Cover on your own car.",
-      "No night-time curfews.",
-      "Start earning your No Claims Bonus.",
-    ],
-  },
-  {
-    title: "Convicted insurance",
-    icon: "convicted",
-    features: [
-      "Competitive rates.",
-      "Cover for drivers with convictions.",
-      "All motoring convictions considered.",
-    ],
-  },
-  {
-    title: "Motorcycle insurance",
-    icon: "motorcycle",
-    features: [
-      "Cover from only 80p* a day.",
-      "Cover on your own car.",
-      "Start earning your No Claims Bonus.",
-    ],
-  },
-  {
     title: "Car insurance",
     icon: "car",
+    description: "Fully comprehensive cover",
     features: [
-      "Cover on your own car.",
-      "No night-time curfews.",
-      "Start earning your No Claims Bonus.",
+      "From just 80p per day",
+      "Flexible annual or short-term cover",
+      "Build your No Claims Bonus",
     ],
   },
   {
     title: "Van insurance",
     icon: "van",
+    description: "Business & personal use",
     features: [
-      "Competitive rates.",
-      "Cover for drivers with convictions.",
-      "All motoring convictions considered.",
+      "Quick quotes and instant cover",
+      "Flexible cover options",
+      "Competitive premiums",
+    ],
+  },
+  {
+    title: "Young driver insurance",
+    icon: "young",
+    description: "Fair rates for new drivers",
+    features: [
+      "No night-time restrictions",
+      "Competitive premiums",
+      "Earn your No Claims Bonus",
+    ],
+  },
+  {
+    title: "Learner driver insurance",
+    icon: "learner",
+    description: "Insure while learning",
+    features: [
+      "From just 80p per day",
+      "Cover any supervising vehicle",
+      "Build your bonus early",
+    ],
+  },
+  {
+    title: "Motorcycle insurance",
+    icon: "motorcycle",
+    description: "Flexible two-wheeler cover",
+    features: [
+      "From just 80p per day",
+      "Short or long-term policies",
+      "Fast claim processing",
+    ],
+  },
+  {
+    title: "Convicted driver insurance",
+    icon: "convicted",
+    description: "Fair cover for all drivers",
+    features: [
+      "All convictions considered",
+      "No exclusions or penalties",
+      "Quick and easy quotes",
     ],
   },
 ];
