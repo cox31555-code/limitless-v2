@@ -147,14 +147,16 @@ const Header = () => {
               {openDropdown === "carVan" && (
                 <div className={styles.dropdown}>
                   {carVanItems.map((item) => (
-                    <Link
+                    <span
                       key={item.href}
-                      href={item.href}
                       className={styles.dropdownItem}
-                      onClick={() => setOpenDropdown(null)}
+                      onClick={() => {
+                        setOpenDropdown(null);
+                        router.push(item.href);
+                      }}
                     >
                       {item.label}
-                    </Link>
+                    </span>
                   ))}
                 </div>
               )}
@@ -169,14 +171,16 @@ const Header = () => {
               {openDropdown === "motorbike" && (
                 <div className={styles.dropdown}>
                   {motorbakeItems.map((item) => (
-                    <Link
+                    <span
                       key={item.href}
-                      href={item.href}
                       className={styles.dropdownItem}
-                      onClick={() => setOpenDropdown(null)}
+                      onClick={() => {
+                        setOpenDropdown(null);
+                        router.push(item.href);
+                      }}
                     >
                       {item.label}
-                    </Link>
+                    </span>
                   ))}
                 </div>
               )}
@@ -346,7 +350,7 @@ const Header = () => {
                       openDropdown === "motorbike" ? styles.dropdownArrowOpen : ""
                     }`}
                   >
-                    ���
+                    ▼
                   </span>
                 </button>
                 {openDropdown === "motorbike" && (
