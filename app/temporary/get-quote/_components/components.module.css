@@ -368,32 +368,56 @@
 .actions {
   width: 100%;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
 }
 
 .back,
 .next {
   flex: 1;
   display: flex;
-  height: 6.2rem;
+  height: 5.8rem;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
-  border-radius: 12px;
-  background: #0388ff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  gap: 1.2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.25);
   color: #fff;
   font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(3, 136, 255, 0.3);
+}
+
+.next:active {
+  transform: translateY(0);
 }
 
 .back {
   background: #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.1);
   color: #0388ff;
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+}
+
+.back:hover {
+  background: #f8fbff;
+  border-color: #0388ff;
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.back:active {
+  transform: translateY(0);
 }
 
 /* Responsive Styles */
