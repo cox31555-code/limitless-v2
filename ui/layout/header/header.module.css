@@ -453,41 +453,59 @@
   }
 
   .mobileButtons {
-    width: 344.012px;
-    height: 64px;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
     flex-shrink: 0;
     border-radius: 12px;
-    background: #ecf0fe;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3.2rem;
-    padding: 0.8rem;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0;
     opacity: 0;
   }
 
   .loginBtn {
     display: flex;
-    height: 4.8rem;
-    padding: 1rem 2.8rem 1rem 2.4rem;
+    height: 5.2rem;
+    width: 100%;
+    padding: 1.2rem 2.4rem;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
-    border: none;
+    border-radius: 10px;
+    border: 1.5px solid rgba(0, 8, 34, 0.2);
     cursor: pointer;
     background: transparent;
-    color: #06112b;
+    color: #000822;
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 124%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    overflow: hidden;
+  }
+
+  .loginBtn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 136, 255, 0.08);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .loginBtn:hover {
     background: rgba(3, 136, 255, 0.1);
+    border-color: rgba(3, 136, 255, 0.3);
     color: #0388ff;
     transform: translateY(-2px);
+  }
+
+  .loginBtn:hover::before {
+    opacity: 1;
   }
 
   .loginBtn:active {
@@ -496,14 +514,15 @@
 
   .quoteBtn {
     display: flex;
-    height: 4.8rem;
-    padding: 1rem 2.4rem;
+    height: 5.2rem;
+    width: 100%;
+    padding: 1.2rem 2.4rem;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    border-radius: 0.8rem;
+    border-radius: 10px;
     background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
-    box-shadow: 0 4px 24px rgba(3, 136, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.35);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -525,8 +544,8 @@
   }
 
   .quoteBtn:hover {
-    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.4);
-    transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(3, 136, 255, 0.45);
+    transform: translateY(-3px);
   }
 
   .quoteBtn:hover::before {
@@ -534,6 +553,6 @@
   }
 
   .quoteBtn:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
   }
 }
