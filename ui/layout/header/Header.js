@@ -70,7 +70,7 @@ const Header = () => {
                 height={50}
               />
             </div>
-            <nav className={styles.stickyMenu}>
+            <nav className={styles.stickyMenu} suppressHydrationWarning>
               <div
                 className={styles.stickyDropdownContainer}
                 onMouseEnter={() => setOpenDropdown("carVan")}
