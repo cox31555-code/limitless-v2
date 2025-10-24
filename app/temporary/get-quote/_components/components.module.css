@@ -40,24 +40,26 @@
 }
 
 .vehicleDataDisplay {
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 1.6rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.15);
+  border-radius: 14px;
+  padding: 2rem;
   margin: 1.6rem 0;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.06);
 }
 
 .vehicleDataRow {
-  margin: 0.8rem 0;
+  margin: 0.6rem 0;
   font-size: 1.4rem;
-  line-height: 1.5;
-  color: #495057;
+  line-height: 160%;
+  color: #000822;
+  font-weight: 500;
 }
 
 .vehicleDataRow strong {
-  color: #212529;
-  font-weight: 600;
-  margin-right: 0.5rem;
+  color: #0388ff;
+  font-weight: 700;
+  margin-right: 0.8rem;
 }
 
 .vehicleDetailsContainer {
