@@ -38,29 +38,7 @@
 }
 
 .contact {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.06;
-  mix-blend-mode: multiply;
-  filter: blur(60px);
-}
-
-.contact:nth-child(1) {
-  width: 400px;
-  height: 400px;
-  background: #0388ff;
-  top: -100px;
-  left: -150px;
-  animation: float 25s infinite ease-in-out;
-}
-
-.contact:nth-child(2) {
-  width: 500px;
-  height: 500px;
-  background: #049cff;
-  bottom: -150px;
-  right: -200px;
-  animation: float 30s infinite ease-in-out reverse;
+  display: none;
 }
 
 .header {
