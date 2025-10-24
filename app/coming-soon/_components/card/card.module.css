@@ -144,38 +144,95 @@
   transform: translateY(-1px);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   .container {
-    padding: 3.4rem 2.8rem 2.8rem;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    gap: 4.6rem;
-  }
-  .imgContainer {
-    height: auto;
-  }
-  .img {
-    width: auto;
-    height: 9rem !important;
+    padding: 3.8rem 3.6rem;
+    gap: 3rem;
   }
 
-  .content {
-    gap: 1.6rem;
-    margin-bottom: 1.6rem;
+  .imgContainer {
+    height: 10.4rem;
   }
+
   .title {
     font-size: 2.4rem;
   }
+
   .description {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
+
   .button {
     font-size: 1.4rem;
-    margin-top: 1rem;
+    height: 4.8rem;
+    padding: 1rem 2.4rem;
   }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 3.4rem 2.8rem 2.8rem;
+    gap: 2.8rem;
+    border-radius: 16px;
+  }
+
+  .imgContainer {
+    height: 9.2rem;
+    border-radius: 12px;
+  }
+
+  .content {
+    gap: 1.4rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+    line-height: 145%;
+  }
+
+  .button {
+    font-size: 1.3rem;
+    height: 4.6rem;
+    padding: 0.95rem 2.2rem;
+    gap: 0.8rem;
+  }
+
   .arrow {
-    width: 3rem;
-    height: 1.7rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .container:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 2.8rem 2.2rem;
+    gap: 2.2rem;
+    border-radius: 14px;
+  }
+
+  .imgContainer {
+    height: 8.4rem;
+  }
+
+  .title {
+    font-size: 1.95rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .button {
+    font-size: 1.2rem;
+    height: 4.4rem;
+    padding: 0.9rem 2rem;
   }
 }
