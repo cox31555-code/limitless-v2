@@ -14,6 +14,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDashboardSidebarOpen, setIsDashboardSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +31,21 @@ const Header = () => {
       window.Tawk_API.maximize();
     }
   };
+
+  const carVanItems = [
+    { label: "Annual car insurance", href: "/annual" },
+    { label: "Hourly car insurance", href: "/temporary" },
+    { label: "Weekly car insurance", href: "/temporary" },
+    { label: "International driving licenses", href: "/coming-soon" },
+  ];
+
+  const motorbakeItems = [
+    { label: "Annual bike insurance", href: "/coming-soon" },
+    { label: "Hourly bike insurance", href: "/coming-soon" },
+    { label: "Weekly bike insurance", href: "/coming-soon" },
+    { label: "International driving licenses", href: "/coming-soon" },
+  ];
+
   return pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ? null : (
@@ -48,10 +64,43 @@ const Header = () => {
               />
             </div>
             <nav className={styles.stickyMenu}>
-              <Link href="/temporary">Temporary</Link>
-              <Link href="/impound">Impound</Link>
-              <Link href="/coming-soon">Courier</Link>
-              <Link href="/contact">Contact</Link>
+              <div
+                className={styles.stickyDropdownContainer}
+                onMouseEnter={() => setOpenDropdown("carVan")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button className={styles.stickyMenuButton}>Car & Van</button>
+                {openDropdown === "carVan" && (
+                  <div className={styles.stickyDropdown}>
+                    {carVanItems.map((item) => (
+                      <Link key={item.href} href={item.href} className={styles.stickyDropdownItem}>
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div
+                className={styles.stickyDropdownContainer}
+                onMouseEnter={() => setOpenDropdown("motorbike")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <button className={styles.stickyMenuButton}>Motorbike</button>
+                {openDropdown === "motorbike" && (
+                  <div className={styles.stickyDropdown}>
+                    {motorbakeItems.map((item) => (
+                      <Link key={item.href} href={item.href} className={styles.stickyDropdownItem}>
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link href="/coming-soon" className={styles.stickyMenuButton}>Courier</Link>
+              <Link href="/about-us" className={styles.stickyMenuButton}>About us</Link>
+              <Link href="/contact" className={styles.stickyMenuButton}>Contact</Link>
             </nav>
             <div className={styles.stickyButtons}>
               <button
@@ -89,36 +138,80 @@ const Header = () => {
         </div>
         {!isDashboard && (
           <menu className={styles.menu}>
-            <li className={styles.menuItem}>
-              <Link 
-                className={`${styles.menuLink} ${pathname === "/temporary" ? styles.activeMenuLink : ""}`} 
-                href="/temporary"
-              >
-                Temporary
-              </Link>
+            <li
+              className={styles.menuItem}
+              onMouseEnter={() => setOpenDropdown("carVan")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={styles.menuLink}>Car & Van</button>
+              {openDropdown === "carVan" && (
+                <div className={styles.dropdown}>
+                  {carVanItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={styles.dropdownItem}
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </li>
-            <li className={styles.menuItem}>
-              <Link 
-                className={`${styles.menuLink} ${pathname === "/impound" ? styles.activeMenuLink : ""}`} 
-                href="/impound"
-              >
-                Impound
-              </Link>
+
+            <li
+              className={styles.menuItem}
+              onMouseEnter={() => setOpenDropdown("motorbike")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className={styles.menuLink}>Motorbike</button>
+              {openDropdown === "motorbike" && (
+                <div className={styles.dropdown}>
+                  {motorbakeItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={styles.dropdownItem}
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </li>
+
             <li className={styles.menuItem}>
-              <Link 
-                className={`${styles.menuLink} ${pathname === "/coming-soon" ? styles.activeMenuLink : ""}`} 
+              <Link
+                className={`${styles.menuLink} ${
+                  pathname === "/coming-soon" ? styles.activeMenuLink : ""
+                }`}
                 href="/coming-soon"
               >
                 Courier
               </Link>
             </li>
+
             <li className={styles.menuItem}>
-              <Link 
-                className={`${styles.menuLink} ${pathname === "/contact" ? styles.activeMenuLink : ""}`} 
+              <Link
+                className={`${styles.menuLink} ${
+                  pathname === "/about-us" ? styles.activeMenuLink : ""
+                }`}
+                href="/about-us"
+              >
+                About us
+              </Link>
+            </li>
+
+            <li className={styles.menuItem}>
+              <Link
+                className={`${styles.menuLink} ${
+                  pathname === "/contact" ? styles.activeMenuLink : ""
+                }`}
                 href="/contact"
               >
-                Contact Us
+                Contact
               </Link>
             </li>
           </menu>
@@ -206,41 +299,100 @@ const Header = () => {
             }`}
           >
             <nav className={styles.mobileNav}>
+              <div className={styles.mobileDropdownContainer}>
+                <button
+                  className={styles.mobileMenuLink}
+                  onClick={() =>
+                    setOpenDropdown(openDropdown === "carVan" ? null : "carVan")
+                  }
+                >
+                  Car & Van
+                  <span
+                    className={`${styles.dropdownArrow} ${
+                      openDropdown === "carVan" ? styles.dropdownArrowOpen : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+                {openDropdown === "carVan" && (
+                  <div className={styles.mobileDropdown}>
+                    {carVanItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={styles.mobileDropdownItem}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.mobileDropdownContainer}>
+                <button
+                  className={styles.mobileMenuLink}
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === "motorbike" ? null : "motorbike"
+                    )
+                  }
+                >
+                  Motorbike
+                  <span
+                    className={`${styles.dropdownArrow} ${
+                      openDropdown === "motorbike" ? styles.dropdownArrowOpen : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </button>
+                {openDropdown === "motorbike" && (
+                  <div className={styles.mobileDropdown}>
+                    {motorbakeItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={styles.mobileDropdownItem}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <Link
-                className={`${styles.menuLink} ${
-                  pathname === "/temporary" ? styles.activeMenuLink : ""
-                }`}
-                href="/temporary"
-                onClick={() => setIsOpen(false)}
-              >
-                Temporary
-              </Link>
-              <Link
-                className={`${styles.menuLink} ${
-                  pathname === "/impound" ? styles.activeMenuLink : ""
-                }`}
-                href="/impound"
-                onClick={() => setIsOpen(false)}
-              >
-                Impound
-              </Link>
-              <Link
-                className={`${styles.menuLink} ${
-                  pathname === "/courier" ? styles.activeMenuLink : ""
+                className={`${styles.mobileMenuLink} ${
+                  pathname === "/coming-soon" ? styles.activeMenuLink : ""
                 }`}
                 href="/coming-soon"
                 onClick={() => setIsOpen(false)}
               >
                 Courier
               </Link>
+
               <Link
-                className={`${styles.menuLink} ${
+                className={`${styles.mobileMenuLink} ${
+                  pathname === "/about-us" ? styles.activeMenuLink : ""
+                }`}
+                href="/about-us"
+                onClick={() => setIsOpen(false)}
+              >
+                About us
+              </Link>
+
+              <Link
+                className={`${styles.mobileMenuLink} ${
                   pathname === "/contact" ? styles.activeMenuLink : ""
                 }`}
                 href="/contact"
                 onClick={() => setIsOpen(false)}
               >
-                Contact Us
+                Contact
               </Link>
             </nav>
             <div className={styles.mobileButtons}>
