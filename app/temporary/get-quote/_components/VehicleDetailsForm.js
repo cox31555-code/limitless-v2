@@ -154,7 +154,7 @@ const VehicleDetailsForm = ({
   // Fetch makes on component mount
   const fetchMakes = useCallback(async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/vehicle-models/makes`);
+      const response = await fetch(`/api/vehicle-models/makes`);
       if (response.ok) {
         const result = await response.json();
         const makes = result.data || [];
