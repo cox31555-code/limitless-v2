@@ -1,38 +1,40 @@
 .page {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin: 1.6rem 1.1% 5.2rem;
+  justify-content: space-between;
+  margin: 2.4rem 1.1% 6rem;
   height: 100%;
   width: 107%;
   position: relative;
+  gap: 4rem;
 }
 .contact {
   position: absolute;
-  top: 30%;
-  right: 0%;
+  top: 25%;
+  right: -2%;
 }
 
 .squares {
   position: absolute;
-  top: -13.6rem;
-  right: -57rem;
+  top: -12rem;
+  right: -55rem;
 }
 .images {
   position: relative;
-  flex-basis: 47.6%;
-  height: 67rem;
-  border-radius: 17px;
-  background: #000822;
+  flex-basis: 47%;
+  height: 65rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #000822 0%, #001033 100%);
   overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
 }
 
 .image1 {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 5%;
   transform: translateY(-50%);
-  width: 80%;
+  width: 75%;
   height: auto;
 }
 .image4 {
