@@ -1,0 +1,310 @@
+.container {
+  width: 100vw;
+  margin: 0 calc(-50vw + 50%);
+  padding: 10rem 6.4rem;
+  background: #fff;
+  position: relative;
+}
+
+.heading {
+  max-width: 652px;
+  margin: 0 auto 8rem;
+  text-align: center;
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  color: #000822;
+}
+
+.highlight {
+  color: #0388ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+  max-width: 131.2rem;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 422px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.iconContainer {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 90px;
+  height: 121px;
+}
+
+.gradientBars {
+  position: absolute;
+  width: 90px;
+  height: 121px;
+  top: 0;
+  left: 0;
+}
+
+.bar {
+  position: absolute;
+  width: 30px;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 60%);
+}
+
+.bar1 {
+  height: 62px;
+  left: 0;
+  top: 41px;
+}
+
+.bar2 {
+  height: 86px;
+  left: 30px;
+  top: 17px;
+}
+
+.bar3 {
+  height: 103px;
+  left: 60px;
+  top: 0;
+}
+
+.lBadge {
+  position: absolute;
+  width: 65px;
+  height: 80px;
+  left: 12px;
+  top: 41px;
+}
+
+.motorcycleWrapper {
+  position: relative;
+  width: 96px;
+  height: 101px;
+}
+
+.checkBadge {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 86px;
+  top: 98px;
+}
+
+.carWrapper {
+  position: relative;
+  width: 128px;
+  height: 117px;
+}
+
+.carCheck {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.carVehicle {
+  position: absolute;
+  width: 93px;
+  height: 68px;
+  left: 0;
+  top: 38px;
+}
+
+.gradientEffect {
+  position: absolute;
+  width: 72px;
+  height: 114px;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 136, 255, 0) 0%,
+    rgba(3, 136, 255, 0.48) 100%
+  );
+  left: 45px;
+  top: 3px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  color: #000822;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.feature svg {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.feature span {
+  color: rgba(0, 8, 34, 0.7);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 124%;
+  letter-spacing: 0.56px;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .heading {
+    font-size: 4.8rem;
+    margin-bottom: 6rem;
+  }
+
+  .card {
+    min-height: 380px;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 8rem 4.4rem;
+  }
+
+  .heading {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+    max-width: 90%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 2rem;
+  }
+
+  .iconContainer {
+    height: 120px;
+    margin-bottom: 2.5rem;
+  }
+
+  .content {
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .feature span {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 6rem 2.4rem;
+  }
+
+  .heading {
+    font-size: 3.2rem;
+    margin-bottom: 4rem;
+    line-height: 110%;
+  }
+
+  .grid {
+    gap: 1.6rem;
+  }
+
+  .card {
+    padding: 1.8rem;
+  }
+
+  .iconContainer {
+    height: 100px;
+    margin-bottom: 2rem;
+  }
+
+  .iconWrapper,
+  .motorcycleWrapper,
+  .carWrapper {
+    transform: scale(0.8);
+    transform-origin: left top;
+  }
+
+  .content {
+    gap: 1.8rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .featureList {
+    gap: 1.2rem;
+  }
+
+  .feature {
+    gap: 1.2rem;
+  }
+
+  .feature svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .feature span {
+    font-size: 1.2rem;
+  }
+}
