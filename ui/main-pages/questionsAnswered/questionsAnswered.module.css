@@ -43,54 +43,51 @@
   }
 }
 
-@keyframes drawIn {
+@keyframes meshGrad {
   0% {
-    clip-path: inset(0 100% 0 0);
-    opacity: 0;
+    background-position: 0% 50%;
   }
-  5% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
+  50% {
+    background-position: 100% 50%;
   }
   100% {
-    clip-path: inset(0 0 0 0);
-    opacity: 0;
+    background-position: 0% 50%;
   }
 }
 
-@keyframes drawIn2 {
-  0% {
-    clip-path: inset(100% 0 0 0);
-    opacity: 0;
+@keyframes orb1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
   }
-  8% {
-    opacity: 1;
+  25% {
+    transform: translate(80px, -100px) scale(1.2);
   }
-  92% {
-    opacity: 1;
+  50% {
+    transform: translate(0, -200px) scale(0.9);
   }
-  100% {
-    clip-path: inset(0 0 0 0);
-    opacity: 0;
+  75% {
+    transform: translate(-100px, -100px) scale(1.1);
   }
 }
 
-@keyframes drawIn3 {
-  0% {
-    clip-path: inset(0 0 100% 0);
-    opacity: 0;
+@keyframes orb2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
   }
-  12% {
-    opacity: 1;
+  33% {
+    transform: translate(-120px, 80px) scale(0.95);
   }
-  88% {
-    opacity: 1;
+  66% {
+    transform: translate(100px, 150px) scale(1.15);
   }
-  100% {
-    clip-path: inset(0 0 0 0);
-    opacity: 0;
+}
+
+@keyframes orb3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-80px, -150px) rotate(180deg);
   }
 }
 
