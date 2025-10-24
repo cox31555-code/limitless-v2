@@ -58,22 +58,24 @@
 @media screen and (max-width: 900px) {
   .stepper {
     max-width: 100%;
+    gap: 1.6rem;
   }
   .stepperItem {
-    gap: 1.4rem;
+    gap: 1.6rem;
   }
   .stepperItemText {
-    gap: 0.8rem;
+    gap: 1rem;
   }
   .stepperLine,
   .stepperLine2 {
-    height: 1px;
-    margin-top: 1.8rem;
+    height: 2px;
+    flex: 0.6;
   }
   .stepperNumber {
     font-size: 1rem;
+    padding: 0.3rem 0.6rem;
   }
   .stepperTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
