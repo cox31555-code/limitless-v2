@@ -39,24 +39,26 @@
 }
 .selectionItem,
 .selectedItem {
-  flex: 1;
+  flex: 0 1 auto;
   display: flex;
-  padding: 1rem 1.6rem;
+  padding: 1rem 1.2rem;
   height: 4.4rem;
   justify-content: center;
   align-items: center;
-  gap: 2.4rem;
+  gap: 1.8rem;
   border-radius: 10px;
   background: #f8fbff;
   border: 1.5px solid rgba(3, 136, 255, 0.1);
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.02);
   color: #000822;
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 130%;
-  letter-spacing: 0.2px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0.1px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 4.6rem;
+  white-space: nowrap;
 }
 
 .selectionItem:hover {
