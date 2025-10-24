@@ -92,47 +92,39 @@
 }
 @media screen and (max-width: 900px) {
   .stepper {
-    gap: 0;
+    gap: 0.8rem;
     width: 100%;
     margin: 0 auto;
     max-width: 100%;
   }
 
-  .stepper::before {
-    display: none;
-  }
-
-  .stepperItemImage {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  .stepperItemImage:first-child {
-    width: 3.4rem;
-    height: 3.4rem;
-  }
-
   .stepperContainer {
     flex: 1;
+    justify-content: center;
   }
 
   .stepperItem {
-    gap: 1rem;
+    gap: 0.6rem;
     margin: 0 !important;
   }
 
   .stepperItemText {
-    gap: 0.5rem;
+    gap: 0.2rem;
   }
 
   .stepperNumber {
-    padding: 0.6rem 1.2rem;
+    width: 3rem;
+    height: 3rem;
     font-size: 1.1rem;
-    border-radius: 50px;
-    min-width: auto;
+  }
+
+  .stepperLine,
+  .stepperLine2 {
+    max-width: 2.4rem;
+    margin: 0 -0.8rem;
   }
 
   .stepperTitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
