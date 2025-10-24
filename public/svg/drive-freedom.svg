@@ -1,28 +1,17 @@
-<svg width="147" height="135" viewBox="0 0 147 135" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="35.3027" cy="35.0063" rx="35.201" ry="35.0063" fill="url(#paint0_linear_freedom)" fill-opacity="0.48"/>
-<rect x="30" y="65" width="87" height="35" rx="6" fill="#000822"/>
-<path d="M35 75L47 68M112 75L100 68" stroke="#0388FF" stroke-width="3" stroke-linecap="round"/>
-<circle cx="45" cy="95" r="10" fill="#000822" stroke="#0388FF" stroke-width="2"/>
-<circle cx="102" cy="95" r="10" fill="#000822" stroke="#0388FF" stroke-width="2"/>
-<circle cx="45" cy="95" r="5" fill="#0388FF"/>
-<circle cx="102" cy="95" r="5" fill="#0388FF"/>
-<rect x="55" y="68" width="37" height="20" rx="3" fill="url(#paint1_linear_freedom)"/>
-<path d="M68 78L73.5 70L79 78" stroke="#000822" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<ellipse cx="100" cy="40" rx="35.244" ry="35.167" fill="url(#paint2_linear_freedom)" fill-opacity="0.3"/>
-<path d="M20 35C25 30 35 25 50 25M127 35C122 30 112 25 97 25" stroke="#0388FF" stroke-width="3" stroke-linecap="round"/>
-<circle cx="50" cy="25" r="3" fill="#0388FF"/>
-<circle cx="97" cy="25" r="3" fill="#0388FF"/>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="30" cy="30" rx="25" ry="25" fill="url(#paint0_linear)" fill-opacity="0.48"/>
+<rect x="20" y="55" width="80" height="35" rx="5" fill="#000822"/>
+<circle cx="35" cy="85" r="8" fill="#000822" stroke="#0388FF" stroke-width="2"/>
+<circle cx="85" cy="85" r="8" fill="#000822" stroke="#0388FF" stroke-width="2"/>
+<circle cx="35" cy="85" r="4" fill="#0388FF"/>
+<circle cx="85" cy="85" r="4" fill="#0388FF"/>
+<path d="M40 65L50 55M80 65L70 55" stroke="#0388FF" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M30 40L50 30M70 40L90 30" stroke="#0388FF" stroke-width="2" stroke-linecap="round"/>
+<circle cx="50" cy="30" r="2" fill="#0388FF"/>
+<circle cx="90" cy="30" r="2" fill="#0388FF"/>
 <defs>
-<linearGradient id="paint0_linear_freedom" x1="35.3027" y1="0" x2="35.3027" y2="70.0125" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear" x1="30" y1="5" x2="30" y2="55" gradientUnits="userSpaceOnUse">
 <stop stop-color="#0388FF" stop-opacity="0"/>
-<stop offset="1" stop-color="#0388FF"/>
-</linearGradient>
-<linearGradient id="paint1_linear_freedom" x1="55" y1="68" x2="92" y2="88" gradientUnits="userSpaceOnUse">
-<stop stop-color="white" stop-opacity="0.3"/>
-<stop offset="1" stop-color="#0388FF"/>
-</linearGradient>
-<linearGradient id="paint2_linear_freedom" x1="65" y1="5" x2="135" y2="75" gradientUnits="userSpaceOnUse">
-<stop stop-color="white" stop-opacity="0.3"/>
 <stop offset="1" stop-color="#0388FF"/>
 </linearGradient>
 </defs>
