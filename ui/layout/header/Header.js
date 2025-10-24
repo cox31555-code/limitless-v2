@@ -183,36 +183,36 @@ const Header = () => {
             </li>
 
             <li className={styles.menuItem}>
-              <Link
+              <span
                 className={`${styles.menuLink} ${
                   pathname === "/coming-soon" ? styles.activeMenuLink : ""
                 }`}
-                href="/coming-soon"
+                onClick={() => router.push("/coming-soon")}
               >
                 Courier
-              </Link>
+              </span>
             </li>
 
             <li className={styles.menuItem}>
-              <Link
+              <span
                 className={`${styles.menuLink} ${
                   pathname === "/about-us" ? styles.activeMenuLink : ""
                 }`}
-                href="/about-us"
+                onClick={() => router.push("/about-us")}
               >
                 About us
-              </Link>
+              </span>
             </li>
 
             <li className={styles.menuItem}>
-              <Link
+              <span
                 className={`${styles.menuLink} ${
                   pathname === "/contact" ? styles.activeMenuLink : ""
                 }`}
-                href="/contact"
+                onClick={() => router.push("/contact")}
               >
                 Contact
-              </Link>
+              </span>
             </li>
           </menu>
         )}
@@ -346,7 +346,7 @@ const Header = () => {
                       openDropdown === "motorbike" ? styles.dropdownArrowOpen : ""
                     }`}
                   >
-                    ▼
+                    ���
                   </span>
                 </button>
                 {openDropdown === "motorbike" && (
