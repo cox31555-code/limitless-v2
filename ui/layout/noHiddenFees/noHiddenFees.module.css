@@ -207,7 +207,7 @@
   position: relative;
   overflow: hidden;
   background-size: 200% 200%;
-  animation: shimmerFlow 3s linear infinite;
+  animation: shimmerFlow 1.5s linear infinite;
 }
 
 .getQuoteBtn::after {
@@ -218,7 +218,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
-  animation: flowingWave 0.8s ease-in-out;
+  animation: flowingWave 0.4s ease-in-out;
   border-radius: 16px;
   z-index: 1;
   pointer-events: none;
@@ -226,7 +226,7 @@
 }
 
 .getQuoteBtn:hover::after {
-  animation: flowingWave 0.8s ease-in-out forwards;
+  animation: flowingWave 0.4s ease-in-out forwards;
 }
 
 .getQuoteBtn:hover {
@@ -264,7 +264,7 @@
 
 .membersPortalBtn:hover::before {
   width: 100%;
-  animation: shimmerFlow 2s linear;
+  animation: shimmerFlow 1s linear;
 }
 
 .membersPortalBtn:hover {
