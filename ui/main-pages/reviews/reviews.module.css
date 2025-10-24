@@ -22,8 +22,8 @@
 
 .wrapper {
   width: 100vw;
-  background: linear-gradient(180deg, #f0f5ff 0%, #ffffff 50%, #f8f9ff 100%);
-  padding: 8rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f5fb 50%, #f8fafc 100%);
+  padding: 6rem 0;
   position: relative;
   overflow: visible;
   left: 50%;
@@ -35,10 +35,10 @@
 .wrapper::before {
   content: '';
   position: absolute;
-  bottom: -40%;
-  left: -10%;
-  width: 50rem;
-  height: 50rem;
+  top: -10%;
+  left: 10%;
+  width: 60rem;
+  height: 60rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(3, 136, 255, 0.08) 0%, transparent 70%);
   pointer-events: none;
@@ -48,12 +48,12 @@
 .wrapper::after {
   content: '';
   position: absolute;
-  bottom: -30%;
-  right: -5%;
-  width: 45rem;
-  height: 45rem;
+  bottom: -10%;
+  right: 5%;
+  width: 50rem;
+  height: 50rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(3, 136, 255, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.06) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
