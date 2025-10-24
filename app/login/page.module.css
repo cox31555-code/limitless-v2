@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  min-height: auto;
+  min-height: unset;
   overflow: visible;
   background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 50%, #e8f2ff 100%);
-  padding: 2rem 3rem;
+  padding: 1.5rem 3rem;
   gap: 1.5rem;
   margin: 0;
 }
