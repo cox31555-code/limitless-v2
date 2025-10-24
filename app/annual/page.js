@@ -5,6 +5,7 @@ import AnnualHero from "../../ui/main-pages/annualHero/AnnualHero";
 import InsuranceTypes from "../../ui/main-pages/insuranceTypes/InsuranceTypes";
 import Coverage from "../../ui/main-pages/coverage/Coverage";
 import QuestionsAnswered from "../../ui/main-pages/questionsAnswered/QuestionsAnswered";
+import ComprehensiveInfo from "../../ui/main-pages/comprehensiveInfo/ComprehensiveInfo";
 import Reviews from "../../ui/main-pages/reviews/Reviews";
 
 export const metadata = {
@@ -118,6 +119,7 @@ export default function Annual() {
         <InsuranceTypes />
         <Coverage />
         <QuestionsAnswered />
+        <ComprehensiveInfo />
         <div className={styles.reviewsContainer}>
           <Reviews />
         </div>
