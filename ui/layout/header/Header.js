@@ -144,7 +144,7 @@ const Header = () => {
           />
         </div>
         {!isDashboard && (
-          <menu className={styles.menu}>
+          <menu className={styles.menu} suppressHydrationWarning>
             <li
               className={styles.menuItem}
               onMouseEnter={() => setOpenDropdown("carVan")}
