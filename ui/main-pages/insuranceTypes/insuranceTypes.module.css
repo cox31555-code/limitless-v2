@@ -275,11 +275,14 @@
 
   .heading {
     font-size: 4.8rem;
-    margin-bottom: 6rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
   }
 
   .card {
-    min-height: 380px;
+    min-height: 480px;
   }
 
   .title {
