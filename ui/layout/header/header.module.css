@@ -827,11 +827,11 @@
 .dropdownItem {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.4rem;
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  padding: 1rem 1.6rem;
-  font-size: 1.4rem;
+  padding: 1.4rem 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0;
@@ -844,8 +844,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   color: #0388ff;
   transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -940,11 +940,11 @@
 .stickyDropdownItem {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  padding: 0.8rem 1.4rem;
-  font-size: 1.2rem;
+  padding: 1.1rem 1.8rem;
+  font-size: 1.35rem;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0;
@@ -1026,11 +1026,11 @@
 .mobileDropdownItem {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.4rem;
   color: #000822;
   text-decoration: none;
-  padding: 1rem 2.2rem 1rem 2.2rem;
-  font-size: 1.5rem;
+  padding: 1.3rem 2.4rem;
+  font-size: 1.65rem;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0;
