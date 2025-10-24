@@ -221,9 +221,7 @@ const AnnualHero = () => {
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/df60fedf22af706a15973700dfc974608c80140e?width=48"
               alt="Google"
-              width={24}
-              height={24}
-              style={{ width: '24px', height: '24px', objectFit: 'contain' }}
+              className={styles.ratingLogo}
             />
             <div className={styles.ratingContent}>
               <div className={styles.score}>
