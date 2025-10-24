@@ -79,8 +79,8 @@ const Header = () => {
                 <span className={styles.stickyMenuButton}>Car & Van</span>
                 {openDropdown === "carVan" && (
                   <div className={styles.stickyDropdown}>
-                    {carVanItems.map((item) => (
-                      <span key={item.href} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
+                    {carVanItems.map((item, index) => (
+                      <span key={`sticky-carVan-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
                         {item.label}
                       </span>
                     ))}
@@ -96,8 +96,8 @@ const Header = () => {
                 <span className={styles.stickyMenuButton}>Motorbike</span>
                 {openDropdown === "motorbike" && (
                   <div className={styles.stickyDropdown}>
-                    {motorbakeItems.map((item) => (
-                      <span key={item.href} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
+                    {motorbakeItems.map((item, index) => (
+                      <span key={`sticky-motorbike-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
                         {item.label}
                       </span>
                     ))}
@@ -153,9 +153,9 @@ const Header = () => {
               <span className={styles.menuLink}>Car & Van</span>
               {openDropdown === "carVan" && (
                 <div className={styles.dropdown}>
-                  {carVanItems.map((item) => (
+                  {carVanItems.map((item, index) => (
                     <span
-                      key={item.href}
+                      key={`carVan-${index}`}
                       className={styles.dropdownItem}
                       onClick={() => {
                         setOpenDropdown(null);
@@ -177,9 +177,9 @@ const Header = () => {
               <span className={styles.menuLink}>Motorbike</span>
               {openDropdown === "motorbike" && (
                 <div className={styles.dropdown}>
-                  {motorbakeItems.map((item) => (
+                  {motorbakeItems.map((item, index) => (
                     <span
-                      key={item.href}
+                      key={`motorbike-${index}`}
                       className={styles.dropdownItem}
                       onClick={() => {
                         setOpenDropdown(null);
@@ -328,9 +328,9 @@ const Header = () => {
                 </button>
                 {openDropdown === "carVan" && (
                   <div className={styles.mobileDropdown}>
-                    {carVanItems.map((item) => (
+                    {carVanItems.map((item, index) => (
                       <span
-                        key={item.href}
+                        key={`mobile-carVan-${index}`}
                         className={styles.mobileDropdownItem}
                         onClick={() => {
                           setIsOpen(false);
@@ -364,9 +364,9 @@ const Header = () => {
                 </button>
                 {openDropdown === "motorbike" && (
                   <div className={styles.mobileDropdown}>
-                    {motorbakeItems.map((item) => (
+                    {motorbakeItems.map((item, index) => (
                       <span
-                        key={item.href}
+                        key={`mobile-motorbike-${index}`}
                         className={styles.mobileDropdownItem}
                         onClick={() => {
                           setIsOpen(false);
