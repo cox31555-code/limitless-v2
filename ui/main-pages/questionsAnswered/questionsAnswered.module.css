@@ -123,7 +123,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   filter: drop-shadow(0 10px 30px rgba(3, 136, 255, 0.2));
-  animation: floatLine1 10s ease-in-out infinite, drawLine 8s ease-in-out 0s infinite;
+  animation: floatLine1 10s ease-in-out infinite, drawIn 8s ease-in-out 0s infinite;
   pointer-events: none;
   z-index: 1;
 }
