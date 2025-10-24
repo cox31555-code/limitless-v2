@@ -15,6 +15,7 @@ import NoHiddenFees from "../noHiddenFees/NoHiddenFees";
 const validPages = [
   "/",
   "/about-us",
+  "/annual",
   "/change-password",
   "/coming-soon",
   "/complaints",
