@@ -17,33 +17,33 @@ export default function Annual() {
   const features = [
     {
       img: {
-        src: "/svg/unbeatable-rates.svg",
-        alt: "unbeatable rates",
+        src: "/svg/insurance-types.svg",
+        alt: "insurance types",
         width: 64,
         height: 64,
       },
-      title: "Unbeatable rates",
-      description: "Slash your premiums with our unbeatable UK-wide rates saving, up to 50% on coverage.",
+      title: "Multiple Insurance Types",
+      description: "Get covered for comprehensive annual car insurance plans",
     },
     {
       img: {
-        src: "/svg/comprehensive-protection.svg",
-        alt: "comprehensive protection",
+        src: "/svg/all-ages.svg",
+        alt: "age eligibility",
         width: 64,
         height: 64,
       },
-      title: "Comprehensive protection",
-      description: "Enjoy peace of mind with theft, accident plus 24/7 support and instant online quotes.",
+      title: "All Ages Welcome",
+      description: "Available to drivers aged 18-75 years old",
     },
     {
       img: {
-        src: "/svg/drive-freedom.svg",
-        alt: "drive with freedom",
+        src: "/svg/vehicle-types.svg",
+        alt: "vehicle eligibility",
         width: 64,
         height: 64,
       },
-      title: "Drive with freedom",
-      description: "Enjoy driving without invasive telematics devices monitoring your every move.",
+      title: "Any Vehicle Type",
+      description: "Cars, vans, scooters, motor-homes and more",
     },
   ];
   const benifits = [
