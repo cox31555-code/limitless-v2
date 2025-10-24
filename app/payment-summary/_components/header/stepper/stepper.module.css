@@ -87,6 +87,19 @@
   line-height: 120%;
   letter-spacing: -0.2px;
 }
+
+.stepperItemImage {
+  width: 5.2rem;
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.15) 0%, rgba(3, 136, 255, 0.08) 100%);
+  border: 2px solid #0388ff;
+  border-radius: 50%;
+  box-shadow: 0 0 24px rgba(3, 136, 255, 0.2);
+  transition: all 0.3s ease;
+}
 @media screen and (max-width: 900px) {
   .stepper {
     gap: 0;
