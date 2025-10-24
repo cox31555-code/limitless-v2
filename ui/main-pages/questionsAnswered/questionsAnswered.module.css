@@ -43,53 +43,53 @@
   }
 }
 
-@keyframes drawLine {
+@keyframes drawIn {
   0% {
-    stroke-dashoffset: 1000;
+    clip-path: inset(0 100% 0 0);
     opacity: 0;
   }
-  10% {
-    opacity: 0.5;
+  5% {
+    opacity: 1;
   }
-  90% {
-    opacity: 0.5;
+  95% {
+    opacity: 1;
   }
   100% {
-    stroke-dashoffset: 0;
+    clip-path: inset(0 0 0 0);
     opacity: 0;
   }
 }
 
-@keyframes drawLine2 {
+@keyframes drawIn2 {
   0% {
-    stroke-dashoffset: 800;
+    clip-path: inset(100% 0 0 0);
     opacity: 0;
   }
-  15% {
-    opacity: 0.6;
+  8% {
+    opacity: 1;
   }
-  85% {
-    opacity: 0.6;
+  92% {
+    opacity: 1;
   }
   100% {
-    stroke-dashoffset: 0;
+    clip-path: inset(0 0 0 0);
     opacity: 0;
   }
 }
 
-@keyframes drawLine3 {
+@keyframes drawIn3 {
   0% {
-    stroke-dashoffset: 1200;
+    clip-path: inset(0 0 100% 0);
     opacity: 0;
   }
-  20% {
-    opacity: 0.4;
+  12% {
+    opacity: 1;
   }
-  80% {
-    opacity: 0.4;
+  88% {
+    opacity: 1;
   }
   100% {
-    stroke-dashoffset: 0;
+    clip-path: inset(0 0 0 0);
     opacity: 0;
   }
 }
