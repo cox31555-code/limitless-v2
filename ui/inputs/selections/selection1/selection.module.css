@@ -1,42 +1,41 @@
 .selectionContainer {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 0.6rem;
+  gap: 1rem;
+  padding: 0.8rem;
   width: 100%;
-  border-radius: 1.2rem;
-  background: #ecf0fe;
-  height: 6.4rem;
-  /* justify-content: center; */
-}
-/* .selection > div {
-  border-radius: 12px;
-  background: #151d39;
-}
-.selection > div > div {
-  border-radius: 8px;
+  border-radius: 14px;
   background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  height: 6rem;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  transition: all 0.3s ease;
+}
 
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-} */
+.selectionContainer:focus-within {
+  border-color: #0388ff;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
+}
 
 .dark {
-  border-radius: 12px;
-  background: #151d39;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
   width: 100%;
 }
 
 .label {
   color: #000822;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
 }
 .selectionItem,
 .selectedItem {
