@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import styles from "./header.module.css";
@@ -322,14 +321,16 @@ const Header = () => {
                 {openDropdown === "carVan" && (
                   <div className={styles.mobileDropdown}>
                     {carVanItems.map((item) => (
-                      <Link
+                      <span
                         key={item.href}
-                        href={item.href}
                         className={styles.mobileDropdownItem}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => {
+                          setIsOpen(false);
+                          router.push(item.href);
+                        }}
                       >
                         {item.label}
-                      </Link>
+                      </span>
                     ))}
                   </div>
                 )}
@@ -356,48 +357,56 @@ const Header = () => {
                 {openDropdown === "motorbike" && (
                   <div className={styles.mobileDropdown}>
                     {motorbakeItems.map((item) => (
-                      <Link
+                      <span
                         key={item.href}
-                        href={item.href}
                         className={styles.mobileDropdownItem}
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => {
+                          setIsOpen(false);
+                          router.push(item.href);
+                        }}
                       >
                         {item.label}
-                      </Link>
+                      </span>
                     ))}
                   </div>
                 )}
               </div>
 
-              <Link
+              <span
                 className={`${styles.mobileMenuLink} ${
                   pathname === "/coming-soon" ? styles.activeMenuLink : ""
                 }`}
-                href="/coming-soon"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push("/coming-soon");
+                }}
               >
                 Courier
-              </Link>
+              </span>
 
-              <Link
+              <span
                 className={`${styles.mobileMenuLink} ${
                   pathname === "/about-us" ? styles.activeMenuLink : ""
                 }`}
-                href="/about-us"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push("/about-us");
+                }}
               >
                 About us
-              </Link>
+              </span>
 
-              <Link
+              <span
                 className={`${styles.mobileMenuLink} ${
                   pathname === "/contact" ? styles.activeMenuLink : ""
                 }`}
-                href="/contact"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push("/contact");
+                }}
               >
                 Contact
-              </Link>
+              </span>
             </nav>
             <div className={styles.mobileButtons}>
               <button
