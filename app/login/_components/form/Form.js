@@ -115,17 +115,7 @@ const Form = () => {
 
       {/* Success Message */}
       {successMessage && (
-        <div
-          className={styles.successMessage}
-          style={{
-            backgroundColor: "#d4edda",
-            color: "#155724",
-            padding: "0.75rem",
-            marginBottom: "1rem",
-            borderRadius: "0.25rem",
-            border: "1px solid #c3e6cb",
-          }}
-        >
+        <div className={styles.successMessage}>
           {successMessage}
         </div>
       )}
@@ -137,10 +127,14 @@ const Form = () => {
           style={{
             backgroundColor: "#f8d7da",
             color: "#721c24",
-            padding: "0.75rem",
-            marginBottom: "1rem",
-            borderRadius: "0.25rem",
+            padding: "1.2rem 1.6rem",
+            marginBottom: "1.8rem",
+            borderRadius: "12px",
             border: "1px solid #f5c6cb",
+            fontSize: "1.1rem",
+            fontWeight: "500",
+            lineHeight: "140%",
+            letterSpacing: "0.2px",
           }}
         >
           {error || errors.root?.message}
