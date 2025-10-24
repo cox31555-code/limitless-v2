@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "../page.module.css";
 import Header from "../../ui/main-pages/header/Header";
 import AnnualHero from "../../ui/main-pages/annualHero/AnnualHero";
-import OurBenifits from "../../ui/main-pages/ourBenifits/OurBenifits";
+import InsuranceTypes from "../../ui/main-pages/insuranceTypes/InsuranceTypes";
 import QuestionsAnswered from "../../ui/main-pages/questionsAnswered/QuestionsAnswered";
 import Reviews from "../../ui/main-pages/reviews/Reviews";
 
