@@ -2,19 +2,20 @@
 .content {
   display: flex;
   flex-direction: column;
-  padding: 3.4rem;
-  border-radius: 16px;
-  background: #fff;
-  /* gap: 2.4rem; */
+  padding: 3.6rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fafbff 0%, #f8f9ff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.04);
 }
 
 .first {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
-  padding-bottom: 2.8rem;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.24);
-  margin-bottom: 2.8rem;
+  gap: 2.4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+  margin-bottom: 3rem;
 }
 
 .regBtn {
