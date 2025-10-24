@@ -1,27 +1,54 @@
-@keyframes shimmer {
+@keyframes linePath1 {
   0% {
-    background-position: -1000px 0;
+    stroke-dashoffset: 1000;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
   }
   100% {
-    background-position: 1000px 0;
+    stroke-dashoffset: 0;
+    opacity: 0.3;
   }
 }
 
-@keyframes float1 {
-  0%, 100% {
-    transform: translateY(0px);
+@keyframes linePath2 {
+  0% {
+    stroke-dashoffset: 1500;
+    opacity: 0.2;
   }
   50% {
-    transform: translateY(-20px);
+    opacity: 0.5;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.2;
   }
 }
 
-@keyframes float2 {
-  0%, 100% {
-    transform: translateY(0px);
+@keyframes linePath3 {
+  0% {
+    stroke-dashoffset: 1200;
+    opacity: 0.25;
   }
   50% {
-    transform: translateY(20px);
+    opacity: 0.55;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.25;
+  }
+}
+
+@keyframes flowGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -34,8 +61,7 @@
   width: 100vw;
   max-width: 100vw;
   border-radius: 0;
-  background:
-    linear-gradient(110deg, #000822 0%, #0a0f2e 50%, #000822 100%);
+  background: #000822;
   position: relative;
   overflow: hidden;
   border: none;
@@ -46,31 +72,34 @@
 .container::before {
   content: '';
   position: absolute;
-  top: 10%;
-  left: 10%;
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(135deg, transparent 30%, rgba(3, 136, 255, 0.1) 50%, transparent 70%);
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  animation: float1 6s ease-in-out infinite;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    url('data:image/svg+xml,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><style>.line1{stroke:rgba(3,136,255,0.4);stroke-width:2;fill:none;stroke-linecap:round;}.line2{stroke:rgba(3,136,255,0.25);stroke-width:1.5;fill:none;stroke-linecap:round;}.line3{stroke:rgba(3,136,255,0.3);stroke-width:2;fill:none;stroke-linecap:round;}</style></defs><path class="line1" d="M 0 20 Q 300 100 600 50 T 1200 80 T 1800 40" stroke-dasharray="1000" stroke-dashoffset="1000"/><path class="line2" d="M 0 200 Q 250 150 500 200 T 1000 150 T 1500 200 T 2000 150" stroke-dasharray="1500" stroke-dashoffset="1500"/><path class="line3" d="M 0 300 Q 400 250 800 300 T 1600 280 T 2400 320" stroke-dasharray="1200" stroke-dashoffset="1200"/></svg>'),
+    linear-gradient(135deg, rgba(3, 136, 255, 0.05) 0%, transparent 100%);
+  background-size: 100% 400px, 100% 100%;
+  background-position: 0 0, 0 0;
+  background-repeat: repeat-y, no-repeat;
+  animation: linePath1 8s ease-in-out infinite, flowGradient 15s ease infinite;
   pointer-events: none;
   z-index: 1;
-  filter: blur(40px);
 }
 
 .container::after {
   content: '';
   position: absolute;
-  bottom: 15%;
-  right: 15%;
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, transparent 40%, rgba(3, 136, 255, 0.08) 50%, transparent 60%);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: float2 7s ease-in-out infinite;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><style>.curve{stroke:rgba(3,136,255,0.2);stroke-width:1;fill:none;stroke-linecap:round;opacity:0.4;}</style></defs><path class="curve" d="M 0 400 Q 200 350 400 400 T 800 400 T 1200 400 T 1600 400 T 2000 400" stroke-dasharray="800" stroke-dashoffset="800"/><path class="curve" d="M 1800 600 Q 1600 550 1400 600 T 800 600 T 200 600" stroke-dasharray="700" stroke-dashoffset="700"/></svg>');
+  background-size: 100% 200px;
+  background-repeat: repeat-y;
+  animation: linePath2 10s ease-in-out infinite reverse;
   pointer-events: none;
   z-index: 1;
-  filter: blur(50px);
 }
 
 .header {
