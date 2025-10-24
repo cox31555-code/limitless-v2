@@ -242,14 +242,14 @@
   }
 
   .menuLink {
-    font-size: 1.4rem;
+    font-size: 1.32rem;
     font-weight: 600;
     line-height: 99.2%;
     padding: 1rem 1.8rem;
   }
 
   .menuLink:hover {
-    transform: scale(1.06);
+    transform: scale(1.05);
   }
 
   .buttons {
