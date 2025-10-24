@@ -98,12 +98,23 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  margin-top: 1.2rem;
-  border-radius: 1.6rem;
+  margin-top: 0.8rem;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(79, 99, 215, 0.15),
-    0 4px 16px rgba(0, 8, 34, 0.08);
-  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 48px rgba(3, 136, 255, 0.15),
+    0 4px 16px rgba(0, 8, 34, 0.1);
+  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .timePickerWrapper {
@@ -112,22 +123,23 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  margin-top: 1.2rem;
+  margin-top: 0.8rem;
   width: 100%;
   max-width: 32rem;
 }
 
 .timePickerContainer {
   background: #fff;
-  border-radius: 1.2rem;
-  box-shadow: 0 8px 32px rgba(79, 99, 215, 0.15),
-    0 4px 16px rgba(0, 8, 34, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 12px 48px rgba(3, 136, 255, 0.15),
+    0 4px 16px rgba(0, 8, 34, 0.1);
   max-height: 32rem;
   overflow-y: auto;
-  padding: 0.8rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.6rem;
+  gap: 0.8rem;
+  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timePickerContainer::-webkit-scrollbar {
@@ -135,7 +147,7 @@
 }
 
 .timePickerContainer::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgba(3, 136, 255, 0.05);
   border-radius: 1rem;
 }
 
@@ -145,25 +157,27 @@
 }
 
 .timePickerContainer::-webkit-scrollbar-thumb:hover {
-  background: #0266cc;
+  background: #0270cc;
 }
 
 .timeSlot {
   padding: 1rem 0.8rem;
   text-align: center;
-  border-radius: 0.8rem;
-  background: #ecf0fe;
+  border-radius: 10px;
+  background: #f8fbff;
   color: #000822;
   font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   user-select: none;
+  border: 1px solid rgba(3, 136, 255, 0.1);
 }
 
 .timeSlot:hover:not(.timeSlotDisabled) {
   background: #0388ff;
   color: #fff;
+  border-color: #0388ff;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
@@ -172,20 +186,22 @@
   background: #0388ff;
   color: #fff;
   font-weight: 600;
+  border-color: #0388ff;
 }
 
 .timeSlotDisabled {
-  opacity: 0.3;
+  opacity: 0.4;
   cursor: not-allowed;
-  background: #f5f5f5;
-  color: #999;
+  background: #f9f9f9;
+  color: #ccc;
+  border-color: #eee;
 }
 
 .timeSlotDisabled:hover {
   transform: none;
   box-shadow: none;
-  background: #f5f5f5;
-  color: #999;
+  background: #f9f9f9;
+  color: #ccc;
 }
 
 /* Custom styling for react-datepicker */
