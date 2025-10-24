@@ -49,3 +49,26 @@
   line-height: 110%;
   letter-spacing: -0.2px;
 }
+
+@media screen and (max-width: 900px) {
+  .stepper {
+    max-width: 100%;
+  }
+  .stepperItem {
+    gap: 1.4rem;
+  }
+  .stepperItemText {
+    gap: 0.8rem;
+  }
+  .stepperLine,
+  .stepperLine2 {
+    height: 1px;
+    margin-top: 1.8rem;
+  }
+  .stepperNumber {
+    font-size: 1rem;
+  }
+  .stepperTitle {
+    font-size: 1.8rem;
+  }
+}
