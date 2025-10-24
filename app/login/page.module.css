@@ -90,6 +90,7 @@
   border: 2px solid rgba(3, 136, 255, 0.2);
   overflow: hidden;
   min-width: 380px;
+  z-index: 2;
 }
 
 .squares {
