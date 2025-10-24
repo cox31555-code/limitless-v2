@@ -1,18 +1,22 @@
-<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="30" cy="30" rx="25" ry="25" fill="url(#paint0_linear)" fill-opacity="0.48"/>
-<rect x="20" y="55" width="80" height="35" rx="5" fill="#000822"/>
-<circle cx="35" cy="85" r="8" fill="#000822" stroke="#0388FF" stroke-width="2"/>
-<circle cx="85" cy="85" r="8" fill="#000822" stroke="#0388FF" stroke-width="2"/>
-<circle cx="35" cy="85" r="4" fill="#0388FF"/>
-<circle cx="85" cy="85" r="4" fill="#0388FF"/>
-<path d="M40 65L50 55M80 65L70 55" stroke="#0388FF" stroke-width="2.5" stroke-linecap="round"/>
-<path d="M30 40L50 30M70 40L90 30" stroke="#0388FF" stroke-width="2" stroke-linecap="round"/>
-<circle cx="50" cy="30" r="2" fill="#0388FF"/>
-<circle cx="90" cy="30" r="2" fill="#0388FF"/>
-<defs>
-<linearGradient id="paint0_linear" x1="30" y1="5" x2="30" y2="55" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0388FF" stop-opacity="0"/>
-<stop offset="1" stop-color="#0388FF"/>
-</linearGradient>
-</defs>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="driveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0388ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#049cff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Car shape -->
+  <path d="M16 38C16 36 18 34 20 34L44 34C46 34 48 36 48 38L48 48C48 50 46 52 44 52L20 52C18 52 16 50 16 48L16 38Z" fill="url(#driveGrad)" stroke="url(#driveGrad)" stroke-width="1.5"/>
+  
+  <!-- Car roof -->
+  <path d="M24 34L26 24C26 22 28 20 30 20L34 20C36 20 38 22 38 24L40 34" fill="url(#driveGrad)" stroke="url(#driveGrad)" stroke-width="1.5"/>
+  
+  <!-- Windows -->
+  <rect x="26" y="26" width="4" height="6" fill="white" opacity="0.6"/>
+  <rect x="34" y="26" width="4" height="6" fill="white" opacity="0.6"/>
+  
+  <!-- Wheels -->
+  <circle cx="24" cy="52" r="3" fill="white"/>
+  <circle cx="40" cy="52" r="3" fill="white"/>
 </svg>
