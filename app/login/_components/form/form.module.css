@@ -1,15 +1,16 @@
 .container {
   display: flex;
   width: 49.73rem;
-  padding: 3.74rem 3.06rem;
+  padding: 4.5rem 3.5rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 15px;
+  border-radius: 20px;
   background: #fff;
   flex: 1;
   margin: auto;
   position: relative;
+  box-shadow: 0 20px 60px rgba(0, 8, 34, 0.08);
 }
 
 .container > * {
@@ -18,10 +19,10 @@
 .title {
   color: #000822;
   text-align: center;
-  font-size: 2.38rem;
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 100%;
-
+  line-height: 110%;
+  letter-spacing: -0.5px;
 }
 .inputsContainer {
   display: flex;
