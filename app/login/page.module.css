@@ -113,11 +113,13 @@
 }
 
 .form {
-  flex: 0 1 480px;
+  flex: 0 1 437px;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 0;
+  position: relative;
+  z-index: 2;
 }
 
 @media screen and (max-width: 1400px) {
