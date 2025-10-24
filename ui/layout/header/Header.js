@@ -378,7 +378,7 @@ const Header = () => {
                       openDropdown === "carVan" ? styles.dropdownArrowOpen : ""
                     }`}
                   >
-                    ▼
+                    <IconComponent type="chevron" />
                   </span>
                 </button>
                 {openDropdown === "carVan" && (
@@ -392,6 +392,9 @@ const Header = () => {
                           router.push(item.href);
                         }}
                       >
+                        <span className={styles.dropdownIcon}>
+                          <IconComponent type={item.icon} />
+                        </span>
                         {item.label}
                       </span>
                     ))}
@@ -414,7 +417,7 @@ const Header = () => {
                       openDropdown === "motorbike" ? styles.dropdownArrowOpen : ""
                     }`}
                   >
-                    ▼
+                    <IconComponent type="chevron" />
                   </span>
                 </button>
                 {openDropdown === "motorbike" && (
@@ -428,6 +431,9 @@ const Header = () => {
                           router.push(item.href);
                         }}
                       >
+                        <span className={styles.dropdownIcon}>
+                          <IconComponent type={item.icon} />
+                        </span>
                         {item.label}
                       </span>
                     ))}
