@@ -10,8 +10,33 @@ const FormTextInput = ({
   button,
   error,
   value,
+  onChange,
   ...props
 }) => {
+  const handleRegistrationChange = (e) => {
+    let val = e.target.value.toUpperCase().replace(/\s/g, '');
+
+    if (val.length > 7) {
+      val = val.slice(0, 7);
+    }
+
+    if (val.length > 4) {
+      val = val.slice(0, 4) + ' ' + val.slice(4);
+    }
+
+    const newEvent = {
+      ...e,
+      target: {
+        ...e.target,
+        value: val
+      }
+    };
+
+    if (onChange) {
+      onChange(newEvent);
+    }
+  };
+
   return (
     <div className={styles.inputGroup}>
       <label className={styles.label}>{label}</label>
