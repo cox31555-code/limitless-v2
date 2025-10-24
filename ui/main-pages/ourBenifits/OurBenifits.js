@@ -5,7 +5,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["700", "300"],
+  weight: ["700", "400"],
 });
 
 const OurBenifits = ({ benifits, title, description }) => {
@@ -17,11 +17,11 @@ const OurBenifits = ({ benifits, title, description }) => {
     <div className={`${styles.container}`}>
       <div className={styles.top}>
         <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          {withoutLastTwoWords}
-          <span>{lastTwoWords}</span>
+          {withoutLastTwoWords} <span>{lastTwoWords}</span>
         </h2>
         {description && <p className={styles.description}>{description}</p>}
       </div>
+
       <div className={styles.benifits}>
         {benifits.map((benifit, index) => (
           <div className={styles.benifit} key={index}>
@@ -34,15 +34,11 @@ const OurBenifits = ({ benifits, title, description }) => {
                 height={benifit.img.height}
               />
             </div>
-            <h3
-              className={`${styles.benifitTitle} ${plusJakartaSans.className}`}
-            >
+            <h3 className={`${styles.benifitTitle} ${plusJakartaSans.className}`}>
               {benifit.title}
             </h3>
             {benifit.description && (
-              <p className={styles.benifitDescription}>
-                {benifit.description}
-              </p>
+              <p className={styles.benifitDescription}>{benifit.description}</p>
             )}
           </div>
         ))}
