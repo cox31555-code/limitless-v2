@@ -1,26 +1,27 @@
 .content {
-  margin: 2.5rem 0 1.4rem;
-  padding: 3.4rem 3.6rem;
+  margin: 2.8rem 0 1.8rem;
+  padding: 3.6rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.8rem;
   width: 100%;
-  border-radius: 16px;
-  background: #fff;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fafbff 0%, #f8f9ff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
 .terms {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding-bottom: 2.3rem;
-  border-bottom: 1px solid #0008223d;
+  gap: 1.8rem;
+  padding-bottom: 2.8rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
 }
 .termItem {
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.2px;
 }
 .selection {
   display: flex;
