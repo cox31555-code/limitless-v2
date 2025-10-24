@@ -65,7 +65,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 3.6rem;
   width: 100%;
-  max-width: 140rem;
+  max-width: 119rem;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
 }
