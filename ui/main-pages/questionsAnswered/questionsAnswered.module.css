@@ -140,7 +140,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   filter: drop-shadow(0 10px 40px rgba(3, 136, 255, 0.15));
-  animation: floatLine2 12s ease-in-out infinite, drawLine2 9s ease-in-out 1.5s infinite;
+  animation: floatLine2 12s ease-in-out infinite, drawIn2 9s ease-in-out 1.5s infinite;
   pointer-events: none;
   z-index: 1;
 }
@@ -156,7 +156,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   filter: drop-shadow(0 8px 25px rgba(3, 136, 255, 0.15));
-  animation: floatLine3 11s ease-in-out infinite, drawLine3 7s ease-in-out 2s infinite;
+  animation: floatLine3 11s ease-in-out infinite, drawIn3 7s ease-in-out 2s infinite;
   pointer-events: none;
   z-index: 1;
 }
@@ -172,7 +172,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   filter: drop-shadow(0 8px 30px rgba(3, 136, 255, 0.1));
-  animation: floatLine2 13s ease-in-out infinite reverse, drawLine2 8.5s ease-in-out 0.8s infinite;
+  animation: floatLine2 13s ease-in-out infinite reverse, drawIn2 8.5s ease-in-out 0.8s infinite;
   pointer-events: none;
   z-index: 1;
 }
@@ -187,7 +187,7 @@
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150"><path d="M 0 50 Q 50 20 100 50 T 200 50" stroke="rgba(3,136,255,0.25)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="800"/><path d="M 0 100 Q 60 70 120 100 T 200 100" stroke="rgba(3,136,255,0.2)" stroke-width="1" fill="none" stroke-linecap="round" stroke-dasharray="750"/></svg>');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  animation: floatLine1 9s ease-in-out 2.5s infinite, drawLine 6s ease-in-out 3s infinite;
+  animation: floatLine1 9s ease-in-out 2.5s infinite, drawIn 6s ease-in-out 3s infinite;
   pointer-events: none;
   z-index: 0;
 }
