@@ -66,7 +66,7 @@ const Footer = () => {
           !["/login", "/forget-password", "/change-password"].includes(
             pathname
           ) &&
-          !shouldUseSpecialStyles(pathname) && <NoHiddenFees />}
+          (pathname === "/" || pathname === "/annual" || !shouldUseSpecialStyles(pathname)) && <NoHiddenFees />}
         <div className={styles.content}>
           <div className={styles.menus}>
             {menus.map((menu, index) => (
