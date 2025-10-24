@@ -1,15 +1,15 @@
 .page {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   min-height: 100vh;
   overflow: hidden;
   background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 50%, #e8f2ff 100%);
-  padding: 2rem;
+  padding: 4rem;
+  gap: 6rem;
 }
 
-/* Animated background elements */
 .contact {
   position: absolute;
   border-radius: 50%;
@@ -19,20 +19,20 @@
 }
 
 .contact:nth-child(1) {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background: #0388ff;
   top: -100px;
-  left: -100px;
+  left: -150px;
   animation: float 25s infinite ease-in-out;
 }
 
 .contact:nth-child(2) {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   background: #049cff;
   bottom: -150px;
-  right: -150px;
+  right: -200px;
   animation: float 30s infinite ease-in-out reverse;
 }
 
@@ -51,47 +51,116 @@
   }
 }
 
-.page > div:first-child {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .images {
-  display: none;
-}
-
-.form {
-  width: 100%;
-  max-width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
+  height: 650px;
+  position: relative;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+  border: 2px solid rgba(3, 136, 255, 0.15);
+  overflow: hidden;
+  min-width: 0;
 }
 
 .squares {
-  display: none;
+  position: absolute;
+  top: -10%;
+  right: -20%;
+  opacity: 0.3;
+  z-index: 1;
 }
 
-.image1,
+.image1 {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  height: auto;
+  max-width: 400px;
+}
+
 .image4 {
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+.form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+@media screen and (max-width: 1400px) {
   .page {
-    padding: 2rem 1.5rem;
+    padding: 3.5rem;
+    gap: 4rem;
+  }
+
+  .images {
+    height: 580px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .page {
+    padding: 3rem;
+    gap: 3rem;
   }
 
   .form {
-    max-width: 100%;
+    flex: 0 1 500px;
+  }
+
+  .images {
+    flex: 0 1 480px;
+    height: 520px;
+  }
+
+  .image1 {
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .page {
+    flex-direction: column;
+    padding: 2.5rem;
+    gap: 2.5rem;
+    justify-content: center;
+  }
+
+  .images {
+    width: 100%;
+    max-width: 500px;
+    height: 450px;
+  }
+
+  .form {
+    width: 100%;
+    max-width: 500px;
   }
 
   .contact {
     display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .images {
+    max-width: 100%;
+    height: 380px;
+    border-radius: 20px;
+  }
+
+  .form {
+    max-width: 100%;
   }
 }
