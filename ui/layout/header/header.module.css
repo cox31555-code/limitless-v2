@@ -408,11 +408,11 @@
 
   .menuLink {
     color: #000822;
-    font-size: 1.95rem;
+    font-size: 1.8rem;
     font-weight: 600;
     line-height: 124%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 1.4rem 2.2rem;
+    padding: 1.2rem 2.2rem;
     border-radius: 10px;
     position: relative;
   }
@@ -420,32 +420,31 @@
   .menuLink::before {
     content: "";
     position: absolute;
-    inset: 0;
-    background: rgba(3, 136, 255, 0.08);
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0388ff, #049cff);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .menuLink:hover {
     color: #0388ff;
-    background: rgba(3, 136, 255, 0.12);
-    transform: scale(1.06);
+    transform: scale(1.05);
   }
 
   .menuLink:hover::before {
-    opacity: 1;
+    width: 40%;
   }
 
   .activeMenuLink {
     color: #0388ff;
-    background: rgba(3, 136, 255, 0.15);
-    font-weight: 700;
   }
 
   .activeMenuLink::before {
-    opacity: 1;
+    width: 40%;
   }
 
   .mobileButtons {
