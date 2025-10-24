@@ -15,16 +15,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const page = () => {
   return (
     <div className={styles.page}>
-      <Image
-        src="/svg/login-back-2.svg"
-        alt="background"
-        width={585}
-        height={776}
-        className={styles.contact}
-        priority
-      />
+      <div className={styles.header}>
+        <h1>Secure Login Portal</h1>
+        <p>Access your Limitless Cover account</p>
+      </div>
 
-      <div className={styles.images}>
+      <div className={styles.content}>
+        <div className={styles.images}>
         <Image
           src="/svg/squares-2.svg"
           alt="squares"
@@ -69,6 +66,7 @@ const page = () => {
         >
           <Form />
         </Suspense>
+      </div>
       </div>
     </div>
   );
