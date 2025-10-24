@@ -2,55 +2,64 @@
   position: absolute;
   top: -36rem;
   right: -74rem;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .wrapper {
-  padding: 3.2rem 0 6.8rem;
+  padding: 4rem 0 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5.6rem;
+  gap: 6.4rem;
 }
 .titles {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.6rem;
 }
 .subTitle {
-  color: #0388ff;
-  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
   font-style: normal;
-  font-weight: 600;
-  line-height: 130%;
-  letter-spacing: 0.8px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
+  background: linear-gradient(90deg, #0388ff, #049cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .title {
   color: #fff;
-  font-size: 5.6rem;
-  font-weight: 800;
+  font-size: 6.4rem;
+  font-weight: 900;
   line-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  letter-spacing: -0.8px;
+  gap: 1.2rem;
+  letter-spacing: -1px;
 }
 .titleSpan {
-  color: #0388ff;
+  color: #fff;
   position: relative;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 0 1.2rem;
 }
 .curvedBorder {
   position: absolute;
-  bottom: -14px;
+  bottom: -16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 110%;
+  width: 100%;
   height: auto;
-  opacity: 0.9;
+  opacity: 1;
 }
 @media screen and (max-width: 900px) {
   .squares {
