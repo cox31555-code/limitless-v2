@@ -1024,7 +1024,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  background: rgba(3, 136, 255, 0.95);
+  background: linear-gradient(135deg, rgba(0, 8, 34, 0.95) 0%, rgba(10, 15, 46, 0.95) 100%);
   border-radius: 8px;
   margin: 0.8rem 0 1rem;
   overflow: hidden;
@@ -1046,8 +1046,8 @@
 }
 
 .mobileDropdownItem:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: rgba(3, 136, 255, 0.15);
+  color: #049cff;
   padding-left: 2.8rem;
 }
 
