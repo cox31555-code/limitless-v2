@@ -309,7 +309,7 @@ const Header = () => {
               isOpen ? styles.mobileMenuOpen : styles.mobileMenuClosed
             }`}
           >
-            <nav className={styles.mobileNav}>
+            <nav className={styles.mobileNav} suppressHydrationWarning>
               <div className={styles.mobileDropdownContainer}>
                 <button
                   className={styles.mobileMenuLink}
