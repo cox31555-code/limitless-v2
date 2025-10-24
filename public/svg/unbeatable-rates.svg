@@ -9,12 +9,6 @@
   <!-- Rounded square container -->
   <path d="M12 16C12 13 14 12 18 12L46 12C50 12 52 14 52 18L52 46C52 50 50 52 46 52L18 52C14 52 12 50 12 46L12 18Z" fill="url(#ratesGrad)" stroke="url(#ratesGrad)" stroke-width="1.5"/>
   
-  <!-- Left £ symbol -->
-  <text x="20" y="42" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">£</text>
-  
-  <!-- Center £ symbol (larger) -->
-  <text x="29" y="39" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">£</text>
-  
-  <!-- Right £ symbol -->
-  <text x="42" y="42" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">£</text>
+  <!-- Main £ symbol centered -->
+  <text x="32" y="42" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">£</text>
 </svg>
