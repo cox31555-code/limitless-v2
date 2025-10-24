@@ -1,29 +1,12 @@
 .container {
   width: 100%;
-  margin: 0 1.1%;
-  padding: 12rem 5% 10rem;
-  border-radius: 24px;
-  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 50%, #f8fbff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 8, 34, 0.06);
+  padding: 10rem 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8.8rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(3, 136, 255, 0.05) 0%, transparent 50%);
-  pointer-events: none;
+  gap: 8rem;
+  background: #ffffff;
 }
 
 .top {
@@ -31,25 +14,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3.2rem;
-  max-width: 85rem;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  gap: 2.4rem;
+  max-width: 80rem;
+  text-align: center;
 }
 
 .title {
-  color: #000822;
-  text-align: center;
-  font-size: 6rem;
+  font-size: 5.6rem;
   font-weight: 800;
-  line-height: 115%;
-  letter-spacing: -1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.6rem;
+  line-height: 120%;
+  letter-spacing: -1.2px;
+  color: #000822;
 }
 
 .title span {
@@ -60,114 +35,82 @@
 }
 
 .description {
-  color: rgba(0, 8, 34, 0.7);
-  text-align: center;
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   font-weight: 400;
-  line-height: 165%;
-  letter-spacing: 0.2px;
-  max-width: 72rem;
+  line-height: 160%;
+  color: rgba(0, 8, 34, 0.7);
+  max-width: 70rem;
 }
 
 .benifits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: stretch;
-  justify-content: center;
+  gap: 3.6rem;
   width: 100%;
-  gap: 3.2rem;
-  position: relative;
-  z-index: 1;
+  max-width: 140rem;
 }
 
 .benifit {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2.4rem;
-  padding: 4rem 3.2rem;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 2.2rem;
+  padding: 3.2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border: 2px solid #f0f4ff;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
-}
-
-.benifit::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #0388ff, #049cff);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
 }
 
 .benifit:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.12);
-  transform: translateY(-6px);
-  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
-}
-
-.benifit:hover::before {
-  transform: scaleX(1);
+  border-color: #0388ff;
+  box-shadow: 0 12px 48px rgba(3, 136, 255, 0.15);
+  transform: translateY(-8px);
+  background: #ffffff;
 }
 
 .imgContainer {
-  width: 100%;
-  height: 11.2rem;
+  width: 6.8rem;
+  height: 6.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #ecf0fe 0%, #dce7fd 100%);
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e8f1ff 0%, #dce7fd 100%);
+  transition: all 0.35s ease;
 }
 
 .benifit:hover .imgContainer {
-  background: linear-gradient(135deg, #dce7fd 0%, #c4d9fc 100%);
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  transform: scale(1.08) rotate(5deg);
 }
 
 .img {
-  width: auto;
-  height: auto;
-  max-height: 8.8rem;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  transition: all 0.3s ease;
+  filter: brightness(1);
+  transition: all 0.35s ease;
 }
 
 .benifit:hover .img {
-  transform: scale(1.1);
+  filter: brightness(2) drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
 
 .benifitTitle {
-  color: #000822;
-  text-align: center;
-  font-size: 1.95rem;
+  font-size: 1.8rem;
   font-weight: 700;
   line-height: 130%;
-  letter-spacing: -0.3px;
-  max-width: 33rem;
+  color: #000822;
+  letter-spacing: -0.4px;
 }
 
 .benifitDescription {
-  color: rgba(0, 8, 34, 0.65);
-  text-align: center;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  line-height: 150%;
-  letter-spacing: 0.2px;
-  max-width: 33rem;
+  line-height: 155%;
+  color: rgba(0, 8, 34, 0.65);
+  letter-spacing: 0.1px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -177,92 +120,90 @@
   }
 
   .title {
-    font-size: 4.8rem;
+    font-size: 4.4rem;
   }
 
   .description {
-    font-size: 1.55rem;
+    font-size: 1.5rem;
   }
 
   .benifit {
-    padding: 3.6rem 2.8rem;
-    gap: 2.2rem;
+    padding: 2.8rem;
   }
 }
 
 @media screen and (max-width: 900px) {
   .container {
-    width: 100%;
-    margin: 0 2%;
-    padding: 8rem 4.4% 6rem;
-    gap: 6.4rem;
+    padding: 8rem 4%;
+    gap: 6rem;
   }
 
   .top {
-    gap: 2.4rem;
-    max-width: 100%;
+    gap: 2rem;
   }
 
   .title {
-    font-size: 3.8rem;
-    line-height: 120%;
+    font-size: 3.4rem;
+    letter-spacing: -0.8px;
   }
 
   .description {
     font-size: 1.35rem;
-    line-height: 150%;
   }
 
   .benifits {
     grid-template-columns: 1fr;
-    gap: 2.4rem;
-    width: 100%;
+    gap: 2rem;
   }
 
   .benifit {
-    gap: 2rem;
-    padding: 3.2rem 2.8rem;
-    border-radius: 16px;
-  }
-
-  .imgContainer {
-    height: 10rem;
-    border-radius: 12px;
+    padding: 2.6rem;
+    gap: 1.8rem;
   }
 
   .benifitTitle {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
+  }
+
+  .benifitDescription {
+    font-size: 1.25rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 6.4rem 3.2% 5.2rem;
-    gap: 5.2rem;
-  }
-
-  .top {
-    gap: 1.8rem;
+    padding: 6rem 3.2%;
+    gap: 4rem;
   }
 
   .title {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
+    letter-spacing: -0.6px;
   }
 
   .description {
     font-size: 1.25rem;
   }
 
+  .benifits {
+    gap: 1.6rem;
+  }
+
   .benifit {
-    padding: 2.8rem 2rem;
-    gap: 1.8rem;
+    padding: 2.2rem;
+    gap: 1.6rem;
   }
 
   .imgContainer {
-    height: 8.8rem;
+    width: 5.8rem;
+    height: 5.8rem;
   }
 
   .benifitTitle {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+
+  .benifitDescription {
+    font-size: 1.2rem;
   }
 }
