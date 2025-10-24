@@ -74,12 +74,12 @@
   right: 40rem;
 }
 .wrapper {
-  padding: 12rem 0 8rem;
+  padding: 20rem 0 8rem;
   display: flex;
   flex-direction: column;
   gap: 6rem;
   width: 100%;
-  min-height: 120vh;
+  min-height: 140vh;
 }
 .container {
   display: flex;
