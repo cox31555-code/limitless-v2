@@ -602,3 +602,182 @@
     transform: scale(0.98);
   }
 }
+
+/* Sticky Header on Scroll */
+@keyframes slideDownSticky {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stickyHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(0, 8, 34, 0.95) 0%, rgba(10, 15, 46, 0.95) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 8, 34, 0.3);
+  animation: slideDownSticky 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.stickyContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 3.4%;
+  gap: 2rem;
+}
+
+.stickyLogoContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.stickyLogo {
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.stickyLogo:hover {
+  transform: scale(1.05);
+}
+
+.stickyMenu {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.stickyMenu a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+}
+
+.stickyMenu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0388ff, #049cff);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.stickyMenu a:hover {
+  color: #fff;
+  background: rgba(3, 136, 255, 0.1);
+}
+
+.stickyMenu a:hover::after {
+  width: 80%;
+}
+
+.stickyButtons {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.stickyLoginBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  height: auto;
+  border-radius: 8px;
+  background: transparent;
+  border: 1.5px solid rgba(3, 136, 255, 0.5);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.stickyLoginBtn:hover {
+  background: rgba(3, 136, 255, 0.15);
+  border-color: rgba(3, 136, 255, 0.8);
+  color: #fff;
+}
+
+.stickyQuoteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.8rem;
+  height: auto;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stickyQuoteBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stickyQuoteBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.4);
+}
+
+.stickyQuoteBtn:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .stickyContent {
+    padding: 1rem 4%;
+  }
+
+  .stickyMenu {
+    gap: 0.2rem;
+  }
+
+  .stickyMenu a {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .stickyHeader {
+    display: none;
+  }
+}
