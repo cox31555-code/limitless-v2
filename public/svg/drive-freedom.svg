@@ -6,17 +6,22 @@
     </linearGradient>
   </defs>
   
-  <!-- Car shape -->
-  <path d="M16 38C16 36 18 34 20 34L44 34C46 34 48 36 48 38L48 48C48 50 46 52 44 52L20 52C18 52 16 50 16 48L16 38Z" fill="url(#driveGrad)" stroke="url(#driveGrad)" stroke-width="1.5"/>
+  <!-- Road lines (freedom/horizon) -->
+  <line x1="8" y1="24" x2="56" y2="24" stroke="white" stroke-width="1.5"/>
+  <line x1="6" y1="32" x2="58" y2="32" stroke="white" stroke-width="1" opacity="0.6"/>
+  <line x1="10" y1="40" x2="54" y2="40" stroke="white" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Car body -->
+  <rect x="20" y="28" width="24" height="12" rx="2" fill="url(#driveGrad)" stroke="url(#driveGrad)" stroke-width="1.5"/>
   
   <!-- Car roof -->
-  <path d="M24 34L26 24C26 22 28 20 30 20L34 20C36 20 38 22 38 24L40 34" fill="url(#driveGrad)" stroke="url(#driveGrad)" stroke-width="1.5"/>
+  <path d="M26 28L32 18L38 28" fill="url(#driveGrad)" stroke="url(#driveGrad)" stroke-width="1.5"/>
   
   <!-- Windows -->
-  <rect x="26" y="26" width="4" height="6" fill="white" opacity="0.6"/>
-  <rect x="34" y="26" width="4" height="6" fill="white" opacity="0.6"/>
+  <rect x="24" y="20" width="6" height="6" fill="white" opacity="0.5" rx="1"/>
+  <rect x="34" y="20" width="6" height="6" fill="white" opacity="0.5" rx="1"/>
   
   <!-- Wheels -->
-  <circle cx="24" cy="52" r="3" fill="white"/>
-  <circle cx="40" cy="52" r="3" fill="white"/>
+  <circle cx="25" cy="40" r="3" fill="white"/>
+  <circle cx="39" cy="40" r="3" fill="white"/>
 </svg>

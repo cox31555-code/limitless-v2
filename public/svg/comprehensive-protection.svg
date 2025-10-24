@@ -6,12 +6,9 @@
     </linearGradient>
   </defs>
   
-  <!-- Lock shape -->
-  <path d="M18 32C18 26 22 22 32 22C42 22 46 26 46 32L46 48C46 50 44 52 42 52L22 52C20 52 18 50 18 48L18 32Z" fill="url(#protectGrad)" stroke="url(#protectGrad)" stroke-width="1.5"/>
+  <!-- Shield shape -->
+  <path d="M32 10L48 18V35C48 46 32 56 32 56C32 56 16 46 16 35V18L32 10Z" fill="url(#protectGrad)" stroke="url(#protectGrad)" stroke-width="1.5"/>
   
-  <!-- Lock shackle -->
-  <path d="M24 32C24 24 28 20 32 20C36 20 40 24 40 32" stroke="url(#protectGrad)" stroke-width="3" fill="none"/>
-  
-  <!-- Keyhole -->
-  <circle cx="32" cy="40" r="2" fill="white"/>
+  <!-- Large checkmark -->
+  <path d="M25 35L30 42L42 26" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
