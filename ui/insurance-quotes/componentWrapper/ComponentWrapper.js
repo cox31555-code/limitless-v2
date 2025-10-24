@@ -30,6 +30,7 @@ const ComponentWrapper = ({ children, title, icon }) => {
   const iconSrc = getIconForTitle(title);
   const isVehicleIcon = title?.toLowerCase().includes("vehicle");
   const isCoverIcon = title?.toLowerCase().includes("cover");
+  const isPersonalIcon = title?.toLowerCase().includes("personal");
 
   return (
     <div className={styles.container}>
@@ -45,6 +46,13 @@ const ComponentWrapper = ({ children, title, icon }) => {
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 1L3 5v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/>
               <path d="M10.5 16.5l-3-3 1.41-1.41L10.5 13.68l5.59-5.59L17.5 9.5l-7 7z" fill="#0388ff"/>
+            </svg>
+          </div>
+        ) : isPersonalIcon ? (
+          <div className={styles.icon}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="8" r="4" fill="white"/>
+              <path d="M12 14c-4 0-6 2-6 4v3c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-3c0-2-2-4-6-4z" fill="white"/>
             </svg>
           </div>
         ) : (
