@@ -40,18 +40,49 @@ const Header = () => {
   };
 
   const carVanItems = [
-    { label: "Annual car insurance", href: "/annual" },
-    { label: "Hourly car insurance", href: "/temporary" },
-    { label: "Weekly car insurance", href: "/temporary" },
-    { label: "International driving licenses", href: "/coming-soon" },
+    { label: "Annual car insurance", href: "/annual", icon: "calendar" },
+    { label: "Hourly car insurance", href: "/temporary", icon: "clock" },
+    { label: "Weekly car insurance", href: "/temporary", icon: "calendar" },
+    { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
   ];
 
   const motorbakeItems = [
-    { label: "Annual bike insurance", href: "/coming-soon" },
-    { label: "Hourly bike insurance", href: "/coming-soon" },
-    { label: "Weekly bike insurance", href: "/coming-soon" },
-    { label: "International driving licenses", href: "/coming-soon" },
+    { label: "Annual bike insurance", href: "/coming-soon", icon: "calendar" },
+    { label: "Hourly bike insurance", href: "/coming-soon", icon: "clock" },
+    { label: "Weekly bike insurance", href: "/coming-soon", icon: "calendar" },
+    { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
   ];
+
+  const IconComponent = ({ type }) => {
+    switch (type) {
+      case "calendar":
+        return (
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M5 1V3M11 1V3M2 5H14M13 2H3C2.44772 2 2 2.44772 2 3V13C2 13.5523 2.44772 14 3 14H13C13.5523 14 14 13.5523 14 13V3C14 2.44772 13.5523 2 13 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        );
+      case "clock":
+        return (
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2ZM8 3.5C10.4853 3.5 12.5 5.51472 12.5 8C12.5 10.4853 10.4853 12.5 8 12.5C5.51472 12.5 3.5 10.4853 3.5 8C3.5 5.51472 5.51472 3.5 8 3.5ZM8 4.5V8H11" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        );
+      case "globe":
+        return (
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2ZM2.5 8H13.5M8 2C6.33579 4.3431 5.3 6.97087 5.3 8C5.3 9.02913 6.33579 11.6569 8 14C9.66421 11.6569 10.7 9.02913 10.7 8C10.7 6.97087 9.66421 4.3431 8 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        );
+      case "chevron":
+        return (
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        );
+      default:
+        return null;
+    }
+  };
 
   return pathname === "/login" ||
     pathname === "/forget-password" ||
