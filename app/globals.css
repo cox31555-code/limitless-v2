@@ -37,7 +37,7 @@ body {
   /* height: 884px; */
   border-radius: 0;
   background: #000822;
-  margin: -80px 0 0 0;
+  margin: -120px 0 3rem 0;
   padding: 0 0 0;
   position: relative;
   overflow: hidden;
@@ -105,7 +105,7 @@ body {
     border-radius: 0;
     background: #000822;
     padding: 0;
-    margin: -80px 0 0 0;
+    margin: -120px 0 3rem 0;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
   }
@@ -127,7 +127,7 @@ body {
 }
 @media (max-width: 600px) {
   .headerContainer {
-    margin: -80px 0 0 0;
+    margin: -120px 0 3rem 0;
     padding: 0;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
