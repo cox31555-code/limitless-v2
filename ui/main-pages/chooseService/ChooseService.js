@@ -19,14 +19,11 @@ const ChooseService = () => {
           width={58}
           height={58}
         />
-        <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Choose a Service that’s<span> right for you </span>
-        </h3>
+        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+          Choose the<span> right insurance </span>for you
+        </h2>
         <p className={styles.description}>
-          Get reliable insurance with Limitless Cover, offering fast, flexible
-          options for UK drivers. Whether a young driver, courier, or reclaiming
-          an impounded vehicle, our tailored solutions provide instant coverage
-          suited to your needs, with inclusivity for all.
+          At <strong>Limitless Cover</strong>, we offer fast, flexible, and affordable insurance tailored to your lifestyle. Whether you're a young driver, courier, or need impound cover, we've got <strong>instant solutions</strong> for all drivers—because insurance should work your way.
         </p>
       </div>
       <div className={styles.cardsContainer}>
