@@ -269,8 +269,16 @@
     padding: 1rem 1.8rem;
   }
 
+  .menuLink::before {
+    opacity: 0;
+  }
+
   .menuLink:hover {
     transform: scale(1.05);
+  }
+
+  .menuLink:hover::before {
+    opacity: 1;
   }
 
   .buttons {
