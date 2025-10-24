@@ -449,6 +449,17 @@
   .menuLink::before {
     content: "";
     position: absolute;
+    inset: 0;
+    background: rgba(3, 136, 255, 0.08);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+  }
+
+  .menuLink::after {
+    content: "";
+    position: absolute;
     bottom: 0;
     left: 50%;
     width: 0;
@@ -465,14 +476,23 @@
   }
 
   .menuLink:hover::before {
+    opacity: 1;
+  }
+
+  .menuLink:hover::after {
     width: 40%;
   }
 
   .activeMenuLink {
     color: #0388ff;
+    background: rgba(3, 136, 255, 0.1);
   }
 
   .activeMenuLink::before {
+    opacity: 1;
+  }
+
+  .activeMenuLink::after {
     width: 40%;
   }
 
