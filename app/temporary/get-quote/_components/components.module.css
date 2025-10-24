@@ -285,17 +285,17 @@
 .terms {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding-bottom: 2.3rem;
-  border-bottom: 1px solid #0008223d;
+  gap: 1.8rem;
+  padding-bottom: 2.8rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
 }
 
 .termItem {
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.2px;
 }
 
 .selection {
