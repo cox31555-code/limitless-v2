@@ -31,6 +31,7 @@ const ComponentWrapper = ({ children, title, icon }) => {
   const isVehicleIcon = title?.toLowerCase().includes("vehicle");
   const isCoverIcon = title?.toLowerCase().includes("cover");
   const isPersonalIcon = title?.toLowerCase().includes("personal");
+  const isTermsIcon = title?.toLowerCase().includes("terms");
 
   return (
     <div className={styles.container}>
@@ -53,6 +54,13 @@ const ComponentWrapper = ({ children, title, icon }) => {
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="8" r="4" fill="white"/>
               <path d="M12 14c-4 0-6 2-6 4v3c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-3c0-2-2-4-6-4z" fill="white"/>
+            </svg>
+          </div>
+        ) : isTermsIcon ? (
+          <div className={styles.icon}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-8-6z" fill="white"/>
+              <path d="M16 18H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V8h8v2z" fill="white"/>
             </svg>
           </div>
         ) : (
