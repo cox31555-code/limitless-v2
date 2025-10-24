@@ -528,39 +528,61 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    border-radius: 10px;
+    border-radius: 50px;
     background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
-    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.35);
+    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     color: #fff;
     border: none;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 124%;
     font-size: 1.4rem;
+    letter-spacing: 0.4px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .quoteBtn::before {
     content: "";
     position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(3, 136, 255, 0.6) 0%, rgba(4, 156, 255, 0.4) 100%);
+    border-radius: 50px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(8px);
+  }
+
+  .quoteBtn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
   }
 
   .quoteBtn:hover {
-    box-shadow: 0 12px 48px rgba(3, 136, 255, 0.45);
-    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(3, 136, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px) scale(1.01);
   }
 
   .quoteBtn:hover::before {
     opacity: 1;
   }
 
+  .quoteBtn:hover::after {
+    opacity: 1;
+  }
+
   .quoteBtn:active {
-    transform: translateY(-1px);
+    transform: translateY(-1px) scale(0.98);
   }
 }
