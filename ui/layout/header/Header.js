@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./header.module.css";
 import { useRouter } from "next/navigation";
 import SideNavbar from "@/ui/dashboard/layout/sideNavbar/SideNavbar";
@@ -13,6 +13,16 @@ const Header = () => {
   const isDashboard = pathname.startsWith("/dashboard");
   const [isOpen, setIsOpen] = useState(false);
   const [isDashboardSidebarOpen, setIsDashboardSidebarOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Function to open Tawk.to chat
   const openLiveChat = () => {
