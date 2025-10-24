@@ -8,16 +8,36 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const getIconForTitle = (title) => {
+  const titleLower = title?.toLowerCase() || "";
+
+  if (titleLower.includes("vehicle")) {
+    return "/svg/vehicle.svg";
+  } else if (titleLower.includes("cover")) {
+    return "/svg/quote.svg";
+  } else if (titleLower.includes("personal")) {
+    return "/svg/contact-details.svg";
+  } else if (titleLower.includes("terms")) {
+    return "/svg/check.svg";
+  } else if (titleLower.includes("car usage")) {
+    return "/svg/vehicle.svg";
+  }
+
+  return "/svg/insurance-quote.svg";
+};
+
 const ComponentWrapper = ({ children, title, icon }) => {
+  const iconSrc = getIconForTitle(title);
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <Image
           className={styles.icon}
-          src="/svg/insurance-quote.svg"
-          alt="terms-and-conditions"
-          width={icon?.width || 50}
-          height={icon?.height || 50}
+          src={iconSrc}
+          alt={title || "section-icon"}
+          width={icon?.width || 48}
+          height={icon?.height || 48}
         />
         <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
           {title}
