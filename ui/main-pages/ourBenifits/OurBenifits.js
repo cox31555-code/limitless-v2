@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./ourBenifits.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700", "300"],
@@ -9,8 +10,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const OurBenifits = ({ benifits, title, description }) => {
   const words = title.split(" ");
-  const lastTwoWords = words.slice(-2).join(" "); // last 2 words
-  const withoutLastTwoWords = words.slice(0, -2).join(" "); // everything except last 2
+  const lastTwoWords = words.slice(-2).join(" ");
+  const withoutLastTwoWords = words.slice(0, -2).join(" ");
 
   return (
     <div className={`${styles.container}`}>
@@ -34,10 +35,15 @@ const OurBenifits = ({ benifits, title, description }) => {
               />
             </div>
             <h3
-              className={`${styles.benifitTitle} ${plusJakartaSans.className} `}
+              className={`${styles.benifitTitle} ${plusJakartaSans.className}`}
             >
               {benifit.title}
             </h3>
+            {benifit.description && (
+              <p className={styles.benifitDescription}>
+                {benifit.description}
+              </p>
+            )}
           </div>
         ))}
       </div>
