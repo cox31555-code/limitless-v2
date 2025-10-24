@@ -310,14 +310,27 @@
 
 .backgroundLogo {
   position: absolute;
-  bottom: 5%;
-  left: 3%;
-  width: 250px;
-  height: 250px;
-  opacity: 0.2;
+  bottom: -5%;
+  left: 2%;
+  width: 280px;
+  height: 280px;
+  opacity: 0.18;
   z-index: 1;
   filter: drop-shadow(0 8px 16px rgba(3, 136, 255, 0.15));
   animation: floatSlow 8s ease-in-out infinite;
+}
+
+.backgroundLogoRotated {
+  position: absolute;
+  top: -8%;
+  right: 3%;
+  width: 280px;
+  height: 280px;
+  opacity: 0.18;
+  z-index: 1;
+  transform: rotate(180deg);
+  filter: drop-shadow(0 8px 16px rgba(3, 136, 255, 0.15));
+  animation: floatSlow 8s ease-in-out infinite reverse;
 }
 
 .image {
