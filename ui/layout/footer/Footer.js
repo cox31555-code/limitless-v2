@@ -62,11 +62,15 @@ const Footer = () => {
       }}
     >
       <div className={`centeredContent ${styles.contentContainer}`}>
-        {!pathname.startsWith("/dashboard") &&
+        {(pathname === "/" || pathname === "/annual") ? (
+          <NoHiddenFees />
+        ) : (
+          !pathname.startsWith("/dashboard") &&
           !["/login", "/forget-password", "/change-password"].includes(
             pathname
           ) &&
-          (pathname === "/" || pathname === "/annual" || !shouldUseSpecialStyles(pathname)) && <NoHiddenFees />}
+          !shouldUseSpecialStyles(pathname) && <NoHiddenFees />
+        )}
         <div className={styles.content}>
           <div className={styles.menus}>
             {menus.map((menu, index) => (
