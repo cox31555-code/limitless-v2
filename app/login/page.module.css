@@ -106,21 +106,21 @@
 
 @media screen and (max-width: 1200px) {
   .page {
-    padding: 3rem;
-    gap: 3rem;
+    padding: 2rem 2.5rem;
+    gap: 2rem;
   }
 
   .form {
-    flex: 0 1 480px;
+    flex: 0 1 460px;
   }
 
   .images {
-    flex: 0 1 380px;
-    height: 550px;
+    flex: 0 1 360px;
+    height: 500px;
   }
 
   .image1 {
-    max-width: 320px;
+    max-width: 300px;
   }
 }
 
