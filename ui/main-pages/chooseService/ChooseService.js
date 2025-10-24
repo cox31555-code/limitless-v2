@@ -20,9 +20,7 @@ const ChooseService = () => {
           height={58}
         />
         <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Choose the <span>right insurance</span>
-          <br />
-          for you
+          Choose the <span>right insurance for you</span>
         </h2>
         <p className={styles.description}>
           At <strong>Limitless Cover</strong>, we offer fast, flexible, and affordable insurance tailored to your lifestyle. Whether you're a young driver, courier, or need impound cover, we've got <strong>instant solutions</strong> for all drivers—because insurance should work your way.
