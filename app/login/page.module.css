@@ -55,8 +55,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  height: 650px;
+  flex: 0 1 420px;
+  height: 600px;
   position: relative;
   border-radius: 28px;
   background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
