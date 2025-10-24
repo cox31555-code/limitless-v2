@@ -19,18 +19,27 @@ const manrope = Manrope({
 });
 
 const ProtectedNoClaimsIcon = () => (
-  <svg width="122" height="119" viewBox="0 0 122 119" fill="none">
-    <rect width="64.7046" height="70.2762" fill="url(#paint0_linear_protected)" fillOpacity="0.48" />
-    <path d="M14 0.347656H58.7073L77.173 15.4984V73.5938H14V0.347656Z" fill="#049CFF" />
-    <path d="M58.6882 15.4861L58.6875 0.223438L77.202 15.4861H58.6882Z" fill="#07102D" />
-    <path d="M22.8828 17.4961H46.8799" stroke="#07102D" strokeWidth="3.30359" strokeLinecap="round" />
-    <path d="M22.8828 24.8789H37.0439" stroke="#07102D" strokeWidth="3.30359" strokeLinecap="round" />
-    <ellipse cx="106.719" cy="105.419" rx="28.9219" ry="28.8587" fill="#0388FF" />
-    <path d="M99.7422 112.403L113.701 98.4355" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round" />
-    <path d="M113.7 112.404L99.7422 98.4365" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round" />
+  <svg width="111" height="103" viewBox="0 0 111 103" fill="none">
+    <rect y="17.2734" width="64.7046" height="70.2762" fill="url(#paint0_linear_protected)" fillOpacity="0.48" />
+    <path d="M14 0.125H58.7073L77.1727 15.2758V73.3716H14V0.125Z" fill="#049CFF" />
+    <path d="M58.6882 15.2626L58.6875 0L77.202 15.2626H58.6882Z" fill="#07102D" />
+    <path d="M22.8828 17.2734H46.8799" stroke="#07102D" strokeWidth="3.30359" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M22.8828 24.6562H37.0439" stroke="#07102D" strokeWidth="3.30359" strokeLinecap="round" strokeLinejoin="round" />
+    <ellipse cx="81.7188" cy="73.2142" rx="28.9219" ry="28.8587" fill="url(#paint1_linear_protected)" />
+    <ellipse cx="81.7188" cy="73.2142" rx="28.9219" ry="28.8587" fill="url(#paint2_linear_protected)" />
+    <path d="M74.7422 80.1977L88.7009 66.2305" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round" />
+    <path d="M88.7004 80.1992L74.7422 66.2314" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round" />
     <defs>
-      <linearGradient id="paint0_linear_protected" x1="32.3523" y1="0" x2="32.3523" y2="70.2762" gradientUnits="userSpaceOnUse">
+      <linearGradient id="paint0_linear_protected" x1="32.3523" y1="17.2734" x2="32.3523" y2="87.5497" gradientUnits="userSpaceOnUse">
         <stop stopColor="#0388FF" stopOpacity="0" />
+        <stop offset="1" stopColor="#0388FF" />
+      </linearGradient>
+      <linearGradient id="paint1_linear_protected" x1="32.8974" y1="94.0682" x2="90.2956" y2="64.9874" gradientUnits="userSpaceOnUse">
+        <stop stopColor="white" stopOpacity="0.3" />
+        <stop offset="1" stopColor="#0388FF" />
+      </linearGradient>
+      <linearGradient id="paint2_linear_protected" x1="32.8974" y1="94.0682" x2="90.2956" y2="64.9874" gradientUnits="userSpaceOnUse">
+        <stop stopColor="white" stopOpacity="0.3" />
         <stop offset="1" stopColor="#0388FF" />
       </linearGradient>
     </defs>
