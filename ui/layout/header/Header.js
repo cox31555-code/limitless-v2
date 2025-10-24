@@ -107,11 +107,17 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("carVan")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <span className={styles.stickyMenuButton}>Car & Van</span>
+                <span className={styles.stickyMenuButton}>
+                  Car & Van
+                  <IconComponent type="chevron" />
+                </span>
                 {openDropdown === "carVan" && (
                   <div className={styles.stickyDropdown}>
                     {carVanItems.map((item, index) => (
                       <span key={`sticky-carVan-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
+                        <span className={styles.dropdownIcon}>
+                          <IconComponent type={item.icon} />
+                        </span>
                         {item.label}
                       </span>
                     ))}
@@ -124,11 +130,17 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("motorbike")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <span className={styles.stickyMenuButton}>Motorbike</span>
+                <span className={styles.stickyMenuButton}>
+                  Motorbike
+                  <IconComponent type="chevron" />
+                </span>
                 {openDropdown === "motorbike" && (
                   <div className={styles.stickyDropdown}>
                     {motorbakeItems.map((item, index) => (
                       <span key={`sticky-motorbike-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
+                        <span className={styles.dropdownIcon}>
+                          <IconComponent type={item.icon} />
+                        </span>
                         {item.label}
                       </span>
                     ))}
