@@ -98,16 +98,12 @@
     gap: 1.4rem;
   }
   .inputSpan {
-    min-width: 4.2rem;
-    min-height: 4.2rem;
-    max-width: 4.2rem;
-    max-height: 4.2rem;
+    width: 5rem;
+    height: 6rem;
   }
   .ukFlag {
-    height: 1.8rem;
-  }
-  .gbContainer {
-    gap: 0.3rem;
+    width: 3rem;
+    height: 2rem;
   }
   .label {
     font-size: 1.4rem;
@@ -118,6 +114,7 @@
   }
   .inputContainer {
     gap: 1.2rem;
+    height: 7.2rem;
   }
 
   .input {
