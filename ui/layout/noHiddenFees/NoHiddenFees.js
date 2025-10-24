@@ -61,6 +61,13 @@ const NoHiddenFees = () => {
         <span className={styles.background2}></span>
         <span className={styles.background3}></span>
         <Image
+          className={styles.backgroundLogo}
+          src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F3b9261c3b11e44158e58e259bf4c6d35?format=webp&width=800"
+          alt="logo"
+          width={300}
+          height={300}
+        />
+        <Image
           className={styles.image}
           src="/svg/no-hidden-fee.svg"
           alt="no-hidden-fees"
