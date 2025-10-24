@@ -49,14 +49,34 @@
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.06);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  min-height: 422px;
+  min-height: 500px;
+  border: 2px solid transparent;
 }
 
 .card:hover {
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
-  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.16);
+  transform: translateY(-6px);
+}
+
+.card.featured {
+  border-color: #0388ff;
+  background: linear-gradient(135deg, #fff 0%, rgba(3, 136, 255, 0.02) 100%);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  color: white;
+  padding: 0.6rem 1.6rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 .iconContainer {
