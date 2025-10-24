@@ -112,6 +112,7 @@ const Form = () => {
       <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
         Welcome back
       </h2>
+      <p className={styles.subtitle}>Enter your credentials to access your portal</p>
 
       {/* Success Message */}
       {successMessage && (
