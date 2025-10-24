@@ -2,18 +2,15 @@
   display: flex;
   width: 100%;
   max-width: 480px;
-  padding: 4rem;
+  padding: 5rem 4rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 0;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.15), 
-              inset 0 1px 1px rgba(255, 255, 255, 0.2),
-              0 0 0 1px rgba(3, 136, 255, 0.1);
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 8, 34, 0.1),
+              0 1px 3px rgba(0, 8, 34, 0.06);
   position: relative;
   z-index: 10;
   animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -30,18 +27,6 @@
   }
 }
 
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 24px;
-  pointer-events: none;
-}
-
 .container > * {
   width: 100%;
   position: relative;
@@ -49,69 +34,67 @@
 }
 
 .title {
-  color: #fff;
+  color: #000822;
   text-align: center;
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   font-weight: 800;
-  line-height: 120%;
-  letter-spacing: -1px;
-  margin-bottom: 0.8rem;
-  background: linear-gradient(135deg, #fff 0%, #e0f0ff 100%);
+  line-height: 110%;
+  letter-spacing: -1.2px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #0388ff 0%, #000822 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .subtitle {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 8, 34, 0.6);
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
   line-height: 150%;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   margin-bottom: 3.5rem;
 }
 
 .inputsContainer {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.2rem;
   margin-bottom: 2.5rem;
 }
 
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1rem;
   position: relative;
 }
 
 .label {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.3rem;
+  color: #000822;
+  font-size: 0.95rem;
   font-weight: 600;
   line-height: 120%;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  opacity: 0.8;
+  opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
 .inputGroup:focus-within .label {
   opacity: 1;
+  color: #0388ff;
 }
 
 .inputContainer {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1.2rem 1.6rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
+  gap: 1.4rem;
+  padding: 1.4rem 1.8rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
+  border: 2px solid rgba(3, 136, 255, 0.2);
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
@@ -124,14 +107,14 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   transition: left 0.5s ease;
 }
 
 .inputContainer:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.2);
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+  border-color: rgba(3, 136, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
 }
 
 .inputContainer:hover::before {
@@ -139,36 +122,35 @@
 }
 
 .inputContainer:focus-within {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(3, 136, 255, 0.6);
-  box-shadow: 0 8px 40px rgba(3, 136, 255, 0.25),
-              inset 0 0 20px rgba(3, 136, 255, 0.1);
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+  border-color: #0388ff;
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.18),
+              inset 0 0 16px rgba(3, 136, 255, 0.08);
 }
 
 .iconWrapper {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.4), rgba(4, 156, 255, 0.3));
+  background: linear-gradient(135deg, #0388ff, #049cff);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  filter: brightness(1.1);
   transition: all 0.3s ease;
 }
 
 .inputContainer:hover .iconWrapper {
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.6), rgba(4, 156, 255, 0.5));
-  box-shadow: 0 0 20px rgba(3, 136, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
+  transform: scale(1.08);
 }
 
 .input {
   width: 100%;
   border: none;
   background: transparent;
-  color: #fff;
+  color: #000822;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 120%;
@@ -177,21 +159,21 @@
 }
 
 .input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 8, 34, 0.4);
 }
 
 .input:focus {
   outline: none;
-  color: #fff;
+  color: #000822;
 }
 
 .input::selection {
-  background: rgba(3, 136, 255, 0.3);
-  color: #fff;
+  background: rgba(3, 136, 255, 0.2);
+  color: #000822;
 }
 
 .errorMessage {
-  color: #ff6b6b;
+  color: #dc3545;
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 140%;
@@ -214,13 +196,13 @@
 }
 
 .dontKnow {
-  color: rgba(255, 255, 255, 0.7);
+  color: #0388ff;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: 0.2px;
   border: none;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.8rem;
   background: none;
   text-align: center;
   cursor: pointer;
@@ -234,7 +216,7 @@
 .dontKnow::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
@@ -244,15 +226,15 @@
 }
 
 .dontKnow:hover {
-  color: rgba(255, 255, 255, 0.95);
+  color: #049cff;
 }
 
 .dontKnow:hover::after {
-  width: 120px;
+  width: 180px;
 }
 
 .eyeButton {
-  background: transparent;
+  background: rgba(3, 136, 255, 0.08);
   border: none;
   cursor: pointer;
   padding: 0.8rem;
@@ -262,33 +244,35 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   flex-shrink: 0;
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .eyeButton:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
+  background: rgba(3, 136, 255, 0.15);
 }
 
 .eyeIcon {
   width: 1.8rem;
   height: 1.8rem;
+  color: #0388ff;
   transition: all 0.2s ease;
+}
+
+.eyeButton:hover .eyeIcon {
+  color: #049cff;
 }
 
 .successMessage {
   width: 100%;
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(56, 142, 60, 0.15));
-  color: #81c784 !important;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.12), rgba(56, 142, 60, 0.08));
+  color: #2e7d32 !important;
   padding: 1.4rem 1.8rem !important;
   margin-bottom: 2rem !important;
-  border-radius: 14px !important;
-  border: 1px solid rgba(76, 175, 80, 0.3) !important;
+  border-radius: 12px !important;
+  border: 2px solid rgba(76, 175, 80, 0.3) !important;
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 140%;
   letter-spacing: 0.2px;
-  backdrop-filter: blur(4px);
   animation: slideDown 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -307,37 +291,36 @@
   .container {
     width: 100%;
     max-width: none;
-    padding: 3.5rem 2.4rem;
-    border-radius: 20px;
-    margin: 2rem;
+    padding: 4rem 2.8rem;
+    border-radius: 24px;
   }
 
   .title {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 3rem;
   }
 
   .inputsContainer {
-    gap: 1.8rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
+    margin-bottom: 2.2rem;
   }
 
   .inputGroup {
-    gap: 0.8rem;
+    gap: 0.9rem;
   }
 
   .label {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .inputContainer {
-    padding: 1rem 1.4rem;
-    gap: 1rem;
-    border-radius: 14px;
+    padding: 1.3rem 1.6rem;
+    gap: 1.2rem;
+    border-radius: 12px;
   }
 
   .iconWrapper {
@@ -347,12 +330,12 @@
   }
 
   .input {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .dontKnow {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.4rem;
   }
 
   .eyeButton {
