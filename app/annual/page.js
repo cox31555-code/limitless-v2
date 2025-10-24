@@ -114,11 +114,7 @@ export default function Annual() {
       />
       <div className={"centeredContent"}>
         <AnnualHero />
-        <OurBenifits
-          benifits={benifits}
-          title="Why Choose Limitless Cover Annual"
-          description="Discover the benefits of Limitless Cover's annual insurance plans, providing comprehensive coverage for UK drivers year-round. Get instant coverage tailored to your needs, with inclusivity and affordability for all drivers."
-        />
+        <InsuranceTypes />
         <QuestionsAnswered />
         <div className={styles.reviewsContainer}>
           <Reviews />
