@@ -310,8 +310,8 @@
 
 .backgroundLogo {
   position: absolute;
-  bottom: -5%;
-  left: 2%;
+  bottom: -15%;
+  left: 1%;
   width: 280px;
   height: 280px;
   opacity: 0.18;
@@ -322,13 +322,13 @@
 
 .backgroundLogoRotated {
   position: absolute;
-  top: -8%;
-  right: 3%;
+  top: -15%;
+  right: 2%;
   width: 280px;
   height: 280px;
   opacity: 0.18;
   z-index: 1;
-  transform: rotate(180deg);
+  transform: rotate(180deg) scaleY(-1);
   filter: drop-shadow(0 8px 16px rgba(3, 136, 255, 0.15));
   animation: floatSlow 8s ease-in-out infinite reverse;
 }
