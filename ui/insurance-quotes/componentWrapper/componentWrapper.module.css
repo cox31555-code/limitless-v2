@@ -32,7 +32,6 @@
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border-radius: 14px;
   box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
-  filter: brightness(0) invert(1);
 }
 @media screen and (max-width: 900px) {
   .container {
