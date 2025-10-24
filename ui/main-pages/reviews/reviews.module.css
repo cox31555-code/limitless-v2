@@ -1,12 +1,3 @@
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-25px);
-  }
-}
-
 @keyframes slideUp {
   from {
     opacity: 0;
