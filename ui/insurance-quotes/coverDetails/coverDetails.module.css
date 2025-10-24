@@ -1,23 +1,24 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 5.2rem;
-  padding: 3.4rem;
-  border-radius: 16px;
-  background: #fff;
+  gap: 4.8rem;
+  padding: 3.6rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fafbff 0%, #f8f9ff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
 .selectionContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  /* margin-top: 3.2rem; */
+  gap: 1.8rem;
 }
 .label {
   color: #000822;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
 }
 .selectionOptions {
   display: flex;
