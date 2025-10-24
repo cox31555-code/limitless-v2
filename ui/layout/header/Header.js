@@ -148,8 +148,8 @@ const Header = () => {
                 )}
               </div>
 
+              <span className={styles.stickyMenuButton} onClick={() => router.push("/impound")}>Impound</span>
               <span className={styles.stickyMenuButton} onClick={() => router.push("/coming-soon")}>Courier</span>
-              <span className={styles.stickyMenuButton} onClick={() => router.push("/about-us")}>About us</span>
               <span className={styles.stickyMenuButton} onClick={() => router.push("/contact")}>Contact</span>
             </nav>
             <div className={styles.stickyButtons}>
@@ -251,22 +251,22 @@ const Header = () => {
             <li className={styles.menuItem}>
               <span
                 className={`${styles.menuLink} ${
-                  pathname === "/coming-soon" ? styles.activeMenuLink : ""
+                  pathname === "/impound" ? styles.activeMenuLink : ""
                 }`}
-                onClick={() => router.push("/coming-soon")}
+                onClick={() => router.push("/impound")}
               >
-                Courier
+                Impound
               </span>
             </li>
 
             <li className={styles.menuItem}>
               <span
                 className={`${styles.menuLink} ${
-                  pathname === "/about-us" ? styles.activeMenuLink : ""
+                  pathname === "/coming-soon" ? styles.activeMenuLink : ""
                 }`}
-                onClick={() => router.push("/about-us")}
+                onClick={() => router.push("/coming-soon")}
               >
-                About us
+                Courier
               </span>
             </li>
 
@@ -443,6 +443,18 @@ const Header = () => {
 
               <span
                 className={`${styles.mobileMenuLink} ${
+                  pathname === "/impound" ? styles.activeMenuLink : ""
+                }`}
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push("/impound");
+                }}
+              >
+                Impound
+              </span>
+
+              <span
+                className={`${styles.mobileMenuLink} ${
                   pathname === "/coming-soon" ? styles.activeMenuLink : ""
                 }`}
                 onClick={() => {
@@ -451,18 +463,6 @@ const Header = () => {
                 }}
               >
                 Courier
-              </span>
-
-              <span
-                className={`${styles.mobileMenuLink} ${
-                  pathname === "/about-us" ? styles.activeMenuLink : ""
-                }`}
-                onClick={() => {
-                  setIsOpen(false);
-                  router.push("/about-us");
-                }}
-              >
-                About us
               </span>
 
               <span
