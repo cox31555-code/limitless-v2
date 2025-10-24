@@ -65,6 +65,8 @@
   gap: 3.6rem;
   width: 100%;
   max-width: 140rem;
+  position: relative;
+  z-index: 2;
 }
 
 .benifit {
