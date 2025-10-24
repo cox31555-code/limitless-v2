@@ -6,14 +6,26 @@
   position: relative;
 }
 
+.headerWrapper {
+  margin-bottom: 8rem;
+  text-align: center;
+}
+
 .heading {
   max-width: 652px;
-  margin: 0 auto 8rem;
-  text-align: center;
+  margin: 0 auto 1.6rem;
   font-size: 5.8rem;
   font-weight: 700;
   line-height: 100%;
   color: #000822;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: rgba(0, 8, 34, 0.6);
+  margin: 0;
+  font-weight: 400;
+  line-height: 140%;
 }
 
 .highlight {
@@ -23,7 +35,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.4rem;
+  gap: 2.8rem;
   max-width: 131.2rem;
   margin: 0 auto;
 }
@@ -31,27 +43,46 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 2.8rem;
-  border-radius: 18px;
+  padding: 3.2rem 2.8rem;
+  border-radius: 20px;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.06);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  min-height: 422px;
+  min-height: 460px;
+  border: 1px solid rgba(3, 136, 255, 0);
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0388ff 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 10px 28px rgba(3, 136, 255, 0.12);
-  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(3, 136, 255, 0.14);
+  transform: translateY(-6px);
+  border-color: rgba(3, 136, 255, 0.1);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .iconContainer {
   width: 100%;
-  height: 140px;
+  height: 150px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-bottom: 3rem;
+  margin-bottom: 2.4rem;
   position: relative;
 }
 
@@ -154,60 +185,88 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
+  gap: 2.8rem;
+  flex: 1;
+}
+
+.titleWrapper {
+  margin-bottom: 0.4rem;
 }
 
 .title {
   font-size: 2.8rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 110%;
   color: #000822;
+  margin: 0 0 0.8rem 0;
+}
+
+.description {
+  font-size: 1.4rem;
+  color: #0388ff;
+  font-weight: 500;
+  margin: 0;
+  line-height: 140%;
 }
 
 .featureList {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.8rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: auto;
 }
 
 .feature {
   display: flex;
   align-items: flex-start;
   gap: 1.6rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .feature {
+  transform: translateX(2px);
 }
 
 .feature svg {
   flex-shrink: 0;
   width: 2.4rem;
   height: 2.4rem;
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
 
 .feature span {
-  color: rgba(0, 8, 34, 0.75);
-  font-size: 1.4rem;
+  color: rgba(0, 8, 34, 0.78);
+  font-size: 1.45rem;
   font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0.56px;
+  line-height: 145%;
+  letter-spacing: 0.3px;
 }
 
 @media screen and (max-width: 1200px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 2.4rem;
   }
 
   .heading {
     font-size: 4.8rem;
-    margin-bottom: 6rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
   }
 
   .card {
-    min-height: 380px;
-    padding: 2.6rem;
+    min-height: 440px;
+    padding: 2.8rem;
+  }
+
+  .iconContainer {
+    height: 140px;
+    margin-bottom: 2rem;
   }
 
   .title {
@@ -215,11 +274,7 @@
   }
 
   .featureList {
-    gap: 1.4rem;
-  }
-
-  .feature span {
-    font-size: 1.3rem;
+    gap: 1.6rem;
   }
 }
 
@@ -230,8 +285,14 @@
 
   .heading {
     font-size: 4rem;
-    margin-bottom: 5rem;
-    max-width: 90%;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 6rem;
   }
 
   .grid {
@@ -246,23 +307,32 @@
 
   .iconContainer {
     height: 120px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.2rem;
   }
 
   .content {
-    gap: 2.2rem;
+    gap: 2.4rem;
   }
 
   .title {
     font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
   }
 
   .featureList {
+    gap: 1.5rem;
+  }
+
+  .feature {
     gap: 1.4rem;
   }
 
   .feature span {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 }
 
@@ -273,8 +343,16 @@
 
   .heading {
     font-size: 3.2rem;
-    margin-bottom: 4rem;
     line-height: 110%;
+    margin-bottom: 0.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 4rem;
   }
 
   .grid {
@@ -282,12 +360,13 @@
   }
 
   .card {
-    padding: 1.8rem;
+    padding: 2rem;
+    min-height: auto;
   }
 
   .iconContainer {
     height: 100px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
   }
 
   .iconWrapper,
@@ -298,15 +377,20 @@
   }
 
   .content {
-    gap: 1.8rem;
+    gap: 2rem;
   }
 
   .title {
     font-size: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
   }
 
   .featureList {
-    gap: 1.2rem;
+    gap: 1.3rem;
   }
 
   .feature {
@@ -316,10 +400,11 @@
   .feature svg {
     width: 2rem;
     height: 2rem;
-    margin-top: 0.1rem;
+    margin-top: 0.2rem;
   }
 
   .feature span {
     font-size: 1.2rem;
+    line-height: 140%;
   }
 }
