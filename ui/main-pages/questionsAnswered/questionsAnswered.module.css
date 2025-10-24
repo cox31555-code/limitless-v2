@@ -141,15 +141,14 @@
 .header::before {
   content: '';
   position: absolute;
-  top: -250px;
-  left: 8%;
-  width: 350px;
-  height: 350px;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350"><path d="M 0 80 Q 90 40 175 80 T 350 80" stroke="rgba(3,136,255,0.4)" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="950"/><path d="M 0 200 Q 110 150 220 200 T 350 200" stroke="rgba(3,136,255,0.3)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="900"/><path d="M 0 300 Q 75 270 150 300 T 300 300 T 350 300" stroke="rgba(3,136,255,0.25)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="880"/></svg>');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0 8px 25px rgba(3, 136, 255, 0.15));
-  animation: floatLine3 11s ease-in-out infinite, drawIn3 7s ease-in-out 2s infinite;
+  top: -200px;
+  left: 15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(ellipse 120% 120% at 50% 50%, rgba(3, 136, 255, 0.15) 0%, transparent 70%);
+  border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+  filter: blur(50px);
+  animation: orb3 20s ease-in-out infinite;
   pointer-events: none;
   z-index: 1;
 }
@@ -157,15 +156,14 @@
 .wrapper::before {
   content: '';
   position: absolute;
-  top: -120px;
-  right: 6%;
-  width: 380px;
-  height: 400px;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 400"><path d="M 380 100 Q 270 60 150 100 T 0 100" stroke="rgba(3,136,255,0.36)" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="1000"/><path d="M 380 220 Q 200 170 40 220" stroke="rgba(3,136,255,0.28)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="920"/><path d="M 380 330 Q 240 290 100 330 T 0 330" stroke="rgba(3,136,255,0.32)" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="980"/></svg>');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0 8px 30px rgba(3, 136, 255, 0.1));
-  animation: floatLine2 13s ease-in-out infinite reverse, drawIn2 8.5s ease-in-out 0.8s infinite;
+  top: -80px;
+  right: 10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(ellipse 130% 130% at 45% 55%, rgba(3, 136, 255, 0.18) 0%, transparent 65%);
+  border-radius: 35% 65% 50% 50% / 50% 50% 50% 50%;
+  filter: blur(60px);
+  animation: orb1 16s ease-in-out infinite reverse;
   pointer-events: none;
   z-index: 1;
 }
@@ -173,14 +171,14 @@
 .question::before {
   content: '';
   position: absolute;
-  top: -50px;
-  left: 10%;
+  top: -60px;
+  left: 15%;
   width: 200px;
-  height: 150px;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150"><path d="M 0 50 Q 50 20 100 50 T 200 50" stroke="rgba(3,136,255,0.25)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="800"/><path d="M 0 100 Q 60 70 120 100 T 200 100" stroke="rgba(3,136,255,0.2)" stroke-width="1" fill="none" stroke-linecap="round" stroke-dasharray="750"/></svg>');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  animation: floatLine1 9s ease-in-out 2.5s infinite, drawIn 6s ease-in-out 3s infinite;
+  height: 200px;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(3, 136, 255, 0.12) 0%, transparent 75%);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  filter: blur(45px);
+  animation: orb2 17s ease-in-out 1s infinite;
   pointer-events: none;
   z-index: 0;
 }
