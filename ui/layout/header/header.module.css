@@ -833,7 +833,7 @@
   display: flex;
   align-items: center;
   gap: 1.4rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #1a1f3a;
   text-decoration: none;
   padding: 1.4rem 2rem;
   font-size: 1.5rem;
@@ -870,8 +870,8 @@
 }
 
 .dropdownItem:hover {
-  background: rgba(3, 136, 255, 0.15);
-  color: #049cff;
+  background: rgba(3, 136, 255, 0.1);
+  color: #0388ff;
   padding-left: 2rem;
 }
 
