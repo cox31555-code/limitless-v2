@@ -57,6 +57,7 @@ const FormTextInput = ({
             placeholder={placeholder}
             className={`${styles.input} ${error ? styles.error : ""} ${reg ? styles.reg : ""}`}
             value={value}
+            onChange={reg ? handleRegistrationChange : onChange}
             {...props}
           />
         </div>
