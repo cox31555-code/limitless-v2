@@ -328,7 +328,7 @@
   height: 280px;
   opacity: 0.18;
   z-index: 1;
-  transform: rotate(180deg) scaleY(-1);
+  transform: scaleX(-1) scaleY(-1);
   filter: drop-shadow(0 8px 16px rgba(3, 136, 255, 0.15));
   animation: floatSlow 8s ease-in-out infinite reverse;
 }
