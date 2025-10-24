@@ -198,17 +198,17 @@
 
 .dontKnow {
   color: #0388ff;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: 0.2px;
   border: none;
-  margin-bottom: 3rem;
+  margin-bottom: 1.8rem;
   background: none;
   text-align: center;
   cursor: pointer;
   transition: color 0.25s ease;
-  padding: 0.7rem 0;
+  padding: 0.5rem 0;
   width: 100%;
 }
 
