@@ -17,7 +17,7 @@ export default function Annual() {
   const features = [
     {
       img: {
-        src: "/svg/cheapest.svg",
+        src: "/svg/unbeatable-rates.svg",
         alt: "unbeatable rates",
         width: 64,
         height: 64,
@@ -27,7 +27,7 @@ export default function Annual() {
     },
     {
       img: {
-        src: "/svg/no-risk.svg",
+        src: "/svg/comprehensive-protection.svg",
         alt: "comprehensive protection",
         width: 64,
         height: 64,
@@ -37,7 +37,7 @@ export default function Annual() {
     },
     {
       img: {
-        src: "/svg/flexible.svg",
+        src: "/svg/drive-freedom.svg",
         alt: "drive with freedom",
         width: 64,
         height: 64,
