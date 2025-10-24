@@ -9,65 +9,24 @@
   border-radius: 17px;
   background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
   border: none;
-  box-shadow: 0 14px 40px rgba(3, 136, 255, 0.28),
-              0 2px 8px rgba(3, 136, 255, 0.16);
+  box-shadow: 0 12px 36px rgba(3, 136, 255, 0.25);
   color: #fff;
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 120%;
   letter-spacing: 1.2px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
-.confirmBtn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-  z-index: 0;
-}
-
-.confirmBtn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-  animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 .confirmBtn:hover {
   background: linear-gradient(135deg, #049cff 0%, #0388ff 100%);
-  box-shadow: 0 18px 50px rgba(3, 136, 255, 0.38),
-              0 4px 12px rgba(3, 136, 255, 0.22);
-  transform: translateY(-5px);
-}
-
-.confirmBtn:hover::before {
-  width: 300px;
-  height: 300px;
+  box-shadow: 0 16px 44px rgba(3, 136, 255, 0.32);
+  transform: translateY(-4px);
 }
 
 .confirmBtn:active {
