@@ -378,7 +378,7 @@ const VehicleDetailsForm = ({
     setIsLoadingVehicleData(true);
     try {
       // Use only DVLA endpoint
-      const apiUrl = `${API_BASE_URL}/api/vehicle-search/dvla/${encodeURIComponent(
+      const apiUrl = `/api/vehicle-search/dvla/${encodeURIComponent(
         cleanRegNumber
       )}`;
 
