@@ -32,66 +32,58 @@ const CheckIcon = () => (
 
 const insuranceData = [
   {
-    title: "Car insurance",
-    icon: "car",
-    badge: "Most Popular",
+    title: "Learner driver insurance",
+    icon: "learner",
     features: [
-      "From just 80p per day",
-      "Fully comprehensive cover",
-      "Earn your No Claims Bonus",
+      "Cover from only 80p* a day.",
+      "Cover on your own car.",
+      "Start earning your No Claims Bonus.",
     ],
-    href: "/annual",
-  },
-  {
-    title: "Van insurance",
-    icon: "van",
-    features: [
-      "Business & personal use",
-      "Flexible cover options",
-      "Quick quote & purchase",
-    ],
-    href: "/annual",
   },
   {
     title: "Young driver insurance",
     icon: "young",
     features: [
-      "No night-time curfews",
-      "Fair premiums for young drivers",
-      "Build your No Claims Bonus",
+      "Cover on your own car.",
+      "No night-time curfews.",
+      "Start earning your No Claims Bonus.",
     ],
-    href: "/annual",
   },
   {
-    title: "Learner driver insurance",
-    icon: "learner",
-    badge: "From 80p",
+    title: "Convicted insurance",
+    icon: "convicted",
     features: [
-      "Insure with any supervisor",
-      "Cover on your own car",
-      "Earn your No Claims Bonus",
+      "Competitive rates.",
+      "Cover for drivers with convictions.",
+      "All motoring convictions considered.",
     ],
-    href: "/annual",
   },
   {
     title: "Motorcycle insurance",
     icon: "motorcycle",
     features: [
-      "Competitive rates",
-      "Flexible annual cover",
-      "Quick & easy quotes",
+      "Cover from only 80p* a day.",
+      "Cover on your own car.",
+      "Start earning your No Claims Bonus.",
     ],
-    href: "/annual",
   },
   {
-    title: "Convicted driver insurance",
-    icon: "convicted",
+    title: "Car insurance",
+    icon: "car",
     features: [
-      "Fair rates with convictions",
-      "All motoring convictions accepted",
-      "No penalty loading",
+      "Cover on your own car.",
+      "No night-time curfews.",
+      "Start earning your No Claims Bonus.",
     ],
-    href: "/annual",
+  },
+  {
+    title: "Van insurance",
+    icon: "van",
+    features: [
+      "Competitive rates.",
+      "Cover for drivers with convictions.",
+      "All motoring convictions considered.",
+    ],
   },
 ];
 
