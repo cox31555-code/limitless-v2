@@ -637,6 +637,7 @@
   margin: 0 auto;
   padding: 1.2rem 3.4%;
   gap: 2rem;
+  position: relative;
 }
 
 .stickyLogoContainer {
