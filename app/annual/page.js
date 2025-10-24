@@ -3,6 +3,7 @@ import styles from "../page.module.css";
 import Header from "../../ui/main-pages/header/Header";
 import AnnualHero from "../../ui/main-pages/annualHero/AnnualHero";
 import InsuranceTypes from "../../ui/main-pages/insuranceTypes/InsuranceTypes";
+import Coverage from "../../ui/main-pages/coverage/Coverage";
 import QuestionsAnswered from "../../ui/main-pages/questionsAnswered/QuestionsAnswered";
 import Reviews from "../../ui/main-pages/reviews/Reviews";
 
@@ -115,6 +116,7 @@ export default function Annual() {
       <div className={"centeredContent"}>
         <AnnualHero />
         <InsuranceTypes />
+        <Coverage />
         <QuestionsAnswered />
         <div className={styles.reviewsContainer}>
           <Reviews />
