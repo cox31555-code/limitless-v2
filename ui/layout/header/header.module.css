@@ -808,9 +808,9 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   min-width: 220px;
   margin-top: 0;
@@ -936,8 +936,8 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, rgba(0, 8, 34, 0.98) 0%, rgba(10, 15, 46, 0.98) 100%);
-  border: 1px solid rgba(3, 136, 255, 0.2);
+  background: linear-gradient(135deg, rgba(0, 8, 34, 0.95) 0%, rgba(10, 15, 46, 0.95) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.25);
   border-radius: 8px;
   min-width: 200px;
   margin-top: 0;
@@ -1024,7 +1024,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  background: rgba(3, 136, 255, 0.05);
+  background: rgba(3, 136, 255, 0.95);
   border-radius: 8px;
   margin: 0.8rem 0 1rem;
   overflow: hidden;
