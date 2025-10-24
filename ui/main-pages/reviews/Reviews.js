@@ -1,12 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import styles from "./reviews.module.css";
-import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope, Inter } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const manrope = Manrope({
@@ -71,135 +70,143 @@ const reviewsData = [
 ];
 
 const Reviews = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsPerView, setCardsPerView] = useState(3);
 
   useEffect(() => {
-    if (!isAutoPlay) return;
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCardsPerView(1);
+      } else if (window.innerWidth < 1200) {
+        setCardsPerView(2);
+      } else {
+        setCardsPerView(3);
+      }
+    };
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % reviewsData.length);
-    }, 5000);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return () => clearInterval(interval);
-  }, [isAutoPlay]);
+  const maxIndex = Math.max(0, reviewsData.length - cardsPerView);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % reviewsData.length);
-    setIsAutoPlay(false);
+    setCurrentIndex((prev) => (prev + 1 <= maxIndex ? prev + 1 : 0));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + reviewsData.length) % reviewsData.length);
-    setIsAutoPlay(false);
+    setCurrentIndex((prev) => (prev - 1 >= 0 ? prev - 1 : maxIndex));
   };
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-    setIsAutoPlay(false);
-  };
+  const visibleReviews = reviewsData.slice(currentIndex, currentIndex + cardsPerView);
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.headerSection}>
-          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Trusted by Thousands of Drivers
-          </h2>
-          <p className={`${styles.subtitle} ${manrope.className}`}>
-            See what our customers have to say about Limitless Cover
-          </p>
-        </div>
+          <div>
+            <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+              Trusted by Thousands of Drivers
+            </h2>
+            <p className={`${styles.subtitle} ${manrope.className}`}>
+              Real reviews from our satisfied customers
+            </p>
+          </div>
 
-        <div className={styles.badgeSection}>
-          <div className={styles.trustpilotBadge}>
-            <div className={styles.badgeContent}>
-              <div className={styles.logoWrapper}>
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 0C8.96 0 0 8.96 0 20s8.96 20 20 20 20-8.96 20-20S31.04 0 20 0zm0 36c-8.82 0-16-7.18-16-16s7.18-16 16-16 16 7.18 16 16-7.18 16-16 16z" fill="#00B582"/>
-                  <path d="M28 14L17 25l-5-5" stroke="#00B582" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <div className={styles.badgeInfo}>
-                <div className={styles.ratingDisplay}>
-                  <span className={`${styles.ratingNumber} ${inter.className}`}>4.8</span>
-                  <div className={styles.starsRow}>
-                    {[1, 2, 3, 4, 5].map((item) => (
-                      <span key={item} className={styles.star}>★</span>
-                    ))}
-                  </div>
+          <div className={styles.badgeSection}>
+            <div className={styles.trustpilotBadge}>
+              <div className={styles.badgeContent}>
+                <div className={styles.logoWrapper}>
+                  <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+                    <path d="M20 0C8.96 0 0 8.96 0 20s8.96 20 20 20 20-8.96 20-20S31.04 0 20 0zm0 36c-8.82 0-16-7.18-16-16s7.18-16 16-16 16 7.18 16 16-7.18 16-16 16z" fill="#00DBC1"/>
+                    <path d="M28 14L17 25l-5-5" stroke="#00DBC1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
-                <p className={`${styles.reviewCount} ${manrope.className}`}>
-                  892 reviews on Trustpilot
-                </p>
+                <div className={styles.badgeInfo}>
+                  <div className={styles.ratingDisplay}>
+                    <span className={`${styles.ratingNumber} ${inter.className}`}>4.8</span>
+                    <div className={styles.starsRow}>
+                      {[1, 2, 3, 4, 5].map((item) => (
+                        <span key={item} className={styles.star}>★</span>
+                      ))}
+                    </div>
+                  </div>
+                  <p className={`${styles.reviewCount} ${manrope.className}`}>
+                    892 verified reviews
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.carouselSection}>
-        <div className={styles.carouselContainer}>
-          <button className={styles.carouselButton + " " + styles.prevBtn} onClick={prevSlide} aria-label="Previous review">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <div className={styles.carouselWrapper}>
+          <button 
+            className={`${styles.navButton} ${styles.prevBtn}`}
+            onClick={prevSlide}
+            aria-label="Previous reviews"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M15 19l-7-7 7-7"/>
             </svg>
           </button>
 
-          <div className={styles.carouselTrack}>
-            {reviewsData.map((review, index) => (
-              <div 
-                key={review.id}
-                className={`${styles.reviewSlide} ${index === currentSlide ? styles.activeSlide : ""}`}
-              >
-                <div className={styles.reviewCard}>
-                  <div className={styles.cardHeader}>
-                    <div className={styles.starsRow}>
-                      {Array(review.rating).fill(0).map((_, i) => (
-                        <span key={i} className={styles.filledStar}>★</span>
-                      ))}
-                    </div>
+          <div className={styles.cardsGrid}>
+            {visibleReviews.map((review) => (
+              <div key={review.id} className={styles.reviewCard}>
+                <div className={styles.cardTop}>
+                  <div className={styles.starsRow}>
+                    {Array(review.rating).fill(0).map((_, i) => (
+                      <span key={i} className={styles.filledStar}>★</span>
+                    ))}
                   </div>
-                  <p className={`${styles.reviewText} ${inter.className}`}>
-                    "{review.text}"
-                  </p>
-                  <div className={styles.cardFooter}>
-                    <div className={styles.authorInfo}>
-                      <p className={`${styles.authorName} ${inter.className}`}>
-                        {review.name}
-                      </p>
-                      <p className={`${styles.reviewDate} ${manrope.className}`}>
-                        {new Date(review.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
-                      </p>
-                    </div>
+                </div>
+
+                <p className={`${styles.reviewText} ${inter.className}`}>
+                  {review.text}
+                </p>
+
+                <div className={styles.cardBottom}>
+                  <div className={styles.authorInfo}>
+                    <p className={`${styles.authorName} ${inter.className}`}>
+                      {review.name}
+                    </p>
                     {review.verified && (
                       <div className={styles.verifiedBadge}>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path d="M8 1L10 6H15L11 9L13 14L8 11L3 14L5 9L1 6H6L8 1Z" fill="#00B582" />
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                          <path d="M8 1L10 6H15L11 9L13 14L8 11L3 14L5 9L1 6H6L8 1Z" fill="#00DBC1" />
                         </svg>
                         <span>Verified</span>
                       </div>
                     )}
                   </div>
+                  <p className={`${styles.reviewDate} ${manrope.className}`}>
+                    {new Date(review.date).toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
 
-          <button className={styles.carouselButton + " " + styles.nextBtn} onClick={nextSlide} aria-label="Next review">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <button 
+            className={`${styles.navButton} ${styles.nextBtn}`}
+            onClick={nextSlide}
+            aria-label="Next reviews"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M9 5l7 7-7 7"/>
             </svg>
           </button>
         </div>
 
-        <div className={styles.paginationDots}>
-          {reviewsData.map((_, index) => (
+        <div className={styles.dotsContainer}>
+          {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
             <button
-              key={index}
-              className={`${styles.dot} ${currentSlide === index ? styles.activeDot : ""}`}
-              onClick={() => goToSlide(index)}
-              aria-label={`Go to review ${index + 1}`}
+              key={idx}
+              className={`${styles.dot} ${currentIndex === idx ? styles.activeDot : ""}`}
+              onClick={() => setCurrentIndex(idx)}
+              aria-label={`Go to review set ${idx + 1}`}
             />
           ))}
         </div>
