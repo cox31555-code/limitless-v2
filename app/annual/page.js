@@ -113,7 +113,7 @@ export default function Annual() {
         features={features}
       />
       <div className={"centeredContent"}>
-        <ChooseService />
+        <AnnualHero />
         <OurBenifits
           benifits={benifits}
           title="Why Choose Limitless Cover Annual"
