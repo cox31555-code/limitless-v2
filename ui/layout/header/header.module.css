@@ -283,12 +283,12 @@
 
   .quoteBtn {
     gap: 1.2rem;
-    width: 15.68rem;
+    width: auto;
     height: 4.48rem;
     padding: 0.96rem 2.24rem;
-    border-radius: 9.6px;
+    border-radius: 40px;
     font-size: 1.28rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 99.2%;
   }
 
