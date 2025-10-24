@@ -297,8 +297,15 @@
 
   .heading {
     font-size: 4rem;
-    margin-bottom: 5rem;
-    max-width: 90%;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-top: 1.8rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 6rem;
   }
 
   .grid {
@@ -309,6 +316,13 @@
   .card {
     min-height: auto;
     padding: 2rem;
+  }
+
+  .badge {
+    top: -10px;
+    left: 20px;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.4rem;
   }
 
   .iconContainer {
@@ -322,6 +336,11 @@
 
   .title {
     font-size: 2.2rem;
+  }
+
+  .ctaButton {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
   }
 
   .feature span {
