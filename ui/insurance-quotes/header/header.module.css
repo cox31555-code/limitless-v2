@@ -87,9 +87,10 @@
     left: 10rem;
   }
   .wrapper {
-    padding: 6rem 1.6rem 5.2rem;
+    padding: 6.4rem 1.6rem 6.4rem;
     margin-top: 0;
-    gap: 4.4rem;
+    gap: 4.8rem;
+    min-height: 85vh;
   }
   .titles {
     gap: 1.2rem;
