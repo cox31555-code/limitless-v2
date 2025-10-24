@@ -74,10 +74,10 @@
   right: 40rem;
 }
 .wrapper {
-  padding: 0 0 1.8rem;
+  padding: 4rem 0 1.8rem;
   display: flex;
   flex-direction: column;
-  gap: 8.5rem;
+  gap: 6rem;
   width: 100%;
 }
 .container {
