@@ -79,7 +79,7 @@
   flex-direction: column;
   gap: 6rem;
   width: 100%;
-  min-height: 140vh;
+  min-height: 135vh;
 }
 .container {
   display: flex;
