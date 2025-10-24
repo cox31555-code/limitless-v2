@@ -55,14 +55,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 1 420px;
-  height: 600px;
+  flex: 0 1 380px;
+  height: 520px;
   position: relative;
-  border-radius: 28px;
-  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
-  border: 2px solid rgba(3, 136, 255, 0.15);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #1a3a52 0%, #0d1f33 100%);
+  border: 2px solid rgba(3, 136, 255, 0.2);
   overflow: hidden;
-  min-width: 420px;
+  min-width: 380px;
 }
 
 .squares {
