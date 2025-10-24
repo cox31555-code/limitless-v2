@@ -206,31 +206,13 @@
   background: none;
   text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.25s ease;
   padding: 0.7rem 0;
-  position: relative;
-  display: inline-block;
   width: 100%;
-}
-
-.dontKnow::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #0388ff, #049cff);
-  transition: width 0.3s ease;
 }
 
 .dontKnow:hover {
   color: #049cff;
-}
-
-.dontKnow:hover::after {
-  width: 200px;
 }
 
 .eyeButton {
