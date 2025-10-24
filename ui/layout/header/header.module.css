@@ -877,6 +877,7 @@
 /* Sticky Dropdown Styles */
 .stickyDropdownContainer {
   position: relative;
+  padding-bottom: 0.5rem;
 }
 
 .stickyMenuButton {
