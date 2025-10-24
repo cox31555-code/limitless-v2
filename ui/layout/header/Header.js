@@ -15,14 +15,22 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 200);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [mounted]);
 
   // Function to open Tawk.to chat
   const openLiveChat = () => {
