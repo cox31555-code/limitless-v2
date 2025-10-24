@@ -69,13 +69,13 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("carVan")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className={styles.stickyMenuButton}>Car & Van</button>
+                <span className={styles.stickyMenuButton}>Car & Van</span>
                 {openDropdown === "carVan" && (
                   <div className={styles.stickyDropdown}>
                     {carVanItems.map((item) => (
-                      <Link key={item.href} href={item.href} className={styles.stickyDropdownItem}>
+                      <span key={item.href} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
                         {item.label}
-                      </Link>
+                      </span>
                     ))}
                   </div>
                 )}
@@ -86,21 +86,21 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("motorbike")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className={styles.stickyMenuButton}>Motorbike</button>
+                <span className={styles.stickyMenuButton}>Motorbike</span>
                 {openDropdown === "motorbike" && (
                   <div className={styles.stickyDropdown}>
                     {motorbakeItems.map((item) => (
-                      <Link key={item.href} href={item.href} className={styles.stickyDropdownItem}>
+                      <span key={item.href} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
                         {item.label}
-                      </Link>
+                      </span>
                     ))}
                   </div>
                 )}
               </div>
 
-              <Link href="/coming-soon" className={styles.stickyMenuButton}>Courier</Link>
-              <Link href="/about-us" className={styles.stickyMenuButton}>About us</Link>
-              <Link href="/contact" className={styles.stickyMenuButton}>Contact</Link>
+              <span className={styles.stickyMenuButton} onClick={() => router.push("/coming-soon")}>Courier</span>
+              <span className={styles.stickyMenuButton} onClick={() => router.push("/about-us")}>About us</span>
+              <span className={styles.stickyMenuButton} onClick={() => router.push("/contact")}>Contact</span>
             </nav>
             <div className={styles.stickyButtons}>
               <button
