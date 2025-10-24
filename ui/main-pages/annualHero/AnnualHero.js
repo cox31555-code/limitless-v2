@@ -217,34 +217,41 @@ const AnnualHero = () => {
             </p>
           </div>
 
-          <div className={`${styles.rating} ${manrope.className}`}>
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/df60fedf22af706a15973700dfc974608c80140e?width=48"
-              alt="Google"
-              className={styles.ratingLogo}
-            />
-            <div className={styles.ratingContent}>
-              <div className={styles.score}>
-                <span className={styles.scoreText}>5.50</span>
-                <div className={styles.stars}>
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      width="18"
-                      height="18"
-                      viewBox="0 0 18 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.2967 2.63297L11.6167 5.27297C11.7967 5.64047 12.2767 5.99297 12.6817 6.06047L15.0742 6.45796C16.6042 6.71296 16.9642 7.82295 15.8617 8.91795L14.0017 10.7779C13.6867 11.0929 13.5142 11.7004 13.6117 12.1354L14.1442 14.4379C14.5642 16.2604 13.5967 16.9654 11.9842 16.0129L9.74168 14.6854C9.33668 14.4454 8.66918 14.4454 8.25668 14.6854L6.0142 16.0129C4.4092 16.9654 3.4342 16.2529 3.8542 14.4379L4.3867 12.1354C4.4842 11.7004 4.3117 11.0929 3.9967 10.7779L2.1367 8.91795C1.0417 7.82295 1.3942 6.71296 2.9242 6.45796L5.3167 6.06047C5.7142 5.99297 6.1942 5.64047 6.3742 5.27297L7.69418 2.63297C8.41418 1.20047 9.58418 1.20047 10.2967 2.63297Z"
-                        fill="#000822"
-                      />
-                    </svg>
-                  ))}
-                </div>
+          <div className={`${styles.trustStats} ${manrope.className}`}>
+            <div className={styles.trustStat}>
+              <div className={styles.statIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#0388FF"/>
+                </svg>
               </div>
-              <span className={styles.reviewCount}>134 Reviews</span>
+              <div className={styles.statContent}>
+                <p className={styles.statNumber}>1M+</p>
+                <p className={styles.statLabel}>UK Drivers</p>
+              </div>
+            </div>
+
+            <div className={styles.trustStat}>
+              <div className={styles.statIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 1L15.09 8.26H23L17.55 13.25L20.16 20.26L12 15.31L3.84 20.26L6.45 13.25L1 8.26H8.91L12 1Z" fill="#0388FF"/>
+                </svg>
+              </div>
+              <div className={styles.statContent}>
+                <p className={styles.statNumber}>Award</p>
+                <p className={styles.statLabel}>Winning Service</p>
+              </div>
+            </div>
+
+            <div className={styles.trustStat}>
+              <div className={styles.statIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="#0388FF"/>
+                </svg>
+              </div>
+              <div className={styles.statContent}>
+                <p className={styles.statNumber}>24/7</p>
+                <p className={styles.statLabel}>Customer Support</p>
+              </div>
             </div>
           </div>
         </div>
