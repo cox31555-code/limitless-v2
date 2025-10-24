@@ -41,53 +41,79 @@
 .selectedItem {
   flex: 1;
   display: flex;
-  padding: 1rem 0;
-  /* width: 16.5rem; */
-  height: 5.0162rem;
+  padding: 1rem 1.6rem;
+  height: 4.4rem;
   justify-content: center;
   align-items: center;
-  gap: 3.4rem;
-  border-radius: 0.8rem;
-  background: transparent;
-  box-shadow: 0 0.4rem 0.84rem 0 rgba(0, 8, 34, 0.04);
+  gap: 2.4rem;
+  border-radius: 10px;
+  background: #f8fbff;
+  border: 1.5px solid rgba(3, 136, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.02);
   color: #000822;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 130%;
+  letter-spacing: 0.2px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.selectionItem:hover {
+  background: #f0f6ff;
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
+  transform: translateY(-2px);
+}
+
 .selectedItem {
-  background: #06112b;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border-color: #0388ff;
   color: #fff;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
 }
+
+.selectedItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.4);
+}
+
 .darkSelectedItem {
-  border-radius: 8px;
+  border-radius: 10px;
   background: #fff !important;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  color: #07102d !important;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
+  color: #0388ff !important;
+  border: 1.5px solid #0388ff;
 }
 .darkItem {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
 }
+
+.darkItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
 .selectionSpan {
   display: flex;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #000822;
+  border: 2px solid rgba(3, 136, 255, 0.3);
+  flex-shrink: 0;
 }
+
 .darkSpan {
-  border: 1px solid #fff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .selectedSpan {
-  background: #0388ff;
-  border: 2px solid white;
-  outline: 1px solid #0388ff;
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: inset 0 0 0 4px #0388ff;
 }
 @media screen and (max-width: 900px) {
   .inputGroup {
