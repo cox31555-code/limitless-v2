@@ -61,8 +61,8 @@
 .inputsContainer {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  margin-bottom: 2.8rem;
+  gap: 1.8rem;
+  margin-bottom: 1.8rem;
 }
 
 .inputGroup {
