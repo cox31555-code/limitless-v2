@@ -447,9 +447,14 @@ const getIcon = (type) => {
 const InsuranceTypes = () => {
   return (
     <div className={styles.container}>
-      <h2 className={`${styles.heading} ${plusJakartaSans.className}`}>
-        Type of motor <span className={styles.highlight}>insurance we offer</span>
-      </h2>
+      <div className={styles.headerWrapper}>
+        <h2 className={`${styles.heading} ${plusJakartaSans.className}`}>
+          Type of motor <span className={styles.highlight}>insurance we offer</span>
+        </h2>
+        <p className={`${styles.subtitle} ${poppins.className}`}>
+          Choose the right cover for your vehicle and budget
+        </p>
+      </div>
 
       <div className={styles.grid}>
         {insuranceData.map((insurance, index) => (
@@ -457,9 +462,14 @@ const InsuranceTypes = () => {
             <div className={styles.iconContainer}>{getIcon(insurance.icon)}</div>
 
             <div className={styles.content}>
-              <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-                {insurance.title}
-              </h3>
+              <div className={styles.titleWrapper}>
+                <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+                  {insurance.title}
+                </h3>
+                <p className={`${styles.description} ${poppins.className}`}>
+                  {insurance.description}
+                </p>
+              </div>
 
               <ul className={`${styles.featureList} ${poppins.className}`}>
                 {insurance.features.map((feature, idx) => (
