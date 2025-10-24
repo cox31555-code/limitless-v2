@@ -31,34 +31,33 @@
   background: #ecf0fe;
   height: 7.5rem;
 }
-.gbContainer {
+.inputSpan {
+  width: 5.2rem;
+  height: 6.2rem;
+  border-radius: 1rem;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.3rem;
+  color: #000822;
+  flex-shrink: 0;
 }
 
 .ukFlag {
-  width: auto;
+  width: 3.2rem;
   height: 2.2rem;
   object-fit: contain;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
 }
 
-.inputSpan {
-  width: 4.4rem;
-  height: 4.4rem;
-  border-radius: 1rem;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000822;
+.gbText {
   font-size: 1.4rem;
   font-weight: 600;
   line-height: 124%;
   letter-spacing: 0.56px;
+  color: #000822;
 }
 .input {
   flex: 1;
