@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.2rem;
+  gap: 2.2rem;
 }
 .stepperContainer {
   display: flex;
@@ -14,14 +14,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 1.4rem;
 }
 .stepperItemText {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 .stepperLine,
 .stepperLine2 {
@@ -38,23 +38,23 @@
   margin-top: 0 !important;
 }
 .stepperNumber {
-  color: #fff;
-  font-size: 1.3rem;
+  color: #0388ff;
+  font-size: 1.1rem;
   font-weight: 700;
-  line-height: 130%;
-  letter-spacing: 0.5px;
+  line-height: 120%;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
-  padding: 0.6rem 1.2rem;
-  border-radius: 10px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 .stepperTitle {
   color: white;
-  font-size: 2.6rem;
+  font-size: 1.8rem;
   font-style: normal;
-  font-weight: 900;
-  line-height: 100%;
-  letter-spacing: -0.3px;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: -0.2px;
 }
 @media screen and (max-width: 900px) {
   .stepper {
