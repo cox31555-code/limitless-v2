@@ -1,44 +1,56 @@
 .container {
   display: flex;
-  gap: 1.8rem;
+  gap: 1.6rem;
   width: 100%;
 }
 .inputGroup {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1rem;
   width: 100%;
   position: relative;
 }
 .label {
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
 }
 .inputContainer {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 0.6rem;
+  gap: 1rem;
+  padding: 0.8rem;
   width: 100%;
-  border-radius: 1.2rem;
-  background: #ecf0fe;
-  /* height: 6.4rem; */
-  height: 5.73rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  height: 5.6rem;
   position: relative;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
+
+.inputContainer:focus-within,
+.inputContainer:hover:not(.disabled) {
+  border-color: #0388ff;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
+}
+
 .iconContainer {
-  width: 4.4rem;
-  height: 4.4rem;
-  border-radius: 1rem;
-  background: #fff;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(3, 136, 255, 0.1);
+  flex-shrink: 0;
 }
 
 .arrowDown {
