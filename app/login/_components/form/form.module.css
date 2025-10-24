@@ -1,7 +1,7 @@
 .container {
   display: flex;
   width: 100%;
-  max-width: 440px;
+  max-width: 500px;
   padding: 5rem 4rem;
   justify-content: center;
   align-items: center;
