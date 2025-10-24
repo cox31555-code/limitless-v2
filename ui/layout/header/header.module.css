@@ -149,58 +149,66 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
-  width: 17.5rem;
+  gap: 1rem;
+  width: auto;
   height: 5.2rem;
   padding: 1.2rem 2.8rem;
-  border-radius: 12px;
+  border-radius: 50px;
   background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
-  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.35);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   color: #ffffff;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 124%;
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  letter-spacing: 0.5px;
 }
 
 .quoteBtn::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.6) 0%, rgba(4, 156, 255, 0.4) 100%);
+  border-radius: 50px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none;
+  z-index: -1;
+  filter: blur(8px);
 }
 
 .quoteBtn::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+  border-radius: 50px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: -1;
+  pointer-events: none;
 }
 
 .quoteBtn:hover {
-  box-shadow: 0 12px 48px rgba(3, 136, 255, 0.45);
-  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(3, 136, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px) scale(1.02);
 }
 
 .quoteBtn:hover::before {
   opacity: 1;
 }
 
+.quoteBtn:hover::after {
+  opacity: 1;
+}
+
 .quoteBtn:active {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(0.98);
 }
 
 .chatIcon {
