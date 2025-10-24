@@ -62,8 +62,7 @@
   background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
   border: 2px solid rgba(3, 136, 255, 0.15);
   overflow: hidden;
-  min-width: 0;
-  order: 2;
+  min-width: 420px;
 }
 
 .squares {
