@@ -37,7 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0 0.5rem 0;
+  padding: 0;
   border-radius: 0;
   position: relative;
 }
@@ -802,13 +802,14 @@
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: 100%;
   left: 0;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   min-width: 220px;
+  margin-top: 0;
   z-index: 1001;
   animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -877,7 +878,6 @@
 /* Sticky Dropdown Styles */
 .stickyDropdownContainer {
   position: relative;
-  padding-bottom: 0.5rem;
 }
 
 .stickyMenuButton {
@@ -927,12 +927,13 @@
 
 .stickyDropdown {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: 100%;
   left: 0;
   background: linear-gradient(135deg, rgba(0, 8, 34, 0.98) 0%, rgba(10, 15, 46, 0.98) 100%);
   border: 1px solid rgba(3, 136, 255, 0.2);
   border-radius: 8px;
   min-width: 200px;
+  margin-top: 0;
   z-index: 1002;
   animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
