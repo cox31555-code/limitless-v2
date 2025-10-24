@@ -424,21 +424,21 @@
 @media screen and (max-width: 900px) {
   /* Vehicle Details Mobile */
   .content {
-    padding: 2rem;
+    padding: 2.4rem 2rem;
   }
 
   .first {
-    padding-bottom: 2.6rem;
-    margin-bottom: 2.6rem;
+    padding-bottom: 2.4rem;
+    margin-bottom: 2.4rem;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
   }
 
   .row {
     flex-direction: column;
-    gap: 2.6rem;
+    gap: 2.2rem;
   }
 
   /* Cover Details Mobile */
