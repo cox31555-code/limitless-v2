@@ -1,54 +1,47 @@
-@keyframes linePath1 {
+@keyframes waveShift1 {
   0% {
-    stroke-dashoffset: 1000;
-    opacity: 0.3;
+    transform: translateX(-100%) translateY(0);
   }
   50% {
-    opacity: 0.6;
+    transform: translateX(0) translateY(-40px);
   }
   100% {
-    stroke-dashoffset: 0;
-    opacity: 0.3;
+    transform: translateX(100%) translateY(0);
   }
 }
 
-@keyframes linePath2 {
+@keyframes waveShift2 {
   0% {
-    stroke-dashoffset: 1500;
-    opacity: 0.2;
+    transform: translateX(100%) translateY(0);
   }
   50% {
-    opacity: 0.5;
+    transform: translateX(0) translateY(40px);
   }
   100% {
-    stroke-dashoffset: 0;
-    opacity: 0.2;
+    transform: translateX(-100%) translateY(0);
   }
 }
 
-@keyframes linePath3 {
+@keyframes waveShift3 {
   0% {
-    stroke-dashoffset: 1200;
-    opacity: 0.25;
+    transform: translateX(-100%) translateY(0);
   }
   50% {
-    opacity: 0.55;
+    transform: translateX(0) translateY(-60px);
   }
   100% {
-    stroke-dashoffset: 0;
-    opacity: 0.25;
+    transform: translateX(100%) translateY(0);
   }
 }
 
-@keyframes flowGradient {
-  0% {
-    background-position: 0% 50%;
+@keyframes floatBlur {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: blur(20px);
   }
   50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+    transform: translateY(-30px) scale(1.1);
+    filter: blur(40px);
   }
 }
 
@@ -72,17 +65,13 @@
 .container::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    url('data:image/svg+xml,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><style>.line1{stroke:rgba(3,136,255,0.4);stroke-width:2;fill:none;stroke-linecap:round;}.line2{stroke:rgba(3,136,255,0.25);stroke-width:1.5;fill:none;stroke-linecap:round;}.line3{stroke:rgba(3,136,255,0.3);stroke-width:2;fill:none;stroke-linecap:round;}</style></defs><path class="line1" d="M 0 20 Q 300 100 600 50 T 1200 80 T 1800 40" stroke-dasharray="1000" stroke-dashoffset="1000"/><path class="line2" d="M 0 200 Q 250 150 500 200 T 1000 150 T 1500 200 T 2000 150" stroke-dasharray="1500" stroke-dashoffset="1500"/><path class="line3" d="M 0 300 Q 400 250 800 300 T 1600 280 T 2400 320" stroke-dasharray="1200" stroke-dashoffset="1200"/></svg>'),
-    linear-gradient(135deg, rgba(3, 136, 255, 0.05) 0%, transparent 100%);
-  background-size: 100% 400px, 100% 100%;
-  background-position: 0 0, 0 0;
-  background-repeat: repeat-y, no-repeat;
-  animation: linePath1 8s ease-in-out infinite, flowGradient 15s ease infinite;
+  width: 200%;
+  height: 200px;
+  background: linear-gradient(90deg, transparent 0%, rgba(3, 136, 255, 0.25) 25%, rgba(3, 136, 255, 0.15) 50%, rgba(3, 136, 255, 0.25) 75%, transparent 100%);
+  clip-path: polygon(0 40%, 2% 35%, 4% 45%, 6% 30%, 8% 40%, 10% 25%, 12% 40%, 14% 35%, 16% 45%, 18% 30%, 20% 40%, 22% 25%, 24% 40%, 26% 35%, 28% 45%, 30% 30%, 32% 40%, 34% 25%, 36% 40%, 38% 35%, 40% 45%, 42% 30%, 44% 40%, 46% 25%, 48% 40%, 50% 35%, 52% 45%, 54% 30%, 56% 40%, 58% 25%, 60% 40%, 62% 35%, 64% 45%, 66% 30%, 68% 40%, 70% 25%, 72% 40%, 74% 35%, 76% 45%, 78% 30%, 80% 40%, 82% 25%, 84% 40%, 86% 35%, 88% 45%, 90% 30%, 92% 40%, 94% 25%, 96% 40%, 98% 35%, 100% 45%, 100% 60%, 98% 60%, 96% 60%, 94% 60%, 92% 60%, 90% 60%, 88% 60%, 86% 60%, 84% 60%, 82% 60%, 80% 60%, 78% 60%, 76% 60%, 74% 60%, 72% 60%, 70% 60%, 68% 60%, 66% 60%, 64% 60%, 62% 60%, 60% 60%, 58% 60%, 56% 60%, 54% 60%, 52% 60%, 50% 60%, 48% 60%, 46% 60%, 44% 60%, 42% 60%, 40% 60%, 38% 60%, 36% 60%, 34% 60%, 32% 60%, 30% 60%, 28% 60%, 26% 60%, 24% 60%, 22% 60%, 20% 60%, 18% 60%, 16% 60%, 14% 60%, 12% 60%, 10% 60%, 8% 60%, 6% 60%, 4% 60%, 2% 60%, 0 60%);
+  animation: waveShift1 8s ease-in-out infinite;
   pointer-events: none;
   z-index: 1;
 }
@@ -90,14 +79,13 @@
 .container::after {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('data:image/svg+xml,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><style>.curve{stroke:rgba(3,136,255,0.2);stroke-width:1;fill:none;stroke-linecap:round;opacity:0.4;}</style></defs><path class="curve" d="M 0 400 Q 200 350 400 400 T 800 400 T 1200 400 T 1600 400 T 2000 400" stroke-dasharray="800" stroke-dashoffset="800"/><path class="curve" d="M 1800 600 Q 1600 550 1400 600 T 800 600 T 200 600" stroke-dasharray="700" stroke-dashoffset="700"/></svg>');
-  background-size: 100% 200px;
-  background-repeat: repeat-y;
-  animation: linePath2 10s ease-in-out infinite reverse;
+  bottom: 10%;
+  left: 0;
+  width: 200%;
+  height: 150px;
+  background: linear-gradient(90deg, transparent 0%, rgba(3, 136, 255, 0.2) 25%, rgba(3, 136, 255, 0.1) 50%, rgba(3, 136, 255, 0.2) 75%, transparent 100%);
+  clip-path: polygon(0 30%, 3% 20%, 6% 35%, 9% 15%, 12% 30%, 15% 20%, 18% 35%, 21% 15%, 24% 30%, 27% 20%, 30% 35%, 33% 15%, 36% 30%, 39% 20%, 42% 35%, 45% 15%, 48% 30%, 51% 20%, 54% 35%, 57% 15%, 60% 30%, 63% 20%, 66% 35%, 69% 15%, 72% 30%, 75% 20%, 78% 35%, 81% 15%, 84% 30%, 87% 20%, 90% 35%, 93% 15%, 96% 30%, 99% 20%, 100% 25%, 100% 70%, 99% 70%, 96% 70%, 93% 70%, 90% 70%, 87% 70%, 84% 70%, 81% 70%, 78% 70%, 75% 70%, 72% 70%, 69% 70%, 66% 70%, 63% 70%, 60% 70%, 57% 70%, 54% 70%, 51% 70%, 48% 70%, 45% 70%, 42% 70%, 39% 70%, 36% 70%, 33% 70%, 30% 70%, 27% 70%, 24% 70%, 21% 70%, 18% 70%, 15% 70%, 12% 70%, 9% 70%, 6% 70%, 3% 70%, 0 70%);
+  animation: waveShift2 10s ease-in-out infinite;
   pointer-events: none;
   z-index: 1;
 }
