@@ -48,7 +48,7 @@ const Header = () => {
   return pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ? null : (
-    <div className="centeredContent">
+    <div className="centeredContent" suppressHydrationWarning>
       {isScrolled && !isDashboard && (
         <div className={styles.stickyHeader}>
           <div className={styles.stickyContent}>
