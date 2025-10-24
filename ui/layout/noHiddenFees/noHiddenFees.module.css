@@ -299,7 +299,26 @@
 }
 
 .imageContainer {
-  display: none;
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.backgroundLogo {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  opacity: 0.15;
+  z-index: 1;
+  filter: drop-shadow(0 8px 16px rgba(3, 136, 255, 0.1));
+  animation: floatSlow 6s ease-in-out infinite;
 }
 
 .image {
