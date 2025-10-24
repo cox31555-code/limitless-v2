@@ -181,7 +181,10 @@ const Header = () => {
               onMouseEnter={() => setOpenDropdown("carVan")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <span className={styles.menuLink}>Car & Van</span>
+              <span className={styles.menuLink}>
+                Car & Van
+                <IconComponent type="chevron" />
+              </span>
               {openDropdown === "carVan" && (
                 <div className={styles.dropdown}>
                   {carVanItems.map((item, index) => (
@@ -193,6 +196,9 @@ const Header = () => {
                         router.push(item.href);
                       }}
                     >
+                      <span className={styles.dropdownIcon}>
+                        <IconComponent type={item.icon} />
+                      </span>
                       {item.label}
                     </span>
                   ))}
@@ -205,7 +211,10 @@ const Header = () => {
               onMouseEnter={() => setOpenDropdown("motorbike")}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <span className={styles.menuLink}>Motorbike</span>
+              <span className={styles.menuLink}>
+                Motorbike
+                <IconComponent type="chevron" />
+              </span>
               {openDropdown === "motorbike" && (
                 <div className={styles.dropdown}>
                   {motorbakeItems.map((item, index) => (
@@ -217,6 +226,9 @@ const Header = () => {
                         router.push(item.href);
                       }}
                     >
+                      <span className={styles.dropdownIcon}>
+                        <IconComponent type={item.icon} />
+                      </span>
                       {item.label}
                     </span>
                   ))}
