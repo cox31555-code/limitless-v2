@@ -1035,7 +1035,7 @@
   display: flex;
   align-items: center;
   gap: 1.4rem;
-  color: #000822;
+  color: #ffffff;
   text-decoration: none;
   padding: 1.3rem 2.4rem;
   font-size: 1.65rem;
@@ -1046,8 +1046,8 @@
 }
 
 .mobileDropdownItem:hover {
-  background: rgba(3, 136, 255, 0.1);
-  color: #0388ff;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
   padding-left: 2.8rem;
 }
 
