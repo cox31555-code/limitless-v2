@@ -89,17 +89,19 @@
 
 .arrowContainer {
   position: absolute;
-  right: 18px;
+  right: 1.2rem;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #0388ff;
 }
 
 .arrowDown {
-  transition: transform 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #0388ff;
 }
 
 .select:focus + .arrowContainer .arrowDown {
@@ -109,14 +111,15 @@
 .errorMessage {
   color: #ef4444;
   font-size: 1.2rem;
-  font-weight: 400;
-  margin-top: 0.5rem;
+  font-weight: 500;
+  margin-top: 0.6rem;
   display: block;
+  letter-spacing: 0.2px;
 }
 
 .error {
-  border: 2px solid #ef4444;
-  background: #fef2f2;
+  border: 1.5px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
 }
 .selected {
   color: rgba(0, 8, 34, 0.4);
