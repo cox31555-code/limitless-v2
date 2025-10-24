@@ -127,15 +127,13 @@
   content: '';
   position: absolute;
   bottom: 5%;
-  right: 5%;
-  width: 420px;
-  height: 480px;
-  background-image:
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 480"><defs><style>.grid{stroke:rgba(3,136,255,0.3);stroke-width:1.2;}.diag{stroke:rgba(3,136,255,0.25);stroke-width:1.5;}</style></defs><line x1="0" y1="60" x2="420" y2="60" class="grid"/><line x1="0" y1="140" x2="420" y2="140" class="grid"/><line x1="0" y1="220" x2="420" y2="220" class="grid"/><line x1="0" y1="300" x2="420" y2="300" class="grid"/><line x1="0" y1="380" x2="420" y2="380" class="grid"/><line x1="70" y1="0" x2="70" y2="480" class="grid"/><line x1="160" y1="0" x2="160" y2="480" class="grid"/><line x1="250" y1="0" x2="250" y2="480" class="grid"/><line x1="340" y1="0" x2="340" y2="480" class="grid"/><line x1="0" y1="480" x2="420" y2="0" class="diag"/><line x1="120" y1="480" x2="420" y2="80" class="diag"/><line x1="240" y1="480" x2="420" y2="200" class="diag"/><line x1="0" y1="180" x2="280" y2="0" class="diag"/><line x1="0" y1="80" x2="420" y2="480" class="diag"/><line x1="0" y1="280" x2="420" y2="480" class="diag"/></svg>');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0 10px 40px rgba(3, 136, 255, 0.1));
-  animation: floatLine2 12s ease-in-out infinite, drawIn2 9s ease-in-out 1.5s infinite;
+  right: 8%;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(ellipse 140% 140% at 40% 60%, rgba(3, 136, 255, 0.2) 0%, rgba(3, 136, 255, 0.08) 35%, transparent 75%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(70px);
+  animation: orb2 18s ease-in-out infinite;
   pointer-events: none;
   z-index: 1;
 }
