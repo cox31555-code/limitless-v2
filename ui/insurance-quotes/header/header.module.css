@@ -26,11 +26,11 @@
 }
 .subTitle {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 140%;
-  letter-spacing: 1.2px;
+  line-height: 130%;
+  letter-spacing: 1px;
   text-transform: uppercase;
   background: linear-gradient(90deg, #0388ff, #049cff);
   -webkit-background-clip: text;
@@ -39,14 +39,14 @@
 }
 .title {
   color: #fff;
-  font-size: 6.8rem;
+  font-size: 5.2rem;
   font-weight: 900;
   line-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.6rem;
-  letter-spacing: -1.2px;
+  gap: 1.2rem;
+  letter-spacing: -1px;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 .titleSpan {
