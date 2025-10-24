@@ -1,40 +1,40 @@
 .page {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
-  min-height: unset;
+  min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 50%, #e8f2ff 100%);
-  padding: 7rem 3rem;
-  gap: 1.5rem;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 25%, #f8fbff 50%, #f0f7ff 75%, #e8f4ff 100%);
+  padding: 0;
   margin: 0;
 }
 
 .page::before {
   content: '';
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(3, 136, 255, 0.15) 0%, transparent 70%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.12) 0%, transparent 70%);
   border-radius: 50%;
-  top: -100px;
-  left: -100px;
-  animation: float 20s ease-in-out infinite;
-  z-index: 0;
+  top: -200px;
+  left: -300px;
+  animation: float 25s ease-in-out infinite;
+  z-index: 1;
 }
 
 .page::after {
   content: '';
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(4, 156, 255, 0.12) 0%, transparent 70%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(4, 156, 255, 0.1) 0%, transparent 70%);
   border-radius: 50%;
-  bottom: -200px;
-  right: -150px;
-  animation: float 25s ease-in-out infinite reverse;
-  z-index: 0;
+  bottom: -250px;
+  right: -200px;
+  animation: float 30s ease-in-out infinite reverse;
+  z-index: 1;
 }
 
 .contact {
