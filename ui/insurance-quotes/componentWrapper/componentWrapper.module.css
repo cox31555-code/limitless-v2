@@ -1,33 +1,52 @@
 .container {
   width: 100%;
-  padding: 2.7rem 1.4rem 1.4rem;
-  border-radius: 18px;
-  background: #e5ebfe;
+  padding: 3.2rem 3.2rem 2.8rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.06);
+  backdrop-filter: blur(10px);
 }
 .header {
   display: flex;
   align-items: center;
-  gap: 2.4rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
 }
 .title {
   color: #000822;
-  font-size: 4.4rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 110%;
+  letter-spacing: -0.5px;
+}
+.icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
 }
 @media screen and (max-width: 900px) {
   .container {
-    padding: 2.4rem 1.4rem 1.4rem;
+    padding: 2.4rem 2rem 2rem;
   }
   .icon {
-    width: 3.7rem;
-    height: 3.7rem;
+    width: 4rem;
+    height: 4rem;
   }
   .header {
-    gap: 1.5rem;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.8rem;
   }
   .title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 }
