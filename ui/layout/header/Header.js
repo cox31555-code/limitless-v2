@@ -34,6 +34,48 @@ const Header = () => {
     pathname === "/forget-password" ||
     pathname === "/change-password" ? null : (
     <div className="centeredContent">
+      {isScrolled && !isDashboard && (
+        <div className={styles.stickyHeader}>
+          <div className={styles.stickyContent}>
+            <div className={styles.stickyLogoContainer}>
+              <Image
+                onClick={() => router.push("/")}
+                className={styles.stickyLogo}
+                src="/svg/logo.svg"
+                alt="logo"
+                width={50}
+                height={50}
+              />
+            </div>
+            <nav className={styles.stickyMenu}>
+              <Link href="/temporary">Temporary</Link>
+              <Link href="/impound">Impound</Link>
+              <Link href="/coming-soon">Courier</Link>
+              <Link href="/contact">Contact</Link>
+            </nav>
+            <div className={styles.stickyButtons}>
+              <button
+                className={styles.stickyLoginBtn}
+                onClick={() => router.push("/login")}
+              >
+                Login
+              </button>
+              <button
+                className={styles.stickyQuoteBtn}
+                onClick={() => router.push("/temporary/get-quote")}
+              >
+                Get Quote
+                <Image
+                  src="/svg/arrow-right.svg"
+                  alt="arrow-right"
+                  width={20}
+                  height={10}
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
