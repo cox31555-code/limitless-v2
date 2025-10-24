@@ -1,33 +1,33 @@
 export const annualFeatures = [
   {
     img: {
-      src: "/svg/insurance-types.svg",
-      alt: "insurance types",
+      src: "/svg/unbeatable-rates.svg",
+      alt: "unbeatable rates",
       width: 64,
       height: 64,
     },
-    title: "Multiple Insurance Types",
-    description: "Get covered for comprehensive annual car insurance plans",
+    title: "Unbeatable rates",
+    description: "Slash your premiums with our unbeatable UK-wide rates saving, up to 50% on coverage.",
   },
   {
     img: {
-      src: "/svg/all-ages.svg",
-      alt: "age eligibility",
+      src: "/svg/comprehensive-protection.svg",
+      alt: "comprehensive protection",
       width: 64,
       height: 64,
     },
-    title: "All Ages Welcome",
-    description: "Available to drivers aged 18-75 years old",
+    title: "Comprehensive protection",
+    description: "Enjoy peace of mind with theft, accident plus 24/7 support and instant online quotes.",
   },
   {
     img: {
-      src: "/svg/vehicle-types.svg",
-      alt: "vehicle eligibility",
+      src: "/svg/drive-freedom.svg",
+      alt: "drive with freedom",
       width: 64,
       height: 64,
     },
-    title: "Any Vehicle Type",
-    description: "Cars, vans, scooters, motor-homes and more",
+    title: "Drive with freedom",
+    description: "Enjoy driving without invasive telematics devices monitoring your every move.",
   },
 ];
 
