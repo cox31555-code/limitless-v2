@@ -402,17 +402,28 @@
     gap: 2.4rem;
   }
 
-  .scoreText,
-  .reviewCount {
-    font-size: 1.4rem;
+  .statNumber {
+    font-size: 1.6rem;
   }
 
-  .stars svg {
-    width: 1.6rem;
-    height: 1.6rem;
+  .statLabel {
+    font-size: 1.1rem;
   }
 
-  .rating img {
+  .trustStats {
+    gap: 1.6rem;
+  }
+
+  .trustStat {
+    gap: 0.8rem;
+  }
+
+  .statIcon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .statIcon svg {
     width: 2rem;
     height: 2rem;
   }
