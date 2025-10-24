@@ -82,16 +82,19 @@
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menuLink:hover {
+.menuLink:hover,
+.menuItem:hover .menuLink {
   color: #ffffff;
   transform: scale(1.06);
 }
 
-.menuLink:hover::before {
+.menuLink:hover::before,
+.menuItem:hover .menuLink::before {
   opacity: 1;
 }
 
-.menuLink:hover::after {
+.menuLink:hover::after,
+.menuItem:hover .menuLink::after {
   width: 50%;
 }
 
@@ -803,7 +806,8 @@
 .dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -915,20 +919,23 @@
   border-radius: 2px;
 }
 
-.stickyMenuButton:hover {
+.stickyMenuButton:hover,
+.stickyDropdownContainer:hover .stickyMenuButton {
   color: #fff;
   background: rgba(3, 136, 255, 0.1);
   border-radius: 8px;
 }
 
-.stickyMenuButton:hover::after {
+.stickyMenuButton:hover::after,
+.stickyDropdownContainer:hover .stickyMenuButton::after {
   width: 80%;
 }
 
 .stickyDropdown {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: linear-gradient(135deg, rgba(0, 8, 34, 0.98) 0%, rgba(10, 15, 46, 0.98) 100%);
   border: 1px solid rgba(3, 136, 255, 0.2);
   border-radius: 8px;
