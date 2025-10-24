@@ -224,10 +224,10 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
+  gap: 2.4rem;
   position: relative;
   z-index: 3;
-  max-width: 117rem;
+  max-width: 131.2rem;
   width: 100%;
   margin: 0 auto;
 }
