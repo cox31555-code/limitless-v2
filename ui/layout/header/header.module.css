@@ -631,7 +631,7 @@
 
 .stickyContent {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
@@ -659,13 +659,11 @@
   display: flex;
   gap: 0.5rem;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 auto;
   padding: 0;
   justify-content: center;
-  position: absolute;
-  right: 280px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative;
+  flex-shrink: 0;
 }
 
 .stickyMenu a {
