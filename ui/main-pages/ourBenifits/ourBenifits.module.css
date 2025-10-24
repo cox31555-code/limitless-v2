@@ -32,6 +32,8 @@
   gap: 2.4rem;
   max-width: 80rem;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .title {
