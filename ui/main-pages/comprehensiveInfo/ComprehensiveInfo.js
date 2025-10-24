@@ -170,11 +170,12 @@ const ComprehensiveInfo = () => {
             What is <span className={styles.highlight}>Comprehensive?</span>
           </h2>
           <p className={`${styles.description} ${manrope.className}`}>
-            Comprehensive car insurance is the highest level of cover you can get for your vehicle. 
-            It protects you against damage to your own car as well as other people's property and 
-            injuries. This includes accidents, theft, fire, and vandalism. With comprehensive cover, 
-            you'll have peace of mind knowing you're protected in most situations on the road. It's 
-            ideal for newer cars or if you want maximum protection for your vehicle.
+            Comprehensive car insurance is the highest level of protection available. It covers
+            damage to your own vehicle from accidents, theft, fire, and malicious damage – plus
+            full liability for damage you cause to others' vehicles and property. With comprehensive
+            cover, you're protected in virtually all road scenarios, giving you complete peace of
+            mind whether driving in town, on motorways, or parked up. It's the ideal choice for
+            newer cars, financed vehicles, or if you want the best possible protection.
           </p>
           <button className={`${styles.readMoreBtn} ${poppins.className}`}>
             <span>Read more</span>
