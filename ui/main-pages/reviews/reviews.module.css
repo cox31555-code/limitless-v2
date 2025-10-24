@@ -1,36 +1,68 @@
-@keyframes floatSlow {
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+@keyframes softFloat {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-8px);
   }
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
   }
   50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes shimmerWave {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
+    opacity: 0.7;
   }
 }
 
 .wrapper {
   width: 100%;
-  background: linear-gradient(135deg, #000822 0%, #0a0f2e 50%, #000822 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f5fb 50%, #f8fafc 100%);
   padding: 8rem 0;
   position: relative;
   overflow: hidden;
@@ -39,13 +71,13 @@
 .wrapper::before {
   content: '';
   position: absolute;
-  top: -30%;
-  left: -15%;
-  width: 50rem;
-  height: 50rem;
+  top: -20%;
+  right: -10%;
+  width: 60rem;
+  height: 60rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(3, 136, 255, 0.12) 0%, transparent 70%);
-  animation: floatSlow 8s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.08) 0%, transparent 70%);
+  animation: softFloat 8s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
 }
@@ -53,13 +85,13 @@
 .wrapper::after {
   content: '';
   position: absolute;
-  bottom: -20%;
-  right: -10%;
-  width: 40rem;
-  height: 40rem;
+  bottom: -15%;
+  left: -10%;
+  width: 50rem;
+  height: 50rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(3, 136, 255, 0.08) 0%, transparent 70%);
-  animation: floatSlow 10s ease-in-out infinite reverse;
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.06) 0%, transparent 70%);
+  animation: softFloat 10s ease-in-out infinite reverse;
   pointer-events: none;
   z-index: 0;
 }
@@ -67,7 +99,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
   width: 100%;
   padding: 0 3.4%;
   max-width: 1400px;
@@ -79,232 +111,191 @@
 .headerSection {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
   text-align: center;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-  animation: slideUp 0.8s ease forwards;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  animation: slideInFromLeft 0.8s ease forwards;
 }
 
 .title {
-  color: #fff;
-  font-size: 5rem;
+  color: #000822;
+  font-size: 4.8rem;
   font-weight: 800;
   line-height: 110%;
-  letter-spacing: -1.5px;
-  background: linear-gradient(135deg, #ffffff 0%, #d4e4ff 40%, #0388ff 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 8s ease infinite;
+  letter-spacing: -1px;
 }
 
 .subtitle {
-  color: #a8b5c4;
+  color: #5a6b7d;
   font-size: 1.8rem;
   font-weight: 400;
-  line-height: 150%;
-  letter-spacing: 0.3px;
+  line-height: 140%;
 }
 
 .badgeSection {
   display: flex;
   justify-content: center;
-  animation: slideUp 1s ease forwards;
+  animation: slideInFromRight 0.8s ease forwards;
   animation-delay: 0.2s;
   opacity: 0;
 }
 
 .trustpilotBadge {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 2rem;
-  padding: 3.2rem 4rem;
-  box-shadow: 0 20px 60px rgba(3, 136, 255, 0.2);
-  border: 1.5px solid rgba(3, 136, 255, 0.3);
+  background: white;
+  border-radius: 1.8rem;
+  padding: 2.8rem 3.6rem;
+  box-shadow: 0 8px 32px rgba(0, 8, 34, 0.1);
+  border: 1.5px solid #e8ecf1;
   display: inline-block;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
 }
 
-.trustpilotBadge::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 2rem;
-  padding: 1.5px;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.5) 0%, rgba(0, 221, 193, 0.3) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.trustpilotBadge:hover::before {
-  opacity: 1;
-}
-
 .trustpilotBadge:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(3, 136, 255, 0.6);
-  box-shadow: 0 30px 80px rgba(3, 136, 255, 0.3);
-  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(3, 136, 255, 0.15);
+  transform: translateY(-4px);
+  border-color: #0388ff;
 }
 
 .badgeContent {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2.4rem;
 }
 
 .logoWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   flex-shrink: 0;
-  background: rgba(0, 221, 193, 0.15);
-  border-radius: 1.4rem;
-  border: 1px solid rgba(0, 221, 193, 0.3);
+  background: #f0f8f7;
+  border-radius: 1.2rem;
+  border: 1.5px solid #d4f1ed;
 }
 
 .badgeInfo {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  text-align: left;
+  gap: 0.8rem;
 }
 
 .ratingDisplay {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.2rem;
 }
 
 .ratingNumber {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   font-weight: 800;
-  color: #fff;
+  color: #000822;
   line-height: 100%;
 }
 
 .starsRow {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .starsRow .star {
   color: #ffc107;
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 100%;
-  text-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
 }
 
 .filledStar {
   color: #ffc107;
-  font-size: 1.4rem;
-  text-shadow: 0 0 6px rgba(255, 193, 7, 0.4);
+  font-size: 1.6rem;
 }
 
 .reviewCount {
-  color: #a8b5c4;
-  font-size: 1.5rem;
+  color: #5a6b7d;
+  font-size: 1.4rem;
   font-weight: 500;
-  line-height: 140%;
-  letter-spacing: 0.3px;
+  line-height: 100%;
 }
 
-.reviewsGrid {
+.carouselSection {
   width: 100%;
-  display: flex;
-  gap: 2.4rem;
   position: relative;
   z-index: 1;
-}
-
-.desktopGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.8rem;
-  width: 100%;
-}
-
-.mobileCarousel {
-  display: none;
-}
-
-.reviewCard {
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 1.6rem;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  height: 100%;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-}
-
-.reviewCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(3, 136, 255, 0.15), transparent);
-  animation: shimmerWave 3s ease-in-out;
-  pointer-events: none;
+  animation: slideInFromLeft 0.8s ease forwards;
+  animation-delay: 0.4s;
   opacity: 0;
 }
 
-.reviewCard:hover::before {
-  animation: shimmerWave 0.6s ease-in-out forwards;
+.carouselContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.carouselTrack {
+  flex: 1;
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.reviewSlide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: none;
+  pointer-events: none;
+}
+
+.reviewSlide.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInFromRight 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  pointer-events: auto;
+}
+
+.reviewSlide:not(.activeSlide) {
+  animation: fadeOutRight 0.6s ease forwards;
+}
+
+.reviewCard {
+  background: white;
+  border-radius: 1.6rem;
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  border: 1.5px solid #e8ecf1;
+  box-shadow: 0 8px 24px rgba(0, 8, 34, 0.08);
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .reviewCard:hover {
-  transform: translateY(-12px) scale(1.02);
-  background: rgba(255, 255, 255, 0.11);
-  box-shadow: 0 20px 60px rgba(3, 136, 255, 0.25);
-  border-color: rgba(3, 136, 255, 0.5);
+  box-shadow: 0 16px 40px rgba(3, 136, 255, 0.12);
+  border-color: #0388ff;
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
   gap: 1rem;
-  position: relative;
-  z-index: 2;
 }
 
 .reviewText {
-  color: #d4dce6;
-  font-size: 1.5rem;
+  color: #2a3640;
+  font-size: 1.6rem;
   font-weight: 400;
-  line-height: 170%;
+  line-height: 160%;
   flex: 1;
-  position: relative;
-  z-index: 2;
+  font-style: italic;
 }
 
 .cardFooter {
@@ -313,23 +304,20 @@
   justify-content: space-between;
   gap: 1.6rem;
   padding-top: 1.6rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  position: relative;
-  z-index: 2;
+  border-top: 1px solid #e8ecf1;
 }
 
 .authorInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.4rem;
 }
 
 .authorName {
-  color: #fff;
+  color: #000822;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: 0.3px;
 }
 
 .reviewDate {
@@ -342,29 +330,84 @@
 .verifiedBadge {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  background: rgba(0, 221, 193, 0.15);
-  border: 1.2px solid rgba(0, 221, 193, 0.5);
+  gap: 0.6rem;
+  background: #f0f8f7;
+  border: 1.2px solid #d4f1ed;
   border-radius: 0.9rem;
   padding: 0.7rem 1.2rem;
   flex-shrink: 0;
-  position: relative;
-  z-index: 2;
-  font-weight: 600;
 }
 
 .verifiedBadge span {
-  color: #00ddc1;
+  color: #00b582;
   font-size: 1.2rem;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: 0.2px;
+}
+
+.carouselButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  border: 1.5px solid #e8ecf1;
+  cursor: pointer;
+  color: #0388ff;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.carouselButton:hover {
+  background: #0388ff;
+  color: white;
+  border-color: #0388ff;
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.2);
+}
+
+.carouselButton:active {
+  transform: scale(0.95);
+}
+
+.paginationDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e8ecf1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 0;
+}
+
+.dot:hover {
+  background: #0388ff;
+  transform: scale(1.2);
+}
+
+.dot.activeDot {
+  background: #0388ff;
+  width: 28px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 @media screen and (max-width: 1200px) {
   .container {
     padding: 0 3.4%;
-    gap: 4rem;
+    gap: 3.6rem;
   }
 
   .title {
@@ -375,9 +418,12 @@
     gap: 2rem;
   }
 
-  .desktopGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.4rem;
+  .carouselTrack {
+    height: 360px;
+  }
+
+  .reviewCard {
+    padding: 2.8rem;
   }
 }
 
@@ -388,12 +434,7 @@
 
   .container {
     padding: 0 4%;
-    gap: 4rem;
-  }
-
-  .headerSection {
-    max-width: 100%;
-    gap: 1.6rem;
+    gap: 3.2rem;
   }
 
   .title {
@@ -404,23 +445,19 @@
     font-size: 1.6rem;
   }
 
-  .badgeSection {
-    justify-content: center;
-  }
-
   .trustpilotBadge {
     padding: 2.4rem 3rem;
   }
 
   .badgeContent {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.6rem;
     text-align: center;
   }
 
   .logoWrapper {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
   }
 
   .badgeInfo {
@@ -428,84 +465,31 @@
   }
 
   .ratingNumber {
-    font-size: 3rem;
-  }
-
-  .desktopGrid {
-    display: none;
-  }
-
-  .mobileCarousel {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
-    width: 100%;
+    font-size: 2.8rem;
   }
 
   .carouselTrack {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
-    width: 100%;
+    height: 400px;
   }
 
-  .reviewCard {
-    padding: 2.4rem;
-  }
-
-  .reviewText {
-    font-size: 1.4rem;
-  }
-
-  .authorName {
-    font-size: 1.5rem;
-  }
-
-  .paginationDots {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    padding: 0;
-  }
-
-  .dot:hover {
-    background: rgba(0, 221, 193, 0.6);
-    border-color: rgba(0, 221, 193, 1);
-    transform: scale(1.3);
-  }
-
-  .dot.activeDot {
-    background: #00ddc1;
-    border-color: #00ddc1;
-    transform: scale(1.4);
-    box-shadow: 0 0 12px rgba(0, 221, 193, 0.6);
+  .carouselButton {
+    width: 48px;
+    height: 48px;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .wrapper {
     padding: 4rem 0;
   }
 
   .container {
     padding: 0 4%;
-    gap: 3rem;
+    gap: 2.8rem;
   }
 
   .title {
     font-size: 2.4rem;
-    letter-spacing: -0.8px;
   }
 
   .subtitle {
@@ -519,7 +503,7 @@
 
   .badgeContent {
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 1.4rem;
   }
 
   .ratingDisplay {
@@ -528,11 +512,72 @@
   }
 
   .ratingNumber {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
+  }
+
+  .carouselContainer {
+    gap: 1rem;
+  }
+
+  .carouselTrack {
+    height: 450px;
   }
 
   .reviewCard {
     padding: 2rem;
+  }
+
+  .reviewText {
+    font-size: 1.4rem;
+  }
+
+  .authorName {
+    font-size: 1.5rem;
+  }
+
+  .carouselButton {
+    width: 44px;
+    height: 44px;
+  }
+
+  .paginationDots {
+    margin-top: 2rem;
+    gap: 0.6rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.activeDot {
+    width: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .carouselContainer {
+    gap: 0.8rem;
+  }
+
+  .carouselTrack {
+    height: 520px;
+  }
+
+  .reviewCard {
+    padding: 1.6rem;
   }
 
   .reviewText {
@@ -542,11 +587,15 @@
   .cardFooter {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.2rem;
   }
 
   .verifiedBadge {
     width: 100%;
     justify-content: center;
+  }
+
+  .carouselButton {
+    width: 40px;
+    height: 40px;
   }
 }
