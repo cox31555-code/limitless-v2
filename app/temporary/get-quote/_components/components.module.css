@@ -206,11 +206,11 @@
 .selections {
   display: flex;
   width: 100%;
-  gap: 1.8rem;
-  /* margin: 1.4rem 0; */
+  gap: 2rem;
 }
 .selections2 > div {
   flex: 1;
+  min-width: 0;
 }
 .selections2 {
   display: flex;
