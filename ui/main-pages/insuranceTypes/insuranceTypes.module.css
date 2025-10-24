@@ -227,6 +227,46 @@
   letter-spacing: 0.56px;
 }
 
+.ctaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 1.2rem 2.4rem;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: auto;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
+}
+
+.ctaButton:hover {
+  background: linear-gradient(135deg, #049cff 0%, #0388ff 100%);
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
+}
+
+.ctaButton svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover svg {
+  transform: translateX(4px);
+}
+
 @media screen and (max-width: 1200px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
