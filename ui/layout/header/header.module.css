@@ -43,7 +43,7 @@
 
 .menuLink {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1.65rem;
+  font-size: 1.55rem;
   font-weight: 600;
   line-height: 124%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,32 +59,31 @@
 .menuLink::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, transparent 100%);
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: -1;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0388ff, #049cff);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menuLink:hover {
   color: #ffffff;
-  background: rgba(3, 136, 255, 0.15);
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 .menuLink:hover::before {
-  opacity: 1;
+  width: 50%;
 }
 
 .activeMenuLink {
-  color: #49d1ff;
-  background: rgba(3, 136, 255, 0.2);
-  font-weight: 700;
+  color: #049cff;
 }
 
 .activeMenuLink::before {
-  opacity: 1;
+  width: 50%;
 }
 
 /* Buttons Container */
