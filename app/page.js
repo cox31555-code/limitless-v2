@@ -5,6 +5,7 @@ import ChooseService from "../ui/main-pages/chooseService/ChooseService";
 import OurBenifits from "../ui/main-pages/ourBenifits/OurBenifits";
 import QuestionsAnswered from "../ui/main-pages/questionsAnswered/QuestionsAnswered";
 import Reviews from "../ui/main-pages/reviews/Reviews";
+import { homeFeatures, homeBenefits } from "./homeData";
 
 export const metadata = {
   title: "Cheapest Impound & Temporary Insurance | Limitless Cover",
