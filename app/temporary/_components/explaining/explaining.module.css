@@ -284,15 +284,19 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .container {
-    gap: 6rem;
+    gap: 6.4rem;
   }
 
   .sectionTitle {
-    font-size: 4rem;
+    font-size: 4.2rem;
   }
 
   .description {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+  }
+
+  .stepsGrid {
+    gap: 2.4rem;
   }
 }
 
@@ -302,66 +306,69 @@
   }
 
   .container {
-    gap: 4.8rem;
+    gap: 5.2rem;
   }
 
   .sectionTitle {
-    font-size: 3.2rem;
+    font-size: 3.6rem;
   }
 
   .description {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .keyFeatures {
-    padding: 2.4rem;
+    padding: 2.8rem;
+    gap: 1.8rem;
   }
 
   .featureHeader {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .featureItem {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    gap: 1.2rem;
   }
 
   .concludingText {
-    font-size: 1.6rem;
-    padding: 2rem;
+    font-size: 1.7rem;
+    padding: 2.4rem;
   }
 
   .stepsGrid {
-    gap: 2rem;
+    gap: 2.2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .stepCard {
-    padding: 2.2rem;
+    padding: 2.6rem;
   }
 
   .stepNumber {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .stepTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .stepDescription {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .processNote {
-    padding: 2.2rem;
+    padding: 2.6rem;
   }
 
   .processNote p {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .wrapper {
-    padding: 4rem 0;
+    padding: 4.8rem 0;
   }
 
   .container {
@@ -370,57 +377,58 @@
   }
 
   .sectionTitle {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 
   .description {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .keyFeatures {
-    padding: 2rem;
+    padding: 2.2rem;
+    gap: 1.4rem;
   }
 
   .featureHeader {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .featureItem {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     gap: 1rem;
   }
 
   .concludingText {
-    font-size: 1.5rem;
-    padding: 1.6rem;
+    font-size: 1.6rem;
+    padding: 2rem;
   }
 
   .stepsGrid {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 1.8rem;
   }
 
   .stepCard {
-    padding: 1.8rem;
+    padding: 2rem;
   }
 
   .stepNumber {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
   .stepTitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .stepDescription {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .processNote {
-    padding: 1.8rem;
+    padding: 2rem;
   }
 
   .processNote p {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
