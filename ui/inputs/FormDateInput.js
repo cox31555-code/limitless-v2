@@ -16,6 +16,8 @@ const FormDateInput = forwardRef(
       onBlur,
       value,
       allowPastDates = false,
+      isDateOfBirth = false,
+      maxDate = null,
       ...props
     },
     ref
