@@ -274,20 +274,47 @@
   gap: 5.4rem;
 }
 
-/* personal details container */
-.personalDetailsContainer {
+/* Personal Details Form */
+.formContent {
+  display: flex;
+  flex-direction: column;
   gap: 2.8rem;
 }
 
-.personalSection,
-.employmentSection,
-.carUsageSection,
-.licenseSection,
-.declarationsSection {
+.formSection {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  padding: 0;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+  align-items: start;
+}
+
+.postcodeRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.2rem;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.findAddressButton {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.findAddressButton button {
+  width: 100%;
+  height: 5.2rem;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .parkingGrid {
@@ -297,21 +324,21 @@
   width: 100%;
 }
 
-.parkingOption {
+.parkingCard {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.usageSubsection {
+.usageTypeWrapper {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
   padding-bottom: 1.6rem;
   border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 
-.subsectionLabel {
+.usageLabel {
   color: #5a6b7d;
   font-size: 1.4rem;
   font-weight: 600;
@@ -319,7 +346,11 @@
   margin: 0;
 }
 
-.declarationQuestion {
+.selections3 {
+  width: 100%;
+}
+
+.declarationItem {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -330,12 +361,12 @@
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.declarationQuestion:hover {
+.declarationItem:hover {
   border-color: rgba(3, 136, 255, 0.15);
   background: #f0f6ff;
 }
 
-.questionTitle {
+.declarationQuestion {
   color: #000822;
   font-size: 1.3rem;
   font-weight: 600;
