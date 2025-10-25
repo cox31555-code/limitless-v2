@@ -119,7 +119,7 @@ const PersonalDetailsForm = ({ form }) => {
         
         {/* Personal Information Section */}
         <div className={styles.formSection}>
-          <Title title="Your Details" />
+          <h3 className={styles.sectionTitle}>Your Details</h3>
           
           <div className={styles.formRow}>
             <FormTextInput
