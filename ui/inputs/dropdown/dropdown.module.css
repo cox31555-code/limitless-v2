@@ -208,7 +208,77 @@
     gap: 1.4rem;
   }
   .dropdown {
-    padding: 1.8rem;
+    padding: 1.4rem 1.6rem;
     border-radius: 12px;
+  }
+
+  .selectWrapper {
+    border-radius: 12px;
+  }
+
+  .select {
+    padding: 1.4rem 2.6rem 1.4rem 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .arrowContainer {
+    right: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 6px;
+  }
+
+  .arrowDown {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .label {
+    font-size: 1.2rem;
+  }
+
+  .dropdownOptions {
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+
+  .dropdownOption,
+  .selectedOption {
+    padding: 0.8rem 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 1.2rem;
+  }
+
+  .dropdown {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .select {
+    padding: 1.2rem 2.4rem 1.2rem 1.4rem;
+    font-size: 1.3rem;
+  }
+
+  .arrowContainer {
+    right: 0.8rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .arrowDown {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .label {
+    font-size: 1.1rem;
+  }
+
+  .selectWrapper {
+    border-radius: 10px;
   }
 }
