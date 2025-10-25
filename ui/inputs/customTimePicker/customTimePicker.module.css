@@ -10,17 +10,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  overflow: visible;
 }
 
 .timeInput {
