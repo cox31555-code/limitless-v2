@@ -148,6 +148,24 @@
   min-width: 0;
 }
 
+.progressiveRow {
+  animation: progressiveSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  grid-template-columns: 1fr;
+}
+
+@keyframes progressiveSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+  }
+}
+
 /* Section Header for Vehicle Details */
 .vehicleDetailsSection {
   padding: 2.4rem 3.2rem;
