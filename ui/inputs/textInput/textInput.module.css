@@ -20,6 +20,12 @@
   align-items: center;
   gap: 1.6rem;
 }
+
+.wrapper > button {
+  flex-shrink: 0;
+  width: auto;
+  min-width: 16rem;
+}
 .inputContainer.error {
   border: 2px solid #ef4444;
   background: rgba(239, 68, 68, 0.04);
