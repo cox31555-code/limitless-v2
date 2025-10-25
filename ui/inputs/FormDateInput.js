@@ -166,52 +166,64 @@ const FormDateInput = forwardRef(
     // Date picker component
     if (type === "date") {
       return (
-        <div className={styles.container}>
-          <div className={styles.inputGroup}>
-            <label className={styles.label}>{dateLabel}</label>
+        <>
+          <div className={styles.container}>
+            <div className={styles.inputGroup}>
+              <label className={styles.label}>{dateLabel}</label>
 
-            <div className={styles.inputContainer} onClick={openDatePicker} ref={inputContainerRef}>
-              <div className={styles.iconContainer}>
+              <div className={styles.inputContainer} onClick={openDatePicker} ref={inputContainerRef}>
+                <div className={styles.iconContainer}>
+                  <Image
+                    src="/svg/date.svg"
+                    alt="calendar"
+                    width={24}
+                    height={24}
+                    className={styles.icon}
+                  />
+                </div>
+                <input
+                  ref={ref}
+                  name={name}
+                  value={formatDateDisplay(value) || ""}
+                  onChange={() => {}} // Dummy onChange to satisfy React
+                  placeholder="DD/MM/YYYY"
+                  className={styles.input}
+                  type="text"
+                  readOnly
+                  onBlur={onBlur}
+                  {...props}
+                />
                 <Image
-                  src="/svg/date.svg"
-                  alt="calendar"
+                  src="/svg/arrow-down.svg"
+                  alt="arrow-down"
                   width={24}
                   height={24}
-                  className={styles.icon}
+                  className={styles.arrowDown}
                 />
               </div>
-              <input
-                ref={ref}
-                name={name}
-                value={formatDateDisplay(value) || ""}
-                onChange={() => {}} // Dummy onChange to satisfy React
-                placeholder="DD/MM/YYYY"
-                className={styles.input}
-                type="text"
-                readOnly
-                onBlur={onBlur}
-                {...props}
-              />
-              <Image
-                src="/svg/arrow-down.svg"
-                alt="arrow-down"
-                width={24}
-                height={24}
-                className={styles.arrowDown}
-              />
-            </div>
 
-            {showDatePicker && (
+              {error && (
+                <span
+                  className={styles.error}
+                  style={{
+                    color: "#ef4444",
+                    fontSize: "1.2rem",
+                    marginTop: "0.5rem",
+                  }}
+                >
+                  {error.message}
+                </span>
+              )}
+            </div>
+          </div>
+
+          {showDatePicker && (
+            <>
               <div
-                className={`${styles.datePickerWrapper} ${
-                  pickerPosition.showAbove ? styles.showAbove : styles.showBelow
-                }`}
-                style={{
-                  top: pickerPosition.top,
-                  bottom: pickerPosition.bottom,
-                }}
-                onClick={(e) => e.stopPropagation()}
-              >
+                className={styles.modalOverlay}
+                onClick={closeDatePicker}
+              />
+              <div className={styles.pickerContainer}>
                 <CustomDatePicker
                   selectedDate={parseDate(value)}
                   onDateSelect={handleDateSelect}
@@ -223,22 +235,9 @@ const FormDateInput = forwardRef(
                   }
                 />
               </div>
-            )}
-
-            {error && (
-              <span
-                className={styles.error}
-                style={{
-                  color: "#ef4444",
-                  fontSize: "1.2rem",
-                  marginTop: "0.5rem",
-                }}
-              >
-                {error.message}
-              </span>
-            )}
-          </div>
-        </div>
+            </>
+          )}
+        </>
       );
     }
 
