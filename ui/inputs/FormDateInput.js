@@ -229,7 +229,7 @@ const FormDateInput = forwardRef(
                 className={styles.modalOverlay}
                 onClick={closeDatePicker}
               />
-              <div className={styles.pickerContainer}>
+              <div className={styles.pickerContainer} ref={datePickerRef}>
                 <CustomDatePicker
                   selectedDate={parseDate(value)}
                   onDateSelect={handleDateSelect}
