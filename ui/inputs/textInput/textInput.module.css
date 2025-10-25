@@ -3,7 +3,7 @@
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   width: 100%;
   flex: 1;
 }
@@ -14,7 +14,6 @@
   line-height: 130%;
   letter-spacing: 0.2px;
   text-transform: capitalize;
-  margin: 0 0 0.8rem 0;
 }
 .wrapper {
   display: flex;
