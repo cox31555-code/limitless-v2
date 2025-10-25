@@ -92,30 +92,16 @@ const CoverDetailsForm = ({ form }) => {
                   setSelectedItem={handlePeriodChange}
                 />
                 {getDropdownOptions().length > 0 && (
-                  <div className={styles.dropdownOption}>
-                    <select
-                      className={`${styles.customDropdown} ${
-                        period && getDropdownOptions().includes(period.toString())
-                          ? styles.dropdownSelected
-                          : ""
-                      }`}
-                      value={
-                        period && getDropdownOptions().includes(period.toString())
-                          ? period.toString()
-                          : ""
-                      }
-                      onChange={handleDropdownChange}
-                    >
-                      <option value="" disabled>
-                        More
-                      </option>
-                      {getDropdownOptions().map((option) => (
-                        <option key={option} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                  <FormDropdown
+                    placeholder="More"
+                    options={getDropdownOptions()}
+                    value={
+                      period && getDropdownOptions().includes(period.toString())
+                        ? period.toString()
+                        : ""
+                    }
+                    onChange={handleDropdownChange}
+                  />
                 )}
               </div>
             </div>
