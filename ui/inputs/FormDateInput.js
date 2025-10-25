@@ -259,79 +259,76 @@ const FormDateInput = forwardRef(
       const closeTimePicker = () => setShowTimePicker(false);
 
       return (
-        <div className={styles.container}>
-          <div className={styles.inputGroup}>
-            <label className={styles.label}>{timeLabel}</label>
+        <>
+          <div className={styles.container}>
+            <div className={styles.inputGroup}>
+              <label className={styles.label}>{timeLabel}</label>
 
-            <div
-              className={styles.inputContainer}
-              onClick={openTimePicker}
-              ref={inputContainerRef}
-            >
-              <div className={styles.iconContainer}>
+              <div
+                className={styles.inputContainer}
+                onClick={openTimePicker}
+                ref={inputContainerRef}
+              >
+                <div className={styles.iconContainer}>
+                  <Image
+                    src="/svg/time.svg"
+                    alt="time"
+                    width={24}
+                    height={24}
+                    className={styles.icon}
+                  />
+                </div>
+                <input
+                  ref={ref}
+                  name={name}
+                  value={value || ""}
+                  onChange={() => {}}
+                  placeholder="--:--"
+                  className={styles.input}
+                  type="text"
+                  readOnly
+                  onBlur={onBlur}
+                />
                 <Image
-                  src="/svg/time.svg"
-                  alt="time"
+                  src="/svg/arrow-down.svg"
+                  alt="arrow-down"
                   width={24}
                   height={24}
-                  className={styles.icon}
+                  className={styles.arrowDown}
                 />
               </div>
-              <input
-                ref={ref}
-                name={name}
-                value={value || ""}
-                onChange={() => {}}
-                placeholder="--:--"
-                className={styles.input}
-                type="text"
-                readOnly
-                onBlur={onBlur}
-              />
-              <Image
-                src="/svg/arrow-down.svg"
-                alt="arrow-down"
-                width={24}
-                height={24}
-                className={styles.arrowDown}
-              />
-            </div>
 
-            {showTimePicker && (
+              {error && (
+                <span
+                  className={styles.error}
+                  style={{
+                    color: "#ef4444",
+                    fontSize: "1.2rem",
+                    marginTop: "0.5rem",
+                  }}
+                >
+                  {error.message}
+                </span>
+              )}
+            </div>
+          </div>
+
+          {showTimePicker && (
+            <>
               <div
-                className={`${styles.timePickerWrapper} ${
-                  pickerPosition.showAbove ? styles.showAbove : styles.showBelow
-                }`}
-                style={{
-                  top: pickerPosition.top,
-                  bottom: pickerPosition.bottom,
-                }}
-                onClick={(e) => e.stopPropagation()}
-              >
+                className={styles.modalOverlay}
+                onClick={closeTimePicker}
+              />
+              <div className={styles.pickerContainer}>
                 <CustomTimePicker
                   selectedTime={value || "10:00"}
-                  onTimeSelect={(timeString) => {
-                    handleTimeSelect(timeString);
-                    closeTimePicker();
-                  }}
+                  onTimeSelect={handleTimeSelect}
+                  onClose={closeTimePicker}
                 />
               </div>
-            )}
-
-            {error && (
-              <span
-                className={styles.error}
-                style={{
-                  color: "#ef4444",
-                  fontSize: "1.2rem",
-                  marginTop: "0.5rem",
-                }}
-              >
-                {error.message}
-              </span>
-            )}
-          </div>
-        </div>
+            </>
+          )}
+        </>
       );
     }
 
