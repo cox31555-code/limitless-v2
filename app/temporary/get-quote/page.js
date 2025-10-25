@@ -8,11 +8,29 @@ import VehicleDetailsForm from "./_components/VehicleDetailsForm";
 import CoverDetailsForm from "./_components/CoverDetailsForm";
 import PersonalDetailsForm from "./_components/PersonalDetailsForm";
 import TermsForm from "./_components/TermsForm";
+import StepperProgress from "./_components/StepperProgress";
+import StepActions from "./_components/StepActions";
 import { useRouter, useSearchParams } from "next/navigation";
 import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
+import styles from "./stepForm.module.css";
+
+const STEPS = {
+  VEHICLE: 1,
+  COVER: 2,
+  PERSONAL: 3,
+  TERMS: 4,
+};
+
+const STEP_TITLES = [
+  "Vehicle Details",
+  "Cover Details",
+  "Personal Details",
+  "Terms & Conditions",
+];
 
 const TemporaryInsuranceContent = () => {
+  const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
