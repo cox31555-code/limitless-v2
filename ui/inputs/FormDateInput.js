@@ -65,43 +65,6 @@ const FormDateInput = forwardRef(
       return `${year}-${month}-${day}`;
     };
 
-    // Initialize flatpickr for time picker
-    useEffect(() => {
-      if (type === "time" && timeInputRef.current) {
-        const fp = flatpickr(timeInputRef.current, {
-          enableTime: true,
-          noCalendar: true,
-          dateFormat: "H:i",
-          time_24hr: true,
-          defaultDate: value || "10:00",
-          onChange: (selectedDates, dateStr) => {
-            // Create synthetic event for React Hook Form
-            const syntheticEvent = {
-              target: {
-                name: name,
-                value: dateStr,
-              },
-            };
-            if (onChange) {
-              onChange(syntheticEvent);
-            }
-          },
-        });
-
-        return () => fp.destroy();
-      }
-    }, [type, name, onChange, value]);
-
-    // Update flatpickr when value changes
-    useEffect(() => {
-      if (
-        type === "time" &&
-        timeInputRef.current &&
-        timeInputRef.current._flatpickr
-      ) {
-        timeInputRef.current._flatpickr.setDate(value || "10:00");
-      }
-    }, [value, type]);
 
     const handleDateSelect = (date) => {
       if (!date) return;
