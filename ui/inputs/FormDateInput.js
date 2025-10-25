@@ -62,7 +62,11 @@ const FormDateInput = forwardRef(
         calculatePickerPosition();
 
         const handleClickOutside = (e) => {
-          if (inputContainerRef.current && !inputContainerRef.current.contains(e.target)) {
+          const isClickInsideInput = inputContainerRef.current && inputContainerRef.current.contains(e.target);
+          const isClickInsideDatePicker = datePickerRef.current && datePickerRef.current.contains(e.target);
+          const isClickInsideTimePicker = timePickerRef.current && timePickerRef.current.contains(e.target);
+
+          if (!isClickInsideInput && !isClickInsideDatePicker && !isClickInsideTimePicker) {
             setShowDatePicker(false);
             setShowTimePicker(false);
           }
