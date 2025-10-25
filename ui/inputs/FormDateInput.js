@@ -236,11 +236,7 @@ const FormDateInput = forwardRef(
                   selectedDate={parseDate(value)}
                   onDateSelect={handleDateSelect}
                   minDate={allowPastDates ? null : today}
-                  maxDate={
-                    allowPastDates && dateLabel === "Date of Birth"
-                      ? new Date(2010, 11, 31)
-                      : null
-                  }
+                  maxDate={isDateOfBirth ? maxDate : null}
                 />
               </div>
             </>
