@@ -201,7 +201,7 @@ const PersonalDetailsForm = ({ form }) => {
 
         {/* Employment Section */}
         <div className={styles.formSection}>
-          <Title title="Employment" />
+          <h3 className={styles.sectionTitle}>Employment</h3>
           
           <div className={styles.formRow}>
             <FormDropdown
