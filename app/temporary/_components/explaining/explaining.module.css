@@ -3,6 +3,8 @@
   padding: 8rem 0;
   position: relative;
   overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .wrapper::before {
