@@ -81,12 +81,15 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  align-items: center;
 }
 
 .mainContent {
   display: flex;
   flex-direction: column;
   gap: 2.8rem;
+  max-width: 900px;
+  width: 100%;
 }
 
 .description {
