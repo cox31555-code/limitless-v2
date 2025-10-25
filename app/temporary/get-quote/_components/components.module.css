@@ -7,6 +7,7 @@
   background: linear-gradient(135deg, #fafbff 0%, #f8f9ff 100%);
   border: 1px solid rgba(3, 136, 255, 0.08);
   box-shadow: 0 8px 32px rgba(3, 136, 255, 0.04);
+  width: 100%;
 }
 
 .first {
