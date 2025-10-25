@@ -1,14 +1,12 @@
 .wrapper {
   background: linear-gradient(180deg, #000822 0%, #051140 100%);
-  padding: 8rem 4.4%;
+  padding: 8rem 0;
   position: relative;
   overflow: hidden;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: -100vw;
+  margin-right: -100vw;
+  padding-left: 100vw;
+  padding-right: 100vw;
 }
 
 .wrapper::before {
