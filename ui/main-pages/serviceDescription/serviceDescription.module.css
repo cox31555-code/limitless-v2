@@ -77,24 +77,53 @@
 .services {
   display: flex;
   flex-direction: column;
-  flex-basis: 44.5%;
+  gap: 2rem;
+  width: 100%;
 }
 .service {
   display: flex;
-  gap: 3.8rem;
-  align-items: center;
-  padding: 2.8rem 0;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.24);
+  gap: 2.4rem;
+  align-items: flex-start;
+  padding: 2.4rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.service:first-child {
-  padding-top: 0;
+.service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0388ff 0%, #0270cc 100%);
 }
+
+.service:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+}
+
+.service img {
+  min-width: 2.4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-top: 0.2rem;
+}
+
 .serviceTitle {
   color: #000822;
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 100%; /* 28px */
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  margin: 0;
 }
 .confirmBtn {
   display: flex;
