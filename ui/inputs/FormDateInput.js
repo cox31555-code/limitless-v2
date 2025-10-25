@@ -22,6 +22,12 @@ const FormDateInput = forwardRef(
   ) => {
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [showTimePicker, setShowTimePicker] = useState(false);
+    const [pickerPosition, setPickerPosition] = useState({
+      top: "auto",
+      bottom: "auto",
+      showAbove: false,
+    });
+    const inputContainerRef = useRef(null);
 
     // Parse date string to Date object, handling timezone issues
     const parseDate = (dateString) => {
