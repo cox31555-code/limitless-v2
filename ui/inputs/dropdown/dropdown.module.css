@@ -5,6 +5,7 @@
   line-height: 130%;
   letter-spacing: 0.2px;
   text-transform: capitalize;
+  margin-top: 1.6rem;
 }
 .container {
   display: flex;
