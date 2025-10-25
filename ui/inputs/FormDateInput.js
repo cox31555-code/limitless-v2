@@ -181,6 +181,18 @@ const FormDateInput = forwardRef(
 
     // Time picker component
     if (type === "time") {
+      const handleTimeSelect = (timeString) => {
+        const syntheticEvent = {
+          target: {
+            name: name,
+            value: timeString,
+          },
+        };
+        if (onChange) {
+          onChange(syntheticEvent);
+        }
+      };
+
       return (
         <div className={styles.container}>
           <div className={styles.inputGroup}>
@@ -188,7 +200,9 @@ const FormDateInput = forwardRef(
 
             <div
               className={styles.inputContainer}
-              onClick={handleTimeContainerClick}
+              onClick={() => {
+                // Show time picker when clicking
+              }}
             >
               <div className={styles.iconContainer}>
                 <Image
@@ -200,19 +214,15 @@ const FormDateInput = forwardRef(
                 />
               </div>
               <input
-                ref={timeInputRef}
+                ref={ref}
                 name={name}
                 value={value || ""}
-                onChange={() => {}} // Dummy onChange - flatpickr handles the real changes
+                onChange={() => {}}
                 placeholder="--:--"
                 className={styles.input}
                 type="text"
+                readOnly
                 onBlur={onBlur}
-                style={{
-                  // Remove default time input styling and clock icon
-                  WebkitAppearance: "none",
-                  MozAppearance: "textfield",
-                }}
               />
               <Image
                 src="/svg/arrow-down.svg"
@@ -222,6 +232,15 @@ const FormDateInput = forwardRef(
                 className={styles.arrowDown}
               />
             </div>
+
+            {showDatePicker && (
+              <div className={styles.timePickerWrapper}>
+                <CustomTimePicker
+                  selectedTime={value || "10:00"}
+                  onTimeSelect={handleTimeSelect}
+                />
+              </div>
+            )}
 
             {error && (
               <span
