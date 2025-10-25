@@ -463,7 +463,12 @@ const VehicleDetailsForm = ({
                 placeholder="Enter your Registration number"
                 value={watch("vehicleDetails.registrationNumber") || ""}
                 onChange={(e) => {
-                  setValue("vehicleDetails.registrationNumber", e.target.value);
+                  const formattedValue = e.target.value;
+                  setValue("vehicleDetails.registrationNumber", formattedValue, {
+                    shouldValidate: false,
+                    shouldDirty: true,
+                    shouldTouch: true,
+                  });
                 }}
                 error={errors.vehicleDetails?.registrationNumber}
                 button={
