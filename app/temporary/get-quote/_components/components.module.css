@@ -132,10 +132,10 @@
 
 .row {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  padding-bottom: 2.4rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+  align-items: start;
   animation: rowFadeIn 0.3s ease;
 }
 
