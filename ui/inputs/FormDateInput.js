@@ -28,6 +28,8 @@ const FormDateInput = forwardRef(
       showAbove: false,
     });
     const inputContainerRef = useRef(null);
+    const datePickerRef = useRef(null);
+    const timePickerRef = useRef(null);
 
     // Parse date string to Date object, handling timezone issues
     const calculatePickerPosition = () => {
