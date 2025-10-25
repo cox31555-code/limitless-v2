@@ -1,20 +1,18 @@
 .container {
   width: 100%;
-  border-radius: 24px;
-  background: linear-gradient(135deg, #000822 0%, #051140 100%);
-  padding: 8.8rem 1.3% 4rem;
+  border-radius: 20px;
+  background: #000822;
+  padding: 8.8rem 1.3% 2.8rem;
   display: flex;
   flex-direction: column;
-  gap: 6.4rem;
+  gap: 10rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 .squares {
   position: absolute;
   top: -40rem;
   left: -40rem;
-  opacity: 0.8;
 }
 
 .content {
