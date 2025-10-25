@@ -171,7 +171,11 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
             className={styles.select}
           >
             {monthNames.map((month, index) => (
-              <option key={month} value={index}>
+              <option
+                key={month}
+                value={index}
+                disabled={isMonthDisabled(index)}
+              >
                 {month}
               </option>
             ))}
@@ -182,7 +186,11 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
             className={styles.select}
           >
             {years.map((year) => (
-              <option key={year} value={year}>
+              <option
+                key={year}
+                value={year}
+                disabled={isYearDisabled(year)}
+              >
                 {year}
               </option>
             ))}
