@@ -132,21 +132,14 @@
 }
 
 .feature {
-  padding: 3.2rem 3.2rem;
+  padding: 2.9rem 3.5rem;
   width: 100%;
-  border-radius: 16px;
-  background: rgba(7, 16, 45, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(3, 136, 255, 0.1);
+  border-radius: 14px;
+  background: #07102d;
+  backdrop-filter: blur(22px);
   display: flex;
   align-items: center;
-  gap: 2.8rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.feature:hover {
-  background: rgba(7, 16, 45, 0.8);
-  border-color: rgba(3, 136, 255, 0.2);
-  transform: translateY(-2px);
+  gap: 3.6rem;
 }
 .featureNumber {
   min-width: 5.2rem;
