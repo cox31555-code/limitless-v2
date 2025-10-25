@@ -634,6 +634,16 @@
     align-items: flex-start;
   }
 
+  .durationWrapper {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .dropdownOption {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
   .dateTimeContainer {
     flex-direction: column;
     gap: 1.6rem;
