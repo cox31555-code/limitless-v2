@@ -242,46 +242,53 @@ const PersonalDetailsForm = ({ form }) => {
         </div>
       </div>
 
-      <div className={styles.selections + " " + styles.selectionsContainer}>
-        <div className={styles.selections2}>
-          <Selection2
-            title="Where do you keep your car during the day?"
-            description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
-            items={keepingCarDuringDayOptions}
-            img={{ src: "/svg/day.svg", alt: "sun", width: 79, height: 106 }}
-            selectedItem={watch("carUsage.keepingCarDuringDay")}
-            setSelectedItem={(item) =>
-              setValue("carUsage.keepingCarDuringDay", item)
-            }
-          />
-          {errors.carUsage?.keepingCarDuringDay && (
-            <span className={styles.error}>
-              {errors.carUsage.keepingCarDuringDay.message}
-            </span>
-          )}
-        </div>
-        <div className={styles.selections2}>
-          <Selection2
-            title="Where do you keep your car during the night?"
-            description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
-            items={keepingCarDuringNightOptions}
-            img={{ src: "/svg/night.svg", alt: "moon", width: 79, height: 106 }}
-            selectedItem={watch("carUsage.keepingCarDuringNight")}
-            setSelectedItem={(item) =>
-              setValue("carUsage.keepingCarDuringNight", item)
-            }
-          />
-          {errors.carUsage?.keepingCarDuringNight && (
-            <span className={styles.error}>
-              {errors.carUsage.keepingCarDuringNight.message}
-            </span>
-          )}
+      {/* Car Usage & Parking Section */}
+      <div className={styles.carUsageSection}>
+        <Title title="Car Usage & Parking" />
+        <div className={styles.parkingGrid}>
+          <div className={styles.parkingOption}>
+            <Selection2
+              title="Where do you keep your car during the day?"
+              description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
+              items={keepingCarDuringDayOptions}
+              img={{ src: "/svg/day.svg", alt: "sun", width: 79, height: 106 }}
+              selectedItem={watch("carUsage.keepingCarDuringDay")}
+              setSelectedItem={(item) =>
+                setValue("carUsage.keepingCarDuringDay", item)
+              }
+            />
+            {errors.carUsage?.keepingCarDuringDay && (
+              <span className={styles.error}>
+                {errors.carUsage.keepingCarDuringDay.message}
+              </span>
+            )}
+          </div>
+          <div className={styles.parkingOption}>
+            <Selection2
+              title="Where do you keep your car during the night?"
+              description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
+              items={keepingCarDuringNightOptions}
+              img={{ src: "/svg/night.svg", alt: "moon", width: 79, height: 106 }}
+              selectedItem={watch("carUsage.keepingCarDuringNight")}
+              setSelectedItem={(item) =>
+                setValue("carUsage.keepingCarDuringNight", item)
+              }
+            />
+            {errors.carUsage?.keepingCarDuringNight && (
+              <span className={styles.error}>
+                {errors.carUsage.keepingCarDuringNight.message}
+              </span>
+            )}
+          </div>
         </div>
       </div>
 
-      <div className={`${styles.content} ${styles.carUsageContainer}`}>
-        <div className={styles.firstSection}>
-          <Title title="What do you use the car for?" />
+      {/* Car Details & License Section */}
+      <div className={styles.licenseSection}>
+        <Title title="Car Usage & License Details" />
+
+        <div className={styles.usageSubsection}>
+          <p className={styles.subsectionLabel}>What do you use the car for?</p>
           <div className={styles.selections3}>
             <Selection3
               options={carUsageOptions}
@@ -296,92 +303,90 @@ const PersonalDetailsForm = ({ form }) => {
           </div>
         </div>
 
-        <div className={styles.secondSection}>
-          <div className={styles.row}>
-            <FormDropdown
-              label="License Type"
-              options={["Full UK", "Provisional UK", "International", "Other"]}
-              placeholder="Select a license type"
-              {...register("carUsage.licenseType")}
-              error={errors.carUsage?.licenseType}
-            />
-            <FormDropdown
-              label="License Held"
-              options={licenseHeldOptions}
-              placeholder="Select license held duration"
-              {...register("carUsage.licenseHeld")}
-              error={errors.carUsage?.licenseHeld}
-            />
-            <FormTextInput
-              label="License No. (Optional)"
-              placeholder="Enter license no."
-              {...register("carUsage.licenseNumber")}
-              error={errors.carUsage?.licenseNumber}
-            />
-          </div>
-
-          <div className={styles.row}>
-            <FormDropdown
-              label="No Claims Bonus (NCB) Years"
-              options={dynamicNcbOptions}
-              placeholder="Select no claims bonus years"
-              {...register("carUsage.NCB")}
-              error={errors.carUsage?.NCB}
-            />
-            <FormDropdown
-              label="Voluntary Excess"
-              options={voluntaryExcessOptions}
-              placeholder="Select voluntary excess"
-              {...register("carUsage.voluntaryExcess")}
-              error={errors.carUsage?.voluntaryExcess}
-            />
-          </div>
+        <div className={styles.row}>
+          <FormDropdown
+            label="License Type"
+            options={["Full UK", "Provisional UK", "International", "Other"]}
+            placeholder="Select a license type"
+            {...register("carUsage.licenseType")}
+            error={errors.carUsage?.licenseType}
+          />
+          <FormDropdown
+            label="License Held"
+            options={licenseHeldOptions}
+            placeholder="Select license held duration"
+            {...register("carUsage.licenseHeld")}
+            error={errors.carUsage?.licenseHeld}
+          />
+          <FormTextInput
+            label="License No. (Optional)"
+            placeholder="Enter license no."
+            {...register("carUsage.licenseNumber")}
+            error={errors.carUsage?.licenseNumber}
+          />
         </div>
 
-        <div className={styles.thirdSection}>
-          <div className={styles.yesNo}>
-            <p className={styles.yesNoTitle}>
-              Do you have any unspent or outstanding criminal convictions?
-            </p>
-            <YesORNo
-              value={watch("carUsage.criminalConvictions")}
-              onChange={(value) =>
-                setValue("carUsage.criminalConvictions", value)
-              }
-            />
-          </div>
+        <div className={styles.row}>
+          <FormDropdown
+            label="No Claims Bonus (NCB) Years"
+            options={dynamicNcbOptions}
+            placeholder="Select no claims bonus years"
+            {...register("carUsage.NCB")}
+            error={errors.carUsage?.NCB}
+          />
+          <FormDropdown
+            label="Voluntary Excess"
+            options={voluntaryExcessOptions}
+            placeholder="Select voluntary excess"
+            {...register("carUsage.voluntaryExcess")}
+            error={errors.carUsage?.voluntaryExcess}
+          />
+        </div>
+      </div>
 
-          <div className={styles.yesNo}>
-            <p className={styles.yesNoTitle}>
-              Do you have any medical conditions that are notifiable to the
-              DVLA?
-            </p>
-            <YesORNo
-              value={watch("carUsage.medicalConditions")}
-              onChange={(value) =>
-                setValue("carUsage.medicalConditions", value)
-              }
-            />
-          </div>
+      {/* Declarations Section */}
+      <div className={styles.declarationsSection}>
+        <Title title="Declarations" />
 
-          <div className={styles.yesNo}>
-            <p className={styles.yesNoTitle}>
-              Have you ever had insurance cancelled, a claim refused, a policy
-              voided, or any special terms imposed? Unspent or outstanding
-              criminal convictions?
-            </p>
-            <YesORNo
-              value={watch(
-                "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided"
-              )}
-              onChange={(value) =>
-                setValue(
-                  "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
-                  value
-                )
-              }
-            />
-          </div>
+        <div className={styles.declarationQuestion}>
+          <p className={styles.questionTitle}>
+            Do you have any unspent or outstanding criminal convictions?
+          </p>
+          <YesORNo
+            value={watch("carUsage.criminalConvictions")}
+            onChange={(value) =>
+              setValue("carUsage.criminalConvictions", value)
+            }
+          />
+        </div>
+
+        <div className={styles.declarationQuestion}>
+          <p className={styles.questionTitle}>
+            Do you have any medical conditions that are notifiable to the DVLA?
+          </p>
+          <YesORNo
+            value={watch("carUsage.medicalConditions")}
+            onChange={(value) =>
+              setValue("carUsage.medicalConditions", value)
+            }
+          />
+        </div>
+
+        <div className={styles.declarationQuestion}>
+          <p className={styles.questionTitle}>
+            Have you ever had insurance cancelled, a claim refused, a policy voided, or any special terms imposed?
+          </p>
+          <YesORNo
+            value={watch(
+              "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided"
+            )}
+            onChange={(value) =>
+              setValue(
+                "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
+                value
+              )
+            }
+          />
         </div>
       </div>
     </ComponentWrapper>
