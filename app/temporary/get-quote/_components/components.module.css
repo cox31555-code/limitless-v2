@@ -561,6 +561,13 @@
     padding-bottom: 0;
   }
 
+  @media screen and (max-width: 600px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
   .progressiveRow {
     animation: progressiveSlideInMobile 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
