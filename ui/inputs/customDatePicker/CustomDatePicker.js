@@ -84,7 +84,17 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
     const currentMonth = today.getMonth();
     const selectedYear = displayMonth.getFullYear();
 
-    // Disable months before the current month in the current year
+    // For date of birth (with maxDate), allow months until the maxDate
+    if (maxDate) {
+      const maxYear = maxDate.getFullYear();
+      const maxMonth = maxDate.getMonth();
+
+      if (selectedYear > maxYear) return true;
+      if (selectedYear === maxYear && monthIndex > maxMonth) return true;
+      return false;
+    }
+
+    // Default behavior for future dates
     if (selectedYear < currentYear) return true;
     if (selectedYear === currentYear && monthIndex < currentMonth) return true;
     return false;
@@ -92,6 +102,14 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
 
   const isYearDisabled = (year) => {
     const today = new Date();
+
+    // For date of birth (with maxDate), allow years up to maxDate year
+    if (maxDate) {
+      if (year > maxDate.getFullYear()) return true;
+      return false;
+    }
+
+    // Default behavior for future dates
     if (year < today.getFullYear()) return true;
     return false;
   };
