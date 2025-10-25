@@ -325,7 +325,7 @@ const FormDateInput = forwardRef(
                 className={styles.modalOverlay}
                 onClick={closeTimePicker}
               />
-              <div className={styles.pickerContainer}>
+              <div className={styles.pickerContainer} ref={timePickerRef}>
                 <CustomTimePicker
                   selectedTime={value || "10:00"}
                   onTimeSelect={handleTimeSelect}
