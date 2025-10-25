@@ -276,7 +276,18 @@
 
 /* personal details container */
 .personalDetailsContainer {
-  gap: 2.4rem;
+  gap: 2.8rem;
+}
+
+.personalSection,
+.employmentSection,
+.carUsageSection,
+.licenseSection,
+.declarationsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 0;
 }
 
 /* selections container */
