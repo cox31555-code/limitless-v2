@@ -278,21 +278,43 @@ const TemporaryInsuranceContent = () => {
       <div className="centeredContent">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="insuranceQuotesContainer"
+          className={styles.stepFormContainer}
           noValidate
         >
-          <VehicleDetailsForm
-            form={form}
-            onVehicleDataFound={setFoundVehicleData}
-            autoTriggerLookup={shouldAutoTrigger}
+          <StepperProgress
+            currentStep={currentStep}
+            totalSteps={4}
+            stepTitles={STEP_TITLES}
           />
-          <CoverDetailsForm form={form} />
-          <PersonalDetailsForm form={form} />
-          <TermsForm
-            form={form}
-            onBack={() => router.back()}
-            isSubmitting={isSubmitting}
-          />
+
+          <div className={styles.stepContent}>
+            {currentStep === STEPS.VEHICLE && (
+              <VehicleDetailsForm
+                form={form}
+                onVehicleDataFound={setFoundVehicleData}
+                autoTriggerLookup={shouldAutoTrigger}
+              />
+            )}
+            {currentStep === STEPS.COVER && <CoverDetailsForm form={form} />}
+            {currentStep === STEPS.PERSONAL && (
+              <PersonalDetailsForm form={form} />
+            )}
+            {currentStep === STEPS.TERMS && (
+              <TermsForm form={form} onBack={handlePreviousStep} isSubmitting={isSubmitting} />
+            )}
+          </div>
+
+          {currentStep !== STEPS.TERMS && (
+            <StepActions
+              currentStep={currentStep}
+              totalSteps={4}
+              onNext={handleNextStep}
+              onBack={handlePreviousStep}
+              isLoading={isSubmitting}
+              nextLabel="Next"
+              backLabel="Back"
+            />
+          )}
         </form>
       </div>
     </div>
