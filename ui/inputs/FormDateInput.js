@@ -288,7 +288,16 @@ const FormDateInput = forwardRef(
             </div>
 
             {showTimePicker && (
-              <div className={styles.timePickerWrapper} onClick={(e) => e.stopPropagation()}>
+              <div
+                className={`${styles.timePickerWrapper} ${
+                  pickerPosition.showAbove ? styles.showAbove : styles.showBelow
+                }`}
+                style={{
+                  top: pickerPosition.top,
+                  bottom: pickerPosition.bottom,
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
                 <CustomTimePicker
                   selectedTime={value || "10:00"}
                   onTimeSelect={(timeString) => {
