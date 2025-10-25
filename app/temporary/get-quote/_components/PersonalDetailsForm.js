@@ -33,7 +33,6 @@ const PersonalDetailsForm = ({ form }) => {
 
   const [addresses, setAddresses] = useState([]);
   const [isLoadingAddresses, setIsLoadingAddresses] = useState(false);
-  const [showAddressDropdown, setShowAddressDropdown] = useState(false);
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
 
   // Watch employment status to disable industry and occupation
@@ -43,7 +42,6 @@ const PersonalDetailsForm = ({ form }) => {
   // Watch date of birth to calculate dynamic NCB options
   const dateOfBirth = watch("userDetails.dateOfBirth");
 
-  // Effect to set industry and occupation to N/A when retired or unemployed
   React.useEffect(() => {
     if (isRetiredOrUnemployed) {
       setValue("userDetails.industry", "N/A");
@@ -51,7 +49,6 @@ const PersonalDetailsForm = ({ form }) => {
     }
   }, [isRetiredOrUnemployed, setValue]);
 
-  // Effect to calculate dynamic NCB options based on date of birth
   React.useEffect(() => {
     if (dateOfBirth) {
       const dob = new Date(dateOfBirth);
@@ -60,29 +57,24 @@ const PersonalDetailsForm = ({ form }) => {
       const monthDiff = today.getMonth() - dob.getMonth();
       const dayDiff = today.getDate() - dob.getDate();
       
-      // Calculate exact age
       let exactAge = age;
       if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
         exactAge--;
       }
       
-      // Maximum NCB years = current age - 17 (minimum driving age in UK)
       const maxNCBYears = Math.max(0, exactAge - 17);
       
-      // Generate NCB options from 0 to maxNCBYears
       const options = [];
       for (let i = 0; i <= Math.min(maxNCBYears, 14); i++) {
         options.push(i.toString());
       }
       
-      // Add "15+" only if user can have 15 or more years of NCB
       if (maxNCBYears >= 15) {
         options.push("15+");
       }
       
       setDynamicNcbOptions(options);
       
-      // Reset NCB value if current value exceeds maximum
       const currentNCB = watch("carUsage.NCB");
       if (currentNCB) {
         const currentNCBValue = currentNCB === "15+" ? 15 : parseInt(currentNCB);
@@ -91,57 +83,45 @@ const PersonalDetailsForm = ({ form }) => {
         }
       }
     } else {
-      // If no DOB selected, show all options
       setDynamicNcbOptions(ncbOptions);
     }
   }, [dateOfBirth, setValue, watch]);
 
   const handleFindAddress = async () => {
     const postcode = watch("userDetails.postCode");
-
-    if (!postcode || postcode.trim() === "") {
-      alert("Please enter a postcode first");
-      return;
-    }
+    if (!postcode) return;
 
     setIsLoadingAddresses(true);
-
     try {
       const response = await fetch(
-        `${API_BASE_URL}/api/insurance/lookup-postcode/${encodeURIComponent(
-          postcode.trim()
-        )}`
+        `${API_BASE_URL}/vehicle-search/postcode/${postcode}`
       );
-
       if (!response.ok) {
-        throw new Error("Failed to lookup postcode");
+        setAddresses([]);
+        return;
       }
-
-      const result = await response.json();
-
-      if (result.status === "success" && result.data.addresses) {
-        setAddresses(result.data.addresses);
-        setShowAddressDropdown(true);
-        // Clear the current address value
-        setValue("userDetails.address", "");
-      } else {
-        alert("No addresses found for this postcode");
-      }
+      const data = await response.json();
+      setAddresses(data.addresses || []);
+      setShowAddressDropdown(data.addresses?.length > 0);
     } catch (error) {
-      console.error("Error looking up postcode:", error);
-      alert("Failed to lookup postcode. Please try again.");
+      console.error("Error fetching addresses:", error);
+      setAddresses([]);
     } finally {
       setIsLoadingAddresses(false);
     }
   };
 
+  const [showAddressDropdown, setShowAddressDropdown] = useState(false);
+
   return (
     <ComponentWrapper title="Personal Details">
-      <div className={`${styles.content} ${styles.personalDetailsContainer}`}>
+      <div className={styles.formContent}>
+        
         {/* Personal Information Section */}
-        <div className={styles.personalSection}>
-          <Title title="Your Personal Information" />
-          <div className={styles.row}>
+        <div className={styles.formSection}>
+          <Title title="Your Details" />
+          
+          <div className={styles.formRow}>
             <FormTextInput
               label="First Name"
               placeholder="Enter your first name"
@@ -164,7 +144,7 @@ const PersonalDetailsForm = ({ form }) => {
             />
           </div>
 
-          <div className={styles.row}>
+          <div className={styles.formRow}>
             <FormTextInput
               label="Email Address"
               type="email"
@@ -173,56 +153,67 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.email}
             />
             <FormTextInput
-              label="Contact Number"
-              placeholder="Enter your contact number"
+              label="Phone Number"
+              placeholder="Enter your phone number"
               {...register("userDetails.phone")}
               error={errors.userDetails?.phone}
             />
           </div>
+        </div>
 
-          <div className={styles.row}>
+        {/* Address Section */}
+        <div className={styles.formSection}>
+          <Title title="Address" />
+          
+          <div className={styles.postcodeRow}>
             <FormTextInput
               label="Postcode"
               placeholder="Enter your postcode"
               {...register("userDetails.postCode")}
               error={errors.userDetails?.postCode}
-              button={
-                <ConfirmBtn
-                  title={isLoadingAddresses ? "Loading..." : "Find Address"}
-                  onClick={handleFindAddress}
-                  disabled={isLoadingAddresses}
-                  type="button"
-                />
-              }
             />
-            <FormDropdown
-              label="Address"
-              options={addresses}
-              placeholder={
-                addresses.length > 0
-                  ? "Select your address"
-                  : "No addresses found"
-              }
-              {...register("userDetails.address")}
-              error={errors.userDetails?.address}
-            />
+            <div className={styles.findAddressButton}>
+              <ConfirmBtn
+                title={isLoadingAddresses ? "Loading..." : "Find Address"}
+                onClick={handleFindAddress}
+                disabled={isLoadingAddresses}
+                type="button"
+              />
+            </div>
           </div>
+
+          {showAddressDropdown && (
+            <div className={styles.formRow}>
+              <FormDropdown
+                label="Address"
+                options={addresses}
+                placeholder={
+                  addresses.length > 0
+                    ? "Select your address"
+                    : "No addresses found"
+                }
+                {...register("userDetails.address")}
+                error={errors.userDetails?.address}
+              />
+            </div>
+          )}
         </div>
 
         {/* Employment Section */}
-        <div className={styles.employmentSection}>
-          <Title title="Employment Details" />
-          <div className={styles.row}>
+        <div className={styles.formSection}>
+          <Title title="Employment" />
+          
+          <div className={styles.formRow}>
             <FormDropdown
               label="Employment Status"
               options={employmentStatusOptions}
-              placeholder="Choose Employment Status"
+              placeholder="Select employment status"
               {...register("userDetails.employmentStatus")}
               error={errors.userDetails?.employmentStatus}
             />
             <FormTextInput
               label="Industry"
-              placeholder="Enter your Industry"
+              placeholder="Enter your industry"
               {...register("userDetails.industry")}
               error={errors.userDetails?.industry}
               disabled={isRetiredOrUnemployed}
@@ -231,7 +222,7 @@ const PersonalDetailsForm = ({ form }) => {
             <FormAutocomplete
               label="Occupation"
               options={occupationOptions}
-              placeholder="Type or select your occupation"
+              placeholder="Select your occupation"
               {...register("userDetails.occupation")}
               error={errors.userDetails?.occupation}
               value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
@@ -240,153 +231,160 @@ const PersonalDetailsForm = ({ form }) => {
             />
           </div>
         </div>
-      </div>
 
-      {/* Car Usage & Parking Section */}
-      <div className={styles.carUsageSection}>
-        <Title title="Car Usage & Parking" />
-        <div className={styles.parkingGrid}>
-          <div className={styles.parkingOption}>
-            <Selection2
-              title="Where do you keep your car during the day?"
-              description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
-              items={keepingCarDuringDayOptions}
-              img={{ src: "/svg/day.svg", alt: "sun", width: 79, height: 106 }}
-              selectedItem={watch("carUsage.keepingCarDuringDay")}
-              setSelectedItem={(item) =>
-                setValue("carUsage.keepingCarDuringDay", item)
+        {/* Car Parking Section */}
+        <div className={styles.formSection}>
+          <Title title="Car Parking" />
+          
+          <div className={styles.parkingGrid}>
+            <div className={styles.parkingCard}>
+              <Selection2
+                title="Where do you keep your car during the day?"
+                description="Select where your car is typically parked during daytime hours."
+                items={keepingCarDuringDayOptions}
+                img={{ src: "/svg/day.svg", alt: "sun", width: 79, height: 106 }}
+                selectedItem={watch("carUsage.keepingCarDuringDay")}
+                setSelectedItem={(item) =>
+                  setValue("carUsage.keepingCarDuringDay", item)
+                }
+              />
+              {errors.carUsage?.keepingCarDuringDay && (
+                <span className={styles.error}>
+                  {errors.carUsage.keepingCarDuringDay.message}
+                </span>
+              )}
+            </div>
+            
+            <div className={styles.parkingCard}>
+              <Selection2
+                title="Where do you keep your car during the night?"
+                description="Select where your car is typically parked during nighttime hours."
+                items={keepingCarDuringNightOptions}
+                img={{ src: "/svg/night.svg", alt: "moon", width: 79, height: 106 }}
+                selectedItem={watch("carUsage.keepingCarDuringNight")}
+                setSelectedItem={(item) =>
+                  setValue("carUsage.keepingCarDuringNight", item)
+                }
+              />
+              {errors.carUsage?.keepingCarDuringNight && (
+                <span className={styles.error}>
+                  {errors.carUsage.keepingCarDuringNight.message}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Car Usage Section */}
+        <div className={styles.formSection}>
+          <Title title="Car Usage" />
+          
+          <div className={styles.usageTypeWrapper}>
+            <p className={styles.usageLabel}>What do you use the car for?</p>
+            <div className={styles.selections3}>
+              <Selection3
+                options={carUsageOptions}
+                selectedItem={watch("carUsage.usageType")}
+                setSelectedItem={(item) => setValue("carUsage.usageType", item)}
+              />
+              {errors.carUsage?.usageType && (
+                <span className={styles.error}>
+                  {errors.carUsage.usageType.message}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* License & Claims Section */}
+        <div className={styles.formSection}>
+          <Title title="License & Claims" />
+          
+          <div className={styles.formRow}>
+            <FormDropdown
+              label="License Type"
+              options={["Full UK", "Provisional UK", "International", "Other"]}
+              placeholder="Select license type"
+              {...register("carUsage.licenseType")}
+              error={errors.carUsage?.licenseType}
+            />
+            <FormDropdown
+              label="License Held"
+              options={licenseHeldOptions}
+              placeholder="Select how long held"
+              {...register("carUsage.licenseHeld")}
+              error={errors.carUsage?.licenseHeld}
+            />
+            <FormTextInput
+              label="License Number (Optional)"
+              placeholder="Enter license number"
+              {...register("carUsage.licenseNumber")}
+              error={errors.carUsage?.licenseNumber}
+            />
+          </div>
+
+          <div className={styles.formRow}>
+            <FormDropdown
+              label="No Claims Bonus"
+              options={dynamicNcbOptions}
+              placeholder="Select NCB years"
+              {...register("carUsage.NCB")}
+              error={errors.carUsage?.NCB}
+            />
+            <FormDropdown
+              label="Voluntary Excess"
+              options={voluntaryExcessOptions}
+              placeholder="Select excess amount"
+              {...register("carUsage.voluntaryExcess")}
+              error={errors.carUsage?.voluntaryExcess}
+            />
+          </div>
+        </div>
+
+        {/* Declarations Section */}
+        <div className={styles.formSection}>
+          <Title title="Declarations" />
+          
+          <div className={styles.declarationItem}>
+            <p className={styles.declarationQuestion}>
+              Do you have any unspent or outstanding criminal convictions?
+            </p>
+            <YesORNo
+              value={watch("carUsage.criminalConvictions")}
+              onChange={(value) =>
+                setValue("carUsage.criminalConvictions", value)
               }
             />
-            {errors.carUsage?.keepingCarDuringDay && (
-              <span className={styles.error}>
-                {errors.carUsage.keepingCarDuringDay.message}
-              </span>
-            )}
           </div>
-          <div className={styles.parkingOption}>
-            <Selection2
-              title="Where do you keep your car during the night?"
-              description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
-              items={keepingCarDuringNightOptions}
-              img={{ src: "/svg/night.svg", alt: "moon", width: 79, height: 106 }}
-              selectedItem={watch("carUsage.keepingCarDuringNight")}
-              setSelectedItem={(item) =>
-                setValue("carUsage.keepingCarDuringNight", item)
+
+          <div className={styles.declarationItem}>
+            <p className={styles.declarationQuestion}>
+              Do you have any medical conditions that are notifiable to the DVLA?
+            </p>
+            <YesORNo
+              value={watch("carUsage.medicalConditions")}
+              onChange={(value) =>
+                setValue("carUsage.medicalConditions", value)
               }
             />
-            {errors.carUsage?.keepingCarDuringNight && (
-              <span className={styles.error}>
-                {errors.carUsage.keepingCarDuringNight.message}
-              </span>
-            )}
           </div>
-        </div>
-      </div>
 
-      {/* Car Details & License Section */}
-      <div className={styles.licenseSection}>
-        <Title title="Car Usage & License Details" />
-
-        <div className={styles.usageSubsection}>
-          <p className={styles.subsectionLabel}>What do you use the car for?</p>
-          <div className={styles.selections3}>
-            <Selection3
-              options={carUsageOptions}
-              selectedItem={watch("carUsage.usageType")}
-              setSelectedItem={(item) => setValue("carUsage.usageType", item)}
+          <div className={styles.declarationItem}>
+            <p className={styles.declarationQuestion}>
+              Have you ever had insurance cancelled, a claim refused, a policy voided, or any special terms imposed?
+            </p>
+            <YesORNo
+              value={watch(
+                "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided"
+              )}
+              onChange={(value) =>
+                setValue(
+                  "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
+                  value
+                )
+              }
             />
-            {errors.carUsage?.usageType && (
-              <span className={styles.error}>
-                {errors.carUsage.usageType.message}
-              </span>
-            )}
           </div>
-        </div>
-
-        <div className={styles.row}>
-          <FormDropdown
-            label="License Type"
-            options={["Full UK", "Provisional UK", "International", "Other"]}
-            placeholder="Select a license type"
-            {...register("carUsage.licenseType")}
-            error={errors.carUsage?.licenseType}
-          />
-          <FormDropdown
-            label="License Held"
-            options={licenseHeldOptions}
-            placeholder="Select license held duration"
-            {...register("carUsage.licenseHeld")}
-            error={errors.carUsage?.licenseHeld}
-          />
-          <FormTextInput
-            label="License No. (Optional)"
-            placeholder="Enter license no."
-            {...register("carUsage.licenseNumber")}
-            error={errors.carUsage?.licenseNumber}
-          />
-        </div>
-
-        <div className={styles.row}>
-          <FormDropdown
-            label="No Claims Bonus (NCB) Years"
-            options={dynamicNcbOptions}
-            placeholder="Select no claims bonus years"
-            {...register("carUsage.NCB")}
-            error={errors.carUsage?.NCB}
-          />
-          <FormDropdown
-            label="Voluntary Excess"
-            options={voluntaryExcessOptions}
-            placeholder="Select voluntary excess"
-            {...register("carUsage.voluntaryExcess")}
-            error={errors.carUsage?.voluntaryExcess}
-          />
-        </div>
-      </div>
-
-      {/* Declarations Section */}
-      <div className={styles.declarationsSection}>
-        <Title title="Declarations" />
-
-        <div className={styles.declarationQuestion}>
-          <p className={styles.questionTitle}>
-            Do you have any unspent or outstanding criminal convictions?
-          </p>
-          <YesORNo
-            value={watch("carUsage.criminalConvictions")}
-            onChange={(value) =>
-              setValue("carUsage.criminalConvictions", value)
-            }
-          />
-        </div>
-
-        <div className={styles.declarationQuestion}>
-          <p className={styles.questionTitle}>
-            Do you have any medical conditions that are notifiable to the DVLA?
-          </p>
-          <YesORNo
-            value={watch("carUsage.medicalConditions")}
-            onChange={(value) =>
-              setValue("carUsage.medicalConditions", value)
-            }
-          />
-        </div>
-
-        <div className={styles.declarationQuestion}>
-          <p className={styles.questionTitle}>
-            Have you ever had insurance cancelled, a claim refused, a policy voided, or any special terms imposed?
-          </p>
-          <YesORNo
-            value={watch(
-              "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided"
-            )}
-            onChange={(value) =>
-              setValue(
-                "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
-                value
-              )
-            }
-          />
         </div>
       </div>
     </ComponentWrapper>
