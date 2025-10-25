@@ -119,7 +119,7 @@ const PersonalDetailsForm = ({ form }) => {
         {/* Personal Information Section */}
         <div className={styles.formSection}>
           <h3 className={styles.sectionTitle}>Your Details</h3>
-          
+
           <div className={styles.formRow}>
             <FormTextInput
               label="First Name"
@@ -137,6 +137,8 @@ const PersonalDetailsForm = ({ form }) => {
               dateLabel="Date of Birth"
               type="date"
               allowPastDates={true}
+              isDateOfBirth={true}
+              maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())}
               {...register("userDetails.dateOfBirth")}
               value={watch("userDetails.dateOfBirth")}
               error={errors.userDetails?.dateOfBirth}
