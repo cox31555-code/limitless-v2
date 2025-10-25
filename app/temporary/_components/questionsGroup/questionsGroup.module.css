@@ -80,23 +80,22 @@
   margin-top: 1.3rem;
 }
 .questionTitle {
-  color: #000822;
-  font-size: 1.8rem;
+  color: #000;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 130%;
-  letter-spacing: -0.2px;
-  margin: 0;
+  line-height: 124%;
+  letter-spacing: 0.72px;
 }
 
 .questionAnswer {
-  color: #5a6b7d;
-  font-size: 1.5rem;
+  color: rgba(0, 8, 34, 0.7);
+  font-size: 14px;
   font-weight: 400;
-  line-height: 160%;
-  letter-spacing: -0.2px;
+  line-height: 124%;
+  letter-spacing: 0.56px;
   margin: 0;
-  padding-bottom: 0;
-  max-width: 100%;
+  padding-bottom: 1rem;
+  max-width: 75%;
 }
 
 /* Answer wrapper for smooth expand/collapse animation */
