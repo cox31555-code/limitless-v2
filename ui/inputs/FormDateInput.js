@@ -149,24 +149,15 @@ const FormDateInput = forwardRef(
 
             {showDatePicker && (
               <div className={styles.datePickerWrapper}>
-                <DatePicker
-                  selected={parseDate(value)}
-                  onChange={handleDateSelect}
-                  onClickOutside={closeDatePicker}
-                  inline
-                  calendarClassName={styles.customCalendar}
+                <CustomDatePicker
+                  selectedDate={parseDate(value)}
+                  onDateSelect={handleDateSelect}
                   minDate={allowPastDates ? null : today}
                   maxDate={
                     allowPastDates && dateLabel === "Date of Birth"
-                      ? new Date(2010, 11, 31) // December 31, 2010
+                      ? new Date(2010, 11, 31)
                       : null
                   }
-                  filterDate={allowPastDates ? null : (date) => date >= today}
-                  showYearDropdown
-                  showMonthDropdown
-                  dropdownMode="select"
-                  yearDropdownItemNumber={100}
-                  scrollableYearDropdown
                 />
               </div>
             )}
