@@ -104,66 +104,77 @@
 }
 
 .description {
-  color: #e8f0f8;
-  font-size: 1.8rem;
-  line-height: 170%;
+  color: #d4e0ed;
+  font-size: 1.9rem;
+  line-height: 180%;
   letter-spacing: -0.3px;
-  max-width: 900px;
+  max-width: 950px;
+  font-weight: 400;
 }
 
 /* Key Features */
 .keyFeatures {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 3.2rem;
-  background: rgba(3, 136, 255, 0.08);
-  border: 1.5px solid rgba(3, 136, 255, 0.15);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
+  gap: 2.2rem;
+  padding: 3.6rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(0, 136, 255, 0.05) 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  max-width: 950px;
+  margin: 0 auto;
 }
 
 .featureHeader {
   color: #0388ff;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 700;
   letter-spacing: -0.2px;
   margin: 0;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .featuresList {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.6rem;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .featureItem {
-  color: #d0dce6;
-  font-size: 1.6rem;
-  line-height: 150%;
+  color: #c8d8e8;
+  font-size: 1.7rem;
+  line-height: 160%;
   display: flex;
   align-items: flex-start;
-  gap: 1.2rem;
+  gap: 1.4rem;
+  font-weight: 400;
 }
 
 .bullet {
-  color: #0388ff;
+  color: #00c9ff;
   font-weight: 700;
+  font-size: 1.8rem;
   flex-shrink: 0;
+  line-height: 1;
 }
 
 .concludingText {
-  color: #b8c5d6;
-  font-size: 1.7rem;
-  line-height: 160%;
+  color: #d0dce6;
+  font-size: 1.8rem;
+  line-height: 170%;
   letter-spacing: -0.2px;
-  padding: 2.4rem;
-  background: rgba(3, 136, 255, 0.06);
-  border-left: 3px solid #0388ff;
-  border-radius: 8px;
+  padding: 2.8rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(0, 136, 255, 0.08) 100%);
+  border-left: 4px solid #00c9ff;
+  border-radius: 12px;
+  max-width: 950px;
+  margin: 0 auto;
+  font-weight: 400;
 }
 
 /* Steps Grid */
