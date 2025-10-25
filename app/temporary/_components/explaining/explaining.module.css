@@ -64,17 +64,20 @@
 }
 .title {
   color: #fff;
-  font-size: 4.3rem;
-  font-style: normal;
+  font-size: 4.2rem;
   font-weight: 700;
-  line-height: 100%; /* 58px */
+  line-height: 110%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 0.4rem;
 }
 .title span {
-  color: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .description {
   color: rgba(255, 255, 255, 0.54);
