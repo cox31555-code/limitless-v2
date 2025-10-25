@@ -119,12 +119,13 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  margin-top: 0.8rem;
-  border-radius: 16px;
+  margin-top: 1rem;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 48px rgba(3, 136, 255, 0.15),
-    0 4px 16px rgba(0, 8, 34, 0.1);
-  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 16px 64px rgba(3, 136, 255, 0.2),
+    0 4px 16px rgba(0, 8, 34, 0.12);
+  animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
 }
 
 @keyframes slideDown {
