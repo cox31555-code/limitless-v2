@@ -20,7 +20,7 @@
 }
 
 .whiteOverlay {
-  opacity: 0.3;
+  opacity: 0.9;
   mix-blend-mode: screen;
 }
 
