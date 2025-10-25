@@ -148,51 +148,59 @@
 
 .card {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 18px;
   background: #fff;
-  padding: 2.1rem 2.2rem 2.2rem;
+  padding: 2.4rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card:hover {
+  box-shadow: 0 16px 48px rgba(3, 136, 255, 0.12);
+  transform: translateY(-2px);
 }
 .cardHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  display: inline-flex;
-  padding: 1.7rem 1.5rem 1.7rem;
-  align-items: center;
-  border-radius: 18px;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+  border-radius: 14px;
   width: 100%;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.6rem;
+  gap: 2rem;
 }
 .left {
   display: flex;
   align-items: center;
-  gap: 2.8rem;
+  gap: 1.6rem;
 }
 .cardTitle {
-  color: #000822;
-  font-size: 16px;
-  font-style: normal;
+  color: #5a6b7d;
+  font-size: 1.4rem;
   font-weight: 600;
-  line-height: 100%; /* 16px */
+  line-height: 120%;
+  margin: 0;
 }
 
 .cardPrice {
   color: #0388ff;
-  font-size: 5.2rem;
-  font-style: normal;
+  font-size: 4.4rem;
   font-weight: 700;
-  line-height: 100%; /* 74px */
+  line-height: 100%;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .cardDescription {
-  color: rgba(0, 8, 34, 0.7);
-  font-size: 16px;
-  font-style: normal;
+  color: #5a6b7d;
+  font-size: 1.3rem;
   font-weight: 400;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-  padding: 1.7rem 0 2.2rem;
-  border-top: 1px solid rgba(0, 8, 34, 0.14);
+  line-height: 160%;
+  padding: 1.6rem 0 2rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.1);
+  margin: 0;
 }
 .card button {
   width: 100%;
