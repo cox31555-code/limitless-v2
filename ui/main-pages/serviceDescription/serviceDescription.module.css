@@ -57,13 +57,14 @@
   background-clip: text;
 }
 .description {
-  color: #494f64;
-  font-size: 1.6rem;
+  color: #5a6b7d;
+  font-size: 1.8rem;
   font-weight: 400;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-  margin-bottom: 2.4rem;
-  text-align: center;
+  line-height: 160%;
+  letter-spacing: -0.2px;
+  margin-bottom: 3.2rem;
+  text-align: left;
+  max-width: 55rem;
 }
 
 .secondPart {
