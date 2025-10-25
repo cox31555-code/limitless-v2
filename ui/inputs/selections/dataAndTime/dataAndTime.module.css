@@ -155,14 +155,21 @@
 }
 
 .timePickerWrapper {
-  position: absolute;
-  top: 100%;
+  position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000;
-  margin-top: 1rem;
-  width: 100%;
+  z-index: 9999;
+  width: 95vw;
   max-width: 32rem;
+}
+
+.timePickerWrapper.showAbove {
+  bottom: auto;
+  animation: slideUp 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timePickerWrapper.showBelow {
+  animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .timePickerContainer {
