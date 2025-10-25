@@ -278,6 +278,13 @@
   justify-content: center;
   backdrop-filter: blur(4px);
   animation: fadeIn 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+}
+
+.pickerContainer {
+  pointer-events: auto;
+  position: relative;
+  z-index: 9999;
 }
 
 @keyframes fadeIn {
