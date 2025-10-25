@@ -34,13 +34,13 @@
 .inputContainer {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem;
+  gap: 1rem;
+  padding: 1.2rem;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 10px;
   background: #fff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
-  height: 6.8rem;
+  height: 5.2rem;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
