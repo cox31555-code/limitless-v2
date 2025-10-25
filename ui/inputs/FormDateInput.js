@@ -193,6 +193,9 @@ const FormDateInput = forwardRef(
         }
       };
 
+      const openTimePicker = () => setShowTimePicker(true);
+      const closeTimePicker = () => setShowTimePicker(false);
+
       return (
         <div className={styles.container}>
           <div className={styles.inputGroup}>
@@ -200,9 +203,7 @@ const FormDateInput = forwardRef(
 
             <div
               className={styles.inputContainer}
-              onClick={() => {
-                // Show time picker when clicking
-              }}
+              onClick={openTimePicker}
             >
               <div className={styles.iconContainer}>
                 <Image
@@ -233,11 +234,14 @@ const FormDateInput = forwardRef(
               />
             </div>
 
-            {showDatePicker && (
-              <div className={styles.timePickerWrapper}>
+            {showTimePicker && (
+              <div className={styles.timePickerWrapper} onClick={(e) => e.stopPropagation()}>
                 <CustomTimePicker
                   selectedTime={value || "10:00"}
-                  onTimeSelect={handleTimeSelect}
+                  onTimeSelect={(timeString) => {
+                    handleTimeSelect(timeString);
+                    closeTimePicker();
+                  }}
                 />
               </div>
             )}
