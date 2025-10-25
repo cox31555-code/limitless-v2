@@ -343,7 +343,7 @@ const PersonalDetailsForm = ({ form }) => {
 
         {/* Declarations Section */}
         <div className={styles.formSection}>
-          <Title title="Declarations" />
+          <h3 className={styles.sectionTitle}>Declarations</h3>
           
           <div className={styles.declarationItem}>
             <p className={styles.declarationQuestion}>
