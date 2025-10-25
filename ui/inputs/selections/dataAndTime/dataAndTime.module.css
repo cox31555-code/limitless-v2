@@ -98,17 +98,19 @@
   border: none;
   outline: none;
   color: #000822;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
   line-height: 130%;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   background: transparent;
   cursor: pointer;
-  padding: 0 0.8rem;
+  padding: 0;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input::placeholder {
   color: rgba(0, 8, 34, 0.35);
+  font-weight: 500;
 }
 
 .datePickerWrapper {
