@@ -58,7 +58,6 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
     if (newHour > 23) newHour = 0;
     const formattedHour = String(newHour).padStart(2, "0");
     setHours(formattedHour);
-    onTimeSelect(`${formattedHour}:${minutes}`);
   };
 
   const handleDecrementHour = () => {
@@ -66,7 +65,6 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
     if (newHour < 0) newHour = 23;
     const formattedHour = String(newHour).padStart(2, "0");
     setHours(formattedHour);
-    onTimeSelect(`${formattedHour}:${minutes}`);
   };
 
   const handleIncrementMinute = () => {
@@ -74,7 +72,6 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
     if (newMinute > 59) newMinute = 0;
     const formattedMinute = String(newMinute).padStart(2, "0");
     setMinutes(formattedMinute);
-    onTimeSelect(`${hours}:${formattedMinute}`);
   };
 
   const handleDecrementMinute = () => {
@@ -82,7 +79,6 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
     if (newMinute < 0) newMinute = 45;
     const formattedMinute = String(newMinute).padStart(2, "0");
     setMinutes(formattedMinute);
-    onTimeSelect(`${hours}:${formattedMinute}`);
   };
 
   const hourOptions = Array.from({ length: 24 }, (_, i) =>
