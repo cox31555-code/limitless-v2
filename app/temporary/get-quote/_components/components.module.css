@@ -615,10 +615,19 @@
     padding-bottom: 0;
   }
 
+  .parkingGrid {
+    grid-template-columns: 1fr;
+  }
+
   @media screen and (max-width: 600px) {
     .row {
       grid-template-columns: 1fr;
       gap: 1rem;
+    }
+
+    .parkingGrid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
     }
   }
 
