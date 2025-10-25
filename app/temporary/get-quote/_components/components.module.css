@@ -321,12 +321,20 @@
   font-weight: 500;
 }
 
+@media screen and (max-width: 900px) {
+  .customDropdown {
+    padding: 1.1rem 2rem 1.1rem 1.4rem;
+    font-size: 1.2rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .customDropdown {
     padding: 1rem 1.8rem 1rem 1.2rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     background-size: 14px;
     background-position: right 0.8rem center;
+    min-height: 4.4rem;
   }
 }
 
