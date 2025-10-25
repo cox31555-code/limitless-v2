@@ -21,7 +21,7 @@ const FormDateInput = forwardRef(
     ref
   ) => {
     const [showDatePicker, setShowDatePicker] = useState(false);
-    const timeInputRef = useRef(null);
+    const [showTimePicker, setShowTimePicker] = useState(false);
 
     // Parse date string to Date object, handling timezone issues
     const parseDate = (dateString) => {
