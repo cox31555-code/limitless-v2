@@ -646,8 +646,23 @@
     padding-bottom: 0;
   }
 
+  .formRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
   .parkingGrid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .postcodeRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .findAddressButton button {
+    height: auto;
   }
 
   @media screen and (max-width: 600px) {
@@ -656,9 +671,31 @@
       gap: 1rem;
     }
 
+    .formRow {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
     .parkingGrid {
       grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .postcodeRow {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .formContent {
+      gap: 2.4rem;
+    }
+
+    .formSection {
       gap: 1.2rem;
+    }
+
+    .declarationItem {
+      padding: 1.2rem;
     }
   }
 
