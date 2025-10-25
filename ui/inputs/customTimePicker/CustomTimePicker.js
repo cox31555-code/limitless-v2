@@ -41,7 +41,6 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
     if (value < 0) value = "0";
     value = String(parseInt(value) || 0).padStart(2, "0");
     setHours(value);
-    onTimeSelect(`${value}:${minutes}`);
   };
 
   const handleMinuteChange = (e) => {
@@ -50,7 +49,6 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
     if (value < 0) value = "0";
     value = String(parseInt(value) || 0).padStart(2, "0");
     setMinutes(value);
-    onTimeSelect(`${hours}:${value}`);
   };
 
   const handleIncrementHour = () => {
