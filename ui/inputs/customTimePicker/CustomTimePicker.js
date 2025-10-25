@@ -157,7 +157,10 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
       <div className={styles.presets}>
         <button
           type="button"
-          onClick={() => onTimeSelect("10:00")}
+          onClick={() => {
+            setHours("10");
+            setMinutes("00");
+          }}
           className={`${styles.preset} ${
             hours === "10" && minutes === "00" ? styles.presetSelected : ""
           }`}
@@ -166,7 +169,10 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
         </button>
         <button
           type="button"
-          onClick={() => onTimeSelect("12:00")}
+          onClick={() => {
+            setHours("12");
+            setMinutes("00");
+          }}
           className={`${styles.preset} ${
             hours === "12" && minutes === "00" ? styles.presetSelected : ""
           }`}
@@ -175,7 +181,10 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
         </button>
         <button
           type="button"
-          onClick={() => onTimeSelect("14:00")}
+          onClick={() => {
+            setHours("14");
+            setMinutes("00");
+          }}
           className={`${styles.preset} ${
             hours === "14" && minutes === "00" ? styles.presetSelected : ""
           }`}
@@ -184,7 +193,10 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
         </button>
         <button
           type="button"
-          onClick={() => onTimeSelect("16:00")}
+          onClick={() => {
+            setHours("16");
+            setMinutes("00");
+          }}
           className={`${styles.preset} ${
             hours === "16" && minutes === "00" ? styles.presetSelected : ""
           }`}
@@ -193,7 +205,10 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
         </button>
         <button
           type="button"
-          onClick={() => onTimeSelect("18:00")}
+          onClick={() => {
+            setHours("18");
+            setMinutes("00");
+          }}
           className={`${styles.preset} ${
             hours === "18" && minutes === "00" ? styles.presetSelected : ""
           }`}
@@ -202,7 +217,10 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
         </button>
         <button
           type="button"
-          onClick={() => onTimeSelect("20:00")}
+          onClick={() => {
+            setHours("20");
+            setMinutes("00");
+          }}
           className={`${styles.preset} ${
             hours === "20" && minutes === "00" ? styles.presetSelected : ""
           }`}
@@ -210,6 +228,10 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
           20:00
         </button>
       </div>
+
+      <button type="button" onClick={handleSetTime} className={styles.setButton}>
+        Set Time
+      </button>
     </div>
   );
 };
