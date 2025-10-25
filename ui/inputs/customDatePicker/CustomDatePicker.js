@@ -1,0 +1,213 @@
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import styles from "./customDatePicker.module.css";
+
+const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
+  const [currentMonth, setCurrentMonth] = useState(() => {
+    if (selectedDate) return selectedDate;
+    return new Date();
+  });
+  const [displayMonth, setDisplayMonth] = useState(new Date(currentMonth));
+
+  useEffect(() => {
+    if (selectedDate) {
+      setCurrentMonth(selectedDate);
+      setDisplayMonth(new Date(selectedDate));
+    }
+  }, [selectedDate]);
+
+  const getDaysInMonth = (date) => {
+    return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+  };
+
+  const getFirstDayOfMonth = (date) => {
+    return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+  };
+
+  const handlePrevMonth = () => {
+    setDisplayMonth(
+      new Date(displayMonth.getFullYear(), displayMonth.getMonth() - 1)
+    );
+  };
+
+  const handleNextMonth = () => {
+    setDisplayMonth(
+      new Date(displayMonth.getFullYear(), displayMonth.getMonth() + 1)
+    );
+  };
+
+  const handleYearChange = (e) => {
+    const year = parseInt(e.target.value);
+    setDisplayMonth(new Date(year, displayMonth.getMonth()));
+  };
+
+  const handleMonthChange = (e) => {
+    const month = parseInt(e.target.value);
+    setDisplayMonth(new Date(displayMonth.getFullYear(), month));
+  };
+
+  const handleDateClick = (day) => {
+    const selectedDateObj = new Date(
+      displayMonth.getFullYear(),
+      displayMonth.getMonth(),
+      day
+    );
+
+    if (minDate && selectedDateObj < minDate) return;
+    if (maxDate && selectedDateObj > maxDate) return;
+
+    setCurrentMonth(selectedDateObj);
+    onDateSelect(selectedDateObj);
+  };
+
+  const isDateDisabled = (day) => {
+    const dateObj = new Date(
+      displayMonth.getFullYear(),
+      displayMonth.getMonth(),
+      day
+    );
+    if (minDate && dateObj < minDate) return true;
+    if (maxDate && dateObj > maxDate) return true;
+    return false;
+  };
+
+  const isDateSelected = (day) => {
+    if (!currentMonth) return false;
+    return (
+      day === currentMonth.getDate() &&
+      displayMonth.getMonth() === currentMonth.getMonth() &&
+      displayMonth.getFullYear() === currentMonth.getFullYear()
+    );
+  };
+
+  const isToday = (day) => {
+    const today = new Date();
+    return (
+      day === today.getDate() &&
+      displayMonth.getMonth() === today.getMonth() &&
+      displayMonth.getFullYear() === today.getFullYear()
+    );
+  };
+
+  const daysInMonth = getDaysInMonth(displayMonth);
+  const firstDay = getFirstDayOfMonth(displayMonth);
+  const days = [];
+
+  for (let i = 0; i < firstDay; i++) {
+    days.push(null);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    days.push(day);
+  }
+
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const years = [];
+  const currentYear = new Date().getFullYear();
+  for (let i = currentYear - 5; i <= currentYear + 10; i++) {
+    years.push(i);
+  }
+
+  return (
+    <div className={styles.calendar}>
+      <div className={styles.header}>
+        <button
+          onClick={handlePrevMonth}
+          className={styles.navButton}
+          type="button"
+        >
+          <Image
+            src="/svg/arrow-down.svg"
+            alt="prev"
+            width={18}
+            height={18}
+            style={{ transform: "rotate(90deg)" }}
+          />
+        </button>
+
+        <div className={styles.monthYearSelector}>
+          <select
+            value={displayMonth.getMonth()}
+            onChange={handleMonthChange}
+            className={styles.select}
+          >
+            {monthNames.map((month, index) => (
+              <option key={month} value={index}>
+                {month}
+              </option>
+            ))}
+          </select>
+          <select
+            value={displayMonth.getFullYear()}
+            onChange={handleYearChange}
+            className={styles.select}
+          >
+            {years.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <button
+          onClick={handleNextMonth}
+          className={styles.navButton}
+          type="button"
+        >
+          <Image
+            src="/svg/arrow-down.svg"
+            alt="next"
+            width={18}
+            height={18}
+            style={{ transform: "rotate(-90deg)" }}
+          />
+        </button>
+      </div>
+
+      <div className={styles.daysHeader}>
+        <div className={styles.dayName}>Sun</div>
+        <div className={styles.dayName}>Mon</div>
+        <div className={styles.dayName}>Tue</div>
+        <div className={styles.dayName}>Wed</div>
+        <div className={styles.dayName}>Thu</div>
+        <div className={styles.dayName}>Fri</div>
+        <div className={styles.dayName}>Sat</div>
+      </div>
+
+      <div className={styles.daysGrid}>
+        {days.map((day, index) => (
+          <button
+            key={index}
+            type="button"
+            onClick={() => day && !isDateDisabled(day) && handleDateClick(day)}
+            className={`${styles.day} ${
+              day && isDateSelected(day) ? styles.selected : ""
+            } ${day && isToday(day) ? styles.today : ""} ${
+              day && isDateDisabled(day) ? styles.disabled : ""
+            }`}
+            disabled={!day || isDateDisabled(day)}
+          >
+            {day}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CustomDatePicker;
