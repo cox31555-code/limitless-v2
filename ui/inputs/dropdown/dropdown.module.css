@@ -5,12 +5,12 @@
   line-height: 130%;
   letter-spacing: 0.2px;
   text-transform: capitalize;
-  margin: 0 0 0.8rem 0;
+  margin-top: 1.6rem;
 }
 .container {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   flex: 1;
 }
 .dropdown {
