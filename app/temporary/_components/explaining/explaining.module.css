@@ -1,296 +1,418 @@
 .wrapper {
   position: relative;
-  border-radius: 20px;
-  background: #000822;
-  position: relative;
   overflow: hidden;
-  width: 97.8%;
-  margin: 7rem auto 0;
-}
-.contact {
-  position: absolute;
-  top: -52rem;
-  right: -26rem;
-}
-.squares {
-  position: absolute;
-  top: 58rem;
-  left: -60rem;
+  background: linear-gradient(180deg, #f8fbff 0%, #f0f6ff 50%, #ffffff 100%);
 }
 
 .container {
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 8rem 4.4%;
   display: flex;
   flex-direction: column;
-  gap: 11.2rem;
-  position: relative;
-  z-index: 2;
+  gap: 8rem;
 }
-.first {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-.second {
-  width: 1310px;
-  min-height: 635px;
-  border-radius: 18px;
-  background: #07102d;
-  backdrop-filter: blur(16.566335678100586px);
-  margin: 0 3.5% 4.3rem;
-  width: 93%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.content {
+
+/* Section Styles */
+.section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 4rem;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 900px;
+}
+
+.sectionTitle {
+  color: #000822;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 110%;
+  gap: 0.4rem;
+}
+
+.sectionTitle span {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  color: #5a6b7d;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+/* Content Grid for What is Section */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
   gap: 2.4rem;
 }
-.first .content {
-  padding: 0 8.5rem;
-}
-.second .content {
-  width: 58%;
-  padding: 5rem 4.2rem;
-}
-.second > div {
-  min-height: 635px;
-}
-.title {
-  color: #fff;
-  font-size: 4.3rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 100%; /* 58px */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.title span {
-  color: #0388ff;
-}
-.description {
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-}
-.description,
-.title {
-  max-width: 90%;
-}
-.featuresContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.background1 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 33.3%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-.background2 {
-  position: absolute;
-  top: 0;
-  right: 33.3%;
-  width: 33.3%;
-  height: 100%;
 
-  opacity: 0.82;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-.background3 {
-  position: absolute;
-  top: 0;
-  right: 66.6%;
-  width: 33.4%;
-  height: 85%;
-  opacity: 0.6;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-.features {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.9rem;
-  position: relative;
-  z-index: 1;
-  margin: 0 6.6%;
-}
-
-.feature {
-  padding: 2.9rem 3.5rem;
-  width: 100%;
-  border-radius: 14px;
-  background: #07102d;
-  backdrop-filter: blur(22px);
-  display: flex;
-  align-items: center;
-  gap: 3.6rem;
-}
-.featureNumber {
-  min-width: 4.4rem;
-  min-height: 4.4rem;
-  border-radius: 50%;
-  background: linear-gradient(107deg, #ffffff4d 0%, #0388ff 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #07102d;
-  font-size: 14.4px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 100%; /* 14.4px */
-}
-.featureContent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.9rem;
-}
-.featureTitle {
-  color: #fff;
+.mainDescription {
+  color: #5a6b7d;
   font-size: 1.8rem;
-  font-style: normal;
+  line-height: 170%;
+  letter-spacing: -0.2px;
+}
+
+.secondaryDescription {
+  color: #7a8a9d;
+  font-size: 1.6rem;
+  line-height: 160%;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+  border-left: 4px solid #0388ff;
+  border-radius: 8px;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  min-height: 450px;
+}
+
+.sectionImage {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
+/* Benefits List */
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.benefitItem {
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+  padding: 1.6rem 2rem;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.benefitItem:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f8fbff;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
+}
+
+.checkmark {
+  color: #0388ff;
   font-weight: 700;
-  line-height: 100%; /* 18px */
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+  border-radius: 50%;
 }
-.featureDescription {
-  color: rgba(255, 255, 255, 0.64);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 124%; /* 17.36px */
-  letter-spacing: 0.56px;
+
+.benefitText {
+  color: #000822;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 150%;
 }
-@media screen and (max-width: 1400px) {
-  .first .content {
-    margin-left: 0;
-    padding: 0 3rem;
-  }
+
+/* Steps Grid */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.4rem;
 }
-@media screen and (max-width: 1250px) {
-  .wrapper {
-    margin: 2.4 auto;
-  }
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 3.2rem 2.4rem;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #0388ff 0%, #0270cc 100%);
+}
+
+.stepCard:hover {
+  border-color: #0388ff;
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.15);
+}
+
+.stepNumber {
+  color: #0388ff;
+  font-size: 3.2rem;
+  font-weight: 700;
+  opacity: 0.2;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.stepIcon {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.stepTitle {
+  color: #000822;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.stepDescription {
+  color: #5a6b7d;
+  font-size: 1.5rem;
+  line-height: 160%;
+  letter-spacing: -0.2px;
+}
+
+.processDescription {
+  color: #5a6b7d;
+  font-size: 1.7rem;
+  line-height: 170%;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border-left: 4px solid #0388ff;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+/* Why Choose Us Grid */
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.4rem;
+}
+
+.whyCard {
+  padding: 3rem;
+  background: linear-gradient(135deg, #fff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.whyCard:hover {
+  border-color: #0388ff;
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(3, 136, 255, 0.15);
+}
+
+.whyIcon {
+  font-size: 4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+  border-radius: 12px;
+}
+
+.whyTitle {
+  color: #000822;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.whyDescription {
+  color: #5a6b7d;
+  font-size: 1.5rem;
+  line-height: 160%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
   .container {
+    padding: 6rem 4.4%;
+    gap: 6rem;
+  }
+
+  .contentGrid {
     gap: 4rem;
   }
-  .first,
-  .second {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+  .sectionTitle {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 4.8rem 4.4%;
+    gap: 4.8rem;
+  }
+
+  .sectionHeader {
+    max-width: 100%;
+  }
+
+  .sectionTitle {
+    font-size: 3.2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.6rem;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .imageContainer {
+    min-height: 350px;
+    padding: 2rem;
+  }
+
+  .sectionImage {
+    max-width: 300px;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .second {
-    padding: 0 0 3rem 0;
-    flex-direction: column-reverse;
-  }
-  .first {
-    padding: 0;
-  }
-  .first .content,
-  .second .content {
-    max-width: 100%;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    min-height: auto;
-  }
-  .second > div {
-    min-height: auto;
-    padding: 2.5rem 0;
-    width: 100%;
-  }
-  .images {
-    width: 100%;
-  }
-  .images img {
-    width: 100%;
-    height: auto;
-  }
-}
-@media screen and (max-width: 900px) {
-  .squares {
-    display: none;
-  }
-  .contact {
-    display: none;
-  }
-  .container {
-    gap: 4.7rem;
-  }
-  .second {
-    width: 92.6%;
-    min-height: auto;
-    margin: 0 3.7% 1.9rem;
-    flex-direction: column-reverse;
-    padding: 0 0 1.8rem;
-    overflow: hidden;
-  }
-  .content {
-    gap: 2.4rem;
-  }
-  .first {
-    gap: 4rem;
-    padding: 0;
-  }
-  .first .content {
-    padding: 0 7%;
-  }
-  .second .content {
-    width: 100%;
-    padding: 0 7%;
-  }
-  .second > div {
-    min-height: auto;
-    padding: 1.3rem 0 5.1rem;
-  }
-  .title {
-    font-size: 3.4rem;
-  }
-  .description {
-    font-size: 1.4rem;
-  }
-  .description,
-  .title {
-    max-width: 100%;
-  }
-  /* .featuresContainer {
-    padding: 0 0 5.1rem;
-  } */
-  .features {
-    gap: 1.2rem;
-    margin: 0 3.5%;
+
+  .stepCard {
+    padding: 2.4rem;
   }
 
-  .feature {
-    padding: 2rem 2.3rem;
-    gap: 2.4rem;
-  }
-  .featureNumber {
-    min-width: 2.8rem;
-    min-height: 2.8rem;
-    font-size: 10px;
-  }
-  .featureContent {
-    gap: 0.6rem;
-  }
-  .featureTitle {
+  .mainDescription {
     font-size: 1.6rem;
+  }
+
+  .secondaryDescription {
+    font-size: 1.5rem;
+    padding: 1.6rem;
+  }
+
+  .benefitItem {
+    padding: 1.4rem;
+  }
+
+  .benefitText {
+    font-size: 1.5rem;
+  }
+
+  .processDescription {
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .whyCard {
+    padding: 2rem;
+  }
+
+  .whyIcon {
+    font-size: 3.2rem;
+    height: 5rem;
+  }
+
+  .whyTitle {
+    font-size: 1.6rem;
+  }
+
+  .whyDescription {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 3rem 4.4%;
+    gap: 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.4rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.4rem;
+  }
+
+  .mainDescription {
+    font-size: 1.5rem;
+  }
+
+  .benefitsList {
+    gap: 1.2rem;
+  }
+
+  .benefitItem {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .stepCard {
+    padding: 1.8rem;
+  }
+
+  .stepTitle {
+    font-size: 1.6rem;
+  }
+
+  .stepIcon {
+    font-size: 2.4rem;
+  }
+
+  .whyCard {
+    padding: 1.6rem;
+  }
+
+  .whyIcon {
+    font-size: 2.8rem;
+    height: 4.4rem;
   }
 }
