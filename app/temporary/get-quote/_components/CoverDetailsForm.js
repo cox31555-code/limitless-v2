@@ -94,7 +94,11 @@ const CoverDetailsForm = ({ form }) => {
                 {getDropdownOptions().length > 0 && (
                   <div className={styles.dropdownOption}>
                     <select
-                      className={styles.customDropdown}
+                      className={`${styles.customDropdown} ${
+                        period && getDropdownOptions().includes(period.toString())
+                          ? styles.dropdownSelected
+                          : ""
+                      }`}
                       value={
                         period && getDropdownOptions().includes(period.toString())
                           ? period.toString()
