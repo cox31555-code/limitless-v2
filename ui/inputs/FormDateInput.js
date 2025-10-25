@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React, { useState, useRef, useEffect, forwardRef } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
+import CustomDatePicker from "./customDatePicker/CustomDatePicker";
+import CustomTimePicker from "./customTimePicker/CustomTimePicker";
 import styles from "./selections/dataAndTime/dataAndTime.module.css";
 
 const FormDateInput = forwardRef(
