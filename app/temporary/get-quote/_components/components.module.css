@@ -590,10 +590,6 @@
     gap: 1.2rem;
   }
 
-  .dropdownOption {
-    width: 100%;
-  }
-
   .dateTimeContainer {
     flex-direction: column;
     gap: 1.6rem;
