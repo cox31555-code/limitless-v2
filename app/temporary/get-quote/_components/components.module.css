@@ -249,20 +249,18 @@
 }
 
 .durationWrapper {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  flex-direction: column;
   gap: 1.2rem;
-  align-items: start;
   width: 100%;
 }
 
 .dropdownOption {
-  min-width: 11rem;
-  max-width: 12rem;
+  width: 100%;
 }
 
 .dropdownOption > div {
-  height: 100%;
+  width: 100%;
 }
 
 .customDropdown {
