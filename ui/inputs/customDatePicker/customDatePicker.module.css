@@ -7,17 +7,7 @@
   box-shadow: 0 16px 64px rgba(3, 136, 255, 0.2),
     0 4px 16px rgba(0, 8, 34, 0.12);
   animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  overflow: visible;
 }
 
 .header {
