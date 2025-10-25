@@ -555,7 +555,7 @@ const VehicleDetailsForm = ({
               />
             </div>
 
-            {selectedMake && !foundVehicleData && (
+            {watch("vehicleDetails.type") && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
                   label="Make"
@@ -570,7 +570,7 @@ const VehicleDetailsForm = ({
               </div>
             )}
 
-            {selectedModel && !foundVehicleData && (
+            {selectedMake && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
                   key={`model-${forceUpdate}`}
@@ -590,7 +590,7 @@ const VehicleDetailsForm = ({
               </div>
             )}
 
-            {selectedYear && !foundVehicleData && (
+            {selectedModel && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
                   key={`year-${forceUpdate}`}
@@ -610,7 +610,7 @@ const VehicleDetailsForm = ({
               </div>
             )}
 
-            {selectedDoors && !foundVehicleData && (
+            {selectedYear && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
                   key={`doors-${forceUpdate}`}
@@ -630,7 +630,7 @@ const VehicleDetailsForm = ({
               </div>
             )}
 
-            {selectedFuel && !foundVehicleData && (
+            {selectedDoors && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
                   key={`fuel-${forceUpdate}`}
@@ -650,7 +650,7 @@ const VehicleDetailsForm = ({
               </div>
             )}
 
-            {watch("vehicleDetails.transmission") && !foundVehicleData && (
+            {selectedFuel && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
                   key={`transmission-${forceUpdate}`}
@@ -676,7 +676,7 @@ const VehicleDetailsForm = ({
               </div>
             )}
 
-            {watch("vehicleDetails.colour") && !foundVehicleData && (
+            {watch("vehicleDetails.transmission") && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
                   label="Vehicle Color"
@@ -689,7 +689,7 @@ const VehicleDetailsForm = ({
               </div>
             )}
 
-            {!foundVehicleData && watch("vehicleDetails.colour") && (
+            {watch("vehicleDetails.colour") && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
                   label="How much is your vehicle worth?"
