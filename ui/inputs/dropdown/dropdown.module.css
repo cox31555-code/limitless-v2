@@ -96,16 +96,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0388ff;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: rgba(3, 136, 255, 0.08);
+  border-radius: 8px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arrowDown {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   color: #0388ff;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
 }
 
-.select:focus + .arrowContainer .arrowDown {
-  transform: rotate(180deg);
+.selectWrapper:hover .arrowContainer {
+  background: rgba(3, 136, 255, 0.12);
+}
+
+.selectWrapper:focus-within .arrowContainer {
+  background: rgba(3, 136, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.1);
+}
+
+.select:focus ~ .arrowContainer .arrowDown {
+  transform: rotate(-180deg);
+  color: #0270cc;
+}
+
+.selectWrapper:hover .arrowDown {
+  transform: translateY(-2px);
 }
 
 .errorMessage {
