@@ -2,7 +2,7 @@
 import React from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import styles from "./components.module.css";
-import ActionBtns from "@/ui/insurance-quotes/actionBtns/ActionBtns";
+import StepActions from "./StepActions";
 
 const TermsForm = ({ form, onBack, isSubmitting }) => {
   const {
