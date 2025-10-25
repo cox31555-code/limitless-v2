@@ -1,9 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: auto;
-  max-width: 48rem;
-  min-width: 45rem;
+  width: 42rem;
   padding: 0;
   border-radius: 2rem;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
@@ -12,7 +10,6 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
-  flex: 0 0 auto;
 }
 
 /* Navigation Wrapper - Progress & Tabs */
