@@ -132,7 +132,6 @@ const TemporaryInsuranceContent = () => {
     "vehicleDetails.fuel",
     "vehicleDetails.transmission",
     "vehicleDetails.colour",
-    "vehicleDetails.worth",
   ];
 
   const coverFields = [
