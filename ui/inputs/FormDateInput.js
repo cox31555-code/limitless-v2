@@ -58,11 +58,22 @@ const FormDateInput = forwardRef(
     useEffect(() => {
       if (showDatePicker || showTimePicker) {
         calculatePickerPosition();
+
+        const handleClickOutside = (e) => {
+          if (inputContainerRef.current && !inputContainerRef.current.contains(e.target)) {
+            setShowDatePicker(false);
+            setShowTimePicker(false);
+          }
+        };
+
         window.addEventListener("scroll", calculatePickerPosition);
         window.addEventListener("resize", calculatePickerPosition);
+        document.addEventListener("click", handleClickOutside);
+
         return () => {
           window.removeEventListener("scroll", calculatePickerPosition);
           window.removeEventListener("resize", calculatePickerPosition);
+          document.removeEventListener("click", handleClickOutside);
         };
       }
     }, [showDatePicker, showTimePicker]);
