@@ -267,16 +267,15 @@
 
 .customDropdown {
   width: 100%;
-  height: 100%;
-  padding: 1.4rem 2.4rem 1.4rem 1.6rem;
+  padding: 1.2rem 2.4rem 1.2rem 1.6rem;
   border: 1.5px solid rgba(3, 136, 255, 0.15);
   background: #fff;
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.3px;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
@@ -285,8 +284,11 @@
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 18px;
-  box-shadow: 0 2px 6px rgba(3, 136, 255, 0.04);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 4.8rem;
+  display: flex;
+  align-items: center;
 }
 
 .customDropdown:hover {
