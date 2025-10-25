@@ -288,19 +288,21 @@
 .customDropdown:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background-color: #f0f6ff;
+  background-position: right 1.1rem center;
   box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
-  transform: translateY(-2px);
 }
 
 .customDropdown:focus {
   outline: none;
   border-color: #0388ff;
   box-shadow: 0 0 0 3px rgba(3, 136, 255, 0.1), 0 6px 16px rgba(3, 136, 255, 0.15);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M18 15l-6-6-6 6' stroke='%230270cc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
 }
 
 .dropdownSelected {
   background-color: #e8f0ff !important;
   border-color: #0388ff !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M18 15l-6-6-6 6' stroke='%230270cc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e") !important;
   box-shadow: inset 0 2px 4px rgba(3, 136, 255, 0.1), 0 2px 8px rgba(3, 136, 255, 0.12) !important;
   color: #0270cc;
   font-weight: 700;
@@ -309,8 +311,9 @@
 .dropdownSelected:hover {
   background-color: #d8e8ff !important;
   border-color: #0270cc !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M18 15l-6-6-6 6' stroke='%230270cc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e") !important;
+  background-position: right 1.1rem center;
   box-shadow: inset 0 2px 6px rgba(3, 136, 255, 0.15), 0 4px 12px rgba(3, 136, 255, 0.15) !important;
-  transform: translateY(0);
 }
 
 .customDropdown option {
