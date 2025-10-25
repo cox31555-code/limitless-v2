@@ -93,7 +93,7 @@ const TemporaryInsuranceContent = () => {
     },
   });
 
-  const { setValue } = form;
+  const { setValue, trigger } = form;
 
   // Populate form with URL parameters from GetQuote
   useEffect(() => {
@@ -121,6 +121,91 @@ const TemporaryInsuranceContent = () => {
       }
     }
   }, [searchParams, setValue]);
+
+  // Step validation fields
+  const vehicleFields = [
+    "vehicleDetails.registrationNumber",
+    "vehicleDetails.type",
+    "vehicleDetails.make",
+    "vehicleDetails.model",
+    "vehicleDetails.year",
+    "vehicleDetails.fuel",
+    "vehicleDetails.transmission",
+    "vehicleDetails.colour",
+    "vehicleDetails.worth",
+  ];
+
+  const coverFields = [
+    "coverDetails.type",
+    "coverDetails.period",
+    "coverDetails.startDate",
+    "coverDetails.startTime",
+  ];
+
+  const personalFields = [
+    "userDetails.firstName",
+    "userDetails.surname",
+    "userDetails.email",
+    "userDetails.phone",
+    "userDetails.dateOfBirth",
+    "userDetails.postCode",
+    "userDetails.address",
+    "userDetails.employmentStatus",
+    "userDetails.industry",
+    "userDetails.occupation",
+    "carUsage.keepingCarDuringDay",
+    "carUsage.keepingCarDuringNight",
+    "carUsage.usageType",
+    "carUsage.licenseType",
+    "carUsage.licenseHeld",
+    "carUsage.NCB",
+    "carUsage.voluntaryExcess",
+    "carUsage.criminalConvictions",
+    "carUsage.medicalConditions",
+    "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
+  ];
+
+  const termsFields = [
+    "terms.acceptTerms",
+  ];
+
+  const getFieldsForStep = (step) => {
+    switch (step) {
+      case STEPS.VEHICLE:
+        return vehicleFields;
+      case STEPS.COVER:
+        return coverFields;
+      case STEPS.PERSONAL:
+        return personalFields;
+      case STEPS.TERMS:
+        return termsFields;
+      default:
+        return [];
+    }
+  };
+
+  const handleNextStep = async () => {
+    const fieldsToValidate = getFieldsForStep(currentStep);
+    const isValid = await trigger(fieldsToValidate);
+
+    if (isValid) {
+      if (currentStep === STEPS.TERMS) {
+        // Last step - will be handled by form submission
+        return;
+      }
+      setCurrentStep(currentStep + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      toast.error("Please fill in all required fields");
+    }
+  };
+
+  const handlePreviousStep = () => {
+    if (currentStep > STEPS.VEHICLE) {
+      setCurrentStep(currentStep - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
