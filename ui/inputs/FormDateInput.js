@@ -30,6 +30,43 @@ const FormDateInput = forwardRef(
     const inputContainerRef = useRef(null);
 
     // Parse date string to Date object, handling timezone issues
+    const calculatePickerPosition = () => {
+      if (!inputContainerRef.current) return;
+
+      const rect = inputContainerRef.current.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+      const pickerHeight = 400; // Approximate height of pickers
+
+      if (spaceBelow < pickerHeight && spaceAbove > pickerHeight) {
+        // Show above
+        setPickerPosition({
+          top: "auto",
+          bottom: `${window.innerHeight - rect.top + 12}px`,
+          showAbove: true,
+        });
+      } else {
+        // Show below (default)
+        setPickerPosition({
+          top: `${rect.bottom + 12}px`,
+          bottom: "auto",
+          showAbove: false,
+        });
+      }
+    };
+
+    useEffect(() => {
+      if (showDatePicker || showTimePicker) {
+        calculatePickerPosition();
+        window.addEventListener("scroll", calculatePickerPosition);
+        window.addEventListener("resize", calculatePickerPosition);
+        return () => {
+          window.removeEventListener("scroll", calculatePickerPosition);
+          window.removeEventListener("resize", calculatePickerPosition);
+        };
+      }
+    }, [showDatePicker, showTimePicker]);
+
     const parseDate = (dateString) => {
       if (!dateString) return null;
       try {
