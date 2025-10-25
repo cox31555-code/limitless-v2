@@ -176,45 +176,47 @@
 @media screen and (max-width: 900px) {
   .container {
     width: 100%;
-    gap: 3.4rem;
+    gap: 2.4rem;
   }
   .header {
-    gap: 1.8rem;
+    gap: 1.4rem;
   }
   .title {
-    font-size: 3.4rem;
+    font-size: 2.8rem;
   }
   .questions {
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .question,
   .questionActive {
-    padding: 2rem;
-    border-radius: 18px;
+    padding: 1.8rem;
+    border-radius: 14px;
   }
 
   .content {
-    gap: 1.8rem;
-    margin-top: 0.9rem;
+    gap: 1.4rem;
+    margin-top: 0.8rem;
   }
   .questionTitle {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    line-height: 120%;
   }
 
   .questionAnswer {
-    font-size: 1.4rem;
-    max-width: 90%;
+    font-size: 1.3rem;
+    line-height: 150%;
+    max-width: 100%;
   }
 
   /* Icon container and animations */
   .iconContainer {
-    min-width: 3.4rem;
-    min-height: 3.4rem;
+    min-width: 3.2rem;
+    min-height: 3.2rem;
   }
 
   .icon {
-    width: 3.4rem;
-    height: 3.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
   }
 }
