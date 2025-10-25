@@ -68,6 +68,31 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
     );
     if (minDate && dateObj < minDate) return true;
     if (maxDate && dateObj > maxDate) return true;
+
+    // Disable entire past months
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const isBeforeToday = dateObj < today;
+    if (isBeforeToday) return true;
+
+    return false;
+  };
+
+  const isMonthDisabled = (monthIndex) => {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const currentMonth = today.getMonth();
+    const selectedYear = displayMonth.getFullYear();
+
+    // Disable months before the current month in the current year
+    if (selectedYear < currentYear) return true;
+    if (selectedYear === currentYear && monthIndex < currentMonth) return true;
+    return false;
+  };
+
+  const isYearDisabled = (year) => {
+    const today = new Date();
+    if (year < today.getFullYear()) return true;
     return false;
   };
 
