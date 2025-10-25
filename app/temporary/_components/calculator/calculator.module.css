@@ -237,63 +237,70 @@
 }
 @media screen and (max-width: 900px) {
   .container {
-    padding: 4.8rem 5.5% 1.8rem;
-    gap: 4.7rem;
+    padding: 4.8rem 4.4% 3.2rem;
+    gap: 3.2rem;
   }
   .content {
-    min-height: 518px;
+    flex-direction: column;
+    min-height: auto;
   }
   .first {
-    gap: 2.8rem;
-    padding: 3.4rem 6.7% 1.4rem;
+    gap: 2.4rem;
+    padding: 2.4rem 4.4% 1.6rem;
     min-height: auto;
   }
 
   .text {
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
   .text,
   .description {
     max-width: 100%;
   }
 
-  .title,
+  .title {
+    font-size: 3.2rem;
+  }
   .contentTitle {
-    font-size: 3.4rem;
+    font-size: 2.8rem;
   }
   .form {
-    gap: 1.4rem;
-    padding: 0 5% 4.8rem;
+    gap: 1.6rem;
+    padding: 2.4rem 4.4%;
     flex-basis: 100%;
     min-width: 100%;
   }
   .selection {
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
   .label {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .card {
-    padding: 2.2rem 1.2rem 1rem;
+    padding: 1.8rem;
   }
   .cardHeader {
-    padding: 2.2rem 1.7rem 1.1rem;
-    margin-bottom: 0;
+    padding: 1.4rem;
+    margin-bottom: 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
   .left {
-    gap: 1.6rem;
+    gap: 1.2rem;
+    width: 100%;
   }
   .cardTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .cardPrice {
-    font-size: 3.4rem;
+    font-size: 3.2rem;
   }
 
   .cardDescription {
-    font-size: 1.4rem;
-    padding: 2rem 0 2rem;
+    font-size: 1.2rem;
+    padding: 1.4rem 0 1.6rem;
   }
 }
