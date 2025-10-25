@@ -47,15 +47,26 @@
 }
 
 .iconContainer {
-  width: 4.2rem;
-  height: 4.2rem;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9px;
+  background: rgba(3, 136, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(3, 136, 255, 0.1);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
   flex-shrink: 0;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inputContainer:hover:not(.disabled) .iconContainer {
+  background: rgba(3, 136, 255, 0.12);
+  border-color: rgba(3, 136, 255, 0.2);
+}
+
+.inputContainer:focus-within .iconContainer {
+  background: rgba(3, 136, 255, 0.15);
+  border-color: rgba(3, 136, 255, 0.25);
 }
 
 .arrowDown {
