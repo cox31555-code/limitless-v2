@@ -35,16 +35,23 @@
   position: relative;
   display: flex;
   align-items: center;
-  border-radius: 14px;
+  border-radius: 12px;
   background: #fff;
   width: 100%;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  transition: all 0.3s ease;
+  border: 1.5px solid rgba(3, 136, 255, 0.15);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(3, 136, 255, 0.04);
+}
+
+.selectWrapper:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.1);
+  transform: translateY(-1px);
 }
 
 .selectWrapper:focus-within {
   border-color: #0388ff;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(3, 136, 255, 0.1), 0 6px 16px rgba(3, 136, 255, 0.15);
 }
 
 .select {
