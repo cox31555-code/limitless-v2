@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./customTimePicker.module.css";
 
-const CustomTimePicker = ({ selectedTime, onTimeSelect }) => {
+const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
   const [hours, setHours] = useState(() => {
     if (selectedTime) {
       const [h] = selectedTime.split(":");
@@ -27,6 +27,13 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect }) => {
       setMinutes(m);
     }
   }, [selectedTime]);
+
+  const handleSetTime = () => {
+    onTimeSelect(`${hours}:${minutes}`);
+    if (onClose) {
+      onClose();
+    }
+  };
 
   const handleHourChange = (e) => {
     let value = e.target.value;
