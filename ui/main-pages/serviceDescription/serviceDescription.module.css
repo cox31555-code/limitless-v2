@@ -125,23 +125,34 @@
 .confirmBtn {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
-  display: flex;
-  height: 4.8rem;
-  width: 19.2rem;
-  padding: 0 2.4rem;
-  align-items: center;
-  border-radius: 1.2rem;
-  background: #0388ff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  justify-content: center;
+  gap: 1.2rem;
+  height: 5.2rem;
+  padding: 0 3.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3);
   border: none;
   color: #fff;
   font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.2px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  margin-top: 1.6rem;
+}
+
+.confirmBtn:hover {
+  background: linear-gradient(135deg, #0270cc 0%, #0156a8 100%);
+  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.confirmBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
 }
 @media screen and (max-width: 1400px) {
   .container {
