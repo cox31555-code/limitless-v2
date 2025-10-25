@@ -142,21 +142,18 @@
   gap: 3.6rem;
 }
 .featureNumber {
-  min-width: 5.2rem;
-  min-height: 5.2rem;
-  width: 5.2rem;
-  height: 5.2rem;
+  min-width: 4.4rem;
+  min-height: 4.4rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: linear-gradient(107deg, #ffffff4d 0%, #0388ff 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 1.8rem;
+  color: #07102d;
+  font-size: 14.4px;
+  font-style: normal;
   font-weight: 700;
-  line-height: 100%;
-  flex-shrink: 0;
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3);
+  line-height: 100%; /* 14.4px */
 }
 .featureContent {
   display: flex;
