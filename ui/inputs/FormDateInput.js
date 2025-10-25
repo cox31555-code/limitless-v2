@@ -191,7 +191,16 @@ const FormDateInput = forwardRef(
             </div>
 
             {showDatePicker && (
-              <div className={styles.datePickerWrapper}>
+              <div
+                className={`${styles.datePickerWrapper} ${
+                  pickerPosition.showAbove ? styles.showAbove : styles.showBelow
+                }`}
+                style={{
+                  top: pickerPosition.top,
+                  bottom: pickerPosition.bottom,
+                }}
+                onClick={(e) => e.stopPropagation()}
+              >
                 <CustomDatePicker
                   selectedDate={parseDate(value)}
                   onDateSelect={handleDateSelect}
