@@ -256,6 +256,7 @@ const FormDateInput = forwardRef(
             <div
               className={styles.inputContainer}
               onClick={openTimePicker}
+              ref={inputContainerRef}
             >
               <div className={styles.iconContainer}>
                 <Image
