@@ -265,9 +265,9 @@
 
 .customDropdown {
   width: 100%;
-  padding: 1.2rem 2.4rem 1.2rem 1.6rem;
-  border: 1.5px solid rgba(3, 136, 255, 0.15);
-  background: #fff;
+  padding: 1.2rem 2.2rem 1.2rem 1.6rem;
+  border: 1.5px solid rgba(3, 136, 255, 0.1);
+  background: #f8fbff;
   color: #000822;
   font-size: 1.3rem;
   font-weight: 600;
@@ -278,10 +278,10 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 9l6 6 6-6' stroke='%230388ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 9l6 6 6-6' stroke='%230388ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 18px;
+  background-position: right 1.2rem center;
+  background-size: 16px;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.02);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   min-height: 4.8rem;
