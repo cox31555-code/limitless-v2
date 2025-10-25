@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./explaining.module.css";
-import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -25,45 +24,23 @@ const Explaining = () => {
   const howItWorksSteps = [
     {
       number: "01",
-      title: "Enter Details",
-      description: "Visit our website and provide your name, driving history, and vehicle registration number.",
-      icon: "📝"
+      title: "Enter Your Details",
+      description: "Provide your name, driving history, and vehicle registration number through our simple online form."
     },
     {
       number: "02",
       title: "Select Duration",
-      description: "Choose your coverage period - from 1 hour to 28 days based on your needs.",
-      icon: "📅"
+      description: "Choose your coverage period from 1 hour to 28 days based on your specific needs."
     },
     {
       number: "03",
       title: "Review & Pay",
-      description: "Get an instant quote, confirm your details, and complete payment online securely.",
-      icon: "💳"
+      description: "Get an instant quote, review your details, and complete secure payment online."
     },
     {
       number: "04",
-      title: "Get Insured",
-      description: "Policy activates instantly with digital documents sent straight to your email.",
-      icon: "✓"
-    }
-  ];
-
-  const whyChooseUs = [
-    {
-      title: "Perfect for Young Drivers",
-      description: "Affordable insurance options tailored for drivers aged 17+",
-      icon: "🚗"
-    },
-    {
-      title: "Couriers Welcome",
-      description: "Specialized coverage for business and delivery driving needs",
-      icon: "📦"
-    },
-    {
-      title: "Past Convictions OK",
-      description: "We work with drivers with motoring convictions to find suitable cover",
-      icon: "🛡️"
+      title: "Policy Active",
+      description: "Your policy activates immediately with digital documents sent directly to your email."
     }
   ];
 
@@ -74,41 +51,31 @@ const Explaining = () => {
         <div className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-              What is Temporary Vehicle <span>Insurance?</span>
+              What is <span>Temporary Insurance?</span>
             </h2>
-            <p className={`${styles.sectionSubtitle} ${manrope.className}`}>
-              A flexible, short-term insurance solution for your driving needs
-            </p>
           </div>
 
-          <div className={styles.contentGrid}>
+          <div className={styles.contentWrapper}>
             <div className={styles.mainContent}>
-              <p className={`${styles.mainDescription} ${manrope.className}`}>
-                Temporary car insurance is a short-term, flexible policy that provides fully comprehensive cover for driving a vehicle in the UK, ranging from one hour to 28 days. Ideal for situations like borrowing a car, test-driving a new vehicle, or covering a short trip, it offers the same protection as an annual policy without the long-term commitment.
+              <p className={`${styles.description} ${manrope.className}`}>
+                Temporary car insurance is a short-term, flexible policy that provides fully comprehensive cover for driving a vehicle in the UK, ranging from one hour to 28 days.
               </p>
 
-              <div className={styles.benefitsList}>
-                {whatsIncludedPoints.map((point, index) => (
-                  <div className={styles.benefitItem} key={index}>
-                    <span className={styles.checkmark}>✓</span>
-                    <span className={`${styles.benefitText} ${manrope.className}`}>{point}</span>
-                  </div>
-                ))}
+              <div className={styles.keyFeatures}>
+                <p className={`${styles.featureHeader} ${plusJakartaSans.className}`}>Key Features:</p>
+                <ul className={styles.featuresList}>
+                  {whatsIncludedPoints.map((point, index) => (
+                    <li key={index} className={`${styles.featureItem} ${manrope.className}`}>
+                      <span className={styles.bullet}>→</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <p className={`${styles.secondaryDescription} ${manrope.className}`}>
-                With Limitless Cover, young drivers, couriers, and those with convictions can quickly secure affordable insurance tailored to their needs, with instant quotes and hassle-free activation through our online platform.
+              <p className={`${styles.concludingText} ${manrope.className}`}>
+                With Limitless Cover, young drivers, couriers, and those with convictions can quickly secure affordable insurance tailored to their needs, with instant quotes and hassle-free activation.
               </p>
-            </div>
-
-            <div className={styles.imageContainer}>
-              <Image
-                src="/svg/temp-car.svg"
-                alt="temporary car insurance"
-                width={400}
-                height={350}
-                className={styles.sectionImage}
-              />
             </div>
           </div>
         </div>
@@ -117,45 +84,26 @@ const Explaining = () => {
         <div className={styles.section}>
           <div className={styles.sectionHeader}>
             <h2 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-              How Temporary Insurance <span>Works</span>
+              How It <span>Works</span>
             </h2>
-            <p className={`${styles.sectionSubtitle} ${manrope.className}`}>
-              4 simple steps to get covered in minutes
-            </p>
           </div>
 
           <div className={styles.stepsGrid}>
             {howItWorksSteps.map((step, index) => (
               <div className={styles.stepCard} key={index}>
-                <div className={styles.stepNumber}>{step.number}</div>
-                <div className={styles.stepIcon}>{step.icon}</div>
-                <h4 className={`${styles.stepTitle} ${plusJakartaSans.className}`}>{step.title}</h4>
+                <div className={styles.stepHeader}>
+                  <div className={styles.stepNumber}>{step.number}</div>
+                  <h4 className={`${styles.stepTitle} ${plusJakartaSans.className}`}>{step.title}</h4>
+                </div>
                 <p className={`${styles.stepDescription} ${manrope.className}`}>{step.description}</p>
               </div>
             ))}
           </div>
 
-          <p className={`${styles.processDescription} ${manrope.className}`}>
-            Temporary vehicle insurance in the UK is a straightforward way to get short-term coverage. After confirming your details and making payment online, the policy activates instantly with digital documents sent via email. This fully comprehensive cover suits young drivers, couriers, or anyone needing quick insurance without long-term commitments.
-          </p>
-        </div>
-
-        {/* Why Choose Us Section */}
-        <div className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <h2 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-              Why Choose <span>Limitless Cover?</span>
-            </h2>
-          </div>
-
-          <div className={styles.whyGrid}>
-            {whyChooseUs.map((reason, index) => (
-              <div className={styles.whyCard} key={index}>
-                <div className={styles.whyIcon}>{reason.icon}</div>
-                <h4 className={`${styles.whyTitle} ${plusJakartaSans.className}`}>{reason.title}</h4>
-                <p className={`${styles.whyDescription} ${manrope.className}`}>{reason.description}</p>
-              </div>
-            ))}
+          <div className={styles.processNote}>
+            <p className={`${manrope.className}`}>
+              Temporary vehicle insurance in the UK is straightforward. After confirming your details and making payment, your policy activates instantly with digital documents sent via email. This fully comprehensive cover suits young drivers, couriers, or anyone needing quick insurance without long-term commitments.
+            </p>
           </div>
         </div>
       </div>
