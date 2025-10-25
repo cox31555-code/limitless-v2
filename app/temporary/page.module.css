@@ -1,12 +1,14 @@
 .paymentOptions {
-  margin: -7rem 4.4% 4.5rem;
+  margin: 4.5rem 4.4% 0;
+  padding: 0 4.4%;
 }
 .questions {
-  margin: 0 12% 11rem;
-  padding-top: 9rem;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 9rem 4.4% 11rem;
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: 4.8rem;
 }
 .questionsTitle {
   color: #000822;
@@ -19,19 +21,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
 }
 .questionsTitle span {
   color: #0388ff;
 }
 @media screen and (max-width: 900px) {
   .questionsTitle {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
+    margin-bottom: 1.6rem;
   }
   .questions {
-    margin: 0 4.4% 5.4rem;
-    padding-top: 7.5rem;
+    padding: 6rem 4.4% 5.4rem;
+    gap: 2rem;
   }
   .paymentOptions {
-    margin: 0;
+    margin: 2rem 0 0;
+    padding: 0;
   }
 }
