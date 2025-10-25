@@ -14,8 +14,8 @@ const LoadingSpinner = () => {
       >
         <defs>
           <linearGradient id="fillGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0388ff" />
-            <stop offset="100%" stopColor="#0270cc" />
+            <stop offset="0%" stopColor="#00d4ff" />
+            <stop offset="100%" stopColor="#0099cc" />
           </linearGradient>
         </defs>
         <g transform="translate(23, 19)">
