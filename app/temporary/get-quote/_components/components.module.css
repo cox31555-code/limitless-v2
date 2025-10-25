@@ -148,6 +148,46 @@
   min-width: 0;
 }
 
+/* Section Header for Vehicle Details */
+.vehicleDetailsSection {
+  padding: 2.4rem 3.2rem;
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+  border-bottom: 2px solid rgba(3, 136, 255, 0.15);
+  margin-bottom: 1.6rem;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.vehicleDetailsSectionIcon {
+  width: 32px;
+  height: 32px;
+  background: rgba(3, 136, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0388ff;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.vehicleDetailsSectionTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.vehicleDetailsSectionSubtitle {
+  font-size: 1.2rem;
+  color: rgba(0, 8, 34, 0.6);
+  font-weight: 400;
+  margin: 0;
+}
+
 /* Cover Details Styles */
 .inputGroup {
   display: flex;
