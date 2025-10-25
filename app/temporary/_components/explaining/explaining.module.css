@@ -1,6 +1,33 @@
 .wrapper {
   background: linear-gradient(180deg, #000822 0%, #051140 100%);
   padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(0deg, transparent 24%, rgba(3, 136, 255, 0.05) 25%, rgba(3, 136, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(3, 136, 255, 0.05) 75%, rgba(3, 136, 255, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(3, 136, 255, 0.05) 25%, rgba(3, 136, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(3, 136, 255, 0.05) 75%, rgba(3, 136, 255, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  animation: gridFlow 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gridFlow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
 }
 
 .container {
@@ -11,6 +38,8 @@
   display: flex;
   flex-direction: column;
   gap: 8rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Section Styles */
