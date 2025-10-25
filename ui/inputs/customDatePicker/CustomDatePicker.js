@@ -69,11 +69,13 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
     if (minDate && dateObj < minDate) return true;
     if (maxDate && dateObj > maxDate) return true;
 
-    // Disable entire past months
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const isBeforeToday = dateObj < today;
-    if (isBeforeToday) return true;
+    // Only disable past dates if maxDate is not set (i.e., not for DOB)
+    if (!maxDate) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const isBeforeToday = dateObj < today;
+      if (isBeforeToday) return true;
+    }
 
     return false;
   };
