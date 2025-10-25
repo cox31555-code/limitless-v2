@@ -161,8 +161,19 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
 
   const years = [];
   const currentYear = new Date().getFullYear();
-  for (let i = currentYear - 5; i <= currentYear + 10; i++) {
-    years.push(i);
+
+  // For date of birth, show years from maxDate year to current year
+  if (maxDate) {
+    const maxYear = maxDate.getFullYear();
+    const startYear = Math.min(maxYear - 50, 1950); // Show 50 years before maxDate, but not before 1950
+    for (let i = startYear; i <= currentYear; i++) {
+      years.push(i);
+    }
+  } else {
+    // Default: current year minus 5 to current year plus 10 (for future dates)
+    for (let i = currentYear - 5; i <= currentYear + 10; i++) {
+      years.push(i);
+    }
   }
 
   return (
