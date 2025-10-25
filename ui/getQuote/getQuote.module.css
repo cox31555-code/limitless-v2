@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 55rem;
+  max-width: 48rem;
   padding: 0;
   border-radius: 2rem;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
