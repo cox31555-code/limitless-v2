@@ -234,7 +234,7 @@ const PersonalDetailsForm = ({ form }) => {
 
         {/* Car Parking Section */}
         <div className={styles.formSection}>
-          <Title title="Car Parking" />
+          <h3 className={styles.sectionTitle}>Car Parking</h3>
           
           <div className={styles.parkingGrid}>
             <div className={styles.parkingCard}>
