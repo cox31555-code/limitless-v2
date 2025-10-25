@@ -461,12 +461,11 @@ const VehicleDetailsForm = ({
                 reg={true}
                 label="Registration Number"
                 placeholder="Enter your Registration number"
-                {...register("vehicleDetails.registrationNumber", {
-                  onChange: (e) => {
-                    e.target.value = e.target.value.toUpperCase();
-                  },
-                })}
-                value={watch("vehicleDetails.registrationNumber") || ""}
+                {...register("vehicleDetails.registrationNumber")}
+                onChange={(e) => {
+                  const upperValue = e.target.value.toUpperCase();
+                  setValue("vehicleDetails.registrationNumber", upperValue);
+                }}
                 error={errors.vehicleDetails?.registrationNumber}
                 button={
                   <ConfirmBtn
