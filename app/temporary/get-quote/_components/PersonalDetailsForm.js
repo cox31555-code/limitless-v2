@@ -277,7 +277,7 @@ const PersonalDetailsForm = ({ form }) => {
 
         {/* Car Usage Section */}
         <div className={styles.formSection}>
-          <Title title="Car Usage" />
+          <h3 className={styles.sectionTitle}>Car Usage</h3>
           
           <div className={styles.usageTypeWrapper}>
             <p className={styles.usageLabel}>What do you use the car for?</p>
