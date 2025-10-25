@@ -138,102 +138,107 @@ const PersonalDetailsForm = ({ form }) => {
   return (
     <ComponentWrapper title="Personal Details">
       <div className={`${styles.content} ${styles.personalDetailsContainer}`}>
-        <div className={styles.row}>
-          <FormTextInput
-            label="First Name"
-            placeholder="Enter your first name"
-            {...register("userDetails.firstName")}
-            error={errors.userDetails?.firstName}
-          />
-          <FormTextInput
-            label="Last Name"
-            placeholder="Enter your last name"
-            {...register("userDetails.surname")}
-            error={errors.userDetails?.surname}
-          />
-          <FormDataAndTime
-            dateLabel="Date of Birth"
-            type="date"
-            allowPastDates={true}
-            {...register("userDetails.dateOfBirth")}
-            value={watch("userDetails.dateOfBirth")}
-            error={errors.userDetails?.dateOfBirth}
-          />
+        {/* Personal Information Section */}
+        <div className={styles.personalSection}>
+          <Title title="Your Personal Information" />
+          <div className={styles.row}>
+            <FormTextInput
+              label="First Name"
+              placeholder="Enter your first name"
+              {...register("userDetails.firstName")}
+              error={errors.userDetails?.firstName}
+            />
+            <FormTextInput
+              label="Last Name"
+              placeholder="Enter your last name"
+              {...register("userDetails.surname")}
+              error={errors.userDetails?.surname}
+            />
+            <FormDataAndTime
+              dateLabel="Date of Birth"
+              type="date"
+              allowPastDates={true}
+              {...register("userDetails.dateOfBirth")}
+              value={watch("userDetails.dateOfBirth")}
+              error={errors.userDetails?.dateOfBirth}
+            />
+          </div>
+
+          <div className={styles.row}>
+            <FormTextInput
+              label="Email Address"
+              type="email"
+              placeholder="Enter your email address"
+              {...register("userDetails.email")}
+              error={errors.userDetails?.email}
+            />
+            <FormTextInput
+              label="Contact Number"
+              placeholder="Enter your contact number"
+              {...register("userDetails.phone")}
+              error={errors.userDetails?.phone}
+            />
+          </div>
+
+          <div className={styles.row}>
+            <FormTextInput
+              label="Postcode"
+              placeholder="Enter your postcode"
+              {...register("userDetails.postCode")}
+              error={errors.userDetails?.postCode}
+              button={
+                <ConfirmBtn
+                  title={isLoadingAddresses ? "Loading..." : "Find Address"}
+                  onClick={handleFindAddress}
+                  disabled={isLoadingAddresses}
+                  type="button"
+                />
+              }
+            />
+            <FormDropdown
+              label="Address"
+              options={addresses}
+              placeholder={
+                addresses.length > 0
+                  ? "Select your address"
+                  : "No addresses found"
+              }
+              {...register("userDetails.address")}
+              error={errors.userDetails?.address}
+            />
+          </div>
         </div>
 
-        <div className={styles.row}>
-          <FormTextInput
-            label="Email Address"
-            type="email"
-            placeholder="Enter your email address"
-            {...register("userDetails.email")}
-            error={errors.userDetails?.email}
-          />
-          <FormTextInput
-            label="Contact Number"
-            placeholder="Enter your contact number"
-            {...register("userDetails.phone")}
-            error={errors.userDetails?.phone}
-          />
-        </div>
-
-        <div className={styles.row}>
-          <FormTextInput
-            label="Postcode"
-            placeholder="Enter your postcode"
-            {...register("userDetails.postCode")}
-            error={errors.userDetails?.postCode}
-            button={
-              <ConfirmBtn
-                title={isLoadingAddresses ? "Loading..." : "Find Address"}
-                onClick={handleFindAddress}
-                disabled={isLoadingAddresses}
-                type="button"
-              />
-            }
-          />
-        </div>
-
-        <div className={styles.row}>
-          <FormDropdown
-            label="Address"
-            options={addresses}
-            placeholder={
-              addresses.length > 0
-                ? "Select your address"
-                : "No addresses found"
-            }
-            {...register("userDetails.address")}
-            error={errors.userDetails?.address}
-          />
-          <FormDropdown
-            label="Employment Status"
-            options={employmentStatusOptions}
-            placeholder="Choose Employment Status"
-            {...register("userDetails.employmentStatus")}
-            error={errors.userDetails?.employmentStatus}
-          />
-        </div>
-
-        <div className={styles.row}>
-          <FormTextInput
-            label="Industry"
-            placeholder="Enter your Industry"
-            {...register("userDetails.industry")}
-            error={errors.userDetails?.industry}
-            disabled={isRetiredOrUnemployed}
-            value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.industry")}
-          />
-          <FormAutocomplete
-            label="Occupation"
-            options={occupationOptions}
-            placeholder="Type or select your occupation"
-            {...register("userDetails.occupation")}
-            error={errors.userDetails?.occupation}
-            value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
-            onChange={(e) => setValue("userDetails.occupation", e.target.value)}
-            disabled={isRetiredOrUnemployed}
-          />
+        {/* Employment Section */}
+        <div className={styles.employmentSection}>
+          <Title title="Employment Details" />
+          <div className={styles.row}>
+            <FormDropdown
+              label="Employment Status"
+              options={employmentStatusOptions}
+              placeholder="Choose Employment Status"
+              {...register("userDetails.employmentStatus")}
+              error={errors.userDetails?.employmentStatus}
+            />
+            <FormTextInput
+              label="Industry"
+              placeholder="Enter your Industry"
+              {...register("userDetails.industry")}
+              error={errors.userDetails?.industry}
+              disabled={isRetiredOrUnemployed}
+              value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.industry")}
+            />
+            <FormAutocomplete
+              label="Occupation"
+              options={occupationOptions}
+              placeholder="Type or select your occupation"
+              {...register("userDetails.occupation")}
+              error={errors.userDetails?.occupation}
+              value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
+              onChange={(e) => setValue("userDetails.occupation", e.target.value)}
+              disabled={isRetiredOrUnemployed}
+            />
+          </div>
         </div>
       </div>
 
