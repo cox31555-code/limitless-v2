@@ -1,27 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
-import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import { useAuth } from "@/contexts/AuthContext";
-import { usePathname } from "next/navigation";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["500"],
-});
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = ({ page }) => {
   const { user } = useAuth();
   const pathname = usePathname();
+  const router = useRouter();
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-  // Determine the title based on the page prop or pathname
   const getTitle = () => {
-    // If page prop is provided, use it
     if (page) {
       switch (page) {
         case "claims":
@@ -34,11 +25,10 @@ const Header = ({ page }) => {
           return "Policy Documents";
         case "dashboard":
         default:
-          return "Welcome";
+          return "Dashboard";
       }
     }
 
-    // Otherwise, determine from pathname
     if (pathname.includes("/claims")) {
       return "Manage Claims";
     } else if (pathname.includes("/policy")) {
@@ -48,51 +38,124 @@ const Header = ({ page }) => {
     } else if (pathname.includes("/documents")) {
       return "Policy Documents";
     } else {
-      return "Welcome";
+      return "Dashboard";
     }
   };
 
-  const title = getTitle();
-  const words = title.split(" ");
-  const lastWord = words[words.length - 1];
-  const withoutLastWord = words.slice(0, -1).join(" ");
+  const HelpIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 16v-4M12 8h.01" />
+    </svg>
+  );
+
+  const BellIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+      <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+    </svg>
+  );
+
+  const UserIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+
   return (
-    <div className="headerDashboardContainer">
-      <Image
-        src="/svg/squares-2.svg"
-        alt="squares"
-        width={1394}
-        height={706}
-        className={styles.squares}
-      />
-      <div className="centeredContent">
-        <div className={styles.wrapper}>
-          <Image
-            src="/svg/dash-header.svg"
-            alt="dash-header"
-            width={585}
-            height={776}
-            className={styles.dashHeader}
-          />
+    <div className={styles.headerContainer}>
+      <div className={styles.headerContent}>
+        <div className={styles.headerLeft}>
+          <h1 className={styles.pageTitle}>{getTitle()}</h1>
+        </div>
 
-          <div className={styles.titles}>
-            <p className={`${styles.subTitle} ${manrope.className}`}>
-              DASHBOARD
-            </p>
-
-            <div className={`${styles.title} ${plusJakartaSans.className}`}>
-              {withoutLastWord}
-              <div className={styles.titleSpan}>
-                {lastWord}{" "}
-                <Image
-                  src="/svg/curved-border.svg"
-                  alt="curved border"
-                  width={393}
-                  height={3}
-                  className={styles.curvedBorder}
-                />
-              </div>
+        <div className={styles.headerRight}>
+          <div className={styles.helpSection}>
+            <div
+              className={styles.helpButton}
+              onClick={() => setIsHelpOpen(!isHelpOpen)}
+              title="Get Help"
+            >
+              <HelpIcon />
             </div>
+            {isHelpOpen && (
+              <div className={styles.helpDropdown}>
+                <div className={styles.dropdownHeader}>How can we help?</div>
+                <a href="/contact" className={styles.dropdownItem}>
+                  <span className={styles.itemIcon}>💬</span>
+                  <div className={styles.itemText}>
+                    <div className={styles.itemTitle}>Contact Support</div>
+                    <div className={styles.itemDesc}>Get in touch with our team</div>
+                  </div>
+                </a>
+                <a href="/FAQ" className={styles.dropdownItem}>
+                  <span className={styles.itemIcon}>❓</span>
+                  <div className={styles.itemText}>
+                    <div className={styles.itemTitle}>FAQ</div>
+                    <div className={styles.itemDesc}>Find answers to common questions</div>
+                  </div>
+                </a>
+                <div className={styles.dropdownItem} onClick={() => {
+                  if (typeof window !== "undefined" && window.Tawk_API) {
+                    window.Tawk_API.maximize();
+                    setIsHelpOpen(false);
+                  }
+                }}>
+                  <span className={styles.itemIcon}>💬</span>
+                  <div className={styles.itemText}>
+                    <div className={styles.itemTitle}>Live Chat</div>
+                    <div className={styles.itemDesc}>Chat with us now</div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <button className={styles.notificationButton} title="Notifications">
+            <BellIcon />
+            <span className={styles.badge}>0</span>
+          </button>
+
+          <div className={styles.profileSection}>
+            <button
+              className={styles.profileButton}
+              onClick={() => setIsProfileOpen(!isProfileOpen)}
+              title="Account"
+            >
+              <UserIcon />
+              <span className={styles.userName}>{user?.email?.split("@")[0] || "User"}</span>
+            </button>
+            {isProfileOpen && (
+              <div className={styles.profileDropdown}>
+                <div className={styles.profileInfo}>
+                  <div className={styles.profileEmail}>{user?.email || "user@example.com"}</div>
+                </div>
+                <a href="/dashboard" className={styles.profileItem}>
+                  Dashboard
+                </a>
+                <a href="/dashboard/policy" className={styles.profileItem}>
+                  Policies
+                </a>
+                <a href="/dashboard/documents" className={styles.profileItem}>
+                  Documents
+                </a>
+                <hr className={styles.profileDivider} />
+                <a href="/change-password" className={styles.profileItem}>
+                  Change Password
+                </a>
+                <button
+                  className={styles.logoutButton}
+                  onClick={async () => {
+                    const { logout } = require("@/contexts/AuthContext").useAuth?.();
+                    // Note: This will be handled by parent component's logout
+                    router.push("/login");
+                  }}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
