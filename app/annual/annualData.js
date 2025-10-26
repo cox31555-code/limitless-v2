@@ -14,14 +14,13 @@ export const annualFeatures = [
   },
   {
     img: {
-      src: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F0abcb22e90c84980ac9901849f8bba5b?format=webp&width=800",
+      src: "/svg/insurance-types.svg",
       alt: "comprehensive protection",
-      width: 100,
-      height: 100,
+      width: 64,
+      height: 64,
     },
     title: "Comprehensive protection",
     description: "Enjoy peace of mind with theft, accident plus 24/7 support and instant online quotes.",
-    imgClassName: featureStyles.imgHighQuality,
   },
   {
     img: {
