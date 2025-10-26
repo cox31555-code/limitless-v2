@@ -4,7 +4,6 @@
   gap: 4rem;
   margin: 5rem 4.4%;
   width: 91.2%;
-  position: relative;
 }
 
 .first {
@@ -17,14 +16,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  position: fixed;
+  position: sticky;
   top: 120px;
-  right: 4.4%;
-  width: 28%;
   height: fit-content;
   z-index: 10;
-  max-height: calc(100vh - 220px);
-  overflow-y: auto;
+  align-self: start;
 }
 
 .actions {
