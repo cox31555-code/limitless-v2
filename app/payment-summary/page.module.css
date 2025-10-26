@@ -1,18 +1,19 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
   gap: 4rem;
-  margin: 5rem auto;
-  padding: 0 4.4%;
+  padding: 5rem 4.4%;
   width: 100%;
-  max-width: 150rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .first {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  min-width: 0;
-  flex: 1.4 1 auto;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .second {
@@ -23,8 +24,8 @@
   top: 120px;
   height: fit-content;
   z-index: 10;
-  flex: 1 0 auto;
-  min-width: 0;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .actions {
