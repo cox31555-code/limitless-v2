@@ -13,13 +13,11 @@ const LoadingSpinner = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="fillGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3399ff" />
-            <stop offset="100%" stopColor="#0051ba" />
+          <linearGradient id="fillGradient">
+            <stop offset="0%" stopColor="#0051ba" />
           </linearGradient>
-          <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0051ba" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          <linearGradient id="darkGradient">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
           </linearGradient>
         </defs>
         <g transform="translate(23, 19)">
