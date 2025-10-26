@@ -111,25 +111,46 @@
 
 .featureItem {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.2rem;
-  background: rgba(3, 136, 255, 0.05);
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.6rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, rgba(3, 136, 255, 0.02) 100%);
   border-radius: 10px;
   border: 1px solid rgba(3, 136, 255, 0.08);
   transition: all 0.3s ease;
 }
 
 .featureItem:hover {
-  background: rgba(3, 136, 255, 0.08);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.05) 100%);
   border-color: rgba(3, 136, 255, 0.15);
   transform: translateY(-2px);
 }
 
-.featureItem img {
-  flex-shrink: 0;
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
+  background: rgba(3, 136, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.featureItem:hover .iconWrapper {
+  background: #0388ff;
+}
+
+.checkIcon {
+  width: 14px;
+  height: 14px;
+  color: #0388ff;
+  transition: color 0.3s ease;
+}
+
+.featureItem:hover .checkIcon {
+  color: #ffffff;
 }
 
 .featureItemTitle {
