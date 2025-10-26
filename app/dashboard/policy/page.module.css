@@ -97,7 +97,8 @@
     align-items: flex-start;
   }
   .title {
-    font-size: 2rem;
+    font-size: 2.4rem;
+    font-weight: 800;
   }
   .button {
     width: 100%;
