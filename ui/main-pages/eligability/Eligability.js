@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./eligability.module.css";
 import Image from "next/image";
