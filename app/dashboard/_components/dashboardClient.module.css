@@ -167,8 +167,10 @@
 }
 
 .statIcon {
-  width: 28px;
-  height: 28px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .statContent {
@@ -449,8 +451,10 @@
 }
 
 .infoIcon {
-  width: 32px;
-  height: 32px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .infoTitle {
