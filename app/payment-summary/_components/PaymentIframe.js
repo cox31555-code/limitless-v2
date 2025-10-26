@@ -16,23 +16,23 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
     if (show && !logoPositions) {
       setLogoPositions({
         logo1: {
-          top: Math.random() * 60 + 5,
-          right: Math.random() * 50 + 20,
+          top: Math.random() * 80 - 20,
+          right: Math.random() * 80 - 10,
           delay: Math.random() * 2,
         },
         logo2: {
-          bottom: Math.random() * 35 + 10,
-          left: Math.random() * 35 + 5,
+          bottom: Math.random() * 80 - 10,
+          left: Math.random() * 80 - 20,
           delay: Math.random() * 2 + 1,
         },
         logo3: {
-          top: Math.random() * 60 + 20,
-          left: Math.random() * 30 + 5,
+          top: Math.random() * 90,
+          left: Math.random() * 80 - 10,
           delay: Math.random() * 2 + 0.5,
         },
         logo4: {
-          bottom: Math.random() * 10,
-          right: Math.random() * 45 + 10,
+          bottom: Math.random() * 15,
+          right: Math.random() * 80 - 10,
           delay: Math.random() * 2 + 1.5,
         },
       });
