@@ -104,7 +104,7 @@ const GetQuote = ({ skipDuration = false }) => {
     setErrors({});
   };
 
-  const progressPercentage = (step / 2) * 100;
+  const progressPercentage = skipDuration ? 100 : (step / 2) * 100;
 
   return (
     <div className={styles.container}>
