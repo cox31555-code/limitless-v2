@@ -381,6 +381,10 @@
     padding: 1rem 1.2rem;
   }
 
+  .headerTitle {
+    font-size: 1rem;
+  }
+
   .logo {
     width: 3.2rem;
     height: 3.2rem;
