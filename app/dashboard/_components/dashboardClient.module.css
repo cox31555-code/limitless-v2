@@ -222,7 +222,7 @@
 
 .statCard:hover .statArrow {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(2px);
 }
 
 /* Quick Actions Section */
