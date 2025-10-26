@@ -7,8 +7,32 @@ import styles from "./paymentIframe.module.css";
 
 export default function PaymentIframe({ insuranceId, show, onClose }) {
   const [isPaid, setIsPaid] = useState(false);
+  const [logoPositions, setLogoPositions] = useState(null);
   const router = useRouter();
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+  // Generate random positions and delays on component mount
+  useEffect(() => {
+    if (show && !logoPositions) {
+      setLogoPositions({
+        logo1: {
+          top: Math.random() * 30 + 5,
+          right: Math.random() * 40 + 10,
+          delay: Math.random() * 2,
+        },
+        logo2: {
+          bottom: Math.random() * 35 + 10,
+          left: Math.random() * 35 + 5,
+          delay: Math.random() * 2 + 1,
+        },
+        logo3: {
+          top: Math.random() * 60 + 20,
+          left: Math.random() * 30 + 5,
+          delay: Math.random() * 2 + 0.5,
+        },
+      });
+    }
+  }, [show, logoPositions]);
 
   useEffect(() => {
     if (!show || !insuranceId) return;
