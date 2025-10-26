@@ -1,9 +1,10 @@
 .container {
-  /* padding: 2.4rem 1.6rem 4.1rem; */
-  max-width: 48.8rem;
-  border-radius: 18px;
-  background: #000822;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 8, 34, 0.06);
   position: relative;
+  overflow: hidden;
 }
 .title {
   color: #fff;
