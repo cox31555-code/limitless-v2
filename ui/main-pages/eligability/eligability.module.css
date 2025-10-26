@@ -74,9 +74,10 @@
 
 .section:hover {
   border: 1.5px solid rgba(3, 136, 255, 0.08) !important;
-  box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04) !important;
   animation: none !important;
   transition: none !important;
+  opacity: 1 !important;
 }
 
 .section svg,
