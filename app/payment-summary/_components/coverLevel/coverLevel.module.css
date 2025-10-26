@@ -42,15 +42,16 @@
 .summery {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2.4rem;
-  margin: 1.6rem 2.4rem;
+  gap: 2.4rem;
+  padding: 3.2rem;
+  margin: 2rem 2.8rem;
   position: relative;
-  border-radius: 16px;
+  border-radius: 18px;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  min-height: 180px;
+  min-height: 220px;
   justify-content: center;
   overflow: hidden;
+  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.25);
 }
 
 .summery::before {
