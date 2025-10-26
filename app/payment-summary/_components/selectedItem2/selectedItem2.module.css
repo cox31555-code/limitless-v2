@@ -56,19 +56,45 @@
 }
 @media screen and (max-width: 900px) {
   .option {
-    gap: 1.5rem;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-    padding: 1.7rem 1.4rem 2rem;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    flex-direction: row;
   }
+
   .optionContent {
-    gap: 0.8rem;
-    max-width: 23rem;
+    gap: 0.6rem;
   }
+
   .title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
+
   .description {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .option {
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .checkIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
   }
 }
