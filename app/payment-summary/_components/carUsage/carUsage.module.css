@@ -45,29 +45,56 @@
 .third {
   padding: 1.6rem;
 }
-@media screen and (max-width: 900px) {
-  .title {
-    font-size: 1.4rem;
-  }
+@media screen and (max-width: 1200px) {
   .row {
-    flex-direction: column;
-    gap: 2.6rem;
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
   .first,
   .second,
   .third {
-    display: flex;
-    flex-direction: column;
-    gap: 2.6rem;
-    padding: 2.4rem 2rem;
+    gap: 1.4rem;
+    padding: 1.4rem;
   }
+
   .first {
-    gap: 1.9rem;
-    padding: 2rem 2rem 2.4rem;
+    gap: 1.2rem;
   }
 
   .first,
   .second {
-    border-bottom: 1px solid rgba(0, 8, 34, 0.24);
+    border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .row {
+    gap: 1.2rem;
+  }
+
+  .first,
+  .second,
+  .third {
+    gap: 1.2rem;
+    padding: 1.2rem;
   }
 }
