@@ -17,7 +17,6 @@ import {
   clearDependentFields,
   shouldAutoSelect,
 } from "../helperFucntion";
-import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
 
 // Simplified state for vehicle data
 const initialState = {
