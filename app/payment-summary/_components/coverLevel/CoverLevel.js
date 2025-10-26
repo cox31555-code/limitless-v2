@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./coverLevel.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { FaCheck } from "react-icons/fa6";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
