@@ -29,7 +29,7 @@ const getIconComponent = (iconType) => {
   }
 };
 
-const Feature = ({ img, icon, title, description }) => {
+const Feature = ({ img, icon, title, description, imgClassName }) => {
   return (
     <div className={styles.container}>
       <svg className={styles.borderSvg} viewBox="0 0 400 120" preserveAspectRatio="none">
@@ -45,7 +45,7 @@ const Feature = ({ img, icon, title, description }) => {
           alt={img.alt}
           width={img.width}
           height={img.height}
-          className={styles.img}
+          className={imgClassName || styles.img}
         />
       )}
       <div className={`${styles.content}`}>
