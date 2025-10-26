@@ -185,16 +185,29 @@
   color: #0CA86E;
   margin-top: 0.2rem;
   animation: none !important;
+  transition: none !important;
+  animation-name: none !important;
+  animation-duration: 0s !important;
 }
 
 .checkmark svg {
   animation: none !important;
+  transition: none !important;
+  animation-name: none !important;
+  animation-duration: 0s !important;
+  stroke-dasharray: 0 !important;
+  stroke-dashoffset: 0 !important;
+  stroke: none !important;
 }
 
 .checkmark svg path {
   animation: none !important;
+  transition: none !important;
+  animation-name: none !important;
+  animation-duration: 0s !important;
   stroke-dasharray: 0 !important;
   stroke-dashoffset: 0 !important;
+  stroke: none !important;
 }
 
 .featureText {
