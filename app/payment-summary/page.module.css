@@ -5,6 +5,11 @@
   margin: 5rem 4.4%;
   width: 91.2%;
   align-items: start;
+  overflow: visible;
+}
+
+.container > * {
+  overflow: visible;
 }
 
 .first {
@@ -21,6 +26,7 @@
   top: 120px;
   height: fit-content;
   z-index: 10;
+  align-self: start;
 }
 
 .actions {
