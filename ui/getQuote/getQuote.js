@@ -280,7 +280,7 @@ const GetQuote = () => {
                 <Selection1
                   items={
                     customDurationType === "Days"
-                      ? ["1", "2", "3", "4", "5", "6", "7"]
+                      ? ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
                       : customDurationType === "Hours"
                       ? [
                           "1",
@@ -296,7 +296,7 @@ const GetQuote = () => {
                           "11",
                           "12",
                         ]
-                      : ["1", "2", "3", "4"]
+                      : ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
                   }
                   selectedItem={customDurationValue}
                   setSelectedItem={(item) => {
