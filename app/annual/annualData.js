@@ -21,7 +21,7 @@ export const annualFeatures = [
   },
   {
     img: {
-      src: "/svg/drive-freedom.svg",
+      src: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F24c044dddeb844ebb0a52f698cbda63c?format=webp&width=800",
       alt: "drive with freedom",
       width: 64,
       height: 64,
