@@ -3,56 +3,74 @@ import React, { useState } from "react";
 import styles from "./calculator.module.css";
 import Image from "next/image";
 import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import Selection1 from "@/ui/inputs/selections/selection1/Selection1";
 import { useRouter } from "next/navigation";
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700", "600"],
 });
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["500"],
+});
+
+const PriceIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <circle cx="16" cy="16" r="14" fill="none" stroke="#0388FF" strokeWidth="2" />
+    <path d="M16 8V24M12 10H20C21.1046 10 22 10.8954 22 12V20C22 21.1046 21.1046 22 20 22H12C10.8954 22 10 21.1046 10 20V12C10 10.8954 10.8954 10 12 10Z" stroke="#0388FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 const Calculator = () => {
   const [data, setData] = useState({
     type: "1 Hour",
   });
   const router = useRouter();
+
+  const priceMap = {
+    "1 Hour": "£12",
+    "1 Day": "£24",
+    "1 Week": "£50",
+  };
+
   return (
     <div className={styles.container}>
-      <Image
-        src="/svg/squares-2.svg"
-        alt="squares"
-        width={1394}
-        height={706}
-        className={styles.squares}
-      />
+      {/* Animated background elements */}
+      <div className={styles.bgOrb1}></div>
+      <div className={styles.bgOrb2}></div>
+      <div className={styles.bgOrb3}></div>
 
-      <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-        Temporary Vehicle<span>Insurance Calculator </span>
-      </h3>
       <div className={styles.content}>
-        <div className={styles.first}>
-          <span className={styles.background1}></span>
-          <span className={styles.background2}></span>
-          <span className={styles.background3}></span>
-          <Image
-            src={"/svg/calc-car.svg"}
-            alt="calculator-1"
-            width={161}
-            height={99}
-          />
-          <div className={styles.text}>
-            <h4
-              className={`${styles.contentTitle} ${plusJakartaSans.className}`}
-            >
-              Get your price <span>estimate</span>
-            </h4>
-            <p className={styles.description}>
-              {`It couldn't be simpler get a short term insurance policy. You can buy a policy online anytime you need it, and with our straightforward quote process, you can get a price in under 2 minutes!`}
+        <div className={styles.left}>
+          <div className={styles.topSection}>
+            <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+              Temporary Vehicle
+              <span>Insurance Calculator</span>
+            </h2>
+            <p className={`${styles.subtitle} ${manrope.className}`}>
+              Get your price estimate in under 2 minutes. It couldn't be simpler to get a short-term insurance policy. Buy online anytime you need it.
             </p>
           </div>
+
+          <div className={styles.illustration}>
+            <Image
+              src={"/svg/calc-car.svg"}
+              alt="calculator-1"
+              width={180}
+              height={120}
+              className={styles.carImage}
+            />
+          </div>
         </div>
-        <div className={styles.form}>
+
+        <div className={styles.right}>
           <div className={styles.selection}>
-            <p className={styles.label}>How long will you need it?</p>
+            <label className={`${styles.label} ${plusJakartaSans.className}`}>
+              How long will you need it?
+            </label>
             <Selection1
               style={"dark"}
               items={["1 Hour", "1 Day", "1 Week"]}
@@ -63,40 +81,30 @@ const Calculator = () => {
           </div>
 
           <div className={styles.card}>
-            <div className={styles.cardHeader}>
-              <div className={styles.left}>
-                <Image
-                  src={"/svg/card-icon.svg"}
-                  alt="card-icon"
-                  width={16}
-                  height={57}
-                />
-                <h5
-                  className={`${styles.cardTitle} ${plusJakartaSans.className}`}
-                >
-                  The average pricing for 1 day{" "}
-                </h5>
+            <div className={styles.priceSection}>
+              <div className={styles.priceLabel}>
+                <PriceIcon />
+                <span className={`${styles.priceLabelText} ${manrope.className}`}>
+                  Average pricing for {data.type.toLowerCase()}
+                </span>
               </div>
-              <h4
-                className={`${styles.cardPrice} ${plusJakartaSans.className}`}
-              >
-                {data.type === "1 Hour"
-                  ? "£12"
-                  : data.type === "1 Day"
-                  ? "£24"
-                  : "£50"}
-              </h4>
+              <div className={styles.priceDisplay}>
+                <span className={`${styles.price} ${plusJakartaSans.className}`}>
+                  {priceMap[data.type]}
+                </span>
+              </div>
             </div>
-            <p className={styles.cardDescription}>
-              Prices based on the averageprice 19,765 policies for the displayed
-              durations (January 2025){" "}
+
+            <p className={`${styles.disclaimer} ${manrope.className}`}>
+              Prices based on average of 19,765 policies for the displayed durations (January 2025)
             </p>
+
             <ConfirmBtn
               title="Get a quote"
               onClick={() => {
                 router.push("/temporary/get-quote");
               }}
-              className={styles.cardButton}
+              className={styles.button}
             />
           </div>
         </div>
