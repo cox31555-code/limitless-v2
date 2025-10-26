@@ -156,7 +156,7 @@ const DashboardClient = () => {
       <section className={styles.infoSection}>
         <div className={styles.infoCard}>
           <div className={styles.infoIconWrapper}>
-            <span style={{ fontSize: "2rem" }}>🔒</span>
+            <span style={{ fontSize: "2rem" }}>🔐</span>
           </div>
           <h3 className={styles.infoTitle}>Your Data is Secure</h3>
           <p className={styles.infoDescription}>
@@ -165,7 +165,7 @@ const DashboardClient = () => {
         </div>
         <div className={styles.infoCard}>
           <div className={styles.infoIconWrapper}>
-            <span style={{ fontSize: "2rem" }}>⭐</span>
+            <span style={{ fontSize: "2rem" }}>💬</span>
           </div>
           <h3 className={styles.infoTitle}>24/7 Support</h3>
           <p className={styles.infoDescription}>
