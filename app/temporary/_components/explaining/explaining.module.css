@@ -362,20 +362,16 @@
   }
 
   .stepCard {
-    padding: 2rem 1.8rem;
+    padding: 2.4rem 2rem;
   }
 
   .stepIconContainer {
-    height: 80px;
+    height: 70px;
   }
 
   .stepIconContainer svg {
-    width: 65px;
-    height: 65px;
-  }
-
-  .stepWrapper::after {
-    top: 45px;
+    width: 54px;
+    height: 54px;
   }
 }
 
@@ -410,25 +406,21 @@
 
   .stepCard {
     padding: 2.2rem;
-    gap: 1.6rem;
+    gap: 1.4rem;
   }
 
   .stepIconContainer {
-    height: 85px;
-  }
-
-  .stepIconContainer svg {
-    width: 65px;
     height: 65px;
   }
 
-  .stepNumber {
-    font-size: 1.6rem;
-    margin-top: 0.6rem;
+  .stepIconContainer svg {
+    width: 50px;
+    height: 50px;
   }
 
-  .stepWrapper::after {
-    display: none;
+  .stepNumber {
+    font-size: 1rem;
+    margin-top: 0.3rem;
   }
 
   .card {
@@ -484,11 +476,7 @@
 
   .stepCard {
     padding: 2rem 1.6rem;
-    gap: 1.3rem;
-  }
-
-  .stepWrapper::after {
-    display: none;
+    gap: 1.2rem;
   }
 
   .card {
