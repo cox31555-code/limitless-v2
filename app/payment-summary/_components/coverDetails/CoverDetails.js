@@ -4,6 +4,7 @@ import styles from "./coverDetails.module.css";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
+import { FaCheck } from "react-icons/fa6";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
