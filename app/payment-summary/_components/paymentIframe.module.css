@@ -340,6 +340,25 @@
   .successCheckmark {
     font-size: 5rem;
   }
+
+  .animatedLogo1 {
+    width: 200px;
+    height: 266px;
+    top: 5%;
+    right: 10%;
+  }
+
+  .animatedLogo2 {
+    width: 180px;
+    height: 240px;
+    bottom: 10%;
+    left: 5%;
+  }
+
+  .animatedLogo3 {
+    width: 150px;
+    height: 200px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -382,5 +401,25 @@
 
   .successMessage {
     font-size: 1rem;
+  }
+
+  .animatedLogo1 {
+    width: 150px;
+    height: 200px;
+    top: 5%;
+    right: 5%;
+  }
+
+  .animatedLogo2 {
+    width: 130px;
+    height: 173px;
+    bottom: 8%;
+    left: 5%;
+  }
+
+  .animatedLogo3 {
+    width: 110px;
+    height: 147px;
+    top: 45%;
   }
 }
