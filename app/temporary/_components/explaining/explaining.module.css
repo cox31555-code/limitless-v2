@@ -151,6 +151,108 @@
   margin: 0 auto;
 }
 
+.timelineWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+  max-width: 131.2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.stepWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  position: relative;
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 2rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(7, 16, 45, 0.8) 0%, rgba(3, 136, 255, 0.06) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.15);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0388ff 0%, transparent 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.stepCard::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 15%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(3, 136, 255, 0.12) 0%, transparent 75%);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  filter: blur(45px);
+  animation: orb2 17s ease-in-out 1s infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stepCard:hover {
+  border-color: rgba(3, 136, 255, 0.3);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.08) 100%);
+}
+
+.stepCard:hover::before {
+  transform: scaleX(1);
+}
+
+.stepIconContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  height: 100px;
+}
+
+.stepIconContainer svg {
+  width: 80px;
+  height: 80px;
+}
+
+.connector {
+  position: absolute;
+  top: 140px;
+  left: calc(100% + 0px);
+  width: calc(100% - 0px);
+  height: 3px;
+  background: linear-gradient(90deg, rgba(3, 136, 255, 0.3) 0%, rgba(3, 136, 255, 0.1) 100%);
+  z-index: 0;
+}
+
+.stepWrapper:last-child .connector {
+  display: none;
+}
+
 .card {
   display: flex;
   flex-direction: column;
