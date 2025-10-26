@@ -1,56 +1,57 @@
 .container {
   display: flex;
-  width: 31.8rem;
-  padding: 2.4rem 1.2rem;
+  width: 28rem;
+  padding: 2rem 0;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.8rem;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
   flex-shrink: 0;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border: 2px solid rgba(3, 136, 255, 0.12);
-  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.08),
-              inset 0 1px 2px rgba(255, 255, 255, 0.5);
-  margin-top: 5.8rem;
-  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  border-right: 1px solid rgba(3, 136, 255, 0.08);
+  margin-top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: top;
+  height: calc(100vh - 80px);
 }
 
 .sidebarOpen {
-  max-height: 600px;
+  max-height: 100vh;
   opacity: 1;
-  transform: scaleY(1);
+  transform: translateX(0);
 }
 
 .sidebarClosed {
   max-height: 0;
   opacity: 0;
-  transform: scaleY(0);
-  padding: 0 1.2rem;
-  margin-top: 0;
+  transform: translateX(-100%);
+  padding: 0;
 }
 
 .sidebarDesktop {
   max-height: none;
   opacity: 1;
-  transform: scaleY(1);
+  transform: translateX(0);
   transition: none;
+  height: calc(100vh - 80px);
 }
 
 .sidebarDesktop .navItem {
   opacity: 1;
   animation: none;
 }
+
 .navItems {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   width: 100%;
-  gap: 0.3rem;
+  gap: 0;
+  padding: 2rem 0;
 }
+
 .navItem {
   border: none;
   background: transparent;
@@ -58,52 +59,93 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 1.2rem 1.6rem;
-  gap: 1.2rem;
+  padding: 1.4rem 2rem;
+  gap: 1.6rem;
   color: #5a6b7d;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 130%;
-  letter-spacing: 0.3px;
-  border-radius: 12px;
+  letter-spacing: 0.2px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.320, 1);
   opacity: 0;
   position: relative;
-  overflow: hidden;
+  border-left: 4px solid transparent;
 }
 
 .sidebarOpen .navItem {
-  animation: slideInUp 0.4s ease-out forwards;
+  animation: slideInLeft 0.4s ease-out forwards;
 }
+
+.navItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, transparent 0%, #0388ff 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
 .activeNavItem {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3),
-              inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  color: #0388ff;
+  background: linear-gradient(90deg, rgba(3, 136, 255, 0.08) 0%, transparent 100%);
+  border-left-color: #0388ff;
+  font-weight: 600;
+}
+
+.activeNavItem::before {
+  opacity: 1;
 }
 
 .activeNavItem .icon {
-  color: #fff;
+  color: #0388ff;
 }
 
 .navItem:hover {
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.05) 100%);
   color: #0388ff;
-  border: 1px solid rgba(3, 136, 255, 0.2);
-  transform: translateX(4px);
+  background: linear-gradient(90deg, rgba(3, 136, 255, 0.06) 0%, transparent 100%);
+  padding-left: 2.4rem;
 }
 
 .navItem:hover .icon {
   color: #0388ff;
 }
+
+.navItem:hover::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(180deg, transparent 0%, #0388ff 50%, transparent 100%);
+  border-radius: 1px;
+  opacity: 0.6;
+}
+
 .icon {
-  width: 2.2rem;
-  height: 2.2rem;
-  color: #7a8a9d;
-  transition: all 0.2s ease;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #9aa9ba;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.320, 1);
   flex-shrink: 0;
 }
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -115,31 +157,70 @@
   }
 }
 
+/* Scrollbar styling */
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: rgba(3, 136, 255, 0.2);
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: rgba(3, 136, 255, 0.4);
+}
+
 @media screen and (max-width: 900px) {
   .container {
     width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+    padding: 1.2rem 0;
+    background: linear-gradient(90deg, #ffffff 0%, #fafbfc 100%);
     margin-top: 0;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-    border: 2px solid rgba(3, 136, 255, 0.12);
-    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.08);
   }
 
   .sidebarClosed {
-    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
   }
 
   .sidebarOpen {
-    margin-top: 0;
+    max-height: 500px;
+    overflow-y: auto;
   }
 
-  /* On mobile, desktop class should behave like mobile */
+  .navItems {
+    padding: 1rem 0;
+  }
+
+  .navItem {
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
+  }
+
+  .navItem:hover {
+    padding-left: 2.2rem;
+  }
+
   .sidebarDesktop {
     max-height: 0;
     opacity: 0;
-    transform: scaleY(0);
-    padding: 0 1.2rem;
-    margin-top: 0;
+    transform: translateY(-100%);
+    padding: 0;
+    margin: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    height: auto;
   }
 
   .sidebarDesktop .navItem {
