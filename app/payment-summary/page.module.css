@@ -74,7 +74,6 @@
     gap: 3rem;
     margin: 3.5rem 4.4%;
     width: 91.2%;
-    position: relative;
   }
 
   .first {
@@ -83,10 +82,6 @@
 
   .second {
     position: static;
-    top: auto;
-    right: auto;
-    width: 100%;
-    max-height: none;
     gap: 1.8rem;
   }
 }
