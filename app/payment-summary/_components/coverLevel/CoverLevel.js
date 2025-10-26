@@ -94,12 +94,9 @@ const CoverLevel = ({ data, insuranceType }) => {
       <div className={styles.features}>
         {features.map((feature, index) => (
           <div className={styles.featureItem} key={index}>
-            <Image
-              src="/svg/included.svg"
-              alt="included"
-              width={26}
-              height={26}
-            />
+            <div className={styles.iconWrapper}>
+              <FaCheck className={styles.checkIcon} />
+            </div>
             <p className={styles.featureItemTitle}>{feature}</p>
           </div>
         ))}
