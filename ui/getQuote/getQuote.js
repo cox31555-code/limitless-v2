@@ -228,6 +228,9 @@ const GetQuote = () => {
                     }}
                   >
                     {type}
+                    {customDurationType === type && customDurationValue && (
+                      <span className={styles.selectedValue}>{customDurationValue}</span>
+                    )}
                   </button>
                 ))}
               </div>
