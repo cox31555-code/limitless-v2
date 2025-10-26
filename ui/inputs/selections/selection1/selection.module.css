@@ -162,10 +162,21 @@
     font-size: 1.2rem;
     padding: 1rem 0.6rem;
   }
+  .darkSelectedItem {
+    box-shadow: 0 6px 20px rgba(3, 136, 255, 0.35);
+  }
+  .darkItem:hover {
+    box-shadow: 0 3px 8px rgba(3, 136, 255, 0.1);
+  }
 }
 
 @media screen and (max-width: 600px) {
   .selectionContainer {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .selectionItem,
+  .selectedItem {
+    font-size: 1.1rem;
+    height: 4.2rem;
   }
 }
