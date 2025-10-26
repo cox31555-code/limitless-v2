@@ -361,29 +361,25 @@
 }
 
 @media (max-width: 900px) {
-  .animatedLogo1,
-  .animatedLogo2,
-  .animatedLogo3 {
+  .animatedLogo1 {
+    top: 10px;
+    right: 10px;
     width: 200px;
     height: 200px;
   }
 
-  .animatedLogo1 {
-    top: 15px;
-    right: 15px;
-  }
-
   .animatedLogo2 {
-    bottom: 20px;
-    left: 20px;
-    width: 180px;
-    height: 180px;
+    bottom: 15px;
+    left: 15px;
+    width: 160px;
+    height: 160px;
   }
 
   .animatedLogo3 {
-    width: 150px;
-    height: 150px;
-    right: 25px;
+    top: 30%;
+    right: 20px;
+    width: 140px;
+    height: 140px;
   }
 
   .title {
