@@ -33,18 +33,19 @@
   opacity: 0.13;
   animation: floatLogo1 8s ease-in-out infinite;
   object-fit: contain;
+  transform: rotate(-25deg);
 }
 
 .logoTopMiddle {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
   width: 100px;
   height: 100px;
   opacity: 0.13;
   animation: floatLogo2 10s ease-in-out infinite;
   object-fit: contain;
+  transform: translateX(-50%) rotate(15deg);
 }
 
 .logoTopRight {
@@ -56,6 +57,7 @@
   opacity: 0.13;
   animation: floatLogo3 12s ease-in-out infinite;
   object-fit: contain;
+  transform: rotate(-40deg);
 }
 
 @keyframes floatLogo1 {
