@@ -135,10 +135,10 @@
   animation: none !important;
 }
 
-.checkmark path {
+.checkmark svg path {
   animation: none !important;
-  stroke-dasharray: none !important;
-  stroke-dashoffset: none !important;
+  stroke-dasharray: 0 !important;
+  stroke-dashoffset: 0 !important;
 }
 
 .featureText {
