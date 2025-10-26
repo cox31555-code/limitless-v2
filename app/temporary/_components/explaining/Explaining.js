@@ -201,7 +201,7 @@ const Explaining = () => {
         <div className={styles.wrapper}>
           {keyFeatures.map((feature, index) => (
             <div key={index} className={styles.card}>
-              <div className={`${styles.iconContainer} ${feature.icon === 'shield' ? styles.shieldIconContainer : ''}`}>{getIcon(feature.icon)}</div>
+              <div className={`${styles.iconContainer} ${feature.icon === 'shield' ? styles.shieldIconContainer : styles.largeIconContainer}`}>{getIcon(feature.icon)}</div>
               <div className={styles.contentContainer}>
                 <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
                   {feature.title}
