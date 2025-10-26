@@ -1,14 +1,17 @@
 .container {
   display: flex;
   width: 31.8rem;
-  padding: 1.8rem 1.2rem;
+  padding: 2.4rem 1.2rem;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 0.8rem;
   flex-shrink: 0;
-  border-radius: 1.8rem;
-  background: #fff;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 2px solid rgba(3, 136, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.08),
+              inset 0 1px 2px rgba(255, 255, 255, 0.5);
   margin-top: 5.8rem;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -50,46 +53,56 @@
 }
 .navItem {
   border: none;
-  background: none;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 1rem 1.4rem;
-  gap: 1.4rem;
-  color: rgba(0, 8, 34, 0.44);
-  font-size: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  gap: 1.2rem;
+  color: #5a6b7d;
+  font-size: 1.4rem;
   font-weight: 500;
-  line-height: 124%;
-  border-radius: 8px;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  width: 100%;
-  transition: all 0.3s ease-in-out;
+  line-height: 130%;
+  letter-spacing: 0.3px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
   opacity: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .sidebarOpen .navItem {
   animation: slideInUp 0.4s ease-out forwards;
 }
 .activeNavItem {
-  background: #049cff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3),
+              inset 0 1px 2px rgba(255, 255, 255, 0.3);
 }
+
 .activeNavItem .icon {
   color: #fff;
 }
+
 .navItem:hover {
-  background: #049cff;
-  color: #fff;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.05) 100%);
+  color: #0388ff;
+  border: 1px solid rgba(3, 136, 255, 0.2);
+  transform: translateX(4px);
 }
+
 .navItem:hover .icon {
-  color: #fff;
+  color: #0388ff;
 }
 .icon {
-  width: 2.4rem;
-  height: 2.5rem;
-  color: #00082270;
-  transition: all 0.3s ease-in-out;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: #7a8a9d;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 @keyframes slideInUp {
   from {
@@ -106,7 +119,9 @@
   .container {
     width: 100%;
     margin-top: 0;
-    background: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    border: 2px solid rgba(3, 136, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(3, 136, 255, 0.08);
   }
 
   .sidebarClosed {
