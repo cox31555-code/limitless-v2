@@ -19,9 +19,9 @@ const manrope = Manrope({
 
 const FlexibilityIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <path d="M50 25C35 25 25 35 25 50C25 65 35 75 50 75" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M50 25L45 30M50 25L55 30" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M50 75C65 75 75 65 75 50C75 35 65 25 50 25" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="5,5" />
+    <path d="M30 50C30 38 38 30 50 30C62 30 70 38 70 50" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M70 50L68 43M70 50L77 48" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M70 50C70 62 62 70 50 70C38 70 30 62 30 50" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="3,3" opacity="0.6" />
   </svg>
 );
 
