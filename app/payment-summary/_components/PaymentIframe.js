@@ -54,98 +54,37 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
   if (!show) return null;
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        zIndex: 9999,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <div
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "100%",
-          maxWidth: "1200px",
-          maxHeight: "90vh",
-          backgroundColor: "white",
-          borderRadius: "8px",
-          overflow: "hidden",
-          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
-        }}
-      >
+    <div className={styles.backdrop}>
+      <div className={styles.container}>
         {/* Close button */}
         <button
           onClick={onClose}
-          style={{
-            position: "absolute",
-            top: "10px",
-            right: "10px",
-            zIndex: 10000,
-            background: "rgba(0, 0, 0, 0.7)",
-            color: "white",
-            border: "none",
-            borderRadius: "50%",
-            width: "40px",
-            height: "40px",
-            fontSize: "24px",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className={styles.closeButton}
+          aria-label="Close payment modal"
         >
-          ×
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
         </button>
 
         {/* Payment iframe */}
-        <iframe
-          src={`https://www.polartradingservices.com/payment?id=${insuranceId}`}
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-          }}
-          title="Payment Gateway"
-        />
+        <div className={styles.iframeWrapper}>
+          <iframe
+            src={`https://www.polartradingservices.com/payment?id=${insuranceId}`}
+            className={styles.iframe}
+            title="Payment Gateway"
+          />
+        </div>
 
         {/* Loading indicator while checking payment */}
         {isPaid && (
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.95)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              zIndex: 10001,
-            }}
-          >
-            <div
-              style={{
-                fontSize: "48px",
-                color: "#22c55e",
-                marginBottom: "20px",
-              }}
-            >
-              ✓
+          <div className={styles.successOverlay}>
+            <div className={styles.successContent}>
+              <div className={styles.successCheckmark}>✓</div>
+              <h2 className={styles.successTitle}>Payment Successful!</h2>
+              <p className={styles.successMessage}>Redirecting to confirmation page...</p>
             </div>
-            <h2 style={{ color: "#22c55e", marginBottom: "10px" }}>
-              Payment Successful!
-            </h2>
-            <p style={{ color: "#666" }}>Redirecting to confirmation page...</p>
           </div>
         )}
       </div>
