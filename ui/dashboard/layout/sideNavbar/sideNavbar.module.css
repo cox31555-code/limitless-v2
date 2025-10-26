@@ -120,10 +120,10 @@
 }
 
 .icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  color: #9aa9ba;
-  transition: all 0.2s ease;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: #7a8a9d;
+  transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
