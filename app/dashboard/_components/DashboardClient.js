@@ -172,12 +172,7 @@ const DashboardClient = () => {
             >
               <div className={styles.actionIconWrapper}>
                 <div className={styles.actionIcon} style={{ "--icon-color": action.color }}>
-                  <Image
-                    src={action.icon}
-                    alt={action.title}
-                    width={28}
-                    height={28}
-                  />
+                  {action.icon}
                 </div>
               </div>
               <div className={styles.actionContent}>
