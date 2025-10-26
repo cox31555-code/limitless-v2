@@ -1,38 +1,23 @@
 .container {
-  width: 100%;
-  background: linear-gradient(135deg, #000822 0%, #051140 100%);
+  background: #ffffff;
   padding: 8rem 4.4%;
   display: flex;
   flex-direction: column;
-  gap: 4.8rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: radial-gradient(ellipse 600px 500px at 100% 50%, rgba(3, 136, 255, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
+  gap: 5rem;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   max-width: 900px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
-.mainTitle {
-  color: #fff;
+.title {
+  color: #000822;
   text-align: center;
   font-size: 5.2rem;
   font-weight: 700;
@@ -44,15 +29,15 @@
   margin: 0;
 }
 
-.mainTitle span {
+.title span {
   background: linear-gradient(135deg, #0388ff 0%, #00c9ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.subtitle {
-  color: rgba(255, 255, 255, 0.72);
+.description {
+  color: #5a6b7d;
   text-align: center;
   font-size: 1.7rem;
   font-weight: 400;
@@ -60,136 +45,90 @@
   margin: 0;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 1100px;
+.eligibility {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1300px;
   margin: 0 auto;
   width: 100%;
-  position: relative;
-  z-index: 1;
 }
 
-.expandableCard {
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(7, 16, 45, 0.4) 0%, rgba(3, 136, 255, 0.06) 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  overflow: hidden;
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 3.6rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
 }
 
-.expandableCard:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  background: linear-gradient(135deg, rgba(7, 16, 45, 0.5) 0%, rgba(3, 136, 255, 0.08) 100%);
+.section:hover {
+  border-color: rgba(3, 136, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(3, 136, 255, 08);
+  transform: translateY(-4px);
 }
 
-.expandableCard.expanded {
-  border-color: rgba(3, 136, 255, 0.3);
-  background: linear-gradient(135deg, rgba(7, 16, 45, 0.5) 0%, rgba(3, 136, 255, 0.1) 100%);
-  box-shadow: 0 16px 48px rgba(3, 136, 255, 0.15);
-}
-
-.cardHeader {
+.sectionHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2.8rem 3.2rem;
-  gap: 2rem;
+  gap: 1.6rem;
 }
 
-.headerLeft {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-  flex: 1;
-}
-
-.sectionBadge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-
-.expandableCard:hover .sectionBadge {
-  transform: scale(1.08);
+.sectionIcon {
+  width: 48px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(3, 136, 255, 0.1));
 }
 
 .sectionTitle {
-  color: #fff;
-  font-size: 2.2rem;
+  color: #000822;
+  font-size: 2.4rem;
   font-weight: 700;
   line-height: 130%;
   margin: 0;
 }
 
-.expandIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: rgba(255, 255, 255, 0.6);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.expandIcon.rotated {
-  color: #00c9ff;
-  transform: rotate(180deg);
-}
-
-.cardContent {
-  padding: 0 3.2rem 2.8rem;
-  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.itemsList {
+.featuresList {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
-.item {
+.featureItem {
   display: flex;
   align-items: flex-start;
   gap: 1.6rem;
   padding: 1.6rem;
   border-radius: 12px;
-  background: rgba(3, 136, 255, 0.08);
-  border: 1px solid rgba(3, 136, 255, 0.12);
+  background: rgba(3, 136, 255, 0.05);
+  border: 1px solid rgba(3, 136, 255, 0.1);
   transition: all 0.2s ease;
 }
 
-.item:hover {
-  background: rgba(3, 136, 255, 0.12);
+.featureItem:hover {
+  background: rgba(3, 136, 255, 0.08);
   border-color: rgba(3, 136, 255, 0.2);
-  transform: translateX(4px);
+  padding-left: 2rem;
 }
 
-.item svg {
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
+  color: #0CA86E;
   margin-top: 0.2rem;
 }
 
-.itemText {
-  color: rgba(255, 255, 255, 0.76);
+.featureText {
+  color: #4c5264;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 150%;
@@ -200,34 +139,35 @@
 @media screen and (max-width: 1200px) {
   .container {
     padding: 7rem 4.4%;
-    gap: 4rem;
+    gap: 4.4rem;
   }
 
-  .mainTitle {
+  .title {
     font-size: 4.2rem;
   }
 
-  .subtitle {
+  .description {
     font-size: 1.6rem;
   }
 
-  .cardHeader {
-    padding: 2.4rem 2.8rem;
+  .eligibility {
+    gap: 3.2rem;
+  }
+
+  .section {
+    padding: 3.2rem;
+    gap: 2.8rem;
   }
 
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
-  .cardContent {
-    padding: 0 2.8rem 2.4rem;
-  }
-
-  .item {
+  .featureItem {
     padding: 1.4rem;
   }
 
-  .itemText {
+  .featureText {
     font-size: 1.4rem;
   }
 }
@@ -235,44 +175,41 @@
 @media screen and (max-width: 900px) {
   .container {
     padding: 5.5rem 4.4%;
-    gap: 3.5rem;
+    gap: 3.8rem;
   }
 
-  .mainTitle {
+  .title {
     font-size: 3.4rem;
   }
 
-  .subtitle {
+  .description {
     font-size: 1.4rem;
   }
 
-  .cardHeader {
-    padding: 2.2rem 2.4rem;
+  .eligibility {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
   }
 
-  .headerLeft {
-    gap: 1.4rem;
+  .section {
+    padding: 2.8rem;
+    gap: 2.4rem;
   }
 
-  .sectionBadge {
-    width: 50px;
-    height: 50px;
+  .sectionIcon {
+    width: 42px;
   }
 
   .sectionTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
-  .cardContent {
-    padding: 0 2.4rem 2rem;
-  }
-
-  .item {
+  .featureItem {
     padding: 1.2rem;
     gap: 1.4rem;
   }
 
-  .itemText {
+  .featureText {
     font-size: 1.3rem;
   }
 }
@@ -283,45 +220,33 @@
     gap: 3rem;
   }
 
-  .background {
-    opacity: 0.5;
-  }
-
-  .mainTitle {
+  .title {
     font-size: 2.6rem;
   }
 
-  .subtitle {
+  .description {
     font-size: 1.2rem;
   }
 
-  .cardHeader {
-    padding: 2rem 2rem;
+  .section {
+    padding: 2rem;
+    gap: 2rem;
   }
 
-  .headerLeft {
-    gap: 1.2rem;
-  }
-
-  .sectionBadge {
-    width: 46px;
-    height: 46px;
+  .sectionIcon {
+    width: 38px;
   }
 
   .sectionTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
-  .cardContent {
-    padding: 0 2rem 1.8rem;
-  }
-
-  .item {
+  .featureItem {
     padding: 1rem;
     gap: 1.2rem;
   }
 
-  .itemText {
+  .featureText {
     font-size: 1.2rem;
   }
 }
