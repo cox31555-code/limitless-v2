@@ -10,9 +10,25 @@ const DashboardClient = () => {
 
   const StatIcon = ({ type }) => {
     const icons = {
-      shield: "🔒",
-      document: "📄",
-      clock: "⏰",
+      shield: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+      ),
+      document: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+          <polyline points="13 2 13 9 20 9" />
+          <line x1="9" y1="13" x2="15" y2="13" />
+          <line x1="9" y1="17" x2="15" y2="17" />
+        </svg>
+      ),
+      clock: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </svg>
+      ),
     };
     return <span className={styles.statIcon}>{icons[type]}</span>;
   };
@@ -47,32 +63,67 @@ const DashboardClient = () => {
     },
   ];
 
+  const ActionIcon = ({ type }) => {
+    const icons = {
+      add: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="16" />
+          <line x1="8" y1="12" x2="16" y2="12" />
+        </svg>
+      ),
+      settings: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m5.08 0l4.24-4.24M1 12h6m6 0h6m-1.78 7.78l-4.24-4.24m-5.08 0l-4.24 4.24" />
+        </svg>
+      ),
+      briefcase: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+          <line x1="8" y1="12" x2="8" y2="16" />
+          <line x1="16" y1="12" x2="16" y2="16" />
+        </svg>
+      ),
+      fileText: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="8" y1="13" x2="16" y2="13" />
+          <line x1="8" y1="17" x2="16" y2="17" />
+        </svg>
+      ),
+    };
+    return <span className={styles.actionIcon}>{icons[type]}</span>;
+  };
+
   const quickActions = [
     {
       title: "Create New Policy",
       description: "Get instant temporary insurance coverage",
-      icon: "🆕",
+      icon: <ActionIcon type="add" />,
       action: () => router.push("/temporary/get-quote?payment=false"),
       color: "#0388ff",
     },
     {
       title: "Manage Your Policy",
       description: "View and manage your existing policies",
-      icon: "⚙️",
+      icon: <ActionIcon type="settings" />,
       action: () => router.push("/dashboard/policy"),
       color: "#049cff",
     },
     {
       title: "View Documents",
       description: "Access policy documents and booklets",
-      icon: "📑",
+      icon: <ActionIcon type="briefcase" />,
       action: () => router.push("/dashboard/documents"),
       color: "#0270cc",
     },
     {
       title: "Submit a Claim",
       description: "File a new insurance claim",
-      icon: "📋",
+      icon: <ActionIcon type="fileText" />,
       action: () => router.push("/dashboard/submit-claim"),
       color: "#ff9500",
     },
@@ -157,7 +208,10 @@ const DashboardClient = () => {
       <section className={styles.infoSection}>
         <div className={styles.infoCard}>
           <div className={styles.infoIconWrapper}>
-            <span style={{ fontSize: "2rem" }}>🔐</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "2.4rem", height: "2.4rem" }}>
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <polyline points="10 14 12 16 14 12" />
+            </svg>
           </div>
           <h3 className={styles.infoTitle}>Your Data is Secure</h3>
           <p className={styles.infoDescription}>
@@ -166,7 +220,12 @@ const DashboardClient = () => {
         </div>
         <div className={styles.infoCard}>
           <div className={styles.infoIconWrapper}>
-            <span style={{ fontSize: "2rem" }}>💬</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: "2.4rem", height: "2.4rem" }}>
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              <circle cx="9" cy="10" r="1" fill="currentColor" />
+              <circle cx="12" cy="10" r="1" fill="currentColor" />
+              <circle cx="15" cy="10" r="1" fill="currentColor" />
+            </svg>
           </div>
           <h3 className={styles.infoTitle}>24/7 Support</h3>
           <p className={styles.infoDescription}>
