@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./coverLevel.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { FaCheck } from "react-icons/fa6";
+import { FaCheck, FaReceipt } from "react-icons/fa6";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -81,12 +81,7 @@ const CoverLevel = ({ data, insuranceType }) => {
       </div>
       <div className={styles.header}>
         <div className={styles.headerItem}>
-          <Image
-            src="/svg/insurance-quote.svg"
-            alt="order-summary"
-            width={22}
-            height={22}
-          />
+          <FaReceipt className={styles.headerItemIcon} />
           <p className={styles.headerItemTitle}>Order Reference</p>
         </div>
         <p className={styles.headerItemValue}>
