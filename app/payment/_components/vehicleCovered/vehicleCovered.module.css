@@ -41,14 +41,14 @@
 }
 
 .vetype {
-  color: #0388ff;
+  color: #6b7c8f;
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
   line-height: 130%;
   letter-spacing: 0.64px;
   margin: 0;
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .vehicleNumber {
@@ -108,8 +108,9 @@
   .vetype {
     font-size: 1.5rem;
     font-style: italic;
-    color: #0388ff;
-    opacity: 1;
+    color: #6b7c8f;
+    opacity: 0.85;
+    font-weight: 500;
   }
 
   .vehicleNumber {
@@ -150,8 +151,9 @@
   .vetype {
     font-size: 1.4rem;
     font-style: italic;
-    color: #0388ff;
-    opacity: 1;
+    color: #6b7c8f;
+    opacity: 0.85;
+    font-weight: 500;
   }
 
   .vehicleNumber {
