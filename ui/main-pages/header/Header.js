@@ -80,7 +80,7 @@ const Header = ({ subTitle, title, description, features }) => {
                 />
               </button>
             </div>
-            {pathname === "/impound" ? <GetQuoteImpound /> : <GetQuote />}
+            {pathname === "/impound" ? <GetQuoteImpound /> : <GetQuote skipDuration={pathname === "/annual"} />}
           </div>
           <div className={styles.features}>
             {features.map((feature) => (
