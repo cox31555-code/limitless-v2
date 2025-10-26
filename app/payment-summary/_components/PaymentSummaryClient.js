@@ -23,7 +23,7 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
 
   return (
     <div>
-      <Header title="Payment Summary" />
+      <Header title="Review Your Quote" />
       <div className={"centeredContent"}>
         <div className={styles.container}>
           <div className={styles.first}>
