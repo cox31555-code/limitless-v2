@@ -1,0 +1,247 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 8, 34, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 840px;
+  max-height: 63vh;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(3, 136, 255, 0.15), 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.iframeWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+.iframeWrapper::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.iframeWrapper::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.05) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border-radius: 10px;
+}
+
+.iframeWrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0388ff 0%, #0270cc 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(3, 136, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.iframeWrapper::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0270cc 0%, #0156b3 100%);
+  box-shadow: 0 0 8px rgba(3, 136, 255, 0.3);
+}
+
+/* Firefox scrollbar */
+.iframeWrapper {
+  scrollbar-color: #0388ff rgba(3, 136, 255, 0.05);
+  scrollbar-width: thin;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Close button */
+.closeButton {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 4.4rem;
+  height: 4.4rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border: none;
+  border-radius: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.25);
+}
+
+.closeButton:hover {
+  transform: scale(1.08) rotate(90deg);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.35);
+}
+
+.closeButton:active {
+  transform: scale(0.96) rotate(90deg);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
+}
+
+.closeButton svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Success overlay */
+.successOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.successContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.successCheckmark {
+  font-size: 6rem;
+  color: #10b981;
+  font-weight: 700;
+  animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  line-height: 1;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #10b981;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.successMessage {
+  font-size: 1.1rem;
+  color: #6b7c8f;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media screen and (max-width: 900px) {
+  .backdrop {
+    padding: 1.5rem;
+  }
+
+  .container {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 16px;
+  }
+
+  .closeButton {
+    width: 4rem;
+    height: 4rem;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .closeButton svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .successTitle {
+    font-size: 1.8rem;
+  }
+
+  .successCheckmark {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .backdrop {
+    padding: 1rem;
+  }
+
+  .container {
+    max-width: 95%;
+    max-height: 85vh;
+    border-radius: 12px;
+  }
+
+  .closeButton {
+    width: 3.6rem;
+    height: 3.6rem;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .closeButton svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .successTitle {
+    font-size: 1.6rem;
+  }
+
+  .successCheckmark {
+    font-size: 4rem;
+  }
+
+  .successMessage {
+    font-size: 1rem;
+  }
+}
