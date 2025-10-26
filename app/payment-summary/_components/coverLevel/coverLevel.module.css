@@ -277,10 +277,8 @@
 }
 
 .featureItem:hover {
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.18) 0%, rgba(3, 136, 255, 0.12) 100%);
-  border-color: rgba(3, 136, 255, 0.32);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.25);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.15) 0%, rgba(3, 136, 255, 0.08) 100%);
+  border-color: rgba(3, 136, 255, 0.25);
 }
 
 .iconWrapper {
