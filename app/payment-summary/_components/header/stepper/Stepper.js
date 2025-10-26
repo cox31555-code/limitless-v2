@@ -20,7 +20,9 @@ const Stepper = ({ steps }) => {
           <div
             style={{
               margin:
-                index === 2
+                index === 3
+                  ? ".7rem 0 .7rem"
+                  : index === 2
                   ? ".7rem 0 .7rem"
                   : index === 1
                   ? ".5rem 0 .5rem"
@@ -46,8 +48,8 @@ const Stepper = ({ steps }) => {
               </p>
             </div>
           </div>
-          {index === 0 && (
-            <div className={styles.stepperLine}>
+          {index < steps.length - 1 && (
+            <div className={index < 2 ? styles.stepperLine : styles.stepperLine2}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="238"
@@ -55,45 +57,37 @@ const Stepper = ({ steps }) => {
                 viewBox="0 0 238 2"
                 fill="none"
               >
-                <path
-                  d="M237 1L0.999993 1.00002"
-                  stroke="url(#paint0_linear_291_117)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_291_117"
-                    x1="237"
-                    y1="1.5"
-                    x2="1"
-                    y2="1.50002"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#0388FF" />
-                    <stop offset="1" stopColor="#0388FF" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-              </svg>{" "}
-            </div>
-          )}
-
-          {index === 1 && (
-            <div className={styles.stepperLine2}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="238"
-                height="2"
-                viewBox="0 0 238 2"
-                fill="none"
-              >
-                <path
-                  d="M1 1L237 1.00002"
-                  stroke="white"
-                  strokeOpacity="0.11"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
+                {index < 2 ? (
+                  <path
+                    d="M237 1L0.999993 1.00002"
+                    stroke="url(#paint0_linear_291_117)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                ) : (
+                  <path
+                    d="M1 1L237 1.00002"
+                    stroke="white"
+                    strokeOpacity="0.11"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                )}
+                {index < 2 && (
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_291_117"
+                      x1="237"
+                      y1="1.5"
+                      x2="1"
+                      y2="1.50002"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#0388FF" />
+                      <stop offset="1" stopColor="#0388FF" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                )}
               </svg>{" "}
             </div>
           )}
