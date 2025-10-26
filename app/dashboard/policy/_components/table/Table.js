@@ -20,8 +20,8 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
   };
 
   return (
-    <div className={styles.section}>
-      <h3 className={styles.sectionTitle}>{title}</h3>
+    <div className={`${styles.section} ${theme === "expired" ? styles.expiredSection : ""}`}>
+      <h3 className={`${styles.sectionTitle} ${theme === "expired" ? styles.expiredTitle : ""}`}>{title}</h3>
       <div className={styles.cardsGrid}>
         {data.map((row, index) => (
           <div key={index} className={styles.policyCard}>
