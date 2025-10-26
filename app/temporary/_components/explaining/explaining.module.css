@@ -407,10 +407,8 @@
     height: 65px;
   }
 
-  .connector {
-    top: 100px;
-    left: calc(100% + 1rem);
-    width: calc(100% + 2rem);
+  .stepWrapper::after {
+    top: 45px;
   }
 }
 
@@ -462,7 +460,7 @@
     margin-top: 0.6rem;
   }
 
-  .connector {
+  .stepWrapper::after {
     display: none;
   }
 
@@ -520,6 +518,10 @@
   .stepCard {
     padding: 2rem 1.6rem;
     gap: 1.3rem;
+  }
+
+  .stepWrapper::after {
+    display: none;
   }
 
   .card {
