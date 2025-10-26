@@ -131,6 +131,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
+          <div className={styles.headerShimmer}></div>
           <div className={styles.logoContainer}>
             <svg className={styles.logo} width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="66" height="66" rx="9.851" fill="#0388FF"/>
