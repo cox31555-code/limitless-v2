@@ -233,18 +233,26 @@ const Explaining = () => {
           </p>
         </div>
 
-        <div className={styles.wrapper}>
+        <div className={styles.timelineWrapper}>
           {howItWorksSteps.map((step, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.stepNumber}>{step.number}</div>
-              <div className={styles.contentContainer}>
-                <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-                  {step.title}
-                </h3>
-                <p className={`${styles.description} ${manrope.className}`}>
-                  {step.description}
-                </p>
+            <div key={index} className={styles.stepWrapper}>
+              <div className={styles.stepCard}>
+                <div className={styles.stepIconContainer}>
+                  {getIcon(step.icon)}
+                </div>
+                <div className={styles.stepNumber}>{step.number}</div>
+                <div className={styles.contentContainer}>
+                  <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+                    {step.title}
+                  </h3>
+                  <p className={`${styles.description} ${manrope.className}`}>
+                    {step.description}
+                  </p>
+                </div>
               </div>
+              {index < howItWorksSteps.length - 1 && (
+                <div className={styles.connector}></div>
+              )}
             </div>
           ))}
         </div>
