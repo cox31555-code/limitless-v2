@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
-  background: transparent;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
 }
 
 .title {
