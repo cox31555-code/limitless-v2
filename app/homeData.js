@@ -21,7 +21,7 @@ export const homeFeatures = [
   },
   {
     img: {
-      src: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fd399c8de7a854df6b1deb4fe41ab7aa8",
+      src: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F85285c0203b14845bc410015a1204de4?format=webp&width=800",
       alt: "vehicle eligibility",
       width: 64,
       height: 64,
