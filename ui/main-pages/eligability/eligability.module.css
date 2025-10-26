@@ -128,6 +128,17 @@
   flex-shrink: 0;
   color: #0CA86E;
   margin-top: 0.2rem;
+  animation: none !important;
+}
+
+.checkmark svg {
+  animation: none !important;
+}
+
+.checkmark path {
+  animation: none !important;
+  stroke-dasharray: none !important;
+  stroke-dashoffset: none !important;
 }
 
 .featureText {
