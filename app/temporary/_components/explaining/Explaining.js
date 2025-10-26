@@ -18,11 +18,11 @@ const manrope = Manrope({
 });
 
 const FlexibilityIcon = () => (
-  <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <path d="M35 45Q50 35 65 45" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M35 55Q50 65 65 55" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
-    <circle cx="35" cy="50" r="2.5" fill="#0388FF" />
-    <circle cx="65" cy="50" r="2.5" fill="#0388FF" />
+  <svg width="100" height="100" viewBox="0 0 80 60" fill="none" preserveAspectRatio="xMidYMid meet">
+    <path d="M15 30Q40 15 65 30" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M15 30Q40 45 65 30" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="15" cy="30" r="2" fill="#0388FF" />
+    <circle cx="65" cy="30" r="2" fill="#0388FF" />
   </svg>
 );
 
@@ -41,8 +41,8 @@ const TimeIcon = () => (
 );
 
 const ShieldIcon = () => (
-  <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <path d="M50 32L63 39V55C63 66 50 72 50 72C50 72 37 66 37 55V39L50 32Z" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  <svg width="100" height="100" viewBox="0 0 60 70" fill="none" preserveAspectRatio="xMidYMid meet">
+    <path d="M30 12L50 22V45C50 60 30 68 30 68C30 68 10 60 10 45V22L30 12Z" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
