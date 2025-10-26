@@ -1,45 +1,69 @@
 .container {
   width: 100%;
-  border-radius: 16px;
-  background: #fff;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
+
+.container:hover {
+  border-color: rgba(3, 136, 255, 0.12);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 2.4rem 2.4rem 1.5rem;
-  /* border-bottom: 1px solid rgba(0, 8, 34, 0.18); */
+  align-items: flex-start;
+  padding: 1.6rem;
+  gap: 1rem;
 }
+
 .headerLeft {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
 }
+
 .editIcon {
   cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.6;
 }
+
+.editIcon:hover {
+  opacity: 1;
+}
+
 .title {
-  color: #0388ff;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.64px;
-  margin-top: 1.3rem;
+  color: #5a6b7d;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.52px;
+  text-transform: capitalize;
+  margin: 0;
 }
+
 .value {
   display: flex;
   align-items: center;
-  padding: 2.4rem;
-  height: 6.4rem;
-  border-radius: 12px;
-  background: #f3f3f3;
-  margin: 0 1.2rem 1.2rem;
+  padding: 1.2rem 1.6rem;
+  min-height: 4.4rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  margin: 0.8rem 1.6rem 1.6rem 1.6rem;
+  transition: all 0.3s ease;
 }
+
 .valueTitle {
-  color: #6b6b6b;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
+  color: #6b7c8f;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 130%;
+  opacity: 0.85;
 }
 @media screen and (max-width: 800px) {
   .container {
