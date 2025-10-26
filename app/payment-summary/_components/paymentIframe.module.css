@@ -21,9 +21,8 @@
   max-width: 840px;
   max-height: 63vh;
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 9px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(3, 136, 255, 0.15), 0 8px 24px rgba(0, 0, 0, 0.12);
   border: 1px solid rgba(3, 136, 255, 0.08);
   display: flex;
   flex-direction: column;
@@ -56,7 +55,6 @@
 
 .iframeWrapper::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #0270cc 0%, #0156b3 100%);
-  box-shadow: 0 0 8px rgba(3, 136, 255, 0.3);
 }
 
 /* Firefox scrollbar */
@@ -77,7 +75,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.6rem 2rem;
+  padding: 1.2rem 1.6rem;
   background: linear-gradient(135deg, rgba(0, 8, 34, 0.98) 0%, rgba(10, 15, 46, 0.98) 100%);
   border-bottom: 1px solid rgba(3, 136, 255, 0.15);
   position: relative;
@@ -91,8 +89,8 @@
 }
 
 .logo {
-  width: 5.2rem;
-  height: 5.2rem;
+  width: 4rem;
+  height: 4rem;
   cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -103,11 +101,11 @@
 
 /* Close button */
 .closeButton {
-  width: 4rem;
-  height: 4rem;
+  width: 3.6rem;
+  height: 3.6rem;
   background: transparent;
   border: 1.5px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
+  border-radius: 8px;
   color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
   display: flex;
