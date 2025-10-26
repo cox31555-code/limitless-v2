@@ -1,3 +1,5 @@
+"use client";
+
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "@/ui/layout/header/Header";
@@ -5,6 +7,7 @@ import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
+import { usePathname } from "next/navigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -12,13 +15,16 @@ const poppins = Poppins({
 });
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const isLoginPage = pathname === "/login";
+
   return (
     <html lang="en">
       <body className={poppins.className}>
         <AuthProvider>
           <Header />
           {children}
-          <Footer />
+          {!isLoginPage && <Footer />}
           <ToastContainer
             position="top-right"
             autoClose={5000}
