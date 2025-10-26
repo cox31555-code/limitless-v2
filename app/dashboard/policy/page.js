@@ -74,59 +74,85 @@ const calculateRemainingDays = (coverDetails) => {
 const Page = async () => {
   const cookieStore = await cookies();
   const token = cookieStore.get("jwt")?.value;
+  const devMode = process.env.NEXT_PUBLIC_DEV_MODE === "true";
 
-  if (!token) {
+  if (!token && !devMode) {
     redirect("/login");
   }
 
   let activePolicies = [];
   let expiredPolicies = [];
 
-  try {
-    // Fetch all insurances for the logged-in user
-    const response = await serverFetch(
-      `${API_BASE_URL}/api/insurance/user/my-insurances`,
+  // Dev mode: return mock data
+  if (devMode && !token) {
+    activePolicies = [
       {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        cache: "no-store",
-      }
-    );
-
-    if (response.ok) {
-      const result = await response.json();
-      const insurances = result.data?.data || [];
-
-      insurances.forEach((insurance) => {
-        const policyData = {
-          id: insurance._id,
-          policyNumber: `LC-${insurance._id
-            .toString()
-            .slice(-8)
-            .toUpperCase()}`,
-          remaining: calculateRemainingDays(insurance.coverDetails),
-          name: insurance.userDetails
-            ? `${insurance.userDetails.firstName} ${insurance.userDetails.surname}`
-            : "N/A",
-          vehicleReg:
-            insurance.vehicleDetails?.registrationNumber?.toUpperCase() ||
-            "N/A",
-          details: "View",
-          isPaid: insurance.quote?.paid || false,
-        };
-
-        // Check if policy is active or expired
-        if (policyData.remaining === "Expired" || !policyData.isPaid) {
-          expiredPolicies.push(policyData);
-        } else {
-          activePolicies.push(policyData);
+        id: "dev-policy-1",
+        policyNumber: "LC-DEV001",
+        remaining: "45 days",
+        name: "Dev User",
+        vehicleReg: "AB21DEV",
+        details: "View",
+        isPaid: true,
+      },
+      {
+        id: "dev-policy-2",
+        policyNumber: "LC-DEV002",
+        remaining: "90 days",
+        name: "Dev User",
+        vehicleReg: "CD22DEV",
+        details: "View",
+        isPaid: true,
+      },
+    ];
+    expiredPolicies = [];
+  } else {
+    try {
+      // Fetch all insurances for the logged-in user
+      const response = await serverFetch(
+        `${API_BASE_URL}/api/insurance/user/my-insurances`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          cache: "no-store",
         }
-      });
-      console.log(insurances);
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        const insurances = result.data?.data || [];
+
+        insurances.forEach((insurance) => {
+          const policyData = {
+            id: insurance._id,
+            policyNumber: `LC-${insurance._id
+              .toString()
+              .slice(-8)
+              .toUpperCase()}`,
+            remaining: calculateRemainingDays(insurance.coverDetails),
+            name: insurance.userDetails
+              ? `${insurance.userDetails.firstName} ${insurance.userDetails.surname}`
+              : "N/A",
+            vehicleReg:
+              insurance.vehicleDetails?.registrationNumber?.toUpperCase() ||
+              "N/A",
+            details: "View",
+            isPaid: insurance.quote?.paid || false,
+          };
+
+          // Check if policy is active or expired
+          if (policyData.remaining === "Expired" || !policyData.isPaid) {
+            expiredPolicies.push(policyData);
+          } else {
+            activePolicies.push(policyData);
+          }
+        });
+        console.log(insurances);
+      }
+    } catch (error) {
+      console.error("Error fetching policies:", error);
     }
-  } catch (error) {
-    console.error("Error fetching policies:", error);
   }
 
   return (
