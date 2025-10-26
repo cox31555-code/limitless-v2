@@ -154,15 +154,14 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 2.7rem;
-  gap: 2.4rem;
+  padding: 3rem;
+  gap: 2rem;
   border-radius: 18px;
-  background: #07102d;
+  background: linear-gradient(135deg, rgba(7, 16, 45, 0.8) 0%, rgba(3, 136, 255, 0.06) 100%);
   border: 1px solid rgba(3, 136, 255, 0.15);
   transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
-  min-height: 380px;
 }
 
 .card::before {
@@ -194,8 +193,8 @@
 }
 
 .card:hover {
-  border-color: rgba(3, 136, 255, 0.4);
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.05) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border-color: rgba(3, 136, 255, 0.3);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.08) 100%);
 }
 
 .card:hover::before {
@@ -226,60 +225,31 @@
 .contentContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.2rem;
   align-items: flex-start;
   position: relative;
   z-index: 1;
   flex: 1;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
 .title {
   color: #fff;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 130%;
   letter-spacing: 0;
   margin: 0;
 }
 
 .description {
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
   margin: 0;
 }
 
-.iconWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4.8rem;
-  height: 4.8rem;
-  border-radius: 12px;
-  background: rgba(3, 136, 255, 0.1);
-  cursor: pointer;
-  transition: all 0.5s ease;
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-  border: 1px solid rgba(3, 136, 255, 0.2);
-}
-
-.iconWrapper:hover {
-  background: rgba(3, 136, 255, 0.2);
-  border-color: rgba(3, 136, 255, 0.5);
-}
 
 .concludingText {
   color: #d0dce6;
@@ -324,8 +294,7 @@
 
   .card {
     padding: 2.4rem;
-    min-height: auto;
-    gap: 2rem;
+    gap: 1.8rem;
   }
 
   .iconContainer {
@@ -333,11 +302,11 @@
   }
 
   .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .description {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .concludingText {
@@ -370,28 +339,23 @@
 
   .card {
     padding: 2rem;
-    gap: 1.6rem;
+    gap: 1.4rem;
   }
 
   .iconContainer {
-    height: 90px;
+    height: 80px;
   }
 
   .stepNumber {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .description {
-    font-size: 1.2rem;
-  }
-
-  .iconWrapper {
-    width: 4rem;
-    height: 4rem;
+    font-size: 1.3rem;
   }
 
   .concludingText {
