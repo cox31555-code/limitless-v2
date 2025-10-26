@@ -8,8 +8,16 @@ import styles from "./paymentIframe.module.css";
 export default function PaymentIframe({ insuranceId, show, onClose }) {
   const [isPaid, setIsPaid] = useState(false);
   const [logoPositions, setLogoPositions] = useState(null);
+  const [isClosing, setIsClosing] = useState(false);
   const router = useRouter();
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  };
 
   // Generate random positions and delays on component mount
   useEffect(() => {
@@ -62,7 +70,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
             
             // Wait a moment then close iframe and redirect to payment confirmation page
             setTimeout(() => {
-              onClose();
+              handleClose();
               router.push(`/payment?id=${insuranceId}`);
             }, 2000);
           }
@@ -79,7 +87,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
   if (!show) return null;
 
   return (
-    <div className={styles.backdrop}>
+    <div className={`${styles.backdrop} ${isClosing ? styles.closing : ''}`}>
       {/* Animated background logos */}
       <div className={styles.animatedLogoContainer}>
         {logoPositions && (
@@ -128,7 +136,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
         )}
       </div>
 
-      <div className={styles.container}>
+      <div className={`${styles.container} ${isClosing ? styles.closing : ''}`}>
         {/* Header */}
         <div className={styles.header}>
           <div className={styles.headerShimmer}></div>
@@ -144,7 +152,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
 
           {/* Close button */}
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className={styles.closeButton}
             aria-label="Close payment modal"
           >
