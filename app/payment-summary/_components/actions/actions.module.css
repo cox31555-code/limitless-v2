@@ -26,11 +26,11 @@
 }
 
 .payButton:hover {
-  opacity: 0.95;
+  transform: scale(1.02);
 }
 
 .payButton:active {
-  opacity: 0.9;
+  transform: scale(0.98);
 }
 
 .cancelButton {
@@ -42,12 +42,12 @@
 .cancelButton:hover {
   background: #f8fbff;
   border-color: #0270cc;
-  opacity: 0.95;
+  transform: scale(1.02);
 }
 
 .cancelButton:active {
   background: #ffffff;
-  opacity: 0.9;
+  transform: scale(0.98);
 }
 
 @media screen and (max-width: 900px) {
