@@ -1,9 +1,11 @@
 .container {
   display: flex;
   gap: 4rem;
-  margin: 5rem 4.4%;
+  margin: 5rem auto;
   width: 91.2%;
+  max-width: 130rem;
   align-items: flex-start;
+  overflow: visible;
 }
 
 .first {
