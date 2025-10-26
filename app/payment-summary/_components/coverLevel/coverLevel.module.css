@@ -262,7 +262,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
   padding: 2.4rem;
-  border-top: 1px solid rgba(3, 136, 255, 0.1);
+  border-top: 1px solid rgba(3, 136, 255, 0.16);
 }
 
 .featureItem {
@@ -270,17 +270,17 @@
   align-items: center;
   gap: 1.2rem;
   padding: 1.4rem 1.8rem;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.06) 0%, rgba(3, 136, 255, 0.03) 100%);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.06) 100%);
   border-radius: 12px;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .featureItem:hover {
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.08) 100%);
-  border-color: rgba(3, 136, 255, 0.2);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.18) 0%, rgba(3, 136, 255, 0.12) 100%);
+  border-color: rgba(3, 136, 255, 0.32);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.25);
 }
 
 .iconWrapper {
@@ -290,19 +290,19 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  background: rgba(3, 136, 255, 0.1);
+  background: rgba(3, 136, 255, 0.2);
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .featureItem:hover .iconWrapper {
-  background: #0388ff;
+  background: #3fa9ff;
 }
 
 .checkIcon {
   width: 14px;
   height: 14px;
-  color: #0388ff;
+  color: #3fa9ff;
   transition: color 0.3s ease;
 }
 
@@ -311,7 +311,7 @@
 }
 
 .featureItemTitle {
-  color: #000822;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 130%;
