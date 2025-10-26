@@ -6,6 +6,7 @@ import styles from "./dashboardClient.module.css";
 const DashboardClient = () => {
   const router = useRouter();
   const [activeInsurances, setActiveInsurances] = useState(2);
+  const [pendingClaims, setPendingClaims] = useState(1);
 
   const StatIcon = ({ type }) => {
     const icons = {
