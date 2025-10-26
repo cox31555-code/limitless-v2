@@ -95,7 +95,8 @@
 
 @media screen and (max-width: 900px) {
   .container {
-    margin: 2.5rem 4.4%;
+    margin: 2.5rem auto;
+    padding: 0 4.4%;
     gap: 2.5rem;
   }
 
@@ -113,7 +114,8 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    margin: 2rem 4.4%;
+    margin: 2rem auto;
+    padding: 0 4.4%;
     gap: 2rem;
   }
 
