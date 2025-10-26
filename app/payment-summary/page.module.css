@@ -6,13 +6,13 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  align-items: start;
 }
 
 .first {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  grid-column: 1;
 }
 
 .second {
@@ -23,6 +23,9 @@
   top: 120px;
   height: fit-content;
   z-index: 10;
+  grid-column: 2;
+  align-self: start;
+  margin-top: 0;
 }
 
 .actions {
