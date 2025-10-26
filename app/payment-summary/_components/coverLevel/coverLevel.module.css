@@ -343,6 +343,7 @@
     padding: 1.6rem;
     margin: 1rem 1.6rem;
     min-height: 140px;
+    background-size: 250px 250px, 200% 200%;
   }
 
   .totalPrice {
