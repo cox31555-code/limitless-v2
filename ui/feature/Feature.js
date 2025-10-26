@@ -6,6 +6,7 @@ import {
   FaClock,
   FaSun,
   FaCalendar,
+  FaCalendarDays,
 } from "react-icons/fa6";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -20,6 +21,7 @@ const getIconComponent = (iconType) => {
     case "sun":
       return <FaSun className={styles.iconSymbol} />;
     case "calendar-week":
+      return <FaCalendarDays className={styles.iconSymbol} />;
     case "calendar-month":
       return <FaCalendar className={styles.iconSymbol} />;
     default:
