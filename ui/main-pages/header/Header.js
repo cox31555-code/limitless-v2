@@ -38,7 +38,7 @@ const Header = ({ subTitle, title, description, features }) => {
           src="/svg/contact.svg"
           alt="contact-us"
           width={585}
-          height={850}
+          height={900}
           className={styles.contact}
         />
 
