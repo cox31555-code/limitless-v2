@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import styles from "./paymentIframe.module.css";
 
 export default function PaymentIframe({ insuranceId, show, onClose }) {
   const [isPaid, setIsPaid] = useState(false);
