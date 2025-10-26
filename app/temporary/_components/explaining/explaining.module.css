@@ -485,22 +485,22 @@
   }
 
   .iconContainer {
-    height: 75px;
+    height: 70px;
   }
 
   .stepIconContainer {
-    height: 75px;
+    height: 65px;
     margin-bottom: 0.2rem;
   }
 
   .stepIconContainer svg {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
   }
 
   .stepNumber {
-    font-size: 1.4rem;
-    margin-top: 0.4rem;
+    font-size: 1rem;
+    margin-top: 0.2rem;
   }
 
   .title {
