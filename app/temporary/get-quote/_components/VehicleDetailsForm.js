@@ -12,13 +12,11 @@ import FormDropdown from "@/ui/inputs/FormDropdown";
 import Title from "@/ui/insurance-quotes/title/Title";
 import styles from "./components.module.css";
 import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { API_BASE_URL } from "@/utils/config";
 import {
   buildVehicleQuery,
   clearDependentFields,
   shouldAutoSelect,
 } from "../helperFucntion";
-import axios from "axios";
 import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
 
 // Simplified state for vehicle data
