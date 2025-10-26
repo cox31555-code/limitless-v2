@@ -30,6 +30,11 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
           left: Math.random() * 30 + 5,
           delay: Math.random() * 2 + 0.5,
         },
+        logo4: {
+          bottom: Math.random() * 20 + 5,
+          right: Math.random() * 45 + 10,
+          delay: Math.random() * 2 + 1.5,
+        },
       });
     }
   }, [show, logoPositions]);
