@@ -246,23 +246,10 @@
   overflow: visible;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #0388ff 0%, transparent 100%);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
-}
-
 .card::after {
   content: '';
   position: absolute;
-  top: -60px;
+  top: -50px;
   left: 15%;
   width: 200px;
   height: 200px;
@@ -275,8 +262,8 @@
 }
 
 .card:hover {
-  border-color: rgba(3, 136, 255, 0.3);
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.08) 100%);
+  border-color: rgba(3, 136, 255, 0.25);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
 }
 
 .card:hover::before {
@@ -436,8 +423,8 @@
   }
 
   .card {
-    padding: 2.4rem;
-    gap: 1.8rem;
+    padding: 2rem 1.8rem;
+    gap: 1.3rem;
   }
 
   .iconContainer {
