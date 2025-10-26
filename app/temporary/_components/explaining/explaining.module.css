@@ -434,7 +434,8 @@
 
   .timelineWrapper {
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.4rem;
+    padding: 0;
   }
 
   .stepWrapper {
@@ -442,8 +443,22 @@
   }
 
   .stepCard {
-    padding: 2.4rem;
-    gap: 1.8rem;
+    padding: 2.2rem;
+    gap: 1.6rem;
+  }
+
+  .stepIconContainer {
+    height: 85px;
+  }
+
+  .stepIconContainer svg {
+    width: 65px;
+    height: 65px;
+  }
+
+  .stepNumber {
+    font-size: 1.6rem;
+    margin-top: 0.6rem;
   }
 
   .connector {
