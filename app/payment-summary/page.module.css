@@ -20,6 +20,8 @@
   top: 120px;
   height: fit-content;
   z-index: 10;
+  align-self: start;
+  width: 100%;
 }
 
 .actions {
