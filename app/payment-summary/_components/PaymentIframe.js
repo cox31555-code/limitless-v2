@@ -138,6 +138,9 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
             </svg>
           </div>
 
+          {/* Header title */}
+          <h2 className={styles.headerTitle}>Complete Payment</h2>
+
           {/* Close button */}
           <button
             onClick={onClose}
