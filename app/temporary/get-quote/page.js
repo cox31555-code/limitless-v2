@@ -209,34 +209,17 @@ const TemporaryInsuranceContent = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
 
-    try {
-      // Generate a temporary insurance ID for offline mode
-      const insuranceId = `TEMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    // Generate a temporary insurance ID for offline mode
+    const insuranceId = `TEMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-      toast.success("Quote generated successfully!", {
-        position: "top-right",
-        autoClose: 3000,
-      });
+    // Check if payment=false is in search params
+    const skipPayment = searchParams.get("payment") === "false";
 
-      // Check if payment=false is in search params
-      const skipPayment = searchParams.get("payment") === "false";
-
-      // Redirect to payment summary with insurance ID or dashboard if payment is skipped
-      setTimeout(() => {
-        if (skipPayment) {
-          router.push(`/dashboard/policy`);
-        } else {
-          router.push(`/payment-summary?id=${insuranceId}`);
-        }
-      }, 1000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error(
-        error.message ||
-          "Failed to process quote. Please try again."
-      );
-    } finally {
-      setIsSubmitting(false);
+    // Redirect to payment summary with insurance ID or dashboard if payment is skipped
+    if (skipPayment) {
+      router.push(`/dashboard/policy`);
+    } else {
+      router.push(`/payment-summary?id=${insuranceId}`);
     }
   };
 
