@@ -147,51 +147,6 @@
   margin: 0.2rem 0 0;
 }
 
-.notificationButton {
-  width: 4.4rem;
-  height: 4.4rem;
-  border-radius: 10px;
-  background: #f0f6ff;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: #0388ff;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.notificationButton:hover {
-  background: #e8f2ff;
-  border-color: #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.16);
-}
-
-.notificationButton svg {
-  width: 2rem;
-  height: 2rem;
-  stroke: currentColor;
-}
-
-.badge {
-  position: absolute;
-  top: -0.4rem;
-  right: -0.4rem;
-  background: #ff4444;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #fff;
-}
-
 .profileSection {
   position: relative;
 }
