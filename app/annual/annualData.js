@@ -21,6 +21,7 @@ export const annualFeatures = [
     },
     title: "Comprehensive protection",
     description: "Enjoy peace of mind with theft, accident plus 24/7 support and instant online quotes.",
+    imgClassName: featureStyles.imgHighQuality,
   },
   {
     img: {
