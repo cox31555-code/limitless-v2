@@ -206,21 +206,12 @@ const TemporaryInsuranceContent = () => {
     }
   };
 
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-
+  const onSubmit = (data) => {
     // Generate a temporary insurance ID for offline mode
     const insuranceId = `TEMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // Check if payment=false is in search params
-    const skipPayment = searchParams.get("payment") === "false";
-
-    // Redirect to payment summary with insurance ID or dashboard if payment is skipped
-    if (skipPayment) {
-      router.push(`/dashboard/policy`);
-    } else {
-      router.push(`/payment-summary?id=${insuranceId}`);
-    }
+    // Redirect to payment summary with insurance ID
+    router.push(`/payment-summary?id=${insuranceId}`);
   };
 
   return (
