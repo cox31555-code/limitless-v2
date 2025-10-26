@@ -130,6 +130,10 @@
     gap: 0.8rem;
   }
 
+  .header img {
+    opacity: 0.85;
+  }
+
   .headerTitle {
     font-size: 1.1rem;
   }
