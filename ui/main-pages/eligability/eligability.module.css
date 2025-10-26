@@ -67,27 +67,9 @@
   position: relative;
 }
 
-.section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent 0%, #0388ff 50%, transparent 100%);
-  border-radius: 20px 20px 0 0;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .section:hover {
-  border-color: rgba(3, 136, 255, 0.15);
-  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.06);
-  transform: translateY(-2px);
-}
-
-.section:hover::before {
-  opacity: 1;
+  border: 2px solid white;
+  box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
 }
 
 .sectionHeader {
