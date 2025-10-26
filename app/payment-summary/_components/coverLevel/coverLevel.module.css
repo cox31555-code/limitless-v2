@@ -444,29 +444,25 @@
 }
 
 @media (max-width: 600px) {
-  .animatedLogo1,
-  .animatedLogo2,
-  .animatedLogo3 {
+  .animatedLogo1 {
+    top: 8px;
+    right: 8px;
     width: 140px;
     height: 140px;
   }
 
-  .animatedLogo1 {
-    top: 10px;
-    right: 10px;
-  }
-
   .animatedLogo2 {
-    bottom: 15px;
-    left: 15px;
+    bottom: 12px;
+    left: 12px;
     width: 120px;
     height: 120px;
   }
 
   .animatedLogo3 {
+    top: 30%;
+    right: 15px;
     width: 100px;
     height: 100px;
-    right: 15px;
   }
 
   .title {
