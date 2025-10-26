@@ -50,30 +50,20 @@ const Stepper = ({ steps }) => {
           </div>
           {index < steps.length - 1 && (
             <div className={index < 2 ? styles.stepperLine : styles.stepperLine2}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="238"
-                height="2"
-                viewBox="0 0 238 2"
-                fill="none"
-              >
-                {index < 2 ? (
+              {index < 2 ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="238"
+                  height="2"
+                  viewBox="0 0 238 2"
+                  fill="none"
+                >
                   <path
                     d="M237 1L0.999993 1.00002"
                     stroke="url(#paint0_linear_291_117)"
                     strokeWidth="2"
                     strokeLinecap="round"
                   />
-                ) : (
-                  <path
-                    d="M1 1L237 1.00002"
-                    stroke="white"
-                    strokeOpacity="0.11"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                )}
-                {index < 2 && (
                   <defs>
                     <linearGradient
                       id="paint0_linear_291_117"
@@ -87,8 +77,24 @@ const Stepper = ({ steps }) => {
                       <stop offset="1" stopColor="#0388FF" stopOpacity="0" />
                     </linearGradient>
                   </defs>
-                )}
-              </svg>{" "}
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="238"
+                  height="2"
+                  viewBox="0 0 238 2"
+                  fill="none"
+                >
+                  <path
+                    d="M1 1L237 1.00002"
+                    stroke="white"
+                    strokeOpacity="0.11"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              )}
             </div>
           )}
         </div>
