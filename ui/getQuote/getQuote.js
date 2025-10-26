@@ -318,8 +318,8 @@ const GetQuote = () => {
                         ? Array.from({ length: 12 }, (_, i) =>
                             (i + 13).toString()
                           )
-                        : Array.from({ length: 23 }, (_, i) =>
-                            (i + 10).toString()
+                        : Array.from({ length: 48 }, (_, i) =>
+                            (i + 5).toString()
                           )
                     }
                     placeholder="More..."
