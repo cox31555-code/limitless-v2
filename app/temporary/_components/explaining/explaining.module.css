@@ -470,6 +470,16 @@
     gap: 1.8rem;
   }
 
+  .timelineWrapper {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .stepCard {
+    padding: 2rem;
+    gap: 1.4rem;
+  }
+
   .card {
     padding: 2rem;
     gap: 1.4rem;
@@ -477,6 +487,15 @@
 
   .iconContainer {
     height: 80px;
+  }
+
+  .stepIconContainer {
+    height: 80px;
+  }
+
+  .stepIconContainer svg {
+    width: 70px;
+    height: 70px;
   }
 
   .stepNumber {
