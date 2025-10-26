@@ -105,7 +105,26 @@ const Page = async () => {
         isPaid: true,
       },
     ];
-    expiredPolicies = [];
+    expiredPolicies = [
+      {
+        id: "dev-policy-3",
+        policyNumber: "LC-DEV003",
+        remaining: "Expired",
+        name: "Dev User",
+        vehicleReg: "EF23DEV",
+        details: "View",
+        isPaid: false,
+      },
+      {
+        id: "dev-policy-4",
+        policyNumber: "LC-DEV004",
+        remaining: "Expired",
+        name: "Dev User",
+        vehicleReg: "GH24DEV",
+        details: "View",
+        isPaid: false,
+      },
+    ];
   } else {
     try {
       // Fetch all insurances for the logged-in user
