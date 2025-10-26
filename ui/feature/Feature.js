@@ -3,10 +3,10 @@ import styles from "./feature.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import {
-  CiClock2,
-  CiCalendar,
-  CiSun,
-} from "react-icons/ci";
+  FaClock,
+  FaSun,
+  FaCalendar,
+} from "react-icons/fa6";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -16,12 +16,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const getIconComponent = (iconType) => {
   switch (iconType) {
     case "clock":
-      return <CiClock2 className={styles.iconSymbol} />;
+      return <FaClock className={styles.iconSymbol} />;
     case "sun":
-      return <CiSun className={styles.iconSymbol} />;
+      return <FaSun className={styles.iconSymbol} />;
     case "calendar-week":
     case "calendar-month":
-      return <CiCalendar className={styles.iconSymbol} />;
+      return <FaCalendar className={styles.iconSymbol} />;
     default:
       return null;
   }
