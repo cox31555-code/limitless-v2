@@ -76,7 +76,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 1.6rem;
+  padding: 1.02rem 1.36rem;
   background: linear-gradient(135deg, rgba(0, 8, 34, 0.98) 0%, rgba(10, 15, 46, 0.98) 100%);
   border-bottom: 1px solid rgba(3, 136, 255, 0.15);
   position: relative;
@@ -114,8 +114,8 @@
 }
 
 .logo {
-  width: 4rem;
-  height: 4rem;
+  width: 3.4rem;
+  height: auto;
   cursor: pointer;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -126,8 +126,8 @@
 
 /* Close button */
 .closeButton {
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 3.06rem;
+  height: 3.06rem;
   background: transparent;
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   border-radius: 8px;
@@ -153,8 +153,8 @@
 }
 
 .closeButton svg {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.04rem;
+  height: 2.04rem;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -333,7 +333,7 @@
   }
 
   .header {
-    padding: 1rem 1.4rem;
+    padding: 0.85rem 1.19rem;
   }
 
   .headerTitle {
@@ -341,18 +341,18 @@
   }
 
   .logo {
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 3.06rem;
+    height: auto;
   }
 
   .closeButton {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.72rem;
+    height: 2.72rem;
   }
 
   .closeButton svg {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.53rem;
+    height: 1.53rem;
   }
 
   .successTitle {
@@ -399,18 +399,18 @@
   }
 
   .logo {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.72rem;
+    height: auto;
   }
 
   .closeButton {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 2.38rem;
+    height: 2.38rem;
   }
 
   .closeButton svg {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.36rem;
+    height: 1.36rem;
   }
 
   .successTitle {
