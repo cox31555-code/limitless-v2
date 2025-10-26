@@ -1,21 +1,17 @@
 .container {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  display: flex;
   gap: 4rem;
   margin: 5rem 4.4%;
   width: 91.2%;
-  align-items: start;
-  overflow: visible;
-}
-
-.container > * {
-  overflow: visible;
+  align-items: flex-start;
 }
 
 .first {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  flex: 1.4;
+  min-width: 0;
 }
 
 .second {
@@ -26,7 +22,8 @@
   top: 120px;
   height: fit-content;
   z-index: 10;
-  align-self: start;
+  flex: 1;
+  min-width: 0;
 }
 
 .actions {
