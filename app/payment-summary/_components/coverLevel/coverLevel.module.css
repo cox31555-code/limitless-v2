@@ -2,7 +2,6 @@
   border-radius: 24px;
   background: linear-gradient(135deg, #0c1840 0%, #051c3a 100%);
   border: 2px solid rgba(3, 136, 255, 0.32);
-  box-shadow: 0 20px 48px rgba(3, 136, 255, 0.25), 0 8px 16px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
