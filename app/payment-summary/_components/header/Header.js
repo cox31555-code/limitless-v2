@@ -77,6 +77,15 @@ const Header = ({ title }) => {
                   height: 82,
                 },
               },
+              {
+                title: "Confirmation",
+                img: {
+                  src: "/svg/payment-step-3.svg",
+                  alt: "step4",
+                  width: 82,
+                  height: 82,
+                },
+              },
             ]}
           />
           <div className={styles.actions}>
