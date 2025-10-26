@@ -19,24 +19,13 @@
 }
 
 .title {
-  color: #000822;
-  font-size: 1.8rem;
-  font-weight: 700;
+  color: #5a6b7d;
+  font-size: 1.6rem;
+  font-weight: 600;
   line-height: 130%;
   margin: 0;
   position: relative;
-  padding-bottom: 1.2rem;
-}
-
-.title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 3.2rem;
-  height: 3px;
-  background: linear-gradient(90deg, #0388ff 0%, transparent 100%);
-  border-radius: 2px;
+  padding-bottom: 0.8rem;
 }
 
 .duration {
