@@ -19,6 +19,13 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
     }, 300);
   };
 
+  // Reset closing state when modal opens
+  useEffect(() => {
+    if (show) {
+      setIsClosing(false);
+    }
+  }, [show]);
+
   // Generate random positions and delays on component mount
   useEffect(() => {
     if (show && !logoPositions) {
