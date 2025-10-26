@@ -69,6 +69,36 @@
   filter: drop-shadow(0 3px 10px rgba(3, 136, 255, 0.16));
 }
 
+.iconContainer {
+  flex-shrink: 0;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.15) 0%, rgba(3, 136, 255, 0.05) 100%);
+  border-radius: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.container:hover .iconContainer {
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.25) 0%, rgba(3, 136, 255, 0.1) 100%);
+  transform: scale(1.05);
+}
+
+.iconSymbol {
+  width: 3.2rem;
+  height: 3.2rem;
+  color: #0388ff;
+  stroke-width: 1.5;
+  transition: all 0.3s ease;
+}
+
+.container:hover .iconSymbol {
+  color: #049cff;
+  filter: drop-shadow(0 2px 8px rgba(3, 136, 255, 0.3));
+}
+
 .content {
   display: flex;
   flex-direction: column;
