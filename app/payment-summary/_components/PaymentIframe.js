@@ -104,7 +104,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
               xmlns="http://www.w3.org/2000/svg"
               style={{
                 top: `${logoPositions.logo3.top}%`,
-                right: `${logoPositions.logo3.right}%`,
+                left: `${logoPositions.logo3.left}%`,
                 animationDelay: `${logoPositions.logo3.delay}s`,
               }}
             >
