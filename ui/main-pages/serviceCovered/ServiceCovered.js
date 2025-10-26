@@ -13,16 +13,14 @@ const manrope = Manrope({
 });
 
 const CheckIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="11" stroke="#0CA86E" strokeWidth="1.5" />
-    <path d="M8 12L11 15L16 9" stroke="#0CA86E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path d="M16.667 5L7.5 14.167L3.333 10" stroke="#0CA86E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const CrossIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="11" stroke="#E74C3C" strokeWidth="1.5" />
-    <path d="M8 8L16 16M16 8L8 16" stroke="#E74C3C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path d="M15 5L5 15M5 5L15 15" stroke="#E74C3C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -39,16 +37,21 @@ const ServiceCovered = ({ title, description, covered, unCovered }) => {
           <span>{lastThreeWords}</span>
         </h2>
         {description && (
-          <p className={`${styles.description} ${manrope.className}`}>
+          <p className={`${styles.subtitle} ${manrope.className}`}>
             {description}
           </p>
         )}
       </div>
 
       <div className={styles.content}>
-        <div className={styles.section}>
+        <div className={`${styles.section} ${styles.coveredSection}`}>
           <div className={styles.sectionHeader}>
-            <div className={styles.sectionIcon}>✓</div>
+            <div className={styles.badge}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                <path d="M8 12L11 15L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
             <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
               {covered.title}
             </h3>
@@ -63,9 +66,14 @@ const ServiceCovered = ({ title, description, covered, unCovered }) => {
           </div>
         </div>
 
-        <div className={styles.section}>
+        <div className={`${styles.section} ${styles.uncoveredSection}`}>
           <div className={styles.sectionHeader}>
-            <div className={styles.sectionIcon}>✕</div>
+            <div className={styles.badge}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                <path d="M8 8L16 16M16 8L8 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </div>
             <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
               {unCovered.title}
             </h3>
