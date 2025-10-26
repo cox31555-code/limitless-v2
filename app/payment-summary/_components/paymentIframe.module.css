@@ -216,22 +216,22 @@
   }
 
   .header {
-    padding: 1.4rem 1.6rem;
+    padding: 1rem 1.4rem;
   }
 
   .logo {
-    width: 4.8rem;
-    height: 4.8rem;
-  }
-
-  .closeButton {
     width: 3.6rem;
     height: 3.6rem;
   }
 
+  .closeButton {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
   .closeButton svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .successTitle {
@@ -255,22 +255,22 @@
   }
 
   .header {
-    padding: 1.2rem 1.4rem;
+    padding: 1rem 1.2rem;
   }
 
   .logo {
-    width: 4.4rem;
-    height: 4.4rem;
-  }
-
-  .closeButton {
     width: 3.2rem;
     height: 3.2rem;
   }
 
+  .closeButton {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
   .closeButton svg {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   .successTitle {
