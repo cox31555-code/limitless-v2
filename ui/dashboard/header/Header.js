@@ -70,6 +70,23 @@ const Header = ({ page }) => {
         </div>
         <div className={styles.headerLeft}>
           <h1 className={styles.pageTitle}>{getTitle()}</h1>
+          <div className={styles.animatedLogos}>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F7b166ace3e774df2a803c723c4d45340?format=webp&width=800"
+              alt="Limitless Cover animated logo 1"
+              className={styles.logoAnimated + " " + styles.logo1}
+            />
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F7b166ace3e774df2a803c723c4d45340?format=webp&width=800"
+              alt="Limitless Cover animated logo 2"
+              className={styles.logoAnimated + " " + styles.logo2}
+            />
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F7b166ace3e774df2a803c723c4d45340?format=webp&width=800"
+              alt="Limitless Cover animated logo 3"
+              className={styles.logoAnimated + " " + styles.logo3}
+            />
+          </div>
         </div>
 
         <div className={styles.headerRight}>
