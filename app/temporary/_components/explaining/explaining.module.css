@@ -407,6 +407,24 @@
     grid-template-columns: 1fr;
   }
 
+  .timelineWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stepWrapper {
+    width: 100%;
+  }
+
+  .stepCard {
+    padding: 2.4rem;
+    gap: 1.8rem;
+  }
+
+  .connector {
+    display: none;
+  }
+
   .card {
     padding: 2.4rem;
     gap: 1.8rem;
