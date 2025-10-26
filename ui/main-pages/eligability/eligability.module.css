@@ -76,16 +76,21 @@
   padding: 3.6rem;
   border-radius: 20px;
   background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  border: 1.5px solid rgba(3, 136, 255, 0.08) !important;
   box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
   position: relative;
   animation: none !important;
+  transition: none !important;
+  animation-name: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
 }
 
 .section:hover {
-  border: 2px solid white;
+  border: 1.5px solid rgba(3, 136, 255, 0.08) !important;
   box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
   animation: none !important;
+  transition: none !important;
 }
 
 .section svg,
