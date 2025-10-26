@@ -139,21 +139,25 @@ const Explaining = () => {
       number: "01",
       title: "Enter Your Details",
       description: "Provide your name, driving history, and vehicle registration number through our simple online form.",
+      icon: "enterdetails",
     },
     {
       number: "02",
       title: "Select Duration",
       description: "Choose your coverage period from 1 hour to 28 days based on your specific needs.",
+      icon: "selectduration",
     },
     {
       number: "03",
       title: "Review & Pay",
       description: "Get an instant quote, review your details, and complete secure payment online.",
+      icon: "reviewpay",
     },
     {
       number: "04",
       title: "Policy Active",
       description: "Your policy activates immediately with digital documents sent directly to your email.",
+      icon: "policyactive",
     },
   ];
 
