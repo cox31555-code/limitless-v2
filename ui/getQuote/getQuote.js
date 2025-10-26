@@ -128,7 +128,7 @@ const GetQuote = () => {
               )}
             </div>
             <div className={styles.tabContent}>
-              <span className={styles.tabLabel}>Get Quote</span>
+              <span className={styles.tabLabel}>Registration</span>
               {step > 1 && registrationNumber && (
                 <span className={styles.tabValue}>{registrationNumber}</span>
               )}
@@ -148,7 +148,7 @@ const GetQuote = () => {
               <span className={styles.stepNum}>2</span>
             </div>
             <div className={styles.tabContent}>
-              <span className={styles.tabLabel}>Confirm</span>
+              <span className={styles.tabLabel}>Duration</span>
               {step > 1 && (quickSelection || customDurationValue) && (
                 <span className={styles.tabValue}>
                   {quickSelection || `${customDurationValue} ${customDurationType}`}
