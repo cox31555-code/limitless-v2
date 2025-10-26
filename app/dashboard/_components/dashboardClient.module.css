@@ -291,12 +291,7 @@
   color: #fff;
   filter: brightness(1.1);
   box-shadow: 0 6px 20px rgba(3, 136, 255, 0.25);
-}
-
-.actionIcon img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(2) saturate(2);
+  font-size: 2rem;
 }
 
 .actionContent {
