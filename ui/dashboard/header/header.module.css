@@ -26,8 +26,8 @@
 
 .logoTopLeft {
   position: absolute;
-  top: 0;
-  left: 2%;
+  top: -30px;
+  left: -20px;
   width: 100px;
   height: 100px;
   opacity: 0.13;
@@ -38,7 +38,7 @@
 
 .logoTopMiddle {
   position: absolute;
-  top: 0;
+  top: -30px;
   left: 50%;
   width: 100px;
   height: 100px;
@@ -50,8 +50,8 @@
 
 .logoTopRight {
   position: absolute;
-  top: 0;
-  right: 2%;
+  top: -30px;
+  right: -20px;
   width: 100px;
   height: 100px;
   opacity: 0.13;
