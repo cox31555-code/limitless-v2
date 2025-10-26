@@ -47,27 +47,36 @@
   position: relative;
   z-index: 2;
   margin-bottom: 3.5rem;
+  padding: 3.2rem 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  animation: slideDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .titleSection h1 {
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   font-weight: 800;
-  color: #000822;
-  margin: 0 0 1rem;
-  line-height: 120%;
-  letter-spacing: -1px;
-  background: linear-gradient(135deg, #0388ff 0%, #000822 100%);
+  margin: 0 0 0.8rem;
+  line-height: 110%;
+  letter-spacing: -1.5px;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 50%, #000822 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: fadeInScale 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .titleSection p {
-  font-size: 1.3rem;
-  color: rgba(0, 8, 34, 0.65);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgba(0, 8, 34, 0.72);
   margin: 0;
-  line-height: 140%;
-  letter-spacing: 0.2px;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  animation: fadeInUp 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s backwards;
 }
 
 .content {
