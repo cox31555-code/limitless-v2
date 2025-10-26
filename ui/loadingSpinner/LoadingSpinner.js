@@ -14,7 +14,7 @@ const LoadingSpinner = () => {
       >
         <defs>
           <linearGradient id="fillGradient">
-            <stop offset="0%" stopColor="#0388FF" />
+            <stop offset="0%" stopColor="#0270CC" />
           </linearGradient>
           <linearGradient id="darkGradient">
             <stop offset="0%" stopColor="#ffffff" stopOpacity="0.05" />
