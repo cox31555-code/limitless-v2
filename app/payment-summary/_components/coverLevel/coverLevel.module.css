@@ -7,33 +7,37 @@
   overflow: hidden;
 }
 .title {
-  color: #fff;
-  font-size: 2.8rem;
+  color: #000822;
+  font-size: 2.4rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 1.12px;
-  padding: 2.4rem 2.4rem 1.8rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  line-height: 130%;
+  padding: 2.4rem 2.4rem 1.6rem;
+  margin: 0;
 }
+
 .coverType {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.4rem 1.6rem 0;
+  padding: 1.6rem 2.4rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #f8fbff 100%);
+  margin: 1.6rem 2.4rem;
+  border-radius: 12px;
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
+
 .coverTypeTitle {
+  color: #5a6b7d;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.coverTypeValue {
   color: #0388ff;
   font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
-}
-.coverTypeValue {
-  color: #fff;
-  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
+  line-height: 130%;
 }
 .summery {
   display: flex;
