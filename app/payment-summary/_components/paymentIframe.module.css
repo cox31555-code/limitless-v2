@@ -156,15 +156,6 @@
   fill: #0388ff;
 }
 
-.animatedLogo2 {
-  position: absolute;
-  width: 250px;
-  height: 330px;
-  opacity: 0.06;
-  animation: scaleAndFade 10s ease-in-out infinite;
-  fill: #049cff;
-}
-
 .animatedLogo3 {
   position: absolute;
   width: 200px;
