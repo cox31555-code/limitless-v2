@@ -210,46 +210,13 @@ const TemporaryInsuranceContent = () => {
     setIsSubmitting(true);
 
     try {
-      const submissionData = {
-        ...data,
-        foundVehicleData: foundVehicleData,
-      };
+      // Generate a temporary insurance ID for offline mode
+      const insuranceId = `TEMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-      let insuranceId = null;
-
-      // Try to submit to API, but allow offline mode if it fails
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/insurance`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(submissionData),
-        });
-
-        const result = await response.json();
-
-        if (!response.ok) {
-          throw new Error(
-            result.message || "Failed to submit insurance application"
-          );
-        }
-
-        insuranceId = result.data.insurance._id;
-
-        toast.success("Insurance application submitted successfully!", {
-          position: "top-right",
-          autoClose: 3000,
-        });
-      } catch (apiError) {
-        // API is unavailable - generate a mock ID and allow offline mode
-        console.warn("API unavailable, proceeding in offline mode:", apiError);
-        insuranceId = `TEMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-        toast.warning("Proceeding without API connection", {
-          position: "top-right",
-          autoClose: 2000,
-        });
-      }
+      toast.success("Quote generated successfully!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
 
       // Check if payment=false is in search params
       const skipPayment = searchParams.get("payment") === "false";
@@ -266,7 +233,7 @@ const TemporaryInsuranceContent = () => {
       console.error("Error submitting form:", error);
       toast.error(
         error.message ||
-          "Failed to submit insurance application. Please try again."
+          "Failed to process quote. Please try again."
       );
     } finally {
       setIsSubmitting(false);
