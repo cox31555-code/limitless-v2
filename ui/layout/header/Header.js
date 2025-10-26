@@ -282,48 +282,31 @@ const Header = () => {
             </li>
           </menu>
         )}
-        <div
-          style={{ gap: isDashboard ? "1.2rem" : "" }}
-          className={styles.buttons}
-        >
-          {isDashboard ? (
-            <div
-              className={styles.chatIcon}
-              onClick={openLiveChat}
-              style={{ cursor: "pointer" }}
-            >
-              <Image
-                src="/svg/live-chat.svg"
-                alt="chat"
-                width={30}
-                height={30}
-              />
-            </div>
-          ) : (
+        {!isDashboard && (
+          <div
+            style={{ gap: isDashboard ? "1.2rem" : "" }}
+            className={styles.buttons}
+          >
             <button
               className={styles.loginBtn}
               onClick={() => router.push("/login")}
             >
               Login
             </button>
-          )}
-          <button
-            className={styles.quoteBtn}
-            onClick={
-              isDashboard
-                ? openLiveChat
-                : () => router.push("/temporary/get-quote")
-            }
-          >
-            {isDashboard ? "Live chat" : "Get Quote"}
-            <Image
-              src="/svg/arrow-right.svg"
-              alt="arrow-right"
-              width={24}
-              height={12}
-            />
-          </button>
-        </div>
+            <button
+              className={styles.quoteBtn}
+              onClick={() => router.push("/temporary/get-quote")}
+            >
+              Get Quote
+              <Image
+                src="/svg/arrow-right.svg"
+                alt="arrow-right"
+                width={24}
+                height={12}
+              />
+            </button>
+          </div>
+        )}
       </header>
       <header className={styles.mobileContainer}>
         <div className={styles.top}>
