@@ -63,18 +63,6 @@ const QuoteIcon = () => (
   </svg>
 );
 
-const ArrowIcon = () => (
-  <svg width="27" height="28" viewBox="0 0 27 28" fill="none">
-    <path
-      d="M9.95312 22.7669L17.2313 15.3155C18.0908 14.4355 18.0908 12.9955 17.2313 12.1155L9.95312 4.66406"
-      stroke="white"
-      strokeWidth="1.63724"
-      strokeMiterlimit="10"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
 
 const Explaining = () => {
   const keyFeatures = [
@@ -170,17 +158,12 @@ const Explaining = () => {
             <div key={index} className={styles.card}>
               <div className={styles.iconContainer}>{getIcon(feature.icon)}</div>
               <div className={styles.contentContainer}>
-                <div className={styles.content}>
-                  <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-                    {feature.title}
-                  </h3>
-                  <p className={`${styles.description} ${manrope.className}`}>
-                    {feature.description}
-                  </p>
-                </div>
-                <div className={styles.iconWrapper}>
-                  <ArrowIcon />
-                </div>
+                <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+                  {feature.title}
+                </h3>
+                <p className={`${styles.description} ${manrope.className}`}>
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}
@@ -207,17 +190,12 @@ const Explaining = () => {
             <div key={index} className={styles.card}>
               <div className={styles.stepNumber}>{step.number}</div>
               <div className={styles.contentContainer}>
-                <div className={styles.content}>
-                  <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-                    {step.title}
-                  </h3>
-                  <p className={`${styles.description} ${manrope.className}`}>
-                    {step.description}
-                  </p>
-                </div>
-                <div className={styles.iconWrapper}>
-                  <ArrowIcon />
-                </div>
+                <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+                  {step.title}
+                </h3>
+                <p className={`${styles.description} ${manrope.className}`}>
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}
