@@ -522,8 +522,8 @@
 
 /* Duration Modal */
 .durationModalOverlay {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  inset: -3.2rem -3.8rem -3.2rem -3.8rem;
   background: rgba(0, 8, 34, 0.6);
   z-index: 999;
   backdrop-filter: blur(2px);
