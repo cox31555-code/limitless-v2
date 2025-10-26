@@ -54,10 +54,6 @@
   overflow: hidden;
 }
 
-.card {
-  border-top: none;
-}
-
 .card:hover {
   box-shadow: 0 12px 36px rgba(3, 136, 255, 0.14);
   transform: translateY(-6px);
