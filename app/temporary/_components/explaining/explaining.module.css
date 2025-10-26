@@ -156,12 +156,13 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 0;
+  gap: 2.8rem;
   position: relative;
   z-index: 2;
   max-width: 131.2rem;
   width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .stepWrapper {
@@ -171,20 +172,22 @@
   gap: 0;
   flex: 1;
   position: relative;
+  min-width: 0;
 }
 
 .stepCard {
   display: flex;
   flex-direction: column;
-  padding: 3rem;
-  gap: 2rem;
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(7, 16, 45, 0.8) 0%, rgba(3, 136, 255, 0.06) 100%);
-  border: 1px solid rgba(3, 136, 255, 0.15);
-  transition: all 0.5s ease;
+  padding: 2.4rem 2rem;
+  gap: 1.8rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(7, 16, 45, 0.6) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   width: 100%;
+  height: 100%;
 }
 
 .stepCard::before {
@@ -216,8 +219,10 @@
 }
 
 .stepCard:hover {
-  border-color: rgba(3, 136, 255, 0.3);
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.08) 100%);
+  border-color: rgba(3, 136, 255, 0.35);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.06) 100%);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.15);
+  transform: translateY(-4px);
 }
 
 .stepCard:hover::before {
@@ -231,22 +236,29 @@
   align-items: center;
   position: relative;
   z-index: 1;
-  height: 100px;
+  height: 90px;
+  margin-bottom: 0.4rem;
 }
 
 .stepIconContainer svg {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s ease;
+}
+
+.stepCard:hover .stepIconContainer svg {
+  transform: scale(1.08);
 }
 
 .connector {
   position: absolute;
-  top: 140px;
-  left: calc(100% + 0px);
-  width: calc(100% - 0px);
-  height: 3px;
-  background: linear-gradient(90deg, rgba(3, 136, 255, 0.3) 0%, rgba(3, 136, 255, 0.1) 100%);
+  top: 110px;
+  left: calc(100% + 1.4rem);
+  width: calc(100% + 2.8rem);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(3, 136, 255, 0.25) 0%, rgba(3, 136, 255, 0.08) 100%);
   z-index: 0;
+  transform-origin: left center;
 }
 
 .stepWrapper:last-child .connector {
@@ -314,14 +326,15 @@
 }
 
 .stepNumber {
-  color: #00c9ff;
-  font-size: 3.2rem;
+  color: #0388ff;
+  font-size: 1.8rem;
   font-weight: 700;
-  opacity: 0.8;
+  opacity: 0.9;
   line-height: 1;
   position: relative;
   z-index: 1;
-  margin: 0;
+  margin: 0.8rem 0 0 0;
+  letter-spacing: 1px;
 }
 
 .contentContainer {
@@ -376,15 +389,27 @@
 
   .timelineWrapper {
     flex-direction: row;
-    gap: 1.2rem;
+    gap: 2rem;
+    padding: 0 0.5rem;
   }
 
   .stepCard {
-    padding: 2.4rem;
+    padding: 2rem 1.8rem;
+  }
+
+  .stepIconContainer {
+    height: 80px;
+  }
+
+  .stepIconContainer svg {
+    width: 65px;
+    height: 65px;
   }
 
   .connector {
-    top: 120px;
+    top: 100px;
+    left: calc(100% + 1rem);
+    width: calc(100% + 2rem);
   }
 }
 
