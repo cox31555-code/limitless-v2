@@ -3,19 +3,16 @@ import React, { useState, useRef } from "react";
 import styles from "./form.module.css";
 import Image from "next/image";
 import ConfirmButton from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { forgotPasswordSchema } from "@/utils/authSchemas";
 import { useAuth } from "@/contexts/AuthContext";
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700"],
-});
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
 });
 
 const Form = () => {
@@ -29,7 +26,6 @@ const Form = () => {
     clearSuccessStates,
   } = useAuth();
 
-  // Ref for input focus
   const emailInputRef = useRef(null);
 
   const {
@@ -56,57 +52,42 @@ const Form = () => {
   if (forgotPasswordSuccess) {
     return (
       <div className={styles.container}>
-        <div className={styles.titleContainer}>
-          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Check Your Email
-          </h2>
-          <p className={`${styles.description} ${manrope.className}`}>
-            {`We've sent you a password reset link. Please check your email and
-            follow the instructions to reset your password.`}
-          </p>
-        </div>
+        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+          Check Your Email
+        </h2>
+        <p className={styles.subtitle}>
+          We've sent you a password reset link. Please check your email and follow the instructions to reset your password.
+        </p>
+
         <ConfirmButton
-          style={{
-            justifyContent: "center",
-            width: "100%",
-            marginTop: "2.6rem",
-          }}
+          style={{ justifyContent: "center", width: "100%", marginTop: "2.2rem" }}
           title="Go to Login"
           onClick={() => {
             clearSuccessStates();
             router.push("/login");
           }}
-          // className={styles.button}
         />
       </div>
     );
   }
 
+  const handleEmailChange = (e) => {
+    if (errors.email) {
+      setError("email", { message: undefined });
+    }
+  };
+
   return (
     <div className={styles.container}>
-      <div className={styles.titleContainer}>
-        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Forgot Password
-        </h2>
-        <p className={`${styles.description} ${manrope.className}`}>
-          Lost your password? Please enter your email address. You will receive
-          a link to create a new password via email
-        </p>
-      </div>
+      <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+        Reset Password
+      </h2>
+      <p className={styles.subtitle}>
+        Enter your email address and we'll send you a link to reset your password
+      </p>
 
-      {/* Error Message */}
       {(error || errors.root) && (
-        <div
-          className={styles.errorMessage}
-          style={{
-            backgroundColor: "#f8d7da",
-            color: "#721c24",
-            padding: "0.75rem",
-            marginBottom: "1rem",
-            borderRadius: "0.25rem",
-            border: "1px solid #f5c6cb",
-          }}
-        >
+        <div className={styles.errorMessage}>
           {error || errors.root?.message}
         </div>
       )}
@@ -136,6 +117,7 @@ const Form = () => {
                 className={`${styles.input} ${
                   errors.email ? styles.error : ""
                 }`}
+                onChange={handleEmailChange}
                 {...(() => {
                   const { ref, ...rest } = register("email");
                   return {
@@ -149,37 +131,27 @@ const Form = () => {
               />
             </div>
             {errors.email && (
-              <span className={styles.errorMessage}>
+              <span className={styles.errorMessage} style={{ color: "#dc3545", fontSize: "0.875rem" }}>
                 {errors.email.message}
               </span>
             )}
           </div>
         </div>
 
-        {errors.root && (
-          <div
-            className={styles.errorMessage}
-            style={{ textAlign: "center", marginBottom: "1rem" }}
-          >
-            {errors.root.message}
-          </div>
-        )}
-
         <ConfirmButton
           style={{ justifyContent: "center", width: "100%" }}
-          title={isLoading ? "Sending..." : "Reset Password"}
+          title={isLoading ? "Sending..." : "Send Reset Link"}
           onClick={handleSubmit(onSubmit)}
           disabled={isLoading}
-          // className={styles.button}
         />
       </form>
 
       <button
-        className={styles.gotoLogin}
+        className={styles.goBackLogin}
         onClick={() => router.push("/login")}
         disabled={isLoading}
       >
-        {`Go back to login`}
+        Back to Login
       </button>
     </div>
   );

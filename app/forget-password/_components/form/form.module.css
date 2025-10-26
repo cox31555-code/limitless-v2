@@ -1,162 +1,351 @@
 .container {
   display: flex;
-  width: 49.73rem;
-  padding: 3.74rem 3.06rem;
+  width: 100%;
+  max-width: 437px;
+  padding: 3rem 3.2rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 15px;
+  gap: 0;
   background: #fff;
-  flex: 1;
-  margin: auto;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 8, 34, 0.12),
+              0 1px 3px rgba(0, 8, 34, 0.06);
+  position: relative;
+  z-index: 10;
+  height: 520px;
+  animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .container > * {
   width: 100%;
-}
-.titleContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.36rem;
-  width: 90%;
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
   color: #000822;
   text-align: center;
-  font-size: 2.38rem;
-  font-weight: 700;
-  line-height: 100%;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 110%;
+  letter-spacing: -1px;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(135deg, #0388ff 0%, #000822 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.description {
-  color: rgba(0, 8, 34, 0.54);
+
+.subtitle {
+  color: rgba(0, 8, 34, 0.65);
   text-align: center;
-  font-size: 9px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 124%; /* 17.36px */
-  letter-spacing: 0.48px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  margin: 0 0 2.2rem;
 }
 
 .inputsContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.53rem;
-  margin: 2.89rem 0 4.25rem;
+  gap: 1.3rem;
+  margin-bottom: 1.5rem;
 }
+
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 1.36rem;
+  gap: 0.7rem;
+  position: relative;
 }
 
 .label {
   color: #000822;
-  font-size: 1.36rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.54px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
+
+.inputGroup:focus-within .label {
+  opacity: 1;
+  color: #0388ff;
+}
+
 .inputContainer {
   display: flex;
-  padding: 0.51rem;
   align-items: center;
-  gap: 1.36rem;
-  border-radius: 9px;
-  background: #ecf0fe;
-  padding: 0.51rem;
+  gap: 1rem;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
+  border: 2px solid rgba(3, 136, 255, 0.22);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
 }
+
+.inputContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.inputContainer:hover {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+  border-color: rgba(3, 136, 255, 0.45);
+  box-shadow: 0 10px 28px rgba(3, 136, 255, 0.14);
+}
+
+.inputContainer:hover::before {
+  left: 100%;
+}
+
+.inputContainer:focus-within {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+  border-color: #0388ff;
+  box-shadow: 0 10px 36px rgba(3, 136, 255, 0.2),
+              inset 0 0 18px rgba(3, 136, 255, 0.09);
+}
+
 .iconWrapper {
-  width: 44px;
-  height: 44px;
-  border-radius: 9px;
-  background: linear-gradient(0deg, #fff 0%, #fff 100%),
-    linear-gradient(52deg, rgba(255, 255, 255, 0.3) 18.09%, #0388ff 88.9%);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0388ff, #049cff);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  filter: brightness(1.1);
+  transition: all 0.3s ease;
+}
+
+.inputContainer:hover .iconWrapper {
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.35);
+  transform: scale(1.1);
 }
 
 .input {
   width: 100%;
   border: none;
   background: transparent;
-  color: rgba(0, 8, 34, 0.4);
-  font-size: 1.19rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.48px;
+  color: #000822;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.2px;
+  transition: color 0.3s ease;
 }
-.errorMessage {
-  color: #ef4444;
-  font-size: 1.02rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.48px;
-  margin-top: 0.34rem;
-  text-align: start;
+
+.input::placeholder {
+  color: rgba(0, 8, 34, 0.42);
 }
+
 .input:focus {
   outline: none;
+  color: #000822;
 }
 
-.gotoLogin {
-  color: #0388ff;
-  font-size: 1.19rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.48px;
-  border: none;
-  background: none;
+.input::selection {
+  background: rgba(3, 136, 255, 0.2);
+  color: #000822;
+}
+
+.errorMessage {
+  color: #dc3545;
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  margin-top: 0.9rem;
   text-align: start;
-  cursor: pointer;
-  margin: 2.21rem auto 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  animation: shake 0.4s ease;
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.05) 100%);
+  padding: 1.2rem 1.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  width: 100%;
 }
 
-@media screen and (max-width: 900px) {
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+.goBackLogin {
+  color: #0388ff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.2px;
+  border: none;
+  margin-top: 1.8rem;
+  background: none;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.goBackLogin:hover {
+  color: #049cff;
+}
+
+.goBackLogin:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 460px;
+    padding: 4.2rem 3.6rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .inputsContainer {
+    gap: 2rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
   .container {
     width: 100%;
-    padding: 4.1rem 2rem 2.3rem;
-  }
-  .titleContainer {
-    gap: 1.2rem;
-  }
-  .title {
-    font-size: 2.4rem;
-  }
-  .description {
-    font-size: 1.2rem;
-  }
-  .inputsContainer {
-    gap: 1.8rem;
-    margin: 3.9rem 0 2rem;
-  }
-  .inputGroup {
-    gap: 1.4rem;
+    max-width: 480px;
+    padding: 4.5rem 3.8rem;
   }
 
-  .label {
-    font-size: 1.4rem;
-    line-height: 100%;
-    letter-spacing: 0.56px;
+  .title {
+    font-size: 3rem;
   }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .inputsContainer {
+    gap: 2rem;
+    margin-bottom: 2.4rem;
+  }
+
   .inputContainer {
-    gap: 1.8rem;
+    padding: 1.4rem 1.8rem;
+    gap: 1.4rem;
+    border-radius: 14px;
   }
+
   .iconWrapper {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
   }
 
   .input {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 
-  .gotoLogin {
-    font-size: 1.4rem;
-    margin-top: 3.8rem;
+  .goBackLogin {
+    font-size: 1.2rem;
+    margin-top: 2.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 4rem 2.6rem;
+    border-radius: 24px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .title {
+    font-size: 2.8rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+    margin-bottom: 3rem;
+  }
+
+  .inputsContainer {
+    gap: 1.9rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .inputGroup {
+    gap: 0.9rem;
+  }
+
+  .label {
+    font-size: 0.9rem;
+  }
+
+  .inputContainer {
+    padding: 1.3rem 1.6rem;
+    gap: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .input {
+    font-size: 1.25rem;
+  }
+
+  .goBackLogin {
+    font-size: 1.1rem;
+    margin-top: 2.2rem;
+  }
+
+  .errorMessage {
+    padding: 1.3rem 1.6rem;
+    border-radius: 11px;
+    font-size: 1.05rem;
   }
 }
