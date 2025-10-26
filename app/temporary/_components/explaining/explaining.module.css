@@ -423,20 +423,25 @@
   }
 
   .card {
-    padding: 2rem 1.8rem;
-    gap: 1.3rem;
+    padding: 1.8rem 1.6rem;
+    gap: 1.2rem;
   }
 
   .iconContainer {
-    height: 100px;
+    height: 55px;
+  }
+
+  .iconContainer svg {
+    width: 45px;
+    height: 45px;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .description {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
   }
 
   .concludingText {
