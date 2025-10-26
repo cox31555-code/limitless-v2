@@ -175,53 +175,24 @@
   min-width: 0;
 }
 
-.stepWrapper::after {
-  content: '';
-  position: absolute;
-  top: 50px;
-  left: 100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(3, 136, 255, 0.4) 0%, rgba(3, 136, 255, 0.15) 100%);
-  z-index: 0;
-}
-
-.stepWrapper:last-child::after {
-  display: none;
-}
-
 .stepCard {
   display: flex;
   flex-direction: column;
-  padding: 2.4rem 2rem;
-  gap: 1.8rem;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(7, 16, 45, 0.6) 0%, rgba(3, 136, 255, 0.04) 100%);
-  border: 1px solid rgba(3, 136, 255, 0.12);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 3rem 2.2rem;
+  gap: 1.6rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(7, 16, 45, 0.5) 0%, rgba(3, 136, 255, 0.05) 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
-  height: 100%;
-}
-
-.stepCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #0388ff 0%, transparent 100%);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease;
 }
 
 .stepCard::after {
   content: '';
   position: absolute;
-  top: -60px;
+  top: -50px;
   left: 15%;
   width: 200px;
   height: 200px;
@@ -234,14 +205,8 @@
 }
 
 .stepCard:hover {
-  border-color: rgba(3, 136, 255, 0.35);
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.06) 100%);
-  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.15);
-  transform: translateY(-4px);
-}
-
-.stepCard:hover::before {
-  transform: scaleX(1);
+  border-color: rgba(3, 136, 255, 0.3);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.06) 100%);
 }
 
 .stepIconContainer {
@@ -251,18 +216,20 @@
   align-items: center;
   position: relative;
   z-index: 1;
-  height: 90px;
-  margin-bottom: 0.4rem;
+  height: 70px;
+  margin-bottom: 0.2rem;
 }
 
 .stepIconContainer svg {
-  width: 70px;
-  height: 70px;
-  transition: transform 0.3s ease;
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 12px rgba(3, 136, 255, 0.2));
 }
 
 .stepCard:hover .stepIconContainer svg {
-  transform: scale(1.08);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 16px rgba(3, 136, 255, 0.4));
 }
 
 
@@ -328,14 +295,14 @@
 
 .stepNumber {
   color: #0388ff;
-  font-size: 1.8rem;
-  font-weight: 700;
-  opacity: 0.9;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.85;
   line-height: 1;
   position: relative;
   z-index: 1;
-  margin: 0.8rem 0 0 0;
-  letter-spacing: 1px;
+  margin: 0.4rem 0 0 0;
+  letter-spacing: 0.5px;
 }
 
 .contentContainer {
