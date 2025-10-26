@@ -6,7 +6,6 @@ import Link from "next/link";
 import { BiLogoInstagramAlt } from "react-icons/bi";
 import { BiLogoFacebook } from "react-icons/bi";
 import { BiLogoTwitter } from "react-icons/bi";
-import { BiLogoLinkedin } from "react-icons/bi";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import NoHiddenFees from "../noHiddenFees/NoHiddenFees";
