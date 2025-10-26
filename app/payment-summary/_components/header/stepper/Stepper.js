@@ -37,7 +37,7 @@ const Stepper = ({ steps, currentStep = 2 }) => {
                     : "rgba(255, 255, 255, 0.5)",
                 }}
               >
-                {isCompleted ? "•" : index + 1}
+                {isCompleted ? "✓" : index + 1}
               </div>
               <p className={`${styles.stepperTitle} ${manrope.className}`}>
                 {step.title}
