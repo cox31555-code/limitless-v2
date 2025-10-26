@@ -47,8 +47,11 @@
   margin: 2rem 2.8rem;
   position: relative;
   border-radius: 18px;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  background-size: 200% 200%;
+  background:
+    url('https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F454de0c14fa148b1a1b02e5d1747ab1e?format=webp&width=800') no-repeat,
+    linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background-size: 500px 500px, 200% 200%;
+  background-position: bottom right, center;
   animation: gradientShift 8s ease infinite;
   min-height: 220px;
   justify-content: center;
