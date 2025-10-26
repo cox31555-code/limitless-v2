@@ -225,16 +225,6 @@ const TemporaryInsuranceContent = () => {
 
       const result = await response.json();
 
-      if (response.status === 409) {
-        toast.error(
-          `An account with email ${data.userDetails.email} already exists. Please login to continue.`
-        );
-        router.push(
-          `/login?email=${encodeURIComponent(data.userDetails.email)}`
-        );
-        return;
-      }
-
       if (!response.ok) {
         throw new Error(
           result.message || "Failed to submit insurance application"
