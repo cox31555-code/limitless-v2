@@ -159,6 +159,16 @@
     width: 5.2rem;
     height: 5.2rem;
   }
+
+  .iconContainer {
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+
+  .iconSymbol {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
 }
 
 /* Tablet - smaller */
