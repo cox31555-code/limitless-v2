@@ -215,7 +215,15 @@
   }
 
   .sectionTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding-bottom: 1.6rem;
+    gap: 0.8rem;
+  }
+
+  .sectionTitle::before {
+    width: 4px;
+    height: 2.2rem;
   }
 
   .cardsGrid {
