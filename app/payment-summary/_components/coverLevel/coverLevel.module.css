@@ -92,6 +92,15 @@
   }
 }
 
+@keyframes pulseOpacity {
+  0%, 100% {
+    opacity: 0.08;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
 .summery::before {
   content: '';
   position: absolute;
