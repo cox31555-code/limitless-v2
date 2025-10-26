@@ -1,31 +1,63 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 1.6rem;
   width: 100%;
-  border-radius: 16px;
-  background: #fff;
-  padding: 2rem 1.8rem;
-  margin-top: 2.4rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  padding: 2.4rem;
 }
+
 .row {
-  display: flex;
-  gap: 1.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
 }
+
 .selections {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 1.6rem;
   width: 100%;
-  margin: 2.2rem 0;
+  margin-top: 1rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
 }
+
+@media screen and (max-width: 1200px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .content {
-    margin-top: 2.4rem;
     padding: 2rem;
   }
+
   .row {
-    flex-direction: column;
-    gap: 2.6rem;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .selections {
+    margin-top: 1rem;
+    gap: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 1.6rem;
+    gap: 1.4rem;
+  }
+
+  .row {
+    gap: 1.2rem;
+  }
+
+  .selections {
+    gap: 1.2rem;
   }
 }
