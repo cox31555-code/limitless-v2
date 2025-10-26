@@ -373,6 +373,19 @@
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .timelineWrapper {
+    flex-direction: row;
+    gap: 1.2rem;
+  }
+
+  .stepCard {
+    padding: 2.4rem;
+  }
+
+  .connector {
+    top: 120px;
+  }
 }
 
 @media screen and (max-width: 900px) {
