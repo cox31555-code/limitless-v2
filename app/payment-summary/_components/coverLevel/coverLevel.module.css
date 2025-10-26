@@ -277,6 +277,7 @@
 .featureItem:hover {
   background: linear-gradient(135deg, rgba(3, 136, 255, 0.15) 0%, rgba(3, 136, 255, 0.08) 100%);
   border-color: rgba(3, 136, 255, 0.25);
+  transform: scale(1.02);
 }
 
 .iconWrapper {
