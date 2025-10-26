@@ -194,6 +194,16 @@
     height: 4.8rem;
   }
 
+  .iconContainer {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .iconSymbol {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
   .content {
     gap: 0.4rem;
   }
