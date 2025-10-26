@@ -1,39 +1,23 @@
 export const features = [
   {
-    img: {
-      src: "/svg/temp-feature-1.svg",
-      alt: "feature1",
-      width: 52,
-      height: 66,
-    },
+    icon: "clock",
     title: "Hourly Vehicle Insurance",
+    description: "From 1 to 12 hours",
   },
   {
-    img: {
-      src: "/svg/temp-feature-2.svg",
-      alt: "feature1",
-      width: 78,
-      height: 48,
-    },
+    icon: "sun",
     title: "Daily Vehicle Insurance",
+    description: "Up to 28 days",
   },
   {
-    img: {
-      src: "/svg/temp-feature-3.svg",
-      alt: "feature3",
-      width: 62,
-      height: 62,
-    },
+    icon: "calendar-week",
     title: "Weekly Vehicle Insurance",
+    description: "Flexible weekly cover",
   },
   {
-    img: {
-      src: "/svg/temp-feature-4.svg",
-      alt: "feature3",
-      width: 76,
-      height: 54,
-    },
+    icon: "calendar-month",
     title: "Monthly Vehicle Insurance",
+    description: "Up to 28 days maximum",
   },
 ];
 export const benifits = [
