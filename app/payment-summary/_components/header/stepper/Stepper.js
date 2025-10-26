@@ -21,32 +21,25 @@ const Stepper = ({ steps, currentStep = 2 }) => {
                 className={`${styles.stepperNumber} ${manrope.className}`}
                 style={{
                   background: isCompleted
-                    ? "rgba(16, 185, 129, 0.2)"
+                    ? "rgba(16, 185, 129, 0.25)"
                     : isActive
-                    ? "rgba(3, 136, 255, 0.25)"
+                    ? "rgba(3, 136, 255, 0.2)"
                     : "rgba(255, 255, 255, 0.08)",
                   boxShadow: isCompleted
-                    ? "inset 0 0 0 1.5px rgba(16, 185, 129, 0.5)"
+                    ? "inset 0 0 0 2px rgba(16, 185, 129, 0.6)"
                     : isActive
-                    ? "inset 0 0 0 1.5px rgba(3, 136, 255, 0.6)"
-                    : "inset 0 0 0 1px rgba(255, 255, 255, 0.2)",
+                    ? "inset 0 0 0 2px rgba(3, 136, 255, 0.8)"
+                    : "inset 0 0 0 2px rgba(255, 255, 255, 0.2)",
                   color: isCompleted
-                    ? "rgba(16, 185, 129, 0.9)"
+                    ? "#10b981"
                     : isActive
                     ? "#0388ff"
-                    : "rgba(255, 255, 255, 0.6)",
-                  fontWeight: isActive ? "700" : "600",
+                    : "rgba(255, 255, 255, 0.5)",
                 }}
               >
                 {isCompleted ? "✓" : index + 1}
               </div>
-              <p
-                className={`${styles.stepperTitle} ${manrope.className}`}
-                style={{
-                  color: isActive ? "#fff" : "rgba(255, 255, 255, 0.8)",
-                  fontWeight: isActive ? "600" : "500",
-                }}
-              >
+              <p className={`${styles.stepperTitle} ${manrope.className}`}>
                 {step.title}
               </p>
             </div>
