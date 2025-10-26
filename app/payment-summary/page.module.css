@@ -1,30 +1,30 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
   gap: 4rem;
-  padding: 5rem 4.4%;
-  width: 100%;
-  max-width: 100%;
-  align-items: flex-start;
-  overflow: visible !important;
-  box-sizing: border-box;
+  margin: 5rem 4.4%;
+  width: 91.2%;
+  position: relative;
 }
 
 .first {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 58.3%;
 }
 
 .second {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  position: sticky;
+  position: fixed;
   top: 120px;
+  right: 4.4%;
+  width: 28%;
   height: fit-content;
   z-index: 10;
-  width: 41.7%;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
 }
 
 .actions {
