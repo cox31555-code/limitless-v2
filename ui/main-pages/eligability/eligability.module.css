@@ -54,6 +54,12 @@
   width: 100%;
 }
 
+@keyframes none {
+  0%, 100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 .section {
   display: flex;
   flex-direction: column;
@@ -70,6 +76,23 @@
 .section:hover {
   border: 2px solid white;
   box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
+  animation: none !important;
+}
+
+.section svg,
+.section svg path,
+.section svg rect {
+  animation: none !important;
+  stroke-dasharray: 0 !important;
+  stroke-dashoffset: 0 !important;
+}
+
+.section:hover svg,
+.section:hover svg path,
+.section:hover svg rect {
+  animation: none !important;
+  stroke-dasharray: 0 !important;
+  stroke-dashoffset: 0 !important;
 }
 
 .sectionHeader {
