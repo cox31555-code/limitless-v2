@@ -77,9 +77,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.02rem 1.36rem;
-  background: linear-gradient(-45deg, rgba(0, 8, 34, 0.98) 0%, rgba(10, 15, 46, 0.98) 25%, rgba(2, 20, 60, 0.95) 50%, rgba(10, 15, 46, 0.98) 75%, rgba(0, 8, 34, 0.98) 100%);
+  background: linear-gradient(-45deg, rgba(0, 8, 34, 0.98) 0%, rgba(5, 12, 40, 0.99) 25%, rgba(1, 15, 45, 0.97) 50%, rgba(5, 12, 40, 0.99) 75%, rgba(0, 8, 34, 0.98) 100%);
   background-size: 400% 400%;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.15);
+  border-bottom: 1px solid rgba(2, 80, 180, 0.25);
   position: relative;
   z-index: 10;
   flex-shrink: 0;
