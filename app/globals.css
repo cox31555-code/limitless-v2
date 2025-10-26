@@ -66,6 +66,7 @@ body {
   align-items: flex-start;
   gap: 4.7rem;
   max-width: 130rem;
+  background: #ffffff;
 }
 .pageContainer {
   width: 100%;
