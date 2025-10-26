@@ -75,18 +75,19 @@
   .container {
     flex-direction: column;
     gap: 3rem;
-    margin: 3.5rem 4.4%;
+    margin: 3.5rem auto;
     width: 91.2%;
+    max-width: 130rem;
   }
 
   .first {
-    flex: 1;
+    width: 100%;
     gap: 1.8rem;
   }
 
   .second {
     position: static;
-    flex: 1;
+    width: 100%;
     gap: 1.8rem;
   }
 }
