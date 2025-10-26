@@ -22,7 +22,11 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
   // Reset closing state when modal opens
   useEffect(() => {
     if (show) {
-      setIsClosing(false);
+      // Small delay ensures previous animation fully clears before reopening
+      const timer = setTimeout(() => {
+        setIsClosing(false);
+      }, 10);
+      return () => clearTimeout(timer);
     }
   }, [show]);
 
