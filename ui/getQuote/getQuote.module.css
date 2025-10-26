@@ -523,10 +523,10 @@
 /* Duration Modal */
 .durationModalOverlay {
   position: absolute;
-  top: 0;
-  left: -3.8rem;
-  right: -3.8rem;
-  bottom: -3.2rem;
+  top: -10rem;
+  left: -50%;
+  right: -50%;
+  bottom: -10rem;
   background: rgba(0, 8, 34, 0.6);
   z-index: 999;
   backdrop-filter: blur(2px);
