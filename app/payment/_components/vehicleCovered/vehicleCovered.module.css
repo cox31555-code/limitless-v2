@@ -91,6 +91,10 @@
     padding: 1.4rem;
   }
 
+  .header img {
+    opacity: 0.85;
+  }
+
   .headerTitle {
     font-size: 1.2rem;
   }
