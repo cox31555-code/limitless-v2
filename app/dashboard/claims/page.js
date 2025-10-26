@@ -20,31 +20,49 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const Page = async () => {
   const cookieStore = await cookies();
   const token = cookieStore.get("jwt")?.value;
+  const devMode = process.env.NEXT_PUBLIC_DEV_MODE === "true";
 
-  if (!token) {
+  if (!token && !devMode) {
     redirect("/login");
   }
 
   let claims = [];
   let error = null;
 
-  try {
-    const response = await serverFetch(`${API_BASE_URL}/api/claims`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "no-store",
-    });
+  // Dev mode: return mock data
+  if (devMode && !token) {
+    claims = [
+      {
+        _id: "dev-claim-1",
+        estimatedResolutionDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+        orderReference: "DEV001",
+        status: "Pending",
+        claimDetails: {
+          placeHolderFirstName: "Dev",
+          placeHolderLastName: "User"
+        },
+        updatedAt: new Date().toISOString()
+      }
+    ];
+  } else {
+    try {
+      const response = await serverFetch(`${API_BASE_URL}/api/claims`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-store",
+      });
 
-    if (response.ok) {
-      const data = await response.json();
-      claims = data.data?.claims || [];
-    } else {
-      error = "Failed to fetch claims";
+      if (response.ok) {
+        const data = await response.json();
+        claims = data.data?.claims || [];
+      } else {
+        error = "Failed to fetch claims";
+      }
+    } catch (err) {
+      console.error("Error fetching claims:", err);
+      error = err.message;
     }
-  } catch (err) {
-    console.error("Error fetching claims:", err);
-    error = err.message;
   }
   // Transform claims data for table display
   const formatClaimsData = (claims) => {
