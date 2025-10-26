@@ -7,9 +7,10 @@
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   box-shadow: 0 8px 32px rgba(0, 8, 34, 0.08);
   border: 1px solid rgba(4, 156, 255, 0.1);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   z-index: 1;
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.6s ease;
 }
 
 /* Navigation Wrapper - Progress & Tabs */
