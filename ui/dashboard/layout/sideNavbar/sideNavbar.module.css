@@ -7,7 +7,7 @@
   align-items: stretch;
   gap: 1.2rem;
   flex-shrink: 0;
-  background: #fff;
+  background: #f8fbff;
   border-right: 1.5px solid rgba(3, 136, 255, 0.12);
   margin-top: 0;
   overflow-y: auto;
@@ -54,7 +54,7 @@
 }
 
 .navItem {
-  background: #fff;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -72,8 +72,8 @@
   opacity: 0;
   position: relative;
   overflow: hidden;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  border: none;
+  box-shadow: none;
 }
 
 .sidebarOpen .navItem {
@@ -81,10 +81,9 @@
 }
 
 .navItem:hover {
-  border-color: rgba(3, 136, 255, 0.25);
   color: #0388ff;
-  background: #f8fbff;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
+  background: rgba(3, 136, 255, 0.08);
+  border-radius: 10px;
 }
 
 .navItem:hover .icon {
@@ -92,11 +91,10 @@
 }
 
 .activeNavItem {
-  border-color: #0388ff;
   color: #0388ff;
-  background: #f0f6ff;
+  background: rgba(3, 136, 255, 0.12);
   font-weight: 600;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
 }
 
 .activeNavItem .icon {
@@ -149,7 +147,7 @@
     border-bottom: 1.5px solid rgba(3, 136, 255, 0.12);
     border-top: 1.5px solid rgba(3, 136, 255, 0.12);
     padding: 1.2rem 1rem;
-    background: #fff;
+    background: #f8fbff;
     margin-top: 0;
     gap: 0.8rem;
   }
