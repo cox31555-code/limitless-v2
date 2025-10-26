@@ -520,6 +520,74 @@
   border-left: 3px solid #dc3545;
 }
 
+/* Duration Modal */
+.durationModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 8, 34, 0.6);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.durationModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.durationModalContent {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border-radius: 1.6rem;
+  border: 1px solid rgba(3, 136, 255, 0.1);
+  padding: 2.4rem;
+  box-shadow: 0 16px 40px rgba(0, 8, 34, 0.12);
+  max-width: 45rem;
+  width: 90vw;
+}
+
+.modalLabel {
+  color: #000822;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.modalValueRow {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.moreOptionsDropdownModal {
+  flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
 /* Mobile Responsive */
 @media screen and (max-width: 900px) {
   .container {
