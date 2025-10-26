@@ -211,20 +211,6 @@
   line-height: 100%;
 }
 
-.statArrow {
-  width: 20px;
-  height: 20px;
-  color: var(--stat-color);
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-}
-
-.statCard:hover .statArrow {
-  opacity: 1;
-  transform: translateX(2px);
-}
 
 /* Quick Actions Section */
 .quickActionsSection,
@@ -341,20 +327,6 @@
   line-height: 130%;
 }
 
-.actionArrow {
-  width: 20px;
-  height: 20px;
-  color: var(--action-color);
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-}
-
-.actionCard:hover .actionArrow {
-  opacity: 1;
-  transform: translateX(2px);
-}
 
 
 /* Info Section */
