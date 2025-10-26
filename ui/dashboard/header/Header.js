@@ -139,9 +139,6 @@ const Header = ({ page }) => {
                   Documents
                 </a>
                 <hr className={styles.profileDivider} />
-                <a href="/change-password" className={styles.profileItem}>
-                  Change Password
-                </a>
                 <button
                   className={styles.logoutButton}
                   onClick={async () => {
