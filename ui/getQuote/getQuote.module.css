@@ -522,13 +522,17 @@
 
 /* Duration Modal */
 .durationModalOverlay {
-  position: absolute;
-  inset: -3.2rem -3.8rem -3.2rem -3.8rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 8, 34, 0.6);
   z-index: 999;
   backdrop-filter: blur(2px);
   animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 0;
+  pointer-events: auto;
 }
 
 .durationModal {
