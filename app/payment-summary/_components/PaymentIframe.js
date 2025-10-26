@@ -22,7 +22,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
         },
         logo3: {
           top: Math.random() * 20 + 40,
-          right: Math.random() * 10 + 5,
+          left: Math.random() * 10 + 5,
           delay: Math.random() * 2 + 0.5,
         },
         logo4: {
