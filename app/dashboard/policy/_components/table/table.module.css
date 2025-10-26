@@ -2,57 +2,66 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 3.8rem;
-  background: #fff;
-  border-radius: 18px;
-  padding-top: 2.8rem;
+  gap: 2rem;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
 }
 .title {
   color: #000822;
   font-size: 1.8rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
-  margin-left: 3.4rem;
+  line-height: 130%;
+  letter-spacing: 0;
+  margin: 0 0 1.6rem 0;
+  padding-bottom: 1.6rem;
+  border-bottom: 1.5px solid rgba(3, 136, 255, 0.12);
 }
 .table {
   width: 100%;
   border-collapse: collapse;
-  /* box-shadow: 0 2px 8px rgba(0, 8, 34, 0.08); */
 }
 
 .tableHeaderRow,
 .tableRow {
-  border-bottom: 1px solid rgba(0, 8, 34, 0.18);
-  /* padding: 0 4.2rem 0 3.4rem; */
+  border-bottom: none;
 }
 
 .tableHeaderCell {
-  color: rgba(0, 8, 34, 0.44);
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: #5a6b7d;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.5px;
   text-align: left;
-  padding-bottom: 2.2rem;
+  padding: 1.2rem 1.6rem;
+  background: transparent;
+  text-transform: uppercase;
 }
 .tableHeaderCell:first-child {
-  padding-left: 3.4rem;
+  padding-left: 1.6rem;
 }
 .tableCell:first-child {
-  padding-left: 3.4rem;
+  padding-left: 1.6rem;
 }
 .tableRow {
-  border-bottom: 1px solid #f1f5f9;
-  transition: background-color 0.2s ease;
+  border-bottom: none;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(248, 251, 255, 0.4) 100%);
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .tableRow:hover {
-  background-color: #f8fafc;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border-color: rgba(3, 136, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
+  transform: translateY(-2px);
 }
 
 .tableCell {
-  padding: 2.2rem 0 2.5rem;
+  padding: 1.6rem;
   vertical-align: center;
   text-align: start;
 }
