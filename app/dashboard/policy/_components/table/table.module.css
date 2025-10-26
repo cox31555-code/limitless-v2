@@ -32,6 +32,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.06);
   overflow: hidden;
+  position: relative;
 }
 
 .policyCard:hover {
