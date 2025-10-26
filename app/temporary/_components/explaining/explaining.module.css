@@ -484,12 +484,17 @@
   }
 
   .card {
-    padding: 2rem;
-    gap: 1.4rem;
+    padding: 1.6rem 1.4rem;
+    gap: 1rem;
   }
 
   .iconContainer {
-    height: 70px;
+    height: 50px;
+  }
+
+  .iconContainer svg {
+    width: 42px;
+    height: 42px;
   }
 
   .stepIconContainer {
@@ -508,12 +513,12 @@
   }
 
   .title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .description {
-    font-size: 1.2rem;
-    line-height: 140%;
+    font-size: 1.15rem;
+    line-height: 135%;
   }
 
   .concludingText {
