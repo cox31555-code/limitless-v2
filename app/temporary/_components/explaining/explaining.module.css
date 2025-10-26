@@ -304,6 +304,18 @@
   justify-content: flex-start;
 }
 
+.largeIconContainer svg {
+  width: 55px;
+  height: 55px;
+}
+
+.largeIconContainer {
+  height: 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 .stepNumber {
   color: #0388ff;
   font-size: 1.2rem;
@@ -453,6 +465,11 @@
     height: 36px;
   }
 
+  .largeIconContainer svg {
+    width: 50px;
+    height: 50px;
+  }
+
   .title {
     font-size: 1.8rem;
   }
@@ -517,6 +534,11 @@
   .shieldIconContainer svg {
     width: 34px;
     height: 34px;
+  }
+
+  .largeIconContainer svg {
+    width: 46px;
+    height: 46px;
   }
 
   .stepIconContainer {
