@@ -18,7 +18,9 @@
   gap: 2rem;
   position: sticky;
   top: 120px;
+  bottom: 100px;
   height: fit-content;
+  z-index: 10;
 }
 
 .actions {
@@ -79,8 +81,11 @@
   }
 
   .second {
-    position: static;
+    position: sticky;
+    top: 120px;
+    bottom: 100px;
     gap: 1.8rem;
+    height: fit-content;
   }
 }
 
