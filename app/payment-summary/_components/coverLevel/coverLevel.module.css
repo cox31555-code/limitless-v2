@@ -102,72 +102,78 @@
   line-height: 130%;
 }
 .features {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
-  padding: 0 2.4rem 2.8rem;
+  padding: 2.4rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.1);
 }
+
 .featureItem {
   display: flex;
-  align-items: center;
-  gap: 1.8rem;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: rgba(3, 136, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  transition: all 0.3s ease;
 }
+
+.featureItem:hover {
+  background: rgba(3, 136, 255, 0.08);
+  border-color: rgba(3, 136, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.featureItem img {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
 .featureItemTitle {
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  color: #000822;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 130%;
 }
-.background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 9.5rem;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-.background2 {
-  position: absolute;
-  top: 0;
-  right: 9.5rem;
-  width: 9.5rem;
-  height: 100%;
-  opacity: 0.82;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
+
+.background,
+.background2,
 .background3 {
-  position: absolute;
-  top: 50%;
-  /* transform: translateY(-50%); */
-  right: 19rem;
-  width: 9.5rem;
-  height: 50%;
-  opacity: 0.6;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
+  display: none;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2.7rem 0 1.4rem;
-  height: 64px;
+  padding: 1.6rem 2.4rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #f8fbff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.1);
   border-radius: 12px;
-  background: #0388ff;
-  margin: 2.4rem 1.6rem 3.5rem;
+  margin: 1.6rem 2.4rem;
 }
+
 .headerItem {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1rem;
 }
-.headerItemTitle,
+
+.headerItemTitle {
+  color: #5a6b7d;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 130%;
+}
+
 .headerItemValue {
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
+  color: #0388ff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 130%;
 }
 
 @media screen and (max-width: 1050px) {
