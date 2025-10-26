@@ -71,18 +71,20 @@
 
 @media screen and (max-width: 1400px) {
   .container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 3rem;
     margin: 3.5rem 4.4%;
     width: 91.2%;
   }
 
   .first {
+    width: 100%;
     gap: 1.8rem;
   }
 
   .second {
     position: static;
+    width: 100%;
     gap: 1.8rem;
   }
 }
