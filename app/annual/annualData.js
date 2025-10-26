@@ -1,3 +1,5 @@
+import featureStyles from "../../ui/feature/feature.module.css";
+
 export const annualFeatures = [
   {
     img: {
@@ -8,6 +10,7 @@ export const annualFeatures = [
     },
     title: "Unbeatable rates",
     description: "Slash your premiums with our unbeatable UK-wide rates saving, up to 50% on coverage.",
+    imgClassName: featureStyles.imgLarge,
   },
   {
     img: {
