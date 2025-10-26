@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
+import styles from "./page.module.css";
+import DashboardClient from "./_components/DashboardClient";
 
 const Page = () => {
   return (
-    <div>
-      <div className={"centeredContent"}></div>
+    <div className={styles.page}>
+      <DashboardClient />
     </div>
   );
 };

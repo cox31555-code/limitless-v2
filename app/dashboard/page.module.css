@@ -1,0 +1,55 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 25%, #f8fbff 50%, #f0f7ff 75%, #e8f4ff 100%);
+  position: relative;
+  animation: backgroundShift 15s ease infinite;
+}
+
+@keyframes backgroundShift {
+  0%, 100% {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 25%, #f8fbff 50%, #f0f7ff 75%, #e8f4ff 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 25%, #e8f0ff 50%, #f8fbff 75%, #f0f4ff 100%);
+  }
+}
+
+.page::before {
+  content: '';
+  position: fixed;
+  top: -200px;
+  right: -300px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatAnimation 25s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page::after {
+  content: '';
+  position: fixed;
+  bottom: -250px;
+  left: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(4, 156, 255, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatAnimation 30s ease-in-out infinite reverse;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+}
