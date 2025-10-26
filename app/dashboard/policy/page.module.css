@@ -95,34 +95,152 @@
 .dropdown {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  min-width: 23.2rem;
-  border-radius: 12px;
+  gap: 0;
+  min-width: 380px;
+  border-radius: 14px;
   background: #fff;
-  box-shadow: 0 27px 79px 0 rgba(0, 8, 34, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 8, 34, 0.16);
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 12px);
   right: 0;
   z-index: 100;
-  padding: 0.8rem;
+  overflow: hidden;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  animation: dropdownSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@keyframes dropdownSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownHeader {
+  padding: 1.6rem;
+  border-bottom: 1.5px solid rgba(3, 136, 255, 0.08);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.02) 0%, transparent 100%);
+}
+
+.dropdownHeader h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 0.4rem 0;
+  line-height: 120%;
+}
+
+.dropdownHeader p {
+  font-size: 1.1rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 120%;
+}
+
 .dropdownOption {
   display: flex;
   width: 100%;
-  min-height: 4.8rem;
-  padding: 10px 24px;
+  min-height: 5.6rem;
+  padding: 1.4rem 1.6rem;
   align-items: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  border: none;
+  background: transparent;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.3s ease;
   color: #000822;
   font-size: 1.4rem;
+  font-weight: 500;
+  gap: 1.2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdownOption::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.dropdownOption:not(:last-child) {
+  border-bottom: 1px solid rgba(3, 136, 255, 0.06);
+}
+
+.dropdownOption:hover {
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, transparent 100%);
+}
+
+.dropdownOption:hover::before {
+  opacity: 1;
+}
+
+.optionIcon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.05) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #0388ff;
+  transition: all 0.3s ease;
+}
+
+.dropdownOption:hover .optionIcon {
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.15) 0%, rgba(3, 136, 255, 0.08) 100%);
+  transform: scale(1.05);
+}
+
+.optionIcon svg {
+  width: 2rem;
+  height: 2rem;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.optionContent {
+  flex: 1;
+}
+
+.optionContent h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0 0 0.3rem 0;
+  line-height: 120%;
+}
+
+.optionContent p {
+  font-size: 1.1rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 120%;
   font-weight: 400;
 }
-.dropdownOption:hover {
-  background: #ecf0fe;
+
+.arrowIcon {
+  width: 1.4rem;
+  height: 1.4rem;
   color: #0388ff;
+  opacity: 0;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dropdownOption:hover .arrowIcon {
+  opacity: 1;
+  transform: translateX(4px);
 }
 @media screen and (max-width: 900px) {
   .page {
