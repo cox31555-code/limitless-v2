@@ -167,10 +167,18 @@
 }
 
 .statIcon {
-  font-size: 2rem;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+}
+
+.statIcon svg {
+  width: 100%;
+  height: 100%;
+  color: inherit;
 }
 
 .statContent {
@@ -291,7 +299,12 @@
   color: #fff;
   filter: brightness(1.1);
   box-shadow: 0 6px 20px rgba(3, 136, 255, 0.25);
-  font-size: 2rem;
+}
+
+.actionIcon svg {
+  width: 28px;
+  height: 28px;
+  color: inherit;
 }
 
 .actionContent {
