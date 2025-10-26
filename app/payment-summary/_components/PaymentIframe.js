@@ -139,7 +139,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
           </div>
 
           {/* Header title */}
-          <h2 className={styles.headerTitle}>Complete Payment</h2>
+          <h2 className={styles.headerTitle}>Payment</h2>
 
           {/* Close button */}
           <button
