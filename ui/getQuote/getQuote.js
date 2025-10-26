@@ -17,6 +17,7 @@ const GetQuote = () => {
   const [customDurationType, setCustomDurationType] = useState("");
   const [customDurationValue, setCustomDurationValue] = useState("");
   const [errors, setErrors] = useState({});
+  const [showDurationModal, setShowDurationModal] = useState(false);
 
   const handleContinue = () => {
     setErrors({});
