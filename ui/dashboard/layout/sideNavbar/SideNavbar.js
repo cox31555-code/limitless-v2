@@ -11,39 +11,17 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
   const { logout } = useAuth();
   const page = pathname.split("/")[2];
 
-  const IconHome = () => (
+  // Modern icon components
+  const DashboardIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-      <polyline points="9 22 9 12 15 12 15 22" />
+      <rect x="2" y="3" width="8" height="8" rx="1" />
+      <rect x="14" y="3" width="8" height="8" rx="1" />
+      <rect x="2" y="15" width="8" height="6" rx="1" />
+      <rect x="14" y="15" width="8" height="6" rx="1" />
     </svg>
   );
 
-  const IconPolicy = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-      <polyline points="14 2 14 8 20 8" />
-      <line x1="8" y1="13" x2="16" y2="13" />
-      <line x1="8" y1="17" x2="16" y2="17" />
-    </svg>
-  );
-
-  const IconDocument = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
-      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
-      <polyline points="13 2 13 9 20 9" />
-      <line x1="9" y1="13" x2="15" y2="13" />
-      <line x1="9" y1="17" x2="15" y2="17" />
-    </svg>
-  );
-
-  const IconClaims = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
-      <path d="M9 11l3 3L22 4" />
-      <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  );
-
-  const IconSubmit = () => (
+  const PolicyIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
       <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
       <polyline points="17 21 17 13 7 13 7 21" />
@@ -51,7 +29,29 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
     </svg>
   );
 
-  const IconLogout = () => (
+  const DocumentIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+      <polyline points="13 2 13 9 20 9" />
+    </svg>
+  );
+
+  const ClaimsIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M8 12l2 2 4-4" />
+    </svg>
+  );
+
+  const SubmitIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="17 8 12 3 7 8" />
+      <line x1="12" y1="3" x2="12" y2="15" />
+    </svg>
+  );
+
+  const LogoutIcon = () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
       <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
       <polyline points="16 17 21 12 16 7" />
@@ -62,34 +62,41 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
   const navItems = [
     {
       label: "Dashboard",
-      icon: <IconHome />,
+      icon: <DashboardIcon />,
       href: "/dashboard",
+      description: "Overview",
     },
     {
       label: "Manage Policy",
-      icon: <IconPolicy />,
+      icon: <PolicyIcon />,
       href: "/dashboard/policy",
+      description: "Your policies",
     },
     {
       label: "Documents",
-      icon: <IconDocument />,
+      icon: <DocumentIcon />,
       href: "/dashboard/documents",
+      description: "Files & docs",
     },
     {
       label: "Manage Claims",
-      icon: <IconClaims />,
+      icon: <ClaimsIcon />,
       href: "/dashboard/claims",
+      description: "Claims history",
     },
     {
       label: "Submit a Claim",
-      icon: <IconSubmit />,
+      icon: <SubmitIcon />,
       href: "/dashboard/submit-claim",
+      description: "New claim",
     },
     {
       label: "Logout",
-      icon: <IconLogout />,
+      icon: <LogoutIcon />,
+      description: "Sign out",
     },
   ];
+
   return (
     <div
       className={`${styles.container} ${
@@ -109,18 +116,18 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
                   ? styles.activeNavItem
                   : ""
               }`}
-              // href={item.href}
               key={item.label}
               style={{
-                animationDelay: isOpen ? `${(index + 1) * 0.1}s` : "0s",
+                animationDelay: isOpen ? `${(index + 1) * 0.08}s` : "0s",
               }}
               onClick={async () => {
                 await logout();
                 router.push("/login");
               }}
+              title={item.description}
             >
               {item.icon}
-              {item.label}
+              <span>{item.label}</span>
             </button>
           ) : (
             <Link
@@ -132,11 +139,12 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
               href={item.href}
               key={item.label}
               style={{
-                animationDelay: isOpen ? `${(index + 1) * 0.1}s` : "0s",
+                animationDelay: isOpen ? `${(index + 1) * 0.08}s` : "0s",
               }}
+              title={item.description}
             >
               {item.icon}
-              {item.label}
+              <span>{item.label}</span>
             </Link>
           )
         )}
