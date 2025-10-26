@@ -82,38 +82,79 @@
 }
 .row {
   display: flex;
-  gap: 1.4rem;
+  gap: 1.6rem;
 }
+
 @media screen and (max-width: 900px) {
   .content {
-    gap: 2.2rem;
+    gap: 2rem;
     padding: 2rem;
-    margin-top: 2.4rem;
   }
+
   .first,
   .second {
-    gap: 2.2rem;
+    gap: 1.4rem;
   }
+
   .title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
   }
+
   .duration {
-    padding: 0.6rem 0.6rem 0.6rem 1rem;
+    padding: 1.2rem 1.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
+
   .durationQuestion {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
+
   .period {
-    width: 9.7rem;
-    height: 4.2rem;
-    padding: 1rem 0;
-    gap: 0.4rem;
+    width: 100%;
+    padding: 0.8rem;
   }
+
   .periodAnswer {
     font-size: 1.4rem;
   }
+
   .row {
     flex-direction: column;
-    gap: 2.2rem;
+    gap: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 1.6rem;
+    gap: 1.6rem;
+  }
+
+  .first,
+  .second {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .duration {
+    padding: 1rem 1.2rem;
+  }
+
+  .durationQuestion {
+    font-size: 1.2rem;
+  }
+
+  .period {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .periodAnswer {
+    font-size: 1.3rem;
   }
 }
