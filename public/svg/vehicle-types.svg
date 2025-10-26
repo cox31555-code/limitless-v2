@@ -6,27 +6,46 @@
     </linearGradient>
   </defs>
   
-  <!-- Main car body -->
-  <path d="M12 28C12 24 15 22 18 22H46C49 22 52 24 52 28L52 44C52 48 48 52 44 52H20C16 52 12 48 12 44V28Z" fill="url(#carGrad)" stroke="url(#carGrad)" stroke-width="0.5"/>
+  <!-- Left side mirror -->
+  <rect x="8" y="26" width="5" height="8" rx="2" fill="url(#carGrad)"/>
   
-  <!-- Car cabin/roof -->
-  <path d="M18 22H46C49 22 52 24 52 28L50 26C50 24 48 22 46 22H18C16 22 14 24 14 26L12 28C12 24 15 22 18 22Z" fill="url(#carGrad)" opacity="0.9"/>
+  <!-- Main car body with rounded corners -->
+  <path d="M16 20C12 20 10 22 10 26L10 45C10 50 13 54 18 54L46 54C51 54 54 50 54 45L54 26C54 22 52 20 48 20L16 20Z" fill="url(#carGrad)" stroke="url(#carGrad)" stroke-width="0"/>
   
-  <!-- Left headlight -->
-  <circle cx="18" cy="34" r="5" fill="white"/>
+  <!-- Car cabin/roof section (darker blue) -->
+  <path d="M20 20C18 20 16 21 16 23L20 20H44L44 23C44 21 42 20 40 20L20 20Z" fill="url(#carGrad)" opacity="0.95"/>
   
-  <!-- Right headlight -->
-  <circle cx="46" cy="34" r="5" fill="white"/>
+  <!-- Top rounded roof section -->
+  <path d="M18 20C18 16 21 14 24 14L40 14C43 14 46 16 46 20L18 20Z" fill="url(#carGrad)"/>
   
-  <!-- Left bumper/intake -->
-  <rect x="14" y="40" width="6" height="6" rx="1" fill="url(#carGrad)" opacity="0.8"/>
+  <!-- Windshield area -->
+  <path d="M20 20L22 15C24 14 40 14 42 15L44 20L20 20Z" fill="url(#carGrad)" opacity="0.85"/>
   
-  <!-- Right bumper/intake -->
-  <rect x="44" y="40" width="6" height="6" rx="1" fill="url(#carGrad)" opacity="0.8"/>
+  <!-- Left headlight (white) -->
+  <circle cx="16" cy="30" r="4.5" fill="white"/>
+  <circle cx="16" cy="30" r="3" fill="url(#carGrad)" opacity="0.2"/>
   
-  <!-- Car windshield detail -->
-  <path d="M20 24C22 26 26 28 32 28C38 28 42 26 44 24" stroke="white" stroke-width="1" fill="none" opacity="0.3"/>
+  <!-- Right headlight (white) -->
+  <circle cx="48" cy="30" r="4.5" fill="white"/>
+  <circle cx="48" cy="30" r="3" fill="url(#carGrad)" opacity="0.2"/>
   
-  <!-- Bottom bumper line -->
-  <line x1="14" y1="48" x2="50" y2="48" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <!-- Left bumper section -->
+  <rect x="10" y="38" width="8" height="8" rx="1.5" fill="url(#carGrad)" opacity="0.9"/>
+  
+  <!-- Right bumper section -->
+  <rect x="46" y="38" width="8" height="8" rx="1.5" fill="url(#carGrad)" opacity="0.9"/>
+  
+  <!-- Left wheel -->
+  <circle cx="18" cy="52" r="6" fill="url(#carGrad)" stroke="white" stroke-width="1"/>
+  <circle cx="18" cy="52" r="3" fill="white" opacity="0.3"/>
+  
+  <!-- Right wheel -->
+  <circle cx="46" cy="52" r="6" fill="url(#carGrad)" stroke="white" stroke-width="1"/>
+  <circle cx="46" cy="52" r="3" fill="white" opacity="0.3"/>
+  
+  <!-- Right side mirror -->
+  <rect x="51" y="26" width="5" height="8" rx="2" fill="url(#carGrad)"/>
+  
+  <!-- Center grille detail -->
+  <rect x="28" y="41" width="8" height="4" rx="1" fill="white" opacity="0.25"/>
 </svg>
