@@ -15,7 +15,6 @@
   gap: 1rem;
   border-radius: 14px;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3);
   color: #fff;
   font-size: 1.6rem;
   font-weight: 600;
@@ -23,34 +22,32 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
+  box-shadow: none;
 }
 
 .payButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.4);
+  opacity: 0.95;
 }
 
 .payButton:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+  opacity: 0.9;
 }
 
 .cancelButton {
   background: #ffffff;
   color: #0388ff;
   border: 2px solid #0388ff;
-  box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
 }
 
 .cancelButton:hover {
   background: #f8fbff;
   border-color: #0270cc;
-  transform: translateY(-2px);
+  opacity: 0.95;
 }
 
 .cancelButton:active {
-  transform: translateY(0);
   background: #ffffff;
+  opacity: 0.9;
 }
 
 @media screen and (max-width: 900px) {
