@@ -30,6 +30,10 @@
   padding-bottom: 1.2rem;
   display: inline-block;
 }
+.buttonWrapper {
+  position: relative;
+}
+
 .button {
   color: #fff;
   font-size: 1.4rem;
@@ -37,21 +41,56 @@
   line-height: 120%;
   display: flex;
   height: 4.4rem;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  border-radius: 10px;
+  gap: 1rem;
+  border-radius: 12px;
   background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
   box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
   cursor: pointer;
   border: none;
   outline: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.4);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.plusIcon {
+  width: 1.8rem;
+  height: 1.8rem;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chevron {
+  width: 1.6rem;
+  height: 1.6rem;
+  transition: transform 0.3s ease;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-left: auto;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
 }
 .dropdown {
   display: flex;
