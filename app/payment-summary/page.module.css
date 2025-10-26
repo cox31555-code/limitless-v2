@@ -3,13 +3,14 @@
   gap: 4rem;
   margin: 5rem 4.4%;
   width: 91.2%;
+  overflow: visible;
 }
 
 .first {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  flex: 1.4;
+  width: calc(58.3% - 2rem);
 }
 
 .second {
@@ -20,8 +21,7 @@
   top: 120px;
   height: fit-content;
   z-index: 10;
-  flex: 1;
-  flex-shrink: 0;
+  width: 41.7%;
 }
 
 .actions {
