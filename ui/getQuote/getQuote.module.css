@@ -191,11 +191,12 @@
 /* Content Wrapper */
 .contentWrapper {
   padding: 3.2rem 3.8rem;
-  min-height: 320px;
   display: flex;
   flex-direction: column;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  min-height: auto;
+  max-height: 1500px;
 }
 
 .accordionContent {
