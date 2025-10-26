@@ -48,10 +48,24 @@
   position: relative;
   border-radius: 18px;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
   min-height: 220px;
   justify-content: center;
   overflow: hidden;
   box-shadow: 0 12px 32px rgba(3, 136, 255, 0.25);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .summery::before {
