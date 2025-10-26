@@ -94,9 +94,8 @@
 }
 
 .liveChat:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(3, 136, 255, 0.5),
-              0 0 20px rgba(3, 136, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3);
 }
 
 .liveChat svg {
@@ -124,7 +123,7 @@
   align-items: center;
   gap: 1.6rem;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.2s ease;
   box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
   position: relative;
   overflow: hidden;
@@ -142,12 +141,10 @@
 }
 
 .statCard:hover {
-  border-color: rgba(3, 136, 255, 0.48);
-  box-shadow: 0 20px 48px rgba(3, 136, 255, 0.25),
-              0 0 30px rgba(3, 136, 255, 0.15),
-              inset 0 1px 2px rgba(255, 255, 255, 0.8);
-  transform: translateY(-6px) scale(1.015);
-  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+  border-color: rgba(3, 136, 255, 0.24);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
 }
 
 .statCard:hover::before {
@@ -165,13 +162,11 @@
   color: #fff;
   flex-shrink: 0;
   box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.2s ease;
 }
 
 .statCard:hover .statIconWrapper {
-  transform: scale(1.15) rotate(8deg);
-  box-shadow: 0 12px 40px rgba(3, 136, 255, 0.5),
-              0 0 25px rgba(3, 136, 255, 0.3);
+  box-shadow: 0 10px 28px rgba(3, 136, 255, 0.2);
 }
 
 .statIcon {
@@ -218,14 +213,14 @@
   height: 20px;
   color: var(--stat-color);
   opacity: 0;
-  transform: translateX(-12px) rotate(-180deg);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
 .statCard:hover .statArrow {
   opacity: 1;
-  transform: translateX(8px) rotate(0deg);
+  transform: translateX(0);
 }
 
 /* Quick Actions Section */
@@ -258,7 +253,7 @@
   align-items: center;
   gap: 1.6rem;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.2s ease;
   box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
   position: relative;
   overflow: hidden;
@@ -279,12 +274,10 @@
 }
 
 .actionCard:hover {
-  border-color: var(--action-color);
-  box-shadow: 0 20px 50px rgba(3, 136, 255, 0.25),
-              0 0 30px rgba(3, 136, 255, 0.15),
-              inset 0 1px 2px rgba(255, 255, 255, 0.8);
-  transform: translateY(-6px) scale(1.015);
-  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
+  border-color: rgba(3, 136, 255, 0.24);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f7ff 100%);
 }
 
 .actionCard:hover::before {
@@ -309,22 +302,18 @@
   color: #fff;
   filter: brightness(1.1);
   box-shadow: 0 6px 20px rgba(3, 136, 255, 0.25);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
 .actionCard:hover .actionIcon {
-  transform: scale(1.2) rotate(-12deg);
-  box-shadow: 0 10px 35px rgba(3, 136, 255, 0.4),
-              0 0 20px rgba(3, 136, 255, 0.25);
-  filter: brightness(1.2);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.2);
 }
 
 .actionIcon svg {
   width: 28px;
   height: 28px;
   color: inherit;
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .actionContent {
@@ -354,14 +343,14 @@
   height: 20px;
   color: var(--action-color);
   opacity: 0;
-  transform: translateX(-12px) rotate(-180deg);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
 .actionCard:hover .actionArrow {
   opacity: 1;
-  transform: translateX(8px) rotate(0deg);
+  transform: translateX(0);
 }
 
 
@@ -387,17 +376,14 @@
 }
 
 .infoCard:hover {
-  border-color: rgba(3, 136, 255, 0.48);
-  box-shadow: 0 16px 40px rgba(3, 136, 255, 0.25),
-              0 0 25px rgba(3, 136, 255, 0.15);
-  transform: translateY(-4px) scale(1.02);
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.16) 0%, rgba(3, 136, 255, 0.10) 100%);
+  border-color: rgba(3, 136, 255, 0.24);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.06) 100%);
 }
 
 .infoCard:hover .infoIconWrapper {
-  transform: scale(1.1) rotate(8deg);
-  box-shadow: 0 12px 35px rgba(3, 136, 255, 0.4),
-              0 0 20px rgba(3, 136, 255, 0.25);
+  box-shadow: 0 10px 28px rgba(3, 136, 255, 0.2);
 }
 
 .infoIconWrapper {
@@ -410,7 +396,7 @@
   justify-content: center;
   color: #fff;
   box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.2s ease;
 }
 
 .infoIcon {
