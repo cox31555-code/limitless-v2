@@ -64,12 +64,14 @@
   border: 1.5px solid rgba(3, 136, 255, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
+  border-top: 3px solid transparent; /* Initial transparent top border */
 }
 
 .section:hover {
   border-color: rgba(3, 136, 255, 0.15);
   box-shadow: 0 8px 20px rgba(3, 136, 255, 0.06);
   transform: translateY(-2px);
+  border-top-color: #0388ff; /* Top border color on hover */
 }
 
 .sectionHeader {
