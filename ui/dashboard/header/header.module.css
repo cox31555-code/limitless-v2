@@ -62,28 +62,28 @@
 
 @keyframes floatLogo1 {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
+    transform: rotate(-25deg) translateY(0);
   }
   50% {
-    transform: translateY(-20px) rotate(10deg);
+    transform: rotate(-25deg) translateY(-20px);
   }
 }
 
 @keyframes floatLogo2 {
   0%, 100% {
-    transform: translateX(-50%) translateY(0) rotate(0deg);
+    transform: translateX(-50%) rotate(15deg) translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(-15px) rotate(-8deg);
+    transform: translateX(-50%) rotate(15deg) translateY(-15px);
   }
 }
 
 @keyframes floatLogo3 {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
+    transform: rotate(-40deg) translateY(0);
   }
   50% {
-    transform: translateY(-20px) rotate(-10deg);
+    transform: rotate(-40deg) translateY(-20px);
   }
 }
 
