@@ -70,31 +70,73 @@
   letter-spacing: 0.48px;
   flex-shrink: 0;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .container {
     width: 100%;
   }
+
   .header {
-    gap: 2.5rem;
-    padding: 2rem 2.3rem;
+    gap: 1rem;
+    padding: 1.4rem;
   }
+
   .headerTitle {
-    font-size: 1.4rem;
-    margin-top: 2rem;
+    font-size: 1.2rem;
   }
+
   .content {
-    gap: 1.6rem;
-    padding: 2rem;
+    gap: 1.2rem;
+    padding: 1.4rem;
   }
+
+  .vetype {
+    font-size: 1.5rem;
+  }
+
+  .vehicleNumber {
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .inputSpan {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    border-radius: 16px;
+  }
+
+  .header {
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+
+  .headerTitle {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
   .vetype {
     font-size: 1.4rem;
   }
+
   .vehicleNumber {
-    gap: 1.5rem;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
   }
+
   .inputSpan {
-    width: 4.2rem;
-    height: 4.2rem;
-    font-size: 1.4rem;
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 1rem;
   }
 }
