@@ -1,63 +1,74 @@
 .container {
   width: 100%;
-  border-radius: 16px;
-  background: #fff;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  overflow: hidden;
 }
+
 .header {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 0.3rem 1.8rem 2.3rem;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.18);
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
+
 .headerTitle {
-  color: #0388ff;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
-  margin-top: 1.3rem;
+  color: #5a6b7d;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.52px;
+  margin: 0;
 }
+
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
-  padding: 2.8rem 1.8rem 1.8rem;
+  gap: 1.4rem;
+  padding: 1.6rem;
 }
+
 .vetype {
   color: #000822;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
+  line-height: 130%;
+  letter-spacing: 0.64px;
+  margin: 0;
 }
+
 .vehicleNumber {
-  color: #6b6b6b;
+  color: #6b7c8f;
   font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 124%;
+  font-weight: 500;
+  line-height: 130%;
   letter-spacing: 0.56px;
   display: flex;
   align-items: center;
-  border-radius: 12px;
-  background: #f3f3f3;
-  gap: 2.2rem;
-  padding: 0.6rem;
-}
-.inputSpan {
-  width: 5.2rem;
-  height: 5.2rem;
   border-radius: 10px;
-  background: linear-gradient(0deg, #fff 0%, #fff 100%),
-    linear-gradient(52deg, rgba(255, 255, 255, 0.3) 18.09%, #0388ff 88.9%);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  gap: 1.2rem;
+  padding: 1rem 1.2rem;
+  opacity: 0.85;
+}
+
+.inputSpan {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.08) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000822;
-  font-size: 1.4rem;
+  color: #0388ff;
+  font-size: 1.2rem;
   font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+  flex-shrink: 0;
 }
 @media (max-width: 800px) {
   .container {
