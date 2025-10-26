@@ -169,14 +169,15 @@
 }
 
 .animatedLogo1 {
-  top: -50px;
-  right: -80px;
+  top: 20px;
+  right: 20px;
   animation: rotateAndScale 8s ease-in-out infinite;
+  opacity: 0.12;
 }
 
 .animatedLogo2 {
-  bottom: -100px;
-  left: -50px;
+  bottom: 30px;
+  left: 30px;
   width: 250px;
   height: 250px;
   animation: scaleAndGlow 6s ease-in-out infinite;
@@ -185,12 +186,11 @@
 
 .animatedLogo3 {
   top: 50%;
-  right: -60px;
+  right: 40px;
   width: 200px;
   height: 200px;
   animation: floatCircle 10s linear infinite;
-  opacity: 0.08;
-  transform: translateY(-50%);
+  opacity: 0.09;
 }
 
 .summery::before {
