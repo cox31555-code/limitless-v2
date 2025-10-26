@@ -1,46 +1,50 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
-  margin: 5.8rem 0;
+  gap: 3.2rem;
+  margin: 0;
+  padding: 4rem 4.4%;
   width: 100%;
   position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: 1.6rem;
 }
 .title {
   color: #000822;
-  font-size: 4.4rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 120%;
+  letter-spacing: -0.5px;
 }
 .button {
   color: #fff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 120%;
   display: flex;
-  height: 4.8rem;
-  width: 23.2rem;
-  padding: 1rem 2.4rem;
+  height: 4.4rem;
+  padding: 1rem 2rem;
   align-items: center;
-  justify-content: space-between;
-  /* gap: 1.2rem; */
-  border-radius: 8px;
-  background: linear-gradient(0deg, #0388ff 0%, #0388ff 100%), #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  justify-content: center;
+  gap: 0.8rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
   cursor: pointer;
   border: none;
   outline: none;
   transition: all 0.3s ease;
 }
 .button:hover {
-  background: linear-gradient(0deg, #0388ff 0%, #0388ff 100%), #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.4);
 }
 .dropdown {
   display: flex;
