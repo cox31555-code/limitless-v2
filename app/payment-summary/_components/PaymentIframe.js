@@ -29,7 +29,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
           bottom: Math.random() * 5,
           left: 50,
           transform: 'translateX(-50%)',
-          delay: Math.random() * 2 + 1.5,
+          delay: 0,
         },
       });
     }
