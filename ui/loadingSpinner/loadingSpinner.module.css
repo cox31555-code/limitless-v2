@@ -15,7 +15,7 @@
 .pathFill {
   fill: url(#fillGradient);
   opacity: 0;
-  animation: fillPath 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+  animation: fillPath 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
 }
 
 .whiteOverlay {
@@ -26,7 +26,7 @@
 .pathWhite {
   fill: url(#darkGradient);
   opacity: 0;
-  animation: fillWhite 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+  animation: fillWhite 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
 }
 
 .pathFill:nth-child(1) { animation-delay: 0.05s; }
