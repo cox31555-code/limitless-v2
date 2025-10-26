@@ -14,6 +14,10 @@
   border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 
+.header img {
+  opacity: 0.85;
+}
+
 .headerTitle {
   color: #5a6b7d;
   font-size: 1.3rem;
