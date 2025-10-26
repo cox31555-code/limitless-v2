@@ -33,11 +33,6 @@ const DashboardClient = () => {
     return <span className={styles.statIcon}>{icons[type]}</span>;
   };
 
-  const ArrowIcon = () => (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <path d="M7 10h10M14 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
 
   const stats = [
     {
@@ -149,7 +144,6 @@ const DashboardClient = () => {
             }}
           >
             <span>Need Help?</span>
-            <ArrowIcon />
           </button>
         </div>
       </section>
@@ -171,7 +165,6 @@ const DashboardClient = () => {
                 <p className={styles.statLabel}>{stat.label}</p>
                 <p className={styles.statValue}>{stat.value}</p>
               </div>
-              <ArrowIcon className={styles.statArrow} style={{ width: "20px", height: "20px" }} />
             </div>
           ))}
         </div>
@@ -197,7 +190,6 @@ const DashboardClient = () => {
                 <h3 className={styles.actionTitle}>{action.title}</h3>
                 <p className={styles.actionDescription}>{action.description}</p>
               </div>
-              <ArrowIcon className={styles.actionArrow} style={{ width: "20px", height: "20px" }} />
             </button>
           ))}
         </div>
