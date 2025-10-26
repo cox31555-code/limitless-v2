@@ -64,6 +64,7 @@
   border: 1.5px solid rgba(3, 136, 255, 0.08);
   box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
   position: relative;
+  animation: none !important;
 }
 
 .section:hover {
