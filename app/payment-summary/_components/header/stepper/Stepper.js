@@ -21,41 +21,35 @@ const Stepper = ({ steps, currentStep = 2 }) => {
                 className={`${styles.stepperNumber} ${manrope.className}`}
                 style={{
                   background: isCompleted
-                    ? "rgba(16, 185, 129, 0.3)"
+                    ? "rgba(16, 185, 129, 0.2)"
                     : isActive
-                    ? "rgba(3, 136, 255, 0.4)"
-                    : "rgba(255, 255, 255, 0.12)",
-                  borderColor: isCompleted
-                    ? "rgba(16, 185, 129, 0.6)"
+                    ? "rgba(3, 136, 255, 0.25)"
+                    : "rgba(255, 255, 255, 0.08)",
+                  boxShadow: isCompleted
+                    ? "inset 0 0 0 1.5px rgba(16, 185, 129, 0.5)"
                     : isActive
-                    ? "rgba(3, 136, 255, 0.6)"
-                    : "rgba(255, 255, 255, 0.2)",
-                  color: isCompleted || isActive ? "#fff" : "rgba(255, 255, 255, 0.6)",
+                    ? "inset 0 0 0 1.5px rgba(3, 136, 255, 0.6)"
+                    : "inset 0 0 0 1px rgba(255, 255, 255, 0.2)",
+                  color: isCompleted
+                    ? "rgba(16, 185, 129, 0.9)"
+                    : isActive
+                    ? "#0388ff"
+                    : "rgba(255, 255, 255, 0.6)",
                   fontWeight: isActive ? "700" : "600",
                 }}
               >
-                {index + 1}
+                {isCompleted ? "✓" : index + 1}
               </div>
               <p
                 className={`${styles.stepperTitle} ${manrope.className}`}
                 style={{
-                  color: isActive ? "#fff" : "rgba(255, 255, 255, 0.75)",
+                  color: isActive ? "#fff" : "rgba(255, 255, 255, 0.8)",
                   fontWeight: isActive ? "600" : "500",
                 }}
               >
                 {step.title}
               </p>
             </div>
-            {index < steps.length - 1 && (
-              <div
-                className={isCompleted ? styles.stepperLine : styles.stepperLine2}
-                style={{
-                  background: isCompleted
-                    ? "rgba(16, 185, 129, 0.4)"
-                    : "rgba(255, 255, 255, 0.12)",
-                }}
-              />
-            )}
           </div>
         );
       })}
