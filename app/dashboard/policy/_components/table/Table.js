@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./table.module.css";
 import { useRouter } from "next/navigation";
 
-const Table = ({ title, columns, data, tableType, showViewButton = true }) => {
+const Table = ({ title, columns, data, tableType, showViewButton = true, theme = "default" }) => {
   const router = useRouter();
 
   const getStatusColor = (remaining) => {
