@@ -1,44 +1,49 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* padding: 0 1.8rem; */
-  border-radius: 16px;
-  background: #fff;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  overflow: hidden;
 }
+
 .title {
-  color: #000822;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
+  color: #5a6b7d;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.56px;
+  margin: 0;
+  padding-top: 0.4rem;
 }
+
 .row {
-  display: flex;
-  gap: 1.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
 }
+
 .first,
 .second,
 .third {
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
-}
-.first {
-  gap: 1.8rem;
+  gap: 1.6rem;
 }
 
 .first {
-  padding: 2rem 1.8rem 2.6rem;
+  gap: 1.4rem;
+  padding: 1.6rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
+
 .second {
-  padding: 2.6rem 1.8rem;
+  padding: 1.6rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
+
 .third {
-  padding: 2.6rem 1.8rem 2rem;
-}
-.first,
-.second {
-  border-bottom: 1px solid rgba(0, 8, 34, 0.24);
+  padding: 1.6rem;
 }
 @media screen and (max-width: 900px) {
   .title {
