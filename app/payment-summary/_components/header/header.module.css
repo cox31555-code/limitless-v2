@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 35rem 0 7.7rem;
+  padding: 31rem 0 7.7rem;
   gap: 6.7rem;
   position: relative;
   overflow: hidden;
@@ -78,7 +78,7 @@
     left: 10rem;
   }
   .wrapper {
-    padding: 35rem 0 5rem;
+    padding: 31rem 0 5rem;
     margin-top: 0;
     gap: 6rem;
   }
