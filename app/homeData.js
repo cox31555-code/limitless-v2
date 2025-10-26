@@ -11,7 +11,7 @@ export const homeFeatures = [
   },
   {
     img: {
-      src: "/svg/all-ages.svg",
+      src: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F10baa804b77b4493b419a6885c6a3d7e?format=webp&width=800",
       alt: "age eligibility",
       width: 64,
       height: 64,
