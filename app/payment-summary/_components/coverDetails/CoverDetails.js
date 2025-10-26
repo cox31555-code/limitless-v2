@@ -33,12 +33,9 @@ const CoverDetails = ({ data }) => {
               How long will you need it?
             </p>
             <div className={styles.period}>
-              <Image
-                src="/svg/included.svg"
-                alt="included"
-                width={18}
-                height={18}
-              />
+              <div className={styles.checkIcon}>
+                <FaCheck className={styles.icon} />
+              </div>
               <p className={styles.periodAnswer}>
                 {data?.impoundType === "Impound Insurance"
                   ? "30 Days"
