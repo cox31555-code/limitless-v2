@@ -236,14 +236,14 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 3rem;
-  gap: 2rem;
-  border-radius: 18px;
-  background: linear-gradient(135deg, rgba(7, 16, 45, 0.8) 0%, rgba(3, 136, 255, 0.06) 100%);
-  border: 1px solid rgba(3, 136, 255, 0.15);
-  transition: all 0.5s ease;
+  padding: 2.2rem 2rem;
+  gap: 1.4rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(7, 16, 45, 0.5) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .card::before {
@@ -285,12 +285,24 @@
 
 .iconContainer {
   width: 100%;
-  height: 120px;
+  height: 60px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
   z-index: 1;
+}
+
+.iconContainer svg {
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(3, 136, 255, 0.15));
+}
+
+.card:hover .iconContainer svg {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(3, 136, 255, 0.3));
 }
 
 .stepNumber {
@@ -317,18 +329,18 @@
 
 .title {
   color: #fff;
-  font-size: 2.4rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  line-height: 130%;
+  line-height: 120%;
   letter-spacing: 0;
   margin: 0;
 }
 
 .description {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 1.3rem;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 140%;
   letter-spacing: 0;
   margin: 0;
 }
