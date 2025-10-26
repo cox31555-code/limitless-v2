@@ -62,6 +62,12 @@
   animation-delay: 0s !important;
 }
 
+.eligibility *:hover {
+  animation: none !important;
+  transition: none !important;
+  animation-name: none !important;
+}
+
 
 .section {
   display: flex;
