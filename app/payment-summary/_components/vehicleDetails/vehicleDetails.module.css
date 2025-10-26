@@ -1,25 +1,25 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.8rem;
   width: 100%;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.6rem;
 }
 
 @media screen and (max-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (max-width: 900px) {
   .content {
-    gap: 1.4rem;
+    gap: 1.6rem;
   }
 
   .cards {
@@ -30,7 +30,7 @@
 
 @media screen and (max-width: 600px) {
   .content {
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
   .cards {
