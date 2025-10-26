@@ -9,7 +9,7 @@ import FormTextInput from "../inputs/FormTextInput";
 import Selection1 from "../inputs/selections/selection1/Selection1";
 import FormDropdown from "../inputs/FormDropdown";
 
-const GetQuote = () => {
+const GetQuote = ({ skipDuration = false }) => {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [registrationNumber, setRegistrationNumber] = useState("");
@@ -29,6 +29,14 @@ const GetQuote = () => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      return;
+    }
+
+    if (skipDuration) {
+      const params = new URLSearchParams();
+      params.set("fromQuote", "true");
+      params.set("registrationNumber", registrationNumber.trim().toUpperCase());
+      router.push(`/temporary/get-quote?${params.toString()}`);
       return;
     }
 
