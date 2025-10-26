@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./dashboardClient.module.css";
 import Image from "next/image";
-import { IoFileText, IoShield, IoCheckmarkCircle, IoClock, IoArrowForward } from "react-icons/io5";
 
 const DashboardClient = () => {
   const router = useRouter();
@@ -11,30 +10,46 @@ const DashboardClient = () => {
   const [expiredInsurances, setExpiredInsurances] = useState(1);
   const [pendingClaims, setPendingClaims] = useState(1);
 
+  const StatIcon = ({ type }) => {
+    const icons = {
+      shield: "🛡️",
+      document: "📄",
+      clock: "⏱️",
+      check: "✓",
+    };
+    return <span className={styles.statIcon}>{icons[type]}</span>;
+  };
+
+  const ArrowIcon = () => (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M7 10h10M14 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+
   const stats = [
     {
-      icon: <IoShield className={styles.statIcon} />,
+      icon: <StatIcon type="shield" />,
       label: "Active Policies",
       value: activeInsurances,
       color: "#0388ff",
       action: () => router.push("/dashboard/policy"),
     },
     {
-      icon: <IoFileText className={styles.statIcon} />,
+      icon: <StatIcon type="document" />,
       label: "Documents",
       value: "5",
       color: "#049cff",
       action: () => router.push("/dashboard/documents"),
     },
     {
-      icon: <IoClock className={styles.statIcon} />,
+      icon: <StatIcon type="clock" />,
       label: "Pending Claims",
       value: pendingClaims,
       color: "#ff9500",
       action: () => router.push("/dashboard/claims"),
     },
     {
-      icon: <IoCheckmarkCircle className={styles.statIcon} />,
+      icon: <StatIcon type="check" />,
       label: "Completed",
       value: "12",
       color: "#00c853",
@@ -108,7 +123,7 @@ const DashboardClient = () => {
               Manage your insurance policies, claims, and documents in one place
             </p>
           </div>
-          <button 
+          <button
             className={styles.liveChat}
             onClick={() => {
               // Live chat integration would go here
@@ -116,7 +131,7 @@ const DashboardClient = () => {
             }}
           >
             <span>Need Help?</span>
-            <IoArrowForward />
+            <ArrowIcon />
           </button>
         </div>
       </section>
@@ -138,7 +153,7 @@ const DashboardClient = () => {
                 <p className={styles.statLabel}>{stat.label}</p>
                 <p className={styles.statValue}>{stat.value}</p>
               </div>
-              <IoArrowForward className={styles.statArrow} />
+              <ArrowIcon className={styles.statArrow} style={{ width: "20px", height: "20px" }} />
             </div>
           ))}
         </div>
@@ -169,7 +184,7 @@ const DashboardClient = () => {
                 <h3 className={styles.actionTitle}>{action.title}</h3>
                 <p className={styles.actionDescription}>{action.description}</p>
               </div>
-              <IoArrowForward className={styles.actionArrow} />
+              <ArrowIcon className={styles.actionArrow} style={{ width: "20px", height: "20px" }} />
             </button>
           ))}
         </div>
@@ -196,7 +211,7 @@ const DashboardClient = () => {
       <section className={styles.infoSection}>
         <div className={styles.infoCard}>
           <div className={styles.infoIconWrapper}>
-            <IoShield className={styles.infoIcon} />
+            <span style={{ fontSize: "2rem" }}>🔒</span>
           </div>
           <h3 className={styles.infoTitle}>Your Data is Secure</h3>
           <p className={styles.infoDescription}>
@@ -205,7 +220,7 @@ const DashboardClient = () => {
         </div>
         <div className={styles.infoCard}>
           <div className={styles.infoIconWrapper}>
-            <IoCheckmarkCircle className={styles.infoIcon} />
+            <span style={{ fontSize: "2rem" }}>⭐</span>
           </div>
           <h3 className={styles.infoTitle}>24/7 Support</h3>
           <p className={styles.infoDescription}>
