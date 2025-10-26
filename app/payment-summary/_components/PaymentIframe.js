@@ -16,8 +16,8 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
     if (show && !logoPositions) {
       setLogoPositions({
         logo1: {
-          top: Math.random() * 30 + 5,
-          right: Math.random() * 25 + 35,
+          top: Math.random() * 60 + 5,
+          right: Math.random() * 50 + 20,
           delay: Math.random() * 2,
         },
         logo2: {
