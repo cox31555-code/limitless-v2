@@ -13,34 +13,54 @@ const page = async ({ params }) => {
   const { id } = await params;
   const cookieStore = await cookies();
   const token = cookieStore.get("jwt")?.value;
+  const devMode = process.env.NEXT_PUBLIC_DEV_MODE === "true";
 
-  if (!token) {
+  if (!token && !devMode) {
     redirect("/login");
   }
 
   let claim = null;
   let error = null;
 
-  try {
-    const response = await serverFetch(`${API_BASE_URL}/api/claims/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
+  // Dev mode: return mock data
+  if (devMode && !token) {
+    claim = {
+      _id: id,
+      orderReference: "CLM-DEV001",
+      status: "Pending",
+      createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+      updatedAt: new Date().toISOString(),
+      claimDetails: {
+        placeHolderFirstName: "Dev",
+        placeHolderLastName: "User"
       },
-      cache: "no-store",
-    });
+      thirdPartyDetails: {
+        name: "Third Party",
+        registrationNumber: "CD22TEST"
+      }
+    };
+  } else {
+    try {
+      const response = await serverFetch(`${API_BASE_URL}/api/claims/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-store",
+      });
 
-    if (response.ok) {
-      const data = await response.json();
-      // Handle nested data structure: data.data.data
-      claim = data.data?.data || data.data;
-    } else if (response.status === 404) {
-      error = "Claim not found";
-    } else {
+      if (response.ok) {
+        const data = await response.json();
+        // Handle nested data structure: data.data.data
+        claim = data.data?.data || data.data;
+      } else if (response.status === 404) {
+        error = "Claim not found";
+      } else {
+        error = "Failed to load claim details";
+      }
+    } catch (err) {
+      console.error("Error fetching claim:", err);
       error = "Failed to load claim details";
     }
-  } catch (err) {
-    console.error("Error fetching claim:", err);
-    error = "Failed to load claim details";
   }
 
   // Redirect if no claim found or error
