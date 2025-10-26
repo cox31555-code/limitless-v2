@@ -1,15 +1,18 @@
 .container {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  display: flex;
   gap: 4rem;
-  margin: 5rem 4.4%;
-  width: 91.2%;
+  margin: 5rem auto;
+  padding: 0 4.4%;
+  width: 100%;
+  max-width: 150rem;
 }
 
 .first {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  min-width: 0;
+  flex: 1.4 1 auto;
 }
 
 .second {
@@ -20,7 +23,8 @@
   top: 120px;
   height: fit-content;
   z-index: 10;
-  align-self: start;
+  flex: 1 0 auto;
+  min-width: 0;
 }
 
 .actions {
