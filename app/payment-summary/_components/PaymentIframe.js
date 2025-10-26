@@ -20,19 +20,15 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
           right: Math.random() * 15 + 5,
           delay: Math.random() * 2,
         },
-        logo2: {
-          top: Math.random() * 20 + 40,
-          left: Math.random() * 10 + 5,
-          delay: Math.random() * 2 + 1,
-        },
         logo3: {
           top: Math.random() * 20 + 40,
           right: Math.random() * 10 + 5,
           delay: Math.random() * 2 + 0.5,
         },
         logo4: {
-          bottom: Math.random() * 8,
-          left: Math.random() * 30 + 35,
+          bottom: Math.random() * 5,
+          left: 50,
+          transform: 'translateX(-50%)',
           delay: Math.random() * 2 + 1.5,
         },
       });
