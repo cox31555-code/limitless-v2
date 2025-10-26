@@ -63,6 +63,42 @@ const QuoteIcon = () => (
   </svg>
 );
 
+const EnterDetailsIcon = () => (
+  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+    <circle cx="40" cy="40" r="38" fill="#0388FF" fillOpacity="0.08" stroke="#0388FF" strokeWidth="1.5" />
+    <rect x="20" y="18" width="40" height="44" rx="4" fill="none" stroke="#0388FF" strokeWidth="2.5" />
+    <path d="M26 28H54" stroke="#0388FF" strokeWidth="2" strokeLinecap="round" />
+    <path d="M26 36H54" stroke="#0388FF" strokeWidth="2" strokeLinecap="round" />
+    <path d="M26 44H38" stroke="#0388FF" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+const SelectDurationIcon = () => (
+  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+    <circle cx="40" cy="40" r="38" fill="#0388FF" fillOpacity="0.08" stroke="#0388FF" strokeWidth="1.5" />
+    <rect x="22" y="20" width="36" height="40" rx="3" fill="none" stroke="#0388FF" strokeWidth="2.5" />
+    <circle cx="40" cy="40" r="12" fill="none" stroke="#0388FF" strokeWidth="2.5" />
+    <path d="M40 28V40M40 40L48 48" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ReviewPayIcon = () => (
+  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+    <circle cx="40" cy="40" r="38" fill="#0388FF" fillOpacity="0.08" stroke="#0388FF" strokeWidth="1.5" />
+    <path d="M24 32C24 28.6863 26.6863 26 30 26H50C53.3137 26 56 28.6863 56 32V56C56 59.3137 53.3137 62 50 62H30C26.6863 62 24 59.3137 24 56V32Z" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="40" cy="44" r="8" fill="none" stroke="#0388FF" strokeWidth="2" />
+    <path d="M40 40V44V48" stroke="#0388FF" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+const PolicyActiveIcon = () => (
+  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+    <circle cx="40" cy="40" r="38" fill="#0388FF" fillOpacity="0.08" stroke="#0388FF" strokeWidth="1.5" />
+    <path d="M28 40L36 50L52 28" stroke="#0388FF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M24 35C24 28.37 29.37 23 36 23H56C62.63 23 68 28.37 68 35V55C68 61.63 62.63 67 56 67H36C29.37 67 24 61.63 24 55V35Z" fill="none" stroke="#0388FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
 
 const Explaining = () => {
   const keyFeatures = [
