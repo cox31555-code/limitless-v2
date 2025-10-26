@@ -99,63 +99,19 @@ const GetQuote = () => {
 
   return (
     <div className={styles.container}>
-      {/* Modern Progress & Tab Navigation */}
+      {/* Quick Quote Header */}
       <div className={styles.navigationWrapper}>
+        <div className={styles.quickQuoteHeader}>
+          <h2 className={styles.quickQuoteTitle}>Get a Quick Quote</h2>
+          <p className={styles.quickQuoteSubtitle}>Just a few details to get started</p>
+        </div>
+
         {/* Animated Progress Bar */}
         <div className={styles.progressBar}>
           <div
             className={styles.progressFill}
             style={{ width: `${progressPercentage}%` }}
           />
-        </div>
-
-        {/* Tab-Style Navigation */}
-        <div className={styles.navigationTabs}>
-          {/* Step 1 */}
-          <button
-            type="button"
-            onClick={() => step === 2 && setStep(1)}
-            className={`${styles.navTab} ${step === 1 ? styles.active : ""} ${step === 2 ? styles.completed : ""}`}
-            disabled={step === 1}
-          >
-            <div className={styles.tabIcon}>
-              {step > 1 ? (
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M16.667 5L7.5 14.167L3.333 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              ) : (
-                <span className={styles.stepNum}>1</span>
-              )}
-            </div>
-            <div className={styles.tabContent}>
-              <span className={styles.tabLabel}>Registration</span>
-              {step > 1 && registrationNumber && (
-                <span className={styles.tabValue}>{registrationNumber}</span>
-              )}
-            </div>
-          </button>
-
-          <div className={styles.tabDivider} />
-
-          {/* Step 2 */}
-          <button
-            type="button"
-            onClick={() => step > 1 && setStep(2)}
-            className={`${styles.navTab} ${step === 2 ? styles.active : ""}`}
-            disabled={step === 1}
-          >
-            <div className={styles.tabIcon}>
-              <span className={styles.stepNum}>2</span>
-            </div>
-            <div className={styles.tabContent}>
-              <span className={styles.tabLabel}>Duration</span>
-              {step > 1 && (quickSelection || customDurationValue) && (
-                <span className={styles.tabValue}>
-                  {quickSelection || `${customDurationValue} ${customDurationType}`}
-                </span>
-              )}
-            </div>
-          </button>
         </div>
       </div>
 
