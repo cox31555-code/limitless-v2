@@ -311,15 +311,15 @@ const GetQuote = () => {
                   <FormDropdown
                     options={
                       customDurationType === "Days"
-                        ? Array.from({ length: 23 }, (_, i) =>
-                            (i + 8).toString()
+                        ? Array.from({ length: 22 }, (_, i) =>
+                            (i + 10).toString()
                           )
                         : customDurationType === "Hours"
                         ? Array.from({ length: 12 }, (_, i) =>
                             (i + 13).toString()
                           )
-                        : Array.from({ length: 48 }, (_, i) =>
-                            (i + 5).toString()
+                        : Array.from({ length: 23 }, (_, i) =>
+                            (i + 10).toString()
                           )
                     }
                     placeholder="More..."
