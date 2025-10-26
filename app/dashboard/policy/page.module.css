@@ -257,17 +257,57 @@
     font-size: 2.4rem;
     font-weight: 800;
   }
+  .buttonWrapper {
+    width: 100%;
+  }
   .button {
     width: 100%;
-    max-width: none;
     height: 4.4rem;
     padding: 0 2rem;
     font-size: 1.4rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .button span {
     display: inline;
+  }
+  .chevron {
+    margin-left: auto;
+  }
+  .dropdown {
+    min-width: 100%;
+    right: 0;
+    top: calc(100% + 12px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dropdown {
+    min-width: 100vw;
+    right: -1.5%;
+    width: calc(100% + 3%);
+  }
+  .button {
+    font-size: 1.2rem;
+  }
+  .plusIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .dropdownOption {
+    min-height: 5.2rem;
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+  .optionIcon {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+  .optionContent h5 {
+    font-size: 1.2rem;
+  }
+  .optionContent p {
+    font-size: 1rem;
   }
 }
