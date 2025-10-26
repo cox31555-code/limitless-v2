@@ -63,8 +63,8 @@
   align-items: stretch;
   justify-content: flex-start;
   width: 100%;
-  gap: 0.6rem;
-  padding: 1rem 0;
+  gap: 0.4rem;
+  padding: 1.2rem 0.6rem 0.8rem;
 }
 
 .navItem {
@@ -73,20 +73,20 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 1.4rem 1.6rem;
-  gap: 1.4rem;
+  padding: 1.2rem 1.4rem;
+  gap: 1.2rem;
   color: #5a6b7d;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 130%;
   letter-spacing: 0.3px;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   position: relative;
   overflow: hidden;
-  border: none;
+  border: 1.5px solid transparent;
   box-shadow: none;
 }
 
@@ -96,23 +96,27 @@
 
 .navItem:hover {
   color: #0388ff;
-  background: rgba(3, 136, 255, 0.08);
-  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.06) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border-color: rgba(3, 136, 255, 0.15);
+  transform: translateX(4px);
 }
 
 .navItem:hover .icon {
   color: #0388ff;
+  filter: drop-shadow(0 2px 6px rgba(3, 136, 255, 0.2));
 }
 
 .activeNavItem {
-  color: #0388ff;
-  background: rgba(3, 136, 255, 0.12);
+  color: #fff;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  border-color: #0388ff;
   font-weight: 600;
-  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 .activeNavItem .icon {
-  color: #0388ff;
+  color: #fff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
 .icon {
