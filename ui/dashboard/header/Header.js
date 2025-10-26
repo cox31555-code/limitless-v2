@@ -66,6 +66,15 @@ const Header = ({ page }) => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerContent}>
+        <div className={styles.logoWrapper}>
+          <Image
+            src="/svg/logo.svg"
+            alt="Limitless Cover"
+            width={50}
+            height={50}
+            className={styles.logo}
+          />
+        </div>
         <div className={styles.headerLeft}>
           <h1 className={styles.pageTitle}>{getTitle()}</h1>
         </div>
