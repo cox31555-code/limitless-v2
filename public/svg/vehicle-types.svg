@@ -1,48 +1,43 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="carGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0388ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0270cc;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  
-  <!-- Left mirror -->
-  <rect x="6" y="22" width="4" height="10" rx="2" fill="url(#carGradient)"/>
-  
-  <!-- Main body -->
-  <path d="M12 16C10 16 8 18 8 20L8 42C8 48 12 52 16 52L48 52C52 52 56 48 56 42L56 20C56 18 54 16 52 16L12 16Z" fill="url(#carGradient)" stroke="url(#carGradient)" stroke-width="0.5"/>
-  
-  <!-- Top section/roof -->
-  <path d="M16 16C16 12 18 10 20 10L44 10C46 10 48 12 48 16L48 20L16 20L16 16Z" fill="url(#carGradient)" opacity="0.95"/>
-  
-  <!-- Windshield -->
-  <path d="M18 16L20 10L44 10L46 16Z" fill="url(#carGradient)" opacity="0.85"/>
-  
-  <!-- Left headlight -->
-  <circle cx="14" cy="26" r="4" fill="white"/>
-  <circle cx="14" cy="26" r="2.5" fill="#0270cc" opacity="0.3"/>
-  
-  <!-- Right headlight -->
-  <circle cx="50" cy="26" r="4" fill="white"/>
-  <circle cx="50" cy="26" r="2.5" fill="#0270cc" opacity="0.3"/>
-  
-  <!-- Left bumper -->
-  <rect x="10" y="36" width="6" height="8" rx="1" fill="url(#carGradient)" opacity="0.9"/>
-  
-  <!-- Center grille -->
-  <rect x="29" y="38" width="6" height="4" rx="0.5" fill="white" opacity="0.2"/>
-  
-  <!-- Right bumper -->
-  <rect x="48" y="36" width="6" height="8" rx="1" fill="url(#carGradient)" opacity="0.9"/>
-  
-  <!-- Left wheel -->
-  <circle cx="16" cy="50" r="5.5" fill="url(#carGradient)" stroke="white" stroke-width="0.5"/>
-  <circle cx="16" cy="50" r="2.5" fill="white" opacity="0.25"/>
-  
-  <!-- Right wheel -->
-  <circle cx="48" cy="50" r="5.5" fill="url(#carGradient)" stroke="white" stroke-width="0.5"/>
-  <circle cx="48" cy="50" r="2.5" fill="white" opacity="0.25"/>
-  
-  <!-- Right mirror -->
-  <rect x="54" y="22" width="4" height="10" rx="2" fill="url(#carGradient)"/>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 96 96">
+  <g>
+    <!-- Left mirror -->
+    <rect x="8" y="28" width="6" height="14" rx="3" fill="#0388ff" stroke="#0270cc" stroke-width="0.5"/>
+    
+    <!-- Main car body -->
+    <path d="M 16 24 C 12 24 10 26 10 30 L 10 62 C 10 70 14 76 20 76 L 76 76 C 82 76 86 70 86 62 L 86 30 C 86 26 84 24 80 24 Z" fill="#0388ff" stroke="#0270cc" stroke-width="0.5"/>
+    
+    <!-- Roof/top section -->
+    <path d="M 20 24 C 20 18 22 14 26 14 L 70 14 C 74 14 76 18 76 24 Z" fill="#0388ff"/>
+    
+    <!-- Windshield area -->
+    <path d="M 24 24 L 26 14 L 70 14 L 72 24 Z" fill="#0388ff" opacity="0.9"/>
+    
+    <!-- Left headlight -->
+    <circle cx="19" cy="53" r="5" fill="#ffffff"/>
+    <circle cx="19" cy="53" r="3" fill="#0270cc" opacity="0.2"/>
+    
+    <!-- Right headlight -->
+    <circle cx="77" cy="53" r="5" fill="#ffffff"/>
+    <circle cx="77" cy="53" r="3" fill="#0270cc" opacity="0.2"/>
+    
+    <!-- Left bumper -->
+    <rect x="12" y="42" width="8" height="10" rx="1" fill="#0388ff" opacity="0.9"/>
+    
+    <!-- Right bumper -->
+    <rect x="76" y="42" width="8" height="10" rx="1" fill="#0388ff" opacity="0.9"/>
+    
+    <!-- Center grille -->
+    <rect x="40" y="46" width="16" height="5" rx="1" fill="#ffffff" opacity="0.15"/>
+    
+    <!-- Left wheel -->
+    <circle cx="22" cy="70" r="7" fill="#0388ff" stroke="#ffffff" stroke-width="1"/>
+    <circle cx="22" cy="70" r="3.5" fill="#ffffff" opacity="0.3"/>
+    
+    <!-- Right wheel -->
+    <circle cx="74" cy="70" r="7" fill="#0388ff" stroke="#ffffff" stroke-width="1"/>
+    <circle cx="74" cy="70" r="3.5" fill="#ffffff" opacity="0.3"/>
+    
+    <!-- Right mirror -->
+    <rect x="82" y="28" width="6" height="14" rx="3" fill="#0388ff" stroke="#0270cc" stroke-width="0.5"/>
+  </g>
 </svg>
