@@ -340,6 +340,13 @@
   gap: 1rem;
 }
 
+.headerItemIcon {
+  width: 2.2rem;
+  height: 2.2rem;
+  color: #0388ff;
+  flex-shrink: 0;
+}
+
 .headerItemTitle {
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.2rem;
