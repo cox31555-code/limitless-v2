@@ -512,12 +512,13 @@
 
   .timelineWrapper {
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 2rem;
+    padding: 0;
   }
 
   .stepCard {
-    padding: 2rem;
-    gap: 1.4rem;
+    padding: 2rem 1.6rem;
+    gap: 1.3rem;
   }
 
   .card {
@@ -526,28 +527,31 @@
   }
 
   .iconContainer {
-    height: 80px;
+    height: 75px;
   }
 
   .stepIconContainer {
-    height: 80px;
+    height: 75px;
+    margin-bottom: 0.2rem;
   }
 
   .stepIconContainer svg {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
 
   .stepNumber {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .description {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 140%;
   }
 
   .concludingText {
