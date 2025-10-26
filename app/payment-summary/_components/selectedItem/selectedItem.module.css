@@ -98,21 +98,52 @@
 }
 @media screen and (max-width: 900px) {
   .header {
-    gap: 2.6rem;
-    padding: 3.1rem 2.4rem 2.8rem;
+    gap: 1.2rem;
+    padding: 1.4rem;
     flex-direction: column;
   }
+
   .headerContent {
-    width: 77%;
+    width: 100%;
   }
-  .title,
+
+  .title {
+    font-size: 1.3rem;
+  }
+
   .description {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
+
   .selectionItem,
   .selectedItem {
-    margin: 2.6rem 2.4rem 3.1rem;
+    margin: 0.8rem 1.4rem;
     padding: 1rem 1.2rem;
-    max-width: max-content;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    border-radius: 16px;
+  }
+
+  .header {
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .selectionItem,
+  .selectedItem {
+    margin: 0.8rem 1.2rem;
+    padding: 1rem;
+    font-size: 1.3rem;
   }
 }
