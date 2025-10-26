@@ -47,8 +47,8 @@ const Eligability = ({ data }) => {
             {data.first.features.map((item, index) => (
               <div className={styles.featureItem} key={index}>
                 <div className={styles.checkmark}>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ animation: 'none' }}>
-                    <path d="M17 5L8 14L3 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'none', strokeDasharray: 'none' }} />
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ animation: 'none', pointerEvents: 'none' }}>
+                    <path d="M17 5L8 14L3 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'none', strokeDasharray: 'none', strokeDashoffset: 0 }} />
                   </svg>
                 </div>
                 <p className={`${styles.featureText} ${manrope.className}`}>
@@ -77,8 +77,8 @@ const Eligability = ({ data }) => {
             {data.second.features.map((item, index) => (
               <div className={styles.featureItem} key={index}>
                 <div className={styles.checkmark}>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ animation: 'none' }}>
-                    <path d="M17 5L8 14L3 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'none', strokeDasharray: 'none' }} />
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ animation: 'none', pointerEvents: 'none' }}>
+                    <path d="M17 5L8 14L3 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ animation: 'none', strokeDasharray: 'none', strokeDashoffset: 0 }} />
                   </svg>
                 </div>
                 <p className={`${styles.featureText} ${manrope.className}`}>
