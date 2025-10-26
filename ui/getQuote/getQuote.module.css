@@ -21,34 +21,6 @@
   padding: 2.4rem 3.8rem 0;
 }
 
-/* Quick Quote Header */
-.quickQuoteHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-bottom: 2.4rem;
-}
-
-.quickQuoteTitle {
-  color: #000822;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 130%;
-  margin: 0;
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.quickQuoteSubtitle {
-  color: #5a6b7d;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 140%;
-  margin: 0;
-}
-
 /* Animated Progress Bar */
 .progressBar {
   width: 100%;
