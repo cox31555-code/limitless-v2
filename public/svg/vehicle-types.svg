@@ -6,31 +6,30 @@
     </linearGradient>
   </defs>
   
-  <!-- Main body -->
-  <path d="M12 36H52C54 36 55 37 55 39V46C55 48 54 49 52 49H12C10 49 9 48 9 46V39C9 37 10 36 12 36Z" fill="url(#carGrad)"/>
+  <!-- Car body -->
+  <path d="M8 34H56V44C56 46.2 54.2 48 52 48H12C9.8 48 8 46.2 8 44V34Z" stroke="url(#carGrad)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   
-  <!-- Cabin/Windshield -->
-  <path d="M16 24C16 22 17 20 19 20H40C42 20 44 22 44 24V36H16V24Z" fill="url(#carGrad)" opacity="0.8"/>
-  
-  <!-- Front bumper -->
-  <rect x="9" y="46" width="46" height="2" rx="1" fill="url(#carGrad)" opacity="0.6"/>
+  <!-- Car top/cabin -->
+  <path d="M16 24H48C50 24 52 25.5 52 28V34H16V28C16 25.5 17.5 24 20 24Z" stroke="url(#carGrad)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   
   <!-- Left wheel -->
-  <g>
-    <circle cx="18" cy="50" r="6" fill="none" stroke="url(#carGrad)" stroke-width="2.5"/>
-    <circle cx="18" cy="50" r="3" fill="url(#carGrad)"/>
-  </g>
+  <circle cx="20" cy="48" r="6" stroke="url(#carGrad)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20" cy="48" r="3" fill="url(#carGrad)"/>
   
   <!-- Right wheel -->
-  <g>
-    <circle cx="46" cy="50" r="6" fill="none" stroke="url(#carGrad)" stroke-width="2.5"/>
-    <circle cx="46" cy="50" r="3" fill="url(#carGrad)"/>
-  </g>
+  <circle cx="44" cy="48" r="6" stroke="url(#carGrad)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="44" cy="48" r="3" fill="url(#carGrad)"/>
   
-  <!-- Door line (vertical divider) -->
-  <line x1="32" y1="36" x2="32" y2="46" stroke="url(#carGrad)" stroke-width="1.5" opacity="0.5"/>
+  <!-- Door line -->
+  <line x1="32" y1="34" x2="32" y2="44" stroke="url(#carGrad)" stroke-width="1.5" opacity="0.5"/>
   
-  <!-- Window details -->
-  <rect x="18" y="22" width="8" height="10" rx="1" fill="none" stroke="url(#carGrad)" stroke-width="1.5" opacity="0.4"/>
-  <rect x="32" y="22" width="8" height="10" rx="1" fill="none" stroke="url(#carGrad)" stroke-width="1.5" opacity="0.4"/>
+  <!-- Window outline left -->
+  <rect x="18" y="26" width="8" height="6" rx="1" stroke="url(#carGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+  
+  <!-- Window outline right -->
+  <rect x="38" y="26" width="8" height="6" rx="1" stroke="url(#carGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+  
+  <!-- Shield/check mark (security indicator) -->
+  <path d="M52 22C52 22 56 20 56 16V12C56 12 52 10 52 16V22Z" stroke="url(#carGrad)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54 14L56 16L58 14" stroke="url(#carGrad)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
