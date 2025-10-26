@@ -30,13 +30,20 @@
   padding: 1.6rem;
 }
 
+.imgContainer {
+  flex-shrink: 0;
+  opacity: 0.4;
+  filter: grayscale(95%) brightness(0.9);
+}
+
 .vetype {
-  color: #000822;
+  color: #5a6b7d;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.64px;
   margin: 0;
+  opacity: 0.85;
 }
 
 .vehicleNumber {
