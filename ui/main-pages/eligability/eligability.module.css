@@ -1,134 +1,249 @@
 .container {
-  border-radius: 20px;
-  background: linear-gradient(
-    180deg,
-    #0168ff -345.34%,
-    rgba(1, 104, 255, 0) 76.17%
-  );
-  padding: 8.6rem 3.5% 9.6rem;
-  margin: 0 1.1%;
+  width: 100%;
+  background: #ffffff;
+  padding: 8rem 4.4%;
+  display: flex;
+  flex-direction: column;
+  gap: 5.2rem;
 }
+
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.4rem;
-  max-width: 68rem;
+  gap: 2.2rem;
+  max-width: 900px;
   margin: 0 auto;
 }
-.title {
+
+.mainTitle {
   color: #000822;
   text-align: center;
-  font-size: 5.8rem;
+  font-size: 5.2rem;
   font-weight: 700;
-  line-height: 100%; /* 58px */
+  line-height: 110%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.mainTitle span {
+  background: linear-gradient(135deg, #0388ff 0%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  color: #5a6b7d;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 160%;
+  margin: 0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 3.6rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section:hover {
+  border-color: rgba(3, 136, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(3, 136, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.iconBadge {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 0.3rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  flex-shrink: 0;
 }
-.title span {
-  color: #049cff;
-}
-.description {
-  color: rgba(0, 8, 34, 0.7);
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-}
-.eligibility {
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
-  gap: 2.6rem;
-  margin: 6.9rem 0 2.6rem;
-}
-.first,
-.second {
-  display: flex;
-  flex-direction: column;
-  gap: 4.2rem;
-  border-radius: 18.072px;
-  background: #fff;
-  backdrop-filter: blur(16.566335678100586px);
-  padding: 0 3.4rem 8rem;
-  flex: 1;
-}
-.title {
-  color: #07102d;
-  font-size: 4.4rem;
+
+.sectionTitle {
+  color: #000822;
+  font-size: 2.4rem;
   font-weight: 700;
-  line-height: 100%; /* 44px */
+  line-height: 130%;
+  margin: 0;
 }
-.features {
+
+.itemsList {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
 }
-.feature {
+
+.item {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 2.8rem;
-  padding: 1.8rem 0;
-  border-bottom: 1px solid rgba(7, 16, 45, 0.24);
+  gap: 1.6rem;
+  padding: 1.8rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s ease;
 }
-.feature:first-child {
-  padding-top: 0;
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.8);
+  padding-left: 2rem;
 }
-.feature:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
+
+.item svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
-.featureText {
-  color: rgba(7, 16, 45, 0.54);
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-  text-align: left;
+
+.itemText {
+  color: #4c5264;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 7rem 4.4%;
+    gap: 4.4rem;
+  }
+
+  .mainTitle {
+    font-size: 4.2rem;
+  }
+
+  .description {
+    font-size: 1.6rem;
+  }
+
+  .content {
+    gap: 3.2rem;
+  }
+
+  .section {
+    padding: 3.2rem;
+    gap: 2.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .item {
+    padding: 1.6rem;
+  }
+
+  .itemText {
+    font-size: 1.4rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
-    padding: 4.1rem 2% 3.1rem;
-    margin: 0 2%;
+    padding: 5.5rem 4.4%;
+    gap: 3.8rem;
   }
-  .header {
-    gap: 1.8rem;
+
+  .mainTitle {
+    font-size: 3.4rem;
   }
-  .title {
-    font-size: 3rem;
-  }
+
   .description {
     font-size: 1.4rem;
   }
-  .eligibility {
-    display: flex;
-    flex-direction: column;
-    gap: 2.2rem;
-    margin: 4.5rem 0 0;
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
   }
-  .first,
-  .second {
-    gap: 4.2rem;
-    padding: 0 1.8rem 2.2rem;
+
+  .section {
+    padding: 2.8rem;
+    gap: 2.4rem;
   }
-  .header {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+
+  .iconBadge {
+    width: 54px;
+    height: 54px;
   }
-  .title {
-    font-size: 2.4rem;
+
+  .sectionTitle {
+    font-size: 2rem;
   }
-  .feature {
+
+  .item {
+    padding: 1.4rem;
+    gap: 1.4rem;
+  }
+
+  .itemText {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 4rem 4.4%;
+    gap: 3rem;
+  }
+
+  .mainTitle {
+    font-size: 2.6rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .section {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .iconBadge {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .item {
+    padding: 1.2rem;
     gap: 1.2rem;
-    padding: 1.2rem 0;
   }
-  .featureText {
-    font-size: 1.4rem;
+
+  .itemText {
+    font-size: 1.2rem;
   }
 }
