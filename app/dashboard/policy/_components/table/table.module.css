@@ -1,255 +1,254 @@
-.container {
+.section {
   display: flex;
   flex-direction: column;
+  gap: 2.4rem;
   width: 100%;
-  gap: 2rem;
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
 }
-.title {
-  color: #000822;
+
+.sectionTitle {
   font-size: 1.8rem;
   font-weight: 700;
-  line-height: 130%;
-  letter-spacing: 0;
-  margin: 0 0 1.6rem 0;
+  color: #000822;
+  margin: 0;
   padding-bottom: 1.6rem;
   border-bottom: 1.5px solid rgba(3, 136, 255, 0.12);
+  line-height: 130%;
 }
-.table {
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2rem;
   width: 100%;
-  border-collapse: collapse;
 }
 
-.tableHeaderRow {
-  border-bottom: none;
-  display: none;
-}
-
-.tableRow {
-  border-bottom: none;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(248, 251, 255, 0.4) 100%);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  margin-bottom: 1.2rem;
-}
-
-.tableRow:hover {
+.policyCard {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border-color: rgba(3, 136, 255, 0.25);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
-  transform: translateY(-2px);
+  border: 1.5px solid rgba(3, 136, 255, 0.15);
+  border-radius: 14px;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.06);
+  overflow: hidden;
 }
 
-.tableHeaderCell {
+.policyCard:hover {
+  border-color: rgba(3, 136, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.policyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
+  border-radius: 14px 14px 0 0;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.policyNumberWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
   color: #5a6b7d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.policyNumber {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
   font-size: 1.2rem;
   font-weight: 600;
-  line-height: 130%;
-  letter-spacing: 0.5px;
-  text-align: left;
-  padding: 1.2rem 1.6rem;
-  background: transparent;
-  text-transform: uppercase;
-}
-.tableHeaderCell:first-child {
-  padding-left: 1.6rem;
-}
-.tableCell:first-child {
-  padding-left: 1.6rem;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.tableCell {
-  padding: 1.6rem;
-  vertical-align: center;
-  text-align: start;
+.badge.high {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(34, 197, 94, 0.06) 100%);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
 }
-.statusBadge {
-  display: inline-flex;
-  min-height: 3.2rem;
-  padding: 0.6rem 1.2rem;
-  justify-content: center;
+
+.badge.medium {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(249, 115, 22, 0.06) 100%);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.badge.low {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.12) 0%, rgba(239, 68, 68, 0.06) 100%);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.cardContent {
+  flex: 1;
+  margin-bottom: 1.6rem;
+}
+
+.infoRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.value {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000822;
+  margin: 0;
+  line-height: 130%;
+}
+
+.cardFooter {
+  display: flex;
+  gap: 1rem;
+}
+
+.viewButton {
+  flex: 1;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem 1.6rem;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  color: #fff;
+  border: none;
   border-radius: 10px;
   font-size: 1.3rem;
   font-weight: 600;
-  line-height: 120%;
-  letter-spacing: 0;
-}
-.active {
-  background: rgba(34, 197, 94, 0.12);
-  color: #22c55e;
-}
-.inactive {
-  background: rgba(239, 68, 68, 0.12);
-  color: #ef4444;
-}
-.claimant {
-  color: #000822;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 130%;
-  letter-spacing: 0;
-}
-.vehicleReg {
-  color: #6b7c8f;
-  font-weight: 500;
-}
-.view {
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: 0;
-  border: none;
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
   cursor: pointer;
   transition: all 0.3s ease;
-  padding: 0.8rem 1.6rem;
-  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
+  line-height: 130%;
 }
 
-.view:hover {
+.viewButton:hover {
+  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
-  transform: translateY(-1px);
 }
 
-.view:focus {
-  outline: 2px solid #0388ff;
-  outline-offset: 2px;
+.viewButton svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  transition: transform 0.3s ease;
 }
-.mobile {
-  display: none;
+
+.viewButton:hover svg {
+  transform: translateX(2px);
 }
-@media screen and (max-width: 900px) {
-  .container {
-    display: none;
-  }
-  .mobile {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-radius: 0;
-    background: transparent;
-    padding: 0;
+
+@media screen and (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 1.6rem;
   }
-  .mobileTitle {
-    color: #000822;
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 130%;
-    margin: 0 0 1.2rem 0;
-    padding-bottom: 1.2rem;
-    border-bottom: 1.5px solid rgba(3, 136, 255, 0.12);
-    text-align: left;
-  }
-  .card {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 100%;
-    padding: 1.6rem;
-    border: 1.5px solid rgba(3, 136, 255, 0.12);
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(248, 251, 255, 0.4) 100%);
-    gap: 1.2rem;
-  }
-  .card:last-child {
-    border-bottom: 1.5px solid rgba(3, 136, 255, 0.12);
-    padding-bottom: 1.6rem;
-  }
-  .card:first-child {
-    padding-top: 1.6rem;
-  }
-  .first {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .data {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .label {
-    color: #5a6b7d;
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 120%;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  .dateAndRef {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .ref {
-    color: #000822;
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 0;
-  }
-  .date {
-    color: #6b7c8f;
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 130%;
-    letter-spacing: 0;
-  }
-  .claimant {
-    color: #000822;
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 130%;
-    letter-spacing: 0;
-  }
-  .pendingActionsCell {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .pendingActions:first-child {
-    color: #6b7c8f;
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 130%;
-    letter-spacing: 0;
-  }
-  .pendingActions:last-child {
-    color: #000822;
-    font-size: 1.3rem;
-    font-weight: 500;
-    line-height: 130%;
-    letter-spacing: 0;
-  }
-  .statusBadge {
-    display: inline-flex;
-    height: 3.2rem;
-    padding: 0.6rem 1.2rem;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3rem;
-    border-radius: 10px;
-    font-weight: 600;
-  }
-  .view {
-    font-size: 1.3rem;
-    width: 100%;
-    padding: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    gap: 2rem;
   }
 
-  .second {
-    display: flex;
-    justify-content: flex-start;
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .policyCard {
+    padding: 1.6rem;
+  }
+
+  .cardHeader {
     flex-direction: column;
     gap: 1.2rem;
-    align-items: flex-start;
+    margin-bottom: 1.2rem;
+  }
+
+  .badge {
+    align-self: flex-start;
+  }
+
+  .infoRow {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .viewButton {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .policyCard {
+    padding: 1.4rem;
+  }
+
+  .policyNumber {
+    font-size: 1.4rem;
+  }
+
+  .infoRow {
+    gap: 1rem;
+  }
+
+  .value {
+    font-size: 1.2rem;
+  }
+
+  .viewButton {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.2rem;
+    flex-direction: column;
+  }
+
+  .viewButton svg {
+    display: none;
   }
 }
