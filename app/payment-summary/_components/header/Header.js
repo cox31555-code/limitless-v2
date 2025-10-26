@@ -51,7 +51,7 @@ const Header = ({ title }) => {
           <Stepper
             steps={[
               {
-                title: "Vehichle",
+                title: "Vehicle",
                 img: {
                   src: "/svg/payment-step-1.svg",
                   alt: "step1",
