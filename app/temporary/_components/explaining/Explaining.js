@@ -250,9 +250,6 @@ const Explaining = () => {
                   </p>
                 </div>
               </div>
-              {index < howItWorksSteps.length - 1 && (
-                <div className={styles.connector}></div>
-              )}
             </div>
           ))}
         </div>

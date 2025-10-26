@@ -265,20 +265,6 @@
   transform: scale(1.08);
 }
 
-.connector {
-  position: absolute;
-  top: 110px;
-  left: calc(100% + 1.4rem);
-  width: calc(100% + 2.8rem);
-  height: 2px;
-  background: linear-gradient(90deg, rgba(3, 136, 255, 0.25) 0%, rgba(3, 136, 255, 0.08) 100%);
-  z-index: 0;
-  transform-origin: left center;
-}
-
-.stepWrapper:last-child .connector {
-  display: none;
-}
 
 .card {
   display: flex;
