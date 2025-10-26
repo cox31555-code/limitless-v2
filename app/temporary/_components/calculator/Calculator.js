@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import styles from "./calculator.module.css";
 import Image from "next/image";
-import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import Selection1 from "@/ui/inputs/selections/selection1/Selection1";
 import { useRouter } from "next/navigation";
@@ -16,6 +15,12 @@ const manrope = Manrope({
   subsets: ["latin"],
   weight: ["500", "400"],
 });
+
+const ArrowIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path d="M3.33301 10H16.6663M16.6663 10L11.6663 5M16.6663 10L11.6663 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 const Calculator = () => {
   const [data, setData] = useState({
@@ -31,30 +36,34 @@ const Calculator = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.wrapper}>
-        <div className={styles.header}>
-          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Temporary Vehicle Insurance
-            <span>Calculator</span>
-          </h2>
-          <p className={`${styles.subtitle} ${manrope.className}`}>
-            Get an instant price estimate. Quick, simple, and transparent pricing for your temporary insurance needs.
-          </p>
-        </div>
+      <div className={styles.background}></div>
+      
+      <div className={styles.content}>
+        <div className={styles.left}>
+          <div className={styles.headerContent}>
+            <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+              Temporary Vehicle
+              <span>Insurance Calculator</span>
+            </h2>
+            <p className={`${styles.description} ${manrope.className}`}>
+              Get an instant price estimate in seconds. Transparent pricing with no hidden fees.
+            </p>
+          </div>
 
-        <div className={styles.body}>
-          <div className={styles.imageSection}>
+          <div className={styles.carSection}>
             <Image
               src={"/svg/calc-car.svg"}
               alt="calculator"
-              width={200}
-              height={140}
-              className={styles.image}
+              width={220}
+              height={150}
+              className={styles.carImage}
             />
           </div>
+        </div>
 
-          <div className={styles.formSection}>
-            <div className={styles.inputGroup}>
+        <div className={styles.right}>
+          <div className={styles.card}>
+            <div className={styles.inputWrapper}>
               <label className={`${styles.label} ${plusJakartaSans.className}`}>
                 How long will you need it?
               </label>
@@ -67,26 +76,30 @@ const Calculator = () => {
               />
             </div>
 
-            <div className={styles.priceCard}>
-              <div className={styles.priceInfo}>
-                <span className={`${styles.priceLabel} ${manrope.className}`}>
-                  Average price for {data.type.toLowerCase()}
-                </span>
-                <div className={styles.priceValue}>
+            <div className={styles.priceSection}>
+              <div className={styles.priceBox}>
+                <p className={`${styles.priceTag} ${manrope.className}`}>
+                  Average for {data.type.toLowerCase()}
+                </p>
+                <div className={styles.priceWrapper}>
                   <span className={`${styles.price} ${plusJakartaSans.className}`}>
                     {priceMap[data.type]}
                   </span>
                 </div>
               </div>
-              <p className={`${styles.note} ${manrope.className}`}>
-                Based on 19,765 policies (January 2025)
-              </p>
-              <ConfirmBtn
-                title="Get a quote"
+
+              <button 
                 onClick={() => router.push("/temporary/get-quote")}
-                className={styles.button}
-              />
+                className={`${styles.button} ${plusJakartaSans.className}`}
+              >
+                <span>Get a quote</span>
+                <ArrowIcon />
+              </button>
             </div>
+
+            <p className={`${styles.disclaimer} ${manrope.className}`}>
+              Based on 19,765 policies • January 2025
+            </p>
           </div>
         </div>
       </div>
