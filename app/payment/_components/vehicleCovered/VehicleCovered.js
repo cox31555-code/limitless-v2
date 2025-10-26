@@ -6,7 +6,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700"],
 });
-const VehicleCovered = ({ data }) => {
+const VehicleCovered = ({ data, hideIcon = false }) => {
   const getVehicleDescription = () => {
     if (!data) return "N/A";
     const parts = [];
@@ -21,12 +21,14 @@ const VehicleCovered = ({ data }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Image
-          src={"/svg/vehicle-covered.svg"}
-          alt="vehicle-covered"
-          width={35}
-          height={46}
-        />
+        {!hideIcon && (
+          <Image
+            src={"/svg/vehicle-covered.svg"}
+            alt="vehicle-covered"
+            width={35}
+            height={46}
+          />
+        )}
         <p className={`${styles.headerTitle} ${plusJakartaSans.className}`}>
           Vehicle to be covered
         </p>

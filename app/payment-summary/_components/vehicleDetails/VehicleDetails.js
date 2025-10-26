@@ -8,7 +8,7 @@ const VehicleDetails = ({ data, carUsage }) => {
   return (
     <ComponentWrapper title="Vehicle Details" icon={{ width: 62, height: 62 }}>
       <div className={styles.content}>
-        <VehicleCovered data={data} />
+        <VehicleCovered data={data} hideIcon={true} />
         <div className={styles.cards}>
           {[
             {
