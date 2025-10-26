@@ -13,6 +13,12 @@ const Table = ({ title, columns, data, tableType }) => {
     return "low";
   };
 
+  const formatVehicleReg = (reg) => {
+    if (!reg) return reg;
+    // Format as XXXX XXX (first 4 chars, space, last 3 chars)
+    return reg.replace(/^(.{4})(.{3})$/, '$1 $2');
+  };
+
   return (
     <div className={styles.section}>
       <h3 className={styles.sectionTitle}>{title}</h3>
@@ -21,8 +27,8 @@ const Table = ({ title, columns, data, tableType }) => {
           <div key={index} className={styles.policyCard}>
             <div className={styles.cardHeader}>
               <div className={styles.policyNumberWrapper}>
-                <span className={styles.label}>Vehicle Reg</span>
-                <h4 className={styles.policyNumber}>{row.vehicleReg}</h4>
+                <span className={styles.label}>Policy Number</span>
+                <h4 className={styles.policyNumber}>{row.policyNumber}</h4>
               </div>
               <span className={`${styles.badge} ${styles[getStatusColor(row.remaining)]}`}>
                 {row.remaining}
@@ -36,8 +42,8 @@ const Table = ({ title, columns, data, tableType }) => {
                   <p className={styles.value}>{row.name}</p>
                 </div>
                 <div className={styles.infoItem}>
-                  <span className={styles.label}>Policy Number</span>
-                  <p className={styles.value}>{row.policyNumber}</p>
+                  <span className={styles.label}>Vehicle Reg</span>
+                  <p className={styles.value}>{formatVehicleReg(row.vehicleReg)}</p>
                 </div>
               </div>
             </div>
