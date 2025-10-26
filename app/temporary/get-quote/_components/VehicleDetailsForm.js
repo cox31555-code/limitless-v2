@@ -160,100 +160,23 @@ const VehicleDetailsForm = ({
 
   // Fetch vehicle data from backend
   const fetchVehicleData = useCallback(async () => {
-    const queryString = buildVehicleQuery(watch);
-    if (!queryString) return;
+    // Offline mode - skip API call and provide default options
+    const defaultOptions = {
+      models: ["Model A", "Model B", "Model C"],
+      years: ["2024", "2023", "2022", "2021", "2020"],
+      doors: ["2", "4", "5"],
+      fuels: ["Petrol", "Diesel", "Hybrid", "Electric"],
+      transmissions: ["Manual", "Automatic"],
+    };
 
-    try {
-      const response = await fetch(
-        `/api/vehicle-models/options?${queryString}`
-      );
-
-      if (!response.ok) {
-        throw new Error(
-          `HTTP ${response.status}: Failed to fetch vehicle data`
-        );
-      }
-
-      const result = await response.json();
-
-      if (result.status === "success") {
-        const { options, autoSelect } = result.data;
-
-        const optionsToUpdate = {
-          models: options?.models || [],
-          years: options?.years || [],
-          doors: options?.doors || [],
-          fuels: options?.fuel || [],
-          transmissions: options?.transmissions || [],
-        };
-
-        // Ensure auto-selected values are included in options
-        if (autoSelect) {
-          const fieldMapping = {
-            model: "models",
-            year: "years",
-            doors: "doors",
-            fuel: "fuels",
-            transmission: "transmissions",
-          };
-
-          Object.entries(autoSelect).forEach(([field, value]) => {
-            const optionKey = fieldMapping[field];
-            if (optionKey && !optionsToUpdate[optionKey].includes(value)) {
-              optionsToUpdate[optionKey].push(value);
-            }
-          });
-        }
-
-        let valuesToUpdate = {};
-        let fieldsToTrigger = [];
-
-        if (autoSelect && Object.keys(autoSelect).length > 0) {
-          isAutoSelectingRef.current = true;
-
-          Object.entries(autoSelect).forEach(([field, value]) => {
-            valuesToUpdate[field] = value;
-            fieldsToTrigger.push(`vehicleDetails.${field}`);
-          });
-        }
-
-        dispatch({
-          type: "SET_VEHICLE_DATA",
-          payload: {
-            values: valuesToUpdate,
-            options: optionsToUpdate,
-          },
-        });
-
-        if (Object.keys(valuesToUpdate).length > 0) {
-          Object.entries(valuesToUpdate).forEach(([field, value]) => {
-            setValue(`vehicleDetails.${field}`, value, {
-              shouldValidate: true,
-              shouldDirty: true,
-              shouldTouch: true,
-            });
-          });
-
-          if (fieldsToTrigger.length > 0) {
-            trigger(fieldsToTrigger);
-          }
-        }
-
-        setForceUpdate((prev) => prev + 1);
-
-        if (isAutoSelectingRef.current) {
-          setTimeout(() => {
-            isAutoSelectingRef.current = false;
-          }, 100);
-        }
-      } else {
-        throw new Error(result.message || "Failed to fetch vehicle data");
-      }
-    } catch (error) {
-      console.error("Error fetching vehicle data:", error);
-      dispatch({ type: "SET_ERROR", payload: error.message });
-    }
-  }, [watch, setValue, trigger]);
+    dispatch({
+      type: "SET_VEHICLE_DATA",
+      payload: {
+        values: {},
+        options: defaultOptions,
+      },
+    });
+  }, []);
 
   // Track the last query to avoid duplicate requests
   const lastQueryRef = useRef("");
