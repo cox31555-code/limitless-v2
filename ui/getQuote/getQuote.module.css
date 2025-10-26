@@ -522,6 +522,14 @@
     padding: 2rem 2.4rem 0;
   }
 
+  .quickQuoteTitle {
+    font-size: 2rem;
+  }
+
+  .quickQuoteSubtitle {
+    font-size: 1.3rem;
+  }
+
   .contentWrapper {
     padding: 2.4rem 2.4rem;
   }
