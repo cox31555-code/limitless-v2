@@ -54,26 +54,14 @@
   overflow: hidden;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #0388ff 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.card {
+  border-top: none;
 }
 
 .card:hover {
   box-shadow: 0 12px 36px rgba(3, 136, 255, 0.14);
   transform: translateY(-6px);
   border-color: rgba(3, 136, 255, 0.1);
-}
-
-.card:hover::before {
-  opacity: 1;
 }
 
 .iconContainer {
