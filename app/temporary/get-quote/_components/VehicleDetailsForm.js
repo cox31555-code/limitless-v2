@@ -287,53 +287,44 @@ const VehicleDetailsForm = ({
     const cleanRegNumber = registrationNumber.trim().toUpperCase();
 
     setIsLoadingVehicleData(true);
-    try {
-      // Use only DVLA endpoint
-      const apiUrl = `/api/vehicle-search/dvla/${encodeURIComponent(
-        cleanRegNumber
-      )}`;
 
-      const response = await axios.get(apiUrl);
-      if (response.data.status === "success" && response.data.data) {
-        const vehicleData = response.data.data;
+    // Offline mode - skip API call and use mock data
+    setTimeout(() => {
+      const mockVehicleData = {
+        registrationNumber: cleanRegNumber,
+        make: "Toyota",
+        model: "Corolla",
+        yearOfManufacture: "2023",
+        fuelType: "Petrol",
+        transmission: "Automatic",
+        colour: "Black",
+      };
 
-        setFoundVehicleData(vehicleData);
-        setShowFoundData(true);
+      setFoundVehicleData(mockVehicleData);
+      setShowFoundData(true);
 
-        if (onVehicleDataFound) {
-          onVehicleDataFound(vehicleData);
-        }
-
-        // Populate all vehicle fields from DVLA API data
-        setValue("vehicleDetails.apiData", vehicleData);
-        setValue(
-          "vehicleDetails.registrationNumber",
-          vehicleData.registrationNumber || cleanRegNumber
-        );
-        setValue("vehicleDetails.type", "Car");
-        setValue("vehicleDetails.make", vehicleData.make || "");
-        setValue("vehicleDetails.model", vehicleData.model || "");
-        setValue("vehicleDetails.year", vehicleData.yearOfManufacture || "");
-        setValue("vehicleDetails.fuel", vehicleData.fuelType || "");
-        setValue("vehicleDetails.transmission", vehicleData.transmission || "");
-        setValue("vehicleDetails.colour", vehicleData.colour || "");
-
-        clearErrors("vehicleDetails.registrationNumber");
-        clearErrors("vehicleDetails.type");
-        clearErrors("vehicleDetails.make");
-        clearErrors("vehicleDetails.model");
+      if (onVehicleDataFound) {
+        onVehicleDataFound(mockVehicleData);
       }
-    } catch (error) {
-      console.error("Error fetching vehicle data:", error);
-      setError("vehicleDetails.registrationNumber", {
-        message:
-          error.response?.data?.message ||
-          error.message ||
-          "Failed to fetch vehicle data. Please check the registration number.",
-      });
-    } finally {
+
+      // Populate all vehicle fields from mock data
+      setValue("vehicleDetails.apiData", mockVehicleData);
+      setValue("vehicleDetails.registrationNumber", cleanRegNumber);
+      setValue("vehicleDetails.type", "Car");
+      setValue("vehicleDetails.make", mockVehicleData.make);
+      setValue("vehicleDetails.model", mockVehicleData.model);
+      setValue("vehicleDetails.year", mockVehicleData.yearOfManufacture);
+      setValue("vehicleDetails.fuel", mockVehicleData.fuelType);
+      setValue("vehicleDetails.transmission", mockVehicleData.transmission);
+      setValue("vehicleDetails.colour", mockVehicleData.colour);
+
+      clearErrors("vehicleDetails.registrationNumber");
+      clearErrors("vehicleDetails.type");
+      clearErrors("vehicleDetails.make");
+      clearErrors("vehicleDetails.model");
+
       setIsLoadingVehicleData(false);
-    }
+    }, 300);
   }, [watch, setError, onVehicleDataFound, setValue, clearErrors]);
 
   const handleChangeVehicle = () => {
