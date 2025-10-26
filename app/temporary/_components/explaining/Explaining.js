@@ -19,8 +19,10 @@ const manrope = Manrope({
 
 const FlexibilityIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <path d="M30 50C30 38.9543 38.9543 30 50 30C61.0457 30 70 38.9543 70 50" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M50 30V50M70 50L60 40M70 50L60 60" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M35 45Q50 35 65 45" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M35 55Q50 65 65 55" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="35" cy="50" r="2.5" fill="#0388FF" />
+    <circle cx="65" cy="50" r="2.5" fill="#0388FF" />
   </svg>
 );
 
@@ -40,8 +42,7 @@ const TimeIcon = () => (
 
 const ShieldIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <path d="M50 30L65 38V55C65 68 50 75 50 75C50 75 35 68 35 55V38L50 30Z" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M45 50L50 55L58 45" stroke="#0388FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M50 32L63 39V55C63 66 50 72 50 72C50 72 37 66 37 55V39L50 32Z" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
