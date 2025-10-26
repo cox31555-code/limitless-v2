@@ -18,7 +18,7 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
         logo1: {
           top: Math.random() * 10 + 5,
           right: Math.random() * 15 + 5,
-          delay: Math.random() * 2,
+          delay: 0,
         },
         logo3: {
           top: Math.random() * 20 + 40,
