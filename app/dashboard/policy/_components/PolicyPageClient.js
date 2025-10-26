@@ -106,6 +106,7 @@ const PolicyPageClient = ({
           ]}
           data={expiredPolicies}
           showViewButton={false}
+          theme="expired"
         />
       )}
 
