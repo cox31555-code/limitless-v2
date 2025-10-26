@@ -5,13 +5,18 @@ export function middleware(request) {
 
   // Only protect dashboard routes
   if (pathname.startsWith("/dashboard")) {
-    const token = request.cookies.get("jwt");
+    // Allow bypass in development mode with NEXT_PUBLIC_DEV_MODE
+    const devMode = process.env.NEXT_PUBLIC_DEV_MODE === "true";
 
-    // Redirect to login if no valid token
-    if (!token || !token.value || token.value === "loggedout") {
-      const loginUrl = new URL("/login", request.url);
-      loginUrl.searchParams.set("message", "Please login to access the dashboard");
-      return NextResponse.redirect(loginUrl);
+    if (!devMode) {
+      const token = request.cookies.get("jwt");
+
+      // Redirect to login if no valid token
+      if (!token || !token.value || token.value === "loggedout") {
+        const loginUrl = new URL("/login", request.url);
+        loginUrl.searchParams.set("message", "Please login to access the dashboard");
+        return NextResponse.redirect(loginUrl);
+      }
     }
   }
 
