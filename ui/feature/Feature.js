@@ -2,25 +2,50 @@ import React from "react";
 import styles from "./feature.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import {
+  CiClock2,
+  CiCalendar,
+  CiSun,
+} from "react-icons/ci";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const Feature = ({ img, title, description }) => {
+const getIconComponent = (iconType) => {
+  switch (iconType) {
+    case "clock":
+      return <CiClock2 className={styles.iconSymbol} />;
+    case "sun":
+      return <CiSun className={styles.iconSymbol} />;
+    case "calendar-week":
+    case "calendar-month":
+      return <CiCalendar className={styles.iconSymbol} />;
+    default:
+      return null;
+  }
+};
+
+const Feature = ({ img, icon, title, description }) => {
   return (
     <div className={styles.container}>
       <svg className={styles.borderSvg} viewBox="0 0 400 120" preserveAspectRatio="none">
         <rect x="2" y="2" width="396" height="116" rx="10" ry="10" fill="none" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="2"/>
       </svg>
-      <Image
-        src={img.src}
-        alt={img.alt}
-        width={img.width}
-        height={img.height}
-        className={styles.img}
-      />
+      {icon ? (
+        <div className={styles.iconContainer}>
+          {getIconComponent(icon)}
+        </div>
+      ) : (
+        <Image
+          src={img.src}
+          alt={img.alt}
+          width={img.width}
+          height={img.height}
+          className={styles.img}
+        />
+      )}
       <div className={`${styles.content}`}>
         <h3
           className={`${styles.title} ${plusJakartaSans.className} ${
