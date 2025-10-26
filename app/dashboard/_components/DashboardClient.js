@@ -47,41 +47,34 @@ const DashboardClient = () => {
       color: "#ff9500",
       action: () => router.push("/dashboard/claims"),
     },
-    {
-      icon: <StatIcon type="check" />,
-      label: "Completed",
-      value: "12",
-      color: "#00c853",
-      action: () => router.push("/dashboard/claims"),
-    },
   ];
 
   const quickActions = [
     {
       title: "Create New Policy",
       description: "Get instant temporary insurance coverage",
-      icon: "➕",
+      icon: "🆕",
       action: () => router.push("/temporary/get-quote?payment=false"),
       color: "#0388ff",
     },
     {
       title: "Manage Your Policy",
       description: "View and manage your existing policies",
-      icon: "✏️",
+      icon: "⚙️",
       action: () => router.push("/dashboard/policy"),
       color: "#049cff",
     },
     {
       title: "View Documents",
       description: "Access policy documents and booklets",
-      icon: "📋",
+      icon: "📑",
       action: () => router.push("/dashboard/documents"),
       color: "#0270cc",
     },
     {
       title: "Submit a Claim",
       description: "File a new insurance claim",
-      icon: "🔔",
+      icon: "📋",
       action: () => router.push("/dashboard/submit-claim"),
       color: "#ff9500",
     },
@@ -184,22 +177,6 @@ const DashboardClient = () => {
         </div>
       </section>
 
-      {/* Recent Activity Section */}
-      <section className={styles.activitySection}>
-        <h2 className={styles.sectionTitle}>Recent Activity</h2>
-        <div className={styles.activityList}>
-          {recentActivity.map((activity, index) => (
-            <div key={index} className={`${styles.activityItem} ${styles[activity.status]}`}>
-              <div className={styles.activityIcon}>{activity.icon}</div>
-              <div className={styles.activityContent}>
-                <h4 className={styles.activityTitle}>{activity.title}</h4>
-                <p className={styles.activityDescription}>{activity.description}</p>
-              </div>
-              <time className={styles.activityDate}>{activity.date}</time>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Info Section */}
       <section className={styles.infoSection}>
