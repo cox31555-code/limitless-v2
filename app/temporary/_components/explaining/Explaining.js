@@ -171,6 +171,14 @@ const Explaining = () => {
         return <NoCommitmentIcon />;
       case "quote":
         return <QuoteIcon />;
+      case "enterdetails":
+        return <EnterDetailsIcon />;
+      case "selectduration":
+        return <SelectDurationIcon />;
+      case "reviewpay":
+        return <ReviewPayIcon />;
+      case "policyactive":
+        return <PolicyActiveIcon />;
       default:
         return null;
     }
