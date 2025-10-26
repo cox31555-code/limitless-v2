@@ -9,46 +9,30 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 const PaymentOptions = () => {
-  const paymentMethods = [
-    {
-      src: "/svg/visa.svg",
-      alt: "Visa",
-      width: 207,
-      height: 114,
-    },
-    {
-      src: "/svg/mastercard.svg",
-      alt: "Mastercard",
-      width: 207,
-      height: 114,
-    },
-    {
-      src: "/svg/american-express.svg",
-      alt: "American Express",
-      width: 207,
-      height: 114,
-    },
-  ];
-
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h4 className={`${styles.title} ${plusJakartaSans.className}`}>
-          You can pay for your short term insurance policy in several ways.
-        </h4>
-      </div>
+      <h4 className={`${styles.title} ${plusJakartaSans.className}`}>
+        We accept all major payment methods
+      </h4>
       <div className={styles.options}>
-        {paymentMethods.map((method, index) => (
-          <div key={index} className={styles.paymentCard}>
-            <Image
-              src={method.src}
-              alt={method.alt}
-              width={method.width}
-              height={method.height}
-              className={styles.cardImage}
-            />
-          </div>
-        ))}
+        <Image
+          src={"/svg/visa.svg"}
+          alt="Visa"
+          width={207}
+          height={114}
+        />
+        <Image
+          src={"/svg/mastercard.svg"}
+          alt="Mastercard"
+          width={207}
+          height={114}
+        />
+        <Image
+          src={"/svg/american-express.svg"}
+          alt="American Express"
+          width={207}
+          height={114}
+        />
       </div>
     </div>
   );
