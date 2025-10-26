@@ -84,6 +84,17 @@
   flex-shrink: 0;
 }
 
+.headerTitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
 .logoContainer {
   display: flex;
   align-items: center;
