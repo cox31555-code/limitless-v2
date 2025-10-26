@@ -164,22 +164,6 @@ const Footer = () => {
                     size={20}
                   />
                 </div>
-                <div
-                  className={`${styles.socialsItem} ${
-                    shouldUseSpecialStyles(pathname)
-                      ? styles["socials-item-black"]
-                      : ""
-                  }`}
-                >
-                  <BiLogoLinkedin
-                    className={`${styles.socialsIcon} ${
-                      shouldUseSpecialStyles(pathname)
-                        ? styles["socials-icon-black"]
-                        : ""
-                    }`}
-                    size={20}
-                  />
-                </div>
               </div>
             </div>
             <div className={styles.stores}>
