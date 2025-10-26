@@ -19,47 +19,43 @@ const manrope = Manrope({
 
 const FlexibilityIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <circle cx="50" cy="50" r="45" fill="#0388FF" fillOpacity="0.1" />
-    <path d="M35 45L45 55L65 35" stroke="#0388FF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M30 50C30 38.9543 38.9543 30 50 30C61.0457 30 70 38.9543 70 50" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M50 30V50M70 50L60 40M70 50L60 60" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const ComprehensiveIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <circle cx="50" cy="50" r="45" fill="#0388FF" fillOpacity="0.1" />
-    <path d="M35 50L45 60L70 30" stroke="#0388FF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-    <circle cx="50" cy="50" r="42" stroke="#0388FF" strokeWidth="2" opacity="0.3" />
+    <circle cx="50" cy="50" r="20" fill="none" stroke="#0388FF" strokeWidth="2.5" />
+    <path d="M40 50L48 58L60 40" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const TimeIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <circle cx="50" cy="50" r="45" fill="#0388FF" fillOpacity="0.1" />
-    <circle cx="50" cy="50" r="35" stroke="#0388FF" strokeWidth="2.5" />
-    <path d="M50 35V50L62 62" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="50" cy="50" r="20" fill="none" stroke="#0388FF" strokeWidth="2.5" />
+    <path d="M50 45V50M50 50L58 58" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const ShieldIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <circle cx="50" cy="50" r="45" fill="#0388FF" fillOpacity="0.1" />
-    <path d="M50 25L70 35V55C70 70 50 80 50 80C50 80 30 70 30 55V35L50 25Z" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M50 30L65 38V55C65 68 50 75 50 75C50 75 35 68 35 55V38L50 30Z" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M45 50L50 55L58 45" stroke="#0388FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const NoCommitmentIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <circle cx="50" cy="50" r="45" fill="#0388FF" fillOpacity="0.1" />
-    <path d="M35 50L50 65L75 35" stroke="#0388FF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M35 60L50 45L65 60" fill="none" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M50 45V70" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
   </svg>
 );
 
 const QuoteIcon = () => (
   <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-    <circle cx="50" cy="50" r="45" fill="#0388FF" fillOpacity="0.1" />
-    <path d="M40 55H35C33.8954 55 33 55.8954 33 57V63C33 64.1046 33.8954 65 35 65H40" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M65 55H60C58.8954 55 58 55.8954 58 57V63C58 64.1046 58.8954 65 60 65H65" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" />
-    <text x="50" y="60" textAnchor="middle" fill="#0388FF" fontSize="20" fontWeight="bold" opacity="0.6">£</text>
+    <circle cx="50" cy="50" r="20" fill="none" stroke="#0388FF" strokeWidth="2.5" />
+    <path d="M42 48L50 54L58 48" stroke="#0388FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
