@@ -153,21 +153,9 @@ const VehicleDetailsForm = ({
 
   // Fetch makes on component mount
   const fetchMakes = useCallback(async () => {
-    try {
-      const response = await fetch(`/api/vehicle-models/makes`);
-      if (response.ok) {
-        const result = await response.json();
-        const makes = result.data || [];
-        dispatch({ type: "SET_MAKES", payload: makes });
-
-        if (shouldAutoSelect(makes)) {
-          setValue("vehicleDetails.make", makes[0]);
-        }
-      }
-    } catch (error) {
-      console.error("Error fetching makes:", error);
-      dispatch({ type: "SET_ERROR", payload: error.message });
-    }
+    // Offline mode - skip API call
+    const defaultMakes = ["Audi", "BMW", "Ford", "Honda", "Toyota", "Volkswagen"];
+    dispatch({ type: "SET_MAKES", payload: defaultMakes });
   }, [setValue]);
 
   // Fetch vehicle data from backend
