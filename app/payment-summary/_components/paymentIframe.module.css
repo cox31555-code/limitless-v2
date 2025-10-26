@@ -217,16 +217,23 @@
     border-radius: 16px;
   }
 
+  .header {
+    padding: 1.4rem 1.6rem;
+  }
+
+  .logo {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
   .closeButton {
-    width: 4rem;
-    height: 4rem;
-    top: 1.5rem;
-    right: 1.5rem;
+    width: 3.6rem;
+    height: 3.6rem;
   }
 
   .closeButton svg {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .successTitle {
@@ -249,16 +256,23 @@
     border-radius: 12px;
   }
 
+  .header {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .logo {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
   .closeButton {
-    width: 3.6rem;
-    height: 3.6rem;
-    top: 1rem;
-    right: 1rem;
+    width: 3.2rem;
+    height: 3.2rem;
   }
 
   .closeButton svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .successTitle {
