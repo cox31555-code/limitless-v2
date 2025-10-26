@@ -121,10 +121,6 @@ const Header = ({ page }) => {
             )}
           </div>
 
-          <button className={styles.notificationButton} title="Notifications">
-            <BellIcon />
-            <span className={styles.badge}>0</span>
-          </button>
 
           <div className={styles.profileSection}>
             <button
