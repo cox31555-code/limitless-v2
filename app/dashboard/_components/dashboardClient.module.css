@@ -352,7 +352,7 @@
 
 .actionCard:hover .actionArrow {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(2px);
 }
 
 
