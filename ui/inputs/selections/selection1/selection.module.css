@@ -19,8 +19,9 @@
 
 .dark {
   border-radius: 14px;
-  background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
+  background: linear-gradient(135deg, rgba(7, 16, 45, 0.4) 0%, rgba(3, 136, 255, 0.06) 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  backdrop-filter: blur(8px);
 }
 .inputGroup {
   display: flex;
@@ -83,20 +84,33 @@
 
 .darkSelectedItem {
   border-radius: 10px;
-  background: #fff !important;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
-  color: #0388ff !important;
-  border: 1.5px solid #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #00c9ff 100%) !important;
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.4);
+  color: #fff !important;
+  border: 1.5px solid rgba(3, 136, 255, 0.6) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
 }
+
+.darkSelectedItem:hover {
+  background: linear-gradient(135deg, #0270cc 0%, #00b8d4 100%) !important;
+  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.5);
+  transform: translateY(-2px);
+}
+
 .darkItem {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.82);
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  font-weight: 600;
 }
 
 .darkItem:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(3, 136, 255, 0.4);
+  color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.15);
+  transform: translateY(-2px);
 }
 
 .selectionSpan {
