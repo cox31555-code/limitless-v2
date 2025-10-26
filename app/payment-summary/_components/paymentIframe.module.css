@@ -12,6 +12,7 @@
   justify-content: center;
   padding: 2rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .container {
@@ -23,9 +24,9 @@
   background: #ffffff;
   border-radius: 9px;
   overflow: hidden;
-  border: 1px solid rgba(3, 136, 255, 0.08);
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
 
 .iframeWrapper {
@@ -132,6 +133,104 @@
   height: 2.4rem;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* Animated background logos */
+.animatedLogoContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.animatedLogo1 {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 300px;
+  height: 400px;
+  opacity: 0.08;
+  animation: floatAndRotate 12s ease-in-out infinite;
+  fill: #0388ff;
+}
+
+.animatedLogo2 {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  width: 250px;
+  height: 330px;
+  opacity: 0.06;
+  animation: scaleAndFade 10s ease-in-out infinite;
+  fill: #049cff;
+}
+
+.animatedLogo3 {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 200px;
+  height: 266px;
+  opacity: 0.05;
+  animation: floatCircular 15s ease-in-out infinite;
+  fill: #0270cc;
+}
+
+@keyframes floatAndRotate {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0.08;
+  }
+  25% {
+    transform: translate(-30px, -40px) rotate(15deg) scale(1.1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translate(-50px, -20px) rotate(30deg) scale(1.15);
+    opacity: 0.1;
+  }
+  75% {
+    transform: translate(-20px, -50px) rotate(20deg) scale(1.05);
+    opacity: 0.09;
+  }
+}
+
+@keyframes scaleAndFade {
+  0%, 100% {
+    transform: translate(0, 0) scale(0.9);
+    opacity: 0.06;
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.2);
+    opacity: 0.1;
+  }
+  66% {
+    transform: translate(20px, 20px) scale(1.1);
+    opacity: 0.08;
+  }
+}
+
+@keyframes floatCircular {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.05;
+  }
+  25% {
+    transform: translate(50px, -50px) rotate(-10deg);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translate(80px, 0) rotate(-20deg);
+    opacity: 0.1;
+  }
+  75% {
+    transform: translate(50px, 50px) rotate(-15deg);
+    opacity: 0.07;
+  }
 }
 
 /* Success overlay */
