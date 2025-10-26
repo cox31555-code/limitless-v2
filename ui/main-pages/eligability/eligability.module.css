@@ -135,11 +135,21 @@
   background: rgba(3, 136, 255, 0.05);
   border: 1px solid rgba(3, 136, 255, 0.1);
   animation: none !important;
+  position: relative;
+}
+
+.featureItem * {
+  animation: none !important;
 }
 
 .featureItem:hover {
   background: rgba(3, 136, 255, 0.05);
   border-color: rgba(3, 136, 255, 0.1);
+  animation: none !important;
+}
+
+.featureItem:hover * {
+  animation: none !important;
 }
 
 .checkmark {
