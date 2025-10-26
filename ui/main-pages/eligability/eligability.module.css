@@ -54,20 +54,6 @@
   width: 100%;
 }
 
-@keyframes strokeDraw {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes none {
-  0%, 100% {
-    stroke-dashoffset: 0;
-  }
-}
 
 .section {
   display: flex;
