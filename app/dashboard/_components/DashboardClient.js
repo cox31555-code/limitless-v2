@@ -6,15 +6,12 @@ import styles from "./dashboardClient.module.css";
 const DashboardClient = () => {
   const router = useRouter();
   const [activeInsurances, setActiveInsurances] = useState(2);
-  const [expiredInsurances, setExpiredInsurances] = useState(1);
-  const [pendingClaims, setPendingClaims] = useState(1);
 
   const StatIcon = ({ type }) => {
     const icons = {
-      shield: "🛡️",
+      shield: "🔒",
       document: "📄",
-      clock: "⏱️",
-      check: "✓",
+      clock: "⏰",
     };
     return <span className={styles.statIcon}>{icons[type]}</span>;
   };
@@ -80,29 +77,6 @@ const DashboardClient = () => {
     },
   ];
 
-  const recentActivity = [
-    {
-      title: "Policy Created",
-      description: "Temporary insurance for AB21DEV",
-      date: "2 days ago",
-      icon: "📋",
-      status: "completed",
-    },
-    {
-      title: "Claim Submitted",
-      description: "Claim #CLM-001 submitted successfully",
-      date: "1 week ago",
-      icon: "✓",
-      status: "pending",
-    },
-    {
-      title: "Document Downloaded",
-      description: "Your policy schedule downloaded",
-      date: "2 weeks ago",
-      icon: "📄",
-      status: "completed",
-    },
-  ];
 
   return (
     <div className={styles.container}>
