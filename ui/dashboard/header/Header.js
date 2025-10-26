@@ -72,7 +72,7 @@ const Header = ({ page }) => {
           <h1 className={styles.pageTitle}>{getTitle()}</h1>
         </div>
 
-        <div className={styles.headerRight}>
+        <div className={styles.headerRight} style={{ position: 'relative', zIndex: 20 }}>
           <div className={styles.helpSection}>
             <div
               className={styles.helpButton}
