@@ -82,25 +82,27 @@
 }
 
 .totalTitle {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.3rem;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.5rem;
+  font-weight: 600;
   line-height: 130%;
+  margin: 0;
 }
 
 .totalPrice {
   color: #ffffff;
-  font-size: 3.6rem;
-  font-weight: 800;
+  font-size: 4.4rem;
+  font-weight: 900;
   line-height: 100%;
   margin: 0;
 }
 
 .totalPriceDescription {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 130%;
+  margin: 0;
 }
 .features {
   display: grid;
