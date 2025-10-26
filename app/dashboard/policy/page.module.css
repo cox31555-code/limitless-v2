@@ -80,24 +80,29 @@
 }
 @media screen and (max-width: 900px) {
   .page {
-    margin: 3.8rem 0;
+    padding: 2rem 2%;
+    gap: 2rem;
   }
   .header {
-    margin: 0 0.6rem;
+    margin: 0;
+    flex-direction: column;
+    gap: 1.6rem;
+    align-items: flex-start;
   }
   .title {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
   .button {
-    width: 34px;
-    height: 34px;
-    padding: 10px 0;
+    width: 100%;
+    max-width: none;
+    height: 4.4rem;
+    padding: 0 2rem;
     font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .button span {
-    display: none;
+    display: inline;
   }
 }
