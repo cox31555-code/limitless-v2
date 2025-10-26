@@ -37,42 +37,67 @@ const PolicyPageClient = ({
         <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
           Your Policy
         </h2>
-        <div style={{ position: "relative" }} ref={dropdownRef}>
+        <div className={styles.buttonWrapper} ref={dropdownRef}>
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className={styles.button}
+            aria-expanded={isDropdownOpen}
           >
-            <Image src="/svg/plus.svg" alt="plus" width={24} height={24} />
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.plusIcon}>
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
             <span>Create a new policy</span>
-            {/* <Image
-              src="/svg/arrow-down-2.svg"
-              alt="dropdown"
-              width={20}
-              height={20}
-              style={{
-                transform: isDropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
-                transition: "transform 0.2s ease",
-              }}
-            /> */}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`${styles.chevron} ${isDropdownOpen ? styles.open : ""}`}>
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
           </button>
           {isDropdownOpen && (
             <div className={styles.dropdown}>
-              <div
-                className={styles.dropdownOption}
-                onClick={() =>
-                  handleOptionClick("/impound/get-quote?payment=false")
-                }
-              >
-                <span>Impound Insurance</span>
+              <div className={styles.dropdownHeader}>
+                <h4>Select Insurance Type</h4>
+                <p>Choose the type of coverage you need</p>
               </div>
-              <div
+              <button
                 className={styles.dropdownOption}
                 onClick={() =>
                   handleOptionClick("/temporary/get-quote?payment=false")
                 }
               >
-                <span>Temporary Insurance</span>
-              </div>
+                <div className={styles.optionIcon}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="1" />
+                    <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m2.12 2.12l4.24 4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m2.12-2.12l4.24-4.24M19.78 19.78l-4.24-4.24m-2.12-2.12l-4.24-4.24M19.78 4.22l-4.24 4.24m-2.12 2.12l-4.24 4.24M23 12h-6m-6 0H5" />
+                  </svg>
+                </div>
+                <div className={styles.optionContent}>
+                  <h5>Temporary Insurance</h5>
+                  <p>Short-term coverage from 1 hour to 30 days</p>
+                </div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.arrowIcon}>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+              <button
+                className={styles.dropdownOption}
+                onClick={() =>
+                  handleOptionClick("/impound/get-quote?payment=false")
+                }
+              >
+                <div className={styles.optionIcon}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="6" width="18" height="14" rx="2" />
+                    <path d="M9 9h6M9 12h6M9 15h6" />
+                  </svg>
+                </div>
+                <div className={styles.optionContent}>
+                  <h5>Impound Insurance</h5>
+                  <p>Protection for impounded or seized vehicles</p>
+                </div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.arrowIcon}>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           )}
         </div>
