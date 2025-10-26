@@ -2,23 +2,35 @@
   <defs>
     <linearGradient id="carGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0388ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#049cff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0270cc;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Main vehicle body (van/car hybrid) -->
-  <rect x="10" y="28" width="44" height="16" rx="3" fill="url(#carGrad)" stroke="url(#carGrad)" stroke-width="1.5"/>
+  <!-- Main body -->
+  <path d="M12 36H52C54 36 55 37 55 39V46C55 48 54 49 52 49H12C10 49 9 48 9 46V39C9 37 10 36 12 36Z" fill="url(#carGrad)"/>
   
-  <!-- Vehicle cabin/windshield -->
-  <path d="M14 24C14 22 15 20 17 20H35C37 20 38 22 38 24V28H14V24Z" fill="url(#carGrad)" stroke="url(#carGrad)" stroke-width="1.5"/>
+  <!-- Cabin/Windshield -->
+  <path d="M16 24C16 22 17 20 19 20H40C42 20 44 22 44 24V36H16V24Z" fill="url(#carGrad)" opacity="0.8"/>
   
-  <!-- Wheels (large and prominent) -->
-  <circle cx="18" cy="46" r="5" fill="none" stroke="url(#carGrad)" stroke-width="2.5"/>
-  <circle cx="18" cy="46" r="2.5" fill="url(#carGrad)"/>
+  <!-- Front bumper -->
+  <rect x="9" y="46" width="46" height="2" rx="1" fill="url(#carGrad)" opacity="0.6"/>
   
-  <circle cx="46" cy="46" r="5" fill="none" stroke="url(#carGrad)" stroke-width="2.5"/>
-  <circle cx="46" cy="46" r="2.5" fill="url(#carGrad)"/>
+  <!-- Left wheel -->
+  <g>
+    <circle cx="18" cy="50" r="6" fill="none" stroke="url(#carGrad)" stroke-width="2.5"/>
+    <circle cx="18" cy="50" r="3" fill="url(#carGrad)"/>
+  </g>
   
-  <!-- Door line -->
-  <line x1="32" y1="28" x2="32" y2="44" stroke="url(#carGrad)" stroke-width="1.5" opacity="0.5"/>
+  <!-- Right wheel -->
+  <g>
+    <circle cx="46" cy="50" r="6" fill="none" stroke="url(#carGrad)" stroke-width="2.5"/>
+    <circle cx="46" cy="50" r="3" fill="url(#carGrad)"/>
+  </g>
+  
+  <!-- Door line (vertical divider) -->
+  <line x1="32" y1="36" x2="32" y2="46" stroke="url(#carGrad)" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Window details -->
+  <rect x="18" y="22" width="8" height="10" rx="1" fill="none" stroke="url(#carGrad)" stroke-width="1.5" opacity="0.4"/>
+  <rect x="32" y="22" width="8" height="10" rx="1" fill="none" stroke="url(#carGrad)" stroke-width="1.5" opacity="0.4"/>
 </svg>
