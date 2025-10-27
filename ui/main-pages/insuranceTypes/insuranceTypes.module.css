@@ -194,7 +194,7 @@
 
 .feature {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.6rem;
 }
 
@@ -202,7 +202,7 @@
   flex-shrink: 0;
   width: 2.4rem;
   height: 2.4rem;
-  margin-top: 0.3rem;
+  margin-top: 0;
 }
 
 .feature span {
