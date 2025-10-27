@@ -1,170 +1,191 @@
 "use client";
 import React from "react";
 import styles from "./questionsAnswered.module.css";
-import { Plus_Jakarta_Sans, Poppins, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700"],
 });
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["500", "400"],
 });
 
-const ProtectedNoClaimsIcon = () => (
-  <svg width="111" height="103" viewBox="0 0 111 103" fill="none">
-    <rect y="17.2734" width="64.7046" height="70.2762" fill="url(#paint0_linear_protected)" fillOpacity="0.48" />
-    <path d="M14 0.125H58.7073L77.1727 15.2758V73.3716H14V0.125Z" fill="#049CFF" />
-    <path d="M58.6882 15.2626L58.6875 0L77.202 15.2626H58.6882Z" fill="#07102D" />
-    <path d="M22.8828 17.2734H46.8799" stroke="#07102D" strokeWidth="3.30359" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M22.8828 24.6562H37.0439" stroke="#07102D" strokeWidth="3.30359" strokeLinecap="round" strokeLinejoin="round" />
-    <ellipse cx="81.7188" cy="73.2142" rx="28.9219" ry="28.8587" fill="url(#paint1_linear_protected)" />
-    <ellipse cx="81.7188" cy="73.2142" rx="28.9219" ry="28.8587" fill="url(#paint2_linear_protected)" />
-    <path d="M74.7422 80.1977L88.7009 66.2305" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round" />
-    <path d="M88.7004 80.1992L74.7422 66.2314" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round" />
+const BackgroundShape = () => (
+  <svg className={styles.backgroundShape} width="353" height="335" viewBox="0 0 353 335" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M476.399 -24.7714L244.478 79.8095V219.251L221.383 196.047L148.767 123.09L108.701 82.8358L244.483 21.5356L340.518 -21.7451L538.497 -111.106C588.772 -133.878 600.909 -200.146 561.916 -239.322L385.523 -416.55C333.53 -468.788 244.478 -431.77 244.478 -357.944V-246.348L0.628817 -136.262L0.628817 -30.6026L96.6639 -73.8834L314.086 -171.881L341.157 -184.074V-289.95L340.513 -289.629V-325.352L476.399 -188.827L416.135 -161.629L416.245 -161.413L159.186 -45.1753L158.971 -45.6068L46.6089 5.12073C44.6761 5.9838 42.8479 6.84689 41.1298 7.82062C17.7103 20.5564 3.64093 43.2231 0.634323 67.3946C-2.26765 90.4927 4.71471 114.88 23.0847 133.336L199.577 310.554C251.57 362.791 340.513 325.773 340.513 251.843V142.188L476.399 80.8883L585 31.9976V-73.8779L476.399 -24.7714Z" fill="url(#paint0_linear_bg)"/>
     <defs>
-      <linearGradient id="paint0_linear_protected" x1="32.3523" y1="17.2734" x2="32.3523" y2="87.5497" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#0388FF" stopOpacity="0" />
-        <stop offset="1" stopColor="#0388FF" />
-      </linearGradient>
-      <linearGradient id="paint1_linear_protected" x1="32.8974" y1="94.0682" x2="90.2956" y2="64.9874" gradientUnits="userSpaceOnUse">
-        <stop stopColor="white" stopOpacity="0.3" />
-        <stop offset="1" stopColor="#0388FF" />
-      </linearGradient>
-      <linearGradient id="paint2_linear_protected" x1="32.8974" y1="94.0682" x2="90.2956" y2="64.9874" gradientUnits="userSpaceOnUse">
-        <stop stopColor="white" stopOpacity="0.3" />
-        <stop offset="1" stopColor="#0388FF" />
+      <linearGradient id="paint0_linear_bg" x1="292.5" y1="-441" x2="292.5" y2="335" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#0168FF"/>
+        <stop offset="1" stopColor="#05AFFF" stopOpacity="0"/>
       </linearGradient>
     </defs>
   </svg>
 );
 
-const GuaranteedReplacementIcon = () => (
-  <svg width="98" height="90" viewBox="0 0 98 90" fill="none">
-    <rect x="46.4609" y="8.29688" width="51.0764" height="81.6311" fill="url(#paint0_linear_replacement)" fillOpacity="0.48" />
-    <path d="M28.9703 52.625L19.0266 52.625L15.1492 58.8713C14.7198 59.5632 14.4922 60.3613 14.4922 61.1757V73.5659C14.4922 74.7725 15.4703 75.7506 16.6768 75.7506L78.3567 75.7506C79.5632 75.7506 80.5413 74.7725 80.5413 73.5659V61.1667C80.5413 60.358 80.3169 59.5652 79.893 58.8765L76.0454 52.625L67.5335 52.625H28.9703Z" fill="#049CFF" />
-    <rect x="17.7891" y="67.5" width="14.8062" height="16.4955" rx="3.27698" fill="#049CFF" />
-    <rect x="62.5156" y="67.5" width="14.8062" height="16.4955" rx="3.27698" fill="#049CFF" />
-    <path d="M25.3279 38.4362C26.1184 36.6645 27.8769 35.5234 29.817 35.5234H64.9696C66.8796 35.5234 68.6168 36.63 69.4242 38.361L76.0757 52.6204H19L25.3279 38.4362Z" fill="#049CFF" />
-    <path d="M36.7812 69.2109H58.2465" stroke="#000822" strokeWidth="1.63849" strokeLinecap="round" />
-    <rect x="20.9609" y="60.9297" width="8.45008" height="4.19977" rx="0.613217" fill="#000822" />
-    <rect x="65.6953" y="60.9297" width="8.45008" height="4.19977" rx="0.613217" fill="#000822" />
-    <ellipse cx="22.0507" cy="22.0349" rx="22.0507" ry="22.0349" fill="#0388FF" />
-    <path d="M32.1797 20.5312C32.1797 18.0018 31.2666 15.5573 29.6082 13.6473C27.9499 11.7373 25.6578 10.4902 23.1533 10.1352C20.6489 9.78017 18.1005 10.3412 15.9767 11.715C13.8528 13.0889 12.2963 15.1833 11.5933 17.6131L13.5081 18.1671C14.0777 16.1986 15.3387 14.5018 17.0593 13.3887C18.78 12.2757 20.8446 11.8212 22.8736 12.1088C24.9026 12.3964 26.7595 13.4068 28.1031 14.9542C29.4466 16.5016 30.1864 18.482 30.1864 20.5312H32.1797Z" stroke="#000822" strokeWidth="2" />
-    <path d="M27.4141 18.7734L30.0794 20.9057C30.5985 21.321 31.336 21.321 31.8551 20.9057L34.5204 18.7734" stroke="#000822" strokeWidth="2" />
-    <path d="M12.1797 23.5312C12.1797 26.0607 13.0928 28.5052 14.7512 30.4152C16.4095 32.3252 18.7016 33.5723 21.206 33.9273C23.7105 34.2823 26.2589 33.7213 28.3827 32.3475C30.5066 30.9736 32.0631 28.8792 32.766 26.4494L30.8401 25.8922C30.2714 27.858 29.0121 29.5525 27.2938 30.664C25.5755 31.7756 23.5136 32.2295 21.4874 31.9423C19.4612 31.655 17.6068 30.646 16.2651 29.1007C14.9234 27.5554 14.1846 25.5777 14.1846 23.5312H12.1797Z" stroke="#000822" strokeWidth="2" />
-    <path d="M16.6719 25.0703L14.0065 22.938C13.4875 22.5228 12.7499 22.5228 12.2308 22.938L9.5655 25.0703" stroke="#000822" strokeWidth="2" />
-    <defs>
-      <linearGradient id="paint0_linear_replacement" x1="71.9991" y1="8.29687" x2="71.9991" y2="89.9279" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#0388FF" stopOpacity="0" />
-        <stop offset="1" stopColor="#0388FF" />
-      </linearGradient>
-    </defs>
-  </svg>
+const FAQIllustration = () => (
+  <div className={styles.faqIllustration}>
+    <div className={styles.gradientBox1}></div>
+    <div className={styles.gradientBox2}></div>
+    <svg className={styles.documentCard} width="416" height="142" viewBox="0 0 416 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="415.043" height="141.036" fill="url(#paint0_linear_doc)"/>
+      <path d="M156.866 61.4199H226.548" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M156.866 78.8496H347.766" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
+      <defs>
+        <linearGradient id="paint0_linear_doc" x1="-139.11" y1="143.56" x2="454.073" y2="-15.1879" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#07102D"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div className={styles.smallDocWrapper}>
+      <div className={styles.smallDocBg}></div>
+      <svg className={styles.smallDoc} width="123" height="137" viewBox="0 0 123 137" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="122.481" height="136.646" fill="#000822"/>
+        <path d="M19.2969 25.6904H55.2312" stroke="#0388FF" strokeWidth="3.49907" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M19.2969 39.4893H74.2776" stroke="#0388FF" strokeWidth="3.49907" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </div>
+    <svg className={styles.questionCircle} width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="41.6841" cy="41.7111" rx="41.6841" ry="41.7111" fill="url(#paint0_linear_circle)"/>
+      <defs>
+        <linearGradient id="paint0_linear_circle" x1="-28.6804" y1="71.8527" x2="54.1413" y2="30.0099" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0.3"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <svg className={styles.questionMark} width="22" height="37" viewBox="0 0 22 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.70748 26.5296V26.3174C7.73243 24.0653 7.98186 22.2731 8.45578 20.9407C8.9297 19.6083 9.60317 18.5295 10.4762 17.7041C11.3492 16.8787 12.3968 16.1182 13.619 15.4226C14.3549 14.9981 15.0159 14.497 15.602 13.9192C16.1882 13.3297 16.6497 12.6517 16.9864 11.8853C17.3356 11.1189 17.5102 10.2699 17.5102 9.33843C17.5102 8.18292 17.2234 7.18069 16.6497 6.33174C16.076 5.48279 15.309 4.82839 14.3486 4.36855C13.3883 3.9087 12.322 3.67878 11.1497 3.67878C10.127 3.67878 9.14172 3.87922 8.19388 4.28011C7.24603 4.68101 6.45408 5.31182 5.81803 6.17256C5.18197 7.0333 4.81406 8.15934 4.71429 9.55067H0C0.0997733 7.54621 0.648526 5.83063 1.64626 4.40392C2.65646 2.97722 3.98469 1.88655 5.63095 1.13193C7.28968 0.37731 9.12925 0 11.1497 0C13.3447 0 15.2528 0.412683 16.8741 1.23805C18.5079 2.06342 19.7676 3.19535 20.6531 4.63384C21.551 6.07234 22 7.71128 22 9.55067C22 10.8477 21.788 12.0209 21.3639 13.0703C20.9524 14.1197 20.3537 15.057 19.568 15.8824C18.7948 16.7078 17.8594 17.4388 16.7619 18.0755C15.6644 18.724 14.7851 19.4079 14.1241 20.1271C13.4632 20.8346 12.983 21.6777 12.6837 22.6563C12.3844 23.635 12.2222 24.8553 12.1973 26.3174V26.5296H7.70748ZM10.102 37C9.17914 37 8.38719 36.6875 7.72619 36.0626C7.06519 35.4377 6.73469 34.689 6.73469 33.8164C6.73469 32.9439 7.06519 32.1952 7.72619 31.5703C8.38719 30.9453 9.17914 30.6329 10.102 30.6329C11.0249 30.6329 11.8169 30.9453 12.4779 31.5703C13.1389 32.1952 13.4694 32.9439 13.4694 33.8164C13.4694 34.3942 13.3135 34.9248 13.0017 35.4082C12.7024 35.8916 12.2971 36.2808 11.7857 36.5755C11.2868 36.8585 10.7256 37 10.102 37Z" fill="#000822"/>
+    </svg>
+  </div>
 );
 
-const HireVehicleIcon = () => (
-  <svg width="132" height="113" viewBox="0 0 132 113" fill="none">
-    <rect width="61.3788" height="66.6641" fill="url(#paint0_linear_hire)" fillOpacity="0.48" />
-    <path d="M12.7656 0H55.175L72.6913 14.372V69.4813H12.7656V0Z" fill="#049CFF" />
-    <path d="M22.7344 29.9668C22.9588 27.0769 25.0071 21.2969 31.4054 21.2969C37.8037 21.2969 39.7521 27.0769 39.9265 29.9668" stroke="#000822" strokeWidth="2.50172" strokeLinecap="round" />
-    <path d="M31.3223 8.62604C34.4426 8.62604 36.9716 11.155 36.9717 14.2744C36.9717 17.3939 34.4427 19.9229 31.3223 19.9229C28.2019 19.9228 25.6729 17.3939 25.6729 14.2744C25.6729 11.155 28.202 8.62604 31.3223 8.62604Z" stroke="#000822" strokeWidth="2.50172" />
-    <path d="M55.1569 14.3609L55.1562 -0.117188L72.7192 14.3609H55.1569Z" fill="#0388FF" />
-    <path d="M20.4766 54.25H40.905" stroke="#000822" strokeWidth="2.95334" strokeLinecap="round" />
-    <path d="M20.4766 61.4922H53.3305" stroke="#000822" strokeWidth="2.95334" strokeLinecap="round" />
-    <ellipse cx="81.223" cy="48.7047" rx="24.9414" ry="24.9234" fill="#0388FF" />
-    <path d="M71.5156 49.5068L75.879 55.4777C76.852 56.8086 78.848 56.7806 79.783 55.4229L88.989 42.0547" stroke="#000822" strokeWidth="3.93069" strokeLinecap="round" />
-    <defs>
-      <linearGradient id="paint0_linear_hire" x1="30.6894" y1="0" x2="30.6894" y2="66.6641" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#0388FF" stopOpacity="0" />
-        <stop offset="1" stopColor="#0388FF" />
-      </linearGradient>
-    </defs>
-  </svg>
+const ServiceIcon = () => (
+  <div className={styles.serviceIcon}>
+    <div className={styles.serviceGradient}></div>
+    <svg width="90" height="114" viewBox="0 0 90 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M80.9884 33.7095L116.435 50.684L80.9884 68.7257L45.5664 50.6851L80.9884 33.7095Z" fill="#049CFF"/>
+      <path d="M45.5469 95.9288V50.6689L80.9809 68.7172V114L45.5469 95.9288Z" fill="#049CFF"/>
+      <path d="M116.413 95.9762V50.6689L80.9805 68.7172V113.998L116.413 95.9762Z" fill="#049CFF"/>
+      <path d="M72.894 100.317L53.6367 90.9795" stroke="#010619" strokeWidth="3.76508" strokeLinecap="round"/>
+    </svg>
+    <svg className={styles.checkBadge} width="37" height="42" viewBox="0 0 37 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M105.867 32.5413L96.7755 36.7966C93.5565 38.3033 91.5 41.5365 91.5 45.0907V57.4783C91.5 60.3314 92.8297 63.0215 95.0965 64.7541L103.784 71.3943C106.985 73.8414 111.41 73.9083 114.684 71.5589L124.179 64.7453C126.577 63.0251 127.998 60.2554 127.998 57.305V45.0907C127.998 41.5365 125.942 38.3033 122.723 36.7966L113.631 32.5413C111.171 31.3898 108.327 31.3898 105.867 32.5413Z" fill="url(#paint0_linear_badge)"/>
+      <path d="M103.746 51.1187L107.101 55.7365C107.934 56.882 109.649 56.858 110.449 55.6895L117.667 45.1465" stroke="#000822" strokeWidth="3.01206" strokeLinecap="round"/>
+      <defs>
+        <linearGradient id="paint0_linear_badge" x1="78.9438" y1="69.3019" x2="117.854" y2="53.2725" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0.3"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+);
+
+const SupportIcon = () => (
+  <div className={styles.supportIcon}>
+    <div className={styles.supportGradient}></div>
+    <svg width="111" height="112" viewBox="0 0 111 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M79.2989 79.9023C55.527 79.9023 47.9167 101.532 47.083 112.347H110.958C110.31 101.532 103.071 79.9023 79.2989 79.9023Z" fill="#049CFF"/>
+      <path d="M100.147 55.1973C100.147 66.9043 90.6852 76.3947 79.0134 76.3947C67.3417 76.3947 57.8799 66.9043 57.8799 55.1973C57.8799 43.4904 67.3417 34 79.0134 34C90.6852 34 100.147 43.4904 100.147 55.1973Z" fill="#049CFF"/>
+      <path d="M127.321 92.6377C131.394 92.6377 134.695 95.9494 134.695 100.035V121.077C134.695 125.162 131.394 128.474 127.321 128.474H108.095L104.68 134.945C103.954 136.322 101.991 136.334 101.248 134.966L97.7225 128.476H93.5556C89.4827 128.474 86.1809 125.162 86.1809 121.077V100.035C86.1809 95.9494 89.4827 92.6377 93.5556 92.6377H127.321Z" fill="#000822"/>
+      <ellipse cx="96.3793" cy="101.978" rx="2.06117" ry="2.06739" fill="#0388FF"/>
+      <ellipse cx="103.813" cy="101.978" rx="2.06117" ry="2.06739" fill="#0388FF"/>
+      <ellipse cx="111.262" cy="101.978" rx="2.06117" ry="2.06739" fill="#0388FF"/>
+    </svg>
+    <svg className={styles.checkCircle} width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="21.413" cy="21.4654" rx="21.413" ry="21.4654" fill="url(#paint0_linear_support)"/>
+      <path d="M13.082 22.2199L17.0197 27.6247C17.7604 28.6414 19.284 28.62 19.9959 27.5829L28.0834 15.8018" stroke="#000822" strokeWidth="2.99392" strokeLinecap="round"/>
+      <defs>
+        <linearGradient id="paint0_linear_support" x1="-14.7331" y1="37.0383" x2="27.8433" y2="15.5666" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0.3"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
 );
 
 const ArrowIcon = () => (
-  <svg width="27" height="28" viewBox="0 0 27 28" fill="none">
-    <path
-      d="M9.95312 22.7669L17.2313 15.3155C18.0908 14.4355 18.0908 12.9955 17.2313 12.1155L9.95312 4.66406"
-      stroke="white"
-      strokeWidth="1.63724"
-      strokeMiterlimit="10"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+  <svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.95 22.766L17.228 15.3145C18.0874 14.4345 18.0874 12.9945 17.228 12.1145L9.95 4.66309" stroke="white" strokeWidth="1.63724" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
-const servicesData = [
-  {
-    title: "Protected No Claims",
-    description: "Get started quickly and easily with our streamlined application process.",
-    icon: "protected",
-  },
-  {
-    title: "Guaranteed Replacement Car",
-    description: "Get started quickly and easily with our streamlined application process.",
-    icon: "replacement",
-  },
-  {
-    title: "Hire Vehicle cover",
-    description: "Get started quickly and easily with our streamlined application process.",
-    icon: "hire",
-  },
-];
-
-const getIcon = (type) => {
-  switch (type) {
-    case "protected":
-      return <ProtectedNoClaimsIcon />;
-    case "replacement":
-      return <GuaranteedReplacementIcon />;
-    case "hire":
-      return <HireVehicleIcon />;
-    default:
-      return null;
-  }
-};
-
 const QuestionsAnswered = () => {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
-      <div className={styles.headerSection}>
-        <h2 className={`${styles.header} ${plusJakartaSans.className}`}>
-          Need <span>more?</span>
-        </h2>
-        <p className={`${styles.subtitle} ${poppins.className}`}>
-          Create your perfect car insurance package with our optional services.
-        </p>
-      </div>
+      <BackgroundShape />
+      
+      <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+        Need Questions <span>Answered?</span>
+      </h2>
 
-      <div className={styles.wrapper}>
-        {servicesData.map((service, index) => (
-          <div key={index} className={styles.question}>
-            <div className={styles.iconContainer}>{getIcon(service.icon)}</div>
-            <div className={styles.contentContainer}>
-              <div className={styles.content}>
-                <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-                  {service.title}
-                </h3>
-                <p className={`${styles.description} ${manrope.className}`}>
-                  {service.description}
-                </p>
-              </div>
-              <div className={styles.iconWrapper}>
-                <ArrowIcon />
-              </div>
-            </div>
+      <div className={styles.cardsGrid}>
+        <div className={styles.faqCard}>
+          <button 
+            className={styles.arrowButton}
+            onClick={() => router.push('/FAQ')}
+            aria-label="View FAQ"
+          >
+            <ArrowIcon />
+          </button>
+          
+          <div className={styles.cardContent}>
+            <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
+              Frequently Asked Questions
+            </h3>
+            <p className={`${styles.cardDescription} ${manrope.className}`}>
+              Have questions? Check our FAQ to see if your question has  already been addressed before.
+            </p>
           </div>
-        ))}
+
+          <FAQIllustration />
+        </div>
+
+        <div className={styles.serviceCard}>
+          <ServiceIcon />
+          
+          <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
+            Learn More About Our Services
+          </h3>
+          <p className={`${styles.cardDescription} ${manrope.className}`}>
+            Buying insurance can be a stressful experience! Feel free to read our documentation and guides on each insurance we provide to make your decision simpler.
+          </p>
+
+          <button 
+            className={styles.arrowButton}
+            onClick={() => router.push('/about-us')}
+            aria-label="Learn more"
+          >
+            <ArrowIcon />
+          </button>
+        </div>
+
+        <div className={styles.supportCard}>
+          <SupportIcon />
+          
+          <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
+            Real Human  Customer  Support
+          </h3>
+          <p className={`${styles.cardDescription} ${manrope.className}`}>
+            Can't find your question? Feel free to email our support team and we will get back to you as soon as possible.
+          </p>
+
+          <button 
+            className={styles.arrowButton}
+            onClick={() => router.push('/contact')}
+            aria-label="Contact support"
+          >
+            <ArrowIcon />
+          </button>
+        </div>
       </div>
     </div>
   );
