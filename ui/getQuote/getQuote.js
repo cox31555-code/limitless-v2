@@ -192,7 +192,7 @@ const GetQuote = ({ skipDuration = false, onExpand }) => {
 
             {/* Quick Duration Options */}
             <div className={styles.durationSection}>
-              <div className={styles.sectionLabel}>How long will you need it?</div>
+              <div className={styles.sectionLabel}>Pick your perfect duration</div>
               <div className={styles.quickOptions}>
                 {["1 Day", "2 Days", "1 Week"].map((option) => (
                   <button
@@ -218,7 +218,7 @@ const GetQuote = ({ skipDuration = false, onExpand }) => {
 
             {/* Custom Duration */}
             <div className={styles.customDurationSection}>
-              <div className={styles.sectionLabel}>Enter a custom duration</div>
+              <div className={styles.sectionLabel}>Want something specific?</div>
 
               {/* Duration Type Selection */}
               <div className={styles.durationTypeGrid}>
