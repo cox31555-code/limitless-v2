@@ -37,10 +37,6 @@
   font-weight: 700;
   line-height: 130%;
   margin: 0;
-  background: linear-gradient(135deg, #0270cc 0%, #0388ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .quickQuoteSubtitle {
