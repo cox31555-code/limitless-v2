@@ -43,6 +43,7 @@
 }
 .table {
   width: 100%;
+  display: block;
 }
 
 .tableHeader {
@@ -62,7 +63,6 @@
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.6rem;
   width: 100%;
-  border-collapse: separate;
 }
 
 .tableRow {
