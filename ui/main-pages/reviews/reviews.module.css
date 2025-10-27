@@ -401,6 +401,16 @@
     height: 2.38rem;
   }
 
+  .largeStars > div > div {
+    width: 2.38rem;
+    height: 2.38rem;
+  }
+
+  .largeStars > div > svg {
+    width: 1.96rem;
+    height: 1.96rem;
+  }
+
   .reviewCard {
     padding: 1.4rem;
   }
