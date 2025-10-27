@@ -1,11 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./reviews.module.css";
-import { Plus_Jakarta_Sans, Manrope, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Manrope, Playfair_Display } from "next/font/google";
+import Image from "next/image";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const manrope = Manrope({
@@ -13,201 +14,89 @@ const manrope = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
-const inter = Inter({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],
 });
 
 const reviewsData = [
   {
     id: 1,
-    text: "Best temporary car insurance I've found. Quick quote, instant cover, and genuinely affordable. No hassle, no hidden fees. Absolutely brilliant service!",
-    name: "Marcus Thompson",
-    date: "2024-11-20",
-    verified: true,
-    rating: 5,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    title: "CEO Lorem Ipsum",
+    avatar: "/svg/avatar-1.svg",
   },
   {
     id: 2,
-    text: "Needed cover for a week and Limitless Cover came through perfectly. Easy to use platform, fair pricing, and responsive customer support.",
-    name: "Jennifer Hayes",
-    date: "2024-10-18",
-    verified: true,
-    rating: 5,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    title: "CEO Lorem Ipsum",
+    avatar: "/svg/avatar-2.svg",
   },
   {
     id: 3,
-    text: "Excellent for short-term insurance needs. The process was straightforward and they delivered exactly what was promised. Very impressed!",
-    name: "Anthony Clarke",
-    date: "2024-10-05",
-    verified: true,
-    rating: 5,
-  },
-  {
-    id: 4,
-    text: "Top-notch service from start to finish. Got my temporary cover sorted in minutes, great rates, and the claims process was smooth.",
-    name: "Victoria Rodriguez",
-    date: "2024-09-28",
-    verified: true,
-    rating: 5,
-  },
-  {
-    id: 5,
-    text: "Really pleased with Limitless Cover. Competitive pricing for temporary cover and they actually respond to queries promptly.",
-    name: "Michael Brown",
-    date: "2024-09-12",
-    verified: true,
-    rating: 5,
-  },
-  {
-    id: 6,
-    text: "Outstanding experience! Got insured for a weekend trip without any complications. Professional, reliable, and genuinely good value.",
-    name: "Sophie Williams",
-    date: "2024-08-30",
-    verified: true,
-    rating: 5,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    title: "CEO Lorem Ipsum",
+    avatar: "/svg/avatar-3.svg",
   },
 ];
 
 const Reviews = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(3);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setCardsPerView(1);
-      } else if (window.innerWidth < 1200) {
-        setCardsPerView(2);
-      } else {
-        setCardsPerView(3);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const maxIndex = Math.max(0, reviewsData.length - cardsPerView);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1 <= maxIndex ? prev + 1 : 0));
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 >= 0 ? prev - 1 : maxIndex));
-  };
-
-  const visibleReviews = reviewsData.slice(currentIndex, currentIndex + cardsPerView);
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.headerSection}>
-          <div>
-            <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-              Trusted by Thousands of Drivers
-            </h2>
-            <p className={`${styles.subtitle} ${manrope.className}`}>
-              Real reviews from our satisfied customers
-            </p>
-          </div>
-
-          <div className={styles.badgeSection}>
-            <div className={styles.trustpilotBadge}>
-              <div className={styles.badgeContent}>
-                <div className={styles.logoWrapper}>
-                  <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-                    <path d="M20 0C8.96 0 0 8.96 0 20s8.96 20 20 20 20-8.96 20-20S31.04 0 20 0zm0 36c-8.82 0-16-7.18-16-16s7.18-16 16-16 16 7.18 16 16-7.18 16-16 16z" fill="#00DBC1"/>
-                    <path d="M28 14L17 25l-5-5" stroke="#00DBC1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <div className={styles.badgeInfo}>
-                  <div className={styles.ratingDisplay}>
-                    <span className={`${styles.ratingNumber} ${inter.className}`}>4.8</span>
-                    <div className={styles.starsRow}>
-                      {[1, 2, 3, 4, 5].map((item) => (
-                        <span key={item} className={styles.star}>★</span>
-                      ))}
-                    </div>
-                  </div>
-                  <p className={`${styles.reviewCount} ${manrope.className}`}>
-                    892 verified reviews
-                  </p>
-                </div>
-              </div>
+        <div className={styles.leftSection}>
+          <h2 className={`${styles.title} ${playfairDisplay.className}`}>
+            Trustpilot Reviews
+          </h2>
+          
+          <div className={styles.trustpilotInfo}>
+            <Image
+              src="https://api.builder.io/api/v1/image/assets/TEMP/8904fd24d5f06ad1009ebb79115c37f65283e748?width=282"
+              alt="Trustpilot"
+              width={141}
+              height={35}
+              className={styles.trustpilotLogo}
+            />
+            
+            <div className={styles.ratingInfo}>
+              <span className={`${styles.rating} ${manrope.className}`}>Rated 4.7</span>
+              <span className={styles.divider}></span>
+              <span className={`${styles.reviewCount} ${manrope.className}`}>134 Reviews</span>
             </div>
           </div>
         </div>
 
-        <div className={styles.carouselWrapper}>
-          <button 
-            className={`${styles.navButton} ${styles.prevBtn}`}
-            onClick={prevSlide}
-            aria-label="Previous reviews"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M15 19l-7-7 7-7"/>
-            </svg>
-          </button>
-
-          <div className={styles.cardsGrid}>
-            {visibleReviews.map((review) => (
-              <div key={review.id} className={styles.reviewCard}>
-                <div className={styles.cardTop}>
-                  <div className={styles.starsRow}>
-                    {Array(review.rating).fill(0).map((_, i) => (
-                      <span key={i} className={styles.filledStar}>★</span>
-                    ))}
-                  </div>
-                </div>
-
-                <p className={`${styles.reviewText} ${inter.className}`}>
-                  {review.text}
-                </p>
-
-                <div className={styles.cardBottom}>
-                  <div className={styles.authorInfo}>
-                    <p className={`${styles.authorName} ${inter.className}`}>
-                      {review.name}
-                    </p>
-                    {review.verified && (
-                      <div className={styles.verifiedBadge}>
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                          <path d="M8 1L10 6H15L11 9L13 14L8 11L3 14L5 9L1 6H6L8 1Z" fill="#00DBC1" />
-                        </svg>
-                        <span>Verified</span>
-                      </div>
-                    )}
-                  </div>
-                  <p className={`${styles.reviewDate} ${manrope.className}`}>
-                    {new Date(review.date).toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })}
+        <div className={styles.cardsGrid}>
+          {reviewsData.map((review) => (
+            <div key={review.id} className={styles.reviewCard}>
+              <Image
+                src="https://api.builder.io/api/v1/image/assets/TEMP/1fb1b840a03b018d6b74df351c3c4010974d3a92?width=190"
+                alt="5 stars"
+                width={95}
+                height={18}
+                className={styles.stars}
+              />
+              
+              <p className={`${styles.reviewText} ${manrope.className}`}>
+                {review.text}
+              </p>
+              
+              <div className={styles.authorSection}>
+                <div className={styles.authorInfo}>
+                  <p className={`${styles.authorName} ${plusJakartaSans.className}`}>
+                    {review.name}
+                  </p>
+                  <p className={`${styles.authorTitle} ${manrope.className}`}>
+                    {review.title}
                   </p>
                 </div>
+                
+                <div className={styles.avatarCircle}></div>
               </div>
-            ))}
-          </div>
-
-          <button 
-            className={`${styles.navButton} ${styles.nextBtn}`}
-            onClick={nextSlide}
-            aria-label="Next reviews"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M9 5l7 7-7 7"/>
-            </svg>
-          </button>
-        </div>
-
-        <div className={styles.dotsContainer}>
-          {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-            <button
-              key={idx}
-              className={`${styles.dot} ${currentIndex === idx ? styles.activeDot : ""}`}
-              onClick={() => setCurrentIndex(idx)}
-              aria-label={`Go to review set ${idx + 1}`}
-            />
+            </div>
           ))}
         </div>
       </div>
