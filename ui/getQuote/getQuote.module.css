@@ -537,66 +537,80 @@
 .numberSelector {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.8rem;
-  border-radius: 0.8rem;
-  background: #ECF0FE;
-  backdrop-filter: blur(22px);
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .numberButton {
-  display: flex;
-  padding: 1rem 2.4rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  padding: 1.4rem 1rem;
   border-radius: 0.6rem;
-  border: 1px solid rgba(0, 8, 34, 0.14);
-  background: transparent;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  color: #000822;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #ffffff;
+  color: #2c3e50;
   font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.056rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  min-width: 6.7rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
 .numberButton:hover {
-  background: rgba(255, 255, 255, 0.5);
-  border-color: rgba(0, 8, 34, 0.25);
+  border-color: rgba(3, 136, 255, 0.25);
+  background: rgba(3, 136, 255, 0.06);
+  color: #2c3e50;
 }
 
 .numberButton.selectedNumber {
-  background: #06112B;
   border-color: #06112B;
-  color: #0388FF;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  background: #06112B;
+  color: white;
+  font-weight: 600;
 }
 
 .moreOptionsDropdown {
   flex: 0 0 auto;
-  min-width: 12rem;
 }
 
 .moreOptionsDropdown > div {
-  height: 4.8rem;
+  display: flex;
+  align-items: center;
 }
 
 .moreOptionsDropdown > div > select,
 .moreOptionsDropdown > div > div {
-  height: 100%;
+  padding: 1.4rem 1rem;
   border-radius: 0.6rem;
-  border: 1px solid rgba(0, 8, 34, 0.14);
-  background: transparent;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #ffffff;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #000822;
-  padding: 1rem 3.2rem 1rem 1.6rem;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: auto;
+  padding-right: 2rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%232c3e50' d='M3.5 5.5L8 11l4.5-5.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-left: 1rem;
+}
+
+.moreOptionsDropdown > div > select:hover,
+.moreOptionsDropdown > div > div:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background-color: rgba(3, 136, 255, 0.06);
+}
+
+.moreOptionsDropdown > div > select:focus,
+.moreOptionsDropdown > div > div:focus {
+  border-color: rgba(3, 136, 255, 0.25);
+  outline: none;
 }
 
 @keyframes slideDown {
@@ -608,6 +622,13 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Remove browser default dropdown arrow */
+.moreOptionsDropdown > div > select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 @keyframes fadeIn {
