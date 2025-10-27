@@ -58,23 +58,6 @@ const Header = ({ page }) => {
 
   return (
     <div className={styles.headerContainer}>
-      <div className={styles.animatedLogosContainer}>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F7b166ace3e774df2a803c723c4d45340?format=webp&width=800"
-          alt="Logo animation"
-          className={styles.logoTopLeft}
-        />
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F7b166ace3e774df2a803c723c4d45340?format=webp&width=800"
-          alt="Logo animation"
-          className={styles.logoTopMiddle}
-        />
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F7b166ace3e774df2a803c723c4d45340?format=webp&width=800"
-          alt="Logo animation"
-          className={styles.logoTopRight}
-        />
-      </div>
       <div className={styles.headerContent}>
         <div className={styles.logoWrapper}>
           <Image
