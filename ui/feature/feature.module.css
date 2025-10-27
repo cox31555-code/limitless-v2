@@ -21,8 +21,6 @@
   gap: 2rem;
   position: relative;
   flex: 1;
-  padding: 2.2rem 2.8rem;
-  border: 2px solid rgba(4, 156, 255, 0.15);
   overflow: visible;
 }
 
