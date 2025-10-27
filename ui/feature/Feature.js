@@ -39,7 +39,7 @@ const Feature = ({ img, icon, title, description, imgClassName }) => {
         <div className={styles.iconContainer}>
           {getIconComponent(icon)}
         </div>
-      ) : (
+      ) : img ? (
         <Image
           src={img.src}
           alt={img.alt}
@@ -47,7 +47,7 @@ const Feature = ({ img, icon, title, description, imgClassName }) => {
           height={img.height}
           className={imgClassName || styles.img}
         />
-      )}
+      ) : null}
       <div className={`${styles.content}`}>
         <h3
           className={`${styles.title} ${plusJakartaSans.className} ${
