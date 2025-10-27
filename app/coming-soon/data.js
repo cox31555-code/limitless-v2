@@ -15,14 +15,14 @@ export const features = [
   {
     img: {
       src: "/svg/comming-soon-2.svg",
-      alt: "feature1",
+      alt: "feature2",
       width: 155,
       height: 88,
     },
-    title: "Food Delivery Insurance",
+    title: "Annual Insurance",
     description:
-      "Looking to become or continue your journey in the courier industry? Our food delivery insurance is an essential and cost-effective way to ensure you're properly covered while transporting services, whether you're using your own vehicle or working for multiple delivery platforms.",
-    href: "/coming-soon",
+      "Get year-round protection with our comprehensive annual car insurance policies. Our flexible coverage options are designed for drivers who want reliable, long-term security at competitive rates. With quick, hassle-free setup and transparent pricing, you get the peace of mind you deserve—backed by our commitment to excellent customer service.",
+    href: "/annual",
     button: "Learn more",
   },
   {
