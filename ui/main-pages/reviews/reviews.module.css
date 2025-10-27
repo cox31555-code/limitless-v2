@@ -329,6 +329,16 @@
     height: 2.72rem;
   }
 
+  .largeStars > div > div {
+    width: 2.72rem;
+    height: 2.72rem;
+  }
+
+  .largeStars > div > svg {
+    width: 2.24rem;
+    height: 2.24rem;
+  }
+
   .excellent {
     font-size: 1.6rem;
   }
