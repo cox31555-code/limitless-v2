@@ -199,8 +199,10 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  max-height: 1000px;
+  max-height: 0;
   overflow: hidden;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes expandAccordion {
@@ -218,6 +220,9 @@
 
 .expanded {
   visibility: visible;
+  opacity: 1;
+  max-height: 1000px;
+  animation: expandAccordion 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Step Header */
