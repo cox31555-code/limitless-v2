@@ -17,7 +17,7 @@ const OurBenifits = ({ benifits, title, description }) => {
     <div className={`${styles.container}`}>
       <div className={styles.top}>
         <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          {withoutLastTwoWords} <span>{lastTwoWords}</span>
+          <p>{title}</p>
         </h2>
         {description && <p className={styles.description}>{description}</p>}
       </div>
