@@ -170,28 +170,16 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
+  gap: 2.5rem;
   flex: 1;
-}
-
-.titleWrapper {
-  margin-bottom: 0.4rem;
 }
 
 .title {
   font-size: 2.8rem;
   font-weight: 700;
-  line-height: 110%;
+  line-height: 100%;
   color: #000822;
-  margin: 0 0 0.8rem 0;
-}
-
-.description {
-  font-size: 1.4rem;
-  color: #0388ff;
-  font-weight: 500;
   margin: 0;
-  line-height: 140%;
 }
 
 .featureList {
