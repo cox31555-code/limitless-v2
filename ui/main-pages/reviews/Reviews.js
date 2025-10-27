@@ -277,6 +277,8 @@ const Reviews = () => {
   };
 
   const displayedReviews = reviewsData.slice(currentIndex, currentIndex + reviewsPerPage);
+  const isAtStart = currentIndex === 0;
+  const isAtEnd = currentIndex >= maxIndex;
 
   return (
     <div className={styles.wrapper}>
