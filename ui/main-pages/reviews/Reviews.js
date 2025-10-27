@@ -317,7 +317,7 @@ const Reviews = () => {
           </div>
 
           <div className={styles.reviewsContainer}>
-            {reviewsData.map((review) => (
+            {displayedReviews.map((review) => (
               <ReviewCard key={review.id} review={review} />
             ))}
           </div>
