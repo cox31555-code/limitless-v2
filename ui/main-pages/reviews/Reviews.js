@@ -1,172 +1,141 @@
 "use client";
-import React, { useState } from "react";
+import React, { memo } from "react";
 import styles from "./reviews.module.css";
-import { Poppins, Roboto, Jost } from "next/font/google";
+import { Plus_Jakarta_Sans, Manrope, Playfair_Display, Poppins, Roboto } from "next/font/google";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400"],
 });
-
-const jost = Jost({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
-
-const StarIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="20" height="20" fill="#00B67A"/>
-    <path d="M10 13.6761L13.0417 12.8616L14.3125 17L10 13.6761ZM17 8.32704H11.6458L10 3L8.35417 8.32704H3L7.33334 11.6289L5.6875 16.956L10.0208 13.6541L12.6875 11.6289L17 8.32704Z" fill="white"/>
-  </svg>
-);
-
-const LargeStarIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="40" height="40" fill="#00B67A"/>
-    <path d="M20 27.3522L26.0833 25.7233L28.625 34L20 27.3522ZM34 16.6541H23.2917L20 6L16.7083 16.6541H6L14.6667 23.2579L11.375 33.9119L20.0417 27.3082L25.375 23.2579L34 16.6541Z" fill="white"/>
-  </svg>
-);
-
-const TrustpilotLogoIcon = () => (
-  <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12.6792 18.3019L18.1887 16.9057L20.4906 24L12.6792 18.3019ZM25.3585 9.13208H15.6604L12.6792 0L9.69811 9.13208H0L7.84906 14.7925L4.86792 23.9245L12.717 18.2641L17.5472 14.7925L25.3585 9.13208Z" fill="#00B67A"/>
-  </svg>
-);
-
-const LeftArrowIcon = () => (
-  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M21.7402 13.4789H4.53011M4.53011 13.4789C4.53011 13.4789 9.4084 10.2707 10.3997 7.60938M4.53011 13.4789C4.53011 13.4789 8.8427 16.4935 10.3997 19.3485" stroke="#1B1464" strokeWidth="2.17391" strokeLinecap="square"/>
-  </svg>
-);
-
-const RightArrowIcon = () => (
-  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4.34766 13.4789H21.5578M21.5578 13.4789C21.5578 13.4789 16.6795 10.2707 15.6882 7.60938M21.5578 13.4789C21.5578 13.4789 17.2452 16.4935 15.6882 19.3485" stroke="#E9E9EA" strokeWidth="2.17391" strokeLinecap="square"/>
-  </svg>
-);
 
 const reviewsData = [
   {
     id: 1,
-    title: "Best on the market",
     text: "I love this product because the support is great. Please ...",
-    author: "Worldtraveler",
-    date: "2 days ago",
+    name: "Jaxson Philips",
+    timestamp: "2 days ago",
   },
   {
     id: 2,
-    title: "Best on the market",
     text: "I love this product because the support is great. Please ...",
-    author: "Worldtraveler",
-    date: "2 days ago",
+    name: "Jaxson Philips",
+    timestamp: "14 days ago",
   },
   {
     id: 3,
-    title: "Best on the market",
     text: "I love this product because the support is great. Please ...",
-    author: "Worldtraveler",
-    date: "2 days ago",
+    name: "Jaxson Philips",
+    timestamp: "5 hours ago",
+  },
+  {
+    id: 4,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    timestamp: "1 day ago",
+  },
+  {
+    id: 5,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    timestamp: "3 days ago",
+  },
+  {
+    id: 6,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    timestamp: "1 week ago",
   },
 ];
 
+const FiveStarsIcon = memo(() => (
+  <svg width="120" height="21" viewBox="0 0 120 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.6667 0H0V20.6667H20.6667V0Z" fill="#219653"/>
+    <path d="M10.3329 13.9283L13.476 13.1318L14.7892 17.179L10.3329 13.9283ZM17.5663 8.69703H12.0336L10.3329 3.4873L8.63225 8.69703H3.09961L7.57739 11.9262L5.87669 17.1359L10.3545 13.9068L13.11 11.9262L17.5663 8.69703Z" fill="white"/>
+    <path d="M45.3327 0H24.666V20.6667H45.3327V0Z" fill="#219653"/>
+    <path d="M34.999 13.9283L38.142 13.1318L39.4552 17.179L34.999 13.9283ZM42.2323 8.69703H36.6996L34.999 3.4873L33.2983 8.69703H27.7656L32.2434 11.9262L30.5427 17.1359L35.0205 13.9068L37.776 11.9262L42.2323 8.69703Z" fill="white"/>
+    <path d="M70.0007 0H49.334V20.6667H70.0007V0Z" fill="#219653"/>
+    <path d="M59.6689 13.9283L62.8119 13.1318L64.1251 17.179L59.6689 13.9283ZM66.9022 8.69703H61.3696L59.6689 3.4873L57.9682 8.69703H52.4355L56.9133 11.9262L55.2126 17.1359L59.6904 13.9068L62.446 11.9262L66.9022 8.69703Z" fill="white"/>
+    <path d="M94.6667 0H74V20.6667H94.6667V0Z" fill="#219653"/>
+    <path d="M84.3329 13.9283L87.476 13.1318L88.7892 17.179L84.3329 13.9283ZM91.5663 8.69703H86.0336L84.3329 3.4873L82.6322 8.69703H77.0996L81.5774 11.9262L79.8767 17.1359L84.3545 13.9068L87.11 11.9262L91.5663 8.69703Z" fill="white"/>
+    <path d="M119.333 0H98.666V20.6667H119.333V0Z" fill="#219653"/>
+    <path d="M108.999 13.9283L112.142 13.1318L113.455 17.179L108.999 13.9283ZM116.232 8.69703H110.7L108.999 3.4873L107.298 8.69703H101.766L106.243 11.9262L104.543 17.1359L109.02 13.9068L111.776 11.9262L116.232 8.69703Z" fill="white"/>
+  </svg>
+));
+
+const TrustpilotIcon = memo(() => (
+  <svg width="37" height="34" viewBox="0 0 37 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18.5 25.9277L26.5387 23.9497L29.8973 34L18.5 25.9277ZM37 12.9371H22.8497L18.5 0L14.1503 12.9371H0L11.4524 20.956L7.10267 33.8931L18.5551 25.8742L25.6027 20.956L37 12.9371Z" fill="#219653"/>
+  </svg>
+));
+
+const ReviewCard = memo(({ review, manropeClass, plusJakartaSansClass, poppinsClass }) => (
+  <div className={styles.reviewCard}>
+    <FiveStarsIcon />
+    <p className={`${styles.reviewText} ${manropeClass}`}>
+      {review.text}
+    </p>
+    <div className={styles.authorInfo}>
+      <p className={`${styles.authorName} ${plusJakartaSansClass}`}>
+        {review.name}
+      </p>
+      <p className={`${styles.timestamp} ${poppinsClass}`}>
+        {review.timestamp}
+      </p>
+    </div>
+  </div>
+));
+
 const Reviews = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? reviewsData.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === reviewsData.length - 1 ? 0 : prev + 1));
-  };
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={`${styles.title} ${poppins.className}`}>
+        <div className={styles.leftSection}>
+          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
             Trustpilot Reviews
           </h2>
           
-          <div className={styles.navigation}>
-            <button 
-              className={styles.navButtonOutline}
-              onClick={handlePrevious}
-              aria-label="Previous review"
-            >
-              <LeftArrowIcon />
-            </button>
-            <button 
-              className={styles.navButtonFilled}
-              onClick={handleNext}
-              aria-label="Next review"
-            >
-              <RightArrowIcon />
-            </button>
+          <div className={styles.trustpilotBadge}>
+            <TrustpilotIcon />
+            <span className={`${styles.trustpilotText} ${roboto.className}`}>Trustpilot</span>
+          </div>
+          
+          <div className={styles.ratingInfo}>
+            <span className={`${styles.rating} ${manrope.className}`}>Rated 4.7</span>
+            <div className={styles.divider}></div>
+            <span className={`${styles.reviewCount} ${manrope.className}`}>134 Reviews</span>
           </div>
         </div>
 
-        <div className={styles.content}>
-          <div className={styles.leftCard}>
-            <div className={`${styles.excellentText} ${jost.className}`}>
-              Eccellente
-            </div>
-            
-            <div className={styles.largeStars}>
-              <LargeStarIcon />
-              <LargeStarIcon />
-              <LargeStarIcon />
-              <LargeStarIcon />
-              <LargeStarIcon />
-            </div>
-
-            <div className={`${styles.basedOnText} ${poppins.className}`}>
-              14,652 reviews on
-            </div>
-
-            <div className={styles.trustpilotBadge}>
-              <TrustpilotLogoIcon />
-              <span className={`${styles.trustpilotText} ${roboto.className}`}>
-                Trustpilot
-              </span>
-            </div>
-          </div>
-
-          <div className={styles.reviewsContainer}>
+        <div className={styles.cardsGridWrapper}>
+          <div className={styles.cardsGrid}>
             {reviewsData.map((review) => (
-              <div key={review.id} className={styles.reviewCard}>
-                <div className={styles.reviewHeader}>
-                  <div className={styles.stars}>
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                    <StarIcon />
-                  </div>
-                  <div className={`${styles.date} ${roboto.className}`}>
-                    {review.date}
-                  </div>
-                </div>
-
-                <h3 className={`${styles.reviewTitle} ${poppins.className}`}>
-                  {review.title}
-                </h3>
-
-                <p className={`${styles.reviewText} ${poppins.className}`}>
-                  {review.text}
-                </p>
-
-                <div className={styles.divider}></div>
-
-                <div className={`${styles.authorName} ${poppins.className}`}>
-                  {review.author}
-                </div>
-              </div>
+              <ReviewCard
+                key={review.id}
+                review={review}
+                manropeClass={manrope.className}
+                plusJakartaSansClass={plusJakartaSans.className}
+                poppinsClass={poppins.className}
+              />
             ))}
           </div>
         </div>
@@ -175,4 +144,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default memo(Reviews);
