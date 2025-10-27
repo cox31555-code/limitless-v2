@@ -9,21 +9,31 @@
   position: relative;
   overflow: visible;
   box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
   filter: none !important;
+  -webkit-filter: none !important;
   outline: none;
   text-shadow: none;
 }
 
 .container * {
   box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
   filter: none !important;
+  -webkit-filter: none !important;
 }
 
 .container:hover,
 .container:focus,
-.container:active {
+.container:active,
+.container:focus-visible {
   box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
   filter: none !important;
+  -webkit-filter: none !important;
 }
 
 .imgContainer {
