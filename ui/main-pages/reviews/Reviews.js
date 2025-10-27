@@ -33,9 +33,9 @@ const LargeStarIcon = memo(() => (
 ));
 
 const HalfStarIcon = memo(() => (
-  <div style={{ position: 'relative', width: '33px', height: '34px', padding: '3px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexShrink: 0, background: 'linear-gradient(90deg, #00B67A 0%, #00B67A 50%, #D9D9D9 50%, #D9D9D9 100%)' }}>
-    <svg width="27px" height="28px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z" fill="white"/>
+  <div style={{ width: '33px', height: '34px', padding: '3px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexShrink: 0, background: 'linear-gradient(90deg, #00B67A 0%, #00B67A 50%, #D9D9D9 50%, #D9D9D9 100%)', position: 'relative' }}>
+    <svg width="100%" height="100%" viewBox="0 0 28 28" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, left: 0 }}>
+      <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z"/>
     </svg>
   </div>
 ));
