@@ -141,6 +141,18 @@
   align-items: flex-start;
   gap: 3.2rem;
   flex: 1;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .reviewCard {
