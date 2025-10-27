@@ -117,21 +117,7 @@
 }
 
 .stepperTitle {
-  color: #d1d5db;
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 130%;
-  letter-spacing: -0.2px;
-  margin: 0;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  transition: all 0.3s ease;
-}
-
-/* Active step title */
-.stepperContainer:first-child .stepperTitle {
-  color: #000822;
-  font-size: 1.35rem;
-  font-weight: 700;
+  display: none;
 }
 
 .stepperItemImage {
