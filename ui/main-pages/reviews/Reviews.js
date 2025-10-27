@@ -288,10 +288,10 @@ const Reviews = () => {
             Trustpilot Reviews
           </h2>
           <div className={styles.navigation}>
-            <button className={styles.navButton} onClick={handlePrev} aria-label="Previous review">
+            <button className={`${styles.navButton} ${!isAtStart ? styles.navButtonActive : ''}`} onClick={handlePrev} aria-label="Previous review" disabled={isAtStart}>
               <LeftArrowIcon />
             </button>
-            <button className={`${styles.navButton} ${styles.navButtonActive}`} onClick={handleNext} aria-label="Next review">
+            <button className={`${styles.navButton} ${!isAtEnd ? styles.navButtonActive : ''}`} onClick={handleNext} aria-label="Next review" disabled={isAtEnd}>
               <RightArrowIcon />
             </button>
           </div>
