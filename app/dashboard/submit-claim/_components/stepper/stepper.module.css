@@ -107,6 +107,10 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+.stepperItemImage {
+  display: none !important;
+}
+
 @media screen and (max-width: 900px) {
   .stepper {
     padding: 2.4rem 2% 2.4rem;
