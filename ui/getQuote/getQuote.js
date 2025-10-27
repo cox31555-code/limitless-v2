@@ -111,8 +111,8 @@ const GetQuote = ({ skipDuration = false }) => {
       {/* Quick Quote Header */}
       <div className={styles.navigationWrapper}>
         <div className={styles.quickQuoteHeader}>
-          <h2 className={styles.quickQuoteTitle}>Get a Quick Quote</h2>
-          <p className={styles.quickQuoteSubtitle}>Just a few details to get started</p>
+          <h2 className={styles.quickQuoteTitle}>Get Your Quote</h2>
+          <p className={styles.quickQuoteSubtitle}>Enter your details to receive a personalized quote</p>
         </div>
 
         {/* Animated Progress Bar */}
