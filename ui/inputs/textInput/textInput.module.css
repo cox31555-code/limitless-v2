@@ -34,13 +34,14 @@
 .inputContainer {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem;
+  gap: 0.6rem;
+  padding: 0.8rem 0.8rem 0.65625rem;
   width: 100%;
   border-radius: 14px;
   background: #fff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   height: 6.8rem;
+  justify-content: flex-start;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
@@ -108,7 +109,7 @@
   font-size: 2.2rem;
   font-family: 'DM Mono', monospace;
   text-transform: uppercase;
-  padding: 1.6rem 2rem;
+  padding: 1.6rem 2rem 0.9375rem;
 }
 .input.reg::placeholder {
   color: rgba(0, 8, 34, 0.3);
