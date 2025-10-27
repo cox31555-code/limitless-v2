@@ -171,6 +171,8 @@
   width: 280px;
   height: 280px;
   opacity: 0.15;
+  animation: none !important;
+  transform: none !important;
 }
 
 .animatedLogo2 {
@@ -179,6 +181,8 @@
   width: 220px;
   height: 220px;
   opacity: 0.12;
+  animation: none !important;
+  transform: none !important;
 }
 
 .animatedLogo3 {
@@ -187,6 +191,8 @@
   width: 180px;
   height: 180px;
   opacity: 0.1;
+  animation: none !important;
+  transform: none !important;
 }
 
 .summery::before {
