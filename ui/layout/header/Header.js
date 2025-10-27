@@ -164,7 +164,7 @@ const Header = () => {
                 className={styles.stickyQuoteBtn}
                 onClick={() => router.push("/temporary/get-quote")}
               >
-                Get Quote
+                Get a Quote
               </button>
             </div>
           </div>
