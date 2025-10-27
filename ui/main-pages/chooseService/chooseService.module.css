@@ -3,10 +3,9 @@
   flex-direction: column;
   gap: 8.8rem;
   width: 100vw;
-  padding: 10rem 4.4% 14.4rem;
+  padding: 2.2rem 4.4% 0;
   margin: 0 calc(-50vw + 50%);
   position: relative;
-  background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
   overflow: hidden;
 }
 
