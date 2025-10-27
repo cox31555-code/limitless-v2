@@ -1,8 +1,8 @@
 .container {
   width: 100vw;
-  min-height: 746px;
+  min-height: 729px;
   margin: 0 calc(-50vw + 50%);
-  padding: 0.1rem 6.4rem 10rem;
+  padding: 0.1rem 6.4rem 10rem 13.9rem;
   position: relative;
   overflow: hidden;
 }
@@ -15,7 +15,7 @@
   gap: 8rem;
   align-items: center;
   position: relative;
-  padding-top: 1.8rem;
+  padding-top: 2.9rem;
 }
 
 .illustrationCard {
