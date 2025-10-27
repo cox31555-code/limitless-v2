@@ -199,7 +199,6 @@
   height: 200px;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
   border-radius: 50%;
-  animation: floatBubble 6s ease-in-out infinite;
 }
 
 @keyframes floatBubble {
