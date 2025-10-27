@@ -27,7 +27,7 @@ const StarIcon = memo(() => (
 
 const LargeStarIcon = memo(() => (
   <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="33" height="34" fill="#219653"/>
+    <rect width="33" height="34" fill="#00B67A"/>
     <path d="M16.5 24.3522L22.5833 22.7233L25.125 31L16.5 24.3522ZM30.5 13.6541H19.7917L16.5 3L13.2083 13.6541H2.5L11.1667 20.2579L7.875 30.9119L16.5417 24.3082L21.875 20.2579L30.5 13.6541Z" fill="white"/>
   </svg>
 ));
@@ -37,13 +37,13 @@ const HalfStarIcon = memo(() => (
     <rect width="34" height="34" fill="url(#halfStarGradient)"/>
     <defs>
       <linearGradient id="halfStarGradient" x1="0" y1="0" x2="34" y2="0" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#219653"/>
-        <stop offset="50%" stopColor="#219653"/>
+        <stop offset="0%" stopColor="#00B67A"/>
+        <stop offset="50%" stopColor="#00B67A"/>
         <stop offset="50%" stopColor="#D9D9D9"/>
         <stop offset="100%" stopColor="#D9D9D9"/>
       </linearGradient>
     </defs>
-    <path d="M17 24.3522L23.0833 22.7233L25.625 31L17 24.3522ZM31 13.6541H20.2917L17 3L13.7083 13.6541H3L11.6667 20.2579L8.375 30.9119L17.0417 24.3082L22.375 20.2579L31 13.6541Z" fill="white"/>
+    <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z" fill="white"/>
   </svg>
 ));
 
