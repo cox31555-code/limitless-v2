@@ -2,114 +2,155 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  border-radius: 18px;
-  background: #000822;
-  padding: 4.2rem 4.7rem 4.8rem 4.1rem;
+  gap: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.15);
+  border-radius: 14px;
+  padding: 2.4rem;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.container:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
+}
+
+.blueBackground,
+.blueBackground2,
+.blueBackground3 {
+  display: none;
+}
+
 .first {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
+
 .title {
-  color: #fff;
   font-size: 1.8rem;
   font-weight: 700;
-  line-height: 124%; /* 22.32px */
-  letter-spacing: 0.72px;
+  color: #000822;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.3px;
 }
+
 .description {
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 130%;
   font-weight: 400;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
 }
+
 .second {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
-  position: relative;
-  z-index: 10;
+  gap: 1rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-.second img {
-  width: 100%;
-  height: 100%;
+
+.second:hover {
+  transform: scale(1.05);
 }
+
+.download {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.4rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.second:hover .download {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.4);
+}
+
 .downloadText {
-  color: #0388ff;
   font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-weight: 600;
+  color: #0388ff;
+  margin: 0;
+  line-height: 130%;
 }
-.blueBackground {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 4.5rem;
-  height: 100%;
-  opacity: 0.82;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
+
+.second:hover .downloadText {
+  color: #0270cc;
 }
-.blueBackground2 {
-  position: absolute;
-  top: 0;
-  right: 4.5rem;
-  width: 20.7rem;
-  height: 100%;
-  opacity: 0.82;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-.blueBackground3 {
-  position: absolute;
-  top: 27%;
-  right: 25.2rem;
-  width: 20.7rem;
-  height: 73%;
-  opacity: 0.6;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
+
 @media screen and (max-width: 900px) {
   .container {
-    border-radius: 18px;
-    padding: 2.2rem 0 2.2rem 2.2rem;
     flex-direction: column;
-    gap: 2.6rem;
-    justify-content: flex-start;
     align-items: flex-start;
+    padding: 2rem;
+    gap: 1.6rem;
   }
+
   .first {
-    gap: 1.4rem;
+    width: 100%;
   }
-  .title {
-    font-size: 1.6rem;
-  }
-  .description {
-    font-size: 1.4rem;
-  }
+
   .second {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .download {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .downloadText {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 1.6rem;
     gap: 1.2rem;
   }
-  .second img {
-    width: 100%;
-    height: 100%;
+
+  .title {
+    font-size: 1.4rem;
   }
-  .blueBackground {
-    top: 5.3rem;
-    right: 0.2rem;
-    width: 13.7rem;
+
+  .description {
+    font-size: 1.1rem;
   }
-  .blueBackground2 {
-    top: 12.9rem;
-    right: 13.9rem;
-    width: 13.7rem;
+
+  .download {
+    width: 4rem;
+    height: 4rem;
   }
-  .blueBackground3 {
-    display: none;
+
+  .downloadText {
+    font-size: 1.2rem;
   }
 }
