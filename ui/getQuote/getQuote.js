@@ -233,7 +233,6 @@ const GetQuote = ({ skipDuration = false, onExpand }) => {
                       setCustomDurationType(type);
                       setCustomDurationValue("");
                       setQuickSelection("");
-                      setShowDurationModal(true);
                       if (errors.duration) {
                         setErrors({ ...errors, duration: undefined });
                       }
@@ -246,6 +245,61 @@ const GetQuote = ({ skipDuration = false, onExpand }) => {
                   </button>
                 ))}
               </div>
+
+              {/* Inline Number Selector */}
+              {customDurationType && (
+                <div className={styles.numberSelectorWrapper}>
+                  <div className={styles.numberSelector}>
+                    {(customDurationType === "Days"
+                      ? ["1", "2", "3", "4", "5", "6", "7"]
+                      : customDurationType === "Hours"
+                      ? ["1", "2", "3", "4", "5", "6", "7"]
+                      : ["1", "2", "3", "4"]
+                    ).map((num) => (
+                      <button
+                        key={num}
+                        type="button"
+                        className={`${styles.numberButton} ${
+                          customDurationValue === num ? styles.selectedNumber : ""
+                        }`}
+                        onClick={() => {
+                          setCustomDurationValue(num);
+                          if (errors.duration) {
+                            setErrors({ ...errors, duration: undefined });
+                          }
+                        }}
+                      >
+                        {num.padStart(2, "0")}
+                      </button>
+                    ))}
+                    <div className={styles.moreOptionsDropdown}>
+                      <FormDropdown
+                        options={
+                          customDurationType === "Days"
+                            ? Array.from({ length: 24 }, (_, i) =>
+                                (i + 8).toString()
+                              )
+                            : customDurationType === "Hours"
+                            ? Array.from({ length: 17 }, (_, i) =>
+                                (i + 8).toString()
+                              )
+                            : Array.from({ length: 48 }, (_, i) =>
+                                (i + 5).toString()
+                              )
+                        }
+                        placeholder="More..."
+                        value={customDurationValue && parseInt(customDurationValue) > (customDurationType === "Weeks" ? 4 : 7) ? customDurationValue : ""}
+                        onChange={(e) => {
+                          setCustomDurationValue(e.target.value);
+                          if (errors.duration) {
+                            setErrors({ ...errors, duration: undefined });
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
 
             </div>
 
