@@ -61,11 +61,7 @@
 }
 
 
-.helpSection {
-  position: relative;
-}
-
-.helpButton {
+.logoutBtn {
   width: 4.4rem;
   height: 4.4rem;
   border-radius: 10px;
@@ -76,193 +72,21 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #64b5f6;
+  color: #ef5350;
   flex-shrink: 0;
 }
 
-.helpButton:hover {
-  background: rgba(3, 136, 255, 0.2);
-  border-color: rgba(3, 136, 255, 0.5);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
+.logoutBtn:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  color: #f44336;
 }
 
-.helpButton svg {
-  width: 2rem;
-  height: 2rem;
+.logoutBtn svg {
+  width: 1.8rem;
+  height: 1.8rem;
   stroke: currentColor;
-}
-
-.helpDropdown {
-  position: absolute;
-  top: calc(100% + 0.8rem);
-  right: 0;
-  background: linear-gradient(135deg, #1a1f3a 0%, #222d45 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.25);
-  border-radius: 12px;
-  padding: 1.2rem 0;
-  min-width: 320px;
-  box-shadow: 0 8px 32px rgba(0, 8, 34, 0.4);
-  z-index: 100;
-  animation: slideUp 0.25s ease;
-}
-
-.dropdownHeader {
-  padding: 0.8rem 1.6rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.15);
-}
-
-.dropdownItem {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 1.2rem 1.6rem;
-  color: #d4dae6;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
-  background: transparent;
-  width: 100%;
-  text-align: left;
-}
-
-.dropdownItem:hover {
-  background: rgba(3, 136, 255, 0.15);
-  color: #64b5f6;
-}
-
-.itemIcon {
-  font-size: 1.6rem;
-  width: 2.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.itemText {
-  flex: 1;
-}
-
-.itemTitle {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: inherit;
-  margin: 0;
-}
-
-.itemDesc {
-  font-size: 1rem;
-  color: #9ca3af;
-  margin: 0.2rem 0 0;
-}
-
-.profileSection {
-  position: relative;
-}
-
-.profileButton {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  height: 4.4rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 10px;
-  background: rgba(3, 136, 255, 0.1);
-  border: 1.5px solid rgba(3, 136, 255, 0.25);
-  color: #64b5f6;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.3rem;
-  font-weight: 500;
-}
-
-.profileButton:hover {
-  background: rgba(3, 136, 255, 0.2);
-  border-color: rgba(3, 136, 255, 0.5);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
-}
-
-.profileButton svg {
-  width: 1.6rem;
-  height: 1.6rem;
-  stroke: currentColor;
-}
-
-.userName {
-  display: none;
-}
-
-.profileDropdown {
-  position: absolute;
-  top: calc(100% + 0.8rem);
-  right: 0;
-  background: linear-gradient(135deg, #1a1f3a 0%, #222d45 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.25);
-  border-radius: 12px;
-  padding: 0;
-  min-width: 240px;
-  box-shadow: 0 8px 32px rgba(0, 8, 34, 0.4);
-  z-index: 100;
-  animation: slideUp 0.25s ease;
-  overflow: hidden;
-}
-
-.profileInfo {
-  padding: 1.2rem 1.6rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.15);
-}
-
-.profileEmail {
-  font-size: 1.1rem;
-  color: #9ca3af;
-  margin: 0;
-}
-
-.profileItem {
-  display: block;
-  padding: 1rem 1.6rem;
-  color: #d4dae6;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: none;
-  background: transparent;
-  width: 100%;
-  text-align: left;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.profileItem:hover {
-  background: rgba(3, 136, 255, 0.15);
-  color: #64b5f6;
-}
-
-.profileDivider {
-  margin: 0.4rem 0;
-  border: none;
-  border-top: 1px solid rgba(3, 136, 255, 0.15);
-}
-
-.logoutButton {
-  display: block;
-  padding: 1rem 1.6rem;
-  color: #ef4444;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: none;
-  background: transparent;
-  width: 100%;
-  text-align: left;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.logoutButton:hover {
-  background: rgba(239, 68, 68, 0.08);
-  color: #d32f2f;
 }
 
 @keyframes slideUp {
