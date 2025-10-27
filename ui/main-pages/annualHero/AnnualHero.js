@@ -212,8 +212,7 @@ const AnnualHero = () => {
             </div>
 
             <p className={`${styles.disclaimer} ${poppins.className}`}>
-              *10% of new customers paid £321 or less in March 2025. Excludes
-              YouDrive.
+              *20% of new customers paid £321 or less in March 2025.
             </p>
           </div>
 
