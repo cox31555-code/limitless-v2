@@ -1,7 +1,7 @@
 export const homeFeatures = [
   {
     title: "Multiple Insurance Types",
-    description: "Get covered for Impound, Temporary, or Delivery insurance",
+    description: "Get covered for Impound, Temporary, Annual, or Delivery insurance",
   },
   {
     title: "Inclusive Age Coverage",
