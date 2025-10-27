@@ -331,9 +331,9 @@
 }
 
 .durationTypeButton:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  background: rgba(3, 136, 255, 0.04);
-  color: #0388ff;
+  border-color: #0270cc;
+  background: #0270cc;
+  color: #ffffff;
 }
 
 .durationTypeButton.selected {
