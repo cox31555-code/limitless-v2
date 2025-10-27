@@ -84,24 +84,6 @@
 
 .cardsContainer > div {
   height: 100%;
-  box-shadow: none !important;
-  filter: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-}
-
-.cardsContainer > div * {
-  box-shadow: none !important;
-  filter: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-}
-
-.cardsContainer {
-  box-shadow: none !important;
-  filter: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
 }
 @media screen and (max-width: 1200px) {
   .cardsContainer {
