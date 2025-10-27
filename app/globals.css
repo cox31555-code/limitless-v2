@@ -34,7 +34,7 @@ body {
 .headerContainer,
 .headerDashboardContainer {
   width: 100vw;
-  height: 91rem;
+  height: 90rem;
   flex-grow: 0;
   border-radius: 0;
   background: #000822;
