@@ -113,7 +113,6 @@ const Reviews = () => {
           <div className={styles.cardsGrid}>
             {reviewsData.map((review) => (
               <div key={review.id} className={styles.reviewCard}>
-                <div className={styles.cardFade}></div>
                 <FiveStarsIcon />
                 
                 <p className={`${styles.reviewText} ${manrope.className}`}>
