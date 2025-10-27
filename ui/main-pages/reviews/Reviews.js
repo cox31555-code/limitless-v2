@@ -75,24 +75,24 @@ const RightArrowIcon = memo(() => (
 const reviewsData = [
   {
     id: 1,
-    title: "Best on the market",
-    text: "I love this product because the support is great. Please ...",
-    name: "Worldtraveler",
-    timestamp: "2 days ago",
+    title: "Excellent value for money",
+    text: "Quick quote process and the coverage options are exactly what I needed. Customer service team sorted everything out in minutes.",
+    name: "SarahM92",
+    timestamp: "5 days ago",
   },
   {
     id: 2,
-    title: "Best on the market",
-    text: "I love this product because the support is great. Please ...",
-    name: "Worldtraveler",
-    timestamp: "2 days ago",
+    title: "Fast and hassle-free",
+    text: "Been with them for over a year now. Really impressed with how easy renewals are. They genuinely care about their customers.",
+    name: "JohnDriver",
+    timestamp: "2 weeks ago",
   },
   {
     id: 3,
-    title: "Best on the market",
-    text: "I love this product because the support is great. Please ...",
-    name: "Worldtraveler",
-    timestamp: "2 days ago",
+    title: "Great customer support",
+    text: "Had a query about my policy and they responded within an hour. Professional, friendly team. Would definitely recommend to friends.",
+    name: "EmmaH",
+    timestamp: "1 month ago",
   },
 ];
 
