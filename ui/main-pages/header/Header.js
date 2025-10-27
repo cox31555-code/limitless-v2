@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./header.module.css";
 import Feature from "../../feature/Feature";
 import Image from "next/image";
@@ -19,12 +19,13 @@ const manrope = Manrope({
 });
 const Header = ({ subTitle, title, description, features }) => {
   const router = useRouter();
+  const [isQuoteExpanded, setIsQuoteExpanded] = useState(false);
   const words = title.split(" ");
   const lastWord = words[words.length - 1];
   const withoutLastWord = words.slice(0, -1).join(" ");
   const pathname = usePathname();
   return (
-    <div className={"headerContainer"}>
+    <div className={`headerContainer ${isQuoteExpanded ? "expanded" : ""}`}>
       <div className="centeredContent">
         <Image
           src="/svg/squares-2.svg"
