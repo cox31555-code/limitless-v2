@@ -29,13 +29,13 @@ const Table = ({ title, columns, data }) => {
           <tbody className={styles.tableBody}>
             {data.map((row, index) => (
               <tr key={index} className={styles.tableRow}>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Date of Claim">
                   <div className={styles.dateAndRef}>
                     <p className={styles.date}>{row.date}</p>
                     <p className={styles.ref}>{row.ref}</p>
                   </div>
                 </td>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Status">
                   <span
                     className={`${styles.statusBadge} ${
                       row.status === "Pending"
@@ -50,10 +50,10 @@ const Table = ({ title, columns, data }) => {
                     {row.status}
                   </span>
                 </td>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Claimant">
                   <span className={styles.claimant}>{row.claimant}</span>
                 </td>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Last Updated">
                   <div className={styles.pendingActionsCell}>
                     <p className={styles.pendingActions}>
                       Estimated resolution Date:
@@ -63,7 +63,7 @@ const Table = ({ title, columns, data }) => {
                     </p>
                   </div>
                 </td>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Actions">
                   <button
                     onClick={() => router.push(`/dashboard/claims/${row.id}`)}
                     className={styles.view}
