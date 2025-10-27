@@ -1,63 +1,106 @@
 .page {
-  margin: 6rem 0 11.5rem;
+  margin: 5rem 0 6rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 4.4%;
 }
+
 .page > div {
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
+
 .claims {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
-  margin-top: 7.5rem;
+  gap: 4rem;
+  margin-top: 5rem;
+  width: 100%;
 }
+
 .claimsTitle {
   color: #000822;
-  font-size: 4.4rem;
-  font-weight: 700;
-  line-height: 100%;
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 120%;
+  letter-spacing: -0.7px;
+  text-align: center;
+  margin: 0 0 3rem 0;
+  background: linear-gradient(135deg, #000822 0%, #0388ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
 .claimsContainer {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+  width: 100%;
   align-items: stretch;
   justify-content: center;
 }
-.fullWidthContainer{
+
+.fullWidthContainer {
   width: 100%;
 }
-.fullWidthContainer > form{
+
+.fullWidthContainer > form {
   width: 100%;
 }
+
+@media screen and (max-width: 1200px) {
+  .claimsContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .page {
-    margin: 3.8rem 0 3.9rem;
-    width: 100%;
+    margin: 3rem 0 4rem;
+    padding: 0 2%;
   }
+
   .claims {
-    gap: 2.5rem;
-    margin-top: 4.8rem;
+    gap: 3rem;
+    margin-top: 3rem;
   }
+
   .claimsTitle {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
+    margin: 0 0 2rem 0;
   }
+
   .claimsContainer {
-    gap: 2.4rem;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
   }
-  /* .claimsContainer :first-child .img {
-    width: 63px;
-    height: 60px;
+}
+
+@media screen and (max-width: 600px) {
+  .page {
+    margin: 2rem 0 3rem;
+    padding: 0 1.5%;
   }
-  .claimsContainer :nth-child(2).img {
-    width: 69px;
-    height: 67px;
-  } */
+
+  .claims {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .claimsTitle {
+    font-size: 2rem;
+    margin: 0 0 1.6rem 0;
+  }
+
+  .claimsContainer {
+    gap: 1.4rem;
+  }
 }
