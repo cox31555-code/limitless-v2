@@ -519,7 +519,7 @@
   width: 100%;
   background: transparent;
   color: #5a6b7d;
-  border: 1px solid #e8ecf1;
+  border: none;
   padding: 1rem 1.6rem;
   height: auto;
 }
