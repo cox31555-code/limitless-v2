@@ -11,6 +11,11 @@
   box-shadow: none !important;
 }
 
+.container,
+.container * {
+  box-shadow: none !important;
+}
+
 .imgContainer {
   display: flex;
   align-items: center;
