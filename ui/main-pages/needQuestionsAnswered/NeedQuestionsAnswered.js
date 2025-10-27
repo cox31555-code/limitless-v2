@@ -31,11 +31,11 @@ const FAQIllustration = () => (
     <div className={styles.gradientBox1}></div>
     <div className={styles.gradientBox2}></div>
     <svg className={styles.documentCard} width="416" height="142" viewBox="0 0 416 142" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="415.043" height="141.036" fill="url(#paint0_linear_doc)"/>
+      <rect width="415.043" height="141.036" fill="url(#paint_faq_doc)"/>
       <path d="M156.866 61.4199H226.548" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
       <path d="M156.866 78.8496H347.766" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
       <defs>
-        <linearGradient id="paint0_linear_doc" x1="-139.11" y1="143.56" x2="454.073" y2="-15.1879" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint_faq_doc" x1="-139.11" y1="143.56" x2="454.073" y2="-15.1879" gradientUnits="userSpaceOnUse">
           <stop stopColor="#07102D"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
@@ -50,9 +50,9 @@ const FAQIllustration = () => (
       </svg>
     </div>
     <svg className={styles.questionCircle} width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="41.6841" cy="41.7111" rx="41.6841" ry="41.7111" fill="url(#paint0_linear_circle)"/>
+      <ellipse cx="41.6841" cy="41.7111" rx="41.6841" ry="41.7111" fill="url(#paint_faq_circle)"/>
       <defs>
-        <linearGradient id="paint0_linear_circle" x1="-28.6804" y1="71.8527" x2="54.1413" y2="30.0099" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint_faq_circle" x1="-28.6804" y1="71.8527" x2="54.1413" y2="30.0099" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0.3"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
