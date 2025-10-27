@@ -101,6 +101,9 @@ const GetQuote = ({ skipDuration = false, onExpand }) => {
   };
 
   const goBack = () => {
+    if (onExpand) {
+      onExpand(false);
+    }
     setStep(1);
     setQuickSelection("");
     setCustomDurationType("");
