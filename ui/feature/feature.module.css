@@ -1,7 +1,7 @@
 .container {
   border-radius: 1.2rem;
   border: 1px solid rgba(3, 136, 255, 0.15);
-  background: rgba(7, 16, 45, 0.6);
+  background: rgba(7, 16, 45, 0.72);
   padding: 2.2rem 4.5rem;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 
 .container:hover {
   border-color: rgba(3, 136, 255, 0.3);
-  background: rgba(7, 16, 45, 0.75);
+  background: rgba(7, 16, 45, 0.85);
 }
 
 .img {
