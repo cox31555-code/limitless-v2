@@ -47,6 +47,24 @@ const reviewsData = [
     name: "Jaxson Philips",
     timestamp: "5 hours ago",
   },
+  {
+    id: 4,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    timestamp: "1 day ago",
+  },
+  {
+    id: 5,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    timestamp: "3 days ago",
+  },
+  {
+    id: 6,
+    text: "I love this product because the support is great. Please ...",
+    name: "Jaxson Philips",
+    timestamp: "1 week ago",
+  },
 ];
 
 const FiveStarsIcon = () => (
@@ -91,25 +109,28 @@ const Reviews = () => {
           </div>
         </div>
 
-        <div className={styles.cardsGrid}>
-          {reviewsData.map((review) => (
-            <div key={review.id} className={styles.reviewCard}>
-              <FiveStarsIcon />
-              
-              <p className={`${styles.reviewText} ${manrope.className}`}>
-                {review.text}
-              </p>
-              
-              <div className={styles.authorInfo}>
-                <p className={`${styles.authorName} ${plusJakartaSans.className}`}>
-                  {review.name}
+        <div className={styles.cardsGridWrapper}>
+          <div className={styles.cardsGrid}>
+            {reviewsData.map((review) => (
+              <div key={review.id} className={styles.reviewCard}>
+                <div className={styles.cardFade}></div>
+                <FiveStarsIcon />
+                
+                <p className={`${styles.reviewText} ${manrope.className}`}>
+                  {review.text}
                 </p>
-                <p className={`${styles.timestamp} ${poppins.className}`}>
-                  {review.timestamp}
-                </p>
+                
+                <div className={styles.authorInfo}>
+                  <p className={`${styles.authorName} ${plusJakartaSans.className}`}>
+                    {review.name}
+                  </p>
+                  <p className={`${styles.timestamp} ${poppins.className}`}>
+                    {review.timestamp}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

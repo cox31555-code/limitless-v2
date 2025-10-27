@@ -99,14 +99,46 @@
   border-radius: 0.1rem;
 }
 
+.cardsGridWrapper {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 1.13rem;
+}
+
 .cardsGrid {
   display: flex;
   align-items: flex-start;
   gap: 2.1rem;
-  flex: 1;
+  animation: slideCarousel 30s linear infinite;
+  will-change: transform;
+}
+
+@keyframes slideCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(calc(-1 * (33.9rem + 2.1rem)));
+  }
+  53.33% {
+    transform: translateX(calc(-1 * (33.9rem + 2.1rem)));
+  }
+  66.66% {
+    transform: translateX(calc(-2 * (33.9rem + 2.1rem)));
+  }
+  86.66% {
+    transform: translateX(calc(-2 * (33.9rem + 2.1rem)));
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .reviewCard {
+  position: relative;
   width: 33.9rem;
   height: 26.3rem;
   background: #FFF;
@@ -114,8 +146,10 @@
   padding: 2.1rem;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  overflow: hidden;
 }
 
 .reviewCard:hover {
@@ -123,7 +157,21 @@
   box-shadow: 0 8px 24px rgba(0, 8, 34, 0.08);
 }
 
+.cardFade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 40%);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 1.13rem;
+}
+
 .reviewCard svg {
+  position: relative;
+  z-index: 3;
   width: 12rem;
   height: 2.1rem;
   flex-shrink: 0;
@@ -131,6 +179,8 @@
 }
 
 .reviewText {
+  position: relative;
+  z-index: 3;
   color: #000822;
   font-size: 1.45rem;
   font-weight: 500;
@@ -141,6 +191,8 @@
 }
 
 .authorInfo {
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -172,13 +224,12 @@
   }
 
   .cardsGrid {
-    flex-wrap: wrap;
-    gap: 2.4rem;
+    animation: slideCarousel 30s linear infinite;
   }
 
   .reviewCard {
-    flex: 1;
-    min-width: 30rem;
+    width: 100%;
+    flex: 0 0 33.9rem;
   }
 }
 
@@ -209,9 +260,14 @@
     width: 20rem;
   }
 
+  .cardsGridWrapper {
+    overflow: visible;
+  }
+
   .cardsGrid {
     flex-wrap: wrap;
     gap: 2rem;
+    animation: none;
   }
 
   .reviewCard {
@@ -220,6 +276,10 @@
     width: auto;
     height: auto;
     min-height: 24rem;
+  }
+
+  .cardFade {
+    display: none;
   }
 }
 
@@ -267,16 +327,26 @@
     height: 3.1rem;
   }
 
+  .cardsGridWrapper {
+    overflow: visible;
+    border-radius: 0;
+  }
+
   .cardsGrid {
     flex-direction: column;
     gap: 2rem;
     width: 100%;
+    animation: none;
   }
 
   .reviewCard {
     width: 100%;
     height: auto;
     min-height: 22rem;
+  }
+
+  .cardFade {
+    display: none;
   }
 }
 
@@ -320,6 +390,15 @@
     height: 2.8rem;
   }
 
+  .cardsGridWrapper {
+    overflow: visible;
+  }
+
+  .cardsGrid {
+    flex-direction: column;
+    animation: none;
+  }
+
   .reviewCard {
     padding: 1.8rem;
     min-height: 20rem;
@@ -342,6 +421,10 @@
     width: 10rem;
     height: 1.9rem;
     margin-bottom: 1.4rem;
+  }
+
+  .cardFade {
+    display: none;
   }
 }
 
@@ -385,6 +468,11 @@
     gap: 1rem;
   }
 
+  .cardsGrid {
+    flex-direction: column;
+    animation: none;
+  }
+
   .reviewCard {
     padding: 1.6rem;
     gap: 1.2rem;
@@ -407,5 +495,9 @@
     width: 9rem;
     height: 1.8rem;
     margin-bottom: 1.2rem;
+  }
+
+  .cardFade {
+    display: none;
   }
 }
