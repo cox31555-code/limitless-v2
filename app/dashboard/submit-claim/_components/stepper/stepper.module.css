@@ -119,7 +119,7 @@
 }
 
 .stepperTitle {
-  color: #9ca3af;
+  color: #d1d5db;
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 130%;
@@ -130,7 +130,7 @@
 }
 
 /* Active step title */
-.stepperItem:first-child .stepperTitle {
+.stepperContainer:first-child .stepperTitle {
   color: #000822;
   font-size: 1.35rem;
   font-weight: 700;
