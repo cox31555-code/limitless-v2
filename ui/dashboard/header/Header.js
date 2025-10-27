@@ -73,85 +73,19 @@ const Header = ({ page }) => {
         </div>
 
         <div className={styles.headerRight} style={{ position: 'relative', zIndex: 20 }}>
-          <div className={styles.helpSection}>
-            <div
-              className={styles.helpButton}
-              onClick={() => setIsHelpOpen(!isHelpOpen)}
-              title="Get Help"
-            >
-              <HelpIcon />
-            </div>
-            {isHelpOpen && (
-              <div className={styles.helpDropdown}>
-                <div className={styles.dropdownHeader}>How can we help?</div>
-                <a href="/contact" className={styles.dropdownItem}>
-                  <span className={styles.itemIcon}>💬</span>
-                  <div className={styles.itemText}>
-                    <div className={styles.itemTitle}>Contact Support</div>
-                    <div className={styles.itemDesc}>Get in touch with our team</div>
-                  </div>
-                </a>
-                <a href="/FAQ" className={styles.dropdownItem}>
-                  <span className={styles.itemIcon}>❓</span>
-                  <div className={styles.itemText}>
-                    <div className={styles.itemTitle}>FAQ</div>
-                    <div className={styles.itemDesc}>Find answers to common questions</div>
-                  </div>
-                </a>
-                <div className={styles.dropdownItem} onClick={() => {
-                  if (typeof window !== "undefined" && window.Tawk_API) {
-                    window.Tawk_API.maximize();
-                    setIsHelpOpen(false);
-                  }
-                }}>
-                  <span className={styles.itemIcon}>💬</span>
-                  <div className={styles.itemText}>
-                    <div className={styles.itemTitle}>Live Chat</div>
-                    <div className={styles.itemDesc}>Chat with us now</div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-
-          <div className={styles.profileSection}>
-            <button
-              className={styles.profileButton}
-              onClick={() => setIsProfileOpen(!isProfileOpen)}
-              title="Account"
-            >
-              <UserIcon />
-              <span className={styles.userName}>{user?.email?.split("@")[0] || "User"}</span>
-            </button>
-            {isProfileOpen && (
-              <div className={styles.profileDropdown}>
-                <div className={styles.profileInfo}>
-                  <div className={styles.profileEmail}>{user?.email || "user@example.com"}</div>
-                </div>
-                <a href="/dashboard" className={styles.profileItem}>
-                  Dashboard
-                </a>
-                <a href="/dashboard/policy" className={styles.profileItem}>
-                  Policies
-                </a>
-                <a href="/dashboard/documents" className={styles.profileItem}>
-                  Documents
-                </a>
-                <hr className={styles.profileDivider} />
-                <button
-                  className={styles.logoutButton}
-                  onClick={async () => {
-                    const { logout } = require("@/contexts/AuthContext").useAuth?.();
-                    // Note: This will be handled by parent component's logout
-                    router.push("/login");
-                  }}
-                >
-                  Logout
-                </button>
-              </div>
-            )}
-          </div>
+          <button
+            className={styles.logoutBtn}
+            onClick={async () => {
+              router.push("/login");
+            }}
+            title="Logout"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
