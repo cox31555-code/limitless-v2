@@ -65,6 +65,7 @@
   color: #000822;
   flex-shrink: 0;
   border: 1px solid rgba(3, 136, 255, 0.1);
+  margin-top: -1px;
 }
 
 .ukFlag {
