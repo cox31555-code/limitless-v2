@@ -516,9 +516,10 @@
 }
 
 .secondaryButton {
-  width: 100%;
+  width: 53%;
   background: transparent;
   color: #5a6b7d;
+  margin: 0 auto;
   border: none;
   padding: 1rem 1.6rem;
   height: auto;
