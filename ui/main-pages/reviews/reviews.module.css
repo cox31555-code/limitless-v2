@@ -54,13 +54,13 @@
 }
 
 .navButtonActive {
-  background: #0388ff;
-  border-color: #0388ff;
+  background: #1B1464;
+  border-color: #1B1464;
 }
 
 .navButtonActive:hover {
-  background: #049cff;
-  border-color: #049cff;
+  background: #251a7f;
+  border-color: #251a7f;
 }
 
 .content {
