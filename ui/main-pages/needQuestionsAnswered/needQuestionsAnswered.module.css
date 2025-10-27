@@ -145,23 +145,6 @@
   margin-bottom: 4rem;
 }
 
-.serviceGradient {
-  position: absolute;
-  top: 27px;
-  left: 27px;
-  width: 61.31px;
-  height: 63.6px;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388FF 100%);
-  opacity: 0.48;
-}
-
-.checkBadge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(30%, -30%);
-}
-
 .supportIcon {
   position: relative;
   width: fit-content;
