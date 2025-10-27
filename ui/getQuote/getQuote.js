@@ -9,7 +9,7 @@ import FormTextInput from "../inputs/FormTextInput";
 import Selection1 from "../inputs/selections/selection1/Selection1";
 import FormDropdown from "../inputs/FormDropdown";
 
-const GetQuote = ({ skipDuration = false }) => {
+const GetQuote = ({ skipDuration = false, onExpand }) => {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [registrationNumber, setRegistrationNumber] = useState("");
@@ -30,6 +30,10 @@ const GetQuote = ({ skipDuration = false }) => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
+    }
+
+    if (onExpand) {
+      onExpand(true);
     }
 
     if (skipDuration) {
