@@ -330,14 +330,14 @@
 }
 
 .durationTypeButton:hover {
-  border-color: #0270cc;
-  background: #0270cc;
+  border-color: #0245a1;
+  background: #0245a1;
   color: #ffffff;
 }
 
 .durationTypeButton.selected {
-  border-color: #0388ff;
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  border-color: #0245a1;
+  background: #0245a1;
   color: white;
   display: flex;
   align-items: center;
