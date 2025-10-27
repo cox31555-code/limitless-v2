@@ -1,31 +1,13 @@
 export const homeFeatures = [
   {
-    img: {
-      src: "/svg/insurance-types.svg",
-      alt: "insurance types",
-      width: 64,
-      height: 64,
-    },
     title: "Multiple Insurance Types",
     description: "Get covered for Impound, Temporary, or Delivery insurance",
   },
   {
-    img: {
-      src: "/svg/person-profile.svg",
-      alt: "age eligibility",
-      width: 64,
-      height: 64,
-    },
     title: "All Ages Welcome",
     description: "Available to drivers aged 18-75 years old",
   },
   {
-    img: {
-      src: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fe018c00bd11e40efb2b3651aa831897c?format=webp&width=800",
-      alt: "vehicle eligibility",
-      width: 64,
-      height: 64,
-    },
     title: "Any Vehicle Type",
     description: "Cars, vans, scooters, motor-homes and more",
   },
