@@ -66,14 +66,15 @@
 }
 
 .tableRow {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap: 1.6rem 2rem;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.15);
   border-radius: 14px;
   padding: 2rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: 1.2rem;
   position: relative;
   overflow: hidden;
 }
@@ -87,6 +88,7 @@
   height: 4px;
   background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
   border-radius: 14px 14px 0 0;
+  grid-column: 1 / -1;
 }
 
 .tableCell {
@@ -100,13 +102,42 @@
   background: transparent;
 }
 
+.tableCell:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.tableCell:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: flex-start;
+}
+
+.tableCell:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.tableCell:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.tableCell:nth-child(5) {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  align-self: flex-end;
+  justify-self: end;
+}
+
 .tableCell::before {
   content: attr(data-label);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: #5a6b7d;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
 }
 .dateAndRef {
   display: flex;
