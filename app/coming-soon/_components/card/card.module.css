@@ -9,11 +9,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: none !important;
-}
-
-.container,
-.container * {
-  box-shadow: none !important;
+  filter: none !important;
 }
 
 .imgContainer {
@@ -83,6 +79,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: none !important;
+  filter: none !important;
 }
 
 .arrow {
