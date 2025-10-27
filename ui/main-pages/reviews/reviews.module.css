@@ -33,24 +33,24 @@
 
 .navButton {
   display: flex;
-  padding: 0.9rem;
+  padding: 0.8rem;
   align-items: center;
   justify-content: center;
-  border-radius: 2.2rem;
-  border: 1px solid rgba(3, 136, 255, 0.3);
-  background: transparent;
+  border-radius: 8px;
+  border: none;
+  background: #F5F5F5;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .navButton:hover:not(:disabled) {
-  background: rgba(3, 136, 255, 0.08);
-  border-color: rgba(3, 136, 255, 0.5);
+  background: #E8E8E8;
 }
 
 .navButton:disabled {
-  opacity: 0.4;
+  opacity: 0.3;
   cursor: not-allowed;
+  background: #F5F5F5;
 }
 
 .navButton svg {
@@ -59,13 +59,11 @@
 }
 
 .navButtonActive {
-  background: #1B1464;
-  border-color: #1B1464;
+  background: #0388FF;
 }
 
 .navButtonActive:hover:not(:disabled) {
-  background: #251a7f;
-  border-color: #251a7f;
+  background: #0270CC;
 }
 
 .content {
