@@ -43,9 +43,14 @@
   transition: all 0.3s ease;
 }
 
-.navButton:hover {
+.navButton:hover:not(:disabled) {
   background: rgba(3, 136, 255, 0.08);
   border-color: rgba(3, 136, 255, 0.5);
+}
+
+.navButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .navButton svg {
@@ -58,7 +63,7 @@
   border-color: #1B1464;
 }
 
-.navButtonActive:hover {
+.navButtonActive:hover:not(:disabled) {
   background: #251a7f;
   border-color: #251a7f;
 }
