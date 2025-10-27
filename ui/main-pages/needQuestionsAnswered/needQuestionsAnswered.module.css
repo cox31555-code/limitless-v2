@@ -110,13 +110,11 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 3;
   padding: 0;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.24);
 }
 
 .arrowButton:hover {
   background: linear-gradient(135deg, #049CFF 0%, #0280e0 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.32);
 }
 
 .arrowButton:active {
