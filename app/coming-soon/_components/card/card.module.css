@@ -103,21 +103,31 @@
   position: relative;
   overflow: visible;
   box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
   filter: none !important;
+  -webkit-filter: none !important;
   outline: none;
   text-shadow: none;
 }
 
 .button:hover,
 .button:focus,
-.button:active {
+.button:active,
+.button:focus-visible {
   box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
   filter: none !important;
+  -webkit-filter: none !important;
 }
 
 .button * {
   box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
   filter: none !important;
+  -webkit-filter: none !important;
 }
 
 .arrow {
