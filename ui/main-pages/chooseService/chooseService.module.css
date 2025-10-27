@@ -65,7 +65,7 @@
 }
 
 .description strong {
-  color: #0388ff;
+  color: rgba(0, 8, 34, 0.7);
   font-weight: 600;
 }
 
