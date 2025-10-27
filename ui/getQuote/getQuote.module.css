@@ -344,6 +344,11 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
 .durationTypeButton:hover {
@@ -353,13 +358,24 @@
 }
 
 .durationTypeButton.selected {
-  border-color: #0245a1;
-  background: #0245a1;
+  border-color: #000822;
+  background: #000822;
   color: white;
+}
+
+.durationTypeButton.selected::before {
+  content: "✓";
   display: flex;
   align-items: center;
-  gap: 0.8rem;
   justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-right: 0.2rem;
 }
 
 .selectedValue {
