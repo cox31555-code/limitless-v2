@@ -98,10 +98,10 @@ const SupportIcon = () => (
       <ellipse cx="111.262" cy="101.978" rx="2.06117" ry="2.06739" fill="#0388FF"/>
     </svg>
     <svg className={styles.checkCircle} width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="21.413" cy="21.4654" rx="21.413" ry="21.4654" fill="url(#paint0_linear_support)"/>
+      <ellipse cx="21.413" cy="21.4654" rx="21.413" ry="21.4654" fill="url(#paint_support_circle)"/>
       <path d="M13.082 22.2199L17.0197 27.6247C17.7604 28.6414 19.284 28.62 19.9959 27.5829L28.0834 15.8018" stroke="#000822" strokeWidth="2.99392" strokeLinecap="round"/>
       <defs>
-        <linearGradient id="paint0_linear_support" x1="-14.7331" y1="37.0383" x2="27.8433" y2="15.5666" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint_support_circle" x1="-14.7331" y1="37.0383" x2="27.8433" y2="15.5666" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0.3"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
