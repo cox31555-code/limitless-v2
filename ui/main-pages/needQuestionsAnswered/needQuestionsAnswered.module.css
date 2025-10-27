@@ -105,18 +105,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 3;
   padding: 0;
-}
-
-.arrowButton:hover {
-  background: linear-gradient(135deg, #049CFF 0%, #0280e0 100%);
-  transform: translateY(-2px);
-}
-
-.arrowButton:active {
-  transform: translateY(0);
 }
 
 .cardContent {
