@@ -60,13 +60,6 @@ const TrustpilotLogo = memo(() => (
   </svg>
 ));
 
-const PrevIcon = memo(() => (
-  <span style={{ fontSize: '1.6rem', lineHeight: 1, fontWeight: 600 }}>←</span>
-));
-
-const NextIcon = memo(() => (
-  <span style={{ fontSize: '1.6rem', lineHeight: 1, fontWeight: 600 }}>→</span>
-));
 
 const reviewsData = [
   {
@@ -285,10 +278,10 @@ const Reviews = () => {
           </h2>
           <div className={styles.navigation}>
             <button className={`${styles.navButton} ${!isAtStart ? styles.navButtonActive : ''}`} onClick={handlePrev} aria-label="Previous review" disabled={isAtStart}>
-              <PrevIcon />
+              Prev
             </button>
             <button className={`${styles.navButton} ${!isAtEnd ? styles.navButtonActive : ''}`} onClick={handleNext} aria-label="Next review" disabled={isAtEnd}>
-              <NextIcon />
+              Next
             </button>
           </div>
         </div>
