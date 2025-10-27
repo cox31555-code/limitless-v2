@@ -73,6 +73,7 @@
   height: 2rem;
   object-fit: contain;
   border-radius: 0.3rem;
+  margin-top: 1px;
 }
 
 .gbText {
