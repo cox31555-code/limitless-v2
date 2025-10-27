@@ -51,7 +51,6 @@
     linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   background-size: 500px 500px, 200% 200%;
   background-position: bottom right, center;
-  animation: gradientShift 8s ease infinite;
   min-height: 220px;
   justify-content: center;
   overflow: hidden;
