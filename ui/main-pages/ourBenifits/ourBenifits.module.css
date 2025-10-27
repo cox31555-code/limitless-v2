@@ -80,6 +80,12 @@
   background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
   border: 2px solid #f0f4ff;
   position: relative;
+  box-shadow: none !important;
+}
+
+.benifit,
+.benifit * {
+  box-shadow: none !important;
 }
 
 .imgContainer {
