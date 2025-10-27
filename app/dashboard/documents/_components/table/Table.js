@@ -27,20 +27,14 @@ const Table = ({ title, columns, data }) => {
           <tbody className={styles.tableBody}>
             {data.map((row, index) => (
               <tr key={index} className={styles.tableRow}>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Document">
                   <span className={styles.datacell}>{row.document}</span>
                 </td>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Date">
                   <span className={styles.datacell}>{row.documentNumber}</span>
                 </td>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Action">
                   <div className={styles.documentType}>
-                    {/* <Image
-                      src="/svg/pdf.svg"
-                      alt="pdf"
-                      width={24}
-                      height={24}
-                    /> */}
                     <span className={styles.datacell}>{row.documentType}</span>
                   </div>
                 </td>
