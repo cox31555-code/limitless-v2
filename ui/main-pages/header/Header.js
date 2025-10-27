@@ -75,7 +75,7 @@ const Header = ({ subTitle, title, description, features }) => {
                 Get a Quote
               </button>
             </div>
-            {pathname === "/impound" ? <GetQuoteImpound /> : <GetQuote skipDuration={pathname === "/annual"} />}
+            {pathname === "/impound" ? <GetQuoteImpound /> : <GetQuote skipDuration={pathname === "/annual"} onExpand={setIsQuoteExpanded} />}
           </div>
           <div className={styles.features}>
             {features.map((feature) => (
