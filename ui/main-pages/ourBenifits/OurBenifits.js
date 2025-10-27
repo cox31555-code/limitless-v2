@@ -9,10 +9,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 const OurBenifits = ({ benifits, title, description }) => {
-  const words = title.split(" ");
-  const lastTwoWords = words.slice(-2).join(" ");
-  const withoutLastTwoWords = words.slice(0, -2).join(" ");
-
   return (
     <div className={`${styles.container}`}>
       <div className={styles.top}>
