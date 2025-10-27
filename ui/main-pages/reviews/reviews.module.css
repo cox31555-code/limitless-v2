@@ -9,20 +9,7 @@
   margin-top: 6rem;
   margin-bottom: 0;
   overflow: hidden;
-}
-
-.wrapper::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 169.4rem;
-  height: 97.6rem;
-  background: #EAF9FF;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
+  background: #DFF6FF;
 }
 
 .container {
