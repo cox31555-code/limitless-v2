@@ -13,7 +13,6 @@ const FormTextInput = ({
   error,
   value,
   onChange,
-  hideLabel = false,
   ...props
 }) => {
   const handleRegistrationChange = (e) => {
