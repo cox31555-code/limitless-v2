@@ -456,14 +456,9 @@ const InsuranceTypes = () => {
             <div className={styles.iconContainer}>{getIcon(insurance.icon)}</div>
 
             <div className={styles.content}>
-              <div className={styles.titleWrapper}>
-                <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-                  {insurance.title}
-                </h3>
-                <p className={`${styles.description} ${poppins.className}`}>
-                  {insurance.description}
-                </p>
-              </div>
+              <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+                {insurance.title}
+              </h3>
 
               <ul className={`${styles.featureList} ${poppins.className}`}>
                 {insurance.features.map((feature, idx) => (
