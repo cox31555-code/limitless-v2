@@ -1,13 +1,19 @@
 .stepper {
   display: flex;
   align-items: flex-start;
-  gap: 1.6rem;
+  gap: 2rem;
   justify-content: center;
+  padding: 3rem 4.4% 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
+
 .stepperContainer {
   display: flex;
   align-items: center;
 }
+
 .stepperItem {
   display: flex;
   align-items: center;
@@ -15,66 +21,118 @@
   flex-direction: column;
   gap: 2.4rem;
 }
+
 .stepperItemText {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+  text-align: center;
 }
+
 .stepperLine,
 .stepperLine2 {
   flex: 1;
+  min-width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .stepperLine svg,
 .stepperLine2 svg {
   width: 100%;
   height: 100%;
   margin-top: -5rem;
+  stroke: rgba(3, 136, 255, 0.3);
 }
+
 .stepperNumber {
-  color: #049cff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: #0388ff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
+
 .stepperTitle {
   color: #000822;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 130%;
+  letter-spacing: -0.2px;
+  margin: 0;
 }
+
 @media screen and (max-width: 900px) {
   .stepper {
-    gap: 1.6rem;
+    gap: 1.2rem;
+    padding: 2.4rem 2% 1.6rem;
   }
+
   .stepperItemImage {
     width: 3.4rem;
     height: 3.4rem;
   }
+
   .stepperItemImage:first-child {
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 4rem;
+    height: 4rem;
   }
+
   .stepperItem {
     gap: 1.2rem;
     margin: 0.4rem 0 0 !important;
   }
+
   .stepperItem:first-child {
     margin: 0 !important;
   }
+
   .stepperItemText {
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
+
   .stepperLine svg,
   .stepperLine2 svg {
     margin-top: -4rem;
   }
+
   .stepperTitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  .stepperNumber {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stepper {
+    gap: 0.8rem;
+    padding: 1.6rem 1.5% 1.2rem;
+  }
+
+  .stepperLine,
+  .stepperLine2 {
+    min-width: 20px;
+  }
+
+  .stepperItem {
+    gap: 0.8rem;
+  }
+
+  .stepperItemText {
+    gap: 0.3rem;
+  }
+
+  .stepperTitle {
+    font-size: 1rem;
+  }
+
+  .stepperNumber {
+    font-size: 0.9rem;
   }
 }
