@@ -295,9 +295,16 @@
 .actions {
   display: none;
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
   .tableBody {
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  .tableBody {
+    grid-template-columns: 1fr;
     gap: 1.6rem;
   }
 }
