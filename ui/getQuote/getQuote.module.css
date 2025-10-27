@@ -279,8 +279,8 @@
 .quickOption {
   padding: 1.6rem 1.2rem;
   border-radius: 1.2rem;
-  border: 2px solid #e8ecf1;
-  background: white;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #ffffff;
   color: #5a6b7d;
   font-size: 1.4rem;
   font-weight: 500;
@@ -290,20 +290,10 @@
   overflow: hidden;
 }
 
-.quickOption::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
 .quickOption:hover {
-  border-color: #0388ff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(3, 136, 255, 0.1);
+  border-color: rgba(3, 136, 255, 0.25);
+  background: rgba(3, 136, 255, 0.04);
+  color: #0388ff;
 }
 
 .quickOption.selected {
