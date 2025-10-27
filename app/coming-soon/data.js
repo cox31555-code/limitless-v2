@@ -16,8 +16,8 @@ export const features = [
     img: {
       src: "/svg/annual-car.svg",
       alt: "annual insurance",
-      width: 166,
-      height: 122,
+      width: 145,
+      height: 105,
     },
     title: "Annual Insurance",
     description:
