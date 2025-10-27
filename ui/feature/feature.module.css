@@ -156,7 +156,7 @@
 /* Tablet - smaller */
 @media screen and (max-width: 900px) {
   .container {
-    border: 2px solid rgba(4, 156, 255, 0.15);
+    border: 1px solid rgba(3, 136, 255, 0.12);
     padding: 1.8rem 2rem;
     gap: 1.6rem;
     flex-direction: column;
