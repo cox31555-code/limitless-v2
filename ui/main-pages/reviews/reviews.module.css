@@ -1,44 +1,111 @@
 .wrapper {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 8.6rem 0;
-  margin-top: 6rem;
-  margin-bottom: 0;
-  overflow: hidden;
-  background: #EAF9FF;
+  width: 100%;
+  padding: 8rem 0;
+  background: transparent;
 }
 
 .container {
-  max-width: 147.2rem;
+  max-width: 132rem;
   margin: 0 auto;
   padding: 0 4.4%;
-  display: flex;
-  align-items: flex-start;
-  gap: 14.5rem;
-  position: relative;
-  z-index: 1;
 }
 
-.leftSection {
+.header {
   display: flex;
-  flex-direction: column;
-  gap: 2.8rem;
-  min-width: 26.7rem;
-  padding-top: 2.4rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4.8rem;
 }
 
 .title {
-  color: #000822;
-  font-size: 5.6rem;
-  font-weight: 800;
-  line-height: 112%;
-  letter-spacing: -1.2px;
+  color: #1D1F2C;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 120%;
   margin: 0;
-  width: 23.6rem;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navButton {
+  display: flex;
+  padding: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2.6rem;
+  border: 1px solid #1B1464;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background: rgba(27, 20, 100, 0.05);
+}
+
+.navButton svg {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.navButtonActive {
+  background: #1B1464;
+  box-shadow: 0 0.7rem 1.95rem 0 rgba(0, 0, 0, 0.06);
+}
+
+.navButtonActive:hover {
+  background: #1B1464;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.summaryCard {
+  display: flex;
+  width: 28rem;
+  min-width: 28rem;
+  height: 22rem;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  background: #FFF;
+  flex-shrink: 0;
+}
+
+.excellent {
+  color: #000;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+}
+
+.largeStars {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.largeStars svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.reviewsCount {
+  color: #000;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.2rem;
 }
 
 .trustpilotBadge {
@@ -46,318 +113,163 @@
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
-  width: 14.9rem;
-  height: 4.4rem;
 }
 
 .trustpilotBadge svg {
-  width: 3.7rem;
-  height: 3.4rem;
-  flex-shrink: 0;
+  width: 2.54rem;
+  height: 2.4rem;
 }
 
 .trustpilotText {
-  font-size: 2.1rem;
+  color: #000;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.6rem;
-  color: #000;
-  width: 9.1rem;
-  height: 2.2rem;
 }
 
-.ratingInfo {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  height: 1.8rem;
-}
-
-.rating,
-.reviewCount {
-  color: #717584;
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 100%;
-}
-
-.divider {
-  width: 0.2rem;
-  height: 1.4rem;
-  background: #717584;
-  border-radius: 0.1rem;
-}
-
-.cardsGridWrapper {
-  flex: 1;
-  overflow: hidden;
-  border-radius: 1.13rem;
-  position: relative;
-}
-
-.cardsGrid {
+.reviewsContainer {
   display: flex;
   align-items: flex-start;
-  gap: 2.1rem;
-  animation: slideCarousel 15s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.cardsGrid > :nth-child(1)::before,
-.cardsGrid > :nth-child(4)::before {
-  animation: fadeOverlay1 15s linear infinite;
-}
-
-.cardsGrid > :nth-child(2)::before,
-.cardsGrid > :nth-child(5)::before {
-  animation: fadeOverlay2 15s linear infinite;
-}
-
-.cardsGrid > :nth-child(3)::before,
-.cardsGrid > :nth-child(6)::before {
-  animation: fadeOverlay3 15s linear infinite;
-}
-
-@keyframes fadeOverlay1 {
-  0%, 26.67%, 100% { opacity: 1; }
-  33.33%, 93.33% { opacity: 0; }
-}
-
-@keyframes fadeOverlay2 {
-  0%, 26.67% { opacity: 0; }
-  33.33%, 60% { opacity: 1; }
-  66.67%, 100% { opacity: 0; }
-}
-
-@keyframes fadeOverlay3 {
-  0%, 60% { opacity: 0; }
-  66.67%, 93.33% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-@keyframes slideCarousel {
-  0% {
-    transform: translateX(0);
-  }
-  26.67% {
-    transform: translateX(0);
-  }
-  33.33% {
-    transform: translateX(calc(-1 * (33.9rem + 2.1rem)));
-  }
-  60% {
-    transform: translateX(calc(-1 * (33.9rem + 2.1rem)));
-  }
-  66.67% {
-    transform: translateX(calc(-2 * (33.9rem + 2.1rem)));
-  }
-  93.33% {
-    transform: translateX(calc(-2 * (33.9rem + 2.1rem)));
-  }
-  100% {
-    transform: translateX(0);
-  }
+  gap: 3.2rem;
+  flex: 1;
 }
 
 .reviewCard {
-  position: relative;
-  width: 33.9rem;
-  height: 26.3rem;
+  display: flex;
+  height: 22rem;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex: 1;
   background: #FFF;
-  border-radius: 1.13rem;
-  padding: 2.1rem;
+  box-shadow: 0 1.2rem 2.4rem 0 rgba(0, 0, 0, 0.05);
+}
+
+.rating {
   display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
-  overflow: hidden;
-  backface-visibility: hidden;
+  height: 2.6rem;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
 }
 
-.reviewCard::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, rgba(223, 246, 255, 0.7) 0%, rgba(223, 246, 255, 0) 100%);
-  pointer-events: none;
-  z-index: 10;
-  border-radius: 1.13rem 0 0 1.13rem;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  will-change: opacity;
-}
-
-
-.reviewCard svg {
-  position: relative;
-  z-index: 3;
-  width: 12rem;
-  height: 2.1rem;
-  flex-shrink: 0;
-  margin-bottom: 1.6rem;
-}
-
-.reviewText {
-  position: relative;
-  z-index: 3;
-  color: #000822;
-  font-size: 1.45rem;
-  font-weight: 500;
-  line-height: 118%;
-  margin: 0 0 auto 0;
-  width: 24.2rem;
-  min-height: 3.4rem;
-}
-
-.authorInfo {
+.stars {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-top: auto;
-  padding-top: 1.5rem;
-  position: relative;
-  z-index: 3;
+  align-items: flex-start;
+  gap: 0.2rem;
 }
 
-.authorName {
-  color: #000822;
-  font-size: 1.45rem;
-  font-weight: 600;
-  line-height: 100%;
-  margin: 0;
+.stars svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 .timestamp {
-  color: rgba(0, 8, 34, 0.54);
-  font-size: 1.29rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.052rem;
-  margin: 0;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2.6rem;
 }
 
-/* Large screens */
-@media screen and (max-width: 1400px) {
-  .container {
-    gap: 8rem;
-  }
-
-  .cardsGrid {
-    animation: slideCarousel 30s linear infinite;
-  }
-
-  .reviewCard {
-    width: 100%;
-    flex: 0 0 33.9rem;
-  }
+.reviewTitle {
+  align-self: stretch;
+  color: #4A4C56;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.6rem;
 }
 
-/* Tablet */
+.reviewText {
+  align-self: stretch;
+  color: #4A4C56;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+}
+
+.divider {
+  width: 6rem;
+  height: 0.1rem;
+  background: #D9D9D9;
+}
+
+.username {
+  color: #4A4C56;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+}
+
 @media screen and (max-width: 1200px) {
   .wrapper {
-    padding: 7rem 0;
-    margin-top: 5rem;
-    margin-bottom: 0;
-  }
-
-  .container {
-    gap: 5rem;
-    padding: 0 4%;
-  }
-
-  .leftSection {
-    min-width: 22rem;
-  }
-
-  .title {
-    font-size: 4.4rem;
-    width: 20rem;
-    letter-spacing: -1px;
-  }
-
-  .cardsGridWrapper {
-    overflow: visible;
-  }
-
-  .cardsGrid {
-    flex-wrap: wrap;
-    gap: 2rem;
-    animation: none;
-  }
-
-  .reviewCard {
-    flex: 1;
-    min-width: 28rem;
-    width: auto;
-    height: auto;
-    min-height: 24rem;
-  }
-
-  .cardsGrid > :nth-child(1)::before,
-  .cardsGrid > :nth-child(2)::before,
-  .cardsGrid > :nth-child(3)::before,
-  .cardsGrid > :nth-child(4)::before,
-  .cardsGrid > :nth-child(5)::before,
-  .cardsGrid > :nth-child(6)::before {
-    animation: none;
-    opacity: 0;
-  }
-}
-
-/* Tablet - smaller */
-@media screen and (max-width: 900px) {
-  .wrapper {
     padding: 6rem 0;
-    margin-top: 4rem;
-    margin-bottom: 0;
   }
 
-  .container {
-    flex-direction: column;
-    gap: 4rem;
-    padding: 0 4%;
-  }
-
-  .leftSection {
-    min-width: 100%;
-    padding-top: 0;
-    gap: 2.4rem;
+  .header {
+    margin-bottom: 4rem;
   }
 
   .title {
     font-size: 4rem;
+  }
+
+  .content {
+    gap: 1.6rem;
+  }
+
+  .reviewsContainer {
+    gap: 2rem;
+  }
+
+  .summaryCard {
+    width: 24rem;
+    min-width: 24rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    padding: 5rem 0;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .navigation {
+    gap: 1.2rem;
+  }
+
+  .navButton {
+    padding: 1rem;
+  }
+
+  .navButton svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .summaryCard {
     width: 100%;
-    letter-spacing: -1px;
+    max-width: 40rem;
+    margin: 0 auto;
   }
 
-  .rating,
-  .reviewCount {
-    font-size: 1.6rem;
-  }
-
-  .trustpilotText {
-    font-size: 1.9rem;
-  }
-
-  .trustpilotBadge svg {
-    width: 3.4rem;
-    height: 3.1rem;
-  }
-
-  .cardsGridWrapper {
-    overflow: visible;
-    border-radius: 0;
-  }
-
-  .cardsGrid {
+  .reviewsContainer {
     flex-direction: column;
     gap: 2rem;
     width: 100%;
-    animation: none;
   }
 
   .reviewCard {
@@ -365,170 +277,102 @@
     height: auto;
     min-height: 22rem;
   }
-
-  .cardsGrid > :nth-child(1)::before,
-  .cardsGrid > :nth-child(2)::before,
-  .cardsGrid > :nth-child(3)::before,
-  .cardsGrid > :nth-child(4)::before,
-  .cardsGrid > :nth-child(5)::before,
-  .cardsGrid > :nth-child(6)::before {
-    animation: none;
-    opacity: 0;
-  }
 }
 
-/* Mobile */
 @media screen and (max-width: 600px) {
   .wrapper {
-    padding: 5rem 0;
-    margin-top: 3rem;
-    margin-bottom: 0;
-  }
-
-  .container {
-    gap: 3rem;
-    padding: 0 4%;
-  }
-
-  .leftSection {
-    gap: 2rem;
-  }
-
-  .title {
-    font-size: 3.2rem;
-    letter-spacing: -0.8px;
-  }
-
-  .rating,
-  .reviewCount {
-    font-size: 1.5rem;
-  }
-
-  .trustpilotText {
-    font-size: 1.7rem;
-  }
-
-  .trustpilotBadge svg {
-    width: 3rem;
-    height: 2.8rem;
-  }
-
-  .cardsGridWrapper {
-    overflow: visible;
-  }
-
-  .cardsGrid {
-    flex-direction: column;
-    animation: none;
-  }
-
-  .reviewCard {
-    padding: 1.8rem;
-    min-height: 20rem;
-  }
-
-  .cardsGrid > :nth-child(1)::before,
-  .cardsGrid > :nth-child(2)::before,
-  .cardsGrid > :nth-child(3)::before,
-  .cardsGrid > :nth-child(4)::before,
-  .cardsGrid > :nth-child(5)::before,
-  .cardsGrid > :nth-child(6)::before {
-    animation: none;
-    opacity: 0;
-  }
-
-  .reviewText {
-    font-size: 1.35rem;
-    width: 100%;
-  }
-
-  .authorName {
-    font-size: 1.35rem;
-  }
-
-  .timestamp {
-    font-size: 1.2rem;
-  }
-
-  .reviewCard svg {
-    width: 10rem;
-    height: 1.9rem;
-    margin-bottom: 1.4rem;
-  }
-}
-
-/* Small mobile */
-@media screen and (max-width: 480px) {
-  .wrapper {
     padding: 4rem 0;
-    margin-top: 2.5rem;
-    margin-bottom: 0;
   }
 
-  .container {
-    gap: 2.5rem;
-    padding: 0 4%;
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .title {
     font-size: 2.8rem;
-    letter-spacing: -0.6px;
   }
 
-  .rating,
-  .reviewCount {
+  .navigation {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .summaryCard {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.6rem;
+  }
+
+  .largeStars {
+    gap: 0.6rem;
+  }
+
+  .largeStars svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .excellent {
+    font-size: 1.6rem;
+  }
+
+  .reviewsCount {
     font-size: 1.4rem;
   }
 
   .trustpilotText {
-    font-size: 1.5rem;
-  }
-
-  .trustpilotBadge svg {
-    width: 2.8rem;
-    height: 2.6rem;
-  }
-
-  .ratingInfo {
-    gap: 1rem;
-  }
-
-  .cardsGrid {
-    flex-direction: column;
-    animation: none;
+    font-size: 1.4rem;
   }
 
   .reviewCard {
     padding: 1.6rem;
-    gap: 1.2rem;
-    min-height: 18rem;
+    min-height: 20rem;
   }
 
-  .cardsGrid > :nth-child(1)::before,
-  .cardsGrid > :nth-child(2)::before,
-  .cardsGrid > :nth-child(3)::before,
-  .cardsGrid > :nth-child(4)::before,
-  .cardsGrid > :nth-child(5)::before,
-  .cardsGrid > :nth-child(6)::before {
-    animation: none;
-    opacity: 0;
+  .reviewTitle {
+    font-size: 1.6rem;
   }
 
   .reviewText {
     font-size: 1.3rem;
   }
 
-  .authorName {
+  .username {
     font-size: 1.3rem;
   }
+}
 
-  .timestamp {
-    font-size: 1.15rem;
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 3rem 0;
   }
 
-  .reviewCard svg {
-    width: 9rem;
-    height: 1.8rem;
-    margin-bottom: 1.2rem;
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .navButton {
+    padding: 0.8rem;
+  }
+
+  .navButton svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .summaryCard {
+    padding: 1.4rem;
+  }
+
+  .largeStars svg {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .reviewCard {
+    padding: 1.4rem;
   }
 }
