@@ -243,24 +243,29 @@
 }
 
 @media screen and (max-width: 600px) {
-  .container {
+  .mobile {
     gap: 1.2rem;
   }
 
-  .title {
+  .mobileTitle {
     font-size: 1.4rem;
+    padding-bottom: 1rem;
   }
 
-  .tableRow {
+  .card {
     padding: 1.4rem;
     gap: 1rem;
   }
 
-  .datacell {
+  .value {
     font-size: 1.2rem;
   }
 
-  .tableCell::before {
+  .label {
     font-size: 0.85rem;
+  }
+
+  .date {
+    font-size: 1.1rem;
   }
 }
