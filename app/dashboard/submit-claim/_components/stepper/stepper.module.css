@@ -1,17 +1,32 @@
 .stepper {
   display: flex;
-  align-items: flex-start;
-  gap: 2rem;
+  align-items: center;
   justify-content: center;
-  padding: 3rem 4.4% 2rem;
+  gap: 0;
+  padding: 3rem 4.4% 3rem;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+}
+
+.stepper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, #0388ff 0%, #0388ff 50%, rgba(3, 136, 255, 0.2) 100%);
+  transform: translateY(-50%);
+  z-index: 0;
 }
 
 .stepperContainer {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .stepperItem {
@@ -19,7 +34,21 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.6rem;
+  flex: 1;
+  min-width: 120px;
+  position: relative;
+}
+
+.stepperItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: 3.4rem;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, #0388ff 0%, rgba(3, 136, 255, 0.2) 100%);
+  z-index: 0;
 }
 
 .stepperItemText {
@@ -33,95 +62,92 @@
 
 .stepperLine,
 .stepperLine2 {
-  flex: 1;
-  min-width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
 
 .stepperLine svg,
 .stepperLine2 svg {
-  width: 100%;
-  height: 100%;
-  margin-top: -5rem;
-  stroke: rgba(3, 136, 255, 0.3);
+  display: none;
 }
 
 .stepperNumber {
-  color: #0388ff;
-  font-size: 1.2rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
   line-height: 130%;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
   text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .stepperTitle {
   color: #000822;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: -0.2px;
   margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 @media screen and (max-width: 900px) {
   .stepper {
-    gap: 1.2rem;
-    padding: 2.4rem 2% 1.6rem;
+    padding: 2.4rem 2% 2.4rem;
   }
 
-  .stepperItemImage {
-    width: 3.4rem;
-    height: 3.4rem;
-  }
-
-  .stepperItemImage:first-child {
-    width: 4rem;
-    height: 4rem;
+  .stepper::before {
+    display: none;
   }
 
   .stepperItem {
     gap: 1.2rem;
-    margin: 0.4rem 0 0 !important;
+    min-width: 100px;
   }
 
-  .stepperItem:first-child {
-    margin: 0 !important;
+  .stepperItem:not(:last-child)::after {
+    right: -40px;
+    width: 80px;
   }
 
   .stepperItemText {
     gap: 0.4rem;
   }
 
-  .stepperLine svg,
-  .stepperLine2 svg {
-    margin-top: -4rem;
-  }
-
   .stepperTitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .stepperNumber {
-    font-size: 1rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .stepper {
-    gap: 0.8rem;
-    padding: 1.6rem 1.5% 1.2rem;
-  }
-
-  .stepperLine,
-  .stepperLine2 {
-    min-width: 20px;
+    gap: 0;
+    padding: 2rem 1.5% 2rem;
   }
 
   .stepperItem {
     gap: 0.8rem;
+    min-width: 80px;
+  }
+
+  .stepperItem:not(:last-child)::after {
+    right: -30px;
+    width: 60px;
+    height: 1.5px;
   }
 
   .stepperItemText {
@@ -133,6 +159,8 @@
   }
 
   .stepperNumber {
-    font-size: 0.9rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 1.2rem;
   }
 }
