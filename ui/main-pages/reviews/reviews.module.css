@@ -132,39 +132,20 @@
 }
 
 @keyframes fadeOverlay1 {
-  0%, 26.67% {
-    opacity: 1;
-  }
-  33.33%, 93.33% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0%, 26.67%, 100% { opacity: 1; }
+  33.33%, 93.33% { opacity: 0; }
 }
 
 @keyframes fadeOverlay2 {
-  0%, 26.67% {
-    opacity: 0;
-  }
-  33.33%, 60% {
-    opacity: 1;
-  }
-  66.67%, 100% {
-    opacity: 0;
-  }
+  0%, 26.67% { opacity: 0; }
+  33.33%, 60% { opacity: 1; }
+  66.67%, 100% { opacity: 0; }
 }
 
 @keyframes fadeOverlay3 {
-  0%, 60% {
-    opacity: 0;
-  }
-  66.67%, 93.33% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  0%, 60% { opacity: 0; }
+  66.67%, 93.33% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 @keyframes slideCarousel {
@@ -245,13 +226,13 @@
 }
 
 .authorInfo {
-  position: relative;
-  z-index: 3;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   margin-top: auto;
   padding-top: 1.5rem;
+  position: relative;
+  z-index: 3;
 }
 
 .authorName {
