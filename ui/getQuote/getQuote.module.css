@@ -311,11 +311,11 @@
 .quickOption.selected::before {
   content: "";
   display: flex;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
-  background: radial-gradient(circle, #0388ff 0%, #0388ff 62.5%, transparent 62.5%, transparent 100%);
-  border: 1.5px solid #0388ff;
+  background: #0388ff;
+  box-shadow: 0 0 0 2px #0388ff;
   flex-shrink: 0;
 }
 
@@ -367,11 +367,11 @@
 .durationTypeButton.selected::before {
   content: "";
   display: flex;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
-  background: radial-gradient(circle, #0388ff 0%, #0388ff 62.5%, transparent 62.5%, transparent 100%);
-  border: 1.5px solid #0388ff;
+  background: #0388ff;
+  box-shadow: 0 0 0 2px #0388ff;
   flex-shrink: 0;
 }
 
