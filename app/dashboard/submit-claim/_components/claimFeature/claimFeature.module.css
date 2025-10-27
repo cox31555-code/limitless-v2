@@ -1,103 +1,188 @@
 .container {
-  width: max(39rem, 45%);
+  width: 100%;
   height: auto;
   flex-shrink: 0;
-  border-radius: 18px;
-  background: #fdfdfd;
-  padding: 0.4rem 1.8rem 2.1rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.15);
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
+  border-radius: 16px 16px 0 0;
+}
+
+.container:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+  transform: translateY(-2px);
+}
+
 .img {
-  margin-left: 1.8rem;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
 }
+
 .claimFeatureText {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  margin: 4.1rem 0 3.3rem;
+  gap: 1.2rem;
 }
+
 .claimFeatureTitle {
   color: #000822;
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 1.12px;
+  line-height: 130%;
+  letter-spacing: -0.3px;
+  margin: 0;
 }
+
 .claimFeatureDescription {
-  color: rgba(0, 8, 34, 0.54);
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.56px;
-  min-height: 3.5rem;
+  color: #5a6b7d;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+  margin: 0;
+  min-height: auto;
 }
+
 .features {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.4rem;
   padding: 2rem;
   border-radius: 12px;
-  background: #ecf0fe;
-  min-height: 18.2rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  min-height: auto;
 }
+
 .feature {
   display: flex;
-  align-items: center;
-  gap: 1.8rem;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.feature img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 
 .featureText {
   color: #000822;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0;
+  margin: 0;
 }
+
 .btn {
   display: flex;
-  height: 48px;
+  height: 5rem;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
-  background: linear-gradient(0deg, #0388ff 0%, #0388ff 100%), #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.25);
   color: #fff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 130%;
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-top: 1.4rem;
+  margin-top: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 6px rgba(3, 136, 255, 0.15);
+}
+
 @media screen and (max-width: 900px) {
   .container {
-    width: 100%;
-    height: auto;
-    padding: 2.5rem 1.6rem;
+    padding: 2rem;
+    gap: 1.8rem;
   }
+
   .img {
-    margin-left: 0.4rem;
-    height: 7.5rem;
-    width: auto;
+    max-width: 160px;
   }
-  .claimFeatureText {
-    gap: 1.6rem;
-    margin: 3.4rem 0 2.4rem;
-  }
+
   .claimFeatureTitle {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
+
   .claimFeatureDescription {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
+
   .features {
-    min-height: auto;
+    padding: 1.6rem;
+    gap: 1.2rem;
   }
 
   .featureText {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
+
   .btn {
-    height: 48px;
+    height: 4.4rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 1.6rem;
+    gap: 1.4rem;
+  }
+
+  .img {
+    max-width: 140px;
+  }
+
+  .claimFeatureTitle {
+    font-size: 1.6rem;
+  }
+
+  .claimFeatureDescription {
+    font-size: 1.1rem;
+  }
+
+  .features {
+    padding: 1.4rem;
+    gap: 1rem;
+  }
+
+  .featureText {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    height: 4rem;
+    font-size: 1.2rem;
   }
 }
