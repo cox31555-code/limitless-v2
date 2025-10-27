@@ -43,6 +43,12 @@ body {
   position: relative;
   overflow: hidden;
   margin-left: calc(-50vw + 50%);
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1), margin 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.headerContainer.expanded {
+  height: 102.5rem;
+  margin: -1px 0 8rem 0;
 }
 
 .headerContainer::before,
