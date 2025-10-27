@@ -35,7 +35,7 @@ const LargeStarIcon = memo(() => (
 const HalfStarIcon = memo(() => (
   <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ padding: '3px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}>
     <defs>
-      <linearGradient id="halfStarGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <linearGradient id="halfStarGradient" x1="0" y1="0" x2="33" y2="0" gradientUnits="userSpaceOnUse">
         <stop offset="0%" stopColor="#00B67A"/>
         <stop offset="50%" stopColor="#00B67A"/>
         <stop offset="50%" stopColor="#D9D9D9"/>
@@ -43,7 +43,7 @@ const HalfStarIcon = memo(() => (
       </linearGradient>
     </defs>
     <rect width="33" height="34" fill="url(#halfStarGradient)"/>
-    <path d="M16.5 24.3522L22.5833 22.7233L25.125 31L16.5 24.3522ZM30.5 13.6541H19.7917L16.5 3L13.2083 13.6541H2.5L11.1667 20.2579L7.875 30.9119L16.5417 24.3082L21.875 20.2579L30.5 13.6541Z" fill="white" style={{ position: 'absolute' }}/>
+    <path d="M16.5 24.3522L22.5833 22.7233L25.125 31L16.5 24.3522ZM30.5 13.6541H19.7917L16.5 3L13.2083 13.6541H2.5L11.1667 20.2579L7.875 30.9119L16.5417 24.3082L21.875 20.2579L30.5 13.6541Z" fill="white"/>
   </svg>
 ));
 
