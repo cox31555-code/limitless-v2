@@ -47,7 +47,7 @@
   padding: 3.2rem 2.8rem;
   border-radius: 20px;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.06);
+  box-shadow: 0 1px 4px rgba(0, 8, 34, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   min-height: 460px;
