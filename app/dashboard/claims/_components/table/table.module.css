@@ -253,9 +253,17 @@
 .actions {
   display: none;
 }
+@media screen and (min-width: 900px) {
+  .tableBody {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.6rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
     display: flex;
+    flex-direction: column;
   }
 
   .title {
