@@ -5,7 +5,7 @@ export const homeFeatures = [
   },
   {
     title: "All Ages Welcome",
-    description: "Available to drivers aged 18-75 years old",
+    description: "Professional insurance coverage for drivers aged 18-75 years old",
   },
   {
     title: "Any Vehicle Type",
