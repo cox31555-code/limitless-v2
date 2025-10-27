@@ -145,13 +145,6 @@ body {
   margin: 0;
 }
 
-/* Force removal of all shadows from card components */
-[class*="card"] {
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-}
-
 body textarea,
 body input {
   font-family: inherit;
