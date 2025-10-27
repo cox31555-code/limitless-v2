@@ -171,7 +171,6 @@
   right: 10px;
   width: 280px;
   height: 280px;
-  animation: rotateAndScale 8s ease-in-out infinite;
   opacity: 0.15;
 }
 
@@ -180,7 +179,6 @@
   left: 20px;
   width: 220px;
   height: 220px;
-  animation: scaleAndGlow 6s ease-in-out infinite;
   opacity: 0.12;
 }
 
@@ -189,7 +187,6 @@
   right: 30px;
   width: 180px;
   height: 180px;
-  animation: floatCircle 10s linear infinite;
   opacity: 0.1;
 }
 
