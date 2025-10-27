@@ -402,7 +402,7 @@
   }
 
   .tableCell::before {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .claimant {
@@ -410,7 +410,11 @@
   }
 
   .date {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .ref {
+    font-size: 1rem;
   }
 
   .pendingActions:last-child {
@@ -419,5 +423,11 @@
 
   .view {
     font-size: 1.2rem;
+    padding: 0.8rem 1.6rem;
+    width: 100%;
+  }
+
+  .statusBadge {
+    font-size: 1.1rem;
   }
 }
