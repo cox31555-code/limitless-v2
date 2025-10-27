@@ -281,9 +281,9 @@
   border-radius: 0.6rem;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   background: #ffffff;
-  color: #5a6b7d;
+  color: #2c3e50;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -338,9 +338,9 @@
   border-radius: 0.6rem;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   background: #ffffff;
-  color: #5a6b7d;
+  color: #2c3e50;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
