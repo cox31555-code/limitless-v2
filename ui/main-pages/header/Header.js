@@ -71,13 +71,7 @@ const Header = ({ subTitle, title, description, features }) => {
                     : router.push("/temporary/get-quote");
                 }}
               >
-                Get a Quote{" "}
-                <Image
-                  src="/svg/arrow-right.svg"
-                  alt="arrow-right"
-                  width={28}
-                  height={14}
-                />
+                Get a Quote
               </button>
             </div>
             {pathname === "/impound" ? <GetQuoteImpound /> : <GetQuote skipDuration={pathname === "/annual"} />}
