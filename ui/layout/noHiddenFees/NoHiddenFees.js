@@ -46,7 +46,7 @@ const NoHiddenFees = () => {
             }}
             className={styles.membersPortalBtn}
           >
-            Members Portal{" "}
+            <p>Members Portal</p>
             <Image
               src="/svg/arrow-right.svg"
               alt="arrow-right"
