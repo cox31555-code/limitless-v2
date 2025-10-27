@@ -564,53 +564,86 @@
   border-left: 3px solid #dc3545;
 }
 
-/* Duration Modal */
-.durationModalOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 8, 34, 0.6);
-  z-index: 999;
-  backdrop-filter: blur(2px);
-  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 0;
+/* Inline Number Selector */
+.numberSelectorWrapper {
+  margin-top: 1.6rem;
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.durationModal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.numberSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  background: #ECF0FE;
+  backdrop-filter: blur(22px);
 }
 
-.durationModalContent {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border-radius: 1.6rem;
-  border: 1px solid rgba(3, 136, 255, 0.1);
-  padding: 2.4rem;
-  box-shadow: 0 16px 40px rgba(0, 8, 34, 0.12);
-  max-width: 45rem;
-  width: 90vw;
-}
-
-.modalLabel {
+.numberButton {
+  display: flex;
+  padding: 1rem 2.4rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(0, 8, 34, 0.14);
+  background: transparent;
+  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
   color: #000822;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 124%;
+  letter-spacing: 0.056rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 6.7rem;
+}
+
+.numberButton:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(0, 8, 34, 0.25);
+}
+
+.numberButton.selectedNumber {
+  background: #06112B;
+  border-color: #06112B;
+  color: #0388FF;
+  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+}
+
+.moreOptionsDropdown {
+  flex: 0 0 auto;
+  min-width: 12rem;
+}
+
+.moreOptionsDropdown > div {
+  height: 4.8rem;
+}
+
+.moreOptionsDropdown > div > select,
+.moreOptionsDropdown > div > div {
+  height: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(0, 8, 34, 0.14);
+  background: transparent;
   font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 0.4px;
-  margin-bottom: 2rem;
-  text-align: center;
+  color: #000822;
+  padding: 1rem 3.2rem 1rem 1.6rem;
 }
 
-.modalValueRow {
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
-}
-
-.moreOptionsDropdownModal {
-  flex-shrink: 0;
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
