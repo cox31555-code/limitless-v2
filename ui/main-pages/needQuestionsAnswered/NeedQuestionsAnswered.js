@@ -199,7 +199,7 @@ const NeedQuestionsAnswered = () => {
           <SupportIcon />
           
           <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
-            Real Human  Customer  Support
+            Real Human Customer Support
           </h3>
           <p className={`${styles.cardDescription} ${manrope.className}`}>
             Can't find your question? Feel free to email our support team and we will get back to you as soon as possible.
