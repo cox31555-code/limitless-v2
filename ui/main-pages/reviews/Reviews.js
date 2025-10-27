@@ -110,7 +110,7 @@ const Reviews = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.leftSection}>
-          <h2 className={`${styles.title} ${playfairDisplay.className}`}>
+          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
             Trustpilot Reviews
           </h2>
           
