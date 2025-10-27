@@ -88,9 +88,9 @@
   width: 5.2rem;
   height: 5.2rem;
   border-radius: 50%;
-  background: #ffffff;
-  color: #9ca3af;
-  font-size: 2rem;
+  background: #f3f4f6;
+  color: #d1d5db;
+  font-size: 1.2rem;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0;
@@ -107,14 +107,14 @@
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
   border: none;
-  font-size: 2.2rem;
+  font-size: 1.4rem;
   box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
 }
 
-/* Completed steps (if any) */
-.stepperItem:first-child ~ .stepperContainer .stepperNumber {
-  background: #e5e7eb;
-  color: #9ca3af;
+/* Muted/Inactive steps */
+.stepperItem:nth-child(n+2) .stepperNumber {
+  background: #f3f4f6;
+  color: #d1d5db;
   border: 2.5px solid #e5e7eb;
 }
 
@@ -157,11 +157,11 @@
   .stepperNumber {
     width: 4.6rem;
     height: 4.6rem;
-    font-size: 1.8rem;
+    font-size: 1.1rem;
   }
 
   .stepperItem:first-child .stepperNumber {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 
   .stepperTitle {
@@ -189,11 +189,11 @@
   .stepperNumber {
     width: 4rem;
     height: 4rem;
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 
   .stepperItem:first-child .stepperNumber {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 
   .stepperTitle {
