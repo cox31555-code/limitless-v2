@@ -165,7 +165,7 @@
 }
 .statusBadge {
   display: inline-flex;
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.4rem;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
@@ -173,21 +173,25 @@
   font-weight: 600;
   line-height: 130%;
   width: fit-content;
+  border: 1.5px solid;
 }
 
 .pending {
-  background: rgba(76, 175, 80, 0.12);
+  background: rgba(76, 175, 80, 0.08);
   color: #2e7d32;
+  border-color: rgba(76, 175, 80, 0.3);
 }
 
 .cancelled {
-  background: rgba(244, 67, 54, 0.12);
+  background: rgba(244, 67, 54, 0.08);
   color: #c62828;
+  border-color: rgba(244, 67, 54, 0.3);
 }
 
 .completed {
-  background: rgba(33, 150, 243, 0.12);
+  background: rgba(33, 150, 243, 0.08);
   color: #1565c0;
+  border-color: rgba(33, 150, 243, 0.3);
 }
 
 .claimant {
