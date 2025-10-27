@@ -143,9 +143,17 @@
     mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%);
     -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%);
   }
+  30% {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+  }
   33.33%, 93.33% {
     mask-image: none;
     -webkit-mask-image: none;
+  }
+  96.67% {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
   }
   100% {
     mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%);
@@ -158,9 +166,17 @@
     mask-image: none;
     -webkit-mask-image: none;
   }
+  30% {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+  }
   33.33%, 60% {
     mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%);
     -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%);
+  }
+  63.33% {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
   }
   66.67%, 100% {
     mask-image: none;
@@ -173,9 +189,17 @@
     mask-image: none;
     -webkit-mask-image: none;
   }
+  63.33% {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+  }
   66.67%, 93.33% {
     mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%);
     -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 1) 50%);
+  }
+  96.67% {
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%);
   }
   100% {
     mask-image: none;
