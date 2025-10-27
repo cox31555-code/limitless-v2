@@ -110,32 +110,25 @@
   display: flex;
   align-items: flex-start;
   gap: 2.1rem;
-  animation: slideCarousel 15s ease-in-out infinite;
+  animation: slideCarousel 15s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
-.cardsGrid > :nth-child(1)::before {
-  animation: fadeOverlay1 15s ease-in-out infinite;
-}
-
-.cardsGrid > :nth-child(2)::before {
-  animation: fadeOverlay2 15s ease-in-out infinite;
-}
-
-.cardsGrid > :nth-child(3)::before {
-  animation: fadeOverlay3 15s ease-in-out infinite;
-}
-
+.cardsGrid > :nth-child(1)::before,
 .cardsGrid > :nth-child(4)::before {
-  animation: fadeOverlay1 15s ease-in-out infinite;
+  animation: fadeOverlay1 15s linear infinite;
 }
 
+.cardsGrid > :nth-child(2)::before,
 .cardsGrid > :nth-child(5)::before {
-  animation: fadeOverlay2 15s ease-in-out infinite;
+  animation: fadeOverlay2 15s linear infinite;
 }
 
+.cardsGrid > :nth-child(3)::before,
 .cardsGrid > :nth-child(6)::before {
-  animation: fadeOverlay3 15s ease-in-out infinite;
+  animation: fadeOverlay3 15s linear infinite;
 }
 
 @keyframes fadeOverlay1 {
@@ -208,9 +201,9 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
   overflow: hidden;
+  backface-visibility: hidden;
 }
 
 .reviewCard::before {
@@ -225,11 +218,8 @@
   z-index: 10;
   border-radius: 1.13rem 0 0 1.13rem;
   opacity: 0;
-  transition: all 0.6s ease-in-out;
-}
-
-.reviewCard:hover::before {
-  transition: all 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
+  will-change: opacity;
 }
 
 
