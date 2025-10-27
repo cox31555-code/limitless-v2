@@ -2,8 +2,7 @@
   width: 100vw;
   min-height: 746px;
   margin: 0 calc(-50vw + 50%);
-  padding: 9rem 6.4rem 10rem;
-  background: #f2f5fe;
+  padding: 0.1rem 6.4rem 10rem;
   position: relative;
   overflow: hidden;
 }
