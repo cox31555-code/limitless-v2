@@ -32,405 +32,226 @@ const CheckIcon = () => (
 
 const insuranceData = [
   {
-    title: "Learner driver insurance",
-    icon: "learner",
+    title: "Losses from damage to third party cars.",
+    icon: "thirdPartyCar",
     features: [
-      "Cover from only 80p* a day.",
-      "Cover on your own car.",
-      "Start earning your No Claims Bonus.",
+      "Cover for damage to third party vehicles and property",
+      "Fire damage",
+      "Protected against fire, lightning, and explosion",
     ],
   },
   {
-    title: "Young driver insurance",
-    icon: "young",
+    title: "Losses from damage to third party property.",
+    icon: "thirdPartyProperty",
     features: [
-      "Cover on your own car.",
-      "No night-time curfews.",
-      "Start earning your No Claims Bonus.",
+      "Theft cover",
+      "Protected against vehicle theft",
+      "Legal assistance",
     ],
   },
   {
-    title: "Convicted insurance",
-    icon: "convicted",
+    title: "Third party medical expenses.",
+    icon: "medicalExpenses",
     features: [
-      "Competitive rates.",
-      "Cover for drivers with convictions.",
-      "All motoring convictions considered.",
+      "Motor legal protection included",
+      "European coverage",
+      "Drive across Europe with cover",
     ],
   },
   {
-    title: "Motorcycle insurance",
-    icon: "motorcycle",
+    title: "Damage to your car because of attempted theft, for example smashed windows.",
+    icon: "attemptedTheft",
     features: [
-      "Cover from only 80p* a day.",
-      "Cover on your own car.",
-      "Start earning your No Claims Bonus.",
+      "24/7 support",
+      "Round-the-clock breakdown and claims support",
+      "Comprehensive protection",
     ],
   },
   {
-    title: "Car insurance",
-    icon: "car",
+    title: "Accidental and non-accidental fire",
+    icon: "fire",
     features: [
-      "Cover on your own car.",
-      "No night-time curfews.",
-      "Start earning your No Claims Bonus.",
+      "Fire damage",
+      "Protected against fire, lightning, and explosion",
+      "Complete peace of mind",
     ],
   },
   {
-    title: "Van insurance",
-    icon: "van",
+    title: "Optimal for older vehicles",
+    icon: "olderVehicles",
     features: [
-      "Competitive rates.",
-      "Cover for drivers with convictions.",
-      "All motoring convictions considered.",
+      "Cost-effective coverage",
+      "Tailored for mature vehicles",
+      "Affordable annual protection",
     ],
   },
 ];
 
-const LearnerIcon = () => (
+const ThirdPartyCarIcon = () => (
   <div className={styles.iconWrapper}>
-    <div className={styles.gradientBars}>
-      <div className={`${styles.bar} ${styles.bar1}`}></div>
-      <div className={`${styles.bar} ${styles.bar2}`}></div>
-      <div className={`${styles.bar} ${styles.bar3}`}></div>
-    </div>
-    <svg
-      width="65"
-      height="80"
-      viewBox="0 0 65 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={styles.lBadge}
-    >
-      <path
-        d="M28.866 1.75194L5.13579 12.8149C2.00286 14.2755 0 17.419 0 20.8757V51.2909C0 54.0678 1.29699 56.6852 3.50641 58.3673L26.3736 75.7763C29.4774 78.1392 33.7587 78.2038 36.9323 75.9355L61.5256 58.3582C63.8616 56.6886 65.2478 53.9939 65.2478 51.1226V20.8757C65.2478 17.419 63.245 14.2755 60.112 12.8149L36.3819 1.75194C33.9997 0.641363 31.2482 0.641364 28.866 1.75194Z"
-        fill="#000822"
-      />
-      <path
-        d="M23.6016 51.4636V22.8672H29.5511V46.2817H41.6422V51.4636H23.6016Z"
-        fill="#0388FF"
-      />
+    <div className={styles.gradientBar}></div>
+    <svg width="96" height="92" viewBox="0 0 96 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.7937 17.4746L4.63321 17.4746L0.67137 23.8571C0.232536 24.564 0 25.3795 0 26.2116V38.8719C0 40.1048 0.999423 41.1042 2.23227 41.1042L65.2563 41.1042C66.4891 41.1042 67.4885 40.1047 67.4885 38.8719V26.2024C67.4885 25.3761 67.2592 24.566 66.8261 23.8623L62.8946 17.4746L54.1973 17.4746H14.7937Z" fill="#000822"/>
+      <rect x="3.36523" y="32.6777" width="15.1288" height="16.855" rx="3.3484" fill="#000822"/>
+      <rect x="49.0723" y="32.6777" width="15.1288" height="16.855" rx="3.3484" fill="#000822"/>
+      <path d="M11.0674 2.97628C11.875 1.16595 13.6719 0 15.6543 0H51.573C53.5247 0 55.2996 1.13063 56.1247 2.89937L62.9212 17.4696H4.60156L11.0674 2.97628Z" fill="#000822"/>
+      <path d="M22.7773 34.4258H44.7104" stroke="#0388FF" strokeWidth="1.6742" strokeLinecap="round"/>
+      <rect x="7" y="54" width="9" height="4" rx="0.627" fill="#0388FF"/>
+      <rect x="52" y="54" width="9" height="4" rx="0.627" fill="#0388FF"/>
+    </svg>
+    <svg className={styles.xCircle} width="46" height="45" viewBox="0 0 46 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="22.5109" cy="22.4617" rx="22.5109" ry="22.4617" fill="url(#paint0_linear_x)" />
+      <path d="M17.0801 27.8907L27.9446 17.0195" stroke="#000822" strokeWidth="3.24626" strokeLinecap="round"/>
+      <path d="M27.9442 27.8906L17.0801 17.019" stroke="#000822" strokeWidth="3.24626" strokeLinecap="round"/>
+      <defs>
+        <linearGradient id="paint0_linear_x" x1="-15.4884" y1="38.6931" x2="29.1865" y2="16.0585" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0.3"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+      </defs>
     </svg>
   </div>
 );
 
-const YoungDriverIcon = () => (
-  <svg
-    width="138"
-    height="146"
-    viewBox="0 0 138 146"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect
-      x="58.5078"
-      width="66.4209"
-      height="106.07"
-      fill="url(#paint0_linear_young)"
-      fillOpacity="0.48"
-    />
-    <rect y="39.6953" width="103.795" height="66.3719" fill="#000822" />
-    <path
-      d="M57.9141 72.5391H88.22"
-      stroke="#0388FF"
-      strokeWidth="2.6"
-      strokeLinecap="round"
-    />
-    <path
-      d="M57.9141 64.1641H76.7582"
-      stroke="#0388FF"
-      strokeWidth="2.6"
-      strokeLinecap="round"
-    />
-    <path
-      d="M57.9141 81.2578H76.7582"
-      stroke="#0388FF"
-      strokeWidth="2.6"
-      strokeLinecap="round"
-    />
-    <path
-      d="M41.2119 61.1279V70.4639C41.2119 74.7049 37.7742 78.1434 33.5332 78.1436H28.3252C23.6816 78.1436 19.9171 74.3789 19.917 69.7354V61.1279H41.2119Z"
-      stroke="#0388FF"
-      strokeWidth="2.6"
-    />
-    <path
-      d="M31.1496 62.1308C27.88 60.1813 25.311 61.3185 23.427 62.1308L19.4971 69.6083C16.8014 63.5168 20.0187 51.5206 33.0625 53.6081C43.0984 55.2142 42.8343 65.371 41.5844 69.6083C41.5844 67.0344 38.4881 63.3698 37.6475 61.8045C36.3721 62.762 34.4191 64.0803 31.1496 62.1308Z"
-      fill="#000822"
-      stroke="#0388FF"
-      strokeWidth="2.6"
-    />
-    <path
-      d="M46.5851 92.3965C46.5851 84.9245 40.5278 78.8672 33.0557 78.8672H28.0684C20.5964 78.8672 14.5391 84.9245 14.5391 92.3965"
-      stroke="#0388FF"
-      strokeWidth="2.6"
-      strokeLinecap="round"
-    />
-    <ellipse cx="110.195" cy="118.206" rx="27.5622" ry="27.5424" fill="#0388FF" />
-    <path
-      d="M99.4688 119.102L104.164 125.526C105.301 127.082 107.634 127.05 108.727 125.462L118.778 110.867"
-      stroke="#000822"
-      strokeWidth="4.5956"
-      strokeLinecap="round"
-    />
+const ThirdPartyPropertyIcon = () => (
+  <div className={styles.iconWrapper}>
+    <rect x="0" y="48.25" width="64.7046" height="70.2762" fill="url(#paint0_linear_property)" fillOpacity="0.48"/>
+    <path d="M41 31.1016H85.7073L104.173 46.2523V104.348H41V31.1016Z" fill="#000822"/>
+    <path d="M85.6843 46.2392L85.6836 30.9766L104.198 46.2392H85.6843Z" fill="#0388FF"/>
+    <path d="M49.8809 48.25H73.8779" stroke="#0388FF" strokeWidth="3.30359" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M49.8809 55.6328H64.042" stroke="#0388FF" strokeWidth="3.30359" strokeLinecap="round" strokeLinejoin="round"/>
+    <ellipse className={styles.xCircle2} cx="117.223" cy="89.6673" rx="28.9219" ry="28.8587" fill="url(#paint1_linear_property)"/>
+    <path d="M110.244 96.6508L124.203 82.6836" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round"/>
+    <path d="M124.202 96.6523L110.244 82.6846" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round"/>
     <defs>
-      <linearGradient
-        id="paint0_linear_young"
-        x1="91.7183"
-        y1="0"
-        x2="91.7183"
-        y2="106.07"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#0388FF" stopOpacity="0" />
-        <stop offset="1" stopColor="#0388FF" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
-
-const ConvictedIcon = () => (
-  <svg
-    width="118"
-    height="157"
-    viewBox="0 0 118 157"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect
-      width="71.6083"
-      height="114.445"
-      fill="url(#paint0_linear_convicted)"
-      fillOpacity="0.48"
-    />
-    <path
-      d="M24.4355 40.4395H81.1987L104.643 59.6758V120.647H24.4355V40.4395Z"
-      fill="#000822"
-    />
-    <path
-      d="M81.1689 59.6596L81.168 40.2812L104.675 59.6596H81.1689Z"
-      fill="#0388FF"
-    />
-    <path
-      d="M117.491 95.0623L115.88 98.6337C113.305 104.348 112.973 110.822 114.952 116.769C119.024 129.009 113.402 142.373 101.805 148.021L96.8411 150.439C93.6641 151.987 90.6108 153.775 87.708 155.79L87.1294 156.195C84.0546 154.015 80.8065 152.09 77.4177 150.439L72.454 148.021C60.8569 142.373 55.2352 129.009 59.307 116.769C61.2855 110.822 60.9542 104.348 58.3783 98.6337L56.7676 95.0623L62.384 89.125C69.8255 92.8772 78.5695 93.0429 86.1476 89.5748L87.1294 89.125L88.1112 89.5748C95.6892 93.0429 104.433 92.8772 111.875 89.125L117.491 95.0623Z"
-      fill="url(#paint1_linear_convicted)"
-    />
-    <path
-      d="M117.491 95.0623L115.88 98.6337C113.305 104.348 112.973 110.822 114.952 116.769C119.024 129.009 113.402 142.373 101.805 148.021L96.8411 150.439C93.6641 151.987 90.6108 153.775 87.708 155.79L87.1294 156.195C84.0546 154.015 80.8065 152.09 77.4177 150.439L72.454 148.021C60.8569 142.373 55.2352 129.009 59.307 116.769C61.2855 110.822 60.9542 104.348 58.3783 98.6337L56.7676 95.0623L62.384 89.125C69.8255 92.8772 78.5695 93.0429 86.1476 89.5748L87.1294 89.125L88.1112 89.5748C95.6892 93.0429 104.433 92.8772 111.875 89.125L117.491 95.0623Z"
-      fill="url(#paint2_linear_convicted)"
-    />
-    <path
-      d="M86.6791 107.833L89.6062 116.909L99.1427 116.888L91.4153 122.477L94.382 131.54L86.6791 125.918L78.9763 131.54L81.943 122.477L74.2156 116.888L83.752 116.909L86.6791 107.833Z"
-      fill="#000822"
-    />
-    <path
-      d="M47.4824 56.4658V66.2759"
-      stroke="#0388FF"
-      strokeWidth="2.7"
-      strokeLinecap="round"
-    />
-    <circle cx="47.483" cy="70.6852" r="1.44198" fill="#0388FF" />
-    <circle
-      cx="47.483"
-      cy="63.2838"
-      r="13.9358"
-      stroke="#0388FF"
-      strokeWidth="2.7"
-    />
-    <defs>
-      <linearGradient
-        id="paint0_linear_convicted"
-        x1="35.8041"
-        y1="0"
-        x2="35.8041"
-        y2="114.445"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#0388FF" stopOpacity="0" />
-        <stop offset="1" stopColor="#0388FF" />
-      </linearGradient>
-      <linearGradient
-        id="paint1_linear_convicted"
-        x1="35.5714"
-        y1="153.112"
-        x2="100.523"
-        y2="126.111"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="white" stopOpacity="0.3" />
-        <stop offset="1" stopColor="#0388FF" />
-      </linearGradient>
-      <linearGradient
-        id="paint2_linear_convicted"
-        x1="35.8773"
-        y1="146.894"
-        x2="98.4848"
-        y2="118.238"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="white" stopOpacity="0.3" />
-        <stop offset="1" stopColor="#0388FF" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
-
-const MotorcycleIcon = () => (
-  <svg
-    width="138"
-    height="102"
-    viewBox="0 0 138 102"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect y="1.02832" width="64.7046" height="70.2762" fill="url(#paint0_linear_1683_5706)" fillOpacity="0.48"/>
-    <path d="M80.6657 42.3146H131.567C133.814 42.3146 135.635 44.1356 135.635 46.3819C135.635 48.6282 133.814 50.4492 131.567 50.4492H113.907C113.244 50.4492 112.589 50.6011 111.993 50.8934L102.734 55.436C101.561 56.0116 100.557 56.8815 99.8204 57.9607L86.6299 77.2819C85.2213 79.3453 82.8842 80.5795 80.3859 80.5795H71.7183C68.0544 80.5795 64.9179 77.9524 64.2752 74.3453L62.0917 62.091C61.4348 58.4045 58.1784 55.7543 54.4354 55.8599L38.3286 56.3142L41.8892 42.3146L42.6547 39.4124C43.5081 36.1772 46.3865 33.8877 49.7308 33.784L60.9934 33.4348C62.3994 33.3913 63.7897 33.7408 65.0079 34.4441L76.8856 41.3017C78.0349 41.9653 79.3386 42.3146 80.6657 42.3146Z" fill="#000822"/>
-    <circle cx="33.1193" cy="77.6018" r="15.3792" stroke="#000822" strokeWidth="6.48033"/>
-    <mask id="path-4-inside-1_1683_5706" fill="white">
-      <path d="M8.95467 61.8401C10.5013 58.8389 12.6238 56.1716 15.2012 53.9906C17.7786 51.8096 20.7604 50.1577 23.9762 49.129C27.192 48.1004 30.579 47.7153 33.9436 47.9956C37.3083 48.2759 40.5848 49.2162 43.5861 50.7628L40.5517 56.6513C38.3237 55.5033 35.8914 54.8052 33.3937 54.5971C30.8959 54.3891 28.3816 54.675 25.9944 55.4386C23.6071 56.2022 21.3937 57.4285 19.4804 59.0475C17.567 60.6666 15.9914 62.6466 14.8433 64.8746L8.95467 61.8401Z"/>
-    </mask>
-    <path d="M8.95467 61.8401C10.5013 58.8389 12.6238 56.1716 15.2012 53.9906C17.7786 51.8096 20.7604 50.1577 23.9762 49.129C27.192 48.1004 30.579 47.7153 33.9436 47.9956C37.3083 48.2759 40.5848 49.2162 43.5861 50.7628L40.5517 56.6513C38.3237 55.5033 35.8914 54.8052 33.3937 54.5971C30.8959 54.3891 28.3816 54.675 25.9944 55.4386C23.6071 56.2022 21.3937 57.4285 19.4804 59.0475C17.567 60.6666 15.9914 62.6466 14.8433 64.8746L8.95467 61.8401Z" stroke="#000822" strokeWidth="12.9607" mask="url(#path-4-inside-1_1683_5706)"/>
-    <circle cx="117.457" cy="76.2718" r="16.7113" stroke="#000822" strokeWidth="6.48033"/>
-    <rect x="75.2988" y="73.6045" width="43.9466" height="6.9866" rx="3.4933" fill="#000822"/>
-    <path d="M32.2571 79.6844C30.3935 79.1851 29.2876 77.2696 29.7869 75.406L44.9911 18.6635L51.7396 20.4717L36.5355 77.2143C36.0361 79.0778 34.1206 80.1837 32.2571 79.6844Z" fill="#000822"/>
-    <path d="M44.9453 18.6621H59.6125C61.5418 18.6621 63.1058 20.2261 63.1058 22.1554C63.1058 24.0847 61.5418 25.6487 59.6125 25.6487H44.9453V18.6621Z" fill="#000822"/>
-    <path d="M27.9102 33.0465C27.9102 31.541 29.4115 30.4973 30.8226 31.0216L42.0553 35.1953V43.7989H30.0703C28.8773 43.7989 27.9102 42.8318 27.9102 41.6388V33.0465Z" fill="#000822"/>
-    <ellipse cx="110.768" cy="24.8118" rx="24.8661" ry="24.8118" fill="url(#paint1_linear_1683_5706)"/>
-    <ellipse cx="110.768" cy="24.8118" rx="24.8661" ry="24.8118" fill="url(#paint2_linear_1683_5706)"/>
-    <path d="M102.541 24.2577L106.334 29.4474C107.253 30.7046 109.138 30.6781 110.021 29.3957L118.141 17.6045" stroke="#000822" strokeWidth="3.71276" strokeLinecap="round"/>
-    <defs>
-      <linearGradient id="paint0_linear_1683_5706" x1="32.3523" y1="1.02832" x2="32.3523" y2="71.3045" gradientUnits="userSpaceOnUse">
+      <linearGradient id="paint0_linear_property" x1="59.3523" y1="48.25" x2="59.3523" y2="118.526" gradientUnits="userSpaceOnUse">
         <stop stopColor="#0388FF" stopOpacity="0"/>
         <stop offset="1" stopColor="#0388FF"/>
       </linearGradient>
-      <linearGradient id="paint1_linear_1683_5706" x1="68.7934" y1="42.7415" x2="118.143" y2="17.7387" gradientUnits="userSpaceOnUse">
-        <stop stopColor="white" stopOpacity="0.3"/>
-        <stop offset="1" stopColor="#0388FF"/>
-      </linearGradient>
-      <linearGradient id="paint2_linear_1683_5706" x1="68.7934" y1="42.7415" x2="118.143" y2="17.7387" gradientUnits="userSpaceOnUse">
+      <linearGradient id="paint1_linear_property" x1="68.4013" y1="110.521" x2="125.8" y2="81.4405" gradientUnits="userSpaceOnUse">
         <stop stopColor="white" stopOpacity="0.3"/>
         <stop offset="1" stopColor="#0388FF"/>
       </linearGradient>
     </defs>
-  </svg>
-);
-
-const CarIcon = () => (
-  <div className={styles.carWrapper}>
-    <svg
-      width="45"
-      height="45"
-      viewBox="0 0 45 45"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={styles.carCheck}
-    >
-      <ellipse cx="22.2674" cy="22.2514" rx="22.2674" ry="22.2514" fill="#0388FF" />
-      <path
-        d="M13.6016 22.9657L17.3946 28.1554C18.3134 29.4126 20.1984 29.3861 21.0815 28.1037L29.2014 16.3125"
-        stroke="#000822"
-        strokeWidth="3.71276"
-        strokeLinecap="round"
-      />
-    </svg>
-    <svg
-      width="93"
-      height="68"
-      viewBox="0 0 93 68"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={styles.carVehicle}
-    >
-      <path
-        d="M20.2981 23.9766L6.35714 23.9766L0.921175 32.7338C0.319058 33.7038 0 34.8228 0 35.9645V53.3354C0 55.027 1.37128 56.3983 3.06284 56.3983L89.5369 56.3982C91.2285 56.3982 92.5998 55.0269 92.5998 53.3354V35.9518C92.5998 34.8181 92.2851 33.7065 91.6908 32.741L86.2965 23.9766L74.363 23.9766H20.2981Z"
-        fill="#000822"
-      />
-      <rect x="4.61719" y="44.8359" width="20.758" height="23.1265" rx="4.59428" fill="#000822" />
-      <rect x="67.3281" y="44.8359" width="20.758" height="23.1265" rx="4.59428" fill="#000822" />
-      <path
-        d="M15.1842 4.0837C16.2923 1.59978 18.7578 0 21.4777 0H70.761C73.4389 0 75.8744 1.55132 77.0064 3.97817L86.3317 23.9697H6.3125L15.1842 4.0837Z"
-        fill="#000822"
-      />
-      <path
-        d="M31.25 47.2344H61.3439"
-        stroke="#0388FF"
-        strokeWidth="2.29714"
-        strokeLinecap="round"
-      />
-      <ellipse cx="15.1172" cy="57.3359" rx="6" ry="3" fill="#0388FF" />
-      <ellipse cx="77.3281" cy="57.3359" rx="6" ry="3" fill="#0388FF" />
-    </svg>
-    <div className={styles.gradientEffect}></div>
   </div>
 );
 
-const VanIcon = () => (
-  <svg
-    width="137"
-    height="100"
-    viewBox="0 0 137 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect
-      y="8.90625"
-      width="67.7737"
-      height="90.16"
-      fill="url(#paint0_linear_van)"
-      fillOpacity="0.48"
-    />
-    <path
-      d="M15.7112 60.699L15.711 84.463C15.711 86.0771 17.0194 87.3856 18.6335 87.3856H124.219C125.833 87.3856 127.142 86.0771 127.142 84.4631L127.142 54.1929L127.142 37.8134C127.142 35.3923 125.179 33.4297 122.758 33.4297H99.1484H52.7611C51.5843 33.4297 50.457 33.9028 49.6326 34.7426L37.6991 46.9C37.3304 47.2756 36.897 47.5818 36.4197 47.8038L18.6684 56.0618C16.8647 56.9009 15.7112 58.7097 15.7112 60.699Z"
-      fill="#000822"
-    />
-    <ellipse cx="40.3874" cy="87.3889" rx="10.8327" ry="11.5139" fill="#000822" />
-    <ellipse cx="102.473" cy="87.3889" rx="10.8327" ry="11.5139" fill="#000822" />
-    <path
-      d="M40.3906 58.3125L127.149 58.3125"
-      stroke="#0388FF"
-      strokeWidth="3.45013"
-    />
-    <path
-      d="M71.4297 87.3828L71.4297 33.4269"
-      stroke="#0388FF"
-      strokeWidth="3.45013"
-    />
-    <ellipse cx="113.311" cy="23.1924" rx="23.2091" ry="23.1924" fill="#0388FF" />
-    <path
-      d="M104.281 23.9423L108.235 29.3516C109.192 30.6619 111.157 30.6343 112.078 29.2976L120.541 17.0078"
-      stroke="#000822"
-      strokeWidth="3.86977"
-      strokeLinecap="round"
-    />
+const MedicalExpensesIcon = () => (
+  <div className={styles.iconWrapper}>
+    <rect width="58.3685" height="73.4591" fill="url(#paint0_linear_medical)" fillOpacity="0.48"/>
+    <rect x="11.9414" y="32.8008" width="75.1211" height="54.2269" fill="#000822"/>
+    <path d="M22.8398 58.9785H45.1697" stroke="#0388FF" strokeWidth="5.05925"/>
+    <path d="M34 47.8105V70.1404" stroke="#0388FF" strokeWidth="5.05925"/>
+    <ellipse className={styles.checkCircle} cx="82.4288" cy="39.8489" rx="24.0597" ry="24.0071" fill="url(#paint1_linear_medical)"/>
+    <path d="M74.4062 39.7415L78.3309 45.1114C79.2816 46.4122 81.232 46.3849 82.1459 45.0579L90.5476 32.8574" stroke="#000822" strokeWidth="4.85981" strokeLinecap="round"/>
     <defs>
-      <linearGradient
-        id="paint0_linear_van"
-        x1="33.8868"
-        y1="8.90625"
-        x2="33.8868"
-        y2="99.0662"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#0388FF" stopOpacity="0" />
-        <stop offset="1" stopColor="#0388FF" />
+      <linearGradient id="paint0_linear_medical" x1="29.1842" y1="0" x2="29.1842" y2="73.4591" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#0388FF" stopOpacity="0"/>
+        <stop offset="1" stopColor="#0388FF"/>
+      </linearGradient>
+      <linearGradient id="paint1_linear_medical" x1="41.815" y1="57.1971" x2="89.5638" y2="33.0052" gradientUnits="userSpaceOnUse">
+        <stop stopColor="white" stopOpacity="0.3"/>
+        <stop offset="1" stopColor="#0388FF"/>
       </linearGradient>
     </defs>
-  </svg>
+  </div>
+);
+
+const AttemptedTheftIcon = () => (
+  <div className={styles.iconWrapper}>
+    <div className={styles.gradientBars}>
+      <div className={styles.bar1}></div>
+      <div className={styles.bar2}></div>
+    </div>
+    <svg width="89" height="92" viewBox="0 0 89 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.0714 16.6172L4.40699 16.6172L0.638591 22.688C0.221182 23.3605 0 24.1362 0 24.9276V36.9698C0 38.1424 0.950626 39.0931 2.12328 39.0931L62.0702 39.093C63.2428 39.093 64.1934 38.1424 64.1934 36.9698V24.9189C64.1934 24.1329 63.9753 23.3624 63.5633 22.693L59.8238 16.6172L51.5511 16.6172H14.0714Z" fill="#000822"/>
+      <rect x="3.20117" y="31.0703" width="14.3902" height="16.0321" rx="3.18492" fill="#000822"/>
+      <rect x="46.6777" y="31.0703" width="14.3902" height="16.0321" rx="3.18492" fill="#000822"/>
+      <path d="M10.5252 2.83097C11.2934 1.10902 13.0025 0 14.888 0H49.053C50.9094 0 52.5978 1.07543 53.3825 2.75781L59.8472 16.6166H4.375L10.5252 2.83097Z" fill="#000822"/>
+      <path d="M21.666 32.7422H42.5281" stroke="#0388FF" strokeWidth="1.59246" strokeLinecap="round"/>
+      <path d="M17.1274 3.33789L19.8911 8.12695L15.6523 12.3657L24.9928 17.7584" stroke="#0388FF" strokeWidth="3"/>
+      <rect x="6" y="25" width="8" height="4" rx="0.596" fill="#0388FF"/>
+      <rect x="50" y="25" width="8" height="4" rx="0.596" fill="#0388FF"/>
+    </svg>
+    <svg className={styles.warningTriangle} width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.5548 0L31.1097 27.0163H0L15.5548 0Z" fill="url(#paint0_linear_warning)"/>
+      <path d="M15.4941 11.0527V17.9854" stroke="black" strokeWidth="1.93043" strokeLinecap="round"/>
+      <circle cx="15.4934" cy="21.4876" r="1.16923" fill="black"/>
+      <defs>
+        <linearGradient id="paint0_linear_warning" x1="-10.7024" y1="23.2695" x2="18.2726" y2="6.40195" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0.3"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+);
+
+const FireIcon = () => (
+  <div className={styles.iconWrapper}>
+    <div className={styles.gradientBars}>
+      <div className={styles.bar1}></div>
+      <div className={styles.bar2}></div>
+    </div>
+    <svg width="89" height="92" viewBox="0 0 89 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.0594 16.6035L4.40324 16.6035L0.638048 22.6692C0.220994 23.3411 0 24.1161 0 24.9069V36.9388C0 38.1105 0.949818 39.0603 2.12147 39.0603L62.0173 39.0602C63.189 39.0602 64.1388 38.1104 64.1388 36.9388V24.8981C64.1388 24.1128 63.9209 23.3429 63.5093 22.6742L59.7729 16.6035L51.5072 16.6035H14.0594Z" fill="#000822"/>
+      <rect x="3.19922" y="31.0488" width="14.3779" height="16.0184" rx="3.18221" fill="#000822"/>
+      <rect x="46.6387" y="31.0488" width="14.3779" height="16.0184" rx="3.18221" fill="#000822"/>
+      <path d="M10.518 2.82856C11.2855 1.10808 12.9932 0 14.8771 0H49.0131C50.8679 0 52.5548 1.07451 53.3389 2.75546L59.798 16.6025H4.37305L10.518 2.82856Z" fill="#000822"/>
+      <path d="M21.6484 32.7129H42.4928" stroke="#0388FF" strokeWidth="1.5911" strokeLinecap="round"/>
+      <rect x="6" y="25" width="8" height="4" rx="0.595" fill="#0388FF"/>
+      <rect x="50" y="25" width="8" height="4" rx="0.595" fill="#0388FF"/>
+    </svg>
+    <svg className={styles.flame} width="23" height="36" viewBox="0 0 23 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8.13397 14.2088C8.85589 9.94096 9.1867 1.68882 8.13397 0C10.7062 3.75557 13.1315 12.4906 14.4695 16.8962C14.7364 17.7752 15.7744 17.9009 16.0777 17.0339C17.0746 14.1842 17.0309 10.1742 17.0909 8.53838C21.9258 15.2565 28.4406 31.7344 13.7091 34.8071C2.87561 37.0667 -2.13147 27.4229 0.84842 20.6731C2.0354 17.9844 2.87613 12.6899 2.8764 9.31134C5.57931 14.9123 7.23156 19.5436 8.13397 14.2088Z" fill="url(#paint0_linear_fire)"/>
+      <defs>
+        <linearGradient id="paint0_linear_fire" x1="-8.19035" y1="30.3392" x2="17.6349" y2="21.6662" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0.3"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+);
+
+const OlderVehiclesIcon = () => (
+  <div className={styles.iconWrapper}>
+    <rect x="27.2734" y="40.5469" width="61.3049" height="75.7613" fill="url(#paint0_linear_older)" fillOpacity="0.48"/>
+    <path d="M27 83.7496V88.9195C27 90.5764 28.3431 91.9195 30 91.9195H148.032C149.671 91.9195 151 90.5906 151 88.9514V75.4004C151 73.5066 149.672 71.8723 147.818 71.485L131.719 68.1214C130.96 67.9627 130.286 67.5299 129.825 66.9056C122.477 56.9427 110.834 51.0625 98.4543 51.0625H87.937C75.9653 51.0625 64.5356 56.0534 56.3981 64.8342L54.4273 66.9608C53.8731 67.5588 53.1654 67.9931 52.3812 68.2164L34.987 73.1703C30.2602 74.5165 27 78.8349 27 83.7496Z" fill="#000822"/>
+    <ellipse cx="60.7811" cy="91.9123" rx="11.0018" ry="11.6936" fill="#000822"/>
+    <ellipse cx="122.76" cy="91.9123" rx="11.0018" ry="11.6936" fill="#000822"/>
+    <ellipse className={styles.recycleCircle} cx="110.559" cy="47.0893" rx="22.5586" ry="22.5424" fill="url(#paint1_linear_older)"/>
+    <path d="M120.324 45.3125C120.324 42.783 119.411 40.3386 117.753 38.4286C116.094 36.5186 113.802 35.2714 111.298 34.9164C108.793 34.5614 106.245 35.1224 104.121 36.4963C101.997 37.8702 100.441 39.9646 99.7379 42.3944L101.653 42.9484C102.222 40.9798 103.483 39.283 105.204 38.17C106.924 37.0569 108.989 36.6024 111.018 36.89C113.047 37.1776 114.904 38.188 116.248 39.7354C117.591 41.2828 118.331 43.2632 118.331 45.3125H120.324Z" stroke="#000822" strokeWidth="2"/>
+    <path d="M115.559 43.5547L118.224 45.687C118.743 46.1022 119.481 46.1022 120 45.687L122.665 43.5547" stroke="#000822" strokeWidth="2"/>
+    <path d="M100.324 48.3125C100.324 50.842 101.237 53.2864 102.896 55.1964C104.554 57.1064 106.846 58.3536 109.351 58.7086C111.855 59.0636 114.403 58.5026 116.527 57.1287C118.651 55.7548 120.208 53.6604 120.911 51.2306L118.985 50.6734C118.416 52.6393 117.157 54.3338 115.438 55.4453C113.72 56.5568 111.658 57.0107 109.632 56.7235C107.606 56.4363 105.751 55.4273 104.41 53.882C103.068 52.3367 102.329 50.359 102.329 48.3125H100.324Z" stroke="#000822" strokeWidth="2"/>
+    <path d="M104.816 49.8516L102.151 47.7193C101.632 47.304 100.894 47.304 100.375 47.7193L97.71 49.8516" stroke="#000822" strokeWidth="2"/>
+    <defs>
+      <linearGradient id="paint0_linear_older" x1="57.9259" y1="40.5469" x2="57.9259" y2="116.308" gradientUnits="userSpaceOnUse">
+        <stop stopColor="#0388FF" stopOpacity="0"/>
+        <stop offset="1" stopColor="#0388FF"/>
+      </linearGradient>
+      <linearGradient id="paint1_linear_older" x1="72.4787" y1="63.379" x2="117.275" y2="40.7161" gradientUnits="userSpaceOnUse">
+        <stop stopColor="white" stopOpacity="0.3"/>
+        <stop offset="1" stopColor="#0388FF"/>
+      </linearGradient>
+    </defs>
+  </div>
 );
 
 const getIcon = (type) => {
   switch (type) {
-    case "learner":
-      return <LearnerIcon />;
-    case "young":
-      return <YoungDriverIcon />;
-    case "convicted":
-      return <ConvictedIcon />;
-    case "motorcycle":
-      return <MotorcycleIcon />;
-    case "car":
-      return <CarIcon />;
-    case "van":
-      return <VanIcon />;
+    case "thirdPartyCar":
+      return <ThirdPartyCarIcon />;
+    case "thirdPartyProperty":
+      return <ThirdPartyPropertyIcon />;
+    case "medicalExpenses":
+      return <MedicalExpensesIcon />;
+    case "attemptedTheft":
+      return <AttemptedTheftIcon />;
+    case "fire":
+      return <FireIcon />;
+    case "olderVehicles":
+      return <OlderVehiclesIcon />;
     default:
       return null;
   }
@@ -441,10 +262,10 @@ const InsuranceTypes = () => {
     <div className={styles.container}>
       <div className={styles.headerWrapper}>
         <h2 className={`${styles.heading} ${plusJakartaSans.className}`}>
-          Type of motor <span className={styles.highlight}>insurance we offer</span>
+          Comprehensive <span className={styles.highlight}>Third Party Coverage</span>
         </h2>
         <p className={`${styles.subtitle} ${poppins.className}`}>
-          Choose the right cover for your vehicle and budget
+          Complete protection for third party incidents and more
         </p>
       </div>
 
