@@ -65,12 +65,6 @@ const ServiceDescription = ({ services, title, description, button, img }) => {
           }}
         >
           Get a Quote
-          <Image
-            src="/svg/arrow-right.svg"
-            alt="arrow-right"
-            width={28}
-            height={14}
-          />
         </button>
       </div>
     </div>
