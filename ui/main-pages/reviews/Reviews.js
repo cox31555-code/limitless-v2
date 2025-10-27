@@ -277,11 +277,11 @@ const Reviews = () => {
             Trustpilot Reviews
           </h2>
           <div className={styles.navigation}>
-            <button className={`${styles.navButton} ${!isAtStart ? styles.navButtonActive : ''}`} onClick={handlePrev} aria-label="Previous review" disabled={isAtStart}>
-              Prev
+            <button className={`${styles.prevButton} ${!isAtStart ? styles.prevButtonActive : ''}`} onClick={handlePrev} aria-label="Previous review" disabled={isAtStart}>
+              ←
             </button>
-            <button className={`${styles.navButton} ${!isAtEnd ? styles.navButtonActive : ''}`} onClick={handleNext} aria-label="Next review" disabled={isAtEnd}>
-              Next
+            <button className={`${styles.nextButton} ${!isAtEnd ? styles.nextButtonActive : ''}`} onClick={handleNext} aria-label="Next review" disabled={isAtEnd}>
+              →
             </button>
           </div>
         </div>
