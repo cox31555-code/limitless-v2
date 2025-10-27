@@ -117,31 +117,34 @@ export default function DownloadButton({
       onClick={handleDownload}
       disabled={isDownloading}
       style={{
-        display: "flex",
+        display: "inline-flex",
         alignItems: "center",
         gap: "8px",
         color: "#0388FF",
-        fontSize: "14px",
-        fontWeight: "400",
-        lineHeight: "124%",
-        letterSpacing: "0.56px",
+        fontSize: "1.3rem",
+        fontWeight: "500",
+        lineHeight: "130%",
         background: "transparent",
         border: "none",
         cursor: isDownloading ? "not-allowed" : "pointer",
-        transition: "all 0.2s",
+        padding: "0.4rem 0",
+        transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+        opacity: isDownloading ? 0.7 : 1,
       }}
       onMouseEnter={(e) => {
         if (!isDownloading) {
-          e.target.style.color = "#2563eb";
+          e.currentTarget.style.color = "#0270cc";
+          e.currentTarget.style.transform = "translateX(2px)";
         }
       }}
       onMouseLeave={(e) => {
         if (!isDownloading) {
-          e.target.style.color = "#3b82f6";
+          e.currentTarget.style.color = "#0388FF";
+          e.currentTarget.style.transform = "translateX(0)";
         }
       }}
     >
-      <Image src="/svg/pdf.svg" alt="pdf" width={18} height={18} />
+      <Image src="/svg/pdf.svg" alt="pdf" width={20} height={20} />
       <span>{isDownloading ? "Downloading..." : label}</span>
     </button>
   );

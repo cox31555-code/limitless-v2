@@ -28,13 +28,21 @@ export default function DocumentsClient({ insurances }) {
   );
 
   // Format data for table - 3 documents per insurance
+  const formatDate = (dateString) => {
+    if (!dateString) return "—";
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString("en-GB");
+    } catch (e) {
+      return "—";
+    }
+  };
+
   const tableData = selectedInsurance
     ? [
         {
           document: "Certificate of Motor Insurance",
-          documentNumber: new Date(
-            selectedInsurance.createdAt
-          ).toLocaleDateString("en-GB"),
+          documentNumber: formatDate(selectedInsurance.createdAt),
           documentType: (
             <DownloadButton
               insuranceId={selectedInsurance._id}
@@ -45,9 +53,7 @@ export default function DocumentsClient({ insurances }) {
         },
         {
           document: "Policy Schedule",
-          documentNumber: new Date(
-            selectedInsurance.createdAt
-          ).toLocaleDateString("en-GB"),
+          documentNumber: formatDate(selectedInsurance.createdAt),
           documentType: (
             <DownloadButton
               insuranceId={selectedInsurance._id}
@@ -58,9 +64,7 @@ export default function DocumentsClient({ insurances }) {
         },
         {
           document: "Statement of Fact",
-          documentNumber: new Date(
-            selectedInsurance.createdAt
-          ).toLocaleDateString("en-GB"),
+          documentNumber: formatDate(selectedInsurance.createdAt),
           documentType: (
             <DownloadButton
               insuranceId={selectedInsurance._id}
