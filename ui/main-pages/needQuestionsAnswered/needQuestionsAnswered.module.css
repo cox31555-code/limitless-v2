@@ -46,7 +46,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 2.4rem;
-  max-width: 140.8rem;
+  max-width: 119.9rem;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -120,6 +120,7 @@
   left: 2.5rem;
   max-width: 32.6rem;
   z-index: 2;
+  padding: 0 0 1rem 1rem;
 }
 
 .cardTitle {
@@ -131,6 +132,11 @@
   letter-spacing: -0.02em;
 }
 
+.serviceCard .cardTitle,
+.supportCard .cardTitle {
+  padding-left: 1rem;
+}
+
 .cardDescription {
   color: rgba(255, 255, 255, 0.6);
   font-size: 1.3rem;
@@ -138,6 +144,14 @@
   line-height: 150%;
   letter-spacing: 0;
   margin: 0;
+}
+
+.serviceCard .cardDescription {
+  padding: 0 2rem 0 1rem;
+}
+
+.supportCard .cardDescription {
+  padding: 0 4.5rem 2rem 1rem;
 }
 
 .faqIllustration {
