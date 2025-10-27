@@ -30,7 +30,7 @@ export default function Home() {
           title="Why Choose Limitless Cover"
           description="Discover the benefits of Limitless Cover, showcasing quick and flexible options for UK drivers. Whether a young driver, courier, or reclaiming an impounded vehicle, our tailored solutions provide instant coverage suited to your needs, with inclusivity for all."
         />
-        <QuestionsAnswered />
+        <NeedQuestionsAnswered />
         <div className={styles.reviewsContainer}>
           <Reviews />
         </div>
