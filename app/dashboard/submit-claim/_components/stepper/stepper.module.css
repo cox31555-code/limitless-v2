@@ -90,7 +90,7 @@
   border-radius: 50%;
   background: #f3f4f6;
   color: #d1d5db;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0;
@@ -99,16 +99,14 @@
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Active step (Step 1) */
 .stepperContainer:first-child .stepperNumber {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: #0388ff;
   color: #fff;
   border: none;
   font-size: 1.4rem;
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
 }
 
 /* Muted/Inactive steps (2, 3, 4) */
