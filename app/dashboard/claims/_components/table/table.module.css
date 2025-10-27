@@ -60,18 +60,12 @@
 
 .tableBody {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.6rem;
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
 }
 
 .tableRow {
-  display: contents;
-}
-
-.tableCell {
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
@@ -82,21 +76,28 @@
   gap: 1.2rem;
   position: relative;
   overflow: hidden;
+}
+
+.tableRow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
+  border-radius: 14px 14px 0 0;
+}
+
+.tableCell {
   padding: 0;
   vertical-align: top;
   text-align: left;
+  display: flex;
+  flex-direction: column;
   gap: 0.6rem;
-}
-
-.tableRow:first-child .tableCell:first-child {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.15);
-  border-radius: 14px;
-  padding: 2rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: 1.2rem;
-  position: relative;
-  overflow: hidden;
+  border: none;
+  background: transparent;
 }
 
 .tableCell::before {
@@ -106,7 +107,6 @@
   color: #5a6b7d;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0.6rem;
 }
 .dateAndRef {
   display: flex;
