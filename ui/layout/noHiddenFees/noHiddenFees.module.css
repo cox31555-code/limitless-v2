@@ -305,7 +305,6 @@
   opacity: 0.18;
   z-index: 1;
   filter: drop-shadow(0 8px 16px rgba(3, 136, 255, 0.15));
-  animation: rotateBounce 6s ease-in-out infinite;
 }
 
 .backgroundLogoRotated {
@@ -317,7 +316,6 @@
   opacity: 0.18;
   z-index: 1;
   filter: drop-shadow(0 8px 16px rgba(3, 136, 255, 0.15));
-  animation: rotateBounceReverse 6s ease-in-out infinite;
 }
 
 .image {
