@@ -17,10 +17,10 @@ const Table = ({ title, columns, data }) => {
           {title}
         </h3>
         <table className={styles.table}>
-          <thead className={styles.tableHeader}>
-            <tr className={styles.tableHeaderRow}>
+          <thead>
+            <tr>
               {columns.map((column, index) => (
-                <th className={styles.tableHeaderCell} key={index}>
+                <th key={index}>
                   {column}
                 </th>
               ))}
