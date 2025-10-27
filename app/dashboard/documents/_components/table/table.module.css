@@ -40,7 +40,7 @@
 }
 
 .table {
-  display: none;
+  display: contents;
 }
 
 .tableHeader {
