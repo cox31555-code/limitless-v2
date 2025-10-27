@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7.6rem;
+  gap: 6.4rem;
   padding: 7.6rem 5% 10rem;
   margin: 11rem calc(-50vw + 50%) 0 calc(-50vw + 50%);
   width: 100vw;
@@ -31,18 +31,20 @@
   line-height: 100%;
   position: relative;
   z-index: 2;
-  letter-spacing: 0;
+  letter-spacing: -0.08em;
+  margin: 0;
 }
 
 .title span {
-  color: #049CFF;
+  color: #0388FF;
+  display: inline-block;
 }
 
 .cardsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: 2.5rem;
+  gap: 2.4rem;
   max-width: 140.8rem;
   width: 100%;
   position: relative;
@@ -55,11 +57,19 @@
   flex-direction: column;
   gap: 1.2rem;
   padding: 2.5rem;
-  background: #07102D;
-  border-radius: 18px;
+  background: linear-gradient(135deg, #07102D 0%, #0a1835 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(3, 136, 255, 0.1);
   position: relative;
   overflow: hidden;
   min-height: 593px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqCard:hover {
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.08);
+  background: linear-gradient(135deg, #0a1835 0%, #0d1f40 100%);
 }
 
 .serviceCard,
@@ -68,11 +78,20 @@
   flex-direction: column;
   gap: 1.2rem;
   padding: 2.7rem;
-  background: #07102D;
-  border-radius: 18px;
+  background: linear-gradient(135deg, #07102D 0%, #0a1835 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(3, 136, 255, 0.1);
   position: relative;
   overflow: visible;
   height: 284px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.serviceCard:hover,
+.supportCard:hover {
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.08);
+  background: linear-gradient(135deg, #0a1835 0%, #0d1f40 100%);
 }
 
 .arrowButton {
@@ -82,26 +101,32 @@
   width: 4.8rem;
   height: 4.8rem;
   border-radius: 50%;
-  background: #0388FF;
+  background: linear-gradient(135deg, #0388FF 0%, #0270CC 100%);
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 3;
   padding: 0;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.24);
 }
 
 .arrowButton:hover {
-  background: #049CFF;
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #049CFF 0%, #0280e0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.32);
+}
+
+.arrowButton:active {
+  transform: translateY(0);
 }
 
 .cardContent {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
   position: absolute;
   bottom: 2.5rem;
   left: 2.5rem;
@@ -111,18 +136,19 @@
 
 .cardTitle {
   color: #fff;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 110%;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .cardDescription {
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.3rem;
   font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 150%;
+  letter-spacing: 0;
   margin: 0;
 }
 
