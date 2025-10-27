@@ -110,7 +110,7 @@
 
 .benifit:hover .imgContainer {
   transform: scale(1.1) rotate(5deg);
-  background: linear-gradient(135deg, #d4e5ff 0%, #c8deff 100%);
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
 }
 
 .img {
