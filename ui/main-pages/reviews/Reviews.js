@@ -33,18 +33,20 @@ const LargeStarIcon = memo(() => (
 ));
 
 const HalfStarIcon = memo(() => (
-  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'relative' }}>
-    <rect width="34" height="34" fill="url(#halfStarGradient)"/>
-    <defs>
-      <linearGradient id="halfStarGradient" x1="0" y1="0" x2="34" y2="0" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#00B67A"/>
-        <stop offset="50%" stopColor="#00B67A"/>
-        <stop offset="50%" stopColor="#D9D9D9"/>
-        <stop offset="100%" stopColor="#D9D9D9"/>
-      </linearGradient>
-    </defs>
-    <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z" fill="white"/>
-  </svg>
+  <div style={{ position: 'relative', width: '34px', height: '34px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="halfStarGradient" x1="0" y1="0" x2="28" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#00B67A"/>
+          <stop offset="50%" stopColor="#00B67A"/>
+          <stop offset="50%" stopColor="#D9D9D9"/>
+          <stop offset="100%" stopColor="#D9D9D9"/>
+        </linearGradient>
+      </defs>
+      <rect width="28" height="28" fill="url(#halfStarGradient)"/>
+      <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z" fill="white"/>
+    </svg>
+  </div>
 ));
 
 const TrustpilotLogo = memo(() => (
