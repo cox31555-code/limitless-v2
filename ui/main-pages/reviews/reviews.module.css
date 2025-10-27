@@ -334,15 +334,10 @@
     font-size: 1.2rem;
   }
 
-  .starsRow {
-    gap: 0.3rem;
+  .reviewCard svg {
+    width: 10rem;
     height: 1.9rem;
     margin-bottom: 1.4rem;
-  }
-
-  .starsRow svg {
-    width: 1.9rem;
-    height: 1.9rem;
   }
 }
 
@@ -404,7 +399,9 @@
     font-size: 1.15rem;
   }
 
-  .starsRow {
+  .reviewCard svg {
+    width: 9rem;
+    height: 1.8rem;
     margin-bottom: 1.2rem;
   }
 }
