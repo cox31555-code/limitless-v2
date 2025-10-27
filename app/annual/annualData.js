@@ -1,5 +1,3 @@
-import featureStyles from "../../ui/feature/feature.module.css";
-
 export const annualFeatures = [
   {
     title: "Unbeatable rates",
