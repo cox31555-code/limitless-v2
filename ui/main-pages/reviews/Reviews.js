@@ -26,9 +26,24 @@ const StarIcon = memo(() => (
 ));
 
 const LargeStarIcon = memo(() => (
-  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="40" height="40" fill="#00B67A"/>
-    <path d="M20 27.3522L26.0833 25.7233L28.625 34L20 27.3522ZM34 16.6541H23.2917L20 6L16.7083 16.6541H6L14.6667 23.2579L11.375 33.9119L20.0417 27.3082L25.375 23.2579L34 16.6541Z" fill="white"/>
+  <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="33" height="34" fill="#219653"/>
+    <path d="M16.5 24.3522L22.5833 22.7233L25.125 31L16.5 24.3522ZM30.5 13.6541H19.7917L16.5 3L13.2083 13.6541H2.5L11.1667 20.2579L7.875 30.9119L16.5417 24.3082L21.875 20.2579L30.5 13.6541Z" fill="white"/>
+  </svg>
+));
+
+const HalfStarIcon = memo(() => (
+  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'relative' }}>
+    <rect width="34" height="34" fill="url(#halfStarGradient)"/>
+    <defs>
+      <linearGradient id="halfStarGradient" x1="0" y1="0" x2="34" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#219653"/>
+        <stop offset="50%" stopColor="#219653"/>
+        <stop offset="50%" stopColor="#D9D9D9"/>
+        <stop offset="100%" stopColor="#D9D9D9"/>
+      </linearGradient>
+    </defs>
+    <path d="M17 24.3522L23.0833 22.7233L25.625 31L17 24.3522ZM31 13.6541H20.2917L17 3L13.7083 13.6541H3L11.6667 20.2579L8.375 30.9119L17.0417 24.3082L22.375 20.2579L31 13.6541Z" fill="white"/>
   </svg>
 ));
 
