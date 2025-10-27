@@ -1,32 +1,52 @@
+/* Progress Stepper v3 */
 .stepper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0;
-  padding: 3rem 4.4% 3rem;
+  padding: 3.2rem 4.4%;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
 }
 
+/* Background progress line */
 .stepper::before {
   content: '';
   position: absolute;
   top: 50%;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, #0388ff 0%, #0388ff 50%, rgba(3, 136, 255, 0.2) 100%);
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  background: #e5e7eb;
   transform: translateY(-50%);
   z-index: 0;
+  border-radius: 2px;
+}
+
+/* Active progress line - 25% for step 1 */
+.stepper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  width: 25%;
+  height: 3px;
+  background: linear-gradient(90deg, #0388ff 0%, #0270cc 100%);
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 2px;
+  transition: width 0.4s ease;
 }
 
 .stepperContainer {
   display: flex;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  flex: 1;
+  justify-content: center;
 }
 
 .stepperItem {
@@ -34,21 +54,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1.6rem;
-  flex: 1;
-  min-width: 120px;
+  gap: 1.2rem;
   position: relative;
 }
 
 .stepperItem:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: -60px;
-  top: 3.4rem;
-  width: 120px;
-  height: 2px;
-  background: linear-gradient(90deg, #0388ff 0%, rgba(3, 136, 255, 0.2) 100%);
-  z-index: 0;
+  display: none;
 }
 
 .stepperItemText {
@@ -74,37 +85,55 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 5.2rem;
+  height: 5.2rem;
   border-radius: 50%;
   background: #ffffff;
-  color: #0388ff;
-  font-size: 1.8rem;
+  color: #9ca3af;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0;
   text-transform: uppercase;
-  border: 2px solid rgba(3, 136, 255, 0.2);
+  border: 2.5px solid #e5e7eb;
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Active step (Step 1) */
 .stepperItem:first-child .stepperNumber {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
   border: none;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  font-size: 2.2rem;
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
+}
+
+/* Completed steps (if any) */
+.stepperItem:first-child ~ .stepperContainer .stepperNumber {
+  background: #e5e7eb;
+  color: #9ca3af;
+  border: 2.5px solid #e5e7eb;
 }
 
 .stepperTitle {
-  color: #000822;
-  font-size: 1.3rem;
-  font-weight: 700;
+  color: #9ca3af;
+  font-size: 1.2rem;
+  font-weight: 600;
   line-height: 130%;
   letter-spacing: -0.2px;
   margin: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Active step title */
+.stepperItem:first-child .stepperTitle {
+  color: #000822;
+  font-size: 1.35rem;
+  font-weight: 700;
 }
 
 .stepperItemImage {
@@ -117,62 +146,61 @@
   }
 
   .stepper::before {
-    display: none;
+    left: 5%;
+    right: 5%;
   }
 
-  .stepperItem {
-    gap: 1.2rem;
-    min-width: 100px;
+  .stepper::after {
+    left: 5%;
   }
 
-  .stepperItem:not(:last-child)::after {
-    right: -40px;
-    width: 80px;
+  .stepperNumber {
+    width: 4.6rem;
+    height: 4.6rem;
+    font-size: 1.8rem;
   }
 
-  .stepperItemText {
-    gap: 0.4rem;
+  .stepperItem:first-child .stepperNumber {
+    font-size: 2rem;
   }
 
   .stepperTitle {
     font-size: 1.1rem;
   }
 
-  .stepperNumber {
-    width: 4rem;
-    height: 4rem;
-    font-size: 1.4rem;
+  .stepperItem:first-child .stepperTitle {
+    font-size: 1.25rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .stepper {
-    gap: 0;
     padding: 2rem 1.5% 2rem;
   }
 
-  .stepperItem {
-    gap: 0.8rem;
-    min-width: 80px;
+  .stepper::before {
+    height: 2px;
   }
 
-  .stepperItem:not(:last-child)::after {
-    right: -30px;
-    width: 60px;
-    height: 1.5px;
+  .stepper::after {
+    height: 2px;
   }
 
-  .stepperItemText {
-    gap: 0.3rem;
+  .stepperNumber {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.6rem;
+  }
+
+  .stepperItem:first-child .stepperNumber {
+    font-size: 1.8rem;
   }
 
   .stepperTitle {
     font-size: 1rem;
   }
 
-  .stepperNumber {
-    width: 3.6rem;
-    height: 3.6rem;
-    font-size: 1.2rem;
+  .stepperItem:first-child .stepperTitle {
+    font-size: 1.15rem;
   }
 }
