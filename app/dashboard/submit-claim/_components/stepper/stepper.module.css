@@ -103,7 +103,7 @@
 }
 
 /* Active step (Step 1) */
-.stepperItem:first-child .stepperNumber {
+.stepperContainer:first-child .stepperNumber {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
   border: none;
@@ -111,11 +111,11 @@
   box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
 }
 
-/* Muted/Inactive steps */
-.stepperItem:nth-child(n+2) .stepperNumber {
-  background: #f3f4f6;
-  color: #d1d5db;
-  border: 2.5px solid #e5e7eb;
+/* Muted/Inactive steps (2, 3, 4) */
+.stepperContainer:nth-child(n+2) .stepperNumber {
+  background: #f3f4f6 !important;
+  color: #d1d5db !important;
+  border: 2.5px solid #e5e7eb !important;
 }
 
 .stepperTitle {
