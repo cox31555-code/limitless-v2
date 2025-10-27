@@ -108,20 +108,27 @@ const ServiceIcon = () => (
 
 const SupportIcon = () => (
   <div className={styles.supportIcon}>
-    <div className={styles.supportGradient}></div>
-    <svg width="111" height="112" viewBox="0 0 111 112" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M79.2989 79.9023C55.527 79.9023 47.9167 101.532 47.083 112.347H110.958C110.31 101.532 103.071 79.9023 79.2989 79.9023Z" fill="#049CFF"/>
-      <path d="M100.147 55.1973C100.147 66.9043 90.6852 76.3947 79.0134 76.3947C67.3417 76.3947 57.8799 66.9043 57.8799 55.1973C57.8799 43.4904 67.3417 34 79.0134 34C90.6852 34 100.147 43.4904 100.147 55.1973Z" fill="#049CFF"/>
-      <path d="M127.321 92.6377C131.394 92.6377 134.695 95.9494 134.695 100.035V121.077C134.695 125.162 131.394 128.474 127.321 128.474H108.095L104.68 134.945C103.954 136.322 101.991 136.334 101.248 134.966L97.7225 128.476H93.5556C89.4827 128.474 86.1809 125.162 86.1809 121.077V100.035C86.1809 95.9494 89.4827 92.6377 93.5556 92.6377H127.321Z" fill="#000822"/>
-      <ellipse cx="96.3793" cy="101.978" rx="2.06117" ry="2.06739" fill="#0388FF"/>
-      <ellipse cx="103.813" cy="101.978" rx="2.06117" ry="2.06739" fill="#0388FF"/>
-      <ellipse cx="111.262" cy="101.978" rx="2.06117" ry="2.06739" fill="#0388FF"/>
-    </svg>
-    <svg className={styles.checkCircle} width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="21.413" cy="21.4654" rx="21.413" ry="21.4654" fill="url(#paint_support_circle)"/>
-      <path d="M13.082 22.2199L17.0197 27.6247C17.7604 28.6414 19.284 28.62 19.9959 27.5829L28.0834 15.8018" stroke="#000822" strokeWidth="2.99392" strokeLinecap="round"/>
+    <svg width="119" height="102" viewBox="0 0 119 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="51.481" y="8.06152" width="67.5186" height="69.8502" fill="url(#paint0_linear_43_400)" fillOpacity="0.48"/>
+      <path d="M53.2989 45.9023C29.527 45.9023 21.9167 67.532 21.083 78.3468H84.9579C84.3099 67.532 77.0709 45.9023 53.2989 45.9023Z" fill="#049CFF"/>
+      <path d="M74.147 21.1973C74.147 32.9043 64.6852 42.3947 53.0134 42.3947C41.3417 42.3947 31.8799 32.9043 31.8799 21.1973C31.8799 9.49037 41.3417 0 53.0134 0C64.6852 0 74.147 9.49037 74.147 21.1973Z" fill="#049CFF"/>
+      <path d="M101.321 58.6377C105.394 58.6377 108.695 61.9494 108.695 66.0346V87.0771C108.695 91.1623 105.394 94.4741 101.321 94.4741H82.095L78.6803 100.945C77.9536 102.322 75.991 102.334 75.2478 100.966L71.7225 94.4761C71.7221 94.4754 71.7217 94.4748 71.7214 94.4741H67.5556C63.4827 94.4741 60.1809 91.1623 60.1809 87.0771V66.0346C60.1809 61.9494 63.4827 58.6377 67.5556 58.6377H101.321Z" fill="#000822"/>
+      <ellipse cx="70.3793" cy="67.9775" rx="2.06117" ry="2.06739" fill="#0388FF"/>
+      <ellipse cx="77.8129" cy="67.9775" rx="2.06117" ry="2.06739" fill="#0388FF"/>
+      <ellipse cx="85.2623" cy="67.9775" rx="2.06117" ry="2.06739" fill="#0388FF"/>
+      <ellipse cx="21.413" cy="29.5269" rx="21.413" ry="21.4654" fill="url(#paint1_linear_43_400)"/>
+      <ellipse cx="21.413" cy="29.5269" rx="21.413" ry="21.4654" fill="url(#paint2_linear_43_400)"/>
+      <path d="M13.082 30.2199L17.0197 35.6247C17.7604 36.6414 19.284 36.62 19.9959 35.5829L28.0834 23.8018" stroke="#000822" strokeWidth="2.99392" strokeLinecap="round"/>
       <defs>
-        <linearGradient id="paint_support_circle" x1="-14.7331" y1="37.0383" x2="27.8433" y2="15.5666" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint0_linear_43_400" x1="85.2403" y1="8.06152" x2="85.2403" y2="77.9118" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#0388FF" stopOpacity="0"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_43_400" x1="-14.7331" y1="45.0383" x2="27.8433" y2="23.5666" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0.3"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_43_400" x1="-14.7331" y1="45.0383" x2="27.8433" y2="23.5666" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0.3"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
