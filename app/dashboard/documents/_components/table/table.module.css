@@ -207,29 +207,38 @@
 
 @media screen and (max-width: 900px) {
   .container {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+    flex-direction: column;
     gap: 1.6rem;
+    width: 100%;
   }
 
-  .title {
-    font-size: 1.6rem;
-    padding-bottom: 1.2rem;
+  .mobileTitle {
+    display: block;
   }
 
-  .title::before {
-    height: 1.8rem;
+  .card {
+    display: flex;
   }
 
-  .tableBody {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+  .cardContent {
+    display: flex;
   }
 
-  .tableRow {
-    padding: 1.6rem;
+  .label {
+    display: block;
   }
 
-  .datacell {
-    font-size: 1.3rem;
+  .value {
+    display: block;
+  }
+
+  .date {
+    display: block;
   }
 }
 
