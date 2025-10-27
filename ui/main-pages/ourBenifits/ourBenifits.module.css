@@ -79,15 +79,7 @@
   border-radius: 16px;
   background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
   border: 2px solid #f0f4ff;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-}
-
-.benifit:hover {
-  border-color: #0388ff;
-  box-shadow: 0 12px 48px rgba(3, 136, 255, 0.15);
-  transform: translateY(-8px);
-  background: #ffffff;
 }
 
 .imgContainer {
@@ -98,24 +90,12 @@
   justify-content: center;
   border-radius: 12px;
   background: linear-gradient(135deg, #e8f1ff 0%, #dce7fd 100%);
-  transition: all 0.35s ease;
-}
-
-.benifit:hover .imgContainer {
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
-  transform: scale(1.08) rotate(5deg);
 }
 
 .img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: brightness(1);
-  transition: all 0.35s ease;
-}
-
-.benifit:hover .img {
-  filter: brightness(2) drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
 
 .benifitTitle {
