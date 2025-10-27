@@ -34,12 +34,6 @@ const Transparency = () => {
             className={styles.getQuoteBtn}
           >
             Get a quote
-            <Image
-              src="/svg/arrow-right.svg"
-              alt="arrow-right"
-              width={28}
-              height={14}
-            />
           </button>
           <button
             // onClick={() => {
@@ -47,13 +41,7 @@ const Transparency = () => {
             // }}
             className={styles.membersPortalBtn}
           >
-            Members Portal{" "}
-            <Image
-              src="/svg/arrow-right.svg"
-              alt="arrow-right"
-              width={28}
-              height={14}
-            />
+            Members Portal
           </button>
         </div>
       </div>
