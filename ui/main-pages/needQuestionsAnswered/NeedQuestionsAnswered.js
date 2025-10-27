@@ -28,38 +28,50 @@ const BackgroundShape = () => (
 
 const FAQIllustration = () => (
   <div className={styles.faqIllustration}>
-    <div className={styles.gradientBox1}></div>
-    <div className={styles.gradientBox2}></div>
-    <svg className={styles.documentCard} width="416" height="142" viewBox="0 0 416 142" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="415.043" height="141.036" fill="url(#paint_faq_doc)"/>
-      <path d="M156.866 61.4199H226.548" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M156.866 78.8496H347.766" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg width="469" height="238" viewBox="0 0 469 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="358.914" height="121.963" transform="translate(82.0156 78.6177)" fill="url(#paint0_linear_43_360)"/>
+      <rect width="317.093" height="107.213" transform="translate(102.926 130.788)" fill="url(#paint1_linear_43_360)"/>
+      <rect width="415.043" height="141.036" transform="translate(53.957 25.4131)" fill="url(#paint2_linear_43_360)"/>
+      <path d="M210.823 86.833H280.505" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M210.823 104.263H401.723" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect width="111.989" height="133.933" transform="matrix(0.977885 0.209141 -0.208652 0.97799 71.8633 0)" fill="url(#paint3_linear_43_360)"/>
+      <foreignObject x="-17.0252" y="-9.56431" width="219.867" height="234.032">
+        <div xmlns="http://www.w3.org/1999/xhtml" style={{backdropFilter: 'blur(24.35px)', clipPath: 'url(#bgblur_0_43_360_clip_path)', height: '100%', width: '100%'}}></div>
+      </foreignObject>
+      <rect data-figma-bg-blur-radius="48.6932" x="31.668" y="39.1289" width="122.481" height="136.646" fill="#000822"/>
+      <path d="M50.9648 64.8193H86.8992" stroke="#0388FF" strokeWidth="3.49907" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M50.9648 78.6182H105.946" stroke="#0388FF" strokeWidth="3.49907" strokeLinecap="round" strokeLinejoin="round"/>
+      <ellipse cx="41.6841" cy="154.214" rx="41.6841" ry="41.7111" fill="url(#paint4_linear_43_360)"/>
+      <ellipse cx="41.6841" cy="154.214" rx="41.6841" ry="41.7111" fill="url(#paint5_linear_43_360)"/>
       <defs>
-        <linearGradient id="paint_faq_doc" x1="-139.11" y1="143.56" x2="454.073" y2="-15.1879" gradientUnits="userSpaceOnUse">
+        <clipPath id="bgblur_0_43_360_clip_path" transform="translate(17.0252 9.56431)">
+          <rect x="31.668" y="39.1289" width="122.481" height="136.646"/>
+        </clipPath>
+        <linearGradient id="paint0_linear_43_360" x1="179.457" y1="61.3118" x2="179.457" y2="220.053" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#0388FF" stopOpacity="0"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_43_360" x1="158.546" y1="53.8967" x2="158.546" y2="193.439" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#0388FF" stopOpacity="0"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_43_360" x1="-139.11" y1="143.56" x2="454.073" y2="-15.1879" gradientUnits="userSpaceOnUse">
           <stop stopColor="#07102D"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
-      </defs>
-    </svg>
-    <div className={styles.smallDocWrapper}>
-      <div className={styles.smallDocBg}></div>
-      <svg className={styles.smallDoc} width="123" height="137" viewBox="0 0 123 137" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="122.481" height="136.646" fill="#000822"/>
-        <path d="M19.2969 25.6904H55.2312" stroke="#0388FF" strokeWidth="3.49907" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M19.2969 39.4893H74.2776" stroke="#0388FF" strokeWidth="3.49907" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    </div>
-    <svg className={styles.questionCircle} width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="41.6841" cy="41.7111" rx="41.6841" ry="41.7111" fill="url(#paint_faq_circle)"/>
-      <defs>
-        <linearGradient id="paint_faq_circle" x1="-28.6804" y1="71.8527" x2="54.1413" y2="30.0099" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint3_linear_43_360" x1="32.8294" y1="164.102" x2="-2.11152" y2="18.6103" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#07102D"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+        <linearGradient id="paint4_linear_43_360" x1="-28.6804" y1="184.356" x2="54.1413" y2="142.513" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0.3"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+        <linearGradient id="paint5_linear_43_360" x1="-28.6804" y1="184.356" x2="54.1413" y2="142.513" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0.3"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
       </defs>
-    </svg>
-    <svg className={styles.questionMark} width="22" height="37" viewBox="0 0 22 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7.70748 26.5296V26.3174C7.73243 24.0653 7.98186 22.2731 8.45578 20.9407C8.9297 19.6083 9.60317 18.5295 10.4762 17.7041C11.3492 16.8787 12.3968 16.1182 13.619 15.4226C14.3549 14.9981 15.0159 14.497 15.602 13.9192C16.1882 13.3297 16.6497 12.6517 16.9864 11.8853C17.3356 11.1189 17.5102 10.2699 17.5102 9.33843C17.5102 8.18292 17.2234 7.18069 16.6497 6.33174C16.076 5.48279 15.309 4.82839 14.3486 4.36855C13.3883 3.9087 12.322 3.67878 11.1497 3.67878C10.127 3.67878 9.14172 3.87922 8.19388 4.28011C7.24603 4.68101 6.45408 5.31182 5.81803 6.17256C5.18197 7.0333 4.81406 8.15934 4.71429 9.55067H0C0.0997733 7.54621 0.648526 5.83063 1.64626 4.40392C2.65646 2.97722 3.98469 1.88655 5.63095 1.13193C7.28968 0.37731 9.12925 0 11.1497 0C13.3447 0 15.2528 0.412683 16.8741 1.23805C18.5079 2.06342 19.7676 3.19535 20.6531 4.63384C21.551 6.07234 22 7.71128 22 9.55067C22 10.8477 21.788 12.0209 21.3639 13.0703C20.9524 14.1197 20.3537 15.057 19.568 15.8824C18.7948 16.7078 17.8594 17.4388 16.7619 18.0755C15.6644 18.724 14.7851 19.4079 14.1241 20.1271C13.4632 20.8346 12.983 21.6777 12.6837 22.6563C12.3844 23.635 12.2222 24.8553 12.1973 26.3174V26.5296H7.70748ZM10.102 37C9.17914 37 8.38719 36.6875 7.72619 36.0626C7.06519 35.4377 6.73469 34.689 6.73469 33.8164C6.73469 32.9439 7.06519 32.1952 7.72619 31.5703C8.38719 30.9453 9.17914 30.6329 10.102 30.6329C11.0249 30.6329 11.8169 30.9453 12.4779 31.5703C13.1389 32.1952 13.4694 32.9439 13.4694 33.8164C13.4694 34.3942 13.3135 34.9248 13.0017 35.4082C12.7024 35.8916 12.2971 36.2808 11.7857 36.5755C11.2868 36.8585 10.7256 37 10.102 37Z" fill="#000822"/>
     </svg>
   </div>
 );
