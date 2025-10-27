@@ -41,10 +41,9 @@ body {
   margin: -120px 0 8rem 0;
   padding: 0 0 0;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   margin-left: calc(-50vw + 50%);
   transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 0 10000px #000822;
 }
 
 .headerContainer.expanded {
