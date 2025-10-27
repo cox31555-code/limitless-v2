@@ -37,14 +37,15 @@
   align-items: center;
   justify-content: center;
   border-radius: 2.6rem;
-  border: 1px solid #1B1464;
+  border: 1px solid rgba(3, 136, 255, 0.3);
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .navButton:hover {
-  background: rgba(27, 20, 100, 0.05);
+  background: rgba(3, 136, 255, 0.08);
+  border-color: rgba(3, 136, 255, 0.5);
 }
 
 .navButton svg {
@@ -53,12 +54,13 @@
 }
 
 .navButtonActive {
-  background: #1B1464;
-  box-shadow: 0 0.7rem 1.95rem 0 rgba(0, 0, 0, 0.06);
+  background: #0388ff;
+  border-color: #0388ff;
 }
 
 .navButtonActive:hover {
-  background: #1B1464;
+  background: #049cff;
+  border-color: #049cff;
 }
 
 .content {
