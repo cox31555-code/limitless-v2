@@ -225,7 +225,11 @@
   z-index: 10;
   border-radius: 1.13rem 0 0 1.13rem;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.reviewCard:hover::before {
+  transition: all 0.6s ease-in-out;
 }
 
 .reviewCard:hover {
