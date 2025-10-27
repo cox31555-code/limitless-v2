@@ -213,21 +213,23 @@
   line-height: 130%;
 }
 .view {
-  color: #0388ff;
+  color: #fff;
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 130%;
   border: none;
-  background: transparent;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   cursor: pointer;
-  padding: 0;
-  border-radius: 0;
+  padding: 1rem 2rem;
+  border-radius: 8px;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   width: fit-content;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
 }
 
 .view:active {
-  color: #0270cc;
+  transform: translateY(1px);
+  box-shadow: 0 1px 4px rgba(3, 136, 255, 0.15);
 }
 
 .mobile {
