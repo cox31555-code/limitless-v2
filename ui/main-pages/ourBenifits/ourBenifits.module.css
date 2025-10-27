@@ -45,10 +45,7 @@
 }
 
 .title span {
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: none;
 }
 
 .description {
