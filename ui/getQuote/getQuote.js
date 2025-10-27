@@ -188,9 +188,6 @@ const GetQuote = ({ skipDuration = false, onExpand }) => {
           <div className={`${styles.accordionContent} ${styles.expanded}`}>
             <div className={styles.stepHeader}>
               <h3 className={styles.stepTitle}>How long do you need cover?</h3>
-              <p className={styles.stepDescription}>
-                Choose a preset duration or customize it
-              </p>
             </div>
 
             {/* Quick Duration Options */}
