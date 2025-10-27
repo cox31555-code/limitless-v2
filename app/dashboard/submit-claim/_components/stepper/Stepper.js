@@ -38,7 +38,7 @@ const Stepper = ({ steps, currentStep = 0 }) => {
                 <div
                   className={`${styles.stepperNumber} ${plusJakartaSans.className}`}
                 >
-                  Step {index + 1}
+                  {index + 1}
                 </div>
                 <p className={`${styles.stepperTitle} ${manrope.className}`}>
                   {step.title}
