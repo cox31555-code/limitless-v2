@@ -266,6 +266,10 @@
     overflow: visible;
   }
 
+  .cardsGridWrapper::after {
+    display: none;
+  }
+
   .cardsGrid {
     flex-wrap: wrap;
     gap: 2rem;
@@ -278,10 +282,6 @@
     width: auto;
     height: auto;
     min-height: 24rem;
-  }
-
-  .cardFade {
-    display: none;
   }
 }
 
@@ -334,6 +334,10 @@
     border-radius: 0;
   }
 
+  .cardsGridWrapper::after {
+    display: none;
+  }
+
   .cardsGrid {
     flex-direction: column;
     gap: 2rem;
@@ -345,10 +349,6 @@
     width: 100%;
     height: auto;
     min-height: 22rem;
-  }
-
-  .cardFade {
-    display: none;
   }
 }
 
@@ -396,6 +396,10 @@
     overflow: visible;
   }
 
+  .cardsGridWrapper::after {
+    display: none;
+  }
+
   .cardsGrid {
     flex-direction: column;
     animation: none;
@@ -423,10 +427,6 @@
     width: 10rem;
     height: 1.9rem;
     margin-bottom: 1.4rem;
-  }
-
-  .cardFade {
-    display: none;
   }
 }
 
@@ -470,6 +470,10 @@
     gap: 1rem;
   }
 
+  .cardsGridWrapper::after {
+    display: none;
+  }
+
   .cardsGrid {
     flex-direction: column;
     animation: none;
@@ -497,9 +501,5 @@
     width: 9rem;
     height: 1.8rem;
     margin-bottom: 1.2rem;
-  }
-
-  .cardFade {
-    display: none;
   }
 }
