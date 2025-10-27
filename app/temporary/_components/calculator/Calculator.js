@@ -88,12 +88,11 @@ const Calculator = () => {
                 </div>
               </div>
 
-              <button 
+              <button
                 onClick={() => router.push("/temporary/get-quote")}
                 className={`${styles.button} ${plusJakartaSans.className}`}
               >
                 <span>Get a quote</span>
-                <ArrowIcon />
               </button>
             </div>
 
