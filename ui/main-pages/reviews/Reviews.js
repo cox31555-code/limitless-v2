@@ -144,7 +144,7 @@ const Reviews = () => {
               <LargeStarIcon />
               <LargeStarIcon />
               <LargeStarIcon />
-              <LargeStarIcon />
+              <HalfStarIcon />
             </div>
             <div className={`${styles.reviewsCount} ${poppins.className}`}>
               1,593 reviews on
