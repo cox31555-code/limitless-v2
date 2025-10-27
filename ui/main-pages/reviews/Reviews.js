@@ -60,16 +60,12 @@ const TrustpilotLogo = memo(() => (
   </svg>
 ));
 
-const LeftArrowIcon = memo(() => (
-  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M21.7402 13.4789H4.53011M4.53011 13.4789C4.53011 13.4789 9.4084 10.2707 10.3997 7.60938M4.53011 13.4789C4.53011 13.4789 8.8427 16.4935 10.3997 19.3485" stroke="#1B1464" strokeWidth="2.17391" strokeLinecap="square"/>
-  </svg>
+const PrevIcon = memo(() => (
+  <span style={{ fontSize: '1.6rem', lineHeight: 1, fontWeight: 600 }}>←</span>
 ));
 
-const RightArrowIcon = memo(() => (
-  <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4.34766 13.4789H21.5578M21.5578 13.4789C21.5578 13.4789 16.6795 10.2707 15.6882 7.60938M21.5578 13.4789C21.5578 13.4789 17.2452 16.4935 15.6882 19.3485" stroke="#E9E9EA" strokeWidth="2.17391" strokeLinecap="square"/>
-  </svg>
+const NextIcon = memo(() => (
+  <span style={{ fontSize: '1.6rem', lineHeight: 1, fontWeight: 600 }}>→</span>
 ));
 
 const reviewsData = [
@@ -289,10 +285,10 @@ const Reviews = () => {
           </h2>
           <div className={styles.navigation}>
             <button className={`${styles.navButton} ${!isAtStart ? styles.navButtonActive : ''}`} onClick={handlePrev} aria-label="Previous review" disabled={isAtStart}>
-              <LeftArrowIcon />
+              <PrevIcon />
             </button>
             <button className={`${styles.navButton} ${!isAtEnd ? styles.navButtonActive : ''}`} onClick={handleNext} aria-label="Next review" disabled={isAtEnd}>
-              <RightArrowIcon />
+              <NextIcon />
             </button>
           </div>
         </div>
