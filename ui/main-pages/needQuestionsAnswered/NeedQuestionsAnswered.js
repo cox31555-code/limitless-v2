@@ -79,18 +79,25 @@ const FAQIllustration = () => (
 
 const ServiceIcon = () => (
   <div className={styles.serviceIcon}>
-    <div className={styles.serviceGradient}></div>
-    <svg width="90" height="114" viewBox="0 0 90 114" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M80.9884 33.7095L116.435 50.684L80.9884 68.7257L45.5664 50.6851L80.9884 33.7095Z" fill="#049CFF"/>
-      <path d="M45.5469 95.9288V50.6689L80.9809 68.7172V114L45.5469 95.9288Z" fill="#049CFF"/>
-      <path d="M116.413 95.9762V50.6689L80.9805 68.7172V113.998L116.413 95.9762Z" fill="#049CFF"/>
-      <path d="M72.894 100.317L53.6367 90.9795" stroke="#010619" strokeWidth="3.76508" strokeLinecap="round"/>
-    </svg>
-    <svg className={styles.checkBadge} width="37" height="42" viewBox="0 0 37 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M105.867 32.5413L96.7755 36.7966C93.5565 38.3033 91.5 41.5365 91.5 45.0907V57.4783C91.5 60.3314 92.8297 63.0215 95.0965 64.7541L103.784 71.3943C106.985 73.8414 111.41 73.9083 114.684 71.5589L124.179 64.7453C126.577 63.0251 127.998 60.2554 127.998 57.305V45.0907C127.998 41.5365 125.942 38.3033 122.723 36.7966L113.631 32.5413C111.171 31.3898 108.327 31.3898 105.867 32.5413Z" fill="url(#paint_service_badge)"/>
-      <path d="M103.746 51.1187L107.101 55.7365C107.934 56.882 109.649 56.858 110.449 55.6895L117.667 45.1465" stroke="#000822" strokeWidth="3.01206" strokeLinecap="round"/>
+    <svg width="101" height="87" viewBox="0 0 101 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="61.3078" height="63.596" fill="url(#paint0_linear_43_380)" fillOpacity="0.48"/>
+      <path d="M53.9884 6.70947L89.4345 23.684L53.9884 41.7257L18.5664 23.6851L53.9884 6.70947Z" fill="#049CFF"/>
+      <path d="M18.5469 68.9288V23.6689L53.9809 41.7172V87.0001L18.5469 68.9288Z" fill="#049CFF"/>
+      <path d="M89.4134 68.9762V23.6689L53.9805 41.7172V86.9983L89.4134 68.9762Z" fill="#049CFF"/>
+      <path d="M45.894 73.3171L26.6367 63.9795" stroke="#010619" strokeWidth="3.76508" strokeLinecap="round"/>
+      <path d="M78.8669 5.54125L69.7755 9.7966C66.5565 11.3033 64.5 14.5365 64.5 18.0907V30.4783C64.5 33.3314 65.8297 36.0215 68.0965 37.7541L76.7839 44.3943C79.9854 46.8414 84.4103 46.9083 87.6842 44.5589L97.1795 37.7453C99.5766 36.0251 100.998 33.2554 100.998 30.305V18.0907C100.998 14.5365 98.9416 11.3033 95.7226 9.7966L86.6313 5.54126C84.1712 4.38978 81.327 4.38978 78.8669 5.54125Z" fill="url(#paint1_linear_43_380)"/>
+      <path d="M78.8669 5.54125L69.7755 9.7966C66.5565 11.3033 64.5 14.5365 64.5 18.0907V30.4783C64.5 33.3314 65.8297 36.0215 68.0965 37.7541L76.7839 44.3943C79.9854 46.8414 84.4103 46.9083 87.6842 44.5589L97.1795 37.7453C99.5766 36.0251 100.998 33.2554 100.998 30.305V18.0907C100.998 14.5365 98.9416 11.3033 95.7226 9.7966L86.6313 5.54126C84.1712 4.38978 81.327 4.38978 78.8669 5.54125Z" fill="url(#paint2_linear_43_380)"/>
+      <path d="M76.7461 24.1187L80.1013 28.7365C80.9336 29.882 82.6494 29.858 83.4493 28.6895L90.6672 18.1465" stroke="#000822" strokeWidth="3.01206" strokeLinecap="round"/>
       <defs>
-        <linearGradient id="paint_service_badge" x1="78.9438" y1="69.3019" x2="117.854" y2="53.2725" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint0_linear_43_380" x1="30.6539" y1="0" x2="30.6539" y2="63.596" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#0388FF" stopOpacity="0"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_43_380" x1="51.9438" y1="42.3019" x2="90.8542" y2="26.2725" gradientUnits="userSpaceOnUse">
+          <stop stopColor="white" stopOpacity="0"/>
+          <stop offset="1" stopColor="#0388FF"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_43_380" x1="51.9438" y1="42.3019" x2="90.8542" y2="26.2725" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0.3"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
