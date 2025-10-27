@@ -2,33 +2,14 @@ import featureStyles from "../../ui/feature/feature.module.css";
 
 export const annualFeatures = [
   {
-    img: {
-      src: "/svg/unbeatable-rates.svg",
-      alt: "unbeatable rates",
-      width: 80,
-      height: 80,
-    },
     title: "Unbeatable rates",
     description: "Slash your premiums with our unbeatable UK-wide rates saving, up to 50% on coverage.",
-    imgClassName: featureStyles.imgLarge,
   },
   {
-    img: {
-      src: "/svg/insurance-types.svg",
-      alt: "comprehensive protection",
-      width: 64,
-      height: 64,
-    },
     title: "Comprehensive protection",
     description: "Enjoy peace of mind with theft, accident plus 24/7 support and instant online quotes.",
   },
   {
-    img: {
-      src: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fe018c00bd11e40efb2b3651aa831897c?format=webp&width=800",
-      alt: "drive with freedom",
-      width: 64,
-      height: 64,
-    },
     title: "Drive with freedom",
     description: "Enjoy driving without invasive telematics devices monitoring your every move.",
   },
