@@ -334,6 +334,15 @@
     width: auto;
     height: auto;
     min-height: 24rem;
+  }
+
+  .cardsGrid > :nth-child(1),
+  .cardsGrid > :nth-child(2),
+  .cardsGrid > :nth-child(3),
+  .cardsGrid > :nth-child(4),
+  .cardsGrid > :nth-child(5),
+  .cardsGrid > :nth-child(6) {
+    animation: none;
     mask-image: none;
     -webkit-mask-image: none;
   }
@@ -399,6 +408,15 @@
     width: 100%;
     height: auto;
     min-height: 22rem;
+  }
+
+  .cardsGrid > :nth-child(1),
+  .cardsGrid > :nth-child(2),
+  .cardsGrid > :nth-child(3),
+  .cardsGrid > :nth-child(4),
+  .cardsGrid > :nth-child(5),
+  .cardsGrid > :nth-child(6) {
+    animation: none;
     mask-image: none;
     -webkit-mask-image: none;
   }
@@ -456,6 +474,15 @@
   .reviewCard {
     padding: 1.8rem;
     min-height: 20rem;
+  }
+
+  .cardsGrid > :nth-child(1),
+  .cardsGrid > :nth-child(2),
+  .cardsGrid > :nth-child(3),
+  .cardsGrid > :nth-child(4),
+  .cardsGrid > :nth-child(5),
+  .cardsGrid > :nth-child(6) {
+    animation: none;
     mask-image: none;
     -webkit-mask-image: none;
   }
@@ -529,6 +556,15 @@
     padding: 1.6rem;
     gap: 1.2rem;
     min-height: 18rem;
+  }
+
+  .cardsGrid > :nth-child(1),
+  .cardsGrid > :nth-child(2),
+  .cardsGrid > :nth-child(3),
+  .cardsGrid > :nth-child(4),
+  .cardsGrid > :nth-child(5),
+  .cardsGrid > :nth-child(6) {
+    animation: none;
     mask-image: none;
     -webkit-mask-image: none;
   }
