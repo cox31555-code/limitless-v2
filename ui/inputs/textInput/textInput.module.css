@@ -109,7 +109,7 @@
   font-size: 2.2rem;
   font-family: 'DM Mono', monospace;
   text-transform: uppercase;
-  padding: 1.6rem 2rem 0.75rem;
+  padding: 1.6rem 2rem 1.03125rem;
 }
 .input.reg::placeholder {
   color: rgba(0, 8, 34, 0.3);
