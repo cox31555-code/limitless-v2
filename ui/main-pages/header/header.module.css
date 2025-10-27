@@ -75,14 +75,15 @@
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .wrapper {
-  padding: 20rem 0 8rem;
+  padding-top: 20rem;
   display: flex;
   flex-direction: column;
   gap: 6rem;
   width: 100%;
-  min-height: 135vh;
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  align-items: flex-start;
+  justify-items: flex-start;
 }
 .container {
   display: flex;
