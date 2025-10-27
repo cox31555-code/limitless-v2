@@ -292,7 +292,7 @@ const Header = () => {
               className={styles.quoteBtn}
               onClick={() => router.push("/temporary/get-quote")}
             >
-              Get Quote
+              Get a Quote
             </button>
           </div>
         )}
@@ -470,7 +470,7 @@ const Header = () => {
                   setIsOpen(false);
                 }}
               >
-                {isDashboard ? "Live chat" : "Get Quote"}
+                {isDashboard ? "Live chat" : "Get a Quote"}
               </button>
             </div>
           </div>
