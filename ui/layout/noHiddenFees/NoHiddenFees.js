@@ -61,6 +61,7 @@ const NoHiddenFees = () => {
             top: "-68.5px",
             opacity: "0.12",
             transform: "rotate(32deg)",
+            position: "absolute",
           }}
         />
         <svg
