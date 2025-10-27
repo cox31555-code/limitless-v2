@@ -74,10 +74,10 @@ const ServiceIcon = () => (
       <path d="M72.894 100.317L53.6367 90.9795" stroke="#010619" strokeWidth="3.76508" strokeLinecap="round"/>
     </svg>
     <svg className={styles.checkBadge} width="37" height="42" viewBox="0 0 37 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M105.867 32.5413L96.7755 36.7966C93.5565 38.3033 91.5 41.5365 91.5 45.0907V57.4783C91.5 60.3314 92.8297 63.0215 95.0965 64.7541L103.784 71.3943C106.985 73.8414 111.41 73.9083 114.684 71.5589L124.179 64.7453C126.577 63.0251 127.998 60.2554 127.998 57.305V45.0907C127.998 41.5365 125.942 38.3033 122.723 36.7966L113.631 32.5413C111.171 31.3898 108.327 31.3898 105.867 32.5413Z" fill="url(#paint0_linear_badge)"/>
+      <path d="M105.867 32.5413L96.7755 36.7966C93.5565 38.3033 91.5 41.5365 91.5 45.0907V57.4783C91.5 60.3314 92.8297 63.0215 95.0965 64.7541L103.784 71.3943C106.985 73.8414 111.41 73.9083 114.684 71.5589L124.179 64.7453C126.577 63.0251 127.998 60.2554 127.998 57.305V45.0907C127.998 41.5365 125.942 38.3033 122.723 36.7966L113.631 32.5413C111.171 31.3898 108.327 31.3898 105.867 32.5413Z" fill="url(#paint_service_badge)"/>
       <path d="M103.746 51.1187L107.101 55.7365C107.934 56.882 109.649 56.858 110.449 55.6895L117.667 45.1465" stroke="#000822" strokeWidth="3.01206" strokeLinecap="round"/>
       <defs>
-        <linearGradient id="paint0_linear_badge" x1="78.9438" y1="69.3019" x2="117.854" y2="53.2725" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint_service_badge" x1="78.9438" y1="69.3019" x2="117.854" y2="53.2725" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0.3"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
