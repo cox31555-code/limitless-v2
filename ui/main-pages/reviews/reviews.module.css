@@ -103,6 +103,12 @@
   flex-shrink: 0;
 }
 
+.largeStars > div {
+  width: 3.4rem;
+  height: 3.4rem;
+  flex-shrink: 0;
+}
+
 .reviewsCount {
   color: #000;
   text-align: center;
