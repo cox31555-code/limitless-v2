@@ -225,8 +225,8 @@
 @media screen and (max-width: 480px) {
   .container {
     border: 1px solid rgba(3, 136, 255, 0.15);
-    padding: 1.8rem 2rem;
-    gap: 1.2rem;
+    padding: 1.4rem 2rem;
+    gap: 1rem;
   }
 
   .title {
