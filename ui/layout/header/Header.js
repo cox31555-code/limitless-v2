@@ -165,12 +165,6 @@ const Header = () => {
                 onClick={() => router.push("/temporary/get-quote")}
               >
                 Get Quote
-                <Image
-                  src="/svg/arrow-right.svg"
-                  alt="arrow-right"
-                  width={20}
-                  height={10}
-                />
               </button>
             </div>
           </div>
