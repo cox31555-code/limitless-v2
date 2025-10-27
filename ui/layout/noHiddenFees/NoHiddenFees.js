@@ -33,12 +33,6 @@ const NoHiddenFees = () => {
             className={styles.getQuoteBtn}
           >
             Get a quote
-            <Image
-              src="/svg/arrow-right.svg"
-              alt="arrow-right"
-              width={28}
-              height={14}
-            />
           </button>
           <button
             onClick={() => {
@@ -47,12 +41,6 @@ const NoHiddenFees = () => {
             className={styles.membersPortalBtn}
           >
             <p>Members Portal</p>
-            <Image
-              src="/svg/arrow-right.svg"
-              alt="arrow-right"
-              width={28}
-              height={14}
-            />
           </button>
         </div>
       </div>
