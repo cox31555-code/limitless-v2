@@ -308,13 +308,9 @@
     gap: 1.2rem;
   }
 
-  .navButton {
-    padding: 1rem;
-  }
-
-  .navButton svg {
-    width: 2.2rem;
-    height: 2.2rem;
+  .prevButton,
+  .nextButton {
+    padding: 0.9rem;
   }
 
   .content {
@@ -431,13 +427,9 @@
     font-size: 2.4rem;
   }
 
-  .navButton {
-    padding: 0.8rem;
-  }
-
-  .navButton svg {
-    width: 2rem;
-    height: 2rem;
+  .prevButton,
+  .nextButton {
+    padding: 0.75rem;
   }
 
   .summaryCard {
