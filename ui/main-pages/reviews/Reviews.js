@@ -33,9 +33,23 @@ const LargeStarIcon = memo(() => (
 ));
 
 const HalfStarIcon = memo(() => (
-  <div style={{ width: '33px', height: '34px', padding: '3px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flexShrink: 0, background: 'linear-gradient(90deg, #00B67A 0%, #00B67A 50%, #D9D9D9 50%, #D9D9D9 100%)', position: 'relative' }}>
-    <svg width="100%" height="100%" viewBox="0 0 28 28" fill="white" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', top: 0, left: 0 }}>
-      <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z"/>
+  <div style={{ width: '34px', height: '34px', flexShrink: 0, position: 'relative' }}>
+    <div style={{
+      display: 'flex',
+      width: '34px',
+      height: '34px',
+      padding: '3px',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexShrink: 0,
+      background: 'linear-gradient(90deg, #00B67A 0%, #00B67A 50%, rgba(0, 182, 122, 0.00) 50.01%, #D9D9D9 50.02%, #D9D9D9 99.98%, rgba(0, 182, 122, 0.00) 99.99%, #D9D9D9 100%)',
+      position: 'absolute',
+      left: '0px',
+      top: '0px'
+    }}></div>
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '28px', height: '28px', flexShrink: 0, fill: '#FFF', position: 'absolute', left: '3px', top: '3px' }}>
+      <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z" fill="white"/>
     </svg>
   </div>
 ));
