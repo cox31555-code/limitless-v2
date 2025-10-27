@@ -202,7 +202,6 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  animation: expandAccordion 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   max-height: 1000px;
   overflow: hidden;
 }
