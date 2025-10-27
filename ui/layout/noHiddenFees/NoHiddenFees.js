@@ -56,7 +56,9 @@ const NoHiddenFees = () => {
           className={styles.backgroundLogoNew}
           src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F3b9261c3b11e44158e58e259bf4c6d35?format=webp&width=800"
           alt="logo"
-          fill
+          width={450}
+          height={450}
+          priority
         />
         <svg
           className={styles.backgroundSvg}
