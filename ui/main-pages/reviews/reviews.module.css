@@ -42,11 +42,15 @@
   border: 1.5px solid #E5E7EB;
   background: #FFFFFF;
   color: #9CA3AF;
-  font-size: 1.6rem;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
+}
+
+.prevButton svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke-width: 2;
 }
 
 .prevButton:hover:not(:disabled) {
@@ -79,11 +83,15 @@
   border: none;
   background: #F3F4F6;
   color: #9CA3AF;
-  font-size: 1.6rem;
-  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
+}
+
+.nextButton svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke-width: 2;
 }
 
 .nextButton:hover:not(:disabled) {
