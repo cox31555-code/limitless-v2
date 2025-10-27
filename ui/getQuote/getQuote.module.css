@@ -196,6 +196,7 @@
   position: relative;
   min-height: auto;
   max-height: 1500px;
+  background-color: #ffffff;
 }
 
 .accordionContent {
