@@ -5,121 +5,40 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding: 12rem 30rem;
+  padding: 8.6rem 0;
+  margin-top: 6rem;
+  margin-bottom: 0;
   overflow: hidden;
-  background: #fff;
+  background: #EAF9FF;
 }
 
 .container {
-  max-width: 192rem;
+  max-width: 147.2rem;
   margin: 0 auto;
+  padding: 0 4.4%;
   display: flex;
-  flex-direction: column;
-  gap: 4.8rem;
+  align-items: flex-start;
+  gap: 14.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-.header {
+.leftSection {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  flex-direction: column;
+  gap: 2.8rem;
+  min-width: 26.7rem;
+  padding-top: 2.4rem;
 }
 
 .title {
-  color: #1D1F2C;
-  font-size: 4.8rem;
-  font-weight: 700;
-  line-height: 120%;
+  color: #000822;
+  font-size: 5.6rem;
+  font-weight: 800;
+  line-height: 112%;
+  letter-spacing: -1.2px;
   margin: 0;
-}
-
-.navigation {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.navButtonOutline,
-.navButtonFilled {
-  display: flex;
-  padding: 1.2rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 2.6rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.navButtonOutline {
-  border: 1px solid #1B1464;
-  background: transparent;
-}
-
-.navButtonOutline:hover {
-  background: rgba(27, 20, 100, 0.05);
-}
-
-.navButtonFilled {
-  background: #1B1464;
-  box-shadow: 0 0.7rem 1.95rem 0 rgba(0, 0, 0, 0.06);
-}
-
-.navButtonFilled:hover {
-  background: #130e4a;
-}
-
-.navButtonOutline svg,
-.navButtonFilled svg {
-  width: 2.6rem;
-  height: 2.6rem;
-}
-
-.content {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.leftCard {
-  display: flex;
-  width: 28rem;
-  height: 22rem;
-  padding: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  background: #FFF;
-  flex-shrink: 0;
-}
-
-.excellentText {
-  color: #000;
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 2.6rem;
-}
-
-.largeStars {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-}
-
-.largeStars svg {
-  width: 4rem;
-  height: 4rem;
-}
-
-.basedOnText {
-  color: #000;
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 2.2rem;
-  margin-top: 0.4rem;
+  width: 23.6rem;
 }
 
 .trustpilotBadge {
@@ -127,278 +46,489 @@
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
+  width: 14.9rem;
+  height: 4.4rem;
 }
 
 .trustpilotBadge svg {
-  width: 2.5rem;
-  height: 2.4rem;
+  width: 3.7rem;
+  height: 3.4rem;
+  flex-shrink: 0;
 }
 
 .trustpilotText {
-  font-size: 1.6rem;
+  font-size: 2.1rem;
   font-weight: 400;
   line-height: 2.6rem;
   color: #000;
+  width: 9.1rem;
+  height: 2.2rem;
 }
 
-.reviewsContainer {
+.ratingInfo {
   display: flex;
-  align-items: flex-start;
-  gap: 3.2rem;
-  flex: 1;
-}
-
-.reviewCard {
-  display: flex;
-  height: 22rem;
-  padding: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.8rem;
-  flex: 1;
-  background: #FFF;
-  box-shadow: 0 1.2rem 2.4rem 0 rgba(0, 0, 0, 0.05);
-}
-
-.reviewHeader {
-  display: flex;
-  height: 2.6rem;
-  justify-content: space-between;
   align-items: center;
-  align-self: stretch;
+  gap: 1.2rem;
+  height: 1.8rem;
 }
 
-.stars {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.2rem;
-}
-
-.stars svg {
-  width: 2rem;
-  height: 2rem;
-}
-
-.date {
-  color: #000;
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 2.6rem;
-}
-
-.reviewTitle {
-  color: #4A4C56;
+.rating,
+.reviewCount {
+  color: #717584;
   font-size: 1.8rem;
   font-weight: 400;
-  line-height: 2.6rem;
-  margin: 0;
-  align-self: stretch;
-}
-
-.reviewText {
-  color: #4A4C56;
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 2.2rem;
-  margin: 0;
-  align-self: stretch;
+  line-height: 100%;
 }
 
 .divider {
-  width: 6rem;
-  height: 0.1rem;
-  background: #D9D9D9;
+  width: 0.2rem;
+  height: 1.4rem;
+  background: #717584;
+  border-radius: 0.1rem;
+}
+
+.cardsGridWrapper {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 1.13rem;
+  position: relative;
+}
+
+.cardsGrid {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.1rem;
+  animation: slideCarousel 15s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.cardsGrid > :nth-child(1)::before,
+.cardsGrid > :nth-child(4)::before {
+  animation: fadeOverlay1 15s linear infinite;
+}
+
+.cardsGrid > :nth-child(2)::before,
+.cardsGrid > :nth-child(5)::before {
+  animation: fadeOverlay2 15s linear infinite;
+}
+
+.cardsGrid > :nth-child(3)::before,
+.cardsGrid > :nth-child(6)::before {
+  animation: fadeOverlay3 15s linear infinite;
+}
+
+@keyframes fadeOverlay1 {
+  0%, 26.67%, 100% { opacity: 1; }
+  33.33%, 93.33% { opacity: 0; }
+}
+
+@keyframes fadeOverlay2 {
+  0%, 26.67% { opacity: 0; }
+  33.33%, 60% { opacity: 1; }
+  66.67%, 100% { opacity: 0; }
+}
+
+@keyframes fadeOverlay3 {
+  0%, 60% { opacity: 0; }
+  66.67%, 93.33% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes slideCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  26.67% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(calc(-1 * (33.9rem + 2.1rem)));
+  }
+  60% {
+    transform: translateX(calc(-1 * (33.9rem + 2.1rem)));
+  }
+  66.67% {
+    transform: translateX(calc(-2 * (33.9rem + 2.1rem)));
+  }
+  93.33% {
+    transform: translateX(calc(-2 * (33.9rem + 2.1rem)));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.reviewCard {
+  position: relative;
+  width: 33.9rem;
+  height: 26.3rem;
+  background: #FFF;
+  border-radius: 1.13rem;
+  padding: 2.1rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.reviewCard::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(223, 246, 255, 0.7) 0%, rgba(223, 246, 255, 0) 100%);
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 1.13rem 0 0 1.13rem;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  will-change: opacity;
+}
+
+
+.reviewCard svg {
+  position: relative;
+  z-index: 3;
+  width: 12rem;
+  height: 2.1rem;
+  flex-shrink: 0;
+  margin-bottom: 1.6rem;
+}
+
+.reviewText {
+  position: relative;
+  z-index: 3;
+  color: #000822;
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 118%;
+  margin: 0 0 auto 0;
+  width: 24.2rem;
+  min-height: 3.4rem;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 3;
 }
 
 .authorName {
-  color: #4A4C56;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 2.2rem;
+  color: #000822;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 100%;
+  margin: 0;
 }
 
-/* Tablet */
+.timestamp {
+  color: rgba(0, 8, 34, 0.54);
+  font-size: 1.29rem;
+  font-weight: 500;
+  line-height: 124%;
+  letter-spacing: 0.052rem;
+  margin: 0;
+}
+
+/* Large screens */
 @media screen and (max-width: 1400px) {
-  .wrapper {
-    padding: 10rem 15rem;
-  }
-
-  .title {
-    font-size: 4rem;
-  }
-
-  .reviewsContainer {
-    gap: 2rem;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .wrapper {
-    padding: 8rem 8rem;
-  }
-
   .container {
-    gap: 3.6rem;
+    gap: 8rem;
   }
 
-  .content {
-    flex-direction: column;
-  }
-
-  .leftCard {
-    width: 100%;
-    height: auto;
-    padding: 3rem 2rem;
-  }
-
-  .reviewsContainer {
-    width: 100%;
-    flex-wrap: wrap;
+  .cardsGrid {
+    animation: slideCarousel 30s linear infinite;
   }
 
   .reviewCard {
-    min-width: calc(50% - 1rem);
-    height: auto;
+    width: 100%;
+    flex: 0 0 33.9rem;
   }
 }
 
-@media screen and (max-width: 900px) {
+/* Tablet */
+@media screen and (max-width: 1200px) {
   .wrapper {
-    padding: 6rem 4rem;
+    padding: 7rem 0;
+    margin-top: 5rem;
+    margin-bottom: 0;
   }
 
-  .header {
+  .container {
+    gap: 5rem;
+    padding: 0 4%;
+  }
+
+  .leftSection {
+    min-width: 22rem;
+  }
+
+  .title {
+    font-size: 4.4rem;
+    width: 20rem;
+    letter-spacing: -1px;
+  }
+
+  .cardsGridWrapper {
+    overflow: visible;
+  }
+
+  .cardsGrid {
+    flex-wrap: wrap;
+    gap: 2rem;
+    animation: none;
+  }
+
+  .reviewCard {
+    flex: 1;
+    min-width: 28rem;
+    width: auto;
+    height: auto;
+    min-height: 24rem;
+  }
+
+  .cardsGrid > :nth-child(1)::before,
+  .cardsGrid > :nth-child(2)::before,
+  .cardsGrid > :nth-child(3)::before,
+  .cardsGrid > :nth-child(4)::before,
+  .cardsGrid > :nth-child(5)::before,
+  .cardsGrid > :nth-child(6)::before {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Tablet - smaller */
+@media screen and (max-width: 900px) {
+  .wrapper {
+    padding: 6rem 0;
+    margin-top: 4rem;
+    margin-bottom: 0;
+  }
+
+  .container {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 4rem;
+    padding: 0 4%;
+  }
+
+  .leftSection {
+    min-width: 100%;
+    padding-top: 0;
     gap: 2.4rem;
   }
 
   .title {
-    font-size: 3.6rem;
+    font-size: 4rem;
+    width: 100%;
+    letter-spacing: -1px;
   }
 
-  .navigation {
-    align-self: flex-end;
+  .rating,
+  .reviewCount {
+    font-size: 1.6rem;
   }
 
-  .reviewsContainer {
+  .trustpilotText {
+    font-size: 1.9rem;
+  }
+
+  .trustpilotBadge svg {
+    width: 3.4rem;
+    height: 3.1rem;
+  }
+
+  .cardsGridWrapper {
+    overflow: visible;
+    border-radius: 0;
+  }
+
+  .cardsGrid {
     flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    animation: none;
   }
 
   .reviewCard {
-    min-width: 100%;
     width: 100%;
+    height: auto;
+    min-height: 22rem;
+  }
+
+  .cardsGrid > :nth-child(1)::before,
+  .cardsGrid > :nth-child(2)::before,
+  .cardsGrid > :nth-child(3)::before,
+  .cardsGrid > :nth-child(4)::before,
+  .cardsGrid > :nth-child(5)::before,
+  .cardsGrid > :nth-child(6)::before {
+    animation: none;
+    opacity: 0;
   }
 }
 
+/* Mobile */
 @media screen and (max-width: 600px) {
   .wrapper {
-    padding: 5rem 2rem;
+    padding: 5rem 0;
+    margin-top: 3rem;
+    margin-bottom: 0;
   }
 
   .container {
     gap: 3rem;
+    padding: 0 4%;
   }
 
-  .header {
+  .leftSection {
     gap: 2rem;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 3.2rem;
+    letter-spacing: -0.8px;
   }
 
-  .navigation {
-    gap: 1.2rem;
-  }
-
-  .navButtonOutline,
-  .navButtonFilled {
-    padding: 1rem;
-  }
-
-  .navButtonOutline svg,
-  .navButtonFilled svg {
-    width: 2.2rem;
-    height: 2.2rem;
-  }
-
-  .leftCard {
-    padding: 2.4rem 2rem;
-  }
-
-  .excellentText {
-    font-size: 1.6rem;
-  }
-
-  .largeStars svg {
-    width: 3.2rem;
-    height: 3.2rem;
-  }
-
-  .largeStars {
-    gap: 0.4rem;
-  }
-
-  .basedOnText {
-    font-size: 1.4rem;
+  .rating,
+  .reviewCount {
+    font-size: 1.5rem;
   }
 
   .trustpilotText {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
+  }
+
+  .trustpilotBadge svg {
+    width: 3rem;
+    height: 2.8rem;
+  }
+
+  .cardsGridWrapper {
+    overflow: visible;
+  }
+
+  .cardsGrid {
+    flex-direction: column;
+    animation: none;
   }
 
   .reviewCard {
     padding: 1.8rem;
+    min-height: 20rem;
   }
 
-  .reviewTitle {
-    font-size: 1.6rem;
+  .cardsGrid > :nth-child(1)::before,
+  .cardsGrid > :nth-child(2)::before,
+  .cardsGrid > :nth-child(3)::before,
+  .cardsGrid > :nth-child(4)::before,
+  .cardsGrid > :nth-child(5)::before,
+  .cardsGrid > :nth-child(6)::before {
+    animation: none;
+    opacity: 0;
   }
 
   .reviewText {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+    width: 100%;
+  }
+
+  .authorName {
+    font-size: 1.35rem;
+  }
+
+  .timestamp {
+    font-size: 1.2rem;
+  }
+
+  .reviewCard svg {
+    width: 10rem;
+    height: 1.9rem;
+    margin-bottom: 1.4rem;
   }
 }
 
+/* Small mobile */
 @media screen and (max-width: 480px) {
   .wrapper {
-    padding: 4rem 1.6rem;
+    padding: 4rem 0;
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  .container {
+    gap: 2.5rem;
+    padding: 0 4%;
   }
 
   .title {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
+    letter-spacing: -0.6px;
   }
 
-  .leftCard {
-    padding: 2rem 1.6rem;
+  .rating,
+  .reviewCount {
+    font-size: 1.4rem;
   }
 
-  .excellentText {
+  .trustpilotText {
     font-size: 1.5rem;
   }
 
-  .largeStars svg {
+  .trustpilotBadge svg {
     width: 2.8rem;
-    height: 2.8rem;
+    height: 2.6rem;
+  }
+
+  .ratingInfo {
+    gap: 1rem;
+  }
+
+  .cardsGrid {
+    flex-direction: column;
+    animation: none;
   }
 
   .reviewCard {
     padding: 1.6rem;
-    gap: 0.6rem;
+    gap: 1.2rem;
+    min-height: 18rem;
   }
 
-  .reviewTitle {
-    font-size: 1.5rem;
+  .cardsGrid > :nth-child(1)::before,
+  .cardsGrid > :nth-child(2)::before,
+  .cardsGrid > :nth-child(3)::before,
+  .cardsGrid > :nth-child(4)::before,
+  .cardsGrid > :nth-child(5)::before,
+  .cardsGrid > :nth-child(6)::before {
+    animation: none;
+    opacity: 0;
   }
 
   .reviewText {
-    font-size: 1.2rem;
-    line-height: 2rem;
+    font-size: 1.3rem;
   }
 
   .authorName {
     font-size: 1.3rem;
+  }
+
+  .timestamp {
+    font-size: 1.15rem;
+  }
+
+  .reviewCard svg {
+    width: 9rem;
+    height: 1.8rem;
+    margin-bottom: 1.2rem;
   }
 }
