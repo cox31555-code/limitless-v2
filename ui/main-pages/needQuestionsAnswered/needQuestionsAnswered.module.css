@@ -68,7 +68,6 @@
 
 .faqCard:hover {
   border-color: rgba(3, 136, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.08);
   background: linear-gradient(135deg, #0a1835 0%, #0d1f40 100%);
 }
 
