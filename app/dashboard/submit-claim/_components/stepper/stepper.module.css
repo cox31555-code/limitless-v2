@@ -155,11 +155,11 @@
   .stepperNumber {
     width: 4.6rem;
     height: 4.6rem;
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 
-  .stepperItem:first-child .stepperNumber {
-    font-size: 1.3rem;
+  .stepperContainer:first-child .stepperNumber {
+    font-size: 1.6rem;
   }
 
   .stepperTitle {
@@ -187,11 +187,11 @@
   .stepperNumber {
     width: 4rem;
     height: 4rem;
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
-  .stepperItem:first-child .stepperNumber {
-    font-size: 1.2rem;
+  .stepperContainer:first-child .stepperNumber {
+    font-size: 1.4rem;
   }
 
   .stepperTitle {
