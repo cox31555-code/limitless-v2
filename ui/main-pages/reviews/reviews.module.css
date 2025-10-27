@@ -33,37 +33,39 @@
 
 .navButton {
   display: flex;
-  padding: 0.8rem;
+  padding: 0.7rem 1.6rem;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  border: none;
-  background: #F5F5F5;
+  border-radius: 6px;
+  border: 1.5px solid #E5E7EB;
+  background: #FFFFFF;
+  color: #6B7280;
+  font-size: 1.3rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .navButton:hover:not(:disabled) {
-  background: #E8E8E8;
+  border-color: #D1D5DB;
+  background: #F9FAFB;
+  color: #374151;
 }
 
 .navButton:disabled {
-  opacity: 0.3;
+  opacity: 0.45;
   cursor: not-allowed;
-  background: #F5F5F5;
-}
-
-.navButton svg {
-  width: 2.2rem;
-  height: 2.2rem;
 }
 
 .navButtonActive {
-  background: #0388FF;
+  background: #1B1464;
+  color: #FFFFFF;
+  border-color: #1B1464;
 }
 
 .navButtonActive:hover:not(:disabled) {
-  background: #0270CC;
+  background: #251a7f;
+  border-color: #251a7f;
 }
 
 .content {
