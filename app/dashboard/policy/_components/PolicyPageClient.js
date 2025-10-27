@@ -98,6 +98,26 @@ const PolicyPageClient = ({
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </button>
+              <button
+                className={styles.dropdownOption}
+                onClick={() =>
+                  handleOptionClick("/annual/get-quote?payment=false")
+                }
+              >
+                <div className={styles.optionIcon}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                </div>
+                <div className={styles.optionContent}>
+                  <h5>Annual Insurance</h5>
+                  <p>Full year coverage for continuous protection</p>
+                </div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.arrowIcon}>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           )}
         </div>
