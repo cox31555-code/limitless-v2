@@ -342,15 +342,14 @@
     min-height: 24rem;
   }
 
-  .cardsGrid > :nth-child(1),
-  .cardsGrid > :nth-child(2),
-  .cardsGrid > :nth-child(3),
-  .cardsGrid > :nth-child(4),
-  .cardsGrid > :nth-child(5),
-  .cardsGrid > :nth-child(6) {
+  .cardsGrid > :nth-child(1)::before,
+  .cardsGrid > :nth-child(2)::before,
+  .cardsGrid > :nth-child(3)::before,
+  .cardsGrid > :nth-child(4)::before,
+  .cardsGrid > :nth-child(5)::before,
+  .cardsGrid > :nth-child(6)::before {
     animation: none;
-    mask-image: none;
-    -webkit-mask-image: none;
+    opacity: 0;
   }
 }
 
@@ -416,15 +415,14 @@
     min-height: 22rem;
   }
 
-  .cardsGrid > :nth-child(1),
-  .cardsGrid > :nth-child(2),
-  .cardsGrid > :nth-child(3),
-  .cardsGrid > :nth-child(4),
-  .cardsGrid > :nth-child(5),
-  .cardsGrid > :nth-child(6) {
+  .cardsGrid > :nth-child(1)::before,
+  .cardsGrid > :nth-child(2)::before,
+  .cardsGrid > :nth-child(3)::before,
+  .cardsGrid > :nth-child(4)::before,
+  .cardsGrid > :nth-child(5)::before,
+  .cardsGrid > :nth-child(6)::before {
     animation: none;
-    mask-image: none;
-    -webkit-mask-image: none;
+    opacity: 0;
   }
 }
 
@@ -482,15 +480,14 @@
     min-height: 20rem;
   }
 
-  .cardsGrid > :nth-child(1),
-  .cardsGrid > :nth-child(2),
-  .cardsGrid > :nth-child(3),
-  .cardsGrid > :nth-child(4),
-  .cardsGrid > :nth-child(5),
-  .cardsGrid > :nth-child(6) {
+  .cardsGrid > :nth-child(1)::before,
+  .cardsGrid > :nth-child(2)::before,
+  .cardsGrid > :nth-child(3)::before,
+  .cardsGrid > :nth-child(4)::before,
+  .cardsGrid > :nth-child(5)::before,
+  .cardsGrid > :nth-child(6)::before {
     animation: none;
-    mask-image: none;
-    -webkit-mask-image: none;
+    opacity: 0;
   }
 
   .reviewText {
@@ -564,15 +561,14 @@
     min-height: 18rem;
   }
 
-  .cardsGrid > :nth-child(1),
-  .cardsGrid > :nth-child(2),
-  .cardsGrid > :nth-child(3),
-  .cardsGrid > :nth-child(4),
-  .cardsGrid > :nth-child(5),
-  .cardsGrid > :nth-child(6) {
+  .cardsGrid > :nth-child(1)::before,
+  .cardsGrid > :nth-child(2)::before,
+  .cardsGrid > :nth-child(3)::before,
+  .cardsGrid > :nth-child(4)::before,
+  .cardsGrid > :nth-child(5)::before,
+  .cardsGrid > :nth-child(6)::before {
     animation: none;
-    mask-image: none;
-    -webkit-mask-image: none;
+    opacity: 0;
   }
 
   .reviewText {
