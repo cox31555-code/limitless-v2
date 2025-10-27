@@ -94,12 +94,13 @@
 .largeStars {
   display: flex;
   align-items: flex-start;
-  gap: 0.8rem;
+  gap: 0.7rem;
 }
 
 .largeStars svg {
-  width: 4rem;
-  height: 4rem;
+  width: 3.3rem;
+  height: 3.4rem;
+  flex-shrink: 0;
 }
 
 .reviewsCount {
