@@ -77,16 +77,24 @@
   width: 4.8rem;
   height: 4.8rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  color: #fff;
+  background: #ffffff;
+  color: #0388ff;
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: 0;
   text-transform: uppercase;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  border: 2px solid rgba(3, 136, 255, 0.2);
   position: relative;
   z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.stepperItem:first-child .stepperNumber {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 .stepperTitle {
