@@ -195,7 +195,6 @@
     top: -7.5rem;
     right: 0;
     left: 0;
-    animation: driftHorizontal 12s linear infinite, driftDiagonal 20s linear infinite;
   }
   .contact {
     width: 378.906px;
