@@ -52,13 +52,7 @@ const Header = () => {
                 router.push("/temporary-get-quote");
               }}
             >
-              Get a Quote{" "}
-              <Image
-                src="/svg/arrow-right.svg"
-                alt="arrow-right"
-                width={28}
-                height={14}
-              />
+              Get a Quote
             </button>
           </div>
           <div className={styles.imageContainer}>
