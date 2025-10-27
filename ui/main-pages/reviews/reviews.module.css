@@ -258,8 +258,9 @@
     overflow: visible;
   }
 
-  .cardsGridWrapper::after {
-    display: none;
+  .cardsGrid > :first-child {
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   .cardsGrid {
@@ -326,8 +327,9 @@
     border-radius: 0;
   }
 
-  .cardsGridWrapper::after {
-    display: none;
+  .cardsGrid > :first-child {
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   .cardsGrid {
@@ -388,8 +390,9 @@
     overflow: visible;
   }
 
-  .cardsGridWrapper::after {
-    display: none;
+  .cardsGrid > :first-child {
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   .cardsGrid {
@@ -462,8 +465,9 @@
     gap: 1rem;
   }
 
-  .cardsGridWrapper::after {
-    display: none;
+  .cardsGrid > :first-child {
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   .cardsGrid {
