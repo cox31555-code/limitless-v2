@@ -287,7 +287,10 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
 .quickOption:hover {
@@ -297,10 +300,24 @@
 }
 
 .quickOption.selected {
-  border-color: #0245a1;
-  background: #0245a1;
+  border-color: #000822;
+  background: #000822;
   color: white;
   font-weight: 600;
+}
+
+.quickOption.selected::after {
+  content: "✓";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .optionText {
