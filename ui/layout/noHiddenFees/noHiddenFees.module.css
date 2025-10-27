@@ -135,7 +135,7 @@
   width: 50rem;
   height: 50rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(3, 136, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.06) 0%, transparent 70%);
   animation: floatSlow 6s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;
@@ -149,7 +149,7 @@
   width: 40rem;
   height: 40rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(3, 136, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.04) 0%, transparent 70%);
   animation: floatSlow 8s ease-in-out infinite reverse;
   pointer-events: none;
   z-index: 0;
