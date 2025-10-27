@@ -1,58 +1,28 @@
-@keyframes strokeDraw {
-  0% {
-    stroke-dashoffset: 1000;
-    opacity: 1;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 1;
-  }
-}
-
 .container {
   border-radius: 1.2rem;
-  border: 2px solid rgba(4, 156, 255, 0.15);
-  background: rgba(7, 16, 45, 0.5);
-  backdrop-filter: blur(20px);
-  padding: 2.2rem 2.8rem;
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  padding: 2.4rem 2.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
   position: relative;
   flex: 1;
-  overflow: visible;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
 .borderSvg {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  opacity: 0;
-  pointer-events: none;
-  overflow: visible;
-}
-
-.borderSvg rect {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: none;
+  display: none;
 }
 
 .container:hover {
-  background: rgba(7, 16, 45, 0.65);
-}
-
-.container:hover .borderSvg {
-  opacity: 1;
-}
-
-.container:hover .borderSvg rect {
-  animation: strokeDraw 0.4s linear forwards;
+  border-color: rgba(3, 136, 255, 0.25);
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+  transform: translateY(-4px);
 }
 
 .img {
