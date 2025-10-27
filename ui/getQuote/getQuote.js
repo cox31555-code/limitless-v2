@@ -148,6 +148,7 @@ const GetQuote = ({ skipDuration = false }) => {
                     ? { message: errors.registrationNumber }
                     : null
                 }
+                hideLabel={true}
               />
             </div>
 
