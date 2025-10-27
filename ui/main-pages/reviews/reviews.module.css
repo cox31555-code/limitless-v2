@@ -316,7 +316,9 @@
 
   .prevButton,
   .nextButton {
-    padding: 0.9rem;
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 1.4rem;
   }
 
   .content {
@@ -435,7 +437,9 @@
 
   .prevButton,
   .nextButton {
-    padding: 0.75rem;
+    width: 3.4rem;
+    height: 3.4rem;
+    font-size: 1.2rem;
   }
 
   .summaryCard {
