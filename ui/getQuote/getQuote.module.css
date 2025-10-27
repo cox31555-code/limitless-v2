@@ -296,7 +296,7 @@
 .quickOption:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: rgba(3, 136, 255, 0.06);
-  color: #5a6b7d;
+  color: #2c3e50;
 }
 
 .quickOption.selected {
@@ -353,7 +353,7 @@
 .durationTypeButton:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: rgba(3, 136, 255, 0.06);
-  color: #5a6b7d;
+  color: #2c3e50;
 }
 
 .durationTypeButton.selected {
