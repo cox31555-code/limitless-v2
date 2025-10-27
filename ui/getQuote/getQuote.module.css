@@ -278,7 +278,7 @@
 
 .quickOption {
   padding: 1.6rem 1.2rem;
-  border-radius: 1.2rem;
+  border-radius: 0.4rem;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   background: #ffffff;
   color: #5a6b7d;
@@ -294,9 +294,9 @@
 }
 
 .quickOption:hover {
-  border-color: #0245a1;
-  background: #0245a1;
-  color: #ffffff;
+  border-color: rgba(3, 136, 255, 0.25);
+  background: rgba(3, 136, 255, 0.06);
+  color: #5a6b7d;
 }
 
 .quickOption.selected {
@@ -304,7 +304,7 @@
   background: #06112B;
   color: white;
   font-weight: 600;
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
   box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
 }
 
@@ -335,7 +335,7 @@
 
 .durationTypeButton {
   padding: 1.4rem 1rem;
-  border-radius: 1rem;
+  border-radius: 0.4rem;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   background: #ffffff;
   color: #5a6b7d;
@@ -351,16 +351,16 @@
 }
 
 .durationTypeButton:hover {
-  border-color: #0245a1;
-  background: #0245a1;
-  color: #ffffff;
+  border-color: rgba(3, 136, 255, 0.25);
+  background: rgba(3, 136, 255, 0.06);
+  color: #5a6b7d;
 }
 
 .durationTypeButton.selected {
   border-color: #06112B;
   background: #06112B;
   color: white;
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
   box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
 }
 
