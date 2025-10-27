@@ -308,6 +308,7 @@
   .serviceCard,
   .supportCard {
     padding: 1.8rem;
+    padding-right: 5.8rem;
     min-height: 220px;
   }
 
