@@ -14,10 +14,10 @@ export const features = [
   },
   {
     img: {
-      src: "/svg/comming-soon-2.svg",
-      alt: "feature2",
-      width: 155,
-      height: 88,
+      src: "/svg/annual-car.svg",
+      alt: "annual insurance",
+      width: 166,
+      height: 122,
     },
     title: "Annual Insurance",
     description:
