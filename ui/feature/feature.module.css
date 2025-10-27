@@ -89,7 +89,7 @@
 }
 
 .title {
-  color: #ffffff;
+  color: #000822;
   font-size: 1.7rem;
   font-weight: 700;
   line-height: 110%;
@@ -99,11 +99,11 @@
 }
 
 .container:hover .title {
-  color: #e8f4ff;
+  color: #0388ff;
 }
 
 .description {
-  color: rgba(255, 255, 255, 0.65);
+  color: #5a6b7d;
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 135%;
@@ -113,7 +113,7 @@
 }
 
 .container:hover .description {
-  color: rgba(255, 255, 255, 0.75);
+  color: #0270cc;
 }
 
 .bold {
