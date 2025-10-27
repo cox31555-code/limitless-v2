@@ -356,24 +356,42 @@
 }
 
 @media screen and (max-width: 480px) {
+  .container {
+    padding: 3.6rem 3%;
+    gap: 2.4rem;
+  }
+
   .title {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 
   .cardTitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .cardDescription {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 140%;
   }
 
   .faqCard {
-    min-height: 280px;
+    min-height: 260px;
+    padding: 1.6rem;
+  }
+
+  .serviceCard,
+  .supportCard {
+    min-height: 200px;
+    padding: 1.6rem;
   }
 
   .faqIllustration {
     transform: scale(0.4);
-    margin: 1rem 0 0 1rem;
+    margin: 0.8rem 0 0 0.8rem;
+  }
+
+  .serviceIcon,
+  .supportIcon {
+    margin-bottom: 2.4rem;
   }
 }
