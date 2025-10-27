@@ -75,7 +75,7 @@
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .wrapper {
-  padding-top: 20rem;
+  padding-top: 19.625rem;
   display: flex;
   flex-direction: column;
   gap: 6rem;
