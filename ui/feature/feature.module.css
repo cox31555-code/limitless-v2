@@ -122,7 +122,7 @@
 @media screen and (max-width: 1200px) {
   .container {
     border: 1px solid rgba(3, 136, 255, 0.15);
-    padding: 2rem 3.2rem;
+    padding: 2rem 3.8rem;
     gap: 2rem;
   }
 
