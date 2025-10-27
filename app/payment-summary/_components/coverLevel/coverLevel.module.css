@@ -195,6 +195,19 @@
   transform: none !important;
 }
 
+.animatedLogoContainer * {
+  animation: none !important;
+  transform: none !important;
+}
+
+.summery,
+.summery *,
+.summery svg,
+.summery img {
+  animation: none !important;
+  transform: none !important;
+}
+
 .summery::before {
   content: '';
   position: absolute;
@@ -219,6 +232,8 @@
 
 .vehicleCovered {
   display: none;
+  animation: none !important;
+  transform: none !important;
 }
 
 .content {
