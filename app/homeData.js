@@ -4,8 +4,8 @@ export const homeFeatures = [
     description: "Get covered for Impound, Temporary, or Delivery insurance",
   },
   {
-    title: "All Ages Welcome",
-    description: "Professional insurance coverage for drivers aged 18-75 years old",
+    title: "Inclusive Age Coverage",
+    description: "Professional insurance coverage for drivers aged 17 years and above",
   },
   {
     title: "Any Vehicle Type",
