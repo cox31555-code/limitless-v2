@@ -152,22 +152,6 @@
   margin-bottom: 4rem;
 }
 
-.supportGradient {
-  position: absolute;
-  top: 42px;
-  left: 77px;
-  width: 67.52px;
-  height: 69.85px;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388FF 100%);
-  opacity: 0.48;
-}
-
-.checkCircle {
-  position: absolute;
-  top: 21px;
-  left: 15px;
-}
-
 @media screen and (max-width: 1300px) {
   .cardsGrid {
     gap: 2rem;
