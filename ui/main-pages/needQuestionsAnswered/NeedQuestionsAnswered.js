@@ -169,7 +169,7 @@ const NeedQuestionsAnswered = () => {
               Frequently Asked Questions
             </h3>
             <p className={`${styles.cardDescription} ${manrope.className}`}>
-              Have questions? Check our FAQ to see if your question has  already been addressed before.
+              Have questions? Check our FAQ to see if your question has already been addressed before.
             </p>
           </div>
 
