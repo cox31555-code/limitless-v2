@@ -274,83 +274,86 @@
   gap: 5.4rem;
 }
 
-/* Duration Container */
-.durationContainer {
-  width: 100%;
-}
-
 /* Duration Wrapper Grid Container */
 .durationWrapper {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   position: relative;
 }
 
+/* Grid with Dropdown Container */
+.gridWithDropdown {
+  display: grid;
+  width: 100%;
+  position: relative;
+  align-items: stretch;
+}
+
 /* Duration type independent grids for Step 2 */
-.durationHoursGrid {
+.durationHoursGrid .gridWithDropdown {
   grid-template-columns: repeat(8, 1fr);
   gap: 1rem;
 }
 
 .durationHoursGrid :global([class*="selectionContainer"]) {
-  grid-column: 1 / -1;
-  grid-template-columns: repeat(8, 1fr) !important;
+  grid-column: 1 / 8;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr) !important;
   gap: 1rem;
 }
 
-.durationDaysGrid {
+.durationDaysGrid .gridWithDropdown {
   grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
 }
 
 .durationDaysGrid :global([class*="selectionContainer"]) {
-  grid-column: 1 / -1;
-  grid-template-columns: repeat(7, 1fr) !important;
+  grid-column: 1 / 7;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) !important;
   gap: 1rem;
 }
 
-.durationWeeksGrid {
+.durationWeeksGrid .gridWithDropdown {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
 .durationWeeksGrid :global([class*="selectionContainer"]) {
   grid-column: 1 / -1;
+  display: grid;
   grid-template-columns: repeat(4, 1fr) !important;
   gap: 1rem;
 }
 
-.durationMonthsGrid {
+.durationMonthsGrid .gridWithDropdown {
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 }
 
 .durationMonthsGrid :global([class*="selectionContainer"]) {
   grid-column: 1 / -1;
+  display: grid;
   grid-template-columns: repeat(5, 1fr) !important;
   gap: 1rem;
 }
 
-/* More Dropdown Icon Button - positioned in grid */
-.moreDropdown {
-  grid-column: 8;
-  grid-row: 1;
-  width: 4.4rem;
-  height: 4.4rem;
-  padding: 0;
-  margin: 0;
-}
-
-.durationDaysGrid .moreDropdown {
-  grid-column: 7;
-}
-
-.moreDropdown :global(.dropdown-module__container) {
+/* Dropdown Icon - as a grid item */
+.gridWithDropdown :global(.dropdown-module__container) {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: stretch;
 }
 
-.moreDropdown :global(.dropdown-module__select) {
+.durationHoursGrid .gridWithDropdown :global(.dropdown-module__container),
+.durationDaysGrid .gridWithDropdown :global(.dropdown-module__container) {
+  grid-column: auto;
+  grid-row: 1;
+}
+
+.gridWithDropdown :global(.dropdown-module__select) {
   width: 100%;
   height: 100%;
   padding: 0;
@@ -366,20 +369,21 @@
   align-items: center;
   justify-content: center;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 4.4rem;
 }
 
-.moreDropdown :global(.dropdown-module__select):hover {
+.gridWithDropdown :global(.dropdown-module__select):hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: #f0f6ff;
 }
 
-.moreDropdown :global(.dropdown-module__select):focus {
+.gridWithDropdown :global(.dropdown-module__select):focus {
   outline: none;
   border-color: #0388ff;
   box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12);
 }
 
-.moreDropdown :global(.dropdown-module__arrowContainer) {
+.gridWithDropdown :global(.dropdown-module__arrowContainer) {
   position: static;
   width: auto;
   height: auto;
