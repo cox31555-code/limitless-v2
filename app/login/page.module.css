@@ -13,13 +13,16 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  flex-grow: 0;
+  margin: 0 60px 0 -5px;
+  padding: 0 49px 0 153px;
 }
 
 .gradientOverlay {
   position: absolute;
   top: 0;
   left: 19%;
-  width: 81%;
+  width: 590px;
   height: 100%;
   background: linear-gradient(218deg, #0388FF -5.84%, #50ACFF 106.73%);
   z-index: 0;
