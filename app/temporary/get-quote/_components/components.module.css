@@ -390,24 +390,34 @@
   position: relative !important;
   width: 4.4rem !important;
   height: 4.4rem !important;
+  min-width: 4.4rem !important;
   padding: 0 !important;
   border: 1.5px solid rgba(3, 136, 255, 0.12) !important;
   background: #fff !important;
   border-radius: 10px !important;
   flex-shrink: 0;
-  cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer !important;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin: 0 !important;
+  gap: 0 !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  color: #000822 !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__selectWrapper):hover {
   border-color: rgba(3, 136, 255, 0.25) !important;
   background: #f0f6ff !important;
   box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08) !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selectWrapper):focus-within {
+  border-color: #0388ff !important;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12) !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__label) {
