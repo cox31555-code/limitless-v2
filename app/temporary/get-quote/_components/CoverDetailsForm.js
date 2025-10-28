@@ -123,7 +123,7 @@ const CoverDetailsForm = ({ form }) => {
             <div className={styles.sparkDurationContainer}>
               <p className={styles.sparkDurationLabel}>Select Duration</p>
               <div className={styles.sparkDurationGrid}>
-                {durationOptions.map((option) => {
+                {(() => {
                   const buttonWidth =
                     durationOptions.length === 12
                       ? "w-[calc(8.333%-0.1875rem)]"
@@ -134,56 +134,61 @@ const CoverDetailsForm = ({ form }) => {
                           : durationOptions.length === 4 && showDropdown
                             ? "w-[calc(20%-0.1875rem)]"
                             : "w-[calc(25%-0.1875rem)]";
+
                   return (
-                    <button
-                      key={option}
-                      onClick={() => handleDurationChange(option)}
-                      className={`${styles.sparkDurationButton} ${buttonWidth} ${
-                        duration === option
-                          ? styles.sparkDurationButtonActive
-                          : styles.sparkDurationButtonInactive
-                      }`}
-                    >
-                      {option}
-                    </button>
-                  );
-                })}
+                    <>
+                      {durationOptions.map((option) => (
+                        <button
+                          key={option}
+                          onClick={() => handleDurationChange(option)}
+                          className={`${styles.sparkDurationButton} ${buttonWidth} ${
+                            duration === option
+                              ? styles.sparkDurationButtonActive
+                              : styles.sparkDurationButtonInactive
+                          }`}
+                        >
+                          {option}
+                        </button>
+                      ))}
 
-                {/* Custom Dropdown for more options - only show for Days */}
-                {showDropdown && (
-                  <div className={`${styles.sparkDropdownContainer} ${buttonWidth}`}>
-                    <button
-                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                      className={styles.sparkDropdownButton}
-                    >
-                      <svg
-                        className={`${styles.sparkDropdownIcon} ${
-                          isDropdownOpen ? styles.sparkDropdownIconOpen : ""
-                        }`}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <polyline points="6 9 12 15 18 9" />
-                      </svg>
-                    </button>
-
-                    {isDropdownOpen && (
-                      <div className={styles.sparkDropdownContent}>
-                        {extraDurationOptions.map((option) => (
+                      {/* Custom Dropdown for more options - only show for Days */}
+                      {showDropdown && (
+                        <div className={`${styles.sparkDropdownContainer} ${buttonWidth}`}>
                           <button
-                            key={option}
-                            onClick={() => handleDurationChange(option)}
-                            className={styles.sparkDropdownItem}
+                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                            className={styles.sparkDropdownButton}
                           >
-                            {option}
+                            <svg
+                              className={`${styles.sparkDropdownIcon} ${
+                                isDropdownOpen ? styles.sparkDropdownIconOpen : ""
+                              }`}
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                            >
+                              <polyline points="6 9 12 15 18 9" />
+                            </svg>
                           </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
+
+                          {isDropdownOpen && (
+                            <div className={styles.sparkDropdownContent}>
+                              {extraDurationOptions.map((option) => (
+                                <button
+                                  key={option}
+                                  onClick={() => handleDurationChange(option)}
+                                  className={styles.sparkDropdownItem}
+                                >
+                                  {option}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
             </div>
           </div>
