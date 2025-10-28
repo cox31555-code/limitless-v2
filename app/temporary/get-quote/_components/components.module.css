@@ -866,6 +866,22 @@
     gap: 1.2rem;
   }
 
+  .durationHoursGrid :global([class*="selectionContainer"]) {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+
+  .durationDaysGrid :global([class*="selectionContainer"]) {
+    grid-template-columns: repeat(7, 1fr) !important;
+  }
+
+  .durationWeeksGrid :global([class*="selectionContainer"]) {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .moreDropdown {
+    margin-top: 0.6rem;
+  }
+
   .dateTimeContainer {
     flex-direction: column;
     gap: 1.6rem;
