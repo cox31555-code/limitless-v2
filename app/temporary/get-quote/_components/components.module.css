@@ -365,6 +365,15 @@
   border: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__container) > *:not(:last-child) {
+  display: none !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selected) {
+  display: none !important;
 }
 
 /* Dropdown Icon Button - Match number buttons exactly */
