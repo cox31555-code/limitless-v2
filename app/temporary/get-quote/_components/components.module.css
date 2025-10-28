@@ -350,23 +350,23 @@
 }
 
 /* Dropdown Icon Button - Match number buttons exactly */
-.gridWithDropdown :global(.dropdown-module__container) {
+.gridWithDropdown :global(.dropdown-module__selectWrapper) {
   width: 4.4rem !important;
   height: 4.4rem !important;
-  flex-shrink: 0;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
   padding: 0 !important;
   border: 1.5px solid rgba(3, 136, 255, 0.12) !important;
   background: #fff !important;
   border-radius: 10px !important;
+  flex-shrink: 0;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.gridWithDropdown :global(.dropdown-module__container):hover {
+.gridWithDropdown :global(.dropdown-module__selectWrapper):hover {
   border-color: rgba(3, 136, 255, 0.25) !important;
   background: #f0f6ff !important;
   box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08) !important;
@@ -387,6 +387,11 @@
   align-items: center !important;
   justify-content: center !important;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  color: transparent !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select) > * {
+  font-size: 0 !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__select):hover {
@@ -402,16 +407,33 @@
 
 .gridWithDropdown :global(.dropdown-module__arrowContainer) {
   position: static !important;
+  width: 2.4rem !important;
+  height: 2.4rem !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: #0388ff !important;
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__arrowDown) {
+  color: #0388ff !important;
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+  transform: none !important;
   width: auto !important;
   height: auto !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  pointer-events: none !important;
-  color: #0388ff !important;
-  font-size: 1.8rem !important;
-  font-weight: 600 !important;
-  line-height: 1 !important;
 }
 
 /* Personal Details Form */
