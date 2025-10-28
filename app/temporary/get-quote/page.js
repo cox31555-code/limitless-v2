@@ -215,7 +215,7 @@ const TemporaryInsuranceContent = () => {
   };
 
   return (
-    <div>
+    <>
       <GetQuoteHeader title="Temporary Insurance" currentStep={currentStep} totalSteps={4} />
       <div className="centeredContent">
         <form
@@ -259,7 +259,7 @@ const TemporaryInsuranceContent = () => {
           )}
         </form>
       </div>
-    </div>
+    </>
   );
 };
 
