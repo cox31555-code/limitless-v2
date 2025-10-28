@@ -14,12 +14,13 @@ const CoverDetailsForm = ({ form }) => {
     watch,
     setValue,
   } = form;
+
   const coverType = watch("coverDetails.type");
   const period = watch("coverDetails.period");
 
   const handleTypeChange = (type) => {
     setValue("coverDetails.type", type);
-    setValue("coverDetails.period", 1); // Reset period when type changes
+    setValue("coverDetails.period", 1);
   };
 
   const handlePeriodChange = (periodValue) => {
@@ -44,47 +45,47 @@ const CoverDetailsForm = ({ form }) => {
       case "Hours":
         return ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
       case "Days":
-        return ["1", "2", "3", "4", "5", "6", "7"];
+        return ["1", "2", "3", "4", "5", "6", "7", "8"];
       case "Weeks":
         return ["1", "2", "3", "4"];
       case "Months":
         return ["1", "2", "3", "6", "12"];
       default:
-        return ["1", "2", "3", "4", "5", "6", "7"];
+        return ["1", "2", "3", "4", "5", "6", "7", "8"];
     }
   };
 
   const getDropdownOptions = () => {
     switch (coverType) {
-      case "Hours":
-        return Array.from({ length: 12 }, (_, i) => (i + 13).toString());
       case "Days":
-        return Array.from({ length: 23 }, (_, i) => (i + 8).toString());
+        return Array.from({ length: 23 }, (_, i) => (i + 9).toString());
+      case "Hours":
       case "Weeks":
-        return [];
       case "Months":
-        return [];
       default:
         return [];
     }
   };
 
-  const handleDropdownIconClick = () => {
-    // Trigger dropdown when "···" is clicked
-    const dropdownElement = document.querySelector(".moreDropdownSelect");
-    if (dropdownElement) {
-      dropdownElement.click();
-    }
+  const durationLabels = {
+    Hours: "Hours",
+    Days: "Days",
+    Weeks: "Weeks",
+    Months: "Months",
   };
+
+  const periodOptions = getPeriodOptions();
+  const dropdownOptions = getDropdownOptions();
+  const showDropdown = dropdownOptions.length > 0;
 
   return (
     <ComponentWrapper title="Cover Details">
-      <div className={`${styles.content} ${styles.coverDetailsContainer}`}>
+      <div className={styles.coverDetailsWrapper}>
         <div className={styles.inputGroup}>
           <Title title="How long will you need it?" />
           <div className={styles.selectionContainer}>
-            <p className={styles.label}>Please select</p>
-            <div className={styles.selectionOptions}>
+            <p className={styles.label}>Select duration type</p>
+            <div className={styles.durationTypeGrid}>
               <Selection1
                 noDotMobile
                 items={["Hours", "Days", "Weeks"]}
@@ -92,20 +93,23 @@ const CoverDetailsForm = ({ form }) => {
                 setSelectedItem={handleTypeChange}
                 type="checkbox"
               />
-              <div className={`${styles.durationWrapper} ${styles[`duration${coverType}Grid`]}`}>
+            </div>
+            <div className={styles.durationValuesSection}>
+              <p className={styles.durationLabel}>Select {durationLabels[coverType]}</p>
+              <div className={styles.durationValuesContainer}>
                 <div className={styles.gridWithDropdown}>
                   <Selection1
                     noDotMobile
-                    items={getPeriodOptions()}
+                    items={periodOptions}
                     selectedItem={period?.toString()}
                     setSelectedItem={handlePeriodChange}
                   />
-                  {getDropdownOptions().length > 0 && (
+                  {showDropdown && (
                     <FormDropdown
                       placeholder=""
-                      options={getDropdownOptions()}
+                      options={dropdownOptions}
                       value={
-                        period && getDropdownOptions().includes(period.toString())
+                        period && dropdownOptions.includes(period.toString())
                           ? period.toString()
                           : ""
                       }
@@ -130,7 +134,7 @@ const CoverDetailsForm = ({ form }) => {
 
         <div className={styles.inputGroup}>
           <Title title="When would you like the cover to start?" />
-          <div className={styles.dateTimeContainer}>
+          <div className={styles.dateTimeGrid}>
             <FormDataAndTime
               dateLabel="Start Date"
               type="date"
