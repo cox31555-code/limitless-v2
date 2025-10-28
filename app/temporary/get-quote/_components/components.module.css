@@ -341,20 +341,17 @@
 .sparkTypeButtonActive {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
 }
 
 .sparkTypeButtonInactive {
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   background: #fff;
   color: #000822;
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
 .sparkTypeButtonInactive:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: #f0f6ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
 }
 
 .sparkDot {
@@ -427,20 +424,17 @@
 .sparkDurationButtonActive {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
 }
 
 .sparkDurationButtonInactive {
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   background: #fff;
   color: #000822;
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
 .sparkDurationButtonInactive:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: #f0f6ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
 }
 
 /* Dropdown Button Container */
@@ -467,7 +461,6 @@
 .sparkDropdownButton:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: #f0f6ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
 }
 
 .sparkDropdownIcon {
@@ -493,7 +486,6 @@
   z-index: 50;
   max-height: 15rem;
   overflow-y: auto;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
 }
 
 .sparkDropdownItem {
@@ -577,13 +569,11 @@
 
 .sparkInput:hover {
   border-color: rgba(3, 136, 255, 0.2);
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.04);
 }
 
 .sparkInput:focus {
   outline: none;
   border-color: #0388ff;
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12);
   background: #fff;
 }
 
