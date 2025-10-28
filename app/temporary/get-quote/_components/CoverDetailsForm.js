@@ -103,27 +103,29 @@ const CoverDetailsForm = ({ form }) => {
                 setSelectedItem={handleTypeChange}
                 type="checkbox"
               />
-              <div className={`${styles.durationWrapper} ${styles[`duration${coverType}Grid`]}`}>
-                <Selection1
-                  noDotMobile
-                  items={getPeriodOptions()}
-                  selectedItem={period?.toString()}
-                  setSelectedItem={handlePeriodChange}
-                />
-                {getDropdownOptions().length > 0 && (
-                  <div className={styles.moreDropdown}>
-                    <FormDropdown
-                      placeholder="More"
-                      options={getDropdownOptions()}
-                      value={
-                        period && getDropdownOptions().includes(period.toString())
-                          ? period.toString()
-                          : ""
-                      }
-                      onChange={handleDropdownChange}
-                    />
-                  </div>
-                )}
+              <div className={styles.durationContainer}>
+                <div className={`${styles.durationWrapper} ${styles[`duration${coverType}Grid`]}`}>
+                  <Selection1
+                    noDotMobile
+                    items={getPeriodOptions()}
+                    selectedItem={period?.toString()}
+                    setSelectedItem={handlePeriodChange}
+                  />
+                  {getDropdownOptions().length > 0 && (
+                    <div className={styles.moreDropdown}>
+                      <FormDropdown
+                        placeholder="More"
+                        options={getDropdownOptions()}
+                        value={
+                          period && getDropdownOptions().includes(period.toString())
+                            ? period.toString()
+                            : ""
+                        }
+                        onChange={handleDropdownChange}
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
