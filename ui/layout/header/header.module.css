@@ -71,6 +71,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
+  gap: 1rem;
 }
 
 .menuLink::before {

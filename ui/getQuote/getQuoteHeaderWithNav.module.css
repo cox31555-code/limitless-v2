@@ -117,7 +117,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  gap: 0.6rem;
+  gap: 1rem;
 }
 
 .menuLink::before {
