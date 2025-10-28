@@ -896,14 +896,19 @@
   }
 
   .gridWithDropdown :global([class*="selectionItem"]) {
-    min-width: 3.8rem;
-    height: 3.8rem;
-    font-size: 1.2rem;
+    width: 3.8rem !important;
+    height: 3.8rem !important;
+    min-width: 3.8rem !important;
+    font-size: 1.2rem !important;
   }
 
   .gridWithDropdown :global(.dropdown-module__container) {
     width: 3.8rem;
     height: 3.8rem;
+  }
+
+  .gridWithDropdown :global([class*="selectionContainer"]) {
+    gap: 0.6rem !important;
   }
 
   .dateTimeContainer {
