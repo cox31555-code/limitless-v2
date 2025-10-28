@@ -892,41 +892,26 @@
     align-items: flex-start;
   }
 
-  .durationWrapper {
-    gap: 1rem;
-  }
-
-  .durationHoursGrid {
+  .durationHoursGrid .gridWithDropdown {
     grid-template-columns: repeat(6, 1fr);
   }
 
   .durationHoursGrid :global([class*="selectionContainer"]) {
-    grid-template-columns: repeat(6, 1fr) !important;
+    grid-column: 1 / 6;
+    grid-template-columns: repeat(5, 1fr) !important;
   }
 
-  .durationHoursGrid .moreDropdown {
-    grid-column: 6;
-  }
-
-  .durationDaysGrid {
-    grid-template-columns: repeat(7, 1fr);
+  .durationDaysGrid .gridWithDropdown {
+    grid-template-columns: repeat(6, 1fr);
   }
 
   .durationDaysGrid :global([class*="selectionContainer"]) {
-    grid-template-columns: repeat(7, 1fr) !important;
-  }
-
-  .durationDaysGrid .moreDropdown {
-    grid-column: 7;
+    grid-column: 1 / 6;
+    grid-template-columns: repeat(5, 1fr) !important;
   }
 
   .durationWeeksGrid :global([class*="selectionContainer"]) {
     grid-template-columns: repeat(4, 1fr) !important;
-  }
-
-  .moreDropdown {
-    width: 4.4rem;
-    height: 4.4rem;
   }
 
   .dateTimeContainer {
