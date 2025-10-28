@@ -13,6 +13,7 @@
 .mobileContainer {
   display: none;
   width: 100%;
+  background: #000822;
 }
 
 .logoContainer {
