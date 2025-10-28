@@ -27,6 +27,7 @@ const FormDateInput = forwardRef(
     const [pickerPosition, setPickerPosition] = useState({
       top: "auto",
       bottom: "auto",
+      left: "auto",
       showAbove: false,
     });
     const inputContainerRef = useRef(null);
@@ -47,6 +48,7 @@ const FormDateInput = forwardRef(
         setPickerPosition({
           top: "auto",
           bottom: `${window.innerHeight - rect.top + 12}px`,
+          left: `${rect.left}px`,
           showAbove: true,
         });
       } else {
@@ -54,6 +56,7 @@ const FormDateInput = forwardRef(
         setPickerPosition({
           top: `${rect.bottom + 12}px`,
           bottom: "auto",
+          left: `${rect.left}px`,
           showAbove: false,
         });
       }
@@ -230,9 +233,8 @@ const FormDateInput = forwardRef(
               position: 'fixed',
               top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
               bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              zIndex: 9999
+              left: pickerPosition.left,
+              zIndex: 99999
             }}>
               <CustomDatePicker
                 selectedDate={parseDate(value)}
@@ -324,9 +326,8 @@ const FormDateInput = forwardRef(
               position: 'fixed',
               top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
               bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              zIndex: 9999
+              left: pickerPosition.left,
+              zIndex: 99999
             }}>
               <CustomTimePicker
                 selectedTime={value || "10:00"}
