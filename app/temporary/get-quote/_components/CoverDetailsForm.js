@@ -123,37 +123,23 @@ const CoverDetailsForm = ({ form }) => {
             <div className={styles.sparkDurationContainer}>
               <p className={styles.sparkDurationLabel}>Select Duration</p>
               <div className={styles.sparkDurationGrid}>
-                {(() => {
-                  const buttonWidth =
-                    durationOptions.length === 12
-                      ? "w-[calc(8.333%-0.1875rem)]"
-                      : durationOptions.length === 8 && showDropdown
-                        ? "w-[calc(11.111%-0.1875rem)]"
-                        : durationOptions.length === 8
-                          ? "w-[calc(12.5%-0.1875rem)]"
-                          : durationOptions.length === 4 && showDropdown
-                            ? "w-[calc(20%-0.1875rem)]"
-                            : "w-[calc(25%-0.1875rem)]";
+                {durationOptions.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleDurationChange(option)}
+                    className={`${styles.sparkDurationButton} ${
+                      duration === option
+                        ? styles.sparkDurationButtonActive
+                        : styles.sparkDurationButtonInactive
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
 
-                  return (
-                    <>
-                      {durationOptions.map((option) => (
-                        <button
-                          key={option}
-                          onClick={() => handleDurationChange(option)}
-                          className={`${styles.sparkDurationButton} ${buttonWidth} ${
-                            duration === option
-                              ? styles.sparkDurationButtonActive
-                              : styles.sparkDurationButtonInactive
-                          }`}
-                        >
-                          {option}
-                        </button>
-                      ))}
-
-                      {/* Custom Dropdown for more options - only show for Days */}
-                      {showDropdown && (
-                        <div className={`${styles.sparkDropdownContainer} ${buttonWidth}`}>
+                {/* Custom Dropdown for more options - only show for Days */}
+                {showDropdown && (
+                  <div className={styles.sparkDropdownContainer}>
                           <button
                             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                             className={styles.sparkDropdownButton}
@@ -184,11 +170,8 @@ const CoverDetailsForm = ({ form }) => {
                               ))}
                             </div>
                           )}
-                        </div>
-                      )}
-                    </>
-                  );
-                })()}
+                  </div>
+                )}
               </div>
             </div>
           </div>
