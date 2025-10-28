@@ -1364,6 +1364,21 @@
       gap: 1rem;
     }
 
+    .sparkDurationGrid {
+      grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+      gap: 0.4rem;
+    }
+
+    .sparkDurationButton {
+      padding: 0.5rem 0.2rem;
+      font-size: 0.9rem;
+      min-height: 2.8rem;
+    }
+
+    .sparkDropdownContainer {
+      min-height: 2.8rem;
+    }
+
     .parkingGrid {
       grid-template-columns: 1fr;
       gap: 1rem;
