@@ -183,7 +183,7 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
       <div className={styles.header}>
         <button
           onClick={handlePrevMonth}
-          className={styles.navButton}
+          className={`${styles.navButton} ${styles.navButtonPrev}`}
           type="button"
         >
           <Image
@@ -230,7 +230,7 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
 
         <button
           onClick={handleNextMonth}
-          className={styles.navButton}
+          className={`${styles.navButton} ${styles.navButtonNext}`}
           type="button"
         >
           <Image
