@@ -32,18 +32,14 @@
   background: #fff;
   color: #0388ff;
   border: 1.5px solid rgba(3, 136, 255, 0.2);
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
 }
 
 .backBtn:hover:not(:disabled) {
   background: #f8fbff;
   border-color: #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
-  transform: translateY(-1px);
 }
 
 .backBtn:active:not(:disabled) {
-  transform: translateY(0);
 }
 
 .backBtn:disabled {
@@ -54,16 +50,12 @@
 .nextBtn {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
 }
 
 .nextBtn:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
 }
 
 .nextBtn:active:not(:disabled) {
-  transform: translateY(0);
 }
 
 .nextBtn:disabled {
