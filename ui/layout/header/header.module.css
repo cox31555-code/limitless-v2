@@ -948,6 +948,15 @@
   width: 80%;
 }
 
+.stickyMenuButton.activeMenuLink {
+  color: #049cff;
+  background: rgba(3, 136, 255, 0.12);
+}
+
+.stickyMenuButton.activeMenuLink::after {
+  width: 80%;
+}
+
 .stickyDropdown {
   position: absolute;
   top: 100%;
