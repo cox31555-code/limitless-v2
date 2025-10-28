@@ -274,9 +274,21 @@
   gap: 5.4rem;
 }
 
-/* Override Selection1 grid for 8-column layout in Step 2 */
-.durationWrapper :global([class*="selectionContainer"]) {
-  grid-template-columns: repeat(8, 2fr) !important;
+/* Duration type independent grids for Step 2 */
+.durationHoursGrid :global([class*="selectionContainer"]) {
+  grid-template-columns: repeat(8, 1fr) !important;
+}
+
+.durationDaysGrid :global([class*="selectionContainer"]) {
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+
+.durationWeeksGrid :global([class*="selectionContainer"]) {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.durationMonthsGrid :global([class*="selectionContainer"]) {
+  grid-template-columns: repeat(5, 1fr) !important;
 }
 
 /* Personal Details Form */
