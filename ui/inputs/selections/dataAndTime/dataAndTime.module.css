@@ -265,25 +265,15 @@
 
 /* Override react-datepicker default styles */
 .modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 8, 34, 0.6);
-  z-index: 9998;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-  animation: fadeIn 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: auto;
+  display: none;
 }
 
 .pickerContainer {
   pointer-events: auto;
-  position: relative;
+  position: fixed;
   z-index: 9999;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 @keyframes fadeIn {
@@ -295,15 +285,6 @@
   }
 }
 
-.pickerContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  max-height: 85vh;
-  overflow-y: auto;
-}
 
 @media screen and (max-width: 900px) {
   .container {
