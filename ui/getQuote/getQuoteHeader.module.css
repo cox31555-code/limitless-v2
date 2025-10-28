@@ -65,7 +65,7 @@
 }
 
 .stepLabel {
-  color: #5a6b7d;
+  color: rgba(255, 255, 255, 0.72);
   font-size: 1.3rem;
   font-weight: 500;
   margin: 0;
