@@ -274,6 +274,11 @@
   gap: 5.4rem;
 }
 
+/* Override Selection1 grid for 8-column layout in Step 2 */
+.durationWrapper :global([class*="selectionContainer"]) {
+  grid-template-columns: repeat(8, 2fr) !important;
+}
+
 /* Personal Details Form */
 .formContent {
   display: flex;
