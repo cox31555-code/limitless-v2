@@ -15,14 +15,6 @@
   position: relative;
 }
 
-.squares {
-  position: absolute;
-  top: -10rem;
-  right: -20rem;
-  opacity: 0.04;
-  z-index: 0;
-}
-
 .wrapper {
   position: relative;
   z-index: 2;
