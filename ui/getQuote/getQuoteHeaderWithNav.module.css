@@ -59,6 +59,27 @@
   opacity: 0.85;
 }
 
+/* Chevron Icon Rotation */
+@keyframes chevronRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.chevronIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chevronIcon.rotated {
+  transform: rotate(180deg);
+}
+
 /* Menu Navigation */
 .menu {
   display: flex;
