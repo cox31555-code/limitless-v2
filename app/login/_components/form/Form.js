@@ -16,9 +16,9 @@ const EmailIcon = () => (
 
 const PasswordIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon}>
-    <circle cx="10" cy="13" r="4" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M14 13C18.4 12.5 21 10 21 7C21 3 19 2 16 2C14 2 12 3 12 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8 17L3 22M22 22H10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="9" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+    <path d="M13 12H21C21.55 12 22 12.45 22 13V15C22 15.55 21.55 16 21 16H14V18C14 19.1 13.1 20 12 20H8C6.9 20 6 19.1 6 18V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13 15V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
