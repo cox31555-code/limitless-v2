@@ -1,15 +1,8 @@
 :root {
-  --spacing-xs: 0.8rem;
-  --spacing-sm: 1.2rem;
-  --spacing-md: 1.6rem;
-  --spacing-lg: 2.4rem;
-  --spacing-xl: 4rem;
   --color-dark: #010923;
   --color-white: #ffffff;
   --color-blue: #0388ff;
   --gradient-blue: linear-gradient(218deg, #0388ff -5.84%, #50acff 106.73%);
-  --z-gradient: 0;
-  --z-logo: 2;
 }
 
 .page {
@@ -18,7 +11,6 @@
   min-height: 100vh;
   background: var(--color-white);
   position: relative;
-  font: 400 1.6rem 'Plus Jakarta Sans', -apple-system, sans-serif;
 }
 
 .hiddenBox {
@@ -26,14 +18,7 @@
 }
 
 .darkBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: clamp(30%, 53.5vw, 749px);
-  height: 100%;
-  background-color: var(--color-dark);
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 .mainContainer {
@@ -43,106 +28,55 @@
   position: relative;
 }
 
+/* Left Section - Dark Blue with Logo */
 .leftSection {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: clamp(30%, 53.5vw, 60%);
+  flex-basis: 49.6%;
+  background: var(--color-dark);
   position: relative;
   overflow: hidden;
-  gap: var(--spacing-lg);
-  z-index: 1;
 }
 
+/* Thin Gradient Strip on Right Edge of Dark Section */
 .gradientOverlay {
   position: absolute;
   top: 0;
-  left: 0;
-  width: clamp(30%, 53.5vw, 749px);
+  right: 0;
+  width: 28px;
   height: 100%;
-  background-image: var(--gradient-blue);
-  z-index: var(--z-gradient);
+  background: var(--gradient-blue);
+  z-index: 1;
   pointer-events: none;
 }
 
 .logo {
   display: block;
-  width: clamp(120px, 12vw, 280px);
-  height: auto;
-  aspect-ratio: 228 / 234;
-  z-index: var(--z-logo);
+  width: 180px;
+  height: 185px;
+  z-index: 2;
   flex-shrink: 0;
+  position: relative;
 }
 
+/* Right Section - White with Form */
 .rightSection {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(2rem, 4vw, 4rem);
+  padding: 4rem 2rem;
   background: var(--color-white);
   min-width: 0;
-  position: relative;
-  z-index: 1;
 }
 
-/* Large Desktops (1400px and above) */
+/* Responsive Breakpoints */
+
+/* Large Desktop (1400px+) */
 @media screen and (min-width: 1400px) {
-  .page {
-    font-size: 1.8rem;
-  }
-
-  .leftSection {
-    flex-basis: 55%;
-  }
-
-  .logo {
-    width: 280px;
-    height: 287px;
-  }
-
-  .rightSection {
-    padding: 4rem;
-  }
-}
-
-/* Standard Desktops (1024px - 1399px) */
-@media screen and (min-width: 1024px) and (max-width: 1399px) {
-  .darkBackground {
-    width: 45%;
-  }
-
   .leftSection {
     flex-basis: 50%;
-  }
-
-  .gradientOverlay {
-    left: 50%;
-  }
-
-  .logo {
-    width: 240px;
-    height: 247px;
-  }
-
-  .rightSection {
-    padding: 3rem;
-  }
-}
-
-/* Medium Screens (768px - 1023px) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .darkBackground {
-    width: 40%;
-  }
-
-  .leftSection {
-    flex-basis: 40%;
-  }
-
-  .gradientOverlay {
-    left: 40%;
-    width: clamp(250px, 40vw, 500px);
   }
 
   .logo {
@@ -150,32 +84,15 @@
     height: 205px;
   }
 
-  .rightSection {
-    padding: 2.4rem;
+  .gradientOverlay {
+    width: 32px;
   }
 }
 
-/* Tablets and Large Mobile (600px - 767px) */
-@media screen and (min-width: 600px) and (max-width: 767px) {
-  .mainContainer {
-    flex-direction: column;
-  }
-
-  .darkBackground {
-    width: 100%;
-    height: 38vh;
-  }
-
+/* Standard Desktop (1024px - 1399px) */
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
   .leftSection {
-    flex-basis: 38vh;
-    min-height: 38vh;
-    flex-direction: column;
-  }
-
-  .gradientOverlay {
-    left: 50%;
-    width: 180vw;
-    transform: translateX(-50%);
+    flex-basis: 48%;
   }
 
   .logo {
@@ -183,43 +100,97 @@
     height: 185px;
   }
 
+  .gradientOverlay {
+    width: 28px;
+  }
+
+  .rightSection {
+    padding: 3rem 2rem;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .leftSection {
+    flex-basis: 42%;
+  }
+
+  .logo {
+    width: 160px;
+    height: 164px;
+  }
+
+  .gradientOverlay {
+    width: 24px;
+  }
+
+  .rightSection {
+    padding: 3rem 1.6rem;
+  }
+}
+
+/* Large Mobile and Tablet Portrait (600px - 767px) */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  .mainContainer {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    flex-basis: auto;
+    min-height: 38vh;
+    position: relative;
+  }
+
+  .gradientOverlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 24px;
+    bottom: auto;
+  }
+
+  .logo {
+    width: 140px;
+    height: 144px;
+  }
+
   .rightSection {
     flex: 1;
-    padding: 2.4rem 1.6rem;
+    padding: 3rem 2rem;
     min-height: 62vh;
   }
 }
 
-/* Mobile (600px and below) */
+/* Mobile (< 600px) */
 @media screen and (max-width: 599px) {
   .mainContainer {
     flex-direction: column;
   }
 
-  .darkBackground {
-    width: 100%;
-    height: 35vh;
-  }
-
   .leftSection {
     flex-basis: auto;
     min-height: 35vh;
+    position: relative;
   }
 
   .gradientOverlay {
-    left: 50%;
-    width: 200vw;
-    transform: translateX(-50%);
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 20px;
   }
 
   .logo {
-    width: 150px;
-    height: 154px;
+    width: 120px;
+    height: 123px;
   }
 
   .rightSection {
     flex: 1;
-    padding: 2rem 1.2rem;
+    padding: 2.4rem 1.6rem;
     min-height: 65vh;
   }
 }
