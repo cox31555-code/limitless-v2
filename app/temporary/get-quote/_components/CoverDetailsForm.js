@@ -74,21 +74,18 @@ const CoverDetailsForm = ({ form }) => {
                 type="checkbox"
               />
               <div className={`${styles.durationWrapper} ${styles[`duration${coverType}Grid`]}`}>
-                <Selection1
-                  noDotMobile
-                  items={getPeriodOptions()}
-                  selectedItem={period?.toString()}
-                  setSelectedItem={handlePeriodChange}
-                />
-                {getDropdownOptions().length > 0 && (
+                {showGridLayout() ? (
+                  <Selection1
+                    noDotMobile
+                    items={getPeriodOptions()}
+                    selectedItem={period?.toString()}
+                    setSelectedItem={handlePeriodChange}
+                  />
+                ) : (
                   <FormDropdown
-                    placeholder="More"
-                    options={getDropdownOptions()}
-                    value={
-                      period && getDropdownOptions().includes(period.toString())
-                        ? period.toString()
-                        : ""
-                    }
+                    placeholder="Select duration"
+                    options={getPeriodOptions()}
+                    value={period?.toString() || ""}
                     onChange={handleDropdownChange}
                   />
                 )}
