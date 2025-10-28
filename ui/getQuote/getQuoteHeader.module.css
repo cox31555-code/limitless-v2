@@ -1,11 +1,11 @@
 .headerContainer {
-  width: 100%;
+  width: 100vw;
   background: #000822;
   position: relative;
   overflow: hidden;
   height: 15rem;
   padding: 6.3rem 0 1.875rem;
-  margin: 0;
+  margin-left: calc(-50vw + 50%);
   box-sizing: border-box;
 }
 
