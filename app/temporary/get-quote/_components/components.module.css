@@ -274,7 +274,371 @@
   gap: 5.4rem;
 }
 
-/* Duration Wrapper */
+/* Spark Space Cover Details - Complete Styling */
+.sparkCoverDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  width: 100%;
+}
+
+.sparkSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.sparkSectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.sparkSectionTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sparkSectionSubtitle {
+  font-size: 1.2rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sparkSpaceY6 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* Duration Type Grid - 3 column layout */
+.sparkDurationTypeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.sparkTypeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.sparkTypeButtonActive {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+}
+
+.sparkTypeButtonInactive {
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  color: #000822;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.sparkTypeButtonInactive:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
+}
+
+.sparkDot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sparkDotActive {
+  border-color: #fff;
+}
+
+.sparkDotInactive {
+  border-color: #5a6b7d;
+}
+
+.sparkDotInner {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Duration Value Selection */
+.sparkDurationContainer {
+  background: rgba(3, 136, 255, 0.03);
+  border-radius: 12px;
+  padding: 1.6rem;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.sparkDurationLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5a6b7d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 1.2rem 0;
+  line-height: 1;
+}
+
+.sparkDurationGrid {
+  display: flex;
+  gap: 0.25rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.sparkDurationButton {
+  flex-shrink: 0;
+  padding: 0.8rem 0.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  line-height: 1;
+}
+
+.sparkDurationButtonActive {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+}
+
+.sparkDurationButtonInactive {
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  color: #000822;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.sparkDurationButtonInactive:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
+}
+
+/* Dropdown Button Container */
+.sparkDropdownContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sparkDropdownButton {
+  width: 100%;
+  height: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sparkDropdownButton:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
+}
+
+.sparkDropdownIcon {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: #0388ff;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sparkDropdownIconOpen {
+  transform: rotate(180deg);
+}
+
+.sparkDropdownContent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.8rem;
+  background: #fff;
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  z-index: 50;
+  max-height: 15rem;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
+}
+
+.sparkDropdownItem {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #000822;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sparkDropdownItem:hover {
+  background: rgba(3, 136, 255, 0.08);
+  color: #0388ff;
+}
+
+.sparkDropdownItem:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.sparkDropdownItem:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+/* Date/Time Input Section */
+.sparkDateTimeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  width: 100%;
+}
+
+.sparkInputLabel {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000822;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.sparkInputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sparkInputIcon {
+  position: absolute;
+  left: 1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: #5a6b7d;
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.sparkInputGroup:focus-within .sparkInputIcon {
+  color: #0388ff;
+}
+
+.sparkInput {
+  width: 100%;
+  padding: 1rem 1.2rem 1rem 3.2rem;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 1.3rem;
+  color: #000822;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sparkInput::placeholder {
+  color: #5a6b7d;
+}
+
+.sparkInput:hover {
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.04);
+}
+
+.sparkInput:focus {
+  outline: none;
+  border-color: #0388ff;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12);
+  background: #fff;
+}
+
+/* Action Buttons */
+.sparkActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.sparkButtonBack,
+.sparkButtonNext {
+  padding: 1.2rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 5.2rem;
+}
+
+.sparkButtonBack {
+  background: #fff;
+  color: #0388ff;
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
+}
+
+.sparkButtonBack:hover {
+  background: #f8fbff;
+  border-color: #0388ff;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.sparkButtonNext {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
+}
+
+.sparkButtonNext:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
+}
+
+.sparkButtonNext:active {
+  transform: translateY(0);
+}
+
+/* Duration Wrapper - kept for backward compatibility */
 .durationWrapper {
   display: flex;
   flex-direction: column;
