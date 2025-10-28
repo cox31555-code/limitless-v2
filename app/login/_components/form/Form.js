@@ -9,16 +9,16 @@ import { loginSchema } from "@/utils/authSchemas";
 
 const EmailIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon}>
-    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" fill="currentColor" />
-    <path d="M20 4L12 11L4 4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M3 5C2 5 1 6 1 7V17C1 18 2 19 3 19H21C22 19 23 18 23 17V7C23 6 22 5 21 5H3Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M1 7L12 13.5L23 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const PasswordIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon}>
-    <path d="M7 10V8C7 5.24 9.24 3 12 3C14.76 3 17 5.24 17 8V10H20C21.1 10 22 10.9 22 12V21C22 22.1 21.1 23 20 23H4C2.9 23 2 22.1 2 21V12C2 10.9 2.9 10 4 10H7Z" fill="currentColor" />
-    <path d="M12 14C12.8284 14 13.5 14.6716 13.5 15.5C13.5 16.3284 12.8284 17 12 17C11.1716 17 10.5 16.3284 10.5 15.5C10.5 14.6716 11.1716 14 12 14Z" fill="white" />
-    <path d="M9 10V8C9 6.34 10.34 5 12 5C13.66 5 15 6.34 15 8V10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="10" cy="13" r="4" stroke="currentColor" strokeWidth="1.5" />
+    <path d="M14 13C18.4 12.5 21 10 21 7C21 3 19 2 16 2C14 2 12 3 12 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M8 17L3 22M22 22H10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
