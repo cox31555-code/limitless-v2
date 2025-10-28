@@ -102,7 +102,7 @@ const CoverDetailsForm = ({ form }) => {
                   />
                   {getDropdownOptions().length > 0 && (
                     <FormDropdown
-                      placeholder="More"
+                      placeholder=""
                       options={getDropdownOptions()}
                       value={
                         period && getDropdownOptions().includes(period.toString())
