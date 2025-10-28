@@ -423,8 +423,8 @@
   }
 
   .titleSection {
-    margin: 2rem 0 2rem;
-    padding-top: 1.6rem;
+    margin: 2rem -0.1rem 2rem;
+    padding: 1.6rem 0 0 16rem;
   }
 
   .title {
@@ -528,8 +528,8 @@
   }
 
   .titleSection {
-    margin: 1.6rem 0 1.6rem;
-    padding-top: 1.2rem;
+    margin: 1.6rem -0.1rem 1.6rem;
+    padding: 1.2rem 0 0 12rem;
     gap: 1.4rem;
   }
 
@@ -592,8 +592,8 @@
   }
 
   .titleSection {
-    margin: 1.2rem 0 1.2rem;
-    padding-top: 1rem;
+    margin: 1.2rem -0.1rem 1.2rem;
+    padding: 1rem 0 0 8rem;
     gap: 1.2rem;
   }
 
