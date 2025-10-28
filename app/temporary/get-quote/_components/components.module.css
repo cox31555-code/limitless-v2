@@ -274,14 +274,6 @@
   gap: 5.4rem;
 }
 
-/* Duration Container */
-.durationContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  width: 100%;
-}
-
 /* Duration Wrapper Grid Container */
 .durationWrapper {
   display: flex;
