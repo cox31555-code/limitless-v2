@@ -122,9 +122,6 @@ const Form = () => {
             className={`${styles.inputWrapper} ${errors.email ? styles.inputError : ""}`}
             onClick={() => emailInputRef.current?.focus()}
           >
-            <div className={styles.iconContainer}>
-              <EmailIcon />
-            </div>
             <input
               type="email"
               placeholder="Enter Email Address"
@@ -152,9 +149,6 @@ const Form = () => {
             className={`${styles.inputWrapper} ${errors.password ? styles.inputError : ""}`}
             onClick={() => passwordInputRef.current?.focus()}
           >
-            <div className={styles.iconContainer}>
-              <PasswordIcon />
-            </div>
             <input
               type="password"
               placeholder="Enter your password..."
