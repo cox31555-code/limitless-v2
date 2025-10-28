@@ -3,7 +3,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { impoundInsuranceSchema } from "@/utils/schemas/impoundInsuranceSchema";
-import GetQuoteHeader from "@/ui/getQuote/GetQuoteHeader";
+import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import VehicleDetailsForm from "@/app/temporary/get-quote/_components/VehicleDetailsForm";
 import ImpoundCoverDetailsForm from "./_components/ImpoundCoverDetailsForm";
 import PersonalDetailsForm from "@/app/temporary/get-quote/_components/PersonalDetailsForm";
@@ -171,9 +171,11 @@ const ImpoundInsuranceContent = () => {
     }
   };
 
+  const [currentStep] = useState(1);
+
   return (
     <>
-      <GetQuoteHeader title="Impound Insurance" />
+      <GetQuoteHeaderWithNav title="Impound Insurance" currentStep={currentStep} totalSteps={3} />
       <div className="centeredContent">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
