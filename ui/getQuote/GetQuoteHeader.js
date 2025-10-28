@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./getQuoteHeader.module.css";
-import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
