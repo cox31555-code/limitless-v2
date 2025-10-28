@@ -173,20 +173,16 @@
   background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
   border: 1px solid rgba(3, 136, 255, 0.2);
   flex-shrink: 0;
-  transition: var(--transition);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
 }
 
 .inputWrapper:focus-within .iconContainer {
-  background: linear-gradient(135deg, #049cff 0%, #0270cc 100%);
-  border-color: rgba(3, 136, 255, 0.4);
-  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.3);
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  border-color: rgba(3, 136, 255, 0.2);
 }
 
 .inputWrapper.inputError .iconContainer {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.8) 0%, rgba(239, 68, 68, 0.7) 100%);
-  border-color: rgba(239, 68, 68, 0.5);
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.9) 0%, rgba(239, 68, 68, 0.85) 100%);
+  border-color: rgba(239, 68, 68, 0.3);
 }
 
 /* Icon */
@@ -302,7 +298,6 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 12px 36px rgba(3, 136, 255, 0.25);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
@@ -310,13 +305,10 @@
 
 .submitButton:hover:not(:disabled) {
   background: linear-gradient(135deg, var(--color-blue-alt) 0%, var(--color-blue) 100%);
-  box-shadow: 0 16px 44px rgba(3, 136, 255, 0.32);
-  transform: translateY(-4px);
 }
 
 .submitButton:active:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(3, 136, 255, 0.24);
+  transform: scale(0.98);
 }
 
 .submitButton:disabled {
