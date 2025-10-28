@@ -637,7 +637,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(135deg, rgba(0, 8, 34, 0.95) 0%, rgba(10, 15, 46, 0.95) 100%);
+  background: #000822;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(3, 136, 255, 0.2);
