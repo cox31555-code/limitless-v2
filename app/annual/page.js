@@ -6,7 +6,7 @@ import InsuranceTypes from "../../ui/main-pages/insuranceTypes/InsuranceTypes";
 import Coverage from "../../ui/main-pages/coverage/Coverage";
 import NeedQuestionsAnswered from "../../ui/main-pages/needQuestionsAnswered/NeedQuestionsAnswered";
 import ComprehensiveInfo from "../../ui/main-pages/comprehensiveInfo/ComprehensiveInfo";
-import FAQ from "../../ui/main-pages/faq/FAQ";
+import AnnualFAQ from "../../ui/main-pages/annualFaq/AnnualFAQ";
 import Reviews from "../../ui/main-pages/reviews/Reviews";
 import { annualFeatures, annualBenefits } from "./annualData";
 
@@ -32,7 +32,7 @@ export default function Annual() {
         <Coverage />
         <NeedQuestionsAnswered />
         <ComprehensiveInfo />
-        <FAQ />
+        <AnnualFAQ />
         <div className={styles.reviewsContainer}>
           <Reviews />
         </div>
