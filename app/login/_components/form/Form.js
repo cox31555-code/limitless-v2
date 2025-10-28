@@ -9,17 +9,22 @@ import { loginSchema } from "@/utils/authSchemas";
 
 const EmailIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon}>
-    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M20 4L12 11L4 4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" fill="currentColor" />
+    <path d="M20 4L12 11L4 4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const PasswordIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon}>
-    <path d="M12 1C6.48 1 2 5.48 2 11V23H22V11C22 5.48 17.52 1 12 1Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M7 11H17" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M9 15H15" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M10 19H14" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M7 10V8C7 5.24 9.24 3 12 3C14.76 3 17 5.24 17 8V10H20C21.1 10 22 10.9 22 12V21C22 22.1 21.1 23 20 23H4C2.9 23 2 22.1 2 21V12C2 10.9 2.9 10 4 10H7Z" fill="currentColor" />
+    <path d="M12 14C12.8284 14 13.5 14.6716 13.5 15.5C13.5 16.3284 12.8284 17 12 17C11.1716 17 10.5 16.3284 10.5 15.5C10.5 14.6716 11.1716 14 12 14Z" fill="white" />
+    <path d="M9 10V8C9 6.34 10.34 5 12 5C13.66 5 15 6.34 15 8V10" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ArrowIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.arrowIcon}>
+    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -103,8 +108,8 @@ const Form = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Login</h1>
-      <p className={styles.subtitle}>Welcome back. Sign in to your account to continue.</p>
+      <h1 className={styles.title}>Welcome back</h1>
+      <p className={styles.subtitle}>Enter your credentials to access your portal</p>
 
       {successMessage && (
         <div className={styles.successMessage}>{successMessage}</div>
@@ -118,6 +123,7 @@ const Form = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <div className={styles.inputGroup}>
+          <label className={styles.inputLabel}>EMAIL ADDRESS</label>
           <div
             className={`${styles.inputWrapper} ${errors.email ? styles.inputError : ""}`}
             onClick={() => emailInputRef.current?.focus()}
@@ -127,7 +133,7 @@ const Form = () => {
             </div>
             <input
               type="email"
-              placeholder="Email address"
+              placeholder="Enter Email Address"
               className={styles.input}
               {...(() => {
                 const { ref, ...rest } = register("email");
@@ -147,6 +153,7 @@ const Form = () => {
         </div>
 
         <div className={styles.inputGroup}>
+          <label className={styles.inputLabel}>PASSWORD</label>
           <div
             className={`${styles.inputWrapper} ${errors.password ? styles.inputError : ""}`}
             onClick={() => passwordInputRef.current?.focus()}
@@ -156,7 +163,7 @@ const Form = () => {
             </div>
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password..."
               className={styles.input}
               {...(() => {
                 const { ref, ...rest } = register("password");
@@ -175,12 +182,19 @@ const Form = () => {
           )}
         </div>
 
+        <div className={styles.forgotPasswordWrapper}>
+          <a href="/forgot-password" className={styles.forgotPasswordLink}>
+            Forgot your password?
+          </a>
+        </div>
+
         <button
           type="submit"
           className={styles.submitButton}
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Signing in..." : "Sign In"}
+          {isSubmitting ? "Signing in..." : "LOGIN"}
+          <ArrowIcon />
         </button>
       </form>
     </div>
