@@ -36,8 +36,9 @@ const faqData = [
   },
 ];
 
-const FAQ = () => {
+const FAQ = ({ customData = null }) => {
   const [openIndex, setOpenIndex] = useState(null);
+  const dataToUse = customData || faqData;
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -50,7 +51,7 @@ const FAQ = () => {
       </h2>
 
       <div className={styles.faqList}>
-        {faqData.map((faq, index) => (
+        {dataToUse.map((faq, index) => (
           <div
             key={index}
             className={`${styles.faqItem} ${
