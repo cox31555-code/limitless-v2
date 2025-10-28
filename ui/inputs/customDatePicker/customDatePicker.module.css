@@ -46,20 +46,7 @@
 }
 
 .navButtonNext {
-  color: #fff;
-}
-
-.navButtonNext:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.navButtonNext :global(svg) {
-  stroke: #fff !important;
-  color: #fff !important;
-}
-
-.navButtonNext :global(img) {
-  filter: invert(1);
+  display: none;
 }
 
 .monthYearSelector {
