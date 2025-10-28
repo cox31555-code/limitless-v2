@@ -173,7 +173,7 @@ const ImpoundInsuranceContent = () => {
 
   return (
     <div>
-      <Header title="Impound Insurance" />
+      <GetQuoteHeader title="Impound Insurance" />
       <div className="centeredContent">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
