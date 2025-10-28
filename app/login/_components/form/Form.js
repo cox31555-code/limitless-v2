@@ -104,13 +104,12 @@ const Form = () => {
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <div className={styles.inputGroup}>
           <div
-            className={`${styles.inputWrapper} ${errors.email ? styles.error : ""}`}
+            className={`${styles.inputWrapper} ${errors.email ? styles.inputError : ""}`}
             onClick={() => emailInputRef.current?.focus()}
           >
             <FaUser className={styles.icon} />
             <input
               type="email"
-              id="email"
               placeholder="Email"
               className={styles.input}
               {...(() => {
@@ -132,13 +131,12 @@ const Form = () => {
 
         <div className={styles.inputGroup}>
           <div
-            className={`${styles.inputWrapper} ${errors.password ? styles.error : ""}`}
+            className={`${styles.inputWrapper} ${errors.password ? styles.inputError : ""}`}
             onClick={() => passwordInputRef.current?.focus()}
           >
             <FaLock className={styles.icon} />
             <input
               type="password"
-              id="password"
               placeholder="Password"
               className={styles.input}
               {...(() => {
