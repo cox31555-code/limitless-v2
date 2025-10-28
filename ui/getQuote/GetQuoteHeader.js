@@ -24,14 +24,6 @@ const GetQuoteHeader = ({ title, currentStep, totalSteps }) => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.centeredContent}>
-        <Image
-          src="/svg/squares-2.svg"
-          alt="squares"
-          width={1394}
-          height={706}
-          className={styles.squares}
-        />
-
         <div className={styles.wrapper}>
           <div className={styles.content}>
             <div className={styles.titleWrapper}>
