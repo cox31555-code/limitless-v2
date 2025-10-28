@@ -1278,6 +1278,17 @@
     gap: 0.8rem;
   }
 
+  .sparkDurationGrid {
+    grid-template-columns: repeat(auto-fit, minmax(3.4rem, 1fr));
+    gap: 0.5rem;
+  }
+
+  .sparkDurationButton {
+    padding: 0.6rem 0.2rem;
+    font-size: 1rem;
+    min-height: 3.2rem;
+  }
+
   .sparkDateTimeGrid {
     grid-template-columns: 1fr;
     gap: 1.4rem;
