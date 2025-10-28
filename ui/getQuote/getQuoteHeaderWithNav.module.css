@@ -1,23 +1,12 @@
 .headerContainer {
-  width: 100vw;
+  width: 100%;
   position: relative;
   overflow: visible;
-  margin-left: calc(-50vw + 50%);
   box-sizing: border-box;
   z-index: 2;
-}
-
-.headerContainer::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 100%;
   background: #000822;
-  z-index: -1;
-  pointer-events: none;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .headerElement {
