@@ -136,20 +136,8 @@
   border: 1.5px solid var(--color-border);
   border-radius: var(--border-radius);
   min-height: 6.8rem;
-  transition: var(--transition);
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
   cursor: text;
-}
-
-.inputWrapper:hover {
-  border-color: rgba(3, 136, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
-}
-
-.inputWrapper:focus-within {
-  border-color: var(--color-border-focus);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
-  background: var(--color-bg-input);
 }
 
 .inputWrapper.inputError {
@@ -173,11 +161,6 @@
   background: linear-gradient(135deg, #f0f3f7 0%, #e8ecf2 100%);
   border: 1px solid rgba(3, 136, 255, 0.08);
   flex-shrink: 0;
-}
-
-.inputWrapper:focus-within .iconContainer {
-  background: linear-gradient(135deg, #e8ecf2 0%, #dfe5ed 100%);
-  border-color: rgba(3, 136, 255, 0.12);
 }
 
 .inputWrapper.inputError .iconContainer {
