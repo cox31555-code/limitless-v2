@@ -22,35 +22,27 @@
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
 }
 
 .payButton:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
 }
 
 .payButton:active {
-  transform: translateY(0);
 }
 
 .cancelButton {
   background: #ffffff;
   color: #0388ff;
   border: 1.5px solid rgba(3, 136, 255, 0.2);
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
 }
 
 .cancelButton:hover {
   background: #f8fbff;
   border-color: #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
-  transform: translateY(-1px);
 }
 
 .cancelButton:active {
   background: #ffffff;
-  transform: translateY(0);
 }
 
 @media screen and (max-width: 900px) {
