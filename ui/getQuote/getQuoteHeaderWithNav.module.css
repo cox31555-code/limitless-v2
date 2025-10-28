@@ -14,10 +14,9 @@
   fontWeight: 400;
   justifyContent: space-between;
   position: relative;
-  width: 149%;
+  width: 100%;
   zIndex: 2;
-  marginRight: 174px;
-  padding: 18px 252px 18px 407px;
+  padding: 1.8rem 1.2rem;
   flex-direction: column;
   box-sizing: border-box;
 }
