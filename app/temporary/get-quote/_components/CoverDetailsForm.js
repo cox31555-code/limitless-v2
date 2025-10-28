@@ -240,16 +240,6 @@ const CoverDetailsForm = ({ form }) => {
             </div>
           </div>
         </div>
-
-        {/* Action Buttons */}
-        <div className={styles.sparkActions}>
-          <button onClick={handleBack} className={styles.sparkButtonBack}>
-            Back
-          </button>
-          <button onClick={handleNext} className={styles.sparkButtonNext}>
-            Next
-          </button>
-        </div>
       </div>
     </ComponentWrapper>
   );
