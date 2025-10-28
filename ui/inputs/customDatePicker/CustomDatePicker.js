@@ -201,30 +201,34 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
             onChange={handleMonthChange}
             className={styles.select}
           >
-            {monthNames.map((month, index) => (
-              <option
-                key={month}
-                value={index}
-                disabled={isMonthDisabled(index)}
-              >
-                {month}
-              </option>
-            ))}
+            {monthNames.map((month, index) => {
+              const isDisabled = isMonthDisabled(index);
+              return !isDisabled ? (
+                <option
+                  key={month}
+                  value={index}
+                >
+                  {month}
+                </option>
+              ) : null;
+            })}
           </select>
           <select
             value={displayMonth.getFullYear()}
             onChange={handleYearChange}
             className={styles.select}
           >
-            {years.map((year) => (
-              <option
-                key={year}
-                value={year}
-                disabled={isYearDisabled(year)}
-              >
-                {year}
-              </option>
-            ))}
+            {years.map((year) => {
+              const isDisabled = isYearDisabled(year);
+              return !isDisabled ? (
+                <option
+                  key={year}
+                  value={year}
+                >
+                  {year}
+                </option>
+              ) : null;
+            })}
           </select>
         </div>
 
