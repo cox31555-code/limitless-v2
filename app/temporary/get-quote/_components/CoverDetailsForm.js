@@ -84,7 +84,7 @@ const CoverDetailsForm = ({ form }) => {
                 setSelectedItem={handleTypeChange}
                 type="checkbox"
               />
-              <div className={styles.durationWrapper}>
+              <div className={`${styles.durationWrapper} ${styles[`duration${coverType}Grid`]}`}>
                 <Selection1
                   noDotMobile
                   items={getPeriodOptions()}
