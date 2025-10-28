@@ -275,6 +275,14 @@
 }
 
 /* Duration type independent grids for Step 2 */
+.durationHoursGrid :global([class*="selectionContainer"]) {
+  grid-template-columns: repeat(8, 1fr) !important;
+}
+
+.durationDaysGrid :global([class*="selectionContainer"]) {
+  grid-template-columns: repeat(7, 1fr) !important;
+}
+
 .durationWeeksGrid :global([class*="selectionContainer"]) {
   grid-template-columns: repeat(4, 1fr) !important;
 }
@@ -283,15 +291,33 @@
   grid-template-columns: repeat(5, 1fr) !important;
 }
 
-/* Duration dropdowns for Hours and Days */
-.durationHoursGrid :global(.dropdown-module__container),
-.durationDaysGrid :global(.dropdown-module__container) {
+/* Period Selection Wrapper */
+.periodSelectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   width: 100%;
 }
 
-.durationHoursGrid :global(.dropdown-module__select),
-.durationDaysGrid :global(.dropdown-module__select) {
-  width: 100%;
+/* More Options Dropdown */
+.moreOptionsDropdown {
+  display: flex;
+  align-items: flex-start;
+}
+
+.moreOptionsDropdown :global(.dropdown-module__container) {
+  width: auto;
+  min-width: 8rem;
+}
+
+.moreOptionsDropdown :global(.dropdown-module__select) {
+  padding: 0.8rem 2.4rem 0.8rem 1rem;
+  font-size: 1.2rem;
+}
+
+.moreOptionsDropdown :global(.dropdown-module__arrowContainer) {
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 /* Personal Details Form */
