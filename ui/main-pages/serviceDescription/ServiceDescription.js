@@ -38,14 +38,8 @@ const ServiceDescription = ({ services, title, description, button, img }) => {
             <div className={styles.service} key={index}>
               <div className={styles.checkmarkWrapper}>
                 <svg className={styles.checkmark} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="11" fill="url(#checkGradient)" />
+                  <circle cx="12" cy="12" r="11" fill="#0388ff" />
                   <path d="M7.5 12.5L10 15L16.5 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <defs>
-                    <linearGradient id="checkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#0388ff" />
-                      <stop offset="100%" stopColor="#0270cc" />
-                    </linearGradient>
-                  </defs>
                 </svg>
               </div>
               <h3
