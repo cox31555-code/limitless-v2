@@ -23,67 +23,34 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.8rem;
+  padding: 1.2rem 1.6rem;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 10px;
   background: #fff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
-  height: 5.6rem;
+  height: 5.2rem;
   position: relative;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
 .inputContainer:focus-within {
   border-color: #0388ff;
-  box-shadow: 0 0 0 3px rgba(3, 136, 255, 0.1), 0 6px 16px rgba(3, 136, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(3, 136, 255, 0.1);
 }
 
 .inputContainer:hover:not(.disabled) {
   border-color: rgba(3, 136, 255, 0.25);
   background-color: #f8fbff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
 }
 
 .iconContainer {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 9px;
-  background: rgba(3, 136, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  flex-shrink: 0;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.inputContainer:hover:not(.disabled) .iconContainer {
-  background: rgba(3, 136, 255, 0.12);
-  border-color: rgba(3, 136, 255, 0.2);
-}
-
-.inputContainer:focus-within .iconContainer {
-  background: rgba(3, 136, 255, 0.15);
-  border-color: rgba(3, 136, 255, 0.25);
+  display: none;
 }
 
 .arrowDown {
-  position: absolute;
-  right: 1.4rem;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #0388ff;
-  width: 1.8rem;
-  height: 1.8rem;
-}
-
-.inputContainer:focus-within .arrowDown {
-  transform: translateY(-50%) rotate(180deg);
-  color: #0270cc;
+  display: none;
 }
 
 .disabled {
@@ -98,7 +65,7 @@
   border: none;
   outline: none;
   color: #000822;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.2px;
