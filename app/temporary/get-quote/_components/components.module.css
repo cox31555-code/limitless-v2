@@ -889,15 +889,31 @@
   }
 
   .durationWrapper {
-    gap: 1.2rem;
+    gap: 1rem;
+  }
+
+  .durationHoursGrid {
+    grid-template-columns: repeat(6, 1fr);
   }
 
   .durationHoursGrid :global([class*="selectionContainer"]) {
     grid-template-columns: repeat(6, 1fr) !important;
   }
 
+  .durationHoursGrid .moreDropdown {
+    grid-column: 6;
+  }
+
+  .durationDaysGrid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
   .durationDaysGrid :global([class*="selectionContainer"]) {
     grid-template-columns: repeat(7, 1fr) !important;
+  }
+
+  .durationDaysGrid .moreDropdown {
+    grid-column: 7;
   }
 
   .durationWeeksGrid :global([class*="selectionContainer"]) {
@@ -905,7 +921,8 @@
   }
 
   .moreDropdown {
-    margin-top: 0.6rem;
+    width: 4.4rem;
+    height: 4.4rem;
   }
 
   .dateTimeContainer {
