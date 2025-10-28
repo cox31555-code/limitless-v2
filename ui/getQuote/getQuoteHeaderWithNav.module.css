@@ -23,12 +23,13 @@
 
 .headerContent {
   width: 100%;
-  max-width: 1480rem;
+  max-width: 148rem;
   padding: 1.8rem 1.2rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
+  margin: 0 auto;
 }
 
 .navigationBar {
