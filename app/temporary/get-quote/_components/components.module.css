@@ -613,23 +613,17 @@
 .sparkButtonBack:hover {
   background: #f8fbff;
   border-color: #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
-  transform: translateY(-1px);
 }
 
 .sparkButtonNext {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
 }
 
 .sparkButtonNext:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
 }
 
 .sparkButtonNext:active {
-  transform: translateY(0);
 }
 
 /* Duration Wrapper - kept for backward compatibility */
