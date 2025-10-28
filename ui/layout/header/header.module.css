@@ -22,6 +22,18 @@
   width: 30.4rem;
 }
 
+/* Chevron Icon Rotation */
+.chevronIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chevronIcon.rotated {
+  transform: rotate(180deg);
+}
+
 /* Modern Menu Style */
 .menu {
   display: flex;
