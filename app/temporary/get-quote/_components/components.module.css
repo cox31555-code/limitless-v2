@@ -290,8 +290,16 @@
 }
 
 /* Duration type independent grids for Step 2 */
+.durationHoursGrid {
+  position: relative;
+}
+
 .durationHoursGrid :global([class*="selectionContainer"]) {
   grid-template-columns: repeat(8, 1fr) !important;
+}
+
+.durationDaysGrid {
+  position: relative;
 }
 
 .durationDaysGrid :global([class*="selectionContainer"]) {
@@ -304,6 +312,54 @@
 
 .durationMonthsGrid :global([class*="selectionContainer"]) {
   grid-template-columns: repeat(5, 1fr) !important;
+}
+
+/* Style dropdown as icon-only button */
+.durationContainer :global(.dropdown-module__container) {
+  min-width: 4.4rem;
+  width: auto;
+}
+
+.durationContainer :global(.dropdown-module__select) {
+  min-height: 4.4rem;
+  padding: 0;
+  font-size: 0;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.durationContainer :global(.dropdown-module__select):hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+}
+
+.durationContainer :global(.dropdown-module__select):focus {
+  outline: none;
+  border-color: #0388ff;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12);
+}
+
+.durationContainer :global(.dropdown-module__arrowContainer) {
+  position: static;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: #0388ff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 /* Personal Details Form */
