@@ -172,7 +172,7 @@ const ImpoundInsuranceContent = () => {
   };
 
   return (
-    <div>
+    <>
       <GetQuoteHeader title="Impound Insurance" />
       <div className="centeredContent">
         <form
@@ -194,7 +194,7 @@ const ImpoundInsuranceContent = () => {
           />
         </form>
       </div>
-    </div>
+    </>
   );
 };
 
