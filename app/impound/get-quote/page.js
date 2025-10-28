@@ -175,7 +175,7 @@ const ImpoundInsuranceContent = () => {
 
   return (
     <>
-      <GetQuoteHeaderWithNav title="Impound Insurance" currentStep={currentStep} totalSteps={3} />
+      <GetQuoteHeaderWithNav title="Get an Impound Insurance Quote" currentStep={currentStep} totalSteps={3} />
       <div className="centeredContent">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
