@@ -1014,6 +1014,11 @@
     height: 3.8rem !important;
   }
 
+  .gridWithDropdown :global(.dropdown-module__select) {
+    width: 3.8rem !important;
+    height: 3.8rem !important;
+  }
+
   .gridWithDropdown :global(.dropdown-module__arrowContainer) {
     width: 2rem !important;
     height: 2rem !important;
