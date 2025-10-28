@@ -185,7 +185,7 @@
 
 /* Content Wrapper */
 .contentWrapper {
-  padding: 3.2rem 3.8rem;
+  padding: 3.2rem 3.8rem 12rem 3.8rem;
   display: flex;
   flex-direction: column;
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
@@ -193,6 +193,7 @@
   min-height: auto;
   max-height: 1500px;
   background-color: #ffffff;
+  overflow: visible;
 }
 
 .accordionContent {
