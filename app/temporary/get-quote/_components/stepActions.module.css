@@ -12,15 +12,15 @@
 .backBtn,
 .nextBtn {
   flex: 1;
-  height: 5.6rem;
-  border-radius: 14px;
-  font-size: 1.4rem;
+  height: 5.2rem;
+  border-radius: 10px;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.2px;
   cursor: pointer;
   border: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,14 +32,14 @@
   background: #fff;
   color: #0388ff;
   border: 1.5px solid rgba(3, 136, 255, 0.2);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
 }
 
 .backBtn:hover:not(:disabled) {
   background: #f8fbff;
   border-color: #0388ff;
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .backBtn:active:not(:disabled) {
@@ -54,12 +54,12 @@
 .nextBtn {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
 }
 
 .nextBtn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
 }
 
 .nextBtn:active:not(:disabled) {
