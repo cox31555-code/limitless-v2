@@ -110,7 +110,7 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("carVan")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <span className={`${styles.stickyMenuButton} ${openDropdown === "carVan" ? styles.active : ""}`}>
+                <span className={`${styles.stickyMenuButton} ${openDropdown === "carVan" ? styles.active : ""} ${carVanItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
                   Car & Van
                   <span className={`${styles.chevronIcon} ${openDropdown === "carVan" ? styles.rotated : ""}`}>
                     <IconComponent type="chevron" />
@@ -135,7 +135,7 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("motorbike")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <span className={`${styles.stickyMenuButton} ${openDropdown === "motorbike" ? styles.active : ""}`}>
+                <span className={`${styles.stickyMenuButton} ${openDropdown === "motorbike" ? styles.active : ""} ${motorbakeItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
                   Motorbike
                   <span className={`${styles.chevronIcon} ${openDropdown === "motorbike" ? styles.rotated : ""}`}>
                     <IconComponent type="chevron" />
