@@ -939,16 +939,6 @@
     gap: 1.2rem;
   }
 
-  .durationTypeGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .dateTimeGrid {
-    grid-template-columns: 1fr;
-    gap: 1.4rem;
-  }
-
   .parkingGrid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
