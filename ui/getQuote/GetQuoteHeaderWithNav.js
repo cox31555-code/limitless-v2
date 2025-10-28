@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./getQuoteHeaderWithNav.module.css";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import Image from "next/image";
@@ -76,150 +76,150 @@ const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
       <header className={styles.headerElement}>
         <div className={styles.headerContent}>
           <div className={styles.navigationBar}>
-          <div className={styles.logoContainer}>
-            <Image
-              onClick={() => router.push("/")}
-              className={styles.logo}
-              src="/svg/logo.svg"
-              alt="logo"
-              width={66}
-              height={66}
-            />
-          </div>
-          <menu className={styles.menu} suppressHydrationWarning>
-            <li
-              className={styles.menuItem}
-              onMouseEnter={() => setOpenDropdown("carVan")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <span className={styles.menuLink}>
-                Car & Van
-                <IconComponent type="chevron" />
-              </span>
-              {openDropdown === "carVan" && (
-                <div className={styles.dropdown}>
-                  {carVanItems.map((item, index) => (
-                    <span
-                      key={`carVan-${index}`}
-                      className={styles.dropdownItem}
-                      onClick={() => {
-                        setOpenDropdown(null);
-                        router.push(item.href);
-                      }}
-                    >
-                      <span className={styles.dropdownIcon}>
-                        <IconComponent type={item.icon} />
+            <div className={styles.logoContainer}>
+              <Image
+                onClick={() => router.push("/")}
+                className={styles.logo}
+                src="/svg/logo.svg"
+                alt="logo"
+                width={66}
+                height={66}
+              />
+            </div>
+            <menu className={styles.menu} suppressHydrationWarning>
+              <li
+                className={styles.menuItem}
+                onMouseEnter={() => setOpenDropdown("carVan")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <span className={styles.menuLink}>
+                  Car & Van
+                  <IconComponent type="chevron" />
+                </span>
+                {openDropdown === "carVan" && (
+                  <div className={styles.dropdown}>
+                    {carVanItems.map((item, index) => (
+                      <span
+                        key={`carVan-${index}`}
+                        className={styles.dropdownItem}
+                        onClick={() => {
+                          setOpenDropdown(null);
+                          router.push(item.href);
+                        }}
+                      >
+                        <span className={styles.dropdownIcon}>
+                          <IconComponent type={item.icon} />
+                        </span>
+                        {item.label}
                       </span>
-                      {item.label}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </li>
+                    ))}
+                  </div>
+                )}
+              </li>
 
-            <li
-              className={styles.menuItem}
-              onMouseEnter={() => setOpenDropdown("motorbike")}
-              onMouseLeave={() => setOpenDropdown(null)}
-            >
-              <span className={styles.menuLink}>
-                Motorbike
-                <IconComponent type="chevron" />
-              </span>
-              {openDropdown === "motorbike" && (
-                <div className={styles.dropdown}>
-                  {motorbakeItems.map((item, index) => (
-                    <span
-                      key={`motorbike-${index}`}
-                      className={styles.dropdownItem}
-                      onClick={() => {
-                        setOpenDropdown(null);
-                        router.push(item.href);
-                      }}
-                    >
-                      <span className={styles.dropdownIcon}>
-                        <IconComponent type={item.icon} />
+              <li
+                className={styles.menuItem}
+                onMouseEnter={() => setOpenDropdown("motorbike")}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <span className={styles.menuLink}>
+                  Motorbike
+                  <IconComponent type="chevron" />
+                </span>
+                {openDropdown === "motorbike" && (
+                  <div className={styles.dropdown}>
+                    {motorbakeItems.map((item, index) => (
+                      <span
+                        key={`motorbike-${index}`}
+                        className={styles.dropdownItem}
+                        onClick={() => {
+                          setOpenDropdown(null);
+                          router.push(item.href);
+                        }}
+                      >
+                        <span className={styles.dropdownIcon}>
+                          <IconComponent type={item.icon} />
+                        </span>
+                        {item.label}
                       </span>
-                      {item.label}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </li>
+                    ))}
+                  </div>
+                )}
+              </li>
 
-            <li className={styles.menuItem}>
-              <span
-                className={`${styles.menuLink} ${
-                  pathname === "/impound" ? styles.activeMenuLink : ""
-                }`}
-                onClick={() => router.push("/impound")}
+              <li className={styles.menuItem}>
+                <span
+                  className={`${styles.menuLink} ${
+                    pathname === "/impound" ? styles.activeMenuLink : ""
+                  }`}
+                  onClick={() => router.push("/impound")}
+                >
+                  Impound
+                </span>
+              </li>
+
+              <li className={styles.menuItem}>
+                <span
+                  className={`${styles.menuLink} ${
+                    pathname === "/coming-soon" ? styles.activeMenuLink : ""
+                  }`}
+                  onClick={() => router.push("/coming-soon")}
+                >
+                  Courier
+                </span>
+              </li>
+
+              <li className={styles.menuItem}>
+                <span
+                  className={`${styles.menuLink} ${
+                    pathname === "/contact" ? styles.activeMenuLink : ""
+                  }`}
+                  onClick={() => router.push("/contact")}
+                >
+                  Contact
+                </span>
+              </li>
+            </menu>
+
+            <div className={styles.buttons}>
+              <button
+                className={styles.loginBtn}
+                onClick={() => router.push("/login")}
               >
-                Impound
-              </span>
-            </li>
-
-            <li className={styles.menuItem}>
-              <span
-                className={`${styles.menuLink} ${
-                  pathname === "/coming-soon" ? styles.activeMenuLink : ""
-                }`}
-                onClick={() => router.push("/coming-soon")}
+                Login
+              </button>
+              <button
+                className={styles.quoteBtn}
+                onClick={() => router.push("/temporary/get-quote")}
               >
-                Courier
-              </span>
-            </li>
-
-            <li className={styles.menuItem}>
-              <span
-                className={`${styles.menuLink} ${
-                  pathname === "/contact" ? styles.activeMenuLink : ""
-                }`}
-                onClick={() => router.push("/contact")}
-              >
-                Contact
-              </span>
-            </li>
-          </menu>
-
-          <div className={styles.buttons}>
-            <button
-              className={styles.loginBtn}
-              onClick={() => router.push("/login")}
-            >
-              Login
-            </button>
-            <button
-              className={styles.quoteBtn}
-              onClick={() => router.push("/temporary/get-quote")}
-            >
-              Get a Quote
-            </button>
-          </div>
+                Get a Quote
+              </button>
+            </div>
           </div>
 
           <div className={styles.titleSection}>
-          <div className={styles.titleContent}>
-            <h1 className={`${styles.title} ${plusJakartaSans.className}`}>
-              {withoutLastWord}{" "}
-              <span className={styles.titleSpan}>
-                {lastWord}
-              </span>
-            </h1>
-          </div>
-
-          {totalSteps && (
-            <div className={styles.progressSection}>
-              <p className={`${styles.stepLabel} ${manrope.className}`}>
-                Step {currentStep} of {totalSteps}
-              </p>
-              <div className={styles.progressBar}>
-                <div
-                  className={styles.progressFill}
-                  style={{ width: `${progressPercentage}%` }}
-                />
-              </div>
+            <div className={styles.titleContent}>
+              <h1 className={`${styles.title} ${plusJakartaSans.className}`}>
+                {withoutLastWord}{" "}
+                <span className={styles.titleSpan}>
+                  {lastWord}
+                </span>
+              </h1>
             </div>
-          )}
+
+            {totalSteps && (
+              <div className={styles.progressSection}>
+                <p className={`${styles.stepLabel} ${manrope.className}`}>
+                  Step {currentStep} of {totalSteps}
+                </p>
+                <div className={styles.progressBar}>
+                  <div
+                    className={styles.progressFill}
+                    style={{ width: `${progressPercentage}%` }}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </header>
