@@ -226,20 +226,21 @@ const FormDateInput = forwardRef(
           </div>
 
           {showDatePicker && (
-            <>
-              <div
-                className={styles.modalOverlay}
-                onClick={closeDatePicker}
+            <div className={styles.pickerContainer} ref={datePickerRef} style={{
+              position: 'fixed',
+              top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
+              bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              zIndex: 9999
+            }}>
+              <CustomDatePicker
+                selectedDate={parseDate(value)}
+                onDateSelect={handleDateSelect}
+                minDate={allowPastDates ? null : today}
+                maxDate={isDateOfBirth ? maxDate : null}
               />
-              <div className={styles.pickerContainer} ref={datePickerRef}>
-                <CustomDatePicker
-                  selectedDate={parseDate(value)}
-                  onDateSelect={handleDateSelect}
-                  minDate={allowPastDates ? null : today}
-                  maxDate={isDateOfBirth ? maxDate : null}
-                />
-              </div>
-            </>
+            </div>
           )}
         </>
       );
@@ -257,6 +258,7 @@ const FormDateInput = forwardRef(
         if (onChange) {
           onChange(syntheticEvent);
         }
+        setShowTimePicker(false);
       };
 
       const openTimePicker = () => setShowTimePicker(true);
@@ -318,19 +320,20 @@ const FormDateInput = forwardRef(
           </div>
 
           {showTimePicker && (
-            <>
-              <div
-                className={styles.modalOverlay}
-                onClick={closeTimePicker}
+            <div className={styles.pickerContainer} ref={timePickerRef} style={{
+              position: 'fixed',
+              top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
+              bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              zIndex: 9999
+            }}>
+              <CustomTimePicker
+                selectedTime={value || "10:00"}
+                onTimeSelect={handleTimeSelect}
+                onClose={closeTimePicker}
               />
-              <div className={styles.pickerContainer} ref={timePickerRef}>
-                <CustomTimePicker
-                  selectedTime={value || "10:00"}
-                  onTimeSelect={handleTimeSelect}
-                  onClose={closeTimePicker}
-                />
-              </div>
-            </>
+            </div>
           )}
         </>
       );
