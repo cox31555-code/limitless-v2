@@ -329,8 +329,10 @@
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  margin-top: 3rem;
+  margin: 3rem 0 2.5rem;
   padding-top: 2rem;
+  border-style: none;
+  border-width: 1px;
 }
 
 .titleContent {
