@@ -215,7 +215,7 @@ const TemporaryInsuranceContent = () => {
 
   return (
     <>
-      <GetQuoteHeaderWithNav title="Temporary Insurance" currentStep={currentStep} totalSteps={4} />
+      <GetQuoteHeaderWithNav title="Get a Temporary Insurance Quote" currentStep={currentStep} totalSteps={4} />
       <div className="centeredContent">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
