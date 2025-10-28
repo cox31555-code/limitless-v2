@@ -26,14 +26,16 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 2rem;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
-  width: 30.4rem;
   flex-shrink: 0;
+  min-width: 70px;
 }
 
 .logo {
