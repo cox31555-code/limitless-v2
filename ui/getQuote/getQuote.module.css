@@ -329,7 +329,7 @@
 /* Duration Type Grid */
 .durationTypeGrid {
   display: grid;
-  grid-template-columns: repeat(8, 2fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
 }
 
@@ -535,10 +535,10 @@
 }
 
 .numberSelector {
-  display: grid;
-  grid-template-columns: repeat(8, 2fr);
-  align-content: start;
-  gap: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .numberButton {
@@ -572,14 +572,12 @@
 }
 
 .moreOptionsDropdown {
-  display: flex;
-  align-items: center;
+  flex: 0 0 auto;
 }
 
 .moreOptionsDropdown > div {
   display: flex;
   align-items: center;
-  width: 100%;
 }
 
 .moreOptionsDropdown > div > select,
