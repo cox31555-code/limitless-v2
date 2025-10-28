@@ -284,10 +284,15 @@
 
 /* Duration Wrapper Grid Container */
 .durationWrapper {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  gap: 1rem;
+  gap: 0;
   position: relative;
+}
+
+.durationWrapper :global([class*="selectionContainer"]) {
+  gap: 1rem;
 }
 
 /* Duration type independent grids for Step 2 */
@@ -315,14 +320,21 @@
   grid-template-columns: repeat(5, 1fr) !important;
 }
 
-/* Style dropdown as icon-only button */
-.durationContainer :global(.dropdown-module__container) {
-  min-width: 4.4rem;
-  width: auto;
+/* More Dropdown Icon Button */
+.moreDropdown {
+  align-self: flex-start;
+  margin-top: 0.8rem;
 }
 
-.durationContainer :global(.dropdown-module__select) {
+.moreDropdown :global(.dropdown-module__container) {
+  width: 100%;
+  min-width: 4.4rem;
+}
+
+.moreDropdown :global(.dropdown-module__select) {
   min-height: 4.4rem;
+  min-width: 4.4rem;
+  width: 4.4rem;
   padding: 0;
   font-size: 0;
   border-radius: 10px;
@@ -338,18 +350,18 @@
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.durationContainer :global(.dropdown-module__select):hover {
+.moreDropdown :global(.dropdown-module__select):hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: #f0f6ff;
 }
 
-.durationContainer :global(.dropdown-module__select):focus {
+.moreDropdown :global(.dropdown-module__select):focus {
   outline: none;
   border-color: #0388ff;
   box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12);
 }
 
-.durationContainer :global(.dropdown-module__arrowContainer) {
+.moreDropdown :global(.dropdown-module__arrowContainer) {
   position: static;
   width: auto;
   height: auto;
