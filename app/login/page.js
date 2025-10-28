@@ -10,7 +10,14 @@ const LoginPage = () => {
   return (
     <div className={styles.page}>
       <div className={styles.darkBackground} />
-      
+
+      <div className={styles.pageHeader}>
+        <div className={styles.headerContent}>
+          <h1 className={styles.headerTitle}>Secure Login Portal</h1>
+          <p className={styles.headerSubtitle}>Access your Limitless Cover account</p>
+        </div>
+      </div>
+
       <div className={styles.mainContainer}>
         <div className={styles.leftSection}>
           <div className={styles.gradientOverlay} />
