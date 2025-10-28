@@ -156,7 +156,7 @@ const Form = () => {
         </div>
 
         <div className={styles.forgotPasswordWrapper}>
-          <a href="/forgot-password" className={styles.forgotPasswordLink}>
+          <a href="/forget-password" className={styles.forgotPasswordLink}>
             Forgot your password?
           </a>
         </div>
