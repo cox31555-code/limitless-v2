@@ -274,83 +274,76 @@
   gap: 5.4rem;
 }
 
-/* Duration Wrapper Grid Container */
+/* Duration Wrapper - Horizontal Flex Layout */
 .durationWrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
   position: relative;
+  gap: 1.2rem;
 }
 
-/* Grid with Dropdown Container */
+/* Grid with Dropdown Container - Horizontal Flex Row */
 .gridWithDropdown {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   position: relative;
-  align-items: stretch;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-/* Duration type independent grids for Step 2 */
-.durationHoursGrid .gridWithDropdown {
-  grid-template-columns: repeat(8, 1fr);
-  gap: 1rem;
-}
-
-.durationHoursGrid :global([class*="selectionContainer"]) {
-  grid-column: 1 / 8;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr) !important;
-  gap: 1rem;
-}
-
-.durationDaysGrid .gridWithDropdown {
-  grid-template-columns: repeat(7, 1fr);
-  gap: 1rem;
-}
-
-.durationDaysGrid :global([class*="selectionContainer"]) {
-  grid-column: 1 / 7;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr) !important;
-  gap: 1rem;
-}
-
-.durationWeeksGrid .gridWithDropdown {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-
-.durationWeeksGrid :global([class*="selectionContainer"]) {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 1rem;
-}
-
-.durationMonthsGrid .gridWithDropdown {
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-}
-
+/* Override Selection1 to display as flex buttons in a row */
+.durationHoursGrid :global([class*="selectionContainer"]),
+.durationDaysGrid :global([class*="selectionContainer"]),
+.durationWeeksGrid :global([class*="selectionContainer"]),
 .durationMonthsGrid :global([class*="selectionContainer"]) {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr) !important;
-  gap: 1rem;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.8rem !important;
+  grid-template-columns: unset !important;
+  width: auto;
 }
 
-/* Dropdown Icon - as a grid item */
-.gridWithDropdown :global(.dropdown-module__container) {
-  width: 100%;
-  height: 100%;
+/* Individual selection items styling */
+.gridWithDropdown :global([class*="selectionItem"]) {
+  min-width: 4.4rem;
+  height: 4.4rem;
+  padding: 0;
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000822;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
 }
 
-.durationHoursGrid .gridWithDropdown :global(.dropdown-module__container),
-.durationDaysGrid .gridWithDropdown :global(.dropdown-module__container) {
-  grid-column: auto;
-  grid-row: 1;
+.gridWithDropdown :global([class*="selectedItem"]) {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  border-color: #0388ff;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+}
+
+.gridWithDropdown :global([class*="selectionItem"]):hover:not(:global([class*="selectedItem"])) {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+}
+
+/* Dropdown Icon Button */
+.gridWithDropdown :global(.dropdown-module__container) {
+  width: 4.4rem;
+  height: 4.4rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gridWithDropdown :global(.dropdown-module__select) {
@@ -369,7 +362,6 @@
   align-items: center;
   justify-content: center;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 4.4rem;
 }
 
 .gridWithDropdown :global(.dropdown-module__select):hover {
