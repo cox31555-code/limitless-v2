@@ -981,6 +981,20 @@
     height: 3.8rem !important;
   }
 
+  .gridWithDropdown :global(.dropdown-module__selectWrapper) {
+    width: 3.8rem !important;
+    height: 3.8rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__arrowContainer) {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__arrowDown) {
+    font-size: 1.6rem !important;
+  }
+
   .gridWithDropdown :global([class*="selectionContainer"]) {
     gap: 0.6rem !important;
   }
