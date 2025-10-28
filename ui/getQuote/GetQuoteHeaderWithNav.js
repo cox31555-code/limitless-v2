@@ -74,7 +74,8 @@ const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
   return (
     <div className={styles.headerContainer}>
       <header className={styles.headerElement}>
-        <div className={styles.navigationBar}>
+        <div className={styles.headerContent}>
+          <div className={styles.navigationBar}>
           <div className={styles.logoContainer}>
             <Image
               onClick={() => router.push("/")}
@@ -194,9 +195,9 @@ const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
               Get a Quote
             </button>
           </div>
-        </div>
+          </div>
 
-        <div className={styles.titleSection}>
+          <div className={styles.titleSection}>
           <div className={styles.titleContent}>
             <h1 className={`${styles.title} ${plusJakartaSans.className}`}>
               {withoutLastWord}{" "}
@@ -219,6 +220,7 @@ const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
               </div>
             </div>
           )}
+          </div>
         </div>
       </header>
     </div>
