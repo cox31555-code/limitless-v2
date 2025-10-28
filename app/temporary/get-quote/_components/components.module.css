@@ -406,6 +406,7 @@
   margin: 0 !important;
   font-size: 0 !important;
   line-height: 0 !important;
+  text-indent: -9999px !important;
   border: none !important;
   background: transparent !important;
   cursor: pointer;
@@ -414,15 +415,25 @@
   -moz-appearance: none !important;
   color: transparent !important;
   z-index: 10;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__select) option {
   font-size: 0 !important;
   line-height: 0 !important;
+  color: transparent !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select)::placeholder {
+  color: transparent !important;
+  font-size: 0 !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__select)::-ms-expand {
-  display: none;
+  display: none !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__select):hover {
