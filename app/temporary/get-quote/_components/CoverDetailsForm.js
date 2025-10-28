@@ -49,20 +49,18 @@ const CoverDetailsForm = ({ form }) => {
   };
 
   const getPeriodOptions = () => {
-    const baseOptions = {
-      Hours: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
-      Days: ["1", "2", "3", "4", "5", "6", "7"],
-      Weeks: ["1", "2", "3", "4"],
-      Months: ["1", "2", "3", "6", "12"],
-    };
-
-    const options = baseOptions[coverType] || ["1", "2", "3", "4", "5", "6", "7"];
-
-    // Add dropdown indicator if there are more options available
-    if ((coverType === "Hours" || coverType === "Days") && getDropdownOptions().length > 0) {
-      return [...options, "···"];
+    switch (coverType) {
+      case "Hours":
+        return ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+      case "Days":
+        return ["1", "2", "3", "4", "5", "6", "7"];
+      case "Weeks":
+        return ["1", "2", "3", "4"];
+      case "Months":
+        return ["1", "2", "3", "6", "12"];
+      default:
+        return ["1", "2", "3", "4", "5", "6", "7"];
     }
-    return options;
   };
 
   const getDropdownOptions = () => {
