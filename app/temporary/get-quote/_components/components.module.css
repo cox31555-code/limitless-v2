@@ -921,8 +921,8 @@
   }
 
   .gridWithDropdown :global(.dropdown-module__container) {
-    width: 3.8rem;
-    height: 3.8rem;
+    width: 3.8rem !important;
+    height: 3.8rem !important;
   }
 
   .gridWithDropdown :global([class*="selectionContainer"]) {
