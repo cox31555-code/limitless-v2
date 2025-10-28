@@ -42,9 +42,9 @@ const CoverDetailsForm = ({ form }) => {
   const getPeriodOptions = () => {
     switch (coverType) {
       case "Hours":
-        return ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+        return Array.from({ length: 12 }, (_, i) => (i + 1).toString());
       case "Days":
-        return ["1", "2", "3", "4", "5", "6", "7"];
+        return Array.from({ length: 30 }, (_, i) => (i + 1).toString());
       case "Weeks":
         return ["1", "2", "3", "4"];
       case "Months":
@@ -54,19 +54,8 @@ const CoverDetailsForm = ({ form }) => {
     }
   };
 
-  const getDropdownOptions = () => {
-    switch (coverType) {
-      case "Hours":
-        return Array.from({ length: 12 }, (_, i) => (i + 13).toString());
-      case "Days":
-        return Array.from({ length: 23 }, (_, i) => (i + 8).toString());
-      case "Weeks":
-        return []; // No dropdown for weeks
-      case "Months":
-        return [];
-      default:
-        return [];
-    }
+  const showGridLayout = () => {
+    return coverType === "Weeks" || coverType === "Months";
   };
 
   return (
