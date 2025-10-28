@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.4rem;
   margin-bottom: 1.6rem;
 }
 
@@ -51,6 +51,15 @@
 
 .navButtonNext:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.navButtonNext :global(svg) {
+  stroke: #fff !important;
+  color: #fff !important;
+}
+
+.navButtonNext :global(img) {
+  filter: invert(1);
 }
 
 .monthYearSelector {
