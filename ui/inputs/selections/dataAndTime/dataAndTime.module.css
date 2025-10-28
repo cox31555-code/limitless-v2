@@ -116,7 +116,7 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9999;
+  z-index: 99999;
   max-width: 95vw;
   max-height: 70vh;
   overflow-y: auto;
@@ -157,7 +157,7 @@
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9999;
+  z-index: 99999;
   width: 95vw;
   max-width: 32rem;
 }
@@ -271,7 +271,7 @@
 .pickerContainer {
   pointer-events: auto;
   position: fixed;
-  z-index: 10001;
+  z-index: 99999;
   max-height: 85vh;
   overflow-y: auto;
 }
