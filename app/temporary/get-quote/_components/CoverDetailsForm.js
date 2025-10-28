@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { Calendar, Clock, ChevronDown } from "lucide-react";
-import { watch, setValue } from "react-hook-form";
+import Image from "next/image";
 
 const CoverDetailsForm = ({ form }) => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
@@ -175,11 +174,17 @@ const CoverDetailsForm = ({ form }) => {
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                         className="w-full py-2 border border-gray-200 rounded-lg flex items-center justify-center hover:border-blue-400 hover:bg-white transition-all duration-200 text-gray-600 hover:text-gray-900"
                       >
-                        <ChevronDown
+                        <svg
                           className={`w-5 h-5 transition-transform duration-200 ${
                             isDropdownOpen ? "rotate-180" : ""
                           }`}
-                        />
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
                       </button>
 
                       {isDropdownOpen && (
@@ -220,7 +225,18 @@ const CoverDetailsForm = ({ form }) => {
                   Start Date
                 </label>
                 <div className="relative group">
-                  <Calendar className="absolute left-4 top-3.5 w-5 h-5 text-gray-400 pointer-events-none group-focus-within:text-blue-600 transition-colors" />
+                  <svg
+                    className="absolute left-4 top-3.5 w-5 h-5 text-gray-400 pointer-events-none group-focus-within:text-blue-600 transition-colors"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
                   <input
                     type="text"
                     placeholder="DD/MM/YYYY"
@@ -237,7 +253,16 @@ const CoverDetailsForm = ({ form }) => {
                   Start Time
                 </label>
                 <div className="relative group">
-                  <Clock className="absolute left-4 top-3.5 w-5 h-5 text-gray-400 pointer-events-none group-focus-within:text-blue-600 transition-colors" />
+                  <svg
+                    className="absolute left-4 top-3.5 w-5 h-5 text-gray-400 pointer-events-none group-focus-within:text-blue-600 transition-colors"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
                   <input
                     type="text"
                     placeholder="10:00"
