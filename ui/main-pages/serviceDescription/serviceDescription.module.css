@@ -217,10 +217,6 @@
     border-radius: 12px;
   }
 
-  .service::before {
-    width: 3px;
-  }
-
   .checkmarkWrapper {
     min-width: 2.8rem;
     width: 2.8rem;
