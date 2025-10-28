@@ -134,6 +134,7 @@
     border: 1px solid rgba(3, 136, 255, 0.15);
     padding: 1.5rem 3.8rem;
     gap: 2rem;
+    height: 6rem;
   }
 
   .title {
@@ -168,6 +169,7 @@
     gap: 1.6rem;
     flex-direction: column;
     text-align: center;
+    height: auto;
   }
 
   .title {
@@ -205,6 +207,7 @@
     padding: 1.2rem 3rem;
     gap: 1.2rem;
     flex-direction: column;
+    height: auto;
   }
 
   .title {
@@ -237,6 +240,7 @@
     border: 1px solid rgba(3, 136, 255, 0.15);
     padding: 1.05rem 2.6rem;
     gap: 1rem;
+    height: auto;
   }
 
   .title {
