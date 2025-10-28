@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
+import FormDateInput from "@/ui/inputs/FormDateInput";
 import styles from "./components.module.css";
 
 const CoverDetailsForm = ({ form }) => {
@@ -57,6 +58,14 @@ const CoverDetailsForm = ({ form }) => {
 
   const handleTimeChange = (e) => {
     form.setValue("coverDetails.startTime", e.target.value);
+  };
+
+  const handleDateInputChange = (e) => {
+    handleDateChange(e);
+  };
+
+  const handleTimeInputChange = (e) => {
+    handleTimeChange(e);
   };
 
   return (
@@ -177,54 +186,23 @@ const CoverDetailsForm = ({ form }) => {
 
           <div className={styles.sparkDateTimeGrid}>
             {/* Start Date */}
-            <div>
-              <label className={styles.sparkInputLabel}>Start Date</label>
-              <div className={styles.sparkInputGroup}>
-                <svg
-                  className={styles.sparkInputIcon}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                </svg>
-                <input
-                  type="text"
-                  placeholder="DD/MM/YYYY"
-                  value={startDate || ""}
-                  onChange={handleDateChange}
-                  className={styles.sparkInput}
-                />
-              </div>
-            </div>
+            <FormDateInput
+              type="date"
+              dateLabel="Start Date"
+              name="coverDetails.startDate"
+              value={startDate || ""}
+              onChange={handleDateInputChange}
+              allowPastDates={false}
+            />
 
             {/* Start Time */}
-            <div>
-              <label className={styles.sparkInputLabel}>Start Time</label>
-              <div className={styles.sparkInputGroup}>
-                <svg
-                  className={styles.sparkInputIcon}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-                <input
-                  type="text"
-                  placeholder="10:00"
-                  value={startTime || ""}
-                  onChange={handleTimeChange}
-                  className={styles.sparkInput}
-                />
-              </div>
-            </div>
+            <FormDateInput
+              type="time"
+              timeLabel="Start Time"
+              name="coverDetails.startTime"
+              value={startTime || ""}
+              onChange={handleTimeInputChange}
+            />
           </div>
         </div>
       </div>
