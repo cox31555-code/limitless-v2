@@ -535,10 +535,10 @@
 }
 
 .numberSelector {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(8, 2fr);
+  align-content: start;
+  gap: 1.2rem;
 }
 
 .numberButton {
