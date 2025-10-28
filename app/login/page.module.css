@@ -56,8 +56,8 @@
 .gradientOverlay {
   position: absolute;
   top: 0;
-  left: clamp(45%, 60vw, 100%);
-  width: clamp(300px, 50vw, 800px);
+  left: clamp(30%, 53.5vw, 749px);
+  width: clamp(400px, 47vw, 900px);
   height: 100%;
   background-image: var(--gradient-blue);
   z-index: var(--z-gradient);
