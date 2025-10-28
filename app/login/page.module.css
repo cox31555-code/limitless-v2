@@ -178,6 +178,15 @@
     padding: 3rem 2rem;
     min-height: 62vh;
   }
+
+  .illustrationContainer {
+    max-width: 600px;
+  }
+
+  .illustration {
+    max-width: 600px;
+    max-height: 480px;
+  }
 }
 
 /* Mobile (< 600px) */
@@ -210,5 +219,14 @@
     flex: 1;
     padding: 2.4rem 1.6rem;
     min-height: 65vh;
+  }
+
+  .illustrationContainer {
+    max-width: 100%;
+  }
+
+  .illustration {
+    max-width: 450px;
+    max-height: 360px;
   }
 }
