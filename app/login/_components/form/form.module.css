@@ -107,11 +107,22 @@
   width: 100%;
 }
 
+/* Input Label */
+.inputLabel {
+  color: #5a6b7d;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
 /* Input Group */
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.8rem;
   width: 100%;
 }
 
@@ -159,20 +170,23 @@
   width: 5.4rem;
   height: 5.4rem;
   border-radius: 10px;
-  background: var(--color-bg-light);
-  border: 1px solid rgba(3, 136, 255, 0.1);
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.2);
   flex-shrink: 0;
   transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
 }
 
 .inputWrapper:focus-within .iconContainer {
-  background: linear-gradient(135deg, #e8f1ff 0%, #dce8ff 100%);
-  border-color: rgba(3, 136, 255, 0.2);
+  background: linear-gradient(135deg, #049cff 0%, #0270cc 100%);
+  border-color: rgba(3, 136, 255, 0.4);
+  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.3);
 }
 
 .inputWrapper.inputError .iconContainer {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.04) 100%);
-  border-color: rgba(239, 68, 68, 0.15);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.8) 0%, rgba(239, 68, 68, 0.7) 100%);
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
 }
 
 /* Icon */
@@ -180,7 +194,7 @@
   width: 2.4rem;
   height: 2.4rem;
   flex-shrink: 0;
-  color: var(--color-black);
+  color: var(--color-white);
   stroke: currentColor;
   stroke-width: 1.5;
   stroke-linecap: round;
@@ -188,7 +202,7 @@
 }
 
 .inputWrapper.inputError .icon {
-  color: var(--color-error);
+  color: var(--color-white);
 }
 
 /* Input */
@@ -225,19 +239,60 @@
   transition: var(--transition);
 }
 
+/* Forgot Password Wrapper */
+.forgotPasswordWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: -0.4rem 0 1.2rem 0;
+}
+
+/* Forgot Password Link */
+.forgotPasswordLink {
+  color: var(--color-blue);
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  line-height: 1.2;
+}
+
+.forgotPasswordLink:hover {
+  color: var(--color-blue-hover);
+  text-decoration: underline;
+}
+
+.forgotPasswordLink:focus {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+/* Arrow Icon */
+.arrowIcon {
+  width: 1.6rem;
+  height: 1.6rem;
+  flex-shrink: 0;
+  margin-left: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.submitButton:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
 /* Submit Button */
 .submitButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.8rem;
   width: 100%;
   min-height: 5.8rem;
   padding: 1.3rem 2.6rem;
-  margin: 2.4rem auto 0;
+  margin: 1.2rem auto 0;
   background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-alt) 100%);
   border: none;
-  border-radius: 17px;
+  border-radius: 28px;
   color: var(--color-white);
   font-family: var(--font-family);
   font-size: 1.35rem;
@@ -298,6 +353,11 @@
     margin-bottom: 2.4rem;
   }
 
+  .inputLabel {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
   .inputWrapper {
     min-height: 6.2rem;
     gap: 1rem;
@@ -317,6 +377,10 @@
   .input {
     font-size: 1.4rem;
     padding: 1.4rem 1.6rem;
+  }
+
+  .forgotPasswordLink {
+    font-size: 1.2rem;
   }
 
   .submitButton {
@@ -344,8 +408,13 @@
     max-width: 100%;
   }
 
+  .inputLabel {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
   .form {
-    gap: 1.6rem;
+    gap: 1.4rem;
   }
 
   .inputWrapper {
@@ -369,13 +438,26 @@
     padding: 1.2rem 1.4rem;
   }
 
+  .forgotPasswordWrapper {
+    margin: -0.2rem 0 0.8rem 0;
+  }
+
+  .forgotPasswordLink {
+    font-size: 1.2rem;
+  }
+
   .submitButton {
     min-height: 5.2rem;
     font-size: 1.25rem;
     padding: 1rem 2rem;
-    border-radius: 14px;
+    border-radius: 24px;
     gap: 0.8rem;
-    margin-top: 1.6rem;
+    margin-top: 0.8rem;
+  }
+
+  .arrowIcon {
+    width: 1.4rem;
+    height: 1.4rem;
   }
 
   .successMessage,
