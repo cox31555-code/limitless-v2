@@ -8,7 +8,6 @@ import VehicleDetailsForm from "./_components/VehicleDetailsForm";
 import CoverDetailsForm from "./_components/CoverDetailsForm";
 import PersonalDetailsForm from "./_components/PersonalDetailsForm";
 import TermsForm from "./_components/TermsForm";
-import StepperProgress from "./_components/StepperProgress";
 import StepActions from "./_components/StepActions";
 import { useRouter, useSearchParams } from "next/navigation";
 import { API_BASE_URL } from "@/utils/config";
@@ -223,12 +222,6 @@ const TemporaryInsuranceContent = () => {
           className={styles.stepFormContainer}
           noValidate
         >
-          <StepperProgress
-            currentStep={currentStep}
-            totalSteps={4}
-            stepTitles={STEP_TITLES}
-          />
-
           <div className={styles.stepContent}>
             {currentStep === STEPS.VEHICLE && (
               <VehicleDetailsForm
