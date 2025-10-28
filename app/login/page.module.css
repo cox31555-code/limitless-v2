@@ -3,36 +3,47 @@
   min-height: 100vh;
   width: 100%;
   background: #ffffff;
+  position: relative;
 }
 
 .leftSection {
-  flex: 0 0 62%;
+  position: relative;
+  flex: 0 0 53.5%;
   background: #010923;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   overflow: hidden;
-  flex-grow: 0;
-  margin: 0 60px 0 -5px;
-  padding: 0 49px 0 153px;
+  min-height: 100vh;
 }
 
 .gradientOverlay {
   position: absolute;
   top: 0;
-  left: 19%;
-  width: 590px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 165%;
   height: 100%;
   background: linear-gradient(218deg, #0388FF -5.84%, #50ACFF 106.73%);
   z-index: 0;
 }
 
+.darkOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #010923;
+  z-index: 1;
+}
+
 .logo {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 228px;
   height: 234px;
+  flex-shrink: 0;
 }
 
 .rightSection {
@@ -42,6 +53,7 @@
   justify-content: center;
   padding: 4rem 2rem;
   background: #ffffff;
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 1200px) {
@@ -50,8 +62,8 @@
   }
 
   .logo {
-    width: 180px;
-    height: 185px;
+    width: 200px;
+    height: 205px;
   }
 }
 
@@ -62,13 +74,34 @@
 
   .leftSection {
     flex: 0 0 auto;
-    min-height: 30vh;
+    min-height: 40vh;
     padding: 3rem 2rem;
   }
 
   .gradientOverlay {
-    left: 0;
-    width: 100%;
+    width: 180%;
+    left: 50%;
+  }
+
+  .logo {
+    width: 180px;
+    height: 185px;
+  }
+
+  .rightSection {
+    padding: 4rem 2rem;
+    min-height: 60vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .leftSection {
+    min-height: 35vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .gradientOverlay {
+    width: 200%;
   }
 
   .logo {
@@ -78,21 +111,5 @@
 
   .rightSection {
     padding: 3rem 1.5rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .leftSection {
-    min-height: 25vh;
-    padding: 2rem 1.5rem;
-  }
-
-  .logo {
-    width: 120px;
-    height: 123px;
-  }
-
-  .rightSection {
-    padding: 2rem 1.5rem;
   }
 }
