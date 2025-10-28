@@ -60,8 +60,9 @@
   backdrop-filter: blur(12px);
   border: 1px solid rgba(3, 136, 255, 0);
   height: 5.2rem;
-  margin-left: -4.2rem;
   flex: 1;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .menuItem {
