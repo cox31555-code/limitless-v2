@@ -3,7 +3,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { impoundInsuranceSchema } from "@/utils/schemas/impoundInsuranceSchema";
-import Header from "@/ui/insurance-quotes/header/Header";
+import GetQuoteHeader from "@/ui/getQuote/GetQuoteHeader";
 import VehicleDetailsForm from "@/app/temporary/get-quote/_components/VehicleDetailsForm";
 import ImpoundCoverDetailsForm from "./_components/ImpoundCoverDetailsForm";
 import PersonalDetailsForm from "@/app/temporary/get-quote/_components/PersonalDetailsForm";
