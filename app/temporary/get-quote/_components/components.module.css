@@ -275,20 +275,23 @@
 }
 
 /* Duration type independent grids for Step 2 */
-.durationHoursGrid :global([class*="selectionContainer"]) {
-  grid-template-columns: repeat(8, 1fr) !important;
-}
-
-.durationDaysGrid :global([class*="selectionContainer"]) {
-  grid-template-columns: repeat(7, 1fr) !important;
-}
-
 .durationWeeksGrid :global([class*="selectionContainer"]) {
   grid-template-columns: repeat(4, 1fr) !important;
 }
 
 .durationMonthsGrid :global([class*="selectionContainer"]) {
   grid-template-columns: repeat(5, 1fr) !important;
+}
+
+/* Duration dropdowns for Hours and Days */
+.durationHoursGrid :global(.dropdown-module__container),
+.durationDaysGrid :global(.dropdown-module__container) {
+  width: 100%;
+}
+
+.durationHoursGrid :global(.dropdown-module__select),
+.durationDaysGrid :global(.dropdown-module__select) {
+  width: 100%;
 }
 
 /* Personal Details Form */
