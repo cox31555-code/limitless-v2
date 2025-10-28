@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: 49.6%;
+  flex-basis: 60%;
   background: var(--color-dark);
   position: relative;
   overflow: hidden;
@@ -125,7 +125,7 @@
 /* Tablet (768px - 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .leftSection {
-    flex-basis: 42%;
+    flex-basis: 55%;
   }
 
   .gradientOverlay {
@@ -137,8 +137,8 @@
   }
 
   .illustration {
-    max-width: 450px;
-    max-height: 380px;
+    max-width: 500px;
+    max-height: 400px;
   }
 
   .rightSection {
