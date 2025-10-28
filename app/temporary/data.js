@@ -2,12 +2,12 @@ export const features = [
   {
     icon: "clock",
     title: "Hourly Vehicle Insurance",
-    description: "From 1 to 12 hours",
+    description: "From 1 to 23 hours",
   },
   {
     icon: "sun",
     title: "Daily Vehicle Insurance",
-    description: "Up to 28 days",
+    description: "Up to 30 days",
   },
   {
     icon: "calendar-week",
@@ -17,7 +17,7 @@ export const features = [
   {
     icon: "calendar-month",
     title: "Monthly Vehicle Insurance",
-    description: "Up to 28 days maximum",
+    description: "Up to 31 days maximum",
   },
 ];
 export const benifits = [
