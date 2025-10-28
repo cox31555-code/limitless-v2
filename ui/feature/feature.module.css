@@ -11,6 +11,16 @@
   flex: 1;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 6rem;
+}
+
+.container:nth-child(1) {
+  padding: 1.65rem 3.2rem 1.65rem 2.6rem;
+  margin-bottom: -1px;
+}
+
+.container:nth-child(4) {
+  padding: 1.65rem 1.8rem 1.65rem 3.8rem;
 }
 
 .borderSvg {
