@@ -446,7 +446,8 @@
 /* Dropdown Button Container */
 .sparkDropdownContainer {
   position: relative;
-  flex-shrink: 0;
+  width: 100%;
+  min-height: 3.6rem;
 }
 
 .sparkDropdownButton {
