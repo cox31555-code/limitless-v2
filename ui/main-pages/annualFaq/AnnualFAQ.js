@@ -13,7 +13,7 @@ const poppins = Poppins({
   weight: ["400"],
 });
 
-const annualFaqData = [
+const faqData = [
   {
     question: "What is annual car insurance?",
     answer: "Annual car insurance is a twelve-month comprehensive or third-party insurance policy that covers your vehicle throughout the year. It provides continuous protection against accidents, theft, fire, and third-party damage, with a fixed premium paid annually or in monthly installments.",
@@ -50,7 +50,7 @@ const AnnualFAQ = () => {
       </h2>
 
       <div className={styles.faqList}>
-        {annualFaqData.map((faq, index) => (
+        {faqData.map((faq, index) => (
           <div
             key={index}
             className={`${styles.faqItem} ${
