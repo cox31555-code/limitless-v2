@@ -67,6 +67,7 @@
   max-width: 600px;
   max-height: 500px;
   object-fit: contain;
+  margin-left: -170px;
 }
 
 .logo {
