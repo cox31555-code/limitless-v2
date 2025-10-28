@@ -23,6 +23,15 @@ const CoverDetailsForm = ({ form }) => {
   };
 
   const handlePeriodChange = (periodValue) => {
+    // Handle the dropdown icon click ("···")
+    if (periodValue === "···") {
+      const dropdownElement = document.querySelector(".moreDropdownSelect");
+      if (dropdownElement) {
+        dropdownElement.click();
+      }
+      return;
+    }
+
     const numValue = parseInt(periodValue);
     if (!isNaN(numValue)) {
       setValue("coverDetails.period", numValue);
