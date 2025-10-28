@@ -1,11 +1,10 @@
 .headerContainer {
-  width: 100%;
+  width: 100vw;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   box-sizing: border-box;
   z-index: 2;
   background: #000822;
-  width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
 
