@@ -291,33 +291,74 @@
   grid-template-columns: repeat(5, 1fr) !important;
 }
 
-/* Period Selection Wrapper */
-.periodSelectionWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+/* Grid Container for Period Options */
+.gridContainer {
+  display: contents;
+}
+
+/* More Icon Dropdown */
+.moreIconDropdown {
+  display: grid;
+  grid-template-columns: 1fr;
   width: 100%;
+  min-height: 4.4rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
-/* More Options Dropdown */
-.moreOptionsDropdown {
+.moreIconDropdown:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+}
+
+.moreIconDropdown :global(.dropdown-module__container) {
+  width: 100%;
+  height: 100%;
+}
+
+.moreIconDropdown :global(.dropdown-module__select) {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
-.moreOptionsDropdown :global(.dropdown-module__container) {
-  width: auto;
-  min-width: 8rem;
+.moreIconDropdown :global(.dropdown-module__select):focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(3, 136, 255, 0.2);
 }
 
-.moreOptionsDropdown :global(.dropdown-module__select) {
-  padding: 0.8rem 2.4rem 0.8rem 1rem;
-  font-size: 1.2rem;
+.moreIconDropdown :global(.dropdown-module__arrowContainer) {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: #0388ff;
+  font-size: 1.8rem;
 }
 
-.moreOptionsDropdown :global(.dropdown-module__arrowContainer) {
-  width: 1.8rem;
-  height: 1.8rem;
+.moreIconDropdown :global(.dropdown-module__select:focus ~ .dropdown-module__arrowContainer),
+.moreIconDropdown :global(.dropdown-module__select:hover ~ .dropdown-module__arrowContainer) {
+  color: #0270cc;
 }
 
 /* Personal Details Form */
