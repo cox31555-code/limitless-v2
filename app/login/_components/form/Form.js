@@ -9,22 +9,16 @@ import { loginSchema } from "@/utils/authSchemas";
 
 const EmailIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon}>
-    <path d="M3 5C2 5 1 6 1 7V17C1 18 2 19 3 19H21C22 19 23 18 23 17V7C23 6 22 5 21 5H3Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M1 7L12 13.5L23 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M20 4L12 11L4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const PasswordIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.icon}>
-    <circle cx="9" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M13 12H21C21.55 12 22 12.45 22 13V15C22 15.55 21.55 16 21 16H14V18C14 19.1 13.1 20 12 20H8C6.9 20 6 19.1 6 18V17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M13 15V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
-);
-
-const ArrowIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.arrowIcon}>
-    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M18 8H20C21.1 8 22 8.9 22 10V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V10C2 8.9 2.9 8 4 8H6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M6 8V6C6 3.24 8.24 1 11 1C13.76 1 16 3.24 16 6V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="12" cy="14" r="2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -194,7 +188,6 @@ const Form = () => {
           disabled={isSubmitting}
         >
           {isSubmitting ? "Signing in..." : "LOGIN"}
-          <ArrowIcon />
         </button>
       </form>
     </div>
