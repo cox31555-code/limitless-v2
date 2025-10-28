@@ -373,8 +373,11 @@
 @media screen and (max-width: 1200px) {
   .headerElement {
     width: 100%;
-    marginRight: 0;
-    padding: 18px 3.2rem;
+    margin-right: 0;
+  }
+
+  .headerContent {
+    padding: 1.8rem 1.2% 0;
   }
 
   .menu {
@@ -406,8 +409,8 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .headerElement {
-    padding: 16px 2.4rem;
+  .headerContent {
+    padding: 1.6rem 1.5% 0;
   }
 
   .navigationBar {
@@ -453,8 +456,11 @@
 @media screen and (max-width: 768px) {
   .headerElement {
     width: 100%;
-    padding: 14px 1.6rem;
     flex-direction: column;
+  }
+
+  .headerContent {
+    padding: 1.4rem 3% 0;
   }
 
   .navigationBar {
@@ -520,8 +526,8 @@
 }
 
 @media screen and (max-width: 600px) {
-  .headerElement {
-    padding: 12px 1.2rem;
+  .headerContent {
+    padding: 1.2rem 4% 0;
   }
 
   .navigationBar {
