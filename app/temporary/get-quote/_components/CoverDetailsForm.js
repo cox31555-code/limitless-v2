@@ -59,19 +59,6 @@ const CoverDetailsForm = ({ form }) => {
     form.setValue("coverDetails.startTime", e.target.value);
   };
 
-  const handleNext = () => {
-    console.log({
-      durationType,
-      duration,
-      startDate,
-      startTime,
-    });
-  };
-
-  const handleBack = () => {
-    console.log("Back clicked");
-  };
-
   return (
     <ComponentWrapper title="Cover Details">
       <div className={styles.sparkCoverDetails}>
