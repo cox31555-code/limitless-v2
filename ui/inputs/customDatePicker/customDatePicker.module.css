@@ -41,6 +41,18 @@
   background: rgba(3, 136, 255, 0.1);
 }
 
+.navButtonPrev {
+  display: none;
+}
+
+.navButtonNext {
+  color: #fff;
+}
+
+.navButtonNext:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .monthYearSelector {
   display: flex;
   gap: 0.8rem;
