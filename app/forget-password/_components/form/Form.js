@@ -1,19 +1,11 @@
 "use client";
 import React, { useState, useRef } from "react";
 import styles from "./form.module.css";
-import Image from "next/image";
-import ConfirmButton from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { forgotPasswordSchema } from "@/utils/authSchemas";
 import { useAuth } from "@/contexts/AuthContext";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Form = () => {
   const router = useRouter();
@@ -52,21 +44,21 @@ const Form = () => {
   if (forgotPasswordSuccess) {
     return (
       <div className={styles.container}>
-        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Check Your Email
-        </h2>
+        <h1 className={styles.title}>Check Your Email</h1>
         <p className={styles.subtitle}>
           We've sent you a password reset link. Please check your email and follow the instructions to reset your password.
         </p>
 
-        <ConfirmButton
-          style={{ justifyContent: "center", width: "100%", marginTop: "2.2rem" }}
-          title="Go to Login"
+        <button
+          type="button"
+          className={styles.submitButton}
           onClick={() => {
             clearSuccessStates();
             router.push("/login");
           }}
-        />
+        >
+          GO TO LOGIN
+        </button>
       </div>
     );
   }
@@ -79,9 +71,7 @@ const Form = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-        Reset Password
-      </h2>
+      <h1 className={styles.title}>Reset Password</h1>
       <p className={styles.subtitle}>
         Enter your email address and we'll send you a link to reset your password
       </p>
@@ -92,62 +82,45 @@ const Form = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.inputsContainer}>
-          <div className={styles.inputGroup}>
-            <label htmlFor="email" className={styles.label}>
-              Email Address
-            </label>
-            <div
-              className={styles.inputContainer}
-              onClick={() => emailInputRef.current?.focus()}
-            >
-              <div className={styles.iconWrapper}>
-                <Image
-                  src={"/svg/email.svg"}
-                  alt="email"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <input
-                type="email"
-                id="email"
-                placeholder="Enter Email Address"
-                className={`${styles.input} ${
-                  errors.email ? styles.error : ""
-                }`}
-                onChange={handleEmailChange}
-                {...(() => {
-                  const { ref, ...rest } = register("email");
-                  return {
-                    ...rest,
-                    ref: (e) => {
-                      ref(e);
-                      emailInputRef.current = e;
-                    },
-                  };
-                })()}
-              />
-            </div>
-            {errors.email && (
-              <span className={styles.errorMessage} style={{ color: "#dc3545", fontSize: "0.875rem" }}>
-                {errors.email.message}
-              </span>
-            )}
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <div className={styles.inputGroup}>
+          <label className={styles.inputLabel}>EMAIL ADDRESS</label>
+          <div
+            className={`${styles.inputWrapper} ${errors.email ? styles.inputError : ""}`}
+            onClick={() => emailInputRef.current?.focus()}
+          >
+            <input
+              type="email"
+              placeholder="Enter Email Address"
+              className={styles.input}
+              {...(() => {
+                const { ref, ...rest } = register("email");
+                return {
+                  ...rest,
+                  ref: (e) => {
+                    ref(e);
+                    emailInputRef.current = e;
+                  },
+                };
+              })()}
+            />
           </div>
+          {errors.email && (
+            <span className={styles.fieldError}>{errors.email.message}</span>
+          )}
         </div>
 
-        <ConfirmButton
-          style={{ justifyContent: "center", width: "100%" }}
-          title={isLoading ? "Sending..." : "Send Reset Link"}
-          onClick={handleSubmit(onSubmit)}
+        <button
+          type="submit"
+          className={styles.submitButton}
           disabled={isLoading}
-        />
+        >
+          {isLoading ? "Sending..." : "SEND RESET LINK"}
+        </button>
       </form>
 
       <button
-        className={styles.goBackLogin}
+        className={styles.backToLogin}
         onClick={() => router.push("/login")}
         disabled={isLoading}
       >
