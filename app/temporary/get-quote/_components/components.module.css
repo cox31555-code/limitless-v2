@@ -398,10 +398,11 @@
 
 .gridWithDropdown :global(.dropdown-module__select) {
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 4.4rem !important;
+  height: 4.4rem !important;
   padding: 0 !important;
   margin: 0 !important;
   font-size: 0 !important;
@@ -415,21 +416,19 @@
   -moz-appearance: none !important;
   color: transparent !important;
   z-index: 10;
-  width: 0 !important;
-  height: 0 !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
+  outline: none !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__select) option {
-  font-size: 0 !important;
-  line-height: 0 !important;
-  color: transparent !important;
+  font-size: 1.3rem !important;
+  line-height: 1.4rem !important;
+  color: #000822 !important;
+  background: #fff !important;
+  padding: 1rem 1.2rem !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__select)::placeholder {
   color: transparent !important;
-  font-size: 0 !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__select)::-ms-expand {
