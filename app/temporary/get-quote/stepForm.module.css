@@ -29,7 +29,7 @@
 @media screen and (max-width: 900px) {
   .stepFormContainer {
     max-width: 100%;
-    padding: 0 2rem 2rem;
+    padding: 2rem 2rem 4.5rem;
   }
 
   .stepContent {
@@ -40,7 +40,7 @@
 @media screen and (max-width: 600px) {
   .stepFormContainer {
     max-width: 100%;
-    padding: 0 1.6rem 1.6rem;
+    padding: 1.6rem 1.6rem 3.6rem;
   }
 
   .stepContent {
