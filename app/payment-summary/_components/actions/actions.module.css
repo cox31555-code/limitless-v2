@@ -13,41 +13,44 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  border-radius: 14px;
+  border-radius: 10px;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
-  box-shadow: none;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
 }
 
 .payButton:hover {
-  transform: scale(1.02);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
 }
 
 .payButton:active {
-  transform: scale(0.98);
+  transform: translateY(0);
 }
 
 .cancelButton {
   background: #ffffff;
   color: #0388ff;
-  border: 2px solid #0388ff;
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
 }
 
 .cancelButton:hover {
   background: #f8fbff;
-  border-color: #0270cc;
-  transform: scale(1.02);
+  border-color: #0388ff;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .cancelButton:active {
   background: #ffffff;
-  transform: scale(0.98);
+  transform: translateY(0);
 }
 
 @media screen and (max-width: 900px) {
