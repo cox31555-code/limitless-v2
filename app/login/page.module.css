@@ -60,7 +60,7 @@
   position: relative;
 }
 
-/* Right Section - White with Form */
+/* Right Section - White with Illustration */
 .rightSection {
   flex: 1;
   display: flex;
@@ -69,6 +69,24 @@
   padding: 4rem 2rem;
   background: var(--color-white);
   min-width: 0;
+  overflow: hidden;
+}
+
+.illustrationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+}
+
+.illustration {
+  width: 100%;
+  height: auto;
+  max-width: 780px;
+  max-height: 620px;
+  object-fit: contain;
 }
 
 /* Responsive Breakpoints */
