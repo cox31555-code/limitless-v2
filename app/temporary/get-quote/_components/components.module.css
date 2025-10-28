@@ -274,12 +274,19 @@
   gap: 5.4rem;
 }
 
+/* Duration Container */
+.durationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
 /* Duration Wrapper Grid Container */
 .durationWrapper {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
   width: 100%;
+  gap: 1rem;
 }
 
 /* Duration type independent grids for Step 2 */
@@ -297,95 +304,6 @@
 
 .durationMonthsGrid :global([class*="selectionContainer"]) {
   grid-template-columns: repeat(5, 1fr) !important;
-}
-
-/* Grid Container for Period Options and Icon */
-.gridContainer {
-  display: grid;
-  grid-template-columns: subgrid;
-  gap: inherit;
-  width: 100%;
-}
-
-.durationHoursGrid .gridContainer {
-  grid-template-columns: repeat(8, 1fr);
-}
-
-.durationDaysGrid .gridContainer {
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.durationWeeksGrid .gridContainer {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.durationMonthsGrid .gridContainer {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-/* More Icon Dropdown Button */
-.moreIconDropdown {
-  min-height: 4.4rem;
-  border-radius: 10px;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  background: #fff;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: visible;
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.moreIconDropdown:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  background: #f0f6ff;
-}
-
-.moreIconDropdown:hover :global(.dropdown-module__arrowContainer) {
-  color: #0270cc;
-}
-
-.moreIconDropdown :global(.dropdown-module__container) {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.moreIconDropdown :global(.dropdown-module__select) {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  font-size: 0;
-  opacity: 0.01;
-  position: relative;
-  z-index: 2;
-}
-
-.moreIconDropdown :global(.dropdown-module__select):focus {
-  outline: none;
-}
-
-.moreIconDropdown :global(.dropdown-module__arrowContainer) {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  color: #0388ff;
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 1;
 }
 
 /* Personal Details Form */
