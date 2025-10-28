@@ -51,6 +51,7 @@
   position: relative;
   overflow: hidden;
   gap: var(--spacing-lg);
+  z-index: 1;
 }
 
 .gradientOverlay {
@@ -81,6 +82,8 @@
   padding: clamp(2rem, 4vw, 4rem);
   background: var(--color-white);
   min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Large Desktops (1400px and above) */
