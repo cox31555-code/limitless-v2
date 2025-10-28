@@ -125,8 +125,7 @@
   height: 5.2rem;
   padding: 0 3.625rem 0 2.9375rem;
   border-radius: 12px;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.3);
+  background: #0388ff;
   border: none;
   color: #fff;
   font-size: 1.6rem;
@@ -140,14 +139,11 @@
 }
 
 .confirmBtn:hover {
-  background: linear-gradient(135deg, #0270cc 0%, #0156a8 100%);
-  box-shadow: 0 12px 32px rgba(3, 136, 255, 0.4);
-  transform: translateY(-2px);
+  background: #0270cc;
 }
 
 .confirmBtn:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
+  background: #0156a8;
 }
 @media screen and (max-width: 1400px) {
   .container {
