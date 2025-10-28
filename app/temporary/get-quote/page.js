@@ -3,7 +3,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insuranceSchema } from "@/utils/schemas/insuranceSchema";
-import Header from "@/ui/insurance-quotes/header/Header";
+import GetQuoteHeader from "@/ui/getQuote/GetQuoteHeader";
 import VehicleDetailsForm from "./_components/VehicleDetailsForm";
 import CoverDetailsForm from "./_components/CoverDetailsForm";
 import PersonalDetailsForm from "./_components/PersonalDetailsForm";
@@ -216,7 +216,7 @@ const TemporaryInsuranceContent = () => {
 
   return (
     <div>
-      <Header title="Temporary Insurance" />
+      <GetQuoteHeader title="Temporary Insurance" currentStep={currentStep} totalSteps={4} />
       <div className="centeredContent">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
