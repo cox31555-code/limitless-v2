@@ -368,12 +368,21 @@
   overflow: hidden !important;
 }
 
-.gridWithDropdown :global(.dropdown-module__container) > *:not(:last-child) {
+.gridWithDropdown :global(.dropdown-module__label) {
   display: none !important;
 }
 
 .gridWithDropdown :global(.dropdown-module__selected) {
   display: none !important;
+}
+
+/* Hide any text nodes */
+.gridWithDropdown :global(.dropdown-module__selectWrapper)::before {
+  content: '' !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selectWrapper)::after {
+  content: '' !important;
 }
 
 /* Dropdown Icon Button - Match number buttons exactly */
