@@ -92,9 +92,11 @@ const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
                 onMouseEnter={() => setOpenDropdown("carVan")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <span className={styles.menuLink}>
+                <span className={`${styles.menuLink} ${openDropdown === "carVan" ? styles.active : ""}`}>
                   Car & Van
-                  <IconComponent type="chevron" />
+                  <span className={`${styles.chevronIcon} ${openDropdown === "carVan" ? styles.rotated : ""}`}>
+                    <IconComponent type="chevron" />
+                  </span>
                 </span>
                 {openDropdown === "carVan" && (
                   <div className={styles.dropdown}>
@@ -122,9 +124,11 @@ const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
                 onMouseEnter={() => setOpenDropdown("motorbike")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <span className={styles.menuLink}>
+                <span className={`${styles.menuLink} ${openDropdown === "motorbike" ? styles.active : ""}`}>
                   Motorbike
-                  <IconComponent type="chevron" />
+                  <span className={`${styles.chevronIcon} ${openDropdown === "motorbike" ? styles.rotated : ""}`}>
+                    <IconComponent type="chevron" />
+                  </span>
                 </span>
                 {openDropdown === "motorbike" && (
                   <div className={styles.dropdown}>
