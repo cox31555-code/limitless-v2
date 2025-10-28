@@ -13,6 +13,7 @@
   grid-template-columns: 535px 1fr;
   gap: 8rem;
   align-items: center;
+  padding: 0 2px 0 6px;
 }
 
 .content {
@@ -75,6 +76,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 25px;
+  padding-left: 36px;
 }
 
 .illustrationContainer svg {
