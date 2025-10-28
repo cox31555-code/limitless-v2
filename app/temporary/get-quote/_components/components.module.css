@@ -274,6 +274,14 @@
   gap: 5.4rem;
 }
 
+/* Duration Wrapper Grid Container */
+.durationWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  width: 100%;
+}
+
 /* Duration type independent grids for Step 2 */
 .durationHoursGrid :global([class*="selectionContainer"]) {
   grid-template-columns: repeat(8, 1fr) !important;
