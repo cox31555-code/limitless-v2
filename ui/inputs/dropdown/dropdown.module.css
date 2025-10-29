@@ -24,16 +24,17 @@
   width: 100%;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   height: 5.2rem;
-  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .selectWrapper:hover {
-  border-color: rgba(3, 136, 255, 0.2);
+  border: 1.5px solid rgba(3, 136, 255, 0.3);
   background: #fff;
 }
 
 .selectWrapper:focus-within {
-  border-color: #0388ff;
+  border: 1.5px solid #0388ff;
+  box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
 }
 
 .select {
