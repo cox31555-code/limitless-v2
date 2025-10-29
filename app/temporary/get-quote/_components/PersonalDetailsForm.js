@@ -4,7 +4,6 @@ import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWr
 import FormTextInput from "@/ui/inputs/FormTextInput";
 import FormDataAndTime from "@/ui/inputs/FormDataAndTime";
 import FormDropdown from "@/ui/inputs/FormDropdown";
-import FormAutocomplete from "@/ui/inputs/FormAutocomplete";
 import Selection2 from "@/ui/inputs/selections/selection2/Selection2";
 import Selection3 from "@/ui/inputs/selections/selection3/Selection3";
 import YesORNo from "@/ui/inputs/selections/yesORNo/YesORNo";
@@ -116,7 +115,7 @@ const PersonalDetailsForm = ({ form }) => {
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle}>Your Details</h3>
           
-          <div className={styles.cleanFormGrid2}>
+          <div className={styles.cleanFormGrid2Col}>
             <FormTextInput
               label="First Name"
               placeholder="Enter your first name"
@@ -131,7 +130,7 @@ const PersonalDetailsForm = ({ form }) => {
             />
           </div>
 
-          <div className={styles.cleanFormGrid2}>
+          <div className={styles.cleanFormGrid2Col}>
             <FormDataAndTime
               dateLabel="Date of Birth"
               type="date"
@@ -151,7 +150,7 @@ const PersonalDetailsForm = ({ form }) => {
             />
           </div>
 
-          <div className={styles.cleanFormGridFull}>
+          <div className={styles.cleanFormGrid1Col}>
             <FormTextInput
               label="Phone Number"
               placeholder="Enter your phone number"
@@ -183,7 +182,7 @@ const PersonalDetailsForm = ({ form }) => {
           </div>
 
           {showAddressDropdown && (
-            <div className={styles.cleanFormGridFull}>
+            <div className={styles.cleanFormGrid1Col}>
               <FormDropdown
                 label="Address"
                 options={addresses}
@@ -203,7 +202,7 @@ const PersonalDetailsForm = ({ form }) => {
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle}>Employment</h3>
           
-          <div className={styles.cleanFormGrid2}>
+          <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
               label="Employment Status"
               options={employmentStatusOptions}
@@ -221,16 +220,15 @@ const PersonalDetailsForm = ({ form }) => {
             />
           </div>
 
-          <div className={styles.cleanFormGridFull}>
-            <FormAutocomplete
+          <div className={styles.cleanFormGrid1Col}>
+            <FormDropdown
               label="Occupation"
               options={occupationOptions}
               placeholder="Select your occupation"
               {...register("userDetails.occupation")}
               error={errors.userDetails?.occupation}
-              value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
-              onChange={(e) => setValue("userDetails.occupation", e.target.value)}
               disabled={isRetiredOrUnemployed}
+              value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
             />
           </div>
         </section>
@@ -239,7 +237,7 @@ const PersonalDetailsForm = ({ form }) => {
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle}>Car Parking</h3>
           
-          <div className={styles.cleanFormGrid2}>
+          <div className={styles.cleanFormGrid2Col}>
             <div className={styles.cleanSelectionCard}>
               <Selection2
                 title="Where do you keep your car during the day?"
@@ -282,7 +280,7 @@ const PersonalDetailsForm = ({ form }) => {
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle}>Car Usage</h3>
           
-          <div className={styles.cleanFormGridFull}>
+          <div className={styles.cleanFormGrid1Col}>
             <p className={styles.cleanLabel}>What do you use the car for?</p>
             <div className={styles.cleanSelections3}>
               <Selection3
@@ -303,7 +301,7 @@ const PersonalDetailsForm = ({ form }) => {
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle}>License & Claims</h3>
           
-          <div className={styles.cleanFormGrid3}>
+          <div className={styles.cleanFormGrid3Col}>
             <FormDropdown
               label="License Type"
               options={["Full UK", "Provisional UK", "International", "Other"]}
@@ -326,7 +324,7 @@ const PersonalDetailsForm = ({ form }) => {
             />
           </div>
 
-          <div className={styles.cleanFormGrid2}>
+          <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
               label="No Claims Bonus"
               options={dynamicNcbOptions}
