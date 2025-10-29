@@ -1,4 +1,6 @@
 "use client";
+"use client";
+
 import React from "react";
 import styles from "./footer.module.css";
 import { menus } from "./data";
@@ -49,8 +51,6 @@ const shouldUseSpecialStyles = (pathname) => {
   // This covers 404/not-found scenarios
   return !validPages.includes(pathname) && !pathname.startsWith("/dashboard");
 };
-
-"use client";
 
 const Footer = () => {
   const router = useRouter();
