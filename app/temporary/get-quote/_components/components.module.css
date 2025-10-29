@@ -1319,11 +1319,6 @@
     padding-bottom: 0;
   }
 
-  .vehicleTypeRow {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-  }
-
   .formRow {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
