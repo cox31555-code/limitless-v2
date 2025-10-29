@@ -72,7 +72,7 @@ const Footer = () => {
       }}
       suppressHydrationWarning
     >
-      <div className={`centeredContent ${styles.contentContainer}`}>
+      <div className={`centeredContent ${styles.contentContainer}`} suppressHydrationWarning>
         {pathname.startsWith("/temporary/get-quote") ||
         pathname.startsWith("/impound/get-quote") ? (
           <GetQuoteFooterBanner />
