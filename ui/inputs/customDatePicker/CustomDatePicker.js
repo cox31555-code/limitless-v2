@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./customDatePicker.module.css";
 
-const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate }) => {
+const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAbove = false }) => {
   const [currentMonth, setCurrentMonth] = useState(() => {
     if (selectedDate) return selectedDate;
     return new Date();
