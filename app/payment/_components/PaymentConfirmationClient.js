@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "./header/Header";
+import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import OrderSummery from "./orderSummery/OrderSummery";
 import VehicleDetails from "@/app/payment-summary/_components/vehicleDetails/VehicleDetails";
 import CoverDetails from "@/app/payment-summary/_components/coverDetails/CoverDetails";
@@ -20,15 +20,7 @@ export default function PaymentConfirmationClient({ insuranceData }) {
 
   return (
     <div>
-      {/* Confirmation Header Box */}
-      <div className={styles.confirmationHeader}>
-        <div className={"centeredContent"}>
-          <h1 className={styles.confirmationHeaderTitle}>Your policy is confirmed</h1>
-          <p className={styles.confirmationHeaderSubtitle}>
-            Payment processed successfully. Your insurance policy is now active.
-          </p>
-        </div>
-      </div>
+      <GetQuoteHeaderWithNav title="Your policy is confirmed" currentStep={4} totalSteps={4} />
 
       <div className={"centeredContent"}>
 
