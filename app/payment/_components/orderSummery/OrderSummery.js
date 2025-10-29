@@ -77,6 +77,7 @@ const OrderSummery = ({ data, vehicleDetails, carUsage }) => {
         <div className={styles.infoBox}>
           <p className={styles.infoTitle}>Email Confirmation</p>
           <p className={styles.infoText}>A confirmation email with your policy details has been sent to your inbox.</p>
+          <p className={styles.infoText}>You will also receive a special login link via email to access your customer dashboard.</p>
         </div>
         <div className={styles.voluntarySection}>
           <span className={styles.voluntaryLabel}>Voluntary Excess</span>
