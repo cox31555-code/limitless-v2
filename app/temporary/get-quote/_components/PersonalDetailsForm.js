@@ -161,6 +161,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Enter your phone number"
               {...register("userDetails.phone")}
               error={errors.userDetails?.phone}
+              inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
         </section>
