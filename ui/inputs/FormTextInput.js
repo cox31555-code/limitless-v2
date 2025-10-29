@@ -15,7 +15,7 @@ const FormTextInput = ({
   onChange,
   disabled = false,
   inputStyle = {},
-  ...props
+  ...rest
 }) => {
   const handleRegistrationChange = (e) => {
     let val = e.target.value.toUpperCase().replace(/\s/g, '');
