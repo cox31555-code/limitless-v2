@@ -90,7 +90,8 @@ const Header = () => {
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/temporary/get-quote") ||
     pathname.startsWith("/impound/get-quote") ||
-    pathname.startsWith("/payment-summary");
+    pathname.startsWith("/payment-summary") ||
+    pathname.startsWith("/payment");
 
   if (shouldHideHeader) {
     return null;
