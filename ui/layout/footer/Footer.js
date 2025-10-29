@@ -63,8 +63,7 @@ const Footer = () => {
     >
       <div className={`centeredContent ${styles.contentContainer}`}>
         {pathname.startsWith("/temporary/get-quote") ||
-        pathname.startsWith("/impound/get-quote") ||
-        pathname === "/payment-test" ? (
+        pathname.startsWith("/impound/get-quote") ? (
           <GetQuoteFooterBanner />
         ) : (pathname === "/" || pathname === "/annual") ? (
           <NoHiddenFees />
