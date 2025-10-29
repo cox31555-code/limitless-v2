@@ -10,13 +10,11 @@
   height: 5.2rem;
   position: relative;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .inputContainer:focus-within {
   border-color: #0388ff;
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12);
 }
 
 .inputContainer:hover:not(.disabled) {
