@@ -33,12 +33,10 @@ const PersonalDetailsForm = ({ form }) => {
   const [addresses, setAddresses] = useState([]);
   const [isLoadingAddresses, setIsLoadingAddresses] = useState(false);
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
+  const [showAddressDropdown, setShowAddressDropdown] = useState(false);
 
-  // Watch employment status to disable industry and occupation
   const employmentStatus = watch("userDetails.employmentStatus");
   const isRetiredOrUnemployed = employmentStatus === "Retired" || employmentStatus === "Unemployed";
-  
-  // Watch date of birth to calculate dynamic NCB options
   const dateOfBirth = watch("userDetails.dateOfBirth");
 
   React.useEffect(() => {
@@ -62,8 +60,8 @@ const PersonalDetailsForm = ({ form }) => {
       }
       
       const maxNCBYears = Math.max(0, exactAge - 17);
-      
       const options = [];
+      
       for (let i = 0; i <= Math.min(maxNCBYears, 14); i++) {
         options.push(i.toString());
       }
@@ -110,17 +108,15 @@ const PersonalDetailsForm = ({ form }) => {
     }
   };
 
-  const [showAddressDropdown, setShowAddressDropdown] = useState(false);
-
   return (
     <ComponentWrapper title="Personal Details">
-      <div className={styles.formContent}>
+      <div className={styles.cleanFormContent}>
         
-        {/* Personal Information Section */}
-        <div className={styles.formSection}>
-          <h3 className={styles.sectionTitle}>Your Details</h3>
-
-          <div className={styles.formRow}>
+        {/* Your Details Section */}
+        <section className={styles.cleanSection}>
+          <h3 className={styles.cleanSectionTitle}>Your Details</h3>
+          
+          <div className={styles.cleanFormGrid2}>
             <FormTextInput
               label="First Name"
               placeholder="Enter your first name"
@@ -133,6 +129,9 @@ const PersonalDetailsForm = ({ form }) => {
               {...register("userDetails.surname")}
               error={errors.userDetails?.surname}
             />
+          </div>
+
+          <div className={styles.cleanFormGrid2}>
             <FormDataAndTime
               dateLabel="Date of Birth"
               type="date"
@@ -143,9 +142,6 @@ const PersonalDetailsForm = ({ form }) => {
               value={watch("userDetails.dateOfBirth")}
               error={errors.userDetails?.dateOfBirth}
             />
-          </div>
-
-          <div className={styles.formRow}>
             <FormTextInput
               label="Email Address"
               type="email"
@@ -153,6 +149,9 @@ const PersonalDetailsForm = ({ form }) => {
               {...register("userDetails.email")}
               error={errors.userDetails?.email}
             />
+          </div>
+
+          <div className={styles.cleanFormGridFull}>
             <FormTextInput
               label="Phone Number"
               placeholder="Enter your phone number"
@@ -160,22 +159,22 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.phone}
             />
           </div>
-        </div>
+        </section>
 
         {/* Address Section */}
-        <div className={styles.formSection}>
-          <h3 className={styles.sectionTitle}>Address</h3>
+        <section className={styles.cleanSection}>
+          <h3 className={styles.cleanSectionTitle}>Address</h3>
           
-          <div className={styles.postcodeRow}>
+          <div className={styles.cleanPostcodeRow}>
             <FormTextInput
               label="Postcode"
               placeholder="Enter your postcode"
               {...register("userDetails.postCode")}
               error={errors.userDetails?.postCode}
             />
-            <div className={styles.findAddressButton}>
+            <div className={styles.cleanFindAddressButton}>
               <ConfirmBtn
-                title={isLoadingAddresses ? "Loading..." : "Find Address"}
+                title={isLoadingAddresses ? "Loading..." : "FIND ADDRESS →"}
                 onClick={handleFindAddress}
                 disabled={isLoadingAddresses}
                 type="button"
@@ -184,7 +183,7 @@ const PersonalDetailsForm = ({ form }) => {
           </div>
 
           {showAddressDropdown && (
-            <div className={styles.formRow}>
+            <div className={styles.cleanFormGridFull}>
               <FormDropdown
                 label="Address"
                 options={addresses}
@@ -198,13 +197,13 @@ const PersonalDetailsForm = ({ form }) => {
               />
             </div>
           )}
-        </div>
+        </section>
 
         {/* Employment Section */}
-        <div className={styles.formSection}>
-          <h3 className={styles.sectionTitle}>Employment</h3>
+        <section className={styles.cleanSection}>
+          <h3 className={styles.cleanSectionTitle}>Employment</h3>
           
-          <div className={styles.formRow}>
+          <div className={styles.cleanFormGrid2}>
             <FormDropdown
               label="Employment Status"
               options={employmentStatusOptions}
@@ -220,6 +219,9 @@ const PersonalDetailsForm = ({ form }) => {
               disabled={isRetiredOrUnemployed}
               value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.industry")}
             />
+          </div>
+
+          <div className={styles.cleanFormGridFull}>
             <FormAutocomplete
               label="Occupation"
               options={occupationOptions}
@@ -231,14 +233,14 @@ const PersonalDetailsForm = ({ form }) => {
               disabled={isRetiredOrUnemployed}
             />
           </div>
-        </div>
+        </section>
 
         {/* Car Parking Section */}
-        <div className={styles.formSection}>
-          <h3 className={styles.sectionTitle}>Car Parking</h3>
+        <section className={styles.cleanSection}>
+          <h3 className={styles.cleanSectionTitle}>Car Parking</h3>
           
-          <div className={styles.parkingGrid}>
-            <div className={styles.parkingCard}>
+          <div className={styles.cleanFormGrid2}>
+            <div className={styles.cleanSelectionCard}>
               <Selection2
                 title="Where do you keep your car during the day?"
                 description="Select where your car is typically parked during daytime hours."
@@ -250,13 +252,13 @@ const PersonalDetailsForm = ({ form }) => {
                 }
               />
               {errors.carUsage?.keepingCarDuringDay && (
-                <span className={styles.error}>
+                <span className={styles.cleanError}>
                   {errors.carUsage.keepingCarDuringDay.message}
                 </span>
               )}
             </div>
             
-            <div className={styles.parkingCard}>
+            <div className={styles.cleanSelectionCard}>
               <Selection2
                 title="Where do you keep your car during the night?"
                 description="Select where your car is typically parked during nighttime hours."
@@ -268,40 +270,40 @@ const PersonalDetailsForm = ({ form }) => {
                 }
               />
               {errors.carUsage?.keepingCarDuringNight && (
-                <span className={styles.error}>
+                <span className={styles.cleanError}>
                   {errors.carUsage.keepingCarDuringNight.message}
                 </span>
               )}
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Car Usage Section */}
-        <div className={styles.formSection}>
-          <h3 className={styles.sectionTitle}>Car Usage</h3>
+        <section className={styles.cleanSection}>
+          <h3 className={styles.cleanSectionTitle}>Car Usage</h3>
           
-          <div className={styles.usageTypeWrapper}>
-            <p className={styles.usageLabel}>What do you use the car for?</p>
-            <div className={styles.selections3}>
+          <div className={styles.cleanFormGridFull}>
+            <p className={styles.cleanLabel}>What do you use the car for?</p>
+            <div className={styles.cleanSelections3}>
               <Selection3
                 options={carUsageOptions}
                 selectedItem={watch("carUsage.usageType")}
                 setSelectedItem={(item) => setValue("carUsage.usageType", item)}
               />
               {errors.carUsage?.usageType && (
-                <span className={styles.error}>
+                <span className={styles.cleanError}>
                   {errors.carUsage.usageType.message}
                 </span>
               )}
             </div>
           </div>
-        </div>
+        </section>
 
         {/* License & Claims Section */}
-        <div className={styles.formSection}>
-          <h3 className={styles.sectionTitle}>License & Claims</h3>
+        <section className={styles.cleanSection}>
+          <h3 className={styles.cleanSectionTitle}>License & Claims</h3>
           
-          <div className={styles.formRow}>
+          <div className={styles.cleanFormGrid3}>
             <FormDropdown
               label="License Type"
               options={["Full UK", "Provisional UK", "International", "Other"]}
@@ -324,7 +326,7 @@ const PersonalDetailsForm = ({ form }) => {
             />
           </div>
 
-          <div className={styles.formRow}>
+          <div className={styles.cleanFormGrid2}>
             <FormDropdown
               label="No Claims Bonus"
               options={dynamicNcbOptions}
@@ -340,53 +342,55 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.carUsage?.voluntaryExcess}
             />
           </div>
-        </div>
+        </section>
 
         {/* Declarations Section */}
-        <div className={styles.formSection}>
-          <h3 className={styles.sectionTitle}>Declarations</h3>
+        <section className={styles.cleanSection}>
+          <h3 className={styles.cleanSectionTitle}>Declarations</h3>
           
-          <div className={styles.declarationItem}>
-            <p className={styles.declarationQuestion}>
-              Do you have any unspent or outstanding criminal convictions?
-            </p>
-            <YesORNo
-              value={watch("carUsage.criminalConvictions")}
-              onChange={(value) =>
-                setValue("carUsage.criminalConvictions", value)
-              }
-            />
-          </div>
+          <div className={styles.cleanDeclarationsContainer}>
+            <div className={styles.cleanDeclarationItem}>
+              <p className={styles.cleanDeclarationQuestion}>
+                Do you have any unspent or outstanding criminal convictions?
+              </p>
+              <YesORNo
+                value={watch("carUsage.criminalConvictions")}
+                onChange={(value) =>
+                  setValue("carUsage.criminalConvictions", value)
+                }
+              />
+            </div>
 
-          <div className={styles.declarationItem}>
-            <p className={styles.declarationQuestion}>
-              Do you have any medical conditions that are notifiable to the DVLA?
-            </p>
-            <YesORNo
-              value={watch("carUsage.medicalConditions")}
-              onChange={(value) =>
-                setValue("carUsage.medicalConditions", value)
-              }
-            />
-          </div>
+            <div className={styles.cleanDeclarationItem}>
+              <p className={styles.cleanDeclarationQuestion}>
+                Do you have any medical conditions that are notifiable to the DVLA?
+              </p>
+              <YesORNo
+                value={watch("carUsage.medicalConditions")}
+                onChange={(value) =>
+                  setValue("carUsage.medicalConditions", value)
+                }
+              />
+            </div>
 
-          <div className={styles.declarationItem}>
-            <p className={styles.declarationQuestion}>
-              Have you ever had insurance cancelled, a claim refused, a policy voided, or any special terms imposed?
-            </p>
-            <YesORNo
-              value={watch(
-                "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided"
-              )}
-              onChange={(value) =>
-                setValue(
-                  "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
-                  value
-                )
-              }
-            />
+            <div className={styles.cleanDeclarationItem}>
+              <p className={styles.cleanDeclarationQuestion}>
+                Have you ever had insurance cancelled, a claim refused, a policy voided, or any special terms imposed?
+              </p>
+              <YesORNo
+                value={watch(
+                  "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided"
+                )}
+                onChange={(value) =>
+                  setValue(
+                    "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
+                    value
+                  )
+                }
+              />
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </ComponentWrapper>
   );
