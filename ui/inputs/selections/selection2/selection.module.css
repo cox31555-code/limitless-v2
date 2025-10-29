@@ -62,14 +62,15 @@
 }
 
 .selectedItem {
-  background: #0388ff;
+  background: #fff;
   border-color: #0388ff;
-  color: #fff;
+  border-width: 2px;
+  color: #000822;
 }
 
 .selectedItem:hover {
-  background: #0270cc;
-  border-color: #0270cc;
+  background: #fff;
+  border-color: #0388ff;
 }
 
 .selectionSpan {
