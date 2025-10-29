@@ -7,6 +7,7 @@ const ConfirmBtn = ({
   style,
   type = "submit",
   disabled = false,
+  hideArrow = false,
   ...props
 }) => {
   return (
@@ -18,14 +19,19 @@ const ConfirmBtn = ({
       disabled={disabled}
       {...props}
     >
-      {title}{" "}
-      <Image
-        className={styles.arrowRight}
-        src="/svg/arrow-right.svg"
-        alt="arrow-right"
-        width={28}
-        height={14}
-      />
+      {title}
+      {!hideArrow && (
+        <>
+          {" "}
+          <Image
+            className={styles.arrowRight}
+            src="/svg/arrow-right.svg"
+            alt="arrow-right"
+            width={28}
+            height={14}
+          />
+        </>
+      )}
     </button>
   );
 };
