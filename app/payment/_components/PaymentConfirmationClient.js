@@ -91,11 +91,6 @@ export default function PaymentConfirmationClient({ insuranceData }) {
             carUsage={insuranceData.carUsage}
           />
         </div>
-
-        {/* Footer Message */}
-        <div className={styles.footerMessage}>
-          <p>A confirmation email has been sent to your inbox with all policy details.</p>
-        </div>
       </div>
     </div>
   );
