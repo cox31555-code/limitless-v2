@@ -293,7 +293,7 @@ const FormDateInput = forwardRef(
                 className={styles.inputContainer}
                 onClick={openTimePicker}
                 ref={inputContainerRef}
-                style={{ paddingLeft: '0.7rem' }}
+                style={["Start Date", "Start Time", "Date of Birth"].includes(timeLabel) ? { paddingLeft: '0.7rem' } : {}}
               >
                 <div className={styles.iconContainer}>
                   <Image
