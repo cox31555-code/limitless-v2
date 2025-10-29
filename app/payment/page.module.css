@@ -286,12 +286,8 @@
     margin: 2.4rem 0;
   }
 
-  .overviewTitle h2 {
-    font-size: 1.8rem;
-  }
-
-  .detailsContainer {
-    margin: 1.6rem 0;
+  .policyOverviewWrapper {
+    margin: 2.4rem 0;
   }
 
   .footerMessage {
