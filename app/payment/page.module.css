@@ -337,6 +337,11 @@
   .confirmationTitle {
     font-size: 2.4rem;
   }
+
+  .confirmationBadge {
+    padding: 0.8rem 1.4rem;
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -396,12 +401,9 @@
     font-size: 2rem;
   }
 
-  .stepLabel {
-    font-size: 1.2rem;
-  }
-
-  .progressBar {
-    height: 5px;
+  .confirmationBadge {
+    padding: 0.7rem 1.2rem;
+    font-size: 1.1rem;
   }
 
   .confirmationSubtitle {
@@ -469,12 +471,9 @@
     font-size: 1.8rem;
   }
 
-  .stepLabel {
-    font-size: 1.1rem;
-  }
-
-  .progressBar {
-    height: 4px;
+  .confirmationBadge {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
   }
 
   .confirmationSubtitle {
