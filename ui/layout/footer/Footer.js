@@ -78,15 +78,16 @@ const Footer = () => {
       }}
     >
       <div className={`centeredContent ${styles.contentContainer}`}>
-        {mounted &&
-        (pathname.startsWith("/temporary/get-quote") ||
-          pathname.startsWith("/impound/get-quote")) ? (
-          <GetQuoteFooterBanner />
-        ) : !mounted ||
-          !pathname.startsWith("/temporary/get-quote") &&
-            !pathname.startsWith("/impound/get-quote") ? (
+        {mounted ? (
+          pathname.startsWith("/temporary/get-quote") ||
+          pathname.startsWith("/impound/get-quote") ? (
+            <GetQuoteFooterBanner />
+          ) : (
+            <NoHiddenFees />
+          )
+        ) : (
           <NoHiddenFees />
-        ) : null}
+        )}
         <div className={styles.content}>
           <div className={styles.menus}>
             {menus.map((menu, index) => (
