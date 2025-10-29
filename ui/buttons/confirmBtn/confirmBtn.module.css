@@ -40,6 +40,37 @@
   background: #0388ff;
 }
 
+.confirmBtn.secondary {
+  background: transparent;
+  border: 1.5px solid #0388ff;
+  color: #0388ff;
+}
+
+.confirmBtn.secondary:hover {
+  background: rgba(3, 136, 255, 0.1);
+  border-color: #0270cc;
+  color: #0270cc;
+}
+
+.confirmBtn.secondary:active {
+  background: rgba(3, 136, 255, 0.15);
+  border-color: #025ab3;
+  color: #025ab3;
+}
+
+.confirmBtn.secondary:disabled {
+  opacity: 0.5;
+  background: transparent;
+  border: 1.5px solid #0388ff;
+  color: #0388ff;
+}
+
+.confirmBtn.secondary:disabled:hover {
+  background: transparent;
+  border: 1.5px solid #0388ff;
+  color: #0388ff;
+}
+
 .arrowRight {
   display: inline-flex;
   width: 1.8rem;
