@@ -333,6 +333,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Enter license number"
               {...register("carUsage.licenseNumber")}
               error={errors.carUsage?.licenseNumber}
+              inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
 
