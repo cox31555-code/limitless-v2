@@ -151,6 +151,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Enter your email address"
               {...register("userDetails.email")}
               error={errors.userDetails?.email}
+              inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
 
