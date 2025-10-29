@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./dropdown/dropdown.module.css";
 
 const FormDropdown = forwardRef(
-  ({ label, options, placeholder, error, disabled, ...props }, ref) => {
+  ({ label, options, placeholder, error, disabled, inputStyle = {}, ...rest }, ref) => {
     return (
       <div className={styles.container}>
         {label && <p className={styles.label}>{label}</p>}
@@ -12,7 +12,8 @@ const FormDropdown = forwardRef(
             ref={ref}
             className={`${styles.select} ${error ? styles.error : ""}`}
             disabled={disabled}
-            {...props}
+            style={inputStyle}
+            {...rest}
           >
             {placeholder && (
               <option value="" disabled>
