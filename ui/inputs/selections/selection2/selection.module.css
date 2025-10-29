@@ -74,8 +74,8 @@
 
 .selectionSpan {
   display: flex;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
   background: transparent;
   border: 2px solid rgba(3, 136, 255, 0.3);
