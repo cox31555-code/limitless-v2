@@ -50,10 +50,21 @@ const shouldUseSpecialStyles = (pathname) => {
   return !validPages.includes(pathname) && !pathname.startsWith("/dashboard");
 };
 
+"use client";
+
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname);
+
+  // Hide footer completely on these routes
+  if (
+    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/payment") ||
+    ["/login", "/forget-password", "/change-password"].includes(pathname)
+  ) {
+    return null;
+  }
+
   return (
     <footer
       className={styles.container}
@@ -65,12 +76,7 @@ const Footer = () => {
         {pathname.startsWith("/temporary/get-quote") ||
         pathname.startsWith("/impound/get-quote") ? (
           <GetQuoteFooterBanner />
-        ) : pathname.startsWith("/dashboard") ||
-          pathname.startsWith("/payment") ||
-          ["/login", "/forget-password", "/change-password"].includes(
-            pathname
-          ) ||
-          shouldUseSpecialStyles(pathname) ? null : (
+        ) : (
           <NoHiddenFees />
         )}
         <div className={styles.content}>
