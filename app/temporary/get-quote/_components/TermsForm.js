@@ -67,7 +67,7 @@ const TermsForm = ({ form, onBack, isSubmitting }) => {
         totalSteps={4}
         onBack={onBack}
         isLoading={isSubmitting}
-        nextLabel="Submit"
+        nextLabel="Get Quote"
       />
     </>
   );

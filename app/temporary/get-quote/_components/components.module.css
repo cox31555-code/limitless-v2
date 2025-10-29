@@ -1107,24 +1107,24 @@
 .terms {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.6rem;
   padding-bottom: 2.8rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 .termItem {
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 500;
-  line-height: 140%;
+  font-weight: 400;
+  line-height: 150%;
   letter-spacing: 0.2px;
 }
 
 .selection {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding-top: 2.3rem;
+  gap: 1.4rem;
+  padding-top: 2.4rem;
 }
 
 .customCheckbox {
@@ -1148,19 +1148,19 @@
 .checkboxStyle {
   width: 18px;
   height: 18px;
-  border: 2px solid rgba(3, 136, 255, 0.4);
-  border-radius: 6px;
+  border: 1.5px solid rgba(3, 136, 255, 0.25);
+  border-radius: 4px;
   position: relative;
   flex-shrink: 0;
   box-sizing: border-box;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   background: #fff;
 }
 
 .customCheckbox input:checked + .checkboxStyle {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border-color: #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  box-shadow: 0 2px 6px rgba(3, 136, 255, 0.2);
 }
 
 .customCheckbox input:checked + .checkboxStyle::after {
@@ -1177,9 +1177,9 @@
 
 .selectionText {
   color: #000822;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 140%;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 150%;
   letter-spacing: 0.2px;
 }
 
