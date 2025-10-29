@@ -1,14 +1,14 @@
 .container {
-  background: #ffffff;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
   border-radius: 12px;
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 8, 34, 0.04);
+  border: 1px solid rgba(3, 136, 255, 0.06);
+  box-shadow: 0 1px 2px rgba(0, 8, 34, 0.02);
   overflow: hidden;
 }
 
 .header {
   padding: 2.4rem 3.2rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 .title {
@@ -31,7 +31,7 @@
 
 .coverTypeLabel {
   font-size: 1.3rem;
-  color: #6b7c8f;
+  color: #7a8a9d;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -39,7 +39,7 @@
 
 .coverTypeName {
   font-size: 1.6rem;
-  color: #0388ff;
+  color: #5a9cff;
   font-weight: 700;
 }
 
@@ -56,7 +56,7 @@
 
 .priceLabel {
   font-size: 1.3rem;
-  color: #5a6b7d;
+  color: #7a8a9d;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -71,7 +71,7 @@
 
 .priceNote {
   font-size: 1.2rem;
-  color: #6b7c8f;
+  color: #7a8a9d;
   font-weight: 500;
 }
 
@@ -82,7 +82,7 @@
 .featuresTitle {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #000822;
+  color: #5a6b7d;
   margin: 0 0 1.6rem 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -107,7 +107,7 @@
 
 .featureText {
   font-size: 1.3rem;
-  color: #5a6b7d;
+  color: #7a8a9d;
   font-weight: 500;
   line-height: 150%;
 }
