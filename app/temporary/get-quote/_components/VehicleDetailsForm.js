@@ -404,6 +404,7 @@ const VehicleDetailsForm = ({
                     title="Change Vehicle"
                     onClick={handleChangeVehicle}
                     type="button"
+                    hideArrow={true}
                   />
                 }
               />
