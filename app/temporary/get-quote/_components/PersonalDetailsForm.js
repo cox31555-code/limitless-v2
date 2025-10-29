@@ -173,7 +173,7 @@ const PersonalDetailsForm = ({ form }) => {
             />
             <div className={styles.cleanFindAddressButton}>
               <ConfirmBtn
-                title={isLoadingAddresses ? "Loading..." : "FIND ADDRESS →"}
+                title={isLoadingAddresses ? "Loading..." : "FIND ADDRESS"}
                 onClick={handleFindAddress}
                 disabled={isLoadingAddresses}
                 type="button"
