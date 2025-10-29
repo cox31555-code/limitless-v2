@@ -194,6 +194,7 @@ const CoverDetailsForm = ({ form }) => {
               onChange={handleDateInputChange}
               allowPastDates={false}
               forceShowAbove={true}
+              reducedPadding={true}
             />
 
             {/* Start Time */}
@@ -204,6 +205,7 @@ const CoverDetailsForm = ({ form }) => {
               value={startTime || ""}
               onChange={handleTimeInputChange}
               forceShowAbove={true}
+              reducedPadding={true}
             />
           </div>
         </div>
