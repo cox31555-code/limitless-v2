@@ -344,6 +344,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Select NCB years"
               {...register("carUsage.NCB")}
               error={errors.carUsage?.NCB}
+              inputStyle={{ paddingLeft: "14px" }}
             />
             <FormDropdown
               label="Voluntary Excess"
