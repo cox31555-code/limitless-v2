@@ -184,7 +184,7 @@ const PersonalDetailsForm = ({ form }) => {
           {showAddressDropdown && (
             <div className={styles.cleanFormGrid1Col}>
               <FormDropdown
-                label="Address"
+                label="Select address"
                 options={addresses}
                 placeholder={
                   addresses.length > 0
