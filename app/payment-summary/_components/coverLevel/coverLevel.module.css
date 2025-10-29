@@ -298,11 +298,6 @@
   flex-shrink: 0;
   background: rgba(3, 136, 255, 0.2);
   border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.featureItem:hover .iconWrapper {
-  background: #3fa9ff;
 }
 
 .checkIcon {
