@@ -7,26 +7,22 @@
   gap: 1.8rem;
   cursor: pointer;
   align-items: flex-start;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 2.4rem 3.2rem;
   border-radius: 14px;
   background: #fff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
   flex: 1;
 }
 
 .option:hover {
-  background: #f8fbff;
+  background: #fff;
   border-color: rgba(3, 136, 255, 0.2);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.1);
-  transform: translateY(-2px);
 }
 
 .option.selected {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: #0388ff;
   border-color: #0388ff;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
 }
 
 .selectionSpan {
