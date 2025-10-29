@@ -69,9 +69,9 @@ const FormTextInput = ({
         <span
           className={styles.errorMessage}
           style={{
-            color: "#dc3545",
-            fontSize: "0.875rem",
-            marginTop: "0.25rem",
+            color: "#ef4444",
+            fontSize: "1.2rem",
+            marginTop: "0.5rem",
           }}
         >
           {error.message}
