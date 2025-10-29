@@ -176,6 +176,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Enter your postcode"
               {...register("userDetails.postCode")}
               error={errors.userDetails?.postCode}
+              inputStyle={{ paddingLeft: "14px" }}
             />
             <div className={styles.cleanFindAddressButton}>
               <ConfirmBtn
