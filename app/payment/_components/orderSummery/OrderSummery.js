@@ -4,11 +4,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "./orderSummery.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const OrderSummery = ({ data, vehicleDetails, carUsage }) => {
   const router = useRouter();
@@ -18,21 +13,16 @@ const OrderSummery = ({ data, vehicleDetails, carUsage }) => {
 
   const getInsuranceTitle = () => {
     const regNumber = vehicleDetails?.registrationNumber || "N/A";
-    // Check if it's impound or temporary insurance
     const insuranceType = data?.insuranceType || "Temporary";
     return `${insuranceType} insurance / ${regNumber}`;
   };
 
-  // Calculate VAT and base price from total
   const priceBreakdown = useMemo(() => {
     const totalPrice = data?.priceAmount || 0;
-    // VAT is 20% of total price
     const vat = totalPrice * 0.2;
-    // Base insurance price is 80% of total
     const basePrice = totalPrice * 0.8;
-    // Discount (previously Fee)
     const discount = data?.price?.fee || 0;
-    
+
     return {
       basePrice,
       vat,
@@ -41,108 +31,61 @@ const OrderSummery = ({ data, vehicleDetails, carUsage }) => {
     };
   }, [data]);
 
-  const summaryItems = [
-    {
-      title: getInsuranceTitle(),
-      value: formatCurrency(priceBreakdown.basePrice),
-    },
-    {
-      title: "VAT",
-      value: formatCurrency(priceBreakdown.vat),
-    },
-    {
-      title: "Discount",
-      value: priceBreakdown.discount > 0 ? `-${formatCurrency(priceBreakdown.discount)}` : formatCurrency(0),
-    },
-  ];
-
   return (
     <div className={styles.container}>
-      <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-        Order Summary
-      </h3>
       <div className={styles.header}>
-        <div className={styles.headerItem}>
-          <Image
-            src="/svg/insurance-quote.svg"
-            alt="order-summary"
-            width={22}
-            height={22}
-          />
-          <p className={styles.headerItemTitle}>Order Reference</p>
+        <h3 className={styles.title}>Order Summary</h3>
+        <div className={styles.orderRef}>
+          <span className={styles.orderRefLabel}>Order Reference</span>
+          <span className={styles.orderRefValue}>{data?.orderRef || "N/A"}</span>
         </div>
-        <p className={styles.headerItemValue}>{data?.orderRef || "N/A"}</p>
       </div>
-      <div className={styles.summary}>
-        <div className={styles.items}>
-          {summaryItems.map((item, index) => (
-            <div className={styles.summaryItem} key={index}>
-              <p className={styles.summaryItemTitle}>{item.title}</p>
-              <p className={styles.summaryItemValue}>{item.value}</p>
-            </div>
-          ))}
+
+      <div className={styles.itemsList}>
+        <div className={styles.itemRow}>
+          <span className={styles.itemLabel}>{getInsuranceTitle()}</span>
+          <span className={styles.itemValue}>{formatCurrency(priceBreakdown.basePrice)}</span>
         </div>
-        <div className={styles.total}>
-          <p className={styles.totalTitle}>Total</p>
-          <p className={styles.totalValue}>{formatCurrency(priceBreakdown.total)}</p>
+        <div className={styles.itemRow}>
+          <span className={styles.itemLabel}>VAT (20%)</span>
+          <span className={styles.itemValue}>{formatCurrency(priceBreakdown.vat)}</span>
         </div>
-        <button 
-          className={styles.dashboardButton}
-          onClick={() => router.push('/dashboard')}
-        >
-          Customer Dashboard
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="18"
-            viewBox="0 0 32 18"
-            fill="none"
-          >
-            <path
-              d="M22.457 1.66272L30.226 9.00005L22.457 16.3374"
-              stroke="#0388FF"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M30.2598 9.01691H1.74023"
-              stroke="#0388FF"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+        {priceBreakdown.discount > 0 && (
+          <div className={styles.itemRow}>
+            <span className={styles.itemLabel}>Discount</span>
+            <span className={styles.itemValue}>-{formatCurrency(priceBreakdown.discount)}</span>
+          </div>
+        )}
       </div>
-      <div className={styles.footer}>
-        <div className={styles.footerText}>
-          <p
-            className={`${styles.footerTextTitle} ${plusJakartaSans.className}`}
-          >
-            You will receive a special login link via email.
-          </p>
-          <p className={styles.footerTextSupport}>
-            Please{" "}
-            <Link 
-              href="https://www.limitlesscover.co.uk/contact" 
-              style={{ color: "#0388FF", textDecoration: "none" }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              contact support
-            </Link>{" "}
-            if you have not received
-          </p>
+
+      <div className={styles.totalSection}>
+        <span className={styles.totalLabel}>Total</span>
+        <span className={styles.totalValue}>{formatCurrency(priceBreakdown.total)}</span>
+      </div>
+
+      <button
+        className={styles.dashboardButton}
+        onClick={() => router.push('/dashboard')}
+      >
+        Go to Dashboard
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+
+      <div className={styles.infoSection}>
+        <div className={styles.infoBox}>
+          <p className={styles.infoTitle}>Email Confirmation</p>
+          <p className={styles.infoText}>A confirmation email with your policy details has been sent to your inbox.</p>
         </div>
-        <div className={styles.voluntaryExcess}>
-          <p className={styles.voluntaryText}>Voluntary excess</p>
-          <p
-            className={`${styles.voluntaryValue} ${plusJakartaSans.className}`}
-          >
-            {carUsage?.voluntaryExcess || "N/A"}
-          </p>
+        <div className={styles.voluntarySection}>
+          <span className={styles.voluntaryLabel}>Voluntary Excess</span>
+          <span className={styles.voluntaryValue}>{carUsage?.voluntaryExcess || "N/A"}</span>
         </div>
+      </div>
+
+      <div className={styles.supportSection}>
+        <p className={styles.supportText}>Questions? <Link href="https://www.limitlesscover.co.uk/contact" target="_blank" rel="noopener noreferrer">Contact support</Link></p>
       </div>
     </div>
   );
