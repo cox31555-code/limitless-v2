@@ -85,6 +85,11 @@ export default function PaymentConfirmationClient({ insuranceData }) {
           </div>
         </div>
 
+        {/* Policy Overview Title */}
+        <div className={styles.overviewTitle}>
+          <h2>Overview of Policy</h2>
+        </div>
+
         {/* Details Grid */}
         <div className={styles.detailsContainer}>
           <div className={styles.detailsGrid}>
