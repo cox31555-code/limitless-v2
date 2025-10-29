@@ -1582,23 +1582,23 @@
   line-height: 1;
 }
 
-.cleanFormGrid2 {
+.cleanFormGrid1Col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.cleanFormGrid2Col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.6rem;
   width: 100%;
 }
 
-.cleanFormGrid3 {
+.cleanFormGrid3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
-  width: 100%;
-}
-
-.cleanFormGridFull {
-  display: grid;
-  grid-template-columns: 1fr;
   gap: 1.6rem;
   width: 100%;
 }
@@ -1627,13 +1627,12 @@
   color: white;
   border: none;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 1.2rem 1.6rem;
 }
 
 .cleanFindAddressButton button:hover {
   background: linear-gradient(135deg, #0270cc 0%, #0258b8 100%);
-  transform: translateY(-1px);
 }
 
 .cleanSelectionCard {
@@ -1660,7 +1659,7 @@
   background: #f5f7fa;
   border-radius: 10px;
   border: 1.5px solid rgba(3, 136, 255, 0.08);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cleanDeclarationItem:hover {
@@ -1688,8 +1687,8 @@
 
 /* Tablet Responsive */
 @media screen and (max-width: 900px) {
-  .cleanFormGrid2,
-  .cleanFormGrid3 {
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
@@ -1733,8 +1732,9 @@
     margin-bottom: 0.8rem;
   }
 
-  .cleanFormGrid2,
-  .cleanFormGrid3 {
+  .cleanFormGrid1Col,
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
