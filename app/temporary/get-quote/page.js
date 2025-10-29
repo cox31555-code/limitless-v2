@@ -36,6 +36,7 @@ const TemporaryInsuranceContent = () => {
   const searchParams = useSearchParams();
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
 
