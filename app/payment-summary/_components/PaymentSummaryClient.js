@@ -25,6 +25,7 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
   return (
     <div>
       <Header title="Review Your Quote" currentStep={4} totalSteps={4} />
+      <Stepper currentStep={4} totalSteps={4} isPaymentPage={true} />
       <div className={"centeredContent"}>
         <div className={styles.container}>
           <div className={styles.first}>
