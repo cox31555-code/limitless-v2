@@ -438,11 +438,11 @@ const VehicleDetailsForm = ({
 
         {/* Vehicle Data Display */}
 
-        {showVehicleDetails && <Title title="What type of vehicle is it?" />}
+        {showVehicleDetails && !foundVehicleData && <Title title="What type of vehicle is it?" />}
 
         <div
           className={`${styles.vehicleDetailsContainer} ${
-            showVehicleDetails
+            showVehicleDetails && !foundVehicleData
               ? styles.vehicleDetailsVisible
               : styles.vehicleDetailsHidden
           }`}
