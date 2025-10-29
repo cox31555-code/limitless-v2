@@ -48,27 +48,11 @@ const IconComponent = ({ type }) => {
 
 const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
   const router = useRouter();
-  const pathname = usePathname();
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  const carVanItems = [
-    { label: "Annual car insurance", href: "/annual", icon: "calendar" },
-    { label: "Hourly car insurance", href: "/temporary", icon: "clock" },
-    { label: "Weekly car insurance", href: "/temporary", icon: "calendar" },
-    { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
-  ];
-
-  const motorbakeItems = [
-    { label: "Annual bike insurance", href: "/coming-soon", icon: "calendar" },
-    { label: "Hourly bike insurance", href: "/coming-soon", icon: "clock" },
-    { label: "Weekly bike insurance", href: "/coming-soon", icon: "calendar" },
-    { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
-  ];
 
   const words = title.split(" ");
   const lastWord = words[words.length - 1];
   const withoutLastWord = words.slice(0, -1).join(" ");
-  
+
   const progressPercentage = totalSteps ? (currentStep / totalSteps) * 100 : 0;
 
   return (
@@ -86,119 +70,14 @@ const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
                 height={66}
               />
             </div>
-            <menu className={styles.menu} suppressHydrationWarning>
-              <li
-                className={styles.menuItem}
-                onMouseEnter={() => setOpenDropdown("carVan")}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <span className={`${styles.menuLink} ${openDropdown === "carVan" ? styles.active : ""} ${carVanItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
-                  Car & Van
-                  <span className={`${styles.chevronIcon} ${openDropdown === "carVan" ? styles.rotated : ""}`}>
-                    <IconComponent type="chevron" />
-                  </span>
-                </span>
-                {openDropdown === "carVan" && (
-                  <div className={styles.dropdown}>
-                    {carVanItems.map((item, index) => (
-                      <span
-                        key={`carVan-${index}`}
-                        className={styles.dropdownItem}
-                        onClick={() => {
-                          setOpenDropdown(null);
-                          router.push(item.href);
-                        }}
-                      >
-                        <span className={styles.dropdownIcon}>
-                          <IconComponent type={item.icon} />
-                        </span>
-                        {item.label}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </li>
 
-              <li
-                className={styles.menuItem}
-                onMouseEnter={() => setOpenDropdown("motorbike")}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <span className={`${styles.menuLink} ${openDropdown === "motorbike" ? styles.active : ""} ${motorbakeItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
-                  Motorbike
-                  <span className={`${styles.chevronIcon} ${openDropdown === "motorbike" ? styles.rotated : ""}`}>
-                    <IconComponent type="chevron" />
-                  </span>
-                </span>
-                {openDropdown === "motorbike" && (
-                  <div className={styles.dropdown}>
-                    {motorbakeItems.map((item, index) => (
-                      <span
-                        key={`motorbike-${index}`}
-                        className={styles.dropdownItem}
-                        onClick={() => {
-                          setOpenDropdown(null);
-                          router.push(item.href);
-                        }}
-                      >
-                        <span className={styles.dropdownIcon}>
-                          <IconComponent type={item.icon} />
-                        </span>
-                        {item.label}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </li>
-
-              <li className={styles.menuItem}>
-                <span
-                  className={`${styles.menuLink} ${
-                    pathname === "/impound" ? styles.activeMenuLink : ""
-                  }`}
-                  onClick={() => router.push("/impound")}
-                >
-                  Impound
-                </span>
-              </li>
-
-              <li className={styles.menuItem}>
-                <span
-                  className={`${styles.menuLink} ${
-                    pathname === "/coming-soon" ? styles.activeMenuLink : ""
-                  }`}
-                  onClick={() => router.push("/coming-soon")}
-                >
-                  Courier
-                </span>
-              </li>
-
-              <li className={styles.menuItem}>
-                <span
-                  className={`${styles.menuLink} ${
-                    pathname === "/contact" ? styles.activeMenuLink : ""
-                  }`}
-                  onClick={() => router.push("/contact")}
-                >
-                  Contact
-                </span>
-              </li>
-            </menu>
-
-            <div className={styles.buttons}>
-              <button
-                className={styles.loginBtn}
-                onClick={() => router.push("/login")}
-              >
-                Login
-              </button>
-              <button
-                className={styles.quoteBtn}
-                onClick={() => router.push("/temporary/get-quote")}
-              >
-                Get a Quote
-              </button>
-            </div>
+            <button className={styles.helpBtn} title="Get help">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="currentColor"/>
+                <path d="M12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z" fill="currentColor"/>
+                <circle cx="12" cy="18" r="1" fill="currentColor"/>
+              </svg>
+            </button>
           </div>
 
           <div className={styles.titleSection}>
