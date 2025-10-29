@@ -108,14 +108,14 @@
 .input::placeholder {
   color: rgba(0, 8, 34, 0.35);
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 130%;
   letter-spacing: 0.2px;
 }
 
 .input.reg {
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 400;
   color: #000822;
   font-size: 1.8rem;
   font-family: 'DM Mono', monospace;
