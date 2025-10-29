@@ -29,7 +29,7 @@
   letter-spacing: 0.2px;
   cursor: pointer;
   transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 1.6rem;
+  padding: 1.3rem 1.6rem;
 }
 
 .button:hover {
