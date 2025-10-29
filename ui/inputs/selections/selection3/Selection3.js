@@ -6,7 +6,9 @@ const Selection3 = ({ options, selectedItem, setSelectedItem }) => {
       {options.map((option, index) => (
         <div
           key={index}
-          className={styles.option}
+          className={`${styles.option} ${
+            selectedItem === option.title ? styles.selected : ""
+          }`}
           onClick={() => setSelectedItem(option.title)}
         >
           <span
