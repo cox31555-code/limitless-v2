@@ -22,7 +22,7 @@ const CoverDetails = ({ data }) => {
   };
 
   return (
-    <ComponentWrapper title="Cover Details" icon={{ width: 62, height: 62 }}>
+    <ComponentWrapper title="Cover Details" icon={{ width: 62, height: 62 }} isPaymentPage={true}>
       <div className={styles.content}>
         <div className={styles.first}>
           <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
