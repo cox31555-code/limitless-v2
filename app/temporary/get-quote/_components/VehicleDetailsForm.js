@@ -448,28 +448,30 @@ const VehicleDetailsForm = ({
           }`}
         >
           <div className={styles.rows}>
-            <div className={`${styles.row}`}>
-              <FormDropdown
-                label="My Vehicle is a...."
-                options={["Car", "Motorcycle", "Truck", "Bus"]}
-                placeholder="Choose Vehicle"
-                {...register("vehicleDetails.type")}
-                error={errors.vehicleDetails?.type}
-                disabled={!!foundVehicleData}
-              />
-              {watch("vehicleDetails.type") && !foundVehicleData && (
+            {!foundVehicleData && (
+              <div className={`${styles.row}`}>
                 <FormDropdown
-                  label="Make"
-                  options={state.makes}
-                  placeholder="Select Make"
-                  value={state.values.make || selectedMake || ""}
-                  onChange={(e) => handleDropdownChange("make", e.target.value)}
-                  {...register("vehicleDetails.make")}
-                  error={errors.vehicleDetails?.make}
+                  label="My Vehicle is a...."
+                  options={["Car", "Motorcycle", "Truck", "Bus"]}
+                  placeholder="Choose Vehicle"
+                  {...register("vehicleDetails.type")}
+                  error={errors.vehicleDetails?.type}
                   disabled={!!foundVehicleData}
                 />
-              )}
-            </div>
+                {watch("vehicleDetails.type") && !foundVehicleData && (
+                  <FormDropdown
+                    label="Make"
+                    options={state.makes}
+                    placeholder="Select Make"
+                    value={state.values.make || selectedMake || ""}
+                    onChange={(e) => handleDropdownChange("make", e.target.value)}
+                    {...register("vehicleDetails.make")}
+                    error={errors.vehicleDetails?.make}
+                    disabled={!!foundVehicleData}
+                  />
+                )}
+              </div>
+            )}
 
             {selectedMake && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
