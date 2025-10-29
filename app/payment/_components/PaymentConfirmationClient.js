@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import OrderSummery from "./orderSummery/OrderSummery";
 import VehicleDetails from "@/app/payment-summary/_components/vehicleDetails/VehicleDetails";
 import CoverDetails from "@/app/payment-summary/_components/coverDetails/CoverDetails";
