@@ -221,11 +221,16 @@ const TemporaryInsuranceContent = () => {
   };
 
   const onSubmit = (data) => {
+    // Show loading overlay
+    setShowLoading(true);
+
     // Generate a temporary insurance ID for offline mode
     const insuranceId = `TEMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // Redirect to payment summary with insurance ID
-    router.push(`/payment-summary?id=${insuranceId}`);
+    // Wait 5 seconds then redirect to payment summary with insurance ID
+    setTimeout(() => {
+      router.push(`/payment-summary?id=${insuranceId}`);
+    }, 5000);
   };
 
   return (
