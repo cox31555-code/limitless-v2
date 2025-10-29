@@ -1,10 +1,10 @@
 .container {
-  background: #ffffff;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
   border-radius: 12px;
   padding: 3.2rem;
   width: 100%;
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  box-shadow: 0 1px 3px rgba(0, 8, 34, 0.04);
+  border: 1px solid rgba(3, 136, 255, 0.06);
+  box-shadow: 0 1px 2px rgba(0, 8, 34, 0.02);
 }
 
 .header {
@@ -13,7 +13,7 @@
   align-items: flex-start;
   margin-bottom: 2.4rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 .title {
@@ -34,7 +34,7 @@
 
 .orderRefLabel {
   font-size: 1.2rem;
-  color: #6b7c8f;
+  color: #7a8a9d;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -42,7 +42,7 @@
 
 .orderRefValue {
   font-size: 1.6rem;
-  color: #0388ff;
+  color: #5a9cff;
   font-weight: 700;
 }
 
@@ -62,13 +62,13 @@
 
 .itemLabel {
   font-size: 1.4rem;
-  color: #5a6b7d;
+  color: #7a8a9d;
   font-weight: 500;
 }
 
 .itemValue {
   font-size: 1.4rem;
-  color: #000822;
+  color: #5a6b7d;
   font-weight: 600;
 }
 
@@ -78,14 +78,14 @@
   align-items: center;
   padding: 2rem 0;
   margin: 2rem 0;
-  border-top: 2px solid rgba(3, 136, 255, 0.12);
-  border-bottom: 2px solid rgba(3, 136, 255, 0.12);
+  border-top: 1px solid rgba(3, 136, 255, 0.1);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
 }
 
 .totalLabel {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #000822;
+  color: #5a6b7d;
 }
 
 .totalValue {
@@ -98,9 +98,9 @@
   width: 100%;
   padding: 1.4rem 1.6rem;
   margin: 2.4rem 0;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  color: #ffffff;
-  border: none;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  color: #0388ff;
+  border: 1.5px solid rgba(3, 136, 255, 0.15);
   border-radius: 10px;
   font-size: 1.4rem;
   font-weight: 600;
@@ -110,12 +110,11 @@
   justify-content: center;
   gap: 0.8rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 .dashboardButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.4);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.08) 100%);
+  border-color: rgba(3, 136, 255, 0.25);
 }
 
 .infoSection {
@@ -137,13 +136,13 @@
 .infoTitle {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #000822;
+  color: #5a6b7d;
   margin: 0;
 }
 
 .infoText {
   font-size: 1.3rem;
-  color: #6b7c8f;
+  color: #7a8a9d;
   line-height: 150%;
   margin: 0;
 }
@@ -153,21 +152,21 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.05) 0%, rgba(3, 136, 255, 0.02) 100%);
   border-radius: 8px;
-  border: 1px solid rgba(3, 136, 255, 0.12);
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 .voluntaryLabel {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #5a6b7d;
+  color: #7a8a9d;
 }
 
 .voluntaryValue {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #0388ff;
+  color: #5a9cff;
 }
 
 .supportSection {
@@ -177,7 +176,7 @@
 
 .supportText {
   font-size: 1.2rem;
-  color: #6b7c8f;
+  color: #7a8a9d;
   margin: 0;
 }
 
