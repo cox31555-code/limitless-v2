@@ -17,7 +17,7 @@
   border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 .title {
-  color: #5a6b7d;
+  color: #000000;
   font-size: 3.2rem;
   font-weight: 700;
   line-height: 110%;
@@ -26,6 +26,7 @@
 }
 
 .title.greyed {
+  color: #5a6b7d;
   opacity: 0.5;
 }
 .icon {
