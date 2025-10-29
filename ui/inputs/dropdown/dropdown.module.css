@@ -107,6 +107,31 @@
   background: rgba(239, 68, 68, 0.04);
 }
 
+.selectWrapper.disabled {
+  background: rgba(0, 8, 34, 0.04);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  cursor: not-allowed;
+}
+
+.selectWrapper.disabled:hover {
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  background: rgba(0, 8, 34, 0.04);
+}
+
+.selectWrapper.disabled:focus-within {
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  box-shadow: none;
+}
+
+.select:disabled {
+  cursor: not-allowed;
+  color: rgba(0, 8, 34, 0.5);
+}
+
+.selectWrapper.disabled .arrowDown {
+  color: rgba(3, 136, 255, 0.4);
+}
+
 .errorMessage {
   color: #ef4444;
   font-size: 1.2rem;
