@@ -39,7 +39,7 @@
 .select {
   width: 100%;
   padding: 1.2rem 1.6rem;
-  border: none !important;
+  border: none;
   background: transparent;
   color: #000822;
   font-size: 1.3rem;
@@ -52,14 +52,11 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none;
 }
 
 .select:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
+  outline: none;
 }
 
 .select option {
