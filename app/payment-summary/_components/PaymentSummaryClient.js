@@ -41,6 +41,7 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
             <CoverLevel
               data={insuranceData.quote}
               insuranceType={insuranceData.type}
+              hideAnimatedLogos={showIframe}
             />
             <Actions insuranceId={id} onPayClick={handlePayClick} />
           </div>
