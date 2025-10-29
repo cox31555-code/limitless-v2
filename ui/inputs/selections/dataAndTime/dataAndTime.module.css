@@ -47,6 +47,11 @@
   background-color: #fff;
 }
 
+.inputContainer.error {
+  border: 1.5px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
+}
+
 .iconContainer {
   width: 4rem;
   height: 4rem;
