@@ -84,13 +84,19 @@ const Header = () => {
     { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
   ];
 
-  return pathname === "/login" ||
+  const shouldHideHeader = pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/temporary/get-quote") ||
     pathname.startsWith("/impound/get-quote") ||
-    pathname.startsWith("/payment-summary") ? null : (
+    pathname.startsWith("/payment-summary");
+
+  if (shouldHideHeader) {
+    return null;
+  }
+
+  return (
     <div className="centeredContent" suppressHydrationWarning>
       {isScrolled && !isDashboard && (
         <div className={styles.stickyHeader}>
