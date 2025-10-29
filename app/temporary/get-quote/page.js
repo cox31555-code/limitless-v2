@@ -94,6 +94,17 @@ const TemporaryInsuranceContent = () => {
 
   const { setValue, trigger } = form;
 
+  // Handle step parameter from URL
+  useEffect(() => {
+    const stepParam = searchParams.get("step");
+    if (stepParam) {
+      const step = parseInt(stepParam);
+      if (step >= STEPS.VEHICLE && step <= STEPS.TERMS) {
+        setCurrentStep(step);
+      }
+    }
+  }, [searchParams]);
+
   // Populate form with URL parameters from GetQuote
   useEffect(() => {
     const fromQuote = searchParams.get("fromQuote");
