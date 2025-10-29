@@ -198,43 +198,10 @@
 
 @media (max-width: 600px) {
   .headerElement {
-    padding: 12px 1.2rem;
-  }
-
-  .navigationBar {
-    gap: 1rem;
-  }
-
-  .logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .menu {
-    padding: 0.5rem 0.2rem;
-    gap: 0.2rem;
-  }
-
-  .menuLink {
-    padding: 0.8rem 1rem;
-    font-size: 1.1rem;
-  }
-
-  .buttons {
-    gap: 0.8rem;
-  }
-
-  .loginBtn,
-  .quoteBtn {
-    height: 4.4rem;
-    padding: 0.7rem 1.4rem;
-    font-size: 1.2rem;
+    padding: 1.6rem 1.2rem;
   }
 
   .confirmationTitleSection {
-    margin: 1.2rem -0.1rem 1.2rem;
-    padding-left: 10rem;
-    padding-top: 1rem;
     gap: 1.2rem;
   }
 
