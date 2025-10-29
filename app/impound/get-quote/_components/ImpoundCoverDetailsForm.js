@@ -68,6 +68,7 @@ const ImpoundCoverDetailsForm = ({ form }) => {
                       })
                     }
                     error={errors.coverDetails?.startDate}
+                    forceShowAbove={true}
                   />
                 </div>
                 <div style={{ flex: 1, minWidth: "200px" }}>
@@ -82,6 +83,7 @@ const ImpoundCoverDetailsForm = ({ form }) => {
                       })
                     }
                     error={errors.coverDetails?.startTime}
+                    forceShowAbove={true}
                   />
                 </div>
               </div>
