@@ -1382,15 +1382,9 @@
       gap: 1rem;
     }
 
-    .vehicleTypeGrid {
+    .vehicleTypeRow {
       grid-template-columns: repeat(2, 1fr);
       gap: 0.8rem;
-    }
-
-    .vehicleTypeOption {
-      min-height: 4.4rem;
-      padding: 0.8rem 1rem;
-      font-size: 1.1rem;
     }
 
     .postcodeRow {
