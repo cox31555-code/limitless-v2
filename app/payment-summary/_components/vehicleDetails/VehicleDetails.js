@@ -6,7 +6,7 @@ import Duration from "@/app/payment/_components/duration/Duration";
 
 const VehicleDetails = ({ data, carUsage }) => {
   return (
-    <ComponentWrapper title="Vehicle Details" icon={{ width: 62, height: 62 }}>
+    <ComponentWrapper title="Vehicle Details" icon={{ width: 62, height: 62 }} isPaymentPage={true}>
       <div className={styles.content}>
         <VehicleCovered data={data} hideIcon={true} />
         <div className={styles.cards}>
