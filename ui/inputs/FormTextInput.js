@@ -47,7 +47,7 @@ const FormTextInput = ({
           {reg && (
             <span className={styles.inputSpan}>
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fc3966e857ea74e3ba58cc72094f4df38?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Ffa4470ac675a4d91a9bef44f25949df0?format=webp&width=800"
                 alt="UK Flag"
                 className={styles.ukFlag}
               />
