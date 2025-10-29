@@ -137,6 +137,7 @@ const PersonalDetailsForm = ({ form }) => {
               allowPastDates={true}
               isDateOfBirth={true}
               maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())}
+              defaultYear={2009}
               {...register("userDetails.dateOfBirth")}
               value={watch("userDetails.dateOfBirth")}
               error={errors.userDetails?.dateOfBirth}
