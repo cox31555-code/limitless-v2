@@ -121,6 +121,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Enter your first name"
               {...register("userDetails.firstName")}
               error={errors.userDetails?.firstName}
+              inputStyle={{ paddingLeft: "14px" }}
             />
             <FormTextInput
               label="Last Name"
