@@ -14,6 +14,7 @@ const FormTextInput = ({
   value,
   onChange,
   disabled = false,
+  inputStyle = {},
   ...props
 }) => {
   const handleRegistrationChange = (e) => {
