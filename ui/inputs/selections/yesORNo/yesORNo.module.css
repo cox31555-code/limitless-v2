@@ -16,8 +16,8 @@
 }
 
 .container:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  background: #f8fbff;
+  border-color: rgba(3, 136, 255, 0.2);
+  background: #fff;
 }
 
 .button,
@@ -27,9 +27,9 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-  gap: 1.6rem;
-  background: #f8fbff;
-  border: 1.5px solid rgba(3, 136, 255, 0.1);
+  gap: 0;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
   border-radius: 8px;
   color: #000822;
   font-size: 1.3rem;
@@ -41,39 +41,25 @@
 }
 
 .button:hover {
-  background: #f8fbff;
-  border-color: rgba(3, 136, 255, 0.15);
+  background: #fff;
+  border-color: rgba(3, 136, 255, 0.2);
 }
 
 .active {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: #0388ff;
   border-color: #0388ff;
   color: #fff;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .active:hover {
-  background: linear-gradient(135deg, #0270cc 0%, #0258b8 100%);
+  background: #0270cc;
   border-color: #0270cc;
 }
 
 .selectionSpan,
 .selectedSpan {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  background: rgba(3, 136, 255, 0.08);
-  border-radius: 6px;
-  font-size: 1.2rem;
-  color: #0388ff;
-  flex-shrink: 0;
-}
-
-.active .selectedSpan {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  display: none;
 }
 
 @media screen and (max-width: 900px) {
