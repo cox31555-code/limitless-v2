@@ -61,6 +61,7 @@ const FormTextInput = ({
             className={`${styles.input} ${error ? styles.error : ""} ${reg ? styles.reg : ""}`}
             value={value}
             onChange={reg ? handleRegistrationChange : onChange}
+            disabled={disabled}
             {...props}
           />
         </div>
