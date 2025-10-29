@@ -22,8 +22,9 @@
 }
 
 .option.selected {
-  background: #0388ff;
+  background: #fff;
   border-color: #0388ff;
+  border-width: 2px;
 }
 
 .selectionSpan {
