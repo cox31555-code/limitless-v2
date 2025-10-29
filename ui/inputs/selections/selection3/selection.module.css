@@ -23,8 +23,7 @@
 
 .option.selected {
   background: #fff;
-  border-color: #0388ff;
-  border-width: 1px;
+  border: 1px solid #0388ff;
 }
 
 .selectionSpan {
