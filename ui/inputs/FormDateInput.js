@@ -196,7 +196,7 @@ const FormDateInput = forwardRef(
                 className={styles.inputContainer}
                 onClick={openDatePicker}
                 ref={inputContainerRef}
-                style={["Start Date", "Start Time", "Date of Birth"].includes(dateLabel) ? { paddingLeft: '0.6rem' } : {}}
+                style={dateLabel && (dateLabel.toLowerCase().includes("start date") || dateLabel.toLowerCase().includes("date of birth") || dateLabel.toLowerCase().includes("date of birth")) ? { paddingLeft: '0.6rem' } : {}}
               >
                 <div className={styles.iconContainer}>
                   <Image
