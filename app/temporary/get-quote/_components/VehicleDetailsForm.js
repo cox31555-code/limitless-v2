@@ -378,6 +378,7 @@ const VehicleDetailsForm = ({
                     disabled={isLoadingVehicleData}
                     type="button"
                     hideArrow={true}
+                    variant={showFoundData ? "secondary" : "primary"}
                   />
                 }
               />
