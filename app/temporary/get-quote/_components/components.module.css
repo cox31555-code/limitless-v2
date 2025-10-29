@@ -1542,3 +1542,219 @@
     border-radius: 12px;
   }
 }
+
+/* Clean Personal Details Form Styling - Minimal & Professional */
+.cleanFormContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 100%;
+}
+
+.cleanSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.cleanSectionTitle {
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000822;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+  margin: 0;
+  padding: 1rem 1.2rem;
+  background: #f5f7fa;
+  border-left: 4px solid #0388ff;
+  border-radius: 0 6px 6px 0;
+  text-transform: capitalize;
+}
+
+.cleanLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #5a6b7d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 1.2rem 0;
+  line-height: 1;
+}
+
+.cleanFormGrid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.cleanFormGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.cleanFormGridFull {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.cleanPostcodeRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.2rem;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.cleanFindAddressButton {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cleanFindAddressButton button {
+  width: 100%;
+  height: 5.2rem;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.2rem 1.6rem;
+}
+
+.cleanFindAddressButton button:hover {
+  background: linear-gradient(135deg, #0270cc 0%, #0258b8 100%);
+  transform: translateY(-1px);
+}
+
+.cleanSelectionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cleanSelections3 {
+  width: 100%;
+}
+
+.cleanDeclarationsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.cleanDeclarationItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  background: #f5f7fa;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cleanDeclarationItem:hover {
+  border-color: rgba(3, 136, 255, 0.15);
+  background: #f0f6ff;
+}
+
+.cleanDeclarationQuestion {
+  color: #000822;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.cleanError {
+  color: #ef4444;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.6rem;
+  display: block;
+  letter-spacing: 0.2px;
+}
+
+/* Tablet Responsive */
+@media screen and (max-width: 900px) {
+  .cleanFormGrid2,
+  .cleanFormGrid3 {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .cleanPostcodeRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cleanFindAddressButton button {
+    height: auto;
+  }
+
+  .cleanFormContent {
+    gap: 2rem;
+  }
+
+  .cleanSection {
+    gap: 1.2rem;
+  }
+
+  .cleanSectionTitle {
+    font-size: 1.3rem;
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+  .cleanFormContent {
+    gap: 1.8rem;
+  }
+
+  .cleanSection {
+    gap: 1rem;
+  }
+
+  .cleanSectionTitle {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .cleanFormGrid2,
+  .cleanFormGrid3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cleanPostcodeRow {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .cleanDeclarationItem {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .cleanDeclarationQuestion {
+    font-size: 1.2rem;
+  }
+
+  .cleanFindAddressButton button {
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+  }
+}
