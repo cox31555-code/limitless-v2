@@ -7,22 +7,12 @@ const YesORNo = ({ value, onChange }) => {
         className={`${styles.button} ${value ? styles.active : ""}`}
         onClick={() => onChange(true)}
       >
-        <span
-          className={`${styles.selectionSpan} ${
-            value ? styles.selectedSpan : ""
-          }`}
-        ></span>
         Yes
       </p>
       <p
         className={`${styles.button} ${value ? "" : styles.active}`}
         onClick={() => onChange(false)}
       >
-        <span
-          className={`${styles.selectionSpan} ${
-            value ? "" : styles.selectedSpan
-          }`}
-        ></span>
         No
       </p>
     </div>
