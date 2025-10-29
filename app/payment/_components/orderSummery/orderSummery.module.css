@@ -1,217 +1,296 @@
 .container {
-  border-radius: 18px;
-  background: #fff;
-  padding: 3.4rem 3.8rem;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 3.2rem;
   width: 100%;
-  min-width: 40rem;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 8, 34, 0.04);
 }
-.title {
-  color: #000822;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 124%; /* 34.72px */
-  letter-spacing: 1.12px;
-}
+
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 1.6rem;
-  height: 64px;
-  border-radius: 12px;
-  background: #0388ff;
-  margin-top: 2.8rem;
+  align-items: flex-start;
+  margin-bottom: 2.4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
 }
-.headerItem {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.3px;
 }
-.headerItemTitle,
-.headerItemValue {
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-}
-.items {
+
+.orderRef {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding: 2.2rem 3.2rem;
+  align-items: flex-end;
+  gap: 0.4rem;
 }
-.summaryItem {
+
+.orderRefLabel {
+  font-size: 1.2rem;
+  color: #6b7c8f;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.orderRefValue {
+  font-size: 1.6rem;
+  color: #0388ff;
+  font-weight: 700;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.itemRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 0;
 }
-.summaryItemTitle {
-  color: rgba(0, 8, 34, 0.4);
+
+.itemLabel {
   font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: #5a6b7d;
+  font-weight: 500;
 }
-.summaryItemValue {
+
+.itemValue {
+  font-size: 1.4rem;
   color: #000822;
-  font-size: 1.4rem;
   font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
 }
-.total {
+
+.totalSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 3.2rem 2.3rem;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-top: 2px solid rgba(3, 136, 255, 0.12);
+  border-bottom: 2px solid rgba(3, 136, 255, 0.12);
 }
-.totalTitle,
+
+.totalLabel {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000822;
+}
+
 .totalValue {
-  color: #000822;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0388ff;
+}
+
+.dashboardButton {
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  margin: 2.4rem 0;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
   font-size: 1.4rem;
   font-weight: 600;
-}
-.dashboardButton {
-  display: flex;
-  width: 100%;
-  height: 62px;
-  align-items: center;
-  justify-content: center;
-  gap: 1.8rem;
-  border-radius: 12px;
-  background: #ecf0fe;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  color: #0388ff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
   transition: all 0.3s ease;
-  border: none;
-}
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 4rem;
-}
-.footerText {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  padding-bottom: 1.4rem;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.18);
-}
-.footerTextTitle {
-  color: #000822;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
-}
-.footerTextSupport {
-  color: #494f64;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
-.voluntaryExcess {
+.dashboardButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.4);
+}
+
+.infoSection {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  margin: 2.4rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.infoTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+}
+
+.infoText {
+  font-size: 1.3rem;
+  color: #6b7c8f;
+  line-height: 150%;
+  margin: 0;
+}
+
+.voluntarySection {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.8rem;
-  padding-top: 1.4rem;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(3, 136, 255, 0.12);
 }
-.voluntaryText {
-  color: #0388ff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
+
+.voluntaryLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #5a6b7d;
 }
+
 .voluntaryValue {
-  color: #000822;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
+  color: #0388ff;
 }
-@media (max-width: 800px) {
+
+.supportSection {
+  text-align: center;
+  padding: 1.6rem 0;
+}
+
+.supportText {
+  font-size: 1.2rem;
+  color: #6b7c8f;
+  margin: 0;
+}
+
+.supportText a {
+  color: #0388ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.supportText a:hover {
+  color: #0270cc;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
   .container {
-    padding: 2.2rem;
-    width: 91.2vw;
-    margin: 2.6rem auto 2.6rem;
-    min-width: 91.2vw;
-  }
-  .title {
-    font-size: 2.4rem;
-  }
-  .header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 0;
-    height: auto;
-    margin-top: 2.4rem;
-  }
-  .headerItem {
-    gap: 1.6rem;
-    padding: 1.6rem 1.6rem 1.4rem;
-  }
-  .headerItemTitle,
-  .headerItemValue {
-    width: 100%;
-  }
-  .headerItemValue {
-    padding: 1.6rem 1.9rem 1.7rem;
-  }
-  .items {
-    gap: 2.1rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid rgba(0, 8, 34, 0.14);
-  }
-  .summaryItemTitle,
-  .summaryItemValue {
-    font-size: 1.4rem;
-  }
-  .total {
-    padding: 2rem 0 2.8rem;
-  }
-  .totalTitle,
-  .totalValue {
-    font-size: 1.4rem;
-  }
-  .dashboardButton {
-    height: 4.8rem;
-    gap: 1.8rem;
-    font-size: 1.4rem;
-  }
-  .footer {
-    margin-top: 3.8rem;
-  }
-  .footerText {
-    gap: 0.8rem;
-    padding-bottom: 7rem;
-  }
-  .footerTextTitle,
-  .footerTextSupport {
-    font-size: 1.4rem;
-    text-align: center;
+    padding: 2rem;
   }
 
-  .voluntaryExcess {
-    gap: 0.8rem;
-    padding-top: 2rem;
+  .header {
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.4rem;
   }
-  .voluntaryText .voluntaryValue {
+
+  .orderRef {
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .itemRow {
+    padding: 0.8rem 0;
+  }
+
+  .itemLabel,
+  .itemValue {
+    font-size: 1.3rem;
+  }
+
+  .totalSection {
+    padding: 1.6rem 0;
+    margin: 1.6rem 0;
+  }
+
+  .totalLabel {
     font-size: 1.4rem;
-    text-align: center;
+  }
+
+  .totalValue {
+    font-size: 2rem;
+  }
+
+  .infoSection {
+    margin: 1.8rem 0;
+    padding: 1.6rem 0;
+    gap: 1.4rem;
+  }
+
+  .dashboardButton {
+    padding: 1.2rem 1.4rem;
+    margin: 1.8rem 0;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.6rem;
+  }
+
+  .header {
+    margin-bottom: 1.4rem;
+    padding-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .orderRefLabel {
+    font-size: 1rem;
+  }
+
+  .orderRefValue {
+    font-size: 1.4rem;
+  }
+
+  .itemLabel,
+  .itemValue {
+    font-size: 1.2rem;
+  }
+
+  .totalValue {
+    font-size: 1.8rem;
+  }
+
+  .dashboardButton {
+    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
+    gap: 0.6rem;
+  }
+
+  .dashboardButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .voluntaryValue {
+    font-size: 1.4rem;
   }
 }
