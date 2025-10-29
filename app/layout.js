@@ -2,12 +2,14 @@
 
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "@/ui/layout/header/Header";
+import dynamic from "next/dynamic";
 import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
 import { usePathname } from "next/navigation";
+
+const Header = dynamic(() => import("@/ui/layout/header/Header"), { ssr: false });
 
 const poppins = Poppins({
   subsets: ["latin"],
