@@ -261,7 +261,7 @@
 .customDurationSection {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.2rem;
 }
 
 .sectionLabel {
@@ -403,8 +403,8 @@
 .durationValueGroup {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
-  padding: 2.4rem;
+  gap: 1.4rem;
+  padding: 1.8rem;
   background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
   border-radius: 1.4rem;
   border: 2px solid #e0eeff;
@@ -462,9 +462,9 @@
 /* Buttons */
 .primaryButton,
 .secondaryButton {
-  padding: 1.4rem 2rem;
+  padding: 1.2rem 2rem;
   border-radius: 1.2rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -479,7 +479,7 @@
 
 .primaryButton {
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
   color: white;
 }
