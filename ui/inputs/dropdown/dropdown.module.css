@@ -90,6 +90,25 @@
   transform: rotate(180deg);
 }
 
+.select.error {
+  border: 2px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.selectWrapper.error {
+  border: 2px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  display: block;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
 @media screen and (max-width: 900px) {
   .selectWrapper {
     height: 5.2rem;
