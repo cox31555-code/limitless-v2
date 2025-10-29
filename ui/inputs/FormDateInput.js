@@ -18,6 +18,7 @@ const FormDateInput = forwardRef(
       allowPastDates = false,
       isDateOfBirth = false,
       maxDate = null,
+      forceShowAbove = false,
       ...props
     },
     ref
@@ -43,7 +44,15 @@ const FormDateInput = forwardRef(
       const spaceAbove = rect.top;
       const pickerHeight = 400; // Approximate height of pickers
 
-      if (spaceBelow < pickerHeight && spaceAbove > pickerHeight) {
+      if (forceShowAbove) {
+        // Always show above when forceShowAbove is true
+        setPickerPosition({
+          top: "auto",
+          bottom: `${window.innerHeight - rect.top + 12}px`,
+          left: `${rect.left}px`,
+          showAbove: true,
+        });
+      } else if (spaceBelow < pickerHeight && spaceAbove > pickerHeight) {
         // Show above
         setPickerPosition({
           top: "auto",
