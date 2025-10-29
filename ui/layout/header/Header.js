@@ -94,7 +94,7 @@ const Header = () => {
     pathname.startsWith("/payment");
 
   if (shouldHideHeader) {
-    return null;
+    return <div style={{ display: "none" }} />;
   }
 
   return (
