@@ -79,7 +79,9 @@ const Footer = () => {
             <GetQuoteFooterBanner />
           ) : !pathname.startsWith("/payment") ? (
             <NoHiddenFees />
-          ) : null}
+          ) : (
+            <div />
+          )}
         </div>
         <div className={styles.content}>
           <div className={styles.menus}>
