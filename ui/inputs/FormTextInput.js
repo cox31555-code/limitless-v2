@@ -44,7 +44,7 @@ const FormTextInput = ({
     <div className={styles.inputGroup}>
       {!reg && <label className={styles.label}>{label}</label>}
       <div className={styles.wrapper}>
-        <div className={`${styles.inputContainer} ${error ? styles.error : ""}`}>
+        <div className={`${styles.inputContainer} ${error ? styles.error : ""} ${disabled ? styles.disabled : ""}`}>
           {reg && (
             <span className={styles.inputSpan}>
               <img
