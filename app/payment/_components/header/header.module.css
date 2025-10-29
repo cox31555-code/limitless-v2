@@ -5,6 +5,10 @@
   display: none;
 }
 
+.success {
+  display: none;
+}
+
 .wrapper {
   position: relative;
   overflow: hidden;
