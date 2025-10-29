@@ -343,6 +343,7 @@ const FormDateInput = forwardRef(
                 selectedTime={value || "10:00"}
                 onTimeSelect={handleTimeSelect}
                 onClose={closeTimePicker}
+                showAbove={pickerPosition.showAbove}
               />
             </div>
           )}
