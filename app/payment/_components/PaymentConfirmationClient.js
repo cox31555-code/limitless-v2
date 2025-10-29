@@ -20,14 +20,17 @@ export default function PaymentConfirmationClient({ insuranceData }) {
 
   return (
     <div>
-      <Header title="Your policy is confirmed" />
-      <div className={"centeredContent"}>
-        {/* Confirmation Message Section */}
-        <div className={styles.confirmationSection}>
-          <p className={styles.confirmationSubtitle}>
+      {/* Confirmation Header Box */}
+      <div className={styles.confirmationHeader}>
+        <div className={"centeredContent"}>
+          <h1 className={styles.confirmationHeaderTitle}>Your policy is confirmed</h1>
+          <p className={styles.confirmationHeaderSubtitle}>
             Payment processed successfully. Your insurance policy is now active.
           </p>
         </div>
+      </div>
+
+      <div className={"centeredContent"}>
 
         {/* Order Summary and Cover Level */}
         <div className={styles.summaryRow}>
