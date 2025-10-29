@@ -134,6 +134,7 @@
   font-size: 1.8rem;
   font-family: "UK Number Plate", monospace;
   text-transform: uppercase;
+  padding: 0 1.6rem;
 }
 
 .input.reg::placeholder {
