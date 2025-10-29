@@ -304,11 +304,6 @@
   width: 14px;
   height: 14px;
   color: #3fa9ff;
-  transition: color 0.3s ease;
-}
-
-.featureItem:hover .checkIcon {
-  color: #ffffff;
 }
 
 .featureItemTitle {
