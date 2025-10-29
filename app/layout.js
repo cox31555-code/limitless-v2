@@ -17,12 +17,13 @@ const poppins = Poppins({
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const isLoginPage = pathname === "/login";
+  const isPaymentSummaryPage = pathname === "/payment-summary" || pathname.startsWith("/payment-summary?");
 
   return (
     <html lang="en">
       <body className={poppins.className}>
         <AuthProvider>
-          <Header />
+          {!isPaymentSummaryPage && <Header />}
           {children}
           {!isLoginPage && <Footer />}
           <ToastContainer
