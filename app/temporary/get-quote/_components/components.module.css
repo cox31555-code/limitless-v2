@@ -88,6 +88,67 @@
   min-width: fit-content;
 }
 
+/* Vehicle Type Grid - 2 Column Layout */
+.vehicleTypeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.vehicleTypeLabel {
+  color: #000822;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.vehicleTypeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.vehicleTypeOption {
+  padding: 1.2rem 1.6rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000822;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicleTypeOption:hover:not(:disabled) {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+}
+
+.vehicleTypeOptionSelected {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border-color: #0388ff;
+  color: #fff;
+}
+
+.vehicleTypeOptionSelected:hover {
+  background: linear-gradient(135deg, #0270cc 0%, #0258b8 100%);
+}
+
+.vehicleTypeOption:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .vehicleDetailsContainer {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
