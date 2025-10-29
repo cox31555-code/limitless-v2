@@ -370,12 +370,14 @@ const VehicleDetailsForm = ({
                   });
                 }}
                 error={errors.vehicleDetails?.registrationNumber}
+                disabled={showFoundData}
                 button={
                   <ConfirmBtn
-                    title={isLoadingVehicleData ? "Loading..." : "Find Vehicle"}
+                    title={isLoadingVehicleData ? "Loading..." : showFoundData ? "Change Vehicle" : "Find Vehicle"}
                     onClick={handleFindVehicle}
                     disabled={isLoadingVehicleData}
                     type="button"
+                    hideArrow={true}
                   />
                 }
               />
