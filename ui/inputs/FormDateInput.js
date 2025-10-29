@@ -19,6 +19,7 @@ const FormDateInput = forwardRef(
       isDateOfBirth = false,
       maxDate = null,
       forceShowAbove = false,
+      defaultYear = null,
       ...props
     },
     ref
