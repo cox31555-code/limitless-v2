@@ -96,11 +96,11 @@
 }
 
 .gbText {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   line-height: 100%;
-  letter-spacing: 0;
-  color: #000;
+  letter-spacing: 0.2px;
+  color: #0388ff;
   text-transform: uppercase;
 }
 
