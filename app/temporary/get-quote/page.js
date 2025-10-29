@@ -230,6 +230,7 @@ const TemporaryInsuranceContent = () => {
   return (
     <>
       <GetQuoteHeaderWithNav title="Temporary Insurance Quote" currentStep={currentStep} totalSteps={4} />
+      <Stepper currentStep={currentStep} totalSteps={4} isPaymentPage={false} />
       <div className="centeredContent">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
