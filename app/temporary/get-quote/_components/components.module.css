@@ -88,14 +88,6 @@
   min-width: fit-content;
 }
 
-/* Vehicle Type Row - 2 Column Grid */
-.vehicleTypeRow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
-  width: 100%;
-  align-items: start;
-}
 
 .vehicleDetailsContainer {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
