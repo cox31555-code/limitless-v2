@@ -25,7 +25,13 @@ export default function PaymentConfirmationClient({ insuranceData }) {
           <div className={styles.headerContent}>
             <div className={styles.navigationBar}>
               <div className={styles.logoContainer}>
-                <img src="/svg/logo.svg" alt="logo" width={66} height={66} className={styles.logo} />
+                <Image
+                  src="/svg/logo.svg"
+                  alt="logo"
+                  width={66}
+                  height={66}
+                  className={styles.logo}
+                />
               </div>
               <menu className={styles.menu} suppressHydrationWarning>
                 <li className={styles.menuItem}>
