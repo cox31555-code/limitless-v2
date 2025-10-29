@@ -73,16 +73,16 @@ const Footer = () => {
       suppressHydrationWarning
     >
       <div className={`centeredContent ${styles.contentContainer}`} suppressHydrationWarning>
-        <div suppressHydrationWarning>
+        <>
           {pathname.startsWith("/temporary/get-quote") ||
           pathname.startsWith("/impound/get-quote") ? (
             <GetQuoteFooterBanner />
-          ) : !pathname.startsWith("/payment") ? (
-            <NoHiddenFees />
+          ) : pathname.startsWith("/payment") ? (
+            <div suppressHydrationWarning />
           ) : (
-            <div />
+            <NoHiddenFees suppressHydrationWarning />
           )}
-        </div>
+        </>
         <div className={styles.content}>
           <div className={styles.menus}>
             {menus.map((menu, index) => (
