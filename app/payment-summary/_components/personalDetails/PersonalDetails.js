@@ -16,7 +16,7 @@ const PersonalDetails = ({ data, carUsage }) => {
   };
 
   return (
-    <ComponentWrapper title="Personal Details" icon={{width: 62, height: 62}}>
+    <ComponentWrapper title="Personal Details" icon={{width: 62, height: 62}} isPaymentPage={true}>
       <div className={styles.content}>
         <div className={styles.row}>
           <InputWithData2   
