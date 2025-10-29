@@ -65,15 +65,18 @@ const Footer = () => {
         {pathname.startsWith("/temporary/get-quote") ||
         pathname.startsWith("/impound/get-quote") ? (
           <GetQuoteFooterBanner />
-        ) : (pathname === "/" || pathname === "/annual") ? (
-          <NoHiddenFees />
-        ) : (
-          !pathname.startsWith("/dashboard") &&
+        ) : !pathname.startsWith("/dashboard") &&
+          !pathname.startsWith("/payment") &&
           !["/login", "/forget-password", "/change-password"].includes(
             pathname
           ) &&
-          !shouldUseSpecialStyles(pathname) && <NoHiddenFees />
-        )}
+          !shouldUseSpecialStyles(pathname) ? (
+          (pathname === "/" || pathname === "/annual") ? (
+            <NoHiddenFees />
+          ) : (
+            <NoHiddenFees />
+          )
+        ) : null}
         <div className={styles.content}>
           <div className={styles.menus}>
             {menus.map((menu, index) => (
