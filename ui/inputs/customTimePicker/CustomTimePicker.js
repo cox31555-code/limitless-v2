@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./customTimePicker.module.css";
 
-const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose }) => {
+const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose, showAbove = false }) => {
   const timeSlots = [
     "08:00",
     "09:00",
