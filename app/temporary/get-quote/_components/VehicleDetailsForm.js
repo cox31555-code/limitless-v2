@@ -448,7 +448,7 @@ const VehicleDetailsForm = ({
           }`}
         >
           <div className={styles.rows}>
-            <div className={styles.vehicleTypeRow}>
+            <div className={`${styles.row}`}>
               <FormDropdown
                 label="My Vehicle is a...."
                 options={["Car", "Motorcycle", "Truck", "Bus"]}
@@ -457,10 +457,7 @@ const VehicleDetailsForm = ({
                 error={errors.vehicleDetails?.type}
                 disabled={!!foundVehicleData}
               />
-            </div>
-
-            {watch("vehicleDetails.type") && !foundVehicleData && (
-              <div className={`${styles.row} ${styles.progressiveRow}`}>
+              {watch("vehicleDetails.type") && !foundVehicleData && (
                 <FormDropdown
                   label="Make"
                   options={state.makes}
@@ -471,21 +468,41 @@ const VehicleDetailsForm = ({
                   error={errors.vehicleDetails?.make}
                   disabled={!!foundVehicleData}
                 />
-                {selectedMake && (
+              )}
+            </div>
+
+            {selectedMake && !foundVehicleData && (
+              <div className={`${styles.row} ${styles.progressiveRow}`}>
+                <FormDropdown
+                  key={`model-${forceUpdate}`}
+                  label="Model"
+                  options={state.options.models}
+                  placeholder="Select Model"
+                  disabled={
+                    !!foundVehicleData ||
+                    !selectedMake ||
+                    state.options.models.length === 0
+                  }
+                  value={state.values.model || selectedModel || ""}
+                  onChange={(e) => handleDropdownChange("model", e.target.value)}
+                  {...register("vehicleDetails.model")}
+                  error={errors.vehicleDetails?.model}
+                />
+                {selectedYear && (
                   <FormDropdown
-                    key={`model-${forceUpdate}`}
-                    label="Model"
-                    options={state.options.models}
-                    placeholder="Select Model"
+                    key={`year-${forceUpdate}`}
+                    label="Year"
+                    options={state.options.years}
+                    placeholder="Select Year"
                     disabled={
                       !!foundVehicleData ||
-                      !selectedMake ||
-                      state.options.models.length === 0
+                      !selectedModel ||
+                      state.options.years.length === 0
                     }
-                    value={state.values.model || selectedModel || ""}
-                    onChange={(e) => handleDropdownChange("model", e.target.value)}
-                    {...register("vehicleDetails.model")}
-                    error={errors.vehicleDetails?.model}
+                    value={state.values.year || selectedYear || ""}
+                    onChange={(e) => handleDropdownChange("year", e.target.value)}
+                    {...register("vehicleDetails.year")}
+                    error={errors.vehicleDetails?.year}
                   />
                 )}
               </div>
