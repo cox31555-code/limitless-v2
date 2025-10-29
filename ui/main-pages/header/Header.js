@@ -5,7 +5,6 @@ import Feature from "../../feature/Feature";
 import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import GetQuote from "../../getQuote/getQuote";
-import GetQuoteImpound from "../getQuoteImpound/GetQuoteImpound";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 const plusJakartaSans = Plus_Jakarta_Sans({
