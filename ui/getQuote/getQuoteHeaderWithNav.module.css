@@ -80,11 +80,6 @@
 .helpBtn:hover {
   border-color: rgba(3, 136, 255, 0.5);
   background: rgba(3, 136, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-.helpBtn:active {
-  transform: translateY(0);
 }
 
 /* Title Section */
