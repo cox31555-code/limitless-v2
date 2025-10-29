@@ -294,6 +294,7 @@ const FormDateInput = forwardRef(
                 className={styles.inputContainer}
                 onClick={openTimePicker}
                 ref={inputContainerRef}
+                style={reducedPadding ? { paddingLeft: '0.7rem' } : {}}
               >
                 <div className={styles.iconContainer}>
                   <Image
