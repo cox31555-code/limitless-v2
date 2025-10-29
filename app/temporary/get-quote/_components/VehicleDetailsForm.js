@@ -448,26 +448,23 @@ const VehicleDetailsForm = ({
           }`}
         >
           <div className={styles.rows}>
-            <div className={styles.vehicleTypeSection}>
-              <label className={styles.vehicleTypeLabel}>My Vehicle is a....</label>
-              <div className={styles.vehicleTypeGrid}>
-                {["Car", "Motorcycle", "Truck", "Bus"].map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    className={`${styles.vehicleTypeOption} ${
-                      watch("vehicleDetails.type") === option ? styles.vehicleTypeOptionSelected : ""
-                    }`}
-                    onClick={() => setValue("vehicleDetails.type", option)}
-                    disabled={!!foundVehicleData}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-              {errors.vehicleDetails?.type && (
-                <span className={styles.error}>{errors.vehicleDetails.type.message}</span>
-              )}
+            <div className={styles.vehicleTypeRow}>
+              <FormDropdown
+                label="My Vehicle is a...."
+                options={["Car", "Motorcycle"]}
+                placeholder="Choose Vehicle"
+                {...register("vehicleDetails.type")}
+                error={errors.vehicleDetails?.type}
+                disabled={!!foundVehicleData}
+              />
+              <FormDropdown
+                label="&nbsp;"
+                options={["Truck", "Bus"]}
+                placeholder="Choose Vehicle"
+                {...register("vehicleDetails.type")}
+                error={errors.vehicleDetails?.type}
+                disabled={!!foundVehicleData}
+              />
             </div>
 
             {watch("vehicleDetails.type") && !foundVehicleData && (
