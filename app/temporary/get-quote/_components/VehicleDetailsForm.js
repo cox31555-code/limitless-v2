@@ -451,15 +451,7 @@ const VehicleDetailsForm = ({
             <div className={styles.vehicleTypeRow}>
               <FormDropdown
                 label="My Vehicle is a...."
-                options={["Car", "Motorcycle"]}
-                placeholder="Choose Vehicle"
-                {...register("vehicleDetails.type")}
-                error={errors.vehicleDetails?.type}
-                disabled={!!foundVehicleData}
-              />
-              <FormDropdown
-                label="&nbsp;"
-                options={["Truck", "Bus"]}
+                options={["Car", "Motorcycle", "Truck", "Bus"]}
                 placeholder="Choose Vehicle"
                 {...register("vehicleDetails.type")}
                 error={errors.vehicleDetails?.type}
