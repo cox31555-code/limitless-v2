@@ -11,162 +11,16 @@
 
 .headerElement {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   background-color: #000822;
   font-weight: 400;
-  justify-content: center;
   position: relative;
   width: 100%;
   z-index: 2;
   flex-direction: column;
   box-sizing: border-box;
-}
-
-.headerContent {
-  width: 100%;
-  max-width: 130rem;
-  padding: 1.8rem 1.2rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;
-  margin: 0 auto 0.9rem;
-}
-
-.navigationBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
-}
-
-.logoContainer {
-  display: flex;
-  align-items: center;
-  width: 30.4rem;
-  flex-shrink: 0;
-}
-
-.logo {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 66px;
-  height: 66px;
-}
-
-.logo:hover {
-  opacity: 0.85;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  list-style: none;
-  padding: 0.8rem 0.4rem 0.8rem 0.5rem;
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(3, 136, 255, 0);
-  height: 5.2rem;
-  margin-left: -4.2rem;
-}
-
-.menuItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0 0.2rem 0;
-  border-radius: 0;
-  position: relative;
-}
-
-.menuLink {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.55rem;
-  font-weight: 600;
-  line-height: 124%;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 1.2rem 2.4rem;
-  position: relative;
-  border-radius: 10px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  gap: 1rem;
-}
-
-.buttons {
-  height: 6.4rem;
-  border-radius: 12px;
-  background: transparent;
-  box-shadow: none;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 0;
-  border: none;
-}
-
-.loginBtn {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
-  display: flex;
-  height: 5.2rem;
-  padding: 1rem 2.8rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.loginBtn:hover {
-  border-color: rgba(4, 156, 255, 0.5);
-  color: #049cff;
-  background: rgba(4, 156, 255, 0.08);
-  transform: translateY(-2px);
-}
-
-.quoteBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  width: auto;
-  height: 5.2rem;
-  padding: 1.2rem 2.4rem;
-  border-radius: 10px;
-  background: #0388ff;
-  box-shadow: none;
-  color: #ffffff;
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 124%;
-  border: none;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.3px;
-}
-
-.quoteBtn:hover {
-  background: #0277e3;
-  transform: scale(1.02);
-}
-
-.quoteBtn:active {
-  transform: scale(0.98);
+  padding: 3.2rem 1.2rem;
 }
 
 /* Confirmation Title Section */
