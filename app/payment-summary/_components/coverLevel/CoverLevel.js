@@ -47,11 +47,13 @@ const CoverLevel = ({ data, insuranceType, hideAnimatedLogos = false }) => {
       </div>
 
       <div className={styles.summery}>
-        <div className={`${styles.animatedLogoContainer} ${hideAnimatedLogos ? styles.hidden : ''}`}>
-          <div className={styles.animatedLogo1}></div>
-          <div className={styles.animatedLogo2}></div>
-          <div className={styles.animatedLogo3}></div>
-        </div>
+        {!hideAnimatedLogos && (
+          <div className={styles.animatedLogoContainer}>
+            <div className={styles.animatedLogo1}></div>
+            <div className={styles.animatedLogo2}></div>
+            <div className={styles.animatedLogo3}></div>
+          </div>
+        )}
 
         <div className={styles.content}>
           <div className={styles.total}>
