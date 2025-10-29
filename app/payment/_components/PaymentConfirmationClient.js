@@ -24,10 +24,20 @@ export default function PaymentConfirmationClient({ insuranceData }) {
 
       <div className={styles.confirmationSection}>
         <div className={"centeredContent"}>
-          <h2 className={styles.confirmationTitle}>Your policy is confirmed</h2>
-          <p className={styles.confirmationSubtitle}>
-            Payment processed successfully. Your insurance policy is now active.
-          </p>
+          <div className={styles.confirmationContent}>
+            <h2 className={styles.confirmationTitle}>Your policy is confirmed</h2>
+
+            <div className={styles.progressContainer}>
+              <p className={styles.stepLabel}>Step 4 of 4</p>
+              <div className={styles.progressBar}>
+                <div className={styles.progressFill} style={{ width: "100%" }} />
+              </div>
+            </div>
+
+            <p className={styles.confirmationSubtitle}>
+              Payment processed successfully. Your insurance policy is now active.
+            </p>
+          </div>
         </div>
       </div>
 
