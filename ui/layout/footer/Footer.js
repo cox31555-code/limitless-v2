@@ -56,10 +56,9 @@ const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Hide footer completely on these routes
+  // Hide footer completely on dashboard and login pages
   if (
     pathname.startsWith("/dashboard") ||
-    pathname.startsWith("/payment") ||
     ["/login", "/forget-password", "/change-password"].includes(pathname)
   ) {
     return null;
