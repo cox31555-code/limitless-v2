@@ -8,6 +8,7 @@ import VehicleDetails from "./vehicleDetails/VehicleDetails";
 import CoverLevel from "./coverLevel/CoverLevel";
 import Actions from "./actions/Actions";
 import PaymentIframe from "./PaymentIframe";
+import Stepper from "@/ui/insurance-quotes/stepper/Stepper";
 import styles from "../page.module.css";
 
 export default function PaymentSummaryClient({ insuranceData, id }) {
