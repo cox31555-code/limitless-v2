@@ -75,17 +75,26 @@
 
 .selectionSpan {
   display: flex;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   background: transparent;
   border: 2px solid rgba(3, 136, 255, 0.3);
   flex-shrink: 0;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .selectedSpan {
   background: #fff;
-  border: 2px solid #fff;
+  border: 2px solid #0388ff;
+  box-shadow: inset 0 0 0 4px #0388ff;
+}
+
+.selectedItem .selectionSpan {
+  border-color: #0388ff;
+}
+
+.selectedItem .selectedSpan {
   box-shadow: inset 0 0 0 4px #0388ff;
 }
 @media screen and (max-width: 900px) {
