@@ -352,6 +352,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Select excess amount"
               {...register("carUsage.voluntaryExcess")}
               error={errors.carUsage?.voluntaryExcess}
+              inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
         </section>
