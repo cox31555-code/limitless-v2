@@ -1566,59 +1566,17 @@
   position: relative;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #000822;
+  color: #0388ff;
   line-height: 140%;
   letter-spacing: 0.1px;
-  margin: 0 0 1.2rem 0;
-  padding: 0 0 0.8rem 0;
+  margin: 0 0 0.8rem 0;
+  padding: 0 0 0.6rem 0;
   background: transparent;
   border-left: none;
   border-radius: 0;
   text-transform: capitalize;
   border-bottom: 2px solid #0388ff;
   display: inline-block;
-}
-
-/* Section 1: About You - Solid Blue */
-.cleanSectionTitle[data-section="1"] {
-  border-bottom-color: #0388ff;
-  color: #0388ff;
-}
-
-/* Section 2: Where You Live - Teal */
-.cleanSectionTitle[data-section="2"] {
-  border-bottom-color: #06b6d4;
-  color: #06b6d4;
-}
-
-/* Section 3: Your Employment - Indigo */
-.cleanSectionTitle[data-section="3"] {
-  border-bottom-color: #6366f1;
-  color: #6366f1;
-}
-
-/* Section 4: Parking & Storage - Cyan */
-.cleanSectionTitle[data-section="4"] {
-  border-bottom-color: #00d9ff;
-  color: #00d9ff;
-}
-
-/* Section 5: Usage Details - Purple */
-.cleanSectionTitle[data-section="5"] {
-  border-bottom-color: #a855f7;
-  color: #a855f7;
-}
-
-/* Section 6: Your Driving Record - Orange */
-.cleanSectionTitle[data-section="6"] {
-  border-bottom-color: #f97316;
-  color: #f97316;
-}
-
-/* Section 7: Important Declarations - Red */
-.cleanSectionTitle[data-section="7"] {
-  border-bottom-color: #ef4444;
-  color: #ef4444;
 }
 
 .cleanLabel {
