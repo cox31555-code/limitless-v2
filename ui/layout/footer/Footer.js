@@ -78,9 +78,11 @@ const Footer = () => {
           pathname.startsWith("/impound/get-quote") ? (
             <GetQuoteFooterBanner />
           ) : pathname.startsWith("/payment") ? (
-            <div />
+            null
           ) : (
-            <NoHiddenFees />
+            <div suppressHydrationWarning>
+              <NoHiddenFees />
+            </div>
           )}
         </div>
         <div className={styles.content}>
