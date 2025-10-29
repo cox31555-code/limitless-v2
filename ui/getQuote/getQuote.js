@@ -8,7 +8,7 @@ import Image from "next/image";
 import FormTextInput from "../inputs/FormTextInput";
 import FormDropdown from "../inputs/FormDropdown";
 
-const GetQuote = ({ skipDuration = false, onExpand }) => {
+const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" }) => {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [registrationNumber, setRegistrationNumber] = useState("");
@@ -38,7 +38,7 @@ const GetQuote = ({ skipDuration = false, onExpand }) => {
       const params = new URLSearchParams();
       params.set("fromQuote", "true");
       params.set("registrationNumber", registrationNumber.trim().toUpperCase());
-      router.push(`/temporary/get-quote?${params.toString()}`);
+      router.push(`/${insuranceType}/get-quote?${params.toString()}`);
       return;
     }
 
@@ -83,11 +83,11 @@ const GetQuote = ({ skipDuration = false, onExpand }) => {
       params.set("durationValue", durationData.value);
     }
 
-    router.push(`/temporary/get-quote?${params.toString()}`);
+    router.push(`/${insuranceType}/get-quote?${params.toString()}`);
   };
 
   const handleDontKnowReg = () => {
-    router.push("/temporary/get-quote");
+    router.push(`/${insuranceType}/get-quote`);
   };
 
   const handleRegistrationChange = (e) => {
