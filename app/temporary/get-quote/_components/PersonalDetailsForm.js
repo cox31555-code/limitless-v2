@@ -192,9 +192,8 @@ const PersonalDetailsForm = ({ form }) => {
               }
               {...register("userDetails.address")}
               error={errors.userDetails?.address}
-              />
+            />
             </div>
-          )}
         </section>
 
         {/* Employment Section */}
