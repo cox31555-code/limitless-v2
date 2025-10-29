@@ -326,6 +326,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Select how long held"
               {...register("carUsage.licenseHeld")}
               error={errors.carUsage?.licenseHeld}
+              inputStyle={{ paddingLeft: "14px" }}
             />
             <FormTextInput
               label="License Number (Optional)"
