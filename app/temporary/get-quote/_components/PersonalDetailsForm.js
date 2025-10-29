@@ -190,6 +190,7 @@ const PersonalDetailsForm = ({ form }) => {
                   ? "Select your address"
                   : "No addresses found"
               }
+              disabled={addresses.length === 0}
               {...register("userDetails.address")}
               error={errors.userDetails?.address}
             />
