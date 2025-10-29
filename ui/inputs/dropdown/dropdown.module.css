@@ -32,6 +32,11 @@
   background: #fff;
 }
 
+.selectWrapper:focus-within:hover {
+  border: 1.5px solid #0388ff;
+  box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
+}
+
 .selectWrapper:focus-within {
   border: 1.5px solid #0388ff;
   box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);

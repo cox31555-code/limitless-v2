@@ -48,6 +48,11 @@
   background-color: #fff;
 }
 
+.inputContainer:focus-within:hover:not(.disabled) {
+  border: 1.5px solid #0388ff;
+  box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
+}
+
 .inputContainer.error {
   border: 1.5px solid #ef4444;
   background: rgba(239, 68, 68, 0.04);
