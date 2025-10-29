@@ -65,6 +65,8 @@ const Footer = () => {
           <NoHiddenFees />
         ) : (
           !pathname.startsWith("/dashboard") &&
+          !pathname.startsWith("/temporary/get-quote") &&
+          !pathname.startsWith("/impound/get-quote") &&
           !["/login", "/forget-password", "/change-password"].includes(
             pathname
           ) &&
