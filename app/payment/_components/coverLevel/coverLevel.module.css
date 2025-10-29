@@ -1,179 +1,220 @@
 .container {
-  /* padding: 2.4rem 1.6rem 4.1rem; */
-  max-width: 48.8rem;
-  border-radius: 18px;
-  background: #000822;
-  position: relative;
-}
-.title {
-  color: #fff;
-  font-size: 2.6rem;
-  font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 1.12px;
-  padding: 2.4rem 2.4rem 1.8rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-}
-.coverType {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2.4rem 1.6rem 0;
-}
-.coverTypeTitle {
-  color: #0388ff;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
-}
-.coverTypeValue {
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
-}
-.summery {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2.3rem 2.2rem 2.4rem;
-  margin: 2.6rem 1.6rem 2.4rem;
-  position: relative;
+  background: #ffffff;
   border-radius: 12px;
-  background: #07102d;
-}
-.vehicleCovered {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60%;
-  height: 100%;
-  object-fit: cover;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 8, 34, 0.04);
+  overflow: hidden;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+.header {
+  padding: 2.4rem 3.2rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
 }
-.total {
-  display: flex;
-  align-items: center;
-  display: flex;
-  height: 3rem;
-  padding: 1rem 0.5rem;
-  gap: 1rem;
-  border-radius: 100px;
-  background: #fff;
-  width: 12.5rem;
-}
-.totalTitle {
-  color: #0388ff;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
-}
-.totalPrice {
-  color: #049cff;
-  font-size: 4.4rem;
+
+.title {
+  font-size: 2rem;
   font-weight: 700;
-  line-height: 100%;
-  margin-bottom: 0.5rem;
+  color: #000822;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.3px;
 }
-.totalPriceDescription {
-  color: rgba(255, 255, 255, 0.64);
+
+.coverTypeSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3.2rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.coverTypeLabel {
+  font-size: 1.3rem;
+  color: #6b7c8f;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coverTypeName {
   font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  color: #0388ff;
+  font-weight: 700;
 }
-.features {
+
+.priceSection {
+  padding: 2.4rem 3.2rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.priceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.priceLabel {
+  font-size: 1.3rem;
+  color: #5a6b7d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.priceValue {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #0388ff;
+  line-height: 120%;
+}
+
+.priceNote {
+  font-size: 1.2rem;
+  color: #6b7c8f;
+  font-weight: 500;
+}
+
+.featuresSection {
+  padding: 2.4rem 3.2rem;
+}
+
+.featuresTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.6rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.featuresList {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  padding: 0 3.6rem 4.1rem;
 }
+
 .featureItem {
   display: flex;
-  align-items: center;
-  gap: 1.8rem;
+  align-items: flex-start;
+  gap: 1.2rem;
 }
-.featureItemTitle {
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+
+.featureItem svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
-.background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 9.5rem;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
+
+.featureText {
+  font-size: 1.3rem;
+  color: #5a6b7d;
+  font-weight: 500;
+  line-height: 150%;
 }
-.background2 {
-  position: absolute;
-  top: 0;
-  right: 9.5rem;
-  width: 9.5rem;
-  height: 100%;
-  opacity: 0.82;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-.background3 {
-  position: absolute;
-  top: 50%;
-  /* transform: translateY(-50%); */
-  right: 19rem;
-  width: 9.5rem;
-  height: 50%;
-  opacity: 0.6;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-@media screen and (max-width: 1050px) {
+
+@media (max-width: 768px) {
   .container {
-    width: 100vw;
+    border-radius: 10px;
   }
-}
-@media (max-width: 800px) {
-  .container {
-    width: 91.2vw;
-    margin: 0 auto;
+
+  .header {
+    padding: 1.8rem 2rem;
   }
+
   .title {
+    font-size: 1.8rem;
+  }
+
+  .coverTypeSection {
+    padding: 1.6rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .priceSection {
+    padding: 2rem 2rem;
+  }
+
+  .priceValue {
+    font-size: 2.8rem;
+  }
+
+  .featuresSection {
+    padding: 2rem 2rem;
+  }
+
+  .featuresList {
+    gap: 1rem;
+  }
+
+  .featureItem {
+    gap: 1rem;
+  }
+
+  .featureText {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 1.4rem 1.6rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .coverTypeSection {
+    padding: 1.4rem 1.6rem;
+    gap: 0.8rem;
+  }
+
+  .coverTypeLabel {
+    font-size: 1.2rem;
+  }
+
+  .coverTypeName {
+    font-size: 1.4rem;
+  }
+
+  .priceSection {
+    padding: 1.6rem;
+  }
+
+  .priceValue {
     font-size: 2.4rem;
-    padding: 2.2rem;
   }
-  .coverType {
-    padding: 2.2rem 02.2rem 0;
+
+  .priceLabel,
+  .priceNote {
+    font-size: 1.1rem;
   }
-  .coverTypeTitle,
-  .coverTypeValue {
-    font-size: 1.4rem;
+
+  .featuresSection {
+    padding: 1.6rem;
   }
-  .summery {
-    padding: 2.4rem 0.9rem 2.9rem 2.4rem;
-    margin: 1.2rem 2.2rem;
+
+  .featuresTitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
   }
-  .content {
-    gap: 1.3rem;
+
+  .featuresList {
+    gap: 0.8rem;
   }
-  .totalPrice {
-    font-size: 3.4rem;
-    margin-bottom: 0rem;
+
+  .featureItem {
+    gap: 0.8rem;
   }
-  .totalPriceDescription {
-    font-size: 1.4rem;
+
+  .featureItem svg {
+    width: 18px;
+    height: 18px;
   }
-  .features {
-    padding: 0 2.2rem 4.8rem;
-  }
-  .featureItemTitle {
-    font-size: 1.4rem;
+
+  .featureText {
+    font-size: 1.1rem;
   }
 }
