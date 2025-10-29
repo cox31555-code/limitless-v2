@@ -359,7 +359,7 @@ const VehicleDetailsForm = ({
               <FormTextInput
                 reg={true}
                 label="Registration Number"
-                placeholder="Enter your Registration number"
+                placeholder="e.g., AB51 ABC"
                 value={watch("vehicleDetails.registrationNumber") || ""}
                 onChange={(e) => {
                   const formattedValue = e.target.value;
@@ -392,7 +392,7 @@ const VehicleDetailsForm = ({
               <FormTextInput
                 reg={true}
                 label="Registration Number"
-                placeholder="Enter your Registration number"
+                placeholder="e.g., AB51 ABC"
                 {...register("vehicleDetails.registrationNumber")}
                 error={errors.vehicleDetails?.registrationNumber}
                 value={watch("vehicleDetails.registrationNumber") || ""}
