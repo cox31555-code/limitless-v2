@@ -76,9 +76,9 @@ const Footer = () => {
         {pathname.startsWith("/temporary/get-quote") ||
         pathname.startsWith("/impound/get-quote") ? (
           <GetQuoteFooterBanner />
-        ) : (
+        ) : !pathname.startsWith("/payment") ? (
           <NoHiddenFees />
-        )}
+        ) : null}
         <div className={styles.content}>
           <div className={styles.menus}>
             {menus.map((menu, index) => (
