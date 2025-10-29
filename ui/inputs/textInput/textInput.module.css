@@ -49,7 +49,7 @@
   border-radius: 10px;
   background: #fff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
-  height: 5.8rem;
+  height: 5.2rem;
   justify-content: flex-start;
   transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
@@ -86,7 +86,7 @@
 
 .inputSpan {
   width: 8rem;
-  height: 5.8rem;
+  height: 5.2rem;
   border-radius: 0;
   background: #f0f3f7;
   display: flex;
