@@ -235,6 +235,7 @@ const TemporaryInsuranceContent = () => {
 
   return (
     <>
+      <LoadingOverlay isVisible={showLoading} />
       <GetQuoteHeaderWithNav title="Temporary Insurance Quote" currentStep={currentStep} totalSteps={4} />
       <div className="centeredContent">
         <form
