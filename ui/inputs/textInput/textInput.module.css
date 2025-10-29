@@ -92,9 +92,8 @@
 
 .input {
   flex: 1;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+  border: none;
+  outline: none;
   color: #000822;
   font-size: 1.3rem;
   font-weight: 400;
