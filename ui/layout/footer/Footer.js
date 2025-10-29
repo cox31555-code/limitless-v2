@@ -55,17 +55,11 @@ const shouldUseSpecialStyles = (pathname) => {
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Hide footer completely on dashboard and login pages (only after hydration)
+  // Don't render footer on dashboard and login pages
   if (
-    mounted &&
-    (pathname.startsWith("/dashboard") ||
-      ["/login", "/forget-password", "/change-password"].includes(pathname))
+    pathname.startsWith("/dashboard") ||
+    ["/login", "/forget-password", "/change-password"].includes(pathname)
   ) {
     return null;
   }
@@ -74,17 +68,14 @@ const Footer = () => {
     <footer
       className={styles.container}
       style={{
-        background: mounted && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
       }}
+      suppressHydrationWarning
     >
       <div className={`centeredContent ${styles.contentContainer}`}>
-        {mounted ? (
-          pathname.startsWith("/temporary/get-quote") ||
-          pathname.startsWith("/impound/get-quote") ? (
-            <GetQuoteFooterBanner />
-          ) : (
-            <NoHiddenFees />
-          )
+        {pathname.startsWith("/temporary/get-quote") ||
+        pathname.startsWith("/impound/get-quote") ? (
+          <GetQuoteFooterBanner />
         ) : (
           <NoHiddenFees />
         )}
