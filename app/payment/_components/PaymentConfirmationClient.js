@@ -6,7 +6,7 @@ import OrderSummery from "./orderSummery/OrderSummery";
 import VehicleDetails from "@/app/payment-summary/_components/vehicleDetails/VehicleDetails";
 import CoverDetails from "@/app/payment-summary/_components/coverDetails/CoverDetails";
 import PersonalDetails from "@/app/payment-summary/_components/personalDetails/PersonalDetails";
-import CoverLevel from "@/app/payment-summary/_components/coverLevel/CoverLevel";
+import CoverLevel from "./coverLevel/CoverLevel";
 import styles from "../page.module.css";
 import paymentSummaryStyles from "@/app/payment-summary/page.module.css";
 import { redirect } from "next/navigation";
