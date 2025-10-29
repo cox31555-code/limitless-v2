@@ -22,6 +22,15 @@ export default function PaymentConfirmationClient({ insuranceData }) {
     <div>
       <GetQuoteHeaderWithNav title="Your policy is confirmed" currentStep={4} totalSteps={4} />
 
+      <div className={styles.confirmationSection}>
+        <div className={"centeredContent"}>
+          <h2 className={styles.confirmationTitle}>Your policy is confirmed</h2>
+          <p className={styles.confirmationSubtitle}>
+            Payment processed successfully. Your insurance policy is now active.
+          </p>
+        </div>
+      </div>
+
       <div className={"centeredContent"}>
 
         {/* Order Summary and Cover Level */}
