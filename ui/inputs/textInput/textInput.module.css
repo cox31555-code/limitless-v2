@@ -55,8 +55,8 @@
 }
 
 .inputContainer:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  background: #f8fbff;
+  border-color: rgba(3, 136, 255, 0.2);
+  background: #fff;
 }
 
 .inputSpan {
