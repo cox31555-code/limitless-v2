@@ -488,7 +488,7 @@ const VehicleDetailsForm = ({
                   {...register("vehicleDetails.model")}
                   error={errors.vehicleDetails?.model}
                 />
-                {selectedYear && (
+                {selectedModel && (
                   <FormDropdown
                     key={`year-${forceUpdate}`}
                     label="Year"
@@ -508,105 +508,88 @@ const VehicleDetailsForm = ({
               </div>
             )}
 
-            {selectedModel && !foundVehicleData && (
+            {selectedYear && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
-                  key={`year-${forceUpdate}`}
-                  label="Year"
-                  options={state.options.years}
-                  placeholder="Select Year"
+                  key={`doors-${forceUpdate}`}
+                  label="Doors"
+                  options={state.options.doors}
+                  placeholder="Select Doors"
                   disabled={
                     !!foundVehicleData ||
-                    !selectedModel ||
-                    state.options.years.length === 0
+                    !selectedYear ||
+                    state.options.doors.length === 0
                   }
-                  value={state.values.year || selectedYear || ""}
-                  onChange={(e) => handleDropdownChange("year", e.target.value)}
-                  {...register("vehicleDetails.year")}
-                  error={errors.vehicleDetails?.year}
+                  value={state.values.doors || selectedDoors || ""}
+                  onChange={(e) => handleDropdownChange("doors", e.target.value)}
+                  {...register("vehicleDetails.doors")}
+                  error={errors.vehicleDetails?.doors}
                 />
-                {selectedYear && (
+                {selectedDoors && (
                   <FormDropdown
-                    key={`doors-${forceUpdate}`}
-                    label="Doors"
-                    options={state.options.doors}
-                    placeholder="Select Doors"
+                    key={`fuel-${forceUpdate}`}
+                    label="Fuel Type"
+                    options={state.options.fuels}
+                    placeholder="Select Fuel Type"
                     disabled={
                       !!foundVehicleData ||
-                      !selectedYear ||
-                      state.options.doors.length === 0
+                      !selectedDoors ||
+                      state.options.fuels.length === 0
                     }
-                    value={state.values.doors || selectedDoors || ""}
-                    onChange={(e) => handleDropdownChange("doors", e.target.value)}
-                    {...register("vehicleDetails.doors")}
-                    error={errors.vehicleDetails?.doors}
+                    value={state.values.fuel || selectedFuel || ""}
+                    onChange={(e) => handleDropdownChange("fuel", e.target.value)}
+                    {...register("vehicleDetails.fuel")}
+                    error={errors.vehicleDetails?.fuel}
                   />
                 )}
               </div>
             )}
 
-            {selectedDoors && !foundVehicleData && (
+            {selectedFuel && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
-                  key={`fuel-${forceUpdate}`}
-                  label="Fuel Type"
-                  options={state.options.fuels}
-                  placeholder="Select Fuel Type"
+                  key={`transmission-${forceUpdate}`}
+                  label="Transmission"
+                  options={state.options.transmissions}
+                  placeholder="Select Transmission"
                   disabled={
                     !!foundVehicleData ||
-                    !selectedDoors ||
-                    state.options.fuels.length === 0
+                    !selectedFuel ||
+                    state.options.transmissions.length === 0
                   }
-                  value={state.values.fuel || selectedFuel || ""}
-                  onChange={(e) => handleDropdownChange("fuel", e.target.value)}
-                  {...register("vehicleDetails.fuel")}
-                  error={errors.vehicleDetails?.fuel}
+                  value={
+                    state.values.transmission ||
+                    watch("vehicleDetails.transmission") ||
+                    ""
+                  }
+                  onChange={(e) =>
+                    handleDropdownChange("transmission", e.target.value)
+                  }
+                  {...register("vehicleDetails.transmission")}
+                  error={errors.vehicleDetails?.transmission}
                 />
-                {selectedFuel && (
+                {watch("vehicleDetails.transmission") && (
                   <FormDropdown
-                    key={`transmission-${forceUpdate}`}
-                    label="Transmission"
-                    options={state.options.transmissions}
-                    placeholder="Select Transmission"
-                    disabled={
-                      !!foundVehicleData ||
-                      !selectedFuel ||
-                      state.options.transmissions.length === 0
-                    }
-                    value={
-                      state.values.transmission ||
-                      watch("vehicleDetails.transmission") ||
-                      ""
-                    }
-                    onChange={(e) =>
-                      handleDropdownChange("transmission", e.target.value)
-                    }
-                    {...register("vehicleDetails.transmission")}
-                    error={errors.vehicleDetails?.transmission}
+                    label="Vehicle Color"
+                    options={carColors}
+                    placeholder="Select Color"
+                    {...register("vehicleDetails.colour")}
+                    error={errors.vehicleDetails?.colour}
+                    disabled={!!foundVehicleData}
                   />
                 )}
               </div>
             )}
 
-            {watch("vehicleDetails.transmission") && !foundVehicleData && (
+            {watch("vehicleDetails.colour") && !foundVehicleData && (
               <div className={`${styles.row} ${styles.progressiveRow}`}>
                 <FormDropdown
-                  label="Vehicle Color"
-                  options={carColors}
-                  placeholder="Select Color"
-                  {...register("vehicleDetails.colour")}
-                  error={errors.vehicleDetails?.colour}
-                  disabled={!!foundVehicleData}
+                  label="How much is your vehicle worth?"
+                  options={vehicleWorthOptions}
+                  placeholder="Choose Price Range"
+                  {...register("vehicleDetails.worth")}
+                  error={errors.vehicleDetails?.worth}
                 />
-                {watch("vehicleDetails.colour") && (
-                  <FormDropdown
-                    label="How much is your vehicle worth?"
-                    options={vehicleWorthOptions}
-                    placeholder="Choose Price Range"
-                    {...register("vehicleDetails.worth")}
-                    error={errors.vehicleDetails?.worth}
-                  />
-                )}
               </div>
             )}
           </div>
