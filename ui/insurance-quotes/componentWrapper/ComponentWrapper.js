@@ -26,7 +26,7 @@ const getIconForTitle = (title) => {
   return "/svg/insurance-quote.svg";
 };
 
-const ComponentWrapper = ({ children, title, icon }) => {
+const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
   const iconSrc = getIconForTitle(title);
   const isVehicleIcon = title?.toLowerCase().includes("vehicle");
   const isCoverIcon = title?.toLowerCase().includes("cover");
