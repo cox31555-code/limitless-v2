@@ -153,6 +153,10 @@
   z-index: 1;
 }
 
+.animatedLogoContainer.hidden {
+  display: none;
+}
+
 .animatedLogo1,
 .animatedLogo2,
 .animatedLogo3 {
