@@ -250,6 +250,7 @@ const FormDateInput = forwardRef(
                 onDateSelect={handleDateSelect}
                 minDate={allowPastDates ? null : today}
                 maxDate={isDateOfBirth ? maxDate : null}
+                showAbove={pickerPosition.showAbove}
               />
             </div>
           )}
