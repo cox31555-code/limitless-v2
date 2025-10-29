@@ -15,7 +15,7 @@ const Actions = ({ insuranceId, onPayClick }) => {
   };
 
   const handleBack = () => {
-    router.back();
+    router.push("/temporary/get-quote");
   };
 
   return (
