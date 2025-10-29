@@ -2,7 +2,7 @@ import React from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import styles from "./loadingOverlay.module.css";
 
-const LoadingOverlay = ({ isVisible = true }) => {
+const LoadingOverlay = ({ isVisible = true, text = "Calculating your quote" }) => {
   if (!isVisible) return null;
 
   return (
@@ -10,6 +10,7 @@ const LoadingOverlay = ({ isVisible = true }) => {
       <div className={styles.backdrop}></div>
       <div className={styles.spinnerContainer}>
         <LoadingSpinner />
+        {text && <p className={styles.loadingText}>{text}</p>}
       </div>
     </div>
   );
