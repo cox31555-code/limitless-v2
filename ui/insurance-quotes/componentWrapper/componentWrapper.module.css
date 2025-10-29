@@ -36,6 +36,11 @@
   box-shadow: none;
   opacity: 0.85;
 }
+
+.icon.greyed {
+  opacity: 0.5;
+  background: rgba(3, 136, 255, 0.06);
+}
 @media screen and (max-width: 900px) {
   .container {
     padding: 2.4rem 2rem 2rem;
