@@ -22,15 +22,26 @@ export default function PaymentConfirmationClient({ insuranceData }) {
     <div>
       <Header title="Thank you for your purchase" />
       <div className={"centeredContent"}>
-        <div className={paymentSummaryStyles.orderSummeryContainer}>
-          <div className={paymentSummaryStyles.orderSummery}>
+        {/* Confirmation Message Section */}
+        <div className={styles.confirmationSection}>
+          <div className={styles.confirmationMessage}>
+            <h2 className={styles.confirmationTitle}>Your policy is confirmed</h2>
+            <p className={styles.confirmationSubtitle}>
+              Your payment has been processed successfully. Your insurance policy is now active.
+            </p>
+          </div>
+        </div>
+
+        {/* Order Summary and Cover Level */}
+        <div className={styles.summaryRow}>
+          <div className={styles.summaryBlock}>
             <OrderSummery
               data={insuranceData.quote}
               vehicleDetails={insuranceData.vehicleDetails}
               carUsage={insuranceData.carUsage}
             />
           </div>
-          <div className={paymentSummaryStyles.coverLevel}>
+          <div className={styles.summaryBlock}>
             <CoverLevel
               data={insuranceData.quote}
               insuranceType={insuranceData.type}
@@ -38,8 +49,9 @@ export default function PaymentConfirmationClient({ insuranceData }) {
           </div>
         </div>
 
-        <div className={paymentSummaryStyles.container}>
-          <div className={paymentSummaryStyles.first}>
+        {/* Details Grid */}
+        <div className={styles.detailsContainer}>
+          <div className={styles.detailsGrid}>
             <VehicleDetails
               data={insuranceData.vehicleDetails}
               carUsage={insuranceData.carUsage}
@@ -50,6 +62,11 @@ export default function PaymentConfirmationClient({ insuranceData }) {
               carUsage={insuranceData.carUsage}
             />
           </div>
+        </div>
+
+        {/* Footer Message */}
+        <div className={styles.footerMessage}>
+          <p>A confirmation email has been sent to your inbox with all policy details.</p>
         </div>
       </div>
     </div>
