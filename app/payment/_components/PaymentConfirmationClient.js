@@ -50,12 +50,6 @@ export default function PaymentConfirmationClient({ insuranceData }) {
               carUsage={insuranceData.carUsage}
             />
           </div>
-          <div className={paymentSummaryStyles.second}>
-            <CoverLevel
-              data={insuranceData.quote}
-              insuranceType={insuranceData.type}
-            />
-          </div>
         </div>
       </div>
     </div>
