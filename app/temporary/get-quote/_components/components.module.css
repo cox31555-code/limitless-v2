@@ -1712,7 +1712,7 @@
   }
 
   .cleanFormContent {
-    gap: 2.4rem;
+    gap: 6rem;
   }
 
   .cleanSection {
@@ -1723,7 +1723,7 @@
 /* Mobile Responsive */
 @media screen and (max-width: 600px) {
   .cleanFormContent {
-    gap: 2.4rem;
+    gap: 6rem;
   }
 
   .cleanSection {
