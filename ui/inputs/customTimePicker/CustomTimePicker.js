@@ -27,7 +27,7 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose, showAbove = fal
   };
 
   return (
-    <div className={styles.timePicker}>
+    <div className={`${styles.timePicker} ${showAbove ? styles.slideUp : ""}`}>
       <div className={styles.timeGrid}>
         {timeSlots.map((time) => (
           <button
