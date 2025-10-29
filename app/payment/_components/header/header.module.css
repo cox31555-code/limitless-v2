@@ -21,6 +21,7 @@
   gap: 4.1rem;
   margin-top: -2.5rem;
   width: 100%;
+  height: auto;
 }
 .titles {
   display: flex;
