@@ -193,7 +193,12 @@ const FormDateInput = forwardRef(
             <div className={styles.inputGroup}>
               <label className={styles.label}>{dateLabel}</label>
 
-              <div className={styles.inputContainer} onClick={openDatePicker} ref={inputContainerRef}>
+              <div
+                className={styles.inputContainer}
+                onClick={openDatePicker}
+                ref={inputContainerRef}
+                style={reducedPadding ? { paddingLeft: '0.6rem' } : {}}
+              >
                 <div className={styles.iconContainer}>
                   <Image
                     src="/svg/date.svg"
