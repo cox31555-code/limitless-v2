@@ -24,12 +24,6 @@ const FormDateInput = forwardRef(
     },
     ref
   ) => {
-    const shouldApplyReducedPadding = (label) => {
-      if (!label) return false;
-      const lowerLabel = label.toLowerCase();
-      return lowerLabel.includes("start date") || lowerLabel.includes("start time") || lowerLabel.includes("date of birth");
-    };
-
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [showTimePicker, setShowTimePicker] = useState(false);
     const [pickerPosition, setPickerPosition] = useState({
