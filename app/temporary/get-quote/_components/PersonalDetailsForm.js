@@ -111,9 +111,9 @@ const PersonalDetailsForm = ({ form }) => {
     <ComponentWrapper title="Personal Details">
       <div className={styles.cleanFormContent}>
         
-        {/* Your Details Section */}
+        {/* About You Section */}
         <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle}>Your Details</h3>
+          <h3 className={styles.cleanSectionTitle} data-section="1">About You</h3>
           
           <div className={styles.cleanFormGrid2Col}>
             <FormTextInput
@@ -160,9 +160,9 @@ const PersonalDetailsForm = ({ form }) => {
           </div>
         </section>
 
-        {/* Address Section */}
+        {/* Where You Live Section */}
         <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle}>Address</h3>
+          <h3 className={styles.cleanSectionTitle} data-section="2">Where You Live</h3>
           
           <div className={styles.cleanPostcodeRow}>
             <FormTextInput
@@ -200,7 +200,7 @@ const PersonalDetailsForm = ({ form }) => {
 
         {/* Employment Section */}
         <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle}>Employment</h3>
+          <h3 className={styles.cleanSectionTitle} data-section="3">Your Employment</h3>
           
           <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
@@ -235,7 +235,7 @@ const PersonalDetailsForm = ({ form }) => {
 
         {/* Car Parking Section */}
         <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle}>Car Parking</h3>
+          <h3 className={styles.cleanSectionTitle} data-section="4">Parking & Storage</h3>
           
           <div className={styles.cleanFormGrid2Col}>
             <div className={styles.cleanSelectionCard}>
@@ -278,7 +278,7 @@ const PersonalDetailsForm = ({ form }) => {
 
         {/* Car Usage Section */}
         <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle}>Car Usage</h3>
+          <h3 className={styles.cleanSectionTitle} data-section="5">Usage Details</h3>
           
           <div className={styles.cleanFormGrid1Col}>
             <p className={styles.cleanLabel}>What do you use the car for?</p>
@@ -297,9 +297,9 @@ const PersonalDetailsForm = ({ form }) => {
           </div>
         </section>
 
-        {/* License & Claims Section */}
+        {/* Your Driving Record Section */}
         <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle}>License & Claims</h3>
+          <h3 className={styles.cleanSectionTitle} data-section="6">Your Driving Record</h3>
           
           <div className={styles.cleanFormGrid3Col}>
             <FormDropdown
