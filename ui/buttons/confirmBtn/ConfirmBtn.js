@@ -8,11 +8,12 @@ const ConfirmBtn = ({
   type = "submit",
   disabled = false,
   hideArrow = false,
+  variant = "primary",
   ...props
 }) => {
   return (
     <button
-      className={styles.confirmBtn}
+      className={`${styles.confirmBtn} ${variant === "secondary" ? styles.secondary : ""}`}
       onClick={onClick}
       style={style}
       type={type}
