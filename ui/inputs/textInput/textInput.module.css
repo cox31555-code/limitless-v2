@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
 
+@font-face {
+  font-family: "UK Number Plate";
+  src: url("/fonts/UKNumberPlate.ttf") format("truetype");
+}
+
 .inputGroup {
   display: flex;
   flex-direction: column;
