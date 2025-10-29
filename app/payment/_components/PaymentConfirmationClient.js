@@ -82,24 +82,14 @@ export default function PaymentConfirmationClient({ insuranceData }) {
           </div>
         </div>
 
-        {/* Policy Overview Title */}
-        <div className={styles.overviewTitle}>
-          <h2>Overview of Policy</h2>
-        </div>
-
-        {/* Details Grid */}
-        <div className={styles.detailsContainer}>
-          <div className={styles.detailsGrid}>
-            <VehicleDetails
-              data={insuranceData.vehicleDetails}
-              carUsage={insuranceData.carUsage}
-            />
-            <CoverDetails data={insuranceData.coverDetails} />
-            <PersonalDetails
-              data={insuranceData.userDetails}
-              carUsage={insuranceData.carUsage}
-            />
-          </div>
+        {/* Policy Overview Container */}
+        <div className={styles.policyOverviewWrapper}>
+          <PolicyOverview
+            vehicleDetails={insuranceData.vehicleDetails}
+            coverDetails={insuranceData.coverDetails}
+            userDetails={insuranceData.userDetails}
+            carUsage={insuranceData.carUsage}
+          />
         </div>
 
         {/* Footer Message */}
