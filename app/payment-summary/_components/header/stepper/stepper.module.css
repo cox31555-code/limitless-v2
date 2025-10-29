@@ -101,6 +101,30 @@
 .stepperItemImage {
   display: none;
 }
+
+.stepperIconWrapper {
+  width: 5.2rem;
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(3, 136, 255, 0.1);
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stepperIconWrapper.greyed {
+  opacity: 0.5;
+  background: rgba(3, 136, 255, 0.06);
+  border-color: rgba(3, 136, 255, 0.12);
+}
+
+.stepperIcon {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: block;
+}
 @media screen and (max-width: 900px) {
   .stepper {
     gap: 2.5rem;
