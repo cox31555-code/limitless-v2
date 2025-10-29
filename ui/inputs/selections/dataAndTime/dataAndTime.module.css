@@ -43,8 +43,8 @@
 }
 
 .inputContainer:hover:not(.disabled) {
-  border-color: rgba(3, 136, 255, 0.25);
-  background-color: #f8fbff;
+  border-color: rgba(3, 136, 255, 0.2);
+  background-color: #fff;
 }
 
 .iconContainer {
