@@ -74,7 +74,11 @@
 
 .option.selected .title,
 .option.selected .description {
-  color: #fff;
+  color: #000822;
+}
+
+.option.selected .title {
+  color: #0388ff;
 }
 @media screen and (max-width: 900px) {
   .container {
