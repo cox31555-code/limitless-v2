@@ -1369,11 +1369,6 @@
       gap: 1rem;
     }
 
-    .vehicleTypeRow {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem;
-    }
-
     .postcodeRow {
       grid-template-columns: 1fr;
       gap: 0.8rem;
