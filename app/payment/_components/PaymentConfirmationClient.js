@@ -20,25 +20,54 @@ export default function PaymentConfirmationClient({ insuranceData }) {
 
   return (
     <div>
-      <GetQuoteHeaderWithNav title="Your policy is confirmed" currentStep={4} totalSteps={4} />
-
-      <div className={styles.confirmationSection}>
-        <div className={"centeredContent"}>
-          <div className={styles.confirmationContent}>
-            <h2 className={styles.confirmationTitle}>Your policy is confirmed</h2>
-
-            <div className={styles.progressContainer}>
-              <p className={styles.stepLabel}>Step 4 of 4</p>
-              <div className={styles.progressBar}>
-                <div className={styles.progressFill} style={{ width: "100%" }} />
+      <div className={styles.headerContainer}>
+        <header className={styles.headerElement}>
+          <div className={styles.headerContent}>
+            <div className={styles.navigationBar}>
+              <div className={styles.logoContainer}>
+                <img src="/svg/logo.svg" alt="logo" width={66} height={66} className={styles.logo} />
+              </div>
+              <menu className={styles.menu} suppressHydrationWarning>
+                <li className={styles.menuItem}>
+                  <span className={styles.menuLink}>Car & Van</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.menuLink}>Motorbike</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.menuLink}>Impound</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.menuLink}>Courier</span>
+                </li>
+                <li className={styles.menuItem}>
+                  <span className={styles.menuLink}>Contact</span>
+                </li>
+              </menu>
+              <div className={styles.buttons}>
+                <button className={styles.loginBtn}>Login</button>
+                <button className={styles.quoteBtn}>Get a Quote</button>
               </div>
             </div>
 
-            <p className={styles.confirmationSubtitle}>
-              Payment processed successfully. Your insurance policy is now active.
-            </p>
+            <div className={styles.confirmationTitleSection}>
+              <div className={styles.confirmationContent}>
+                <h1 className={styles.confirmationTitle}>Your policy is confirmed</h1>
+
+                <div className={styles.progressContainer}>
+                  <p className={styles.stepLabel}>Step 4 of 4</p>
+                  <div className={styles.progressBar}>
+                    <div className={styles.progressFill} style={{ width: "100%" }} />
+                  </div>
+                </div>
+
+                <p className={styles.confirmationSubtitle}>
+                  Payment processed successfully. Your insurance policy is now active.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </header>
       </div>
 
       <div className={"centeredContent"}>
