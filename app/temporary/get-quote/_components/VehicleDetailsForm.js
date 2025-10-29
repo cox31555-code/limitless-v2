@@ -488,23 +488,21 @@ const VehicleDetailsForm = ({
                   {...register("vehicleDetails.model")}
                   error={errors.vehicleDetails?.model}
                 />
-                {selectedModel && (
-                  <FormDropdown
-                    key={`year-${forceUpdate}`}
-                    label="Year"
-                    options={state.options.years}
-                    placeholder="Select Year"
-                    disabled={
-                      !!foundVehicleData ||
-                      !selectedModel ||
-                      state.options.years.length === 0
-                    }
-                    value={state.values.year || selectedYear || ""}
-                    onChange={(e) => handleDropdownChange("year", e.target.value)}
-                    {...register("vehicleDetails.year")}
-                    error={errors.vehicleDetails?.year}
-                  />
-                )}
+                <FormDropdown
+                  key={`year-${forceUpdate}`}
+                  label="Year"
+                  options={state.options.years}
+                  placeholder="Select Year"
+                  disabled={
+                    !!foundVehicleData ||
+                    !selectedMake ||
+                    state.options.years.length === 0
+                  }
+                  value={state.values.year || selectedYear || ""}
+                  onChange={(e) => handleDropdownChange("year", e.target.value)}
+                  {...register("vehicleDetails.year")}
+                  error={errors.vehicleDetails?.year}
+                />
               </div>
             )}
 
@@ -525,23 +523,21 @@ const VehicleDetailsForm = ({
                   {...register("vehicleDetails.doors")}
                   error={errors.vehicleDetails?.doors}
                 />
-                {selectedDoors && (
-                  <FormDropdown
-                    key={`fuel-${forceUpdate}`}
-                    label="Fuel Type"
-                    options={state.options.fuels}
-                    placeholder="Select Fuel Type"
-                    disabled={
-                      !!foundVehicleData ||
-                      !selectedDoors ||
-                      state.options.fuels.length === 0
-                    }
-                    value={state.values.fuel || selectedFuel || ""}
-                    onChange={(e) => handleDropdownChange("fuel", e.target.value)}
-                    {...register("vehicleDetails.fuel")}
-                    error={errors.vehicleDetails?.fuel}
-                  />
-                )}
+                <FormDropdown
+                  key={`fuel-${forceUpdate}`}
+                  label="Fuel Type"
+                  options={state.options.fuels}
+                  placeholder="Select Fuel Type"
+                  disabled={
+                    !!foundVehicleData ||
+                    !selectedYear ||
+                    state.options.fuels.length === 0
+                  }
+                  value={state.values.fuel || selectedFuel || ""}
+                  onChange={(e) => handleDropdownChange("fuel", e.target.value)}
+                  {...register("vehicleDetails.fuel")}
+                  error={errors.vehicleDetails?.fuel}
+                />
               </div>
             )}
 
@@ -568,16 +564,14 @@ const VehicleDetailsForm = ({
                   {...register("vehicleDetails.transmission")}
                   error={errors.vehicleDetails?.transmission}
                 />
-                {watch("vehicleDetails.transmission") && (
-                  <FormDropdown
-                    label="Vehicle Color"
-                    options={carColors}
-                    placeholder="Select Color"
-                    {...register("vehicleDetails.colour")}
-                    error={errors.vehicleDetails?.colour}
-                    disabled={!!foundVehicleData}
-                  />
-                )}
+                <FormDropdown
+                  label="Vehicle Color"
+                  options={carColors}
+                  placeholder="Select Color"
+                  {...register("vehicleDetails.colour")}
+                  error={errors.vehicleDetails?.colour}
+                  disabled={!!foundVehicleData}
+                />
               </div>
             )}
 
