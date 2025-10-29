@@ -136,6 +136,23 @@
     font-size: 1.8rem;
   }
 
+  .confirmationContent {
+    gap: 1.6rem;
+  }
+
+  .progressContainer {
+    gap: 0.8rem;
+    max-width: 100%;
+  }
+
+  .stepLabel {
+    font-size: 1.2rem;
+  }
+
+  .progressBar {
+    height: 5px;
+  }
+
   .confirmationSubtitle {
     font-size: 1.2rem;
   }
