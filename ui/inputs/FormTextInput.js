@@ -63,6 +63,7 @@ const FormTextInput = ({
             value={value}
             onChange={reg ? handleRegistrationChange : onChange}
             disabled={disabled}
+            style={inputStyle}
             {...props}
           />
         </div>
