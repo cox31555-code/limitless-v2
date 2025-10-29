@@ -91,12 +91,12 @@
 }
 
 .select.error {
-  border: 2px solid #ef4444;
+  border: 1.5px solid #ef4444;
   background: rgba(239, 68, 68, 0.04);
 }
 
 .selectWrapper.error {
-  border: 2px solid #ef4444;
+  border: 1.5px solid #ef4444;
   background: rgba(239, 68, 68, 0.04);
 }
 
