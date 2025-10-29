@@ -179,7 +179,7 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
   }
 
   return (
-    <div className={styles.calendar}>
+    <div className={`${styles.calendar} ${showAbove ? styles.slideUp : ""}`}>
       <div className={styles.header}>
         <button
           onClick={handlePrevMonth}
