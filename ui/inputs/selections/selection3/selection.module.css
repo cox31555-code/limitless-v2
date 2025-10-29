@@ -1,6 +1,7 @@
 .container {
   display: flex;
-  gap: 2rem;
+  gap: 1.6rem;
+  flex-direction: column;
 }
 .option {
   display: flex;
