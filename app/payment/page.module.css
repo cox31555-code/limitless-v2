@@ -1,3 +1,8 @@
+/* Payment page specific header height override */
+:global(.headerContainer) {
+  height: 41.2rem !important;
+}
+
 .left {
   border-radius: 18px;
   background: #e5ebfe;
