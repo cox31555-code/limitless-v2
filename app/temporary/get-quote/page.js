@@ -31,20 +31,7 @@ const STEP_TITLES = [
 const TemporaryInsuranceContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-
-  // Initialize step from URL parameter if provided
-  const initialStep = () => {
-    const stepParam = searchParams.get("step");
-    if (stepParam) {
-      const step = parseInt(stepParam);
-      if (step >= STEPS.VEHICLE && step <= STEPS.TERMS) {
-        return step;
-      }
-    }
-    return STEPS.VEHICLE;
-  };
-
-  const [currentStep, setCurrentStep] = useState(initialStep);
+  const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
