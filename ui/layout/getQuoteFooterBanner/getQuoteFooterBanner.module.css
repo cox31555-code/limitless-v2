@@ -30,7 +30,7 @@
 .title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #000822;
+  color: #3d4a5c;
   margin: 0;
   line-height: 130%;
   letter-spacing: -0.4px;
@@ -39,7 +39,7 @@
 .description {
   font-size: 1.4rem;
   font-weight: 400;
-  color: #6b7c8f;
+  color: #7a8a9d;
   margin: 0;
   line-height: 150%;
   max-width: 60rem;
@@ -52,24 +52,43 @@
   padding: 1.2rem 3.2rem;
   height: 5.2rem;
   border-radius: 10px;
-  background: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #ffffff;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
   flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(3, 136, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.contactBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
 }
 
 .contactBtn:hover {
-  background: #0277e3;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
+  background: linear-gradient(135deg, #049cff 0%, #0277e3 100%);
+  box-shadow: 0 6px 24px rgba(3, 136, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.contactBtn:hover::before {
+  left: 100%;
 }
 
 .contactBtn:active {
-  opacity: 0.95;
+  transform: translateY(0);
 }
 
 /* Responsive */
