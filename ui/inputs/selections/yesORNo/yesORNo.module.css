@@ -31,14 +31,13 @@
   background: #f8fbff;
   border: 1.5px solid rgba(3, 136, 255, 0.1);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.02);
   color: #000822;
   font-size: 1.3rem;
   font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.2px;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover {
@@ -50,7 +49,6 @@
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border-color: #0388ff;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
   font-weight: 700;
 }
 
