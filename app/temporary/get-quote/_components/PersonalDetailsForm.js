@@ -318,6 +318,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Select license type"
               {...register("carUsage.licenseType")}
               error={errors.carUsage?.licenseType}
+              inputStyle={{ paddingLeft: "14px" }}
             />
             <FormDropdown
               label="License Held"
