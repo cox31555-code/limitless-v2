@@ -406,6 +406,7 @@ const VehicleDetailsForm = ({
                     onClick={handleChangeVehicle}
                     type="button"
                     hideArrow={true}
+                    variant="secondary"
                   />
                 }
               />
