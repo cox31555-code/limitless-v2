@@ -4,12 +4,12 @@
 }
 .option {
   display: flex;
-  gap: 1.8rem;
+  gap: 1.6rem;
   cursor: pointer;
   align-items: flex-start;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 2.4rem 3.2rem;
-  border-radius: 14px;
+  padding: 1.8rem 2.2rem;
+  border-radius: 10px;
   background: #fff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   flex: 1;
