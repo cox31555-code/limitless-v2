@@ -1547,7 +1547,7 @@
 .cleanFormContent {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
   width: 100%;
 }
 
