@@ -71,6 +71,19 @@
   box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
 }
 
+.inputContainer.disabled {
+  background: rgba(3, 136, 255, 0.04);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  opacity: 0.6;
+}
+
+.inputContainer.disabled:hover,
+.inputContainer.disabled:focus-within {
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  background: rgba(3, 136, 255, 0.04);
+  box-shadow: none;
+}
+
 .inputSpan {
   width: 8rem;
   height: 5.8rem;
