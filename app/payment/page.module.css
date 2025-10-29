@@ -293,8 +293,9 @@
     font-size: clamp(2rem, 4vw, 2.8rem);
   }
 
-  .progressContainer {
-    max-width: 100%;
+  .confirmationBadge {
+    padding: 0.8rem 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
