@@ -216,6 +216,7 @@ const PersonalDetailsForm = ({ form }) => {
               placeholder="Select employment status"
               {...register("userDetails.employmentStatus")}
               error={errors.userDetails?.employmentStatus}
+              inputStyle={{ paddingLeft: "14px" }}
             />
             <FormTextInput
               label="Industry"
