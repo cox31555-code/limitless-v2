@@ -182,7 +182,7 @@
 @media (max-width: 1200px) {
   .summaryRow {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.4rem;
   }
 
   .headerElement {
