@@ -200,6 +200,7 @@ const PersonalDetailsForm = ({ form }) => {
               disabled={addresses.length === 0}
               {...register("userDetails.address")}
               error={errors.userDetails?.address}
+              inputStyle={{ paddingLeft: "14px" }}
             />
             </div>
         </section>
