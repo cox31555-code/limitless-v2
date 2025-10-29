@@ -9,6 +9,7 @@ import { BiLogoTwitter } from "react-icons/bi";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import NoHiddenFees from "../noHiddenFees/NoHiddenFees";
+import GetQuoteFooterBanner from "../getQuoteFooterBanner/GetQuoteFooterBanner";
 
 // List of all valid pages in the app directory
 const validPages = [
