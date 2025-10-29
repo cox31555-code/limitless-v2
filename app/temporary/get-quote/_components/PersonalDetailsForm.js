@@ -181,18 +181,17 @@ const PersonalDetailsForm = ({ form }) => {
             </div>
           </div>
 
-          {showAddressDropdown && (
-            <div className={styles.cleanFormGrid1Col}>
-              <FormDropdown
-                label="Select address"
-                options={addresses}
-                placeholder={
-                  addresses.length > 0
-                    ? "Select your address"
-                    : "No addresses found"
-                }
-                {...register("userDetails.address")}
-                error={errors.userDetails?.address}
+          <div className={styles.cleanFormGrid1Col}>
+            <FormDropdown
+              label="Select address"
+              options={addresses}
+              placeholder={
+                addresses.length > 0
+                  ? "Select your address"
+                  : "No addresses found"
+              }
+              {...register("userDetails.address")}
+              error={errors.userDetails?.address}
               />
             </div>
           )}
