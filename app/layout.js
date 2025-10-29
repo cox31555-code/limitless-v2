@@ -14,16 +14,26 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
+function ConditionalHeader() {
+  const pathname = usePathname();
+  const isPaymentSummaryPage = pathname === "/payment-summary" || pathname.startsWith("/payment-summary?");
+
+  if (isPaymentSummaryPage) {
+    return null;
+  }
+
+  return <Header />;
+}
+
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const isLoginPage = pathname === "/login";
-  const isPaymentSummaryPage = pathname === "/payment-summary" || pathname.startsWith("/payment-summary?");
 
   return (
     <html lang="en">
       <body className={poppins.className}>
         <AuthProvider>
-          {!isPaymentSummaryPage && <Header />}
+          <ConditionalHeader />
           {children}
           {!isLoginPage && <Footer />}
           <ToastContainer
