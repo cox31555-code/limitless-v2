@@ -1,21 +1,15 @@
 .squares {
-  position: absolute;
-  top: -36rem;
-  right: -74rem;
+  display: none;
 }
 .contact {
-  position: absolute;
-  /* top: 17.5rem; */
-  top: 0rem;
-  left: 0rem;
-  transform: translateX(-50%);
+  display: none;
 }
 
 .wrapper {
   position: relative;
   overflow: hidden;
   /* z-index: 2; */
-  padding: 2.5rem 0 30.3rem;
+  padding: 20.2rem 0 30.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
