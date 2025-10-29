@@ -1,6 +1,6 @@
 "use client";
 
-import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
+import Image from "next/image";
 import OrderSummery from "./orderSummery/OrderSummery";
 import VehicleDetails from "@/app/payment-summary/_components/vehicleDetails/VehicleDetails";
 import CoverDetails from "@/app/payment-summary/_components/coverDetails/CoverDetails";
