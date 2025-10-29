@@ -175,5 +175,7 @@
     height: 4.6rem;
     padding: 1rem 2rem;
     font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
   }
 }
