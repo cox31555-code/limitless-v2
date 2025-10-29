@@ -344,7 +344,7 @@ const PersonalDetailsForm = ({ form }) => {
 
         {/* Declarations Section */}
         <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle}>Declarations</h3>
+          <h3 className={styles.cleanSectionTitle} data-section="7">Important Declarations</h3>
           
           <div className={styles.cleanDeclarationsContainer}>
             <div className={styles.cleanDeclarationItem}>
