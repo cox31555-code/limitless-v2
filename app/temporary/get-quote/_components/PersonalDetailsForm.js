@@ -238,6 +238,7 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.occupation}
               disabled={isRetiredOrUnemployed}
               value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
+              inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
         </section>
