@@ -18,6 +18,7 @@ import {
   licenseHeldOptions,
   ncbOptions,
   occupationOptions,
+  otherVehiclesOptions,
   voluntaryExcessOptions,
 } from "../data";
 
