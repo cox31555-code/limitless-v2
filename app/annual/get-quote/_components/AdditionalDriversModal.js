@@ -84,32 +84,6 @@ const AdditionalDriversModal = ({
     });
   };
 
-  const autoExpandNextTile = useCallback((driverIndex) => {
-    const driver = drivers[driverIndex];
-    if (!driver) return;
-
-    const tiles = getTileOrder();
-    const driverTiles = expandedTiles[driverIndex] || new Set(['about']);
-
-    // Only auto-expand if the current expanded tile is complete
-    for (const tile of driverTiles) {
-      const tileIndex = tiles.indexOf(tile);
-      if (tileIndex !== -1 && tileIndex < tiles.length - 1) {
-        // Check if this tile is complete
-        if (checkTileCompletion(driverIndex, tile)) {
-          const nextTile = tiles[tileIndex + 1];
-          setExpandedTiles(prev => {
-            const updated = prev[driverIndex] ? new Set(prev[driverIndex]) : new Set(['about']);
-            if (!updated.has(nextTile)) {
-              updated.add(nextTile);
-            }
-            return { ...prev, [driverIndex]: updated };
-          });
-          return; // Only auto-expand one tile at a time
-        }
-      }
-    }
-  }, [drivers, checkTileCompletion]);
 
   useEffect(() => {
     drivers.forEach((_, index) => {
