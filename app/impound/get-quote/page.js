@@ -7,7 +7,6 @@ import { insuranceSchema } from "@/utils/schemas/insuranceSchema";
 import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import VehicleDetailsForm from "@/app/temporary/get-quote/_components/VehicleDetailsForm";
 import CoverDetailsForm from "@/app/temporary/get-quote/_components/CoverDetailsForm";
-import ImpoundCoverDetailsForm from "@/app/impound/get-quote/_components/ImpoundCoverDetailsForm";
 import PersonalDetailsForm from "@/app/temporary/get-quote/_components/PersonalDetailsForm";
 import TermsForm from "@/app/temporary/get-quote/_components/TermsForm";
 import StepActions from "@/app/temporary/get-quote/_components/StepActions";
@@ -251,7 +250,7 @@ const ImpoundInsuranceContent = () => {
                 autoTriggerLookup={shouldAutoTrigger}
               />
             )}
-            {currentStep === STEPS.COVER && <ImpoundCoverDetailsForm form={form} />}
+            {currentStep === STEPS.COVER && <CoverDetailsForm form={form} isImpound={true} />}
             {currentStep === STEPS.PERSONAL && (
               <PersonalDetailsForm form={form} />
             )}
