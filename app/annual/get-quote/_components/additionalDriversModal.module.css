@@ -641,6 +641,15 @@
     gap: 1rem;
   }
 
+  .driverButtonsList {
+    gap: 0.6rem;
+  }
+
+  .driverNameButton {
+    padding: 0.7rem 1.4rem;
+    font-size: 1rem;
+  }
+
   .modalFooter {
     flex-direction: column;
     align-items: stretch;
