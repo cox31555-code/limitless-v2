@@ -394,22 +394,6 @@ const AdditionalDriversModal = ({
                       <h4 className={modalStyles.sectionLabel}>Additional Information</h4>
 
                       <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Do you own your home?</p>
-                        <YesORNo
-                          value={watch(`carUsage.additionalDrivers.${index}.ownsHome`)}
-                          onChange={(value) => onUpdateDriver(index, "ownsHome", value)}
-                        />
-                      </div>
-
-                      <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Children under 16?</p>
-                        <YesORNo
-                          value={watch(`carUsage.additionalDrivers.${index}.childrenUnder16`)}
-                          onChange={(value) => onUpdateDriver(index, "childrenUnder16", value)}
-                        />
-                      </div>
-
-                      <div className={modalStyles.field}>
                         <p className={modalStyles.fieldLabel}>Lived in UK since birth?</p>
                         <p className={modalStyles.fieldHelper}>Continuously, without breaks of 6+ months</p>
                         <YesORNo
