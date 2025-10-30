@@ -275,17 +275,6 @@ const AdditionalDriversModal = ({
                       <h4 className={modalStyles.sectionLabel}>Usage Details</h4>
 
                       <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>What do you use the car for?</p>
-                        <div className={modalStyles.selectionsWrapper}>
-                          <Selection3
-                            options={carUsageOptions}
-                            selectedItem={watch(`carUsage.additionalDrivers.${index}.usageType`)}
-                            setSelectedItem={(item) => onUpdateDriver(index, "usageType", item)}
-                          />
-                        </div>
-                      </div>
-
-                      <div className={modalStyles.field}>
                         <p className={modalStyles.fieldLabel}>Other Vehicles?</p>
                         <YesORNo
                           value={watch(`carUsage.additionalDrivers.${index}.otherVehicles`)}
