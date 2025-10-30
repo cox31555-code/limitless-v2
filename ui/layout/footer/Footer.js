@@ -56,11 +56,6 @@ const shouldUseSpecialStyles = (pathname) => {
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [isMounted, setIsMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   // Don't render footer on dashboard and login pages
   if (
@@ -70,28 +65,23 @@ const Footer = () => {
     return null;
   }
 
+  // Determine which banner to show
+  const isGetQuotePage = pathname?.startsWith("/temporary/get-quote") ||
+    pathname?.startsWith("/impound/get-quote") ||
+    pathname?.startsWith("/annual/get-quote");
+  const isPaymentPage = pathname?.startsWith("/payment");
+
   return (
     <footer
       className={styles.container}
       style={{
-        background: isMounted && pathname && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: pathname && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
       }}
       suppressHydrationWarning
     >
       <div className={`centeredContent ${styles.contentContainer}`} suppressHydrationWarning>
-        <div suppressHydrationWarning>
-          {isMounted ? (
-            (pathname?.startsWith("/temporary/get-quote") ||
-            pathname?.startsWith("/impound/get-quote") ||
-            pathname?.startsWith("/annual/get-quote")) ? (
-              <GetQuoteFooterBanner />
-            ) : pathname?.startsWith("/payment") ? null : (
-              <NoHiddenFees />
-            )
-          ) : (
-            <NoHiddenFees />
-          )}
-        </div>
+        {isGetQuotePage && <GetQuoteFooterBanner key="quote-banner" />}
+        {!isPaymentPage && !isGetQuotePage && <NoHiddenFees key="hidden-fees" />}
         <div className={styles.content}>
           <div className={styles.menus}>
             {menus.map((menu, index) => (
