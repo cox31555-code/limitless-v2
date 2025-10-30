@@ -18,6 +18,7 @@ const validPages = [
   "/",
   "/about-us",
   "/annual",
+  "/annual/get-quote",
   "/change-password",
   "/coming-soon",
   "/complaints",
