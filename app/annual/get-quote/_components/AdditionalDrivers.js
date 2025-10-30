@@ -252,7 +252,6 @@ const AdditionalDrivers = ({
                   value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)}
                   onChange={(value) => onUpdateDriver(index, "medicalConditions", value)}
                 />
-                <a href="#" className={styles.cleanHelpLink}>Does the DVLA (or DVA) need to know about their condition?</a>
               </div>
 
               {/* Insurance History */}
@@ -264,7 +263,6 @@ const AdditionalDrivers = ({
                   value={watch(`carUsage.additionalDrivers.${index}.insuranceHistory`)}
                   onChange={(value) => onUpdateDriver(index, "insuranceHistory", value)}
                 />
-                <a href="#" className={styles.cleanHelpLink}>How do I know if they've had special terms imposed?</a>
               </div>
 
               {/* Criminal Convictions */}
@@ -276,8 +274,6 @@ const AdditionalDrivers = ({
                   value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)}
                   onChange={(value) => onUpdateDriver(index, "criminalConvictions", value)}
                 />
-                <a href="#" className={styles.cleanHelpLink}>What's an unspent conviction?</a>
-                <a href="#" className={styles.cleanHelpLink}>How do I know if their conviction is spent?</a>
               </div>
             </div>
           ))}
