@@ -230,18 +230,21 @@
 }
 
 .formSection.disabled {
-  opacity: 0.6;
+  opacity: 0.55 !important;
+  border-color: rgba(3, 136, 255, 0.06) !important;
+  background: rgba(240, 242, 245, 0.4) !important;
 }
 
 .formSection.disabled .tileHeader {
-  opacity: 1;
-  cursor: not-allowed;
-  background: rgba(245, 247, 250, 0.8) !important;
+  opacity: 1 !important;
+  cursor: not-allowed !important;
+  background: rgba(230, 235, 240, 0.7) !important;
+  pointer-events: none !important;
 }
 
 .formSection.disabled .tileHeader ~ div {
-  opacity: 0.5;
-  pointer-events: none;
+  opacity: 0.4 !important;
+  pointer-events: none !important;
 }
 
 .tileHeader {
