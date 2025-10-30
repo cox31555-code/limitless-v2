@@ -436,35 +436,37 @@ const AnnualPersonalDetailsForm = ({ form }) => {
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle} data-section="7">Additional Information</h3>
 
-          <div className={styles.cleanFormGrid1Col}>
-            <p className={styles.cleanFormFieldLabel}>Do you own your home?</p>
-            <YesORNo
-              value={watch("carUsage.ownsHome")}
-              onChange={(value) =>
-                setValue("carUsage.ownsHome", value)
-              }
-            />
-          </div>
+          <div className={styles.cleanAdditionalInfoContainer}>
+            <div className={styles.cleanFormGrid1Col}>
+              <p className={styles.cleanFormFieldLabel}>Do you own your home?</p>
+              <YesORNo
+                value={watch("carUsage.ownsHome")}
+                onChange={(value) =>
+                  setValue("carUsage.ownsHome", value)
+                }
+              />
+            </div>
 
-          <div className={styles.cleanFormGrid1Col}>
-            <p className={styles.cleanFormFieldLabel}>Do any children under the age of 16 live with you?</p>
-            <YesORNo
-              value={watch("carUsage.childrenUnder16")}
-              onChange={(value) =>
-                setValue("carUsage.childrenUnder16", value)
-              }
-            />
-          </div>
+            <div className={styles.cleanFormGrid1Col}>
+              <p className={styles.cleanFormFieldLabel}>Do any children under the age of 16 live with you?</p>
+              <YesORNo
+                value={watch("carUsage.childrenUnder16")}
+                onChange={(value) =>
+                  setValue("carUsage.childrenUnder16", value)
+                }
+              />
+            </div>
 
-          <div className={styles.cleanFormGrid1Col}>
-            <p className={styles.cleanFormFieldLabel}>Have you continuously lived in the UK since birth?</p>
-            <p className={styles.cleanSubLabel}>Insurance providers need to know how long you've lived in the UK on a continuous basis, without any breaks lasting 6 months or longer.</p>
-            <YesORNo
-              value={watch("carUsage.livedInUKSinceBirth")}
-              onChange={(value) =>
-                setValue("carUsage.livedInUKSinceBirth", value)
-              }
-            />
+            <div className={styles.cleanFormGrid1Col}>
+              <p className={styles.cleanFormFieldLabel}>Have you continuously lived in the UK since birth?</p>
+              <p className={styles.cleanSubLabel}>Insurance providers need to know how long you've lived in the UK on a continuous basis, without any breaks lasting 6 months or longer.</p>
+              <YesORNo
+                value={watch("carUsage.livedInUKSinceBirth")}
+                onChange={(value) =>
+                  setValue("carUsage.livedInUKSinceBirth", value)
+                }
+              />
+            </div>
           </div>
         </section>
 
