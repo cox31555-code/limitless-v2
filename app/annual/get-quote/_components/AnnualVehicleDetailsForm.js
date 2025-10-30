@@ -144,8 +144,8 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
   };
 
   const handleModificationsCancel = () => {
-    // Only reset to "No" if mods weren't previously selected (first time opening)
-    if (!modsAlreadySelected) {
+    // Only reset to "No" if no modifications have been selected yet
+    if (vehicleModifications.length === 0) {
       setValue("vehicleDetails.vehicleModified", "No", {
         shouldValidate: true,
         shouldDirty: true,
