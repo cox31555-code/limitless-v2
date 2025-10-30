@@ -111,6 +111,7 @@ export const employmentStatusOptions = [
   "Unemployed",
   "Retired",
   "Student",
+  "Houseperson",
 ];
 
 export const voluntaryExcessOptions = [
