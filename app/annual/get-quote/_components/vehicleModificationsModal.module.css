@@ -106,19 +106,18 @@
 .modificationItem {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1.2rem;
-  border-radius: 10px;
-  background: #f8fbff;
-  border: 1px solid rgba(3, 136, 255, 0.08);
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.2s ease;
   user-select: none;
 }
 
 .modificationItem:hover {
-  background: #f0f7ff;
-  border-color: rgba(3, 136, 255, 0.15);
+  background: rgba(3, 136, 255, 0.05);
 }
 
 .modificationItem input:checked ~ .label {
@@ -131,11 +130,12 @@
 }
 
 .checkbox {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
   cursor: pointer;
   flex-shrink: 0;
   accent-color: #0388ff;
+  border-radius: 4px;
 }
 
 .label {
@@ -197,25 +197,23 @@
 }
 
 .confirmBtn {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: #0388ff;
   border: none;
   color: #fff;
   padding: 1rem 2rem;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
+  transition: background 0.2s ease;
 }
 
 .confirmBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.25);
+  background: #0270cc;
 }
 
 .confirmBtn:active {
-  transform: translateY(0);
+  background: #0259b3;
 }
 
 /* Responsive */
