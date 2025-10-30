@@ -62,6 +62,7 @@
   border: 1.5px solid rgba(3, 136, 255, 0.08);
   box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
   position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -69,10 +70,95 @@
   box-shadow: 0 8px 24px rgba(3, 136, 255, 0.08);
 }
 
-.cardHeader {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
+.iconWrapper {
+  width: 8.9rem;
+  height: 9.5rem;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.iconBackground {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.bar1 {
+  width: 2.8rem;
+  height: 2.5rem;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
+  position: absolute;
+  left: 0.7rem;
+  top: 7rem;
+}
+
+.bar2 {
+  width: 2.7rem;
+  height: 3.6rem;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
+  position: absolute;
+  left: 3.5rem;
+  top: 5.8rem;
+}
+
+.bar3 {
+  width: 2.8rem;
+  height: 8.7rem;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
+  position: absolute;
+  left: 6.1rem;
+  top: 0.7rem;
+}
+
+.barUncovered1 {
+  width: 2.8rem;
+  height: 2.5rem;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
+  position: absolute;
+  left: 0.7rem;
+  top: 0;
+}
+
+.barUncovered2 {
+  width: 2.7rem;
+  height: 3.6rem;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
+  position: absolute;
+  left: 3.5rem;
+  top: 0;
+}
+
+.barUncovered3 {
+  width: 2.8rem;
+  height: 8.7rem;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
+  position: absolute;
+  left: 6.1rem;
+  top: 0;
+}
+
+.iconBase {
+  width: 6.2rem;
+  height: 6.2rem;
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+}
+
+.iconCheck {
+  width: 4.3rem;
+  height: 4.3rem;
+  position: absolute;
+  left: 2.7rem;
+  top: 0;
+}
+
+.iconCross {
+  width: 4.3rem;
+  height: 4.3rem;
+  position: absolute;
+  left: 2.7rem;
+  top: 5.2rem;
 }
 
 .cardTitle {
@@ -156,6 +242,69 @@
     gap: 2.8rem;
   }
 
+  .iconWrapper {
+    width: 7.8rem;
+    height: 8.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .bar1 {
+    width: 2.4rem;
+    height: 2.2rem;
+    left: 0.6rem;
+    top: 6.2rem;
+  }
+
+  .bar2 {
+    width: 2.4rem;
+    height: 3.2rem;
+    left: 3.1rem;
+    top: 5.1rem;
+  }
+
+  .bar3 {
+    width: 2.4rem;
+    height: 7.7rem;
+    left: 5.4rem;
+    top: 0.6rem;
+  }
+
+  .barUncovered1 {
+    width: 2.4rem;
+    height: 2.2rem;
+    left: 0.6rem;
+  }
+
+  .barUncovered2 {
+    width: 2.4rem;
+    height: 3.2rem;
+    left: 3.1rem;
+  }
+
+  .barUncovered3 {
+    width: 2.4rem;
+    height: 7.7rem;
+    left: 5.4rem;
+  }
+
+  .iconBase {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .iconCheck {
+    width: 3.8rem;
+    height: 3.8rem;
+    left: 2.4rem;
+  }
+
+  .iconCross {
+    width: 3.8rem;
+    height: 3.8rem;
+    left: 2.4rem;
+    top: 4.6rem;
+  }
+
   .cardTitle {
     font-size: 2.2rem;
   }
@@ -193,6 +342,69 @@
     gap: 2.4rem;
   }
 
+  .iconWrapper {
+    width: 7rem;
+    height: 7.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .bar1 {
+    width: 2.2rem;
+    height: 2rem;
+    left: 0.5rem;
+    top: 5.5rem;
+  }
+
+  .bar2 {
+    width: 2.1rem;
+    height: 2.8rem;
+    left: 2.8rem;
+    top: 4.6rem;
+  }
+
+  .bar3 {
+    width: 2.2rem;
+    height: 6.9rem;
+    left: 4.8rem;
+    top: 0.5rem;
+  }
+
+  .barUncovered1 {
+    width: 2.2rem;
+    height: 2rem;
+    left: 0.5rem;
+  }
+
+  .barUncovered2 {
+    width: 2.1rem;
+    height: 2.8rem;
+    left: 2.8rem;
+  }
+
+  .barUncovered3 {
+    width: 2.2rem;
+    height: 6.9rem;
+    left: 4.8rem;
+  }
+
+  .iconBase {
+    width: 4.9rem;
+    height: 4.9rem;
+  }
+
+  .iconCheck {
+    width: 3.4rem;
+    height: 3.4rem;
+    left: 2.1rem;
+  }
+
+  .iconCross {
+    width: 3.4rem;
+    height: 3.4rem;
+    left: 2.1rem;
+    top: 4.1rem;
+  }
+
   .cardTitle {
     font-size: 2rem;
   }
@@ -228,6 +440,69 @@
   .card {
     padding: 2rem;
     gap: 2rem;
+  }
+
+  .iconWrapper {
+    width: 6rem;
+    height: 6.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .bar1 {
+    width: 1.9rem;
+    height: 1.7rem;
+    left: 0.4rem;
+    top: 4.7rem;
+  }
+
+  .bar2 {
+    width: 1.8rem;
+    height: 2.4rem;
+    left: 2.4rem;
+    top: 3.9rem;
+  }
+
+  .bar3 {
+    width: 1.9rem;
+    height: 5.9rem;
+    left: 4.1rem;
+    top: 0.4rem;
+  }
+
+  .barUncovered1 {
+    width: 1.9rem;
+    height: 1.7rem;
+    left: 0.4rem;
+  }
+
+  .barUncovered2 {
+    width: 1.8rem;
+    height: 2.4rem;
+    left: 2.4rem;
+  }
+
+  .barUncovered3 {
+    width: 1.9rem;
+    height: 5.9rem;
+    left: 4.1rem;
+  }
+
+  .iconBase {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .iconCheck {
+    width: 2.9rem;
+    height: 2.9rem;
+    left: 1.8rem;
+  }
+
+  .iconCross {
+    width: 2.9rem;
+    height: 2.9rem;
+    left: 1.8rem;
+    top: 3.6rem;
   }
 
   .cardTitle {

@@ -47,11 +47,34 @@ const ServiceCovered = ({ title, description, covered, unCovered }) => {
 
       <div className={styles.content}>
         <div className={styles.card}>
-          <div className={styles.cardHeader}>
-            <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
-              {covered.title}
-            </h3>
+          <div className={styles.iconWrapper}>
+            <div className={styles.iconBackground}>
+              <div className={styles.bar1}></div>
+              <div className={styles.bar2}></div>
+              <div className={styles.bar3}></div>
+              <svg className={styles.iconBase} width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0H43.9265L62.0695 14.8862V62.0695H0V0Z" fill="#000822"/>
+              </svg>
+              <svg className={styles.iconCheck} width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" fill="url(#paint0_linear_check)"/>
+                <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" fill="url(#paint1_linear_check)"/>
+                <path d="M13.125 22.164L16.785 27.1717C17.6716 28.3848 19.4904 28.3593 20.3426 27.1218L28.1778 15.7441" stroke="#000822" strokeWidth="3.58255" strokeLinecap="round"/>
+                <defs>
+                  <linearGradient id="paint0_linear_check" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="white" stopOpacity="0.3"/>
+                    <stop offset="1" stopColor="#0388FF"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_check" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="white" stopOpacity="0.3"/>
+                    <stop offset="1" stopColor="#0388FF"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
+          <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
+            {covered.title}
+          </h3>
           <div className={styles.itemsList}>
             {covered.features.map((feature, index) => (
               <div className={styles.item} key={index}>
@@ -65,11 +88,35 @@ const ServiceCovered = ({ title, description, covered, unCovered }) => {
         </div>
 
         <div className={styles.card}>
-          <div className={styles.cardHeader}>
-            <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
-              {unCovered.title}
-            </h3>
+          <div className={styles.iconWrapper}>
+            <div className={styles.iconBackground}>
+              <div className={styles.barUncovered1}></div>
+              <div className={styles.barUncovered2}></div>
+              <div className={styles.barUncovered3}></div>
+              <svg className={styles.iconBase} width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 62.0695H43.9265L62.0695 47.1833V0H0V62.0695Z" fill="#000822"/>
+              </svg>
+              <svg className={styles.iconCross} width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" transform="matrix(1 0 0 -1 0 42.942)" fill="url(#paint0_linear_cross)"/>
+                <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" transform="matrix(1 0 0 -1 0 42.942)" fill="url(#paint1_linear_cross)"/>
+                <path d="M14.3008 29.0518L28.2595 15.0846" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round"/>
+                <path d="M28.259 29.0518L14.3008 15.084" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round"/>
+                <defs>
+                  <linearGradient id="paint0_linear_cross" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="white" stopOpacity="0.3"/>
+                    <stop offset="1" stopColor="#0388FF"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear_cross" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="white" stopOpacity="0.3"/>
+                    <stop offset="1" stopColor="#0388FF"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
+          <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
+            {unCovered.title}
+          </h3>
           <div className={styles.itemsList}>
             {unCovered.features.map((feature, index) => (
               <div className={styles.item} key={index}>
