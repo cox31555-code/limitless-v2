@@ -261,18 +261,15 @@ const AdditionalDriversModal = ({
                     <div className={modalStyles.formSection}>
                       <h4 className={modalStyles.sectionLabel}>Declarations</h4>
                       <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Criminal Convictions?</p>
-                        <p className={modalStyles.fieldHelper}>Any unspent or outstanding?</p>
+                        <label className={modalStyles.inputLabel}>Criminal Convictions?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => onUpdateDriver(index, "criminalConvictions", value)} />
                       </div>
                       <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Medical Conditions?</p>
-                        <p className={modalStyles.fieldHelper}>Notifiable to DVLA?</p>
+                        <label className={modalStyles.inputLabel}>Medical Conditions?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)} onChange={(value) => onUpdateDriver(index, "medicalConditions", value)} />
                       </div>
                       <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Insurance History?</p>
-                        <p className={modalStyles.fieldHelper}>Cancelled, refused, voided, or special terms?</p>
+                        <label className={modalStyles.inputLabel}>Insurance History?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.insuranceCancelledOrClaimRefusedOrPolicyVoided`)} onChange={(value) => onUpdateDriver(index, "insuranceCancelledOrClaimRefusedOrPolicyVoided", value)} />
                       </div>
                     </div>
