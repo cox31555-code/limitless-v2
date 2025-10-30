@@ -71,21 +71,27 @@
   margin: 0 0 0.8rem 0;
 }
 
-.registrationSection {
+.registrationSection,
+.additionalDetailsSection,
+.ownershipSection,
+.rows {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
   padding: 2.4rem;
   border-radius: 12px;
-  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 8, 34, 0.03);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  box-shadow: none;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.registrationSection:hover {
-  border-color: rgba(3, 136, 255, 0.12);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.06);
+.registrationSection:hover,
+.additionalDetailsSection:hover,
+.ownershipSection:hover,
+.rows:hover {
+  border-color: rgba(3, 136, 255, 0.18);
+  background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
 }
 
 .regBtn {
@@ -183,22 +189,7 @@
   }
 }
 
-.rows {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  padding: 2.4rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 8, 34, 0.03);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.rows:hover {
-  border-color: rgba(3, 136, 255, 0.12);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.06);
-}
+/* Rows are unified with sections above */
 
 .row {
   display: grid;
@@ -206,7 +197,6 @@
   gap: 1.6rem;
   width: 100%;
   align-items: start;
-  animation: rowFadeIn 0.3s ease;
 }
 
 @keyframes rowFadeIn {
@@ -244,41 +234,7 @@
   }
 }
 
-/* Additional Details Section */
-.additionalDetailsSection {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  padding: 2.4rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 8, 34, 0.03);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.additionalDetailsSection:hover {
-  border-color: rgba(3, 136, 255, 0.12);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.06);
-}
-
-/* Ownership Section */
-.ownershipSection {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  padding: 2.4rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 8, 34, 0.03);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ownershipSection:hover {
-  border-color: rgba(3, 136, 255, 0.12);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.06);
-}
+/* Sections are now unified above */
 
 /* Date with Checkbox */
 .dateWithCheckbox {
