@@ -265,11 +265,12 @@ const AdditionalDriversModal = ({
                           />
                         </div>
                         <div className={modalStyles.field}>
-                          <FormTextInput
-                            label="Industry"
-                            placeholder="Enter industry"
-                            value={watch(`carUsage.additionalDrivers.${index}.industry`) || ""}
-                            onChange={(e) => onUpdateDriver(index, "industry", e.target.value)}
+                          <FormDropdown
+                            label="Occupation"
+                            options={occupationOptions}
+                            placeholder="Select occupation"
+                            value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""}
+                            onChange={(value) => onUpdateDriver(index, "occupation", value)}
                             disabled={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Retired" || watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Unemployed"}
                             inputStyle={{ paddingLeft: "14px" }}
                           />
@@ -277,12 +278,11 @@ const AdditionalDriversModal = ({
                       </div>
 
                       <div className={modalStyles.field}>
-                        <FormDropdown
-                          label="Occupation"
-                          options={occupationOptions}
-                          placeholder="Select occupation"
-                          value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""}
-                          onChange={(value) => onUpdateDriver(index, "occupation", value)}
+                        <FormTextInput
+                          label="Industry"
+                          placeholder="Enter industry"
+                          value={watch(`carUsage.additionalDrivers.${index}.industry`) || ""}
+                          onChange={(e) => onUpdateDriver(index, "industry", e.target.value)}
                           disabled={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Retired" || watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Unemployed"}
                           inputStyle={{ paddingLeft: "14px" }}
                         />
