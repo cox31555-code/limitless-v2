@@ -36,6 +36,7 @@ const AdditionalDriversModal = ({
   const [dynamicDriverNcbOptions, setDynamicDriverNcbOptions] = useState({});
   const [expandedTiles, setExpandedTiles] = useState({});
   const [expandedDriver, setExpandedDriver] = useState({});
+  const [validationError, setValidationError] = useState("");
 
   const toggleDriver = (driverIndex) => {
     setExpandedDriver(prev => ({
