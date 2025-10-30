@@ -126,8 +126,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.2rem;
-  padding-bottom: 1.2rem;
-  border-bottom: 2px solid rgba(3, 136, 255, 0.1);
+  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 1.5px solid rgba(3, 136, 255, 0.08);
 }
 
 .driverNumber {
