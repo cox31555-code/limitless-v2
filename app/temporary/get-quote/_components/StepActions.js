@@ -23,7 +23,6 @@ const StepActions = ({
           onClick={onBack}
           disabled={isLoading}
         >
-          <span className={styles.backIcon}>←</span>
           {backLabel}
         </button>
       ) : (
@@ -37,7 +36,6 @@ const StepActions = ({
         disabled={isLoading}
       >
         {isLoading ? "Loading..." : isLastStep ? nextLabel : "Next"}
-        {!isLastStep && <span className={styles.nextIcon}>→</span>}
       </button>
     </div>
   );
