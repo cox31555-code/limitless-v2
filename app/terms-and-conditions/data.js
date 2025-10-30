@@ -287,7 +287,7 @@ export const content = [
     value: {
       title: "Changes to These Terms",
       description1:
-        "We take data protection seriously. Our Privacy Policy explains how we collect, use, and store your personal data. By using our services, you consent to this data processing in accordance with the UK General Data Protection Regulation (GDPR) and related laws.",
+        "We reserve the right to modify these Terms & Conditions at any time. Changes will be effective immediately upon posting to our website. Your continued use of our services after any changes constitutes your acceptance of the new terms. We recommend reviewing these terms periodically to stay informed of any updates.",
     },
   },
   {
@@ -295,7 +295,7 @@ export const content = [
     value: {
       title: "Governing Law",
       description1:
-        "We take data protection seriously. Our Privacy Policy explains how we collect, use, and store your personal data. By using our services, you consent to this data processing in accordance with the UK General Data Protection Regulation (GDPR) and related laws.",
+        "These Terms & Conditions are governed by and construed in accordance with the laws of England and Wales. You irrevocably submit to the exclusive jurisdiction of the courts of England and Wales.",
     },
   }
 ];
