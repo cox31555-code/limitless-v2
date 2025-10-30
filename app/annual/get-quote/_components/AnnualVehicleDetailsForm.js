@@ -429,7 +429,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
               <>
                 <div className={styles.vehicleDataDisplay}>
                   <p className={styles.vehicleDataRow}>
-                    <strong>{foundVehicleData.make}</strong> {foundVehicleData.model} ({foundVehicleData.yearOfManufacture})
+                    {foundVehicleData.make} {foundVehicleData.model} ({foundVehicleData.yearOfManufacture})
                   </p>
                   <p className={styles.vehicleDataRow}>
                     {foundVehicleData.registrationNumber}
