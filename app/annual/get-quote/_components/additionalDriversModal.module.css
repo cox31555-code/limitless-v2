@@ -403,8 +403,9 @@
 /* Tablet Responsive */
 @media screen and (max-width: 900px) {
   .modalContainer {
-    width: 95%;
-    max-width: 70rem;
+    width: 96%;
+    max-width: 76rem;
+    max-height: 94vh;
   }
 
   .modalHeader {
@@ -423,8 +424,15 @@
     padding: 1.6rem;
   }
 
-  .fieldRow {
-    grid-template-columns: repeat(2, 1fr);
+  .fieldRow2Col,
+  .fieldRow3Col {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .postcodeRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .modalFooter {
