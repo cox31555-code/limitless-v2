@@ -244,6 +244,21 @@
   opacity: 1;
 }
 
+/* Owner/Keeper Field Wrappers for "Other" input */
+.ownerFieldWrapper,
+.keeperFieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.ownerFieldWrapper > div:first-child,
+.keeperFieldWrapper > div:first-child {
+  flex: 1;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .row {
