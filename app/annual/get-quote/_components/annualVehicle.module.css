@@ -677,9 +677,7 @@
   }
 
   .manualEntryIcon {
-    width: 1.8rem;
-    height: 1.8rem;
-    font-size: 0.9rem;
+    display: none;
   }
 
   .successCard {
