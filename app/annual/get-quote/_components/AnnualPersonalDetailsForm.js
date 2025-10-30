@@ -42,6 +42,63 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
   const [showAddressDropdown, setShowAddressDropdown] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [expandedTile, setExpandedTile] = useState('about');
+
+  const getTileOrder = () => ['about', 'location', 'employment', 'parking', 'usage', 'driving', 'additional', 'declarations', 'additionalDrivers'];
+
+  const toggleTile = (tileKey) => {
+    setExpandedTile(expandedTile === tileKey ? null : tileKey);
+  };
+
+  const isTileExpanded = (tileKey) => {
+    return expandedTile === tileKey;
+  };
+
+  const checkTileCompletion = (tileKey) => {
+    const requiredFields = {
+      about: ['userDetails.firstName', 'userDetails.surname', 'userDetails.dateOfBirth', 'userDetails.email', 'userDetails.phone'],
+      location: ['userDetails.postCode', 'userDetails.address'],
+      employment: ['userDetails.employmentStatus', 'userDetails.occupation', 'userDetails.industry'],
+      parking: ['carUsage.keepingCarDuringDay', 'carUsage.keepingCarDuringNight'],
+      usage: ['carUsage.usageType'],
+      driving: ['carUsage.licenseType', 'carUsage.licenseHeld', 'carUsage.NCB'],
+      additional: ['carUsage.ownsHome', 'carUsage.childrenUnder16', 'carUsage.livedInUKSinceBirth'],
+      declarations: ['carUsage.criminalConvictions', 'carUsage.medicalConditions', 'carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided'],
+      additionalDrivers: []
+    };
+
+    const fieldsToCheck = requiredFields[tileKey] || [];
+    return fieldsToCheck.every(field => {
+      const value = watch(field);
+      return value !== null && value !== undefined && value !== '';
+    });
+  };
+
+  const isTileDisabled = (tileKey) => {
+    const tiles = getTileOrder();
+    const currentTileIndex = tiles.indexOf(tileKey);
+
+    if (currentTileIndex === 0) return false;
+
+    const previousTileKey = tiles[currentTileIndex - 1];
+    return !checkTileCompletion(previousTileKey);
+  };
+
+  const autoExpandNextTile = () => {
+    const tiles = getTileOrder();
+    const currentIndex = tiles.indexOf(expandedTile);
+
+    if (currentIndex !== -1 && currentIndex < tiles.length - 1) {
+      const nextTile = tiles[currentIndex + 1];
+      if (checkTileCompletion(expandedTile)) {
+        setExpandedTile(nextTile);
+      }
+    }
+  };
+
+  useEffect(() => {
+    setExpandedTile('about');
+  }, []);
 
   const employmentStatus = watch("userDetails.employmentStatus");
   const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
