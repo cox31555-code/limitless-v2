@@ -271,7 +271,7 @@ const AdditionalDriversModal = ({
           <div className={modalStyles.driversList}>
             {drivers.map((driver, index) => (
               <div key={index} className={modalStyles.driverItem}>
-                <div className={`${modalStyles.driverHeader} ${isDriverExpanded(index) ? modalStyles.expanded : ''}`} onClick={() => toggleDriver(index)} role="button" tabIndex={0}>
+                <div className={`${modalStyles.driverHeader} ${isDriverExpanded(index) ? modalStyles.expanded : ''} ${isDriverDisabled(index) ? modalStyles.disabled : ''}`} onClick={() => !isDriverDisabled(index) && toggleDriver(index)} role="button" tabIndex={isDriverDisabled(index) ? -1 : 0}>
                   <span className={modalStyles.driverNumber}>
                     {driver.firstName && driver.lastName ? `${driver.firstName} ${driver.lastName}` : `Driver ${index + 1}`}
                   </span>
