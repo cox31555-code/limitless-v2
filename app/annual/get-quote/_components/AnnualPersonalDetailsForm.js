@@ -46,6 +46,29 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
   const getTileOrder = () => ['about', 'location', 'employment', 'parking', 'usage', 'driving', 'additional', 'declarations', 'additionalDrivers'];
 
+  const getTileLabel = (tileKey) => {
+    const labels = {
+      about: 'Your Details',
+      location: 'Location',
+      employment: 'Employment',
+      parking: 'Car Parking',
+      usage: 'Car Usage',
+      driving: 'Driving Record',
+      additional: 'Additional Information',
+      declarations: 'Declarations',
+      additionalDrivers: 'Additional Drivers'
+    };
+    return labels[tileKey] || tileKey;
+  };
+
+  const getPreviousTileLabel = (tileKey) => {
+    const tiles = getTileOrder();
+    const currentIndex = tiles.indexOf(tileKey);
+    if (currentIndex <= 0) return null;
+    const previousKey = tiles[currentIndex - 1];
+    return getTileLabel(previousKey);
+  };
+
   const toggleTile = (tileKey) => {
     setExpandedTile(prev => prev === tileKey ? null : tileKey);
   };
