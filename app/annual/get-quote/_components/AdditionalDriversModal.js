@@ -242,7 +242,13 @@ const AdditionalDriversModal = ({
                       <h4 className={modalStyles.sectionLabel}>About You</h4>
                       <span className={modalStyles.expandIcon}>+</span>
                     </button>
-                    {isTileExpanded(index, 'about') && <>
+                    {isTileExpanded(index, 'about') && isTileDisabled(index, 'about') && (
+                      <div className={modalStyles.errorMessage}>
+                        <span className={modalStyles.errorIcon}>!</span>
+                        <span>Complete {getPreviousTileLabel('about')} first</span>
+                      </div>
+                    )}
+                    {isTileExpanded(index, 'about') && !isTileDisabled(index, 'about') && <>
                       <div className={modalStyles.fieldRow2Col}>
                         <div className={modalStyles.field}>
                           <FormTextInput label="First Name" placeholder="Enter first name" value={watch(`carUsage.additionalDrivers.${index}.firstName`) || ""} onChange={(e) => onUpdateDriver(index, "firstName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
