@@ -394,9 +394,9 @@
   }
 
   .featureNumber {
-    min-width: 3.2rem;
-    min-height: 3.2rem;
-    font-size: 0.9rem;
+    min-width: 3.8rem;
+    min-height: 3.8rem;
+    font-size: 1.2rem;
   }
 
   .featureTitle {
