@@ -256,50 +256,59 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
             />
           </div>
 
-          <label
+          <button
+            type="button"
+            onClick={handleStartImmediately}
             style={{
+              width: "100%",
+              padding: "1.4rem 2rem",
+              borderRadius: "10px",
+              fontSize: "1.3rem",
+              fontWeight: "600",
+              marginTop: "2rem",
+              cursor: "pointer",
+              transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
+              border: startPolicyImmediately
+                ? "2px solid #0388ff"
+                : "2px solid rgba(3, 136, 255, 0.2)",
+              background: startPolicyImmediately
+                ? "linear-gradient(135deg, #0388ff 0%, #0270cc 100%)"
+                : "transparent",
+              color: startPolicyImmediately ? "#fff" : "#000822",
               display: "flex",
               alignItems: "center",
-              gap: "1.2rem",
-              padding: "1.2rem 1.6rem",
-              borderRadius: "10px",
-              border: "1.5px solid rgba(3, 136, 255, 0.12)",
-              background: "#f8fbff",
-              cursor: "pointer",
-              marginTop: "2rem",
-              transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
+              justifyContent: "center",
+              gap: "1rem",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.25)";
-              e.currentTarget.style.background = "#f0f6ff";
+              if (!startPolicyImmediately) {
+                e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.4)";
+                e.currentTarget.style.background = "rgba(3, 136, 255, 0.04)";
+              }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.12)";
-              e.currentTarget.style.background = "#f8fbff";
+              if (!startPolicyImmediately) {
+                e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.2)";
+                e.currentTarget.style.background = "transparent";
+              }
             }}
           >
-            <input
-              type="checkbox"
-              checked={startPolicyImmediately}
-              onChange={handleStartImmediately}
-              style={{
-                width: "20px",
-                height: "20px",
-                cursor: "pointer",
-                accentColor: "#0388ff",
-                flexShrink: 0,
-              }}
-            />
-            <span
-              style={{
-                fontSize: "1.3rem",
-                fontWeight: "500",
-                color: "#000822",
-              }}
-            >
-              Start policy immediately
-            </span>
-          </label>
+            {startPolicyImmediately && (
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            )}
+            Start policy immediately
+          </button>
         </div>
       </div>
     </ComponentWrapper>
