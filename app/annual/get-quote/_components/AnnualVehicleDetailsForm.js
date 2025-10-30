@@ -94,8 +94,8 @@ const alarmImmobiliserOptions = [
   "Factory fitted alarm and immobiliser",
 ];
 const yesNoOptions = ["No", "Yes"];
-const ownerOptions = ["Me", "Spouse/Partner", "Parent", "Company", "Other"];
-const keeperOptions = ["Me", "Spouse/Partner", "Parent", "Company", "Other"];
+const ownerOptions = ["Policyholder", "Spouse/Partner", "Parent", "Company", "Other"];
+const keeperOptions = ["Policyholder", "Spouse/Partner", "Parent", "Company", "Other"];
 
 const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup = false }) => {
   const [showVehicleDetails, setShowVehicleDetails] = useState(false);
@@ -117,6 +117,8 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
   const selectedDoors = watch("vehicleDetails.doors");
   const selectedFuel = watch("vehicleDetails.fuel");
   const purchaseDate = watch("vehicleDetails.purchaseDate");
+  const owner = watch("vehicleDetails.owner");
+  const registeredKeeper = watch("vehicleDetails.registeredKeeper");
 
   const toggleVehicleDetails = () => {
     setShowVehicleDetails(!showVehicleDetails);

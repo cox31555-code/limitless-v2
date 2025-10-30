@@ -66,7 +66,9 @@ const AnnualInsuranceContent = () => {
         purchaseDate: "",
         legalOwner: "",
         owner: "",
+        ownerOther: "",
         registeredKeeper: "",
+        registeredKeeperOther: "",
         apiData: null,
       },
       coverDetails: {
