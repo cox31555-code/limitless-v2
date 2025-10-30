@@ -427,8 +427,9 @@
 /* Driver Buttons Container */
 .driversButtonContainer {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: flex-start;
   margin-top: 1.6rem;
 }
 
@@ -436,6 +437,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  align-items: flex-start;
 }
 
 .driverNameButton {
