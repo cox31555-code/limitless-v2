@@ -210,10 +210,10 @@
 
 .inputLabel {
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #000822;
-  margin: 0 0 0.6rem 0;
-  letter-spacing: 0.1px;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: 0.2px;
   display: block;
 }
 
