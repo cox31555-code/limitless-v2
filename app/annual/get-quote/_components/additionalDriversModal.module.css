@@ -644,6 +644,10 @@
     gap: 1rem;
   }
 
+  .driversButtonContainer {
+    gap: 0.6rem;
+  }
+
   .driverButtonsList {
     gap: 0.6rem;
   }
