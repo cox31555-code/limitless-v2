@@ -185,6 +185,11 @@ const AdditionalDriversModal = ({
                           <FormDataAndTime dateLabel="Date of Birth" type="date" allowPastDates={true} isDateOfBirth={true} maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())} defaultYear={2009} reducedPadding={true} value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""} onChange={(value) => onUpdateDriver(index, "dateOfBirth", value)} />
                         </div>
                       </div>
+                      <div className={modalStyles.field}>
+                        <p className={modalStyles.fieldLabel}>Lived in UK since birth?</p>
+                        <p className={modalStyles.fieldHelper}>Continuously, without breaks of 6+ months</p>
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.livedInUKSinceBirth`)} onChange={(value) => onUpdateDriver(index, "livedInUKSinceBirth", value)} />
+                      </div>
                     </div>
 
                     {/* Employment Section */}
