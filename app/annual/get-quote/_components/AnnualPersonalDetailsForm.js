@@ -130,21 +130,6 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     return !checkTileCompletion(previousTileKey);
   };
 
-  const autoExpandNextTile = () => {
-    const tiles = getTileOrder();
-    const currentIndex = tiles.indexOf(expandedTile);
-
-    if (currentIndex !== -1 && currentIndex < tiles.length - 1) {
-      const nextTile = tiles[currentIndex + 1];
-      if (checkTileCompletion(expandedTile)) {
-        setExpandedTile(nextTile);
-      }
-    }
-  };
-
-  useEffect(() => {
-    setExpandedTile('about');
-  }, []);
 
   const employmentStatus = watch("userDetails.employmentStatus");
   const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
