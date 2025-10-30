@@ -145,7 +145,6 @@ const AdditionalDrivers = ({
                   onChange={(value) => onUpdateDriver(index, "relationshipStatus", value)}
                   inputStyle={{ paddingLeft: "14px" }}
                 />
-                <a href="#" className={styles.cleanHelpLink}>Why are we asking?</a>
                 {errors.carUsage?.additionalDrivers?.[index]?.relationshipStatus && (
                   <span className={styles.cleanError}>
                     {errors.carUsage.additionalDrivers[index].relationshipStatus.message}
