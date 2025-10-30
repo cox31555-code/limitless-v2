@@ -495,6 +495,27 @@
     gap: 2rem;
   }
 
+  .instructionBox {
+    padding: 1.2rem;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .instructionIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .instructionIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .instructionText {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
   .row,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
