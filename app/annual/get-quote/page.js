@@ -102,8 +102,10 @@ const AnnualInsuranceContent = () => {
 
   const { setValue, trigger } = form;
 
-  // Handle step parameter from URL
+  // Handle step parameter from URL (only on client)
   useEffect(() => {
+    if (!isMounted) return;
+
     const stepParam = searchParams.get("step");
     if (stepParam) {
       const step = parseInt(stepParam);
@@ -111,10 +113,12 @@ const AnnualInsuranceContent = () => {
         setCurrentStep(step);
       }
     }
-  }, [searchParams]);
+  }, [isMounted, searchParams]);
 
-  // Populate form with URL parameters from GetQuote
+  // Populate form with URL parameters from GetQuote (only on client)
   useEffect(() => {
+    if (!isMounted) return;
+
     const fromQuote = searchParams.get("fromQuote");
 
     if (fromQuote === "true") {
@@ -126,7 +130,7 @@ const AnnualInsuranceContent = () => {
         setShouldAutoTrigger(true);
       }
     }
-  }, [searchParams, setValue]);
+  }, [isMounted, searchParams, setValue]);
 
   // Step validation fields
   const vehicleFields = [
