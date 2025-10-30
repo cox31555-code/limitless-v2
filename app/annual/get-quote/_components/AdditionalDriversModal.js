@@ -40,6 +40,20 @@ const AdditionalDriversModal = ({
   const [driverAddresses, setDriverAddresses] = useState({});
   const [driverLoadingStates, setDriverLoadingStates] = useState({});
   const [dynamicDriverNcbOptions, setDynamicDriverNcbOptions] = useState({});
+  const [expandedSections, setExpandedSections] = useState({});
+
+  const toggleSection = (driverIndex, sectionName) => {
+    const key = `${driverIndex}-${sectionName}`;
+    setExpandedSections(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
+  const isSectionExpanded = (driverIndex, sectionName) => {
+    const key = `${driverIndex}-${sectionName}`;
+    return expandedSections[key] !== false;
+  };
 
   React.useEffect(() => {
     drivers.forEach((driver, index) => {
