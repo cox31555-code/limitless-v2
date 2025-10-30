@@ -75,15 +75,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .levelIconActive {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  color: #ffffff;
+  border: 2px solid #0388ff;
+  color: #0388ff;
 }
 
 .levelIconInactive {
