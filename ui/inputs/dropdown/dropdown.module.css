@@ -73,6 +73,15 @@
   font-weight: 400;
 }
 
+.select option:first-child {
+  color: #a8b2bd;
+}
+
+.select:has(option:checked:first-child),
+.select:invalid {
+  color: #a8b2bd;
+}
+
 .arrowContainer {
   position: absolute;
   right: 1.6rem;
