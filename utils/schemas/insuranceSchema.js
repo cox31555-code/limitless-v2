@@ -17,6 +17,15 @@ export const vehicleDetailsSchema = z
     doors: z.string().optional(),
     colour: z.string().optional(),
     worth: z.string().optional(), // Made optional - will be validated conditionally
+    // Annual insurance specific fields
+    trackingDevice: z.string().optional(),
+    alarmImmobiliser: z.string().optional(),
+    importedVehicle: z.string().optional(),
+    vehicleModified: z.string().optional(),
+    purchaseDate: z.string().optional(),
+    legalOwner: z.string().optional(),
+    owner: z.string().optional(),
+    registeredKeeper: z.string().optional(),
     apiData: z
       .object({
         registration: z.string().optional(),

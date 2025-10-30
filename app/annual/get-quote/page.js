@@ -150,6 +150,15 @@ const AnnualInsuranceContent = () => {
     "vehicleDetails.fuel",
     "vehicleDetails.transmission",
     "vehicleDetails.colour",
+    "vehicleDetails.worth",
+    "vehicleDetails.trackingDevice",
+    "vehicleDetails.alarmImmobiliser",
+    "vehicleDetails.importedVehicle",
+    "vehicleDetails.vehicleModified",
+    "vehicleDetails.purchaseDate",
+    "vehicleDetails.legalOwner",
+    "vehicleDetails.owner",
+    "vehicleDetails.registeredKeeper",
   ];
 
   const coverFields = [
