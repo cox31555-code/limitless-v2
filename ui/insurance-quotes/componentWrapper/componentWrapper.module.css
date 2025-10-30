@@ -70,3 +70,25 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 1.6rem 1.6rem 1.6rem;
+    border-radius: 16px;
+  }
+
+  .header {
+    margin: -1.6rem -1.6rem 1.6rem -1.6rem;
+    padding: 1.6rem;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .icon {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
