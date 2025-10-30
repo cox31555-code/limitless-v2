@@ -69,16 +69,16 @@ const Footer = () => {
     <footer
       className={styles.container}
       style={{
-        background: shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: pathname && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
       }}
       suppressHydrationWarning
     >
       <div className={`centeredContent ${styles.contentContainer}`} suppressHydrationWarning>
-        {pathname.startsWith("/temporary/get-quote") ||
-        pathname.startsWith("/impound/get-quote") ||
-        pathname.startsWith("/annual/get-quote") ? (
+        {(pathname?.startsWith("/temporary/get-quote") ||
+        pathname?.startsWith("/impound/get-quote") ||
+        pathname?.startsWith("/annual/get-quote")) ? (
           <GetQuoteFooterBanner />
-        ) : pathname.startsWith("/payment") ? null : (
+        ) : pathname?.startsWith("/payment") ? null : (
           <NoHiddenFees />
         )}
         <div className={styles.content}>
