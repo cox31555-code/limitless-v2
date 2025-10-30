@@ -56,6 +56,11 @@ const shouldUseSpecialStyles = (pathname) => {
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Don't render footer on dashboard and login pages
   if (
@@ -69,17 +74,21 @@ const Footer = () => {
     <footer
       className={styles.container}
       style={{
-        background: pathname && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: isMounted && pathname && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
       }}
       suppressHydrationWarning
     >
       <div className={`centeredContent ${styles.contentContainer}`} suppressHydrationWarning>
         <div suppressHydrationWarning>
-          {(pathname?.startsWith("/temporary/get-quote") ||
-          pathname?.startsWith("/impound/get-quote") ||
-          pathname?.startsWith("/annual/get-quote")) ? (
-            <GetQuoteFooterBanner />
-          ) : pathname?.startsWith("/payment") ? null : (
+          {isMounted ? (
+            (pathname?.startsWith("/temporary/get-quote") ||
+            pathname?.startsWith("/impound/get-quote") ||
+            pathname?.startsWith("/annual/get-quote")) ? (
+              <GetQuoteFooterBanner />
+            ) : pathname?.startsWith("/payment") ? null : (
+              <NoHiddenFees />
+            )
+          ) : (
             <NoHiddenFees />
           )}
         </div>
