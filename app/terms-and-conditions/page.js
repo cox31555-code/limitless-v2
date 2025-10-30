@@ -15,7 +15,7 @@ export const metadata = {
 const page = () => {
   return (
     <div className={styles.page}>
-      <Header title="Cookies Policy" />
+      <Header title="Terms & Conditions" />
       <div className={"centeredContent"}>
         <div className={"companyPageContainer"}>
           {content.map((item, index) => (
