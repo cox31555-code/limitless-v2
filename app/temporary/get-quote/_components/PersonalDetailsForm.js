@@ -223,10 +223,10 @@ const PersonalDetailsForm = ({ form }) => {
             <FormAutocomplete
               label="Occupation"
               options={occupationOptions}
-              placeholder="Type or select occupation"
-              value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
+              placeholder="Type your occupation..."
+              value={isRetiredOrUnemployed ? "N/A" : (watch("userDetails.occupation") || "")}
               onChange={(e) => {
-                const value = e.target?.value || e;
+                const value = typeof e === "string" ? e : (e?.target?.value || "");
                 setValue("userDetails.occupation", value);
               }}
               disabled={isRetiredOrUnemployed}
