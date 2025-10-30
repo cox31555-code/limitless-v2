@@ -16,12 +16,6 @@ const manrope = Manrope({
   weight: ["500", "400"],
 });
 
-const ArrowIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-    <path d="M3.33301 10H16.6663M16.6663 10L11.6663 5M16.6663 10L11.6663 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
 const Calculator = () => {
   const [data, setData] = useState({
     type: "1 Hour",
