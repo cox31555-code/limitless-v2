@@ -8,6 +8,7 @@ import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import AnnualVehicleDetailsForm from "./_components/AnnualVehicleDetailsForm";
 import AnnualCoverDetailsForm from "./_components/AnnualCoverDetailsForm";
 import AnnualPersonalDetailsForm from "./_components/AnnualPersonalDetailsForm";
+import AnnualOptionalExtrasForm from "./_components/AnnualOptionalExtrasForm";
 import TermsForm from "@/app/temporary/get-quote/_components/TermsForm";
 import StepActions from "@/app/temporary/get-quote/_components/StepActions";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
