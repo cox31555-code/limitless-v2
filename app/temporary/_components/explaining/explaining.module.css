@@ -6,7 +6,7 @@
   gap: 6rem;
 }
 
-/* First Section - What is temporary vehicle insurance */
+/* Combined Container - Both sections in same background */
 .container {
   display: flex;
   flex-direction: column;
@@ -15,9 +15,23 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 8rem 4.9rem 11rem;
+  padding: 6.7rem 6.2rem;
   position: relative;
   overflow: hidden;
+}
+
+.mainContent {
+  display: flex;
+  gap: 12rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.whatIsSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
@@ -77,18 +91,7 @@
   pointer-events: none;
 }
 
-/* Second Section - How does temporary vehicle insurance work */
-.howCard {
-  width: 100%;
-  max-width: 100%;
-  background: #07102D;
-  border-radius: 18px;
-  backdrop-filter: blur(16.566335678100586px);
-  padding: 6.7rem 6.2rem;
-  position: relative;
-  overflow: hidden;
-}
-
+/* Gradient bars background */
 .gradientBars {
   width: 105.5rem;
   height: 60.4rem;
@@ -128,10 +131,17 @@
   top: 13.7rem;
 }
 
+/* How does temporary vehicle insurance work section */
+.howIsSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .howContent {
   display: flex;
-  gap: 12rem;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 2.4rem;
   position: relative;
   z-index: 1;
 }
@@ -140,8 +150,6 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  max-width: 56.5rem;
-  margin-top: 5.2rem;
 }
 
 .howTitle {
@@ -171,7 +179,6 @@
   flex-direction: column;
   gap: 0.9rem;
   max-width: 52.5rem;
-  flex: 1;
 }
 
 .stepBox {
@@ -233,7 +240,11 @@
   }
 
   .container {
-    padding: 6.5rem 4rem 9rem;
+    padding: 5.5rem 5rem;
+  }
+
+  .mainContent {
+    gap: 8rem;
   }
 
   .content {
@@ -261,14 +272,6 @@
     top: -340px;
   }
 
-  .howCard {
-    padding: 5.5rem 5rem;
-  }
-
-  .howContent {
-    gap: 8rem;
-  }
-
   .gradientBars {
     left: 60rem;
   }
@@ -281,8 +284,13 @@
   }
 
   .container {
-    padding: 5.5rem 3.6rem 7.5rem;
+    padding: 4.5rem 3.6rem;
     border-radius: 16px;
+  }
+
+  .mainContent {
+    flex-direction: column;
+    gap: 3.5rem;
   }
 
   .content {
@@ -311,18 +319,20 @@
     top: -280px;
   }
 
-  .howCard {
-    padding: 4.5rem 3.6rem;
+  .whatIsSection {
+    max-width: 100%;
+  }
+
+  .howIsSection {
+    max-width: 100%;
   }
 
   .howContent {
     flex-direction: column;
-    gap: 3.5rem;
   }
 
   .leftColumn {
     max-width: 100%;
-    margin-top: 0;
   }
 
   .stepsColumn {
@@ -363,8 +373,12 @@
   }
 
   .container {
-    padding: 4rem 2.4rem 6rem;
+    padding: 3.5rem 2.4rem;
     border-radius: 14px;
+  }
+
+  .mainContent {
+    gap: 0;
   }
 
   .content {
@@ -386,10 +400,6 @@
     height: 490px;
     padding-bottom: 60px;
     top: -220px;
-  }
-
-  .howCard {
-    padding: 3.5rem 2.4rem;
   }
 
   .stepBox {
