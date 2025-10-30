@@ -92,11 +92,6 @@ const PersonalDetailsForm = ({ form }) => {
     }
   }, [dateOfBirth, setValue, watch]);
 
-  const handleFindAddress = async () => {
-    // Postcode is sufficient for now - skip API lookup
-    // Future enhancement: Implement address lookup via API
-  };
-
   return (
     <ComponentWrapper title="Personal Details">
       <div className={styles.cleanFormContent}>
