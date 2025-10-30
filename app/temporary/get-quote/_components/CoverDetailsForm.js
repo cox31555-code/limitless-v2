@@ -265,7 +265,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
               borderRadius: "10px",
               fontSize: "1.3rem",
               fontWeight: "600",
-              marginTop: "2rem",
+              marginTop: "0.8rem",
               cursor: "pointer",
               transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
               border: startPolicyImmediately
