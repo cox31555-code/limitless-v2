@@ -198,7 +198,6 @@
   animation-duration: 0s !important;
   stroke-dasharray: 0 !important;
   stroke-dashoffset: 0 !important;
-  stroke: none !important;
 }
 
 .checkmark svg path {
@@ -208,7 +207,7 @@
   animation-duration: 0s !important;
   stroke-dasharray: 0 !important;
   stroke-dashoffset: 0 !important;
-  stroke: none !important;
+  stroke: currentColor !important;
 }
 
 .featureText {
