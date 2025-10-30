@@ -1942,6 +1942,30 @@
   .cleanSection {
     gap: 1.5rem;
   }
+
+  .cleanDriverCard {
+    padding: 1.8rem;
+    gap: 1.4rem;
+  }
+
+  .cleanDriverHeader {
+    gap: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .cleanDriverSection {
+    gap: 1.4rem;
+  }
+
+  .cleanRemoveDriverButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .cleanAddDriverButtonContainer {
+    margin-top: 2rem;
+    padding-top: 1.6rem;
+  }
 }
 
 /* Mobile Responsive */
