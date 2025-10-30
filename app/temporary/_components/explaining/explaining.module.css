@@ -193,9 +193,16 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1400px) {
-  .first .content {
-    margin-left: 0;
-    padding: 0 3rem;
+  .first {
+    gap: 4rem;
+  }
+
+  .title {
+    font-size: 3.8rem;
+  }
+
+  .image {
+    max-width: 480px;
   }
 }
 
