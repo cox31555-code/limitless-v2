@@ -263,7 +263,7 @@ const AnnualInsuranceContent = () => {
                 autoTriggerLookup={shouldAutoTrigger}
               />
             )}
-            {currentStep === STEPS.COVER && <CoverDetailsForm form={form} />}
+            {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
             {currentStep === STEPS.PERSONAL && (
               <PersonalDetailsForm form={form} />
             )}
