@@ -132,13 +132,14 @@
 
 .actionBtnActive {
   border-color: #0388ff;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  color: #ffffff;
+  background: #ffffff;
+  color: #0388ff;
+  font-weight: 600;
 }
 
 .actionBtnActive:hover {
-  background: linear-gradient(135deg, #0270cc 0%, #015fa3 100%);
-  border-color: #0270cc;
+  background: #f0f6ff;
+  border-color: #0388ff;
 }
 
 /* Responsive Design */
