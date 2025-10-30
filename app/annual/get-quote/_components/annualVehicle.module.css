@@ -8,10 +8,10 @@
   border: none;
   box-shadow: none;
   width: 100%;
-  gap: 3.2rem;
+  gap: 2.4rem;
 }
 
-/* Section Wrapper */
+/* Section Wrapper with Title and Content */
 .section {
   display: flex;
   flex-direction: column;
@@ -43,6 +43,32 @@
   font-weight: 400;
   opacity: 0.85;
   line-height: 1.5;
+}
+
+/* Clean Form Grid Layouts */
+.cleanFormGrid2Col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.cleanFormGrid3Col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+}
+
+/* Field Label Styling */
+.cleanFormFieldLabel {
+  color: #000822;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  margin: 0 0 0.8rem 0;
 }
 
 .registrationSection {
