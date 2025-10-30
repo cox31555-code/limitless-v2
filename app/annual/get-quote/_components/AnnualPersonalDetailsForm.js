@@ -369,27 +369,20 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.postCode}
               inputStyle={{ paddingLeft: "14px" }}
             />
-            <div className={styles.cleanFindAddressButton}>
-              <ConfirmBtn
-                title={isLoadingAddresses ? "Loading..." : "FIND ADDRESS"}
-                onClick={handleFindAddress}
-                disabled={isLoadingAddresses}
-                type="button"
-                hideArrow={true}
-              />
-            </div>
+            <button
+              className={styles.findAddressButton}
+              onClick={handleFindAddress}
+              type="button"
+            >
+              Find Address
+            </button>
           </div>
 
           <div className={styles.cleanFormGrid1Col}>
             <FormDropdown
               label="Select address"
-              options={addresses}
-              placeholder={
-                addresses.length > 0
-                  ? "Select your address"
-                  : "No addresses found"
-              }
-              disabled={addresses.length === 0}
+              options={["2 KINGS ROAD"]}
+              placeholder="Select your address"
               {...register("userDetails.address")}
               error={errors.userDetails?.address}
               inputStyle={{ paddingLeft: "14px" }}
