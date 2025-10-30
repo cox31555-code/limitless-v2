@@ -137,6 +137,13 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
       shouldValidate: true,
       shouldDirty: true,
     });
+    // If no modifications are selected, reset vehicle modified to "No"
+    if (selectedModifications.length === 0) {
+      setValue("vehicleDetails.vehicleModified", "No", {
+        shouldValidate: true,
+        shouldDirty: true,
+      });
+    }
     setShowModificationsModal(false);
   };
 
