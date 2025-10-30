@@ -754,6 +754,11 @@
     padding: 2rem;
   }
 
+  .validationErrorBox {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
   .driverItem {
     padding: 1.6rem;
     gap: 0;
