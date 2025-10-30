@@ -7,7 +7,7 @@ import FormDateInput from "@/ui/inputs/FormDateInput";
 import Title from "@/ui/insurance-quotes/title/Title";
 import styles from "./annualVehicle.module.css";
 import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { buildVehicleQuery, clearDependentFields, shouldAutoSelect } from "../../temporary/get-quote/helperFucntion";
+import { buildVehicleQuery, clearDependentFields, shouldAutoSelect } from "../../../temporary/get-quote/helperFucntion";
 
 // Simplified state for vehicle data
 const initialState = {
