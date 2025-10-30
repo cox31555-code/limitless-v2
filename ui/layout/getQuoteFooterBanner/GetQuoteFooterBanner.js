@@ -14,8 +14,8 @@ const GetQuoteFooterBanner = () => {
   const router = useRouter();
 
   return (
-    <div className={styles.banner}>
-      <div className={styles.content}>
+    <div className={styles.banner} suppressHydrationWarning>
+      <div className={styles.content} suppressHydrationWarning>
         <div className={styles.textContent}>
           <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
             Need help with your quote?
