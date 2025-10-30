@@ -40,6 +40,10 @@ const AnnualInsuranceContent = () => {
   const [foundVehicleData, setFoundVehicleData] = useState(null);
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const form = useForm({
     resolver: zodResolver(insuranceSchema),
     defaultValues: {
