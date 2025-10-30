@@ -5,6 +5,7 @@ import FormTextInput from "@/ui/inputs/FormTextInput";
 import FormDropdown from "@/ui/inputs/FormDropdown";
 import FormDateInput from "@/ui/inputs/FormDateInput";
 import Title from "@/ui/insurance-quotes/title/Title";
+import VehicleModificationsModal from "./VehicleModificationsModal";
 import styles from "./annualVehicle.module.css";
 import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
 import { buildVehicleQuery, clearDependentFields, shouldAutoSelect } from "../../../temporary/get-quote/helperFucntion";
@@ -106,6 +107,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
   const [foundVehicleData, setFoundVehicleData] = useState(null);
   const [showFoundData, setShowFoundData] = useState(false);
   const [haventBoughtYet, setHaventBoughtYet] = useState(false);
+  const [showModificationsModal, setShowModificationsModal] = useState(false);
   const isAutoSelectingRef = useRef(false);
   const hasAutoTriggeredRef = useRef(false);
 
@@ -120,6 +122,23 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
   const purchaseDate = watch("vehicleDetails.purchaseDate");
   const owner = watch("vehicleDetails.owner");
   const registeredKeeper = watch("vehicleDetails.registeredKeeper");
+  const vehicleModified = watch("vehicleDetails.vehicleModified");
+  const vehicleModifications = watch("vehicleDetails.vehicleModifications") || [];
+
+  // Open modifications modal when "Yes" is selected
+  useEffect(() => {
+    if (vehicleModified === "Yes") {
+      setShowModificationsModal(true);
+    }
+  }, [vehicleModified]);
+
+  const handleModificationsConfirm = (selectedModifications) => {
+    setValue("vehicleDetails.vehicleModifications", selectedModifications, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setShowModificationsModal(false);
+  };
 
   const toggleVehicleDetails = () => {
     setShowVehicleDetails(!showVehicleDetails);
