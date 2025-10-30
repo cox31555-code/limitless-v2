@@ -61,6 +61,11 @@
   outline: none;
 }
 
+.select:invalid,
+.select option:first-child {
+  color: #a8b2bd;
+}
+
 .select:focus {
   outline: none;
 }
