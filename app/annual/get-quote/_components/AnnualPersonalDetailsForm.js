@@ -571,20 +571,31 @@ const AnnualPersonalDetailsForm = ({ form }) => {
                   }
                 }}
               />
+
+              {hasAdditionalDrivers && (
+                <button
+                  type="button"
+                  className={modalButtonStyles.openModalButton}
+                  onClick={() => setIsModalOpen(true)}
+                >
+                  + Add Drivers
+                </button>
+              )}
             </div>
           </div>
         </section>
-
-        {hasAdditionalDrivers && (
-          <AdditionalDrivers
-            form={form}
-            drivers={additionalDrivers}
-            onAddDriver={handleAddDriver}
-            onRemoveDriver={handleRemoveDriver}
-            onUpdateDriver={handleUpdateDriver}
-          />
-        )}
       </div>
+
+      {/* Additional Drivers Modal */}
+      <AdditionalDriversModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        form={form}
+        drivers={additionalDrivers}
+        onAddDriver={handleAddDriver}
+        onRemoveDriver={handleRemoveDriver}
+        onUpdateDriver={handleUpdateDriver}
+      />
     </ComponentWrapper>
   );
 };
