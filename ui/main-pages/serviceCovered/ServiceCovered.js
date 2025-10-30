@@ -48,29 +48,37 @@ const ServiceCovered = ({ title, description, covered, unCovered }) => {
       <div className={styles.content}>
         <div className={styles.card}>
           <div className={styles.iconWrapper}>
-            <div className={styles.iconBackground}>
-              <div className={styles.bar1}></div>
-              <div className={styles.bar2}></div>
-              <div className={styles.bar3}></div>
-              <svg className={styles.iconBase} width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0H43.9265L62.0695 14.8862V62.0695H0V0Z" fill="#000822"/>
-              </svg>
-              <svg className={styles.iconCheck} width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" fill="url(#paint0_linear_check)"/>
-                <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" fill="url(#paint1_linear_check)"/>
-                <path d="M13.125 22.164L16.785 27.1717C17.6716 28.3848 19.4904 28.3593 20.3426 27.1218L28.1778 15.7441" stroke="#000822" strokeWidth="3.58255" strokeLinecap="round"/>
-                <defs>
-                  <linearGradient id="paint0_linear_check" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="white" stopOpacity="0.3"/>
-                    <stop offset="1" stopColor="#0388FF"/>
-                  </linearGradient>
-                  <linearGradient id="paint1_linear_check" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="white" stopOpacity="0.3"/>
-                    <stop offset="1" stopColor="#0388FF"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            <svg width="89" height="95" viewBox="0 0 89 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="7.28125" y="69.582" width="27.5091" height="25.0818" fill="url(#paint0_linear_167_5799)" fillOpacity="0.48"/>
+              <rect x="34.7891" y="58.2544" width="26.7" height="36.4091" fill="url(#paint1_linear_167_5799)" fillOpacity="0.48"/>
+              <rect x="61.4922" y="7.47607" width="27.5091" height="87.3818" fill="url(#paint2_linear_167_5799)" fillOpacity="0.48"/>
+              <path d="M0 7.40186H43.9265L62.0695 22.288V69.4713H0V7.40186Z" fill="#000822"/>
+              <ellipse cx="48.1857" cy="21.471" rx="21.4864" ry="21.471" fill="url(#paint3_linear_167_5799)"/>
+              <ellipse cx="48.1857" cy="21.471" rx="21.4864" ry="21.471" fill="url(#paint4_linear_167_5799)"/>
+              <path d="M39.8242 22.164L43.4842 27.1717C44.3708 28.3848 46.1897 28.3593 47.0418 27.1218L54.877 15.7441" stroke="#000822" strokeWidth="3.58255" strokeLinecap="round"/>
+              <defs>
+                <linearGradient id="paint0_linear_167_5799" x1="21.0358" y1="69.582" x2="21.0358" y2="94.6638" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#0388FF" stopOpacity="0"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_167_5799" x1="48.1391" y1="58.2544" x2="48.1391" y2="94.6635" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#0388FF" stopOpacity="0"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+                <linearGradient id="paint2_linear_167_5799" x1="75.2467" y1="7.47607" x2="75.2467" y2="94.8579" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#0388FF" stopOpacity="0"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+                <linearGradient id="paint3_linear_167_5799" x1="11.9156" y1="36.9865" x2="54.5831" y2="15.4007" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="white" stopOpacity="0.3"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+                <linearGradient id="paint4_linear_167_5799" x1="11.9156" y1="36.9865" x2="54.5831" y2="15.4007" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="white" stopOpacity="0.3"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
           <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
             {covered.title}
@@ -89,30 +97,38 @@ const ServiceCovered = ({ title, description, covered, unCovered }) => {
 
         <div className={styles.card}>
           <div className={styles.iconWrapper}>
-            <div className={styles.iconBackground}>
-              <div className={styles.barUncovered1}></div>
-              <div className={styles.barUncovered2}></div>
-              <div className={styles.barUncovered3}></div>
-              <svg className={styles.iconBase} width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 62.0695H43.9265L62.0695 47.1833V0H0V62.0695Z" fill="#000822"/>
-              </svg>
-              <svg className={styles.iconCross} width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" transform="matrix(1 0 0 -1 0 42.942)" fill="url(#paint0_linear_cross)"/>
-                <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" transform="matrix(1 0 0 -1 0 42.942)" fill="url(#paint1_linear_cross)"/>
-                <path d="M14.3008 29.0518L28.2595 15.0846" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round"/>
-                <path d="M28.259 29.0518L14.3008 15.084" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round"/>
-                <defs>
-                  <linearGradient id="paint0_linear_cross" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="white" stopOpacity="0.3"/>
-                    <stop offset="1" stopColor="#0388FF"/>
-                  </linearGradient>
-                  <linearGradient id="paint1_linear_cross" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="white" stopOpacity="0.3"/>
-                    <stop offset="1" stopColor="#0388FF"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            <svg width="89" height="95" viewBox="0 0 89 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="27.5091" height="25.0818" transform="matrix(1 0 0 -1 7.28125 25.2759)" fill="url(#paint0_linear_167_5844)" fillOpacity="0.48"/>
+              <rect width="26.7" height="36.4091" transform="matrix(1 0 0 -1 34.7891 36.6035)" fill="url(#paint1_linear_167_5844)" fillOpacity="0.48"/>
+              <rect width="27.5091" height="87.3818" transform="matrix(1 0 0 -1 61.4922 87.3818)" fill="url(#paint2_linear_167_5844)" fillOpacity="0.48"/>
+              <path d="M0 87.4561H43.9265L62.0695 72.5699V25.3866H0V87.4561Z" fill="#000822"/>
+              <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" transform="matrix(1 0 0 -1 26.6992 94.8579)" fill="url(#paint3_linear_167_5844)"/>
+              <ellipse cx="21.4864" cy="21.471" rx="21.4864" ry="21.471" transform="matrix(1 0 0 -1 26.6992 94.8579)" fill="url(#paint4_linear_167_5844)"/>
+              <path d="M41 80.9677L54.9587 67.0005" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round"/>
+              <path d="M54.9582 80.9678L41 67" stroke="#000822" strokeWidth="4.17079" strokeLinecap="round"/>
+              <defs>
+                <linearGradient id="paint0_linear_167_5844" x1="13.7545" y1="0" x2="13.7545" y2="25.0818" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#0388FF" stopOpacity="0"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_167_5844" x1="13.35" y1="0" x2="13.35" y2="36.4091" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#0388FF" stopOpacity="0"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+                <linearGradient id="paint2_linear_167_5844" x1="13.7545" y1="0" x2="13.7545" y2="87.3818" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#0388FF" stopOpacity="0"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+                <linearGradient id="paint3_linear_167_5844" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="white" stopOpacity="0.3"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+                <linearGradient id="paint4_linear_167_5844" x1="-14.7836" y1="36.9865" x2="27.8838" y2="15.4007" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="white" stopOpacity="0.3"/>
+                  <stop offset="1" stopColor="#0388FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
           <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
             {unCovered.title}
