@@ -92,7 +92,8 @@ const AdditionalDriversModal = ({
         setExpandedTiles(prev => ({ ...prev, [index]: new Set(['about']) }));
       }
     });
-  }, [drivers.length]);
+    setValidationError("");
+  }, [drivers.length, isOpen]);
 
   const isDriverComplete = (driver) => {
     const requiredFields = [
