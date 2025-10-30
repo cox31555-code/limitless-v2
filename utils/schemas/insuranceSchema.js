@@ -22,6 +22,7 @@ export const vehicleDetailsSchema = z
     alarmImmobiliser: z.string().optional(),
     importedVehicle: z.string().optional(),
     vehicleModified: z.string().optional(),
+    vehicleModifications: z.array(z.string()).optional(),
     purchaseDate: z.string().optional(),
     legalOwner: z.string().optional(),
     owner: z.string().optional(),
