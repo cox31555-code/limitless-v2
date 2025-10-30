@@ -504,16 +504,6 @@ const AnnualPersonalDetailsForm = ({ form }) => {
           </div>
         </section>
 
-        {hasAdditionalDrivers && (
-          <AdditionalDrivers
-            form={form}
-            drivers={additionalDrivers}
-            onAddDriver={handleAddDriver}
-            onRemoveDriver={handleRemoveDriver}
-            onUpdateDriver={handleUpdateDriver}
-          />
-        )}
-
         {/* Declarations Section */}
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle} data-section="8">Important Declarations</h3>
