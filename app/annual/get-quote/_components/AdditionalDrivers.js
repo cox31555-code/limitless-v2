@@ -5,7 +5,7 @@ import FormDataAndTime from "@/ui/inputs/FormDataAndTime";
 import FormDropdown from "@/ui/inputs/FormDropdown";
 import YesORNo from "@/ui/inputs/selections/yesORNo/YesORNo";
 import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import styles from "./components.module.css";
+import styles from "@/app/temporary/get-quote/_components/components.module.css";
 import {
   employmentStatusOptions,
   licenseHeldOptions,
