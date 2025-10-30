@@ -85,9 +85,9 @@ const TemporaryInsuranceContent = () => {
         licenseNumber: "",
         NCB: "",
         voluntaryExcess: "",
-        criminalConvictions: false,
-        medicalConditions: false,
-        insuranceCancelledOrClaimRefusedOrPolicyVoided: false,
+        criminalConvictions: null,
+        medicalConditions: null,
+        insuranceCancelledOrClaimRefusedOrPolicyVoided: null,
       },
       terms: {
         acceptTerms: false,
