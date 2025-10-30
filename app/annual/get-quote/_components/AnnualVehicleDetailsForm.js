@@ -696,7 +696,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
           </div>
 
           {legalOwner !== "Yes" && (
-            <div className={styles.row}>
+            <div className={styles.cleanFormGrid2Col}>
               <div className={styles.ownerFieldWrapper}>
                 <FormDropdown
                   label={haventBoughtYet ? "Who will be the owner?" : "Who is the owner?"}
