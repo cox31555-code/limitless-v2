@@ -37,6 +37,17 @@ const AdditionalDriversModal = ({
   const [expandedTile, setExpandedTile] = useState({});
   const [expandedDriver, setExpandedDriver] = useState({});
 
+  const toggleDriver = (driverIndex) => {
+    setExpandedDriver(prev => ({
+      ...prev,
+      [driverIndex]: !prev[driverIndex]
+    }));
+  };
+
+  const isDriverExpanded = (driverIndex) => {
+    return expandedDriver[driverIndex] !== false;
+  };
+
   const toggleTile = (driverIndex, tileKey) => {
     setExpandedTile(prev => ({
       ...prev,
