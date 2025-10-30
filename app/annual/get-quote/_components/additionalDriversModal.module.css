@@ -542,6 +542,10 @@
     font-size: 1.2rem;
   }
 
+  .toggleArrow {
+    font-size: 1.6rem;
+  }
+
   .fieldRow2Col,
   .fieldRow3Col {
     grid-template-columns: 1fr;
