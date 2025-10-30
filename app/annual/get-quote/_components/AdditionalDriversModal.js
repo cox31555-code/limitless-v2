@@ -79,7 +79,7 @@ const AdditionalDriversModal = ({
       about: ['firstName', 'lastName', 'dateOfBirth', 'livedInUKSinceBirth'],
       employment: ['employmentStatus', 'occupation', 'industry'],
       usage: ['otherVehicles'],
-      driving: ['licenseType', 'licenseHeld'],
+      driving: ['licenseType', 'licenseHeld', 'hasAdditionalQualifications'],
       declarations: ['criminalConvictions', 'medicalConditions', 'insuranceCancelledOrClaimRefusedOrPolicyVoided']
     };
 
@@ -198,7 +198,9 @@ const AdditionalDriversModal = ({
             {drivers.map((driver, index) => (
               <div key={index} className={modalStyles.driverItem}>
                 <div className={`${modalStyles.driverHeader} ${isDriverExpanded(index) ? modalStyles.expanded : ''}`} onClick={() => toggleDriver(index)} role="button" tabIndex={0}>
-                  <span className={modalStyles.driverNumber}>Driver {index + 1}</span>
+                  <span className={modalStyles.driverNumber}>
+                    {driver.firstName && driver.lastName ? `${driver.firstName} ${driver.lastName}` : `Driver ${index + 1}`}
+                  </span>
                   <div className={modalStyles.driverHeaderActions}>
                     <span className={modalStyles.expandIcon}>+</span>
                     <button
