@@ -340,8 +340,14 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Where You Live</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('location') && <>
-          
+          {isTileExpanded('location') && isTileDisabled('location') && (
+            <div className={modalButtonStyles.errorMessage}>
+              <span className={modalButtonStyles.errorIcon}>!</span>
+              <span>Complete {getPreviousTileLabel('location')} first</span>
+            </div>
+          )}
+          {isTileExpanded('location') && !isTileDisabled('location') && <>
+
           <div className={styles.cleanPostcodeRow}>
             <FormTextInput
               label="Postcode"
