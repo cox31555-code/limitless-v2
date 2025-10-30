@@ -264,12 +264,4 @@ const AnnualInsuranceContent = () => {
   );
 };
 
-const AnnualInsurancePage = () => {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <AnnualInsuranceContent />
-    </Suspense>
-  );
-};
-
-export default AnnualInsurancePage;
+export default AnnualInsuranceContent;
