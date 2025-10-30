@@ -233,7 +233,21 @@ const AdditionalDriversModal = ({
                       </div>
                       <div className={modalStyles.fieldRow2Col}>
                         <div className={modalStyles.field}>
-                          <FormDataAndTime dateLabel="Date of Birth" type="date" allowPastDates={true} isDateOfBirth={true} maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())} defaultYear={2009} reducedPadding={true} value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""} onChange={(value) => onUpdateDriver(index, "dateOfBirth", value)} />
+                          <FormDataAndTime
+                            dateLabel="Date of Birth"
+                            type="date"
+                            allowPastDates={true}
+                            isDateOfBirth={true}
+                            maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())}
+                            defaultYear={2009}
+                            reducedPadding={true}
+                            {...form.register(`carUsage.additionalDrivers.${index}.dateOfBirth`)}
+                            value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""}
+                            onChange={(e) => {
+                              const value = e?.target?.value || e;
+                              onUpdateDriver(index, "dateOfBirth", value);
+                            }}
+                          />
                         </div>
                       </div>
                       <div className={modalStyles.field}>
