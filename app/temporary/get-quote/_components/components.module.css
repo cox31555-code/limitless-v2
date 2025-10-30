@@ -1595,7 +1595,7 @@
 .cleanFormContent {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 2.4rem;
   width: 100%;
 }
 
@@ -1936,7 +1936,7 @@
   }
 
   .cleanFormContent {
-    gap: 6rem;
+    gap: 2.4rem;
   }
 
   .cleanSection {
@@ -1971,7 +1971,7 @@
 /* Mobile Responsive */
 @media screen and (max-width: 600px) {
   .cleanFormContent {
-    gap: 6rem;
+    gap: 2.4rem;
   }
 
   .cleanSection {
