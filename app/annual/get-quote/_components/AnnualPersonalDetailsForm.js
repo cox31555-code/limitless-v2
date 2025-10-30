@@ -859,9 +859,9 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
               {hasAdditionalDrivers && (
                 <div className={modalButtonStyles.driversButtonContainer}>
-                  {additionalDrivers.length > 0 && (
+                  {completeDrivers.length > 0 && (
                     <div className={modalButtonStyles.driverButtonsList}>
-                      {additionalDrivers.map((driver, index) => (
+                      {completeDrivers.map((driver, index) => (
                         <button
                           key={index}
                           type="button"
@@ -869,18 +869,18 @@ const AnnualPersonalDetailsForm = ({ form }) => {
                           onClick={() => setIsModalOpen(true)}
                           title="Click to edit driver"
                         >
-                          {driver.firstName && driver.lastName ? `${driver.firstName} ${driver.lastName}` : `Driver ${index + 1}`}
+                          {driver.firstName && driver.lastName ? `${driver.firstName} ${driver.lastName}` : `Driver`}
                         </button>
                       ))}
                     </div>
                   )}
-                  {additionalDrivers.length < 5 && (
+                  {completeDrivers.length < 5 && (
                     <button
                       type="button"
                       className={modalButtonStyles.openModalButton}
                       onClick={() => setIsModalOpen(true)}
                     >
-                      + Add {additionalDrivers.length === 0 ? 'Drivers' : 'Another Driver'}
+                      + Add {completeDrivers.length === 0 ? 'Drivers' : 'Another Driver'}
                     </button>
                   )}
                 </div>
