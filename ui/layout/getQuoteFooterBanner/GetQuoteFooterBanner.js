@@ -17,7 +17,7 @@ const GetQuoteFooterBanner = () => {
     <div className={styles.banner} suppressHydrationWarning>
       <div className={styles.content} suppressHydrationWarning>
         <div className={styles.textContent}>
-          <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+          <h3 className={`${styles.title} ${plusJakartaSans.className}`} suppressHydrationWarning>
             Need help with your quote?
           </h3>
           <p className={styles.description}>

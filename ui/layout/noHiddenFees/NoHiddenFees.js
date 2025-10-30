@@ -16,7 +16,7 @@ const NoHiddenFees = () => {
   return (
     <div className={styles.container} suppressHydrationWarning>
       <div className={styles.content} suppressHydrationWarning>
-        <div className={`${styles.title} ${plusJakartaSans.className}`}>
+        <div className={`${styles.title} ${plusJakartaSans.className}`} suppressHydrationWarning>
           No hidden fees
           <div className={styles.titleSpan}>
             Limitless Cover{" "}
