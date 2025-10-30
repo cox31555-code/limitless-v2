@@ -316,10 +316,12 @@
 /* Responsive */
 @media (max-width: 900px) {
   .content {
-    gap: 2.8rem;
+    gap: 2.4rem;
   }
 
-  .row {
+  .row,
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
@@ -328,15 +330,18 @@
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    padding: 2rem;
+    padding: 1.8rem;
+    gap: 1.4rem;
   }
 
   .sectionTitle {
     font-size: 1.4rem;
+    padding-left: 1.4rem;
   }
 
   .sectionDescription {
     font-size: 1rem;
+    padding-left: 1.4rem;
   }
 }
 
