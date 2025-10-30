@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           {!isGetQuotePage && <Header />}
           {children}
-          {!isLoginPage && !isGetQuotePage && <Footer />}
+          {!isLoginPage && <Footer />}
           <ToastContainer
             position="top-right"
             autoClose={5000}
