@@ -1,10 +1,11 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import FormTextInput from "../../../ui/inputs/FormTextInput";
-import FormDropdown from "../../../ui/inputs/FormDropdown";
-import FormDataAndTime from "../../../ui/inputs/FormDataAndTime";
-import FormAutocomplete from "../../../ui/inputs/FormAutocomplete";
-import YesORNo from "../../../ui/inputs/selections/yesORNo/YesORNo";
-import ConfirmBtn from "../../../ui/buttons/confirmBtn/ConfirmBtn";
+import FormTextInput from "@/ui/inputs/FormTextInput";
+import FormDropdown from "@/ui/inputs/FormDropdown";
+import FormDataAndTime from "@/ui/inputs/FormDataAndTime";
+import FormAutocomplete from "@/ui/inputs/FormAutocomplete";
+import YesORNo from "@/ui/inputs/selections/yesORNo/YesORNo";
+import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
 import modalStyles from "./additionalDriversModal.module.css";
 import {
   employmentStatusOptions,
