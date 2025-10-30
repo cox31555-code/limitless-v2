@@ -386,7 +386,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
           </div>
 
           <div className={`${styles.cleanFormGrid1Col} ${styles.cleanFormGrid1ColWithTopGap}`}>
-            <p className={styles.cleanLabel}>Have you passed any additional driving qualifications?</p>
+            <p className={styles.cleanFormFieldLabel}>Have you passed any additional driving qualifications?</p>
             <p className={styles.cleanSubLabel}>Some insurance providers may offer a discount if you have an additional driving qualification.</p>
             <YesORNo
               value={watch("carUsage.hasAdditionalQualifications")}
