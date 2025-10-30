@@ -399,7 +399,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
           {watch("carUsage.hasAdditionalQualifications") && (
             <>
               <div className={`${styles.cleanFormGrid1Col} ${styles.cleanFormGrid1ColWithTopPadding}`}>
-                <p className={styles.cleanLabel}>What type of driving qualification do you have?</p>
+                <p className={styles.cleanFormFieldLabel}>What type of driving qualification do you have?</p>
                 <FormDropdown
                   label=""
                   options={additionalQualificationsOptions}
