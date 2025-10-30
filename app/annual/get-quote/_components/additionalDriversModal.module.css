@@ -283,6 +283,11 @@
   padding: 0 2rem 2rem 2rem;
 }
 
+.formSection.disabled > div:not(.tileHeader) {
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
 .formSection.disabled .tileHeader ~ div {
   opacity: 0.5;
   pointer-events: auto;
