@@ -1,123 +1,173 @@
-.extrasContent {
+.extrasContainer {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
 }
 
-.extrasIntro {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.introTitle {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #000822;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.introSubtitle {
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: #5a6b7d;
-  line-height: 1.4;
-  margin: 0;
-}
-
-.extrasGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-  gap: 2.4rem;
-}
-
-.extraOption {
+.extraSection {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 }
 
-.extraCard {
+.extraHeader {
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  padding: 2.4rem;
-  border-radius: 12px;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  flex-grow: 1;
+  align-items: flex-end;
+  gap: 0.9rem;
 }
 
-.extraCard:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.08);
-}
-
-.iconSection {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
+.iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.2rem;
-  height: 3.2rem;
-  color: #1b1464;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  color: #1B1464;
 }
 
-.icon svg {
+.iconWrapper svg {
   width: 100%;
   height: 100%;
 }
 
-.contentSection {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.extraName {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #000822;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.extraPrice {
-  font-size: 1.2rem;
+.extraTitle {
+  font-size: 2rem;
   font-weight: 500;
-  color: #0388ff;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.extraDescription {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #5a6b7d;
-  line-height: 1.5;
+  line-height: 1.2;
+  color: #1D1F2C;
   margin: 0;
 }
 
-.selectionWrapper {
+.pricingSection {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.pricingRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.pricingCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex: 1 0 0;
+}
+
+.pricingLabel {
+  align-self: stretch;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #1D1F2C;
+  margin: 0;
+}
+
+.pricingValue {
+  align-self: stretch;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #777980;
+  margin: 0;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #DFE1E7;
+}
+
+.mainDescription {
+  display: flex;
+  align-items: flex-start;
   gap: 1rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid rgba(3, 136, 255, 0.08);
+  align-self: stretch;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4A4C56;
+  margin: 0;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+  align-self: stretch;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  align-self: stretch;
+}
+
+.checkIcon,
+.crossIcon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.featureText {
+  flex: 1 0 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #4A4C56;
+  margin: 0;
+}
+
+.moreInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  align-self: stretch;
+}
+
+.moreInfoText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  align-self: stretch;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(27, 20, 100, 1);
+  margin: 0;
+}
+
+.infoIcon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+.selectionSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+  align-self: stretch;
 }
 
 .selectionQuestion {
-  font-size: 1.2rem;
+  width: 100%;
+  max-width: 52.6rem;
+  font-size: 1.8rem;
   font-weight: 500;
-  color: #000822;
+  line-height: 1.2;
+  color: #1D1F2C;
   margin: 0;
-  line-height: 1.4;
 }
 
 .selectionQuestion strong {
@@ -126,23 +176,35 @@
 
 .buttonGroup {
   display: flex;
-  gap: 0.8rem;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1.2rem;
+  align-self: stretch;
 }
 
 .optionBtn {
-  flex: 1;
-  height: 4.4rem;
-  padding: 0.8rem 1.6rem;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  display: flex;
+  height: 5.6rem;
+  padding: 1.3rem 1.6rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex: 1 0 0;
   border-radius: 8px;
-  background: #ffffff;
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #000822;
+  border: 1px solid #DFE1E7;
+  background: #FFF;
+  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #777980;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
+}
+
+.optionBtn .btnIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
 }
 
 .optionBtn:hover {
@@ -150,141 +212,216 @@
   background: #f0f6ff;
 }
 
-.optionBtnYes {
+.optionBtnActive {
   border-color: #0388ff;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #ffffff;
 }
 
-.optionBtnYes:hover {
+.optionBtnActive:hover {
   background: linear-gradient(135deg, #0270cc 0%, #015fa3 100%);
   border-color: #0270cc;
 }
 
-.optionBtnNo {
-  border-color: #d0d5dd;
-  background: #ffffff;
-  color: #000822;
+.sectionDivider {
+  width: 100%;
+  height: 1px;
+  background: #DFE1E7;
+  margin: 1.6rem 0;
 }
 
-.optionBtnNo:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  background: #f0f6ff;
+.saveSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+  padding-top: 1.6rem;
+}
+
+.saveHeader {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.9rem;
+}
+
+.saveIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+}
+
+.saveTitle {
+  width: 100%;
+  max-width: 28.4rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #1D1F2C;
+  margin: 0;
+}
+
+.saveDivider {
+  width: 100%;
+  height: 1px;
+  background: #DFE1E7;
+}
+
+.saveDescription {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex: 1 0 0;
+  align-self: stretch;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #4A4C56;
+  margin: 0;
+}
+
+.saveDescription strong {
+  font-weight: 700;
 }
 
 /* Responsive Design */
 @media (max-width: 900px) {
-  .extrasContent {
+  .extrasContainer {
     gap: 2.8rem;
   }
 
-  .introTitle {
+  .extraSection {
+    gap: 1.4rem;
+  }
+
+  .extraTitle {
+    font-size: 1.8rem;
+  }
+
+  .pricingLabel,
+  .pricingValue,
+  .mainDescription,
+  .featureText,
+  .moreInfoText {
     font-size: 1.4rem;
   }
 
-  .introSubtitle {
-    font-size: 1.2rem;
-  }
-
-  .extrasGrid {
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-    gap: 2rem;
-  }
-
-  .extraCard {
-    padding: 2rem;
-    gap: 1rem;
-  }
-
-  .icon {
-    width: 2.8rem;
-    height: 2.8rem;
-  }
-
-  .extraName {
-    font-size: 1.3rem;
-  }
-
-  .extraPrice {
-    font-size: 1.1rem;
-  }
-
-  .extraDescription {
-    font-size: 1.1rem;
-  }
-
   .selectionQuestion {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
+  }
+
+  .saveTitle {
+    font-size: 1.8rem;
+  }
+
+  .saveDescription {
+    font-size: 1.4rem;
   }
 
   .optionBtn {
-    height: 4rem;
-    font-size: 1.2rem;
+    height: 5.2rem;
+    font-size: 1.4rem;
   }
 }
 
 @media (max-width: 600px) {
-  .extrasContent {
+  .extrasContainer {
     gap: 2.4rem;
   }
 
-  .introTitle {
-    font-size: 1.3rem;
+  .extraSection {
+    gap: 1.2rem;
   }
 
-  .introSubtitle {
-    font-size: 1.1rem;
+  .extraHeader {
+    gap: 0.8rem;
   }
 
-  .extrasGrid {
-    grid-template-columns: 1fr;
+  .iconWrapper {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .extraTitle {
+    font-size: 1.6rem;
+  }
+
+  .pricingSection {
     gap: 1.6rem;
   }
 
-  .extraCard {
-    padding: 1.6rem;
+  .pricingRow {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .pricingLabel,
+  .pricingValue {
+    font-size: 1.3rem;
+  }
+
+  .mainDescription,
+  .featureText {
+    font-size: 1.3rem;
+  }
+
+  .featuresList {
+    gap: 1.2rem;
+  }
+
+  .featureItem {
     gap: 1rem;
   }
 
-  .icon {
-    width: 2.4rem;
-    height: 2.4rem;
+  .moreInfoText {
+    font-size: 1.3rem;
   }
 
-  .iconSection {
-    align-items: flex-start;
-  }
-
-  .extraName {
-    font-size: 1.2rem;
-  }
-
-  .extraPrice {
-    font-size: 1rem;
-  }
-
-  .extraDescription {
-    font-size: 1rem;
-  }
-
-  .selectionWrapper {
-    gap: 0.8rem;
-    padding-top: 1.2rem;
+  .selectionSection {
+    gap: 1.2rem;
   }
 
   .selectionQuestion {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
   .buttonGroup {
-    flex-direction: row;
-    gap: 0.6rem;
+    gap: 1rem;
   }
 
   .optionBtn {
-    height: 3.8rem;
-    padding: 0.6rem 1.2rem;
-    font-size: 1.1rem;
-    border-radius: 6px;
+    height: 4.8rem;
+    padding: 1rem 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .optionBtn .btnIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .sectionDivider {
+    margin: 1.2rem 0;
+  }
+
+  .saveSection {
+    gap: 1.2rem;
+    padding-top: 1.2rem;
+  }
+
+  .saveHeader {
+    gap: 0.8rem;
+  }
+
+  .saveIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .saveTitle {
+    font-size: 1.6rem;
+  }
+
+  .saveDescription {
+    font-size: 1.3rem;
   }
 }
