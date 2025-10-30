@@ -151,20 +151,6 @@ const PersonalDetailsForm = ({ form }) => {
           </div>
         </section>
 
-        {/* Where You Live Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="2">Where You Live</h3>
-
-          <div className={styles.cleanFormGrid1Col}>
-            <FormTextInput
-              label="Postcode"
-              placeholder="Enter your postcode"
-              {...register("userDetails.postCode")}
-              error={errors.userDetails?.postCode}
-              inputStyle={{ paddingLeft: "14px" }}
-            />
-          </div>
-        </section>
 
         {/* Employment Section */}
         <section className={styles.cleanSection}>
