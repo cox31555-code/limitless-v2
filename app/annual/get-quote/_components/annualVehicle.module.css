@@ -365,6 +365,20 @@
     gap: 2.4rem;
   }
 
+  .instructionBox {
+    padding: 1.4rem;
+    gap: 1rem;
+  }
+
+  .instructionIcon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .instructionText {
+    font-size: 1rem;
+  }
+
   .row,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
