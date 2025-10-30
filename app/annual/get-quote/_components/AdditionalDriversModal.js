@@ -381,7 +381,13 @@ const AdditionalDriversModal = ({
                       <h4 className={modalStyles.sectionLabel}>Declarations</h4>
                       <span className={modalStyles.expandIcon}>+</span>
                     </button>
-                    {isTileExpanded(index, 'declarations') && <>
+                    {isTileExpanded(index, 'declarations') && isTileDisabled(index, 'declarations') && (
+                      <div className={modalStyles.errorMessage}>
+                        <span className={modalStyles.errorIcon}>!</span>
+                        <span>Complete {getPreviousTileLabel('declarations')} first</span>
+                      </div>
+                    )}
+                    {isTileExpanded(index, 'declarations') && !isTileDisabled(index, 'declarations') && <>
                       <div className={modalStyles.field}>
                         <label className={modalStyles.inputLabel}>Do you have any unspent or outstanding criminal convictions?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => onUpdateDriver(index, "criminalConvictions", value)} />
