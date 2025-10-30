@@ -53,18 +53,20 @@
 
 .title {
   color: #fff;
-  font-size: 4.3rem;
+  font-size: 4rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 110%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   margin: 0;
+  letter-spacing: -0.4px;
 }
 
 .title span {
   color: #0388ff;
+  font-size: 4rem;
 }
 
 .title2 {
