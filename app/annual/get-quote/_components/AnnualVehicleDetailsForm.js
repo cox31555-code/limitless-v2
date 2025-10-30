@@ -122,6 +122,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
   const purchaseDate = watch("vehicleDetails.purchaseDate");
   const owner = watch("vehicleDetails.owner");
   const registeredKeeper = watch("vehicleDetails.registeredKeeper");
+  const legalOwner = watch("vehicleDetails.legalOwner");
   const vehicleModified = watch("vehicleDetails.vehicleModified");
   const vehicleModifications = watch("vehicleDetails.vehicleModifications") || [];
 
