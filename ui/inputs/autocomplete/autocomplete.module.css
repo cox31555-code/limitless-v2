@@ -82,7 +82,8 @@
 }
 
 .input::placeholder {
-  color: rgba(0, 8, 34, 0.4);
+  color: #a8b2bd;
+  font-weight: 400;
 }
 
 .arrowContainer {
