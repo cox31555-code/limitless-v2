@@ -663,27 +663,13 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 minDate={new Date(1960, 0, 1)}
                 maxDate={new Date()}
               />
-              <div className={styles.checkboxWrapper}>
-                <input
-                  type="checkbox"
-                  id="haventBoughtYet"
-                  checked={haventBoughtYet}
-                  onChange={handleHaventBoughtChange}
-                  className={styles.checkbox}
-                />
-                <label htmlFor="haventBoughtYet" className={styles.checkboxLabel}>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="8" cy="8" r="8" fill="#27A2FF" />
-                    <path
-                      d="M5.41016 8.68674L6.66366 10.3964C7.11442 11.0112 8.03679 10.9983 8.47009 10.371L11.3899 6.14453"
-                      stroke="white"
-                      strokeWidth="0.943366"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                  I haven&apos;t bought it yet
-                </label>
-              </div>
+              <button
+                type="button"
+                className={styles.haventBoughtBtn}
+                onClick={(e) => handleHaventBoughtChange({ target: { checked: !haventBoughtYet } })}
+              >
+                I haven't bought it yet
+              </button>
             </div>
             {haventBoughtYet && (
               <FormDropdown
