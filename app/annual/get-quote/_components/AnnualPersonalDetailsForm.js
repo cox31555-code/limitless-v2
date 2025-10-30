@@ -798,7 +798,13 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Additional Drivers</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('additionalDrivers') && <>
+          {isTileExpanded('additionalDrivers') && isTileDisabled('additionalDrivers') && (
+            <div className={modalButtonStyles.errorMessage}>
+              <span className={modalButtonStyles.errorIcon}>!</span>
+              <span>Complete {getPreviousTileLabel('additionalDrivers')} first</span>
+            </div>
+          )}
+          {isTileExpanded('additionalDrivers') && !isTileDisabled('additionalDrivers') && <>
 
           <div className={styles.cleanAdditionalInfoContainer}>
             <div className={styles.cleanFormGrid1Col}>
