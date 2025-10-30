@@ -1,10 +1,13 @@
 .container {
   width: 100%;
-  background: linear-gradient(135deg, #000822 0%, #051140 100%);
+  background: #000822;
   padding: 8rem 4.4%;
   position: relative;
   overflow: hidden;
   min-height: 600px;
+  border-radius: 2rem;
+  margin: 0 4.4%;
+  width: calc(100% - 8.8%);
 }
 
 .background {
@@ -13,7 +16,7 @@
   right: 0;
   width: 60%;
   height: 100%;
-  background: radial-gradient(ellipse 600px 400px at 90% 50%, rgba(3, 136, 255, 0.08) 0%, transparent 70%);
+  background: transparent;
   pointer-events: none;
   z-index: 0;
 }
@@ -53,10 +56,7 @@
 }
 
 .title span {
-  background: linear-gradient(135deg, #0388ff 0%, #00c9ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #0388ff;
   display: block;
 }
 
