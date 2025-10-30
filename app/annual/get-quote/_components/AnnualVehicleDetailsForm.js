@@ -463,7 +463,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
         >
           <div className={styles.rows}>
             {!foundVehicleData && (
-              <div className={styles.row}>
+              <div className={styles.cleanFormGrid2Col}>
                 <FormDropdown
                   label="My Vehicle is a...."
                   options={["Car", "Motorcycle", "Truck", "Bus"]}
@@ -488,7 +488,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             )}
 
             {selectedMake && !foundVehicleData && (
-              <div className={`${styles.row} ${styles.progressiveRow}`}>
+              <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
                 <FormDropdown
                   key={`model-${forceUpdate}`}
                   label="Model"
@@ -515,7 +515,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             )}
 
             {selectedYear && !foundVehicleData && (
-              <div className={`${styles.row} ${styles.progressiveRow}`}>
+              <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
                 <FormDropdown
                   key={`doors-${forceUpdate}`}
                   label="Doors"
@@ -542,7 +542,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             )}
 
             {selectedFuel && !foundVehicleData && (
-              <div className={`${styles.row} ${styles.progressiveRow}`}>
+              <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
                 <FormDropdown
                   key={`transmission-${forceUpdate}`}
                   label="Transmission"
