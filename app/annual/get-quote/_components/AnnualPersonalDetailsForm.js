@@ -16,6 +16,7 @@ import modalButtonStyles from "./additionalDriversModal.module.css";
 import {
   carUsageOptions,
   employmentStatusOptions,
+  industryOptions,
   keepingCarDuringDayOptions,
   keepingCarDuringNightOptions,
   licenseHeldOptions,
