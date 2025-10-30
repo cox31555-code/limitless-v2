@@ -221,46 +221,6 @@ const AdditionalDriversModal = ({
                       </div>
                     </div>
 
-                    {/* Where You Live Section */}
-                    <div className={modalStyles.formSection}>
-                      <h4 className={modalStyles.sectionLabel}>Where You Live</h4>
-
-                      <div className={modalStyles.postcodeRow}>
-                        <div className={modalStyles.field}>
-                          <FormTextInput
-                            label="Postcode"
-                            placeholder="Enter postcode"
-                            value={watch(`carUsage.additionalDrivers.${index}.postCode`) || ""}
-                            onChange={(e) => onUpdateDriver(index, "postCode", e.target.value)}
-                            inputStyle={{ paddingLeft: "14px" }}
-                          />
-                        </div>
-                        <div className={modalStyles.findAddressButton}>
-                          <ConfirmBtn
-                            title={driverLoadingStates[index] ? "Loading..." : "FIND"}
-                            onClick={() => handleFindAddress(index)}
-                            disabled={driverLoadingStates[index]}
-                            type="button"
-                          />
-                        </div>
-                      </div>
-
-                      <div className={modalStyles.field}>
-                        <FormDropdown
-                          label="Select Address"
-                          options={driverAddresses[index] || []}
-                          placeholder={
-                            (driverAddresses[index]?.length || 0) > 0
-                              ? "Select your address"
-                              : "No addresses found"
-                          }
-                          disabled={(driverAddresses[index]?.length || 0) === 0}
-                          value={watch(`carUsage.additionalDrivers.${index}.address`) || ""}
-                          onChange={(value) => onUpdateDriver(index, "address", value)}
-                          inputStyle={{ paddingLeft: "14px" }}
-                        />
-                      </div>
-                    </div>
 
                     {/* Employment Section */}
                     <div className={modalStyles.formSection}>
