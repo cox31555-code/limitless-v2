@@ -281,7 +281,7 @@
 
 /* Error Message */
 .errorMessage {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
@@ -289,10 +289,12 @@
   background: rgba(239, 68, 68, 0.08);
   border: 1.5px solid rgba(239, 68, 68, 0.3);
   border-radius: 8px;
-  margin: 0 auto 1.6rem auto;
+  margin: 0 2rem 1.6rem 2rem;
   font-size: 0.95rem;
   color: #dc2626;
   font-weight: 500;
+  width: calc(100% - 4rem);
+  box-sizing: border-box;
 }
 
 .errorIcon {
