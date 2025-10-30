@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./explaining.module.css";
 import { Plus_Jakarta_Sans, Poppins, Manrope } from "next/font/google";
+import Image from "next/image";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
