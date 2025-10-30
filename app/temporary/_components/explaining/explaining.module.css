@@ -10,14 +10,15 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: 24px;
   background: #000822;
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding: 6.7rem 6.2rem;
+  padding: 5.6rem;
   position: relative;
   overflow: hidden;
+  border: 2px solid rgba(3, 136, 255, 0.25);
 }
 
 .mainContent {
