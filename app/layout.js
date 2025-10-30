@@ -18,17 +18,13 @@ const poppins = Poppins({
 });
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  const isLoginPage = pathname === "/login";
-  const isGetQuotePage = pathname.includes("/get-quote");
-
   return (
     <html lang="en">
       <body className={poppins.className}>
         <AuthProvider>
-          {!isGetQuotePage && <Header />}
+          <Header />
           {children}
-          {!isLoginPage && <Footer />}
+          <Footer />
           <ToastContainer
             position="top-right"
             autoClose={5000}
