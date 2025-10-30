@@ -34,7 +34,7 @@
   max-width: 88rem;
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(3, 136, 255, 0.2);
+  border: 1px solid rgba(3, 136, 255, 0.12);
   display: flex;
   flex-direction: column;
   animation: slideInModal 0.28s cubic-bezier(0.4, 0, 0.2, 1);
