@@ -13,11 +13,15 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin: 0 0 2rem 0;
+  margin: 0 0 3.5rem 0;
   padding: 0;
   background: transparent;
   border: none;
   border-radius: 0;
+}
+
+.header.vehicleHeader {
+  margin: 0 0 2rem 0;
 }
 .title {
   color: #0388ff;
