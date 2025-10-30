@@ -1637,6 +1637,16 @@
   line-height: 1;
 }
 
+.cleanSubLabel {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #7a8a9d;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: -1rem 0 0.8rem 0;
+  line-height: 1.4;
+}
+
 .cleanFormGrid1Col {
   display: flex;
   flex-direction: column;
