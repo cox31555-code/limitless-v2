@@ -133,6 +133,12 @@ const AnnualPersonalDetailsForm = ({ form }) => {
           break;
         }
       }
+
+      // Special handling for Additional Drivers tile - auto-expand when declarations are complete
+      const declarationsComplete = checkTileCompletion('declarations');
+      if (declarationsComplete && !isTileDisabled('additionalDrivers')) {
+        setExpandedTiles(prev => new Set(prev).add('additionalDrivers'));
+      }
     }, 100);
 
     return () => clearTimeout(timer);
