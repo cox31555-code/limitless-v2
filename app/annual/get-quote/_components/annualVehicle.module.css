@@ -254,6 +254,28 @@
   min-width: 0;
 }
 
+/* Ensure proper input styling in owner/keeper wrappers */
+.ownerFieldWrapper :global(.inputContainer),
+.keeperFieldWrapper :global(.inputContainer) {
+  height: 6.5rem;
+  padding: 1.2rem 1.6rem;
+}
+
+.ownerFieldWrapper :global(.input),
+.keeperFieldWrapper :global(.input) {
+  padding: 0 !important;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+@media (max-width: 900px) {
+  .ownerFieldWrapper :global(.inputContainer),
+  .keeperFieldWrapper :global(.inputContainer) {
+    height: 5.2rem;
+  }
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .row {
