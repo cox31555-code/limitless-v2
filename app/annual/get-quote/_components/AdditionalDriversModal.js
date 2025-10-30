@@ -185,12 +185,11 @@ const AdditionalDriversModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className={modalStyles.modalOverlay} onClick={onClose}>
-      <div className={modalStyles.modalContainer} onClick={e => e.stopPropagation()}>
+    <div className={modalStyles.modalOverlay}>
+      <div className={modalStyles.modalContainer}>
         <div className={modalStyles.modalHeader}>
           <h2 className={modalStyles.modalTitle}>Add Additional Drivers</h2>
           <p className={modalStyles.modalSubtitle}>Complete the details for each driver</p>
-          <button className={modalStyles.closeButton} onClick={onClose}>×</button>
         </div>
 
         <div className={modalStyles.modalContent}>
