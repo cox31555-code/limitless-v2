@@ -88,15 +88,17 @@ const AnnualCoverDetailsForm = ({ form }) => {
             </p>
           </div>
 
-          <FormDateInput
-            type="date"
-            dateLabel="Start Date"
-            value={startDate || ""}
-            onChange={handleDateChange}
-            error={form.formState.errors.coverDetails?.startDate}
-            minDate={new Date()}
-            reducedPadding={true}
-          />
+          <div className={styles.dateSection}>
+            <FormDateInput
+              type="date"
+              dateLabel="Start Date"
+              value={startDate || ""}
+              onChange={handleDateChange}
+              error={form.formState.errors.coverDetails?.startDate}
+              minDate={new Date()}
+              reducedPadding={true}
+            />
+          </div>
         </div>
       </div>
     </ComponentWrapper>
