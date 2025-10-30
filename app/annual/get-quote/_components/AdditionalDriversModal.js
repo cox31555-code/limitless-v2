@@ -312,7 +312,13 @@ const AdditionalDriversModal = ({
                       <h4 className={modalStyles.sectionLabel}>Usage Details</h4>
                       <span className={modalStyles.expandIcon}>+</span>
                     </button>
-                    {isTileExpanded(index, 'usage') && <>
+                    {isTileExpanded(index, 'usage') && isTileDisabled(index, 'usage') && (
+                      <div className={modalStyles.errorMessage}>
+                        <span className={modalStyles.errorIcon}>!</span>
+                        <span>Complete {getPreviousTileLabel('usage')} first</span>
+                      </div>
+                    )}
+                    {isTileExpanded(index, 'usage') && !isTileDisabled(index, 'usage') && <>
                       <div className={modalStyles.field}>
                         <label className={modalStyles.inputLabel}>Other Vehicles?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.otherVehicles`)} onChange={(value) => onUpdateDriver(index, "otherVehicles", value)} />
