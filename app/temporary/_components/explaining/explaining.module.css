@@ -8,27 +8,6 @@
   background: #000822;
 }
 
-.contact {
-  position: absolute;
-  top: 400px;
-  right: 0;
-  width: 600px;
-  height: auto;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.squares {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1394px;
-  height: auto;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .container {
   width: 100%;
   display: flex;
