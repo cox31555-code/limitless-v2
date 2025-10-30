@@ -233,14 +233,15 @@ const ImpoundInsuranceContent = () => {
   };
 
   return (
-    <>
+    <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
       <GetQuoteHeaderWithNav title="Impound Insurance Quote" currentStep={currentStep} totalSteps={4} />
-      <div className="centeredContent">
+      <div className="centeredContent" suppressHydrationWarning>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className={styles.stepFormContainer}
           noValidate
+          suppressHydrationWarning
         >
           <div className={styles.stepContent}>
             {currentStep === STEPS.VEHICLE && (
@@ -272,7 +273,7 @@ const ImpoundInsuranceContent = () => {
           )}
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
