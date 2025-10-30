@@ -211,7 +211,7 @@ const AdditionalDriversModal = ({
                     <div className={modalStyles.formSection}>
                       <h4 className={modalStyles.sectionLabel}>Usage Details</h4>
                       <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Other Vehicles?</p>
+                        <label className={modalStyles.inputLabel}>Other Vehicles?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.otherVehicles`)} onChange={(value) => onUpdateDriver(index, "otherVehicles", value)} />
                       </div>
                       {watch(`carUsage.additionalDrivers.${index}.otherVehicles`) && (
