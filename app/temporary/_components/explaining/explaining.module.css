@@ -145,7 +145,7 @@
 .howContent {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2.8rem;
   position: relative;
   z-index: 1;
 }
@@ -153,7 +153,7 @@
 .leftColumn {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.6rem;
 }
 
 .howTitle {
