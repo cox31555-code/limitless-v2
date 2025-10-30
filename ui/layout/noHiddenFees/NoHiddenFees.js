@@ -32,7 +32,7 @@ const NoHiddenFees = () => {
         <div className={styles.buttons}>
           <button
             onClick={() => {
-              router.push("/temporary/get-quote");
+              router.push("/annual/get-quote");
             }}
             className={styles.getQuoteBtn}
           >

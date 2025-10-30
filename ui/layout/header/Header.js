@@ -484,7 +484,7 @@ const Header = () => {
                   if (isDashboard) {
                     openLiveChat();
                   } else {
-                    router.push("/temporary/get-quote");
+                    router.push("/annual/get-quote");
                   }
                   setIsOpen(false);
                 }}
