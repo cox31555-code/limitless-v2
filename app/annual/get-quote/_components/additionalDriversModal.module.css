@@ -736,6 +736,21 @@
     font-size: 1.1rem;
   }
 
+  .driverButtonsList {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .driverNameButton {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .openModalButton {
+    width: 100%;
+  }
+
   .modalFooter {
     padding: 1.6rem;
     flex-direction: column;
