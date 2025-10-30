@@ -276,6 +276,55 @@
   }
 }
 
+/* Modifications List */
+.modificationsListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding: 1.6rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  animation: slideDown 0.3s ease;
+}
+
+.modificationsLabel {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #5a6b7d;
+  margin: 0;
+}
+
+.modificationsTagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.modificationTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
+}
+
+.modificationTag::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
 @media (max-width: 600px) {
   .content {
     gap: 1.6rem;
@@ -294,5 +343,10 @@
 
   .checkboxLabel {
     font-size: 1.3rem;
+  }
+
+  .modificationTag {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
   }
 }
