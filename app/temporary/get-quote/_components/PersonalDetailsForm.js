@@ -290,7 +290,32 @@ const PersonalDetailsForm = ({ form }) => {
         {/* Car Usage Section */}
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle} data-section="5">Usage Details</h3>
-          
+
+          <div className={styles.cleanFormGrid1Col}>
+            <p className={styles.cleanLabel}>Do you use any other vehicles?</p>
+            <YesORNo
+              value={watch("carUsage.otherVehicles")}
+              onChange={(value) =>
+                setValue("carUsage.otherVehicles", value)
+              }
+            />
+          </div>
+
+          {watch("carUsage.otherVehicles") && (
+            <div className={styles.cleanFormGrid1Col}>
+              <p className={styles.cleanLabel}>What other vehicles do you have use of?</p>
+              <p className={styles.cleanSubLabel}>Select the most applicable option.</p>
+              <FormDropdown
+                label=""
+                options={otherVehiclesOptions}
+                placeholder="Select vehicle type"
+                {...register("carUsage.otherVehiclesType")}
+                error={errors.carUsage?.otherVehiclesType}
+                inputStyle={{ paddingLeft: "14px" }}
+              />
+            </div>
+          )}
+
           <div className={styles.cleanFormGrid1Col}>
             <p className={styles.cleanLabel}>What do you use the car for?</p>
             <div className={styles.cleanSelections3}>
