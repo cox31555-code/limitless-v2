@@ -339,15 +339,15 @@ const AdditionalDriversModal = ({
                     </button>
                     {isTileExpanded(index, 'declarations') && <>
                       <div className={modalStyles.field}>
-                        <label className={modalStyles.inputLabel}>Criminal Convictions?</label>
+                        <label className={modalStyles.inputLabel}>Do you have any unspent or outstanding criminal convictions?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => onUpdateDriver(index, "criminalConvictions", value)} />
                       </div>
                       <div className={modalStyles.field}>
-                        <label className={modalStyles.inputLabel}>Medical Conditions?</label>
+                        <label className={modalStyles.inputLabel}>Do you have any medical conditions that are notifiable to the DVLA?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)} onChange={(value) => onUpdateDriver(index, "medicalConditions", value)} />
                       </div>
                       <div className={modalStyles.field}>
-                        <label className={modalStyles.inputLabel}>Insurance History?</label>
+                        <label className={modalStyles.inputLabel}>Have you ever had insurance cancelled, a claim refused, a policy voided, or any special terms imposed?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.insuranceCancelledOrClaimRefusedOrPolicyVoided`)} onChange={(value) => onUpdateDriver(index, "insuranceCancelledOrClaimRefusedOrPolicyVoided", value)} />
                       </div>
                     </>}
