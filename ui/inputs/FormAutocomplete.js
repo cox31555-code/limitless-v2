@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./autocomplete/autocomplete.module.css";
 
 const FormAutocomplete = forwardRef(
-  ({ label, options, placeholder, error, onChange, value, ...props }, ref) => {
+  ({ label, options, placeholder, error, onChange, value, disabled, ...props }, ref) => {
     const [inputValue, setInputValue] = useState(value || "");
     const [isOpen, setIsOpen] = useState(false);
     const [filteredOptions, setFilteredOptions] = useState(options);
@@ -30,6 +30,8 @@ const FormAutocomplete = forwardRef(
     }, []);
 
     const handleInputChange = (e) => {
+      if (disabled) return;
+
       const value = e.target.value;
       setInputValue(value);
       setIsOpen(true);
@@ -47,6 +49,8 @@ const FormAutocomplete = forwardRef(
     };
 
     const handleOptionClick = (option) => {
+      if (disabled) return;
+
       setInputValue(option);
       setIsOpen(false);
 
@@ -64,6 +68,7 @@ const FormAutocomplete = forwardRef(
     };
 
     const handleInputFocus = () => {
+      if (disabled) return;
       setIsOpen(true);
       setFilteredOptions(options);
     };
