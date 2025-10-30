@@ -148,25 +148,6 @@ const AdditionalDriversModal = ({
     return !checkTileCompletion(driverIndex, previousTileKey);
   };
 
-  const checkTileCompletion = (driverIndex, tileKey) => {
-    const driver = drivers[driverIndex];
-    if (!driver) return false;
-
-    const requiredFields = {
-      about: ['firstName', 'lastName', 'dateOfBirth', 'livedInUKSinceBirth'],
-      employment: ['employmentStatus', 'occupation', 'industry'],
-      usage: ['otherVehicles'],
-      driving: ['licenseType', 'licenseHeld', 'hasAdditionalQualifications'],
-      declarations: ['criminalConvictions', 'medicalConditions', 'insuranceCancelledOrClaimRefusedOrPolicyVoided']
-    };
-
-    const fieldsToCheck = requiredFields[tileKey] || [];
-    return fieldsToCheck.every(field => {
-      const value = driver[field];
-      return value !== null && value !== undefined && value !== '';
-    });
-  };
-
 
   useEffect(() => {
     drivers.forEach((driver, index) => {
