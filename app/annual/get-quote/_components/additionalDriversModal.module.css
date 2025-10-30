@@ -167,14 +167,13 @@
 .formSection {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
-  padding-top: 1.2rem;
-  border-top: 1px solid rgba(3, 136, 255, 0.08);
+  gap: 1.6rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 
-.formSection:first-child {
-  border-top: none;
-  padding-top: 0;
+.formSection:last-child {
+  border-bottom: none;
 }
 
 .sectionLabel {
