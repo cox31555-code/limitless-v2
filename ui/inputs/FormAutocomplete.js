@@ -106,6 +106,7 @@ const FormAutocomplete = forwardRef(
             onChange={handleInputChange}
             onFocus={handleInputFocus}
             disabled={disabled}
+            style={inputStyle}
             {...props}
           />
           <div className={styles.arrowContainer}>
