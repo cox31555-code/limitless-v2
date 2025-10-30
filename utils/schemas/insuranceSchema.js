@@ -212,6 +212,15 @@ export const carUsageSchema = z.object({
       required_error: "Please specify how you use your car",
     }
   ),
+  otherVehicles: z.boolean().default(false),
+  otherVehiclesType: z.enum(
+    [
+      "Own another car or van",
+      "Have use of another car",
+      "Company car (including personal use)",
+      "Company car (excluding personal use)",
+    ]
+  ).optional(),
   licenseType: z.string().min(1, "License type is required"),
   licenseHeld: z.string().min(1, "License held is required"),
   licenseNumber: z.string().optional(),
