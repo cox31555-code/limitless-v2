@@ -269,33 +269,6 @@ const AdditionalDriversModal = ({
                       </div>
                     </div>
 
-                    {/* Parking & Storage Section */}
-                    <div className={modalStyles.formSection}>
-                      <h4 className={modalStyles.sectionLabel}>Parking & Storage</h4>
-
-                      <div className={modalStyles.fieldRow2Col}>
-                        <div className={modalStyles.selectionField}>
-                          <Selection2
-                            title="During the day?"
-                            description="Where car is parked during daytime"
-                            items={keepingCarDuringDayOptions}
-                            img={{ src: "/svg/day.svg", alt: "sun", width: 79, height: 106 }}
-                            selectedItem={watch(`carUsage.additionalDrivers.${index}.keepingCarDuringDay`)}
-                            setSelectedItem={(item) => onUpdateDriver(index, "keepingCarDuringDay", item)}
-                          />
-                        </div>
-                        <div className={modalStyles.selectionField}>
-                          <Selection2
-                            title="During the night?"
-                            description="Where car is parked during nighttime"
-                            items={keepingCarDuringNightOptions}
-                            img={{ src: "/svg/night.svg", alt: "moon", width: 79, height: 106 }}
-                            selectedItem={watch(`carUsage.additionalDrivers.${index}.keepingCarDuringNight`)}
-                            setSelectedItem={(item) => onUpdateDriver(index, "keepingCarDuringNight", item)}
-                          />
-                        </div>
-                      </div>
-                    </div>
 
                     {/* Usage Details Section */}
                     <div className={modalStyles.formSection}>
