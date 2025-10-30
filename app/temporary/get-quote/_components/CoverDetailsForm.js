@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import FormDateInput from "@/ui/inputs/FormDateInput";
-import Image from "next/image";
 import styles from "./components.module.css";
 
 const CoverDetailsForm = ({ form, isImpound = false }) => {
