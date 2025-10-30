@@ -107,32 +107,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
   useEffect(() => {
     autoExpandNextTile();
-  }, [
-    watch('userDetails.firstName'),
-    watch('userDetails.surname'),
-    watch('userDetails.dateOfBirth'),
-    watch('userDetails.email'),
-    watch('userDetails.phone'),
-    watch('userDetails.postCode'),
-    watch('userDetails.address'),
-    watch('userDetails.employmentStatus'),
-    watch('userDetails.occupation'),
-    watch('userDetails.industry'),
-    watch('carUsage.keepingCarDuringDay'),
-    watch('carUsage.keepingCarDuringNight'),
-    watch('carUsage.usageType'),
-    watch('carUsage.licenseType'),
-    watch('carUsage.licenseHeld'),
-    watch('carUsage.NCB'),
-    watch('carUsage.ownsHome'),
-    watch('carUsage.childrenUnder16'),
-    watch('carUsage.livedInUKSinceBirth'),
-    watch('carUsage.criminalConvictions'),
-    watch('carUsage.medicalConditions'),
-    watch('carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided'),
-    watch('carUsage.hasAdditionalDrivers'),
-    autoExpandNextTile
-  ]);
+  }, [autoExpandNextTile]);
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
