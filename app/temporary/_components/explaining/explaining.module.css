@@ -114,42 +114,16 @@
 .featuresContainer {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex: 1;
-  width: 42%;
+  width: 52%;
 }
 
-.background1 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 33.3%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-  pointer-events: none;
-}
-
-.background2 {
-  position: absolute;
-  top: 0;
-  right: 33.3%;
-  width: 33.3%;
-  height: 100%;
-  opacity: 0.82;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-  pointer-events: none;
-}
-
+.background1,
+.background2,
 .background3 {
-  position: absolute;
-  top: 0;
-  right: 66.6%;
-  width: 33.4%;
-  height: 85%;
-  opacity: 0.6;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-  pointer-events: none;
+  display: none;
 }
 
 .features {
