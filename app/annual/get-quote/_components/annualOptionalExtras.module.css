@@ -1,355 +1,290 @@
-.extrasContainer {
+.extrasContent {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  padding: 2rem 0;
 }
 
-.header {
+.extrasIntro {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.title {
-  font-size: 2rem;
+.introTitle {
+  font-size: 1.6rem;
   font-weight: 600;
-  color: #1d1f2c;
+  color: #000822;
   margin: 0;
+  line-height: 1.3;
 }
 
-.subtitle {
-  font-size: 1.4rem;
+.introSubtitle {
+  font-size: 1.3rem;
   font-weight: 400;
-  color: #4a4c56;
-  line-height: 1.6;
+  color: #5a6b7d;
+  line-height: 1.4;
   margin: 0;
 }
 
-.extrasList {
+.extrasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 2.4rem;
+}
+
+.extraOption {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.6rem;
 }
 
 .extraCard {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  border-radius: 12px;
+  gap: 1.2rem;
   padding: 2.4rem;
+  border-radius: 12px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-grow: 1;
 }
 
 .extraCard:hover {
   border-color: rgba(3, 136, 255, 0.25);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.08);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.08);
 }
 
-.extraHeader {
+.iconSection {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.iconTitle {
-  display: flex;
-  align-items: flex-end;
-  gap: 1rem;
-}
-
-.iconWrapper {
+.icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 3.2rem;
+  height: 3.2rem;
   color: #1b1464;
 }
 
-.iconWrapper svg {
+.icon svg {
   width: 100%;
   height: 100%;
 }
 
-.extraTitle {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #1d1f2c;
+.contentSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.extraName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000822;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
-.extraBody {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.priceSection {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.priceLabel {
-  font-size: 1.6rem;
+.extraPrice {
+  font-size: 1.2rem;
   font-weight: 500;
-  color: #1d1f2c;
-}
-
-.priceValue {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #777980;
-}
-
-.divider {
-  width: 100%;
-  height: 1px;
-  background: #dfe1e7;
-}
-
-.description {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #4a4c56;
-  line-height: 1.6;
+  color: #0388ff;
   margin: 0;
+  line-height: 1.3;
 }
 
-.featuresList,
-.limitationsList {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.featureItem,
-.limitationItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.2rem;
-}
-
-.featureItem svg,
-.limitationItem svg {
-  width: 2rem;
-  height: 2rem;
-  flex-shrink: 0;
-  margin-top: 0.2rem;
-}
-
-.featureItem span,
-.limitationItem span {
-  font-size: 1.6rem;
+.extraDescription {
+  font-size: 1.2rem;
   font-weight: 400;
-  color: #4a4c56;
-  line-height: 1.4;
-  flex: 1;
-}
-
-.infoButton {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border: none;
-  background: none;
-  padding: 0;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.infoButton:hover {
-  opacity: 0.7;
-}
-
-.infoText {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: rgba(27, 20, 100, 1);
+  color: #5a6b7d;
   line-height: 1.5;
+  margin: 0;
 }
 
-.infoButton svg {
-  width: 2rem;
-  height: 2rem;
-}
-
-.selectionSection {
+.selectionWrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 .selectionQuestion {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  color: #1d1f2c;
-  line-height: 1.2;
+  color: #000822;
   margin: 0;
+  line-height: 1.4;
 }
 
 .selectionQuestion strong {
   font-weight: 600;
 }
 
-.selectionButtons {
+.buttonGroup {
   display: flex;
-  align-items: flex-start;
-  gap: 1.2rem;
+  gap: 0.8rem;
+  align-items: center;
 }
 
-.selectionBtn {
-  display: flex;
-  height: 5.6rem;
-  padding: 1.3rem 1.6rem;
-  align-items: center;
-  gap: 1.2rem;
-  flex: 1 0 0;
+.optionBtn {
+  flex: 1;
+  height: 4.4rem;
+  padding: 0.8rem 1.6rem;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
   border-radius: 8px;
-  border: 1px solid #dfe1e7;
-  background: #fff;
+  background: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000822;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #777980;
-  line-height: 1.5;
+  text-align: center;
 }
 
-.selectionBtn svg {
-  width: 2.4rem;
-  height: 2.4rem;
-  color: #777980;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.selectionBtn:hover {
+.optionBtn:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: #f0f6ff;
 }
 
-.selectionBtnActive {
+.optionBtnYes {
   border-color: #0388ff;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #ffffff;
 }
 
-.selectionBtnActive svg {
-  color: #ffffff;
-}
-
-.selectionBtnActive:hover {
+.optionBtnYes:hover {
   background: linear-gradient(135deg, #0270cc 0%, #015fa3 100%);
   border-color: #0270cc;
 }
 
+.optionBtnNo {
+  border-color: #d0d5dd;
+  background: #ffffff;
+  color: #000822;
+}
+
+.optionBtnNo:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
-  .extrasContainer {
+  .extrasContent {
     gap: 2.8rem;
-    padding: 1.6rem 0;
   }
 
-  .title {
-    font-size: 1.8rem;
+  .introTitle {
+    font-size: 1.4rem;
   }
 
-  .subtitle {
-    font-size: 1.3rem;
+  .introSubtitle {
+    font-size: 1.2rem;
   }
 
-  .extrasList {
+  .extrasGrid {
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     gap: 2rem;
   }
 
   .extraCard {
     padding: 2rem;
-    gap: 1.4rem;
-  }
-
-  .extraTitle {
-    font-size: 1.8rem;
-  }
-
-  .priceLabel,
-  .priceValue,
-  .description,
-  .featureItem span,
-  .limitationItem span,
-  .infoText {
-    font-size: 1.4rem;
-  }
-
-  .selectionQuestion {
-    font-size: 1.6rem;
-  }
-
-  .selectionButtons {
-    flex-direction: column;
     gap: 1rem;
   }
 
-  .selectionBtn {
-    width: 100%;
-    justify-content: center;
+  .icon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .extraName {
+    font-size: 1.3rem;
+  }
+
+  .extraPrice {
+    font-size: 1.1rem;
+  }
+
+  .extraDescription {
+    font-size: 1.1rem;
+  }
+
+  .selectionQuestion {
+    font-size: 1.1rem;
+  }
+
+  .optionBtn {
+    height: 4rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 600px) {
-  .extrasContainer {
+  .extrasContent {
     gap: 2.4rem;
-    padding: 1.2rem 0;
   }
 
-  .title {
-    font-size: 1.6rem;
+  .introTitle {
+    font-size: 1.3rem;
   }
 
-  .subtitle {
-    font-size: 1.2rem;
+  .introSubtitle {
+    font-size: 1.1rem;
   }
 
-  .extrasList {
+  .extrasGrid {
+    grid-template-columns: 1fr;
     gap: 1.6rem;
   }
 
   .extraCard {
     padding: 1.6rem;
-    gap: 1.2rem;
+    gap: 1rem;
   }
 
-  .iconTitle {
+  .icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .iconSection {
+    align-items: flex-start;
+  }
+
+  .extraName {
+    font-size: 1.2rem;
+  }
+
+  .extraPrice {
+    font-size: 1rem;
+  }
+
+  .extraDescription {
+    font-size: 1rem;
+  }
+
+  .selectionWrapper {
     gap: 0.8rem;
-  }
-
-  .iconWrapper {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .extraTitle {
-    font-size: 1.6rem;
-  }
-
-  .priceLabel,
-  .priceValue,
-  .description,
-  .featureItem span,
-  .limitationItem span,
-  .infoText {
-    font-size: 1.3rem;
+    padding-top: 1.2rem;
   }
 
   .selectionQuestion {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
-  .selectionBtn {
-    height: 5.2rem;
-    font-size: 1.4rem;
+  .buttonGroup {
+    flex-direction: row;
+    gap: 0.6rem;
+  }
+
+  .optionBtn {
+    height: 3.8rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
   }
 }
