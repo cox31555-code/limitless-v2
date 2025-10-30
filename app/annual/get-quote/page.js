@@ -21,13 +21,15 @@ const STEPS = {
   VEHICLE: 1,
   COVER: 2,
   PERSONAL: 3,
-  TERMS: 4,
+  OPTIONAL_EXTRAS: 4,
+  TERMS: 5,
 };
 
 const STEP_TITLES = [
   "Vehicle Details",
   "Cover Details",
   "Personal Details",
+  "Optional Extras",
   "Terms & Conditions",
 ];
 
