@@ -592,7 +592,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
           <div className={styles.row}>
             <div className={styles.ownerFieldWrapper}>
               <FormDropdown
-                label="Who is the owner?"
+                label={haventBoughtYet ? "Who will be the owner?" : "Who is the owner?"}
                 options={ownerOptions}
                 placeholder="Please select"
                 {...register("vehicleDetails.owner")}
@@ -609,7 +609,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             </div>
             <div className={styles.keeperFieldWrapper}>
               <FormDropdown
-                label="Who is the registered keeper?"
+                label={haventBoughtYet ? "Who will be the registered keeper?" : "Who is the registered keeper?"}
                 options={keeperOptions}
                 placeholder="Please select"
                 {...register("vehicleDetails.registeredKeeper")}
