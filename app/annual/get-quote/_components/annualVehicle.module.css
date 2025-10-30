@@ -254,6 +254,12 @@
   min-width: 0;
 }
 
+/* Target input elements inside the wrappers to add padding */
+.ownerFieldWrapper div:last-child input,
+.keeperFieldWrapper div:last-child input {
+  padding: 0 1.6rem !important;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .row {
