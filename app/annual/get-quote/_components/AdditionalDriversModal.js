@@ -285,7 +285,13 @@ const AdditionalDriversModal = ({
                       <h4 className={modalStyles.sectionLabel}>Your Employment</h4>
                       <span className={modalStyles.expandIcon}>+</span>
                     </button>
-                    {isTileExpanded(index, 'employment') && <>
+                    {isTileExpanded(index, 'employment') && isTileDisabled(index, 'employment') && (
+                      <div className={modalStyles.errorMessage}>
+                        <span className={modalStyles.errorIcon}>!</span>
+                        <span>Complete {getPreviousTileLabel('employment')} first</span>
+                      </div>
+                    )}
+                    {isTileExpanded(index, 'employment') && !isTileDisabled(index, 'employment') && <>
                       <div className={modalStyles.fieldRow2Col}>
                         <div className={modalStyles.field}>
                           <FormDropdown label="Employment Status" options={employmentStatusOptions} placeholder="Select status" value={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) || ""} onChange={(e) => onUpdateDriver(index, "employmentStatus", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
