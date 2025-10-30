@@ -244,6 +244,15 @@
   background: rgba(3, 136, 255, 0.06);
 }
 
+.tileHeader.disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.tileHeader.disabled:hover {
+  background: #ffffff;
+}
+
 .tileHeader .sectionLabel {
   margin: 0;
 }
