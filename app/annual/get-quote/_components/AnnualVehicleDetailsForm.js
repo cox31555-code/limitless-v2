@@ -128,8 +128,6 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
   // Open modifications modal when "Yes" is selected
   useEffect(() => {
     if (vehicleModified === "Yes") {
-      // Check if mods were already selected before opening modal
-      setModsAlreadySelected(vehicleModifications.length > 0);
       setShowModificationsModal(true);
     }
   }, [vehicleModified]);
