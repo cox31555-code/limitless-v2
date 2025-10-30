@@ -283,11 +283,15 @@ const AdditionalDriversModal = ({
                       </div>
 
                       <div className={modalStyles.field}>
-                        <FormTextInput
+                        <FormAutocomplete
                           label="Industry"
-                          placeholder="Enter industry"
+                          options={industryOptions}
+                          placeholder="Type your industry..."
                           value={watch(`carUsage.additionalDrivers.${index}.industry`) || ""}
-                          onChange={(e) => onUpdateDriver(index, "industry", e.target.value)}
+                          onChange={(e) => {
+                            const value = typeof e === "string" ? e : (e?.target?.value || "");
+                            onUpdateDriver(index, "industry", value);
+                          }}
                           disabled={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Retired" || watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Unemployed"}
                           inputStyle={{ paddingLeft: "14px" }}
                         />
