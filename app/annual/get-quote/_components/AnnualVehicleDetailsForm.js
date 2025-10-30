@@ -365,7 +365,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
         onConfirm={handleModificationsConfirm}
         selectedModifications={vehicleModifications}
       />
-      <ComponentWrapper title="Vehicle Details" hideIcon={true}>
+      <ComponentWrapper title="Vehicle Details">
         <div className={styles.content}>
         {/* Registration Number Section */}
         <div className={styles.registrationSection}>
