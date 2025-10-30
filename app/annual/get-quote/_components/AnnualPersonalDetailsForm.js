@@ -399,6 +399,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
                 onClick={handleFindAddress}
                 disabled={isLoadingAddresses}
                 type="button"
+                hideArrow={true}
               />
             </div>
           </div>
