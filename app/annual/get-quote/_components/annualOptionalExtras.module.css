@@ -59,8 +59,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.8rem;
+  height: 2.8rem;
   flex-shrink: 0;
   color: #1B1464;
 }
@@ -78,7 +78,7 @@
 }
 
 .extraTitle {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #000822;
   margin: 0;
@@ -86,7 +86,7 @@
 }
 
 .extraPrice {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #5a6b7d;
   margin: 0;
   line-height: 1.3;
@@ -94,7 +94,7 @@
 }
 
 .extraDescription {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #5a6b7d;
   margin: 0;
   line-height: 1.5;
@@ -103,20 +103,20 @@
 
 .actionButtons {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   align-items: stretch;
   margin-top: 0.4rem;
 }
 
 .actionBtn {
   flex: 1;
-  height: 5.6rem;
-  padding: 1.3rem 1.6rem;
+  height: 4.4rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 8px;
   border: 1px solid #DFE1E7;
   background: #ffffff;
   font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #777980;
   cursor: pointer;
