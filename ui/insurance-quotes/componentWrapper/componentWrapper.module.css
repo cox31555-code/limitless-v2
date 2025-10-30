@@ -15,12 +15,12 @@
   gap: 2rem;
   margin: -3.2rem -3.2rem 2.8rem -3.2rem;
   padding: 2.4rem 3.2rem;
-  background: rgba(3, 136, 255, 0.06);
-  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+  background: #000822;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px 24px 0 0;
 }
 .title {
-  color: #000000;
+  color: #ffffff;
   font-size: 3.2rem;
   font-weight: 700;
   line-height: 110%;
@@ -29,8 +29,8 @@
 }
 
 .title.greyed {
-  color: #5a6b7d;
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
 }
 .icon {
   width: 4.8rem;
