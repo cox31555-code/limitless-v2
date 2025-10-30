@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import FormTextInput from "@/ui/inputs/FormTextInput";
 import FormDropdown from "@/ui/inputs/FormDropdown";
 import FormDataAndTime from "@/ui/inputs/FormDataAndTime";
@@ -34,7 +34,7 @@ const AdditionalDriversModal = ({
   const [driverAddresses, setDriverAddresses] = useState({});
   const [driverLoadingStates, setDriverLoadingStates] = useState({});
   const [dynamicDriverNcbOptions, setDynamicDriverNcbOptions] = useState({});
-  const [expandedTile, setExpandedTile] = useState({});
+  const [expandedTiles, setExpandedTiles] = useState({});
   const [expandedDriver, setExpandedDriver] = useState({});
 
   const toggleDriver = (driverIndex) => {
@@ -49,17 +49,57 @@ const AdditionalDriversModal = ({
   };
 
   const toggleTile = (driverIndex, tileKey) => {
-    setExpandedTile(prev => ({
-      ...prev,
-      [driverIndex]: prev[driverIndex] === tileKey ? null : tileKey
-    }));
+    setExpandedTiles(prev => {
+      const driverTiles = prev[driverIndex] ? new Set(prev[driverIndex]) : new Set(['about']);
+      if (driverTiles.has(tileKey)) {
+        driverTiles.delete(tileKey);
+      } else {
+        driverTiles.add(tileKey);
+      }
+      return { ...prev, [driverIndex]: driverTiles };
+    });
   };
 
   const isTileExpanded = (driverIndex, tileKey) => {
-    return expandedTile[driverIndex] === tileKey;
+    const driverTiles = expandedTiles[driverIndex];
+    return driverTiles && driverTiles.has ? driverTiles.has(tileKey) : false;
   };
 
+  const autoExpandNextTile = useCallback((driverIndex) => {
+    const driver = drivers[driverIndex];
+    if (!driver) return;
+
+    const tiles = getTileOrder();
+    for (let i = 0; i < tiles.length; i++) {
+      if (!checkTileCompletion(driverIndex, tiles[i]) && i > 0) {
+        // Auto-expand the next incomplete tile
+        setExpandedTiles(prev => {
+          const driverTiles = prev[driverIndex] ? new Set(prev[driverIndex]) : new Set(['about']);
+          driverTiles.add(tiles[i]);
+          return { ...prev, [driverIndex]: driverTiles };
+        });
+        break;
+      }
+    }
+  }, [drivers, checkTileCompletion]);
+
+  useEffect(() => {
+    drivers.forEach((_, index) => {
+      if (!expandedTiles[index]) {
+        setExpandedTiles(prev => ({ ...prev, [index]: new Set(['about']) }));
+      }
+    });
+  }, [drivers.length]);
+
+  useEffect(() => {
+    drivers.forEach((_, index) => {
+      autoExpandNextTile(index);
+    });
+  }, [drivers, autoExpandNextTile]);
+
   const getTileOrder = () => ['about', 'employment', 'usage', 'driving', 'declarations'];
+
+  useCallback(() => getTileOrder(), [])
 
   const getTileLabel = (tileKey) => {
     const labels = {
