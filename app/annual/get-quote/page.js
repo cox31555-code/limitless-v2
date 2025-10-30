@@ -233,11 +233,12 @@ const AnnualInsuranceContent = () => {
     <>
       <LoadingOverlay isVisible={showLoading} />
       <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={4} />
-      <div className="centeredContent">
+      <div className="centeredContent" suppressHydrationWarning>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className={styles.stepFormContainer}
           noValidate
+          suppressHydrationWarning
         >
           <div className={styles.stepContent}>
             {currentStep === STEPS.VEHICLE && (
