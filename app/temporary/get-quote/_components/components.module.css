@@ -1801,35 +1801,65 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.6rem;
-  border-bottom: 1.5px solid rgba(3, 136, 255, 0.08);
+  border-bottom: 2px solid rgba(3, 136, 255, 0.15);
   padding-bottom: 1.6rem;
+  margin-bottom: 0.8rem;
 }
 
-.cleanDriverTitle {
-  font-size: 1.4rem;
+.cleanDriverNumberBadge {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #000822;
-  margin: 0;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   letter-spacing: 0.2px;
 }
 
 .cleanRemoveDriverButton {
-  padding: 0.8rem 1.6rem;
+  padding: 0.7rem 1.4rem;
   background: transparent;
-  border: 1.5px solid rgba(239, 68, 68, 0.3);
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
   border-radius: 8px;
   color: #ef4444;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .cleanRemoveDriverButton:hover {
   border-color: #ef4444;
-  background: rgba(239, 68, 68, 0.08);
+  background: rgba(239, 68, 68, 0.12);
   color: #dc2626;
+  transform: none;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.1);
+}
+
+.cleanDriverSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.cleanDriverSection:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.cleanDriverSectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0388ff;
+  margin: 0;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
 }
 
 .cleanRadioGroup {
