@@ -367,8 +367,13 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
       />
       <ComponentWrapper title="Vehicle Details">
         <div className={styles.content}>
-        {/* Registration Number Section */}
-        <div className={styles.registrationSection}>
+        {/* Vehicle Registration Section */}
+        <div className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h3 className={styles.sectionTitle}>Vehicle Registration</h3>
+            <p className={styles.sectionDescription}>Find your vehicle using its registration number or enter details manually</p>
+          </div>
+          <div className={styles.registrationSection}>
           {!showFoundData ? (
             <>
               <FormTextInput
@@ -439,8 +444,16 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             </div>
           )}
         </div>
+        </div>
 
-        {showVehicleDetails && !foundVehicleData && <Title title="What type of vehicle is it?" />}
+        {showVehicleDetails && !foundVehicleData && (
+          <div className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <h3 className={styles.sectionTitle}>Vehicle Specification</h3>
+              <p className={styles.sectionDescription}>Provide details about your vehicle's make, model, and features</p>
+            </div>
+          </div>
+        )}
 
         {/* Manual Vehicle Entry */}
         <div
@@ -554,8 +567,13 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
           </div>
         </div>
 
-        {/* Additional Vehicle Details Section */}
-        <div className={styles.additionalDetailsSection}>
+        {/* Safety & Security Features Section */}
+        <div className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h3 className={styles.sectionTitle}>Safety & Security Features</h3>
+            <p className={styles.sectionDescription}>Tell us about your vehicle's safety and security features</p>
+          </div>
+          <div className={styles.additionalDetailsSection}>
           <div className={styles.row}>
             <FormDropdown
               label="Tracking device"
@@ -620,10 +638,16 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
               error={errors.vehicleDetails?.worth}
             />
           </div>
+          </div>
         </div>
 
-        {/* Ownership and Purchase Section */}
-        <div className={styles.ownershipSection}>
+        {/* Purchase & Ownership Section */}
+        <div className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h3 className={styles.sectionTitle}>Purchase & Ownership</h3>
+            <p className={styles.sectionDescription}>Details about when you purchased the vehicle and who owns it</p>
+          </div>
+          <div className={styles.ownershipSection}>
           <div className={styles.row}>
             <div className={styles.dateWithCheckbox}>
               <FormDateInput
@@ -709,6 +733,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
               </div>
             </div>
           )}
+        </div>
         </div>
       </div>
     </ComponentWrapper>
