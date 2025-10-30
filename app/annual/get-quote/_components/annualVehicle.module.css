@@ -425,7 +425,7 @@
 
 @media (max-width: 600px) {
   .content {
-    gap: 1.6rem;
+    gap: 2.4rem;
   }
 
   .row {
@@ -437,6 +437,16 @@
   .ownershipSection,
   .rows {
     padding: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+    padding-left: 1.2rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.95rem;
+    padding-left: 1.2rem;
   }
 
   .checkboxLabel {
