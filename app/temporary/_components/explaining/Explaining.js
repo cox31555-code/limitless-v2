@@ -22,23 +22,6 @@ const manrope = Manrope({
 const Explaining = () => {
   return (
     <div className={styles.wrapper}>
-      <Image
-        src="/svg/contact.svg"
-        alt="contact-us"
-        width={600}
-        height={1000}
-        className={styles.contact}
-        priority
-      />
-      <Image
-        src="/svg/squares-2.svg"
-        alt="squares"
-        width={1394}
-        height={706}
-        className={styles.squares}
-        priority
-      />
-
       <div className={styles.container}>
         {/* First Section - What is temporary vehicle insurance */}
         <div className={styles.first}>
