@@ -209,16 +209,6 @@ const AdditionalDriversModal = ({
                           />
                         </div>
                       </div>
-
-                      <div className={modalStyles.field}>
-                        <FormTextInput
-                          label="Phone Number"
-                          placeholder="Enter phone number"
-                          value={watch(`carUsage.additionalDrivers.${index}.phone`) || ""}
-                          onChange={(e) => onUpdateDriver(index, "phone", e.target.value)}
-                          inputStyle={{ paddingLeft: "14px" }}
-                        />
-                      </div>
                     </div>
 
 
