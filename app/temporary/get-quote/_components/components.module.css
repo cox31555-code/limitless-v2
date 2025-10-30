@@ -1657,37 +1657,6 @@
   margin: 0 0 0.8rem 0;
 }
 
-.cleanDetailsDropdown {
-  margin: 1rem 0 0 0;
-  cursor: pointer;
-}
-
-.cleanDetailsSummary {
-  color: #0388ff;
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-decoration: underline;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0;
-  margin: 0;
-  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cleanDetailsSummary:hover {
-  color: #0270cc;
-}
-
-.cleanDetailsContent {
-  font-size: 1rem;
-  color: #5a6b7d;
-  line-height: 1.5;
-  margin: 0.8rem 0 0 0;
-}
-
 .cleanFormGrid1Col {
   display: flex;
   flex-direction: column;
