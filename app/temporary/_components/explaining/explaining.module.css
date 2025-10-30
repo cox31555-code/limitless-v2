@@ -1,225 +1,218 @@
 .wrapper {
-  padding: 8rem 2%;
-  background: #ffffff;
+  width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 8rem;
+  padding: 8rem 2%;
+  background: #ffffff;
+}
+
+.contact {
+  position: absolute;
+  top: 400px;
+  right: 0;
+  width: 600px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.squares {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1394px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 11.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.first {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   gap: 6rem;
 }
 
-/* Combined Container - Both sections in same background */
-.container {
+.images {
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  border-radius: 24px;
-  background: #000822;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 5.6rem;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid rgba(3, 136, 255, 0.25);
-}
-
-.mainContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: flex-start;
-  position: relative;
-  z-index: 1;
-}
-
-.whatIsSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  max-width: 540px;
+  height: auto;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 2rem;
-  position: relative;
-  z-index: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2.4rem;
+  flex: 1;
 }
 
-.illustration {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  flex-shrink: 0;
-  margin: 0 auto;
-}
-
-.textContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
+.first .content {
+  max-width: 90%;
 }
 
 .title {
   color: #fff;
-  font-size: 3.8rem;
+  font-size: 4.3rem;
   font-weight: 700;
-  line-height: 110%;
+  line-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin: 0;
 }
 
 .title span {
-  color: #049CFF;
-  display: block;
+  color: #0388ff;
+}
+
+.title2 {
+  color: #fff;
 }
 
 .description {
   color: rgba(255, 255, 255, 0.54);
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 160%;
-  letter-spacing: 0.32px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 124%;
+  letter-spacing: 0.64px;
   margin: 0;
+  max-width: 90%;
 }
 
-.logo {
-  display: flex;
-  width: 585px;
-  height: 891px;
-  padding-bottom: 115px;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  top: -421px;
-  pointer-events: none;
-}
-
-/* Gradient bars background */
-.gradientBars {
-  width: 105.5rem;
-  height: 60.4rem;
-  transform: rotate(90deg);
-  position: absolute;
-  left: 70.6rem;
-  top: -23.2rem;
-  pointer-events: none;
-}
-
-.bar1 {
-  width: 20.1rem;
-  height: 76.7rem;
-  opacity: 0.6;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.bar2 {
-  width: 20.1rem;
-  height: 88.8rem;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
-  position: absolute;
-  left: 40.3rem;
-  top: 16.7rem;
-}
-
-.bar3 {
-  width: 20.1rem;
-  height: 77.3rem;
-  opacity: 0.82;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
-  position: absolute;
-  left: 20.1rem;
-  top: 13.7rem;
-}
-
-/* How does temporary vehicle insurance work section */
-.howIsSection {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.howContent {
-  display: flex;
-  flex-direction: column;
-  gap: 2.8rem;
-  position: relative;
-  z-index: 1;
-}
-
-.leftColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.howTitle {
-  color: #fff;
-  font-size: 3.8rem;
-  font-weight: 700;
-  line-height: 110%;
-  margin: 0;
-}
-
-.howTitle span {
-  color: #049CFF;
-  display: block;
-}
-
-.howDescription {
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 160%;
-  letter-spacing: 0.32px;
-  margin: 0;
-}
-
-.stepsColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  width: 100%;
-}
-
-.stepBox {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 2rem 2.4rem;
-  background: rgba(7, 16, 45, 0.6);
-  border-radius: 12px;
-  backdrop-filter: blur(22px);
-}
-
-.stepBadge {
+.second {
+  width: 93%;
+  min-height: 635px;
+  border-radius: 18px;
+  background: #07102d;
+  backdrop-filter: blur(16.566335678100586px);
+  margin: 0 3.5% 4.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, #0388FF 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.stepNumber {
-  color: #07102D;
+.second .content {
+  width: 58%;
+  padding: 5rem 4.2rem;
+  z-index: 2;
+}
+
+.second > div {
+  min-height: 635px;
+}
+
+.featuresContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 42%;
+}
+
+.background1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 33.3%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
+  pointer-events: none;
+}
+
+.background2 {
+  position: absolute;
+  top: 0;
+  right: 33.3%;
+  width: 33.3%;
+  height: 100%;
+  opacity: 0.82;
+  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
+  pointer-events: none;
+}
+
+.background3 {
+  position: absolute;
+  top: 0;
+  right: 66.6%;
+  width: 33.4%;
+  height: 85%;
+  opacity: 0.6;
+  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
+  pointer-events: none;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  position: relative;
+  z-index: 1;
+  margin: 0 6.6%;
+}
+
+.feature {
+  padding: 2.9rem 3.5rem;
+  width: 100%;
+  border-radius: 14px;
+  background: #07102d;
+  backdrop-filter: blur(22px);
+  display: flex;
+  align-items: center;
+  gap: 3.6rem;
+}
+
+.featureNumber {
+  min-width: 4.4rem;
+  min-height: 4.4rem;
+  border-radius: 50%;
+  background: linear-gradient(107deg, rgba(255, 255, 255, 0.3) 0%, #0388ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #07102d;
   font-size: 1.44rem;
   font-weight: 700;
   line-height: 100%;
+  flex-shrink: 0;
 }
 
-.stepText {
+.featureContent {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.9rem;
 }
 
-.stepTitle {
+.featureTitle {
   color: #fff;
   font-size: 1.8rem;
   font-weight: 700;
@@ -227,7 +220,7 @@
   margin: 0;
 }
 
-.stepDesc {
+.featureDescription {
   color: rgba(255, 255, 255, 0.64);
   font-size: 1.4rem;
   font-weight: 400;
@@ -237,156 +230,148 @@
 }
 
 /* Responsive Design */
-@media screen and (max-width: 1200px) {
-  .wrapper {
-    gap: 5rem;
-  }
-
-  .container {
-    padding: 5.5rem 5rem;
-  }
-
-  .mainContent {
-    gap: 8rem;
-  }
-
-  .content {
-    gap: 4.5rem;
-  }
-
-  .illustration {
-    max-width: 450px;
-  }
-
-  .title,
-  .howTitle {
-    font-size: 4.8rem;
-  }
-
-  .description,
-  .howDescription {
-    font-size: 1.5rem;
-  }
-
-  .logo {
-    width: 480px;
-    height: 730px;
-    padding-bottom: 90px;
-    top: -340px;
-  }
-
-  .gradientBars {
-    left: 60rem;
+@media screen and (max-width: 1400px) {
+  .first .content {
+    margin-left: 0;
+    padding: 0 3rem;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .mainContent {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+@media screen and (max-width: 1250px) {
+  .wrapper {
+    margin: 2.4 auto;
   }
 
-  .title,
-  .howTitle {
-    font-size: 3.2rem;
+  .container {
+    gap: 4rem;
   }
 
-  .description,
-  .howDescription {
-    font-size: 1.3rem;
+  .first,
+  .second {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
   }
 
-  .illustration {
-    max-width: 320px;
+  .second {
+    padding: 0 0 3rem 0;
+    flex-direction: column-reverse;
+  }
+
+  .first {
+    padding: 0;
+  }
+
+  .first .content,
+  .second .content {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .second > div {
+    min-height: auto;
+    padding: 2.5rem 0;
+    width: 100%;
+  }
+
+  .images {
+    width: 100%;
+  }
+
+  .images img {
+    width: 100%;
+    height: auto;
+  }
+
+  .featuresContainer {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .wrapper {
-    padding: 5.5rem 4.4%;
-    gap: 4rem;
+  .squares {
+    display: none;
+  }
+
+  .contact {
+    display: none;
   }
 
   .container {
-    padding: 4.5rem 3.6rem;
-    border-radius: 16px;
+    gap: 4.7rem;
   }
 
-  .mainContent {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
+  .second {
+    width: 92.6%;
+    min-height: auto;
+    margin: 0 3.7% 1.9rem;
+    flex-direction: column-reverse;
+    padding: 0 0 1.8rem;
+    overflow: hidden;
   }
 
   .content {
-    flex-direction: column;
-    gap: 2rem;
+    gap: 2.4rem;
   }
 
-  .illustration {
-    max-width: 100%;
+  .first {
+    gap: 4rem;
+    padding: 0;
   }
 
-  .title,
-  .howTitle {
-    font-size: 3.2rem;
+  .first .content {
+    padding: 0 7%;
+  }
+
+  .second .content {
+    width: 100%;
+    padding: 0 7%;
+  }
+
+  .second > div {
+    min-height: auto;
+    padding: 1.3rem 0 5.1rem;
+  }
+
+  .title {
+    font-size: 3.4rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
   }
 
   .description,
-  .howDescription {
-    font-size: 1.3rem;
-  }
-
-  .logo {
-    width: 400px;
-    height: 610px;
-    padding-bottom: 75px;
-    top: -280px;
-  }
-
-  .whatIsSection {
-    width: 100%;
-  }
-
-  .howIsSection {
-    width: 100%;
-  }
-
-  .howContent {
-    flex-direction: column;
-  }
-
-  .leftColumn {
+  .title {
     max-width: 100%;
   }
 
-  .stepsColumn {
-    width: 100%;
+  .features {
+    gap: 1.2rem;
+    margin: 0 3.5%;
   }
 
-  .gradientBars {
-    width: 80rem;
-    height: 50rem;
-    left: 50rem;
-    top: -18rem;
+  .feature {
+    padding: 2rem 2.3rem;
+    gap: 2.4rem;
   }
 
-  .bar1 {
-    width: 16rem;
-    height: 60rem;
+  .featureNumber {
+    min-width: 2.8rem;
+    min-height: 2.8rem;
+    font-size: 1rem;
   }
 
-  .bar2 {
-    width: 16rem;
-    height: 70rem;
-    left: 32rem;
-    top: 14rem;
+  .featureContent {
+    gap: 0.6rem;
   }
 
-  .bar3 {
-    width: 16rem;
-    height: 62rem;
-    left: 16rem;
-    top: 11rem;
+  .featureTitle {
+    font-size: 1.6rem;
   }
 }
 
@@ -397,80 +382,53 @@
   }
 
   .container {
-    padding: 3.5rem 2.4rem;
-    border-radius: 14px;
+    gap: 3rem;
   }
 
-  .mainContent {
-    gap: 0;
+  .first {
+    gap: 2rem;
   }
 
-  .content {
-    gap: 2.8rem;
+  .first .content {
+    padding: 0;
   }
 
-  .title,
-  .howTitle {
-    font-size: 3rem;
+  .second {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
-  .description,
-  .howDescription {
+  .second .content {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .description {
     font-size: 1.2rem;
+    max-width: 100%;
   }
 
-  .logo {
-    width: 320px;
-    height: 490px;
-    padding-bottom: 60px;
-    top: -220px;
+  .feature {
+    padding: 1.6rem;
+    gap: 1.6rem;
   }
 
-  .stepBox {
-    padding: 2.2rem 2.4rem;
-    gap: 1.8rem;
+  .featureNumber {
+    min-width: 3.2rem;
+    min-height: 3.2rem;
+    font-size: 0.9rem;
   }
 
-  .stepBadge {
-    width: 40px;
-    height: 40px;
+  .featureTitle {
+    font-size: 1.4rem;
   }
 
-  .stepNumber {
-    font-size: 1.3rem;
-  }
-
-  .stepTitle {
-    font-size: 1.6rem;
-  }
-
-  .stepDesc {
-    font-size: 1.3rem;
-  }
-
-  .gradientBars {
-    width: 60rem;
-    height: 40rem;
-    left: 35rem;
-    top: -15rem;
-  }
-
-  .bar1 {
-    width: 12rem;
-    height: 45rem;
-  }
-
-  .bar2 {
-    width: 12rem;
-    height: 52rem;
-    left: 24rem;
-    top: 10rem;
-  }
-
-  .bar3 {
-    width: 12rem;
-    height: 46rem;
-    left: 12rem;
-    top: 8rem;
+  .featureDescription {
+    font-size: 1.2rem;
   }
 }
