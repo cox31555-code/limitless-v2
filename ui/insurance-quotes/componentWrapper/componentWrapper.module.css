@@ -79,25 +79,28 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 1.6rem 1.6rem 1.6rem;
-    border-radius: 16px;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    margin: 0;
   }
 
   .header {
-    margin: -1.6rem -1.6rem 1.6rem -1.6rem;
-    padding: 1.6rem;
-    border-radius: 16px 16px 0 0;
-    background: #000822;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 0 0 1.6rem 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    gap: 0.6rem;
   }
 
   .title {
-    font-size: 1.8rem;
-    color: #ffffff;
+    font-size: 1.4rem;
+    color: #000822;
   }
 
   .icon {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
 }
