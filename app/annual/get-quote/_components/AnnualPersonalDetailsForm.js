@@ -147,6 +147,9 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const dateOfBirth = watch("userDetails.dateOfBirth");
   const additionalDrivers = watch("carUsage.additionalDrivers") || [];
   const hasAdditionalDrivers = watch("carUsage.hasAdditionalDrivers");
+  const criminalConvictions = watch("carUsage.criminalConvictions");
+  const medicalConditions = watch("carUsage.medicalConditions");
+  const insuranceCancelledStatus = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
 
   const handleAddDriver = () => {
     const newDriver = {
