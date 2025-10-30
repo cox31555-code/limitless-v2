@@ -1660,7 +1660,7 @@
 .cleanAdditionalInfoContainer {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 3.2rem;
 }
 
 .cleanFormGrid1Col {
