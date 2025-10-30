@@ -209,7 +209,7 @@ const PersonalDetailsForm = ({ form }) => {
         {/* Employment Section */}
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle} data-section="3">Your Employment</h3>
-          
+
           <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
               label="Employment Status"
@@ -219,18 +219,6 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.employmentStatus}
               inputStyle={{ paddingLeft: "14px" }}
             />
-            <FormTextInput
-              label="Industry"
-              placeholder="Enter your industry"
-              {...register("userDetails.industry")}
-              error={errors.userDetails?.industry}
-              disabled={isRetiredOrUnemployed}
-              value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.industry")}
-              inputStyle={{ paddingLeft: "14px" }}
-            />
-          </div>
-
-          <div className={styles.cleanFormGrid1Col}>
             <FormDropdown
               label="Occupation"
               options={occupationOptions}
@@ -239,6 +227,18 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.occupation}
               disabled={isRetiredOrUnemployed}
               value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
+              inputStyle={{ paddingLeft: "14px" }}
+            />
+          </div>
+
+          <div className={styles.cleanFormGrid1Col}>
+            <FormTextInput
+              label="Industry"
+              placeholder="Enter your industry"
+              {...register("userDetails.industry")}
+              error={errors.userDetails?.industry}
+              disabled={isRetiredOrUnemployed}
+              value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.industry")}
               inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
