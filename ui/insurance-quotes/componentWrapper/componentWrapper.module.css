@@ -13,9 +13,11 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 2.8rem;
-  padding-bottom: 2.4rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+  margin: -3.2rem -3.2rem 2.8rem -3.2rem;
+  padding: 2.4rem 3.2rem;
+  background: rgba(3, 136, 255, 0.06);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 24px 24px 0 0;
 }
 .title {
   color: #000000;
