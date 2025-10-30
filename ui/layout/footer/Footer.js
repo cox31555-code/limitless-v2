@@ -56,17 +56,12 @@ const shouldUseSpecialStyles = (pathname) => {
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [isMounted, setIsMounted] = React.useState(false);
 
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  const shouldHideFooter =
+  // Don't render footer on dashboard and login pages
+  if (
     pathname?.startsWith("/dashboard") ||
-    ["/login", "/forget-password", "/change-password"].includes(pathname);
-
-  if (isMounted && shouldHideFooter) {
+    ["/login", "/forget-password", "/change-password"].includes(pathname)
+  ) {
     return null;
   }
 
@@ -74,7 +69,7 @@ const Footer = () => {
     <footer
       className={styles.container}
       style={{
-        background: isMounted && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
       }}
       suppressHydrationWarning
     >
