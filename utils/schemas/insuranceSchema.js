@@ -316,6 +316,8 @@ export const insuranceSchema = z.object({
 
 // Optional Extras Schema - for annual insurance
 export const optionalExtrasSchema = z.object({
+  protectedNCD: z.boolean().optional(),
+  motorLegal: z.boolean().optional(),
   courtesyCar: z.boolean().optional(),
   breakdownCover: z.boolean().optional(),
   foreignUseCover: z.boolean().optional(),
