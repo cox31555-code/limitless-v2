@@ -177,7 +177,6 @@
   width: 100%;
   align-items: start;
   animation: rowFadeIn 0.3s ease;
-  margin-bottom: 1.2rem;
 }
 
 @keyframes rowFadeIn {
@@ -190,8 +189,7 @@
 }
 
 .row:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .row > div {
