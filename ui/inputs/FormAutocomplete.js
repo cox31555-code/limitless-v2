@@ -3,18 +3,31 @@ import Image from "next/image";
 import styles from "./autocomplete/autocomplete.module.css";
 
 const FormAutocomplete = forwardRef(
-  ({ label, options, placeholder, error, onChange, value, disabled, ...props }, ref) => {
-    const [inputValue, setInputValue] = useState(value || "");
+  ({ label, options, placeholder = "Type or select option", error, onChange, value, disabled, ...props }, ref) => {
+    const [inputValue, setInputValue] = useState(() => {
+      // Handle string or object values
+      if (typeof value === "string") {
+        return value || "";
+      }
+      if (value && typeof value === "object" && value.target && value.target.value) {
+        return value.target.value;
+      }
+      return "";
+    });
     const [isOpen, setIsOpen] = useState(false);
     const [filteredOptions, setFilteredOptions] = useState(options);
     const containerRef = useRef(null);
     const inputRef = useRef(null);
 
     useEffect(() => {
-      if (value !== undefined) {
-        setInputValue(value);
+      if (value !== undefined && value !== null) {
+        // Handle string or object values
+        const stringValue = typeof value === "string" ? value : "";
+        if (stringValue !== inputValue) {
+          setInputValue(stringValue);
+        }
       }
-    }, [value]);
+    }, [value, inputValue]);
 
     useEffect(() => {
       const handleClickOutside = (event) => {
