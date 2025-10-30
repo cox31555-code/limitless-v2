@@ -264,6 +264,34 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     }
   };
 
+  const isDriverComplete = (driver) => {
+    if (!driver) return false;
+
+    const requiredFields = [
+      'firstName',
+      'lastName',
+      'dateOfBirth',
+      'livedInUKSinceBirth',
+      'employmentStatus',
+      'occupation',
+      'industry',
+      'otherVehicles',
+      'licenseType',
+      'licenseHeld',
+      'hasAdditionalQualifications',
+      'criminalConvictions',
+      'medicalConditions',
+      'insuranceCancelledOrClaimRefusedOrPolicyVoided'
+    ];
+
+    return requiredFields.every(field => {
+      const value = driver[field];
+      return value !== null && value !== undefined && value !== '';
+    });
+  };
+
+  const completeDrivers = additionalDrivers.filter(driver => isDriverComplete(driver));
+
   return (
     <>
       <ComponentWrapper title="Personal Details">
