@@ -256,42 +256,50 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
             />
           </div>
 
-          <button
-            type="button"
-            onClick={handleStartImmediately}
+          <label
             style={{
-              padding: "1rem 1.6rem",
-              borderRadius: "10px",
-              fontWeight: "600",
-              fontSize: "1.3rem",
-              cursor: "pointer",
-              border: "1.5px solid #0388ff",
               display: "flex",
               alignItems: "center",
-              justifyContent: "flex-start",
-              gap: "1rem",
+              gap: "1.2rem",
+              padding: "1.2rem 1.6rem",
+              borderRadius: "10px",
+              border: "1.5px solid rgba(3, 136, 255, 0.12)",
+              background: "#f8fbff",
+              cursor: "pointer",
               marginTop: "2rem",
-              background: startPolicyImmediately
-                ? "linear-gradient(135deg, #0388ff 0%, #0270cc 100%)"
-                : "transparent",
-              color: startPolicyImmediately ? "#fff" : "#000822",
               transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
             }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.25)";
+              e.currentTarget.style.background = "#f0f6ff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.12)";
+              e.currentTarget.style.background = "#f8fbff";
+            }}
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+            <input
+              type="checkbox"
+              checked={startPolicyImmediately}
+              onChange={handleStartImmediately}
+              style={{
+                width: "20px",
+                height: "20px",
+                cursor: "pointer",
+                accentColor: "#0388ff",
+                flexShrink: 0,
+              }}
+            />
+            <span
+              style={{
+                fontSize: "1.3rem",
+                fontWeight: "500",
+                color: "#000822",
+              }}
             >
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-            Start policy immediately
-          </button>
+              Start policy immediately
+            </span>
+          </label>
         </div>
       </div>
     </ComponentWrapper>
