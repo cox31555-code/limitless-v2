@@ -35,6 +35,7 @@ const AdditionalDriversModal = ({
   const [driverLoadingStates, setDriverLoadingStates] = useState({});
   const [dynamicDriverNcbOptions, setDynamicDriverNcbOptions] = useState({});
   const [expandedTile, setExpandedTile] = useState({});
+  const [expandedDriver, setExpandedDriver] = useState({});
 
   const toggleTile = (driverIndex, tileKey) => {
     setExpandedTile(prev => ({
