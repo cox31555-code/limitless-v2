@@ -71,7 +71,7 @@ const FormAutocomplete = forwardRef(
     return (
       <div className={styles.container} ref={containerRef}>
         {label && <p className={styles.label}>{label}</p>}
-        <div className={styles.inputWrapper}>
+        <div className={`${styles.inputWrapper} ${error ? styles.error : ""}`}>
           <input
             ref={(e) => {
               inputRef.current = e;
@@ -82,7 +82,7 @@ const FormAutocomplete = forwardRef(
               }
             }}
             type="text"
-            className={`${styles.input} ${error ? styles.error : ""}`}
+            className={styles.input}
             placeholder={placeholder}
             value={inputValue}
             onChange={handleInputChange}
@@ -112,11 +112,6 @@ const FormAutocomplete = forwardRef(
                 }
                 onClick={() => handleOptionClick(option)}
               >
-                <span
-                  className={`${styles.selectionSpan} ${
-                    inputValue === option ? styles.selectedSpan : ""
-                  }`}
-                />
                 {option}
               </div>
             ))}
