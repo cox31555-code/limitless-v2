@@ -68,7 +68,7 @@ export const content = [
     value: {
       title: "Information You Provide",
       description1:
-        "Our website may contain links to third-party websites or resources. These links are provided for your convenience only. We have no control over the contents of those websites or resources and accept no responsibility for them or for any loss or damage that may arise from your use of them. You should review the terms and conditions and privacy policies of any third-party websites you visit.",
+        "When you request a quote or purchase a policy through Limitless Cover, you provide personal and vehicle information. We collect this information to arrange your insurance and fulfil regulatory requirements. All information you provide must be accurate and complete. Any false, misleading, or incomplete information may result in your policy being cancelled or claims being rejected.",
     },
   },
   {
