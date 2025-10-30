@@ -35,10 +35,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     setValue,
   } = form;
 
-  const [addresses, setAddresses] = useState([]);
-  const [isLoadingAddresses, setIsLoadingAddresses] = useState(false);
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
-  const [showAddressDropdown, setShowAddressDropdown] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expandedTiles, setExpandedTiles] = useState(new Set(['about']));
 
