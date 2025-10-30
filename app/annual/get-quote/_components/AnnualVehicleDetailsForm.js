@@ -387,76 +387,101 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             <p className={styles.sectionDescription}>Find your vehicle using its registration number or enter details manually</p>
           </div>
           <div className={styles.registrationSection}>
-          {!showFoundData ? (
-            <>
-              <FormTextInput
-                reg={true}
-                label="What is your registration number?"
-                placeholder="Enter your registration number"
-                value={watch("vehicleDetails.registrationNumber") || ""}
-                onChange={(e) => {
-                  const formattedValue = e.target.value;
-                  setValue("vehicleDetails.registrationNumber", formattedValue, {
-                    shouldValidate: false,
-                    shouldDirty: true,
-                    shouldTouch: true,
-                  });
-                }}
-                error={errors.vehicleDetails?.registrationNumber}
-                disabled={showFoundData}
-                button={
-                  <ConfirmBtn
-                    title={isLoadingVehicleData ? "Loading..." : "Find Vehicle"}
-                    onClick={handleFindVehicle}
-                    disabled={isLoadingVehicleData}
-                    type="button"
-                    hideArrow={true}
-                    variant="primary"
+            {!showFoundData ? (
+              <div className={styles.registrationInputWrapper}>
+                <div className={styles.inputContainer}>
+                  <FormTextInput
+                    reg={true}
+                    label="What is your registration number?"
+                    placeholder="E.g. AB23 XYZ"
+                    value={watch("vehicleDetails.registrationNumber") || ""}
+                    onChange={(e) => {
+                      const formattedValue = e.target.value.toUpperCase();
+                      setValue("vehicleDetails.registrationNumber", formattedValue, {
+                        shouldValidate: false,
+                        shouldDirty: true,
+                        shouldTouch: true,
+                      });
+                    }}
+                    error={errors.vehicleDetails?.registrationNumber}
+                    disabled={showFoundData}
+                    button={
+                      <ConfirmBtn
+                        title={isLoadingVehicleData ? "Searching..." : "Find Vehicle"}
+                        onClick={handleFindVehicle}
+                        disabled={isLoadingVehicleData || !watch("vehicleDetails.registrationNumber")?.trim()}
+                        type="button"
+                        hideArrow={true}
+                        variant="primary"
+                      />
+                    }
                   />
-                }
-              />
-              <button type="button" className={styles.regBtn} onClick={toggleVehicleDetails}>
-                {`Don't know the reg yet?`}
-              </button>
-            </>
-          ) : (
-            <>
-              <FormTextInput
-                reg={true}
-                label="What is your registration number?"
-                placeholder="Enter your registration number"
-                {...register("vehicleDetails.registrationNumber")}
-                error={errors.vehicleDetails?.registrationNumber}
-                value={watch("vehicleDetails.registrationNumber") || ""}
-                disabled={true}
-                button={
-                  <ConfirmBtn
-                    title="Change Vehicle"
+                </div>
+                <div className={styles.dividerWithText}>
+                  <span className={styles.dividerText}>OR</span>
+                </div>
+                <button type="button" className={styles.manualEntryBtn} onClick={toggleVehicleDetails}>
+                  <span className={styles.manualEntryIcon}>✎</span>
+                  <span className={styles.manualEntryText}>Enter Vehicle Details Manually</span>
+                </button>
+              </div>
+            ) : (
+              <div className={styles.successCardWrapper}>
+                <div className={styles.successCard}>
+                  <div className={styles.successHeader}>
+                    <div className={styles.successIcon}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" fill="#10B981" opacity="0.1"/>
+                        <path d="M9 12L11 14L15 10" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <h4 className={styles.successTitle}>Vehicle Found</h4>
+                  </div>
+
+                  <div className={styles.vehicleInfo}>
+                    <div className={styles.vehicleMainInfo}>
+                      <div className={styles.vehicleMainDetails}>
+                        <p className={styles.vehicleMakeModel}>
+                          {foundVehicleData.make} {foundVehicleData.model}
+                        </p>
+                        <p className={styles.vehicleYear}>{foundVehicleData.yearOfManufacture}</p>
+                      </div>
+                      <p className={styles.vehicleReg}>{foundVehicleData.registrationNumber}</p>
+                    </div>
+
+                    <div className={styles.vehicleSpecsGrid}>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Colour</span>
+                        <span className={styles.specValue}>{foundVehicleData.colour || "N/A"}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Fuel Type</span>
+                        <span className={styles.specValue}>{foundVehicleData.fuelType || "N/A"}</span>
+                      </div>
+                      <div className={styles.specItem}>
+                        <span className={styles.specLabel}>Transmission</span>
+                        <span className={styles.specValue}>{foundVehicleData.transmission || "N/A"}</span>
+                      </div>
+                      {foundVehicleData.cylinderCapacity && (
+                        <div className={styles.specItem}>
+                          <span className={styles.specLabel}>Engine Size</span>
+                          <span className={styles.specValue}>{foundVehicleData.cylinderCapacity}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    className={styles.changeVehicleBtn}
                     onClick={handleChangeVehicle}
-                    type="button"
-                    hideArrow={true}
-                    variant="secondary"
-                  />
-                }
-              />
-              <button type="button" className={styles.regBtn} onClick={toggleVehicleDetails}>
-                {`Don't know the reg yet?`}
-              </button>
-            </>
-          )}
-          {showFoundData && foundVehicleData && (
-            <div className={styles.vehicleDataDisplay}>
-              <p className={styles.vehicleDataRow}>
-                {foundVehicleData.make + " "} {foundVehicleData.model + " "}
-                {foundVehicleData.yearOfManufacture + " "} {foundVehicleData.registrationNumber + " "}
-              </p>
-              <p className={styles.vehicleDataRow}>
-                {foundVehicleData.cylinderCapacity || "N/A"} {foundVehicleData.colour || "N/A"}{" "}
-                {foundVehicleData.fuelType || "N/A"} {foundVehicleData.transmission || "N/A"}
-              </p>
-            </div>
-          )}
-        </div>
+                  >
+                    Use Different Vehicle
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {showVehicleDetails && !foundVehicleData && (
