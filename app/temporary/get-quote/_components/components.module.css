@@ -1959,6 +1959,10 @@
     flex: 1;
   }
 
+  .findAddressButton {
+    height: 5.2rem;
+  }
+
   .cleanFormContent {
     gap: 2.4rem;
   }
