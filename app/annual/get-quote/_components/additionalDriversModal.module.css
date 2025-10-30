@@ -283,6 +283,11 @@
   padding: 0 2rem 2rem 2rem;
 }
 
+.formSection.disabled .tileHeader ~ div {
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
 .sectionLabel {
   font-size: 1.3rem;
   font-weight: 600;
