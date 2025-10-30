@@ -394,7 +394,13 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Your Employment</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('employment') && <>
+          {isTileExpanded('employment') && isTileDisabled('employment') && (
+            <div className={modalButtonStyles.errorMessage}>
+              <span className={modalButtonStyles.errorIcon}>!</span>
+              <span>Complete {getPreviousTileLabel('employment')} first</span>
+            </div>
+          )}
+          {isTileExpanded('employment') && !isTileDisabled('employment') && <>
 
           <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
@@ -446,8 +452,14 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Parking & Storage</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('parking') && <>
-          
+          {isTileExpanded('parking') && isTileDisabled('parking') && (
+            <div className={modalButtonStyles.errorMessage}>
+              <span className={modalButtonStyles.errorIcon}>!</span>
+              <span>Complete {getPreviousTileLabel('parking')} first</span>
+            </div>
+          )}
+          {isTileExpanded('parking') && !isTileDisabled('parking') && <>
+
           <div className={styles.cleanFormGrid2Col}>
             <div className={styles.cleanSelectionCard}>
               <Selection2
@@ -498,8 +510,14 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Usage Details</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('usage') && <>
-          
+          {isTileExpanded('usage') && isTileDisabled('usage') && (
+            <div className={modalButtonStyles.errorMessage}>
+              <span className={modalButtonStyles.errorIcon}>!</span>
+              <span>Complete {getPreviousTileLabel('usage')} first</span>
+            </div>
+          )}
+          {isTileExpanded('usage') && !isTileDisabled('usage') && <>
+
           <div className={styles.cleanFormGrid1Col}>
             <p className={styles.cleanLabel}>What do you use the car for?</p>
             <div className={styles.cleanSelections3}>
