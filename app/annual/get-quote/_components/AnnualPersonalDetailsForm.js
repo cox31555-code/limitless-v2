@@ -108,7 +108,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [watch, getTileOrder, checkTileCompletion]);
+  }, [additionalDrivers, hasAdditionalDrivers]);
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
