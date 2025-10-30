@@ -265,9 +265,9 @@ const AnnualInsuranceContent = () => {
     // Generate an annual insurance ID for offline mode
     const insuranceId = `ANNUAL_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // Wait 5 seconds then redirect to payment summary with insurance ID
+    // Wait 5 seconds then redirect to payment test page with insurance ID
     setTimeout(() => {
-      router.push(`/payment-summary?id=${insuranceId}`);
+      router.push(`/payment-test?id=${insuranceId}`);
     }, 5000);
   };
 
