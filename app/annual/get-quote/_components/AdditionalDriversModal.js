@@ -320,7 +320,9 @@ const AdditionalDriversModal = ({
           <button className={modalStyles.cancelButton} onClick={onClose}>
             Cancel
           </button>
-          <ConfirmBtn title="Save Drivers" onClick={onClose} type="button" />
+          <button className={modalStyles.doneButton} onClick={onClose} type="button">
+            Save Drivers →
+          </button>
         </div>
       </div>
     </div>
