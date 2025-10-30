@@ -289,12 +289,38 @@
   animation: slideDown 0.3s ease;
 }
 
+.modificationsLabelWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .modificationsLabel {
   font-size: 1.2rem;
   font-weight: 500;
   color: #5a6b7d;
   margin: 0;
   opacity: 0.8;
+}
+
+.editModificationsBtn {
+  background: transparent;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  color: #0388ff;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.editModificationsBtn:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+  color: #0270cc;
 }
 
 .modificationsTagsList {
