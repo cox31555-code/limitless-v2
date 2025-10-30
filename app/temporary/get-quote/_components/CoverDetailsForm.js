@@ -111,13 +111,13 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                 style={{
                   padding: "1rem 1.6rem",
                   borderRadius: "10px",
-                  border: "2px solid #0388ff",
-                  background: "transparent",
-                  color: "#0388ff",
+                  border: "1.5px solid rgba(3, 136, 255, 0.25)",
+                  background: "rgba(3, 136, 255, 0.06)",
+                  color: "rgba(3, 136, 255, 0.5)",
                   fontSize: "1.3rem",
                   fontWeight: "600",
-                  cursor: "default",
-                  opacity: 1,
+                  cursor: "not-allowed",
+                  opacity: 0.65,
                   minWidth: "150px",
                   textAlign: "center",
                 }}
@@ -125,6 +125,9 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
               >
                 30 Days
               </button>
+              <span style={{ fontSize: "1.2rem", color: "#7a8a9d", fontWeight: "500" }}>
+                (Fixed)
+              </span>
             </div>
           ) : (
             <div className={styles.sparkSpaceY6}>
