@@ -39,14 +39,7 @@ const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
   if (isCoverIcon) {
     iconContent = null;
   } else if (isPersonalIcon) {
-    iconContent = (
-      <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="8" r="4" fill="white"/>
-          <path d="M12 14c-4 0-6 2-6 4v3c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-3c0-2-2-4-6-4z" fill="white"/>
-        </svg>
-      </div>
-    );
+    iconContent = null;
   } else if (isTermsIcon) {
     iconContent = (
       <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
