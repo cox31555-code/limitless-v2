@@ -249,19 +249,64 @@ export const insuranceSchema = z.object({
       const age = today.getFullYear() - dob.getFullYear();
       const monthDiff = today.getMonth() - dob.getMonth();
       const dayDiff = today.getDate() - dob.getDate();
-      
+
       // Calculate exact age
       let exactAge = age;
       if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
         exactAge--;
       }
-      
+
       // Maximum NCB years = current age - 17 (minimum driving age)
       const maxNCBYears = Math.max(0, exactAge - 17);
-      
+
       // Parse NCB value (handle "15+" case)
       const ncbValue = data.carUsage.NCB === "15+" ? 15 : parseInt(data.carUsage.NCB);
-      
+
+      if (ncbValue > maxNCBYears) {
+        return false;
+      }
+    }
+    return true;
+  },
+  {
+    message: "No claims bonus years cannot exceed the years since you turned 17",
+    path: ["carUsage", "NCB"],
+  }
+);
+
+// Annual Insurance Schema
+export const annualInsuranceSchema = z.object({
+  type: z.enum(["Annual"], {
+    required_error: "Insurance type is required",
+  }),
+  vehicleDetails: vehicleDetailsSchema,
+  coverDetails: annualCoverDetailsSchema,
+  userDetails: userDetailsSchema.optional(), // Optional for dashboard users
+  carUsage: carUsageSchema,
+  terms: termsSchema,
+}).refine(
+  (data) => {
+    // Validate NCB against date of birth
+    // User cannot have NCB before their 17th birthday
+    if (data.userDetails?.dateOfBirth && data.carUsage?.NCB) {
+      const dob = new Date(data.userDetails.dateOfBirth);
+      const today = new Date();
+      const age = today.getFullYear() - dob.getFullYear();
+      const monthDiff = today.getMonth() - dob.getMonth();
+      const dayDiff = today.getDate() - dob.getDate();
+
+      // Calculate exact age
+      let exactAge = age;
+      if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        exactAge--;
+      }
+
+      // Maximum NCB years = current age - 17 (minimum driving age)
+      const maxNCBYears = Math.max(0, exactAge - 17);
+
+      // Parse NCB value (handle "15+" case)
+      const ncbValue = data.carUsage.NCB === "15+" ? 15 : parseInt(data.carUsage.NCB);
+
       if (ncbValue > maxNCBYears) {
         return false;
       }
