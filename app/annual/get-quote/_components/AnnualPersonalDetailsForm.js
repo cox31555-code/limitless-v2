@@ -270,8 +270,14 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>About You</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('about') && <>
-          
+          {isTileExpanded('about') && isTileDisabled('about') && (
+            <div className={modalButtonStyles.errorMessage}>
+              <span className={modalButtonStyles.errorIcon}>!</span>
+              <span>Complete {getPreviousTileLabel('about')} first</span>
+            </div>
+          )}
+          {isTileExpanded('about') && !isTileDisabled('about') && <>
+
           <div className={styles.cleanFormGrid2Col}>
             <FormTextInput
               label="First Name"
