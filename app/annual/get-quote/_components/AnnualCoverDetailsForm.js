@@ -93,6 +93,9 @@ const AnnualCoverDetailsForm = ({ form }) => {
             <h2 className={styles.sectionTitle}>
               When would you like your cover to start?
             </h2>
+            <p className={styles.sectionSubtitle}>
+              Select your preferred cover start date
+            </p>
           </div>
 
           <FormDateInput
