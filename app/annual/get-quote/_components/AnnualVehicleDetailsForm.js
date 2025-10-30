@@ -140,6 +140,14 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
     setShowModificationsModal(false);
   };
 
+  const handleModificationsCancel = () => {
+    setValue("vehicleDetails.vehicleModified", "No", {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setShowModificationsModal(false);
+  };
+
   const toggleVehicleDetails = () => {
     setShowVehicleDetails(!showVehicleDetails);
   };
