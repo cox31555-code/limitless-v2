@@ -108,7 +108,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [additionalDrivers, hasAdditionalDrivers]);
+  }, [additionalDrivers, hasAdditionalDrivers, criminalConvictions, medicalConditions, insuranceCancelledStatus]);
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
