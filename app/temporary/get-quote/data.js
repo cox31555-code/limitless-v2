@@ -16,6 +16,13 @@ export const carUsageOptions = [
   },
 ];
 
+export const otherVehiclesOptions = [
+  "Own another car or van",
+  "Have use of another car",
+  "Company car (including personal use)",
+  "Company car (excluding personal use)",
+];
+
 export const licenseHeldOptions = [
   "0-1 years",
   "2 years",
