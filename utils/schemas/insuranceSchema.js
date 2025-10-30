@@ -242,6 +242,23 @@ export const carUsageSchema = z.object({
   criminalConvictions: z.boolean().default(false),
   medicalConditions: z.boolean().default(false),
   insuranceCancelledOrClaimRefusedOrPolicyVoided: z.boolean().default(false),
+  hasAdditionalDrivers: z.boolean().nullable().default(null),
+  additionalDrivers: z.array(z.object({
+    relationship: z.string().min(1, "Relationship is required"),
+    title: z.string().min(1, "Title is required"),
+    firstName: z.string().min(1, "First name is required"),
+    lastName: z.string().min(1, "Last name is required"),
+    dateOfBirth: z.string().min(1, "Date of birth is required"),
+    relationshipStatus: z.string().min(1, "Relationship status is required"),
+    livedInUKSinceBirth: z.boolean().nullable(),
+    employmentStatus: z.string().min(1, "Employment status is required"),
+    licenseType: z.string().min(1, "License type is required"),
+    licenseHeld: z.string().min(1, "License held is required"),
+    otherVehicles: z.boolean().nullable(),
+    medicalConditions: z.boolean().nullable(),
+    insuranceHistory: z.boolean().nullable(),
+    criminalConvictions: z.boolean().nullable(),
+  })).default([]).optional(),
 });
 
 // Terms and Conditions Schema
