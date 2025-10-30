@@ -23,8 +23,9 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
 
   const handleStartImmediately = () => {
     if (!startPolicyImmediately) {
-      // Set to current date and time
+      // Set to 10 minutes in the future
       const now = new Date();
+      now.setMinutes(now.getMinutes() + 10);
       const currentDate = now.toISOString().split("T")[0];
       const currentTime = now.toTimeString().slice(0, 5);
 
