@@ -1647,6 +1647,16 @@
   line-height: 1.4;
 }
 
+.cleanFormFieldLabel {
+  color: #000822;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  margin: 0 0 0.8rem 0;
+}
+
 .cleanFormGrid1Col {
   display: flex;
   flex-direction: column;
