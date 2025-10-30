@@ -551,6 +551,37 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             </div>
           </div>
         </section>
+
+        {/* Additional Drivers Section */}
+        <section className={styles.cleanSection}>
+          <h3 className={styles.cleanSectionTitle} data-section="9">Additional Drivers</h3>
+
+          <div className={styles.cleanAdditionalInfoContainer}>
+            <div className={styles.cleanFormGrid1Col}>
+              <p className={styles.cleanFormFieldLabel}>Do you want to add any additional drivers?</p>
+              <p className={styles.cleanSubLabel}>You can add up to 5 additional drivers. Include any drivers who share the car for business use.</p>
+              <YesORNo
+                value={watch("carUsage.hasAdditionalDrivers")}
+                onChange={(value) => {
+                  setValue("carUsage.hasAdditionalDrivers", value);
+                  if (!value) {
+                    setValue("carUsage.additionalDrivers", []);
+                  }
+                }}
+              />
+            </div>
+          </div>
+        </section>
+
+        {hasAdditionalDrivers && (
+          <AdditionalDrivers
+            form={form}
+            drivers={additionalDrivers}
+            onAddDriver={handleAddDriver}
+            onRemoveDriver={handleRemoveDriver}
+            onUpdateDriver={handleUpdateDriver}
+          />
+        )}
       </div>
     </ComponentWrapper>
   );
