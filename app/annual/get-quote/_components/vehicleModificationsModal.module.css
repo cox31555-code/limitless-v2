@@ -65,12 +65,12 @@
   width: 3.2rem;
   height: 3.2rem;
   border: none;
-  background: rgba(3, 136, 255, 0.1);
-  border-radius: 10px;
+  background: transparent;
+  border-radius: 8px;
   font-size: 2.4rem;
-  color: #0388ff;
+  color: #5a6b7d;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,8 +78,8 @@
 }
 
 .closeBtn:hover {
-  background: rgba(3, 136, 255, 0.15);
-  color: #0270cc;
+  background: rgba(3, 136, 255, 0.08);
+  color: #0388ff;
 }
 
 /* Content */
