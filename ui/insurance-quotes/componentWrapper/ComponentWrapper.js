@@ -42,6 +42,8 @@ const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
     iconContent = null;
   } else if (isTermsIcon) {
     iconContent = null;
+  } else if (titleLower.includes("optional")) {
+    iconContent = null;
   } else if (!isVehicleIcon) {
     iconContent = (
       <Image
