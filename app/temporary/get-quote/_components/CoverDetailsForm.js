@@ -98,8 +98,8 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                   padding: "1.2rem 2.4rem",
                   borderRadius: "8px",
                   border: "2px solid #0388ff",
-                  background: "#0388ff",
-                  color: "#fff",
+                  background: "transparent",
+                  color: "#0388ff",
                   fontSize: "1.3rem",
                   fontWeight: "600",
                   cursor: "not-allowed",
@@ -107,7 +107,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                 }}
                 disabled
               >
-                ✓ 30 Days
+                30 Days
               </button>
             </div>
           ) : (
