@@ -178,57 +178,56 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 1.4rem 2rem;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, rgba(3, 136, 255, 0.02) 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.16);
-  border-radius: 12px;
+  gap: 0.8rem;
+  padding: 1.2rem 2rem;
+  background: #ffffff;
+  border: 1.5px solid #d5dce3;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
 }
 
 .manualEntryBtn:hover {
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
-  border-color: rgba(3, 136, 255, 0.28);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.12);
+  background: #f8f9fa;
+  border-color: #a8b2bd;
 }
 
 .manualEntryBtn:active {
-  transform: translateY(0);
+  background: #f0f2f5;
 }
 
 .manualEntryIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  background: rgba(3, 136, 255, 0.12);
-  border-radius: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: transparent;
+  border-radius: 0;
   font-size: 1rem;
-  color: #0388ff;
+  color: #5a6b7d;
   font-weight: 600;
   flex-shrink: 0;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .manualEntryBtn:hover .manualEntryIcon {
-  background: rgba(3, 136, 255, 0.2);
-  transform: rotate(12deg) scale(1.05);
+  background: transparent;
+  transform: none;
+  color: #000822;
 }
 
 .manualEntryText {
   font-size: 1.2rem;
-  font-weight: 600;
-  color: #0388ff;
+  font-weight: 500;
+  color: #000822;
   letter-spacing: 0.02em;
   transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .manualEntryBtn:hover .manualEntryText {
-  color: #0270cc;
+  color: #000822;
 }
 
 /* Success Card Wrapper */
