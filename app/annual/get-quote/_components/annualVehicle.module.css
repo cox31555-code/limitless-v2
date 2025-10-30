@@ -871,14 +871,12 @@
 
   .manualEntryBtn {
     padding: 1rem 1.4rem;
-    gap: 0.6rem;
+    gap: 0;
     font-size: 1rem;
   }
 
   .manualEntryIcon {
-    width: 1.6rem;
-    height: 1.6rem;
-    font-size: 0.8rem;
+    display: none;
   }
 
   .manualEntryText {
