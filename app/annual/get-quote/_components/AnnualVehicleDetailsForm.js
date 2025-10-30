@@ -574,7 +574,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             <p className={styles.sectionDescription}>Tell us about your vehicle's safety and security features</p>
           </div>
           <div className={styles.additionalDetailsSection}>
-          <div className={styles.row}>
+          <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
               label="Tracking device"
               options={trackingDeviceOptions}
@@ -591,7 +591,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             />
           </div>
 
-          <div className={styles.row}>
+          <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
               label="Imported vehicle"
               options={yesNoOptions}
