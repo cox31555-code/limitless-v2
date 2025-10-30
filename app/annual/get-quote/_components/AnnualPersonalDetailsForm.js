@@ -39,23 +39,15 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expandedTiles, setExpandedTiles] = useState(new Set(['about']));
 
-  // Watch form values early to use in dependencies
-  const employmentStatus = watch("userDetails.employmentStatus");
-  const dateOfBirth = watch("userDetails.dateOfBirth");
-  const additionalDrivers = watch("carUsage.additionalDrivers") || [];
-  const hasAdditionalDrivers = watch("carUsage.hasAdditionalDrivers");
-  const criminalConvictions = watch("carUsage.criminalConvictions");
-  const medicalConditions = watch("carUsage.medicalConditions");
-  const insuranceCancelledStatus = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
-
-  // Watch all required fields to trigger re-evaluation
+  // Watch all form values early to use in dependencies and trigger re-evaluation
   const firstName = watch("userDetails.firstName");
   const surname = watch("userDetails.surname");
+  const dateOfBirth = watch("userDetails.dateOfBirth");
   const userEmail = watch("userDetails.email");
   const userPhone = watch("userDetails.phone");
   const postCode = watch("userDetails.postCode");
   const address = watch("userDetails.address");
-  const userEmploymentStatus = watch("userDetails.employmentStatus");
+  const employmentStatus = watch("userDetails.employmentStatus");
   const industry = watch("userDetails.industry");
   const occupation = watch("userDetails.occupation");
   const keepingCarDuringDay = watch("carUsage.keepingCarDuringDay");
@@ -67,6 +59,11 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const ownsHome = watch("carUsage.ownsHome");
   const childrenUnder16 = watch("carUsage.childrenUnder16");
   const livedInUKSinceBirth = watch("carUsage.livedInUKSinceBirth");
+  const criminalConvictions = watch("carUsage.criminalConvictions");
+  const medicalConditions = watch("carUsage.medicalConditions");
+  const insuranceCancelledStatus = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
+  const additionalDrivers = watch("carUsage.additionalDrivers") || [];
+  const hasAdditionalDrivers = watch("carUsage.hasAdditionalDrivers");
   const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
   const isRetiredOrUnemployed = isIndustryOccupationDisabled;
 
