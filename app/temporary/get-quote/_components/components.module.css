@@ -1040,12 +1040,6 @@
   background: #f8fbff;
   border-radius: 10px;
   border: 1.5px solid rgba(3, 136, 255, 0.08);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.declarationItem:hover {
-  border-color: rgba(3, 136, 255, 0.15);
-  background: #f0f6ff;
 }
 
 .declarationQuestion {
