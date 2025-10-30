@@ -626,6 +626,48 @@
 .sparkButtonNext:active {
 }
 
+.startPolicyButton {
+  padding: 1rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 1.5px solid #0388ff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+  background: transparent;
+  color: #000822;
+  min-height: auto;
+}
+
+.startPolicyButton:hover {
+  background: #f8fbff;
+  border-color: #0388ff;
+}
+
+.startPolicyButton.active {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  border-color: #0388ff;
+}
+
+.startPolicyButton.active:hover {
+  background: linear-gradient(135deg, #0270cc 0%, #0156a8 100%);
+}
+
+.startPolicyButtonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 /* Duration Wrapper - kept for backward compatibility */
 .durationWrapper {
   display: flex;
