@@ -99,7 +99,6 @@ const AdditionalDriversModal = ({
 
   const getTileOrder = () => ['about', 'employment', 'usage', 'driving', 'declarations'];
 
-  useCallback(() => getTileOrder(), [])
 
   const getTileLabel = (tileKey) => {
     const labels = {
