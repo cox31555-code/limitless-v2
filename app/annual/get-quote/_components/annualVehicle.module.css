@@ -131,6 +131,7 @@
   width: 100%;
   align-items: start;
   animation: rowFadeIn 0.3s ease;
+  margin-bottom: 1.2rem;
 }
 
 @keyframes rowFadeIn {
@@ -173,7 +174,7 @@
 .additionalDetailsSection {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 2rem;
   padding: 3.2rem;
   border-radius: 16px;
   background: #fff;
@@ -185,7 +186,7 @@
 .ownershipSection {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 2rem;
   padding: 3.2rem;
   border-radius: 16px;
   background: #fff;
