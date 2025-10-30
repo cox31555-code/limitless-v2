@@ -171,146 +171,116 @@ const AdditionalDriversModal = ({
                   <div className={modalStyles.driverFormContent}>
                     {/* About You Section */}
                     <div className={modalStyles.formSection}>
-                      <button type="button" className={`${modalStyles.sectionToggle} ${isSectionExpanded(index, 'about') ? modalStyles.expanded : ''}`} onClick={() => toggleSection(index, 'about')}>
-                        <span className={modalStyles.sectionLabel}>About You</span>
-                        <span className={modalStyles.toggleArrow}>›</span>
-                      </button>
-                      {isSectionExpanded(index, 'about') && <>
-                        <div className={modalStyles.fieldRow2Col}>
-                          <div className={modalStyles.field}>
-                            <FormTextInput label="First Name" placeholder="Enter first name" value={watch(`carUsage.additionalDrivers.${index}.firstName`) || ""} onChange={(e) => onUpdateDriver(index, "firstName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
-                          </div>
-                          <div className={modalStyles.field}>
-                            <FormTextInput label="Last Name" placeholder="Enter last name" value={watch(`carUsage.additionalDrivers.${index}.lastName`) || ""} onChange={(e) => onUpdateDriver(index, "lastName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
-                          </div>
+                      <h4 className={modalStyles.sectionLabel}>About You</h4>
+                      <div className={modalStyles.fieldRow2Col}>
+                        <div className={modalStyles.field}>
+                          <FormTextInput label="First Name" placeholder="Enter first name" value={watch(`carUsage.additionalDrivers.${index}.firstName`) || ""} onChange={(e) => onUpdateDriver(index, "firstName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
-                        <div className={modalStyles.fieldRow2Col}>
-                          <div className={modalStyles.field}>
-                            <FormDataAndTime dateLabel="Date of Birth" type="date" allowPastDates={true} isDateOfBirth={true} maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())} defaultYear={2009} reducedPadding={true} value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""} onChange={(value) => onUpdateDriver(index, "dateOfBirth", value)} />
-                          </div>
+                        <div className={modalStyles.field}>
+                          <FormTextInput label="Last Name" placeholder="Enter last name" value={watch(`carUsage.additionalDrivers.${index}.lastName`) || ""} onChange={(e) => onUpdateDriver(index, "lastName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
-                      </>}
+                      </div>
+                      <div className={modalStyles.fieldRow2Col}>
+                        <div className={modalStyles.field}>
+                          <FormDataAndTime dateLabel="Date of Birth" type="date" allowPastDates={true} isDateOfBirth={true} maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())} defaultYear={2009} reducedPadding={true} value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""} onChange={(value) => onUpdateDriver(index, "dateOfBirth", value)} />
+                        </div>
+                      </div>
                     </div>
 
                     {/* Employment Section */}
                     <div className={modalStyles.formSection}>
-                      <button type="button" className={`${modalStyles.sectionToggle} ${isSectionExpanded(index, 'employment') ? modalStyles.expanded : ''}`} onClick={() => toggleSection(index, 'employment')}>
-                        <span className={modalStyles.sectionLabel}>Your Employment</span>
-                        <span className={modalStyles.toggleArrow}>›</span>
-                      </button>
-                      {isSectionExpanded(index, 'employment') && <>
-                        <div className={modalStyles.fieldRow2Col}>
-                          <div className={modalStyles.field}>
-                            <FormDropdown label="Employment Status" options={employmentStatusOptions} placeholder="Select status" value={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) || ""} onChange={(value) => onUpdateDriver(index, "employmentStatus", value)} inputStyle={{ paddingLeft: "14px" }} />
-                          </div>
-                          <div className={modalStyles.field}>
-                            <FormAutocomplete label="Occupation" options={occupationOptions} placeholder="Type your occupation..." value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "occupation", value); }} disabled={["Retired", "Unemployed", "Student", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
-                          </div>
+                      <h4 className={modalStyles.sectionLabel}>Your Employment</h4>
+                      <div className={modalStyles.fieldRow2Col}>
+                        <div className={modalStyles.field}>
+                          <FormDropdown label="Employment Status" options={employmentStatusOptions} placeholder="Select status" value={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) || ""} onChange={(value) => onUpdateDriver(index, "employmentStatus", value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                         <div className={modalStyles.field}>
-                          <FormAutocomplete label="Industry" options={industryOptions} placeholder="Type your industry..." value={watch(`carUsage.additionalDrivers.${index}.industry`) || ""} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "industry", value); }} disabled={["Retired", "Unemployed", "Student", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
+                          <FormAutocomplete label="Occupation" options={occupationOptions} placeholder="Type your occupation..." value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "occupation", value); }} disabled={["Retired", "Unemployed", "Student", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
-                      </>}
+                      </div>
+                      <div className={modalStyles.field}>
+                        <FormAutocomplete label="Industry" options={industryOptions} placeholder="Type your industry..." value={watch(`carUsage.additionalDrivers.${index}.industry`) || ""} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "industry", value); }} disabled={["Retired", "Unemployed", "Student", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
+                      </div>
                     </div>
 
                     {/* Usage Details Section */}
                     <div className={modalStyles.formSection}>
-                      <button type="button" className={`${modalStyles.sectionToggle} ${isSectionExpanded(index, 'usage') ? modalStyles.expanded : ''}`} onClick={() => toggleSection(index, 'usage')}>
-                        <span className={modalStyles.sectionLabel}>Usage Details</span>
-                        <span className={modalStyles.toggleArrow}>›</span>
-                      </button>
-                      {isSectionExpanded(index, 'usage') && <>
+                      <h4 className={modalStyles.sectionLabel}>Usage Details</h4>
+                      <div className={modalStyles.field}>
+                        <p className={modalStyles.fieldLabel}>Other Vehicles?</p>
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.otherVehicles`)} onChange={(value) => onUpdateDriver(index, "otherVehicles", value)} />
+                      </div>
+                      {watch(`carUsage.additionalDrivers.${index}.otherVehicles`) && (
                         <div className={modalStyles.field}>
-                          <p className={modalStyles.fieldLabel}>Other Vehicles?</p>
-                          <YesORNo value={watch(`carUsage.additionalDrivers.${index}.otherVehicles`)} onChange={(value) => onUpdateDriver(index, "otherVehicles", value)} />
+                          <FormDropdown label="What other vehicles?" options={otherVehiclesOptions} placeholder="Select vehicle type" value={watch(`carUsage.additionalDrivers.${index}.otherVehiclesType`) || ""} onChange={(value) => onUpdateDriver(index, "otherVehiclesType", value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
-                        {watch(`carUsage.additionalDrivers.${index}.otherVehicles`) && (
-                          <div className={modalStyles.field}>
-                            <FormDropdown label="What other vehicles?" options={otherVehiclesOptions} placeholder="Select vehicle type" value={watch(`carUsage.additionalDrivers.${index}.otherVehiclesType`) || ""} onChange={(value) => onUpdateDriver(index, "otherVehiclesType", value)} inputStyle={{ paddingLeft: "14px" }} />
-                          </div>
-                        )}
-                      </>}
+                      )}
                     </div>
 
                     {/* Driving Record Section */}
                     <div className={modalStyles.formSection}>
-                      <button type="button" className={`${modalStyles.sectionToggle} ${isSectionExpanded(index, 'driving') ? modalStyles.expanded : ''}`} onClick={() => toggleSection(index, 'driving')}>
-                        <span className={modalStyles.sectionLabel}>Driving Record</span>
-                        <span className={modalStyles.toggleArrow}>›</span>
-                      </button>
-                      {isSectionExpanded(index, 'driving') && <>
-                        <div className={modalStyles.fieldRow3Col}>
-                          <div className={modalStyles.field}>
-                            <FormDropdown label="License Type" options={["Full UK", "Provisional UK", "International", "Other"]} placeholder="Select type" value={watch(`carUsage.additionalDrivers.${index}.licenseType`) || ""} onChange={(value) => onUpdateDriver(index, "licenseType", value)} inputStyle={{ paddingLeft: "14px" }} />
-                          </div>
-                          <div className={modalStyles.field}>
-                            <FormDropdown label="License Held" options={licenseHeldOptions} placeholder="Select duration" value={watch(`carUsage.additionalDrivers.${index}.licenseHeld`) || ""} onChange={(value) => onUpdateDriver(index, "licenseHeld", value)} inputStyle={{ paddingLeft: "14px" }} />
-                          </div>
-                          <div className={modalStyles.field}>
-                            <FormTextInput label="License Number" placeholder="Optional" value={watch(`carUsage.additionalDrivers.${index}.licenseNumber`) || ""} onChange={(e) => onUpdateDriver(index, "licenseNumber", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
-                          </div>
+                      <h4 className={modalStyles.sectionLabel}>Driving Record</h4>
+                      <div className={modalStyles.fieldRow3Col}>
+                        <div className={modalStyles.field}>
+                          <FormDropdown label="License Type" options={["Full UK", "Provisional UK", "International", "Other"]} placeholder="Select type" value={watch(`carUsage.additionalDrivers.${index}.licenseType`) || ""} onChange={(value) => onUpdateDriver(index, "licenseType", value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                         <div className={modalStyles.field}>
-                          <FormDropdown label="No Claims Bonus" options={dynamicDriverNcbOptions[index] || ncbOptions} placeholder="Select years" value={watch(`carUsage.additionalDrivers.${index}.NCB`) || ""} onChange={(value) => onUpdateDriver(index, "NCB", value)} inputStyle={{ paddingLeft: "14px" }} />
+                          <FormDropdown label="License Held" options={licenseHeldOptions} placeholder="Select duration" value={watch(`carUsage.additionalDrivers.${index}.licenseHeld`) || ""} onChange={(value) => onUpdateDriver(index, "licenseHeld", value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                         <div className={modalStyles.field}>
-                          <p className={modalStyles.fieldLabel}>Additional Driving Qualifications?</p>
-                          <YesORNo value={watch(`carUsage.additionalDrivers.${index}.hasAdditionalQualifications`)} onChange={(value) => onUpdateDriver(index, "hasAdditionalQualifications", value)} />
+                          <FormTextInput label="License Number" placeholder="Optional" value={watch(`carUsage.additionalDrivers.${index}.licenseNumber`) || ""} onChange={(e) => onUpdateDriver(index, "licenseNumber", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
-                        {watch(`carUsage.additionalDrivers.${index}.hasAdditionalQualifications`) && (<>
+                      </div>
+                      <div className={modalStyles.field}>
+                        <FormDropdown label="No Claims Bonus" options={dynamicDriverNcbOptions[index] || ncbOptions} placeholder="Select years" value={watch(`carUsage.additionalDrivers.${index}.NCB`) || ""} onChange={(value) => onUpdateDriver(index, "NCB", value)} inputStyle={{ paddingLeft: "14px" }} />
+                      </div>
+                      <div className={modalStyles.field}>
+                        <p className={modalStyles.fieldLabel}>Additional Driving Qualifications?</p>
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.hasAdditionalQualifications`)} onChange={(value) => onUpdateDriver(index, "hasAdditionalQualifications", value)} />
+                      </div>
+                      {watch(`carUsage.additionalDrivers.${index}.hasAdditionalQualifications`) && (<>
+                        <div className={modalStyles.field}>
+                          <FormDropdown label="Qualification Type" options={additionalQualificationsOptions} placeholder="Select type" value={watch(`carUsage.additionalDrivers.${index}.additionalQualificationType`) || ""} onChange={(value) => onUpdateDriver(index, "additionalQualificationType", value)} inputStyle={{ paddingLeft: "14px" }} />
+                        </div>
+                        <div className={modalStyles.fieldRow2Col}>
                           <div className={modalStyles.field}>
-                            <FormDropdown label="Qualification Type" options={additionalQualificationsOptions} placeholder="Select type" value={watch(`carUsage.additionalDrivers.${index}.additionalQualificationType`) || ""} onChange={(value) => onUpdateDriver(index, "additionalQualificationType", value)} inputStyle={{ paddingLeft: "14px" }} />
+                            <FormDropdown label="Month" options={monthOptions} placeholder="Select month" value={watch(`carUsage.additionalDrivers.${index}.qualificationMonth`) || ""} onChange={(value) => onUpdateDriver(index, "qualificationMonth", value)} inputStyle={{ paddingLeft: "14px" }} />
                           </div>
-                          <div className={modalStyles.fieldRow2Col}>
-                            <div className={modalStyles.field}>
-                              <FormDropdown label="Month" options={monthOptions} placeholder="Select month" value={watch(`carUsage.additionalDrivers.${index}.qualificationMonth`) || ""} onChange={(value) => onUpdateDriver(index, "qualificationMonth", value)} inputStyle={{ paddingLeft: "14px" }} />
-                            </div>
-                            <div className={modalStyles.field}>
-                              <FormDropdown label="Year" options={yearOptions} placeholder="Select year" value={watch(`carUsage.additionalDrivers.${index}.qualificationYear`) || ""} onChange={(value) => onUpdateDriver(index, "qualificationYear", value)} inputStyle={{ paddingLeft: "14px" }} />
-                            </div>
+                          <div className={modalStyles.field}>
+                            <FormDropdown label="Year" options={yearOptions} placeholder="Select year" value={watch(`carUsage.additionalDrivers.${index}.qualificationYear`) || ""} onChange={(value) => onUpdateDriver(index, "qualificationYear", value)} inputStyle={{ paddingLeft: "14px" }} />
                           </div>
-                        </>)}
-                      </>}
+                        </div>
+                      </>)}
                     </div>
 
                     {/* Additional Information Section */}
                     <div className={modalStyles.formSection}>
-                      <button type="button" className={`${modalStyles.sectionToggle} ${isSectionExpanded(index, 'additional') ? modalStyles.expanded : ''}`} onClick={() => toggleSection(index, 'additional')}>
-                        <span className={modalStyles.sectionLabel}>Additional Information</span>
-                        <span className={modalStyles.toggleArrow}>›</span>
-                      </button>
-                      {isSectionExpanded(index, 'additional') && <>
-                        <div className={modalStyles.field}>
-                          <p className={modalStyles.fieldLabel}>Lived in UK since birth?</p>
-                          <p className={modalStyles.fieldHelper}>Continuously, without breaks of 6+ months</p>
-                          <YesORNo value={watch(`carUsage.additionalDrivers.${index}.livedInUKSinceBirth`)} onChange={(value) => onUpdateDriver(index, "livedInUKSinceBirth", value)} />
-                        </div>
-                      </>}
+                      <h4 className={modalStyles.sectionLabel}>Additional Information</h4>
+                      <div className={modalStyles.field}>
+                        <p className={modalStyles.fieldLabel}>Lived in UK since birth?</p>
+                        <p className={modalStyles.fieldHelper}>Continuously, without breaks of 6+ months</p>
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.livedInUKSinceBirth`)} onChange={(value) => onUpdateDriver(index, "livedInUKSinceBirth", value)} />
+                      </div>
                     </div>
 
                     {/* Declarations Section */}
                     <div className={modalStyles.formSection}>
-                      <button type="button" className={`${modalStyles.sectionToggle} ${isSectionExpanded(index, 'declarations') ? modalStyles.expanded : ''}`} onClick={() => toggleSection(index, 'declarations')}>
-                        <span className={modalStyles.sectionLabel}>Declarations</span>
-                        <span className={modalStyles.toggleArrow}>›</span>
-                      </button>
-                      {isSectionExpanded(index, 'declarations') && <>
-                        <div className={modalStyles.field}>
-                          <p className={modalStyles.fieldLabel}>Criminal Convictions?</p>
-                          <p className={modalStyles.fieldHelper}>Any unspent or outstanding?</p>
-                          <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => onUpdateDriver(index, "criminalConvictions", value)} />
-                        </div>
-                        <div className={modalStyles.field}>
-                          <p className={modalStyles.fieldLabel}>Medical Conditions?</p>
-                          <p className={modalStyles.fieldHelper}>Notifiable to DVLA?</p>
-                          <YesORNo value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)} onChange={(value) => onUpdateDriver(index, "medicalConditions", value)} />
-                        </div>
-                        <div className={modalStyles.field}>
-                          <p className={modalStyles.fieldLabel}>Insurance History?</p>
-                          <p className={modalStyles.fieldHelper}>Cancelled, refused, voided, or special terms?</p>
-                          <YesORNo value={watch(`carUsage.additionalDrivers.${index}.insuranceCancelledOrClaimRefusedOrPolicyVoided`)} onChange={(value) => onUpdateDriver(index, "insuranceCancelledOrClaimRefusedOrPolicyVoided", value)} />
-                        </div>
-                      </>}
+                      <h4 className={modalStyles.sectionLabel}>Declarations</h4>
+                      <div className={modalStyles.field}>
+                        <p className={modalStyles.fieldLabel}>Criminal Convictions?</p>
+                        <p className={modalStyles.fieldHelper}>Any unspent or outstanding?</p>
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => onUpdateDriver(index, "criminalConvictions", value)} />
+                      </div>
+                      <div className={modalStyles.field}>
+                        <p className={modalStyles.fieldLabel}>Medical Conditions?</p>
+                        <p className={modalStyles.fieldHelper}>Notifiable to DVLA?</p>
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)} onChange={(value) => onUpdateDriver(index, "medicalConditions", value)} />
+                      </div>
+                      <div className={modalStyles.field}>
+                        <p className={modalStyles.fieldLabel}>Insurance History?</p>
+                        <p className={modalStyles.fieldHelper}>Cancelled, refused, voided, or special terms?</p>
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.insuranceCancelledOrClaimRefusedOrPolicyVoided`)} onChange={(value) => onUpdateDriver(index, "insuranceCancelledOrClaimRefusedOrPolicyVoided", value)} />
+                      </div>
                     </div>
                   </div>
                 </div>
