@@ -395,52 +395,22 @@
   flex: 1;
 }
 
-.checkboxWrapper {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-}
-
-.checkbox {
-  display: none;
-}
-
-.checkboxLabel {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  cursor: pointer;
-  font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+.haventBoughtBtn {
+  background: transparent;
+  border: none;
+  color: #0388ff;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  color: #000822;
-  user-select: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
   transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
 }
 
-.checkboxLabel:hover {
-  color: #0388ff;
-}
-
-.checkboxLabel svg {
-  width: 1.6rem;
-  height: 1.6rem;
-  flex-shrink: 0;
-  opacity: 0.4;
-  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.checkbox:checked + .checkboxLabel svg {
-  opacity: 1;
-}
-
-.checkboxLabel:hover svg {
-  opacity: 0.7;
-}
-
-.checkbox:checked + .checkboxLabel:hover svg {
-  opacity: 1;
+.haventBoughtBtn:hover {
+  color: #0270cc;
 }
 
 /* Owner/Keeper Field Wrappers for "Other" input */
