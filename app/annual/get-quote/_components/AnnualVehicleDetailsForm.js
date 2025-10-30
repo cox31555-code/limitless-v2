@@ -365,7 +365,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
         onConfirm={handleModificationsConfirm}
         selectedModifications={vehicleModifications}
       />
-      <ComponentWrapper title="Vehicle Details">
+      <ComponentWrapper title="Your Vehicle Information">
         <div className={styles.content}>
         {/* Instruction Message */}
         <div className={styles.instructionBox}>
