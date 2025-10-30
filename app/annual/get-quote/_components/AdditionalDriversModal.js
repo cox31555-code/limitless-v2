@@ -265,8 +265,8 @@ const AdditionalDriversModal = ({
                   </div>
 
                   {/* Usage Details Section */}
-                  <div className={modalStyles.formSection}>
-                    <button type="button" className={`${modalStyles.tileHeader} ${isTileExpanded(index, 'usage') ? modalStyles.expanded : ''}`} onClick={() => toggleTile(index, 'usage')}>
+                  <div className={`${modalStyles.formSection} ${isTileDisabled(index, 'usage') ? modalStyles.disabled : ''}`}>
+                    <button type="button" className={`${modalStyles.tileHeader} ${isTileExpanded(index, 'usage') ? modalStyles.expanded : ''} ${isTileDisabled(index, 'usage') ? modalStyles.disabled : ''}`} onClick={() => !isTileDisabled(index, 'usage') && toggleTile(index, 'usage')}>
                       <h4 className={modalStyles.sectionLabel}>Usage Details</h4>
                       <span className={modalStyles.expandIcon}>+</span>
                     </button>
