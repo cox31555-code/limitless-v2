@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
+import FormDateInput from "@/ui/inputs/FormDateInput";
 import styles from "./annualCoverDetails.module.css";
 
 const INSURANCE_LEVELS = [
