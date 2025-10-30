@@ -120,10 +120,11 @@ const AdditionalDriversModal = ({
   }, [drivers.length]);
 
   useEffect(() => {
+    // Auto-expand next tile when driver data changes
     drivers.forEach((_, index) => {
       autoExpandNextTile(index);
     });
-  }, [drivers, autoExpandNextTile]);
+  }, [drivers[0]?.firstName, drivers[0]?.lastName, drivers[0]?.dateOfBirth, drivers[0]?.livedInUKSinceBirth, drivers[0]?.employmentStatus, drivers[0]?.occupation, drivers[0]?.industry, drivers[0]?.otherVehicles, drivers[0]?.licenseType, drivers[0]?.licenseHeld, drivers[0]?.hasAdditionalQualifications, autoExpandNextTile]);
 
   const getTileOrder = () => ['about', 'employment', 'usage', 'driving', 'declarations'];
 
