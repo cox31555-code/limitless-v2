@@ -39,6 +39,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const [isLoadingAddresses, setIsLoadingAddresses] = useState(false);
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
   const [showAddressDropdown, setShowAddressDropdown] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const employmentStatus = watch("userDetails.employmentStatus");
   const isRetiredOrUnemployed = employmentStatus === "Retired" || employmentStatus === "Unemployed";
