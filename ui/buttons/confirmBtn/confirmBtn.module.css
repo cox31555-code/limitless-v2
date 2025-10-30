@@ -7,7 +7,7 @@
   height: 5.8rem;
   padding: 1.3rem 2rem;
   border-radius: 10px;
-  background: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border: none;
   color: #fff;
   font-size: 1.3rem;
@@ -15,29 +15,38 @@
   line-height: 120%;
   letter-spacing: 0.3px;
   cursor: pointer;
-  transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   text-transform: none;
   white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
 }
 
 .confirmBtn:hover {
-  background: #0270cc;
+  background: linear-gradient(135deg, #0270cc 0%, #0259b8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(3, 136, 255, 0.4);
 }
 
 .confirmBtn:active {
-  background: #025ab3;
+  background: linear-gradient(135deg, #025ab3 0%, #01479b 100%);
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
 }
 
 .confirmBtn:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
-  background: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  transform: none;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.15);
 }
 
 .confirmBtn:disabled:hover {
-  background: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  transform: none;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.15);
 }
 
 .confirmBtn.secondary {
