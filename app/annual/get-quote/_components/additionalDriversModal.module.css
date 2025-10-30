@@ -208,6 +208,15 @@
   letter-spacing: 0.1px;
 }
 
+.inputLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0 0 0.6rem 0;
+  letter-spacing: 0.1px;
+  display: block;
+}
+
 .fieldHelper {
   font-size: 1rem;
   color: #7a8a9d;
