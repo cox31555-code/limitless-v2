@@ -47,6 +47,26 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const criminalConvictions = watch("carUsage.criminalConvictions");
   const medicalConditions = watch("carUsage.medicalConditions");
   const insuranceCancelledStatus = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
+
+  // Watch all required fields to trigger re-evaluation
+  const firstName = watch("userDetails.firstName");
+  const surname = watch("userDetails.surname");
+  const userEmail = watch("userDetails.email");
+  const userPhone = watch("userDetails.phone");
+  const postCode = watch("userDetails.postCode");
+  const address = watch("userDetails.address");
+  const userEmploymentStatus = watch("userDetails.employmentStatus");
+  const industry = watch("userDetails.industry");
+  const occupation = watch("userDetails.occupation");
+  const keepingCarDuringDay = watch("carUsage.keepingCarDuringDay");
+  const keepingCarDuringNight = watch("carUsage.keepingCarDuringNight");
+  const usageType = watch("carUsage.usageType");
+  const licenseType = watch("carUsage.licenseType");
+  const licenseHeld = watch("carUsage.licenseHeld");
+  const ncb = watch("carUsage.NCB");
+  const ownsHome = watch("carUsage.ownsHome");
+  const childrenUnder16 = watch("carUsage.childrenUnder16");
+  const livedInUKSinceBirth = watch("carUsage.livedInUKSinceBirth");
   const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
   const isRetiredOrUnemployed = isIndustryOccupationDisabled;
 
