@@ -45,7 +45,7 @@ const AnnualInsuranceContent = () => {
   }, []);
 
   const form = useForm({
-    resolver: zodResolver(insuranceSchema),
+    resolver: zodResolver(annualInsuranceSchema),
     defaultValues: {
       type: "Annual",
       vehicleDetails: {
