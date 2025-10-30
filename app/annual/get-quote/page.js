@@ -73,10 +73,7 @@ const AnnualInsuranceContent = () => {
         apiData: null,
       },
       coverDetails: {
-        type: "Days",
-        period: 365,
-        startDate: "",
-        startTime: "10:00",
+        level: "",
       },
       userDetails: {
         firstName: "",
