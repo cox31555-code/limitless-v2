@@ -40,6 +40,59 @@ const AdditionalDriversModal = ({
   const [driverAddresses, setDriverAddresses] = useState({});
   const [driverLoadingStates, setDriverLoadingStates] = useState({});
   const [dynamicDriverNcbOptions, setDynamicDriverNcbOptions] = useState({});
+  const [expandedTile, setExpandedTile] = useState({});
+
+  const toggleTile = (driverIndex, tileKey) => {
+    setExpandedTile(prev => ({
+      ...prev,
+      [driverIndex]: prev[driverIndex] === tileKey ? null : tileKey
+    }));
+  };
+
+  const isTileExpanded = (driverIndex, tileKey) => {
+    return expandedTile[driverIndex] === tileKey;
+  };
+
+  const checkTileCompletion = (driverIndex, tileKey) => {
+    const driver = drivers[driverIndex];
+    if (!driver) return false;
+
+    const requiredFields = {
+      about: ['firstName', 'lastName', 'dateOfBirth', 'livedInUKSinceBirth'],
+      employment: ['employmentStatus', 'occupation', 'industry'],
+      usage: ['otherVehicles'],
+      driving: ['licenseType', 'licenseHeld', 'NCB'],
+      declarations: ['criminalConvictions', 'medicalConditions', 'insuranceCancelledOrClaimRefusedOrPolicyVoided']
+    };
+
+    const fieldsToCheck = requiredFields[tileKey] || [];
+    return fieldsToCheck.every(field => {
+      const value = driver[field];
+      return value !== null && value !== undefined && value !== '';
+    });
+  };
+
+  const autoExpandNextTile = (driverIndex) => {
+    const tiles = ['about', 'employment', 'usage', 'driving', 'declarations'];
+    const currentExpanded = expandedTile[driverIndex];
+    const currentIndex = tiles.indexOf(currentExpanded);
+
+    if (currentIndex !== -1 && currentIndex < tiles.length - 1) {
+      const nextTile = tiles[currentIndex + 1];
+      if (checkTileCompletion(driverIndex, currentExpanded)) {
+        setExpandedTile(prev => ({
+          ...prev,
+          [driverIndex]: nextTile
+        }));
+      }
+    }
+  };
+
+  React.useEffect(() => {
+    drivers.forEach((_, index) => {
+      autoExpandNextTile(index);
+    });
+  }, [drivers]);
 
   React.useEffect(() => {
     drivers.forEach((driver, index) => {
