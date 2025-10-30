@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./autocomplete/autocomplete.module.css";
 
 const FormAutocomplete = forwardRef(
-  ({ label, options, placeholder = "Type or select option", error, onChange, value, disabled, ...props }, ref) => {
+  ({ label, options, placeholder = "Type or select option", error, onChange, value, disabled, inputStyle, ...props }, ref) => {
     const [inputValue, setInputValue] = useState(() => {
       // Handle string or object values
       if (typeof value === "string") {
