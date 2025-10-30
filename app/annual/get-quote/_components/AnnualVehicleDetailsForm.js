@@ -426,60 +426,23 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 </button>
               </div>
             ) : (
-              <div className={styles.successCardWrapper}>
-                <div className={styles.successCard}>
-                  <div className={styles.successHeader}>
-                    <div className={styles.successIcon}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" fill="#10B981" opacity="0.1"/>
-                        <path d="M9 12L11 14L15 10" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                    <h4 className={styles.successTitle}>Vehicle Found</h4>
-                  </div>
-
-                  <div className={styles.vehicleInfo}>
-                    <div className={styles.vehicleMainInfo}>
-                      <div className={styles.vehicleMainDetails}>
-                        <p className={styles.vehicleMakeModel}>
-                          {foundVehicleData.make} {foundVehicleData.model}
-                        </p>
-                        <p className={styles.vehicleYear}>{foundVehicleData.yearOfManufacture}</p>
-                      </div>
-                      <p className={styles.vehicleReg}>{foundVehicleData.registrationNumber}</p>
-                    </div>
-
-                    <div className={styles.vehicleSpecsGrid}>
-                      <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Colour</span>
-                        <span className={styles.specValue}>{foundVehicleData.colour || "N/A"}</span>
-                      </div>
-                      <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Fuel Type</span>
-                        <span className={styles.specValue}>{foundVehicleData.fuelType || "N/A"}</span>
-                      </div>
-                      <div className={styles.specItem}>
-                        <span className={styles.specLabel}>Transmission</span>
-                        <span className={styles.specValue}>{foundVehicleData.transmission || "N/A"}</span>
-                      </div>
-                      {foundVehicleData.cylinderCapacity && (
-                        <div className={styles.specItem}>
-                          <span className={styles.specLabel}>Engine Size</span>
-                          <span className={styles.specValue}>{foundVehicleData.cylinderCapacity}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    className={styles.changeVehicleBtn}
-                    onClick={handleChangeVehicle}
-                  >
-                    Use Different Vehicle
-                  </button>
+              <>
+                <div className={styles.vehicleDataDisplay}>
+                  <p className={styles.vehicleDataRow}>
+                    <strong>{foundVehicleData.make}</strong> {foundVehicleData.model} ({foundVehicleData.yearOfManufacture})
+                  </p>
+                  <p className={styles.vehicleDataRow}>
+                    {foundVehicleData.registrationNumber}
+                  </p>
                 </div>
-              </div>
+                <button
+                  type="button"
+                  className={styles.changeVehicleBtn}
+                  onClick={handleChangeVehicle}
+                >
+                  Change Vehicle
+                </button>
+              </>
             )}
           </div>
         </div>
