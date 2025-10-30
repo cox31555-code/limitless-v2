@@ -148,7 +148,7 @@
 }
 
 .input::placeholder {
-  color: rgba(0, 8, 34, 0.35);
+  color: #a8b2bd;
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 130%;
