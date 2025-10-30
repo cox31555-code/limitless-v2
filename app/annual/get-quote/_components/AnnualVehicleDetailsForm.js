@@ -388,7 +388,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 disabled={showFoundData}
                 button={
                   <ConfirmBtn
-                    title={isLoadingVehicleData ? "Loading..." : "Change Vehicle"}
+                    title={isLoadingVehicleData ? "Loading..." : "Find Vehicle"}
                     onClick={handleFindVehicle}
                     disabled={isLoadingVehicleData}
                     type="button"
