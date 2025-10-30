@@ -257,7 +257,7 @@ const FormDateInput = forwardRef(
                 selectedDate={parseDate(value)}
                 onDateSelect={handleDateSelect}
                 minDate={minDate || (allowPastDates ? null : today)}
-                maxDate={isDateOfBirth ? maxDate : (maxDate ? maxDate : null)}
+                maxDate={maxDate}
                 showAbove={pickerPosition.showAbove}
                 defaultYear={defaultYear}
               />
