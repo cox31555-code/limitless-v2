@@ -62,7 +62,7 @@ const AnnualInsuranceContent = () => {
         trackingDevice: "",
         alarmImmobiliser: "",
         importedVehicle: "",
-        vehicleModified: "",
+        vehicleModified: "No",
         vehicleModifications: [],
         purchaseDate: "",
         legalOwner: "",
