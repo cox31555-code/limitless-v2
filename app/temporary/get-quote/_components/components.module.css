@@ -1778,6 +1778,112 @@
   line-height: 1.5;
 }
 
+.cleanAdditionalDriversContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.cleanDriverCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.4rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.cleanDriverHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  border-bottom: 1.5px solid rgba(3, 136, 255, 0.08);
+  padding-bottom: 1.6rem;
+}
+
+.cleanDriverTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.cleanRemoveDriverButton {
+  padding: 0.8rem 1.6rem;
+  background: transparent;
+  border: 1.5px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: #ef4444;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.cleanRemoveDriverButton:hover {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  color: #dc2626;
+}
+
+.cleanRadioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cleanRadioLabel {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #000822;
+  font-weight: 500;
+  user-select: none;
+}
+
+.cleanRadioInput {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  accent-color: #0388ff;
+  flex-shrink: 0;
+}
+
+.cleanRadioInput:checked {
+  accent-color: #0388ff;
+}
+
+.cleanAddDriverButtonContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1.6rem;
+}
+
+.cleanHelpLink {
+  color: #0388ff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0.8rem;
+  display: inline-block;
+  letter-spacing: 0.2px;
+}
+
+.cleanHelpLink:hover {
+  color: #0270cc;
+  text-decoration-color: #0270cc;
+}
+
 /* Tablet Responsive */
 @media screen and (max-width: 900px) {
   .cleanFormGrid2Col,
