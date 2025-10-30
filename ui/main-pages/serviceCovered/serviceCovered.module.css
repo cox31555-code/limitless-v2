@@ -1,17 +1,16 @@
 .container {
-  padding: 8rem 4.4% 10rem;
   background: #ffffff;
+  padding: 8rem 4.4%;
   display: flex;
   flex-direction: column;
-  gap: 5.2rem;
-  max-width: 1440px;
-  margin: 0 auto;
+  gap: 5rem;
 }
 
 .headerSection {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   max-width: 900px;
   margin: 0 auto;
@@ -19,10 +18,14 @@
 
 .title {
   color: #000822;
-  font-size: 5.8rem;
-  font-weight: 700;
-  line-height: 100%;
   text-align: center;
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 110%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
   margin: 0;
 }
 
@@ -31,11 +34,11 @@
 }
 
 .subtitle {
-  color: rgba(0, 8, 34, 0.7);
-  font-size: 1.6rem;
+  color: #5a6b7d;
+  text-align: center;
+  font-size: 1.7rem;
   font-weight: 400;
   line-height: 160%;
-  text-align: center;
   margin: 0;
   max-width: 750px;
 }
@@ -43,8 +46,8 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.4rem;
-  max-width: 1312px;
+  gap: 4rem;
+  max-width: 1300px;
   margin: 0 auto;
   width: 100%;
 }
@@ -52,186 +55,128 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
-  border-radius: 18px;
-  padding: 3.2rem;
+  gap: 3.2rem;
+  padding: 3.6rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
   position: relative;
 }
 
-.iconWrapper {
-  width: 8.9rem;
-  height: 9.5rem;
-  position: relative;
-  margin-bottom: 1.6rem;
+.card:hover {
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.08);
 }
 
-.iconBackground {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.bar1 {
-  width: 2.8rem;
-  height: 2.5rem;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
-  position: absolute;
-  left: 0.7rem;
-  top: 7rem;
-}
-
-.bar2 {
-  width: 2.7rem;
-  height: 3.6rem;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
-  position: absolute;
-  left: 3.5rem;
-  top: 5.8rem;
-}
-
-.bar3 {
-  width: 2.8rem;
-  height: 8.7rem;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
-  position: absolute;
-  left: 6.1rem;
-  top: 0.7rem;
-}
-
-.barUncovered1 {
-  width: 2.8rem;
-  height: 2.5rem;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
-  position: absolute;
-  left: 0.7rem;
-  top: 0;
-}
-
-.barUncovered2 {
-  width: 2.7rem;
-  height: 3.6rem;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
-  position: absolute;
-  left: 3.5rem;
-  top: 0;
-}
-
-.barUncovered3 {
-  width: 2.8rem;
-  height: 8.7rem;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, rgba(3, 136, 255, 0.48) 100%);
-  position: absolute;
-  left: 6.1rem;
-  top: 0;
-}
-
-.iconBase {
-  width: 6.2rem;
-  height: 6.2rem;
-  position: absolute;
-  left: 0;
-  top: 0.7rem;
-}
-
-.iconCheck {
-  width: 4.3rem;
-  height: 4.3rem;
-  position: absolute;
-  left: 2.7rem;
-  top: 0;
-}
-
-.iconCross {
-  width: 4.3rem;
-  height: 4.3rem;
-  position: absolute;
-  left: 2.7rem;
-  top: 5.2rem;
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
 }
 
 .cardTitle {
   color: #000822;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  line-height: 100%;
-  margin: 0 0 3.2rem 0;
+  line-height: 130%;
+  margin: 0;
 }
 
 .itemsList {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.2rem;
 }
 
 .item {
   display: flex;
-  align-items: center;
-  gap: 3.2rem;
+  align-items: flex-start;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  border-radius: 12px;
+  background: rgba(3, 136, 255, 0.05);
+  border: 1px solid rgba(3, 136, 255, 0.1);
+  position: relative;
+  transition: all 0.2s ease;
 }
 
-.checkIcon,
+.item:hover {
+  background: rgba(3, 136, 255, 0.08);
+  border-color: rgba(3, 136, 255, 0.15);
+}
+
+.checkmarkIcon,
 .crossIcon {
-  width: 2.4rem;
-  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.checkmarkIcon svg,
+.crossIcon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .itemText {
-  color: rgba(0, 8, 34, 0.70);
-  font-size: 1.6rem;
+  color: #4c5264;
+  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.064rem;
+  line-height: 150%;
   margin: 0;
   flex: 1;
 }
 
-.separator {
-  width: 100%;
-  height: 0.1rem;
-  flex-shrink: 0;
-}
-
+/* Responsive Design */
 @media screen and (max-width: 1200px) {
   .container {
-    padding: 7rem 4.4% 9rem;
+    padding: 7rem 4.4%;
     gap: 4.4rem;
   }
 
   .title {
-    font-size: 4.8rem;
+    font-size: 4.2rem;
   }
 
   .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .content {
-    gap: 2rem;
+    gap: 3.2rem;
   }
 
   .card {
-    padding: 2.8rem;
+    padding: 3.2rem;
+    gap: 2.8rem;
   }
 
   .cardTitle {
-    font-size: 2.4rem;
-    margin-bottom: 2.8rem;
+    font-size: 2.2rem;
+  }
+
+  .item {
+    padding: 1.4rem;
   }
 
   .itemText {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 900px) {
   .container {
-    padding: 5.5rem 4.4% 7rem;
+    padding: 5.5rem 4.4%;
     gap: 3.8rem;
   }
 
   .title {
-    font-size: 3.6rem;
+    font-size: 3.4rem;
   }
 
   .subtitle {
@@ -240,208 +185,61 @@
 
   .content {
     grid-template-columns: 1fr;
-    gap: 2.4rem;
+    gap: 2.8rem;
   }
 
   .card {
-    padding: 2.4rem;
-  }
-
-  .iconWrapper {
-    width: 7.5rem;
-    height: 8rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .bar1 {
-    width: 2.4rem;
-    height: 2.1rem;
-    left: 0.6rem;
-    top: 5.9rem;
-  }
-
-  .bar2 {
-    width: 2.3rem;
-    height: 3rem;
-    left: 2.9rem;
-    top: 4.9rem;
-  }
-
-  .bar3 {
-    width: 2.4rem;
-    height: 7.3rem;
-    left: 5.2rem;
-    top: 0.6rem;
-  }
-
-  .barUncovered1 {
-    width: 2.4rem;
-    height: 2.1rem;
-    left: 0.6rem;
-  }
-
-  .barUncovered2 {
-    width: 2.3rem;
-    height: 3rem;
-    left: 2.9rem;
-  }
-
-  .barUncovered3 {
-    width: 2.4rem;
-    height: 7.3rem;
-    left: 5.2rem;
-  }
-
-  .iconBase {
-    width: 5.2rem;
-    height: 5.2rem;
-    top: 0.6rem;
-  }
-
-  .iconCheck {
-    width: 3.6rem;
-    height: 3.6rem;
-    left: 2.3rem;
-  }
-
-  .iconCross {
-    width: 3.6rem;
-    height: 3.6rem;
-    left: 2.3rem;
-    top: 4.4rem;
-  }
-
-  .cardTitle {
-    font-size: 2.2rem;
-    margin-bottom: 2.4rem;
-  }
-
-  .itemsList {
-    gap: 1.4rem;
-  }
-
-  .item {
+    padding: 2.8rem;
     gap: 2.4rem;
   }
 
-  .checkIcon,
-  .crossIcon {
-    width: 2rem;
-    height: 2rem;
+  .cardTitle {
+    font-size: 2rem;
+  }
+
+  .item {
+    padding: 1.2rem;
+    gap: 1.4rem;
   }
 
   .itemText {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 4rem 4.4% 6rem;
+    padding: 4rem 4.4%;
     gap: 3rem;
   }
 
   .title {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 
   .subtitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .content {
-    gap: 2rem;
+    gap: 2.4rem;
   }
 
   .card {
     padding: 2rem;
-  }
-
-  .iconWrapper {
-    width: 6.5rem;
-    height: 7rem;
-    margin-bottom: 1rem;
-  }
-
-  .bar1 {
-    width: 2rem;
-    height: 1.8rem;
-    left: 0.5rem;
-    top: 5.2rem;
-  }
-
-  .bar2 {
-    width: 1.9rem;
-    height: 2.6rem;
-    left: 2.5rem;
-    top: 4.2rem;
-  }
-
-  .bar3 {
-    width: 2rem;
-    height: 6.3rem;
-    left: 4.5rem;
-    top: 0.5rem;
-  }
-
-  .barUncovered1 {
-    width: 2rem;
-    height: 1.8rem;
-    left: 0.5rem;
-  }
-
-  .barUncovered2 {
-    width: 1.9rem;
-    height: 2.6rem;
-    left: 2.5rem;
-  }
-
-  .barUncovered3 {
-    width: 2rem;
-    height: 6.3rem;
-    left: 4.5rem;
-  }
-
-  .iconBase {
-    width: 4.5rem;
-    height: 4.5rem;
-    top: 0.5rem;
-  }
-
-  .iconCheck {
-    width: 3.1rem;
-    height: 3.1rem;
-    left: 2rem;
-  }
-
-  .iconCross {
-    width: 3.1rem;
-    height: 3.1rem;
-    left: 2rem;
-    top: 3.8rem;
-  }
-
-  .cardTitle {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .itemsList {
-    gap: 1.2rem;
-  }
-
-  .item {
     gap: 2rem;
   }
 
-  .checkIcon,
-  .crossIcon {
-    width: 1.8rem;
-    height: 1.8rem;
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .item {
+    padding: 1rem;
+    gap: 1.2rem;
   }
 
   .itemText {
-    font-size: 1.3rem;
-    letter-spacing: 0.052rem;
+    font-size: 1.2rem;
   }
 }
