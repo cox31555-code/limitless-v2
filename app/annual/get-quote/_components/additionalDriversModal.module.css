@@ -458,8 +458,6 @@
   background: rgba(3, 136, 255, 0.12);
   border-color: #0388ff;
   color: #0388ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
 }
 
 /* Open Modal Button */
