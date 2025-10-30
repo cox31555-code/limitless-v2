@@ -293,6 +293,45 @@
   pointer-events: auto;
 }
 
+/* Disable hover states on all inputs and buttons in disabled sections */
+.formSection.disabled input:hover,
+.formSection.disabled select:hover,
+.formSection.disabled button:hover,
+.formSection.disabled [role="button"]:hover,
+.formSection.disabled :global([class*="input"]):hover,
+.formSection.disabled :global([class*="select"]):hover,
+.formSection.disabled :global([class*="button"]):hover {
+  border-color: rgba(3, 136, 255, 0.12) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Disable active/pressed states on buttons in disabled sections */
+.formSection.disabled button:active,
+.formSection.disabled [role="button"]:active,
+.formSection.disabled :global([class*="button"]):active {
+  transform: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Disable focus states in disabled sections */
+.formSection.disabled input:focus,
+.formSection.disabled select:focus,
+.formSection.disabled button:focus,
+.formSection.disabled [role="button"]:focus,
+.formSection.disabled :global([class*="input"]):focus {
+  border-color: rgba(3, 136, 255, 0.12) !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+/* Disable focus-within states */
+.formSection.disabled :global(.dropdown-module__selectWrapper):focus-within {
+  border-color: rgba(3, 136, 255, 0.12) !important;
+  box-shadow: none !important;
+}
+
 .sectionLabel {
   font-size: 1.3rem;
   font-weight: 600;
