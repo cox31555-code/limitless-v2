@@ -1,101 +1,85 @@
 .wrapper {
   padding: 8rem 2%;
   background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
-.container {
+.cardContainer {
   max-width: 100%;
   margin: 0;
-  background: #000822;
-  border: 2px solid rgba(3, 136, 255, 0.3);
-  border-radius: 20px;
-  padding: 11rem 4.9rem;
+  background: #07102D;
+  border-radius: 18px;
+  backdrop-filter: blur(16.566335678100586px);
+  padding: 6.7rem 6.2rem;
   position: relative;
   overflow: hidden;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6.2rem;
-  align-items: flex-start;
+/* Gradient bars background */
+.gradientBars {
+  width: 105.5rem;
+  height: 60.4rem;
+  transform: rotate(90deg);
+  position: absolute;
+  left: 70.6rem;
+  top: -23.2rem;
+  pointer-events: none;
 }
 
-/* Left Column */
-.leftColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 4.4rem;
+.bar1 {
+  width: 20.1rem;
+  height: 76.7rem;
+  opacity: 0.6;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-.illustrationWrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.bar2 {
+  width: 20.1rem;
+  height: 88.8rem;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+  position: absolute;
+  left: 40.3rem;
+  top: 16.7rem;
 }
 
-.illustration {
-  width: 100%;
-  max-width: 343px;
-  height: auto;
+.bar3 {
+  width: 20.1rem;
+  height: 77.3rem;
+  opacity: 0.82;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+  position: absolute;
+  left: 20.1rem;
+  top: 13.7rem;
 }
 
-.leftTextContent {
+.cardContent {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  max-width: 56.5rem;
 }
 
-.title {
+.cardTitle {
   color: #fff;
-  font-size: 5rem;
+  font-size: 5.8rem;
   font-weight: 700;
   line-height: 100%;
   margin: 0;
 }
 
-.title span {
+.cardTitle span {
   color: #049CFF;
   display: block;
 }
 
-.description {
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.64px;
-  margin: 0;
-}
-
-/* Right Column */
-.rightColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 5.2rem;
-}
-
-.rightHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
-.rightTitle {
-  color: #fff;
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 100%;
-  margin: 0;
-}
-
-.rightTitle span {
-  color: #049CFF;
-  display: block;
-}
-
-.rightDescription {
+.cardDescription {
   color: rgba(255, 255, 255, 0.54);
   font-size: 1.6rem;
   font-weight: 500;
@@ -109,16 +93,19 @@
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  max-width: 52.5rem;
+  margin-top: 2.8rem;
 }
 
 .stepBox {
   display: flex;
   align-items: flex-start;
   gap: 2.4rem;
-  padding: 2.4rem 3.2rem;
-  background: rgba(7, 16, 45, 0.7);
+  padding: 2.9rem 3.5rem;
+  background: #07102D;
   border-radius: 14px;
   backdrop-filter: blur(22px);
+  position: relative;
 }
 
 .stepBadge {
@@ -133,7 +120,7 @@
 }
 
 .stepNumber {
-  color: #000822;
+  color: #07102D;
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 100%;
@@ -165,30 +152,29 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .container {
-    padding: 4rem 3.2rem;
+  .cardContainer {
+    padding: 5rem 4.5rem;
   }
 
-  .content {
-    gap: 5rem;
+  .gradientBars {
+    left: 60rem;
+    top: -20rem;
   }
 
-  .title,
-  .rightTitle {
-    font-size: 4.2rem;
+  .cardTitle {
+    font-size: 4.8rem;
   }
 
-  .description,
-  .rightDescription {
+  .cardDescription {
     font-size: 1.5rem;
   }
 
   .stepsContainer {
-    gap: 1.2rem;
+    max-width: 48rem;
   }
 
   .stepBox {
-    padding: 2rem 2.8rem;
+    padding: 2.4rem 3rem;
     gap: 2rem;
   }
 }
@@ -196,39 +182,55 @@
 @media screen and (max-width: 900px) {
   .wrapper {
     padding: 5.5rem 4.4%;
+    gap: 3rem;
   }
 
-  .container {
-    padding: 3.6rem 2.8rem;
+  .cardContainer {
+    padding: 4rem 3.6rem;
     border-radius: 16px;
   }
 
-  .content {
-    grid-template-columns: 1fr;
-    gap: 4rem;
+  .gradientBars {
+    width: 80rem;
+    height: 50rem;
+    left: 50rem;
+    top: -18rem;
   }
 
-  .title,
-  .rightTitle {
-    font-size: 3.4rem;
+  .bar1 {
+    width: 16rem;
+    height: 60rem;
   }
 
-  .description,
-  .rightDescription {
+  .bar2 {
+    width: 16rem;
+    height: 70rem;
+    left: 32rem;
+    top: 14rem;
+  }
+
+  .bar3 {
+    width: 16rem;
+    height: 62rem;
+    left: 16rem;
+    top: 11rem;
+  }
+
+  .cardContent {
+    max-width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 3.8rem;
+  }
+
+  .cardDescription {
     font-size: 1.4rem;
   }
 
-  .leftColumn,
-  .rightColumn {
-    gap: 3.2rem;
-  }
-
-  .rightColumn {
-    gap: 4rem;
-  }
-
-  .illustration {
-    max-width: 280px;
+  .stepsContainer {
+    max-width: 100%;
+    margin-top: 2rem;
   }
 
   .stepBox {
@@ -248,46 +250,50 @@
 @media screen and (max-width: 600px) {
   .wrapper {
     padding: 4rem 4.4%;
-  }
-
-  .container {
-    padding: 2.4rem 2rem;
-    border-radius: 14px;
-    border-width: 1.5px;
-  }
-
-  .content {
-    gap: 3rem;
-  }
-
-  .title,
-  .rightTitle {
-    font-size: 2.8rem;
-  }
-
-  .description,
-  .rightDescription {
-    font-size: 1.2rem;
-  }
-
-  .leftColumn,
-  .rightColumn {
     gap: 2.4rem;
   }
 
-  .rightColumn {
-    gap: 3rem;
+  .cardContainer {
+    padding: 3rem 2.4rem;
+    border-radius: 14px;
   }
 
-  .rightHeader {
-    gap: 1.8rem;
+  .gradientBars {
+    width: 60rem;
+    height: 40rem;
+    left: 35rem;
+    top: -15rem;
   }
 
-  .illustration {
-    max-width: 240px;
+  .bar1 {
+    width: 12rem;
+    height: 45rem;
+  }
+
+  .bar2 {
+    width: 12rem;
+    height: 52rem;
+    left: 24rem;
+    top: 10rem;
+  }
+
+  .bar3 {
+    width: 12rem;
+    height: 46rem;
+    left: 12rem;
+    top: 8rem;
+  }
+
+  .cardTitle {
+    font-size: 3rem;
+  }
+
+  .cardDescription {
+    font-size: 1.2rem;
   }
 
   .stepsContainer {
+    margin-top: 1.6rem;
     gap: 1rem;
   }
 
