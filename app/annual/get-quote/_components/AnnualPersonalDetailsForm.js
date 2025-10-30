@@ -501,8 +501,32 @@ const AnnualPersonalDetailsForm = ({ form }) => {
                 }
               />
             </div>
+
+            <div className={styles.cleanFormGrid1Col}>
+              <p className={styles.cleanFormFieldLabel}>Do you want to add any additional drivers?</p>
+              <p className={styles.cleanSubLabel}>You can add up to 5 additional drivers. Include any drivers who share the car for business use.</p>
+              <YesORNo
+                value={watch("carUsage.hasAdditionalDrivers")}
+                onChange={(value) => {
+                  setValue("carUsage.hasAdditionalDrivers", value);
+                  if (!value) {
+                    setValue("carUsage.additionalDrivers", []);
+                  }
+                }}
+              />
+            </div>
           </div>
         </section>
+
+        {hasAdditionalDrivers && (
+          <AdditionalDrivers
+            form={form}
+            drivers={additionalDrivers}
+            onAddDriver={handleAddDriver}
+            onRemoveDriver={handleRemoveDriver}
+            onUpdateDriver={handleUpdateDriver}
+          />
+        )}
 
         {/* Declarations Section */}
         <section className={styles.cleanSection}>
