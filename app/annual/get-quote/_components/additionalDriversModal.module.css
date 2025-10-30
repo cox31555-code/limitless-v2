@@ -121,6 +121,37 @@
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
+.driverHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.6rem;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: -2rem -2rem 0 -2rem;
+  border-radius: 12px 12px 0 0;
+}
+
+.driverHeader:hover {
+  background: rgba(3, 136, 255, 0.02);
+}
+
+.driverHeader.expanded {
+  background: rgba(3, 136, 255, 0.06);
+  border-bottom: 1.5px solid rgba(3, 136, 255, 0.12);
+}
+
+.driverHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
 .driverItemHeader {
   display: flex;
   justify-content: space-between;
