@@ -81,6 +81,13 @@ const AdditionalDriversModal = ({
         if (driver.occupation !== "N/A") {
           onUpdateDriver(index, "occupation", "N/A");
         }
+      } else {
+        if (driver.industry === "N/A") {
+          onUpdateDriver(index, "industry", "");
+        }
+        if (driver.occupation === "N/A") {
+          onUpdateDriver(index, "occupation", "");
+        }
       }
     });
   }, [drivers, onUpdateDriver]);
