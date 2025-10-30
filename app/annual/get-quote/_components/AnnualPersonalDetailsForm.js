@@ -454,10 +454,6 @@ const AnnualPersonalDetailsForm = ({ form }) => {
                 setValue("carUsage.childrenUnder16", value)
               }
             />
-            <details className={styles.cleanDetailsDropdown}>
-              <summary className={styles.cleanDetailsSummary}>Why are we asking?</summary>
-              <p className={styles.cleanDetailsContent}>Insurance providers use this information to calculate risk and determine appropriate coverage.</p>
-            </details>
           </div>
 
           <div className={styles.cleanFormGrid1Col}>
