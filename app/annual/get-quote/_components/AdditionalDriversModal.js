@@ -186,8 +186,7 @@ const AdditionalDriversModal = ({
                         </div>
                       </div>
                       <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Lived in UK since birth?</p>
-                        <p className={modalStyles.fieldHelper}>Continuously, without breaks of 6+ months</p>
+                        <label className={modalStyles.inputLabel}>Lived in UK since birth?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.livedInUKSinceBirth`)} onChange={(value) => onUpdateDriver(index, "livedInUKSinceBirth", value)} />
                       </div>
                     </div>
