@@ -43,6 +43,23 @@
   box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
 }
 
+.inputWrapper:has(input:disabled) {
+  background: rgba(3, 136, 255, 0.04);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  cursor: not-allowed;
+}
+
+.inputWrapper:has(input:disabled):hover {
+  background: rgba(3, 136, 255, 0.04);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  color: #6b7c8f;
+  opacity: 0.85;
+}
+
 .input {
   width: 100%;
   padding: 1.2rem 1.6rem;
