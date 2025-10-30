@@ -6,7 +6,9 @@
   gap: 6rem;
   padding: 6rem calc(50vw - 50%);
   margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   background: #000822;
+  overflow-x: hidden;
 }
 
 .container {
