@@ -239,7 +239,7 @@ const AdditionalDriversModal = ({
                         <FormDropdown label="No Claims Bonus" options={dynamicDriverNcbOptions[index] || ncbOptions} placeholder="Select years" value={watch(`carUsage.additionalDrivers.${index}.NCB`) || ""} onChange={(value) => onUpdateDriver(index, "NCB", value)} inputStyle={{ paddingLeft: "14px" }} />
                       </div>
                       <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Additional Driving Qualifications?</p>
+                        <label className={modalStyles.inputLabel}>Additional Driving Qualifications?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.hasAdditionalQualifications`)} onChange={(value) => onUpdateDriver(index, "hasAdditionalQualifications", value)} />
                       </div>
                       {watch(`carUsage.additionalDrivers.${index}.hasAdditionalQualifications`) && (<>
