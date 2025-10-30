@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insuranceSchema } from "@/utils/schemas/insuranceSchema";
 import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
-import VehicleDetailsForm from "@/app/temporary/get-quote/_components/VehicleDetailsForm";
+import AnnualVehicleDetailsForm from "./_components/AnnualVehicleDetailsForm";
 import CoverDetailsForm from "@/app/temporary/get-quote/_components/CoverDetailsForm";
 import PersonalDetailsForm from "@/app/temporary/get-quote/_components/PersonalDetailsForm";
 import TermsForm from "@/app/temporary/get-quote/_components/TermsForm";
@@ -59,6 +59,14 @@ const AnnualInsuranceContent = () => {
         doors: "",
         colour: "",
         worth: "",
+        trackingDevice: "",
+        alarmImmobiliser: "",
+        importedVehicle: "",
+        vehicleModified: "",
+        purchaseDate: "",
+        legalOwner: "",
+        owner: "",
+        registeredKeeper: "",
         apiData: null,
       },
       coverDetails: {
@@ -242,7 +250,7 @@ const AnnualInsuranceContent = () => {
         >
           <div className={styles.stepContent}>
             {currentStep === STEPS.VEHICLE && (
-              <VehicleDetailsForm
+              <AnnualVehicleDetailsForm
                 form={form}
                 onVehicleDataFound={setFoundVehicleData}
                 autoTriggerLookup={shouldAutoTrigger}
