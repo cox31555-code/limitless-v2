@@ -644,7 +644,7 @@
 
 .doneButton {
   padding: 1rem 2.4rem;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: #0388ff;
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: 600;
@@ -657,9 +657,8 @@
 }
 
 .doneButton:hover {
-  background: linear-gradient(135deg, #0270cc 0%, #0258b0 100%);
+  background: #0270cc;
   border-color: #0270cc;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
 }
 
 /* Tablet Responsive */
