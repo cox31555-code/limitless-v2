@@ -175,26 +175,12 @@
 }
 
 .sectionLabel {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: #000822;
   margin: 0;
-  letter-spacing: 0.15px;
+  letter-spacing: 0px;
   text-transform: capitalize;
-  position: relative;
-  padding-left: 1.2rem;
-}
-
-.sectionLabel::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 1.4rem;
-  background: linear-gradient(180deg, #0388ff 0%, #0270cc 100%);
-  border-radius: 2px;
 }
 
 .field {
