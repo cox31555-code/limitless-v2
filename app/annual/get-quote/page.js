@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { insuranceSchema } from "@/utils/schemas/insuranceSchema";
 import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import AnnualVehicleDetailsForm from "./_components/AnnualVehicleDetailsForm";
-import CoverDetailsForm from "@/app/temporary/get-quote/_components/CoverDetailsForm";
+import AnnualCoverDetailsForm from "./_components/AnnualCoverDetailsForm";
 import PersonalDetailsForm from "@/app/temporary/get-quote/_components/PersonalDetailsForm";
 import TermsForm from "@/app/temporary/get-quote/_components/TermsForm";
 import StepActions from "@/app/temporary/get-quote/_components/StepActions";
