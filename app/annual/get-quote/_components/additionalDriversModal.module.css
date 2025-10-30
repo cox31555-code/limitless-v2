@@ -285,7 +285,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  padding: 1.2rem 1.6rem;
+  padding: 1.2rem;
   background: rgba(239, 68, 68, 0.08);
   border: 1.5px solid rgba(239, 68, 68, 0.3);
   border-radius: 10px;
@@ -293,22 +293,23 @@
   font-size: 1rem;
   color: #dc2626;
   font-weight: 500;
-  text-align: center;
-  min-width: 0;
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 .errorIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   background: #dc2626;
   color: #ffffff;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   flex-shrink: 0;
+  min-width: 1.8rem;
 }
 
 .tileHeader ~ div {
