@@ -249,9 +249,10 @@ export const content = [
     type: "list",
     value: {
       title: "Cancellations & Refunds",
-      description1: "The policy has not yet started, and ",
+      description1:
+        "You have the right to cancel your policy within 14 days of purchase (the 'cooling-off' period), provided:",
       description2:
-        "Please refer to your policy wording for specific cancellation rights and fees.",
+        "If you cancel within the cooling-off period, we will refund any premium paid, less any statutory fees. If you cancel after the cooling-off period has ended, cancellation charges may apply. Please refer to your policy wording for specific cancellation rights and fees.",
       list: [
         "The policy has not yet started, and",
         "The insurer's cancellation terms permit it.",
