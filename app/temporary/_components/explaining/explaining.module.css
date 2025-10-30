@@ -3,8 +3,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8rem;
-  padding: 8rem 2%;
+  gap: 6rem;
+  padding: 6rem 2%;
   background: #000822;
 }
 
