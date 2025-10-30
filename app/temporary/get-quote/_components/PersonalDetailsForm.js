@@ -14,6 +14,7 @@ import styles from "./components.module.css";
 import {
   carUsageOptions,
   employmentStatusOptions,
+  industryOptions,
   keepingCarDuringDayOptions,
   keepingCarDuringNightOptions,
   licenseHeldOptions,
