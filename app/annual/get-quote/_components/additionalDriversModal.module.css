@@ -111,13 +111,14 @@
 }
 
 .driverItem {
-  padding: 2rem;
-  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  padding: 2.4rem;
+  background: #ffffff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 0;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
 .driverItemHeader {
