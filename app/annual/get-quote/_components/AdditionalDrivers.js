@@ -224,7 +224,6 @@ const AdditionalDrivers = ({
                   onChange={(value) => onUpdateDriver(index, "licenseHeld", value)}
                   inputStyle={{ paddingLeft: "14px" }}
                 />
-                <a href="#" className={styles.cleanHelpLink}>Where can I find the date?</a>
                 {errors.carUsage?.additionalDrivers?.[index]?.licenseHeld && (
                   <span className={styles.cleanError}>
                     {errors.carUsage.additionalDrivers[index].licenseHeld.message}
