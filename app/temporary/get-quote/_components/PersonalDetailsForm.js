@@ -236,13 +236,16 @@ const PersonalDetailsForm = ({ form }) => {
           </div>
 
           <div className={styles.cleanFormGrid1Col}>
-            <FormTextInput
+            <FormAutocomplete
               label="Industry"
-              placeholder="Enter your industry"
-              {...register("userDetails.industry")}
-              error={errors.userDetails?.industry}
+              options={industryOptions}
+              placeholder="Type your industry..."
+              value={isRetiredOrUnemployed ? "N/A" : (watch("userDetails.industry") || "")}
+              onChange={(e) => {
+                const value = typeof e === "string" ? e : (e?.target?.value || "");
+                setValue("userDetails.industry", value);
+              }}
               disabled={isRetiredOrUnemployed}
-              value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.industry")}
               inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
