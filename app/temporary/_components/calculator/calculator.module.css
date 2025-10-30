@@ -149,7 +149,7 @@
   width: 100%;
   height: 6rem;
   padding: 0 2rem;
-  background: linear-gradient(135deg, #0388ff 0%, #00c9ff 100%);
+  background: #0388ff;
   border: none;
   border-radius: 12px;
   color: #fff;
@@ -161,14 +161,6 @@
   gap: 1.2rem;
   cursor: pointer;
   letter-spacing: 0.5px;
-}
-
-.button:hover {
-  opacity: 0.95;
-}
-
-.button:active {
-  opacity: 0.9;
 }
 
 .disclaimer {
