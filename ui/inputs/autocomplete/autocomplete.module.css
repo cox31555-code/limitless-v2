@@ -60,6 +60,10 @@
   opacity: 0.85;
 }
 
+.input:disabled::placeholder {
+  color: #a8b2bd;
+}
+
 .input {
   width: 100%;
   padding: 1.2rem 1.6rem;
