@@ -432,10 +432,12 @@
 
 @media (max-width: 600px) {
   .content {
-    gap: 2.4rem;
+    gap: 2rem;
   }
 
-  .row {
+  .row,
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
     gap: 1rem;
   }
 
@@ -444,6 +446,7 @@
   .ownershipSection,
   .rows {
     padding: 1.6rem;
+    gap: 1.2rem;
   }
 
   .sectionTitle {
@@ -456,8 +459,12 @@
     padding-left: 1.2rem;
   }
 
+  .cleanFormFieldLabel {
+    font-size: 1.2rem;
+  }
+
   .checkboxLabel {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .modificationTag {
