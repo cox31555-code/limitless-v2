@@ -87,6 +87,24 @@ const AnnualCoverDetailsForm = ({ form }) => {
             ))}
           </div>
         </div>
+
+        <div className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>
+              When would you like your cover to start?
+            </h2>
+          </div>
+
+          <FormDateInput
+            type="date"
+            dateLabel="Start Date"
+            value={startDate || ""}
+            onChange={handleDateChange}
+            error={form.formState.errors.coverDetails?.startDate}
+            minDate={new Date()}
+            reducedPadding={true}
+          />
+        </div>
       </div>
     </ComponentWrapper>
   );
