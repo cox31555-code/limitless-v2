@@ -83,9 +83,23 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const autoExpandNextTile = useCallback(() => {
     const tiles = getTileOrder();
     for (let i = 0; i < tiles.length; i++) {
-      if (!checkTileCompletion(tiles[i]) && i > 0) {
-        // Auto-expand the next incomplete tile
-        setExpandedTiles(prev => new Set(prev).add(tiles[i]));
+      const isComplete = checkTileCompletion(tiles[i]);
+
+      if (!isComplete) {
+        // Found the first incomplete tile
+        if (i === 0) {
+          // First tile is always expanded
+          setExpandedTiles(prev => new Set(prev).add(tiles[i]));
+        } else {
+          // Check if previous tile is complete
+          const previousTile = tiles[i - 1];
+          const isPrevComplete = checkTileCompletion(previousTile);
+
+          if (isPrevComplete) {
+            // Auto-expand the next tile since previous is complete
+            setExpandedTiles(prev => new Set(prev).add(tiles[i]));
+          }
+        }
         break;
       }
     }
@@ -93,7 +107,32 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
   useEffect(() => {
     autoExpandNextTile();
-  }, [watch('userDetails'), watch('location'), watch('employment'), watch('parking'), watch('usage'), watch('driving'), watch('additional'), watch('declarations'), watch('carUsage.hasAdditionalDrivers'), autoExpandNextTile]);
+  }, [
+    watch('userDetails.firstName'),
+    watch('userDetails.surname'),
+    watch('userDetails.dateOfBirth'),
+    watch('userDetails.email'),
+    watch('userDetails.phone'),
+    watch('userDetails.postCode'),
+    watch('userDetails.address'),
+    watch('userDetails.employmentStatus'),
+    watch('userDetails.occupation'),
+    watch('userDetails.industry'),
+    watch('carUsage.keepingCarDuringDay'),
+    watch('carUsage.keepingCarDuringNight'),
+    watch('carUsage.usageType'),
+    watch('carUsage.licenseType'),
+    watch('carUsage.licenseHeld'),
+    watch('carUsage.NCB'),
+    watch('carUsage.ownsHome'),
+    watch('carUsage.childrenUnder16'),
+    watch('carUsage.livedInUKSinceBirth'),
+    watch('carUsage.criminalConvictions'),
+    watch('carUsage.medicalConditions'),
+    watch('carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided'),
+    watch('carUsage.hasAdditionalDrivers'),
+    autoExpandNextTile
+  ]);
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
