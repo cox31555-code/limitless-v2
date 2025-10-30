@@ -177,7 +177,7 @@ const Header = () => {
               </button>
               <button
                 className={styles.stickyQuoteBtn}
-                onClick={() => router.push("/temporary/get-quote")}
+                onClick={() => router.push("/annual/get-quote")}
               >
                 Get a Quote
               </button>

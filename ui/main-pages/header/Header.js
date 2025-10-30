@@ -68,13 +68,13 @@ const Header = ({ subTitle, title, description, features }) => {
                 onClick={() => {
                   title === "Impound Insurance"
                     ? router.push("/impound/get-quote")
-                    : router.push("/temporary/get-quote");
+                    : router.push("/annual/get-quote");
                 }}
               >
                 Get a Quote
               </button>
             </div>
-            {<GetQuote skipDuration={pathname === "/annual"} onExpand={setIsQuoteExpanded} insuranceType={pathname === "/impound" ? "impound" : "temporary"} />}
+            {<GetQuote skipDuration={pathname === "/annual"} onExpand={setIsQuoteExpanded} insuranceType={pathname === "/impound" ? "impound" : "annual"} />}
           </div>
           <div className={styles.features}>
             {features.map((feature) => (

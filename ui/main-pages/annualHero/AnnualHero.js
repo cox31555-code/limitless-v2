@@ -175,7 +175,7 @@ const AnnualHero = () => {
             <div className={styles.buttons}>
               <button
                 className={`${styles.primaryBtn} ${poppins.className}`}
-                onClick={() => router.push("/temporary/get-quote")}
+                onClick={() => router.push("/annual/get-quote")}
               >
                 <span>Get an annual quote</span>
                 <svg
