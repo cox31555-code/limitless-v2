@@ -185,17 +185,24 @@ const AdditionalDriversModal = ({
           <div className={modalStyles.driversList}>
             {drivers.map((driver, index) => (
               <div key={index} className={modalStyles.driverItem}>
-                <div className={modalStyles.driverItemHeader}>
+                <button type="button" className={`${modalStyles.driverHeader} ${isDriverExpanded(index) ? modalStyles.expanded : ''}`} onClick={() => toggleDriver(index)}>
                   <span className={modalStyles.driverNumber}>Driver {index + 1}</span>
-                  <button
-                    type="button"
-                    className={modalStyles.removeButton}
-                    onClick={() => onRemoveDriver(index)}
-                  >
-                    Remove
-                  </button>
-                </div>
+                  <div className={modalStyles.driverHeaderActions}>
+                    <span className={modalStyles.expandIcon}>+</span>
+                    <button
+                      type="button"
+                      className={modalStyles.removeButton}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onRemoveDriver(index);
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </button>
 
+                {isDriverExpanded(index) && (
                 <div className={modalStyles.driverFormContent}>
                   {/* About You Section */}
                   <div className={modalStyles.formSection}>
@@ -327,6 +334,7 @@ const AdditionalDriversModal = ({
                     </>}
                   </div>
                 </div>
+                )}
               </div>
             ))}
 
