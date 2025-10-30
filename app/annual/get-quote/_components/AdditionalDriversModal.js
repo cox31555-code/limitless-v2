@@ -88,8 +88,13 @@ const AdditionalDriversModal = ({
 
   useEffect(() => {
     drivers.forEach((_, index) => {
+      // Initialize expanded tiles with 'about' as first tile
       if (!expandedTiles[index]) {
         setExpandedTiles(prev => ({ ...prev, [index]: new Set(['about']) }));
+      }
+      // Auto-expand drivers that are newly added or become available
+      if (!isDriverDisabled(index)) {
+        setExpandedDriver(prev => ({ ...prev, [index]: true }));
       }
     });
     setValidationError("");
