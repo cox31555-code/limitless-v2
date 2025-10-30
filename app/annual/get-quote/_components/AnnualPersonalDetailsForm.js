@@ -571,8 +571,14 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Your Driving Record</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('driving') && <>
-          
+          {isTileExpanded('driving') && isTileDisabled('driving') && (
+            <div className={modalButtonStyles.errorMessage}>
+              <span className={modalButtonStyles.errorIcon}>!</span>
+              <span>Complete {getPreviousTileLabel('driving')} first</span>
+            </div>
+          )}
+          {isTileExpanded('driving') && !isTileDisabled('driving') && <>
+
           <div className={styles.cleanFormGrid3Col}>
             <FormDropdown
               label="License Type"
@@ -676,7 +682,13 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Additional Information</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('additional') && <>
+          {isTileExpanded('additional') && isTileDisabled('additional') && (
+            <div className={modalButtonStyles.errorMessage}>
+              <span className={modalButtonStyles.errorIcon}>!</span>
+              <span>Complete {getPreviousTileLabel('additional')} first</span>
+            </div>
+          )}
+          {isTileExpanded('additional') && !isTileDisabled('additional') && <>
 
           <div className={styles.cleanAdditionalInfoContainer}>
             <div className={styles.cleanFormGrid1Col}>
