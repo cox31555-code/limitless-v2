@@ -319,6 +319,10 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .content {
+    gap: 2.8rem;
+  }
+
   .row {
     grid-template-columns: 1fr;
     gap: 1.2rem;
@@ -328,7 +332,15 @@
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    padding: 2.4rem;
+    padding: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .sectionDescription {
+    font-size: 1rem;
   }
 }
 
