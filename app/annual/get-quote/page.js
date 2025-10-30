@@ -74,6 +74,7 @@ const AnnualInsuranceContent = () => {
       },
       coverDetails: {
         level: "",
+        startDate: "",
       },
       userDetails: {
         firstName: "",
