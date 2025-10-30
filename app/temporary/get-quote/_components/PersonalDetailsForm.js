@@ -307,7 +307,7 @@ const PersonalDetailsForm = ({ form }) => {
             </div>
           </div>
 
-          <div className={styles.cleanFormGrid1Col}>
+          <div className={`${styles.cleanFormGrid1Col} ${styles.cleanFormGrid1ColWithTopGap}`}>
             <p className={styles.cleanLabel}>Do you use any other vehicles?</p>
             <YesORNo
               value={watch("carUsage.otherVehicles")}
