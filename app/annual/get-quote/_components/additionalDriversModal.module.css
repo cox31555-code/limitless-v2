@@ -121,7 +121,7 @@
   flex-direction: column;
   gap: 0;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
-  overflow: visible;
+  overflow: hidden;
 }
 
 .driverHeader {
