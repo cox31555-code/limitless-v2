@@ -133,7 +133,7 @@ export const userDetailsSchema = z
       .max(20, "Phone number cannot exceed 20 characters")
       .regex(/^\+?[\d\s\-()]+$/, "Please enter a valid phone number"),
     dateOfBirth: z.string().min(1, "Date of birth is required"),
-    postCode: z.string().min(1, "Postcode is required"),
+    postCode: z.string().optional(),
     address: z.string().optional(),
     employmentStatus: z.string().min(1, "Employment status is required"),
     occupation: z.string().optional(),
