@@ -528,14 +528,14 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             <FormDropdown
               label="Tracking device"
               options={trackingDeviceOptions}
-              placeholder="No"
+              placeholder="Please select"
               {...register("vehicleDetails.trackingDevice")}
               error={errors.vehicleDetails?.trackingDevice}
             />
             <FormDropdown
               label="Alarm / Immobiliser"
               options={alarmImmobiliserOptions}
-              placeholder="Thatcham approved immobiliser"
+              placeholder="Please select"
               {...register("vehicleDetails.alarmImmobiliser")}
               error={errors.vehicleDetails?.alarmImmobiliser}
             />
@@ -545,14 +545,14 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             <FormDropdown
               label="Imported vehicle"
               options={yesNoOptions}
-              placeholder="No"
+              placeholder="Please select"
               {...register("vehicleDetails.importedVehicle")}
               error={errors.vehicleDetails?.importedVehicle}
             />
             <FormDropdown
               label="Has your vehicle been modified?"
               options={yesNoOptions}
-              placeholder="Yes"
+              placeholder="Please select"
               {...register("vehicleDetails.vehicleModified")}
               error={errors.vehicleDetails?.vehicleModified}
             />
@@ -562,7 +562,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             <FormDropdown
               label="How much is your vehicle worth?"
               options={vehicleWorthOptions}
-              placeholder="£0 - £5,000"
+              placeholder="Please select"
               {...register("vehicleDetails.worth")}
               error={errors.vehicleDetails?.worth}
             />
@@ -609,7 +609,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
               <FormDropdown
                 label="Will you be the legal and registered owner?"
                 options={yesNoOptions}
-                placeholder="Yes"
+                placeholder="Please select"
                 {...register("vehicleDetails.legalOwner")}
                 error={errors.vehicleDetails?.legalOwner}
               />
