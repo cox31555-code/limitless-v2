@@ -99,13 +99,16 @@
 }
 
 .second .content {
-  width: 58%;
-  padding: 5rem 4.2rem;
+  width: 48%;
+  padding: 0;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .second > div {
-  min-height: 635px;
+  min-height: auto;
 }
 
 .featuresContainer {
