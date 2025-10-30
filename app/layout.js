@@ -7,8 +7,6 @@ import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
-import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
 
 const Header = dynamic(() => import("@/ui/layout/header/Header"), { ssr: false });
 
