@@ -55,9 +55,15 @@ const shouldUseSpecialStyles = (pathname) => {
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Don't render footer on dashboard and login pages
   if (
+    !isMounted ||
     pathname.startsWith("/dashboard") ||
     ["/login", "/forget-password", "/change-password"].includes(pathname)
   ) {
