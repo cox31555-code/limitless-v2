@@ -38,7 +38,8 @@ const PersonalDetailsForm = ({ form }) => {
   const [showAddressDropdown, setShowAddressDropdown] = useState(false);
 
   const employmentStatus = watch("userDetails.employmentStatus");
-  const isRetiredOrUnemployed = employmentStatus === "Retired" || employmentStatus === "Unemployed";
+  const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
+  const isRetiredOrUnemployed = isIndustryOccupationDisabled;
   const dateOfBirth = watch("userDetails.dateOfBirth");
 
   React.useEffect(() => {
