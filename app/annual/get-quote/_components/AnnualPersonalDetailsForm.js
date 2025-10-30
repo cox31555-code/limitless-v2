@@ -42,6 +42,39 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const employmentStatus = watch("userDetails.employmentStatus");
   const isRetiredOrUnemployed = employmentStatus === "Retired" || employmentStatus === "Unemployed";
   const dateOfBirth = watch("userDetails.dateOfBirth");
+  const additionalDrivers = watch("carUsage.additionalDrivers") || [];
+  const hasAdditionalDrivers = watch("carUsage.hasAdditionalDrivers");
+
+  const handleAddDriver = () => {
+    const newDriver = {
+      relationship: "",
+      title: "",
+      firstName: "",
+      lastName: "",
+      dateOfBirth: "",
+      relationshipStatus: "",
+      livedInUKSinceBirth: null,
+      employmentStatus: "",
+      licenseType: "",
+      licenseHeld: "",
+      otherVehicles: null,
+      medicalConditions: null,
+      insuranceHistory: null,
+      criminalConvictions: null,
+    };
+    setValue("carUsage.additionalDrivers", [...additionalDrivers, newDriver]);
+  };
+
+  const handleRemoveDriver = (index) => {
+    const updatedDrivers = additionalDrivers.filter((_, i) => i !== index);
+    setValue("carUsage.additionalDrivers", updatedDrivers);
+  };
+
+  const handleUpdateDriver = (index, field, value) => {
+    const updatedDrivers = [...additionalDrivers];
+    updatedDrivers[index] = { ...updatedDrivers[index], [field]: value };
+    setValue("carUsage.additionalDrivers", updatedDrivers);
+  };
 
   React.useEffect(() => {
     if (isRetiredOrUnemployed) {
