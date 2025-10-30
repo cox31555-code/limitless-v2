@@ -666,42 +666,44 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             )}
           </div>
 
-          <div className={styles.row}>
-            <div className={styles.ownerFieldWrapper}>
-              <FormDropdown
-                label={haventBoughtYet ? "Who will be the owner?" : "Who is the owner?"}
-                options={ownerOptions}
-                placeholder="Please select"
-                {...register("vehicleDetails.owner")}
-                error={errors.vehicleDetails?.owner}
-              />
-              {owner === "Other" && (
-                <FormTextInput
-                  label="Please specify owner"
-                  placeholder="Enter owner details"
-                  {...register("vehicleDetails.ownerOther")}
-                  error={errors.vehicleDetails?.ownerOther}
+          {legalOwner !== "Yes" && (
+            <div className={styles.row}>
+              <div className={styles.ownerFieldWrapper}>
+                <FormDropdown
+                  label={haventBoughtYet ? "Who will be the owner?" : "Who is the owner?"}
+                  options={ownerOptions}
+                  placeholder="Please select"
+                  {...register("vehicleDetails.owner")}
+                  error={errors.vehicleDetails?.owner}
                 />
-              )}
-            </div>
-            <div className={styles.keeperFieldWrapper}>
-              <FormDropdown
-                label={haventBoughtYet ? "Who will be the registered keeper?" : "Who is the registered keeper?"}
-                options={keeperOptions}
-                placeholder="Please select"
-                {...register("vehicleDetails.registeredKeeper")}
-                error={errors.vehicleDetails?.registeredKeeper}
-              />
-              {registeredKeeper === "Other" && (
-                <FormTextInput
-                  label="Please specify registered keeper"
-                  placeholder="Enter registered keeper details"
-                  {...register("vehicleDetails.registeredKeeperOther")}
-                  error={errors.vehicleDetails?.registeredKeeperOther}
+                {owner === "Other" && (
+                  <FormTextInput
+                    label="Please specify owner"
+                    placeholder="Enter owner details"
+                    {...register("vehicleDetails.ownerOther")}
+                    error={errors.vehicleDetails?.ownerOther}
+                  />
+                )}
+              </div>
+              <div className={styles.keeperFieldWrapper}>
+                <FormDropdown
+                  label={haventBoughtYet ? "Who will be the registered keeper?" : "Who is the registered keeper?"}
+                  options={keeperOptions}
+                  placeholder="Please select"
+                  {...register("vehicleDetails.registeredKeeper")}
+                  error={errors.vehicleDetails?.registeredKeeper}
                 />
-              )}
+                {registeredKeeper === "Other" && (
+                  <FormTextInput
+                    label="Please specify registered keeper"
+                    placeholder="Enter registered keeper details"
+                    {...register("vehicleDetails.registeredKeeperOther")}
+                    error={errors.vehicleDetails?.registeredKeeperOther}
+                  />
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </ComponentWrapper>
