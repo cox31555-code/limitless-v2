@@ -25,7 +25,9 @@ export const vehicleDetailsSchema = z
     purchaseDate: z.string().optional(),
     legalOwner: z.string().optional(),
     owner: z.string().optional(),
+    ownerOther: z.string().optional(),
     registeredKeeper: z.string().optional(),
+    registeredKeeperOther: z.string().optional(),
     apiData: z
       .object({
         registration: z.string().optional(),
