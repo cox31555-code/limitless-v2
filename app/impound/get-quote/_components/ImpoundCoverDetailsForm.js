@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import FormDataAndTime from "@/ui/inputs/FormDataAndTime";
 import Title from "@/ui/insurance-quotes/title/Title";
@@ -29,6 +29,16 @@ const ImpoundCoverDetailsForm = ({ form }) => {
   const selectedImpoundType = watch("coverDetails.impoundType");
   const startDate = watch("coverDetails.startDate");
   const startTime = watch("coverDetails.startTime");
+  const coverType = watch("coverDetails.type");
+  const coverPeriod = watch("coverDetails.period");
+
+  // Auto-select 30 Days on mount
+  useEffect(() => {
+    if (!coverType || coverType !== "Days" || coverPeriod !== 30) {
+      setValue("coverDetails.type", "Days");
+      setValue("coverDetails.period", 30);
+    }
+  }, []);
 
   const handleImpoundTypeSelect = (type) => {
     setValue("coverDetails.impoundType", type, { shouldValidate: true });
