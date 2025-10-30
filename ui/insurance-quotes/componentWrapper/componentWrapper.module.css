@@ -27,6 +27,31 @@
   letter-spacing: -0.3px;
   opacity: 1;
   margin: 0;
+  position: relative;
+  padding-left: 1.6rem;
+  background: linear-gradient(135deg, transparent 0%, transparent 4px, rgba(3, 136, 255, 0.15) 4px, rgba(3, 136, 255, 0.15) 100%);
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #0388ff 0%, #0270cc 100%);
+  border-radius: 2px;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 3.2rem;
+  height: 2px;
+  background: linear-gradient(90deg, #0388ff 0%, rgba(3, 136, 255, 0) 100%);
+  border-radius: 1px;
 }
 
 .title.greyed {
