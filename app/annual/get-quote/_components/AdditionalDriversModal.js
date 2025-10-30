@@ -79,7 +79,7 @@ const AdditionalDriversModal = ({
       about: ['firstName', 'lastName', 'dateOfBirth', 'livedInUKSinceBirth'],
       employment: ['employmentStatus', 'occupation', 'industry'],
       usage: ['otherVehicles'],
-      driving: ['licenseType', 'licenseHeld', 'NCB'],
+      driving: ['licenseType', 'licenseHeld'],
       declarations: ['criminalConvictions', 'medicalConditions', 'insuranceCancelledOrClaimRefusedOrPolicyVoided']
     };
 
