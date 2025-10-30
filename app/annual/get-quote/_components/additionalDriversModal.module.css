@@ -309,7 +309,7 @@
   flex-shrink: 0;
 }
 
-.tileHeader ~ div {
+.tileHeader ~ div:not(.errorMessage) {
   padding: 0 2rem 2rem 2rem;
 }
 
