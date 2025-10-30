@@ -147,23 +147,6 @@
   width: 100%;
 }
 
-/* Registration Input Border Styling */
-.registrationInputWrapper :global(.textInput-module__inputContainer) {
-  border: 1.5px solid #c5cdd5 !important;
-  background: #ffffff !important;
-}
-
-.registrationInputWrapper :global(.textInput-module__inputContainer):hover {
-  border: 1.5px solid #a8b2bd !important;
-  background: #ffffff !important;
-}
-
-.registrationInputWrapper :global(.textInput-module__inputContainer):focus-within {
-  border: 1.5px solid #5a6b7d !important;
-  background: #ffffff !important;
-  box-shadow: 0 0 0 2px rgba(90, 107, 125, 0.1) !important;
-}
-
 /* Divider with OR text */
 .dividerWithText {
   display: flex;
