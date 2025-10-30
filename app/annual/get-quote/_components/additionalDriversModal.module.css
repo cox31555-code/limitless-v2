@@ -424,6 +424,42 @@
   width: 100%;
 }
 
+/* Driver Buttons Container */
+.driversButtonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.driverButtonsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.driverNameButton {
+  padding: 0.8rem 1.6rem;
+  background: rgba(3, 136, 255, 0.08);
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  color: #000822;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+.driverNameButton:hover {
+  background: rgba(3, 136, 255, 0.12);
+  border-color: #0388ff;
+  color: #0388ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
+}
+
 /* Open Modal Button */
 .openModalButton {
   padding: 1rem 2rem;
@@ -437,7 +473,6 @@
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: 0.1px;
   white-space: nowrap;
-  margin-top: 1.2rem;
   align-self: flex-start;
 }
 
