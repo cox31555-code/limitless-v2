@@ -1,43 +1,47 @@
-.container {
-  width: 100%;
-  background: #000822;
+.wrapper {
   padding: 8rem 4.4%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 2rem;
-  margin: 0 4.4%;
-  width: calc(100% - 8.8%);
+  background: #ffffff;
 }
 
-.logoDecor {
-  position: absolute;
-  right: -100px;
-  top: -200px;
-  width: 585px;
-  height: 891px;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
+.container {
+  max-width: 1408px;
+  margin: 0 auto;
+  background: #000822;
+  border: 2px solid rgba(3, 136, 255, 0.3);
+  border-radius: 20px;
+  padding: 4.9rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .content {
-  max-width: 1310px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 6.2rem;
   align-items: flex-start;
-  position: relative;
-  z-index: 1;
 }
 
-.leftContent {
+/* Left Column */
+.leftColumn {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 4.4rem;
 }
 
-.headerSection {
+.illustrationWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 343px;
+  height: auto;
+}
+
+.leftTextContent {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -45,7 +49,7 @@
 
 .title {
   color: #fff;
-  font-size: 5.8rem;
+  font-size: 5rem;
   font-weight: 700;
   line-height: 100%;
   margin: 0;
@@ -59,160 +63,83 @@
 .description {
   color: rgba(255, 255, 255, 0.54);
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 124%;
   letter-spacing: 0.64px;
   margin: 0;
 }
 
-.illustrationSection {
-  width: 100%;
+/* Right Column */
+.rightColumn {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
+  gap: 5.2rem;
 }
 
-.illustration {
-  width: 100%;
-  max-width: 680px;
-  height: auto;
-}
-
-.rightContent {
-  display: flex;
-  align-items: flex-start;
-  position: sticky;
-  top: 100px;
-}
-
-.card {
-  width: 100%;
-  background: #07102D;
-  border-radius: 18px;
-  padding: 6.2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.cardBackground {
-  position: absolute;
-  top: -200px;
-  right: 0;
-  width: 100%;
-  height: 604px;
-  transform: rotate(90deg);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.gradientBar1 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 201px;
-  height: 767px;
-  opacity: 0.6;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
-}
-
-.gradientBar2 {
-  position: absolute;
-  left: 201px;
-  top: 137px;
-  width: 201px;
-  height: 773px;
-  opacity: 0.82;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
-}
-
-.gradientBar3 {
-  position: absolute;
-  left: 403px;
-  top: 167px;
-  width: 201px;
-  height: 888px;
-  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
-}
-
-.cardContent {
-  position: relative;
-  z-index: 1;
+.rightHeader {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 }
 
-.cardHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  padding-bottom: 5.2rem;
-}
-
-.cardTitle {
+.rightTitle {
   color: #fff;
-  font-size: 5.8rem;
+  font-size: 5rem;
   font-weight: 700;
   line-height: 100%;
   margin: 0;
 }
 
-.cardTitle span {
+.rightTitle span {
   color: #049CFF;
   display: block;
 }
 
-.cardSubtitle {
+.rightDescription {
   color: rgba(255, 255, 255, 0.54);
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 124%;
   letter-spacing: 0.64px;
   margin: 0;
 }
 
-.steps {
+/* Steps Container */
+.stepsContainer {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
 }
 
-.step {
+.stepBox {
   display: flex;
   align-items: flex-start;
-  gap: 3rem;
-  padding: 2.9rem 3.5rem;
-  background: #07102D;
+  gap: 2.4rem;
+  padding: 2.4rem 3.2rem;
+  background: rgba(7, 16, 45, 0.7);
   border-radius: 14px;
+  backdrop-filter: blur(22px);
 }
 
-.stepIcon {
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  position: relative;
+.stepBadge {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.stepIcon svg {
-  width: 100%;
-  height: 100%;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, #0388FF 100%);
 }
 
 .stepNumber {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #07102D;
-  font-size: 1.44rem;
+  color: #000822;
+  font-size: 1.8rem;
   font-weight: 700;
   line-height: 100%;
 }
 
-.stepContent {
+.stepText {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -227,7 +154,7 @@
   margin: 0;
 }
 
-.stepDescription {
+.stepDesc {
   color: rgba(255, 255, 255, 0.64);
   font-size: 1.4rem;
   font-weight: 400;
@@ -239,186 +166,150 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .container {
-    padding: 7rem 4.4%;
+    padding: 4rem 3.2rem;
   }
 
   .content {
-    gap: 4rem;
+    gap: 5rem;
   }
 
-  .title {
-    font-size: 4.8rem;
+  .title,
+  .rightTitle {
+    font-size: 4.2rem;
   }
 
-  .cardTitle {
-    font-size: 4.8rem;
-  }
-
-  .description {
+  .description,
+  .rightDescription {
     font-size: 1.5rem;
   }
 
-  .cardSubtitle {
-    font-size: 1.5rem;
+  .stepsContainer {
+    gap: 1.2rem;
   }
 
-  .card {
-    padding: 5rem;
-  }
-
-  .step {
-    padding: 2.4rem 3rem;
+  .stepBox {
+    padding: 2rem 2.8rem;
+    gap: 2rem;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .container {
+  .wrapper {
     padding: 5.5rem 4.4%;
-    border-radius: 0;
-    margin: 0;
-    width: 100%;
+  }
+
+  .container {
+    padding: 3.6rem 2.8rem;
+    border-radius: 16px;
   }
 
   .content {
     grid-template-columns: 1fr;
-    gap: 5rem;
+    gap: 4rem;
   }
 
-  .rightContent {
-    position: relative;
-    top: 0;
+  .title,
+  .rightTitle {
+    font-size: 3.4rem;
   }
 
-  .title {
-    font-size: 3.6rem;
-  }
-
-  .cardTitle {
-    font-size: 3.6rem;
-  }
-
-  .description {
+  .description,
+  .rightDescription {
     font-size: 1.4rem;
   }
 
-  .cardSubtitle {
-    font-size: 1.4rem;
+  .leftColumn,
+  .rightColumn {
+    gap: 3.2rem;
   }
 
-  .card {
-    padding: 3.6rem 3rem;
+  .rightColumn {
+    gap: 4rem;
   }
 
-  .cardHeader {
-    padding-bottom: 3.6rem;
+  .illustration {
+    max-width: 280px;
   }
 
-  .steps {
-    gap: 1.2rem;
-  }
-
-  .step {
-    padding: 2.2rem 2.4rem;
-    gap: 2.4rem;
+  .stepBox {
+    padding: 2rem 2.4rem;
+    gap: 1.8rem;
   }
 
   .stepTitle {
     font-size: 1.6rem;
   }
 
-  .stepDescription {
+  .stepDesc {
     font-size: 1.3rem;
-  }
-
-  .illustration {
-    max-width: 500px;
-  }
-
-  .logoDecor {
-    right: -150px;
-    top: -250px;
-    width: 450px;
-    height: auto;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .container {
+  .wrapper {
     padding: 4rem 4.4%;
   }
 
-  .content {
-    gap: 3.6rem;
+  .container {
+    padding: 2.4rem 2rem;
+    border-radius: 14px;
+    border-width: 1.5px;
   }
 
-  .leftContent {
+  .content {
     gap: 3rem;
   }
 
-  .title {
+  .title,
+  .rightTitle {
     font-size: 2.8rem;
   }
 
-  .cardTitle {
-    font-size: 2.8rem;
-  }
-
-  .description {
+  .description,
+  .rightDescription {
     font-size: 1.2rem;
   }
 
-  .cardSubtitle {
-    font-size: 1.2rem;
+  .leftColumn,
+  .rightColumn {
+    gap: 2.4rem;
   }
 
-  .card {
-    padding: 2.4rem 2rem;
+  .rightColumn {
+    gap: 3rem;
   }
 
-  .cardHeader {
-    padding-bottom: 2.4rem;
+  .rightHeader {
     gap: 1.8rem;
   }
 
-  .steps {
+  .illustration {
+    max-width: 240px;
+  }
+
+  .stepsContainer {
     gap: 1rem;
   }
 
-  .step {
-    padding: 2rem;
-    gap: 2rem;
-    flex-direction: column;
-    align-items: flex-start;
+  .stepBox {
+    padding: 1.8rem 2rem;
+    gap: 1.6rem;
   }
 
-  .stepIcon {
+  .stepBadge {
     width: 40px;
     height: 40px;
   }
 
   .stepNumber {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .stepTitle {
     font-size: 1.5rem;
   }
 
-  .stepDescription {
+  .stepDesc {
     font-size: 1.2rem;
-  }
-
-  .illustration {
-    max-width: 100%;
-  }
-
-  .logoDecor {
-    display: none;
-  }
-
-  .gradientBar1,
-  .gradientBar2,
-  .gradientBar3 {
-    opacity: 0.3;
   }
 }
