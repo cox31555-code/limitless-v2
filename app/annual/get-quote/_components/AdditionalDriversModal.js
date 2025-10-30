@@ -302,17 +302,17 @@ const AdditionalDriversModal = ({
                     {isTileExpanded(index, 'driving') && <>
                       <div className={modalStyles.fieldRow3Col}>
                         <div className={modalStyles.field}>
-                          <FormDropdown label="License Type" options={["Full UK", "Provisional UK", "International", "Other"]} placeholder="Select type" value={watch(`carUsage.additionalDrivers.${index}.licenseType`) || ""} onChange={(value) => onUpdateDriver(index, "licenseType", value)} inputStyle={{ paddingLeft: "14px" }} />
+                          <FormDropdown label="License Type" options={["Full UK", "Provisional UK", "International", "Other"]} placeholder="Select type" value={watch(`carUsage.additionalDrivers.${index}.licenseType`) || ""} onChange={(e) => onUpdateDriver(index, "licenseType", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                         <div className={modalStyles.field}>
-                          <FormDropdown label="License Held" options={licenseHeldOptions} placeholder="Select duration" value={watch(`carUsage.additionalDrivers.${index}.licenseHeld`) || ""} onChange={(value) => onUpdateDriver(index, "licenseHeld", value)} inputStyle={{ paddingLeft: "14px" }} />
+                          <FormDropdown label="License Held" options={licenseHeldOptions} placeholder="Select duration" value={watch(`carUsage.additionalDrivers.${index}.licenseHeld`) || ""} onChange={(e) => onUpdateDriver(index, "licenseHeld", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                         <div className={modalStyles.field}>
                           <FormTextInput label="License Number" placeholder="Optional" value={watch(`carUsage.additionalDrivers.${index}.licenseNumber`) || ""} onChange={(e) => onUpdateDriver(index, "licenseNumber", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                       </div>
                       <div className={modalStyles.field}>
-                        <FormDropdown label="No Claims Bonus" options={dynamicDriverNcbOptions[index] || ncbOptions} placeholder="Select years" value={watch(`carUsage.additionalDrivers.${index}.NCB`) || ""} onChange={(value) => onUpdateDriver(index, "NCB", value)} inputStyle={{ paddingLeft: "14px" }} />
+                        <FormDropdown label="No Claims Bonus" options={dynamicDriverNcbOptions[index] || ncbOptions} placeholder="Select years" value={watch(`carUsage.additionalDrivers.${index}.NCB`) || ""} onChange={(e) => onUpdateDriver(index, "NCB", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                       </div>
                       <div className={modalStyles.field}>
                         <label className={modalStyles.inputLabel}>Additional Driving Qualifications?</label>
@@ -320,14 +320,14 @@ const AdditionalDriversModal = ({
                       </div>
                       {watch(`carUsage.additionalDrivers.${index}.hasAdditionalQualifications`) && (<>
                         <div className={modalStyles.field}>
-                          <FormDropdown label="Qualification Type" options={additionalQualificationsOptions} placeholder="Select type" value={watch(`carUsage.additionalDrivers.${index}.additionalQualificationType`) || ""} onChange={(value) => onUpdateDriver(index, "additionalQualificationType", value)} inputStyle={{ paddingLeft: "14px" }} />
+                          <FormDropdown label="Qualification Type" options={additionalQualificationsOptions} placeholder="Select type" value={watch(`carUsage.additionalDrivers.${index}.additionalQualificationType`) || ""} onChange={(e) => onUpdateDriver(index, "additionalQualificationType", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                         <div className={modalStyles.fieldRow2Col}>
                           <div className={modalStyles.field}>
-                            <FormDropdown label="Month" options={monthOptions} placeholder="Select month" value={watch(`carUsage.additionalDrivers.${index}.qualificationMonth`) || ""} onChange={(value) => onUpdateDriver(index, "qualificationMonth", value)} inputStyle={{ paddingLeft: "14px" }} />
+                            <FormDropdown label="Month" options={monthOptions} placeholder="Select month" value={watch(`carUsage.additionalDrivers.${index}.qualificationMonth`) || ""} onChange={(e) => onUpdateDriver(index, "qualificationMonth", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                           </div>
                           <div className={modalStyles.field}>
-                            <FormDropdown label="Year" options={yearOptions} placeholder="Select year" value={watch(`carUsage.additionalDrivers.${index}.qualificationYear`) || ""} onChange={(value) => onUpdateDriver(index, "qualificationYear", value)} inputStyle={{ paddingLeft: "14px" }} />
+                            <FormDropdown label="Year" options={yearOptions} placeholder="Select year" value={watch(`carUsage.additionalDrivers.${index}.qualificationYear`) || ""} onChange={(e) => onUpdateDriver(index, "qualificationYear", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                           </div>
                         </div>
                       </>)}
