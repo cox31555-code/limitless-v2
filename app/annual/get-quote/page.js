@@ -210,6 +210,10 @@ const AnnualInsuranceContent = () => {
     "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
   ];
 
+  const optionalExtrasFields = [
+    // Optional extras are all optional, no validation required
+  ];
+
   const termsFields = [
     "terms.acceptTerms",
   ];
@@ -222,6 +226,8 @@ const AnnualInsuranceContent = () => {
         return coverFields;
       case STEPS.PERSONAL:
         return personalFields;
+      case STEPS.OPTIONAL_EXTRAS:
+        return optionalExtrasFields;
       case STEPS.TERMS:
         return termsFields;
       default:
