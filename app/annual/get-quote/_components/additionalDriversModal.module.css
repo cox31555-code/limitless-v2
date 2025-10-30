@@ -283,14 +283,6 @@
   padding: 0 2rem 2rem 2rem;
 }
 
-.formSection {
-  position: relative;
-}
-
-.formSection.disabled {
-  position: relative;
-}
-
 .formSection.disabled > div:not(.tileHeader) {
   opacity: 0.45;
   pointer-events: none;
@@ -299,20 +291,6 @@
 .formSection.disabled .tileHeader ~ div {
   opacity: 0.45;
   pointer-events: none;
-}
-
-/* Locked overlay indicator */
-.formSection.disabled::after {
-  content: '🔒';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4rem;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 10;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .sectionLabel {
