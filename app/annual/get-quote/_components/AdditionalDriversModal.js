@@ -20,7 +20,7 @@ import {
   carUsageOptions,
   keepingCarDuringDayOptions,
   keepingCarDuringNightOptions,
-} from "../data";
+} from "@/app/temporary/get-quote/data";
 
 const AdditionalDriversModal = ({
   isOpen,
