@@ -80,8 +80,56 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     return expandedTiles.has(tileKey);
   };
 
-  // Get all form values to trigger re-run
-  const allFormValues = watch();
+  // Watch form changes to trigger auto-expand
+  const watchedFields = useMemo(() => {
+    return {
+      firstName: watch('userDetails.firstName'),
+      surname: watch('userDetails.surname'),
+      dateOfBirth: watch('userDetails.dateOfBirth'),
+      email: watch('userDetails.email'),
+      phone: watch('userDetails.phone'),
+      postCode: watch('userDetails.postCode'),
+      address: watch('userDetails.address'),
+      employmentStatus: watch('userDetails.employmentStatus'),
+      occupation: watch('userDetails.occupation'),
+      industry: watch('userDetails.industry'),
+      keepingCarDuringDay: watch('carUsage.keepingCarDuringDay'),
+      keepingCarDuringNight: watch('carUsage.keepingCarDuringNight'),
+      usageType: watch('carUsage.usageType'),
+      licenseType: watch('carUsage.licenseType'),
+      licenseHeld: watch('carUsage.licenseHeld'),
+      NCB: watch('carUsage.NCB'),
+      ownsHome: watch('carUsage.ownsHome'),
+      childrenUnder16: watch('carUsage.childrenUnder16'),
+      livedInUKSinceBirth: watch('carUsage.livedInUKSinceBirth'),
+      criminalConvictions: watch('carUsage.criminalConvictions'),
+      medicalConditions: watch('carUsage.medicalConditions'),
+      insuranceCancelled: watch('carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided'),
+    };
+  }, [
+    watch('userDetails.firstName'),
+    watch('userDetails.surname'),
+    watch('userDetails.dateOfBirth'),
+    watch('userDetails.email'),
+    watch('userDetails.phone'),
+    watch('userDetails.postCode'),
+    watch('userDetails.address'),
+    watch('userDetails.employmentStatus'),
+    watch('userDetails.occupation'),
+    watch('userDetails.industry'),
+    watch('carUsage.keepingCarDuringDay'),
+    watch('carUsage.keepingCarDuringNight'),
+    watch('carUsage.usageType'),
+    watch('carUsage.licenseType'),
+    watch('carUsage.licenseHeld'),
+    watch('carUsage.NCB'),
+    watch('carUsage.ownsHome'),
+    watch('carUsage.childrenUnder16'),
+    watch('carUsage.livedInUKSinceBirth'),
+    watch('carUsage.criminalConvictions'),
+    watch('carUsage.medicalConditions'),
+    watch('carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided'),
+  ]);
 
   useEffect(() => {
     const tiles = getTileOrder();
@@ -106,7 +154,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
         break;
       }
     }
-  }, [allFormValues]);
+  }, [watchedFields]);
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
