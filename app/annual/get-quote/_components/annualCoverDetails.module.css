@@ -67,27 +67,39 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  min-width: 2.4rem;
-  height: 2.4rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .levelIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid #ccc;
   border-radius: 50%;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  position: relative;
 }
 
 .levelIconActive {
-  border: 2px solid #0388ff;
-  color: #0388ff;
+  border-color: #0388ff;
+  background: transparent;
+}
+
+.levelIconActive::after {
+  content: '';
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: #0388ff;
+  border-radius: 50%;
 }
 
 .levelIconInactive {
-  color: #5a6b7d;
+  border-color: #d0d5dd;
 }
 
 .levelContent {
