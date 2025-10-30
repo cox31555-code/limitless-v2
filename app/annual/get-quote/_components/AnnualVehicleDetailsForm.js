@@ -371,8 +371,8 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
         <div className={styles.instructionBox}>
           <div className={styles.instructionIcon}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="10" stroke="#0388ff" strokeWidth="2"/>
-              <path d="M12 16V12M12 8H12.01" stroke="#0388ff" strokeWidth="2" strokeLinecap="round"/>
+              <circle cx="12" cy="12" r="10" stroke="#5a6b7d" strokeWidth="2"/>
+              <path d="M12 16V12M12 8H12.01" stroke="#5a6b7d" strokeWidth="2" strokeLinecap="round"/>
             </svg>
           </div>
           <div className={styles.instructionContent}>
