@@ -25,19 +25,49 @@ import {
   yearOptions,
 } from "@/app/temporary/get-quote/data";
 
-const AdditionalDriversModal = ({ 
-  isOpen, 
-  onClose, 
-  form, 
-  drivers = [], 
-  onAddDriver, 
+const AdditionalDriversModal = ({
+  isOpen,
+  onClose,
+  form,
+  drivers = [],
+  onAddDriver,
   onRemoveDriver,
-  onUpdateDriver 
+  onUpdateDriver
 }) => {
   const { watch, setValue } = form;
   const [driverAddresses, setDriverAddresses] = useState({});
   const [driverLoadingStates, setDriverLoadingStates] = useState({});
   const [dynamicDriverNcbOptions, setDynamicDriverNcbOptions] = useState({});
+
+  React.useEffect(() => {
+    drivers.forEach((driver, index) => {
+      if (driver.dateOfBirth) {
+        const dob = new Date(driver.dateOfBirth);
+        const today = new Date();
+        const age = today.getFullYear() - dob.getFullYear();
+        const monthDiff = today.getMonth() - dob.getMonth();
+        const dayDiff = today.getDate() - dob.getDate();
+
+        let exactAge = age;
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+          exactAge--;
+        }
+
+        const maxNCBYears = Math.max(0, exactAge - 17);
+        const options = [];
+
+        for (let i = 0; i <= Math.min(maxNCBYears, 14); i++) {
+          options.push(i.toString());
+        }
+
+        if (maxNCBYears >= 15) {
+          options.push("15+");
+        }
+
+        setDynamicDriverNcbOptions(prev => ({ ...prev, [index]: options }));
+      }
+    });
+  }, [drivers]);
 
   if (!isOpen) return null;
 
@@ -69,36 +99,6 @@ const AdditionalDriversModal = ({
       setDriverLoadingStates(prev => ({ ...prev, [driverIndex]: false }));
     }
   };
-
-  React.useEffect(() => {
-    drivers.forEach((driver, index) => {
-      if (driver.dateOfBirth) {
-        const dob = new Date(driver.dateOfBirth);
-        const today = new Date();
-        const age = today.getFullYear() - dob.getFullYear();
-        const monthDiff = today.getMonth() - dob.getMonth();
-        const dayDiff = today.getDate() - dob.getDate();
-        
-        let exactAge = age;
-        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-          exactAge--;
-        }
-        
-        const maxNCBYears = Math.max(0, exactAge - 17);
-        const options = [];
-        
-        for (let i = 0; i <= Math.min(maxNCBYears, 14); i++) {
-          options.push(i.toString());
-        }
-        
-        if (maxNCBYears >= 15) {
-          options.push("15+");
-        }
-        
-        setDynamicDriverNcbOptions(prev => ({ ...prev, [index]: options }));
-      }
-    });
-  }, [drivers]);
 
   return (
     <>
