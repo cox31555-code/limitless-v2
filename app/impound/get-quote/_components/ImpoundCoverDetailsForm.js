@@ -62,6 +62,39 @@ const ImpoundCoverDetailsForm = ({ form }) => {
       <div className={styles.content}>
         <div className={styles.inputWrapper}>
           <div className={styles.inputGroup}>
+            <Title title="How Long Will You Need It?" />
+            <p style={{ color: "#5a6b7d", fontSize: "1.4rem", margin: "0 0 1.6rem 0" }}>
+              Select your preferred coverage duration
+            </p>
+            <div
+              style={{
+                display: "flex",
+                gap: "1.2rem",
+                marginBottom: "2.4rem",
+                flexWrap: "wrap",
+              }}
+            >
+              <button
+                type="button"
+                style={{
+                  padding: "1.2rem 2.4rem",
+                  borderRadius: "8px",
+                  border: "2px solid #0388ff",
+                  background: "#0388ff",
+                  color: "#fff",
+                  fontSize: "1.3rem",
+                  fontWeight: "600",
+                  cursor: "not-allowed",
+                  opacity: 1,
+                }}
+                disabled
+              >
+                30 Days
+              </button>
+            </div>
+          </div>
+
+          <div className={styles.inputGroup}>
             <Title title="When would you like the cover to start?" />
 
             {!startPolicyImmediately && (
