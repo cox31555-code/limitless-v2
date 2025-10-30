@@ -79,6 +79,11 @@ const AnnualInsuranceContent = () => {
         level: "",
         startDate: "",
       },
+      optionalExtras: {
+        courtesyCar: null,
+        breakdownCover: null,
+        foreignUseCover: null,
+      },
       userDetails: {
         firstName: "",
         surname: "",
