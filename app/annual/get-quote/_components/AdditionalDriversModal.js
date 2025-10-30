@@ -329,7 +329,7 @@ const AdditionalDriversModal = ({
             Cancel
           </button>
           <button className={modalStyles.doneButton} onClick={onClose} type="button">
-            Save Drivers →
+            Save Drivers
           </button>
         </div>
       </div>
