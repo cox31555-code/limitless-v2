@@ -318,7 +318,7 @@ const PersonalDetailsForm = ({ form }) => {
           </div>
 
           {watch("carUsage.otherVehicles") && (
-            <div className={styles.cleanFormGrid1Col}>
+            <div className={`${styles.cleanFormGrid1Col} ${styles.cleanFormGrid1ColWithTopPadding}`}>
               <p className={styles.cleanLabel}>What other vehicles do you have use of?</p>
               <p className={styles.cleanSubLabel}>Select the most applicable option.</p>
               <FormDropdown
