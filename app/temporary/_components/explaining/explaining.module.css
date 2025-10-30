@@ -21,23 +21,25 @@
 }
 
 .mainContent {
-  display: flex;
-  gap: 12rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: flex-start;
   position: relative;
   z-index: 1;
 }
 
 .whatIsSection {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 .content {
   display: flex;
-  align-items: center;
-  gap: 6rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
   position: relative;
   z-index: 1;
 }
