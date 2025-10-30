@@ -173,22 +173,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     if (currentTileIndex === 0) return false;
 
     const previousTileKey = tiles[currentTileIndex - 1];
-    const isPrevComplete = checkTileCompletion(previousTileKey);
-    const isDisabled = !isPrevComplete;
-
-    // Debug logging for Additional Drivers tile
-    if (tileKey === 'additionalDrivers') {
-      console.log('Additional Drivers disabled state:', {
-        previousTile: previousTileKey,
-        isPrevComplete,
-        isDisabled,
-        criminalConvictions,
-        medicalConditions,
-        insuranceCancelledStatus
-      });
-    }
-
-    return isDisabled;
+    return !checkTileCompletion(previousTileKey);
   };
 
 
