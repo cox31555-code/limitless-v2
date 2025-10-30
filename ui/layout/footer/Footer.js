@@ -74,13 +74,15 @@ const Footer = () => {
       suppressHydrationWarning
     >
       <div className={`centeredContent ${styles.contentContainer}`} suppressHydrationWarning>
-        {(pathname?.startsWith("/temporary/get-quote") ||
-        pathname?.startsWith("/impound/get-quote") ||
-        pathname?.startsWith("/annual/get-quote")) ? (
-          <GetQuoteFooterBanner />
-        ) : pathname?.startsWith("/payment") ? null : (
-          <NoHiddenFees />
-        )}
+        <div suppressHydrationWarning>
+          {(pathname?.startsWith("/temporary/get-quote") ||
+          pathname?.startsWith("/impound/get-quote") ||
+          pathname?.startsWith("/annual/get-quote")) ? (
+            <GetQuoteFooterBanner />
+          ) : pathname?.startsWith("/payment") ? null : (
+            <NoHiddenFees />
+          )}
+        </div>
         <div className={styles.content}>
           <div className={styles.menus}>
             {menus.map((menu, index) => (
