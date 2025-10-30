@@ -41,14 +41,7 @@ const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
   } else if (isPersonalIcon) {
     iconContent = null;
   } else if (isTermsIcon) {
-    iconContent = (
-      <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-8-6z" fill="white"/>
-          <path d="M16 18H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V8h8v2z" fill="white"/>
-        </svg>
-      </div>
-    );
+    iconContent = null;
   } else if (!isVehicleIcon) {
     iconContent = (
       <Image
