@@ -221,6 +221,16 @@ export const carUsageSchema = z.object({
       "Company car (excluding personal use)",
     ]
   ).optional(),
+  hasAdditionalQualifications: z.boolean().default(false),
+  additionalQualificationType: z.enum(
+    [
+      "AA Proficiency",
+      "Institute of Advanced Motorists",
+      "Pass Plus",
+    ]
+  ).optional(),
+  qualificationMonth: z.string().optional(),
+  qualificationYear: z.string().optional(),
   licenseType: z.string().min(1, "License type is required"),
   licenseHeld: z.string().min(1, "License held is required"),
   licenseNumber: z.string().optional(),
