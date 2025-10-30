@@ -62,12 +62,11 @@ const Footer = () => {
     setIsMounted(true);
   }, []);
 
-  // Don't render footer on dashboard and login pages (only after mounted)
-  if (
-    isMounted &&
-    (pathname?.startsWith("/dashboard") ||
-    ["/login", "/forget-password", "/change-password"].includes(pathname))
-  ) {
+  const shouldHideFooter =
+    pathname?.startsWith("/dashboard") ||
+    ["/login", "/forget-password", "/change-password"].includes(pathname);
+
+  if (isMounted && shouldHideFooter) {
     return null;
   }
 
@@ -75,7 +74,7 @@ const Footer = () => {
     <footer
       className={styles.container}
       style={{
-        background: shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: isMounted && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
       }}
       suppressHydrationWarning
     >
