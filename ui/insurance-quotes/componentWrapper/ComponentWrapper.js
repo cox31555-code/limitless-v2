@@ -70,7 +70,7 @@ const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
+      <div className={`${styles.header} ${isVehicleIcon ? styles.vehicleHeader : ""}`}>
         {iconContent}
         <h3 className={`${styles.title} ${isPaymentPage ? styles.greyed : ""} ${plusJakartaSans.className}`}>
           {title}
