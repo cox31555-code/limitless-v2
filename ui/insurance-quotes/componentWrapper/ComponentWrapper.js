@@ -27,45 +27,58 @@ const getIconForTitle = (title) => {
 };
 
 const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
+  const titleLower = title?.toLowerCase() || "";
+  const isVehicleIcon = titleLower.includes("vehicle");
+  const isCoverIcon = titleLower.includes("cover");
+  const isPersonalIcon = titleLower.includes("personal");
+  const isTermsIcon = titleLower.includes("terms");
   const iconSrc = getIconForTitle(title);
-  const isVehicleIcon = title?.toLowerCase().includes("vehicle");
-  const isCoverIcon = title?.toLowerCase().includes("cover");
-  const isPersonalIcon = title?.toLowerCase().includes("personal");
-  const isTermsIcon = title?.toLowerCase().includes("terms");
+
+  let iconContent = null;
+
+  if (isCoverIcon) {
+    iconContent = (
+      <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L3 5v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/>
+          <path d="M10.5 16.5l-3-3 1.41-1.41L10.5 13.68l5.59-5.59L17.5 9.5l-7 7z" fill="#0388ff"/>
+        </svg>
+      </div>
+    );
+  } else if (isPersonalIcon) {
+    iconContent = (
+      <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="8" r="4" fill="white"/>
+          <path d="M12 14c-4 0-6 2-6 4v3c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-3c0-2-2-4-6-4z" fill="white"/>
+        </svg>
+      </div>
+    );
+  } else if (isTermsIcon) {
+    iconContent = (
+      <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-8-6z" fill="white"/>
+          <path d="M16 18H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V8h8v2z" fill="white"/>
+        </svg>
+      </div>
+    );
+  } else if (!isVehicleIcon) {
+    iconContent = (
+      <Image
+        className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}
+        src={iconSrc}
+        alt={title || "section-icon"}
+        width={icon?.width || 48}
+        height={icon?.height || 48}
+      />
+    );
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        {isCoverIcon ? (
-          <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 1L3 5v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/>
-              <path d="M10.5 16.5l-3-3 1.41-1.41L10.5 13.68l5.59-5.59L17.5 9.5l-7 7z" fill="#0388ff"/>
-            </svg>
-          </div>
-        ) : isPersonalIcon ? (
-          <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="8" r="4" fill="white"/>
-              <path d="M12 14c-4 0-6 2-6 4v3c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-3c0-2-2-4-6-4z" fill="white"/>
-            </svg>
-          </div>
-        ) : isTermsIcon ? (
-          <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-8-6z" fill="white"/>
-              <path d="M16 18H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V8h8v2z" fill="white"/>
-            </svg>
-          </div>
-        ) : !isVehicleIcon ? (
-          <Image
-            className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}
-            src={iconSrc}
-            alt={title || "section-icon"}
-            width={icon?.width || 48}
-            height={icon?.height || 48}
-          />
-        ) : null}
+        {iconContent}
         <h3 className={`${styles.title} ${isPaymentPage ? styles.greyed : ""} ${plusJakartaSans.className}`}>
           {title}
         </h3>
