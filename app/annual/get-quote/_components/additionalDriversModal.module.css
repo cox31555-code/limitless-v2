@@ -111,7 +111,7 @@
 }
 
 .driverItem {
-  padding: 2.4rem;
+  padding: 0;
   background: #ffffff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   border-radius: 12px;
@@ -119,6 +119,7 @@
   flex-direction: column;
   gap: 0;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  overflow: hidden;
 }
 
 .driverHeader {
