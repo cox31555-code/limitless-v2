@@ -731,8 +731,8 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
           <div className={styles.cleanAdditionalInfoContainer}>
             <div className={styles.cleanFormGrid1Col}>
-              <p className={styles.cleanFormFieldLabel}>Do you want to add any additional drivers?</p>
-              <p className={styles.cleanSubLabel}>You can add up to 5 additional drivers. Include any drivers who share the car for business use.</p>
+              <p className={styles.cleanFormFieldLabel}>Additional Drivers</p>
+              <p className={styles.cleanSubLabel}>Do you want to add any additional drivers? You can add up to 5 additional drivers. Include any drivers who share the car for business use.</p>
               <YesORNo
                 value={watch("carUsage.hasAdditionalDrivers")}
                 onChange={(value) => {
@@ -744,13 +744,32 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               />
 
               {hasAdditionalDrivers && (
-                <button
-                  type="button"
-                  className={modalButtonStyles.openModalButton}
-                  onClick={() => setIsModalOpen(true)}
-                >
-                  + Add Drivers
-                </button>
+                <div className={modalButtonStyles.driversButtonContainer}>
+                  {additionalDrivers.length > 0 && (
+                    <div className={modalButtonStyles.driverButtonsList}>
+                      {additionalDrivers.map((driver, index) => (
+                        <button
+                          key={index}
+                          type="button"
+                          className={modalButtonStyles.driverNameButton}
+                          onClick={() => setIsModalOpen(true)}
+                          title="Click to edit driver"
+                        >
+                          {driver.firstName && driver.lastName ? `${driver.firstName} ${driver.lastName}` : `Driver ${index + 1}`}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  {additionalDrivers.length < 5 && (
+                    <button
+                      type="button"
+                      className={modalButtonStyles.openModalButton}
+                      onClick={() => setIsModalOpen(true)}
+                    >
+                      + Add {additionalDrivers.length === 0 ? 'Drivers' : 'Another Driver'}
+                    </button>
+                  )}
+                </div>
               )}
             </div>
           </div>
