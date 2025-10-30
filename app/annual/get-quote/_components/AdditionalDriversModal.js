@@ -14,6 +14,7 @@ import { API_BASE_URL } from "@/utils/config";
 import {
   carUsageOptions,
   employmentStatusOptions,
+  industryOptions,
   keepingCarDuringDayOptions,
   keepingCarDuringNightOptions,
   licenseHeldOptions,
