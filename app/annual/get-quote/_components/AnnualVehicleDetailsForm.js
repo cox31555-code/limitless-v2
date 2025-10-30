@@ -337,7 +337,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
     <>
       <VehicleModificationsModal
         isOpen={showModificationsModal}
-        onClose={() => setShowModificationsModal(false)}
+        onClose={handleModificationsCancel}
         onConfirm={handleModificationsConfirm}
         selectedModifications={vehicleModifications}
       />
