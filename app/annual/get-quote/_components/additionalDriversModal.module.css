@@ -245,7 +245,15 @@
   flex-shrink: 0;
 }
 
+.driverHeader .expandIcon {
+  font-size: 1.8rem;
+}
+
 .tileHeader.expanded .expandIcon {
+  transform: rotate(45deg);
+}
+
+.driverHeader.expanded .expandIcon {
   transform: rotate(45deg);
 }
 
