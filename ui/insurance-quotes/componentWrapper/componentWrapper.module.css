@@ -84,10 +84,13 @@
     margin: -1.6rem -1.6rem 1.6rem -1.6rem;
     padding: 1.6rem;
     border-radius: 16px 16px 0 0;
+    background: #000822;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .title {
     font-size: 1.8rem;
+    color: #ffffff;
   }
 
   .icon {
