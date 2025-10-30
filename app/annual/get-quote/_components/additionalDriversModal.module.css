@@ -229,10 +229,19 @@
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.formSection.disabled {
+  opacity: 0.6;
+}
+
 .formSection.disabled .tileHeader {
-  opacity: 0.5;
+  opacity: 1;
   cursor: not-allowed;
   background: rgba(245, 247, 250, 0.8) !important;
+}
+
+.formSection.disabled .tileHeader ~ div {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .tileHeader {
