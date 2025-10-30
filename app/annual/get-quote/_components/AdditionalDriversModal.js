@@ -83,16 +83,16 @@ const AdditionalDriversModal = ({
   };
 
   React.useEffect(() => {
-    drivers.forEach((_, index) => {
-      if (!(index in expandedTile)) {
-        setExpandedTile(prev => ({
-          ...prev,
-          [index]: 'about'
-        }));
-      }
-      autoExpandNextTile(index);
+    setExpandedTile(prev => {
+      const updated = { ...prev };
+      drivers.forEach((_, index) => {
+        if (!(index in updated)) {
+          updated[index] = 'about';
+        }
+      });
+      return updated;
     });
-  }, [drivers]);
+  }, [drivers.length]);
 
   useEffect(() => {
     drivers.forEach((driver, index) => {
