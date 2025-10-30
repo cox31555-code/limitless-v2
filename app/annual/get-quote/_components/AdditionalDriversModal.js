@@ -332,27 +332,15 @@ const AdditionalDriversModal = ({
                         </div>
                       </div>
 
-                      <div className={modalStyles.fieldRow2Col}>
-                        <div className={modalStyles.field}>
-                          <FormDropdown
-                            label="No Claims Bonus"
-                            options={dynamicDriverNcbOptions[index] || ncbOptions}
-                            placeholder="Select years"
-                            value={watch(`carUsage.additionalDrivers.${index}.NCB`) || ""}
-                            onChange={(value) => onUpdateDriver(index, "NCB", value)}
-                            inputStyle={{ paddingLeft: "14px" }}
-                          />
-                        </div>
-                        <div className={modalStyles.field}>
-                          <FormDropdown
-                            label="Voluntary Excess"
-                            options={voluntaryExcessOptions}
-                            placeholder="Select amount"
-                            value={watch(`carUsage.additionalDrivers.${index}.voluntaryExcess`) || ""}
-                            onChange={(value) => onUpdateDriver(index, "voluntaryExcess", value)}
-                            inputStyle={{ paddingLeft: "14px" }}
-                          />
-                        </div>
+                      <div className={modalStyles.field}>
+                        <FormDropdown
+                          label="No Claims Bonus"
+                          options={dynamicDriverNcbOptions[index] || ncbOptions}
+                          placeholder="Select years"
+                          value={watch(`carUsage.additionalDrivers.${index}.NCB`) || ""}
+                          onChange={(value) => onUpdateDriver(index, "NCB", value)}
+                          inputStyle={{ paddingLeft: "14px" }}
+                        />
                       </div>
 
                       <div className={modalStyles.field}>
