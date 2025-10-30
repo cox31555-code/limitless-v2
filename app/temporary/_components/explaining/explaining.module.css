@@ -1,16 +1,58 @@
 .container {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: column;
   border-radius: 20px;
   background: #000822;
   width: 100%;
   max-width: 1408px;
-  height: 1373px;
   margin: 0 auto;
-  padding: 0 0 903px 1158.5px;
+  padding: 8rem 4.9rem 11rem;
   position: relative;
   overflow: hidden;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  flex: 1;
+}
+
+.title {
+  color: #fff;
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+.title span {
+  color: #049CFF;
+  display: block;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 124%;
+  letter-spacing: 0.64px;
+  margin: 0;
 }
 
 .logo {
@@ -23,13 +65,29 @@
   position: absolute;
   right: 0;
   top: -421px;
+  pointer-events: none;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .container {
-    height: 1100px;
-    padding: 0 0 700px 900px;
+    padding: 6.5rem 4rem 9rem;
+  }
+
+  .content {
+    gap: 4.5rem;
+  }
+
+  .illustration {
+    max-width: 450px;
+  }
+
+  .title {
+    font-size: 4.8rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
   }
 
   .logo {
@@ -42,8 +100,25 @@
 
 @media screen and (max-width: 900px) {
   .container {
-    height: 900px;
-    padding: 0 0 600px 700px;
+    padding: 5.5rem 3.6rem 7.5rem;
+    border-radius: 16px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .illustration {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 3.8rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
   }
 
   .logo {
@@ -56,9 +131,24 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    height: 700px;
-    padding: 0 0 500px 500px;
+    padding: 4rem 2.4rem 6rem;
     border-radius: 14px;
+  }
+
+  .content {
+    gap: 2.8rem;
+  }
+
+  .illustration {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
   }
 
   .logo {
