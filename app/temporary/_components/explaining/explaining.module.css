@@ -1,11 +1,14 @@
 .wrapper {
-  width: 100vw;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 6rem;
-  padding: 6rem calc((100vw - 100%) / 2);
-  margin-left: calc(-1 * ((100vw - 100%) / 2));
+  padding: 6rem 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
   background: #000822;
 }
 
@@ -16,6 +19,9 @@
   gap: 5rem;
   position: relative;
   z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2%;
 }
 
 .first {
