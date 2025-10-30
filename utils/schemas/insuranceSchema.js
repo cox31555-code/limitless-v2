@@ -83,7 +83,7 @@ export const vehicleDetailsSchema = z
     }
   );
 
-// Cover Details Schema
+// Cover Details Schema - for temporary/impound insurance
 export const coverDetailsSchema = z.object({
   type: z.enum(["Hours", "Days", "Weeks", "Months", "Years"], {
     required_error: "Cover type is required",
@@ -99,6 +99,13 @@ export const coverDetailsSchema = z.object({
       /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/,
       "Please enter a valid time format (HH:MM)"
     ),
+});
+
+// Cover Details Schema - for annual insurance
+export const annualCoverDetailsSchema = z.object({
+  level: z.enum(["comprehensive", "tpft", "tpo"], {
+    required_error: "Please select a cover level",
+  }),
 });
 
 // User Details Schema
