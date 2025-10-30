@@ -208,16 +208,6 @@ const AdditionalDriversModal = ({
                             onChange={(value) => onUpdateDriver(index, "dateOfBirth", value)}
                           />
                         </div>
-                        <div className={modalStyles.field}>
-                          <FormTextInput
-                            label="Email Address"
-                            type="email"
-                            placeholder="Enter email"
-                            value={watch(`carUsage.additionalDrivers.${index}.email`) || ""}
-                            onChange={(e) => onUpdateDriver(index, "email", e.target.value)}
-                            inputStyle={{ paddingLeft: "14px" }}
-                          />
-                        </div>
                       </div>
 
                       <div className={modalStyles.field}>
