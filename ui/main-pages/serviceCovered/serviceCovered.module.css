@@ -65,10 +65,6 @@
   overflow: hidden;
 }
 
-.card:hover {
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.08);
-}
 
 .iconWrapper {
   width: 8.9rem;
@@ -187,10 +183,6 @@
   transition: all 0.2s ease;
 }
 
-.item:hover {
-  background: rgba(3, 136, 255, 0.08);
-  border-color: rgba(3, 136, 255, 0.15);
-}
 
 .checkmarkIcon,
 .crossIcon {
