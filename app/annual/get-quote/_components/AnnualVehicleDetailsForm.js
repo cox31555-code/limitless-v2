@@ -557,28 +557,26 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
               {...register("vehicleDetails.importedVehicle")}
               error={errors.vehicleDetails?.importedVehicle}
             />
-            <div>
-              <FormDropdown
-                label="Has your vehicle been modified?"
-                options={yesNoOptions}
-                placeholder="Please select"
-                {...register("vehicleDetails.vehicleModified")}
-                error={errors.vehicleDetails?.vehicleModified}
-              />
-              {vehicleModified === "Yes" && vehicleModifications.length > 0 && (
-                <div className={styles.modificationsListContainer}>
-                  <p className={styles.modificationsLabel}>Selected Modifications:</p>
-                  <div className={styles.modificationsTagsList}>
-                    {vehicleModifications.map((modification) => (
-                      <span key={modification} className={styles.modificationTag}>
-                        {modification}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+            <FormDropdown
+              label="Has your vehicle been modified?"
+              options={yesNoOptions}
+              placeholder="Please select"
+              {...register("vehicleDetails.vehicleModified")}
+              error={errors.vehicleDetails?.vehicleModified}
+            />
           </div>
+          {vehicleModified === "Yes" && vehicleModifications.length > 0 && (
+            <div className={styles.modificationsListContainer}>
+              <p className={styles.modificationsLabel}>Selected Modifications:</p>
+              <div className={styles.modificationsTagsList}>
+                {vehicleModifications.map((modification) => (
+                  <span key={modification} className={styles.modificationTag}>
+                    {modification}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className={styles.row}>
             <FormDropdown
