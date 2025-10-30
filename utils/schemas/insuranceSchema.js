@@ -314,6 +314,13 @@ export const insuranceSchema = z.object({
   }
 );
 
+// Optional Extras Schema - for annual insurance
+export const optionalExtrasSchema = z.object({
+  courtesyCar: z.boolean().optional(),
+  breakdownCover: z.boolean().optional(),
+  foreignUseCover: z.boolean().optional(),
+}).optional();
+
 // Annual Insurance Schema
 export const annualInsuranceSchema = z.object({
   type: z.enum(["Annual"], {
@@ -321,6 +328,7 @@ export const annualInsuranceSchema = z.object({
   }),
   vehicleDetails: vehicleDetailsSchema,
   coverDetails: annualCoverDetailsSchema,
+  optionalExtras: optionalExtrasSchema,
   userDetails: userDetailsSchema.optional(), // Optional for dashboard users
   carUsage: carUsageSchema,
   terms: termsSchema,
