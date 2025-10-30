@@ -183,6 +183,12 @@ const AdditionalDriversModal = ({
     return !checkTileCompletion(driverIndex, previousTileKey);
   };
 
+  const isDriverDisabled = (driverIndex) => {
+    if (driverIndex === 0) return false; // First driver is always enabled
+    const previousDriver = drivers[driverIndex - 1];
+    return !isDriverComplete(previousDriver);
+  };
+
 
   useEffect(() => {
     drivers.forEach((driver, index) => {
