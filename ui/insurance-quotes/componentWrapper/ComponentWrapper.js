@@ -28,6 +28,7 @@ const getIconForTitle = (title) => {
 
 const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
   const iconSrc = getIconForTitle(title);
+  const isVehicleIcon = title?.toLowerCase().includes("vehicle");
   const isCoverIcon = title?.toLowerCase().includes("cover");
   const isPersonalIcon = title?.toLowerCase().includes("personal");
   const isTermsIcon = title?.toLowerCase().includes("terms");
@@ -56,7 +57,7 @@ const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
               <path d="M16 18H8v-2h8v2zm0-4H8v-2h8v2zm0-4H8V8h8v2z" fill="white"/>
             </svg>
           </div>
-        ) : (
+        ) : !isVehicleIcon ? (
           <Image
             className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}
             src={iconSrc}
@@ -64,7 +65,7 @@ const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
             width={icon?.width || 48}
             height={icon?.height || 48}
           />
-        )}
+        ) : null}
         <h3 className={`${styles.title} ${isPaymentPage ? styles.greyed : ""} ${plusJakartaSans.className}`}>
           {title}
         </h3>
