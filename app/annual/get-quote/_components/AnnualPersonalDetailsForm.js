@@ -137,7 +137,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
     return () => clearTimeout(timer);
   }, [
-    firstName, surname, userEmail, userPhone, postCode, address, userEmploymentStatus, industry, occupation,
+    firstName, surname, dateOfBirth, userEmail, userPhone, postCode, address, employmentStatus, industry, occupation,
     keepingCarDuringDay, keepingCarDuringNight, usageType, licenseType, licenseHeld, ncb,
     ownsHome, childrenUnder16, livedInUKSinceBirth, criminalConvictions, medicalConditions, insuranceCancelledStatus,
     additionalDrivers, hasAdditionalDrivers
