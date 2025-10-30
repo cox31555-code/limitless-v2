@@ -274,7 +274,7 @@ const AnnualInsuranceContent = () => {
   return (
     <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
-      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={4} />
+      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={5} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -294,6 +294,9 @@ const AnnualInsuranceContent = () => {
             {currentStep === STEPS.PERSONAL && (
               <AnnualPersonalDetailsForm form={form} />
             )}
+            {currentStep === STEPS.OPTIONAL_EXTRAS && (
+              <AnnualOptionalExtrasForm form={form} />
+            )}
             {currentStep === STEPS.TERMS && (
               <TermsForm form={form} onBack={handlePreviousStep} isSubmitting={isSubmitting} />
             )}
@@ -302,7 +305,7 @@ const AnnualInsuranceContent = () => {
           {currentStep !== STEPS.TERMS && (
             <StepActions
               currentStep={currentStep}
-              totalSteps={4}
+              totalSteps={5}
               onNext={handleNextStep}
               onBack={handlePreviousStep}
               isLoading={isSubmitting}
