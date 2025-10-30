@@ -289,10 +289,11 @@
   background: rgba(239, 68, 68, 0.08);
   border: 1.5px solid rgba(239, 68, 68, 0.3);
   border-radius: 8px;
-  margin: 0 0 1.6rem 0;
+  margin: 0 auto 1.6rem auto;
   font-size: 0.95rem;
   color: #dc2626;
   font-weight: 500;
+  max-width: fit-content;
 }
 
 .errorIcon {
