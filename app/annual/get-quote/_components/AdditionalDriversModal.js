@@ -241,12 +241,8 @@ const AdditionalDriversModal = ({
                             maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())}
                             defaultYear={2009}
                             reducedPadding={true}
-                            {...form.register(`carUsage.additionalDrivers.${index}.dateOfBirth`)}
                             value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""}
-                            onChange={(e) => {
-                              const value = e?.target?.value || e;
-                              onUpdateDriver(index, "dateOfBirth", value);
-                            }}
+                            onChange={(value) => onUpdateDriver(index, "dateOfBirth", value)}
                           />
                         </div>
                       </div>
