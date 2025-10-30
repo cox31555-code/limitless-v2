@@ -109,7 +109,7 @@ const AdditionalDriversModal = ({
         }
       }
     }
-  }, [drivers, checkTileCompletion, expandedTiles]);
+  }, [drivers, checkTileCompletion]);
 
   useEffect(() => {
     drivers.forEach((_, index) => {
