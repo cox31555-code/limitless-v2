@@ -42,7 +42,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
   const [showAddressDropdown, setShowAddressDropdown] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [expandedTile, setExpandedTile] = useState('about');
+  const [expandedTiles, setExpandedTiles] = useState(new Set(['about']));
 
   const getTileOrder = () => ['about', 'location', 'employment', 'parking', 'usage', 'driving', 'additional', 'declarations', 'additionalDrivers'];
 
@@ -70,12 +70,35 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   };
 
   const toggleTile = (tileKey) => {
-    setExpandedTile(prev => prev === tileKey ? null : tileKey);
+    setExpandedTiles(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(tileKey)) {
+        newSet.delete(tileKey);
+      } else {
+        newSet.add(tileKey);
+      }
+      return newSet;
+    });
   };
 
   const isTileExpanded = (tileKey) => {
-    return expandedTile === tileKey;
+    return expandedTiles.has(tileKey);
   };
+
+  const autoExpandNextTile = useCallback(() => {
+    const tiles = getTileOrder();
+    for (let i = 0; i < tiles.length; i++) {
+      if (!checkTileCompletion(tiles[i]) && i > 0) {
+        // Auto-expand the next incomplete tile
+        setExpandedTiles(prev => new Set(prev).add(tiles[i]));
+        break;
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    autoExpandNextTile();
+  }, [watch('userDetails'), watch('location'), watch('employment'), watch('parking'), watch('usage'), watch('driving'), watch('additional'), watch('declarations'), watch('carUsage.hasAdditionalDrivers'), autoExpandNextTile]);
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
