@@ -61,6 +61,25 @@ const AdditionalDriversModal = ({
 
   const getTileOrder = () => ['about', 'employment', 'usage', 'driving', 'declarations'];
 
+  const getTileLabel = (tileKey) => {
+    const labels = {
+      about: 'About You',
+      employment: 'Your Employment',
+      usage: 'Usage Details',
+      driving: 'Driving Record',
+      declarations: 'Declarations'
+    };
+    return labels[tileKey] || tileKey;
+  };
+
+  const getPreviousTileLabel = (tileKey) => {
+    const tiles = getTileOrder();
+    const currentIndex = tiles.indexOf(tileKey);
+    if (currentIndex <= 0) return null;
+    const previousKey = tiles[currentIndex - 1];
+    return getTileLabel(previousKey);
+  };
+
   const isTileDisabled = (driverIndex, tileKey) => {
     const tiles = getTileOrder();
     const currentTileIndex = tiles.indexOf(tileKey);
