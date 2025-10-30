@@ -262,7 +262,7 @@ const AdditionalDriversModal = ({
                     {isTileExpanded(index, 'employment') && <>
                       <div className={modalStyles.fieldRow2Col}>
                         <div className={modalStyles.field}>
-                          <FormDropdown label="Employment Status" options={employmentStatusOptions} placeholder="Select status" value={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) || ""} onChange={(value) => onUpdateDriver(index, "employmentStatus", value)} inputStyle={{ paddingLeft: "14px" }} />
+                          <FormDropdown label="Employment Status" options={employmentStatusOptions} placeholder="Select status" value={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) || ""} onChange={(e) => onUpdateDriver(index, "employmentStatus", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                         <div className={modalStyles.field}>
                           <FormAutocomplete label="Occupation" options={occupationOptions} placeholder="Type your occupation..." value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "occupation", value); }} disabled={["Retired", "Unemployed", "Student", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
