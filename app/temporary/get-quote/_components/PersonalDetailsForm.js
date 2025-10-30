@@ -98,27 +98,8 @@ const PersonalDetailsForm = ({ form }) => {
   }, [dateOfBirth, setValue, watch]);
 
   const handleFindAddress = async () => {
-    const postcode = watch("userDetails.postCode");
-    if (!postcode) return;
-
-    setIsLoadingAddresses(true);
-    try {
-      const response = await fetch(
-        `${API_BASE_URL}/vehicle-search/postcode/${postcode}`
-      );
-      if (!response.ok) {
-        setAddresses([]);
-        return;
-      }
-      const data = await response.json();
-      setAddresses(data.addresses || []);
-      setShowAddressDropdown(data.addresses?.length > 0);
-    } catch (error) {
-      console.error("Error fetching addresses:", error);
-      setAddresses([]);
-    } finally {
-      setIsLoadingAddresses(false);
-    }
+    // Postcode is sufficient for now - skip API lookup
+    // Future enhancement: Implement address lookup via API
   };
 
   return (
