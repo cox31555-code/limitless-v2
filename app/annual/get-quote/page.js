@@ -107,6 +107,8 @@ const AnnualInsuranceContent = () => {
         ownsHome: null,
         childrenUnder16: null,
         livedInUKSinceBirth: null,
+        hasAdditionalDrivers: null,
+        additionalDrivers: [],
         criminalConvictions: false,
         medicalConditions: false,
         insuranceCancelledOrClaimRefusedOrPolicyVoided: false,
