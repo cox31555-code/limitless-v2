@@ -133,6 +133,16 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
     }
   }, [vehicleModified]);
 
+  // Clear owner and keeper fields if legal owner is "Yes"
+  useEffect(() => {
+    if (legalOwner === "Yes") {
+      setValue("vehicleDetails.owner", "", { shouldValidate: false });
+      setValue("vehicleDetails.registeredKeeper", "", { shouldValidate: false });
+      setValue("vehicleDetails.ownerOther", "", { shouldValidate: false });
+      setValue("vehicleDetails.registeredKeeperOther", "", { shouldValidate: false });
+    }
+  }, [legalOwner, setValue]);
+
   const handleModificationsConfirm = (selectedModifications) => {
     setValue("vehicleDetails.vehicleModifications", selectedModifications, {
       shouldValidate: true,
