@@ -1,11 +1,20 @@
+.wrapper {
+  padding: 8rem 2%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* First Section - What is temporary vehicle insurance */
 .container {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   background: #000822;
   width: 100%;
-  max-width: 1408px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   padding: 8rem 4.9rem 11rem;
   position: relative;
   overflow: hidden;
@@ -68,8 +77,161 @@
   pointer-events: none;
 }
 
+/* Second Section - How does temporary vehicle insurance work */
+.howCard {
+  width: 100%;
+  max-width: 100%;
+  background: #07102D;
+  border-radius: 18px;
+  backdrop-filter: blur(16.566335678100586px);
+  padding: 6.7rem 6.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradientBars {
+  width: 105.5rem;
+  height: 60.4rem;
+  transform: rotate(90deg);
+  position: absolute;
+  left: 70.6rem;
+  top: -23.2rem;
+  pointer-events: none;
+}
+
+.bar1 {
+  width: 20.1rem;
+  height: 76.7rem;
+  opacity: 0.6;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.bar2 {
+  width: 20.1rem;
+  height: 88.8rem;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+  position: absolute;
+  left: 40.3rem;
+  top: 16.7rem;
+}
+
+.bar3 {
+  width: 20.1rem;
+  height: 77.3rem;
+  opacity: 0.82;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+  position: absolute;
+  left: 20.1rem;
+  top: 13.7rem;
+}
+
+.howContent {
+  display: flex;
+  gap: 12rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  max-width: 56.5rem;
+  margin-top: 5.2rem;
+}
+
+.howTitle {
+  color: #fff;
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+.howTitle span {
+  color: #049CFF;
+  display: block;
+}
+
+.howDescription {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 124%;
+  letter-spacing: 0.64px;
+  margin: 0;
+}
+
+.stepsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 52.5rem;
+  flex: 1;
+}
+
+.stepBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.4rem;
+  padding: 2.9rem 3.5rem;
+  background: #07102D;
+  border-radius: 14px;
+  backdrop-filter: blur(22px);
+}
+
+.stepBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, #0388FF 100%);
+}
+
+.stepNumber {
+  color: #07102D;
+  font-size: 1.44rem;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.stepTitle {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+.stepDesc {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 124%;
+  letter-spacing: 0.56px;
+  margin: 0;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
+  .wrapper {
+    gap: 5rem;
+  }
+
   .container {
     padding: 6.5rem 4rem 9rem;
   }
@@ -82,11 +244,13 @@
     max-width: 450px;
   }
 
-  .title {
+  .title,
+  .howTitle {
     font-size: 4.8rem;
   }
 
-  .description {
+  .description,
+  .howDescription {
     font-size: 1.5rem;
   }
 
@@ -96,9 +260,26 @@
     padding-bottom: 90px;
     top: -340px;
   }
+
+  .howCard {
+    padding: 5.5rem 5rem;
+  }
+
+  .howContent {
+    gap: 8rem;
+  }
+
+  .gradientBars {
+    left: 60rem;
+  }
 }
 
 @media screen and (max-width: 900px) {
+  .wrapper {
+    padding: 5.5rem 4.4%;
+    gap: 4rem;
+  }
+
   .container {
     padding: 5.5rem 3.6rem 7.5rem;
     border-radius: 16px;
@@ -113,11 +294,13 @@
     max-width: 100%;
   }
 
-  .title {
+  .title,
+  .howTitle {
     font-size: 3.8rem;
   }
 
-  .description {
+  .description,
+  .howDescription {
     font-size: 1.4rem;
   }
 
@@ -127,9 +310,58 @@
     padding-bottom: 75px;
     top: -280px;
   }
+
+  .howCard {
+    padding: 4.5rem 3.6rem;
+  }
+
+  .howContent {
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .leftColumn {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .stepsColumn {
+    max-width: 100%;
+  }
+
+  .gradientBars {
+    width: 80rem;
+    height: 50rem;
+    left: 50rem;
+    top: -18rem;
+  }
+
+  .bar1 {
+    width: 16rem;
+    height: 60rem;
+  }
+
+  .bar2 {
+    width: 16rem;
+    height: 70rem;
+    left: 32rem;
+    top: 14rem;
+  }
+
+  .bar3 {
+    width: 16rem;
+    height: 62rem;
+    left: 16rem;
+    top: 11rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .wrapper {
+    padding: 4rem 4.4%;
+    gap: 3rem;
+  }
+
   .container {
     padding: 4rem 2.4rem 6rem;
     border-radius: 14px;
@@ -139,15 +371,13 @@
     gap: 2.8rem;
   }
 
-  .illustration {
-    max-width: 100%;
-  }
-
-  .title {
+  .title,
+  .howTitle {
     font-size: 3rem;
   }
 
-  .description {
+  .description,
+  .howDescription {
     font-size: 1.2rem;
   }
 
@@ -156,5 +386,57 @@
     height: 490px;
     padding-bottom: 60px;
     top: -220px;
+  }
+
+  .howCard {
+    padding: 3.5rem 2.4rem;
+  }
+
+  .stepBox {
+    padding: 2.2rem 2.4rem;
+    gap: 1.8rem;
+  }
+
+  .stepBadge {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stepNumber {
+    font-size: 1.3rem;
+  }
+
+  .stepTitle {
+    font-size: 1.6rem;
+  }
+
+  .stepDesc {
+    font-size: 1.3rem;
+  }
+
+  .gradientBars {
+    width: 60rem;
+    height: 40rem;
+    left: 35rem;
+    top: -15rem;
+  }
+
+  .bar1 {
+    width: 12rem;
+    height: 45rem;
+  }
+
+  .bar2 {
+    width: 12rem;
+    height: 52rem;
+    left: 24rem;
+    top: 10rem;
+  }
+
+  .bar3 {
+    width: 12rem;
+    height: 46rem;
+    left: 12rem;
+    top: 8rem;
   }
 }
