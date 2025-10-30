@@ -39,6 +39,17 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expandedTiles, setExpandedTiles] = useState(new Set(['about']));
 
+  // Watch form values early to use in dependencies
+  const employmentStatus = watch("userDetails.employmentStatus");
+  const dateOfBirth = watch("userDetails.dateOfBirth");
+  const additionalDrivers = watch("carUsage.additionalDrivers") || [];
+  const hasAdditionalDrivers = watch("carUsage.hasAdditionalDrivers");
+  const criminalConvictions = watch("carUsage.criminalConvictions");
+  const medicalConditions = watch("carUsage.medicalConditions");
+  const insuranceCancelledStatus = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
+  const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
+  const isRetiredOrUnemployed = isIndustryOccupationDisabled;
+
   const getTileOrder = () => ['about', 'location', 'employment', 'parking', 'usage', 'driving', 'additional', 'declarations', 'additionalDrivers'];
 
   const getTileLabel = (tileKey) => {
