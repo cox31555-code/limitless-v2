@@ -139,7 +139,12 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, [additionalDrivers, hasAdditionalDrivers, criminalConvictions, medicalConditions, insuranceCancelledStatus]);
+  }, [
+    firstName, surname, userEmail, userPhone, postCode, address, userEmploymentStatus, industry, occupation,
+    keepingCarDuringDay, keepingCarDuringNight, usageType, licenseType, licenseHeld, ncb,
+    ownsHome, childrenUnder16, livedInUKSinceBirth, criminalConvictions, medicalConditions, insuranceCancelledStatus,
+    additionalDrivers, hasAdditionalDrivers
+  ]);
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
