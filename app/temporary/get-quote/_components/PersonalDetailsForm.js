@@ -32,10 +32,7 @@ const PersonalDetailsForm = ({ form }) => {
     setValue,
   } = form;
 
-  const [addresses, setAddresses] = useState([]);
-  const [isLoadingAddresses, setIsLoadingAddresses] = useState(false);
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
-  const [showAddressDropdown, setShowAddressDropdown] = useState(false);
 
   const employmentStatus = watch("userDetails.employmentStatus");
   const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
