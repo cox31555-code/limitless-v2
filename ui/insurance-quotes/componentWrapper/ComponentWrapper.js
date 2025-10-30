@@ -26,9 +26,8 @@ const getIconForTitle = (title) => {
   return "/svg/insurance-quote.svg";
 };
 
-const ComponentWrapper = ({ children, title, icon, isPaymentPage = false, hideIcon = false }) => {
+const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
   const iconSrc = getIconForTitle(title);
-  const isVehicleIcon = !hideIcon && title?.toLowerCase().includes("vehicle");
   const isCoverIcon = title?.toLowerCase().includes("cover");
   const isPersonalIcon = title?.toLowerCase().includes("personal");
   const isTermsIcon = title?.toLowerCase().includes("terms");
@@ -36,13 +35,7 @@ const ComponentWrapper = ({ children, title, icon, isPaymentPage = false, hideIc
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        {!hideIcon && isVehicleIcon ? (
-          <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm11 0c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM5 11l1.5-4.5h11L19 11H5z" fill="white"/>
-            </svg>
-          </div>
-        ) : isCoverIcon ? (
+        {isCoverIcon ? (
           <div className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}>
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 1L3 5v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="white"/>
