@@ -256,8 +256,8 @@ const FormDateInput = forwardRef(
               <CustomDatePicker
                 selectedDate={parseDate(value)}
                 onDateSelect={handleDateSelect}
-                minDate={allowPastDates ? null : today}
-                maxDate={isDateOfBirth ? maxDate : null}
+                minDate={minDate || (allowPastDates ? null : today)}
+                maxDate={isDateOfBirth ? maxDate : (maxDate ? maxDate : null)}
                 showAbove={pickerPosition.showAbove}
                 defaultYear={defaultYear}
               />
