@@ -2066,4 +2066,9 @@
     margin-top: 1.8rem;
     padding-top: 1.4rem;
   }
+
+  .findAddressButton {
+    height: 4.8rem;
+    font-size: 1.1rem;
+  }
 }
