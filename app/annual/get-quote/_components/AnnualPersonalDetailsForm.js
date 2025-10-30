@@ -238,9 +238,16 @@ const AnnualPersonalDetailsForm = ({ form }) => {
       <div className={styles.cleanFormContent}>
         
         {/* About You Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="1">About You</h3>
-          
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('about') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('about') ? modalButtonStyles.expanded : ''} ${isTileDisabled('about') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('about')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>About You</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('about') && <>
           <div className={styles.cleanFormGrid2Col}>
             <FormTextInput
               label="First Name"
@@ -290,12 +297,21 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
+          </>
+          }
         </section>
 
         {/* Where You Live Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="2">Where You Live</h3>
-          
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('location') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('location') ? modalButtonStyles.expanded : ''} ${isTileDisabled('location') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('location')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>Where You Live</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('location') && <>
           <div className={styles.cleanPostcodeRow}>
             <FormTextInput
               label="Postcode"
@@ -329,11 +345,21 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               inputStyle={{ paddingLeft: "14px" }}
             />
             </div>
+          </>
+          }
         </section>
 
         {/* Employment Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="3">Your Employment</h3>
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('employment') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('employment') ? modalButtonStyles.expanded : ''} ${isTileDisabled('employment') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('employment')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>Your Employment</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('employment') && <>
 
           <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
@@ -372,12 +398,21 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
+          </>
+          }
         </section>
 
         {/* Car Parking Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="4">Parking & Storage</h3>
-          
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('parking') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('parking') ? modalButtonStyles.expanded : ''} ${isTileDisabled('parking') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('parking')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>Parking & Storage</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('parking') && <>
           <div className={styles.cleanFormGrid2Col}>
             <div className={styles.cleanSelectionCard}>
               <Selection2
@@ -415,12 +450,21 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               )}
             </div>
           </div>
+          </>
+          }
         </section>
 
         {/* Car Usage Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="5">Usage Details</h3>
-          
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('usage') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('usage') ? modalButtonStyles.expanded : ''} ${isTileDisabled('usage') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('usage')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>Usage Details</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('usage') && <>
           <div className={styles.cleanFormGrid1Col}>
             <p className={styles.cleanLabel}>What do you use the car for?</p>
             <div className={styles.cleanSelections3}>
@@ -461,12 +505,21 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               />
             </div>
           )}
+          </>
+          }
         </section>
 
         {/* Your Driving Record Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="6">Your Driving Record</h3>
-          
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('driving') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('driving') ? modalButtonStyles.expanded : ''} ${isTileDisabled('driving') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('driving')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>Your Driving Record</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('driving') && <>
           <div className={styles.cleanFormGrid3Col}>
             <FormDropdown
               label="License Type"
@@ -557,11 +610,21 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               </div>
             </>
           )}
+          </>
+          }
         </section>
 
         {/* Additional Information Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="7">Additional Information</h3>
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('additional') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('additional') ? modalButtonStyles.expanded : ''} ${isTileDisabled('additional') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('additional')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>Additional Information</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('additional') && <>
 
           <div className={styles.cleanAdditionalInfoContainer}>
             <div className={styles.cleanFormGrid1Col}>
@@ -595,12 +658,21 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               />
             </div>
           </div>
+          </>
+          }
         </section>
 
         {/* Declarations Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="8">Important Declarations</h3>
-          
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('declarations') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('declarations') ? modalButtonStyles.expanded : ''} ${isTileDisabled('declarations') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('declarations')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>Important Declarations</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('declarations') && <>
           <div className={styles.cleanDeclarationsContainer}>
             <div className={styles.cleanDeclarationItem}>
               <p className={styles.cleanDeclarationQuestion}>
@@ -643,11 +715,21 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               />
             </div>
           </div>
+          </>
+          }
         </section>
 
         {/* Additional Drivers Section */}
-        <section className={styles.cleanSection}>
-          <h3 className={styles.cleanSectionTitle} data-section="9">Additional Drivers</h3>
+        <section className={`${modalButtonStyles.formSection} ${isTileDisabled('additionalDrivers') ? modalButtonStyles.disabled : ''}`}>
+          <button
+            type="button"
+            className={`${modalButtonStyles.tileHeader} ${isTileExpanded('additionalDrivers') ? modalButtonStyles.expanded : ''} ${isTileDisabled('additionalDrivers') ? modalButtonStyles.disabled : ''}`}
+            onClick={() => toggleTile('additionalDrivers')}
+          >
+            <h3 className={modalButtonStyles.sectionLabel}>Additional Drivers</h3>
+            <span className={modalButtonStyles.expandIcon}>+</span>
+          </button>
+          {isTileExpanded('additionalDrivers') && <>
 
           <div className={styles.cleanAdditionalInfoContainer}>
             <div className={styles.cleanFormGrid1Col}>
@@ -674,6 +756,8 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               )}
             </div>
           </div>
+          </>
+          }
         </section>
       </div>
 
