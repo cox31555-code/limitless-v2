@@ -682,6 +682,10 @@
     padding: 2.4rem;
   }
 
+  .validationErrorBox {
+    padding: 1.2rem 2.4rem;
+  }
+
   .driverItem {
     padding: 2rem;
   }
