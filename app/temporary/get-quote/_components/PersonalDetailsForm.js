@@ -164,8 +164,8 @@ const PersonalDetailsForm = ({ form }) => {
         {/* Where You Live Section */}
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle} data-section="2">Where You Live</h3>
-          
-          <div className={styles.cleanPostcodeRow}>
+
+          <div className={styles.cleanFormGrid1Col}>
             <FormTextInput
               label="Postcode"
               placeholder="Enter your postcode"
@@ -173,31 +173,7 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.postCode}
               inputStyle={{ paddingLeft: "14px" }}
             />
-            <div className={styles.cleanFindAddressButton}>
-              <ConfirmBtn
-                title={isLoadingAddresses ? "Loading..." : "FIND ADDRESS"}
-                onClick={handleFindAddress}
-                disabled={isLoadingAddresses}
-                type="button"
-              />
-            </div>
           </div>
-
-          <div className={styles.cleanFormGrid1Col}>
-            <FormDropdown
-              label="Select address"
-              options={addresses}
-              placeholder={
-                addresses.length > 0
-                  ? "Select your address"
-                  : "No addresses found"
-              }
-              disabled={addresses.length === 0}
-              {...register("userDetails.address")}
-              error={errors.userDetails?.address}
-              inputStyle={{ paddingLeft: "14px" }}
-            />
-            </div>
         </section>
 
         {/* Employment Section */}
