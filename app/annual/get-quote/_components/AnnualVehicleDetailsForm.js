@@ -92,6 +92,7 @@ const alarmImmobiliserOptions = [
   "Thatcham approved alarm and immobiliser",
   "Factory fitted immobiliser",
   "Factory fitted alarm and immobiliser",
+  "Other",
 ];
 const yesNoOptions = ["No", "Yes"];
 const ownerOptions = ["Policyholder", "Spouse/Partner", "Parent", "Company", "Other"];
