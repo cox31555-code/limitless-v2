@@ -17,6 +17,7 @@ const FormDateInput = forwardRef(
       value,
       allowPastDates = false,
       isDateOfBirth = false,
+      minDate = null,
       maxDate = null,
       forceShowAbove = false,
       defaultYear = null,
