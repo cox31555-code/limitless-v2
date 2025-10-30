@@ -106,6 +106,7 @@ export const annualCoverDetailsSchema = z.object({
   level: z.enum(["comprehensive", "tpft", "tpo"], {
     required_error: "Please select a cover level",
   }),
+  startDate: z.string().min(1, "Start date is required"),
 });
 
 // User Details Schema
