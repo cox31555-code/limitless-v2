@@ -92,6 +92,7 @@ const FormAutocomplete = forwardRef(
             value={inputValue}
             onChange={handleInputChange}
             onFocus={handleInputFocus}
+            disabled={disabled}
             {...props}
           />
           <div className={styles.arrowContainer}>
@@ -100,7 +101,7 @@ const FormAutocomplete = forwardRef(
               alt="arrow-down"
               width={24}
               height={24}
-              className={`${styles.arrowDown} ${isOpen ? styles.arrowUp : ""}`}
+              className={`${styles.arrowDown} ${isOpen && !disabled ? styles.arrowUp : ""}`}
             />
           </div>
         </div>
