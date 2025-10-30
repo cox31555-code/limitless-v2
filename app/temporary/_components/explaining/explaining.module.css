@@ -157,15 +157,15 @@
 }
 
 .featureNumber {
-  min-width: 3.2rem;
-  min-height: 3.2rem;
+  min-width: 4.8rem;
+  min-height: 4.8rem;
   border-radius: 50%;
   background: #0388ff;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 100%;
   flex-shrink: 0;
