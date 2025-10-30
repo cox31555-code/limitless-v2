@@ -115,7 +115,6 @@ const AdditionalDrivers = ({
               {/* Date of Birth */}
               <div className={styles.cleanFormGrid1Col}>
                 <p className={styles.cleanFormFieldLabel}>What's their date of birth?</p>
-                <a href="#" className={styles.cleanHelpLink}>Can I get a quote if they're under 17?</a>
               </div>
 
               <div className={styles.cleanFormGrid1Col}>
