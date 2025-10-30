@@ -71,6 +71,21 @@
   box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
 }
 
+/* Registration Input Grey Border */
+.inputContainer:has(.input.reg) {
+  border: 1.5px solid #c5cdd5;
+}
+
+.inputContainer:has(.input.reg):hover {
+  border: 1.5px solid #a8b2bd;
+  background: #ffffff;
+}
+
+.inputContainer:has(.input.reg):focus-within {
+  border: 1.5px solid #5a6b7d;
+  box-shadow: 0 0 0 2px rgba(90, 107, 125, 0.1);
+}
+
 .inputContainer.disabled {
   background: rgba(3, 136, 255, 0.04);
   border: 1.5px solid rgba(3, 136, 255, 0.08);
