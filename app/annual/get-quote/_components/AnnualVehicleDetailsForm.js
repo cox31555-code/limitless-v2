@@ -351,6 +351,9 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
     setHaventBoughtYet(isChecked);
     if (isChecked) {
       setValue("vehicleDetails.purchaseDate", "");
+    } else {
+      // When unchecking, also clear the legal owner field
+      setValue("vehicleDetails.legalOwner", "", { shouldValidate: false });
     }
   };
 
