@@ -165,6 +165,7 @@ const AnnualInsuranceContent = () => {
 
   const coverFields = [
     "coverDetails.level",
+    "coverDetails.startDate",
   ];
 
   const personalFields = [
