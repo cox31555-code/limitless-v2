@@ -8,9 +8,10 @@ import Selection2 from "@/ui/inputs/selections/selection2/Selection2";
 import Selection3 from "@/ui/inputs/selections/selection3/Selection3";
 import YesORNo from "@/ui/inputs/selections/yesORNo/YesORNo";
 import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import AdditionalDrivers from "./AdditionalDrivers";
+import AdditionalDriversModal from "./AdditionalDriversModal";
 import { API_BASE_URL } from "@/utils/config";
 import styles from "@/app/temporary/get-quote/_components/components.module.css";
+import modalButtonStyles from "./additionalDriversModal.module.css";
 import {
   carUsageOptions,
   employmentStatusOptions,
