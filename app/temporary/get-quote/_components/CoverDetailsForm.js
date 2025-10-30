@@ -90,95 +90,117 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
             </p>
           </div>
 
-          <div className={styles.sparkSpaceY6}>
-            {/* Duration Type Selection */}
-            <div className={styles.sparkDurationTypeGrid}>
-              {[
-                { key: "Hours", label: "Hours" },
-                { key: "Days", label: "Days" },
-                { key: "Weeks", label: "Weeks" },
-              ].map(({ key, label }) => (
-                <button
-                  key={key}
-                  onClick={() => handleDurationTypeChange(key)}
-                  className={`${styles.sparkTypeButton} ${
-                    durationType === key
-                      ? styles.sparkTypeButtonActive
-                      : styles.sparkTypeButtonInactive
-                  }`}
-                >
-                  <div
-                    className={`${styles.sparkDot} ${
-                      durationType === key
-                        ? styles.sparkDotActive
-                        : styles.sparkDotInactive
-                    }`}
-                  >
-                    {durationType === key && (
-                      <div className={styles.sparkDotInner} />
-                    )}
-                  </div>
-                  <span>{label}</span>
-                </button>
-              ))}
+          {isImpound ? (
+            <div style={{ display: "flex", gap: "1.2rem", flexWrap: "wrap" }}>
+              <button
+                type="button"
+                style={{
+                  padding: "1.2rem 2.4rem",
+                  borderRadius: "8px",
+                  border: "2px solid #0388ff",
+                  background: "#0388ff",
+                  color: "#fff",
+                  fontSize: "1.3rem",
+                  fontWeight: "600",
+                  cursor: "not-allowed",
+                  opacity: 1,
+                }}
+                disabled
+              >
+                ✓ 30 Days
+              </button>
             </div>
-
-            {/* Duration Value Selection */}
-            <div className={styles.sparkDurationContainer}>
-              <p className={styles.sparkDurationLabel}>Select Duration</p>
-              <div className={styles.sparkDurationGrid}>
-                {durationOptions.map((option) => (
+          ) : (
+            <div className={styles.sparkSpaceY6}>
+              {/* Duration Type Selection */}
+              <div className={styles.sparkDurationTypeGrid}>
+                {[
+                  { key: "Hours", label: "Hours" },
+                  { key: "Days", label: "Days" },
+                  { key: "Weeks", label: "Weeks" },
+                ].map(({ key, label }) => (
                   <button
-                    key={option}
-                    onClick={() => handleDurationChange(option)}
-                    className={`${styles.sparkDurationButton} ${
-                      duration === option
-                        ? styles.sparkDurationButtonActive
-                        : styles.sparkDurationButtonInactive
+                    key={key}
+                    onClick={() => handleDurationTypeChange(key)}
+                    className={`${styles.sparkTypeButton} ${
+                      durationType === key
+                        ? styles.sparkTypeButtonActive
+                        : styles.sparkTypeButtonInactive
                     }`}
                   >
-                    {option}
+                    <div
+                      className={`${styles.sparkDot} ${
+                        durationType === key
+                          ? styles.sparkDotActive
+                          : styles.sparkDotInactive
+                      }`}
+                    >
+                      {durationType === key && (
+                        <div className={styles.sparkDotInner} />
+                      )}
+                    </div>
+                    <span>{label}</span>
                   </button>
                 ))}
+              </div>
 
-                {/* Custom Dropdown for more options - only show for Days */}
-                {showDropdown && (
-                  <div className={styles.sparkDropdownContainer}>
-                          <button
-                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                            className={styles.sparkDropdownButton}
-                          >
-                            <svg
-                              className={`${styles.sparkDropdownIcon} ${
-                                isDropdownOpen ? styles.sparkDropdownIconOpen : ""
-                              }`}
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
+              {/* Duration Value Selection */}
+              <div className={styles.sparkDurationContainer}>
+                <p className={styles.sparkDurationLabel}>Select Duration</p>
+                <div className={styles.sparkDurationGrid}>
+                  {durationOptions.map((option) => (
+                    <button
+                      key={option}
+                      onClick={() => handleDurationChange(option)}
+                      className={`${styles.sparkDurationButton} ${
+                        duration === option
+                          ? styles.sparkDurationButtonActive
+                          : styles.sparkDurationButtonInactive
+                      }`}
+                    >
+                      {option}
+                    </button>
+                  ))}
+
+                  {/* Custom Dropdown for more options - only show for Days */}
+                  {showDropdown && (
+                    <div className={styles.sparkDropdownContainer}>
+                            <button
+                              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                              className={styles.sparkDropdownButton}
                             >
-                              <polyline points="6 9 12 15 18 9" />
-                            </svg>
-                          </button>
+                              <svg
+                                className={`${styles.sparkDropdownIcon} ${
+                                  isDropdownOpen ? styles.sparkDropdownIconOpen : ""
+                                }`}
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                              >
+                                <polyline points="6 9 12 15 18 9" />
+                              </svg>
+                            </button>
 
-                          {isDropdownOpen && (
-                            <div className={styles.sparkDropdownContent}>
-                              {extraDurationOptions.map((option) => (
-                                <button
-                                  key={option}
-                                  onClick={() => handleDurationChange(option)}
-                                  className={styles.sparkDropdownItem}
-                                >
-                                  {option}
-                                </button>
-                              ))}
-                            </div>
-                          )}
-                  </div>
-                )}
+                            {isDropdownOpen && (
+                              <div className={styles.sparkDropdownContent}>
+                                {extraDurationOptions.map((option) => (
+                                  <button
+                                    key={option}
+                                    onClick={() => handleDurationChange(option)}
+                                    className={styles.sparkDropdownItem}
+                                  >
+                                    {option}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Start Date/Time Section */}
