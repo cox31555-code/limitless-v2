@@ -196,6 +196,10 @@
   background: rgba(3, 136, 255, 0.02);
 }
 
+.tileHeader.expanded {
+  background: rgba(3, 136, 255, 0.06);
+}
+
 .tileHeader .sectionLabel {
   margin: 0;
 }
