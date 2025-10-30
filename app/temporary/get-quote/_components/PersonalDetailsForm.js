@@ -220,14 +220,16 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.employmentStatus}
               inputStyle={{ paddingLeft: "14px" }}
             />
-            <FormDropdown
+            <FormAutocomplete
               label="Occupation"
               options={occupationOptions}
-              placeholder="Select your occupation"
-              {...register("userDetails.occupation")}
-              error={errors.userDetails?.occupation}
-              disabled={isRetiredOrUnemployed}
+              placeholder="Type or select occupation"
               value={isRetiredOrUnemployed ? "N/A" : watch("userDetails.occupation")}
+              onChange={(e) => {
+                const value = e.target?.value || e;
+                setValue("userDetails.occupation", value);
+              }}
+              disabled={isRetiredOrUnemployed}
               inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
