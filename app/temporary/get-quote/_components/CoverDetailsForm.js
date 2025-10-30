@@ -1,11 +1,13 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import FormDateInput from "@/ui/inputs/FormDateInput";
+import Image from "next/image";
 import styles from "./components.module.css";
 
 const CoverDetailsForm = ({ form, isImpound = false }) => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [startPolicyImmediately, setStartPolicyImmediately] = useState(false);
 
   const durationType = form.watch("coverDetails.type");
   const duration = form.watch("coverDetails.period");
@@ -19,6 +21,19 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
       form.setValue("coverDetails.period", 30);
     }
   }, [isImpound, form]);
+
+  const handleStartImmediately = () => {
+    if (!startPolicyImmediately) {
+      // Set to current date and time
+      const now = new Date();
+      const currentDate = now.toISOString().split("T")[0];
+      const currentTime = now.toTimeString().slice(0, 5);
+
+      form.setValue("coverDetails.startDate", currentDate, { shouldValidate: true });
+      form.setValue("coverDetails.startTime", currentTime, { shouldValidate: true });
+    }
+    setStartPolicyImmediately(!startPolicyImmediately);
+  };
 
   // Dynamic duration options based on selected type
   const getDurationOptions = () => {
