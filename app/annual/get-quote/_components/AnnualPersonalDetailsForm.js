@@ -265,7 +265,8 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   };
 
   return (
-    <ComponentWrapper title="Personal Details">
+    <>
+      <ComponentWrapper title="Personal Details">
       <div className={styles.cleanFormContent}>
         
         {/* About You Section */}
@@ -861,8 +862,10 @@ const AnnualPersonalDetailsForm = ({ form }) => {
           </>}
         </section>
       </div>
+    </ComponentWrapper>
 
-      {/* Additional Drivers Modal */}
+    {/* Additional Drivers Modal - Rendered outside ComponentWrapper */}
+    {isModalOpen && (
       <AdditionalDriversModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -872,7 +875,8 @@ const AnnualPersonalDetailsForm = ({ form }) => {
         onRemoveDriver={handleRemoveDriver}
         onUpdateDriver={handleUpdateDriver}
       />
-    </ComponentWrapper>
+    )}
+    </>
   );
 };
 
