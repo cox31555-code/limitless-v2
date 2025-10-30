@@ -457,11 +457,18 @@ const AdditionalDriversModal = ({
           </div>
         </div>
 
+        {validationError && (
+          <div className={modalStyles.validationErrorBox}>
+            <span className={modalStyles.errorIcon}>!</span>
+            <span>{validationError}</span>
+          </div>
+        )}
+
         <div className={modalStyles.modalFooter}>
-          <button className={modalStyles.cancelButton} onClick={onClose}>
+          <button className={modalStyles.cancelButton} onClick={handleCancel}>
             Cancel
           </button>
-          <button className={modalStyles.doneButton} onClick={onClose} type="button">
+          <button className={modalStyles.doneButton} onClick={handleSaveDrivers} type="button">
             Save Drivers
           </button>
         </div>
