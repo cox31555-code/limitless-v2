@@ -1714,6 +1714,30 @@
   flex: 1;
 }
 
+.findAddressButton {
+  padding: 1.2rem 1.6rem;
+  background: #0388ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.findAddressButton:hover {
+  background: #0270cc;
+}
+
+.findAddressButton:active {
+  background: #025ab3;
+}
+
 .cleanFindAddressButton button {
   width: 100%;
   height: 5.2rem;
