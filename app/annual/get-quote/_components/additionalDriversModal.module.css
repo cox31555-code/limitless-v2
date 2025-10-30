@@ -19,11 +19,11 @@
 
 /* Modal Container */
 .modalContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999999;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 9999999 !important;
   max-height: 92vh;
   width: 92%;
   max-width: 88rem;
