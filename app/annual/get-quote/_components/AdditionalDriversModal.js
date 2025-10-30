@@ -94,6 +94,60 @@ const AdditionalDriversModal = ({
     });
   }, [drivers.length]);
 
+  const isDriverComplete = (driver) => {
+    const requiredFields = [
+      'firstName',
+      'lastName',
+      'dateOfBirth',
+      'livedInUKSinceBirth',
+      'employmentStatus',
+      'occupation',
+      'industry',
+      'otherVehicles',
+      'licenseType',
+      'licenseHeld',
+      'hasAdditionalQualifications',
+      'criminalConvictions',
+      'medicalConditions',
+      'insuranceCancelledOrClaimRefusedOrPolicyVoided'
+    ];
+
+    return requiredFields.every(field => {
+      const value = driver[field];
+      return value !== null && value !== undefined && value !== '';
+    });
+  };
+
+  const validateAllDrivers = () => {
+    if (drivers.length === 0) {
+      return true;
+    }
+
+    const incompleteDriverIndex = drivers.findIndex(driver => !isDriverComplete(driver));
+
+    if (incompleteDriverIndex !== -1) {
+      const driverName = drivers[incompleteDriverIndex].firstName && drivers[incompleteDriverIndex].lastName
+        ? `${drivers[incompleteDriverIndex].firstName} ${drivers[incompleteDriverIndex].lastName}`
+        : `Driver ${incompleteDriverIndex + 1}`;
+      setValidationError(`Please complete all details for ${driverName} before saving.`);
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSaveDrivers = () => {
+    if (validateAllDrivers()) {
+      setValidationError("");
+      onClose();
+    }
+  };
+
+  const handleCancel = () => {
+    setValidationError("");
+    onClose();
+  };
+
 
 
   const getTileOrder = () => ['about', 'employment', 'usage', 'driving', 'declarations'];
