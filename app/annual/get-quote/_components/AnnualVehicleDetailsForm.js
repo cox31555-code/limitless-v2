@@ -108,6 +108,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
   const [showFoundData, setShowFoundData] = useState(false);
   const [haventBoughtYet, setHaventBoughtYet] = useState(false);
   const [showModificationsModal, setShowModificationsModal] = useState(false);
+  const [modsAlreadySelected, setModsAlreadySelected] = useState(false);
   const isAutoSelectingRef = useRef(false);
   const hasAutoTriggeredRef = useRef(false);
 
