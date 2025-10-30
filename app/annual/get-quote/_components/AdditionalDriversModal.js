@@ -59,6 +59,18 @@ const AdditionalDriversModal = ({
     return expandedTile[driverIndex] === tileKey;
   };
 
+  const getTileOrder = () => ['about', 'employment', 'usage', 'driving', 'declarations'];
+
+  const isTileDisabled = (driverIndex, tileKey) => {
+    const tiles = getTileOrder();
+    const currentTileIndex = tiles.indexOf(tileKey);
+
+    if (currentTileIndex === 0) return false; // First tile is always enabled
+
+    const previousTileKey = tiles[currentTileIndex - 1];
+    return !checkTileCompletion(driverIndex, previousTileKey);
+  };
+
   const checkTileCompletion = (driverIndex, tileKey) => {
     const driver = drivers[driverIndex];
     if (!driver) return false;
