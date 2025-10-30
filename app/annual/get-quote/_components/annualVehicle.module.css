@@ -64,26 +64,30 @@
 
 .regBtn {
   color: #0388ff;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   border: none;
   cursor: pointer;
-  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
   background: transparent;
-  padding: 0.4rem 0;
+  padding: 0.6rem 0;
   align-self: flex-start;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .regBtn:hover {
   color: #0270cc;
-  background: transparent;
-  border-color: transparent;
-  transform: none;
-  box-shadow: none;
+  transform: translateX(2px);
+}
+
+.regBtn:active {
+  transform: translateX(1px);
 }
 
 .vehicleDataDisplay {
