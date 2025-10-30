@@ -80,7 +80,10 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     return expandedTiles.has(tileKey);
   };
 
-  const autoExpandNextTile = useCallback(() => {
+  // Get all form values to trigger re-run
+  const allFormValues = watch();
+
+  useEffect(() => {
     const tiles = getTileOrder();
     for (let i = 0; i < tiles.length; i++) {
       const isComplete = checkTileCompletion(tiles[i]);
@@ -103,11 +106,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
         break;
       }
     }
-  }, []);
-
-  useEffect(() => {
-    autoExpandNextTile();
-  }, [autoExpandNextTile]);
+  }, [allFormValues]);
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
