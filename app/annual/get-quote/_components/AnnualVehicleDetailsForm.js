@@ -629,7 +629,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             </div>
           )}
 
-          <div className={styles.row}>
+          <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
               label="How much is your vehicle worth?"
               options={vehicleWorthOptions}
