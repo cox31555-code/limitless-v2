@@ -397,10 +397,30 @@
   padding: 2rem 2.8rem;
   border-top: 1.5px solid rgba(3, 136, 255, 0.08);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 1.2rem;
   background: transparent;
+}
+
+.cancelButton {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  color: #5a6b7d;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+.cancelButton:hover {
+  background: rgba(3, 136, 255, 0.04);
+  border-color: rgba(3, 136, 255, 0.3);
+  color: #000822;
 }
 
 .addDriverButton {
