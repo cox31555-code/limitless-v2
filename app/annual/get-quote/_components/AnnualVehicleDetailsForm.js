@@ -326,8 +326,15 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
   };
 
   return (
-    <ComponentWrapper title="Vehicle Details">
-      <div className={styles.content}>
+    <>
+      <VehicleModificationsModal
+        isOpen={showModificationsModal}
+        onClose={() => setShowModificationsModal(false)}
+        onConfirm={handleModificationsConfirm}
+        selectedModifications={vehicleModifications}
+      />
+      <ComponentWrapper title="Vehicle Details">
+        <div className={styles.content}>
         {/* Registration Number Section */}
         <div className={styles.registrationSection}>
           {!showFoundData ? (
@@ -648,6 +655,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
         </div>
       </div>
     </ComponentWrapper>
+    </>
   );
 };
 
