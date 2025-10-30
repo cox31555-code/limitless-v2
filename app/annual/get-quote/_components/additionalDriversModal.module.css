@@ -283,27 +283,29 @@
 .errorMessage {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.8rem;
   padding: 1.2rem 1.6rem;
   background: rgba(239, 68, 68, 0.08);
   border: 1.5px solid rgba(239, 68, 68, 0.3);
   border-radius: 10px;
-  margin: 0 2rem 1.6rem 2rem;
+  margin: 0 0 1.6rem 0;
   font-size: 1.1rem;
   color: #dc2626;
   font-weight: 500;
+  text-align: center;
 }
 
 .errorIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2rem;
+  height: 2rem;
   background: #dc2626;
   color: #ffffff;
   border-radius: 50%;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   flex-shrink: 0;
 }
