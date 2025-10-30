@@ -120,12 +120,6 @@ const AdditionalDriversModal = ({
   }, [drivers.length]);
 
 
-  useEffect(() => {
-    // Trigger auto-expand when driver data changes
-    drivers.forEach((_, index) => {
-      autoExpandNextTile(index);
-    });
-  }, [drivers, autoExpandNextTile]);
 
   const getTileOrder = () => ['about', 'employment', 'usage', 'driving', 'declarations'];
 
