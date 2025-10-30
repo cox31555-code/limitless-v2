@@ -266,12 +266,15 @@ const AdditionalDriversModal = ({
                           />
                         </div>
                         <div className={modalStyles.field}>
-                          <FormDropdown
+                          <FormAutocomplete
                             label="Occupation"
                             options={occupationOptions}
-                            placeholder="Select occupation"
+                            placeholder="Type or select occupation"
                             value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""}
-                            onChange={(value) => onUpdateDriver(index, "occupation", value)}
+                            onChange={(e) => {
+                              const value = e.target?.value || e;
+                              onUpdateDriver(index, "occupation", value);
+                            }}
                             disabled={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Retired" || watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Unemployed"}
                             inputStyle={{ paddingLeft: "14px" }}
                           />
