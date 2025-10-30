@@ -254,22 +254,37 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
           <button
             type="button"
             onClick={handleStartImmediately}
-            className={`${styles.startPolicyButton} ${startPolicyImmediately ? styles.active : ""}`}
+            style={{
+              padding: "1rem 1.6rem",
+              borderRadius: "10px",
+              fontWeight: "600",
+              fontSize: "1.3rem",
+              cursor: "pointer",
+              border: "1.5px solid #0388ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              gap: "1rem",
+              marginTop: "2rem",
+              background: startPolicyImmediately
+                ? "linear-gradient(135deg, #0388ff 0%, #0270cc 100%)"
+                : "transparent",
+              color: startPolicyImmediately ? "#fff" : "#000822",
+              transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
+            }}
           >
-            <div className={styles.startPolicyButtonIcon}>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
             Start policy immediately
           </button>
         </div>
