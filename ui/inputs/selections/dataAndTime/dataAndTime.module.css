@@ -72,12 +72,10 @@
 
 .inputContainer:hover:not(.disabled) .iconContainer {
   background: rgba(3, 136, 255, 0.12);
-  border-color: rgba(3, 136, 255, 0.2);
 }
 
 .inputContainer:focus-within .iconContainer {
   background: rgba(3, 136, 255, 0.15);
-  border-color: rgba(3, 136, 255, 0.25);
 }
 
 .arrowDown {
