@@ -71,6 +71,20 @@ const AdditionalDriversModal = ({
     });
   }, [drivers]);
 
+  React.useEffect(() => {
+    drivers.forEach((driver, index) => {
+      const isDisabledStatus = ["Retired", "Unemployed", "Student", "Houseperson"].includes(driver.employmentStatus);
+      if (isDisabledStatus) {
+        if (driver.industry !== "N/A") {
+          onUpdateDriver(index, "industry", "N/A");
+        }
+        if (driver.occupation !== "N/A") {
+          onUpdateDriver(index, "occupation", "N/A");
+        }
+      }
+    });
+  }, [drivers, onUpdateDriver]);
+
   if (!isOpen) return null;
 
   const handleAddDriver = () => {
