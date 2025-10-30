@@ -52,23 +52,23 @@
 
 /* Modal Header */
 .modalHeader {
-  padding: 2.4rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+  padding: 2.8rem;
+  border-bottom: 1.5px solid rgba(3, 136, 255, 0.08);
   position: relative;
 }
 
 .modalTitle {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #000822;
-  margin: 0 0 0.8rem 0;
-  letter-spacing: 0.2px;
+  margin: 0 0 0.6rem 0;
+  letter-spacing: 0.3px;
   line-height: 130%;
 }
 
 .modalSubtitle {
-  font-size: 1.3rem;
-  color: #7a8a9d;
+  font-size: 1.4rem;
+  color: #5a6b7d;
   margin: 0;
   font-weight: 400;
   letter-spacing: 0.1px;
