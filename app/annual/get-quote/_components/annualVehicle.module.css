@@ -135,6 +135,285 @@
   background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
 }
 
+/* Registration Input Wrapper */
+.registrationInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.inputContainer {
+  width: 100%;
+}
+
+/* Divider with OR text */
+.dividerWithText {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  margin: 0.8rem 0;
+}
+
+.dividerWithText::before,
+.dividerWithText::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(3, 136, 255, 0) 0%, rgba(3, 136, 255, 0.25) 50%, rgba(3, 136, 255, 0) 100%);
+}
+
+.dividerText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7a8a9d;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Manual Entry Button */
+.manualEntryBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.4rem 2rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.16);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.manualEntryBtn:hover {
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border-color: rgba(3, 136, 255, 0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.12);
+}
+
+.manualEntryBtn:active {
+  transform: translateY(0);
+}
+
+.manualEntryIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: rgba(3, 136, 255, 0.12);
+  border-radius: 50%;
+  font-size: 1rem;
+  color: #0388ff;
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.manualEntryBtn:hover .manualEntryIcon {
+  background: rgba(3, 136, 255, 0.2);
+  transform: rotate(12deg) scale(1.05);
+}
+
+.manualEntryText {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0388ff;
+  letter-spacing: 0.02em;
+  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.manualEntryBtn:hover .manualEntryText {
+  color: #0270cc;
+}
+
+/* Success Card Wrapper */
+.successCardWrapper {
+  width: 100%;
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Success Card */
+.successCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+  border: 1.5px solid rgba(16, 185, 129, 0.2);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.successCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10B981 0%, #34D399 100%);
+}
+
+/* Success Header */
+.successHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.06) 100%);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.successTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #10B981;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+/* Vehicle Info */
+.vehicleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding: 1.6rem;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.vehicleMainInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.vehicleMainDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.vehicleMakeModel {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.vehicleYear {
+  font-size: 1.2rem;
+  color: #7a8a9d;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.vehicleReg {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0388ff;
+  margin: 0;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Specs Grid */
+.vehicleSpecsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  border-radius: 8px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.specItem:hover {
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border-color: rgba(3, 136, 255, 0.16);
+}
+
+.specLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5a6b7d;
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+}
+
+.specValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000822;
+  letter-spacing: -0.2px;
+}
+
+/* Change Vehicle Button */
+.changeVehicleBtn {
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.02em;
+}
+
+.changeVehicleBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(3, 136, 255, 0.3);
+}
+
+.changeVehicleBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(3, 136, 255, 0.2);
+}
+
 .regBtn {
   color: #0388ff;
   font-size: 1.1rem;
