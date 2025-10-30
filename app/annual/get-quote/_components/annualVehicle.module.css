@@ -444,6 +444,7 @@
   .instructionBox {
     padding: 1.4rem;
     gap: 1rem;
+    opacity: 0.65;
   }
 
   .instructionIcon {
