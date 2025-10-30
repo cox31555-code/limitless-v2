@@ -1,572 +1,424 @@
-@keyframes orb1 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(80px, -100px) scale(1.2);
-  }
-  50% {
-    transform: translate(0, -200px) scale(0.9);
-  }
-  75% {
-    transform: translate(-100px, -100px) scale(1.1);
-  }
-}
-
-@keyframes orb2 {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(-120px, 80px) scale(0.95);
-  }
-  66% {
-    transform: translate(100px, 150px) scale(1.15);
-  }
-}
-
-@keyframes orb3 {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  50% {
-    transform: translate(-80px, -150px) rotate(180deg);
-  }
-}
-
-.mainContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10rem;
-  padding: 8rem 5% 10rem;
-  margin: 0 calc(-50vw + 50%);
-  width: 100vw;
-  max-width: 100vw;
+.container {
+  width: 100%;
   background: #000822;
+  padding: 8rem 4.4%;
   position: relative;
   overflow: hidden;
+  border-radius: 2rem;
+  margin: 0 4.4%;
+  width: calc(100% - 8.8%);
 }
 
-.mainContainer::before {
-  content: '';
+.logoDecor {
   position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(ellipse 150% 150% at 50% 50%, rgba(3, 136, 255, 0.25) 0%, rgba(3, 136, 255, 0.1) 40%, transparent 80%);
-  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-  filter: blur(60px);
-  animation: orb1 15s ease-in-out infinite;
+  right: -100px;
+  top: -200px;
+  width: 585px;
+  height: 891px;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
 }
 
-.mainContainer::after {
-  content: '';
-  position: absolute;
-  bottom: 5%;
-  right: 8%;
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(ellipse 140% 140% at 40% 60%, rgba(3, 136, 255, 0.2) 0%, rgba(3, 136, 255, 0.08) 35%, transparent 75%);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  filter: blur(70px);
-  animation: orb2 18s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
+.content {
+  max-width: 1310px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
-.section {
+.leftContent {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-
-.section::before {
-  content: '';
-  position: absolute;
-  top: -200px;
-  left: 15%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(ellipse 120% 120% at 50% 50%, rgba(3, 136, 255, 0.15) 0%, transparent 70%);
-  border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
-  filter: blur(50px);
-  animation: orb3 20s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .headerSection {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 2.4rem;
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.header {
-  color: #fff;
-  text-align: center;
-  font-size: 5.8rem;
-  font-weight: 700;
-  line-height: 100%;
-  letter-spacing: 0;
-  margin: 0;
-  position: relative;
-  z-index: 2;
-}
-
-.header span {
-  color: #049cff;
-  display: block;
-}
-
-.subtitle {
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
-  max-width: 800px;
-  margin: 0;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.4rem;
-  position: relative;
-  z-index: 2;
-  max-width: 131.2rem;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.timelineWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2.8rem;
-  position: relative;
-  z-index: 2;
-  max-width: 131.2rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.stepWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  flex: 1;
-  position: relative;
-  min-width: 0;
-}
-
-.stepCard {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 2.2rem;
-  gap: 1.6rem;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(7, 16, 45, 0.5) 0%, rgba(3, 136, 255, 0.05) 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.15);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: visible;
-  width: 100%;
-}
-
-.stepCard::after {
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: 15%;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(3, 136, 255, 0.12) 0%, transparent 75%);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  filter: blur(45px);
-  animation: orb2 17s ease-in-out 1s infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.stepCard:hover {
-  border-color: rgba(3, 136, 255, 0.3);
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.06) 100%);
-}
-
-.stepIconContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  height: 70px;
-  margin-bottom: 0.2rem;
-}
-
-.stepIconContainer svg {
-  width: 56px;
-  height: 56px;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 12px rgba(3, 136, 255, 0.2));
-}
-
-.stepCard:hover .stepIconContainer svg {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 16px rgba(3, 136, 255, 0.4));
-}
-
-
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: 2.2rem 2rem;
-  gap: 1.4rem;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(7, 16, 45, 0.5) 0%, rgba(3, 136, 255, 0.04) 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: visible;
-}
-
-.card::after {
-  content: '';
-  position: absolute;
-  top: -50px;
-  left: 15%;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(3, 136, 255, 0.12) 0%, transparent 75%);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  filter: blur(45px);
-  animation: orb2 17s ease-in-out 1s infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.card:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
-}
-
-.card:hover::before {
-  transform: scaleX(1);
-}
-
-.iconContainer {
-  width: 100%;
-  height: 60px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  z-index: 1;
-}
-
-.iconContainer svg {
-  width: 50px;
-  height: 50px;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(3, 136, 255, 0.15));
-}
-
-.card:hover .iconContainer svg {
-  transform: scale(1.08);
-  filter: drop-shadow(0 0 12px rgba(3, 136, 255, 0.3));
-}
-
-.shieldIconContainer svg {
-  width: 40px;
-  height: 40px;
-}
-
-.shieldIconContainer {
-  height: 50px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.largeIconContainer svg {
-  width: 55px;
-  height: 55px;
-}
-
-.largeIconContainer {
-  height: 70px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.stepNumber {
-  color: #0388ff;
-  font-size: 1.2rem;
-  font-weight: 600;
-  opacity: 0.85;
-  line-height: 1;
-  position: relative;
-  z-index: 1;
-  margin: 0.4rem 0 0 0;
-  letter-spacing: 0.5px;
-}
-
-.contentContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  align-items: flex-start;
-  position: relative;
-  z-index: 1;
-  flex: 1;
 }
 
 .title {
   color: #fff;
-  font-size: 1.9rem;
+  font-size: 5.8rem;
   font-weight: 700;
-  line-height: 120%;
-  letter-spacing: 0;
+  line-height: 100%;
   margin: 0;
+}
+
+.title span {
+  color: #049CFF;
+  display: block;
 }
 
 .description {
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 1.6rem;
   font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0;
+  line-height: 124%;
+  letter-spacing: 0.64px;
   margin: 0;
 }
 
-
-.concludingText {
-  color: #d0dce6;
-  font-size: 1.8rem;
-  line-height: 170%;
-  letter-spacing: -0.2px;
-  padding: 2.8rem;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(0, 136, 255, 0.08) 100%);
-  border-left: 4px solid #00c9ff;
-  border-radius: 12px;
-  max-width: 900px;
-  margin: 1.6rem auto 0;
-  font-weight: 400;
-  position: relative;
-  z-index: 2;
+.illustrationSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
+.illustration {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+}
+
+.rightContent {
+  display: flex;
+  align-items: flex-start;
+  position: sticky;
+  top: 100px;
+}
+
+.card {
+  width: 100%;
+  background: #07102D;
+  border-radius: 18px;
+  padding: 6.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardBackground {
+  position: absolute;
+  top: -200px;
+  right: 0;
+  width: 100%;
+  height: 604px;
+  transform: rotate(90deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gradientBar1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 201px;
+  height: 767px;
+  opacity: 0.6;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+}
+
+.gradientBar2 {
+  position: absolute;
+  left: 201px;
+  top: 137px;
+  width: 201px;
+  height: 773px;
+  opacity: 0.82;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+}
+
+.gradientBar3 {
+  position: absolute;
+  left: 403px;
+  top: 167px;
+  width: 201px;
+  height: 888px;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0.00) 0%, #0388FF 184.11%);
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-bottom: 5.2rem;
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+.cardTitle span {
+  color: #049CFF;
+  display: block;
+}
+
+.cardSubtitle {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 124%;
+  letter-spacing: 0.64px;
+  margin: 0;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 2.9rem 3.5rem;
+  background: #07102D;
+  border-radius: 14px;
+}
+
+.stepIcon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.stepNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #07102D;
+  font-size: 1.44rem;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.stepTitle {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+.stepDescription {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 124%;
+  letter-spacing: 0.56px;
+  margin: 0;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .wrapper {
-    grid-template-columns: repeat(2, 1fr);
+  .container {
+    padding: 7rem 4.4%;
   }
 
-  .timelineWrapper {
-    flex-direction: row;
-    gap: 2rem;
-    padding: 0 0.5rem;
+  .content {
+    gap: 4rem;
   }
 
-  .stepCard {
-    padding: 2.4rem 2rem;
+  .title {
+    font-size: 4.8rem;
   }
 
-  .stepIconContainer {
-    height: 70px;
+  .cardTitle {
+    font-size: 4.8rem;
   }
 
-  .stepIconContainer svg {
-    width: 54px;
-    height: 54px;
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .cardSubtitle {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 5rem;
+  }
+
+  .step {
+    padding: 2.4rem 3rem;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .mainContainer {
-    padding: 6rem 4%;
-    gap: 6rem;
-  }
-
-  .header {
-    font-size: 4rem;
-    line-height: 110%;
-  }
-
-  .subtitle {
-    font-size: 1.4rem;
-  }
-
-  .wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .timelineWrapper {
-    flex-direction: column;
-    gap: 2.4rem;
-    padding: 0;
-  }
-
-  .stepWrapper {
+  .container {
+    padding: 5.5rem 4.4%;
+    border-radius: 0;
+    margin: 0;
     width: 100%;
   }
 
-  .stepCard {
-    padding: 2.2rem;
-    gap: 1.4rem;
+  .content {
+    grid-template-columns: 1fr;
+    gap: 5rem;
   }
 
-  .stepIconContainer {
-    height: 65px;
-  }
-
-  .stepIconContainer svg {
-    width: 50px;
-    height: 50px;
-  }
-
-  .stepNumber {
-    font-size: 1rem;
-    margin-top: 0.3rem;
-  }
-
-  .card {
-    padding: 1.8rem 1.6rem;
-    gap: 1.2rem;
-  }
-
-  .iconContainer {
-    height: 55px;
-  }
-
-  .iconContainer svg {
-    width: 45px;
-    height: 45px;
-  }
-
-  .shieldIconContainer svg {
-    width: 36px;
-    height: 36px;
-  }
-
-  .largeIconContainer svg {
-    width: 50px;
-    height: 50px;
+  .rightContent {
+    position: relative;
+    top: 0;
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 3.6rem;
+  }
+
+  .cardTitle {
+    font-size: 3.6rem;
   }
 
   .description {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
 
-  .concludingText {
+  .cardSubtitle {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    padding: 3.6rem 3rem;
+  }
+
+  .cardHeader {
+    padding-bottom: 3.6rem;
+  }
+
+  .steps {
+    gap: 1.2rem;
+  }
+
+  .step {
+    padding: 2.2rem 2.4rem;
+    gap: 2.4rem;
+  }
+
+  .stepTitle {
     font-size: 1.6rem;
-    padding: 2.4rem;
+  }
+
+  .stepDescription {
+    font-size: 1.3rem;
+  }
+
+  .illustration {
+    max-width: 500px;
+  }
+
+  .logoDecor {
+    right: -150px;
+    top: -250px;
+    width: 450px;
+    height: auto;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .mainContainer {
-    padding: 5rem 3%;
-    gap: 4rem;
+  .container {
+    padding: 4rem 4.4%;
   }
 
-  .header {
-    font-size: 3.2rem;
+  .content {
+    gap: 3.6rem;
   }
 
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .headerSection {
-    gap: 1.8rem;
-  }
-
-  .wrapper {
-    gap: 1.8rem;
-  }
-
-  .timelineWrapper {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 0;
-  }
-
-  .stepCard {
-    padding: 2rem 1.6rem;
-    gap: 1.2rem;
-  }
-
-  .card {
-    padding: 1.6rem 1.4rem;
-    gap: 1rem;
-  }
-
-  .iconContainer {
-    height: 50px;
-  }
-
-  .iconContainer svg {
-    width: 42px;
-    height: 42px;
-  }
-
-  .shieldIconContainer svg {
-    width: 34px;
-    height: 34px;
-  }
-
-  .largeIconContainer svg {
-    width: 46px;
-    height: 46px;
-  }
-
-  .stepIconContainer {
-    height: 65px;
-    margin-bottom: 0.2rem;
-  }
-
-  .stepIconContainer svg {
-    width: 48px;
-    height: 48px;
-  }
-
-  .stepNumber {
-    font-size: 1rem;
-    margin-top: 0.2rem;
+  .leftContent {
+    gap: 3rem;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
+  }
+
+  .cardTitle {
+    font-size: 2.8rem;
   }
 
   .description {
-    font-size: 1.15rem;
-    line-height: 135%;
+    font-size: 1.2rem;
   }
 
-  .concludingText {
-    font-size: 1.5rem;
+  .cardSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 2.4rem 2rem;
+  }
+
+  .cardHeader {
+    padding-bottom: 2.4rem;
+    gap: 1.8rem;
+  }
+
+  .steps {
+    gap: 1rem;
+  }
+
+  .step {
     padding: 2rem;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stepIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stepNumber {
+    font-size: 1.3rem;
+  }
+
+  .stepTitle {
+    font-size: 1.5rem;
+  }
+
+  .stepDescription {
+    font-size: 1.2rem;
+  }
+
+  .illustration {
+    max-width: 100%;
+  }
+
+  .logoDecor {
+    display: none;
+  }
+
+  .gradientBar1,
+  .gradientBar2,
+  .gradientBar3 {
+    opacity: 0.3;
   }
 }
