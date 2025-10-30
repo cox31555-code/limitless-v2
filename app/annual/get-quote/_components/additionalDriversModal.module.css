@@ -213,6 +213,13 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
   overflow: hidden;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.formSection.disabled {
+  background: #f5f7fa;
+  border-color: rgba(3, 136, 255, 0.08);
+  opacity: 0.6;
 }
 
 .tileHeader {
