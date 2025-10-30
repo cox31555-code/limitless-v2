@@ -292,7 +292,7 @@ const AdditionalDriversModal = ({
                             const value = typeof e === "string" ? e : (e?.target?.value || "");
                             onUpdateDriver(index, "industry", value);
                           }}
-                          disabled={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Retired" || watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Unemployed"}
+                          disabled={["Retired", "Unemployed", "Student", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))}
                           inputStyle={{ paddingLeft: "14px" }}
                         />
                       </div>
