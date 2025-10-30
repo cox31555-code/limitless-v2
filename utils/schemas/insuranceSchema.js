@@ -212,7 +212,7 @@ export const carUsageSchema = z.object({
       required_error: "Please specify how you use your car",
     }
   ),
-  otherVehicles: z.boolean().default(false),
+  otherVehicles: z.boolean().nullable(),
   otherVehiclesType: z.enum(
     [
       "Own another car or van",
@@ -221,7 +221,7 @@ export const carUsageSchema = z.object({
       "Company car (excluding personal use)",
     ]
   ).optional(),
-  hasAdditionalQualifications: z.boolean().default(false),
+  hasAdditionalQualifications: z.boolean().nullable(),
   additionalQualificationType: z.enum(
     [
       "AA Proficiency",
@@ -231,9 +231,9 @@ export const carUsageSchema = z.object({
   ).optional(),
   qualificationMonth: z.string().optional(),
   qualificationYear: z.string().optional(),
-  ownsHome: z.boolean().default(false),
-  childrenUnder16: z.boolean().default(false),
-  livedInUKSinceBirth: z.boolean().default(false),
+  ownsHome: z.boolean().nullable(),
+  childrenUnder16: z.boolean().nullable(),
+  livedInUKSinceBirth: z.boolean().nullable(),
   licenseType: z.string().min(1, "License type is required"),
   licenseHeld: z.string().min(1, "License held is required"),
   licenseNumber: z.string().optional(),
