@@ -292,6 +292,22 @@ const PersonalDetailsForm = ({ form }) => {
           <h3 className={styles.cleanSectionTitle} data-section="5">Usage Details</h3>
 
           <div className={styles.cleanFormGrid1Col}>
+            <p className={styles.cleanLabel}>What do you use the car for?</p>
+            <div className={styles.cleanSelections3}>
+              <Selection3
+                options={carUsageOptions}
+                selectedItem={watch("carUsage.usageType")}
+                setSelectedItem={(item) => setValue("carUsage.usageType", item)}
+              />
+              {errors.carUsage?.usageType && (
+                <span className={styles.cleanError}>
+                  {errors.carUsage.usageType.message}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.cleanFormGrid1Col}>
             <p className={styles.cleanLabel}>Do you use any other vehicles?</p>
             <YesORNo
               value={watch("carUsage.otherVehicles")}
@@ -315,22 +331,6 @@ const PersonalDetailsForm = ({ form }) => {
               />
             </div>
           )}
-
-          <div className={styles.cleanFormGrid1Col}>
-            <p className={styles.cleanLabel}>What do you use the car for?</p>
-            <div className={styles.cleanSelections3}>
-              <Selection3
-                options={carUsageOptions}
-                selectedItem={watch("carUsage.usageType")}
-                setSelectedItem={(item) => setValue("carUsage.usageType", item)}
-              />
-              {errors.carUsage?.usageType && (
-                <span className={styles.cleanError}>
-                  {errors.carUsage.usageType.message}
-                </span>
-              )}
-            </div>
-          </div>
         </section>
 
         {/* Your Driving Record Section */}
