@@ -23,6 +23,32 @@ export const otherVehiclesOptions = [
   "Company car (excluding personal use)",
 ];
 
+export const additionalQualificationsOptions = [
+  "AA Proficiency",
+  "Institute of Advanced Motorists",
+  "Pass Plus",
+];
+
+export const monthOptions = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export const yearOptions = Array.from({ length: 50 }, (_, i) => {
+  const year = new Date().getFullYear() - i;
+  return year.toString();
+});
+
 export const licenseHeldOptions = [
   "0-1 years",
   "2 years",
