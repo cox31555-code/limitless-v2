@@ -148,35 +148,6 @@ const AdditionalDriversModal = ({
     });
   };
 
-  const autoExpandNextTile = (driverIndex) => {
-    const tiles = ['about', 'employment', 'usage', 'driving', 'declarations'];
-    const currentExpanded = expandedTile[driverIndex];
-    const currentIndex = tiles.indexOf(currentExpanded);
-
-    if (currentIndex !== -1 && currentIndex < tiles.length - 1) {
-      const nextTile = tiles[currentIndex + 1];
-      if (checkTileCompletion(driverIndex, currentExpanded)) {
-        setExpandedTile(prev => ({
-          ...prev,
-          [driverIndex]: nextTile
-        }));
-      }
-    }
-  };
-
-  React.useEffect(() => {
-    if (isOpen) {
-      setExpandedTile(prev => {
-        const updated = { ...prev };
-        drivers.forEach((_, index) => {
-          if (!(index in updated)) {
-            updated[index] = 'about';
-          }
-        });
-        return updated;
-      });
-    }
-  }, [isOpen, drivers.length]);
 
   useEffect(() => {
     drivers.forEach((driver, index) => {
