@@ -267,6 +267,10 @@
   background: rgba(3, 136, 255, 0.06);
 }
 
+.tileHeader.expanded.disabled {
+  background: rgba(245, 247, 250, 0.8) !important;
+}
+
 .tileHeader.disabled {
   cursor: not-allowed;
   opacity: 0.65;
