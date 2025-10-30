@@ -273,7 +273,7 @@ const AnnualInsuranceContent = () => {
             )}
             {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
             {currentStep === STEPS.PERSONAL && (
-              <PersonalDetailsForm form={form} />
+              <AnnualPersonalDetailsForm form={form} />
             )}
             {currentStep === STEPS.TERMS && (
               <TermsForm form={form} onBack={handlePreviousStep} isSubmitting={isSubmitting} />
