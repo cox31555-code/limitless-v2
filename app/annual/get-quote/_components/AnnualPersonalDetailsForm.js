@@ -864,18 +864,18 @@ const AnnualPersonalDetailsForm = ({ form }) => {
       </div>
     </ComponentWrapper>
 
-    {/* Additional Drivers Modal - Rendered outside ComponentWrapper */}
-    {isModalOpen && (
-      <AdditionalDriversModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        form={form}
-        drivers={additionalDrivers}
-        onAddDriver={handleAddDriver}
-        onRemoveDriver={handleRemoveDriver}
-        onUpdateDriver={handleUpdateDriver}
-      />
-    )}
+      {/* Additional Drivers Modal - Rendered outside ComponentWrapper */}
+      {isModalOpen && (
+        <AdditionalDriversModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          form={form}
+          drivers={additionalDrivers}
+          onAddDriver={handleAddDriver}
+          onRemoveDriver={handleRemoveDriver}
+          onUpdateDriver={handleUpdateDriver}
+        />
+      )}
     </>
   );
 };
