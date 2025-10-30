@@ -426,19 +426,23 @@
   }
 
   .modalHeader {
-    padding: 2rem;
+    padding: 2.4rem;
   }
 
   .modalTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .modalContent {
-    padding: 2rem;
+    padding: 2.4rem;
   }
 
   .driverItem {
-    padding: 1.6rem;
+    padding: 2rem;
+  }
+
+  .sectionLabel {
+    font-size: 1.3rem;
   }
 
   .fieldRow2Col,
