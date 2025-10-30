@@ -290,7 +290,14 @@ const AdditionalDriversModal = ({
                   </div>
                 </div>
 
-                {isDriverExpanded(index) && (
+                {isDriverExpanded(index) && isDriverDisabled(index) && (
+                  <div className={modalStyles.errorMessage}>
+                    <span className={modalStyles.errorIcon}>!</span>
+                    <span>Complete Driver {index} details first</span>
+                  </div>
+                )}
+
+                {isDriverExpanded(index) && !isDriverDisabled(index) && (
                 <div className={modalStyles.driverFormContent}>
                   {/* About You Section */}
                   <div className={`${modalStyles.formSection} ${isTileDisabled(index, 'about') ? modalStyles.disabled : ''}`}>
