@@ -635,6 +635,8 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 error={errors.vehicleDetails?.purchaseDate}
                 allowPastDates={true}
                 reducedPadding={true}
+                minDate={new Date(1960, 0, 1)}
+                maxDate={new Date()}
               />
               <div className={styles.checkboxWrapper}>
                 <input
