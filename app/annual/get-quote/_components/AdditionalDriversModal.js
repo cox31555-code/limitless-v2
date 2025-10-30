@@ -269,10 +269,10 @@ const AdditionalDriversModal = ({
                           <FormAutocomplete
                             label="Occupation"
                             options={occupationOptions}
-                            placeholder="Type or select occupation"
+                            placeholder="Type your occupation..."
                             value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""}
                             onChange={(e) => {
-                              const value = e.target?.value || e;
+                              const value = typeof e === "string" ? e : (e?.target?.value || "");
                               onUpdateDriver(index, "occupation", value);
                             }}
                             disabled={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Retired" || watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Unemployed"}
