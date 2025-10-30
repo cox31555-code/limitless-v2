@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insuranceSchema } from "@/utils/schemas/insuranceSchema";
+import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import AnnualVehicleDetailsForm from "./_components/AnnualVehicleDetailsForm";
 import AnnualCoverDetailsForm from "./_components/AnnualCoverDetailsForm";
