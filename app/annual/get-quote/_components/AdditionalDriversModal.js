@@ -258,16 +258,6 @@ const AdditionalDriversModal = ({
                       </>)}
                     </div>
 
-                    {/* Additional Information Section */}
-                    <div className={modalStyles.formSection}>
-                      <h4 className={modalStyles.sectionLabel}>Additional Information</h4>
-                      <div className={modalStyles.field}>
-                        <p className={modalStyles.fieldLabel}>Lived in UK since birth?</p>
-                        <p className={modalStyles.fieldHelper}>Continuously, without breaks of 6+ months</p>
-                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.livedInUKSinceBirth`)} onChange={(value) => onUpdateDriver(index, "livedInUKSinceBirth", value)} />
-                      </div>
-                    </div>
-
                     {/* Declarations Section */}
                     <div className={modalStyles.formSection}>
                       <h4 className={modalStyles.sectionLabel}>Declarations</h4>
