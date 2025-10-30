@@ -648,7 +648,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             <p className={styles.sectionDescription}>Details about when you purchased the vehicle and who owns it</p>
           </div>
           <div className={styles.ownershipSection}>
-          <div className={styles.row}>
+          <div className={styles.cleanFormGrid2Col}>
             <div className={styles.dateWithCheckbox}>
               <FormDateInput
                 type="date"
