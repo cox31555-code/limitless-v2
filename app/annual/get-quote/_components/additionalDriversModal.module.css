@@ -217,9 +217,14 @@
 }
 
 .formSection.disabled {
-  background: #f5f7fa;
+  background: rgba(245, 247, 250, 0.5);
   border-color: rgba(3, 136, 255, 0.08);
+  pointer-events: auto;
+}
+
+.formSection.disabled .tileHeader {
   opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .tileHeader {
