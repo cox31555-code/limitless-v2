@@ -1,16 +1,24 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import FormDateInput from "@/ui/inputs/FormDateInput";
 import styles from "./components.module.css";
 
-const CoverDetailsForm = ({ form }) => {
+const CoverDetailsForm = ({ form, isImpound = false }) => {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
 
   const durationType = form.watch("coverDetails.type");
   const duration = form.watch("coverDetails.period");
   const startDate = form.watch("coverDetails.startDate");
   const startTime = form.watch("coverDetails.startTime");
+
+  // Auto-select 30 Days for impound insurance on mount
+  useEffect(() => {
+    if (isImpound) {
+      form.setValue("coverDetails.type", "Days");
+      form.setValue("coverDetails.period", 30);
+    }
+  }, [isImpound, form]);
 
   // Dynamic duration options based on selected type
   const getDurationOptions = () => {
