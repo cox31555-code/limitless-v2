@@ -239,9 +239,9 @@ export const carUsageSchema = z.object({
   licenseNumber: z.string().optional(),
   NCB: z.string().min(1, "No claims bonus years is required"),
   voluntaryExcess: z.string().min(1, "Voluntary excess is required"),
-  criminalConvictions: z.boolean().default(false),
-  medicalConditions: z.boolean().default(false),
-  insuranceCancelledOrClaimRefusedOrPolicyVoided: z.boolean().default(false),
+  criminalConvictions: z.boolean().nullable(),
+  medicalConditions: z.boolean().nullable(),
+  insuranceCancelledOrClaimRefusedOrPolicyVoided: z.boolean().nullable(),
   hasAdditionalDrivers: z.boolean().nullable().default(null),
   additionalDrivers: z.array(z.object({
     relationship: z.string().min(1, "Relationship is required"),
