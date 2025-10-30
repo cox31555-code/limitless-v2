@@ -17,14 +17,6 @@ const WhenImpound = () => {
   return (
     <div className={styles.container}>
       <Image
-        src="/svg/squares-2.svg"
-        alt="squares"
-        width={1394}
-        height={706}
-        className={styles.squares}
-      />
-
-      <Image
         src="/svg/contact.svg"
         alt="contact-us"
         width={585}
