@@ -22,8 +22,9 @@ const PersonalDetails = ({ data, carUsage }) => {
 
   return (
     <ComponentWrapper title="Personal Details" icon={{width: 62, height: 62}} isPaymentPage={true}>
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Personal Information</h3>
+      <div className={styles.sectionsWrapper}>
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Personal Information</h3>
         <div className={styles.sectionContent}>
           <div className={styles.row}>
           <InputWithData2
@@ -91,6 +92,7 @@ const PersonalDetails = ({ data, carUsage }) => {
             }}
           />
           </div>
+          </div>
         </div>
       </div>
       <div className={styles.selections}>
@@ -108,8 +110,9 @@ const PersonalDetails = ({ data, carUsage }) => {
           img="/svg/night.svg"
         />
       </div>
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>License & Claims</h3>
+      <div className={styles.sectionsWrapper}>
+        <div className={`${styles.section} ${styles.disabled}`}>
+          <h3 className={styles.sectionTitle}>License & Claims</h3>
         <div className={styles.sectionContent}>
           <div className={styles.row}>
             <InputWithData2
@@ -145,10 +148,10 @@ const PersonalDetails = ({ data, carUsage }) => {
               }}
             />
           </div>
+          </div>
         </div>
-      </div>
-      <div className={styles.section}>
-        <h3 className={styles.sectionTitle}>Important Declarations</h3>
+        <div className={`${styles.section} ${styles.disabled}`}>
+          <h3 className={styles.sectionTitle}>Important Declarations</h3>
         <div className={styles.sectionContent}>
           <div className={styles.row}>
             <InputWithData2
@@ -169,6 +172,7 @@ const PersonalDetails = ({ data, carUsage }) => {
                 value: formatBoolValue(carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided),
               }}
             />
+          </div>
           </div>
         </div>
       </div>
