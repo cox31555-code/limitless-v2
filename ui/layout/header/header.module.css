@@ -896,7 +896,7 @@
 /* Mobile Menu Divider */
 .mobileMenuDivider {
   height: 1px;
-  background: rgba(0, 8, 34, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   margin: 0.8rem 0;
 }
 
