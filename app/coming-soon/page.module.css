@@ -73,4 +73,17 @@
   .cardsContainer {
     margin-top: -4rem;
   }
+  .mailingListContent {
+    width: 100%;
+    padding: 0 3.5%;
+  }
+  .mailingTitle {
+    font-size: 4.8rem;
+  }
+  .mailingInputContainer {
+    width: 100%;
+  }
+  .mailingSubscribeButton {
+    width: 100%;
+  }
 }
