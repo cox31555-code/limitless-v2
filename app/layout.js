@@ -1,12 +1,10 @@
-"use client";
-
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import dynamic from "next/dynamic";
 import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
-import { ToastContainer } from "react-toastify";
+import ClientLayout from "./clientLayout";
 
 const Header = dynamic(() => import("@/ui/layout/header/Header"), { ssr: false });
 
@@ -25,20 +23,8 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <AuthProvider>
           <Header />
-          {children}
+          <ClientLayout>{children}</ClientLayout>
           <Footer />
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
         </AuthProvider>
       </body>
     </html>
