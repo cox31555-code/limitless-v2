@@ -1,0 +1,244 @@
+.reviewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  padding: 0;
+  margin: 0;
+}
+
+.reviewTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.6rem 0;
+  padding: 0;
+}
+
+.reviewSections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  border-radius: 12px;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.field label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #5a6b7d;
+}
+
+.field p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000822;
+  margin: 0;
+}
+
+.summaryCard {
+  background: linear-gradient(135deg, #0c1840 0%, #051c3a 100%);
+  border: 2px solid rgba(3, 136, 255, 0.32);
+  border-radius: 12px;
+  padding: 2.4rem;
+  margin-top: 1.6rem;
+}
+
+.summaryContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.summaryTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.coverType {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.15) 0%, rgba(3, 136, 255, 0.08) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.24);
+  border-radius: 8px;
+}
+
+.coverTypeLabel {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.coverTypeValue {
+  color: #3fa9ff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.totalPriceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.6rem;
+  background: rgba(3, 136, 255, 0.08);
+  border-radius: 8px;
+}
+
+.totalLabel {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.totalPrice {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 100%;
+}
+
+.totalDescription {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.16);
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(3, 136, 255, 0.08);
+  border-radius: 8px;
+}
+
+.checkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background: rgba(3, 136, 255, 0.2);
+  border-radius: 50%;
+  color: #3fa9ff;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.featureItem span {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryCard {
+    padding: 2rem;
+  }
+
+  .summaryTitle {
+    font-size: 1.6rem;
+  }
+
+  .totalPrice {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviewContainer {
+    gap: 2rem;
+  }
+
+  .reviewTitle {
+    font-size: 1.6rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .summaryCard {
+    padding: 1.6rem;
+  }
+
+  .summaryTitle {
+    font-size: 1.4rem;
+  }
+
+  .totalPrice {
+    font-size: 2rem;
+  }
+
+  .features {
+    gap: 0.8rem;
+  }
+
+  .featureItem {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
