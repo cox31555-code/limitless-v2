@@ -342,20 +342,21 @@
   }
 
   .mobileContainer {
-    margin: 1.8rem 0 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
     background: #f2f5fe;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 100;
   }
 
   @media (max-width: 640px) {
     .mobileContainer {
-      background: white;
+      background: white !important;
     }
   }
 
