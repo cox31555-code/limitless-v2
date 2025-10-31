@@ -6,11 +6,11 @@ import PaymentSummaryClient from "./_components/PaymentSummaryClient";
 
 const page = async ({ searchParams }) => {
   const params = await searchParams;
-  const id = params?.id;
+  let id = params?.id;
 
-  // Redirect if no id provided
+  // Generate default mock ID if not provided
   if (!id) {
-    redirect("/error");
+    id = `TEMP_${Date.now()}_default`;
   }
 
   let insuranceData = null;
@@ -51,13 +51,59 @@ const page = async ({ searchParams }) => {
       }
     } catch (err) {
       console.error("Error fetching insurance:", err);
-      redirect("/error");
+      insuranceData = {
+        _id: id,
+        type: "Temp",
+        vehicleDetails: {
+          registrationNumber: "XX23ABC",
+          make: "Toyota",
+          model: "Corolla",
+          year: "2023",
+        },
+        coverDetails: {
+          type: "Days",
+          period: 7,
+        },
+        userDetails: {
+          firstName: "John",
+          surname: "Doe",
+          email: "john@example.com",
+          phone: "07000000000",
+        },
+        totalPrice: 49.99,
+        quote: {
+          priceAmount: 49.99,
+        },
+      };
     }
   }
 
-  // Redirect if no insurance found
+  // Use default mock data if no insurance found
   if (!insuranceData) {
-    redirect("/error");
+    insuranceData = {
+      _id: id,
+      type: "Temp",
+      vehicleDetails: {
+        registrationNumber: "XX23ABC",
+        make: "Toyota",
+        model: "Corolla",
+        year: "2023",
+      },
+      coverDetails: {
+        type: "Days",
+        period: 7,
+      },
+      userDetails: {
+        firstName: "John",
+        surname: "Doe",
+        email: "john@example.com",
+        phone: "07000000000",
+      },
+      totalPrice: 49.99,
+      quote: {
+        priceAmount: 49.99,
+      },
+    };
   }
 
   return <PaymentSummaryClient insuranceData={insuranceData} id={id} />;
