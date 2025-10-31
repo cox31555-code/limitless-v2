@@ -364,29 +364,75 @@ const Header = () => {
             }`}
           >
             <nav className={styles.mobileNav} suppressHydrationWarning>
-              <span
-                className={`${styles.mobileMenuLink} ${
-                  pathname.includes("/annual") || pathname.includes("/temporary") ? styles.activeMenuLink : ""
-                }`}
-                onClick={() => {
-                  setIsOpen(false);
-                  router.push("/annual");
-                }}
-              >
-                Annual Insurance
-              </span>
+              <div className={styles.mobileDropdownContainer}>
+                <button
+                  className={styles.mobileMenuLink}
+                  onClick={() =>
+                    setOpenDropdown(openDropdown === "carVan" ? null : "carVan")
+                  }
+                >
+                  Car & Van
+                  <span
+                    className={`${styles.dropdownArrow} ${
+                      openDropdown === "carVan" ? styles.dropdownArrowOpen : ""
+                    }`}
+                  >
+                    <IconComponent type="chevron" />
+                  </span>
+                </button>
+                {openDropdown === "carVan" && (
+                  <div className={styles.mobileDropdown}>
+                    {carVanItems.map((item, index) => (
+                      <span
+                        key={`mobile-carVan-${index}`}
+                        className={styles.mobileDropdownItem}
+                        onClick={() => {
+                          setIsOpen(false);
+                          router.push(item.href);
+                        }}
+                      >
+                        {item.label}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-              <span
-                className={`${styles.mobileMenuLink} ${
-                  pathname.includes("/temporary") ? styles.activeMenuLink : ""
-                }`}
-                onClick={() => {
-                  setIsOpen(false);
-                  router.push("/temporary");
-                }}
-              >
-                Temporary Insurance
-              </span>
+              <div className={styles.mobileDropdownContainer}>
+                <button
+                  className={styles.mobileMenuLink}
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === "motorbike" ? null : "motorbike"
+                    )
+                  }
+                >
+                  Motorbike
+                  <span
+                    className={`${styles.dropdownArrow} ${
+                      openDropdown === "motorbike" ? styles.dropdownArrowOpen : ""
+                    }`}
+                  >
+                    <IconComponent type="chevron" />
+                  </span>
+                </button>
+                {openDropdown === "motorbike" && (
+                  <div className={styles.mobileDropdown}>
+                    {motorbakeItems.map((item, index) => (
+                      <span
+                        key={`mobile-motorbike-${index}`}
+                        className={styles.mobileDropdownItem}
+                        onClick={() => {
+                          setIsOpen(false);
+                          router.push(item.href);
+                        }}
+                      >
+                        {item.label}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <span
                 className={`${styles.mobileMenuLink} ${
@@ -397,12 +443,8 @@ const Header = () => {
                   router.push("/impound");
                 }}
               >
-                Impound Insurance
+                Impound
               </span>
-
-              <span
-                className={styles.mobileMenuDivider}
-              />
 
               <span
                 className={`${styles.mobileMenuLink} ${
