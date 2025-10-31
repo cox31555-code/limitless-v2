@@ -188,6 +188,37 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
           </div>
         </div>
         )}
+        {carUsage?.additionalDrivers && carUsage?.additionalDrivers.length > 0 && (
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Additional Drivers</h3>
+          <div className={styles.sectionContent}>
+            {carUsage.additionalDrivers.map((driver, index) => (
+              <div key={index} className={styles.driverBlock}>
+                <div className={styles.row}>
+                  <InputWithData2 item={{ label: `Driver ${index + 1} - First Name`, value: driver?.firstName || "N/A" }} />
+                  <InputWithData2 item={{ label: "Surname", value: driver?.surname || "N/A" }} />
+                  <InputWithData2 item={{ label: "Date of Birth", value: formatDate(driver?.dateOfBirth) || "N/A" }} />
+                </div>
+                <div className={styles.row}>
+                  <InputWithData2 item={{ label: "Employment Status", value: driver?.employmentStatus || "N/A" }} />
+                  <InputWithData2 item={{ label: "Occupation", value: driver?.occupation || "N/A" }} />
+                  <InputWithData2 item={{ label: "Industry", value: driver?.industry || "N/A" }} />
+                </div>
+                <div className={styles.row}>
+                  <InputWithData2 item={{ label: "Uses Other Vehicles", value: driver?.otherVehicles ? "Yes" : "No" }} />
+                  <InputWithData2 item={{ label: "License Type", value: driver?.licenseType || "N/A" }} />
+                  <InputWithData2 item={{ label: "License Held Since", value: driver?.licenseHeld || "N/A" }} />
+                </div>
+                <div className={styles.row}>
+                  <InputWithData2 item={{ label: "No Claims Bonus", value: driver?.NCB || "N/A" }} />
+                  <InputWithData2 item={{ label: "Criminal Convictions", value: formatBoolValue(driver?.criminalConvictions) }} />
+                  <InputWithData2 item={{ label: "Medical Conditions", value: formatBoolValue(driver?.medicalConditions) }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        )}
       </div>
       )}
       <CarUsage carUsage={carUsage}/>
