@@ -12,7 +12,7 @@
 .first {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.4rem;
   flex-basis: 58.3%;
   flex-grow: 1.4;
   flex-shrink: 1;
@@ -88,14 +88,14 @@
   .first {
     flex-basis: 100%;
     flex-grow: 0;
-    gap: 1.8rem;
+    gap: 2rem;
   }
 
   .second {
     position: static;
     flex-basis: 100%;
     flex-grow: 0;
-    gap: 1.8rem;
+    gap: 2rem;
   }
 }
 
@@ -107,7 +107,7 @@
 
   .first,
   .second {
-    gap: 1.6rem;
+    gap: 1.8rem;
   }
 
   .payButton,
