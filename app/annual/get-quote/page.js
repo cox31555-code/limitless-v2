@@ -315,15 +315,18 @@ const AnnualInsuranceContent = () => {
             {currentStep === STEPS.TERMS && (
               <TermsForm form={form} />
             )}
+            {currentStep === STEPS.REVIEW && (
+              <ReviewQuote form={form} insuranceType="Annual" />
+            )}
           </div>
 
           <StepActions
             currentStep={currentStep}
-            totalSteps={5}
+            totalSteps={6}
             onNext={handleNextStep}
             onBack={handlePreviousStep}
             isLoading={isSubmitting}
-            nextLabel={currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
+            nextLabel={currentStep === STEPS.REVIEW ? "Proceed to payment" : currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
             backLabel="Back"
           />
         </form>
