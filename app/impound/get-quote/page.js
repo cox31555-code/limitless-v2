@@ -219,23 +219,15 @@ const ImpoundInsuranceContent = () => {
     }
   };
 
-  const onSubmit = async (data) => {
-    // Validate terms are accepted
-    if (!data.terms?.acceptTerms) {
-      toast.error("You must accept the terms and conditions to proceed");
-      return;
-    }
-
+  const onSubmit = (data) => {
     // Show loading overlay
     setShowLoading(true);
 
     // Generate a temporary insurance ID for offline mode
     const insuranceId = `IMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // Wait 5 seconds then redirect to payment summary (review your quote) page with insurance ID
-    setTimeout(() => {
-      router.push(`/payment-summary?id=${insuranceId}`);
-    }, 5000);
+    // Redirect to payment summary (review your quote) page with insurance ID
+    router.push(`/payment-summary?id=${insuranceId}`);
   };
 
   return (
