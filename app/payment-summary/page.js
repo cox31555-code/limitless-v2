@@ -41,11 +41,12 @@ const page = async ({ searchParams }) => {
         legalOwner: insuranceType === "Annual" ? "Yes" : undefined,
       },
       coverDetails: {
-        type: insuranceType === "Temp" ? "Days" : "Annual",
-        period: insuranceType === "Temp" ? 7 : 1,
+        type: insuranceType === "Temp" ? "Days" : insuranceType === "Impound" ? "Days" : "Annual",
+        period: insuranceType === "Temp" ? 7 : insuranceType === "Impound" ? 30 : 1,
         startDate: "2025-01-15",
         startTime: "09:00",
         level: insuranceType === "Annual" ? "Comprehensive" : undefined,
+        impoundType: insuranceType === "Impound" ? "Impound Insurance" : undefined,
       },
       userDetails: {
         firstName: "John",
