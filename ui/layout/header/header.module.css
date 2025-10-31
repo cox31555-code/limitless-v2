@@ -384,19 +384,16 @@
     justify-content: center;
     align-items: center;
     border-radius: 100%;
-    border: 1px solid rgba(0, 8, 34, 0.34);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
     background: transparent;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .menuBtn:hover {
-    background: rgba(3, 136, 255, 0.1);
-    border-color: rgba(3, 136, 255, 0.5);
-    transform: scale(1.05);
+    flex-shrink: 0;
   }
 
   .menuBtn:active {
+    background: rgba(3, 136, 255, 0.15);
+    border-color: rgba(3, 136, 255, 0.4);
     transform: scale(0.95);
   }
 
