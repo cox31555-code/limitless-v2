@@ -12,6 +12,7 @@ import PersonalDetailsForm from "./_components/PersonalDetailsForm";
 import TermsForm from "./_components/TermsForm";
 import StepActions from "./_components/StepActions";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
+import ReviewQuote from "./_components/ReviewQuote";
 import { useRouter, useSearchParams } from "next/navigation";
 import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
