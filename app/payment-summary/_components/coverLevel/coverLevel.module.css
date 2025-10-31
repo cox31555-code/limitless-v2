@@ -317,27 +317,6 @@
 }
 
 @media (max-width: 600px) {
-  .animatedLogo1 {
-    top: 8px;
-    right: 8px;
-    width: 140px;
-    height: 140px;
-  }
-
-  .animatedLogo2 {
-    bottom: 12px;
-    left: 12px;
-    width: 120px;
-    height: 120px;
-  }
-
-  .animatedLogo3 {
-    top: 30%;
-    right: 15px;
-    width: 100px;
-    height: 100px;
-  }
-
   .title {
     font-size: 1.8rem;
     padding: 1.6rem 1.6rem 1rem;
