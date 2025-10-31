@@ -141,6 +141,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                 ].map(({ key, label }) => (
                   <button
                     key={key}
+                    type="button"
                     onClick={() => handleDurationTypeChange(key)}
                     className={`${styles.sparkTypeButton} ${
                       durationType === key
@@ -171,6 +172,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                   {durationOptions.map((option) => (
                     <button
                       key={option}
+                      type="button"
                       onClick={() => handleDurationChange(option)}
                       className={`${styles.sparkDurationButton} ${
                         duration === option
@@ -186,6 +188,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                   {showDropdown && (
                     <div className={styles.sparkDropdownContainer}>
                             <button
+                              type="button"
                               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                               className={styles.sparkDropdownButton}
                             >
@@ -207,6 +210,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                                 {extraDurationOptions.map((option) => (
                                   <button
                                     key={option}
+                                    type="button"
                                     onClick={() => handleDurationChange(option)}
                                     className={styles.sparkDropdownItem}
                                   >
@@ -281,6 +285,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
               justifyContent: "center",
               gap: "1rem",
             }}
+            aria-pressed={startPolicyImmediately}
             onMouseEnter={(e) => {
               if (!startPolicyImmediately) {
                 e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.4)";
