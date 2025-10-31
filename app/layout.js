@@ -1,12 +1,9 @@
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import dynamic from "next/dynamic";
 import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ClientLayout from "./clientLayout";
-
-const Header = dynamic(() => import("@/ui/layout/header/Header"), { ssr: false });
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,7 +19,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={poppins.className}>
         <AuthProvider>
-          <Header />
           <ClientLayout>{children}</ClientLayout>
           <Footer />
         </AuthProvider>
