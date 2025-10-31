@@ -69,7 +69,8 @@ const Footer = () => {
   const isGetQuotePage = pathname?.startsWith("/temporary/get-quote") ||
     pathname?.startsWith("/impound/get-quote") ||
     pathname?.startsWith("/annual/get-quote");
-  const isPaymentPage = pathname?.startsWith("/payment");
+  const isPaymentSummaryPage = pathname === "/payment-summary";
+  const isPaymentPage = pathname?.startsWith("/payment") && !isPaymentSummaryPage;
 
   return (
     <footer
