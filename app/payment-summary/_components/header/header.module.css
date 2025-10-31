@@ -323,6 +323,28 @@
   transform: scale(0.98);
 }
 
+/* Help Button */
+.helpBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: white;
+  color: #0388ff;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.helpBtn:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12);
+}
+
 /* Title Section */
 .titleSection {
   display: flex;
