@@ -16,7 +16,6 @@ body {
   background: #ffffff;
   margin: 0;
   padding: 0;
-  padding-top: max(env(safe-area-inset-top), 0px);
 }
 
 body {
