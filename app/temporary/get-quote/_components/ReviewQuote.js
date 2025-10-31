@@ -223,7 +223,7 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
                       <h4 className={styles.additionalInfoSubtitle}>Additional Drivers</h4>
                       {carUsage.additionalDrivers.map((driver, index) => (
                         <div key={index} className={styles.driverCard}>
-                          <h5 className={styles.driverTitle}>Driver {index + 1}</h5>
+                          <h5 className={styles.driverTitle}>Driver {index + 2}</h5>
                           <div className={styles.row}>
                             {renderField("First Name", driver?.firstName)}
                             {renderField("Last Name", driver?.lastName)}
