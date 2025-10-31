@@ -16,13 +16,6 @@ const Header = () => {
   return (
     <div className="headerContainer">
       <div className="centeredContent">
-        <Image
-          src="/svg/squares.svg"
-          alt="squares"
-          width={1394}
-          height={706}
-          className={styles.squares}
-        />
         <div className={styles.container}>
           <div className={styles.content}>
             <button className={`${styles.commingSoon} ${manrope.className}`}>
