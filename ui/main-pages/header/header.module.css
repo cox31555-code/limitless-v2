@@ -248,3 +248,9 @@
     font-size: 1.5rem;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .wrapper {
+    padding-top: 35rem;
+  }
+}
