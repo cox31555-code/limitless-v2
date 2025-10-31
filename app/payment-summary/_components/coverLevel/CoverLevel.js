@@ -9,7 +9,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["700"],
 });
 
-const CoverLevel = ({ data, insuranceType, hideAnimatedLogos = false }) => {
+const CoverLevel = ({ data, insuranceType }) => {
   const getInsuranceTypeName = () => {
     if (!insuranceType) return "N/A";
     if (insuranceType === "Temp") return "Temporary Insurance";
@@ -47,13 +47,6 @@ const CoverLevel = ({ data, insuranceType, hideAnimatedLogos = false }) => {
       </div>
 
       <div className={styles.summery}>
-        {!hideAnimatedLogos && (
-          <div className={styles.animatedLogoContainer}>
-            <div className={styles.animatedLogo1}></div>
-            <div className={styles.animatedLogo2}></div>
-            <div className={styles.animatedLogo3}></div>
-          </div>
-        )}
 
         <div className={styles.content}>
           <div className={styles.total}>
