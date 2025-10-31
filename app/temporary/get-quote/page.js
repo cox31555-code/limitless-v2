@@ -274,6 +274,9 @@ const TemporaryInsuranceContent = () => {
             {currentStep === STEPS.TERMS && (
               <TermsForm form={form} />
             )}
+            {currentStep === STEPS.REVIEW && (
+              <ReviewQuote form={form} insuranceType="Temp" />
+            )}
           </div>
 
           <StepActions
