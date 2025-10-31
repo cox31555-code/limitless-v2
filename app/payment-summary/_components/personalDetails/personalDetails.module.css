@@ -25,6 +25,31 @@
   border-top: 1px solid rgba(3, 136, 255, 0.08);
 }
 
+.carUsageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+.declarationsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+  margin-top: 0.8rem;
+}
+
+.declarationTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0388ff;
+  margin: 0;
+}
+
 @media screen and (max-width: 1200px) {
   .row {
     grid-template-columns: 1fr 1fr;
