@@ -220,13 +220,18 @@ const ImpoundInsuranceContent = () => {
   };
 
   const onSubmit = (data) => {
+    console.log("Form submitted with data:", data);
+
     // Show loading overlay
     setShowLoading(true);
+    setIsSubmitting(true);
 
     // Generate a temporary insurance ID for offline mode
     const insuranceId = `IMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // Redirect to payment summary (review your quote) page with insurance ID
+    console.log("Redirecting to:", `/payment-summary?id=${insuranceId}`);
+
+    // Redirect immediately
     router.push(`/payment-summary?id=${insuranceId}`);
   };
 
