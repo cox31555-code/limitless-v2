@@ -70,6 +70,12 @@
 
   .vehicleInfoSection {
     gap: 1.2rem;
+    padding: 1.4rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+    padding-bottom: 0.8rem;
   }
 
   .row {
@@ -91,6 +97,11 @@
   .vehicleInfoSection {
     padding: 1.2rem;
     gap: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+    padding-bottom: 0.6rem;
   }
 
   .row {
