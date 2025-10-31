@@ -9,7 +9,6 @@ import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import VehicleDetailsForm from "./_components/VehicleDetailsForm";
 import CoverDetailsForm from "./_components/CoverDetailsForm";
 import PersonalDetailsForm from "./_components/PersonalDetailsForm";
-import TermsForm from "./_components/TermsForm";
 import StepActions from "./_components/StepActions";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import ReviewQuote from "./_components/ReviewQuote";
