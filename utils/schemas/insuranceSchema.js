@@ -240,18 +240,21 @@ export const carUsageSchema = z.object({
   NCB: z.string().min(1, "No claims bonus years is required"),
   voluntaryExcess: z.string().min(1, "Voluntary excess is required"),
   criminalConvictions: z.boolean({
-    errorMap: () => ({ message: "Please select Yes or No for criminal convictions" }),
-  }).refine(val => val !== null && val !== undefined, {
+    required_error: "Please select Yes or No for criminal convictions",
+    invalid_type_error: "Please select Yes or No for criminal convictions",
+  }).nullable().refine(val => val !== null && val !== undefined, {
     message: "Please select Yes or No for criminal convictions"
   }),
   medicalConditions: z.boolean({
-    errorMap: () => ({ message: "Please select Yes or No for medical conditions" }),
-  }).refine(val => val !== null && val !== undefined, {
+    required_error: "Please select Yes or No for medical conditions",
+    invalid_type_error: "Please select Yes or No for medical conditions",
+  }).nullable().refine(val => val !== null && val !== undefined, {
     message: "Please select Yes or No for medical conditions"
   }),
   insuranceCancelledOrClaimRefusedOrPolicyVoided: z.boolean({
-    errorMap: () => ({ message: "Please select Yes or No for insurance history" }),
-  }).refine(val => val !== null && val !== undefined, {
+    required_error: "Please select Yes or No for insurance history",
+    invalid_type_error: "Please select Yes or No for insurance history",
+  }).nullable().refine(val => val !== null && val !== undefined, {
     message: "Please select Yes or No for insurance history"
   }),
   hasAdditionalDrivers: z.boolean().nullable().default(null),
