@@ -326,6 +326,14 @@ const Header = () => {
             width={50}
             height={50}
           />
+          {!isDashboard && (
+            <button
+              className={styles.mobileQuoteBtn}
+              onClick={() => router.push("/temporary/get-quote")}
+            >
+              Get a Quote
+            </button>
+          )}
           <button
             onClick={() => {
               if (isDashboard) {
