@@ -63,6 +63,18 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mounted]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   // Function to open Tawk.to chat
   const openLiveChat = () => {
     if (typeof window !== "undefined" && window.Tawk_API) {
