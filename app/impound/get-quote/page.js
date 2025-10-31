@@ -11,6 +11,7 @@ import PersonalDetailsForm from "@/app/temporary/get-quote/_components/PersonalD
 import TermsForm from "@/app/temporary/get-quote/_components/TermsForm";
 import StepActions from "@/app/temporary/get-quote/_components/StepActions";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
+import ReviewQuote from "@/app/temporary/get-quote/_components/ReviewQuote";
 import { useRouter, useSearchParams } from "next/navigation";
 import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
