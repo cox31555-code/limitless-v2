@@ -248,15 +248,3 @@
     font-size: 1.5rem;
   }
 }
-
-@media screen and (max-width: 640px) {
-  .wrapper {
-    padding-top: 25rem;
-    padding-left: 6%;
-    padding-right: 6%;
-    padding-bottom: 3.4rem;
-  }
-  .container {
-    padding-top: 0;
-  }
-}
