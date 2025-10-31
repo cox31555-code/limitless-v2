@@ -509,29 +509,29 @@
   }
 
   .menuLink:hover {
-    color: #0388ff;
-    transform: scale(1.05);
+    color: #000822;
+    transform: none;
   }
 
   .menuLink:hover::before {
-    opacity: 1;
+    opacity: 0;
   }
 
   .menuLink:hover::after {
-    width: 40%;
+    width: 0;
   }
 
   .activeMenuLink {
-    color: #0388ff;
-    background: rgba(3, 136, 255, 0.1);
+    color: #000822;
+    background: none;
   }
 
   .activeMenuLink::before {
-    opacity: 1;
+    opacity: 0;
   }
 
   .activeMenuLink::after {
-    width: 40%;
+    width: 0;
   }
 
   .mobileButtons {
