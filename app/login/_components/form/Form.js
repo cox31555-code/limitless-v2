@@ -86,89 +86,113 @@ const Form = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Welcome back</h1>
-      <p className={styles.subtitle}>Enter your credentials to access your portal</p>
-
-      {successMessage && (
-        <div className={styles.successMessage}>{successMessage}</div>
-      )}
-
-      {(error || errors.root) && (
-        <div className={styles.errorMessage}>
-          {error || errors.root?.message}
+    <div className={styles.cardWrapper}>
+      <div className={styles.card}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Welcome back</h1>
+          <p className={styles.subtitle}>Access your insurance dashboard</p>
         </div>
-      )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <div className={styles.inputGroup}>
-          <label className={styles.inputLabel}>EMAIL ADDRESS</label>
-          <div
-            className={`${styles.inputWrapper} ${errors.email ? styles.inputError : ""}`}
-            onClick={() => emailInputRef.current?.focus()}
-          >
-            <input
-              type="email"
-              placeholder="Enter Email Address"
-              className={styles.input}
-              {...(() => {
-                const { ref, ...rest } = register("email");
-                return {
-                  ...rest,
-                  ref: (e) => {
-                    ref(e);
-                    emailInputRef.current = e;
-                  },
-                };
-              })()}
-            />
+        {successMessage && (
+          <div className={styles.successMessage}>{successMessage}</div>
+        )}
+
+        {(error || errors.root) && (
+          <div className={styles.errorMessage}>
+            {error || errors.root?.message}
           </div>
-          {errors.email && (
-            <span className={styles.fieldError}>{errors.email.message}</span>
-          )}
-        </div>
+        )}
 
-        <div className={styles.inputGroup}>
-          <label className={styles.inputLabel}>PASSWORD</label>
-          <div
-            className={`${styles.inputWrapper} ${errors.password ? styles.inputError : ""}`}
-            onClick={() => passwordInputRef.current?.focus()}
-          >
-            <input
-              type="password"
-              placeholder="Enter your password..."
-              className={styles.input}
-              {...(() => {
-                const { ref, ...rest } = register("password");
-                return {
-                  ...rest,
-                  ref: (e) => {
-                    ref(e);
-                    passwordInputRef.current = e;
-                  },
-                };
-              })()}
-            />
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div className={styles.formGroup}>
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>Email Address</label>
+              <div
+                className={`${styles.inputField} ${errors.email ? styles.fieldError : ""}`}
+                onClick={() => emailInputRef.current?.focus()}
+              >
+                <svg className={styles.fieldIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 8L10.89 13.26C11.5475 13.7277 12.4525 13.7277 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  className={styles.input}
+                  {...(() => {
+                    const { ref, ...rest } = register("email");
+                    return {
+                      ...rest,
+                      ref: (e) => {
+                        ref(e);
+                        emailInputRef.current = e;
+                      },
+                    };
+                  })()}
+                />
+              </div>
+              {errors.email && (
+                <span className={styles.errorText}>{errors.email.message}</span>
+              )}
+            </div>
+
+            <div className={styles.fieldWrapper}>
+              <div className={styles.passwordHeader}>
+                <label className={styles.fieldLabel}>Password</label>
+                <a href="/forget-password" className={styles.forgotLink}>
+                  Forgot password?
+                </a>
+              </div>
+              <div
+                className={`${styles.inputField} ${errors.password ? styles.fieldError : ""}`}
+                onClick={() => passwordInputRef.current?.focus()}
+              >
+                <svg className={styles.fieldIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 1C6.48 1 2 5.48 2 11V21C2 22.1046 2.89543 23 4 23H20C21.1046 23 22 22.1046 22 21V11C22 5.48 17.52 1 12 1ZM12 3C16.41 3 20 6.59 20 11H4C4 6.59 7.59 3 12 3ZM12 16C11.4477 16 11 15.5523 11 15C11 14.4477 11.4477 14 12 14C12.5523 14 13 14.4477 13 15C13 15.5523 12.5523 16 12 16Z" fill="currentColor"/>
+                </svg>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  className={styles.input}
+                  {...(() => {
+                    const { ref, ...rest } = register("password");
+                    return {
+                      ...rest,
+                      ref: (e) => {
+                        ref(e);
+                        passwordInputRef.current = e;
+                      },
+                    };
+                  })()}
+                />
+              </div>
+              {errors.password && (
+                <span className={styles.errorText}>{errors.password.message}</span>
+              )}
+            </div>
           </div>
-          {errors.password && (
-            <span className={styles.fieldError}>{errors.password.message}</span>
-          )}
-        </div>
 
-        <div className={styles.forgotPasswordWrapper}>
-          <a href="/forget-password" className={styles.forgotPasswordLink}>
-            Forgot your password?
-          </a>
-        </div>
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={isSubmitting}
+          >
+            <span className={styles.buttonText}>
+              {isSubmitting ? "Signing in..." : "Sign In"}
+            </span>
+            {!isSubmitting && (
+              <svg className={styles.buttonIcon} width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </button>
+        </form>
 
-        <button
-          type="submit"
-          className={styles.submitButton}
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? "Signing in..." : "LOGIN"}
-        </button>
-      </form>
+        <div className={styles.footer}>
+          <p className={styles.footerText}>
+            Don't have an account? <a href="/contact" className={styles.signupLink}>Contact support</a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
