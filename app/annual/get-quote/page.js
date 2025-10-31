@@ -259,8 +259,6 @@ const AnnualInsuranceContent = () => {
   };
 
   const onSubmit = (data) => {
-    console.log("Form submitted with data:", data);
-
     // Show loading overlay
     setShowLoading(true);
     setIsSubmitting(true);
@@ -268,9 +266,7 @@ const AnnualInsuranceContent = () => {
     // Generate an annual insurance ID for offline mode
     const insuranceId = `ANNUAL_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    console.log("Redirecting to:", `/payment-summary?id=${insuranceId}`);
-
-    // Redirect immediately
+    // Redirect to payment summary (review your quote) page
     router.push(`/payment-summary?id=${insuranceId}`);
   };
 
