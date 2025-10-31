@@ -69,39 +69,61 @@
   margin: 0;
 }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .content {
-    padding: 2rem;
+    padding: 1.4rem;
+    gap: 1.2rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+
+  .selections {
+    margin-top: 0.8rem;
+    gap: 1.2rem;
+  }
+
+  .carUsageSection {
+    gap: 1.2rem;
+  }
+
+  .declarationsSection {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 1.2rem;
+    gap: 1rem;
   }
 
   .row {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
+    gap: 1rem;
   }
 
   .selections {
-    margin-top: 1rem;
-    gap: 1.4rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .content {
-    padding: 1.6rem;
-    gap: 1.4rem;
+    gap: 1rem;
   }
 
-  .row {
-    gap: 1.2rem;
+  .carUsageSection {
+    gap: 1rem;
   }
 
-  .selections {
-    gap: 1.2rem;
+  .declarationsSection {
+    gap: 0.8rem;
+  }
+
+  .declarationTitle {
+    font-size: 1.1rem;
   }
 }
