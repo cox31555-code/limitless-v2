@@ -151,36 +151,6 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
           </div>
         </div>
 
-        <div className={styles.summaryCard}>
-          <div className={styles.summaryContent}>
-            <h3 className={`${styles.summaryTitle} ${plusJakartaSans.className}`}>
-              Current level of cover
-            </h3>
-            <div className={styles.coverType}>
-              <span className={styles.coverTypeLabel}>Type of Insurance</span>
-              <span className={styles.coverTypeValue}>
-                {getInsuranceTypeName()}
-              </span>
-            </div>
-            <div className={styles.totalPriceSection}>
-              <p className={styles.totalLabel}>Total Price</p>
-              <p className={styles.totalPrice}>£49.99</p>
-              <p className={styles.totalDescription}>
-                Including all additional fees
-              </p>
-            </div>
-            <div className={styles.features}>
-              {features.map((feature, index) => (
-                <div className={styles.featureItem} key={index}>
-                  <div className={styles.checkIcon}>
-                    <FaCheck />
-                  </div>
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
