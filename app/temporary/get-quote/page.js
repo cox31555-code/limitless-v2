@@ -280,6 +280,7 @@ const TemporaryInsuranceContent = () => {
             totalSteps={5}
             onNext={handleNextStep}
             onBack={handlePreviousStep}
+            onSubmit={onSubmit}
             isLoading={isSubmitting}
             nextLabel={currentStep === STEPS.REVIEW ? "Proceed to payment" : currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
             backLabel="Back"
