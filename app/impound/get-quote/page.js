@@ -8,7 +8,6 @@ import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import VehicleDetailsForm from "@/app/temporary/get-quote/_components/VehicleDetailsForm";
 import CoverDetailsForm from "@/app/temporary/get-quote/_components/CoverDetailsForm";
 import PersonalDetailsForm from "@/app/temporary/get-quote/_components/PersonalDetailsForm";
-import TermsForm from "@/app/temporary/get-quote/_components/TermsForm";
 import StepActions from "@/app/temporary/get-quote/_components/StepActions";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import ReviewQuote from "@/app/temporary/get-quote/_components/ReviewQuote";
