@@ -260,7 +260,7 @@ const TemporaryInsuranceContent = () => {
               <PersonalDetailsForm form={form} />
             )}
             {currentStep === STEPS.TERMS && (
-              <TermsForm form={form} onBack={handlePreviousStep} isSubmitting={isSubmitting} />
+              <TermsForm form={form} />
             )}
           </div>
 
