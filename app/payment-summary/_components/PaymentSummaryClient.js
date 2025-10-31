@@ -32,11 +32,14 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
             <VehicleDetails
               data={insuranceData.vehicleDetails}
               carUsage={insuranceData.carUsage}
+              insuranceType={insuranceData.type}
             />
-            <CoverDetails data={insuranceData.coverDetails} />
+            <CoverDetails data={insuranceData.coverDetails} insuranceType={insuranceData.type} />
             <PersonalDetails
               data={insuranceData.userDetails}
               carUsage={insuranceData.carUsage}
+              insuranceType={insuranceData.type}
+              optionalExtras={insuranceData.optionalExtras}
             />
           </div>
           <div className={styles.second}>
