@@ -176,7 +176,6 @@ const TemporaryInsuranceContent = () => {
     "carUsage.criminalConvictions",
     "carUsage.medicalConditions",
     "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
-    "terms.acceptTerms",
   ];
 
   const getFieldsForStep = (step) => {
