@@ -3,8 +3,6 @@
 import React from "react";
 import { useWatch } from "react-hook-form";
 import styles from "./reviewQuote.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-import { FaCheck } from "react-icons/fa6";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
