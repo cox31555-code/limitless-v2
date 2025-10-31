@@ -291,9 +291,11 @@ const AnnualInsuranceContent = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            if (currentStep === STEPS.REVIEW) {
-              onSubmit({});
+            // Only allow form submission on the REVIEW step
+            if (currentStep !== STEPS.REVIEW) {
+              return;
             }
+            onSubmit({});
           }}
           className={styles.stepFormContainer}
           noValidate
