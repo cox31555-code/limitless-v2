@@ -216,12 +216,6 @@
 .logo {
   width: 3.4rem;
   height: auto;
-  cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.logo:hover {
-  transform: scale(1.05);
 }
 
 /* Close button */
