@@ -421,7 +421,11 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 1.2rem 0;
+    padding: 0;
+  }
+
+  .mobileDropdownContainer {
+    width: 100%;
   }
 
   .mobileNav .menuLink {
