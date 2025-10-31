@@ -18,19 +18,33 @@ const CoverDetails = ({ data, insuranceType }) => {
       <div className={styles.content}>
         <div className={styles.section}>
           <h3 className={styles.sectionTitle}>
-            {insuranceType === "Annual" ? "Cover Level" : "How long will you need it?"}
+            {insuranceType === "Annual" ? "Cover Level" : insuranceType === "Impound" ? "Impound Type" : "How long will you need it?"}
           </h3>
           <div className={styles.sectionContent}>
-            <InputWithData2
-              item={{
-                label: insuranceType === "Annual" ? "Coverage Type" : "Duration",
-                value: insuranceType === "Annual"
-                  ? (data?.level || "Comprehensive")
-                  : (data?.impoundType === "Impound Insurance"
-                    ? "30 Days"
-                    : (data?.period || 0) + " " + (data?.type || "Days")),
-              }}
-            />
+            {insuranceType === "Impound" && (
+              <InputWithData2
+                item={{
+                  label: "Insurance Type",
+                  value: data?.impoundType || "N/A",
+                }}
+              />
+            )}
+            {insuranceType === "Annual" && (
+              <InputWithData2
+                item={{
+                  label: "Coverage Type",
+                  value: data?.level || "Comprehensive",
+                }}
+              />
+            )}
+            {insuranceType === "Temp" && (
+              <InputWithData2
+                item={{
+                  label: "Duration",
+                  value: (data?.period || 0) + " " + (data?.type || "Days"),
+                }}
+              />
+            )}
           </div>
         </div>
         <div className={styles.section}>
