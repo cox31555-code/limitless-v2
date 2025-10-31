@@ -80,7 +80,7 @@ const Footer = () => {
     <footer
       className={styles.container}
       style={{
-        background: pathname && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: isMounted && pathname && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
       }}
       suppressHydrationWarning
     >
