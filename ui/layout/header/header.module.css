@@ -404,6 +404,7 @@
     transition: max-height 0.15s ease-out;
     transform-origin: top;
     background: #000822;
+    width: 100%;
   }
 
   .mobileMenuOpen {
@@ -422,6 +423,7 @@
     flex-direction: column;
     gap: 0;
     padding: 0;
+    width: 100%;
   }
 
   .mobileDropdownContainer {
