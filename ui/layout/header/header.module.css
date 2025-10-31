@@ -346,7 +346,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    background: #f2f5fe;
+    background: #000822;
     align-items: center;
     justify-content: center;
     position: sticky;
@@ -356,7 +356,7 @@
 
   @media (max-width: 640px) {
     .mobileContainer {
-      background: white !important;
+      background: #000822 !important;
     }
   }
 
