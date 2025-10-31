@@ -5,6 +5,7 @@ import styles from "./stepActions.module.css";
 const StepActions = ({
   onBack,
   onNext,
+  onSubmit,
   currentStep,
   totalSteps,
   isLoading = false,
@@ -30,9 +31,9 @@ const StepActions = ({
       )}
 
       <button
-        type={isLastStep ? "submit" : "button"}
+        type="button"
         className={styles.nextBtn}
-        onClick={!isLastStep ? onNext : undefined}
+        onClick={isLastStep ? onSubmit : onNext}
         disabled={isLoading}
       >
         {isLoading ? "Loading..." : isLastStep ? nextLabel : "Next"}
