@@ -294,6 +294,8 @@
 
 @media screen and (max-width: 900px) {
   .container {
+    width: 100%;
+    margin: 0;
     padding: 7rem 4.4rem 8rem;
     min-height: auto;
   }
