@@ -110,6 +110,7 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
           img="/svg/night.svg"
         />
       </div>
+      {insuranceType === "Annual" && (
       <div className={styles.sectionsWrapper}>
         <div className={`${styles.section} ${styles.disabled}`}>
           <h3 className={styles.sectionTitle}>License & Claims</h3>
@@ -152,7 +153,7 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
         </div>
         <div className={`${styles.section} ${styles.disabled}`}>
           <h3 className={styles.sectionTitle}>Important Declarations</h3>
-        <div className={styles.sectionContent}>
+          <div className={styles.sectionContent}>
           <div className={styles.row}>
             <InputWithData2
               item={{
@@ -173,9 +174,22 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
               }}
             />
           </div>
+            </div>
+        </div>
+        {optionalExtras && (
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Optional Extras</h3>
+          <div className={styles.sectionContent}>
+            <div className={styles.row}>
+              <InputWithData2 item={{ label: "Courtesy Car", value: optionalExtras?.courtesyCar ? "Yes" : "No" }} />
+              <InputWithData2 item={{ label: "Breakdown Cover", value: optionalExtras?.breakdownCover ? "Yes" : "No" }} />
+              <InputWithData2 item={{ label: "Foreign Use Cover", value: optionalExtras?.foreignUseCover ? "Yes" : "No" }} />
+            </div>
           </div>
         </div>
+        )}
       </div>
+      )}
       <CarUsage carUsage={carUsage}/>
     </ComponentWrapper>
   );
