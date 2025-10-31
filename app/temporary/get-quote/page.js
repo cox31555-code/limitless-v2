@@ -255,8 +255,6 @@ const TemporaryInsuranceContent = () => {
             e.preventDefault();
             if (currentStep === STEPS.REVIEW) {
               onSubmit({});
-            } else {
-              form.handleSubmit(onSubmit)(e);
             }
           }}
           className={styles.stepFormContainer}
