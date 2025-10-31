@@ -276,7 +276,10 @@ const AnnualInsuranceContent = () => {
       <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={5} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={(e) => {
+            e.preventDefault();
+            form.handleSubmit(onSubmit)(e);
+          }}
           className={styles.stepFormContainer}
           noValidate
           suppressHydrationWarning
