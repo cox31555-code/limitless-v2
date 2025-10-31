@@ -163,12 +163,6 @@ const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" 
               disabled={!registrationNumber.trim()}
             >
               Continue
-              <Image
-                src="/svg/arrow-right.svg"
-                alt="arrow"
-                width={18}
-                height={18}
-              />
             </button>
 
             <button
@@ -312,12 +306,6 @@ const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" 
               disabled={!quickSelection && !customDurationValue}
             >
               Continue
-              <Image
-                src="/svg/arrow-right.svg"
-                alt="arrow"
-                width={18}
-                height={18}
-              />
             </button>
 
             <button
