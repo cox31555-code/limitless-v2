@@ -187,7 +187,6 @@ const Header = ({ title, currentStep, totalSteps }) => {
               </li>
             </menu>
             )}
-            )}
 
             {!isPaymentSummaryPage && (
             <div className={styles.buttons}>
@@ -204,7 +203,6 @@ const Header = ({ title, currentStep, totalSteps }) => {
                 Get a Quote
               </button>
             </div>
-            )}
             )}
           </div>
 
