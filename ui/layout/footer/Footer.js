@@ -82,8 +82,8 @@ const Footer = () => {
     >
       <div className={`centeredContent ${styles.contentContainer}`} suppressHydrationWarning>
         <div suppressHydrationWarning>
-          {isGetQuotePage && <GetQuoteFooterBanner key="quote-banner" />}
-          {!isPaymentPage && !isGetQuotePage && <NoHiddenFees key="hidden-fees" />}
+          {(isGetQuotePage || isPaymentSummaryPage) && <GetQuoteFooterBanner key="quote-banner" />}
+          {!isPaymentPage && !isGetQuotePage && !isPaymentSummaryPage && <NoHiddenFees key="hidden-fees" />}
         </div>
         <div className={styles.content}>
           <div className={styles.menus}>
