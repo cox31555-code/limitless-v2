@@ -103,14 +103,13 @@
 }
 
 @media (max-width: 600px) {
-  .content {
-    padding: 1.2rem;
-    gap: 1rem;
-  }
-
   .row {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .sectionsWrapper {
+    gap: 1.2rem;
   }
 
   .section {
