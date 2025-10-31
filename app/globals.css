@@ -135,6 +135,7 @@ body {
     padding: 0;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    height: 140rem;
   }
   .insuranceQuotesContainer {
     padding: 3.8rem 2% 6.8rem;
