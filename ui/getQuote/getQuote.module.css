@@ -655,26 +655,26 @@
 /* Mobile Responsive */
 @media screen and (max-width: 900px) {
   .container {
-    width: 90%;
-    max-width: 520px;
+    width: 95%;
+    max-width: 100%;
     margin: 0 auto;
     border-radius: 1.5rem;
   }
 
   .navigationWrapper {
-    padding: 1.6rem 2rem 0;
+    padding: 2rem 2.2rem 0;
   }
 
   .quickQuoteTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .quickQuoteSubtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .contentWrapper {
-    padding: 2rem 2rem;
+    padding: 2.2rem 2.2rem;
   }
 
   .navigationTabs {
@@ -747,27 +747,27 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    width: calc(100% - 2rem);
+    width: calc(100% - 1.6rem);
     max-width: none;
-    margin: 1rem auto;
+    margin: 0.8rem auto;
     border-radius: 1.2rem;
     box-shadow: 0 4px 16px rgba(0, 8, 34, 0.06);
   }
 
   .navigationWrapper {
-    padding: 1.4rem 1.4rem 0;
+    padding: 1.8rem 1.8rem 0;
   }
 
   .quickQuoteTitle {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
   }
 
   .quickQuoteSubtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .contentWrapper {
-    padding: 1.6rem 1.4rem;
+    padding: 2rem 1.8rem;
   }
 
   .progressBar {
@@ -876,26 +876,34 @@
 
 @media screen and (max-width: 400px) {
   .container {
-    width: calc(100% - 1.6rem);
-    margin: 0.8rem auto;
+    width: calc(100% - 1.2rem);
+    margin: 0.6rem auto;
     padding: 0;
     border-radius: 1rem;
   }
 
   .navigationWrapper {
-    padding: 1.2rem 1.2rem 0;
+    padding: 1.6rem 1.4rem 0;
   }
 
   .contentWrapper {
-    padding: 1.4rem 1.2rem;
+    padding: 1.8rem 1.4rem;
   }
 
   .quickQuoteTitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .quickQuoteSubtitle {
+    font-size: 1.15rem;
   }
 
   .stepTitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .stepDescription {
+    font-size: 1.3rem;
   }
 
   .quickOptions,
