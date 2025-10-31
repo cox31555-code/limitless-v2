@@ -21,15 +21,13 @@ const STEPS = {
   VEHICLE: 1,
   COVER: 2,
   PERSONAL: 3,
-  TERMS: 4,
-  REVIEW: 5,
+  REVIEW: 4,
 };
 
 const STEP_TITLES = [
   "Vehicle Details",
   "Cover Details",
   "Personal Details",
-  "Terms & Conditions",
   "Review Your Quote",
 ];
 
@@ -180,10 +178,6 @@ const ImpoundInsuranceContent = () => {
     "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
   ];
 
-  const termsFields = [
-    "terms.acceptTerms",
-  ];
-
   const getFieldsForStep = (step) => {
     switch (step) {
       case STEPS.VEHICLE:
@@ -192,8 +186,6 @@ const ImpoundInsuranceContent = () => {
         return coverFields;
       case STEPS.PERSONAL:
         return personalFields;
-      case STEPS.TERMS:
-        return termsFields;
       default:
         return [];
     }
@@ -204,7 +196,7 @@ const ImpoundInsuranceContent = () => {
     const isValid = await trigger(fieldsToValidate);
 
     if (isValid) {
-      if (currentStep === STEPS.TERMS) {
+      if (currentStep === STEPS.PERSONAL) {
         setCurrentStep(STEPS.REVIEW);
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;
@@ -247,7 +239,7 @@ const ImpoundInsuranceContent = () => {
   return (
     <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
-      <GetQuoteHeaderWithNav title="Impound Insurance Quote" currentStep={currentStep} totalSteps={5} />
+      <GetQuoteHeaderWithNav title="Impound Insurance Quote" currentStep={currentStep} totalSteps={4} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
           className={styles.stepFormContainer}
@@ -266,9 +258,6 @@ const ImpoundInsuranceContent = () => {
             {currentStep === STEPS.PERSONAL && (
               <PersonalDetailsForm form={form} />
             )}
-            {currentStep === STEPS.TERMS && (
-              <TermsForm form={form} />
-            )}
             {currentStep === STEPS.REVIEW && (
               <ReviewQuote form={form} insuranceType="Impound" />
             )}
@@ -276,12 +265,12 @@ const ImpoundInsuranceContent = () => {
 
           <StepActions
             currentStep={currentStep}
-            totalSteps={5}
+            totalSteps={4}
             onNext={handleNextStep}
             onBack={handlePreviousStep}
             onSubmit={onSubmit}
             isLoading={isSubmitting}
-            nextLabel={currentStep === STEPS.REVIEW ? "Proceed to payment" : currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
+            nextLabel={currentStep === STEPS.REVIEW ? "Proceed to payment" : "Next"}
             backLabel="Back"
           />
         </form>
