@@ -44,6 +44,12 @@ const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
     iconContent = null;
   } else if (titleLower.includes("optional")) {
     iconContent = null;
+  } else if (titleLower.includes("declarations")) {
+    iconContent = null;
+  } else if (titleLower.includes("additional drivers")) {
+    iconContent = null;
+  } else if (titleLower.includes("car usage")) {
+    iconContent = null;
   } else if (!isVehicleIcon) {
     iconContent = (
       <Image
