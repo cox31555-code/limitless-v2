@@ -16,6 +16,21 @@
   border-radius: 12px;
 }
 
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
