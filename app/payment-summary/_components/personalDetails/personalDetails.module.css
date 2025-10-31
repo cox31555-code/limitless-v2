@@ -53,6 +53,11 @@
 .section.disabled {
   background: rgba(3, 136, 255, 0.04);
   border: 1px solid rgba(3, 136, 255, 0.08);
+  opacity: 0.85;
+}
+
+.section.disabled .sectionTitle {
+  color: #5a6b7d;
 }
 
 .sectionTitle {
