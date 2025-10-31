@@ -112,69 +112,100 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
       </div>
       {insuranceType === "Annual" && (
       <div className={styles.sectionsWrapper}>
-        <div className={`${styles.section} ${styles.disabled}`}>
-          <h3 className={styles.sectionTitle}>License & Claims</h3>
-        <div className={styles.sectionContent}>
-          <div className={styles.row}>
-            <InputWithData2
-              item={{
-                label: "What do you use the car for?",
-                value: carUsage?.usageType || "N/A",
-              }}
-            />
-            <InputWithData2
-              item={{
-                label: "License Type",
-                value: carUsage?.licenseType || "N/A",
-              }}
-            />
-            <InputWithData2
-              item={{
-                label: "License Held Since",
-                value: carUsage?.licenseHeld || "N/A",
-              }}
-            />
-          </div>
-          <div className={styles.row}>
-            <InputWithData2
-              item={{
-                label: "No Claims Bonus",
-                value: carUsage?.NCB || "N/A",
-              }}
-            />
-            <InputWithData2
-              item={{
-                label: "Voluntary Excess",
-                value: carUsage?.voluntaryExcess || "N/A",
-              }}
-            />
-          </div>
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Additional Information</h3>
+          <div className={styles.sectionContent}>
+            <div className={styles.row}>
+              <InputWithData2
+                item={{
+                  label: "Own Your Home",
+                  value: formatBoolValue(carUsage?.ownsHome),
+                }}
+              />
+              <InputWithData2
+                item={{
+                  label: "Children Under 16",
+                  value: formatBoolValue(carUsage?.childrenUnder16),
+                }}
+              />
+              <InputWithData2
+                item={{
+                  label: "Lived in UK Since Birth",
+                  value: formatBoolValue(carUsage?.livedInUKSinceBirth),
+                }}
+              />
+            </div>
           </div>
         </div>
-        <div className={`${styles.section} ${styles.disabled}`}>
-          <h3 className={styles.sectionTitle}>Important Declarations</h3>
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Car Usage & License</h3>
           <div className={styles.sectionContent}>
-          <div className={styles.row}>
-            <InputWithData2
-              item={{
-                label: "Criminal Convictions",
-                value: formatBoolValue(carUsage?.criminalConvictions),
-              }}
-            />
-            <InputWithData2
-              item={{
-                label: "Medical Conditions",
-                value: formatBoolValue(carUsage?.medicalConditions),
-              }}
-            />
-            <InputWithData2
-              item={{
-                label: "Insurance Cancelled/Refused",
-                value: formatBoolValue(carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided),
-              }}
-            />
-          </div>
+            <div className={styles.row}>
+              <InputWithData2
+                item={{
+                  label: "What do you use the car for?",
+                  value: carUsage?.usageType || "N/A",
+                }}
+              />
+              <InputWithData2
+                item={{
+                  label: "License Type",
+                  value: carUsage?.licenseType || "N/A",
+                }}
+              />
+              <InputWithData2
+                item={{
+                  label: "License Held Since",
+                  value: carUsage?.licenseHeld || "N/A",
+                }}
+              />
             </div>
+            <div className={styles.row}>
+              <InputWithData2
+                item={{
+                  label: "License Number",
+                  value: carUsage?.licenseNumber || "N/A",
+                }}
+              />
+              <InputWithData2
+                item={{
+                  label: "No Claims Bonus",
+                  value: carUsage?.NCB || "N/A",
+                }}
+              />
+              <InputWithData2
+                item={{
+                  label: "Voluntary Excess",
+                  value: carUsage?.voluntaryExcess || "N/A",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Declarations</h3>
+          <div className={styles.sectionContent}>
+            <div className={styles.row}>
+              <InputWithData2
+                item={{
+                  label: "Criminal Convictions",
+                  value: formatBoolValue(carUsage?.criminalConvictions),
+                }}
+              />
+              <InputWithData2
+                item={{
+                  label: "Medical Conditions",
+                  value: formatBoolValue(carUsage?.medicalConditions),
+                }}
+              />
+              <InputWithData2
+                item={{
+                  label: "Insurance Cancelled/Refused",
+                  value: formatBoolValue(carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided),
+                }}
+              />
+            </div>
+          </div>
         </div>
         {optionalExtras && (
         <div className={styles.section}>
@@ -221,7 +252,7 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
         )}
       </div>
       )}
-      <CarUsage carUsage={carUsage}/>
+      {insuranceType !== "Annual" && <CarUsage carUsage={carUsage}/>}
     </ComponentWrapper>
   );
 };
