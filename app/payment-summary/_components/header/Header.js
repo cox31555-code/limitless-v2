@@ -184,7 +184,9 @@ const Header = ({ title, currentStep, totalSteps }) => {
                 </span>
               </li>
             </menu>
+            )}
 
+            {!isPaymentSummaryPage && (
             <div className={styles.buttons}>
               <button
                 className={styles.loginBtn}
@@ -199,6 +201,7 @@ const Header = ({ title, currentStep, totalSteps }) => {
                 Get a Quote
               </button>
             </div>
+            )}
           </div>
 
           <div className={styles.titleSection}>
