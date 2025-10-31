@@ -23,6 +23,13 @@
   margin: 0;
 }
 
+.sectionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+}
+
 .selections {
   display: flex;
   flex-direction: column;
@@ -41,6 +48,11 @@
   background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
   border: 1px solid rgba(3, 136, 255, 0.08);
   border-radius: 12px;
+}
+
+.section.disabled {
+  background: rgba(3, 136, 255, 0.04);
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 .sectionTitle {
