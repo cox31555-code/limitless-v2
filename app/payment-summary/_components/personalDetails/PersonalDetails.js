@@ -111,13 +111,13 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
         />
       </div>
       {(insuranceType === "Temp" || insuranceType === "Impound") && (
-        <ComponentWrapper title="Car Usage" icon={{width: 62, height: 62}} isPaymentPage={true}>
+        <ComponentWrapper title="Car Usage" isPaymentPage={true}>
           <CarUsage carUsage={carUsage}/>
         </ComponentWrapper>
       )}
       {insuranceType === "Annual" && (
         <>
-          <ComponentWrapper title="Car Usage" icon={{width: 62, height: 62}} isPaymentPage={true}>
+          <ComponentWrapper title="Car Usage" isPaymentPage={true}>
             <div className={styles.sectionsWrapper}>
               <div className={styles.section}>
                 <h3 className={styles.sectionTitle}>Additional Information</h3>
@@ -191,7 +191,7 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
               </div>
             </div>
           </ComponentWrapper>
-          <ComponentWrapper title="Declarations" icon={{width: 62, height: 62}} isPaymentPage={true}>
+          <ComponentWrapper title="Declarations" isPaymentPage={true}>
             <div className={styles.sectionsWrapper}>
               <div className={styles.section}>
                 <div className={styles.sectionContent}>
@@ -220,7 +220,7 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
             </div>
           </ComponentWrapper>
           {optionalExtras && (
-            <ComponentWrapper title="Optional Extras" icon={{width: 62, height: 62}} isPaymentPage={true}>
+            <ComponentWrapper title="Optional Extras" isPaymentPage={true}>
               <div className={styles.sectionsWrapper}>
                 <div className={styles.section}>
                   <div className={styles.sectionContent}>
@@ -235,7 +235,7 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
             </ComponentWrapper>
           )}
           {carUsage?.additionalDrivers && carUsage?.additionalDrivers.length > 0 && (
-            <ComponentWrapper title="Additional Drivers" icon={{width: 62, height: 62}} isPaymentPage={true}>
+            <ComponentWrapper title="Additional Drivers" isPaymentPage={true}>
               <div className={styles.sectionsWrapper}>
                 <div className={styles.section}>
                   <div className={styles.sectionContent}>
