@@ -15,6 +15,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media (max-width: 900px) {
+  body {
+    padding-top: 80px;
+  }
+}
 @keyframes driftHorizontal {
   0% {
     background-position: 0 0;
