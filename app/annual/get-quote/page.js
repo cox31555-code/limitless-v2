@@ -244,7 +244,12 @@ const AnnualInsuranceContent = () => {
 
     if (isValid) {
       if (currentStep === STEPS.TERMS) {
-        // Last step - will be handled by form submission
+        setCurrentStep(STEPS.REVIEW);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      if (currentStep === STEPS.REVIEW) {
+        // Final step - will be handled by form submission
         return;
       }
       setCurrentStep(currentStep + 1);
