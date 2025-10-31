@@ -76,6 +76,9 @@ const Footer = () => {
   const isPaymentSummaryPage = isMounted && pathname === "/payment-summary";
   const isPaymentPage = isMounted && pathname?.startsWith("/payment") && !isPaymentSummaryPage;
 
+  // Only apply special styles if mounted and pathname is available
+  const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname);
+
   return (
     <footer
       className={styles.container}
