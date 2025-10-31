@@ -905,8 +905,8 @@
   display: flex;
   align-items: center;
   width: 100%;
-  color: #000822;
-  background: #ffffff;
+  color: rgba(255, 255, 255, 0.85);
+  background: #000822;
   border: none;
   font-size: 1.5rem;
   font-weight: 400;
@@ -916,7 +916,7 @@
   position: relative;
   gap: 0;
   white-space: nowrap;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: none;
 }
 
@@ -925,7 +925,7 @@
 }
 
 .mobileMenuLink.activeMenuLink {
-  background: rgba(3, 136, 255, 0.08);
+  background: rgba(3, 136, 255, 0.15);
   color: #0388ff;
   font-weight: 500;
 }
