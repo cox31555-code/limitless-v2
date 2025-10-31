@@ -68,64 +68,68 @@ const VehicleDetails = ({ data, carUsage, insuranceType }) => {
           <>
             <div className={styles.vehicleInfoSection}>
               <h3 className={styles.sectionTitle}>Vehicle Worth & Purchase Details</h3>
-              <div className={styles.row}>
-                <InputWithData2
-                  item={{
-                    label: "Vehicle Worth",
-                    value: data?.worth || "N/A",
-                  }}
-                />
-                <InputWithData2
-                  item={{
-                    label: "Purchase Date",
-                    value: formatDate(data?.purchaseDate),
-                  }}
-                />
-                <InputWithData2
-                  item={{
-                    label: "Legal Owner",
-                    value: data?.legalOwner || "N/A",
-                  }}
-                />
+              <div className={styles.sectionContent}>
+                <div className={styles.row}>
+                  <InputWithData2
+                    item={{
+                      label: "Vehicle Worth",
+                      value: data?.worth || "N/A",
+                    }}
+                  />
+                  <InputWithData2
+                    item={{
+                      label: "Purchase Date",
+                      value: formatDate(data?.purchaseDate),
+                    }}
+                  />
+                  <InputWithData2
+                    item={{
+                      label: "Legal Owner",
+                      value: data?.legalOwner || "N/A",
+                    }}
+                  />
+                </div>
               </div>
             </div>
             <div className={styles.vehicleInfoSection}>
               <h3 className={styles.sectionTitle}>Safety & Security Features</h3>
-              <div className={styles.row}>
-                <InputWithData2
-                  item={{
-                    label: "Tracking Device",
-                    value: data?.trackingDevice || "N/A",
-                  }}
-                />
-                <InputWithData2
-                  item={{
-                    label: "Alarm / Immobiliser",
-                    value: data?.alarmImmobiliser || "N/A",
-                  }}
-                />
-                <InputWithData2
-                  item={{
-                    label: "Imported Vehicle",
-                    value: data?.importedVehicle || "N/A",
-                  }}
-                />
-              </div>
-              <div className={styles.row}>
-                <InputWithData2
-                  item={{
-                    label: "Vehicle Modified",
-                    value: data?.vehicleModified || "N/A",
-                  }}
-                />
-                {data?.vehicleModifications && data?.vehicleModifications.length > 0 && (
+              <div className={styles.sectionContent}>
+                <div className={styles.row}>
                   <InputWithData2
                     item={{
-                      label: "Modifications",
-                      value: data?.vehicleModifications.join(", "),
+                      label: "Tracking Device",
+                      value: data?.trackingDevice || "N/A",
                     }}
                   />
-                )}
+                  <InputWithData2
+                    item={{
+                      label: "Alarm / Immobiliser",
+                      value: data?.alarmImmobiliser || "N/A",
+                    }}
+                  />
+                  <InputWithData2
+                    item={{
+                      label: "Imported Vehicle",
+                      value: data?.importedVehicle || "N/A",
+                    }}
+                  />
+                </div>
+                <div className={styles.row}>
+                  <InputWithData2
+                    item={{
+                      label: "Vehicle Modified",
+                      value: data?.vehicleModified || "N/A",
+                    }}
+                  />
+                  {data?.vehicleModifications && data?.vehicleModifications.length > 0 && (
+                    <InputWithData2
+                      item={{
+                        label: "Modifications",
+                        value: data?.vehicleModifications.join(", "),
+                      }}
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </>
