@@ -15,11 +15,16 @@ const PersonalDetails = ({ data, carUsage }) => {
     return `${day}/${month}/${year}`;
   };
 
+  const formatBoolValue = (value) => {
+    if (value === null || value === undefined) return "N/A";
+    return value === true ? "Yes" : "No";
+  };
+
   return (
     <ComponentWrapper title="Personal Details" icon={{width: 62, height: 62}} isPaymentPage={true}>
       <div className={styles.content}>
         <div className={styles.row}>
-          <InputWithData2   
+          <InputWithData2
             item={{
               label: "First Name",
               value: data?.firstName || "N/A",
@@ -64,24 +69,26 @@ const PersonalDetails = ({ data, carUsage }) => {
             value: data?.address || "N/A",
           }}
         />
-        <InputWithData2
-          item={{
-            label: "Employment Status",
-            value: data?.employmentStatus || "N/A",
-          }}
-        />
-        <InputWithData2
-          item={{
-            label: "Occupation",
-            value: data?.occupation || "N/A",
-          }}
-        />
-        <InputWithData2
-          item={{
-            label: "Industry",
-            value: data?.industry || "N/A",
-          }}
-        />
+        <div className={styles.row}>
+          <InputWithData2
+            item={{
+              label: "Employment Status",
+              value: data?.employmentStatus || "N/A",
+            }}
+          />
+          <InputWithData2
+            item={{
+              label: "Occupation",
+              value: data?.occupation || "N/A",
+            }}
+          />
+          <InputWithData2
+            item={{
+              label: "Industry",
+              value: data?.industry || "N/A",
+            }}
+          />
+        </div>
       </div>
       <div className={styles.selections}>
         <SelectedItem
@@ -90,13 +97,72 @@ const PersonalDetails = ({ data, carUsage }) => {
           description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
           img="/svg/day.svg"
         />
-        
+
         <SelectedItem
           item={carUsage?.keepingCarDuringNight}
           title="Where do you keep your car during the night?"
           description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
           img="/svg/night.svg"
         />
+      </div>
+      <div className={styles.carUsageSection}>
+        <div className={styles.row}>
+          <InputWithData2
+            item={{
+              label: "What do you use the car for?",
+              value: carUsage?.usageType || "N/A",
+            }}
+          />
+          <InputWithData2
+            item={{
+              label: "License Type",
+              value: carUsage?.licenseType || "N/A",
+            }}
+          />
+          <InputWithData2
+            item={{
+              label: "License Held Since",
+              value: carUsage?.licenseHeld || "N/A",
+            }}
+          />
+        </div>
+        <div className={styles.row}>
+          <InputWithData2
+            item={{
+              label: "No Claims Bonus",
+              value: carUsage?.NCB || "N/A",
+            }}
+          />
+          <InputWithData2
+            item={{
+              label: "Voluntary Excess",
+              value: carUsage?.voluntaryExcess || "N/A",
+            }}
+          />
+        </div>
+        <div className={styles.declarationsSection}>
+          <h4 className={styles.declarationTitle}>Important Declarations</h4>
+          <div className={styles.row}>
+            <InputWithData2
+              item={{
+                label: "Criminal Convictions",
+                value: formatBoolValue(carUsage?.criminalConvictions),
+              }}
+            />
+            <InputWithData2
+              item={{
+                label: "Medical Conditions",
+                value: formatBoolValue(carUsage?.medicalConditions),
+              }}
+            />
+            <InputWithData2
+              item={{
+                label: "Insurance Cancelled/Refused",
+                value: formatBoolValue(carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided),
+              }}
+            />
+          </div>
+        </div>
       </div>
       <CarUsage carUsage={carUsage}/>
     </ComponentWrapper>
