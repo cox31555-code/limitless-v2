@@ -251,14 +251,6 @@ const TemporaryInsuranceContent = () => {
       <GetQuoteHeaderWithNav title="Temporary Insurance Quote" currentStep={currentStep} totalSteps={5} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            // Only allow form submission on the REVIEW step
-            if (currentStep !== STEPS.REVIEW) {
-              return;
-            }
-            onSubmit({});
-          }}
           className={styles.stepFormContainer}
           noValidate
           suppressHydrationWarning
