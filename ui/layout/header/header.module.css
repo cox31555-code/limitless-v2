@@ -402,7 +402,7 @@
     overflow: hidden;
     transition: max-height 0.15s ease-out;
     transform-origin: top;
-    background: #ffffff;
+    background: #000822;
   }
 
   .mobileMenuOpen {
