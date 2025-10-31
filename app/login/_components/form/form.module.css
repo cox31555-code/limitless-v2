@@ -235,6 +235,7 @@
   width: 100%;
   height: 5.8rem;
   padding: 1.4rem 2.2rem;
+  margin-top: 0.8rem;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border: none;
   border-radius: 12px;
@@ -243,42 +244,24 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.25);
   font-family: inherit;
   text-transform: none;
 }
 
-.submitButton::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-
 .submitButton:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.35);
-}
-
-.submitButton:hover:not(:disabled)::before {
-  opacity: 1;
+  opacity: 0.95;
 }
 
 .submitButton:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
+  opacity: 0.9;
 }
 
 .submitButton:disabled {
   opacity: 0.7;
   cursor: not-allowed;
-  transform: none;
 }
 
 .submitButton:focus {
@@ -374,6 +357,7 @@
     font-size: 1.35rem;
     padding: 1.3rem 2rem;
     gap: 0.8rem;
+    margin-top: 0.8rem;
   }
 
   .buttonIcon {
@@ -450,11 +434,7 @@
     padding: 1.2rem 1.8rem;
     gap: 0.7rem;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
-  }
-
-  .submitButton:hover:not(:disabled) {
-    box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+    margin-top: 0.8rem;
   }
 
   .buttonIcon {
