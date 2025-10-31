@@ -77,14 +77,13 @@
 }
 
 @media (max-width: 900px) {
-  .content {
-    padding: 1.4rem;
-    gap: 1.2rem;
-  }
-
   .row {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
+  }
+
+  .sectionsWrapper {
+    gap: 1.4rem;
   }
 
   .section {
