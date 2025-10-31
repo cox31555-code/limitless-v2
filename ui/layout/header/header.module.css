@@ -977,7 +977,6 @@
   margin: 0;
   overflow: hidden;
   animation: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .mobileDropdownItem {
@@ -993,7 +992,6 @@
   border-radius: 0;
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   background: #000822;
 }
 
