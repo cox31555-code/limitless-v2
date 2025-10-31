@@ -949,10 +949,10 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  border: 1.5px solid rgba(0, 8, 34, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
   background: transparent;
-  color: #000822;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1.4rem;
   font-weight: 500;
   transition: background 0.15s ease, border-color 0.15s ease;
@@ -961,8 +961,9 @@
 }
 
 .mobileLoginBtn:active {
-  background: rgba(3, 136, 255, 0.08);
-  border-color: rgba(3, 136, 255, 0.3);
+  background: rgba(3, 136, 255, 0.15);
+  border-color: rgba(3, 136, 255, 0.5);
+  color: #0388ff;
 }
 
 /* No animation updates needed - simplified mobile menu */
