@@ -10,7 +10,6 @@ import { BiLogoFacebook } from "react-icons/bi";
 import { BiLogoTwitter } from "react-icons/bi";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import NoHiddenFees from "../noHiddenFees/NoHiddenFees";
 import GetQuoteFooterBanner from "../getQuoteFooterBanner/GetQuoteFooterBanner";
 
@@ -57,11 +56,6 @@ const shouldUseSpecialStyles = (pathname) => {
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Don't render footer on dashboard and login pages
   if (
@@ -72,10 +66,10 @@ const Footer = () => {
   }
 
   // Determine which banner to show
-  const isGetQuotePage = mounted && (pathname?.startsWith("/temporary/get-quote") ||
+  const isGetQuotePage = pathname?.startsWith("/temporary/get-quote") ||
     pathname?.startsWith("/impound/get-quote") ||
-    pathname?.startsWith("/annual/get-quote"));
-  const isPaymentPage = mounted && pathname?.startsWith("/payment");
+    pathname?.startsWith("/annual/get-quote");
+  const isPaymentPage = pathname?.startsWith("/payment");
 
   return (
     <footer
