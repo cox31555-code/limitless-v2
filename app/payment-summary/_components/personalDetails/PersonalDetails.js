@@ -22,8 +22,10 @@ const PersonalDetails = ({ data, carUsage }) => {
 
   return (
     <ComponentWrapper title="Personal Details" icon={{width: 62, height: 62}} isPaymentPage={true}>
-      <div className={styles.content}>
-        <div className={styles.row}>
+      <div className={styles.section}>
+        <h3 className={styles.sectionTitle}>Personal Information</h3>
+        <div className={styles.sectionContent}>
+          <div className={styles.row}>
           <InputWithData2
             item={{
               label: "First Name",
@@ -88,6 +90,7 @@ const PersonalDetails = ({ data, carUsage }) => {
               value: data?.industry || "N/A",
             }}
           />
+          </div>
         </div>
       </div>
       <div className={styles.selections}>
