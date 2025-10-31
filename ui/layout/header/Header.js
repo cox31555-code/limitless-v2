@@ -73,7 +73,7 @@ const Header = () => {
   const carVanItems = [
     { label: "Annual car insurance", href: "/annual", icon: "calendar" },
     { label: "Hourly car insurance", href: "/temporary", icon: "clock" },
-    { label: "Weekly car insurance", href: "/temporary", icon: "calendar" },
+    { label: "Temporary car insurance", href: "/temporary", icon: "calendar" },
     { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
   ];
 
