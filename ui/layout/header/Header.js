@@ -500,18 +500,19 @@ const Header = () => {
               >
                 FAQ
               </span>
-            </nav>
-            <div className={styles.mobileBottomSection}>
-              <button
-                className={styles.mobileLoginBtn}
+
+              <span
+                className={`${styles.mobileMenuLink} ${
+                  pathname === "/login" ? styles.activeMenuLink : ""
+                }`}
                 onClick={() => {
-                  router.push("/login");
                   setIsOpen(false);
+                  router.push("/login");
                 }}
               >
                 Login
-              </button>
-            </div>
+              </span>
+            </nav>
             </div>
           </>
         )}
