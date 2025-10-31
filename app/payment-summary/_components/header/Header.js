@@ -70,6 +70,7 @@ const Header = ({ title, currentStep, totalSteps }) => {
   const withoutLastWord = words.slice(0, -1).join(" ");
   
   const progressPercentage = totalSteps ? (currentStep / totalSteps) * 100 : 0;
+  const isPaymentSummaryPage = pathname.includes("/payment-summary");
 
   return (
     <div className={styles.headerContainer}>
@@ -86,6 +87,7 @@ const Header = ({ title, currentStep, totalSteps }) => {
                 height={66}
               />
             </div>
+            {!isPaymentSummaryPage && (
             <menu className={styles.menu} suppressHydrationWarning>
               <li
                 className={styles.menuItem}
@@ -185,6 +187,7 @@ const Header = ({ title, currentStep, totalSteps }) => {
               </li>
             </menu>
             )}
+            )}
 
             {!isPaymentSummaryPage && (
             <div className={styles.buttons}>
@@ -201,6 +204,7 @@ const Header = ({ title, currentStep, totalSteps }) => {
                 Get a Quote
               </button>
             </div>
+            )}
             )}
           </div>
 
