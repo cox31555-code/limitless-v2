@@ -358,12 +358,19 @@ const Header = () => {
             isMobile={true}
           />
         ) : (
-          <div
-            className={`${styles.mobileMenu} ${
-              isOpen ? styles.mobileMenuOpen : styles.mobileMenuClosed
-            }`}
-          >
-            <nav className={styles.mobileNav} suppressHydrationWarning>
+          <>
+            {isOpen && (
+              <div
+                className={styles.mobileBackdrop}
+                onClick={() => setIsOpen(false)}
+              />
+            )}
+            <div
+              className={`${styles.mobileMenu} ${
+                isOpen ? styles.mobileMenuOpen : styles.mobileMenuClosed
+              }`}
+            >
+              <nav className={styles.mobileNav} suppressHydrationWarning>
               <div className={styles.mobileDropdownContainer}>
                 <button
                   className={styles.mobileMenuLink}
@@ -493,7 +500,8 @@ const Header = () => {
                 Login
               </button>
             </div>
-          </div>
+            </div>
+          </>
         )}
       </header>
     </div>
