@@ -14,9 +14,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const NoHiddenFees = () => {
   const router = useRouter();
   return (
-    <div className={styles.container} suppressHydrationWarning>
-      <div className={styles.content} suppressHydrationWarning>
-        <div className={`${styles.title} ${plusJakartaSans.className}`} suppressHydrationWarning>
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <div className={`${styles.title} ${plusJakartaSans.className}`}>
           No hidden fees
           <div className={styles.titleSpan}>
             Limitless Cover{" "}
