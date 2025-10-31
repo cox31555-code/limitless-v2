@@ -252,7 +252,11 @@ const ImpoundInsuranceContent = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            form.handleSubmit(onSubmit)(e);
+            if (currentStep === STEPS.REVIEW) {
+              onSubmit({});
+            } else {
+              form.handleSubmit(onSubmit)(e);
+            }
           }}
           className={styles.stepFormContainer}
           noValidate
