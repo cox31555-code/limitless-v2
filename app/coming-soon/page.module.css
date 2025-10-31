@@ -2,10 +2,6 @@
   /* position: relative;
   overflow: hidden; */
 }
-
-.headerWrapper {
-  margin-top: 9rem;
-}
 .cardsContainer {
   display: flex;
   align-items: stretch;
