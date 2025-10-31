@@ -5,11 +5,18 @@ import { redirect } from "next/navigation";
 import PaymentSummaryClient from "./_components/PaymentSummaryClient";
 
 const page = async ({ searchParams }) => {
-  const { id } = await searchParams;
+  const params = await searchParams;
+  const id = params?.id;
+
+  // Redirect if no id provided
+  if (!id) {
+    redirect("/error");
+  }
+
   let insuranceData = null;
 
   // Handle offline mode with temporary IDs
-  if (id && (id.startsWith("TEMP_") || id.startsWith("ANNUAL_") || id.startsWith("IMP_"))) {
+  if (id.startsWith("TEMP_") || id.startsWith("ANNUAL_") || id.startsWith("IMP_")) {
     const insuranceType = id.startsWith("TEMP_") ? "Temp" : id.startsWith("ANNUAL_") ? "Annual" : "Impound";
     insuranceData = {
       _id: id,
