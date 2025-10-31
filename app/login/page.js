@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import styles from "./page.module.css";
 import Form from "./_components/form/Form";
 import Header from "@/app/payment-summary/_components/header/Header";
-import GetQuoteFooterBanner from "@/ui/layout/getQuoteFooterBanner/GetQuoteFooterBanner";
 
 export const metadata = {
   title: "Login | Limitless Cover",
@@ -12,7 +11,7 @@ const LoginPage = () => {
   return (
     <div className={styles.pageWrapper}>
       <Header title="Login to Your Account" />
-      
+
       <div className={styles.mainContent}>
         <div className={styles.formContainer}>
           <Suspense
@@ -26,8 +25,6 @@ const LoginPage = () => {
           </Suspense>
         </div>
       </div>
-
-      <GetQuoteFooterBanner />
     </div>
   );
 };
