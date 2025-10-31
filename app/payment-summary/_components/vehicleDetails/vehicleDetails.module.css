@@ -48,43 +48,50 @@
   gap: 1.6rem;
 }
 
-@media screen and (max-width: 1200px) {
-  .row {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .content {
-    gap: 1.6rem;
+    gap: 1.2rem;
+  }
+
+  .vehicleInfoSection {
+    gap: 1.2rem;
   }
 
   .row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
 
   .cards {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .content {
-    gap: 1.4rem;
+    gap: 1rem;
+  }
+
+  .vehicleInfoSection {
+    padding: 1.2rem;
+    gap: 1rem;
   }
 
   .row {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 1rem;
   }
 
   .cards {
-    gap: 1.2rem;
+    gap: 1rem;
+  }
+
+  .field label {
+    font-size: 1rem;
+  }
+
+  .field p {
+    font-size: 1.2rem;
   }
 }
