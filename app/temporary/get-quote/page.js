@@ -220,7 +220,13 @@ const TemporaryInsuranceContent = () => {
     }
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    // Validate terms are accepted
+    if (!data.terms?.acceptTerms) {
+      toast.error("You must accept the terms and conditions to proceed");
+      return;
+    }
+
     // Show loading overlay
     setShowLoading(true);
 
