@@ -256,21 +256,19 @@ const ImpoundInsuranceContent = () => {
               <PersonalDetailsForm form={form} />
             )}
             {currentStep === STEPS.TERMS && (
-              <TermsForm form={form} onBack={handlePreviousStep} isSubmitting={isSubmitting} />
+              <TermsForm form={form} />
             )}
           </div>
 
-          {currentStep !== STEPS.TERMS && (
-            <StepActions
-              currentStep={currentStep}
-              totalSteps={4}
-              onNext={handleNextStep}
-              onBack={handlePreviousStep}
-              isLoading={isSubmitting}
-              nextLabel="Next"
-              backLabel="Back"
-            />
-          )}
+          <StepActions
+            currentStep={currentStep}
+            totalSteps={4}
+            onNext={handleNextStep}
+            onBack={handlePreviousStep}
+            isLoading={isSubmitting}
+            nextLabel={currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
+            backLabel="Back"
+          />
         </form>
       </div>
     </div>
