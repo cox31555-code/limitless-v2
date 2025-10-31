@@ -490,6 +490,7 @@
     flex-direction: column;
     gap: 0;
     padding: 0;
+    padding-top: 1.6rem;
     width: 100%;
     flex: 1;
     overflow-y: auto;
