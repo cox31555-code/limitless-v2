@@ -189,7 +189,7 @@ const Form = () => {
 
         <div className={styles.footer}>
           <p className={styles.footerText}>
-            Don't have an account? <a href="/contact" className={styles.signupLink}>Contact support</a>
+            New to Limitless Cover? <a href="/temporary/get-quote" className={styles.signupLink}>Get a quote</a>
           </p>
         </div>
       </div>
