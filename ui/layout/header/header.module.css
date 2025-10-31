@@ -1018,6 +1018,7 @@
 .mobileMenuLink {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   color: rgba(255, 255, 255, 0.85);
   background: #000822;
