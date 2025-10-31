@@ -110,6 +110,9 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
           img="/svg/night.svg"
         />
       </div>
+      {(insuranceType === "Temp" || insuranceType === "Impound") && (
+      <CarUsage carUsage={carUsage}/>
+      )}
       {insuranceType === "Annual" && (
       <div className={styles.sectionsWrapper}>
         <div className={styles.section}>
