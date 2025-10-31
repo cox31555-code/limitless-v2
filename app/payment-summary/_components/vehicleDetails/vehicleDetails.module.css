@@ -1,22 +1,45 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.2rem;
   width: 100%;
 }
 
 .vehicleInfoSection {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.2rem;
   width: 100%;
+  padding: 1.6rem;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  border-radius: 12px;
 }
 
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
+  gap: 1.2rem;
   width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.field label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #5a6b7d;
+}
+
+.field p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000822;
+  margin: 0;
 }
 
 .cards {
