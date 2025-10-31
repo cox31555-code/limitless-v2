@@ -57,14 +57,14 @@ export const temporaryCoverDetails = {
       "Damage to third party property up to £2m",
       "Social domestic and pleasure (SDP), commuting, class 1 business use and carriage of own goods",
       "Fully comprehensive insurance on policies from 1 hour to 28 days",
-      "£150 for a child seat",
+      "Insuring rental cars",
       "Driving in the EU, plus Andorra, Iceland, Liechtenstein, Norway, Serbia and Switzerland. This is third party cover only (which covers damage to the other person's car), and policies must start and end in Britain",
     ],
   },
   unCovered: {
     title: "What's not covered",
     features: [
-      "Insuring rental cars",
+      "£150 for a child seat",
       "Putting the wrong type of fuel in your car",
       "Impounded car release",
       "Driving vehicles under fleet policies",
