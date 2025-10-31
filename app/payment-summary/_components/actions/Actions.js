@@ -3,7 +3,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import styles from "./actions.module.css";
 
-const Actions = ({ insuranceId, onPayClick }) => {
+const Actions = ({ insuranceId, insuranceType, onPayClick }) => {
   const router = useRouter();
 
   const handlePayment = () => {
@@ -14,7 +14,17 @@ const Actions = ({ insuranceId, onPayClick }) => {
   };
 
   const handleBack = () => {
-    router.push("/temporary/get-quote?step=1");
+    let backRoute = "/temporary/get-quote?step=4";
+
+    if (insuranceType === "Annual") {
+      backRoute = "/annual/get-quote?step=4";
+    } else if (insuranceType === "Impound") {
+      backRoute = "/impound/get-quote?step=4";
+    } else if (insuranceType === "Temp") {
+      backRoute = "/temporary/get-quote?step=4";
+    }
+
+    router.push(backRoute);
   };
 
   return (
