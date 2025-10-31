@@ -67,13 +67,28 @@ const page = async ({ searchParams }) => {
         ownsHome: true,
         childrenUnder16: false,
         livedInUKSinceBirth: true,
-        hasAdditionalDrivers: false,
-        additionalDrivers: [],
+        hasAdditionalDrivers: insuranceType === "Annual",
+        additionalDrivers: insuranceType === "Annual" ? [
+          {
+            firstName: "Sarah",
+            surname: "Smith",
+            dateOfBirth: "1995-08-10",
+            employmentStatus: "Employed",
+            occupation: "Engineer",
+            industry: "Technology",
+            otherVehicles: false,
+            licenseType: "Full UK",
+            licenseHeld: "10+ years",
+            NCB: "3 Years",
+            criminalConvictions: false,
+            medicalConditions: false,
+          }
+        ] : [],
       },
       optionalExtras: {
-        courtesyCar: false,
-        breakdownCover: false,
-        foreignUseCover: false,
+        courtesyCar: insuranceType === "Annual" ? true : false,
+        breakdownCover: insuranceType === "Annual" ? true : false,
+        foreignUseCover: insuranceType === "Annual" ? false : false,
       },
       totalPrice: 49.99,
       quote: {
