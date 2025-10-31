@@ -229,7 +229,12 @@ const TemporaryInsuranceContent = () => {
     const insuranceId = `TEMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
     // Redirect to payment summary (review your quote) page
-    router.push(`/payment-summary?id=${insuranceId}`);
+    const redirectUrl = `/payment-summary?id=${insuranceId}`;
+
+    // Use window.location.href for reliable navigation
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 100);
   };
 
   return (
