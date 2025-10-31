@@ -205,7 +205,7 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
         {/* ANNUAL-SPECIFIC ADDITIONAL INFO */}
         {insuranceType === "Annual" && (
           <>
-            {(carUsage?.ownsHome !== undefined || carUsage?.childrenUnder16 !== undefined || carUsage?.livedInUKSinceBirth !== undefined || carUsage?.hasAdditionalDrivers === "Yes") && (
+            {(carUsage?.ownsHome !== undefined || carUsage?.childrenUnder16 !== undefined || carUsage?.livedInUKSinceBirth !== undefined || carUsage?.hasAdditionalDrivers === true) && (
               <div className={styles.section}>
                 <h3 className={styles.sectionTitle}>Additional Information</h3>
                 <div className={styles.sectionContent}>
@@ -218,7 +218,7 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
                   )}
 
                   {/* ADDITIONAL DRIVERS - NESTED UNDER ADDITIONAL INFO */}
-                  {carUsage?.hasAdditionalDrivers === "Yes" && carUsage?.additionalDrivers?.length > 0 && (
+                  {carUsage?.hasAdditionalDrivers === true && carUsage?.additionalDrivers?.length > 0 && (
                     <div className={styles.driversContainer}>
                       <h4 className={styles.additionalInfoSubtitle}>Additional Drivers</h4>
                       {carUsage.additionalDrivers.map((driver, index) => (
@@ -254,7 +254,7 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
             )}
 
             {/* OPTIONAL EXTRAS SECTION */}
-            {(optionalExtras?.courtesyCar !== null || optionalExtras?.breakdownCover !== null || optionalExtras?.foreignUseCover !== null) && (
+            {(optionalExtras?.courtesyCar === true || optionalExtras?.breakdownCover === true || optionalExtras?.foreignUseCover === true) && (
               <div className={styles.section}>
                 <h3 className={styles.sectionTitle}>Optional Extras</h3>
                 <div className={styles.sectionContent}>
