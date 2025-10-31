@@ -47,7 +47,7 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
               data={insuranceData.quote}
               insuranceType={insuranceData.type}
             />
-            <Actions insuranceId={id} onPayClick={handlePayClick} />
+            <Actions insuranceId={id} insuranceType={insuranceData.type} onPayClick={handlePayClick} />
           </div>
         </div>
       </div>
