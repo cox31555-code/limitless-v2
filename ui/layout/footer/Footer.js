@@ -55,21 +55,26 @@ const shouldUseSpecialStyles = (pathname) => {
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Don't render footer on dashboard and login pages
-  if (
+  if (isMounted && (
     pathname?.startsWith("/dashboard") ||
     ["/login", "/forget-password", "/change-password"].includes(pathname)
-  ) {
+  )) {
     return null;
   }
 
   // Determine which banner to show
-  const isGetQuotePage = pathname?.startsWith("/temporary/get-quote") ||
+  const isGetQuotePage = isMounted && (pathname?.startsWith("/temporary/get-quote") ||
     pathname?.startsWith("/impound/get-quote") ||
-    pathname?.startsWith("/annual/get-quote");
-  const isPaymentSummaryPage = pathname === "/payment-summary";
-  const isPaymentPage = pathname?.startsWith("/payment") && !isPaymentSummaryPage;
+    pathname?.startsWith("/annual/get-quote"));
+  const isPaymentSummaryPage = isMounted && pathname === "/payment-summary";
+  const isPaymentPage = isMounted && pathname?.startsWith("/payment") && !isPaymentSummaryPage;
 
   return (
     <footer
