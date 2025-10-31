@@ -14,8 +14,6 @@ const StepActions = ({
   const isFirstStep = currentStep === 1;
   const isLastStep = currentStep === totalSteps;
 
-  console.log("StepActions rendered:", { currentStep, totalSteps, isLastStep, nextLabel });
-
   return (
     <div className={styles.actionsContainer}>
       {!isFirstStep ? (
