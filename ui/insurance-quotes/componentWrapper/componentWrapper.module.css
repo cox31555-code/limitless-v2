@@ -9,6 +9,10 @@
   opacity: 1;
   isolation: auto;
 }
+
+.container:has(.header:not(:first-child)) {
+  margin-top: 2rem;
+}
 .header {
   display: flex;
   align-items: center;
