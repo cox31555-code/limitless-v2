@@ -4,11 +4,6 @@ import React from "react";
 import { useWatch } from "react-hook-form";
 import styles from "./reviewQuote.module.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
-
 const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
   const vehicleDetails = useWatch({
     control: form.control,
