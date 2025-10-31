@@ -248,7 +248,7 @@ const TemporaryInsuranceContent = () => {
   return (
     <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
-      <GetQuoteHeaderWithNav title="Temporary Insurance Quote" currentStep={currentStep} totalSteps={4} />
+      <GetQuoteHeaderWithNav title="Temporary Insurance Quote" currentStep={currentStep} totalSteps={5} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
           onSubmit={(e) => {
