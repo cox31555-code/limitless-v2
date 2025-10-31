@@ -203,6 +203,22 @@
   }
 }
 
+.driversContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.12);
+}
+
+.additionalInfoSubtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0388ff;
+  margin: 0 0 1rem 0;
+}
+
 .driverCard {
   display: flex;
   flex-direction: column;
@@ -211,11 +227,10 @@
   background: rgba(3, 136, 255, 0.04);
   border: 1px solid rgba(3, 136, 255, 0.12);
   border-radius: 10px;
-  margin-top: 1rem;
 }
 
 .driverTitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #0388ff;
   margin: 0;
