@@ -349,6 +349,11 @@ const PersonalDetailsForm = ({ form }) => {
                   setValue("carUsage.criminalConvictions", value)
                 }
               />
+              {errors.carUsage?.criminalConvictions && (
+                <span className={styles.cleanError}>
+                  {errors.carUsage.criminalConvictions.message}
+                </span>
+              )}
             </div>
 
             <div className={styles.cleanDeclarationItem}>
@@ -361,6 +366,11 @@ const PersonalDetailsForm = ({ form }) => {
                   setValue("carUsage.medicalConditions", value)
                 }
               />
+              {errors.carUsage?.medicalConditions && (
+                <span className={styles.cleanError}>
+                  {errors.carUsage.medicalConditions.message}
+                </span>
+              )}
             </div>
 
             <div className={styles.cleanDeclarationItem}>
@@ -378,6 +388,11 @@ const PersonalDetailsForm = ({ form }) => {
                   )
                 }
               />
+              {errors.carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided && (
+                <span className={styles.cleanError}>
+                  {errors.carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided.message}
+                </span>
+              )}
             </div>
           </div>
         </section>
