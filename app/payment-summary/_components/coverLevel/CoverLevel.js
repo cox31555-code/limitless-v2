@@ -77,7 +77,7 @@ const CoverLevel = ({ data, insuranceType }) => {
       <div className={styles.header}>
         <div className={styles.headerItem}>
           <FaReceipt className={styles.headerItemIcon} />
-          <p className={styles.headerItemTitle}>Order Reference</p>
+          <p className={styles.headerItemTitle}>Quote Reference</p>
         </div>
         <p className={styles.headerItemValue}>
           #{data?._id?.slice(-10).toUpperCase() || "N/A"}
