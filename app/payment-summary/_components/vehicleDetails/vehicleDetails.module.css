@@ -5,6 +5,20 @@
   width: 100%;
 }
 
+.vehicleInfoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
