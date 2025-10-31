@@ -9,10 +9,11 @@ const page = async ({ searchParams }) => {
   let insuranceData = null;
 
   // Handle offline mode with temporary IDs
-  if (id && id.startsWith("TEMP_")) {
+  if (id && (id.startsWith("TEMP_") || id.startsWith("ANNUAL_") || id.startsWith("IMP_"))) {
+    const insuranceType = id.startsWith("TEMP_") ? "Temp" : id.startsWith("ANNUAL_") ? "Annual" : "Impound";
     insuranceData = {
       _id: id,
-      type: "Temp",
+      type: insuranceType,
       vehicleDetails: {
         registrationNumber: "XX23ABC",
         make: "Toyota",
@@ -20,8 +21,8 @@ const page = async ({ searchParams }) => {
         year: "2023",
       },
       coverDetails: {
-        type: "Days",
-        period: 7,
+        type: insuranceType === "Temp" ? "Days" : "Annual",
+        period: insuranceType === "Temp" ? 7 : 1,
       },
       userDetails: {
         firstName: "John",
@@ -30,6 +31,9 @@ const page = async ({ searchParams }) => {
         phone: "07000000000",
       },
       totalPrice: 49.99,
+      quote: {
+        priceAmount: 49.99,
+      },
     };
   } else {
     try {
