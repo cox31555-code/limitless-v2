@@ -261,17 +261,15 @@ const TemporaryInsuranceContent = () => {
             )}
           </div>
 
-          {currentStep !== STEPS.TERMS && (
-            <StepActions
-              currentStep={currentStep}
-              totalSteps={4}
-              onNext={handleNextStep}
-              onBack={handlePreviousStep}
-              isLoading={isSubmitting}
-              nextLabel="Next"
-              backLabel="Back"
-            />
-          )}
+          <StepActions
+            currentStep={currentStep}
+            totalSteps={4}
+            onNext={handleNextStep}
+            onBack={handlePreviousStep}
+            isLoading={isSubmitting}
+            nextLabel={currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
+            backLabel="Back"
+          />
         </form>
       </div>
     </div>
