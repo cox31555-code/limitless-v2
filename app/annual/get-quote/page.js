@@ -22,17 +22,13 @@ const STEPS = {
   VEHICLE: 1,
   COVER: 2,
   PERSONAL: 3,
-  OPTIONAL_EXTRAS: 4,
-  TERMS: 5,
-  REVIEW: 6,
+  REVIEW: 4,
 };
 
 const STEP_TITLES = [
   "Vehicle Details",
   "Cover Details",
   "Personal Details",
-  "Optional Extras",
-  "Terms & Conditions",
   "Review Your Quote",
 ];
 
@@ -213,14 +209,6 @@ const AnnualInsuranceContent = () => {
     "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
   ];
 
-  const optionalExtrasFields = [
-    // Optional extras are all optional, no validation required
-  ];
-
-  const termsFields = [
-    "terms.acceptTerms",
-  ];
-
   const getFieldsForStep = (step) => {
     switch (step) {
       case STEPS.VEHICLE:
@@ -229,10 +217,6 @@ const AnnualInsuranceContent = () => {
         return coverFields;
       case STEPS.PERSONAL:
         return personalFields;
-      case STEPS.OPTIONAL_EXTRAS:
-        return optionalExtrasFields;
-      case STEPS.TERMS:
-        return termsFields;
       default:
         return [];
     }
@@ -243,7 +227,7 @@ const AnnualInsuranceContent = () => {
     const isValid = await trigger(fieldsToValidate);
 
     if (isValid) {
-      if (currentStep === STEPS.TERMS) {
+      if (currentStep === STEPS.PERSONAL) {
         setCurrentStep(STEPS.REVIEW);
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;
@@ -286,7 +270,7 @@ const AnnualInsuranceContent = () => {
   return (
     <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
-      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={6} />
+      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={4} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
           className={styles.stepFormContainer}
@@ -305,12 +289,6 @@ const AnnualInsuranceContent = () => {
             {currentStep === STEPS.PERSONAL && (
               <AnnualPersonalDetailsForm form={form} />
             )}
-            {currentStep === STEPS.OPTIONAL_EXTRAS && (
-              <AnnualOptionalExtrasForm form={form} />
-            )}
-            {currentStep === STEPS.TERMS && (
-              <TermsForm form={form} />
-            )}
             {currentStep === STEPS.REVIEW && (
               <ReviewQuote form={form} insuranceType="Annual" />
             )}
@@ -318,12 +296,12 @@ const AnnualInsuranceContent = () => {
 
           <StepActions
             currentStep={currentStep}
-            totalSteps={6}
+            totalSteps={4}
             onNext={handleNextStep}
             onBack={handlePreviousStep}
             onSubmit={onSubmit}
             isLoading={isSubmitting}
-            nextLabel={currentStep === STEPS.REVIEW ? "Proceed to payment" : currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
+            nextLabel={currentStep === STEPS.REVIEW ? "Proceed to payment" : "Next"}
             backLabel="Back"
           />
         </form>
