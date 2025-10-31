@@ -133,7 +133,7 @@ const VehicleDetails = ({ data, carUsage, insuranceType }) => {
         {(insuranceType === "Temp" || insuranceType === "Impound") && (
           <div className={styles.vehicleInfoSection}>
             <h3 className={styles.sectionTitle}>Additional Details</h3>
-            <div className={styles.row}>
+            <div className={styles.sectionContent}>
               <InputWithData2
                 item={{
                   label: "Vehicle Worth",
