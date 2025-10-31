@@ -13,9 +13,7 @@ const page = () => {
     <div className={styles.page}>
       <span className={styles.squareLight}></span>
       <span className={styles.squareLight2}></span>
-      <div className={styles.headerWrapper}>
-        <Header />
-      </div>
+      <Header />
       <div className={"centeredContent"}>
         <div className={styles.cardsContainer}>
           {features.map((feature, index) => (
