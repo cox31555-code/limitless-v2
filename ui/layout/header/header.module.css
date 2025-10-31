@@ -443,7 +443,7 @@
   }
 
   .menuLink {
-  color: #000822;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 120%;
@@ -456,8 +456,8 @@
   gap: 0;
   cursor: pointer;
   white-space: nowrap;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.05);
-  background: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000822;
 }
 
 .menuLink:last-of-type {
