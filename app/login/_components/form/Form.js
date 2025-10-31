@@ -136,12 +136,7 @@ const Form = () => {
             </div>
 
             <div className={styles.fieldWrapper}>
-              <div className={styles.passwordHeader}>
-                <label className={styles.fieldLabel}>Password</label>
-                <a href="/forget-password" className={styles.forgotLink}>
-                  Forgot password?
-                </a>
-              </div>
+              <label className={styles.fieldLabel}>Password</label>
               <div
                 className={`${styles.inputField} ${errors.password ? styles.fieldError : ""}`}
                 onClick={() => passwordInputRef.current?.focus()}
@@ -168,6 +163,9 @@ const Form = () => {
               {errors.password && (
                 <span className={styles.errorText}>{errors.password.message}</span>
               )}
+              <a href="/forget-password" className={styles.forgotLink}>
+                Forgot your password?
+              </a>
             </div>
           </div>
 
