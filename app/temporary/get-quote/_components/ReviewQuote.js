@@ -22,31 +22,6 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
     name: "carUsage",
   });
 
-  const getInsuranceTypeName = () => {
-    if (insuranceType === "Temp") return "Temporary Insurance";
-    if (insuranceType === "Impound") return "Impound Insurance";
-    return insuranceType;
-  };
-
-  const features =
-    insuranceType === "Temp"
-      ? [
-          "Instant documents",
-          "Uninsured driver promise",
-          "European cover",
-          "Protected no claims",
-          "Loss, theft, fire or vandalism cover",
-          "Legal liability cover",
-        ]
-      : [
-          "Instant documents",
-          "Uninsured driver promise",
-          "Protected no claims",
-          "Loss, theft, fire or vandalism cover",
-          "Legal liability cover",
-          "Impound Release",
-        ];
-
   return (
     <div className={styles.reviewContainer}>
       <h2 className={styles.reviewTitle}>Review Your Quote</h2>
