@@ -26,6 +26,10 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .cards {
     grid-template-columns: 1fr 1fr;
   }
@@ -34,6 +38,11 @@
 @media screen and (max-width: 900px) {
   .content {
     gap: 1.6rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
   }
 
   .cards {
@@ -45,6 +54,11 @@
 @media screen and (max-width: 600px) {
   .content {
     gap: 1.4rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
   .cards {
