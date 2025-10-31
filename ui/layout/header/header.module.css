@@ -380,6 +380,13 @@
     flex-shrink: 0;
   }
 
+  .mobileHeaderActions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+  }
+
   .menuBtn {
     display: flex;
     width: 4.4rem;
