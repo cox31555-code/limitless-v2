@@ -1,7 +1,6 @@
 "use client";
-"use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./footer.module.css";
 import { menus } from "./data";
 import Link from "next/link";
