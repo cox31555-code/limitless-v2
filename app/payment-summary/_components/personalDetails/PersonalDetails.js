@@ -255,7 +255,6 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
         )}
       </div>
       )}
-      {insuranceType !== "Annual" && <CarUsage carUsage={carUsage}/>}
     </ComponentWrapper>
   );
 };
