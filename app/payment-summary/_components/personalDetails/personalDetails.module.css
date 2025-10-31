@@ -13,14 +13,16 @@
 .field label {
   font-size: 1.1rem;
   font-weight: 500;
-  color: #5a6b7d;
+  color: #6b7c8f;
+  opacity: 0.85;
 }
 
 .field p {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #000822;
+  color: #6b7c8f;
   margin: 0;
+  opacity: 0.85;
 }
 
 .sectionsWrapper {
@@ -63,7 +65,7 @@
 .sectionTitle {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #000822;
+  color: #5a6b7d;
   margin: 0;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(3, 136, 255, 0.12);
