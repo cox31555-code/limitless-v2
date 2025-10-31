@@ -205,50 +205,50 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
         {/* ANNUAL-SPECIFIC ADDITIONAL INFO */}
         {insuranceType === "Annual" && (
           <>
-            {(carUsage?.ownsHome !== undefined || carUsage?.childrenUnder16 !== undefined || carUsage?.livedInUKSinceBirth !== undefined) && (
+            {(carUsage?.ownsHome !== undefined || carUsage?.childrenUnder16 !== undefined || carUsage?.livedInUKSinceBirth !== undefined || carUsage?.hasAdditionalDrivers === "Yes") && (
               <div className={styles.section}>
                 <h3 className={styles.sectionTitle}>Additional Information</h3>
                 <div className={styles.sectionContent}>
-                  <div className={styles.row}>
-                    {carUsage?.ownsHome !== undefined && renderField("Own Home", carUsage?.ownsHome)}
-                    {carUsage?.childrenUnder16 !== undefined && renderField("Children Under 16", carUsage?.childrenUnder16)}
-                    {carUsage?.livedInUKSinceBirth !== undefined && renderField("Lived in UK Since Birth", carUsage?.livedInUKSinceBirth)}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* ADDITIONAL DRIVERS SECTION */}
-            {carUsage?.hasAdditionalDrivers === "Yes" && carUsage?.additionalDrivers?.length > 0 && (
-              <div className={styles.section}>
-                <h3 className={styles.sectionTitle}>Additional Drivers</h3>
-                <div className={styles.sectionContent}>
-                  {carUsage.additionalDrivers.map((driver, index) => (
-                    <div key={index} className={styles.driverCard}>
-                      <h4 className={styles.driverTitle}>Driver {index + 1}</h4>
-                      <div className={styles.row}>
-                        {renderField("First Name", driver?.firstName)}
-                        {renderField("Last Name", driver?.lastName)}
-                        {renderField("Date of Birth", driver?.dateOfBirth)}
-                      </div>
-                      <div className={styles.row}>
-                        {renderField("License Type", driver?.licenseType)}
-                        {renderField("License Held", driver?.licenseHeld)}
-                        {renderField("Employment Status", driver?.employmentStatus)}
-                      </div>
-                      <div className={styles.row}>
-                        {renderField("Occupation", driver?.occupation)}
-                        {renderField("Industry", driver?.industry)}
-                      </div>
-                      {(driver?.criminalConvictions !== undefined || driver?.medicalConditions !== undefined || driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided !== undefined) && (
-                        <div className={styles.row}>
-                          {driver?.criminalConvictions !== undefined && renderField("Criminal Convictions", driver?.criminalConvictions)}
-                          {driver?.medicalConditions !== undefined && renderField("Medical Conditions", driver?.medicalConditions)}
-                          {driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided !== undefined && renderField("Insurance Cancelled/Refused", driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}
-                        </div>
-                      )}
+                  {(carUsage?.ownsHome !== undefined || carUsage?.childrenUnder16 !== undefined || carUsage?.livedInUKSinceBirth !== undefined) && (
+                    <div className={styles.row}>
+                      {carUsage?.ownsHome !== undefined && renderField("Own Home", carUsage?.ownsHome)}
+                      {carUsage?.childrenUnder16 !== undefined && renderField("Children Under 16", carUsage?.childrenUnder16)}
+                      {carUsage?.livedInUKSinceBirth !== undefined && renderField("Lived in UK Since Birth", carUsage?.livedInUKSinceBirth)}
                     </div>
-                  ))}
+                  )}
+
+                  {/* ADDITIONAL DRIVERS - NESTED UNDER ADDITIONAL INFO */}
+                  {carUsage?.hasAdditionalDrivers === "Yes" && carUsage?.additionalDrivers?.length > 0 && (
+                    <div className={styles.driversContainer}>
+                      <h4 className={styles.additionalInfoSubtitle}>Additional Drivers</h4>
+                      {carUsage.additionalDrivers.map((driver, index) => (
+                        <div key={index} className={styles.driverCard}>
+                          <h5 className={styles.driverTitle}>Driver {index + 1}</h5>
+                          <div className={styles.row}>
+                            {renderField("First Name", driver?.firstName)}
+                            {renderField("Last Name", driver?.lastName)}
+                            {renderField("Date of Birth", driver?.dateOfBirth)}
+                          </div>
+                          <div className={styles.row}>
+                            {renderField("License Type", driver?.licenseType)}
+                            {renderField("License Held", driver?.licenseHeld)}
+                            {renderField("Employment Status", driver?.employmentStatus)}
+                          </div>
+                          <div className={styles.row}>
+                            {renderField("Occupation", driver?.occupation)}
+                            {renderField("Industry", driver?.industry)}
+                          </div>
+                          {(driver?.criminalConvictions !== undefined || driver?.medicalConditions !== undefined || driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided !== undefined) && (
+                            <div className={styles.row}>
+                              {driver?.criminalConvictions !== undefined && renderField("Criminal Convictions", driver?.criminalConvictions)}
+                              {driver?.medicalConditions !== undefined && renderField("Medical Conditions", driver?.medicalConditions)}
+                              {driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided !== undefined && renderField("Insurance Cancelled/Refused", driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             )}
