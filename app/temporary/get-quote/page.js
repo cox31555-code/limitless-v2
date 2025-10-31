@@ -22,6 +22,7 @@ const STEPS = {
   COVER: 2,
   PERSONAL: 3,
   TERMS: 4,
+  REVIEW: 5,
 };
 
 const STEP_TITLES = [
@@ -29,6 +30,7 @@ const STEP_TITLES = [
   "Cover Details",
   "Personal Details",
   "Terms & Conditions",
+  "Review Your Quote",
 ];
 
 const TemporaryInsuranceContent = () => {
