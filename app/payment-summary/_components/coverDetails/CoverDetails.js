@@ -3,7 +3,7 @@ import styles from "./coverDetails.module.css";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
 
-const CoverDetails = ({ data }) => {
+const CoverDetails = ({ data, insuranceType }) => {
   const formatDate = (dateString) => {
     if (!dateString) return "";
     const date = new Date(dateString);
@@ -17,14 +17,18 @@ const CoverDetails = ({ data }) => {
     <ComponentWrapper title="Cover Details" icon={{ width: 62, height: 62 }} isPaymentPage={true}>
       <div className={styles.content}>
         <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>How long will you need it?</h3>
+          <h3 className={styles.sectionTitle}>
+            {insuranceType === "Annual" ? "Cover Level" : "How long will you need it?"}
+          </h3>
           <div className={styles.sectionContent}>
             <InputWithData2
               item={{
-                label: "Duration",
-                value: data?.impoundType === "Impound Insurance"
-                  ? "30 Days"
-                  : (data?.period || 0) + " " + (data?.type || "Days"),
+                label: insuranceType === "Annual" ? "Coverage Type" : "Duration",
+                value: insuranceType === "Annual"
+                  ? (data?.level || "Comprehensive")
+                  : (data?.impoundType === "Impound Insurance"
+                    ? "30 Days"
+                    : (data?.period || 0) + " " + (data?.type || "Days")),
               }}
             />
           </div>
