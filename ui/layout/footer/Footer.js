@@ -192,7 +192,7 @@ const Footer = () => {
               <h3
                 className={styles.socialsTitle}
                 style={{
-                  color: shouldUseSpecialStyles(pathname)
+                  color: isMounted && pathname && shouldUseSpecialStyles(pathname)
                     ? "rgba(0, 8, 34, 0.34)"
                     : "",
                 }}
