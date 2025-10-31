@@ -5,7 +5,7 @@ import CarUsage from "../carUsage/CarUsage";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
 
-const PersonalDetails = ({ data, carUsage }) => {
+const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
   const formatDate = (dateString) => {
     if (!dateString) return "";
     const date = new Date(dateString);
