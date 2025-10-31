@@ -21,104 +21,253 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
     control: form.control,
     name: "carUsage",
   });
+  const optionalExtras = useWatch({
+    control: form.control,
+    name: "optionalExtras",
+  });
+
+  const formatValue = (value) => {
+    if (value === null || value === undefined || value === "") return "N/A";
+    if (typeof value === "boolean") return value ? "Yes" : "No";
+    if (Array.isArray(value)) return value.length > 0 ? value.join(", ") : "N/A";
+    return value;
+  };
+
+  const renderField = (label, value) => (
+    <div className={styles.field}>
+      <label>{label}</label>
+      <p>{formatValue(value)}</p>
+    </div>
+  );
 
   return (
     <div className={styles.reviewContainer}>
       <h2 className={styles.reviewTitle}>Review Your Quote</h2>
 
       <div className={styles.reviewSections}>
+        {/* VEHICLE DETAILS SECTION */}
         <div className={styles.section}>
           <h3 className={styles.sectionTitle}>Vehicle Details</h3>
           <div className={styles.sectionContent}>
             <div className={styles.row}>
-              <div className={styles.field}>
-                <label>Registration</label>
-                <p>{vehicleDetails?.registrationNumber || "N/A"}</p>
-              </div>
-              <div className={styles.field}>
-                <label>Make & Model</label>
-                <p>
-                  {vehicleDetails?.make || "N/A"} {vehicleDetails?.model || ""}
-                </p>
-              </div>
-              <div className={styles.field}>
-                <label>Year</label>
-                <p>{vehicleDetails?.year || "N/A"}</p>
-              </div>
+              {renderField("Registration", vehicleDetails?.registrationNumber)}
+              {renderField("Make", vehicleDetails?.make)}
+              {renderField("Model", vehicleDetails?.model)}
             </div>
             <div className={styles.row}>
-              <div className={styles.field}>
-                <label>Type</label>
-                <p>{vehicleDetails?.type || "N/A"}</p>
-              </div>
-              <div className={styles.field}>
-                <label>Fuel</label>
-                <p>{vehicleDetails?.fuel || "N/A"}</p>
-              </div>
-              <div className={styles.field}>
-                <label>Colour</label>
-                <p>{vehicleDetails?.colour || "N/A"}</p>
-              </div>
+              {renderField("Year", vehicleDetails?.year)}
+              {renderField("Type", vehicleDetails?.type)}
+              {renderField("Colour", vehicleDetails?.colour)}
             </div>
+            <div className={styles.row}>
+              {renderField("Fuel Type", vehicleDetails?.fuel)}
+              {renderField("Transmission", vehicleDetails?.transmission)}
+              {renderField("Doors", vehicleDetails?.doors)}
+            </div>
+            {vehicleDetails?.worth && (
+              <div className={styles.row}>
+                {renderField("Value", vehicleDetails?.worth)}
+              </div>
+            )}
+
+            {/* ANNUAL-SPECIFIC VEHICLE FIELDS */}
+            {insuranceType === "Annual" && (
+              <>
+                <div className={styles.row}>
+                  {renderField("Tracking Device", vehicleDetails?.trackingDevice)}
+                  {renderField("Alarm/Immobiliser", vehicleDetails?.alarmImmobiliser)}
+                  {renderField("Imported Vehicle", vehicleDetails?.importedVehicle)}
+                </div>
+                <div className={styles.row}>
+                  {renderField("Vehicle Modified", vehicleDetails?.vehicleModified)}
+                  {vehicleDetails?.vehicleModifications && vehicleDetails.vehicleModifications.length > 0 && 
+                    renderField("Modifications", vehicleDetails.vehicleModifications.join(", "))}
+                  {renderField("Purchase Date", vehicleDetails?.purchaseDate)}
+                </div>
+                <div className={styles.row}>
+                  {renderField("Legal Owner", vehicleDetails?.legalOwner)}
+                  {renderField("Owner", vehicleDetails?.owner)}
+                  {renderField("Registered Keeper", vehicleDetails?.registeredKeeper)}
+                </div>
+              </>
+            )}
           </div>
         </div>
 
+        {/* COVER DETAILS SECTION */}
         <div className={styles.section}>
           <h3 className={styles.sectionTitle}>Cover Details</h3>
           <div className={styles.sectionContent}>
-            <div className={styles.row}>
-              <div className={styles.field}>
-                <label>Duration</label>
-                <p>
-                  {coverDetails?.period || "N/A"} {coverDetails?.type || ""}
-                </p>
+            {insuranceType === "Annual" ? (
+              <div className={styles.row}>
+                {renderField("Cover Level", coverDetails?.level)}
+                {renderField("Start Date", coverDetails?.startDate)}
               </div>
-              <div className={styles.field}>
-                <label>Start Date</label>
-                <p>{coverDetails?.startDate || "N/A"}</p>
+            ) : (
+              <div className={styles.row}>
+                {renderField("Duration", `${coverDetails?.period || "N/A"} ${coverDetails?.type || ""}`)}
+                {renderField("Start Date", coverDetails?.startDate)}
+                {renderField("Start Time", coverDetails?.startTime)}
               </div>
-              <div className={styles.field}>
-                <label>Start Time</label>
-                <p>{coverDetails?.startTime || "N/A"}</p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
 
+        {/* PERSONAL DETAILS SECTION */}
         <div className={styles.section}>
           <h3 className={styles.sectionTitle}>Personal Details</h3>
           <div className={styles.sectionContent}>
             <div className={styles.row}>
-              <div className={styles.field}>
-                <label>First Name</label>
-                <p>{userDetails?.firstName || "N/A"}</p>
-              </div>
-              <div className={styles.field}>
-                <label>Last Name</label>
-                <p>{userDetails?.surname || "N/A"}</p>
-              </div>
-              <div className={styles.field}>
-                <label>Email</label>
-                <p>{userDetails?.email || "N/A"}</p>
-              </div>
+              {renderField("First Name", userDetails?.firstName)}
+              {renderField("Surname", userDetails?.surname)}
+              {renderField("Date of Birth", userDetails?.dateOfBirth)}
             </div>
             <div className={styles.row}>
-              <div className={styles.field}>
-                <label>Phone</label>
-                <p>{userDetails?.phone || "N/A"}</p>
-              </div>
-              <div className={styles.field}>
-                <label>Date of Birth</label>
-                <p>{userDetails?.dateOfBirth || "N/A"}</p>
-              </div>
-              <div className={styles.field}>
-                <label>Address</label>
-                <p>{userDetails?.address || "N/A"}</p>
-              </div>
+              {renderField("Email", userDetails?.email)}
+              {renderField("Phone", userDetails?.phone)}
+              {renderField("Postcode", userDetails?.postCode)}
+            </div>
+            <div className={styles.row}>
+              {renderField("Address", userDetails?.address)}
             </div>
           </div>
         </div>
 
+        {/* EMPLOYMENT DETAILS SECTION */}
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Employment Details</h3>
+          <div className={styles.sectionContent}>
+            <div className={styles.row}>
+              {renderField("Employment Status", userDetails?.employmentStatus)}
+              {renderField("Industry", userDetails?.industry)}
+              {renderField("Occupation", userDetails?.occupation)}
+            </div>
+          </div>
+        </div>
+
+        {/* CAR PARKING & USAGE SECTION */}
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Car Parking & Usage</h3>
+          <div className={styles.sectionContent}>
+            <div className={styles.row}>
+              {renderField("Keeping Car During Day", carUsage?.keepingCarDuringDay)}
+              {renderField("Keeping Car During Night", carUsage?.keepingCarDuringNight)}
+              {renderField("What Do You Use Car For", carUsage?.usageType)}
+            </div>
+
+            {/* ANNUAL-SPECIFIC CAR USAGE */}
+            {insuranceType === "Annual" && (
+              <>
+                <div className={styles.row}>
+                  {renderField("Own Other Vehicles", carUsage?.otherVehicles)}
+                  {carUsage?.otherVehicles === "Yes" && renderField("Other Vehicles Type", carUsage?.otherVehiclesType)}
+                  {renderField("Additional Qualifications", carUsage?.hasAdditionalQualifications)}
+                </div>
+                {carUsage?.hasAdditionalQualifications === "Yes" && (
+                  <div className={styles.row}>
+                    {renderField("Qualification Type", carUsage?.additionalQualificationType)}
+                    {renderField("Month/Year", `${carUsage?.qualificationMonth || "N/A"} ${carUsage?.qualificationYear || ""}`)}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* LICENSE & CLAIMS SECTION */}
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>License & Claims</h3>
+          <div className={styles.sectionContent}>
+            <div className={styles.row}>
+              {renderField("License Type", carUsage?.licenseType)}
+              {renderField("License Held Since", carUsage?.licenseHeld)}
+              {renderField("License Number", carUsage?.licenseNumber)}
+            </div>
+            <div className={styles.row}>
+              {renderField("No Claims Bonus", carUsage?.NCB)}
+              {renderField("Voluntary Excess", carUsage?.voluntaryExcess)}
+            </div>
+          </div>
+        </div>
+
+        {/* DECLARATIONS SECTION */}
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>Declarations</h3>
+          <div className={styles.sectionContent}>
+            <div className={styles.row}>
+              {renderField("Criminal Convictions", carUsage?.criminalConvictions)}
+              {renderField("Medical Conditions", carUsage?.medicalConditions)}
+              {renderField("Insurance Cancelled or Claim Refused", carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}
+            </div>
+          </div>
+        </div>
+
+        {/* ANNUAL-SPECIFIC ADDITIONAL INFO */}
+        {insuranceType === "Annual" && (
+          <>
+            {(carUsage?.ownsHome !== undefined || carUsage?.childrenUnder16 !== undefined || carUsage?.livedInUKSinceBirth !== undefined) && (
+              <div className={styles.section}>
+                <h3 className={styles.sectionTitle}>Additional Information</h3>
+                <div className={styles.sectionContent}>
+                  <div className={styles.row}>
+                    {carUsage?.ownsHome !== undefined && renderField("Own Home", carUsage?.ownsHome)}
+                    {carUsage?.childrenUnder16 !== undefined && renderField("Children Under 16", carUsage?.childrenUnder16)}
+                    {carUsage?.livedInUKSinceBirth !== undefined && renderField("Lived in UK Since Birth", carUsage?.livedInUKSinceBirth)}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ADDITIONAL DRIVERS SECTION */}
+            {carUsage?.hasAdditionalDrivers === "Yes" && carUsage?.additionalDrivers?.length > 0 && (
+              <div className={styles.section}>
+                <h3 className={styles.sectionTitle}>Additional Drivers</h3>
+                <div className={styles.sectionContent}>
+                  {carUsage.additionalDrivers.map((driver, index) => (
+                    <div key={index} className={styles.driverCard}>
+                      <h4 className={styles.driverTitle}>Driver {index + 1}</h4>
+                      <div className={styles.row}>
+                        {renderField("First Name", driver?.firstName)}
+                        {renderField("Last Name", driver?.lastName)}
+                        {renderField("Date of Birth", driver?.dateOfBirth)}
+                      </div>
+                      <div className={styles.row}>
+                        {renderField("License Type", driver?.licenseType)}
+                        {renderField("License Held", driver?.licenseHeld)}
+                        {renderField("Employment Status", driver?.employmentStatus)}
+                      </div>
+                      <div className={styles.row}>
+                        {renderField("Occupation", driver?.occupation)}
+                        {renderField("Industry", driver?.industry)}
+                      </div>
+                      {(driver?.criminalConvictions !== undefined || driver?.medicalConditions !== undefined || driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided !== undefined) && (
+                        <div className={styles.row}>
+                          {driver?.criminalConvictions !== undefined && renderField("Criminal Convictions", driver?.criminalConvictions)}
+                          {driver?.medicalConditions !== undefined && renderField("Medical Conditions", driver?.medicalConditions)}
+                          {driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided !== undefined && renderField("Insurance Cancelled/Refused", driver?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* OPTIONAL EXTRAS SECTION */}
+            {(optionalExtras?.courtesyCar !== null || optionalExtras?.breakdownCover !== null || optionalExtras?.foreignUseCover !== null) && (
+              <div className={styles.section}>
+                <h3 className={styles.sectionTitle}>Optional Extras</h3>
+                <div className={styles.sectionContent}>
+                  <div className={styles.row}>
+                    {renderField("Courtesy Car", optionalExtras?.courtesyCar)}
+                    {renderField("Breakdown Cover", optionalExtras?.breakdownCover)}
+                    {renderField("Foreign Use Cover", optionalExtras?.foreignUseCover)}
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
