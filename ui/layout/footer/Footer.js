@@ -83,7 +83,7 @@ const Footer = () => {
     <footer
       className={styles.container}
       style={{
-        background: isMounted && pathname && shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: shouldApplySpecialStyles ? "#F2F5FE" : "",
       }}
       suppressHydrationWarning
     >
@@ -98,7 +98,7 @@ const Footer = () => {
               <div key={index} className={styles.menu}>
                 <h3
                   style={{
-                    color: shouldUseSpecialStyles(pathname)
+                    color: shouldApplySpecialStyles
                       ? "rgba(0, 8, 34, 0.34)"
                       : "",
                   }}
@@ -112,7 +112,7 @@ const Footer = () => {
                       <Link
                         href={item.link}
                         style={{
-                          color: shouldUseSpecialStyles(pathname)
+                          color: shouldApplySpecialStyles
                             ? "#000822"
                             : "",
                         }}
@@ -130,7 +130,7 @@ const Footer = () => {
               <h3
                 className={styles.socialsTitle}
                 style={{
-                  color: shouldUseSpecialStyles(pathname)
+                  color: shouldApplySpecialStyles
                     ? "rgba(0, 8, 34, 0.34)"
                     : "",
                 }}
@@ -140,14 +140,14 @@ const Footer = () => {
               <div className={styles.socialsItems}>
                 <div
                   className={`${styles.socialsItem} ${
-                    shouldUseSpecialStyles(pathname)
+                    shouldApplySpecialStyles
                       ? styles["socials-item-black"]
                       : ""
                   }`}
                 >
                   <BiLogoInstagramAlt
                     className={`${styles.socialsIcon} ${
-                      shouldUseSpecialStyles(pathname)
+                      shouldApplySpecialStyles
                         ? styles["socials-icon-black"]
                         : ""
                     }`}
@@ -156,14 +156,14 @@ const Footer = () => {
                 </div>
                 <div
                   className={`${styles.socialsItem} ${
-                    shouldUseSpecialStyles(pathname)
+                    shouldApplySpecialStyles
                       ? styles["socials-item-black"]
                       : ""
                   }`}
                 >
                   <BiLogoFacebook
                     className={`${styles.socialsIcon} ${
-                      shouldUseSpecialStyles(pathname)
+                      shouldApplySpecialStyles
                         ? styles["socials-icon-black"]
                         : ""
                     }`}
@@ -172,14 +172,14 @@ const Footer = () => {
                 </div>
                 <div
                   className={`${styles.socialsItem} ${
-                    shouldUseSpecialStyles(pathname)
+                    shouldApplySpecialStyles
                       ? styles["socials-item-black"]
                       : ""
                   }`}
                 >
                   <BiLogoTwitter
                     className={`${styles.socialsIcon} ${
-                      shouldUseSpecialStyles(pathname)
+                      shouldApplySpecialStyles
                         ? styles["socials-icon-black"]
                         : ""
                     }`}
@@ -204,7 +204,7 @@ const Footer = () => {
                   onClick={() => router.push("/coming-soon")}
                   className={styles.store}
                   src={`${
-                    shouldUseSpecialStyles(pathname)
+                    shouldApplySpecialStyles
                       ? "/svg/light-google-store.svg"
                       : "/svg/google-store.svg"
                   }`}
@@ -217,7 +217,7 @@ const Footer = () => {
                   onClick={() => router.push("/coming-soon")}
                   className={styles.store}
                   src={`${
-                    shouldUseSpecialStyles(pathname)
+                    shouldApplySpecialStyles
                       ? "/svg/light-apple-store.svg"
                       : "/svg/apple-store.svg"
                   }`}
