@@ -131,7 +131,7 @@ body {
 }
 @media (max-width: 600px) {
   .headerContainer {
-    margin: -120px 0 6rem 0;
+    margin: 0 0 6rem 0;
     padding: 0;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
