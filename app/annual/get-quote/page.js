@@ -286,7 +286,7 @@ const AnnualInsuranceContent = () => {
   return (
     <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
-      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={5} />
+      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={6} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
           onSubmit={(e) => {
