@@ -361,12 +361,12 @@
   }
 
   .top {
-    margin: 0 6%;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 88%;
-    padding: 1.2rem 0;
+    width: 100%;
+    padding: 1.2rem 2.4rem;
     gap: 1rem;
     background: #000822;
   }
