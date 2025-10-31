@@ -101,7 +101,8 @@
 
 .inputSpan {
   width: 9.2rem;
-  height: 6rem;
+  height: 100%;
+  min-height: 6rem;
   border-radius: 0;
   background: #f0f3f7;
   display: flex;
