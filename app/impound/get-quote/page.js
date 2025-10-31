@@ -226,9 +226,9 @@ const ImpoundInsuranceContent = () => {
     // Generate a temporary insurance ID for offline mode
     const insuranceId = `IMP_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // Wait 5 seconds then redirect to payment test page with insurance ID
+    // Wait 5 seconds then redirect to payment summary (review your quote) page with insurance ID
     setTimeout(() => {
-      router.push(`/payment-test?id=${insuranceId}`);
+      router.push(`/payment-summary?id=${insuranceId}`);
     }, 5000);
   };
 
