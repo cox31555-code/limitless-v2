@@ -106,14 +106,6 @@
   width: 100%;
 }
 
-/* Password Header (Label + Forgot Link) */
-.passwordHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
 /* Field Label */
 .fieldLabel {
   font-size: 1.25rem;
@@ -206,13 +198,14 @@
 
 /* Forgot Password Link */
 .forgotLink {
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: #0388ff;
   text-decoration: none;
   transition: color 0.28s ease;
-  white-space: nowrap;
-  margin-left: auto;
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.2rem 0;
 }
 
 .forgotLink:hover {
@@ -402,14 +395,8 @@
     font-size: 1.15rem;
   }
 
-  .passwordHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-
   .forgotLink {
-    margin-left: 0;
+    font-size: 1.15rem;
   }
 
   .inputField {
