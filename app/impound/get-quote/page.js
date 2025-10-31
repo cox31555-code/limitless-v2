@@ -247,7 +247,7 @@ const ImpoundInsuranceContent = () => {
   return (
     <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
-      <GetQuoteHeaderWithNav title="Impound Insurance Quote" currentStep={currentStep} totalSteps={4} />
+      <GetQuoteHeaderWithNav title="Impound Insurance Quote" currentStep={currentStep} totalSteps={5} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
           onSubmit={(e) => {
