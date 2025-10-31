@@ -281,11 +281,11 @@ const TemporaryInsuranceContent = () => {
 
           <StepActions
             currentStep={currentStep}
-            totalSteps={4}
+            totalSteps={5}
             onNext={handleNextStep}
             onBack={handlePreviousStep}
             isLoading={isSubmitting}
-            nextLabel={currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
+            nextLabel={currentStep === STEPS.REVIEW ? "Proceed to payment" : currentStep === STEPS.TERMS ? "Get Quote" : "Next"}
             backLabel="Back"
           />
         </form>
