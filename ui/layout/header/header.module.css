@@ -1109,9 +1109,3 @@
     animation-delay: 0.5s;
   }
 }
-
-@media (max-width: 640px) {
-  .mobileContainer {
-    background: rgba(255, 255, 255, 1) !important;
-  }
-}
