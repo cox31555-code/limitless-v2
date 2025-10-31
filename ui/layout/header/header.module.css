@@ -353,6 +353,12 @@
     z-index: 100;
   }
 
+  @media (max-width: 640px) {
+    .mobileContainer {
+      background: white;
+    }
+  }
+
   .top {
     margin: 0 6%;
     display: flex;
