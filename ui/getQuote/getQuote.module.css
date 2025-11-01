@@ -462,7 +462,7 @@
 
 /* Buttons */
 .primaryButton,
-.secondaryButton {
+.secondaryButtonOld {
   padding: 1.2rem 2rem;
   border-radius: 1.2rem;
   font-size: 1.4rem;
@@ -500,7 +500,7 @@
   transform: none;
 }
 
-.secondaryButton {
+.secondaryButtonOld {
   width: auto;
   background: transparent;
   color: #5a6b7d;
@@ -913,7 +913,7 @@
   }
 
   .primaryButton,
-  .secondaryButton {
+  .secondaryButtonOld {
     font-size: 1.6rem;
     padding: 1.2rem 1.6rem;
   }
