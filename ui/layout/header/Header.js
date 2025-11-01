@@ -104,7 +104,7 @@ const Header = () => {
     { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
   ];
 
-  const shouldHideHeader = pathname === "/login" ||
+  const shouldHideHeader = !mounted || pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname.startsWith("/dashboard") ||
