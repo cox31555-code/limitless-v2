@@ -7,7 +7,8 @@ const dropdownListeners = new Set();
 // Custom hook to manage dropdown singleton behavior
 export const useDropdownManager = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownId = useRef(useId());
+  const id = useId();
+  const dropdownId = useRef(id);
 
   const openDropdown = () => {
     // Close any currently open dropdown
