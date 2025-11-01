@@ -275,6 +275,12 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .navigationBar {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .headerElement {
     padding: 12px 1.2rem;
@@ -284,10 +290,7 @@
   }
 
   .navigationBar {
-    gap: 1rem;
-    flex-direction: row;
-    padding-bottom: 0;
-    border-bottom: none;
+    display: none;
   }
 
   .logo {
