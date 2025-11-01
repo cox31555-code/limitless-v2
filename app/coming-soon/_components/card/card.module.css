@@ -170,15 +170,15 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 2.8rem 2.2rem;
-    gap: 2.2rem;
+    padding: 3.2rem 2.2rem;
+    gap: 2.6rem;
     border-radius: 14px;
     max-width: 90%;
     margin: 0 auto;
   }
 
   .imgContainer {
-    height: 8.4rem;
+    height: 9rem;
   }
 
   .title {
