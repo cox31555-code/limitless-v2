@@ -19,8 +19,8 @@ export default function Home() {
     <div className={styles.page}>
       <Header
         subTitle="Welcome Back! We've Got You Covered."
-        title="Quick and affordable short-term car insurance"
-        description="Join 1 million+ drivers getting a great deal on short-term cover. Drive for hours, days, or weeks with affordable, fully comprehensive policies. It's quick, easy, and all sorted from your phone."
+        title="Quick and affordable car insurance"
+        description="Join 1 million+ drivers getting a great deal on short-term and annual car insurance cover. Drive for hours, days, weeks, or all year round with affordable, fully comprehensive policies. It's quick, easy, and all sorted from your phone."
         features={features}
       />
       <div className={"centeredContent"}>
