@@ -329,13 +329,18 @@
 
 @media screen and (max-width: 900px) {
   .wrapper {
-    padding: 5rem 0;
-    position: relative;
+    padding: 5rem 0 12rem 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 
   .header {
     margin-bottom: 0;
-    flex-direction: column;
+    position: relative;
+    z-index: 1;
   }
 
   .title {
@@ -346,11 +351,11 @@
     gap: 1.6rem;
     width: 100%;
     justify-content: center;
-    position: absolute;
-    bottom: -8rem;
+    position: fixed;
+    bottom: 2rem;
     left: 0;
     right: 0;
-    margin-top: 0;
+    z-index: 50;
   }
 
   .prevButton,
@@ -412,8 +417,12 @@
 
 @media screen and (max-width: 600px) {
   .wrapper {
-    padding: 4rem 0;
-    position: relative;
+    padding: 4rem 0 11rem 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 
   .header {
@@ -421,6 +430,8 @@
     align-items: flex-start;
     gap: 2rem;
     margin-bottom: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .title {
@@ -431,11 +442,11 @@
     width: 100%;
     justify-content: center;
     gap: 1.4rem;
-    position: absolute;
-    bottom: -7.5rem;
+    position: fixed;
+    bottom: 2rem;
     left: 0;
     right: 0;
-    margin-top: 0;
+    z-index: 50;
   }
 
   .prevButton,
@@ -553,8 +564,12 @@
 
 @media screen and (max-width: 480px) {
   .wrapper {
-    padding: 3rem 0;
-    position: relative;
+    padding: 3rem 0 10.5rem 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 
   .title {
@@ -564,17 +579,19 @@
   .header {
     align-items: center;
     margin-bottom: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .navigation {
     width: 100%;
     justify-content: center;
     gap: 1.2rem;
-    position: absolute;
-    bottom: -7rem;
+    position: fixed;
+    bottom: 2rem;
     left: 0;
     right: 0;
-    margin-top: 0;
+    z-index: 50;
   }
 
   .prevButton,
