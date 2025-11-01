@@ -207,8 +207,16 @@
     padding: 0;
   }
 
+  .input::placeholder {
+    font-size: 1.6rem;
+  }
+
   .input.reg {
     font-size: 2.6rem;
+  }
+
+  .input.reg::placeholder {
+    font-size: 1.9rem;
   }
 
   .wrapper {
@@ -227,8 +235,16 @@
     font-size: 1.9rem;
   }
 
+  .input::placeholder {
+    font-size: 1.8rem;
+  }
+
   .input.reg {
     font-size: 2.9rem;
+  }
+
+  .input.reg::placeholder {
+    font-size: 2.2rem;
   }
 
   .inputSpan {
