@@ -481,23 +481,24 @@
 .primaryButton {
   width: 100%;
   height: 5.6rem;
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  background: #0388ff;
   color: white;
   font-size: 1.5rem;
+  border-radius: 0.8rem;
 }
 
 .primaryButton:hover:not(:disabled) {
-  opacity: 0.9;
+  background: #0270cc;
 }
 
 .primaryButton:active:not(:disabled) {
-  transform: translateY(-2px);
+  background: #025ab8;
 }
 
 .primaryButton:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
-  transform: none;
+  background: #0388ff;
 }
 
 .secondaryButtonOld {
@@ -701,6 +702,7 @@
   .primaryButton {
     height: 5.8rem;
     font-size: 1.7rem;
+    border-radius: 0.8rem;
   }
 
   .secondaryButton {
@@ -829,6 +831,7 @@
   .primaryButton {
     height: 5.6rem;
     font-size: 1.7rem;
+    border-radius: 0.8rem;
   }
 
   .secondaryButton {
@@ -975,6 +978,7 @@
   .primaryButton {
     height: 5.4rem;
     font-size: 1.6rem;
+    border-radius: 0.8rem;
   }
 
   .sectionLabel {
