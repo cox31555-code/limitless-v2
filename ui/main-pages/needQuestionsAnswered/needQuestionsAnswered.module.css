@@ -229,7 +229,7 @@
 @media screen and (max-width: 900px) {
   .container {
     padding: 5.6rem 4%;
-    gap: 3.6rem;
+    gap: 5rem;
     border-radius: 0;
   }
 
@@ -317,7 +317,7 @@
 @media screen and (max-width: 600px) {
   .container {
     padding: 4.4rem 3%;
-    gap: 2.2rem;
+    gap: 3.2rem;
     width: 100%;
     max-width: 100%;
   }
@@ -417,7 +417,7 @@
 @media screen and (max-width: 480px) {
   .container {
     padding: 3.6rem 2%;
-    gap: 2rem;
+    gap: 3rem;
     width: 100%;
     max-width: 100%;
   }
