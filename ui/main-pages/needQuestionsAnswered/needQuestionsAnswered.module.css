@@ -404,6 +404,18 @@
     min-height: auto;
     height: auto;
     padding: 1.8rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faqIllustration {
+    order: -1;
+    transform: scale(0.5);
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .cardTitle {
@@ -423,11 +435,6 @@
     padding: 1.8rem 1.6rem;
   }
 
-  .faqIllustration {
-    transform: scale(0.55);
-    margin: 1rem 0 0 1rem;
-  }
-
   .serviceIcon,
   .supportIcon {
     transform: scale(0.75);
@@ -435,13 +442,15 @@
   }
 
   .arrowButton {
-    width: 3.6rem;
-    height: 3.6rem;
-    margin-top: 1rem;
+    display: none;
   }
 
   .cardContent {
-    margin: 1rem 0 0 0;
+    position: relative;
+    margin: 0;
     gap: 0.8rem;
+    bottom: auto;
+    left: auto;
+    max-width: 100%;
   }
 }
