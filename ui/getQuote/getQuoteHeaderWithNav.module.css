@@ -366,10 +366,3 @@
     height: 100%;
   }
 }
-
-/* Hide header on desktop, show only on mobile */
-@media (min-width: 901px) {
-  .headerContainer {
-    display: none;
-  }
-}

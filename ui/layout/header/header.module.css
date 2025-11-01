@@ -1102,3 +1102,14 @@
 }
 
 /* No animation updates needed - simplified mobile menu */
+
+/* Hide desktop header on get-quote pages, show mobile header */
+@media (max-width: 900px) {
+  .container {
+    display: none;
+  }
+
+  .mobileContainer {
+    display: flex;
+  }
+}
