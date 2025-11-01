@@ -355,11 +355,14 @@
     background: #000822;
     align-items: stretch;
     justify-content: flex-start;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 101;
-    -webkit-position: sticky;
-    -webkit-top: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    will-change: transform;
   }
 
   @media (max-width: 640px) {
