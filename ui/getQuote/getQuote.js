@@ -3,17 +3,11 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./getQuote.module.css";
-import Image from "next/image";
 import FormTextInput from "../inputs/FormTextInput";
-import FormDropdown from "../inputs/FormDropdown";
 
-const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" }) => {
+const GetQuote = ({ onExpand, insuranceType = "temporary" }) => {
   const router = useRouter();
-  const [step, setStep] = useState(1);
   const [registrationNumber, setRegistrationNumber] = useState("");
-  const [quickSelection, setQuickSelection] = useState("");
-  const [customDurationType, setCustomDurationType] = useState("");
-  const [customDurationValue, setCustomDurationValue] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleContinue = () => {
@@ -33,55 +27,9 @@ const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" 
       onExpand(true);
     }
 
-    if (skipDuration) {
-      const params = new URLSearchParams();
-      params.set("fromQuote", "true");
-      params.set("registrationNumber", registrationNumber.trim().toUpperCase());
-      router.push(`/${insuranceType}/get-quote?${params.toString()}`);
-      return;
-    }
-
-    setStep(2);
-  };
-
-  const handleDurationContinue = () => {
-    setErrors({});
-    const newErrors = {};
-
-    if (!quickSelection && !customDurationValue) {
-      newErrors.duration = "Please select a duration";
-    }
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    let durationData = {};
-    if (quickSelection) {
-      if (quickSelection.includes("Day")) {
-        durationData = { type: "Days", value: quickSelection.split(" ")[0] };
-      } else if (quickSelection.includes("Week")) {
-        durationData = { type: "Weeks", value: quickSelection.split(" ")[0] };
-      }
-    } else if (customDurationType && customDurationValue) {
-      durationData = {
-        type: customDurationType,
-        value: customDurationValue,
-      };
-    }
-
     const params = new URLSearchParams();
     params.set("fromQuote", "true");
     params.set("registrationNumber", registrationNumber.trim().toUpperCase());
-
-    if (durationData.type) {
-      params.set("durationType", durationData.type);
-    }
-    if (durationData.value) {
-      params.set("durationValue", durationData.value);
-    }
-
     router.push(`/${insuranceType}/get-quote?${params.toString()}`);
   };
 
@@ -97,18 +45,7 @@ const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" 
     }
   };
 
-  const goBack = () => {
-    if (onExpand) {
-      onExpand(false);
-    }
-    setStep(1);
-    setQuickSelection("");
-    setCustomDurationType("");
-    setCustomDurationValue("");
-    setErrors({});
-  };
-
-  const progressPercentage = skipDuration ? 100 : (step / 2) * 100;
+  const progressPercentage = 100;
 
   return (
     <div className={styles.container}>
