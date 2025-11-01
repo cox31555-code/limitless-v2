@@ -212,6 +212,7 @@
     padding: 0;
     position: relative;
     z-index: 1;
+    min-height: 89rem;
   }
   .content {
     gap: 2.8rem;
