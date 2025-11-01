@@ -670,11 +670,11 @@
   }
 
   .quickQuoteTitle {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
   }
 
   .quickQuoteSubtitle {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .contentWrapper {
@@ -683,16 +683,16 @@
 
   .primaryButton {
     height: 5.8rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .sectionLabel {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .quickOption {
     padding: 1.8rem 1.4rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .navigationTabs {
@@ -722,12 +722,20 @@
     align-items: center;
   }
 
+  .tabLabel {
+    font-size: 1.4rem;
+  }
+
+  .tabValue {
+    font-size: 1.5rem;
+  }
+
   .stepTitle {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   .stepDescription {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .quickOptions {
@@ -736,6 +744,10 @@
 
   .durationTypeGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .durationTypeButton {
+    font-size: 1.7rem;
   }
 
   .valueInputRow {
@@ -749,12 +761,17 @@
 
   .numberButton {
     padding: 1.2rem 0.8rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .moreOptionsDropdown {
     width: 100%;
     min-width: auto;
+  }
+
+  .moreOptionsDropdown > div > select,
+  .moreOptionsDropdown > div > div {
+    font-size: 1.5rem;
   }
 
   .durationValueGroup {
@@ -777,11 +794,11 @@
   }
 
   .quickQuoteTitle {
-    font-size: 2.4rem;
+    font-size: 2.7rem;
   }
 
   .quickQuoteSubtitle {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .contentWrapper {
@@ -790,16 +807,16 @@
 
   .primaryButton {
     height: 5.6rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .sectionLabel {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .quickOption {
     padding: 1.8rem 1.2rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .progressBar {
@@ -810,6 +827,20 @@
     padding: 1.2rem 1.2rem;
     margin-bottom: 0.6rem;
     font-size: 0.95rem;
+  }
+
+  .tabIcon {
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
+  }
+
+  .tabLabel {
+    font-size: 1.3rem;
+  }
+
+  .tabValue {
+    font-size: 1.3rem;
   }
 
   .durationValueGroup {
@@ -828,43 +859,29 @@
 
   .numberButton {
     padding: 1rem 0.6rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .moreOptionsDropdown > div > select,
   .moreOptionsDropdown > div > div {
     padding: 1rem 0.6rem;
     padding-right: 1.6rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .moreOptionsDropdown > div > select,
   .moreOptionsDropdown > div > div {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     border-radius: 0.6rem;
     padding: 0.8rem 2.8rem 0.8rem 1.2rem;
   }
 
-  .tabIcon {
-    width: 3.2rem;
-    height: 3.2rem;
-    font-size: 1.4rem;
-  }
-
-  .tabLabel {
-    font-size: 1.1rem;
-  }
-
-  .tabValue {
-    font-size: 1.1rem;
-  }
-
   .stepTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .stepDescription {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .quickOptions {
@@ -874,7 +891,7 @@
 
   .quickOption {
     padding: 1.2rem 1rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .durationTypeGrid {
@@ -884,7 +901,7 @@
 
   .durationTypeButton {
     padding: 1.2rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .durationValueGroup {
@@ -897,7 +914,7 @@
 
   .primaryButton,
   .secondaryButton {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 1.2rem 1.6rem;
   }
 
@@ -923,33 +940,41 @@
   }
 
   .quickQuoteTitle {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .quickQuoteSubtitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .primaryButton {
     height: 5.4rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .sectionLabel {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .quickOption {
     padding: 1.6rem 1rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .stepTitle {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .stepDescription {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+  }
+
+  .tabLabel {
+    font-size: 1.2rem;
+  }
+
+  .tabValue {
+    font-size: 1.3rem;
   }
 
   .quickOptions,
@@ -960,7 +985,16 @@
   .quickOption,
   .durationTypeButton {
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .numberButton {
+    font-size: 1.3rem;
+  }
+
+  .moreOptionsDropdown > div > select,
+  .moreOptionsDropdown > div > div {
+    font-size: 1.3rem;
   }
 
   .navTab {
