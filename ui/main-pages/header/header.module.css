@@ -216,7 +216,7 @@
   .content {
     gap: 2.8rem;
     flex-basis: 100%;
-    max-width: 85%;
+    max-width: 95%;
   }
 
   .subTitle {
@@ -251,6 +251,10 @@
 @media screen and (max-width: 600px) {
   .subTitle {
     display: none;
+  }
+
+  .content {
+    max-width: 100%;
   }
 
   .title {
