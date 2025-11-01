@@ -167,7 +167,7 @@ const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" 
               type="button"
               onClick={handleContinue}
               className={styles.primaryButton}
-              disabled={!registrationNumber.trim()}
+              
             >
               Continue
             </button>
