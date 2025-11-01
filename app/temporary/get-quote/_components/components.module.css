@@ -1379,6 +1379,11 @@
     height: auto;
   }
 
+  .sectionTitle {
+    font-size: 1.7rem;
+    margin-bottom: 1.8rem;
+  }
+
   @media screen and (max-width: 600px) {
     .row {
       grid-template-columns: 1fr;
