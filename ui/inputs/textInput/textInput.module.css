@@ -234,9 +234,18 @@
 }
 
 @media screen and (max-width: 600px) {
+  .inputGroup {
+    gap: 1.1rem;
+  }
+
+  .label {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
   .inputContainer {
-    height: 7.4rem;
-    padding: 1.2rem 1.6rem;
+    height: 7.6rem;
+    padding: 1.4rem 1.8rem;
     border-radius: 14px;
   }
 
@@ -245,24 +254,24 @@
   }
 
   .input {
-    font-size: 1.9rem;
+    font-size: 1.95rem;
   }
 
   .input::placeholder {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
   }
 
   .input.reg {
-    font-size: 2.9rem;
+    font-size: 2.95rem;
   }
 
   .input.reg::placeholder {
     color: transparent;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 
   .inputSpan {
-    width: 5.2rem;
+    width: 5.4rem;
     height: 100%;
     border-radius: 14px 0 0 14px;
   }
