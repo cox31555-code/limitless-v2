@@ -512,15 +512,32 @@
   white-space: nowrap;
 }
 
+.secondaryButton {
+  width: fit-content;
+  background: transparent;
+  color: #5a6b7d;
+  margin: 0.4rem 0 0 0;
+  border: none;
+  padding: 0.2rem 0;
+  height: auto;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .secondaryButton:hover {
-  border-color: #0388ff;
-  color: #0388ff;
-  background: #f8fbff;
-  transform: translateY(-2px);
+  color: #000822;
+  background: transparent;
+  border-color: transparent;
+  transform: none;
 }
 
 .secondaryButton:active {
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Error Message */
