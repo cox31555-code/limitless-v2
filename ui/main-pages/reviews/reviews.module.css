@@ -423,6 +423,7 @@
 
   .content {
     gap: 0rem;
+    justify-content: flex-start;
   }
 
   .summaryCard {
