@@ -42,6 +42,7 @@ const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
   const isDashboard = pathname.startsWith("/dashboard");
+  const isGetQuotePage = pathname.includes("/get-quote");
   const [isOpen, setIsOpen] = useState(false);
   const [isDashboardSidebarOpen, setIsDashboardSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
