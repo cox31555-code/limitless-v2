@@ -619,7 +619,7 @@
   .row,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .registrationSection,
