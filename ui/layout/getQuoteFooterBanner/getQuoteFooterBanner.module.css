@@ -52,22 +52,25 @@
   padding: 1.2rem 3.2rem;
   height: 5.2rem;
   border-radius: 12px;
-  background: #ffffff;
-  color: #0388ff;
+  background: transparent;
+  color: #ffffff;
   font-size: 1.4rem;
   font-weight: 600;
-  border: none;
+  border: 2px solid #0388ff;
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contactBtn:hover {
-  background: #ffffff;
+  background: rgba(3, 136, 255, 0.1);
+  border-color: #0388ff;
 }
 
 .contactBtn:active {
-  background: #ffffff;
+  background: rgba(3, 136, 255, 0.15);
+  border-color: #0388ff;
 }
 
 /* Responsive */
