@@ -495,11 +495,6 @@
   background: #025ab8;
 }
 
-.primaryButton:disabled {
-  opacity: 1;
-  cursor: not-allowed;
-  background: #b3d9ff;
-}
 
 .secondaryButtonOld {
   width: auto;
