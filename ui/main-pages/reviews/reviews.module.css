@@ -436,7 +436,6 @@
     animation: smoothSwipeIn 1.2s ease-out forwards;
     box-shadow: none;
     border-radius: 1.2rem;
-    text-align: center;
   }
 
   .reviewCard:nth-child(2) {
@@ -584,7 +583,6 @@
     animation: smoothSwipeIn 1.2s ease-out forwards;
     box-shadow: none;
     border-radius: 1.2rem;
-    text-align: center;
   }
 
   .reviewTitle {
@@ -726,6 +724,5 @@
     animation: smoothSwipeIn 1.2s ease-out forwards;
     box-shadow: none;
     border-radius: 1.2rem;
-    text-align: center;
   }
 }
