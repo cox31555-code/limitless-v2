@@ -273,9 +273,65 @@
 
 @media (max-width: 650px) {
   .content {
-    gap: 3.5rem;
-    padding: 4rem 3%;
+    gap: 4rem;
+    padding: 4.5rem 3%;
     max-width: 100%;
+  }
+
+  .menus {
+    gap: 3.5rem;
+  }
+
+  .menu {
+    gap: 1.8rem;
+  }
+
+  .menuTitle {
+    font-size: 1.3rem;
+    letter-spacing: 0.6px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+
+  .menuItem {
+    font-size: 1.3rem;
+    line-height: 150%;
+  }
+
+  .menuItems {
+    gap: 1.2rem;
+  }
+
+  .socialsItems {
+    gap: 1.4rem;
+  }
+
+  .socialsItem {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .socialsIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .socialsTitle {
+    font-size: 1.3rem;
+    line-height: 130%;
+  }
+
+  .copyright {
+    padding: 3.2rem 3%;
+    font-size: 1.2rem;
+    line-height: 150%;
+  }
+}
+
+@media (max-width: 450px) {
+  .content {
+    padding: 4rem 3%;
+    gap: 3.5rem;
   }
 
   .menus {
@@ -284,20 +340,29 @@
 
   .menu {
     gap: 1.6rem;
+    min-width: auto;
   }
 
   .menuTitle {
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
+    font-size: 1.3rem;
     font-weight: 700;
+    letter-spacing: 0.6px;
+    line-height: 130%;
   }
 
   .menuItem {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    line-height: 150%;
   }
 
   .menuItems {
     gap: 1rem;
+  }
+
+  .socialsTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 130%;
   }
 
   .socialsItems {
@@ -309,61 +374,9 @@
     height: 3.8rem;
   }
 
-  .socialsIcon {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-
   .copyright {
     padding: 3rem 3%;
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 450px) {
-  .content {
-    padding: 3.5rem 3%;
-    gap: 3rem;
-  }
-
-  .menus {
-    gap: 2.5rem;
-  }
-
-  .menu {
-    gap: 1.4rem;
-    min-width: auto;
-  }
-
-  .menuTitle {
-    font-size: 1rem;
-    font-weight: 700;
-  }
-
-  .menuItem {
-    font-size: 1rem;
-  }
-
-  .menuItems {
-    gap: 0.8rem;
-  }
-
-  .socialsTitle {
-    font-size: 1rem;
-    font-weight: 700;
-  }
-
-  .socialsItems {
-    gap: 1rem;
-  }
-
-  .socialsItem {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-
-  .copyright {
-    padding: 2.5rem 3%;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 150%;
   }
 }
