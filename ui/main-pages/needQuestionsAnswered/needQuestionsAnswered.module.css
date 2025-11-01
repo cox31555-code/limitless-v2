@@ -256,6 +256,8 @@
     padding: 2rem;
     min-height: auto;
     height: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .cardTitle {
@@ -276,7 +278,8 @@
 
   .faqIllustration {
     transform: scale(0.65);
-    margin: 1.2rem 0 0 1.2rem;
+    margin: 0 0 1.2rem 0;
+    order: -1;
   }
 
   .cardContent {
@@ -285,7 +288,7 @@
     left: auto;
     max-width: 100%;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 0;
   }
 
   .arrowButton {
@@ -329,7 +332,8 @@
     padding: 2rem 1.8rem;
     min-height: auto;
     height: auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .faqIllustration {
@@ -338,6 +342,7 @@
     width: auto;
     display: block;
     text-align: center;
+    order: -1;
   }
 
   .cardTitle {
@@ -401,7 +406,8 @@
     min-height: auto;
     height: auto;
     padding: 1.8rem 1.6rem;
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .faqIllustration {
@@ -410,6 +416,7 @@
     width: auto;
     display: block;
     text-align: center;
+    order: -1;
   }
 
   .cardTitle {
