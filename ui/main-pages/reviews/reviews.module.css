@@ -8,10 +8,18 @@
   max-width: 132rem;
   margin: 0 auto;
   padding: 0 4.4%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.8rem;
+  align-items: flex-start;
 }
 
 .header {
-  margin-bottom: 4.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .title {
@@ -23,7 +31,7 @@
 }
 
 .navigation {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 2rem;
 }
@@ -114,6 +122,7 @@
   display: flex;
   align-items: flex-start;
   gap: 2rem;
+  width: 100%;
 }
 
 .summaryCard {
@@ -302,8 +311,12 @@
     padding: 6rem 0;
   }
 
+  .container {
+    gap: 4rem;
+  }
+
   .header {
-    margin-bottom: 4rem;
+    margin-bottom: 0;
   }
 
   .title {
@@ -312,6 +325,10 @@
 
   .content {
     gap: 1.6rem;
+  }
+
+  .navigation {
+    display: flex;
   }
 
   .reviewsContainer {
@@ -330,11 +347,13 @@
   }
 
   .container {
-    display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
   .header {
+    flex-direction: column;
+    width: 100%;
     margin-bottom: 2rem;
   }
 
@@ -344,15 +363,19 @@
   }
 
   .content {
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
     margin-bottom: 3rem;
   }
 
   .navigation {
+    display: flex;
     gap: 1.6rem;
     width: 100%;
     justify-content: center;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 
   .prevButton,
@@ -418,11 +441,14 @@
   }
 
   .container {
-    display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
   .header {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
     margin-bottom: 2rem;
   }
 
@@ -432,15 +458,16 @@
   }
 
   .content {
+    gap: 0rem;
+    width: 100%;
     margin-bottom: 2.5rem;
   }
 
   .navigation {
+    display: flex;
     width: 100%;
     justify-content: center;
     gap: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 
   .prevButton,
@@ -562,8 +589,8 @@
   }
 
   .container {
-    display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
   .title {
@@ -572,19 +599,20 @@
   }
 
   .header {
+    width: 100%;
     margin-bottom: 2rem;
   }
 
   .content {
+    width: 100%;
     margin-bottom: 2rem;
   }
 
   .navigation {
+    display: flex;
     width: 100%;
     justify-content: center;
     gap: 1.2rem;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 
   .prevButton,
