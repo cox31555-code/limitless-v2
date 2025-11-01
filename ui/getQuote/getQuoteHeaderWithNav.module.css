@@ -267,7 +267,7 @@
   }
 
   .title {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     width: 100%;
     white-space: normal;
     text-wrap: wrap;
@@ -275,7 +275,7 @@
   }
 
   .stepLabel {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
   }
 
@@ -342,7 +342,7 @@
   }
 
   .title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     width: 100%;
     white-space: normal;
     text-wrap: wrap;
@@ -351,7 +351,7 @@
   }
 
   .stepLabel {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     letter-spacing: 0.5px;
   }
