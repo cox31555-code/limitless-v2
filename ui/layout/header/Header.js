@@ -55,6 +55,10 @@ const Header = () => {
   useEffect(() => {
     if (!mounted) return;
 
+    // Disable scroll listener on mobile to avoid iOS keyboard issues
+    const isMobile = window.innerWidth <= 900;
+    if (isMobile) return;
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 200);
     };
