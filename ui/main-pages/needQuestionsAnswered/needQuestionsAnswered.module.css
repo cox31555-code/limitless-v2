@@ -275,17 +275,19 @@
     padding-right: 5.4rem;
     height: auto;
     min-height: auto;
+    align-items: center;
   }
 
   .faqIllustration {
     transform: scale(0.7776);
-    margin: 0 0 -9.8rem 0;
+    margin: 0 auto -9.8rem auto;
     order: -1;
   }
 
   .serviceIcon,
   .supportIcon {
     transform: scale(1.1);
+    margin: 0 auto;
   }
 
   .cardContent {
@@ -367,6 +369,7 @@
     padding: 2rem 1.8rem;
     min-height: auto;
     height: auto;
+    align-items: center;
   }
 
   .arrowButton {
@@ -386,8 +389,8 @@
   .serviceIcon,
   .supportIcon {
     transform: scale(0.88);
-    transform-origin: top left;
-    margin-bottom: 1.6rem;
+    transform-origin: center;
+    margin: 0 auto 1.6rem auto;
   }
 }
 
@@ -442,12 +445,14 @@
     min-height: auto;
     height: auto;
     padding: 1.8rem 1.6rem;
+    align-items: center;
   }
 
   .serviceIcon,
   .supportIcon {
     transform: scale(0.83);
-    margin-bottom: 1.4rem;
+    transform-origin: center;
+    margin: 0 auto 1.4rem auto;
   }
 
   .arrowButton {
