@@ -29,16 +29,13 @@ const BackgroundShape = () => (
 const FAQIllustration = () => (
   <div className={styles.faqIllustration}>
     <svg width="316" height="161" viewBox="0 0 316 161" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="358.914" height="121.963" transform="translate(82.0156 78.6177)" fill="url(#paint0_linear_121_219)"/>
-      <rect width="317.093" height="107.213" transform="translate(102.926 130.788)" fill="url(#paint1_linear_121_219)"/>
-      <rect width="415.043" height="141.036" transform="translate(53.957 25.4131)" fill="url(#paint2_linear_121_219)"/>
-      <path d="M210.823 86.833H280.505" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M210.823 104.263H401.723" stroke="#0388FF" strokeWidth="4.97999" strokeLinecap="round" strokeLinejoin="round"/>
-      <rect width="111.989" height="133.933" transform="matrix(0.977885 0.209141 -0.208652 0.97799 71.8633 0)" fill="url(#paint3_linear_121_219)"/>
-      <foreignObject x="-17.0252" y="-9.56431" width="219.867" height="234.032">
-        <div xmlns="http://www.w3.org/1999/xhtml" style={{backdropFilter: 'blur(24.35px)', clipPath: 'url(#bgblur_0_121_219_clip_path)', height: '100%', width: '100%'}}></div>
-      </foreignObject>
-      <rect data-figma-bg-blur-radius="48.6932" x="31.668" y="39.1289" width="122.481" height="136.646" fill="#000822"/>
+      <rect width="241.827" height="82.1754" transform="translate(55.2617 52.9707)" fill="url(#paint0_linear_324_8287)"/>
+      <rect width="213.649" height="72.237" transform="translate(69.3477 88.1211)" fill="url(#paint1_linear_324_8287)"/>
+      <rect width="279.645" height="95.0264" transform="translate(36.3555 17.123)" fill="url(#paint2_linear_324_8287)"/>
+      <path d="M142.047 58.5059H188.997" stroke="#0388FF" strokeWidth="3.35539" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M142.047 70.25H270.67" stroke="#0388FF" strokeWidth="3.35539" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect width="75.455" height="90.2408" transform="matrix(0.977885 0.209141 -0.208652 0.97799 48.418 0)" fill="url(#paint3_linear_324_8287)"/>
+      <rect data-figma-bg-blur-radius="32.8082" x="21.3359" y="26.3633" width="82.5245" height="92.0683" fill="#000822"/>
       <path d="M50.9648 64.8193H86.8992" stroke="#0388FF" strokeWidth="3.49907" strokeLinecap="round" strokeLinejoin="round"/>
       <path d="M50.9648 78.6182H105.946" stroke="#0388FF" strokeWidth="3.49907" strokeLinecap="round" strokeLinejoin="round"/>
       <ellipse cx="41.6841" cy="154.214" rx="41.6841" ry="41.7111" fill="url(#paint4_linear_121_219)"/>
