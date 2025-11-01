@@ -46,7 +46,7 @@
   gap: 0;
   padding: 0;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 14px;
   background: #fff;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   height: 6rem;
@@ -100,11 +100,11 @@
 }
 
 .inputSpan {
-  width: 9.2rem;
+  width: 6.5rem;
   height: 100%;
   min-height: 6rem;
-  border-radius: 0;
-  background: #f0f3f7;
+  border-radius: 14px 0 0 14px;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.06) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,8 +113,8 @@
   color: #000;
   flex-shrink: 0;
   border: none;
-  margin-right: 1.2rem;
-  border-right: 1px solid rgba(3, 136, 255, 0.12);
+  margin-right: 0;
+  border-right: none;
 }
 
 .ukFlag {
@@ -122,14 +122,15 @@
   height: 2rem;
   object-fit: contain;
   border-radius: 2px;
+  display: none;
 }
 
 .gbText {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   line-height: 100%;
   letter-spacing: 0.2px;
-  color: #0a3a6a;
+  color: #0388ff;
   text-transform: uppercase;
 }
 
