@@ -501,6 +501,11 @@
   content: "" !important;
 }
 
+.primaryButton img,
+.primaryButton svg {
+  display: none !important;
+}
+
 
 .secondaryButtonOld {
   width: auto;
