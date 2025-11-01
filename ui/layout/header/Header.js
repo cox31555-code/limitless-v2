@@ -212,6 +212,7 @@ const Header = () => {
           </div>
         </div>
       )}
+      {!(isGetQuotePage && mounted) && (
       <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
@@ -343,6 +344,7 @@ const Header = () => {
           </div>
         )}
       </header>
+      )}
       <header className={styles.mobileContainer}>
         <div className={styles.top}>
           <Image
