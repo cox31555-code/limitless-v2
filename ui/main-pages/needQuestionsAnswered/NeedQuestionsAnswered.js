@@ -42,30 +42,27 @@ const FAQIllustration = () => (
       <ellipse cx="28.0856" cy="103.905" rx="28.0856" ry="28.1039" fill="url(#paint5_linear_324_8287)"/>
       <path d="M38.7075 162.53V162.317C38.7324 160.065 38.9819 158.273 39.4558 156.941C39.9297 155.608 40.6032 154.529 41.4762 153.704C42.3492 152.879 43.3968 152.118 44.619 151.423C45.3549 150.998 46.0159 150.497 46.602 149.919C47.1882 149.33 47.6497 148.652 47.9864 147.885C48.3356 147.119 48.5102 146.27 48.5102 145.338C48.5102 144.183 48.2234 143.181 47.6497 142.332C47.076 141.483 46.309 140.828 45.3486 140.369C44.3883 139.909 43.322 139.679 42.1497 139.679C41.127 139.679 40.1417 139.879 39.1939 140.28C38.246 140.681 37.4541 141.312 36.818 142.173C36.182 143.033 35.8141 144.159 35.7143 145.551H31C31.0998 143.546 31.6485 141.831 32.6463 140.404C33.6565 138.977 34.9847 137.887 36.631 137.132C38.2897 136.377 40.1293 136 42.1497 136C44.3447 136 46.2528 136.413 47.8741 137.238C49.5079 138.063 50.7676 139.195 51.6531 140.634C52.551 142.072 53 143.711 53 145.551C53 146.848 52.788 148.021 52.3639 149.07C51.9524 150.12 51.3537 151.057 50.568 151.882C49.7948 152.708 48.8594 153.439 47.7619 154.076C46.6644 154.724 45.7851 155.408 45.1241 156.127C44.4632 156.835 43.983 157.678 43.6837 158.656C43.3844 159.635 43.2222 160.855 43.1973 162.317V162.53H38.7075ZM41.102 173C40.1791 173 39.3872 172.688 38.7262 172.063C38.0652 171.438 37.7347 170.689 37.7347 169.816C37.7347 168.944 38.0652 168.195 38.7262 167.57C39.3872 166.945 40.1791 166.633 41.102 166.633C42.0249 166.633 42.8169 166.945 43.4779 167.57C44.1389 168.195 44.4694 168.944 44.4694 169.816C44.4694 170.394 44.3135 170.925 44.0017 171.408C43.7024 171.892 43.2971 172.281 42.7857 172.576C42.2868 172.859 41.7256 173 41.102 173Z" fill="#000822"/>
       <defs>
-        <clipPath id="bgblur_0_121_219_clip_path" transform="translate(17.0252 9.56431)">
-          <rect x="31.668" y="39.1289" width="122.481" height="136.646"/>
-        </clipPath>
-        <linearGradient id="paint0_linear_121_219" x1="179.457" y1="61.3118" x2="179.457" y2="220.053" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint0_linear_324_8287" x1="120.914" y1="41.3103" x2="120.914" y2="148.266" gradientUnits="userSpaceOnUse">
           <stop stopColor="#0388FF" stopOpacity="0"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
-        <linearGradient id="paint1_linear_121_219" x1="158.546" y1="53.8967" x2="158.546" y2="193.439" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint1_linear_324_8287" x1="106.824" y1="36.3142" x2="106.824" y2="130.334" gradientUnits="userSpaceOnUse">
           <stop stopColor="#0388FF" stopOpacity="0"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
-        <linearGradient id="paint2_linear_121_219" x1="-139.11" y1="143.56" x2="454.073" y2="-15.1879" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint2_linear_324_8287" x1="-93.7287" y1="96.7271" x2="305.942" y2="-10.2333" gradientUnits="userSpaceOnUse">
           <stop stopColor="#07102D"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
-        <linearGradient id="paint3_linear_121_219" x1="32.8294" y1="164.102" x2="-2.11152" y2="18.6103" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint3_linear_324_8287" x1="22.1196" y1="110.568" x2="-1.42269" y2="12.5391" gradientUnits="userSpaceOnUse">
           <stop stopColor="#07102D"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
-        <linearGradient id="paint4_linear_121_219" x1="-28.6804" y1="184.356" x2="54.1413" y2="142.513" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint4_linear_324_8287" x1="-19.3241" y1="124.213" x2="36.479" y2="96.0207" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0.3"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
-        <linearGradient id="paint5_linear_121_219" x1="-28.6804" y1="184.356" x2="54.1413" y2="142.513" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint5_linear_324_8287" x1="-19.3241" y1="124.213" x2="36.479" y2="96.0207" gradientUnits="userSpaceOnUse">
           <stop stopColor="white" stopOpacity="0.3"/>
           <stop offset="1" stopColor="#0388FF"/>
         </linearGradient>
