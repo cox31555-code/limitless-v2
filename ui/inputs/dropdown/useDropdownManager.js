@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useId } from "react";
 
 // Global state to track which dropdown is currently open
 let currentOpenDropdown = null;
@@ -7,7 +7,7 @@ const dropdownListeners = new Set();
 // Custom hook to manage dropdown singleton behavior
 export const useDropdownManager = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownId = useRef(Math.random().toString(36).substr(2, 9));
+  const dropdownId = useRef(useId());
 
   const openDropdown = () => {
     // Close any currently open dropdown
