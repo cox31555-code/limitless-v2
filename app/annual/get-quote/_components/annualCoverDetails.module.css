@@ -85,6 +85,10 @@
   position: relative;
 }
 
+.levelIcon svg {
+  display: none;
+}
+
 .levelIconActive {
   border-color: #0388ff;
   background: transparent;
