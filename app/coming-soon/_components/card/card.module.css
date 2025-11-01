@@ -181,6 +181,14 @@
     height: 9rem;
   }
 
+  .body {
+    gap: 2.6rem;
+  }
+
+  .content {
+    gap: 1.8rem;
+  }
+
   .title {
     font-size: 2.15rem;
   }
