@@ -496,6 +496,11 @@
   background: #025ab8;
 }
 
+.primaryButton::after {
+  display: none;
+  content: "" !important;
+}
+
 
 .secondaryButtonOld {
   width: auto;
