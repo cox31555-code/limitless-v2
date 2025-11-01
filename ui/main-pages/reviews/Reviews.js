@@ -33,10 +33,10 @@ const LargeStarIcon = memo(() => (
 ));
 
 const HalfStarIcon = memo(() => (
-  <div style={{ width: '34px', height: '34px', flexShrink: 0, position: 'relative' }}>
+  <div style={{ width: '33px', height: '34px', flexShrink: 0, position: 'relative' }}>
     <div style={{
       display: 'flex',
-      width: '34px',
+      width: '33px',
       height: '34px',
       padding: '3px',
       flexDirection: 'column',
@@ -48,7 +48,7 @@ const HalfStarIcon = memo(() => (
       left: '0px',
       top: '0px'
     }}></div>
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '28px', height: '28px', flexShrink: 0, fill: '#FFF', position: 'absolute', left: '3px', top: '3px' }}>
+    <svg width="27" height="27" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '27px', height: '27px', flexShrink: 0, fill: '#FFF', position: 'absolute', left: '3px', top: '3.5px' }}>
       <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z" fill="white"/>
     </svg>
   </div>
@@ -254,7 +254,20 @@ const ReviewCard = memo(({ review }) => (
 
 const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const reviewsPerPage = 3;
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const reviewsPerPage = isMobile ? 1 : 3;
   const maxIndex = Math.max(0, reviewsData.length - reviewsPerPage);
 
   const handleNext = () => {
@@ -263,6 +276,20 @@ const Reviews = () => {
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - reviewsPerPage < 0 ? maxIndex : prev - reviewsPerPage));
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    setTouchEnd(e.changedTouches[0].clientX);
+    if (touchStart - e.changedTouches[0].clientX > 50) {
+      handleNext();
+    }
+    if (e.changedTouches[0].clientX - touchStart > 50) {
+      handlePrev();
+    }
   };
 
   const displayedReviews = reviewsData.slice(currentIndex, currentIndex + reviewsPerPage);
@@ -311,7 +338,7 @@ const Reviews = () => {
             </div>
           </div>
 
-          <div className={styles.reviewsContainer}>
+          <div className={styles.reviewsContainer} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
             {displayedReviews.map((review) => (
               <ReviewCard key={review.id} review={review} />
             ))}
