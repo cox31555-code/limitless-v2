@@ -33,11 +33,11 @@ const LargeStarIcon = memo(() => (
 ));
 
 const HalfStarIcon = memo(() => (
-  <div style={{ width: '33px', height: '34px', flexShrink: 0, position: 'relative' }}>
+  <div style={{ flexShrink: 0, position: 'relative', width: '100%', height: '100%' }}>
     <div style={{
       display: 'flex',
-      width: '33px',
-      height: '34px',
+      width: '100%',
+      height: '100%',
       padding: '3px',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -48,7 +48,7 @@ const HalfStarIcon = memo(() => (
       left: '0px',
       top: '0px'
     }}></div>
-    <svg width="27" height="27" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '27px', height: '27px', flexShrink: 0, fill: '#FFF', position: 'absolute', left: '3px', top: '3.5px' }}>
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', flexShrink: 0, fill: '#FFF', position: 'absolute', left: '0px', top: '0px', padding: '3px', boxSizing: 'border-box' }}>
       <path d="M14 21.3522L20.0833 19.7233L22.625 28L14 21.3522ZM28 10.6541H17.2917L14 0L10.7083 10.6541H0L8.66667 17.2579L5.375 27.9119L14.0417 21.3082L19.375 17.2579L28 10.6541Z" fill="white"/>
     </svg>
   </div>
