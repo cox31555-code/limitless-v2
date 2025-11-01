@@ -281,6 +281,11 @@
     height: auto;
   }
 
+  .container:hover {
+    border-color: rgba(3, 136, 255, 0.15);
+    background: rgba(7, 16, 45, 0.72);
+  }
+
   .title {
     font-size: 1.3rem;
   }
@@ -292,15 +297,48 @@
   .img {
     width: 4rem;
     height: 4rem;
+    filter: drop-shadow(0 1px 3px rgba(3, 136, 255, 0.08));
+  }
+
+  .container:hover .img {
+    filter: drop-shadow(0 1px 3px rgba(3, 136, 255, 0.08));
+  }
+
+  .imgLarge {
+    filter: drop-shadow(0 1px 3px rgba(3, 136, 255, 0.08));
+  }
+
+  .container:hover .imgLarge {
+    filter: drop-shadow(0 1px 3px rgba(3, 136, 255, 0.08));
   }
 
   .iconContainer {
     width: 4rem;
     height: 4rem;
+    background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.02) 100%);
+  }
+
+  .container:hover .iconContainer {
+    background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.02) 100%);
+    transform: none;
   }
 
   .iconSymbol {
     width: 2rem;
     height: 2rem;
+    color: #0388ff;
+  }
+
+  .container:hover .iconSymbol {
+    color: #0388ff;
+    filter: none;
+  }
+
+  .container:hover .title {
+    color: #ffffff;
+  }
+
+  .container:hover .description {
+    color: rgba(255, 255, 255, 0.65);
   }
 }
