@@ -330,10 +330,11 @@
 @media screen and (max-width: 900px) {
   .wrapper {
     padding: 5rem 0;
+    position: relative;
   }
 
   .header {
-    margin-bottom: 3rem;
+    margin-bottom: 0;
     flex-direction: column;
   }
 
@@ -345,8 +346,11 @@
     gap: 1.6rem;
     width: 100%;
     justify-content: center;
-    order: 2;
-    margin-top: 2rem;
+    position: absolute;
+    bottom: -8rem;
+    left: 0;
+    right: 0;
+    margin-top: 0;
   }
 
   .prevButton,
@@ -359,10 +363,6 @@
   .nextButton svg {
     width: 2.8rem;
     height: 2.8rem;
-  }
-
-  .title {
-    order: 1;
   }
 
   .content {
@@ -413,26 +413,29 @@
 @media screen and (max-width: 600px) {
   .wrapper {
     padding: 4rem 0;
+    position: relative;
   }
 
   .header {
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0;
   }
 
   .title {
     font-size: 2.8rem;
-    order: 1;
   }
 
   .navigation {
     width: 100%;
     justify-content: center;
     gap: 1.4rem;
-    order: 2;
-    margin-top: 1.2rem;
+    position: absolute;
+    bottom: -7.5rem;
+    left: 0;
+    right: 0;
+    margin-top: 0;
   }
 
   .prevButton,
@@ -551,23 +554,27 @@
 @media screen and (max-width: 480px) {
   .wrapper {
     padding: 3rem 0;
+    position: relative;
   }
 
   .title {
     font-size: 2.4rem;
-    order: 1;
   }
 
   .header {
     align-items: center;
+    margin-bottom: 0;
   }
 
   .navigation {
     width: 100%;
     justify-content: center;
     gap: 1.2rem;
-    order: 2;
-    margin-top: 1rem;
+    position: absolute;
+    bottom: -7rem;
+    left: 0;
+    right: 0;
+    margin-top: 0;
   }
 
   .prevButton,
