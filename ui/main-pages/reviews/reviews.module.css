@@ -329,33 +329,31 @@
 
 @media screen and (max-width: 900px) {
   .wrapper {
-    padding: 5rem 0 12rem 0;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
+    padding: 5rem 0;
   }
 
   .header {
-    margin-bottom: 0;
-    position: relative;
-    z-index: 1;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
   }
 
   .title {
     font-size: 3.2rem;
+    order: 1;
+    margin: 0;
   }
 
   .navigation {
     gap: 1.6rem;
     width: 100%;
     justify-content: center;
-    position: fixed;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
-    z-index: 50;
+    order: 3;
+    margin-top: 2rem;
+  }
+
+  .content {
+    order: 2;
   }
 
   .prevButton,
@@ -417,36 +415,33 @@
 
 @media screen and (max-width: 600px) {
   .wrapper {
-    padding: 4rem 0 11rem 0;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
+    padding: 4rem 0;
   }
 
   .header {
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    margin-bottom: 0;
-    position: relative;
-    z-index: 1;
+    margin-bottom: 2rem;
+    display: flex;
   }
 
   .title {
     font-size: 2.8rem;
+    order: 1;
+    margin: 0;
   }
 
   .navigation {
     width: 100%;
     justify-content: center;
     gap: 1.4rem;
-    position: fixed;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
-    z-index: 50;
+    order: 3;
+    margin-top: 2rem;
+  }
+
+  .content {
+    order: 2;
   }
 
   .prevButton,
@@ -564,34 +559,33 @@
 
 @media screen and (max-width: 480px) {
   .wrapper {
-    padding: 3rem 0 10.5rem 0;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
+    padding: 3rem 0;
   }
 
   .title {
     font-size: 2.4rem;
+    order: 1;
+    margin: 0;
   }
 
   .header {
     align-items: center;
-    margin-bottom: 0;
-    position: relative;
-    z-index: 1;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+    display: flex;
   }
 
   .navigation {
     width: 100%;
     justify-content: center;
     gap: 1.2rem;
-    position: fixed;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
-    z-index: 50;
+    order: 3;
+    margin-top: 2rem;
+  }
+
+  .content {
+    order: 2;
   }
 
   .prevButton,
