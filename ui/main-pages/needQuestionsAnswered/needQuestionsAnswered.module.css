@@ -275,6 +275,10 @@
     padding-right: 5.4rem;
     height: auto;
     min-height: auto;
+  }
+
+  .faqCard {
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -282,6 +286,7 @@
     transform: scale(0.7776);
     margin: 0 auto -9.8rem auto;
     order: -1;
+    flex-shrink: 0;
   }
 
   .serviceIcon,
@@ -364,12 +369,27 @@
     line-height: 145%;
   }
 
+  .faqCard {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .faqIllustration {
+    transform: scale(0.464);
+    margin: 0 auto -9.8rem auto;
+    width: auto;
+    display: block;
+    text-align: center;
+    order: -1;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
   .serviceCard,
   .supportCard {
     padding: 2rem 1.8rem;
     min-height: auto;
     height: auto;
-    align-items: center;
   }
 
   .arrowButton {
@@ -440,12 +460,27 @@
     line-height: 140%;
   }
 
+  .faqCard {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .faqIllustration {
+    transform: scale(0.4536);
+    margin: 0 auto -9.8rem auto;
+    width: auto;
+    display: block;
+    text-align: center;
+    order: -1;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
   .serviceCard,
   .supportCard {
     min-height: auto;
     height: auto;
     padding: 1.8rem 1.6rem;
-    align-items: center;
   }
 
   .serviceIcon,
