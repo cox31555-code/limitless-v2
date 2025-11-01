@@ -362,12 +362,16 @@
     flex-direction: column;
     gap: 2rem;
     width: 100%;
+    overflow: hidden;
+    display: flex;
+    touch-action: pan-y;
   }
 
   .reviewCard {
     width: 100%;
     height: auto;
     min-height: 22rem;
+    flex: 0 0 100%;
   }
 }
 
@@ -418,8 +422,8 @@
   }
 
   .largeStars > div > svg {
-    width: 2.24rem;
-    height: 2.24rem;
+    width: 2.27rem;
+    height: 2.27rem;
   }
 
   .excellent {
@@ -434,9 +438,19 @@
     font-size: 1.4rem;
   }
 
+  .reviewsContainer {
+    touch-action: pan-y;
+    cursor: grab;
+  }
+
+  .reviewsContainer:active {
+    cursor: grabbing;
+  }
+
   .reviewCard {
     padding: 1.6rem;
     min-height: 20rem;
+    flex: 0 0 100%;
   }
 
   .reviewTitle {
@@ -493,11 +507,12 @@
   }
 
   .largeStars > div > svg {
-    width: 1.96rem;
-    height: 1.96rem;
+    width: 1.99rem;
+    height: 1.99rem;
   }
 
   .reviewCard {
     padding: 1.4rem;
+    flex: 0 0 100%;
   }
 }
