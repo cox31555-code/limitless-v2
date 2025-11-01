@@ -262,11 +262,11 @@
   }
 
   .cardTitle {
-    font-size: 2.2rem;
+    font-size: 2.86rem;
   }
 
   .cardDescription {
-    font-size: 1.2rem;
+    font-size: 1.56rem;
   }
 
   .serviceCard,
@@ -278,9 +278,14 @@
   }
 
   .faqIllustration {
-    transform: scale(0.65);
+    transform: scale(0.85);
     margin: 0 0 -9.8rem 0;
     order: -1;
+  }
+
+  .serviceIcon,
+  .supportIcon {
+    transform: scale(1.3);
   }
 
   .cardContent {
@@ -339,7 +344,7 @@
   }
 
   .faqIllustration {
-    transform: scale(0.42);
+    transform: scale(0.546);
     margin: 0 auto -9.8rem auto;
     width: auto;
     display: block;
@@ -348,12 +353,12 @@
   }
 
   .cardTitle {
-    font-size: 1.9rem;
+    font-size: 2.47rem;
     margin-bottom: 0.8rem;
   }
 
   .cardDescription {
-    font-size: 1.15rem;
+    font-size: 1.495rem;
     line-height: 145%;
   }
 
@@ -380,7 +385,7 @@
 
   .serviceIcon,
   .supportIcon {
-    transform: scale(0.8);
+    transform: scale(1.04);
     transform-origin: top left;
     margin-bottom: 1.6rem;
   }
@@ -414,7 +419,7 @@
   }
 
   .faqIllustration {
-    transform: scale(0.38);
+    transform: scale(0.494);
     margin: 0 auto -9.8rem auto;
     width: auto;
     display: block;
@@ -423,12 +428,12 @@
   }
 
   .cardTitle {
-    font-size: 1.7rem;
+    font-size: 2.21rem;
     margin-bottom: 0.6rem;
   }
 
   .cardDescription {
-    font-size: 1.05rem;
+    font-size: 1.365rem;
     line-height: 140%;
   }
 
@@ -441,7 +446,7 @@
 
   .serviceIcon,
   .supportIcon {
-    transform: scale(0.75);
+    transform: scale(0.975);
     margin-bottom: 1.4rem;
   }
 
