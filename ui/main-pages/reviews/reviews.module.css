@@ -412,7 +412,6 @@
     width: 100%;
     max-width: 40rem;
     margin: 0 auto 0 auto;
-    align-items: center;
     text-align: center;
   }
 
@@ -437,7 +436,6 @@
     animation: smoothSwipeIn 1.2s ease-out forwards;
     box-shadow: none;
     border-radius: 1.2rem;
-    align-items: center;
     text-align: center;
   }
 
@@ -447,14 +445,6 @@
 
   .reviewCard:nth-child(3) {
     animation-delay: 0s;
-  }
-
-  .rating {
-    justify-content: center;
-  }
-
-  .divider {
-    margin: 0 auto;
   }
 }
 
@@ -521,8 +511,6 @@
     gap: 0.6rem;
     margin: 0;
     height: auto;
-    justify-content: center;
-    align-items: center;
     text-align: center;
   }
 
@@ -596,16 +584,7 @@
     animation: smoothSwipeIn 1.2s ease-out forwards;
     box-shadow: none;
     border-radius: 1.2rem;
-    align-items: center;
     text-align: center;
-  }
-
-  .rating {
-    justify-content: center;
-  }
-
-  .divider {
-    margin: 0 auto;
   }
 
   .reviewTitle {
@@ -681,8 +660,6 @@
     gap: 0.5rem;
     margin: 0;
     height: auto;
-    justify-content: center;
-    align-items: center;
     text-align: center;
   }
 
@@ -749,15 +726,6 @@
     animation: smoothSwipeIn 1.2s ease-out forwards;
     box-shadow: none;
     border-radius: 1.2rem;
-    align-items: center;
     text-align: center;
-  }
-
-  .rating {
-    justify-content: center;
-  }
-
-  .divider {
-    margin: 0 auto;
   }
 }
