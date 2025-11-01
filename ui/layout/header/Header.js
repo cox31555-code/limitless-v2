@@ -59,12 +59,19 @@ const Header = () => {
     const isMobile = window.innerWidth <= 900;
     if (isMobile) return;
 
+    let scrollTimeout;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 200);
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        setIsScrolled(window.scrollY > 200);
+      }, 100);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      clearTimeout(scrollTimeout);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [mounted]);
 
   // Prevent body scroll when mobile menu is open
