@@ -193,7 +193,7 @@
   }
 
   .inputContainer {
-    height: 5.2rem;
+    height: 5.8rem;
     padding: 1.2rem 1.6rem;
   }
 
@@ -203,8 +203,12 @@
   }
 
   .input {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 0;
+  }
+
+  .input.reg {
+    font-size: 2.2rem;
   }
 
   .wrapper {
@@ -215,12 +219,16 @@
 
 @media screen and (max-width: 600px) {
   .inputContainer {
-    height: 5.2rem;
+    height: 6.2rem;
     padding: 1.2rem 1.6rem;
   }
 
   .input {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+  }
+
+  .input.reg {
+    font-size: 2.4rem;
   }
 
   .inputSpan {
