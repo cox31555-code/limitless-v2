@@ -798,6 +798,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    margin-bottom: 26px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     width: 100%;
