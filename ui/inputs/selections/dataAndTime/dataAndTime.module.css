@@ -147,6 +147,10 @@
     height: 3.6rem;
   }
 
+  .label {
+    font-size: 1.4rem;
+  }
+
   .input {
     font-size: 1.6rem;
   }
@@ -163,6 +167,10 @@
     width: 3.2rem;
     height: 3.2rem;
     flex-shrink: 0;
+  }
+
+  .label {
+    font-size: 1.6rem;
   }
 
   .input {
