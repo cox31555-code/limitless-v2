@@ -279,7 +279,7 @@
 
   .faqIllustration {
     transform: scale(0.65);
-    margin: 0 0 0.2rem 0;
+    margin: 0 0 -9.8rem 0;
     order: -1;
   }
 
@@ -340,7 +340,7 @@
 
   .faqIllustration {
     transform: scale(0.42);
-    margin: 0 auto 0.2rem auto;
+    margin: 0 auto -9.8rem auto;
     width: auto;
     display: block;
     text-align: center;
@@ -415,7 +415,7 @@
 
   .faqIllustration {
     transform: scale(0.38);
-    margin: 0 auto 0.2rem auto;
+    margin: 0 auto -9.8rem auto;
     width: auto;
     display: block;
     text-align: center;
