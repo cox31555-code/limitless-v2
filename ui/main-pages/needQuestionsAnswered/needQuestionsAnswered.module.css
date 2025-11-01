@@ -332,6 +332,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
   }
 
   .faqIllustration {
@@ -341,6 +343,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+  }
+
+  .faqIllustration svg {
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
   }
 
   .cardTitle {
