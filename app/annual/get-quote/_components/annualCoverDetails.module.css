@@ -104,7 +104,7 @@
 }
 
 .levelIconInactive::after {
-  content: none !important;
+  content: '' !important;
   display: none !important;
 }
 
