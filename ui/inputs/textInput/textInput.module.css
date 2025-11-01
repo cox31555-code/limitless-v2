@@ -201,7 +201,7 @@
 
   .inputSpan {
     width: 5rem;
-    height: 5rem;
+    height: 100%;
     border-radius: 14px 0 0 14px;
   }
 
@@ -253,7 +253,7 @@
 
   .inputSpan {
     width: 5.2rem;
-    height: 5.2rem;
+    height: 100%;
     border-radius: 14px 0 0 14px;
   }
 }
