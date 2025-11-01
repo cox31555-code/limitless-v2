@@ -230,12 +230,12 @@
 
 /* Change Vehicle Button */
 .changeVehicleBtn {
-  padding: 1.2rem 2rem;
+  padding: 1.6rem 3.2rem;
   background: #0388ff;
   color: #ffffff;
   border: none;
   border-radius: 10px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
