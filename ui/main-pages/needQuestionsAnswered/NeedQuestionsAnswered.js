@@ -28,7 +28,7 @@ const BackgroundShape = () => (
 
 const FAQIllustration = () => (
   <div className={styles.faqIllustration}>
-    <svg width="469" height="238" viewBox="0 0 469 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="316" height="161" viewBox="0 0 316 161" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="358.914" height="121.963" transform="translate(82.0156 78.6177)" fill="url(#paint0_linear_121_219)"/>
       <rect width="317.093" height="107.213" transform="translate(102.926 130.788)" fill="url(#paint1_linear_121_219)"/>
       <rect width="415.043" height="141.036" transform="translate(53.957 25.4131)" fill="url(#paint2_linear_121_219)"/>
