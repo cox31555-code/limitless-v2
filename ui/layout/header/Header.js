@@ -104,7 +104,8 @@ const Header = () => {
     { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
   ];
 
-  const shouldHideHeader = !mounted || pathname === "/login" ||
+  const shouldHideHeader = mounted && (
+    pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname.startsWith("/dashboard") ||
@@ -112,7 +113,8 @@ const Header = () => {
     pathname.startsWith("/annual/get-quote") ||
     pathname.startsWith("/impound/get-quote") ||
     pathname.startsWith("/payment-summary") ||
-    pathname.startsWith("/payment");
+    pathname.startsWith("/payment")
+  );
 
   if (shouldHideHeader) {
     return null;
