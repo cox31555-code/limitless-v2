@@ -362,6 +362,7 @@
     grid-column: 1;
     grid-row: 1;
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   .title {
@@ -411,6 +412,8 @@
     width: 100%;
     max-width: 40rem;
     margin: 0 auto 0 auto;
+    align-items: center;
+    text-align: center;
   }
 
   .reviewsContainer {
@@ -434,6 +437,8 @@
     animation: smoothSwipeIn 1.2s ease-out forwards;
     box-shadow: none;
     border-radius: 1.2rem;
+    align-items: center;
+    text-align: center;
   }
 
   .reviewCard:nth-child(2) {
@@ -442,6 +447,14 @@
 
   .reviewCard:nth-child(3) {
     animation-delay: 0s;
+  }
+
+  .rating {
+    justify-content: center;
+  }
+
+  .divider {
+    margin: 0 auto;
   }
 }
 
