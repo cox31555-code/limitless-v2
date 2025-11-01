@@ -703,6 +703,10 @@
     font-size: 1.7rem;
   }
 
+  .secondaryButton {
+    font-size: 1.25rem;
+  }
+
   .sectionLabel {
     font-size: 1.7rem;
   }
@@ -825,6 +829,10 @@
   .primaryButton {
     height: 5.6rem;
     font-size: 1.7rem;
+  }
+
+  .secondaryButton {
+    font-size: 1.3rem;
   }
 
   .sectionLabel {
