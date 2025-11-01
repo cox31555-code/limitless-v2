@@ -196,11 +196,13 @@
   .inputContainer {
     height: 7rem;
     padding: 1.2rem 1.6rem;
+    border-radius: 14px;
   }
 
   .inputSpan {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 14px 0 0 14px;
   }
 
   .input {
@@ -230,6 +232,7 @@
   .inputContainer {
     height: 7.4rem;
     padding: 1.2rem 1.6rem;
+    border-radius: 14px;
   }
 
   .input {
@@ -249,7 +252,8 @@
   }
 
   .inputSpan {
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 14px 0 0 14px;
   }
 }
