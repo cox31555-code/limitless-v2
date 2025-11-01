@@ -360,6 +360,7 @@
     flex-direction: column;
     gap: 0.2rem;
     justify-content: flex-start;
+    align-items: stretch;
   }
 
   .summaryCard {
@@ -424,6 +425,7 @@
   .content {
     gap: 0rem;
     justify-content: flex-start;
+    align-items: stretch;
   }
 
   .summaryCard {
@@ -543,6 +545,7 @@
   .content {
     gap: 0rem;
     justify-content: flex-start;
+    align-items: stretch;
   }
 
   .summaryCard {
