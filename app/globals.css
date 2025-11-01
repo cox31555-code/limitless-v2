@@ -155,7 +155,7 @@ body {
 @media (max-width: 600px) {
   .headerContainer {
     margin: 0 0 6rem 0;
-    padding: 0;
+    padding: 0 0 26px 0;
     width: 100%;
     margin-left: 0;
     height: auto;
