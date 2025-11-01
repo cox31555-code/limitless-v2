@@ -329,27 +329,15 @@
     padding: 2rem 1.8rem;
     min-height: auto;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
+    display: block;
   }
 
   .faqIllustration {
-    order: -1;
-    transform: scale(0.6);
-    margin: 0 0 0 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-  }
-
-  .faqIllustration svg {
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
+    transform: scale(0.42);
+    margin: 0 auto 1.2rem auto;
+    width: auto;
+    display: block;
+    text-align: center;
   }
 
   .cardTitle {
