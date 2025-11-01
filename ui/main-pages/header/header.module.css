@@ -232,20 +232,95 @@
     margin-bottom: 0;
   }
   .features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-    margin: 0;
+    display: none;
   }
   .features > div {
     width: 100%;
-    padding: 1.2rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
+  .features {
+    display: none;
+  }
+  .features > div {
+    width: 100%;
+  }
   }
   .confirmBtn {
     gap: 1.7rem;
