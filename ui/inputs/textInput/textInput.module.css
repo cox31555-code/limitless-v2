@@ -210,12 +210,12 @@
   }
 
   .input {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     padding: 0;
   }
 
   .input::placeholder {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .input.reg {
