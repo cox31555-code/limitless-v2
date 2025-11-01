@@ -72,7 +72,7 @@ const Header = ({ subTitle, title, description, features }) => {
                 Get a Quote
               </button>
             </div>
-            <GetQuote skipDuration={false} onExpand={setIsQuoteExpanded} insuranceType="annual" />
+            <GetQuote onExpand={setIsQuoteExpanded} insuranceType="annual" />
           </div>
           <div className={styles.features}>
             {features.map((feature) => (
