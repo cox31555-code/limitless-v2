@@ -195,7 +195,7 @@
 
   .inputContainer {
     height: 7rem;
-    padding: 0;
+    padding: 1.2rem 1.6rem;
     border-radius: 14px;
   }
 
@@ -207,7 +207,6 @@
     width: 5rem;
     height: 100%;
     border-radius: 14px 0 0 14px;
-    margin: 0 -1.6rem 0 0;
   }
 
   .input {
@@ -236,7 +235,7 @@
 @media screen and (max-width: 600px) {
   .inputContainer {
     height: 7.4rem;
-    padding: 0;
+    padding: 1.2rem 1.6rem;
     border-radius: 14px;
   }
 
@@ -254,7 +253,6 @@
 
   .input.reg {
     font-size: 2.9rem;
-    padding: 0 1.6rem 0 0;
   }
 
   .input.reg::placeholder {
@@ -265,6 +263,5 @@
     width: 5.2rem;
     height: 100%;
     border-radius: 14px 0 0 14px;
-    margin: 0 -1.6rem 0 0;
   }
 }
