@@ -246,7 +246,16 @@
   }
 
   .cardsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 1.8rem;
+  }
+
+  .faqCard {
+    grid-row: auto;
+    padding: 2rem;
+    min-height: auto;
+    height: auto;
   }
 
   .cardTitle {
@@ -257,30 +266,35 @@
     font-size: 1.2rem;
   }
 
-  .faqCard {
-    padding: 2rem;
-    min-height: 360px;
-  }
-
   .serviceCard,
   .supportCard {
     padding: 2.2rem;
-    padding-right: 6.4rem;
+    padding-right: 5.4rem;
     height: auto;
-    min-height: 240px;
+    min-height: auto;
   }
 
   .faqIllustration {
-    transform: scale(0.7);
+    transform: scale(0.65);
+    margin: 1.2rem 0 0 1.2rem;
   }
 
   .cardContent {
-    max-width: 28rem;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    max-width: 100%;
+    padding: 0;
+    margin-top: 1rem;
   }
 
   .arrowButton {
+    position: relative;
     width: 4.4rem;
     height: 4.4rem;
+    bottom: auto;
+    right: auto;
+    margin-top: 1rem;
   }
 }
 
