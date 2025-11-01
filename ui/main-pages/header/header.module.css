@@ -200,7 +200,7 @@
     animation: floatContact 5s ease-in-out infinite, glow 3s ease-in-out infinite;
   }
   .wrapper {
-    padding: 3.9rem 6% 3.4rem;
+    padding: 3.9rem 6% 0.5rem;
     gap: 3.5rem;
   }
   .container {
