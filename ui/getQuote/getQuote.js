@@ -154,6 +154,13 @@ const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" 
                     : null
                 }
               />
+              <button
+                type="button"
+                onClick={handleDontKnowReg}
+                className={styles.secondaryButton}
+              >
+                I don't know my reg yet
+              </button>
             </div>
 
             <button
@@ -163,14 +170,6 @@ const GetQuote = ({ skipDuration = false, onExpand, insuranceType = "temporary" 
               disabled={!registrationNumber.trim()}
             >
               Continue
-            </button>
-
-            <button
-              type="button"
-              onClick={handleDontKnowReg}
-              className={styles.secondaryButton}
-            >
-              I don't know my reg yet
             </button>
           </div>
         )}
