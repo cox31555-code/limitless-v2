@@ -57,21 +57,18 @@ const Header = () => {
 
     // Disable scroll listener on mobile to avoid iOS keyboard issues
     const isMobile = window.innerWidth <= 900;
-    if (isMobile) return;
+    if (isMobile) {
+      // On mobile, always keep header hidden (fixed at top)
+      setIsScrolled(false);
+      return;
+    }
 
-    let scrollTimeout;
     const handleScroll = () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        setIsScrolled(window.scrollY > 200);
-      }, 100);
+      setIsScrolled(window.scrollY > 200);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      clearTimeout(scrollTimeout);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [mounted]);
 
   // Prevent body scroll when mobile menu is open
