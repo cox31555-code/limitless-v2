@@ -156,6 +156,10 @@
 }
 
 @media screen and (max-width: 900px) {
+  .arrowContainer {
+    display: none;
+  }
+
   .selectWrapper {
     height: 5.2rem;
   }
