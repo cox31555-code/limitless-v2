@@ -330,18 +330,29 @@
 @media screen and (max-width: 900px) {
   .wrapper {
     padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 
   .header {
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    order: 1;
   }
 
   .title {
     font-size: 3.2rem;
-    order: 1;
     margin: 0;
+  }
+
+  .content {
+    order: 2;
   }
 
   .navigation {
@@ -349,11 +360,8 @@
     width: 100%;
     justify-content: center;
     order: 3;
-    margin-top: 2rem;
-  }
-
-  .content {
-    order: 2;
+    margin-top: 3rem;
+    margin-bottom: 0;
   }
 
   .prevButton,
@@ -416,20 +424,31 @@
 @media screen and (max-width: 600px) {
   .wrapper {
     padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 
   .header {
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     display: flex;
+    order: 1;
   }
 
   .title {
     font-size: 2.8rem;
-    order: 1;
     margin: 0;
+  }
+
+  .content {
+    order: 2;
   }
 
   .navigation {
@@ -437,11 +456,8 @@
     justify-content: center;
     gap: 1.4rem;
     order: 3;
-    margin-top: 2rem;
-  }
-
-  .content {
-    order: 2;
+    margin-top: 2.5rem;
+    margin-bottom: 0;
   }
 
   .prevButton,
@@ -560,20 +576,31 @@
 @media screen and (max-width: 480px) {
   .wrapper {
     padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
   }
 
   .title {
     font-size: 2.4rem;
-    order: 1;
     margin: 0;
   }
 
   .header {
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     flex-direction: column;
     gap: 2rem;
     display: flex;
+    order: 1;
+  }
+
+  .content {
+    order: 2;
   }
 
   .navigation {
@@ -582,10 +609,7 @@
     gap: 1.2rem;
     order: 3;
     margin-top: 2rem;
-  }
-
-  .content {
-    order: 2;
+    margin-bottom: 0;
   }
 
   .prevButton,
