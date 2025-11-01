@@ -1096,20 +1096,3 @@
 }
 
 .mobileLoginBtn:active {
-  background: rgba(3, 136, 255, 0.15);
-  border-color: rgba(3, 136, 255, 0.5);
-  color: #0388ff;
-}
-
-/* No animation updates needed - simplified mobile menu */
-
-/* Hide desktop header on get-quote pages, show mobile header */
-@media (max-width: 900px) {
-  .container {
-    display: none;
-  }
-
-  .mobileContainer {
-    display: flex;
-  }
-}
