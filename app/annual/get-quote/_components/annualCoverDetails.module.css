@@ -175,42 +175,55 @@
 
 @media (max-width: 600px) {
   .coverContainer {
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .section {
-    gap: 1.2rem;
+    gap: 1.6rem;
   }
 
   .sectionTitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .sectionSubtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .levelCard {
-    padding: 1.6rem;
-    gap: 0.8rem;
-    flex-direction: column;
+    padding: 2rem;
+    gap: 1.2rem;
+    flex-direction: row;
     align-items: flex-start;
   }
 
   .dateSection {
-    padding: 1.6rem;
-    gap: 1.2rem;
+    padding: 2rem;
+    gap: 1.6rem;
   }
 
   .levelIconWrapper {
-    min-width: auto;
+    width: 2.4rem;
+    height: 2.4rem;
+    min-width: 2.4rem;
+  }
+
+  .levelIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-width: 2px;
+  }
+
+  .levelIconActive::after {
+    width: 0.6rem;
+    height: 0.6rem;
   }
 
   .levelTitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .levelDescription {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
