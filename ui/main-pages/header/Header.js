@@ -5,7 +5,6 @@ import Feature from "../../feature/Feature";
 import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import GetQuote from "../../getQuote/getQuote";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -22,7 +21,6 @@ const Header = ({ subTitle, title, description, features }) => {
   const words = title.split(" ");
   const lastWord = words[words.length - 1];
   const withoutLastWord = words.slice(0, -1).join(" ");
-  const pathname = usePathname();
   return (
     <div className={`headerContainer ${isQuoteExpanded ? "expanded" : ""}`}>
       <div className="centeredContent">
@@ -74,7 +72,7 @@ const Header = ({ subTitle, title, description, features }) => {
                 Get a Quote
               </button>
             </div>
-            {<GetQuote skipDuration={pathname === "/annual"} onExpand={setIsQuoteExpanded} insuranceType={pathname === "/impound" ? "impound" : "annual"} />}
+            {<GetQuote skipDuration={false} onExpand={setIsQuoteExpanded} insuranceType="annual" />}
           </div>
           <div className={styles.features}>
             {features.map((feature) => (
