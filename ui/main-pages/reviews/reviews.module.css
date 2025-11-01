@@ -314,18 +314,28 @@
 
   .container {
     gap: 3.2rem;
+    grid-template-columns: 1fr auto;
   }
 
   .header {
+    grid-column: 1;
+    grid-row: 1;
     margin-bottom: 0;
   }
 
-  .title {
-    font-size: 4rem;
+  .navigation {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .content {
     gap: 1.6rem;
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .title {
+    font-size: 4rem;
   }
 
   .reviewsContainer {
@@ -344,13 +354,13 @@
   }
 
   .container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 0;
   }
 
   .header {
-    flex-direction: column;
-    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
     margin-bottom: 2rem;
   }
 
@@ -364,7 +374,8 @@
     gap: 0.2rem;
     justify-content: flex-start;
     align-items: stretch;
-    width: 100%;
+    grid-column: 1;
+    grid-row: 2;
     margin-bottom: 3rem;
   }
 
@@ -373,6 +384,8 @@
     gap: 1.6rem;
     width: 100%;
     justify-content: center;
+    grid-column: 1;
+    grid-row: 3;
   }
 
   .prevButton,
@@ -438,14 +451,13 @@
   }
 
   .container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 0;
   }
 
   .header {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
     margin-bottom: 2rem;
   }
 
@@ -456,7 +468,8 @@
 
   .content {
     gap: 0rem;
-    width: 100%;
+    grid-column: 1;
+    grid-row: 2;
     margin-bottom: 2.5rem;
   }
 
@@ -465,6 +478,8 @@
     width: 100%;
     justify-content: center;
     gap: 1.4rem;
+    grid-column: 1;
+    grid-row: 3;
   }
 
   .prevButton,
@@ -586,7 +601,7 @@
   }
 
   .container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 0;
   }
 
@@ -596,12 +611,14 @@
   }
 
   .header {
-    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
     margin-bottom: 2rem;
   }
 
   .content {
-    width: 100%;
+    grid-column: 1;
+    grid-row: 2;
     margin-bottom: 2rem;
   }
 
@@ -610,6 +627,8 @@
     width: 100%;
     justify-content: center;
     gap: 1.2rem;
+    grid-column: 1;
+    grid-row: 3;
   }
 
   .prevButton,
