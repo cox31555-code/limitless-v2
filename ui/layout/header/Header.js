@@ -123,7 +123,12 @@ const Header = () => {
   }
 
   return (
-    <div className="centeredContent" suppressHydrationWarning>
+    <>
+      <InsuranceTypeModal
+        isOpen={isInsuranceModalOpen}
+        onClose={() => setIsInsuranceModalOpen(false)}
+      />
+      <div className="centeredContent" suppressHydrationWarning>
       {isScrolled && !isDashboard && (
         <div className={styles.stickyHeader}>
           <div className={styles.stickyContent}>
@@ -532,6 +537,7 @@ const Header = () => {
         )}
       </header>
     </div>
+    </>
   );
 };
 
