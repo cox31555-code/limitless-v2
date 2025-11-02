@@ -277,3 +277,14 @@
     font-size: 1.2rem;
   }
 }
+
+@media (max-width: 360px) {
+  .coverContainer {
+    gap: 1.8rem;
+  }
+
+  .dateSection {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
