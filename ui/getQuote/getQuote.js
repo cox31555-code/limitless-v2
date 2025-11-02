@@ -78,7 +78,7 @@ const GetQuote = ({ onExpand, insuranceType = "temporary" }) => {
           <div className={styles.regInputField}>
             <FormTextInput
               label="Registration Number"
-              placeholder=""
+              placeholder="e.g., AB51 ABC"
               reg={true}
               value={registrationNumber}
               onChange={handleRegistrationChange}
