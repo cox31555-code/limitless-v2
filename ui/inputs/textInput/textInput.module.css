@@ -120,7 +120,7 @@
   flex-shrink: 0;
   border: none;
   margin-right: 0;
-  border-right: 1px solid #e0e5ec;
+  border-right: 1.5px solid #bcc5cf;
   pointer-events: none;
 }
 
