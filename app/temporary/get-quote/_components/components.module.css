@@ -1427,10 +1427,14 @@
 
     .formContent {
       gap: 2.4rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .formSection {
       gap: 1.2rem;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .declarationItem {
