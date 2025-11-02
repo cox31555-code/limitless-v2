@@ -313,7 +313,7 @@ const FormDateInput = forwardRef(
         if (onChange) {
           onChange(syntheticEvent);
         }
-        setShowTimePicker(false);
+        closeTimePicker();
       };
 
 
