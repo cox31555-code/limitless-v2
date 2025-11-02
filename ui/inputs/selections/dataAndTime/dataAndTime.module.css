@@ -187,6 +187,28 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .inputContainer {
+    height: 5.6rem;
+    min-height: 5.6rem;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .label {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .input {
+    font-size: 1.5rem;
+  }
+
+  .arrowDown {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     width: 100%;
@@ -194,10 +216,18 @@
   }
 
   .inputContainer {
-    height: 5.2rem;
-    padding: 1.2rem 1.6rem;
+    height: 5.6rem;
+    min-height: 5.6rem;
+    padding: 1.4rem 1.6rem;
     width: 100%;
     box-sizing: border-box;
+    border-radius: 12px;
+    font-size: 1.6rem;
+  }
+
+  .inputContainer:active {
+    border: 1.5px solid #0388ff;
+    background: rgba(3, 136, 255, 0.02);
   }
 
   .iconContainer {
@@ -206,10 +236,16 @@
 
   .label {
     font-size: 1.6rem;
+    margin-bottom: 1rem;
   }
 
   .input {
     font-size: 1.6rem;
+  }
+
+  .arrowDown {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 }
 
