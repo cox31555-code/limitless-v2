@@ -204,7 +204,7 @@ const FormDateInput = forwardRef(
     const openDatePicker = () => {
       setShowDatePicker(true);
       // Prevent body scroll when picker is open on mobile
-      if (window.innerWidth <= 900) {
+      if (isMobile) {
         document.body.style.overflow = "hidden";
       }
     };
@@ -217,7 +217,7 @@ const FormDateInput = forwardRef(
     const openTimePicker = () => {
       setShowTimePicker(true);
       // Prevent body scroll when picker is open on mobile
-      if (window.innerWidth <= 900) {
+      if (isMobile) {
         document.body.style.overflow = "hidden";
       }
     };
