@@ -242,11 +242,11 @@
 
 @media (max-width: 400px) {
   .coverContainer {
-    gap: 2.4rem;
+    gap: 2rem;
   }
 
   .section {
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
 
   .sectionTitle {
@@ -258,13 +258,15 @@
   }
 
   .levelCard {
-    padding: 1.6rem;
+    padding: 1.4rem;
     gap: 1rem;
   }
 
   .dateSection {
-    padding: 1.6rem;
-    gap: 1.4rem;
+    padding: 1.2rem;
+    gap: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .levelTitle {
