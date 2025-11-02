@@ -619,7 +619,8 @@
   .row,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
-    gap: 2.8rem;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -697,7 +698,10 @@
   .row,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .registrationSection,
@@ -706,6 +710,8 @@
   .rows {
     padding: 1.4rem;
     gap: 1.4rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .sectionTitle {
