@@ -189,8 +189,31 @@ const FormDateInput = forwardRef(
       }
     };
 
-    const openDatePicker = () => setShowDatePicker(true);
-    const closeDatePicker = () => setShowDatePicker(false);
+    const openDatePicker = () => {
+      setShowDatePicker(true);
+      // Prevent body scroll when picker is open on mobile
+      if (window.innerWidth <= 900) {
+        document.body.style.overflow = "hidden";
+      }
+    };
+
+    const closeDatePicker = () => {
+      setShowDatePicker(false);
+      document.body.style.overflow = "unset";
+    };
+
+    const openTimePicker = () => {
+      setShowTimePicker(true);
+      // Prevent body scroll when picker is open on mobile
+      if (window.innerWidth <= 900) {
+        document.body.style.overflow = "hidden";
+      }
+    };
+
+    const closeTimePicker = () => {
+      setShowTimePicker(false);
+      document.body.style.overflow = "unset";
+    };
 
     // Get today's date for restrictions
     const today = new Date();
