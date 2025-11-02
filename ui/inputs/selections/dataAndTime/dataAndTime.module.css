@@ -150,6 +150,9 @@
   z-index: 99999;
   max-height: 85vh;
   overflow-y: auto;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @media screen and (max-width: 900px) {
