@@ -287,11 +287,11 @@
 
 @media screen and (max-width: 400px) {
   .inputGroup {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .inputContainer {
-    height: 5.2rem;
+    height: 5.6rem;
     padding: 1rem 1.4rem;
     border-radius: 10px;
     box-sizing: border-box;
@@ -304,6 +304,7 @@
   .input {
     font-size: 1.5rem;
     padding-left: 6rem;
+    font-weight: 500;
   }
 
   .input::placeholder {
@@ -317,7 +318,12 @@
 }
 
 @media screen and (max-width: 360px) {
+  .inputGroup {
+    gap: 1.2rem;
+  }
+
   .inputContainer {
+    height: 5.6rem;
     padding: 1rem 1.2rem;
   }
 
@@ -327,6 +333,7 @@
 
   .input {
     padding-left: 5.6rem;
+    font-weight: 500;
   }
 
   .input.reg {
