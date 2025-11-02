@@ -393,7 +393,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                   <FormTextInput
                     reg={true}
                     label="What is your registration number?"
-                    placeholder="E.g. AB23 XYZ"
+                    placeholder=""
                     value={watch("vehicleDetails.registrationNumber") || ""}
                     onChange={(e) => {
                       const formattedValue = e.target.value.toUpperCase();
