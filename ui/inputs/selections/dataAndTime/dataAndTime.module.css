@@ -151,8 +151,7 @@
   }
 
   .iconContainer {
-    width: 2rem;
-    height: 2rem;
+    display: none;
   }
 
   .label {
@@ -178,8 +177,7 @@
   }
 
   .iconContainer {
-    width: 2rem;
-    height: 2rem;
+    display: none;
   }
 
   .label {
@@ -200,9 +198,7 @@
   }
 
   .iconContainer {
-    width: 2rem;
-    height: 2rem;
-    right: 1.4rem;
+    display: none;
   }
 
   .label {
@@ -220,6 +216,6 @@
   }
 
   .iconContainer {
-    right: 1.2rem;
+    display: none;
   }
 }
