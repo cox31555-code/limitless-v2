@@ -236,6 +236,7 @@
 @media screen and (max-width: 600px) {
   .inputGroup {
     gap: 1.1rem;
+    width: 100%;
   }
 
   .label {
@@ -246,6 +247,8 @@
     height: 5.2rem;
     padding: 1.2rem 1.6rem;
     border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .inputContainer:has(.input.reg) {
@@ -273,5 +276,25 @@
     width: 5rem;
     height: 100%;
     border-radius: 10px 0 0 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .inputGroup {
+    gap: 1rem;
+  }
+
+  .inputContainer {
+    height: 5rem;
+    padding: 1rem 1.4rem;
+    border-radius: 8px;
+  }
+
+  .input {
+    font-size: 1.5rem;
+  }
+
+  .input::placeholder {
+    font-size: 1.4rem;
   }
 }
