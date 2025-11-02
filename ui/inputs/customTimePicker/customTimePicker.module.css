@@ -4,7 +4,7 @@
   padding: 1.6rem;
   width: 100%;
   max-width: 32rem;
-  animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -12,6 +12,9 @@
   position: relative;
   z-index: 99999;
   box-sizing: border-box;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @media screen and (max-width: 900px) {
@@ -137,11 +140,11 @@
     max-width: calc(100% - 3.2rem);
     width: 100%;
     padding: 1.6rem;
-    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .timePicker.slideUp {
-    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .timeGrid {

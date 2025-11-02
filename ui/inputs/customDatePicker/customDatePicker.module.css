@@ -4,7 +4,7 @@
   padding: 1.6rem;
   width: 100%;
   max-width: 32rem;
-  animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   overflow: visible;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,9 @@
   position: relative;
   z-index: 99999;
   box-sizing: border-box;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @media screen and (max-width: 900px) {
