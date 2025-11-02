@@ -280,7 +280,7 @@
   }
 
   .input.reg {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     padding-left: 7rem;
   }
 
@@ -318,7 +318,7 @@
   }
 
   .input.reg {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding-left: 6.8rem;
   }
 
@@ -351,6 +351,7 @@
   }
 
   .input.reg {
+    font-size: 1.5rem;
     padding-left: 6.2rem;
   }
 }
