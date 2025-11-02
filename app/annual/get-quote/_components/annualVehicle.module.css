@@ -752,3 +752,47 @@
     font-weight: 500;
   }
 }
+
+@media (max-width: 360px) {
+  .content {
+    gap: 2.6rem;
+  }
+
+  .row,
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .registrationSection,
+  .additionalDetailsSection,
+  .ownershipSection,
+  .rows {
+    padding: 1.6rem;
+    gap: 1.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    padding-left: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  .sectionDescription {
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    line-height: 1.6;
+  }
+
+  .cleanFormFieldLabel {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+}
