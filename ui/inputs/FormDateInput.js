@@ -46,13 +46,23 @@ const FormDateInput = forwardRef(
       const spaceBelow = window.innerHeight - rect.bottom;
       const spaceAbove = rect.top;
       const pickerHeight = 400; // Approximate height of pickers
+      const pickerWidth = Math.min(320, window.innerWidth - 32); // Max 320px or viewport minus padding
+
+      // Calculate optimal left position to keep picker within viewport
+      let leftPos = rect.left;
+      const pickerRightEdge = leftPos + pickerWidth;
+
+      if (pickerRightEdge > window.innerWidth) {
+        // Adjust left to keep picker within viewport
+        leftPos = Math.max(16, window.innerWidth - pickerWidth - 16);
+      }
 
       if (forceShowAbove) {
         // Always show above when forceShowAbove is true
         setPickerPosition({
           top: "auto",
           bottom: `${window.innerHeight - rect.top + 12}px`,
-          left: `${rect.left}px`,
+          left: `${leftPos}px`,
           showAbove: true,
         });
       } else if (spaceBelow < pickerHeight && spaceAbove > pickerHeight) {
@@ -60,7 +70,7 @@ const FormDateInput = forwardRef(
         setPickerPosition({
           top: "auto",
           bottom: `${window.innerHeight - rect.top + 12}px`,
-          left: `${rect.left}px`,
+          left: `${leftPos}px`,
           showAbove: true,
         });
       } else {
@@ -68,7 +78,7 @@ const FormDateInput = forwardRef(
         setPickerPosition({
           top: `${rect.bottom + 12}px`,
           bottom: "auto",
-          left: `${rect.left}px`,
+          left: `${leftPos}px`,
           showAbove: false,
         });
       }
