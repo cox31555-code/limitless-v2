@@ -51,7 +51,7 @@
   box-sizing: border-box;
   border: none;
   background: transparent;
-  color: #000822;
+  color: #6b7c8f;
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 130%;
@@ -76,7 +76,7 @@
 
 .select option {
   background: #fff;
-  color: #000822;
+  color: #6b7c8f;
   padding: 1rem;
   font-size: 1.3rem;
   font-weight: 300;
