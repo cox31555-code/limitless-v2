@@ -315,8 +315,6 @@ const FormDateInput = forwardRef(
         setShowTimePicker(false);
       };
 
-      const openTimePicker = () => setShowTimePicker(true);
-      const closeTimePicker = () => setShowTimePicker(false);
 
       return (
         <>
