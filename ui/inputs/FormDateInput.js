@@ -392,11 +392,12 @@ const FormDateInput = forwardRef(
                 />
               )}
               <div className={styles.pickerContainer} ref={timePickerRef} style={{
-                position: window.innerWidth <= 900 ? 'fixed' : 'fixed',
-                top: window.innerWidth <= 900 ? 'auto' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
-                bottom: window.innerWidth <= 900 ? 0 : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
-                left: window.innerWidth <= 900 ? 0 : pickerPosition.left,
-                right: window.innerWidth <= 900 ? 0 : 'auto',
+                position: 'fixed',
+                top: window.innerWidth <= 900 ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
+                bottom: window.innerWidth <= 900 ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
+                left: window.innerWidth <= 900 ? '50%' : pickerPosition.left,
+                right: window.innerWidth <= 900 ? 'auto' : 'auto',
+                transform: window.innerWidth <= 900 ? 'translate(-50%, -50%)' : 'none',
                 zIndex: 99999
               }}>
                 <CustomTimePicker
