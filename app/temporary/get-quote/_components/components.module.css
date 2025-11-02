@@ -2102,3 +2102,49 @@
     margin-bottom: 1.6rem;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .formContent {
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formSection {
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formRow,
+  .cleanFormGrid1Col,
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .postcodeRow,
+  .cleanPostcodeRow {
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+    padding-left: 1rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .declarationItem,
+  .cleanDeclarationItem {
+    padding: 1rem;
+  }
+
+  .findAddressButton {
+    height: 5.2rem;
+    font-size: 1.2rem;
+  }
+}
