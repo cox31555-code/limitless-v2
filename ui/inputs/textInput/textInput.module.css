@@ -170,7 +170,7 @@
   letter-spacing: 1px;
   font-weight: 400;
   color: #6b7c8f;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-family: "UK Number Plate", monospace;
   text-transform: uppercase;
   padding: 0 1.6rem;
@@ -228,7 +228,7 @@
   }
 
   .input.reg {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     padding-left: 7.8rem;
   }
 
@@ -280,7 +280,7 @@
   }
 
   .input.reg {
-    font-size: 2rem;
+    font-size: 2.4rem;
     padding-left: 8rem;
   }
 
@@ -318,7 +318,7 @@
   }
 
   .input.reg {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     padding-left: 7.6rem;
   }
 
@@ -351,7 +351,7 @@
   }
 
   .input.reg {
-    font-size: 1.7rem;
+    font-size: 2rem;
     padding-left: 7rem;
   }
 }
