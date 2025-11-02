@@ -145,7 +145,7 @@
   flex: 1;
   border: none;
   outline: none;
-  color: #000822;
+  color: #6b7c8f;
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 130%;
@@ -168,7 +168,7 @@
 .input.reg {
   letter-spacing: 1px;
   font-weight: 400;
-  color: #000822;
+  color: #6b7c8f;
   font-size: 1.3rem;
   font-family: "UK Number Plate", monospace;
   text-transform: uppercase;
