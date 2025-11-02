@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 3.2rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .section {
