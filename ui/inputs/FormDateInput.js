@@ -396,7 +396,7 @@ const FormDateInput = forwardRef(
 
           {showTimePicker && (
             <>
-              {window.innerWidth <= 900 && (
+              {isMobile && (
                 <div
                   className={styles.modalOverlay}
                   onClick={closeTimePicker}
@@ -404,11 +404,11 @@ const FormDateInput = forwardRef(
               )}
               <div className={styles.pickerContainer} ref={timePickerRef} style={{
                 position: 'fixed',
-                top: window.innerWidth <= 900 ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
-                bottom: window.innerWidth <= 900 ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
-                left: window.innerWidth <= 900 ? '50%' : pickerPosition.left,
-                right: window.innerWidth <= 900 ? 'auto' : 'auto',
-                transform: window.innerWidth <= 900 ? 'translate(-50%, -50%)' : 'none',
+                top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
+                bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
+                left: isMobile ? '50%' : pickerPosition.left,
+                right: isMobile ? 'auto' : 'auto',
+                transform: isMobile ? 'translate(-50%, -50%)' : 'none',
                 zIndex: 99999
               }}>
                 <CustomTimePicker
