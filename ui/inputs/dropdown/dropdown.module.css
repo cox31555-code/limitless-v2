@@ -79,7 +79,7 @@
   color: #000822;
   padding: 1rem;
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .select option:first-child {
@@ -167,7 +167,7 @@
   .select {
     font-size: 1.4rem;
     padding: 1.2rem 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .label {
@@ -199,7 +199,7 @@
     padding: 1.3rem 1.8rem;
     width: 100%;
     box-sizing: border-box;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .label {
@@ -225,7 +225,7 @@
     font-size: 1.5rem;
     padding: 1rem 1.4rem;
     box-sizing: border-box;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .label {
