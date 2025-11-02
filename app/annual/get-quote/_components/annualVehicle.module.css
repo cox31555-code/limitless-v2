@@ -105,7 +105,7 @@
 .cleanFormFieldLabel {
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.2px;
   text-transform: capitalize;
@@ -130,7 +130,7 @@
 .rows {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 2rem;
   padding: 2.4rem;
   border-radius: 12px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
@@ -438,7 +438,7 @@
 /* Responsive */
 @media (max-width: 900px) {
   .content {
-    gap: 2.4rem;
+    gap: 2.8rem;
   }
 
   .instructionBox {
@@ -456,33 +456,39 @@
     font-size: 1rem;
   }
 
+  .cleanFormFieldLabel {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
   .row,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 1.6rem;
   }
 
   .registrationSection,
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    padding: 1.8rem;
-    gap: 1.4rem;
+    padding: 2rem;
+    gap: 1.8rem;
   }
 
   .sectionTitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     padding-left: 1.4rem;
+    font-weight: 700;
   }
 
   .sectionDescription {
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding-left: 1.4rem;
   }
 
   .registrationInputWrapper {
-    gap: 1.6rem;
+    gap: 1.8rem;
   }
 
   .dividerWithText {
@@ -491,7 +497,7 @@
 
   .manualEntryBtn {
     padding: 1.1rem 1.6rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .manualEntryIcon {
@@ -591,7 +597,7 @@
 
 @media (max-width: 600px) {
   .content {
-    gap: 3rem;
+    gap: 3.2rem;
   }
 
   .instructionBox {
@@ -616,11 +622,17 @@
     line-height: 1.5;
   }
 
+  .cleanFormFieldLabel {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
   .row,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 1.4rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -629,8 +641,8 @@
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    padding: 1.6rem;
-    gap: 1.6rem;
+    padding: 1.8rem;
+    gap: 1.8rem;
     width: 100%;
     box-sizing: border-box;
   }
