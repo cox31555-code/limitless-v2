@@ -257,8 +257,8 @@
 
 @media screen and (max-width: 400px) {
   .inputContainer {
-    height: 5.4rem;
-    min-height: 5.4rem;
+    height: 5.6rem;
+    min-height: 5.6rem;
     padding: 1.2rem 1.4rem;
     border-radius: 12px;
     box-sizing: border-box;
@@ -274,11 +274,13 @@
 
   .label {
     font-size: 1.5rem;
+    font-weight: 500;
     margin-bottom: 0.8rem;
   }
 
   .input {
     font-size: 1.5rem;
+    font-weight: 500;
   }
 
   .arrowDown {
@@ -290,10 +292,22 @@
 
 @media screen and (max-width: 360px) {
   .inputContainer {
+    height: 5.6rem;
+    min-height: 5.6rem;
     padding: 1rem 1.2rem;
   }
 
   .iconContainer {
     display: none;
+  }
+
+  .label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  .input {
+    font-weight: 500;
   }
 }
