@@ -78,6 +78,7 @@
 /* Registration Input Grey Border */
 .inputContainer:has(.input.reg) {
   border: 1.5px solid #bcc5cf;
+  height: 6.2rem;
 }
 
 .inputContainer:has(.input.reg):hover {
