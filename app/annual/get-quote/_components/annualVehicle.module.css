@@ -612,24 +612,25 @@
   }
 
   .instructionBox {
-    padding: 1.2rem;
-    gap: 0.8rem;
-    margin-bottom: 0.4rem;
+    padding: 1.8rem 2rem;
+    gap: 1.4rem;
+    margin-bottom: 0.8rem;
     opacity: 0.65;
   }
 
   .instructionIcon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   .instructionIcon svg {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
   }
 
   .instructionText {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     line-height: 1.5;
   }
 
@@ -721,6 +722,28 @@
     gap: 2.8rem;
   }
 
+  .instructionBox {
+    padding: 1.8rem 2rem;
+    gap: 1.4rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.65;
+  }
+
+  .instructionIcon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .instructionIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .instructionText {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
   .row,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
@@ -763,6 +786,28 @@
 @media (max-width: 360px) {
   .content {
     gap: 2.6rem;
+  }
+
+  .instructionBox {
+    padding: 1.8rem 2rem;
+    gap: 1.4rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.65;
+  }
+
+  .instructionIcon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .instructionIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .instructionText {
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 
   .row,
