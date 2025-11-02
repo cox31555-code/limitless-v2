@@ -126,14 +126,12 @@
 .modalOverlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 99998;
-  animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(2px);
+  animation: fadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(3px);
+  pointer-events: auto;
 }
 
 .modalOverlay.show {
