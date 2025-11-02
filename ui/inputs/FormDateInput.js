@@ -383,20 +383,29 @@ const FormDateInput = forwardRef(
           </div>
 
           {showTimePicker && (
-            <div className={styles.pickerContainer} ref={timePickerRef} style={{
-              position: 'fixed',
-              top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
-              bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
-              left: pickerPosition.left,
-              zIndex: 99999
-            }}>
-              <CustomTimePicker
-                selectedTime={value || "10:00"}
-                onTimeSelect={handleTimeSelect}
-                onClose={closeTimePicker}
-                showAbove={pickerPosition.showAbove}
-              />
-            </div>
+            <>
+              {window.innerWidth <= 900 && (
+                <div
+                  className={styles.modalOverlay}
+                  onClick={closeTimePicker}
+                />
+              )}
+              <div className={styles.pickerContainer} ref={timePickerRef} style={{
+                position: window.innerWidth <= 900 ? 'fixed' : 'fixed',
+                top: window.innerWidth <= 900 ? 'auto' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
+                bottom: window.innerWidth <= 900 ? 0 : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
+                left: window.innerWidth <= 900 ? 0 : pickerPosition.left,
+                right: window.innerWidth <= 900 ? 0 : 'auto',
+                zIndex: 99999
+              }}>
+                <CustomTimePicker
+                  selectedTime={value || "10:00"}
+                  onTimeSelect={handleTimeSelect}
+                  onClose={closeTimePicker}
+                  showAbove={pickerPosition.showAbove}
+                />
+              </div>
+            </>
           )}
         </>
       );
