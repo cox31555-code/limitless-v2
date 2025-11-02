@@ -161,16 +161,18 @@
 
 @media screen and (max-width: 900px) {
   .selectWrapper {
-    height: 5.4rem;
+    height: 5.6rem;
   }
 
   .select {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding: 1.2rem 1.6rem;
   }
 
   .label {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
   }
 
   .arrowDown {
@@ -192,14 +194,16 @@
   }
 
   .select {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     padding: 1.3rem 1.8rem;
     width: 100%;
     box-sizing: border-box;
   }
 
   .label {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
   }
 
   .arrowDown {
