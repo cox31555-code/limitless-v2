@@ -28,6 +28,7 @@ const FormDateInput = forwardRef(
   ) => {
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [showTimePicker, setShowTimePicker] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const [pickerPosition, setPickerPosition] = useState({
       top: "auto",
       bottom: "auto",
@@ -37,6 +38,16 @@ const FormDateInput = forwardRef(
     const inputContainerRef = useRef(null);
     const datePickerRef = useRef(null);
     const timePickerRef = useRef(null);
+
+    // Detect mobile on mount and on resize
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 900);
+      };
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Parse date string to Date object, handling timezone issues
     const calculatePickerPosition = () => {
