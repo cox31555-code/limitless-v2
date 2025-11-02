@@ -96,6 +96,7 @@ const FormDateInput = forwardRef(
           if (!isClickInsideInput && !isClickInsideDatePicker && !isClickInsideTimePicker) {
             setShowDatePicker(false);
             setShowTimePicker(false);
+            document.body.style.overflow = "unset";
           }
         };
 
