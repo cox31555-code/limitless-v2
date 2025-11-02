@@ -734,10 +734,10 @@
   }
 
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding-left: 1rem;
     line-height: 1.3;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .sectionDescription {
@@ -778,10 +778,10 @@
   }
 
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding-left: 1rem;
     line-height: 1.3;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .sectionDescription {
