@@ -2122,6 +2122,7 @@
   .cleanFormGrid1Col,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
+    grid-template-columns: 1fr;
     gap: 1rem;
     width: 100%;
     box-sizing: border-box;
