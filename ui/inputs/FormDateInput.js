@@ -100,14 +100,25 @@ const FormDateInput = forwardRef(
         calculatePickerPosition();
 
         const handleClickOutside = (e) => {
-          const isClickInsideInput = inputContainerRef.current && inputContainerRef.current.contains(e.target);
-          const isClickInsideDatePicker = datePickerRef.current && datePickerRef.current.contains(e.target);
-          const isClickInsideTimePicker = timePickerRef.current && timePickerRef.current.contains(e.target);
+          // On mobile, only close when clicking the overlay
+          if (isMobile) {
+            const isClickOnOverlay = e.target.className && e.target.className.includes('modalOverlay');
+            if (isClickOnOverlay) {
+              setShowDatePicker(false);
+              setShowTimePicker(false);
+              document.body.style.overflow = "unset";
+            }
+          } else {
+            // On desktop, close on click outside
+            const isClickInsideInput = inputContainerRef.current && inputContainerRef.current.contains(e.target);
+            const isClickInsideDatePicker = datePickerRef.current && datePickerRef.current.contains(e.target);
+            const isClickInsideTimePicker = timePickerRef.current && timePickerRef.current.contains(e.target);
 
-          if (!isClickInsideInput && !isClickInsideDatePicker && !isClickInsideTimePicker) {
-            setShowDatePicker(false);
-            setShowTimePicker(false);
-            document.body.style.overflow = "unset";
+            if (!isClickInsideInput && !isClickInsideDatePicker && !isClickInsideTimePicker) {
+              setShowDatePicker(false);
+              setShowTimePicker(false);
+              document.body.style.overflow = "unset";
+            }
           }
         };
 
@@ -121,7 +132,7 @@ const FormDateInput = forwardRef(
           document.removeEventListener("click", handleClickOutside);
         };
       }
-    }, [showDatePicker, showTimePicker]);
+    }, [showDatePicker, showTimePicker, isMobile]);
 
     const parseDate = (dateString) => {
       if (!dateString) return null;
