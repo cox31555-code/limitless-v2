@@ -14,19 +14,30 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 900px) {
+  .calendar {
+    max-width: min(90vw, 42rem);
+    width: 90vw;
+    padding: 1.6rem;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .calendar {
-    max-width: calc(100vw - 3.2rem);
-    width: calc(100vw - 3.2rem);
+    max-width: min(92vw, 40rem);
+    width: 92vw;
     padding: 1.4rem;
+    margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 400px) {
   .calendar {
-    max-width: calc(100vw - 2.4rem);
-    width: calc(100vw - 2.4rem);
+    max-width: min(95vw, 38rem);
+    width: 95vw;
     padding: 1.2rem;
+    margin: 0 auto;
   }
 }
 
