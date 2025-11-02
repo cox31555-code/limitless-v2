@@ -143,6 +143,8 @@
   border-radius: 12px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Responsive Design */
