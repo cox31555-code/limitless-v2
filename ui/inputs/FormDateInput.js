@@ -97,10 +97,7 @@ const FormDateInput = forwardRef(
 
     useEffect(() => {
       if (showDatePicker || showTimePicker) {
-        // Use requestAnimationFrame to delay position calculation until after animation starts
-        const rafId = requestAnimationFrame(() => {
-          calculatePickerPosition();
-        });
+        calculatePickerPosition();
 
         const handleClickOutside = (e) => {
           // On mobile, only close when clicking the overlay
@@ -130,7 +127,6 @@ const FormDateInput = forwardRef(
         document.addEventListener("click", handleClickOutside);
 
         return () => {
-          cancelAnimationFrame(rafId);
           window.removeEventListener("scroll", calculatePickerPosition);
           window.removeEventListener("resize", calculatePickerPosition);
           document.removeEventListener("click", handleClickOutside);
