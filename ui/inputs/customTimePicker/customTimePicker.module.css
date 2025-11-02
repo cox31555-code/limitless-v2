@@ -14,19 +14,30 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 900px) {
+  .timePicker {
+    max-width: min(90vw, 44rem);
+    width: 90vw;
+    padding: 1.6rem;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .timePicker {
-    max-width: calc(100vw - 3.2rem);
-    width: calc(100vw - 3.2rem);
-    padding: 1.4rem;
+    max-width: min(92vw, 42rem);
+    width: 92vw;
+    padding: 1.6rem;
+    margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 400px) {
   .timePicker {
-    max-width: calc(100vw - 2.4rem);
-    width: calc(100vw - 2.4rem);
-    padding: 1.2rem;
+    max-width: min(95vw, 40rem);
+    width: 95vw;
+    padding: 1.4rem;
+    margin: 0 auto;
   }
 }
 
