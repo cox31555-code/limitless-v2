@@ -47,7 +47,7 @@
 
 .select {
   width: 100%;
-  padding: 1.2rem 1.6rem 1.2rem 0.2rem;
+  padding: 1.2rem 1.6rem;
   box-sizing: border-box;
   border: none;
   background: transparent;
@@ -166,7 +166,7 @@
 
   .select {
     font-size: 1.4rem;
-    padding: 1.2rem 1.6rem;
+    padding: 1.2rem 1.6rem 1.2rem 0.2rem;
     font-weight: 400;
   }
 
@@ -196,7 +196,7 @@
 
   .select {
     font-size: 1.5rem;
-    padding: 1.3rem 1.8rem;
+    padding: 1.3rem 1.8rem 1.3rem 0.2rem;
     width: 100%;
     box-sizing: border-box;
     font-weight: 400;
@@ -223,7 +223,7 @@
 
   .select {
     font-size: 1.5rem;
-    padding: 1rem 1.4rem;
+    padding: 1rem 1.4rem 1rem 0.2rem;
     box-sizing: border-box;
     font-weight: 400;
   }
@@ -246,7 +246,7 @@
   }
 
   .select {
-    padding: 1rem 1.2rem;
+    padding: 1rem 1.2rem 1rem 0.2rem;
     font-weight: 500;
   }
 
