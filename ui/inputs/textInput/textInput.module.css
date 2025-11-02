@@ -137,8 +137,9 @@
   font-weight: 600;
   line-height: 100%;
   letter-spacing: 0.2px;
-  color: #5a6b7d;
+  color: #000;
   text-transform: uppercase;
+  font-family: "UK Number Plate", monospace;
 }
 
 .input {
