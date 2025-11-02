@@ -718,7 +718,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 2rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -728,7 +728,7 @@
   .ownershipSection,
   .rows {
     padding: 1.6rem;
-    gap: 1.8rem;
+    gap: 2rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -762,7 +762,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 2rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -772,7 +772,7 @@
   .ownershipSection,
   .rows {
     padding: 1.6rem;
-    gap: 1.8rem;
+    gap: 2rem;
     width: 100%;
     box-sizing: border-box;
   }
