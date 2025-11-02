@@ -239,3 +239,39 @@
     font-size: 1.3rem;
   }
 }
+
+@media (max-width: 400px) {
+  .coverContainer {
+    gap: 2.4rem;
+  }
+
+  .section {
+    gap: 1.4rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .levelCard {
+    padding: 1.6rem;
+    gap: 1rem;
+  }
+
+  .dateSection {
+    padding: 1.6rem;
+    gap: 1.4rem;
+  }
+
+  .levelTitle {
+    font-size: 1.4rem;
+  }
+
+  .levelDescription {
+    font-size: 1.2rem;
+  }
+}
