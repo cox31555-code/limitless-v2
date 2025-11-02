@@ -200,7 +200,7 @@
 
   .label {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 0.8rem;
   }
 
@@ -218,6 +218,7 @@
   .input {
     font-size: 1.3rem;
     padding-left: 6.5rem;
+    font-weight: 500;
   }
 
   .input::placeholder {
@@ -247,7 +248,7 @@
 
   .label {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 0.8rem;
   }
 
@@ -267,6 +268,7 @@
   .input {
     font-size: 1.6rem;
     padding-left: 6.5rem;
+    font-weight: 500;
   }
 
   .input::placeholder {
