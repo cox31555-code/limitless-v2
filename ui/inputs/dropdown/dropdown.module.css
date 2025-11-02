@@ -1,7 +1,7 @@
 .label {
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 130%;
   letter-spacing: 0.2px;
   text-transform: capitalize;
@@ -167,11 +167,12 @@
   .select {
     font-size: 1.4rem;
     padding: 1.2rem 1.6rem;
+    font-weight: 500;
   }
 
   .label {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 0.8rem;
   }
 
@@ -198,11 +199,12 @@
     padding: 1.3rem 1.8rem;
     width: 100%;
     box-sizing: border-box;
+    font-weight: 500;
   }
 
   .label {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 0.8rem;
   }
 
