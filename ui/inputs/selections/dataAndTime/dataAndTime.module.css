@@ -151,7 +151,10 @@
   }
 
   .iconContainer {
-    display: none;
+    /* Removed display: none; to ensure icons are visible again */
+    width: 2rem;
+    height: 2rem;
+    right: 1.4rem; /* Reverted to previous value */
   }
 
   .label {
