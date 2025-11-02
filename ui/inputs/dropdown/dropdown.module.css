@@ -216,7 +216,7 @@
 
 @media screen and (max-width: 400px) {
   .selectWrapper {
-    height: 5.2rem;
+    height: 5.6rem;
     padding: 1rem 1.4rem;
     box-sizing: border-box;
   }
@@ -225,10 +225,13 @@
     font-size: 1.5rem;
     padding: 1rem 1.4rem;
     box-sizing: border-box;
+    font-weight: 500;
   }
 
   .label {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
   }
 
   .arrowContainer {
@@ -238,11 +241,19 @@
 
 @media screen and (max-width: 360px) {
   .selectWrapper {
+    height: 5.6rem;
     padding: 1rem 1.2rem;
   }
 
   .select {
     padding: 1rem 1.2rem;
+    font-weight: 500;
+  }
+
+  .label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
   }
 
   .arrowContainer {
