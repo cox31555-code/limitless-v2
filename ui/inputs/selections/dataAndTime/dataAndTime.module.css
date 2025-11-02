@@ -202,11 +202,13 @@
 
   .label {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-weight: 500;
+    margin-bottom: 0;
   }
 
   .input {
     font-size: 1.5rem;
+    font-weight: 500;
   }
 
   .arrowDown {
@@ -241,12 +243,14 @@
   }
 
   .label {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0;
   }
 
   .input {
     font-size: 1.6rem;
+    font-weight: 500;
   }
 
   .arrowDown {
