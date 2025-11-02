@@ -395,7 +395,7 @@ const VehicleDetailsForm = ({
               <FormTextInput
                 reg={true}
                 label="Registration Number"
-                placeholder="e.g., AB51 ABC"
+                placeholder=""
                 {...register("vehicleDetails.registrationNumber")}
                 error={errors.vehicleDetails?.registrationNumber}
                 value={watch("vehicleDetails.registrationNumber") || ""}
