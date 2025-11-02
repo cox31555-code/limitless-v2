@@ -77,17 +77,17 @@
 
 /* Registration Input Grey Border */
 .inputContainer:has(.input.reg) {
-  border: 1.5px solid #c5cdd5;
+  border: 1px solid #e0e5ec;
 }
 
 .inputContainer:has(.input.reg):hover {
-  border: 1.5px solid #a8b2bd;
+  border: 1px solid #d5dce5;
   background: #ffffff;
 }
 
 .inputContainer:has(.input.reg):focus-within {
-  border: 1.5px solid #5a6b7d;
-  box-shadow: 0 0 0 2px rgba(90, 107, 125, 0.1);
+  border: 1px solid #a8b2bd;
+  box-shadow: none;
 }
 
 .inputContainer.disabled {
@@ -110,7 +110,7 @@
   bottom: 0;
   width: 6.5rem;
   border-radius: 10px 0 0 10px;
-  background: linear-gradient(135deg, rgba(160, 174, 192, 0.15) 0%, rgba(160, 174, 192, 0.08) 100%);
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,7 +120,7 @@
   flex-shrink: 0;
   border: none;
   margin-right: 0;
-  border-right: none;
+  border-right: 1px solid #e0e5ec;
   pointer-events: none;
 }
 
@@ -134,7 +134,7 @@
 
 .gbText {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 100%;
   letter-spacing: 0.2px;
   color: #5a6b7d;
