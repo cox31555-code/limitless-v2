@@ -195,15 +195,17 @@
 
 @media screen and (max-width: 900px) {
   .inputGroup {
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
   .label {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
   }
 
   .inputContainer {
-    height: 5.2rem;
+    height: 5.6rem;
     padding: 1.2rem 1.6rem;
     border-radius: 10px;
   }
@@ -239,16 +241,18 @@
 
 @media screen and (max-width: 600px) {
   .inputGroup {
-    gap: 1.1rem;
+    gap: 0.8rem;
     width: 100%;
   }
 
   .label {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
   }
 
   .inputContainer {
-    height: 5.2rem;
+    height: 5.6rem;
     padding: 1.2rem 1.6rem;
     border-radius: 10px;
     width: 100%;
