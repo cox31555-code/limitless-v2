@@ -286,17 +286,18 @@
 
   .inputContainer {
     height: 5.2rem;
-    padding: 1.2rem 1.6rem;
+    padding: 1rem 1.4rem;
     border-radius: 10px;
+    box-sizing: border-box;
   }
 
   .inputSpan {
-    width: 6.5rem;
+    width: 6rem;
   }
 
   .input {
     font-size: 1.5rem;
-    padding-left: 6.5rem;
+    padding-left: 6rem;
   }
 
   .input::placeholder {
@@ -305,6 +306,24 @@
 
   .input.reg {
     font-size: 1.5rem;
-    padding-left: 6.5rem;
+    padding-left: 6rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .inputContainer {
+    padding: 1rem 1.2rem;
+  }
+
+  .inputSpan {
+    width: 5.6rem;
+  }
+
+  .input {
+    padding-left: 5.6rem;
+  }
+
+  .input.reg {
+    padding-left: 5.6rem;
   }
 }
