@@ -173,7 +173,7 @@
   .label {
     font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0;
   }
 
   .arrowDown {
@@ -205,7 +205,7 @@
   .label {
     font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0;
   }
 
   .arrowDown {
@@ -231,7 +231,7 @@
   .label {
     font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0;
   }
 
   .arrowContainer {
@@ -253,7 +253,7 @@
   .label {
     font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0;
   }
 
   .arrowContainer {
