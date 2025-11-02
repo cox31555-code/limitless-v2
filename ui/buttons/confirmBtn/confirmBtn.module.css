@@ -88,9 +88,24 @@
 
 @media screen and (max-width: 900px) {
   .confirmBtn {
+    height: 5.4rem;
+    font-size: 1.3rem;
+    padding: 1.1rem 1.8rem;
+    gap: 0.7rem;
+  }
+
+  .arrowRight {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .confirmBtn {
     height: 5.2rem;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     padding: 1rem 1.6rem;
+    border-radius: 8px;
     gap: 0.6rem;
   }
 
@@ -100,32 +115,17 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   .confirmBtn {
     height: 5rem;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     padding: 0.95rem 1.4rem;
     border-radius: 8px;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 
   .arrowRight {
     width: 1.4rem;
     height: 1.4rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .confirmBtn {
-    height: 4.8rem;
-    font-size: 1.1rem;
-    padding: 0.9rem 1.2rem;
-    border-radius: 8px;
-    gap: 0.5rem;
-  }
-
-  .arrowRight {
-    width: 1.3rem;
-    height: 1.3rem;
   }
 }
