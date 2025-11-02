@@ -439,7 +439,7 @@
 /* Responsive */
 @media (max-width: 900px) {
   .content {
-    gap: 2.8rem;
+    gap: 3.2rem;
   }
 
   .instructionBox {
