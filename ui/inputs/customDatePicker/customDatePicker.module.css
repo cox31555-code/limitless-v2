@@ -220,19 +220,18 @@
 @media screen and (max-width: 900px) {
   .calendar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: auto;
-    border-radius: 16px 16px 0 0;
-    max-width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+    max-width: calc(100% - 3.2rem);
     width: 100%;
-    max-height: 80vh;
-    animation: slideUpMobile 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 90vh;
+    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .calendar.slideUp {
-    animation: slideUpMobile 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
