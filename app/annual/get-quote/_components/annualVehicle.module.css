@@ -446,6 +446,7 @@
     padding: 1.4rem;
     gap: 1rem;
     opacity: 0.65;
+    margin-bottom: 0.6rem;
   }
 
   .instructionIcon {
@@ -607,7 +608,7 @@
   .instructionBox {
     padding: 1.2rem;
     gap: 0.8rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.4rem;
     opacity: 0.65;
   }
 
