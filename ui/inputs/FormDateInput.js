@@ -301,33 +301,31 @@ const FormDateInput = forwardRef(
             </div>
           </div>
 
+          {showDatePicker && isMobile && (
+            <div
+              className={styles.modalOverlay}
+              onClick={closeDatePicker}
+            />
+          )}
           {showDatePicker && (
-            <>
-              {isMobile && (
-                <div
-                  className={styles.modalOverlay}
-                  onClick={closeDatePicker}
-                />
-              )}
-              <div className={styles.pickerContainer} ref={datePickerRef} style={{
-                position: 'fixed',
-                top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
-                bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
-                left: isMobile ? '50%' : pickerPosition.left,
-                right: isMobile ? 'auto' : 'auto',
-                transform: isMobile ? 'translate(-50%, -50%)' : 'none',
-                zIndex: 99999
-              }}>
-                <CustomDatePicker
-                  selectedDate={parseDate(value)}
-                  onDateSelect={handleDateSelect}
-                  minDate={minDate || (allowPastDates ? null : today)}
-                  maxDate={maxDate}
-                  showAbove={pickerPosition.showAbove}
-                  defaultYear={defaultYear}
-                />
-              </div>
-            </>
+            <div className={styles.pickerContainer} ref={datePickerRef} style={{
+              position: 'fixed',
+              top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
+              bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
+              left: isMobile ? '50%' : pickerPosition.left,
+              right: isMobile ? 'auto' : 'auto',
+              transform: isMobile ? 'translate(-50%, -50%)' : 'none',
+              zIndex: 99999
+            }}>
+              <CustomDatePicker
+                selectedDate={parseDate(value)}
+                onDateSelect={handleDateSelect}
+                minDate={minDate || (allowPastDates ? null : today)}
+                maxDate={maxDate}
+                showAbove={pickerPosition.showAbove}
+                defaultYear={defaultYear}
+              />
+            </div>
           )}
         </>
       );
@@ -405,31 +403,29 @@ const FormDateInput = forwardRef(
             </div>
           </div>
 
+          {showTimePicker && isMobile && (
+            <div
+              className={styles.modalOverlay}
+              onClick={closeTimePicker}
+            />
+          )}
           {showTimePicker && (
-            <>
-              {isMobile && (
-                <div
-                  className={styles.modalOverlay}
-                  onClick={closeTimePicker}
-                />
-              )}
-              <div className={styles.pickerContainer} ref={timePickerRef} style={{
-                position: 'fixed',
-                top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
-                bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
-                left: isMobile ? '50%' : pickerPosition.left,
-                right: isMobile ? 'auto' : 'auto',
-                transform: isMobile ? 'translate(-50%, -50%)' : 'none',
-                zIndex: 99999
-              }}>
-                <CustomTimePicker
-                  selectedTime={value || "10:00"}
-                  onTimeSelect={handleTimeSelect}
-                  onClose={closeTimePicker}
-                  showAbove={pickerPosition.showAbove}
-                />
-              </div>
-            </>
+            <div className={styles.pickerContainer} ref={timePickerRef} style={{
+              position: 'fixed',
+              top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
+              bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
+              left: isMobile ? '50%' : pickerPosition.left,
+              right: isMobile ? 'auto' : 'auto',
+              transform: isMobile ? 'translate(-50%, -50%)' : 'none',
+              zIndex: 99999
+            }}>
+              <CustomTimePicker
+                selectedTime={value || "10:00"}
+                onTimeSelect={handleTimeSelect}
+                onClose={closeTimePicker}
+                showAbove={pickerPosition.showAbove}
+              />
+            </div>
           )}
         </>
       );
