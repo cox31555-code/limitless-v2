@@ -172,30 +172,15 @@
 }
 
 @media screen and (max-width: 900px) {
-  .inputContainer {
-    height: 5.2rem;
-    padding: 1.2rem 1.6rem;
-  }
-
-  .iconContainer {
-    /* Removed display: none; to ensure icons are visible again */
-    width: 2rem;
-    height: 2rem;
-    right: 1.4rem; /* Reverted to previous value */
-  }
-
-  .label {
-    font-size: 1.4rem;
-  }
-
-  .input {
-    font-size: 1.3rem;
-  }
-}
-
-@media screen and (max-width: 900px) {
   .container {
     gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputGroup {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .inputContainer {
@@ -230,6 +215,13 @@
     width: 100%;
     box-sizing: border-box;
     gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputGroup {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .inputContainer {
@@ -275,6 +267,13 @@
 @media screen and (max-width: 400px) {
   .container {
     gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputGroup {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .inputContainer {
@@ -316,6 +315,16 @@
 }
 
 @media screen and (max-width: 360px) {
+  .container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputGroup {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   .inputContainer {
     height: 5.6rem;
     min-height: 5.6rem;
