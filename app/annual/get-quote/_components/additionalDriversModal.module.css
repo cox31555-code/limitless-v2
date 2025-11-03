@@ -229,6 +229,10 @@
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.formSection.expanded {
+  border: 1.5px solid rgba(3, 136, 255, 0);
+}
+
 .formSection.disabled {
   opacity: 0.55 !important;
   border-color: rgba(3, 136, 255, 0.06) !important;
