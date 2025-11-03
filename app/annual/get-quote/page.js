@@ -46,9 +46,11 @@ const AnnualInsuranceContent = () => {
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
+  const [formReady, setFormReady] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    setFormReady(true);
   }, []);
 
   const form = useForm({
