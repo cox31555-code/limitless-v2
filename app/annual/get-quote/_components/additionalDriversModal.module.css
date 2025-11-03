@@ -459,11 +459,19 @@
   width: 100%;
 }
 
+.cleanFormGrid2Col > * {
+  margin-bottom: 0;
+}
+
 .cleanFormGrid3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
   width: 100%;
+}
+
+.cleanFormGrid3Col > * {
+  margin-bottom: 0;
 }
 
 .fieldRow3Col {
@@ -583,8 +591,17 @@
     gap: 2rem;
   }
 
+  .cleanFormGrid2Col > *,
+  .cleanFormGrid3Col > * {
+    margin-bottom: 0;
+  }
+
   .cleanFormGrid1Col {
     gap: 2rem;
+  }
+
+  .cleanFormGrid1Col > * {
+    margin-bottom: 0;
   }
 
   .sectionLabel {
@@ -613,8 +630,17 @@
     gap: 2rem;
   }
 
+  .cleanFormGrid2Col > *,
+  .cleanFormGrid3Col > * {
+    margin-bottom: 0;
+  }
+
   .cleanFormGrid1Col {
     gap: 2rem;
+  }
+
+  .cleanFormGrid1Col > * {
+    margin-bottom: 0;
   }
 
   .sectionLabel {
@@ -648,8 +674,17 @@
     gap: 2rem;
   }
 
+  .cleanFormGrid2Col > *,
+  .cleanFormGrid3Col > * {
+    margin-bottom: 0;
+  }
+
   .cleanFormGrid1Col {
     gap: 2rem;
+  }
+
+  .cleanFormGrid1Col > * {
+    margin-bottom: 0;
   }
 
   .sectionLabel {
@@ -683,8 +718,17 @@
     gap: 2rem;
   }
 
+  .cleanFormGrid2Col > *,
+  .cleanFormGrid3Col > * {
+    margin-bottom: 0;
+  }
+
   .cleanFormGrid1Col {
     gap: 2rem;
+  }
+
+  .cleanFormGrid1Col > * {
+    margin-bottom: 0;
   }
 
   .sectionLabel {
