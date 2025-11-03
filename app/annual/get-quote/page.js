@@ -13,10 +13,10 @@ import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
 import styles from "@/app/temporary/get-quote/stepForm.module.css";
 
-const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
-const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
-const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPersonalDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
-const ReviewQuote = dynamic(() => import("@/app/temporary/get-quote/_components/ReviewQuote"), { ssr: false, loading: () => <StepFallback /> });
+const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { loading: () => <StepFallback /> });
+const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { loading: () => <StepFallback /> });
+const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPersonalDetailsForm"), { loading: () => <StepFallback /> });
+const ReviewQuote = dynamic(() => import("@/app/temporary/get-quote/_components/ReviewQuote"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
