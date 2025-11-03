@@ -609,6 +609,7 @@
 @media (max-width: 600px) {
   .content {
     gap: 3.2rem;
+    padding: 0 1.8rem;
   }
 
   .instructionBox {
@@ -723,6 +724,7 @@
 @media (max-width: 400px) {
   .content {
     gap: 2.8rem;
+    padding: 0 1.4rem;
   }
 
   .instructionBox {
@@ -789,6 +791,7 @@
 @media (max-width: 360px) {
   .content {
     gap: 2.6rem;
+    padding: 0 1.2rem;
   }
 
   .instructionBox {
