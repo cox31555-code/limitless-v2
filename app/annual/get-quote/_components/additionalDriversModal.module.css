@@ -405,6 +405,11 @@
   display: block;
 }
 
+.radioLabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 .fieldHelper {
   font-size: 1rem;
   color: #7a8a9d;
@@ -605,7 +610,23 @@
   }
 
   .sectionLabel {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .fieldLabel {
     font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .inputLabel {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .radioLabel {
+    font-size: 1.3rem;
+    font-weight: 500;
   }
 
   .formSection {
@@ -644,8 +665,23 @@
   }
 
   .sectionLabel {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .fieldLabel {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
+  }
+
+  .inputLabel {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .radioLabel {
+    font-size: 1.4rem;
+    font-weight: 500;
   }
 
   .formSection {
@@ -688,8 +724,23 @@
   }
 
   .sectionLabel {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .fieldLabel {
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 600;
+  }
+
+  .inputLabel {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .radioLabel {
+    font-size: 1.3rem;
+    font-weight: 500;
   }
 
   .formSection {
