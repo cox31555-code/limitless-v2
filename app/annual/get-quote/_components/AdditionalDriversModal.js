@@ -395,7 +395,7 @@ const AdditionalDriversModal = ({
                   </div>
 
                   {/* Driving Record Section */}
-                  <div className={`${modalStyles.formSection} ${isTileDisabled(index, 'driving') ? modalStyles.disabled : ''}`}>
+                  <div className={`${modalStyles.formSection} ${isTileExpanded(index, 'driving') ? modalStyles.expanded : ''} ${isTileDisabled(index, 'driving') ? modalStyles.disabled : ''}`}>
                     <button type="button" className={`${modalStyles.tileHeader} ${isTileExpanded(index, 'driving') ? modalStyles.expanded : ''} ${isTileDisabled(index, 'driving') ? modalStyles.disabled : ''}`} onClick={() => toggleTile(index, 'driving')}>
                       <h4 className={modalStyles.sectionLabel}>Driving Record</h4>
                       <span className={modalStyles.expandIcon}>+</span>
