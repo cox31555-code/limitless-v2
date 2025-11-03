@@ -580,7 +580,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 2rem;
   }
 
   .sectionLabel {
@@ -588,7 +588,7 @@
   }
 
   .formSection {
-    gap: 1.4rem;
+    gap: 2rem;
     padding: 0;
   }
 
@@ -606,7 +606,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 2rem;
   }
 
   .sectionLabel {
