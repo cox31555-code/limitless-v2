@@ -1606,8 +1606,9 @@
 .cleanFormContent {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2.8rem;
   width: 100%;
+  padding: 0 2.4rem;
 }
 
 .cleanSection {
