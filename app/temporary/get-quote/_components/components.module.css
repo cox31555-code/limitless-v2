@@ -1679,7 +1679,7 @@
 .cleanFormGrid1Col {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.2rem;
   width: 100%;
 }
 
