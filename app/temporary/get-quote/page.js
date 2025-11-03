@@ -285,8 +285,7 @@ const TemporaryInsuranceContent = () => {
               nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Next"}
               backLabel="Back"
             />
-          </form>
-        )}
+        </form>
       </div>
     </div>
   );
