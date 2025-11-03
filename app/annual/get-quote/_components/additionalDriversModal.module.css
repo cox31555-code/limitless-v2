@@ -803,6 +803,12 @@
   .formSection.expanded,
   .driverItem.expanded {
     border: none !important;
+    border-bottom: none !important;
+  }
+
+  .formSection.expanded .tileHeader {
+    border: none !important;
+    border-bottom: none !important;
   }
 
   .driverItem {
