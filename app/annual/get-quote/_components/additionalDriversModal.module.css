@@ -227,16 +227,15 @@
   flex-direction: column;
   gap: 1.6rem;
   background: #ffffff;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border: none;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
   overflow: visible;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.formSection.expanded {
-  border: 0 !important;
-  border-bottom: 0 !important;
+.formSection:not(.expanded) {
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
 }
 
 .formSection.expanded .tileHeader {
