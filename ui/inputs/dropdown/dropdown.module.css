@@ -160,6 +160,11 @@
 }
 
 @media screen and (max-width: 900px) {
+  .container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   .selectWrapper {
     height: 5.6rem;
   }
@@ -186,6 +191,8 @@
   .container {
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .selectWrapper {
@@ -215,6 +222,11 @@
 }
 
 @media screen and (max-width: 400px) {
+  .container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   .selectWrapper {
     height: 5.6rem;
     padding: 1rem 1.4rem;
@@ -240,6 +252,11 @@
 }
 
 @media screen and (max-width: 360px) {
+  .container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   .selectWrapper {
     height: 5.6rem;
     padding: 1rem 1.2rem;
