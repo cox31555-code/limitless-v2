@@ -152,6 +152,7 @@
 @media (max-width: 900px) {
   .coverContainer {
     gap: 3.2rem;
+    padding: 0 1.8rem;
   }
 
   .section {
@@ -193,6 +194,7 @@
 @media (max-width: 600px) {
   .coverContainer {
     gap: 3.6rem;
+    padding: 0 2rem;
   }
 
   .section {
@@ -253,6 +255,7 @@
 @media (max-width: 400px) {
   .coverContainer {
     gap: 3.2rem;
+    padding: 0 1.6rem;
   }
 
   .section {
@@ -312,6 +315,7 @@
 @media (max-width: 360px) {
   .coverContainer {
     gap: 3rem;
+    padding: 0 1.4rem;
   }
 
   .section {
