@@ -3,26 +3,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 0;
-  background: linear-gradient(135deg, #000822 0%, #001a4d 50%, #000822 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
   width: 100%;
   min-height: auto;
-  padding: 7rem 5%;
+  padding: 6.4rem 4.8rem;
   margin: 0;
-  gap: 4.5rem;
+  gap: 3.2rem;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 .container::before {
   content: '';
   position: absolute;
-  top: -30%;
-  left: -15%;
-  width: 50rem;
-  height: 50rem;
+  top: 0;
+  right: 0;
+  width: 60rem;
+  height: 60rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(3, 136, 255, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.03) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -30,12 +31,12 @@
 .container::after {
   content: '';
   position: absolute;
-  bottom: -20%;
-  right: -10%;
+  bottom: 0;
+  left: -10rem;
   width: 40rem;
   height: 40rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(3, 136, 255, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.02) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -45,33 +46,37 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.8rem;
+  gap: 2.4rem;
   width: 100%;
-  max-width: 80rem;
+  max-width: 86rem;
   position: relative;
   z-index: 1;
 }
 
 .title {
-  color: #fff;
-  font-size: 5.2rem;
-  font-weight: 800;
-  line-height: 110%;
+  color: #000822;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.3;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0;
+  gap: 0.4rem;
   text-align: center;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 
 .titleSpan {
   color: #0388ff;
-  font-size: 5.2rem;
-  font-weight: 800;
-  letter-spacing: -1px;
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   position: relative;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .curvedBorder {
@@ -80,26 +85,28 @@
 
 .buttons {
   display: flex;
-  gap: 2rem;
+  gap: 1.6rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 0.8rem;
 }
 
 .getQuoteBtn,
 .membersPortalBtn {
   display: flex;
-  height: 5.8rem;
-  padding: 1.6rem 4rem;
-  gap: 1.4rem;
+  height: 5.2rem;
+  padding: 1.2rem 3.2rem;
+  gap: 0.8rem;
   align-items: center;
-  border-radius: 14px;
-  border: 2px solid;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1.5px solid;
   color: #fff;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 140%;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.5;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -107,40 +114,41 @@
   z-index: 2;
   font-family: inherit;
   text-transform: capitalize;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .getQuoteBtn {
-  background: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border-color: #0388ff;
+  color: #ffffff;
 }
 
 .getQuoteBtn:hover {
-  background: #0388ff;
-  border-color: #0388ff;
-  opacity: 0.9;
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
 }
 
 .getQuoteBtn:active {
-  background: #0388ff;
-  border-color: #0388ff;
-  opacity: 0.85;
+  opacity: 0.88;
+  transform: translateY(0);
 }
 
 .membersPortalBtn {
-  background: transparent;
-  border-color: rgba(3, 136, 255, 0.6);
-  color: #fff;
+  background: #ffffff;
+  border-color: rgba(3, 136, 255, 0.2);
+  color: #000822;
 }
 
 .membersPortalBtn:hover {
-  background: rgba(3, 136, 255, 0.08);
-  border-color: rgba(3, 136, 255, 0.8);
-  opacity: 0.95;
+  background: #f8fbff;
+  border-color: rgba(3, 136, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.08);
 }
 
 .membersPortalBtn:active {
-  background: rgba(3, 136, 255, 0.12);
+  background: #ffffff;
   border-color: #0388ff;
 }
 
@@ -166,7 +174,6 @@
   z-index: 0;
 }
 
-
 .image {
   display: none;
 }
@@ -179,108 +186,119 @@
 
 @media screen and (max-width: 1300px) {
   .title {
-    font-size: 4rem;
+    font-size: 3.2rem;
   }
 
   .titleSpan {
-    font-size: 4rem;
+    font-size: 3.2rem;
   }
 
   .container {
-    padding: 6rem 4%;
+    padding: 5.6rem 4rem;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .container {
-    padding: 5rem 4%;
-    gap: 3.5rem;
+    padding: 5rem 3.6rem;
+    gap: 2.8rem;
   }
 
   .content {
-    gap: 2.4rem;
+    gap: 2rem;
   }
 
   .title {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
   }
 
   .titleSpan {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
   }
 
   .buttons {
-    gap: 1.6rem;
+    gap: 1.4rem;
     width: 100%;
+    margin-top: 0.6rem;
   }
 
   .getQuoteBtn,
   .membersPortalBtn {
-    padding: 1.4rem 3.5rem;
-    font-size: 1.4rem;
-    height: 5.4rem;
+    padding: 1.1rem 2.8rem;
+    font-size: 1.25rem;
+    height: 5rem;
   }
 }
 
 @media screen and (max-width: 650px) {
   .container {
-    padding: 6.5rem 3%;
-    gap: 4rem;
+    padding: 5rem 2.4rem;
+    gap: 2.4rem;
+    border-radius: 0;
   }
 
   .content {
-    gap: 3.6rem;
+    gap: 1.8rem;
   }
 
   .title {
-    font-size: 4.2rem;
+    font-size: 2.2rem;
   }
 
   .titleSpan {
-    font-size: 4.2rem;
+    font-size: 2.2rem;
   }
 
   .buttons {
-    gap: 1.4rem;
+    gap: 1.2rem;
     flex-direction: column;
     width: 100%;
+    margin-top: 0.4rem;
   }
 
   .getQuoteBtn,
   .membersPortalBtn {
     width: 100%;
-    padding: 1.4rem 3.2rem;
-    font-size: 1.4rem;
-    height: 5.4rem;
+    padding: 1rem 2.4rem;
+    font-size: 1.2rem;
+    height: 4.8rem;
     justify-content: center;
   }
 }
 
 @media screen and (max-width: 450px) {
   .container {
-    padding: 5.5rem 3%;
-    gap: 3.2rem;
+    padding: 4rem 1.6rem;
+    gap: 2rem;
+  }
+
+  .content {
+    gap: 1.6rem;
   }
 
   .title {
-    font-size: 3.2rem;
+    font-size: 1.9rem;
   }
 
   .titleSpan {
-    font-size: 3.2rem;
+    font-size: 1.9rem;
+  }
+
+  .buttons {
+    gap: 1rem;
   }
 
   .getQuoteBtn,
   .membersPortalBtn {
-    padding: 1.4rem 2.8rem;
-    font-size: 1.3rem;
-    height: 5.2rem;
+    padding: 0.95rem 2rem;
+    font-size: 1.15rem;
+    height: 4.6rem;
     width: 100%;
   }
 
   .getQuoteBtn img,
   .membersPortalBtn img {
-    width: 20px;
-    height: 10px;
+    width: 18px;
+    height: 9px;
   }
 }
