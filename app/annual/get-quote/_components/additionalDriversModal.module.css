@@ -742,7 +742,8 @@
   .modalContainer {
     width: 96%;
     max-width: 76rem;
-    max-height: 88vh;
+    max-height: min(70vh, 100dvh - 80px);
+    overflow-y: auto;
   }
 
   .modalHeader {
@@ -994,8 +995,9 @@
   .modalContainer {
     width: 98%;
     max-width: 100%;
-    max-height: 82vh;
+    max-height: min(70vh, 100dvh - 80px);
     border-radius: 10px;
+    overflow-y: auto;
   }
 
   .modalHeader {
