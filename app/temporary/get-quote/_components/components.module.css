@@ -1494,6 +1494,16 @@
       font-size: 1.3rem;
       font-weight: 500;
     }
+
+    .cleanLabel {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    .cleanDeclarationQuestion {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
   }
 
   .progressiveRow {
