@@ -1872,7 +1872,7 @@
 
 .cleanDeclarationItem.expanded,
 .cleanDeclarationItem:focus-within {
-  border: none !important;
+  border: 0 !important;
 }
 
 .cleanDeclarationQuestion {
