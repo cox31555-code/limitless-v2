@@ -1401,6 +1401,22 @@
     margin-bottom: 1.8rem;
   }
 
+  .parkingCard h4,
+  .parkingCard label {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .usageLabel {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .declarationQuestion {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
   @media screen and (max-width: 600px) {
     .row {
       grid-template-columns: 1fr;
@@ -1451,6 +1467,22 @@
 
     .declarationItem {
       padding: 1.2rem;
+    }
+
+    .parkingCard h4,
+    .parkingCard label {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .usageLabel {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .declarationQuestion {
+      font-size: 1.3rem;
+      font-weight: 500;
     }
   }
 
