@@ -792,11 +792,6 @@
     border-bottom: 0 !important;
   }
 
-  .formSection.expanded .tileHeader {
-    border: 0 !important;
-    border-bottom: 0 !important;
-  }
-
   .driverItem {
     padding: 2rem;
   }
