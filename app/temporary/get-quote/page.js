@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insuranceSchema } from "@/utils/schemas/insuranceSchema";
@@ -12,10 +13,10 @@ import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
 import styles from "./stepForm.module.css";
 
-const VehicleDetailsForm = lazy(() => import("./_components/VehicleDetailsForm"));
-const CoverDetailsForm = lazy(() => import("./_components/CoverDetailsForm"));
-const PersonalDetailsForm = lazy(() => import("./_components/PersonalDetailsForm"));
-const ReviewQuote = lazy(() => import("./_components/ReviewQuote"));
+const VehicleDetailsForm = dynamic(() => import("./_components/VehicleDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
+const CoverDetailsForm = dynamic(() => import("./_components/CoverDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
+const PersonalDetailsForm = dynamic(() => import("./_components/PersonalDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
+const ReviewQuote = dynamic(() => import("./_components/ReviewQuote"), { ssr: false, loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
@@ -252,38 +253,27 @@ const TemporaryInsuranceContent = () => {
       <LoadingOverlay isVisible={showLoading} />
       <GetQuoteHeaderWithNav title="Temporary Insurance Quote" currentStep={currentStep} totalSteps={4} />
       <div className="centeredContent" suppressHydrationWarning>
-        {!formReady ? (
-          <StepFallback />
-        ) : (
-          <form
-            className={styles.stepFormContainer}
-            noValidate
-            suppressHydrationWarning
-          >
+        <form
+          className={styles.stepFormContainer}
+          noValidate
+          suppressHydrationWarning
+        >
           <div className={styles.stepContent}>
-            <Suspense fallback={<StepFallback />}>
-              {currentStep === STEPS.VEHICLE && (
-                <VehicleDetailsForm
-                  form={form}
-                  onVehicleDataFound={setFoundVehicleData}
-                  autoTriggerLookup={shouldAutoTrigger}
-                />
-              )}
-            </Suspense>
-            <Suspense fallback={<StepFallback />}>
-              {currentStep === STEPS.COVER && <CoverDetailsForm form={form} />}
-            </Suspense>
-            <Suspense fallback={<StepFallback />}>
-              {currentStep === STEPS.PERSONAL && (
-                <PersonalDetailsForm form={form} />
-              )}
-            </Suspense>
-            <Suspense fallback={<StepFallback />}>
-              {currentStep === STEPS.REVIEW && (
-                <ReviewQuote form={form} insuranceType="Temp" />
-              )}
-            </Suspense>
-            </div>
+            {currentStep === STEPS.VEHICLE && (
+              <VehicleDetailsForm
+                form={form}
+                onVehicleDataFound={setFoundVehicleData}
+                autoTriggerLookup={shouldAutoTrigger}
+              />
+            )}
+            {currentStep === STEPS.COVER && <CoverDetailsForm form={form} />}
+            {currentStep === STEPS.PERSONAL && (
+              <PersonalDetailsForm form={form} />
+            )}
+            {currentStep === STEPS.REVIEW && (
+              <ReviewQuote form={form} insuranceType="Temp" />
+            )}
+          </div>
 
             <StepActions
               currentStep={currentStep}
