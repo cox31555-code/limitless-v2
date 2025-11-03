@@ -252,11 +252,14 @@ const TemporaryInsuranceContent = () => {
       <LoadingOverlay isVisible={showLoading} />
       <GetQuoteHeaderWithNav title="Temporary Insurance Quote" currentStep={currentStep} totalSteps={4} />
       <div className="centeredContent" suppressHydrationWarning>
-        <form
-          className={styles.stepFormContainer}
-          noValidate
-          suppressHydrationWarning
-        >
+        {!formReady ? (
+          <StepFallback />
+        ) : (
+          <form
+            className={styles.stepFormContainer}
+            noValidate
+            suppressHydrationWarning
+          >
           <div className={styles.stepContent}>
             <Suspense fallback={<StepFallback />}>
               {currentStep === STEPS.VEHICLE && (
