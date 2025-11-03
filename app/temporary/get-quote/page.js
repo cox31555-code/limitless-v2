@@ -45,6 +45,7 @@ const TemporaryInsuranceContent = () => {
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
+  const [formReady, setFormReady] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(insuranceSchema),
@@ -103,6 +104,10 @@ const TemporaryInsuranceContent = () => {
   });
 
   const { setValue, trigger } = form;
+
+  useEffect(() => {
+    setFormReady(true);
+  }, []);
 
   // Handle step parameter from URL
   useEffect(() => {
@@ -275,19 +280,20 @@ const TemporaryInsuranceContent = () => {
                 <ReviewQuote form={form} insuranceType="Temp" />
               )}
             </Suspense>
-          </div>
+            </div>
 
-          <StepActions
-            currentStep={currentStep}
-            totalSteps={4}
-            onNext={handleNextStep}
-            onBack={handlePreviousStep}
-            onSubmit={onSubmit}
-            isLoading={isSubmitting}
-            nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Next"}
-            backLabel="Back"
-          />
-        </form>
+            <StepActions
+              currentStep={currentStep}
+              totalSteps={4}
+              onNext={handleNextStep}
+              onBack={handlePreviousStep}
+              onSubmit={onSubmit}
+              isLoading={isSubmitting}
+              nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Next"}
+              backLabel="Back"
+            />
+          </form>
+        )}
       </div>
     </div>
   );
@@ -295,7 +301,7 @@ const TemporaryInsuranceContent = () => {
 
 const TemporaryInsurancePage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<GetQuoteHeaderWithNav title="Temporary Insurance Quote" currentStep={1} totalSteps={4} />}>
       <TemporaryInsuranceContent />
     </Suspense>
   );
