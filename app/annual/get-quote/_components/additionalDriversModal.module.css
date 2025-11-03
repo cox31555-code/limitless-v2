@@ -151,7 +151,7 @@
 
 .driverHeader.expanded {
   background: rgba(3, 136, 255, 0.1);
-  border-bottom: 1.5px solid rgba(3, 136, 255, 0);
+  border-bottom: none !important;
 }
 
 .driverHeader.disabled {
