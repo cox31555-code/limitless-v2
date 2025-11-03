@@ -115,7 +115,7 @@
 .driverItem {
   padding: 0;
   background: #ffffff;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border: none;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -125,8 +125,8 @@
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.driverItem.expanded {
-  border: 0 !important;
+.driverItem:not(.expanded) {
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
 }
 
 .driverHeader {
