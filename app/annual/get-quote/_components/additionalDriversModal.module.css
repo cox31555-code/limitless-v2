@@ -405,10 +405,6 @@
   display: block;
 }
 
-.formSection {
-  padding: 0 1.6rem !important;
-}
-
 .radioLabel {
   font-size: 1.2rem;
   font-weight: 500;
@@ -587,254 +583,6 @@
   margin-top: 0;
 }
 
-/* Mobile Responsive Breakpoints - Step 3 Optimization */
-@media (max-width: 900px) {
-  .modalTitle {
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  .modalSubtitle {
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-
-  .cleanFormContent {
-    gap: 2.8rem;
-    padding: 0 1.4rem;
-  }
-
-  .cleanFormGrid2Col,
-  .cleanFormGrid3Col {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .cleanFormGrid2Col > *,
-  .cleanFormGrid3Col > * {
-    margin-bottom: 0;
-  }
-
-  .cleanFormGrid1Col {
-    gap: 2rem;
-  }
-
-  .cleanFormGrid1Col > * {
-    margin-bottom: 0;
-  }
-
-  .sectionLabel {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  .fieldLabel {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-
-  .inputLabel {
-    font-size: 1.4rem;
-    font-weight: 500;
-  }
-
-  .radioLabel {
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-
-  .formSection {
-    gap: 2rem;
-    padding: 0;
-  }
-
-  .tileHeader ~ div:not(.errorMessage) {
-    padding: 0 2rem 2rem 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .modalTitle {
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  .modalSubtitle {
-    font-size: 1.4rem;
-    font-weight: 500;
-  }
-
-  .cleanFormContent {
-    gap: 3rem;
-    padding: 0 1.6rem;
-  }
-
-  .cleanFormGrid2Col,
-  .cleanFormGrid3Col {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .cleanFormGrid2Col > *,
-  .cleanFormGrid3Col > * {
-    margin-bottom: 0;
-  }
-
-  .cleanFormGrid1Col {
-    gap: 2rem;
-  }
-
-  .cleanFormGrid1Col > * {
-    margin-bottom: 0;
-  }
-
-  .sectionLabel {
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
-
-  .fieldLabel {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  .inputLabel {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-
-  .radioLabel {
-    font-size: 1.4rem;
-    font-weight: 500;
-  }
-
-  .formSection {
-    gap: 2rem;
-    padding: 0;
-  }
-
-  .tileHeader {
-    padding: 1.6rem;
-  }
-
-  .tileHeader ~ div:not(.errorMessage) {
-    padding: 0 1.6rem 0 1.6rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .modalTitle {
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
-
-  .modalSubtitle {
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-
-  .cleanFormContent {
-    gap: 2.6rem;
-    padding: 0 1.2rem;
-  }
-
-  .cleanFormGrid2Col,
-  .cleanFormGrid3Col {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .cleanFormGrid2Col > *,
-  .cleanFormGrid3Col > * {
-    margin-bottom: 0;
-  }
-
-  .cleanFormGrid1Col {
-    gap: 2rem;
-  }
-
-  .cleanFormGrid1Col > * {
-    margin-bottom: 0;
-  }
-
-  .sectionLabel {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-
-  .fieldLabel {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-
-  .inputLabel {
-    font-size: 1.4rem;
-    font-weight: 500;
-  }
-
-  .radioLabel {
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
-
-  .formSection {
-    gap: 2rem;
-    padding: 0;
-  }
-
-  .tileHeader {
-    padding: 2.2rem 1.6rem;
-  }
-
-  .tileHeader ~ div:not(.errorMessage) {
-    padding: 0 1.4rem 0 1.4rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .cleanFormContent {
-    gap: 2.4rem;
-    padding: 0 1rem;
-  }
-
-  .cleanFormGrid2Col,
-  .cleanFormGrid3Col {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .cleanFormGrid2Col > *,
-  .cleanFormGrid3Col > * {
-    margin-bottom: 0;
-  }
-
-  .cleanFormGrid1Col {
-    gap: 2rem;
-  }
-
-  .cleanFormGrid1Col > * {
-    margin-bottom: 0;
-  }
-
-  .sectionLabel {
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
-
-  .formSection {
-    gap: 2rem;
-    padding: 0;
-  }
-
-  .tileHeader {
-    padding: 1.4rem;
-  }
-
-  .tileHeader ~ div:not(.errorMessage) {
-    padding: 0 1.4rem 0 1.4rem;
-  }
-}
-
 .openModalButton:hover {
   border-color: #0270cc;
 }
@@ -988,7 +736,7 @@
   border-color: #0270cc;
 }
 
-/* Tablet Responsive */
+/* Modal-Only Mobile Responsive */
 @media screen and (max-width: 900px) {
   .modalContainer {
     width: 96%;
@@ -1080,7 +828,6 @@
   }
 }
 
-/* Mobile Responsive */
 @media screen and (max-width: 600px) {
   .modalContainer {
     width: 98%;
@@ -1229,7 +976,6 @@
   }
 }
 
-/* Extra Small Phones */
 @media screen and (max-width: 400px) {
   .modalContainer {
     width: 98%;
