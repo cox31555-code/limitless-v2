@@ -1608,14 +1608,14 @@
   flex-direction: column;
   gap: 2.8rem;
   width: 100%;
-  padding: 0 2.4rem;
+  padding: 0;
 }
 
 .cleanSection {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  padding: 2.4rem;
+  padding: 2rem;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   border-radius: 12px;
@@ -1978,10 +1978,12 @@
 
   .cleanFormContent {
     gap: 2.4rem;
+    padding: 0;
   }
 
   .cleanSection {
-    gap: 1.5rem;
+    gap: 1.6rem;
+    padding: 1.8rem;
   }
 
   .cleanDriverCard {
@@ -2024,15 +2026,17 @@
   }
 
   .cleanFormContent {
-    gap: 2.4rem;
+    gap: 2rem;
     width: 100%;
     box-sizing: border-box;
+    padding: 0;
   }
 
   .cleanSection {
-    gap: 1.5rem;
+    gap: 1.4rem;
     width: 100%;
     box-sizing: border-box;
+    padding: 1.6rem;
   }
 
   .cleanSectionTitle {
@@ -2110,7 +2114,7 @@
 
 @media screen and (max-width: 400px) {
   .formContent {
-    gap: 2rem;
+    gap: 1.8rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -2119,6 +2123,7 @@
     gap: 1rem;
     width: 100%;
     box-sizing: border-box;
+    padding: 1.2rem;
   }
 
   .formRow,
