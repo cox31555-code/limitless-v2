@@ -353,7 +353,7 @@
 }
 
 .tileHeader ~ div:not(.errorMessage) {
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 2rem 0 2rem;
 }
 
 .formSection.disabled > div:not(.tileHeader) {
