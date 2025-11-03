@@ -1989,7 +1989,7 @@
   }
 
   .cleanSection {
-    gap: 1.4rem;
+    gap: 1.2rem;
     padding: 1.6rem;
   }
 
@@ -2043,7 +2043,7 @@
     gap: 1.2rem;
     width: 100%;
     box-sizing: border-box;
-    padding: 1.2rem;
+    padding: 1.4rem;
   }
 
   .cleanSectionTitle {
@@ -2134,10 +2134,10 @@
   }
 
   .cleanSection {
-    gap: 1rem;
+    gap: 1.2rem;
     width: 100%;
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
   .cleanSectionTitle {
