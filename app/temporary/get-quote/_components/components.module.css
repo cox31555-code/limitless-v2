@@ -1679,7 +1679,7 @@
 .cleanFormGrid1Col {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -1694,14 +1694,14 @@
 .cleanFormGrid2Col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
+  gap: 2rem;
   width: 100%;
 }
 
 .cleanFormGrid3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  gap: 2rem;
   width: 100%;
 }
 
