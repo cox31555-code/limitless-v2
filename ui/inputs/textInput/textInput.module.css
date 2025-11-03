@@ -220,13 +220,14 @@
   }
 
   .input {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     padding-left: 6.5rem;
     font-weight: 500;
+    font-family: inherit;
   }
 
   .input::placeholder {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 400;
   }
 
@@ -274,13 +275,14 @@
   }
 
   .input {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     padding-left: 6.5rem;
     font-weight: 500;
+    font-family: inherit;
   }
 
   .input::placeholder {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-weight: 400;
   }
 
