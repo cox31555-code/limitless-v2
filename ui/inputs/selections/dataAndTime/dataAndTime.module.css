@@ -225,6 +225,7 @@
   .container {
     width: 100%;
     box-sizing: border-box;
+    gap: 0.8rem;
   }
 
   .inputContainer {
@@ -268,6 +269,10 @@
 }
 
 @media screen and (max-width: 400px) {
+  .container {
+    gap: 0.8rem;
+  }
+
   .inputContainer {
     height: 5.6rem;
     min-height: 5.6rem;
