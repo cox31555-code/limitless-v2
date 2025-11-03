@@ -2066,8 +2066,7 @@
   .cleanFormGrid1Col > *,
   .cleanFormGrid2Col > *,
   .cleanFormGrid3Col > * {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
   }
 
   .cleanPostcodeRow {
