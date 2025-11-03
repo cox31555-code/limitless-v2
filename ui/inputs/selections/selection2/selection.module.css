@@ -123,9 +123,9 @@
   }
   .selectionItem,
   .selectedItem {
-    padding: 1.2rem 1.4rem;
-    gap: 1rem;
-    min-height: 4rem;
-    font-size: 1.2rem;
+    padding: 1.4rem 1.6rem;
+    gap: 1.2rem;
+    min-height: 5.2rem;
+    font-size: 1.3rem;
   }
 }

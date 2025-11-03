@@ -1019,6 +1019,15 @@
   gap: 0.8rem;
 }
 
+.parkingCard h4,
+.parkingCard label {
+  color: #000822;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin: 0 0 1rem 0;
+}
+
 .usageTypeWrapper {
   display: flex;
   flex-direction: column;
@@ -1028,11 +1037,11 @@
 }
 
 .usageLabel {
-  color: #5a6b7d;
-  font-size: 1.4rem;
+  color: #000822;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: 0.2px;
-  margin: 0;
+  margin: 0 0 1rem 0;
 }
 
 .selections3 {
