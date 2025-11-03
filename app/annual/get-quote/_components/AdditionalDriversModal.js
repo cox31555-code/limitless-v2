@@ -195,6 +195,33 @@ const AdditionalDriversModal = ({
   };
 
 
+  // Auto-expand next tile when current tile is completed
+  useEffect(() => {
+    drivers.forEach((_, driverIndex) => {
+      const tiles = getTileOrder();
+      tiles.forEach((tileKey, tileIndex) => {
+        const isComplete = checkTileCompletion(driverIndex, tileKey);
+        const isCurrentlyExpanded = isTileExpanded(driverIndex, tileKey);
+
+        if (isComplete && isCurrentlyExpanded && tileIndex < tiles.length - 1) {
+          const nextTileKey = tiles[tileIndex + 1];
+          const isNextTileExpanded = isTileExpanded(driverIndex, nextTileKey);
+
+          // Auto-expand next tile if not already expanded and not disabled
+          if (!isNextTileExpanded && !isTileDisabled(driverIndex, nextTileKey)) {
+            setTimeout(() => {
+              setExpandedTiles(prev => {
+                const driverTiles = prev[driverIndex] ? new Set(prev[driverIndex]) : new Set();
+                driverTiles.add(nextTileKey);
+                return { ...prev, [driverIndex]: driverTiles };
+              });
+            }, 300);
+          }
+        }
+      });
+    });
+  }, [drivers]);
+
   useEffect(() => {
     drivers.forEach((driver, index) => {
       const dateOfBirth = watch(`carUsage.additionalDrivers.${index}.dateOfBirth`);
