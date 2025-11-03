@@ -117,12 +117,14 @@
   .nextBtn {
     background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
     color: #fff;
+    order: -1;
   }
 
   .backBtn {
     background: #fff;
     color: #0388ff;
     border: 1.5px solid rgba(3, 136, 255, 0.2);
+    order: 1;
   }
 
   .backIcon,
@@ -156,12 +158,14 @@
   .nextBtn {
     background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
     color: #fff;
+    order: -1;
   }
 
   .backBtn {
     background: #fff;
     color: #0388ff;
     border: 1.5px solid rgba(3, 136, 255, 0.2);
+    order: 1;
   }
 
   .backIcon,
