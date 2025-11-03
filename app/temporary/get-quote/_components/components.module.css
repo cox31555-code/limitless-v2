@@ -2228,6 +2228,22 @@
     margin-bottom: 1.4rem;
   }
 
+  .parkingCard h4,
+  .parkingCard label {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .usageLabel {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .declarationQuestion {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
   .declarationItem,
   .cleanDeclarationItem {
     padding: 1.2rem;
