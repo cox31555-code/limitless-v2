@@ -1066,6 +1066,11 @@
     font-size: 1.4rem;
   }
 
+  .formSection.expanded,
+  .driverItem.expanded {
+    border: none !important;
+  }
+
   .sectionLabel {
     font-size: 1.5rem;
   }
