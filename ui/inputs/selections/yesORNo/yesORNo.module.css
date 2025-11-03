@@ -57,7 +57,7 @@
 
 @media screen and (max-width: 900px) {
   .container {
-    height: 5.2rem;
+    height: 5.6rem;
   }
 
   .button,
@@ -68,7 +68,7 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    height: 5.2rem;
+    height: 5.6rem;
   }
 
   .button,
