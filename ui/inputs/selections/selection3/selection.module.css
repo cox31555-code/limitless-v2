@@ -70,6 +70,12 @@
   line-height: 140%;
   letter-spacing: 0.1px;
 }
+.optionTitle {
+  font-weight: 500;
+}
+.optionDescription {
+  font-weight: 400;
+}
 
 .option.selected .title,
 .option.selected .description {
@@ -88,19 +94,26 @@
     padding: 1.4rem 1.6rem;
     flex-direction: column;
     gap: 1.2rem;
-    min-height: 5.2rem;
+    min-height: 5.6rem;
   }
   .selectionSpan,
   .selectedSpan {
     min-width: 1.6rem;
     min-height: 1.6rem;
+    flex-shrink: 0;
   }
   .optionContent {
     gap: 0.6rem;
+    display: flex;
+    flex-direction: column;
   }
-  .title,
+  .title {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
   .description {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 400;
   }
 }
 
@@ -111,23 +124,31 @@
   }
   .option {
     padding: 1.4rem 1.6rem;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.2rem;
-    min-height: 5.2rem;
+    min-height: 6rem;
     border: none;
+    align-items: flex-start;
   }
   .selectionSpan,
   .selectedSpan {
     min-width: 1.6rem;
     min-height: 1.6rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
   }
   .optionContent {
     gap: 0.6rem;
+    display: flex;
+    flex-direction: column;
   }
-  .title,
+  .title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
   .description {
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 400;
   }
 }
 
@@ -138,22 +159,30 @@
   }
   .option {
     padding: 1.3rem 1.5rem;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
-    min-height: 4.8rem;
+    min-height: 5.2rem;
     border: none;
+    align-items: flex-start;
   }
   .selectionSpan,
   .selectedSpan {
     min-width: 1.5rem;
     min-height: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
   }
   .optionContent {
     gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
   }
-  .title,
+  .title {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
   .description {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 400;
   }
 }

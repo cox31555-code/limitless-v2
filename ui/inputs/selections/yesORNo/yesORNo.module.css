@@ -62,19 +62,34 @@
 
   .button,
   .active {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
+    padding: 1.5rem 1.8rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .container {
-    height: 5.6rem;
+    height: 6rem;
   }
 
   .button,
   .active {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    padding: 1.6rem 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    height: 5.4rem;
+  }
+
+  .button,
+  .active {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1.4rem 1.8rem;
   }
 }
