@@ -30,7 +30,7 @@
 @media screen and (max-width: 900px) {
   .stepFormContainer {
     max-width: 100%;
-    padding: 2rem 2rem 4.5rem;
+    padding: 2rem 1.6rem 4.5rem;
     box-sizing: border-box;
   }
 
@@ -42,7 +42,7 @@
 @media screen and (max-width: 600px) {
   .stepFormContainer {
     max-width: 100%;
-    padding: 1.6rem 1.2rem 3.6rem;
+    padding: 1.4rem 0.8rem 3.6rem;
     box-sizing: border-box;
   }
 
@@ -54,7 +54,7 @@
 @media screen and (max-width: 400px) {
   .stepFormContainer {
     max-width: 100%;
-    padding: 1.4rem 1rem 3rem;
+    padding: 1.2rem 0.6rem 3rem;
     box-sizing: border-box;
   }
 
