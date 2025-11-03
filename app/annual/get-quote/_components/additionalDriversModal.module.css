@@ -444,6 +444,28 @@
   gap: 1.2rem;
 }
 
+/* Clean Form Content - Desktop (Default) */
+.cleanFormContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  padding: 0 2.4rem;
+}
+
+.cleanFormGrid2Col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+}
+
+.cleanFormGrid3Col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  width: 100%;
+}
+
 .fieldRow3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
