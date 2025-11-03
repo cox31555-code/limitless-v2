@@ -129,3 +129,73 @@
     font-size: 1.3rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 1.6rem;
+    padding: 2rem 1.6rem;
+  }
+  .img {
+    width: 4.8rem;
+    height: 6rem;
+  }
+  .header {
+    gap: 1.4rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  .headerContent {
+    gap: 0.4rem;
+    flex-direction: column;
+  }
+  .title,
+  .description {
+    font-size: 1.2rem;
+  }
+  .selectionContainer {
+    gap: 1rem;
+  }
+  .selectionItem,
+  .selectedItem {
+    padding: 1.4rem 1.6rem;
+    gap: 1.2rem;
+    min-height: 5.2rem;
+    font-size: 1.3rem;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    gap: 1.6rem;
+    padding: 1.8rem 1.4rem;
+  }
+  .img {
+    width: 4.4rem;
+    height: 5.6rem;
+  }
+  .header {
+    gap: 1.2rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  .headerContent {
+    gap: 0.3rem;
+    flex-direction: column;
+  }
+  .title,
+  .description {
+    font-size: 1.1rem;
+  }
+  .selectionContainer {
+    gap: 0.8rem;
+  }
+  .selectionItem,
+  .selectedItem {
+    padding: 1.3rem 1.5rem;
+    gap: 1rem;
+    min-height: 4.8rem;
+    font-size: 1.2rem;
+    border: none;
+  }
+}

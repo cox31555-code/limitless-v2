@@ -103,3 +103,55 @@
     font-size: 1.3rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 1.2rem;
+    flex-direction: column;
+  }
+  .option {
+    padding: 1.4rem 1.6rem;
+    flex-direction: column;
+    gap: 1.2rem;
+    min-height: 5.2rem;
+    border: none;
+  }
+  .selectionSpan,
+  .selectedSpan {
+    min-width: 1.6rem;
+    min-height: 1.6rem;
+  }
+  .optionContent {
+    gap: 0.6rem;
+  }
+  .title,
+  .description {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .option {
+    padding: 1.3rem 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 4.8rem;
+    border: none;
+  }
+  .selectionSpan,
+  .selectedSpan {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+  }
+  .optionContent {
+    gap: 0.5rem;
+  }
+  .title,
+  .description {
+    font-size: 1.2rem;
+  }
+}
