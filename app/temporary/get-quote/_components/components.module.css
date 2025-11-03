@@ -2056,7 +2056,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
+    gap: 0;
   }
 
   .cleanPostcodeRow {
