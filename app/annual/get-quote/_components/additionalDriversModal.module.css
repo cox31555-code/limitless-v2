@@ -585,6 +585,16 @@
 
 /* Mobile Responsive Breakpoints - Step 3 Optimization */
 @media (max-width: 900px) {
+  .modalTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .modalSubtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
   .cleanFormContent {
     gap: 2.8rem;
     padding: 0 1.4rem;
