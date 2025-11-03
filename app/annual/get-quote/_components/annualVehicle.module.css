@@ -440,6 +440,7 @@
 @media (max-width: 900px) {
   .content {
     gap: 3.2rem;
+    padding: 0 1.6rem;
   }
 
   .instructionBox {
