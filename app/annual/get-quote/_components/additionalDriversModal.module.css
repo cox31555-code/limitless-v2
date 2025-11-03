@@ -577,64 +577,112 @@
     padding: 0 1.4rem;
   }
 
-  .sectionLabel {
-    font-size: 1.5rem;
-  }
-
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
+    grid-template-columns: 1fr;
     gap: 1.6rem;
+  }
+
+  .sectionLabel {
+    font-size: 1.4rem;
+  }
+
+  .formSection {
+    gap: 1.4rem;
+    padding: 2rem;
   }
 }
 
 @media (max-width: 600px) {
   .cleanFormContent {
-    gap: 3.2rem;
+    gap: 3rem;
     padding: 0 1.6rem;
-  }
-
-  .sectionLabel {
-    font-size: 1.8rem;
   }
 
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .sectionLabel {
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 
   .formSection {
+    gap: 1.6rem;
+    padding: 2rem;
+  }
+
+  .tileHeader {
     padding: 1.8rem;
+  }
+
+  .tileHeader ~ div:not(.errorMessage) {
+    padding: 0 1.8rem 1.8rem 1.8rem;
   }
 }
 
 @media (max-width: 400px) {
   .cleanFormContent {
-    gap: 2.8rem;
+    gap: 2.6rem;
     padding: 0 1.2rem;
-  }
-
-  .sectionLabel {
-    font-size: 1.6rem;
-  }
-
-  .formSection {
-    padding: 1.6rem;
   }
 
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .sectionLabel {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .formSection {
+    gap: 1.4rem;
+    padding: 1.6rem;
+  }
+
+  .tileHeader {
+    padding: 1.6rem;
+  }
+
+  .tileHeader ~ div:not(.errorMessage) {
+    padding: 0 1.6rem 1.6rem 1.6rem;
   }
 }
 
 @media (max-width: 360px) {
   .cleanFormContent {
-    gap: 2.6rem;
+    gap: 2.4rem;
     padding: 0 1rem;
   }
 
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .sectionLabel {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
   .formSection {
-    padding: 1.6rem;
+    gap: 1.2rem;
+    padding: 1.4rem;
+  }
+
+  .tileHeader {
+    padding: 1.4rem;
+  }
+
+  .tileHeader ~ div:not(.errorMessage) {
+    padding: 0 1.4rem 1.4rem 1.4rem;
   }
 }
 
