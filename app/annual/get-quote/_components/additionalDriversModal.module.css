@@ -615,16 +615,12 @@
   }
 
   .formSection {
-    gap: 1.2rem;
+    gap: 2rem;
     padding: 0;
   }
 
   .tileHeader {
     padding: 1.6rem;
-  }
-
-  .formSection {
-    gap: 2rem;
   }
 
   .cleanFormGrid1Col,
