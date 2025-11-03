@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React, { useState, useEffect, Suspense } from "react";
+import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
@@ -12,10 +13,10 @@ import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
 import styles from "@/app/temporary/get-quote/stepForm.module.css";
 
-const AnnualVehicleDetailsForm = lazy(() => import("./_components/AnnualVehicleDetailsForm"));
-const AnnualCoverDetailsForm = lazy(() => import("./_components/AnnualCoverDetailsForm"));
-const AnnualPersonalDetailsForm = lazy(() => import("./_components/AnnualPersonalDetailsForm"));
-const ReviewQuote = lazy(() => import("@/app/temporary/get-quote/_components/ReviewQuote"));
+const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
+const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
+const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPersonalDetailsForm"), { ssr: false, loading: () => <StepFallback /> });
+const ReviewQuote = dynamic(() => import("@/app/temporary/get-quote/_components/ReviewQuote"), { ssr: false, loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
@@ -285,28 +286,20 @@ const AnnualInsuranceContent = () => {
           suppressHydrationWarning
         >
           <div className={styles.stepContent}>
-            <Suspense fallback={<StepFallback />}>
-              {currentStep === STEPS.VEHICLE && (
-                <AnnualVehicleDetailsForm
-                  form={form}
-                  onVehicleDataFound={setFoundVehicleData}
-                  autoTriggerLookup={shouldAutoTrigger}
-                />
-              )}
-            </Suspense>
-            <Suspense fallback={<StepFallback />}>
-              {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
-            </Suspense>
-            <Suspense fallback={<StepFallback />}>
-              {currentStep === STEPS.PERSONAL && (
-                <AnnualPersonalDetailsForm form={form} />
-              )}
-            </Suspense>
-            <Suspense fallback={<StepFallback />}>
-              {currentStep === STEPS.REVIEW && (
-                <ReviewQuote form={form} insuranceType="Annual" />
-              )}
-            </Suspense>
+            {currentStep === STEPS.VEHICLE && (
+              <AnnualVehicleDetailsForm
+                form={form}
+                onVehicleDataFound={setFoundVehicleData}
+                autoTriggerLookup={shouldAutoTrigger}
+              />
+            )}
+            {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
+            {currentStep === STEPS.PERSONAL && (
+              <AnnualPersonalDetailsForm form={form} />
+            )}
+            {currentStep === STEPS.REVIEW && (
+              <ReviewQuote form={form} insuranceType="Annual" />
+            )}
           </div>
 
           <StepActions
