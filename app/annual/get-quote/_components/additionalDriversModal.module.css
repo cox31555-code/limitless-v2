@@ -230,11 +230,6 @@
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.formSection.expanded .tileHeader {
-  border: 0 !important;
-  border-bottom: 0 !important;
-}
-
 .formSection.disabled {
   opacity: 0.55 !important;
   border-color: rgba(3, 136, 255, 0.06) !important;
