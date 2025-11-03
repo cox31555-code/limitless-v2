@@ -197,7 +197,7 @@
 
 @media screen and (max-width: 900px) {
   .inputGroup {
-    gap: 0;
+    gap: 0.8rem;
     margin-bottom: 0;
     padding-bottom: 0;
   }
@@ -248,7 +248,7 @@
 
 @media screen and (max-width: 600px) {
   .inputGroup {
-    gap: 0;
+    gap: 0.8rem;
     width: 100%;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -297,7 +297,7 @@
 
 @media screen and (max-width: 400px) {
   .inputGroup {
-    gap: 0;
+    gap: 0.8rem;
     margin-bottom: 0;
     padding-bottom: 0;
   }
@@ -336,7 +336,7 @@
 
 @media screen and (max-width: 360px) {
   .inputGroup {
-    gap: 0;
+    gap: 0.8rem;
     margin-bottom: 0;
     padding-bottom: 0;
   }
