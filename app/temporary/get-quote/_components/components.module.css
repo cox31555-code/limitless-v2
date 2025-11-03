@@ -1984,13 +1984,13 @@
   }
 
   .cleanFormContent {
-    gap: 2.4rem;
+    gap: 2rem;
     padding: 0;
   }
 
   .cleanSection {
-    gap: 1.6rem;
-    padding: 1.8rem;
+    gap: 1.4rem;
+    padding: 1.6rem;
   }
 
   .cleanDriverCard {
@@ -2040,16 +2040,16 @@
   }
 
   .cleanSection {
-    gap: 1.4rem;
+    gap: 1.2rem;
     width: 100%;
     box-sizing: border-box;
-    padding: 0;
+    padding: 1.2rem;
   }
 
   .cleanSectionTitle {
-    font-size: 1.6rem;
-    margin-bottom: 1.4rem;
-    padding-left: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    padding-left: 0.8rem;
   }
 
   .cleanFormGrid1Col,
@@ -2134,16 +2134,16 @@
   }
 
   .cleanSection {
-    gap: 1.2rem;
+    gap: 1rem;
     width: 100%;
     box-sizing: border-box;
-    padding: 0;
+    padding: 1rem;
   }
 
   .cleanSectionTitle {
     font-size: 1.4rem;
-    margin-bottom: 1.2rem;
-    padding-left: 0.8rem;
+    margin-bottom: 1rem;
+    padding-left: 0.6rem;
   }
 
   .formRow,
