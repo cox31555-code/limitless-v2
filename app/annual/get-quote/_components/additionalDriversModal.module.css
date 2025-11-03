@@ -650,6 +650,16 @@
 }
 
 @media (max-width: 600px) {
+  .modalTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .modalSubtitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
   .cleanFormContent {
     gap: 3rem;
     padding: 0 1.6rem;
