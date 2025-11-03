@@ -698,7 +698,7 @@
   }
 
   .tileHeader {
-    padding: 1.4rem;
+    padding: 2.2rem 1.6rem;
   }
 
   .tileHeader ~ div:not(.errorMessage) {
