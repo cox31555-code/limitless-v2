@@ -548,6 +548,74 @@
   margin-top: 0;
 }
 
+/* Mobile Responsive Breakpoints - Step 3 Optimization */
+@media (max-width: 900px) {
+  .cleanFormContent {
+    gap: 2.8rem;
+    padding: 0 1.4rem;
+  }
+
+  .sectionLabel {
+    font-size: 1.5rem;
+  }
+
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    gap: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cleanFormContent {
+    gap: 3.2rem;
+    padding: 0 1.6rem;
+  }
+
+  .sectionLabel {
+    font-size: 1.8rem;
+  }
+
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    gap: 2rem;
+  }
+
+  .formSection {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .cleanFormContent {
+    gap: 2.8rem;
+    padding: 0 1.2rem;
+  }
+
+  .sectionLabel {
+    font-size: 1.6rem;
+  }
+
+  .formSection {
+    padding: 1.6rem;
+  }
+
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .cleanFormContent {
+    gap: 2.6rem;
+    padding: 0 1rem;
+  }
+
+  .formSection {
+    padding: 1.6rem;
+  }
+}
+
 .openModalButton:hover {
   border-color: #0270cc;
 }
