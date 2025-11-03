@@ -1061,7 +1061,7 @@
 
 .declarationItem.expanded,
 .declarationItem:focus-within {
-  border: none !important;
+  border: 0 !important;
 }
 
 .declarationQuestion {
