@@ -151,11 +151,15 @@
 /* Responsive Design */
 @media (max-width: 900px) {
   .coverContainer {
-    gap: 2.8rem;
+    gap: 3.2rem;
   }
 
   .section {
-    gap: 1.6rem;
+    gap: 2rem;
+  }
+
+  .sectionHeader {
+    gap: 1rem;
   }
 
   .sectionTitle {
@@ -188,11 +192,15 @@
 
 @media (max-width: 600px) {
   .coverContainer {
-    gap: 3.2rem;
+    gap: 3.6rem;
   }
 
   .section {
-    gap: 1.8rem;
+    gap: 2.2rem;
+  }
+
+  .sectionHeader {
+    gap: 1.2rem;
   }
 
   .sectionTitle {
@@ -244,11 +252,15 @@
 
 @media (max-width: 400px) {
   .coverContainer {
-    gap: 2.8rem;
+    gap: 3.2rem;
   }
 
   .section {
-    gap: 1.4rem;
+    gap: 2rem;
+  }
+
+  .sectionHeader {
+    gap: 1rem;
   }
 
   .sectionTitle {
@@ -299,7 +311,15 @@
 
 @media (max-width: 360px) {
   .coverContainer {
-    gap: 2.6rem;
+    gap: 3rem;
+  }
+
+  .section {
+    gap: 1.8rem;
+  }
+
+  .sectionHeader {
+    gap: 0.9rem;
   }
 
   .sectionTitle {
