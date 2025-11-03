@@ -150,7 +150,8 @@
   }
   .title,
   .description {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
   }
   .selectionContainer {
     gap: 1rem;
@@ -185,7 +186,8 @@
   }
   .title,
   .description {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
   }
   .selectionContainer {
     gap: 0.8rem;
