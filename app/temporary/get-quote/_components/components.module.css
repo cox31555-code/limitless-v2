@@ -1056,6 +1056,12 @@
   background: #f8fbff;
   border-radius: 10px;
   border: 1.5px solid rgba(3, 136, 255, 0.08);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.declarationItem.expanded,
+.declarationItem:focus-within {
+  border: 1.5px solid rgba(3, 136, 255, 0);
 }
 
 .declarationQuestion {
