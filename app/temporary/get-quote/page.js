@@ -1,21 +1,27 @@
 "use client";
-"use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insuranceSchema } from "@/utils/schemas/insuranceSchema";
 import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
-import VehicleDetailsForm from "./_components/VehicleDetailsForm";
-import CoverDetailsForm from "./_components/CoverDetailsForm";
-import PersonalDetailsForm from "./_components/PersonalDetailsForm";
 import StepActions from "./_components/StepActions";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
-import ReviewQuote from "./_components/ReviewQuote";
 import { useRouter, useSearchParams } from "next/navigation";
 import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
 import styles from "./stepForm.module.css";
+
+const VehicleDetailsForm = lazy(() => import("./_components/VehicleDetailsForm"));
+const CoverDetailsForm = lazy(() => import("./_components/CoverDetailsForm"));
+const PersonalDetailsForm = lazy(() => import("./_components/PersonalDetailsForm"));
+const ReviewQuote = lazy(() => import("./_components/ReviewQuote"));
+
+const StepFallback = () => (
+  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
+    Loading...
+  </div>
+);
 
 const STEPS = {
   VEHICLE: 1,
@@ -247,20 +253,28 @@ const TemporaryInsuranceContent = () => {
           suppressHydrationWarning
         >
           <div className={styles.stepContent}>
-            {currentStep === STEPS.VEHICLE && (
-              <VehicleDetailsForm
-                form={form}
-                onVehicleDataFound={setFoundVehicleData}
-                autoTriggerLookup={shouldAutoTrigger}
-              />
-            )}
-            {currentStep === STEPS.COVER && <CoverDetailsForm form={form} />}
-            {currentStep === STEPS.PERSONAL && (
-              <PersonalDetailsForm form={form} />
-            )}
-            {currentStep === STEPS.REVIEW && (
-              <ReviewQuote form={form} insuranceType="Temp" />
-            )}
+            <Suspense fallback={<StepFallback />}>
+              {currentStep === STEPS.VEHICLE && (
+                <VehicleDetailsForm
+                  form={form}
+                  onVehicleDataFound={setFoundVehicleData}
+                  autoTriggerLookup={shouldAutoTrigger}
+                />
+              )}
+            </Suspense>
+            <Suspense fallback={<StepFallback />}>
+              {currentStep === STEPS.COVER && <CoverDetailsForm form={form} />}
+            </Suspense>
+            <Suspense fallback={<StepFallback />}>
+              {currentStep === STEPS.PERSONAL && (
+                <PersonalDetailsForm form={form} />
+              )}
+            </Suspense>
+            <Suspense fallback={<StepFallback />}>
+              {currentStep === STEPS.REVIEW && (
+                <ReviewQuote form={form} insuranceType="Temp" />
+              )}
+            </Suspense>
           </div>
 
           <StepActions
