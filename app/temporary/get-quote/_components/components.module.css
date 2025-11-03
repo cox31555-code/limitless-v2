@@ -1624,19 +1624,20 @@
 
 .cleanSectionTitle {
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #0388ff;
+  color: #000822;
   line-height: 140%;
   letter-spacing: 0.1px;
-  margin: 0 0 0.8rem 0;
-  padding: 0 0 0.6rem 0;
+  margin: 0 0 1.6rem 0;
+  padding: 0;
   background: transparent;
-  border-left: none;
+  border-left: 4px solid;
+  border-image: linear-gradient(180deg, #0388ff 0%, #0270cc 100%) 1;
   border-radius: 0;
   text-transform: capitalize;
-  border-bottom: 2px solid #0388ff;
-  display: inline-block;
+  padding-left: 1.2rem;
+  display: block;
 }
 
 .cleanLabel {
@@ -1678,7 +1679,7 @@
 .cleanFormGrid1Col {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.6rem;
   width: 100%;
 }
 
@@ -1693,14 +1694,14 @@
 .cleanFormGrid2Col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
+  gap: 1.8rem;
   width: 100%;
 }
 
 .cleanFormGrid3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
+  gap: 1.8rem;
   width: 100%;
 }
 
@@ -1789,17 +1790,23 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  padding: 1.6rem;
-  background: #f8fbff;
+  padding: 1.8rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
   border-radius: 12px;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cleanDeclarationItem:hover {
+  border-color: rgba(3, 136, 255, 0.18);
+  background: linear-gradient(135deg, #f5f9ff 0%, #ffffff 100%);
 }
 
 .cleanDeclarationQuestion {
   color: #000822;
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
   line-height: 140%;
   letter-spacing: 0.2px;
   margin: 0;
@@ -1960,7 +1967,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.4rem;
   }
 
   .cleanPostcodeRow {
@@ -2041,24 +2048,24 @@
 
   .cleanSectionTitle {
     font-size: 1.6rem;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.4rem;
+    padding-left: 1rem;
   }
 
   .cleanFormGrid1Col,
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.4rem;
   }
 
   .cleanPostcodeRow {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.4rem;
   }
 
   .cleanDeclarationItem {
-    padding: 1rem;
+    padding: 1.4rem;
     gap: 1.2rem;
   }
 
@@ -2131,7 +2138,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.2rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -2152,7 +2159,7 @@
 
   .declarationItem,
   .cleanDeclarationItem {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
   .findAddressButton {
