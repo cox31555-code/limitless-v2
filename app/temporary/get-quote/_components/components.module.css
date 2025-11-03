@@ -1701,7 +1701,7 @@
 .cleanFormGrid3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.8rem;
+  gap: 1.2rem;
   width: 100%;
 }
 
