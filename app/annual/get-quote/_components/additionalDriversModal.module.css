@@ -1086,13 +1086,13 @@
 
   .formSection.expanded,
   .driverItem.expanded {
-    border: none !important;
-    border-bottom: none !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
   }
 
   .formSection.expanded .tileHeader {
-    border: none !important;
-    border-bottom: none !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
   }
 
   .sectionLabel {
