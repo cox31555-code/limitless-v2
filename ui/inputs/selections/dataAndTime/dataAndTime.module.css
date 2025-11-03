@@ -194,6 +194,10 @@
 }
 
 @media screen and (max-width: 900px) {
+  .container {
+    gap: 0.8rem;
+  }
+
   .inputContainer {
     height: 5.6rem;
     min-height: 5.6rem;
