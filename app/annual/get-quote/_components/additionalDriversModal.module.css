@@ -623,6 +623,16 @@
     padding: 1.6rem;
   }
 
+  .formSection {
+    gap: 2rem;
+  }
+
+  .cleanFormGrid1Col,
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    gap: 2rem;
+  }
+
   .tileHeader ~ div:not(.errorMessage) {
     padding: 0 1.6rem 0 1.6rem;
   }
@@ -637,7 +647,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
+    gap: 2rem;
   }
 
   .sectionLabel {
@@ -646,7 +656,7 @@
   }
 
   .formSection {
-    gap: 1.2rem;
+    gap: 2rem;
     padding: 0;
   }
 
@@ -668,11 +678,11 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 2rem;
   }
 
   .cleanFormGrid1Col {
-    gap: 1.2rem;
+    gap: 2rem;
   }
 
   .sectionLabel {
