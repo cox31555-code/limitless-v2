@@ -126,7 +126,7 @@
 }
 
 .driverItem.expanded {
-  border: 1.5px solid rgba(3, 136, 255, 0);
+  border: 1.5px solid rgba(3, 136, 255, 0) !important;
 }
 
 .driverHeader {
