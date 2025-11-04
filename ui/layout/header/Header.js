@@ -107,7 +107,7 @@ const Header = () => {
     { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
   ];
 
-  const shouldHideHeader = mounted && (
+  const shouldHideHeader = (
     pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
@@ -211,7 +211,7 @@ const Header = () => {
           </div>
         </div>
       )}
-      {!(isGetQuotePage && mounted) && (
+      {!isGetQuotePage && (
       <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
