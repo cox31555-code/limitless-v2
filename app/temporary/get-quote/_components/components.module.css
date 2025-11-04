@@ -1479,12 +1479,18 @@
       gap: 2.4rem;
       width: 100%;
       box-sizing: border-box;
+      padding: 0 1.6rem;
     }
 
     .formSection {
       gap: 1.2rem;
       width: 100%;
       box-sizing: border-box;
+      padding: 1.8rem;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid rgba(3, 136, 255, 0.12);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
     }
 
     .declarationItem {
