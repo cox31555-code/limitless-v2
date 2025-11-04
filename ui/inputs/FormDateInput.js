@@ -254,7 +254,7 @@ const FormDateInput = forwardRef(
               <label className={styles.label}>{dateLabel}</label>
 
               <div
-                className={styles.inputContainer}
+                className={`${styles.inputContainer} ${props.disabled ? styles.disabled : ''}`}
                 onClick={openDatePicker}
                 ref={inputContainerRef}
                 style={reducedPadding ? { paddingLeft: '0.6rem' } : {}}
