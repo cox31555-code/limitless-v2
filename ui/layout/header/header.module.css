@@ -744,6 +744,28 @@
   opacity: 1;
 }
 
+.stickyHelpBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: rgba(3, 136, 255, 0.1);
+  border: 1px solid rgba(3, 136, 255, 0.25);
+  border-radius: 8px;
+  color: #0388ff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.stickyHelpBtn:hover {
+  background: rgba(3, 136, 255, 0.15);
+  border-color: rgba(3, 136, 255, 0.5);
+  color: #049cff;
+}
+
 @media (max-width: 1200px) {
   .stickyContent {
     padding: 1rem 4%;
