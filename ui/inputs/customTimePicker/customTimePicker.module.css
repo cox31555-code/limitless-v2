@@ -123,10 +123,12 @@
 
 @media screen and (max-width: 900px) {
   .timePicker {
-    max-width: min(92vw, 36rem);
-    width: 92vw;
+    position: relative;
+    max-width: 28rem;
+    width: auto;
     padding: 1.4rem;
     gap: 1.2rem;
+    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .timePicker.slideUp {
