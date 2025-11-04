@@ -2,13 +2,19 @@
 
 import dynamic from "next/dynamic";
 import { ToastContainer } from "react-toastify";
+import { Suspense } from "react";
 
-const Header = dynamic(() => import("@/ui/layout/header/Header"), { ssr: false });
+const Header = dynamic(() => import("@/ui/layout/header/Header"), {
+  ssr: false,
+  loading: () => <div style={{ height: "80px", backgroundColor: "#000822" }} />
+});
 
 export default function ClientLayout({ children }) {
   return (
     <>
-      <Header />
+      <Suspense fallback={<div style={{ height: "80px", backgroundColor: "#000822" }} />}>
+        <Header />
+      </Suspense>
       {children}
       <ToastContainer
         position="top-right"
