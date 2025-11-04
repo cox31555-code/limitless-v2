@@ -123,26 +123,27 @@
   .timePicker {
     max-width: 30rem;
     width: calc(100vw - 4rem);
-    padding: 1.6rem;
-    gap: 1.4rem;
+    padding: 1.4rem;
+    gap: 1.2rem;
   }
 
   .timeGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+    max-height: 45vh;
   }
 
   .timeSlot {
-    padding: 1.4rem 1rem;
-    font-size: 1.4rem;
-    min-height: 5.4rem;
+    padding: 0.8rem 0.5rem;
+    font-size: 1rem;
+    min-height: 3.8rem;
     font-weight: 600;
   }
 
   .timeSlot:active {
     background: #0270cc;
     border-color: #0270cc;
-    transform: scale(0.97);
+    transform: scale(0.95);
   }
 }
 
