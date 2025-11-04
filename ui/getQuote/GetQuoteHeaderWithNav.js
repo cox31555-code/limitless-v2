@@ -59,7 +59,13 @@ const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps }) => 
               </h1>
             </div>
 
-            {totalSteps && (
+            {subtitle ? (
+              <div className={styles.progressSection}>
+                <p className={`${styles.stepLabel} ${manrope.className}`}>
+                  {subtitle}
+                </p>
+              </div>
+            ) : totalSteps ? (
               <div className={styles.progressSection}>
                 <p className={`${styles.stepLabel} ${manrope.className}`}>
                   Step {currentStep} of {totalSteps}
@@ -71,7 +77,7 @@ const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps }) => 
                   />
                 </div>
               </div>
-            )}
+            ) : null}
           </div>
         </div>
       </header>
