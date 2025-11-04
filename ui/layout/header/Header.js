@@ -56,8 +56,6 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
-
     // Disable scroll listener on mobile to avoid iOS keyboard issues
     const isMobile = window.innerWidth <= 900;
     if (isMobile) {
@@ -72,7 +70,7 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [mounted]);
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -107,7 +105,7 @@ const Header = () => {
     { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
   ];
 
-  const shouldHideHeader = mounted && (
+  const shouldHideHeader = (
     pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
@@ -211,8 +209,8 @@ const Header = () => {
           </div>
         </div>
       )}
-      {!(isGetQuotePage && mounted) && (
-      <header className={styles.container} suppressHydrationWarning>
+      {!isGetQuotePage && (
+      <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
             onClick={() => router.push("/")}
