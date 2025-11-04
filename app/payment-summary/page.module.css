@@ -20,7 +20,7 @@
 
 .second {
   position: sticky;
-  top: 120px;
+  top: 80px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
