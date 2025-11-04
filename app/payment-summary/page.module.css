@@ -142,9 +142,34 @@
     gap: 1.4rem;
   }
 
+  .actions {
+    gap: 1.2rem;
+  }
+
   .payButton,
   .cancelButton {
-    height: 4.4rem;
-    font-size: 1.4rem;
+    height: 5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 14px;
+    padding: 0 1.6rem;
+    letter-spacing: -0.2px;
+  }
+
+  .payButton {
+    box-shadow: 0 4px 16px rgba(3, 136, 255, 0.25);
+  }
+
+  .payButton:active {
+    transform: scale(0.98);
+  }
+
+  .cancelButton {
+    border-width: 2px;
+  }
+
+  .cancelButton:active {
+    transform: scale(0.98);
+    opacity: 0.95;
   }
 }
