@@ -59,8 +59,8 @@ const ImpoundCoverDetailsForm = ({ form }) => {
 
   return (
     <ComponentWrapper title="Cover Details">
-      <div className={styles.content}>
-        <div className={styles.inputWrapper}>
+      <div className={styles.formContent}>
+        <div className={styles.formSection}>
           <div className={styles.inputGroup}>
             <Title title="How Long Will You Need It?" />
             <p style={{ color: "#5a6b7d", fontSize: "1.4rem", margin: "0 0 1.6rem 0" }}>
