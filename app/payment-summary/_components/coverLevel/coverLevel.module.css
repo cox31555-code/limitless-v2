@@ -141,12 +141,13 @@
 }
 
 .totalTitle {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 130%;
   margin: 0;
   letter-spacing: -0.2px;
+  display: none;
 }
 
 .totalPrice {
@@ -354,92 +355,102 @@
 
 @media (max-width: 600px) {
   .title {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     padding: 1.4rem 1.4rem 0.8rem;
     font-weight: 700;
+    letter-spacing: -0.3px;
   }
 
   .coverType {
-    padding: 1.1rem 1.4rem;
-    margin: 0.6rem 1.4rem;
+    padding: 1.2rem 1.4rem;
+    margin: 0.8rem 1.4rem;
   }
 
   .coverTypeTitle {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
   }
 
   .coverTypeValue {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
   }
 
   .summery {
-    padding: 1.8rem;
-    margin: 0.6rem 1.4rem;
-    min-height: 150px;
-    background-size: 220px 220px, 200% 200%;
-    gap: 1rem;
+    padding: 2rem;
+    margin: 0.8rem 1.4rem;
+    min-height: 160px;
+    background-size: 240px 240px, 200% 200%;
+    gap: 1.2rem;
   }
 
   .totalPrice {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -0.4px;
   }
 
   .totalPriceDescription {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    letter-spacing: -0.1px;
   }
 
   .header {
-    padding: 1.1rem 1.4rem;
-    margin: 0.6rem 1.4rem;
+    padding: 1.2rem 1.4rem;
+    margin: 0.8rem 1.4rem;
     flex-direction: row;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
     justify-content: space-between;
   }
 
   .headerItem {
-    gap: 0.6rem;
+    gap: 0.8rem;
   }
 
   .headerItemIcon {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.9rem;
+    height: 1.9rem;
   }
 
   .headerItemTitle {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
+    letter-spacing: -0.1px;
   }
 
   .headerItemValue {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
   }
 
   .features {
-    padding: 1.6rem;
+    padding: 1.8rem;
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .featureItem {
-    padding: 0.9rem 1.1rem;
-    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    gap: 0.9rem;
   }
 
   .iconWrapper {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    margin-top: 0.25rem;
   }
 
   .checkIcon {
-    width: 0.95rem;
-    height: 0.95rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .featureItemTitle {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    letter-spacing: -0.2px;
+    line-height: 1.35;
   }
 }
