@@ -258,6 +258,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
               value={startTime || ""}
               onChange={handleTimeInputChange}
               forceShowAbove={true}
+              relatedDateValue={startDate}
             />
           </div>
 
