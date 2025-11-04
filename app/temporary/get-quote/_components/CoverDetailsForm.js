@@ -93,7 +93,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
 
   return (
     <ComponentWrapper title="Cover Details">
-      <div className={styles.sparkCoverDetails}>
+      <div className={isImpound ? styles.formContent : styles.sparkCoverDetails}>
         {/* Duration Section */}
         <div className={styles.sparkSection}>
           <div className={styles.sparkSectionHeader}>
