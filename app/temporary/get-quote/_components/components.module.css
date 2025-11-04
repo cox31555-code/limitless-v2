@@ -450,7 +450,7 @@
   width: 100%;
   padding: 0.8rem 0.4rem;
   border-radius: 10px;
-  border: none;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
   background: #fff;
   font-size: 1.3rem;
   font-weight: 600;
@@ -459,7 +459,10 @@
   appearance: none;
   text-align: center;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  min-height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sparkNativeSelect:hover {
@@ -469,12 +472,6 @@
 
 .sparkNativeSelect:focus {
   outline: none;
-}
-
-/* Style select when a value is selected (not the placeholder) */
-.sparkNativeSelect:has(option:not([value=""]):checked) {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  color: #fff;
   border-color: #0388ff;
 }
 
