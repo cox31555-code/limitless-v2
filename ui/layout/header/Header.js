@@ -143,17 +143,17 @@ const Header = () => {
                 <nav className={styles.stickyMenu} suppressHydrationWarning>
                   <div
                     className={styles.stickyDropdownContainer}
-                    onMouseEnter={() => setOpenDropdown("carVan")}
-                    onMouseLeave={() => setOpenDropdown(null)}
+                    onMouseEnter={() => setOpenStickyDropdown("carVan")}
+                    onMouseLeave={() => setOpenStickyDropdown(null)}
                     suppressHydrationWarning
                   >
-                    <span className={`${styles.stickyMenuButton} ${openDropdown === "carVan" ? styles.active : ""} ${carVanItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
+                    <span className={`${styles.stickyMenuButton} ${openStickyDropdown === "carVan" ? styles.active : ""} ${carVanItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
                       Car & Van
-                      <span className={`${styles.chevronIcon} ${openDropdown === "carVan" ? styles.rotated : ""}`}>
+                      <span className={`${styles.chevronIcon} ${openStickyDropdown === "carVan" ? styles.rotated : ""}`}>
                         <IconComponent type="chevron" />
                       </span>
                     </span>
-                    {openDropdown === "carVan" && (
+                    {openStickyDropdown === "carVan" && (
                       <div className={styles.stickyDropdown} suppressHydrationWarning>
                         {carVanItems.map((item, index) => (
                           <span key={`sticky-carVan-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
@@ -169,17 +169,17 @@ const Header = () => {
 
                   <div
                     className={styles.stickyDropdownContainer}
-                    onMouseEnter={() => setOpenDropdown("motorbike")}
-                    onMouseLeave={() => setOpenDropdown(null)}
+                    onMouseEnter={() => setOpenStickyDropdown("motorbike")}
+                    onMouseLeave={() => setOpenStickyDropdown(null)}
                     suppressHydrationWarning
                   >
-                    <span className={`${styles.stickyMenuButton} ${openDropdown === "motorbike" ? styles.active : ""} ${motorbakeItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
+                    <span className={`${styles.stickyMenuButton} ${openStickyDropdown === "motorbike" ? styles.active : ""} ${motorbakeItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
                       Motorbike
-                      <span className={`${styles.chevronIcon} ${openDropdown === "motorbike" ? styles.rotated : ""}`}>
+                      <span className={`${styles.chevronIcon} ${openStickyDropdown === "motorbike" ? styles.rotated : ""}`}>
                         <IconComponent type="chevron" />
                       </span>
                     </span>
-                    {openDropdown === "motorbike" && (
+                    {openStickyDropdown === "motorbike" && (
                       <div className={styles.stickyDropdown} suppressHydrationWarning>
                         {motorbakeItems.map((item, index) => (
                           <span key={`sticky-motorbike-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
