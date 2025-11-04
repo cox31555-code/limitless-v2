@@ -726,21 +726,8 @@
   overflow: hidden;
 }
 
-.stickyQuoteBtn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .stickyQuoteBtn:hover {
   background: linear-gradient(135deg, #0277e3 0%, #0366d6 100%);
-}
-
-.stickyQuoteBtn:hover::before {
-  opacity: 1;
 }
 
 .stickyHelpBtn {
