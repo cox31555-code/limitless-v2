@@ -409,6 +409,11 @@
   flex: 1;
 }
 
+.dateWithCheckbox.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .haventBoughtBtn {
   background: transparent;
   border: none;
