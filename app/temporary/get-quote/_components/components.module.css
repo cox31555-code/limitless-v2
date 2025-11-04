@@ -1520,6 +1520,10 @@
       min-height: 4.4rem;
     }
 
+    .sparkNativeSelect {
+      min-height: 4.4rem;
+    }
+
     .parkingGrid {
       grid-template-columns: 1fr;
       gap: 1rem;
