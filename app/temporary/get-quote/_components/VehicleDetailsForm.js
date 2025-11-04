@@ -654,7 +654,7 @@ const VehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup = fals
           </div>
           <div className={styles.ownershipSection}>
           <div className={styles.cleanFormGrid2Col}>
-            <div className={styles.dateWithCheckbox}>
+            <div className={`${styles.dateWithCheckbox} ${haventBoughtYet ? styles.disabled : ''}`}>
               <FormDateInput
                 type="date"
                 dateLabel="When was the car bought?"
@@ -666,6 +666,7 @@ const VehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup = fals
                 reducedPadding={true}
                 minDate={new Date(1960, 0, 1)}
                 maxDate={new Date()}
+                disabled={haventBoughtYet}
               />
               <button
                 type="button"
