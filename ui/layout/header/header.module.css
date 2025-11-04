@@ -347,10 +347,6 @@
     display: none;
   }
 
-  .container[data-payment-summary="true"] {
-    display: flex;
-  }
-
   .mobileContainer {
     margin: 0;
     display: flex;
