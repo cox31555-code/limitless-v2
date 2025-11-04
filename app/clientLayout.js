@@ -1,9 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import Header from "@/ui/layout/header/Header";
 import { ToastContainer } from "react-toastify";
-
-const Header = dynamic(() => import("@/ui/layout/header/Header"));
 
 export default function ClientLayout({ children }) {
   return (
