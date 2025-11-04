@@ -9,13 +9,15 @@ const LoadingOverlay = ({ isVisible = true, text = "Calculating your quote" }) =
     <div className={styles.overlay}>
       <div className={styles.backdrop}></div>
       <div className={styles.spinnerContainer}>
-        <LoadingSpinner />
-        {text && (
-          <p className={styles.loadingText}>
-            {text}
-            <span className={styles.dots}></span>
-          </p>
-        )}
+        <div className={styles.spinnerBox}>
+          <LoadingSpinner />
+          {text && (
+            <p className={styles.loadingText}>
+              {text}
+              <span className={styles.dots}></span>
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
