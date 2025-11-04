@@ -1613,11 +1613,11 @@
   }
 
   .gridWithDropdown :global([class*="selectionItem"]) {
-    width: 4.6rem !important;
-    height: 4.6rem !important;
-    min-width: 4.6rem !important;
-    font-size: 1.3rem !important;
-    padding: 1.8rem !important;
+    width: 5.4rem !important;
+    height: 5.4rem !important;
+    min-width: 5.4rem !important;
+    font-size: 1.4rem !important;
+    padding: 2rem !important;
   }
 
   .gridWithDropdown :global(.dropdown-module__container) {
