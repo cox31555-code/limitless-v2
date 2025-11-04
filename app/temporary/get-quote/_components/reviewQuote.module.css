@@ -261,6 +261,8 @@
 @media (max-width: 600px) {
   .reviewContainer {
     gap: 2rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
   }
 
   .reviewTitle {
@@ -303,5 +305,41 @@
   .featureItem {
     padding: 0.8rem;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .reviewContainer {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+
+  .reviewTitle {
+    font-size: 1.5rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .driverCard {
+    padding: 0.8rem;
+  }
+
+  .summaryCard {
+    padding: 1.4rem;
+  }
+
+  .summaryTitle {
+    font-size: 1.3rem;
+  }
+
+  .totalPrice {
+    font-size: 1.8rem;
   }
 }
