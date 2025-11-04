@@ -50,6 +50,7 @@ const Header = () => {
   const [isInsuranceModalOpen, setIsInsuranceModalOpen] = useState(false);
 
   const [mounted, setMounted] = useState(false);
+  const [openStickyDropdown, setOpenStickyDropdown] = useState(null);
 
   useEffect(() => {
     setMounted(true);
