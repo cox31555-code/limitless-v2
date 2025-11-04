@@ -52,22 +52,36 @@
 
 @media screen and (max-width: 900px) {
   .actions {
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .payButton,
   .cancelButton {
-    height: 4.4rem;
-    font-size: 1.1rem;
+    height: 5rem;
+    font-size: 1.2rem;
     border-radius: 12px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .payButton,
-  .cancelButton {
-    height: 4.4rem;
-    font-size: 1rem;
+  .actions {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .payButton {
+    height: 6.2rem;
+    font-size: 1.5rem;
     border-radius: 12px;
+    padding: 1.8rem;
+    order: -1;
+  }
+
+  .cancelButton {
+    height: 6.2rem;
+    font-size: 1.5rem;
+    border-radius: 12px;
+    padding: 1.8rem;
+    order: 1;
   }
 }
