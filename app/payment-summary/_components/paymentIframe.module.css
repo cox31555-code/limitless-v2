@@ -337,26 +337,26 @@
   }
 
   .header {
-    padding: 0.85rem 1.19rem;
+    padding: 1rem 1.3rem;
   }
 
   .headerTitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .logo {
-    width: 3.06rem;
+    width: 3.2rem;
     height: auto;
   }
 
   .closeButton {
-    width: 2.72rem;
-    height: 2.72rem;
+    width: 2.9rem;
+    height: 2.9rem;
   }
 
   .closeButton svg {
-    width: 1.53rem;
-    height: 1.53rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   .successTitle {
@@ -380,26 +380,26 @@
   }
 
   .header {
-    padding: 1rem 1.2rem;
+    padding: 1.1rem 1.4rem;
   }
 
   .headerTitle {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .logo {
-    width: 2.72rem;
+    width: 3rem;
     height: auto;
   }
 
   .closeButton {
-    width: 2.38rem;
-    height: 2.38rem;
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .closeButton svg {
-    width: 1.36rem;
-    height: 1.36rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .successTitle {
@@ -427,26 +427,26 @@
   }
 
   .header {
-    padding: 0.9rem 1rem;
+    padding: 1rem 1.2rem;
   }
 
   .headerTitle {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
 
   .logo {
-    width: 2.4rem;
+    width: 2.8rem;
     height: auto;
   }
 
   .closeButton {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   .closeButton svg {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.35rem;
+    height: 1.35rem;
   }
 
   .successTitle {
