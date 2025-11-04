@@ -154,11 +154,28 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 900px) {
   .pickerContainer {
-    max-height: 80vh;
+    max-height: min(85vh, 100dvh - 100px);
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pickerContainer {
+    max-height: min(80vh, 100dvh - 120px);
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pickerContainer {
+    max-height: min(75vh, 100dvh - 140px);
     overflow-y: auto;
   }
 }
