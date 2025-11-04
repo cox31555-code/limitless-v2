@@ -93,9 +93,9 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
 
   return (
     <ComponentWrapper title="Cover Details">
-      <div className={isImpound ? styles.formContent : styles.sparkCoverDetails}>
+      <div className={styles.formContent}>
         {/* Duration Section */}
-        <div className={isImpound ? styles.formSection : styles.sparkSection}>
+        <div className={styles.formSection}>
           <div className={styles.sparkSectionHeader}>
             <h2 className={styles.sparkSectionTitle}>
               How Long Will You Need It?
@@ -228,7 +228,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
         </div>
 
         {/* Start Date/Time Section */}
-        <div className={isImpound ? styles.formSection : styles.sparkSection}>
+        <div className={styles.formSection}>
           <div className={styles.sparkSectionHeader}>
             <h2 className={styles.sparkSectionTitle}>
               When Would You Like The Cover To Start?
