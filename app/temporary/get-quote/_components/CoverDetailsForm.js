@@ -198,7 +198,9 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                       <select
                         value={duration >= 9 ? duration : ""}
                         onChange={(e) => handleDurationChange(parseInt(e.target.value))}
-                        className={styles.sparkNativeSelect}
+                        className={`${styles.sparkNativeSelect} ${
+                          duration >= 9 ? styles.sparkNativeSelectActive : ""
+                        }`}
                       >
                         <option value="">More...</option>
                         {extraDurationOptions.map((option) => (
