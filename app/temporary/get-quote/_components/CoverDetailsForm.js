@@ -265,38 +265,26 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
             type="button"
             onClick={handleStartImmediately}
             style={{
-              width: "100%",
-              padding: "1.4rem 2rem",
-              borderRadius: "10px",
-              fontSize: "1.3rem",
-              fontWeight: "600",
-              marginTop: "0.8rem",
+              padding: "0.8rem 0",
+              background: "transparent",
+              border: "none",
+              fontSize: "1.2rem",
+              fontWeight: "500",
+              marginTop: "1.6rem",
               cursor: "pointer",
-              transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
-              border: startPolicyImmediately
-                ? "2px solid #0388ff"
-                : "2px solid rgba(3, 136, 255, 0.2)",
-              background: startPolicyImmediately
-                ? "linear-gradient(135deg, #0388ff 0%, #0270cc 100%)"
-                : "transparent",
-              color: startPolicyImmediately ? "#fff" : "#000822",
+              transition: "color 0.28s ease",
+              color: startPolicyImmediately ? "#0388ff" : "#5a6b7d",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
-              gap: "1rem",
+              justifyContent: "flex-start",
+              gap: "0.8rem",
             }}
             aria-pressed={startPolicyImmediately}
             onMouseEnter={(e) => {
-              if (!startPolicyImmediately) {
-                e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.4)";
-                e.currentTarget.style.background = "rgba(3, 136, 255, 0.04)";
-              }
+              e.currentTarget.style.color = startPolicyImmediately ? "#0270cc" : "#000822";
             }}
             onMouseLeave={(e) => {
-              if (!startPolicyImmediately) {
-                e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.2)";
-                e.currentTarget.style.background = "transparent";
-              }
+              e.currentTarget.style.color = startPolicyImmediately ? "#0388ff" : "#5a6b7d";
             }}
           >
             {startPolicyImmediately && (
