@@ -185,7 +185,7 @@
 
 /* Content Wrapper */
 .contentWrapper {
-  padding: 2.4rem 3.8rem 10rem 3.8rem;
+  padding: 2.4rem 3.8rem 3rem 3.8rem;
   display: flex;
   flex-direction: column;
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
