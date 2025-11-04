@@ -1621,27 +1621,27 @@
   }
 
   .gridWithDropdown :global(.dropdown-module__container) {
-    width: 5.4rem !important;
-    height: 5.4rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
   }
 
   .gridWithDropdown :global(.dropdown-module__selectWrapper) {
-    width: 5.4rem !important;
-    height: 5.4rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
   }
 
   .gridWithDropdown :global(.dropdown-module__select) {
-    width: 5.4rem !important;
-    height: 5.4rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
   }
 
   .gridWithDropdown :global(.dropdown-module__arrowContainer) {
-    width: 2.4rem !important;
-    height: 2.4rem !important;
+    width: 2.2rem !important;
+    height: 2.2rem !important;
   }
 
   .gridWithDropdown :global(.dropdown-module__arrowDown) {
-    font-size: 1.9rem !important;
+    font-size: 1.8rem !important;
   }
 
   .gridWithDropdown :global([class*="selectionContainer"]) {
