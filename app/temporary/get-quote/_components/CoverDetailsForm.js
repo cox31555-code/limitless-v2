@@ -228,7 +228,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
         </div>
 
         {/* Start Date/Time Section */}
-        <div className={styles.sparkSection}>
+        <div className={isImpound ? styles.formSection : styles.sparkSection}>
           <div className={styles.sparkSectionHeader}>
             <h2 className={styles.sparkSectionTitle}>
               When Would You Like The Cover To Start?
