@@ -165,12 +165,13 @@
 
 @media screen and (max-width: 600px) {
   .timePicker {
-    padding: 1.6rem;
-    gap: 1.2rem;
-    max-width: min(94vw, 34rem);
-    width: 94vw;
+    padding: 1.4rem;
+    gap: 1rem;
+    max-width: min(88vw, 26rem);
+    width: 88vw;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    max-height: min(75vh, 100dvh - 140px);
   }
 
   .timeGrid {
