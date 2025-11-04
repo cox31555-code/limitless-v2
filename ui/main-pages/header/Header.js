@@ -77,12 +77,14 @@ const Header = ({ subTitle, title, description, features }) => {
               >
                 Get a Quote
               </button>
-              <button
-                className={styles.retrieveBtn}
-                onClick={() => router.push("/retrieve-quote")}
-              >
-                Retrieve your quote
-              </button>
+              {isMounted && (
+                <button
+                  className={styles.retrieveBtn}
+                  onClick={() => router.push("/retrieve-quote")}
+                >
+                  Retrieve your quote
+                </button>
+              )}
             </div>
             <GetQuote onExpand={setIsQuoteExpanded} insuranceType="annual" />
           </div>
