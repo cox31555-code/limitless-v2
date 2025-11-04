@@ -97,26 +97,7 @@
 }
 
 .iconContainer {
-  position: absolute;
-  right: 1.6rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 4px;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  pointer-events: none;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (min-width: 901px) {
-  .iconContainer {
-    display: none;
-  }
+  display: none;
 }
 
 .inputContainer:hover:not(.disabled) .iconContainer {
