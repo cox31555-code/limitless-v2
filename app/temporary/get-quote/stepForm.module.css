@@ -39,6 +39,12 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .stepFormContainer {
+    padding-top: 1.6875rem;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .stepFormContainer {
     max-width: 100%;
@@ -50,7 +56,7 @@
 @media screen and (max-width: 600px) {
   .stepFormContainer {
     max-width: 100%;
-    padding: 1.4rem 0.8rem 3.6rem;
+    padding: 1.6875rem 0.8rem 3.6rem;
     box-sizing: border-box;
   }
 
@@ -62,7 +68,7 @@
 @media screen and (max-width: 400px) {
   .stepFormContainer {
     max-width: 100%;
-    padding: 1.2rem 0.6rem 3rem;
+    padding: 1.6875rem 0.6rem 3rem;
     box-sizing: border-box;
   }
 
