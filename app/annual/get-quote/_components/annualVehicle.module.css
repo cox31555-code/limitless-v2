@@ -409,8 +409,8 @@
   flex: 1;
 }
 
-.dateWithCheckbox.disabled {
-  opacity: 0.6;
+.dateWithCheckbox.disabled > div:first-child {
+  opacity: 0.5;
   pointer-events: none;
 }
 
