@@ -167,7 +167,8 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                 ))}
               </div>
 
-              {/* Duration Value Selection */}
+              {/* Duration Value Selection - only show if a type is selected */}
+              {durationType && (
               <div className={styles.sparkDurationContainer}>
                 <p className={styles.sparkDurationLabel}>Select Duration</p>
                 <div className={styles.sparkDurationGrid}>
