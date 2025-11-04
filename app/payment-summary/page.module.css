@@ -5,8 +5,14 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  align-items: stretch;
+  align-items: flex-start;
   scroll-behavior: smooth;
+}
+
+@supports (height: 100vh) {
+  .container {
+    align-items: auto;
+  }
 }
 
 .first {
