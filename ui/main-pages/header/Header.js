@@ -18,6 +18,12 @@ const manrope = Manrope({
 const Header = ({ subTitle, title, description, features }) => {
   const router = useRouter();
   const [isQuoteExpanded, setIsQuoteExpanded] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const words = title.split(" ");
   const lastWord = words[words.length - 1];
   const withoutLastWord = words.slice(0, -1).join(" ");
