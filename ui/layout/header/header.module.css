@@ -175,15 +175,10 @@
   border-color: rgba(4, 156, 255, 0.5);
   color: #049cff;
   background: rgba(4, 156, 255, 0.08);
-  transform: translateY(-2px);
 }
 
 .loginBtn:hover::before {
   opacity: 1;
-}
-
-.loginBtn:active {
-  transform: translateY(0);
 }
 
 /* Get Quote Button - Modern Clean Design */
