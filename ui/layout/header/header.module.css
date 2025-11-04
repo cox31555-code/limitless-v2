@@ -748,16 +748,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: 5.2rem;
+  height: 5.2rem;
   background: rgba(3, 136, 255, 0.1);
   border: 1px solid rgba(3, 136, 255, 0.25);
-  border-radius: 8px;
+  border-radius: 12px;
   color: #0388ff;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   flex-shrink: 0;
   padding: 0;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.stickyHelpBtn svg {
+  width: 28px;
+  height: 28px;
 }
 
 .stickyHelpBtn:hover {
