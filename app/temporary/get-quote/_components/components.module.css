@@ -1028,7 +1028,7 @@
   background: transparent;
   border: none;
   color: #0388ff;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   cursor: pointer;
@@ -1037,6 +1037,9 @@
   transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
   margin-top: -6px;
+  text-decoration: underline;
+  text-decoration-color: #0388ff;
+  text-underline-offset: 0.4rem;
 }
 
 .haventBoughtBtn:hover {
