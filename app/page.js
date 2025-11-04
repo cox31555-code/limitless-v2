@@ -19,7 +19,7 @@ export default function Home() {
     <div className={styles.page}>
       <Header
         subTitle="Welcome Back! We've Got You Covered."
-        title="Quick and affordable car insurance"
+        title="Quick and affordable vehicle insurance"
         description="Join 1 million+ drivers getting a great deal on short-term and annual car insurance cover. Drive for hours, days, weeks, or all year round with affordable, fully comprehensive policies. It's quick, easy, and all sorted from your phone."
         features={features}
       />
