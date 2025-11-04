@@ -22,6 +22,7 @@ const FormDateInput = forwardRef(
       forceShowAbove = false,
       defaultYear = null,
       reducedPadding = false,
+      relatedDateValue = null,
       ...props
     },
     ref
