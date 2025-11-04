@@ -736,8 +736,7 @@
 }
 
 .stickyQuoteBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.4);
+  background: linear-gradient(135deg, #0277e3 0%, #0366d6 100%);
 }
 
 .stickyQuoteBtn:hover::before {
