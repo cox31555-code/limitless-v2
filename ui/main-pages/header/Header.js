@@ -67,24 +67,26 @@ const Header = ({ subTitle, title, description, features }) => {
                 </div>
               </div>
               <p className={`${styles.description} `}>{description}</p>
-              <button
-                className={styles.confirmBtn}
-                onClick={() => {
-                  title === "Impound Insurance"
-                    ? router.push("/impound/get-quote")
-                    : router.push("/annual/get-quote");
-                }}
-              >
-                Get a Quote
-              </button>
-              {isMounted && (
+              <div className={styles.buttonWrapper}>
                 <button
-                  className={styles.retrieveBtn}
-                  onClick={() => router.push("/retrieve-quote")}
+                  className={styles.confirmBtn}
+                  onClick={() => {
+                    title === "Impound Insurance"
+                      ? router.push("/impound/get-quote")
+                      : router.push("/annual/get-quote");
+                  }}
                 >
-                  Retrieve your quote
+                  Get a Quote
                 </button>
-              )}
+                {isMounted && (
+                  <button
+                    className={styles.retrieveBtn}
+                    onClick={() => router.push("/retrieve-quote")}
+                  >
+                    Retrieve your quote
+                  </button>
+                )}
+              </div>
             </div>
             <GetQuote onExpand={setIsQuoteExpanded} insuranceType="annual" />
           </div>
