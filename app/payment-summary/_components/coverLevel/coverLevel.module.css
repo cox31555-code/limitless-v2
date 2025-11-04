@@ -7,10 +7,10 @@
 }
 .title {
   color: #ffffff;
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 120%;
-  padding: 2.8rem 2.8rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 130%;
+  padding: 2rem 2rem 1.2rem;
   margin: 0;
 }
 
@@ -41,17 +41,17 @@
 .summery {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  padding: 3.2rem;
-  margin: 2rem 2.8rem;
+  gap: 1.6rem;
+  padding: 2.4rem;
+  margin: 1.2rem 2rem;
   position: relative;
-  border-radius: 18px;
+  border-radius: 12px;
   background:
     url('https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F454de0c14fa148b1a1b02e5d1747ab1e?format=webp&width=800') no-repeat,
     linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  background-size: 500px 500px, 200% 200%;
+  background-size: 400px 400px, 200% 200%;
   background-position: bottom right, center;
-  min-height: 220px;
+  min-height: 180px;
   justify-content: center;
   overflow: hidden;
 }
@@ -149,7 +149,7 @@
 
 .totalPrice {
   color: #ffffff;
-  font-size: 4.4rem;
+  font-size: 3.2rem;
   font-weight: 900;
   line-height: 100%;
   margin: 0;
@@ -165,18 +165,18 @@
 .features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-  padding: 2.4rem;
+  gap: 1rem;
+  padding: 1.6rem 2rem;
   border-top: 1px solid rgba(3, 136, 255, 0.16);
 }
 
 .featureItem {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1.4rem 1.8rem;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
   background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.06) 100%);
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1.5px solid rgba(3, 136, 255, 0.2);
 }
 
@@ -199,7 +199,7 @@
 
 .featureItemTitle {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   line-height: 130%;
 }
@@ -256,69 +256,7 @@
 
 @media (max-width: 900px) {
   .title {
-    font-size: 2.2rem;
-    padding: 2rem 2rem 1.2rem;
-  }
-
-  .coverType {
-    padding: 1.4rem;
-    margin: 1.2rem 2rem;
-  }
-
-  .coverTypeTitle {
-    font-size: 1.2rem;
-  }
-
-  .coverTypeValue {
-    font-size: 1.5rem;
-  }
-
-  .summery {
-    padding: 2rem;
-    margin: 1.2rem 2rem;
-    min-height: 160px;
-    background-size: 350px 350px, 200% 200%;
-  }
-
-  .totalPrice {
-    font-size: 3rem;
-  }
-
-  .totalPriceDescription {
-    font-size: 1.3rem;
-  }
-
-  .header {
-    padding: 1.4rem;
-    margin: 1.2rem 2rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .headerItem {
-    width: 100%;
-    gap: 0.8rem;
-  }
-
-  .features {
-    padding: 2rem;
-    gap: 1rem;
-  }
-
-  .featureItem {
-    padding: 1rem;
-    gap: 0.8rem;
-  }
-
-  .featureItemTitle {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding: 1.6rem 1.6rem 1rem;
   }
 
@@ -327,32 +265,113 @@
     margin: 1rem 1.6rem;
   }
 
+  .coverTypeTitle {
+    font-size: 1.1rem;
+  }
+
+  .coverTypeValue {
+    font-size: 1.4rem;
+  }
+
   .summery {
-    padding: 1.6rem;
+    padding: 1.8rem;
     margin: 1rem 1.6rem;
-    min-height: 140px;
-    background-size: 250px 250px, 200% 200%;
+    min-height: 160px;
+    background-size: 300px 300px, 200% 200%;
   }
 
   .totalPrice {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
+  }
+
+  .totalPriceDescription {
+    font-size: 1.1rem;
   }
 
   .header {
     padding: 1.2rem;
     margin: 1rem 1.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .headerItem {
+    width: 100%;
+    gap: 0.6rem;
   }
 
   .features {
     padding: 1.6rem;
-    grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
 
   .featureItem {
     padding: 0.8rem;
+    gap: 0.6rem;
   }
 
   .featureItemTitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.5rem;
+    padding: 1.4rem 1.4rem 0.8rem;
+  }
+
+  .coverType {
+    padding: 1rem;
+    margin: 0.8rem 1.4rem;
+  }
+
+  .coverTypeTitle {
+    font-size: 1rem;
+  }
+
+  .coverTypeValue {
+    font-size: 1.3rem;
+  }
+
+  .summery {
+    padding: 1.4rem;
+    margin: 0.8rem 1.4rem;
+    min-height: 140px;
+    background-size: 200px 200px, 200% 200%;
+  }
+
+  .totalPrice {
+    font-size: 2.4rem;
+  }
+
+  .totalPriceDescription {
+    font-size: 1rem;
+  }
+
+  .header {
+    padding: 1rem;
+    margin: 0.8rem 1.4rem;
+  }
+
+  .headerItemIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .features {
+    padding: 1.4rem;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .featureItem {
+    padding: 0.8rem;
+    gap: 0.6rem;
+  }
+
+  .featureItemTitle {
+    font-size: 0.95rem;
   }
 }
