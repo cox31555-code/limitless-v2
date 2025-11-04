@@ -1568,6 +1568,7 @@
     height: 3.8rem !important;
     min-width: 3.8rem !important;
     font-size: 1.2rem !important;
+    padding: 1.5rem !important;
   }
 
   .gridWithDropdown :global(.dropdown-module__container) {
