@@ -265,7 +265,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
             type="button"
             onClick={handleStartImmediately}
             style={{
-              padding: "1rem 1.6rem",
+              padding: "1.4rem 1.6rem",
               background: startPolicyImmediately ? "rgba(3, 136, 255, 0.08)" : "transparent",
               border: `1.5px solid ${startPolicyImmediately ? "#0388ff" : "rgba(3, 136, 255, 0.2)"}`,
               borderRadius: "10px",
