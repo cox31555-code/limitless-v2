@@ -475,6 +475,17 @@
   border-color: #0388ff;
 }
 
+.sparkNativeSelectActive {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  border-color: #0388ff;
+}
+
+.sparkNativeSelectActive:hover {
+  border-color: #0270cc;
+  background: linear-gradient(135deg, #0270cc 0%, #0158b8 100%);
+}
+
 @media screen and (max-width: 900px) {
   .sparkNativeSelect {
     display: block;
