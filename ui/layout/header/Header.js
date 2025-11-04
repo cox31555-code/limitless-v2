@@ -227,6 +227,7 @@ const Header = () => {
               className={styles.menuItem}
               onMouseEnter={() => setOpenDropdown("carVan")}
               onMouseLeave={() => setOpenDropdown(null)}
+              suppressHydrationWarning
             >
               <span className={`${styles.menuLink} ${openDropdown === "carVan" ? styles.active : ""} ${carVanItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
                 Car & Van
@@ -235,7 +236,7 @@ const Header = () => {
                 </span>
               </span>
               {openDropdown === "carVan" && (
-                <div className={styles.dropdown}>
+                <div className={styles.dropdown} suppressHydrationWarning>
                   {carVanItems.map((item, index) => (
                     <span
                       key={`carVan-${index}`}
