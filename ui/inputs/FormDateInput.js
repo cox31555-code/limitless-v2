@@ -260,15 +260,6 @@ const FormDateInput = forwardRef(
                 ref={inputContainerRef}
                 style={reducedPadding ? { paddingLeft: '0.6rem' } : {}}
               >
-                <div className={styles.iconContainer}>
-                  <Image
-                    src="/svg/date.svg"
-                    alt="calendar"
-                    width={24}
-                    height={24}
-                    className={styles.icon}
-                  />
-                </div>
                 <input
                   ref={ref}
                   name={name}
