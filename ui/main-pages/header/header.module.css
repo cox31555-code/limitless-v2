@@ -198,7 +198,7 @@
 .retrieveBtn {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: #0388ff;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 124%;
@@ -206,14 +206,14 @@
   transition: all 0.3s ease;
   white-space: nowrap;
   text-decoration: underline;
-  text-decoration-color: rgba(3, 136, 255, 0.5);
+  text-decoration-color: #0388ff;
   text-underline-offset: 0.5rem;
   padding: 0;
 }
 
 .retrieveBtn:hover {
-  color: rgba(255, 255, 255, 1);
-  text-decoration-color: #0388ff;
+  color: #0270cc;
+  text-decoration-color: #0270cc;
 }
 
 @media screen and (max-width: 900px) {
