@@ -97,6 +97,7 @@
     flex-grow: 0;
     gap: 2rem;
     order: 2;
+    top: auto;
   }
 }
 
