@@ -241,28 +241,6 @@
   margin: 0;
 }
 
-@media (max-width: 900px) {
-  .row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .summaryCard {
-    padding: 2rem;
-  }
-
-  .summaryTitle {
-    font-size: 1.6rem;
-  }
-
-  .totalPrice {
-    font-size: 2.4rem;
-  }
-}
-
 @media (max-width: 600px) {
   .reviewContainer {
     gap: 2rem;
