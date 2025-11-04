@@ -123,11 +123,11 @@
 
 @media screen and (max-width: 900px) {
   .timePicker {
-    border-radius: 16px;
-    max-width: calc(100% - 3.2rem);
-    width: 100%;
-    padding: 1.6rem;
     animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    max-width: min(92vw, 38rem);
+    width: 92vw;
+    padding: 1.6rem;
+    gap: 1.4rem;
   }
 
   .timePicker.slideUp {
@@ -135,20 +135,21 @@
   }
 
   .timeGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.8rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .timeSlot {
-    padding: 1rem;
-    font-size: 1.3rem;
-    min-height: 4.2rem;
+    padding: 1.2rem 0.8rem;
+    font-size: 1.4rem;
+    min-height: 5.2rem;
     font-weight: 600;
   }
 
   .timeSlot:active {
     background: #0270cc;
     border-color: #0270cc;
+    transform: scale(0.97);
   }
 }
 
