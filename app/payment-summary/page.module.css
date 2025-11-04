@@ -96,6 +96,37 @@
     flex-basis: 100%;
     flex-grow: 0;
     gap: 2rem;
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    gap: 2.4rem;
+    padding: 2.8rem 3.2%;
+  }
+
+  .first {
+    gap: 1.8rem;
+  }
+
+  .second {
+    gap: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 2rem;
+    padding: 2rem 2.4%;
+  }
+
+  .first {
+    gap: 1.6rem;
+  }
+
+  .second {
+    gap: 1.4rem;
   }
 }
 
