@@ -32,9 +32,20 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
   // Disable background scroll when iframe modal is open
   useEffect(() => {
     if (show) {
-      document.body.style.overflow = "hidden";
+      // Disable scroll on both html and body
+      const htmlElement = document.documentElement;
+      const bodyElement = document.body;
+
+      htmlElement.style.overflow = "hidden";
+      bodyElement.style.overflow = "hidden";
+      htmlElement.style.touchAction = "none";
+      bodyElement.style.touchAction = "none";
+
       return () => {
-        document.body.style.overflow = "";
+        htmlElement.style.overflow = "";
+        bodyElement.style.overflow = "";
+        htmlElement.style.touchAction = "";
+        bodyElement.style.touchAction = "";
       };
     }
   }, [show]);
