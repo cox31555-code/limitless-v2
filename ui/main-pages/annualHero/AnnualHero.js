@@ -204,9 +204,9 @@ const AnnualHero = () => {
 
               <button
                 className={`${styles.secondaryBtn} ${poppins.className}`}
-                onClick={() => router.push("/login")}
+                onClick={() => router.push("/retrieve-quote")}
               >
-                <span>Retrieve a saved quote</span>
+                <span>Retrieve your quote</span>
                 <div className={styles.underline}></div>
               </button>
             </div>
