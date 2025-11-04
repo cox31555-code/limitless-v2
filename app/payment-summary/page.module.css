@@ -19,8 +19,6 @@
 }
 
 .second {
-  position: sticky;
-  top: 140px;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
