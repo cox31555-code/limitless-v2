@@ -153,7 +153,7 @@
 .totalPrice {
   color: #ffffff;
   font-size: 4rem;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 100%;
   margin: 0;
   letter-spacing: -0.5px;
@@ -217,8 +217,9 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
   padding: 1.4rem 1.8rem;
   background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.06) 100%);
   border: 1px solid rgba(3, 136, 255, 0.2);
@@ -300,10 +301,9 @@
   .header {
     padding: 1.4rem 1.6rem;
     margin: 1rem 1.6rem;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .headerItem {
@@ -400,10 +400,9 @@
   .header {
     padding: 1.8rem 1.6rem;
     margin: 1.4rem 1.6rem;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.2rem;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .headerItem {
@@ -500,7 +499,9 @@
   .header {
     padding: 1.6rem 1.4rem;
     margin: 1.2rem 1.4rem;
-    gap: 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .headerItem {
