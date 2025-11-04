@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { ToastContainer } from "react-toastify";
 
-const Header = dynamic(() => import("@/ui/layout/header/Header"));
+const Header = dynamic(() => import("@/ui/layout/header/Header"), { ssr: false });
 
 export default function ClientLayout({ children }) {
   return (
