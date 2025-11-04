@@ -2318,4 +2318,19 @@
     height: 5.2rem;
     font-size: 1.2rem;
   }
+
+  .sparkDurationGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .sparkDurationButton {
+    padding: 0.8rem 0.5rem;
+    font-size: 1rem;
+    min-height: 4rem;
+  }
+
+  .sparkDropdownContainer {
+    min-height: 4rem;
+  }
 }
