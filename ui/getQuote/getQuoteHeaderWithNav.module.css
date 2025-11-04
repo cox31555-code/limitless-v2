@@ -114,9 +114,10 @@
   justify-content: flex-start;
   flex-direction: row;
   gap: 0.8rem;
-  white-space: nowrap;
-  text-wrap: nowrap;
-  width: 23rem;
+  white-space: normal;
+  text-wrap: wrap;
+  width: auto;
+  flex-wrap: wrap;
 }
 
 .titleSpan {
