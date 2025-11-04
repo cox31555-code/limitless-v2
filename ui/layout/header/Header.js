@@ -212,7 +212,7 @@ const Header = () => {
         </div>
       )}
       {!(isGetQuotePage && mounted) && (
-      <header className={styles.container} data-payment-summary={pathname.includes("/payment-summary")}>
+      <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
             onClick={() => router.push("/")}
