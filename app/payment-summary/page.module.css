@@ -27,6 +27,7 @@
   flex-basis: 41.7%;
   flex-grow: 0;
   flex-shrink: 0;
+  align-self: auto;
 }
 
 .actions {
