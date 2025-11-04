@@ -81,19 +81,21 @@
   box-shadow: none !important;
 }
 
-.inputContainer.disabled .input {
+.inputContainer.disabled .input,
+.inputContainer.disabled input {
   color: #9ca3af !important;
-  opacity: 0.7 !important;
+  opacity: 0.75 !important;
 }
 
 .inputGroup:has(.inputContainer.disabled) .label {
   color: #9ca3af !important;
-  opacity: 0.7 !important;
+  opacity: 0.75 !important;
 }
 
 .inputContainer.disabled .iconContainer,
-.inputContainer.disabled .arrowDown {
-  opacity: 0.6 !important;
+.inputContainer.disabled .arrowDown,
+.inputContainer.disabled svg {
+  opacity: 0.65 !important;
   color: #9ca3af !important;
 }
 
