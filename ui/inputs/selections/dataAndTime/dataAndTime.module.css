@@ -61,6 +61,14 @@
   background: rgba(239, 68, 68, 0.04);
 }
 
+.inputContainer.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: rgba(3, 136, 255, 0.04);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+}
+
 .iconContainer {
   position: absolute;
   right: 1.6rem;
