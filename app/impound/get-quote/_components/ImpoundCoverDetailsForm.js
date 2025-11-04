@@ -139,16 +139,27 @@ const ImpoundCoverDetailsForm = ({ form }) => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "8px",
-                padding: "12px 16px",
-                background: startPolicyImmediately ? "#0388ff" : "transparent",
-                color: startPolicyImmediately ? "#fff" : "#000822",
-                border: "1px solid #0388ff",
-                borderRadius: "8px",
+                gap: "0.8rem",
+                padding: "1rem 1.4rem",
+                background: "transparent",
+                color: "#5a6b7d",
+                border: "1.5px solid rgba(3, 136, 255, 0.2)",
+                borderRadius: "10px",
                 cursor: "pointer",
-                fontSize: "14px",
+                fontSize: "1.2rem",
                 fontWeight: "500",
-                marginTop: "16px",
+                marginTop: "1.6rem",
+                transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.4)";
+                e.currentTarget.style.color = "#000822";
+                e.currentTarget.style.backgroundColor = "rgba(3, 136, 255, 0.04)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.2)";
+                e.currentTarget.style.color = "#5a6b7d";
+                e.currentTarget.style.backgroundColor = "transparent";
               }}
             >
               <Image
@@ -157,9 +168,8 @@ const ImpoundCoverDetailsForm = ({ form }) => {
                 width={16}
                 height={16}
                 style={{
-                  filter: startPolicyImmediately
-                    ? "brightness(0) invert(1)"
-                    : "none",
+                  opacity: startPolicyImmediately ? 1 : 0.5,
+                  filter: "brightness(0.6)",
                 }}
               />
               Start policy immediately
@@ -167,20 +177,22 @@ const ImpoundCoverDetailsForm = ({ form }) => {
           </div>
         </div>
 
-        <div className={styles.inputGroup}>
-          <Title title="Which type of impound insurance?" />
-          <div className={styles.selectionContainer}>
-            <p className={styles.label}>Please select</p>
-            <Selection4
-              options={impoundTypeOptions}
-              selectedItem={selectedImpoundType}
-              setSelectedItem={handleImpoundTypeSelect}
-            />
-            {errors.coverDetails?.impoundType && (
-              <span className={styles.errorMessage}>
-                {errors.coverDetails.impoundType.message}
-              </span>
-            )}
+        <div className={styles.formSection}>
+          <div className={styles.inputGroup}>
+            <Title title="Which type of impound insurance?" />
+            <div className={styles.selectionContainer}>
+              <p className={styles.label}>Please select</p>
+              <Selection4
+                options={impoundTypeOptions}
+                selectedItem={selectedImpoundType}
+                setSelectedItem={handleImpoundTypeSelect}
+              />
+              {errors.coverDetails?.impoundType && (
+                <span className={styles.errorMessage}>
+                  {errors.coverDetails.impoundType.message}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>
