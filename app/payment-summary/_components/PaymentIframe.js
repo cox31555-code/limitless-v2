@@ -29,6 +29,16 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
     }
   }, [show]);
 
+  // Disable background scroll when iframe modal is open
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [show]);
+
 
   useEffect(() => {
     if (!show || !insuranceId) return;
