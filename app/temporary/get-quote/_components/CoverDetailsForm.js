@@ -265,26 +265,31 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
             type="button"
             onClick={handleStartImmediately}
             style={{
-              padding: "0.8rem 0",
-              background: "transparent",
-              border: "none",
-              fontSize: "1.2rem",
+              padding: "1rem 1.6rem",
+              background: startPolicyImmediately ? "rgba(3, 136, 255, 0.08)" : "transparent",
+              border: `1.5px solid ${startPolicyImmediately ? "#0388ff" : "rgba(3, 136, 255, 0.2)"}`,
+              borderRadius: "10px",
+              fontSize: "1.3rem",
               fontWeight: "500",
               marginTop: "1.6rem",
               cursor: "pointer",
-              transition: "color 0.28s ease",
+              transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
               color: startPolicyImmediately ? "#0388ff" : "#5a6b7d",
               display: "flex",
               alignItems: "center",
-              justifyContent: "flex-start",
+              justifyContent: "center",
               gap: "0.8rem",
             }}
             aria-pressed={startPolicyImmediately}
             onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = startPolicyImmediately ? "#0270cc" : "rgba(3, 136, 255, 0.35)";
               e.currentTarget.style.color = startPolicyImmediately ? "#0270cc" : "#000822";
+              e.currentTarget.style.backgroundColor = startPolicyImmediately ? "rgba(3, 136, 255, 0.12)" : "rgba(3, 136, 255, 0.02)";
             }}
             onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = startPolicyImmediately ? "#0388ff" : "rgba(3, 136, 255, 0.2)";
               e.currentTarget.style.color = startPolicyImmediately ? "#0388ff" : "#5a6b7d";
+              e.currentTarget.style.backgroundColor = startPolicyImmediately ? "rgba(3, 136, 255, 0.08)" : "transparent";
             }}
           >
             {startPolicyImmediately && (
