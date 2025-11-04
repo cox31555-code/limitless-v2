@@ -89,12 +89,10 @@
   }
 
   .second {
-    position: static;
     flex-basis: 100%;
     flex-grow: 0;
     gap: 2rem;
     order: 2;
-    top: auto;
   }
 }
 
