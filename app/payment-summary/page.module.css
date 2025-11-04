@@ -143,33 +143,45 @@
   }
 
   .actions {
-    gap: 1.2rem;
+    gap: 1.4rem;
+  }
+
+  .payButton {
+    order: -1;
+  }
+
+  .cancelButton {
+    order: 1;
   }
 
   .payButton,
   .cancelButton {
-    height: 5rem;
+    height: 6.2rem;
     font-size: 1.5rem;
-    font-weight: 700;
-    border-radius: 14px;
-    padding: 0 1.6rem;
-    letter-spacing: -0.2px;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 1.8rem;
+    letter-spacing: 0.2px;
   }
 
   .payButton {
+    background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+    color: #fff;
     box-shadow: 0 4px 16px rgba(3, 136, 255, 0.25);
   }
 
-  .payButton:active {
+  .payButton:active:not(:disabled) {
     transform: scale(0.98);
+    opacity: 0.95;
   }
 
   .cancelButton {
-    border-width: 2px;
+    background: #ffffff;
+    color: #0388ff;
+    border: 1.5px solid rgba(3, 136, 255, 0.2);
   }
 
-  .cancelButton:active {
+  .cancelButton:active:not(:disabled) {
     transform: scale(0.98);
-    opacity: 0.95;
   }
 }
