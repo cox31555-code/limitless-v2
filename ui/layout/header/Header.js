@@ -212,7 +212,7 @@ const Header = () => {
         </div>
       )}
       {!(isGetQuotePage && mounted) && (
-      <header className={styles.container}>
+      <header className={styles.container} suppressHydrationWarning>
         <div className={styles.logoContainer}>
           <Image
             onClick={() => router.push("/")}
