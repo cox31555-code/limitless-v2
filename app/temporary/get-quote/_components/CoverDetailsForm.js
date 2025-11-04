@@ -250,6 +250,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                   )}
                 </div>
               </div>
+              )}
             </div>
           )}
         </div>
