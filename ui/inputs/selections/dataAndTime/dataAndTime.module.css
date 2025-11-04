@@ -81,8 +81,8 @@
 }
 
 .inputContainer.disabled .input {
-  color: #9ca3af;
-  opacity: 0.5;
+  color: #9ca3af !important;
+  opacity: 0.7 !important;
 }
 
 .inputGroup:has(.inputContainer.disabled) .label {
