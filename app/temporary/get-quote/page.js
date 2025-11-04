@@ -66,10 +66,10 @@ const TemporaryInsuranceContent = () => {
         apiData: null,
       },
       coverDetails: {
-        type: "Days",
-        period: 1,
+        type: "",
+        period: "",
         startDate: "",
-        startTime: "10:00",
+        startTime: "",
       },
       userDetails: {
         firstName: "",
