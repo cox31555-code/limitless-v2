@@ -332,7 +332,7 @@
 
   .container {
     max-width: 90%;
-    max-height: 80vh;
+    max-height: 75vh;
     border-radius: 16px;
   }
 
@@ -375,7 +375,7 @@
 
   .container {
     max-width: 95%;
-    max-height: 85vh;
+    max-height: 61vh;
     border-radius: 12px;
   }
 
@@ -412,5 +412,52 @@
 
   .successMessage {
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .backdrop {
+    padding: 0.8rem;
+  }
+
+  .container {
+    max-width: 96%;
+    max-height: 60vh;
+    border-radius: 10px;
+  }
+
+  .header {
+    padding: 0.9rem 1rem;
+  }
+
+  .headerTitle {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 2.4rem;
+    height: auto;
+  }
+
+  .closeButton {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .closeButton svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .successTitle {
+    font-size: 1.4rem;
+  }
+
+  .successCheckmark {
+    font-size: 3.6rem;
+  }
+
+  .successMessage {
+    font-size: 0.95rem;
   }
 }
