@@ -40,7 +40,7 @@ const CoverLevel = ({ data, insuranceType }) => {
         Current level of cover
       </h3>
       <div className={styles.coverType}>
-        <p className={styles.coverTypeTitle}>Type of Insurance</p>
+        <p className={styles.coverTypeTitle}>Type</p>
         <p className={`${styles.coverTypeValue} ${plusJakartaSans.className}`}>
           {getInsuranceTypeName(insuranceType)}
         </p>
