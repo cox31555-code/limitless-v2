@@ -112,7 +112,7 @@ const Header = () => {
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname.startsWith("/dashboard") ||
-    pathname.startsWith("/payment")
+    (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary"))
   );
 
   if (shouldHideHeader) {
