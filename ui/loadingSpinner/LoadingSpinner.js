@@ -6,12 +6,9 @@ const LoadingSpinner = () => {
     <div className={styles.spinner}>
       <svg
         className={styles.spinnerSvg}
-        width="136"
-        height="136"
         viewBox="0 0 136 136"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ display: 'block' }}
       >
         <defs>
           <linearGradient id="fillGradient">
