@@ -1380,7 +1380,7 @@
 
   .sparkDurationButton {
     padding: 1rem 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     min-height: 4.8rem;
   }
 
@@ -1508,7 +1508,7 @@
 
     .sparkDurationButton {
       padding: 0.9rem 0.6rem;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       min-height: 4.4rem;
     }
 
@@ -2377,11 +2377,15 @@
 
   .sparkDurationButton {
     padding: 0.8rem 0.5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     min-height: 4rem;
   }
 
   .sparkDropdownContainer {
     min-height: 4rem;
+  }
+
+  .sparkNativeSelect {
+    font-size: 1.2rem;
   }
 }
