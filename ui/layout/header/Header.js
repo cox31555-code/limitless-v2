@@ -168,6 +168,7 @@ const Header = () => {
                 className={styles.stickyDropdownContainer}
                 onMouseEnter={() => setOpenDropdown("motorbike")}
                 onMouseLeave={() => setOpenDropdown(null)}
+                suppressHydrationWarning
               >
                 <span className={`${styles.stickyMenuButton} ${openDropdown === "motorbike" ? styles.active : ""} ${motorbakeItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
                   Motorbike
@@ -176,7 +177,7 @@ const Header = () => {
                   </span>
                 </span>
                 {openDropdown === "motorbike" && (
-                  <div className={styles.stickyDropdown}>
+                  <div className={styles.stickyDropdown} suppressHydrationWarning>
                     {motorbakeItems.map((item, index) => (
                       <span key={`sticky-motorbike-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
                         <span className={styles.dropdownIcon}>
