@@ -350,6 +350,7 @@
     text-wrap: wrap;
     margin: 0;
     line-height: 130%;
+    flex-wrap: wrap;
   }
 
   .stepLabel {
