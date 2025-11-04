@@ -18,11 +18,10 @@ const manrope = Manrope({
 const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps }) => {
   const router = useRouter();
 
-  // Only split title if we have steps (get-quote flow), not for payment summary
-  const shouldSplitTitle = !subtitle && totalSteps;
+  // Always split title to have last word in blue
   const words = title.split(" ");
-  const lastWord = shouldSplitTitle ? words[words.length - 1] : null;
-  const withoutLastWord = shouldSplitTitle ? words.slice(0, -1).join(" ") : title;
+  const lastWord = words[words.length - 1];
+  const withoutLastWord = words.slice(0, -1).join(" ");
 
   const progressPercentage = totalSteps ? (currentStep / totalSteps) * 100 : 0;
 
