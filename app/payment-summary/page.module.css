@@ -9,12 +9,6 @@
   scroll-behavior: smooth;
 }
 
-@supports (height: 100vh) {
-  .container {
-    align-items: auto;
-  }
-}
-
 .first {
   display: flex;
   flex-direction: column;
