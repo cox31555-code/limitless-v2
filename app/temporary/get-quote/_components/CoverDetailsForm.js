@@ -186,8 +186,8 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
 
                   {/* Dropdown for more options - only show for Days */}
                   {showDropdown && (
-                    <div className={styles.sparkDropdownContainer}>
-                      {/* Native select for mobile */}
+                    <>
+                      {/* Native select for mobile only */}
                       <select
                         value={duration >= 9 ? duration : ""}
                         onChange={(e) => handleDurationChange(parseInt(e.target.value))}
@@ -201,44 +201,48 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
                         ))}
                       </select>
 
-                      {/* Custom dropdown for desktop */}
-                      <button
-                        type="button"
-                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                        className={`${styles.sparkDropdownButton} ${
-                          duration >= 9 ? styles.sparkDropdownButtonActive : ""
-                        }`}
-                      >
-                        {duration >= 9 ? duration : (
-                          <svg
-                            className={`${styles.sparkDropdownIcon} ${
-                              isDropdownOpen ? styles.sparkDropdownIconOpen : ""
-                            }`}
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <polyline points="6 9 12 15 18 9" />
-                          </svg>
-                        )}
-                      </button>
-
-                      {isDropdownOpen && (
-                        <div className={styles.sparkDropdownContent}>
-                          {extraDurationOptions.map((option) => (
-                            <button
-                              key={option}
-                              type="button"
-                              onClick={() => handleDurationChange(option)}
-                              className={styles.sparkDropdownItem}
+                      {/* Custom dropdown for desktop only */}
+                      <div className={styles.sparkDropdownContainer}>
+                        <button
+                          type="button"
+                          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                          className={`${styles.sparkDurationButton} ${
+                            duration >= 9
+                              ? styles.sparkDurationButtonActive
+                              : styles.sparkDurationButtonInactive
+                          }`}
+                        >
+                          {duration >= 9 ? duration : (
+                            <svg
+                              className={`${styles.sparkDropdownIcon} ${
+                                isDropdownOpen ? styles.sparkDropdownIconOpen : ""
+                              }`}
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
                             >
-                              {option}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                              <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                          )}
+                        </button>
+
+                        {isDropdownOpen && (
+                          <div className={styles.sparkDropdownContent}>
+                            {extraDurationOptions.map((option) => (
+                              <button
+                                key={option}
+                                type="button"
+                                onClick={() => handleDurationChange(option)}
+                                className={styles.sparkDropdownItem}
+                              >
+                                {option}
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </>
                   )}
                 </div>
               </div>
