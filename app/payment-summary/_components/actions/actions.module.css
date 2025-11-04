@@ -66,22 +66,20 @@
 @media screen and (max-width: 600px) {
   .actions {
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
 
   .payButton {
-    height: 6.2rem;
-    font-size: 1.5rem;
+    height: 5.2rem;
+    font-size: 1.3rem;
     border-radius: 12px;
-    padding: 1.8rem;
     order: -1;
   }
 
   .cancelButton {
-    height: 6.2rem;
-    font-size: 1.5rem;
+    height: 5.2rem;
+    font-size: 1.3rem;
     border-radius: 12px;
-    padding: 1.8rem;
     order: 1;
   }
 }
