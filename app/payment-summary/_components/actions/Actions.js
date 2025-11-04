@@ -29,11 +29,11 @@ const Actions = ({ insuranceId, insuranceType, onPayClick }) => {
 
   return (
     <div className={styles.actions}>
-      <button className={styles.cancelButton} onClick={handleBack}>
-        Back
-      </button>
       <button className={styles.payButton} onClick={handlePayment}>
         Proceed to payment
+      </button>
+      <button className={styles.cancelButton} onClick={handleBack}>
+        Back
       </button>
     </div>
   );
