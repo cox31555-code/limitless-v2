@@ -8,12 +8,17 @@
   flex-direction: column;
   gap: 1.6rem;
   overflow: visible;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 99999;
   box-sizing: border-box;
   will-change: transform, opacity;
   backface-visibility: hidden;
   perspective: 1000px;
+  max-height: min(85vh, 100dvh - 100px);
+  overflow-y: auto;
 }
 
 @media screen and (min-width: 901px) {
