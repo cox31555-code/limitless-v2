@@ -62,11 +62,22 @@
 }
 
 .inputContainer.disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
-  background: rgba(3, 136, 255, 0.04);
-  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  color: #9ca3af;
+}
+
+.inputContainer.disabled .input {
+  color: #9ca3af;
+  opacity: 0.5;
+}
+
+.inputContainer.disabled .label {
+  color: #9ca3af;
+  opacity: 0.6;
 }
 
 .iconContainer {
