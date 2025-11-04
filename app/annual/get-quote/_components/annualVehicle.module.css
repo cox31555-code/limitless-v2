@@ -15,6 +15,13 @@
   .content {
     gap: 4.3rem;
   }
+
+  .registrationSection,
+  .additionalDetailsSection,
+  .ownershipSection,
+  .rows {
+    margin-bottom: 3.4rem;
+  }
 }
 
 /* Section Wrapper with Title and Content */
