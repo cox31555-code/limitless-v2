@@ -14,12 +14,7 @@
   will-change: transform, opacity;
   backface-visibility: hidden;
   perspective: 1000px;
-}
-
-@media screen and (min-width: 901px) {
-  .timePicker {
-    animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
+  animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @media screen and (max-width: 900px) {
