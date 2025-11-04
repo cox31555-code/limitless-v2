@@ -156,11 +156,8 @@
   .timePicker {
     padding: 1.4rem;
     gap: 1rem;
-    max-width: min(88vw, 26rem);
-    width: 88vw;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    max-height: min(75vh, 100dvh - 140px);
+    max-width: min(90vw, 32rem);
+    width: 90vw;
   }
 
   .timeGrid {
@@ -170,10 +167,9 @@
 
   .timeSlot {
     padding: 1.2rem 0.8rem;
-    font-size: 1.4rem;
-    min-height: 5.2rem;
+    font-size: 1.3rem;
+    min-height: 5rem;
     font-weight: 600;
-    border-radius: 12px;
   }
 
   .timeSlot:active:not(.timeSlotSelected) {
@@ -187,9 +183,8 @@
   .timePicker {
     padding: 1.2rem;
     gap: 0.8rem;
-    max-width: min(86vw, 24rem);
-    width: 86vw;
-    max-height: min(70vh, 100dvh - 160px);
+    max-width: min(92vw, 28rem);
+    width: 92vw;
   }
 
   .timeGrid {
@@ -200,7 +195,7 @@
   .timeSlot {
     padding: 1rem 0.6rem;
     font-size: 1.3rem;
-    min-height: 4.8rem;
+    min-height: 4.6rem;
     font-weight: 600;
   }
 }
