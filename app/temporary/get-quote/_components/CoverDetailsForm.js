@@ -14,18 +14,13 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
   const startTime = form.watch("coverDetails.startTime");
 
   // Auto-select 30 Days for impound insurance on mount
-  // For Temporary, ensure no duration is selected by default
+  // For Temporary, no auto-selection - user must choose
   useEffect(() => {
     if (isImpound) {
       form.setValue("coverDetails.type", "Days");
       form.setValue("coverDetails.period", 30);
-    } else {
-      // For Temporary - ensure no default selection
-      if (!form.watch("coverDetails.type")) {
-        form.setValue("coverDetails.type", "Hours");
-      }
-      // Don't set a default period - leave it unselected
     }
+    // For Temporary: no auto-selection
   }, [isImpound, form]);
 
   const handleStartImmediately = () => {
