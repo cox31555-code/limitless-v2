@@ -15,7 +15,7 @@ const manrope = Manrope({
   weight: ["500"],
 });
 
-const GetQuoteHeaderWithNav = ({ title, currentStep, totalSteps }) => {
+const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps }) => {
   const router = useRouter();
 
   const words = title.split(" ");
