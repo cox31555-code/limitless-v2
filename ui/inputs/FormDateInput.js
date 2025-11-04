@@ -214,6 +214,8 @@ const FormDateInput = forwardRef(
     };
 
     const openDatePicker = () => {
+      // Don't open picker if disabled
+      if (props.disabled) return;
       setShowDatePicker(true);
       // Prevent body scroll when picker is open on mobile
       if (isMobile) {
