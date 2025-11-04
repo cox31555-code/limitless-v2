@@ -1,23 +1,51 @@
 import React from "react";
 import styles from "./customTimePicker.module.css";
 
-const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose, showAbove = false }) => {
-  const timeSlots = [
-    "08:00",
-    "09:00",
-    "10:00",
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-  ];
+const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose, showAbove = false, selectedDate = null }) => {
+  // Generate 15-minute increments for 24 hours
+  const generateTimeSlots = () => {
+    const slots = [];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Parse selected date if provided
+    const selectedDateObj = selectedDate ? new Date(selectedDate) : null;
+    const isToday = selectedDateObj && selectedDateObj.toDateString() === today.toDateString();
+
+    for (let hours = 0; hours < 24; hours++) {
+      for (let minutes = 0; minutes < 60; minutes += 15) {
+        const timeStr = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+
+        // If selected date is today, only show future times
+        if (isToday) {
+          const now = new Date();
+          const currentHour = now.getHours();
+          const currentMinute = now.getMinutes();
+
+          // Skip if this time is in the past
+          if (hours < currentHour || (hours === currentHour && minutes <= currentMinute)) {
+            continue;
+          }
+        }
+
+        slots.push(timeStr);
+      }
+    }
+
+    // If no future times today, start from midnight tomorrow
+    if (isToday && slots.length === 0) {
+      for (let hours = 0; hours < 24; hours++) {
+        for (let minutes = 0; minutes < 60; minutes += 15) {
+          const timeStr = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+          slots.push(timeStr);
+        }
+      }
+    }
+
+    return slots;
+  };
+
+  const timeSlots = generateTimeSlots();
 
   const handleTimeClick = (time) => {
     onTimeSelect(time);
