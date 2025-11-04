@@ -1019,9 +1019,9 @@
 }
 
 .dateWithCheckbox.disabled > div:first-child {
-  opacity: 0.65;
-  pointer-events: none;
-  filter: grayscale(20%);
+  opacity: 0.65 !important;
+  pointer-events: none !important;
+  filter: grayscale(15%) !important;
 }
 
 .haventBoughtBtn {
