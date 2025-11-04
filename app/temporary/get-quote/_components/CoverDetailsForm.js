@@ -95,7 +95,7 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
     <ComponentWrapper title="Cover Details">
       <div className={isImpound ? styles.formContent : styles.sparkCoverDetails}>
         {/* Duration Section */}
-        <div className={styles.sparkSection}>
+        <div className={isImpound ? styles.formSection : styles.sparkSection}>
           <div className={styles.sparkSectionHeader}>
             <h2 className={styles.sparkSectionTitle}>
               How Long Will You Need It?
