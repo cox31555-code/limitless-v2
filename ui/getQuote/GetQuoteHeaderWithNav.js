@@ -54,11 +54,9 @@ const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps }) => 
             <div className={styles.titleContent}>
               <h1 className={`${styles.title} ${plusJakartaSans.className}`}>
                 <p>{withoutLastWord}</p>
-                {lastWord && (
-                  <span className={styles.titleSpan}>
-                    {lastWord}
-                  </span>
-                )}
+                <span className={styles.titleSpan}>
+                  {lastWord}
+                </span>
               </h1>
             </div>
 
