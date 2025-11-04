@@ -189,6 +189,33 @@
   background: rgba(3, 137, 255, 0.8);
 }
 
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.retrieveBtn {
+  background: transparent;
+  border: none;
+  color: #0388ff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 124%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: #0388ff;
+  text-underline-offset: 0.5rem;
+  padding: 0;
+}
+
+.retrieveBtn:hover {
+  color: #0270cc;
+  text-decoration-color: #0270cc;
+}
+
 @media screen and (max-width: 900px) {
   .squares {
     display: none !important;
