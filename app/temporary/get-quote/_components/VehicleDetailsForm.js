@@ -9,7 +9,7 @@ import Title from "@/ui/insurance-quotes/title/Title";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import styles from "@/app/annual/get-quote/_components/annualVehicle.module.css";
 import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { buildVehicleQuery, clearDependentFields, shouldAutoSelect } from "./helperFucntion";
+import { buildVehicleQuery, clearDependentFields, shouldAutoSelect } from "../helperFucntion";
 
 // Simplified state for vehicle data
 const initialState = {
