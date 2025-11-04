@@ -1337,6 +1337,10 @@
     min-height: 4.8rem;
   }
 
+  .sparkDropdownContainer {
+    min-height: 4.8rem;
+  }
+
   .sparkDateTimeGrid {
     grid-template-columns: 1fr;
     gap: 1.4rem;
