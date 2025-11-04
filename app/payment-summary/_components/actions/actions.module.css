@@ -24,10 +24,6 @@
   font-family: inherit;
 }
 
-.cancelButton {
-  order: 2;
-}
-
 .payButton {
   order: 1;
 }
@@ -39,6 +35,7 @@
 }
 
 .cancelButton {
+  order: 2;
   background: #ffffff;
   color: #0388ff;
   border: 1.5px solid rgba(3, 136, 255, 0.2);
