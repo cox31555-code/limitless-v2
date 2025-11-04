@@ -125,6 +125,7 @@
     white-space: normal;
     text-wrap: wrap;
     flex-wrap: wrap;
+    margin: 0 -0.3rem 0 -0.2rem;
   }
 }
 
