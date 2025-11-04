@@ -427,26 +427,26 @@
   }
 
   .header {
-    padding: 1.2rem 1.3rem;
+    padding: 1.4rem 1.5rem;
   }
 
   .headerTitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .logo {
-    width: 3.2rem;
+    width: 3.6rem;
     height: auto;
   }
 
   .closeButton {
-    width: 2.7rem;
-    height: 2.7rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .closeButton svg {
-    width: 1.55rem;
-    height: 1.55rem;
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .successTitle {
