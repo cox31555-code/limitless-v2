@@ -57,8 +57,8 @@
 
   .payButton,
   .cancelButton {
-    height: 5rem;
-    font-size: 1.2rem;
+    height: 5.4rem;
+    font-size: 1.3rem;
     border-radius: 12px;
   }
 }
