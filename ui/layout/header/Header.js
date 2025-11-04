@@ -260,6 +260,7 @@ const Header = () => {
               className={styles.menuItem}
               onMouseEnter={() => setOpenDropdown("motorbike")}
               onMouseLeave={() => setOpenDropdown(null)}
+              suppressHydrationWarning
             >
               <span className={`${styles.menuLink} ${openDropdown === "motorbike" ? styles.active : ""} ${motorbakeItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
                 Motorbike
@@ -268,7 +269,7 @@ const Header = () => {
                 </span>
               </span>
               {openDropdown === "motorbike" && (
-                <div className={styles.dropdown}>
+                <div className={styles.dropdown} suppressHydrationWarning>
                   {motorbakeItems.map((item, index) => (
                     <span
                       key={`motorbike-${index}`}
