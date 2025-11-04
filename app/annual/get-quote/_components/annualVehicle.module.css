@@ -11,6 +11,12 @@
   gap: 2.4rem;
 }
 
+@media (max-width: 640px) {
+  .content {
+    gap: 4.3rem;
+  }
+}
+
 /* Section Wrapper with Title and Content */
 .section {
   display: flex;
