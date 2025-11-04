@@ -61,8 +61,8 @@
 }
 
 .timeSlot:hover:not(.timeSlotSelected) {
-  border-color: rgba(3, 136, 255, 0.3);
-  background: rgba(3, 136, 255, 0.12);
+  border-color: rgba(3, 136, 255, 0.25);
+  background: rgba(3, 136, 255, 0.08);
 }
 
 .timeSlotSelected {
