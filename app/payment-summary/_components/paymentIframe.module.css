@@ -422,42 +422,42 @@
 
   .container {
     max-width: 96%;
-    max-height: 60vh;
+    max-height: 63vh;
     border-radius: 10px;
   }
 
   .header {
-    padding: 1rem 1.2rem;
+    padding: 1.2rem 1.3rem;
   }
 
   .headerTitle {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
 
   .logo {
-    width: 2.8rem;
+    width: 3.2rem;
     height: auto;
   }
 
   .closeButton {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.7rem;
+    height: 2.7rem;
   }
 
   .closeButton svg {
-    width: 1.35rem;
-    height: 1.35rem;
+    width: 1.55rem;
+    height: 1.55rem;
   }
 
   .successTitle {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .successCheckmark {
-    font-size: 3.6rem;
+    font-size: 4rem;
   }
 
   .successMessage {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
