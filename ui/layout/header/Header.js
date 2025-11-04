@@ -137,77 +137,90 @@ const Header = () => {
                 height={50}
               />
             </div>
-            <nav className={styles.stickyMenu} suppressHydrationWarning>
-              <div
-                className={styles.stickyDropdownContainer}
-                onMouseEnter={() => setOpenDropdown("carVan")}
-                onMouseLeave={() => setOpenDropdown(null)}
-                suppressHydrationWarning
-              >
-                <span className={`${styles.stickyMenuButton} ${openDropdown === "carVan" ? styles.active : ""} ${carVanItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
-                  Car & Van
-                  <span className={`${styles.chevronIcon} ${openDropdown === "carVan" ? styles.rotated : ""}`}>
-                    <IconComponent type="chevron" />
-                  </span>
-                </span>
-                {openDropdown === "carVan" && (
-                  <div className={styles.stickyDropdown} suppressHydrationWarning>
-                    {carVanItems.map((item, index) => (
-                      <span key={`sticky-carVan-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
-                        <span className={styles.dropdownIcon}>
-                          <IconComponent type={item.icon} />
-                        </span>
-                        {item.label}
+            {!isGetQuotePage && (
+              <>
+                <nav className={styles.stickyMenu} suppressHydrationWarning>
+                  <div
+                    className={styles.stickyDropdownContainer}
+                    onMouseEnter={() => setOpenDropdown("carVan")}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    suppressHydrationWarning
+                  >
+                    <span className={`${styles.stickyMenuButton} ${openDropdown === "carVan" ? styles.active : ""} ${carVanItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
+                      Car & Van
+                      <span className={`${styles.chevronIcon} ${openDropdown === "carVan" ? styles.rotated : ""}`}>
+                        <IconComponent type="chevron" />
                       </span>
-                    ))}
+                    </span>
+                    {openDropdown === "carVan" && (
+                      <div className={styles.stickyDropdown} suppressHydrationWarning>
+                        {carVanItems.map((item, index) => (
+                          <span key={`sticky-carVan-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
+                            <span className={styles.dropdownIcon}>
+                              <IconComponent type={item.icon} />
+                            </span>
+                            {item.label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
 
-              <div
-                className={styles.stickyDropdownContainer}
-                onMouseEnter={() => setOpenDropdown("motorbike")}
-                onMouseLeave={() => setOpenDropdown(null)}
-                suppressHydrationWarning
-              >
-                <span className={`${styles.stickyMenuButton} ${openDropdown === "motorbike" ? styles.active : ""} ${motorbakeItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
-                  Motorbike
-                  <span className={`${styles.chevronIcon} ${openDropdown === "motorbike" ? styles.rotated : ""}`}>
-                    <IconComponent type="chevron" />
-                  </span>
-                </span>
-                {openDropdown === "motorbike" && (
-                  <div className={styles.stickyDropdown} suppressHydrationWarning>
-                    {motorbakeItems.map((item, index) => (
-                      <span key={`sticky-motorbike-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
-                        <span className={styles.dropdownIcon}>
-                          <IconComponent type={item.icon} />
-                        </span>
-                        {item.label}
+                  <div
+                    className={styles.stickyDropdownContainer}
+                    onMouseEnter={() => setOpenDropdown("motorbike")}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                    suppressHydrationWarning
+                  >
+                    <span className={`${styles.stickyMenuButton} ${openDropdown === "motorbike" ? styles.active : ""} ${motorbakeItems.some(item => pathname === item.href || pathname.startsWith(item.href + "/")) ? styles.activeMenuLink : ""}`}>
+                      Motorbike
+                      <span className={`${styles.chevronIcon} ${openDropdown === "motorbike" ? styles.rotated : ""}`}>
+                        <IconComponent type="chevron" />
                       </span>
-                    ))}
+                    </span>
+                    {openDropdown === "motorbike" && (
+                      <div className={styles.stickyDropdown} suppressHydrationWarning>
+                        {motorbakeItems.map((item, index) => (
+                          <span key={`sticky-motorbike-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
+                            <span className={styles.dropdownIcon}>
+                              <IconComponent type={item.icon} />
+                            </span>
+                            {item.label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
 
-              <span className={styles.stickyMenuButton} onClick={() => router.push("/impound")}>Impound</span>
-              <span className={styles.stickyMenuButton} onClick={() => router.push("/coming-soon")}>Courier</span>
-              <span className={styles.stickyMenuButton} onClick={() => router.push("/contact")}>Contact</span>
-            </nav>
-            <div className={styles.stickyButtons}>
-              <button
-                className={styles.stickyLoginBtn}
-                onClick={() => router.push("/login")}
-              >
-                Login
+                  <span className={styles.stickyMenuButton} onClick={() => router.push("/impound")}>Impound</span>
+                  <span className={styles.stickyMenuButton} onClick={() => router.push("/coming-soon")}>Courier</span>
+                  <span className={styles.stickyMenuButton} onClick={() => router.push("/contact")}>Contact</span>
+                </nav>
+                <div className={styles.stickyButtons}>
+                  <button
+                    className={styles.stickyLoginBtn}
+                    onClick={() => router.push("/login")}
+                  >
+                    Login
+                  </button>
+                  <button
+                    className={styles.stickyQuoteBtn}
+                    onClick={() => router.push("/annual/get-quote")}
+                  >
+                    Get a Quote
+                  </button>
+                </div>
+              </>
+            )}
+            {isGetQuotePage && (
+              <button className={styles.stickyHelpBtn} title="Get help">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="currentColor"/>
+                  <path d="M12 6C9.79 6 8 7.79 8 10H10C10 8.9 10.9 8 12 8C13.1 8 14 8.9 14 10C14 12 11 11.75 11 15H13C13 12.75 16 12.5 16 10C16 7.79 14.21 6 12 6Z" fill="currentColor"/>
+                  <circle cx="12" cy="18" r="1" fill="currentColor"/>
+                </svg>
               </button>
-              <button
-                className={styles.stickyQuoteBtn}
-                onClick={() => router.push("/annual/get-quote")}
-              >
-                Get a Quote
-              </button>
-            </div>
+            )}
           </div>
         </div>
       )}
