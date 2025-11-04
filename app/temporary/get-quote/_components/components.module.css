@@ -1363,20 +1363,20 @@
   }
 
   .sparkDurationButton {
-    padding: 1rem 2.4rem;
-    font-size: 1.4rem;
-    min-height: 5.4rem;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.6rem;
+    min-height: 6.4rem;
   }
 
   .sparkDropdownContainer {
-    min-height: 5.4rem;
+    min-height: 6.4rem;
   }
 
   .sparkNativeSelect {
-    height: 5.4rem;
-    font-size: 1.4rem;
-    padding: 1.2rem 0.8rem;
-    line-height: 2.4rem;
+    height: 6.4rem;
+    font-size: 1.6rem;
+    padding: 1.4rem 0.8rem;
+    line-height: 3rem;
   }
 
   .sparkDateTimeGrid {
