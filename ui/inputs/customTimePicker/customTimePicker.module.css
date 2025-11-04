@@ -56,26 +56,26 @@
 .timeGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
+  gap: 1rem;
   width: 100%;
 }
 
 .timeSlot {
-  padding: 1rem;
-  border: 1px solid rgba(3, 136, 255, 0.1);
-  border-radius: 8px;
-  background: rgba(3, 136, 255, 0.05);
+  padding: 1.2rem 0.8rem;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(3, 136, 255, 0.04);
   color: #e0e8f0;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 3.8rem;
+  min-height: 5.2rem;
   width: 100%;
-  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .timeSlot:hover:not(.timeSlotSelected) {
