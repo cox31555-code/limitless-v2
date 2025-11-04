@@ -319,4 +319,12 @@ const AnnualInsuranceContent = () => {
   );
 };
 
-export default AnnualInsuranceContent;
+const AnnualInsurancePage = () => {
+  return (
+    <Suspense fallback={<GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={1} totalSteps={4} />}>
+      <AnnualInsuranceContent />
+    </Suspense>
+  );
+};
+
+export default AnnualInsurancePage;
