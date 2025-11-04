@@ -3,7 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   background: rgba(0, 8, 34, 0.6);
   backdrop-filter: blur(4px);
   z-index: 9999;
@@ -18,6 +19,8 @@
   -webkit-font-smoothing: antialiased;
   pointer-events: auto;
   touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .backdrop.closing {
