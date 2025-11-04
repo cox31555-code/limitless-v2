@@ -2370,23 +2370,63 @@
 
   .sparkDurationGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 
   .sparkDurationButton {
-    padding: 0.8rem 0.5rem;
-    font-size: 1.1rem;
-    min-height: 4rem;
+    padding: 1rem 2.4rem;
+    font-size: 1.5rem;
+    min-height: 5.8rem;
   }
 
   .sparkDropdownContainer {
-    min-height: 4rem;
+    min-height: 5.8rem;
   }
 
   .sparkNativeSelect {
-    height: 4rem;
-    font-size: 1.1rem;
-    padding: 0.9rem 0.5rem;
-    line-height: 2.2rem;
+    height: 5.8rem;
+    font-size: 1.5rem;
+    padding: 1.2rem 0.5rem;
+    line-height: 2.8rem;
+  }
+
+  .gridWithDropdown {
+    gap: 0.6rem;
+  }
+
+  .gridWithDropdown :global([class*="selectionItem"]) {
+    width: 5rem !important;
+    height: 5rem !important;
+    min-width: 5rem !important;
+    font-size: 1.3rem !important;
+    padding: 1.8rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__container) {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__selectWrapper) {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__select) {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__arrowContainer) {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__arrowDown) {
+    font-size: 1.8rem !important;
+  }
+
+  .gridWithDropdown :global([class*="selectionContainer"]) {
+    gap: 0.6rem !important;
   }
 }
