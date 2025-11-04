@@ -237,10 +237,13 @@ const ImpoundInsuranceContent = () => {
     // Redirect to payment summary (review your quote) page
     const redirectUrl = `/payment-summary?id=${insuranceId}`;
 
+    // Generate random delay between 4-9 seconds for loading spinner
+    const randomDelay = Math.floor(Math.random() * 5001) + 4000;
+
     // Use window.location.href for reliable navigation
     setTimeout(() => {
       window.location.href = redirectUrl;
-    }, 100);
+    }, randomDelay);
   };
 
   return (
