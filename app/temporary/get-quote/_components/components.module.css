@@ -409,7 +409,7 @@
   padding: 0.8rem 0.4rem;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border: none;
@@ -444,6 +444,44 @@
   min-height: 3.6rem;
 }
 
+.sparkNativeSelect {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000822;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sparkNativeSelect:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: #f0f6ff;
+}
+
+.sparkNativeSelect:focus {
+  outline: none;
+  border-color: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .sparkNativeSelect {
+    display: block;
+  }
+
+  .sparkDropdownButton {
+    display: none;
+  }
+}
+
 .sparkDropdownButton {
   width: 100%;
   height: 100%;
@@ -456,11 +494,20 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000822;
 }
 
 .sparkDropdownButton:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: #f0f6ff;
+}
+
+.sparkDropdownButtonActive {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+  border-color: #0388ff;
 }
 
 .sparkDropdownIcon {
