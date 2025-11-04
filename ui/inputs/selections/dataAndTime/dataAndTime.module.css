@@ -62,12 +62,22 @@
 }
 
 .inputContainer.disabled {
-  opacity: 0.5;
+  opacity: 1;
   cursor: not-allowed;
-  pointer-events: none;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  pointer-events: none !important;
+  background: rgba(107, 114, 128, 0.08) !important;
+  border: 1.5px solid rgba(107, 114, 128, 0.2) !important;
   color: #9ca3af;
+}
+
+.inputContainer.disabled:hover {
+  border: 1.5px solid rgba(107, 114, 128, 0.2) !important;
+  background: rgba(107, 114, 128, 0.08) !important;
+}
+
+.inputContainer.disabled:focus-within {
+  border: 1.5px solid rgba(107, 114, 128, 0.2) !important;
+  box-shadow: none !important;
 }
 
 .inputContainer.disabled .input {
