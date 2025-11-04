@@ -422,6 +422,7 @@ const FormDateInput = forwardRef(
             }}>
               <CustomTimePicker
                 selectedTime={value || "10:00"}
+                selectedDate={relatedDateValue}
                 onTimeSelect={handleTimeSelect}
                 onClose={closeTimePicker}
                 showAbove={pickerPosition.showAbove}
