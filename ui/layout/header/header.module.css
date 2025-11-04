@@ -790,7 +790,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, rgba(0, 8, 34, 0.95) 0%, rgba(10, 15, 46, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(0, 8, 34, 0.99) 0%, rgba(10, 15, 46, 0.99) 100%);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(3, 136, 255, 0.25);
   border-radius: 10px;
