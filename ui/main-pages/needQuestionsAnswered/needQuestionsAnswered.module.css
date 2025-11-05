@@ -2,106 +2,96 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6.4rem;
-  padding: 7.6rem 5% 10rem;
-  margin-top: 4.8rem;
-  width: 280rem;
-  max-width: 280rem;
+  gap: 4.8rem;
+  padding: 6rem 4% 8rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 100%;
   align-self: center;
   background: #000822;
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 0;
 }
 
 .backgroundShape {
-  position: absolute;
-  top: -44.1rem;
-  right: 10.55rem;
-  width: 58.5rem;
-  height: 77.6rem;
-  pointer-events: none;
-  z-index: 1;
+  display: none;
 }
 
 .title {
   color: #fff;
   text-align: center;
-  font-size: 5.8rem;
+  font-size: 4.8rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 110%;
   position: relative;
   z-index: 2;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.02em;
   margin: 0;
+  max-width: 90rem;
 }
 
 .title span {
   color: #0388FF;
-  display: inline-block;
+  display: inline;
 }
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
-  max-width: 119.9rem;
+  max-width: 130rem;
   width: 100%;
   position: relative;
   z-index: 2;
 }
 
 .faqCard {
-  grid-row: 1 / 3;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 2.5rem 2.5rem 1.5rem;
-  background: linear-gradient(135deg, #07102D 0%, #0a1835 100%);
-  border-radius: 20px;
-  border: 1px solid rgba(3, 136, 255, 0.1);
+  gap: 1.6rem;
+  padding: 2.4rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(3, 136, 255, 0.08);
   position: relative;
   overflow: hidden;
-  min-height: 593px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 320px;
+  transition: all 0.3s ease;
 }
 
 .faqCard:hover {
-  border-color: rgba(3, 136, 255, 0.2);
-  background: linear-gradient(135deg, #0a1835 0%, #0d1f40 100%);
+  border-color: rgba(3, 136, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
 }
 
 .serviceCard,
 .supportCard {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 2.7rem;
-  padding-right: 7rem;
-  background: linear-gradient(135deg, #07102D 0%, #0a1835 100%);
-  border-radius: 20px;
-  border: 1px solid rgba(3, 136, 255, 0.1);
+  gap: 1.6rem;
+  padding: 2.4rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(3, 136, 255, 0.08);
   position: relative;
-  overflow: visible;
-  height: 284px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  min-height: 320px;
+  transition: all 0.3s ease;
 }
 
 .serviceCard:hover,
 .supportCard:hover {
-  border-color: rgba(3, 136, 255, 0.2);
-  background: linear-gradient(135deg, #0a1835 0%, #0d1f40 100%);
+  border-color: rgba(3, 136, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08);
 }
 
 .arrowButton {
-  position: absolute;
-  bottom: 2.7rem;
-  right: 2.7rem;
-  width: 4.8rem;
-  height: 4.8rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0388FF 0%, #0270CC 100%);
+  align-self: flex-start;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
   border: none;
   display: flex;
   align-items: center;
@@ -109,56 +99,50 @@
   cursor: pointer;
   z-index: 3;
   padding: 0;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.arrowButton:hover {
+  transform: translateX(4px);
+}
+
+.arrowButton svg {
+  stroke: #0388FF;
 }
 
 .cardContent {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  position: absolute;
-  bottom: 2.5rem;
-  left: 2.5rem;
-  max-width: 32.6rem;
+  position: relative;
+  bottom: auto;
+  left: auto;
+  max-width: 100%;
   z-index: 2;
-  padding: 0 0 0.1rem 1rem;
+  padding: 0;
 }
 
 .cardTitle {
-  color: #fff;
-  font-size: 2.6rem;
+  color: #000822;
+  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 110%;
+  line-height: 120%;
   margin: 0;
-  letter-spacing: -0.02em;
-}
-
-.serviceCard .cardTitle,
-.supportCard .cardTitle {
-  padding-left: 1rem;
+  letter-spacing: -0.01em;
 }
 
 .cardDescription {
-  color: rgba(255, 255, 255, 0.6);
+  color: #5a6b7d;
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 150%;
   letter-spacing: 0;
   margin: 0;
 }
 
-.serviceCard .cardDescription {
-  padding: 0 2rem 0 1rem;
-}
-
-.supportCard .cardDescription {
-  padding: 0 4.5rem 2rem 1rem;
-}
-
 .faqIllustration {
-  position: relative;
-  width: 469px;
-  height: 238px;
-  margin: 6.2rem 0 0 6.2rem;
+  display: none;
 }
 
 .faqIllustration svg {
@@ -170,181 +154,101 @@
   position: relative;
   width: fit-content;
   height: fit-content;
-  margin-bottom: 4rem;
+  margin: 0;
 }
 
 .supportIcon {
   position: relative;
   width: fit-content;
   height: fit-content;
-  margin-bottom: 4rem;
+  margin: 0;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1200px) {
   .container {
-    gap: 5.6rem;
+    gap: 4.4rem;
+    padding: 5.2rem 4% 7.2rem;
+  }
+
+  .title {
+    font-size: 4rem;
   }
 
   .cardsGrid {
     gap: 2rem;
   }
 
-  .title {
-    font-size: 4.8rem;
-  }
-
-  .faqCard {
-    min-height: 520px;
-  }
-
+  .faqCard,
   .serviceCard,
   .supportCard {
-    height: 250px;
+    padding: 2.2rem;
+    min-height: 300px;
   }
 
-  .faqIllustration {
-    transform: scale(0.85);
-    transform-origin: top left;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .cardsGrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+  .cardTitle {
+    font-size: 1.6rem;
   }
 
-  .faqCard {
-    grid-row: auto;
-    min-height: 400px;
-  }
-
-  .serviceCard,
-  .supportCard {
-    height: auto;
-    min-height: 260px;
+  .cardDescription {
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 900px) {
   .container {
-    padding: 5.6rem 4%;
-    gap: 6rem;
-    border-radius: 0;
-  }
-
-  .backgroundShape {
-    right: -10rem;
-    top: -35rem;
-    width: 45rem;
-    height: 60rem;
+    padding: 4.4rem 3% 6rem;
+    gap: 3.8rem;
   }
 
   .title {
-    font-size: 3.4rem;
+    font-size: 3.2rem;
     line-height: 110%;
   }
-}
 
-@media screen and (max-width: 640px) {
-  .title {
-    padding: 0 0.375rem;
-  }
-
-  .cardsGrid {
-    padding: 0 0.75rem;
-  }
-}
-
-@media screen and (max-width: 900px) {
   .cardsGrid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 1.8rem;
   }
 
-  .faqCard {
-    grid-row: auto;
+  .faqCard,
+  .serviceCard,
+  .supportCard {
     padding: 2rem;
     min-height: auto;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
   }
 
   .cardTitle {
-    font-size: 2.43rem;
+    font-size: 1.5rem;
   }
 
   .cardDescription {
-    font-size: 1.33rem;
-  }
-
-  .serviceCard,
-  .supportCard {
-    padding: 2.2rem;
-    padding-right: 5.4rem;
-    height: auto;
-    min-height: auto;
-  }
-
-  .faqCard {
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .faqIllustration {
-    transform: scale(0.7776);
-    margin: 0 auto -9.8rem auto;
-    order: -1;
-    flex-shrink: 0;
+    font-size: 1.2rem;
   }
 
   .serviceIcon,
   .supportIcon {
-    transform: scale(1.1);
-    margin: 0 auto;
-  }
-
-  .cardContent {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    max-width: 100%;
-    padding: 0;
-    margin-top: -0.6rem;
+    width: 60px;
+    height: 60px;
   }
 
   .arrowButton {
-    position: relative;
-    width: 4.4rem;
-    height: 4.4rem;
-    bottom: auto;
-    right: auto;
     margin-top: 1rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 4.4rem 3%;
-    gap: 4.4rem;
+    padding: 3.6rem 2% 5.2rem;
+    gap: 3.2rem;
     width: 100%;
     max-width: 100%;
   }
 
-  .backgroundShape {
-    right: -15rem;
-    top: -30rem;
-    width: 35rem;
-    height: 50rem;
-  }
-
   .title {
-    font-size: 2.9rem;
-    letter-spacing: -0.06em;
-    padding: 0 0.375rem;
+    font-size: 2.8rem;
+    letter-spacing: -0.02em;
   }
 
   .cardsGrid {
@@ -352,189 +256,108 @@
     gap: 1.6rem;
     width: 100%;
     max-width: 100%;
-    padding: 0 0.75rem;
   }
 
-  .faqCard {
-    padding: 2rem 1.8rem;
+  .faqCard,
+  .serviceCard,
+  .supportCard {
+    padding: 1.8rem;
     min-height: auto;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .faqIllustration {
-    transform: scale(0.50112);
-    margin: 0 auto -9.8rem auto;
-    width: auto;
-    display: block;
-    text-align: center;
-    order: -1;
   }
 
   .cardTitle {
-    font-size: 2.1rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
   }
 
   .cardDescription {
-    font-size: 1.27rem;
+    font-size: 1.1rem;
     line-height: 145%;
   }
 
-  .faqCard {
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .faqIllustration {
-    transform: scale(0.464);
-    margin: 0 auto -9.8rem auto;
-    width: auto;
-    display: block;
-    text-align: center;
-    order: -1;
-    flex-shrink: 0;
-    align-self: center;
-  }
-
-  .serviceCard,
-  .supportCard {
-    padding: 2rem 1.8rem;
-    min-height: auto;
-    height: auto;
-  }
-
   .arrowButton {
-    display: none;
-  }
-
-  .cardContent {
-    position: relative;
-    max-width: 100%;
-    bottom: auto;
-    left: auto;
-    gap: 1rem;
-    padding: 0;
-    margin: -0.6rem 0 0 0;
+    display: flex;
   }
 
   .serviceIcon,
   .supportIcon {
-    transform: scale(0.88);
-    transform-origin: center;
-    margin: 0 auto 1.6rem auto;
+    width: 56px;
+    height: 56px;
+  }
+
+  .cardContent {
+    gap: 0.8rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .container {
-    padding: 3.6rem 2%;
-    gap: 3.8rem;
-    width: 100%;
-    max-width: 100%;
+    padding: 2.8rem 2% 4.4rem;
+    gap: 2.8rem;
   }
 
   .title {
-    font-size: 2.9rem;
-    padding: 0 0.375rem;
+    font-size: 2.4rem;
   }
 
   .cardsGrid {
-    grid-template-columns: 1fr;
     gap: 1.4rem;
-    width: 100%;
-    padding: 0 0.75rem;
   }
 
-  .faqCard {
+  .faqCard,
+  .serviceCard,
+  .supportCard {
+    padding: 1.6rem;
     min-height: auto;
-    height: auto;
-    padding: 1.8rem 1.6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .faqIllustration {
-    transform: scale(0.4536);
-    margin: 0 auto -9.8rem auto;
-    width: auto;
-    display: block;
-    text-align: center;
-    order: -1;
   }
 
   .cardTitle {
-    font-size: 1.88rem;
-    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
   }
 
   .cardDescription {
-    font-size: 1.16rem;
+    font-size: 1rem;
     line-height: 140%;
-  }
-
-  .faqCard {
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .faqIllustration {
-    transform: scale(0.4536);
-    margin: 0 auto -9.8rem auto;
-    width: auto;
-    display: block;
-    text-align: center;
-    order: -1;
-    flex-shrink: 0;
-    align-self: center;
-  }
-
-  .serviceCard,
-  .supportCard {
-    min-height: auto;
-    height: auto;
-    padding: 1.8rem 1.6rem;
   }
 
   .serviceIcon,
   .supportIcon {
-    transform: scale(0.83);
-    transform-origin: center;
-    margin: 0 auto 1.4rem auto;
-  }
-
-  .arrowButton {
-    display: none;
-  }
-
-  .cardContent {
-    position: relative;
-    margin: -0.6rem 0 0 0;
-    gap: 0.8rem;
-    bottom: auto;
-    left: auto;
-    max-width: 100%;
+    width: 50px;
+    height: 50px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
+  .container {
+    padding: 2.4rem 1.5% 3.8rem;
+    gap: 2.4rem;
+  }
+
   .title {
-    font-size: 2.4rem;
-    padding: 0 0.375rem;
+    font-size: 2.1rem;
   }
 
   .cardsGrid {
-    grid-template-columns: 1fr;
     gap: 1.2rem;
-    width: 100%;
-    padding: 0 0.75rem;
   }
 
-  .container {
-    padding: 3rem 1.8%;
-    gap: 3.4rem;
+  .faqCard,
+  .serviceCard,
+  .supportCard {
+    padding: 1.4rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardDescription {
+    font-size: 0.95rem;
+  }
+
+  .serviceIcon,
+  .supportIcon {
+    width: 45px;
+    height: 45px;
   }
 }
