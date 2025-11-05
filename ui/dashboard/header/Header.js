@@ -112,6 +112,14 @@ const Header = ({ page }) => {
               <MenuIcon />
             </button>
 
+            {/* Mobile Menu Backdrop */}
+            {isMenuOpen && (
+              <div
+                className={styles.menuBackdrop}
+                onClick={() => setIsMenuOpen(false)}
+              />
+            )}
+
             {/* Mobile Menu Dropdown */}
             {isMenuOpen && (
               <div className={styles.menuDropdown}>
