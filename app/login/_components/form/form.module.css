@@ -118,14 +118,14 @@
 .inputField {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1.6rem 2rem;
+  gap: 1.4rem;
+  padding: 1.8rem 2.4rem;
   background: #ffffff;
   border: 1.5px solid rgba(3, 136, 255, 0.1);
   border-radius: 12px;
   transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: text;
-  height: 6rem;
+  height: 6.6rem;
 }
 
 .inputField:focus-within {
