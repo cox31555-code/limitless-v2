@@ -154,6 +154,14 @@
   top: 38px;
 }
 
+@media screen and (max-width: 640px) {
+  .carVehicle {
+    width: 4.75rem;
+    height: 2.875rem;
+    top: 0.8125rem;
+  }
+}
+
 .gradientEffect {
   position: absolute;
   width: 72px;
