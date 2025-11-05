@@ -84,7 +84,7 @@
 
 @media (max-width: 640px) {
   .grid {
-    gap: 37px;
+    gap: 3rem;
   }
 
   .card {
@@ -321,7 +321,7 @@
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 37px;
+    gap: 3rem;
   }
 
   .card {
@@ -597,7 +597,7 @@
   }
 
   .grid {
-    gap: 37px;
+    gap: 3rem;
   }
 
   .card {
@@ -743,7 +743,7 @@
   }
 
   .grid {
-    gap: 37px;
+    gap: 3rem;
   }
 
   .card {
@@ -889,7 +889,7 @@
   }
 
   .grid {
-    gap: 37px;
+    gap: 3rem;
   }
 
   .card {
