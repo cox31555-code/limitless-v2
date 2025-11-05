@@ -140,7 +140,7 @@ const Footer = () => {
                 style={{
                   color: shouldApplySpecialStyles
                     ? "rgba(0, 8, 34, 0.34)"
-                    : "",
+                    : isLoginPage ? "#000822" : "",
                 }}
               >
                 Social Media
