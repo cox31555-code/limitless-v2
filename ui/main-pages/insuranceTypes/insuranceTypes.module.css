@@ -567,110 +567,110 @@
   }
 
   .grid {
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
 
   .card {
-    padding: 1.8rem 1.4rem;
-    min-height: 400px;
+    padding: 1.5rem 1.2rem;
+    min-height: auto;
   }
 
   .iconContainer {
-    height: 48px;
-    margin-bottom: 1.6rem;
+    height: 44px;
+    margin-bottom: 1.2rem;
     align-items: center;
   }
 
   .iconWrapper {
-    width: 28px;
-    height: 38px;
+    width: 26px;
+    height: 36px;
   }
 
   .motorcycleWrapper {
-    width: 46px;
-    height: 34px;
+    width: 44px;
+    height: 32px;
   }
 
   .carWrapper {
-    width: 42px;
-    height: 36px;
+    width: 40px;
+    height: 34px;
   }
 
   .gradientBars {
-    width: 28px;
-    height: 38px;
+    width: 26px;
+    height: 36px;
   }
 
   .bar {
-    width: 9px;
+    width: 8px;
   }
 
   .bar1 {
-    height: 20px;
+    height: 18px;
   }
 
   .bar2 {
-    height: 30px;
-    left: 9px;
+    height: 28px;
+    left: 8px;
   }
 
   .bar3 {
-    height: 36px;
-    left: 18px;
+    height: 34px;
+    left: 16px;
   }
 
   .lBadge {
-    width: 22px;
-    height: 27px;
-  }
-
-  .checkBadge {
-    width: 18px;
-    height: 18px;
-  }
-
-  .carCheck {
-    width: 18px;
-    height: 18px;
-  }
-
-  .carVehicle {
-    width: 35px;
+    width: 20px;
     height: 25px;
   }
 
+  .checkBadge {
+    width: 16px;
+    height: 16px;
+  }
+
+  .carCheck {
+    width: 16px;
+    height: 16px;
+  }
+
+  .carVehicle {
+    width: 32px;
+    height: 23px;
+  }
+
   .gradientEffect {
-    width: 31px;
-    height: 50px;
+    width: 28px;
+    height: 46px;
   }
 
   .content {
-    gap: 1.2rem;
+    gap: 1rem;
   }
 
   .title {
-    font-size: 1.35rem;
-    margin-bottom: 0.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.1rem;
     font-weight: 700;
     line-height: 110%;
   }
 
   .featureList {
-    gap: 0.8rem;
-  }
-
-  .feature {
     gap: 0.7rem;
   }
 
+  .feature {
+    gap: 0.6rem;
+  }
+
   .feature svg {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.4rem;
+    height: 1.4rem;
     flex-shrink: 0;
   }
 
   .feature span {
-    font-size: 0.95rem;
-    line-height: 130%;
+    font-size: 0.9rem;
+    line-height: 125%;
   }
 }
