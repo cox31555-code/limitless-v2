@@ -83,6 +83,10 @@
 }
 
 @media (max-width: 640px) {
+  .grid {
+    gap: 37px;
+  }
+
   .card {
     margin: 0 9px;
     padding: 25px 22px 28px 0;
