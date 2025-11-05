@@ -114,6 +114,7 @@
   background: rgba(0, 8, 34, 0.6);
   z-index: 1999;
   animation: fadeIn 0.15s ease-out;
+  display: block !important;
 }
 
 @keyframes fadeIn {
@@ -163,7 +164,7 @@
   animation: slideDown 0.3s ease;
   overflow-y: auto;
   overflow-x: hidden;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   max-height: calc(100vh - 80px);
 }
