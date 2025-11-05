@@ -216,15 +216,15 @@
   }
 
   .cardTitle {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   .cardDescription {
-    font-size: 0.75rem;
+    font-size: 1.3rem;
   }
 
   .cardLink {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -253,16 +253,16 @@
   }
 
   .cardTitle {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   .cardDescription {
-    font-size: 0.75rem;
+    font-size: 1.3rem;
     line-height: 140%;
   }
 
   .cardLink {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -291,14 +291,14 @@
   }
 
   .cardTitle {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   .cardDescription {
-    font-size: 0.75rem;
+    font-size: 1.3rem;
   }
 
   .cardLink {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
   }
 }
