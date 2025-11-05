@@ -312,6 +312,12 @@
     font-size: 1.4rem;
   }
 
+  .mobileMenuWrapper {
+    display: flex !important;
+    align-items: center;
+    position: relative;
+  }
+
   .logoutBtn,
   .menuBtn {
     width: 4.4rem;
