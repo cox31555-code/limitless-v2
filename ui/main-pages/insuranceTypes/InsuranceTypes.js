@@ -19,6 +19,14 @@ const CheckIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    style={{
+      width: "14px",
+      height: "14px",
+      "@media (max-width: 640px)": {
+        width: "18px",
+        height: "18px",
+      },
+    }}
   >
     <circle cx="12" cy="12" r="12" fill="#ECF0FE" />
     <path
