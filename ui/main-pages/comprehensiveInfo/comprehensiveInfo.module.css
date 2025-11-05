@@ -107,6 +107,17 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .wrapper {
+    padding: 0 32px 62px 30px;
+  }
+
+  .illustrationContainer {
+    margin-right: -4px;
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
     padding: 8rem 4.4rem;
