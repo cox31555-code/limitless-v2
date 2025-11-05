@@ -275,13 +275,13 @@
 
 /* Footer */
 .footer {
-  padding-top: 2.4rem;
+  padding-top: 2.8rem;
   border-top: 1px solid rgba(3, 136, 255, 0.06);
   text-align: center;
 }
 
 .footerText {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   color: #6b7c8f;
   margin: 0;
   font-weight: 400;
