@@ -77,15 +77,6 @@
   border-color: rgba(3, 136, 255, 0.2);
 }
 
-.cardIcon {
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(3, 136, 255, 0.1);
-  border-radius: 12px;
-}
 
 .cardTitle {
   color: #fff;
