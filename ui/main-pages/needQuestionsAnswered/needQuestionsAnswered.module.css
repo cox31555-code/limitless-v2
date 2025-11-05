@@ -234,6 +234,7 @@
   .content {
     gap: 3.2rem;
     padding: 2.8rem 2% 4.4rem;
+    padding-top: 3.3125rem;
   }
 
   .title {
