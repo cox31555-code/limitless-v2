@@ -24,7 +24,7 @@ const NeedQuestionsAnswered = () => {
   const router = useRouter();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} suppressHydrationWarning>
       <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
         Need Questions <span>Answered?</span>
       </h2>
