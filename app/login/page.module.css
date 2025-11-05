@@ -19,9 +19,10 @@
 
 .formContainer {
   width: 100%;
-  max-width: 720px;
+  max-width: 900px;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1024px) {
