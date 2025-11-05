@@ -306,6 +306,11 @@
 }
 
 @media screen and (max-width: 640px) {
+  .contact {
+    top: 1.55rem;
+    animation: none;
+  }
+
   .description {
     padding-top: 10px;
     margin-bottom: -16px;
