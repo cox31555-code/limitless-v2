@@ -197,13 +197,13 @@
 
 /* Forgot Password Link */
 .forgotLink {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: #0388ff;
   text-decoration: none;
   transition: color 0.28s ease;
   display: inline-block;
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
   padding: 0;
 }
 
