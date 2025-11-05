@@ -11,7 +11,7 @@ export const metadata = {
 const LoginPage = () => {
   return (
     <div className={styles.pageWrapper}>
-      <GetQuoteHeaderWithNav title="Manage Your Coverage" subtitle="Access your policy, claims, and documents anytime" />
+      <GetQuoteHeaderWithNav title="Sign In to Your Account" subtitle="Access your policy, documents, and claims" />
       <div className={styles.mainContent}>
         <div className={styles.formContainer}>
           <Suspense
