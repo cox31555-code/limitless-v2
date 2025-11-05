@@ -381,7 +381,10 @@ const Header = () => {
             {!isDashboard && (
               <button
                 className={styles.mobileQuoteBtn}
-                onClick={() => setIsInsuranceModalOpen(true)}
+                onClick={() => {
+                  setIsOpen(false);
+                  setIsInsuranceModalOpen(true);
+                }}
               >
                 Get a Quote
               </button>
