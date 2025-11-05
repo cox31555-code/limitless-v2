@@ -418,3 +418,19 @@
   color: #6b7c8f;
   border-top: 1px solid rgba(3, 136, 255, 0.08);
 }
+
+.lightTheme .content {
+  border-top: none;
+}
+
+.lightTheme .appStoresContainer {
+  background: transparent;
+}
+
+.lightTheme .downloadTitle {
+  color: #000822;
+}
+
+.lightTheme .downloadSubtitle {
+  color: #6b7c8f;
+}
