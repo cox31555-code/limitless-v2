@@ -1048,6 +1048,7 @@
   gap: 0;
   white-space: nowrap;
   transition: none;
+  font-family: inherit;
 }
 
 .mobileMenuLink:last-of-type {
