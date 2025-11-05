@@ -174,17 +174,12 @@
     gap: 1.6rem;
   }
 
-  .cardIcon {
-    width: 48px;
-    height: 48px;
-  }
-
   .cardTitle {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .cardDescription {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .cardLink {
