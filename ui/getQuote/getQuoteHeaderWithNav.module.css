@@ -325,3 +325,26 @@
     height: 4.6rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .headerElement {
+    padding: 1.6rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .navigationBar {
+    display: none;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .helpBtn {
+    width: 4.6rem;
+    height: 4.6rem;
+  }
+}
