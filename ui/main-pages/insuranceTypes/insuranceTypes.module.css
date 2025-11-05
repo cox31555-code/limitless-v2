@@ -753,6 +753,11 @@
     align-items: center;
   }
 
+  .iconContainer:has(.carWrapper) {
+    margin-top: -11px;
+    padding-bottom: 29px;
+  }
+
   .iconWrapper {
     width: 2.8rem;
     height: 3.8rem;
