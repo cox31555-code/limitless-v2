@@ -806,6 +806,18 @@
   .container {
     margin-bottom: 26px;
   }
+
+  .accordionContent {
+    gap: 0.3rem;
+  }
+
+  .quickQuoteTitle {
+    font-size: 2.1rem;
+  }
+
+  .quickQuoteSubtitle {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
