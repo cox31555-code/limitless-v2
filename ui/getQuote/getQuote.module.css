@@ -1081,30 +1081,3 @@
     height: 3rem;
   }
 }
-
-@media screen and (max-width: 360px) {
-  .navigationWrapper {
-    padding: 0 1rem;
-  }
-
-  .quickQuoteHeader {
-    margin-bottom: 0.4rem;
-  }
-
-  .quickQuoteTitle {
-    font-size: 1.8rem;
-  }
-
-  .quickQuoteSubtitle {
-    font-size: 1rem;
-  }
-
-  .regInputField {
-    margin-top: 1.2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .regInputField :global(input) {
-    height: 5.2rem;
-  }
-}
