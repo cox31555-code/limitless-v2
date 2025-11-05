@@ -98,11 +98,11 @@ const Header = ({ page }) => {
             <button
               type="button"
               className={styles.menuBtn}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              onTouchEnd={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                setIsMenuOpen(!isMenuOpen);
+              }}
               title={isMenuOpen ? "Close menu" : "Open menu"}
               aria-label="Dashboard menu"
-              style={{ cursor: 'pointer' }}
             >
               {isMenuOpen ? (
                 <Image src="/svg/close.svg" alt="close" width={20} height={20} />
