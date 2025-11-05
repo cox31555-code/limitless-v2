@@ -155,6 +155,29 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .description {
+    font-size: 1.45rem;
+  }
+
+  .imgContainer {
+    width: 7.2rem;
+    height: 7.2rem;
+  }
+
+  .benifitTitle {
+    font-size: 2rem;
+  }
+
+  .benifitDescription {
+    font-size: 1.4rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
     width: 100%;
