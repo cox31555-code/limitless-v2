@@ -207,6 +207,10 @@
     right: -50%;
     transform: translateX(50%);
   }
+
+  .mobileMenuWrapper {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 600px) {
