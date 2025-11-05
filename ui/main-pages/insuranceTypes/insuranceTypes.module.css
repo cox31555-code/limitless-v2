@@ -109,6 +109,11 @@
   .featureList {
     gap: 11px;
   }
+
+  .convictedSvg {
+    width: 97px !important;
+    height: 101px !important;
+  }
 }
 
 .iconWrapper {
