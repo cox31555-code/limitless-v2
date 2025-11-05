@@ -49,7 +49,35 @@ const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps }) => 
                 <circle cx="12" cy="18" r="1" fill="currentColor"/>
               </svg>
             </button>
+
+            <div className={styles.mobileActions}>
+              <button
+                className={styles.quoteBtn}
+                onClick={() => router.push("/")}
+              >
+                Get a Quote
+              </button>
+
+              <button
+                className={styles.menuBtn}
+                onClick={() => setShowDropdown(!showDropdown)}
+                title="Menu"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
           </div>
+
+          {showDropdown && (
+            <div className={styles.mobileDropdown}>
+              <button onClick={() => { router.push("/annual"); setShowDropdown(false); }} className={styles.dropdownItem}>Annual car insurance</button>
+              <button onClick={() => { router.push("/temporary"); setShowDropdown(false); }} className={styles.dropdownItem}>Temporary car insurance</button>
+              <button onClick={() => { router.push("/impound"); setShowDropdown(false); }} className={styles.dropdownItem}>Impound insurance</button>
+              <button onClick={() => { router.push("/contact"); setShowDropdown(false); }} className={styles.dropdownItem}>Contact Support</button>
+            </div>
+          )}
 
           <div className={styles.titleSection}>
             <div className={styles.titleContent}>
