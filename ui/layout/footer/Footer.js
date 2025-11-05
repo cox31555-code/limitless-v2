@@ -243,7 +243,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className={styles.copyright}>
+        <div className={styles.copyright} style={isLoginPage ? { color: "#6b7c8f" } : {}}>
           © 2025 Limitless Cover Services . All Rights Reserved
         </div>
       </div>
