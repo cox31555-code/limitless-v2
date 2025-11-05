@@ -285,22 +285,12 @@
     gap: 1rem;
   }
 
-  .cardIcon {
-    width: 36px;
-    height: 36px;
-  }
-
-  .cardIcon svg {
-    width: 20px;
-    height: 20px;
-  }
-
   .cardTitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .cardDescription {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .cardLink {
