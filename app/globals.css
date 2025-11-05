@@ -152,6 +152,12 @@ body {
     gap: 2.4rem;
   }
 }
+@media (max-width: 640px) {
+  .headerContainer {
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 600px) {
   .headerContainer {
     margin: 0 0 6rem 0;
@@ -163,12 +169,6 @@ body {
   .insuranceQuotesContainer {
     padding: 3.8rem 2% 6.8rem;
     gap: 2.4rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .headerContainer {
-    margin-bottom: 0;
   }
 }
 * {
