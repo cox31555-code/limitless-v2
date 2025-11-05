@@ -168,6 +168,7 @@
   .cardsGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    padding: 0 1.3rem;
   }
 
   .card {
