@@ -130,7 +130,6 @@
 
 .inputField:focus-within {
   border-color: #0388ff;
-  box-shadow: 0 0 0 3px rgba(3, 136, 255, 0.1);
   background: #f8fbff;
 }
 
@@ -141,7 +140,6 @@
 
 .inputField.fieldError:focus-within {
   border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
 /* Field Icon */
