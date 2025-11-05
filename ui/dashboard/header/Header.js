@@ -11,6 +11,7 @@ const Header = ({ page }) => {
   const router = useRouter();
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const getTitle = () => {
     if (page) {
@@ -55,6 +56,19 @@ const Header = ({ page }) => {
       <circle cx="12" cy="7" r="4" />
     </svg>
   );
+
+  const MenuIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="4" y1="12" x2="20" y2="12" />
+      <line x1="4" y1="18" x2="20" y2="18" />
+    </svg>
+  );
+
+  const handleNavigate = (path) => {
+    router.push(path);
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className={styles.headerContainer}>
