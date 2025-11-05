@@ -197,7 +197,7 @@ const Footer = () => {
                         : isLoginPage ? styles["socials-icon-light"] : ""
                     }`}
                     size={20}
-                    style={isLoginPage ? { color: "#0388ff" } : {}}
+                    style={isLoginPage ? { color: "#9ca3af" } : {}}
                   />
                 </div>
               </div>
