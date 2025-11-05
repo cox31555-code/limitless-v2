@@ -186,16 +186,18 @@ const Footer = () => {
                   className={`${styles.socialsItem} ${
                     shouldApplySpecialStyles
                       ? styles["socials-item-black"]
-                      : ""
+                      : isLoginPage ? styles["socials-item-light"] : ""
                   }`}
+                  style={isLoginPage ? { background: "#f0f6ff" } : {}}
                 >
                   <BiLogoTwitter
                     className={`${styles.socialsIcon} ${
                       shouldApplySpecialStyles
                         ? styles["socials-icon-black"]
-                        : ""
+                        : isLoginPage ? styles["socials-icon-light"] : ""
                     }`}
                     size={20}
+                    style={isLoginPage ? { color: "#0388ff" } : {}}
                   />
                 </div>
               </div>
