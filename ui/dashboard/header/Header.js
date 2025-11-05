@@ -4,7 +4,6 @@ import styles from "./header.module.css";
 import Image from "next/image";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
 
 const Header = ({ page }) => {
   const { user } = useAuth();
