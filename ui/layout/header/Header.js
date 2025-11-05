@@ -548,7 +548,7 @@ const Header = () => {
 
               <span
                 className={`${styles.mobileMenuLink} ${
-                  pathname === "/retrieve-quote" ? styles.activeMenuLink : ""
+                  mounted && pathname === "/retrieve-quote" ? styles.activeMenuLink : ""
                 }`}
                 onClick={() => {
                   setIsOpen(false);
