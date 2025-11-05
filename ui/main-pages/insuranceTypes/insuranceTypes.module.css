@@ -106,6 +106,10 @@
     padding-bottom: 29px;
   }
 
+  .iconContainer:has(.convictedSvg) {
+    margin-bottom: 26px;
+  }
+
   .featureList {
     gap: 11px;
   }
