@@ -122,7 +122,7 @@ const Footer = () => {
                         style={{
                           color: shouldApplySpecialStyles
                             ? "#000822"
-                            : "",
+                            : isLoginPage ? "#5a6b7d" : "",
                         }}
                       >
                         {item.title}
