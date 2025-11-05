@@ -63,6 +63,12 @@ const Form = () => {
   }, [error, clearError]);
 
   const onSubmit = async (data) => {
+    // In dev mode, bypass login and go straight to dashboard
+    if (process.env.NEXT_PUBLIC_DEV_MODE === "true") {
+      router.push("/dashboard");
+      return;
+    }
+
     clearError();
     setSuccessMessage("");
     setIsSubmitting(true);
