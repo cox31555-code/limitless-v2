@@ -95,7 +95,14 @@
 
 .mobileMenuWrapper {
   position: relative;
-  display: none;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 901px) {
+  .mobileMenuWrapper {
+    display: none;
+  }
 }
 
 .menuBackdrop {
