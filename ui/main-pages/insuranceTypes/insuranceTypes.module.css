@@ -83,6 +83,10 @@
 }
 
 @media (max-width: 640px) {
+  .subtitle {
+    margin-bottom: 3rem;
+  }
+
   .grid {
     gap: 3rem;
   }
@@ -313,6 +317,7 @@
 
   .subtitle {
     font-size: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .headerWrapper {
@@ -590,6 +595,7 @@
 
   .subtitle {
     font-size: 1.2rem;
+    margin-bottom: 3rem;
   }
 
   .headerWrapper {
@@ -736,6 +742,7 @@
 
   .subtitle {
     font-size: 1.2rem;
+    margin-bottom: 3rem;
   }
 
   .headerWrapper {
@@ -882,6 +889,7 @@
 
   .subtitle {
     font-size: 1.2rem;
+    margin-bottom: 3rem;
   }
 
   .headerWrapper {
