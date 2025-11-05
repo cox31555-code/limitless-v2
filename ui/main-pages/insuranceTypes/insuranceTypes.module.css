@@ -901,4 +901,9 @@
     font-size: 1.4rem !important;
     line-height: 125%;
   }
+
+  .checkIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }
