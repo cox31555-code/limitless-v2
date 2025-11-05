@@ -336,6 +336,23 @@
     height: 4.4rem;
     font-size: 1.2rem;
   }
+
+  .headerContent {
+    padding: 1.2rem 1.2rem 0;
+    gap: 0.8rem;
+  }
+
+  .titleSection {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .stepLabel {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
