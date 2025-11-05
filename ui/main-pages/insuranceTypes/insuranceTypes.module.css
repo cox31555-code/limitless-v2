@@ -163,8 +163,8 @@
 
 @media screen and (max-width: 640px) {
   .carVehicle {
-    width: 68px;
-    height: 47px;
+    width: 6.2rem;
+    height: 5rem;
   }
 }
 
@@ -489,8 +489,8 @@
   }
 
   .carVehicle {
-    width: 4rem;
-    height: 2.9rem;
+    width: 6.2rem;
+    height: 5rem;
   }
 
   .gradientEffect {
