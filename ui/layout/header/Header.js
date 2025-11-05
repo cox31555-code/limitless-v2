@@ -545,6 +545,18 @@ const Header = () => {
               >
                 Login
               </span>
+
+              <span
+                className={`${styles.mobileMenuLink} ${
+                  pathname === "/retrieve-quote" ? styles.activeMenuLink : ""
+                }`}
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push("/retrieve-quote");
+                }}
+              >
+                Retrieve Your Quote
+              </span>
             </nav>
             </div>
           </>
