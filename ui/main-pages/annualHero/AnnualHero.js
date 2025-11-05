@@ -166,7 +166,7 @@ const AnnualHero = () => {
               VEHICLE INSURANCE
             </p>
             <h1 className={`${styles.heading} ${plusJakartaSans.className}`}>
-              Get annual insurance from&nbsp;
+              Get annual insurance from{" "}
               <span className={styles.highlight}>just £221</span>
             </h1>
           </div>
