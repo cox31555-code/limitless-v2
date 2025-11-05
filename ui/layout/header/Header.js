@@ -367,7 +367,10 @@ const Header = () => {
       <header className={styles.mobileContainer}>
         <div className={styles.top}>
           <Image
-            onClick={() => router.push("/")}
+            onClick={() => {
+              setIsOpen(false);
+              router.push("/");
+            }}
             className={styles.logoMobile}
             src="/svg/logo.svg"
             alt="logo"
