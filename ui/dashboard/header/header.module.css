@@ -314,12 +314,6 @@
     font-size: 1.4rem;
   }
 
-  .mobileMenuWrapper {
-    display: flex !important;
-    align-items: center;
-    position: relative;
-  }
-
   .logoutBtn,
   .menuBtn {
     width: 4.4rem;
@@ -386,12 +380,6 @@
 }
 
 @media screen and (max-width: 400px) {
-  .mobileMenuWrapper {
-    display: flex !important;
-    align-items: center;
-    position: relative;
-  }
-
   .menuBackdrop {
     position: fixed !important;
     top: 80px !important;
@@ -438,12 +426,6 @@
 }
 
 @media screen and (max-width: 360px) {
-  .mobileMenuWrapper {
-    display: flex !important;
-    align-items: center;
-    position: relative;
-  }
-
   .menuBackdrop {
     position: fixed !important;
     top: 80px !important;
