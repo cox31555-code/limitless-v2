@@ -240,4 +240,29 @@
     right: -80%;
     transform: translateX(80%);
   }
+
+  .logoutBtn,
+  .menuBtn {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .logoutBtn svg,
+  .menuBtn svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .menuDropdown {
+    min-width: 200px;
+  }
+
+  .menuItem {
+    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .menuItem:hover {
+    padding-left: 1.6rem;
+  }
 }
