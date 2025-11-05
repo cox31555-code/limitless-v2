@@ -230,7 +230,7 @@ const Header = () => {
           </div>
         </div>
       )}
-      {!isGetQuotePage && (
+      {!isGetQuotePage && !isFAQPage && (
       <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
