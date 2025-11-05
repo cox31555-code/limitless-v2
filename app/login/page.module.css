@@ -52,3 +52,23 @@
     max-width: 100%;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .mainContent {
+    padding: 2.4rem 1rem;
+  }
+
+  .formContainer {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .mainContent {
+    padding: 2rem 0.8rem;
+  }
+
+  .formContainer {
+    max-width: 100%;
+  }
+}
