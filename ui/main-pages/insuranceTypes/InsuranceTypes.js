@@ -194,6 +194,7 @@ const ConvictedIcon = () => (
     viewBox="0 0 118 157"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className={styles.convictedSvg}
   >
     <rect
       width="71.6083"
