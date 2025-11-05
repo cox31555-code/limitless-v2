@@ -63,7 +63,7 @@ const Header = ({ page }) => {
   };
 
   return (
-    <div className={styles.headerContainer}>
+    <div className={`${styles.headerContainer} ${isMenuOpen ? styles.menuOpen : ''}`}>
       <div className={styles.headerContent}>
         <div className={styles.logoWrapper}>
           <Image
@@ -96,10 +96,13 @@ const Header = ({ page }) => {
           {/* Mobile Menu Button */}
           <div className={styles.mobileMenuWrapper}>
             <button
+              type="button"
               className={styles.menuBtn}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onTouchEnd={() => setIsMenuOpen(!isMenuOpen)}
               title={isMenuOpen ? "Close menu" : "Open menu"}
               aria-label="Dashboard menu"
+              style={{ cursor: 'pointer' }}
             >
               {isMenuOpen ? (
                 <Image src="/svg/close.svg" alt="close" width={20} height={20} />
