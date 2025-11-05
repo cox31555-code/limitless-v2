@@ -111,10 +111,10 @@
 
 .lBadge {
   position: absolute;
-  width: 65px;
-  height: 80px;
-  left: 12px;
-  top: 41px;
+  width: 4.5625rem;
+  height: 3.875rem;
+  left: -0.125rem;
+  top: 0.1rem;
 }
 
 .motorcycleWrapper {
@@ -324,8 +324,10 @@
   }
 
   .lBadge {
-    width: 40px;
-    height: 48px;
+    width: 4.5625rem;
+    height: 3.875rem;
+    left: -0.125rem;
+    top: 0.1rem;
   }
 
   .checkBadge {
@@ -589,8 +591,10 @@
   }
 
   .lBadge {
-    width: 2.4rem;
-    height: 3rem;
+    width: 4.5625rem;
+    height: 3.875rem;
+    left: -0.125rem;
+    top: -0.1rem;
   }
 
   .checkBadge {
@@ -723,8 +727,10 @@
   }
 
   .lBadge {
-    width: 2.2rem;
-    height: 2.8rem;
+    width: 4.5625rem;
+    height: 3.875rem;
+    left: -0.125rem;
+    top: -0.1rem;
   }
 
   .checkBadge {
@@ -857,8 +863,10 @@
   }
 
   .lBadge {
-    width: 2rem;
-    height: 2.5rem;
+    width: 4.5625rem;
+    height: 3.875rem;
+    left: -0.125rem;
+    top: -0.1rem;
   }
 
   .checkBadge {
