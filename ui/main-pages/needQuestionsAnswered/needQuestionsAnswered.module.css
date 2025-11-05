@@ -254,7 +254,9 @@
   .cardsGrid {
     padding: 0 0.75rem;
   }
+}
 
+@media screen and (max-width: 900px) {
   .cardsGrid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
