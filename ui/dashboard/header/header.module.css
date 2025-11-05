@@ -88,6 +88,84 @@
   stroke: currentColor;
 }
 
+.mobileMenuWrapper {
+  position: relative;
+  display: none;
+}
+
+.menuBtn {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 10px;
+  background: rgba(3, 136, 255, 0.1);
+  border: 1.5px solid rgba(3, 136, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #0388ff;
+  flex-shrink: 0;
+}
+
+.menuBtn:hover {
+  background: rgba(3, 136, 255, 0.2);
+  border-color: rgba(3, 136, 255, 0.35);
+  color: #0270cc;
+}
+
+.menuBtn svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  stroke: currentColor;
+}
+
+.menuDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.8rem;
+  background: #1a2438;
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  border-radius: 12px;
+  min-width: 220px;
+  box-shadow: 0 8px 24px rgba(0, 8, 34, 0.4);
+  z-index: 2000;
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+.menuItem {
+  display: block;
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+}
+
+.menuItem:last-of-type {
+  border-bottom: none;
+}
+
+.menuItem:hover {
+  background: rgba(3, 136, 255, 0.1);
+  color: #0388ff;
+  padding-left: 2rem;
+}
+
+.menuDivider {
+  height: 1px;
+  background: rgba(3, 136, 255, 0.15);
+  margin: 0.4rem 0;
+}
+
 @keyframes slideUp {
   from {
     opacity: 0;
