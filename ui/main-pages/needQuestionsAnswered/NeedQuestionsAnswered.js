@@ -57,7 +57,7 @@ const NeedQuestionsAnswered = () => {
           <div className={styles.card}>
             <div className={styles.cardIcon}>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26 2H6C3.9 2 2.1 3.9 2.1 6L2 26c0 2.1 1.9 4 4 4h20c2.1 0 4-1.9 4-4V6c0-2.1-1.9-4-4-4zm0 24H6V6h20v20zm-2-16h-4v2h4v-2zm0 4h-4v2h4v-2zm0 4h-4v2h4v-2z" fill="#0388FF"/>
+                <path d="M26 2H6C3.9 2 2.1 3.9 2.1 6L2 26c0 2.1 1.9 4 4 4h20c2.1 0 4-1.9 4-4V6c0-2.1-1.9-4-4-4zm0 24H6V6h20v20zm-2-16h-4v2h4v-2zm0 4h-4v2h4v-2zm0 4h-4v2h4v-2z" fill="#000822"/>
               </svg>
             </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
