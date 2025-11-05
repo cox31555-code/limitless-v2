@@ -262,12 +262,6 @@
     stroke: currentColor;
   }
 
-  .mobileMenuWrapper {
-    display: flex !important;
-    align-items: center;
-    position: relative;
-  }
-
   .menuBtn {
     width: 4.4rem !important;
     height: 4.4rem !important;
