@@ -302,8 +302,7 @@
 
 @media screen and (max-width: 900px) {
   .navigationBar {
-    display: flex !important;
-    gap: 0.8rem;
+    display: none;
   }
 }
 
