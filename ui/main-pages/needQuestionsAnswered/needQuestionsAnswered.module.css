@@ -248,22 +248,12 @@
     gap: 1.2rem;
   }
 
-  .cardIcon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .cardIcon svg {
-    width: 24px;
-    height: 24px;
-  }
-
   .cardTitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .cardDescription {
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 140%;
   }
 
