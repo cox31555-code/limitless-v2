@@ -79,6 +79,8 @@ const Header = () => {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
+      // Reset dropdown when menu closes
+      setOpenDropdown(null);
     }
     return () => {
       document.body.style.overflow = "unset";
