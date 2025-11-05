@@ -243,12 +243,12 @@
   }
 
   .title {
-    font-size: 2.6rem;
+    font-size: 2.9rem;
     letter-spacing: -0.6px;
   }
 
   .description {
-    font-size: 1.25rem;
+    font-size: 1.32rem;
     margin: 0 -3px 0 -4px;
   }
 
@@ -262,16 +262,16 @@
   }
 
   .imgContainer {
-    width: 5.8rem;
-    height: 5.8rem;
+    width: 6.4rem;
+    height: 6.4rem;
   }
 
   .benifitTitle {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .benifitDescription {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
