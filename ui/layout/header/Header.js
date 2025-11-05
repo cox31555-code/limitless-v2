@@ -123,7 +123,10 @@ const Header = () => {
     <>
       <InsuranceTypeModal
         isOpen={isInsuranceModalOpen}
-        onClose={() => setIsInsuranceModalOpen(false)}
+        onClose={() => {
+          setIsInsuranceModalOpen(false);
+          setIsOpen(false);
+        }}
       />
       <div className="centeredContent" suppressHydrationWarning>
       {isScrolled && !isDashboard && (
