@@ -91,6 +91,9 @@
   .iconContainer {
     width: 156px;
     height: 86px;
+  }
+
+  .iconContainer:has(.carWrapper) {
     margin-top: -11px;
     padding-bottom: 29px;
   }
