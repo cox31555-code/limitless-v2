@@ -71,6 +71,13 @@
   position: relative;
 }
 
+@media (max-width: 640px) {
+  .iconContainer {
+    width: 156px;
+    height: 86px;
+  }
+}
+
 .iconWrapper {
   position: relative;
   width: 90px;
