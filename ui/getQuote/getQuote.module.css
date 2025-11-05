@@ -866,6 +866,15 @@
     font-size: 1.3rem;
   }
 
+  .regInputField {
+    margin-top: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .regInputField :global(input) {
+    height: 5.6rem;
+  }
+
   .sectionLabel {
     font-size: 1.7rem;
   }
