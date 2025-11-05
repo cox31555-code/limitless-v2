@@ -1,5 +1,4 @@
 import { AuthProvider } from "@/contexts/AuthContext";
-import Header from "@/ui/layout/header/Header";
 import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 
@@ -12,7 +11,6 @@ export default function LoginLayout({ children }) {
   return (
     <>
       <AuthProvider>
-        <Header />
         {children}
         <ToastContainer
           position="top-right"
