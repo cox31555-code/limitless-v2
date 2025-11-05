@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./getQuoteHeaderWithNav.module.css";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import Image from "next/image";
@@ -17,6 +17,7 @@ const manrope = Manrope({
 
 const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps }) => {
   const router = useRouter();
+  const [showDropdown, setShowDropdown] = useState(false);
 
   // Always split title to have last word in blue
   const words = title.split(" ");
