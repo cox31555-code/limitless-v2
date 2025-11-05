@@ -12,6 +12,11 @@
   min-height: 100px;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.3);
   margin-bottom: 0;
+  transition: border-color 0.3s ease;
+}
+
+.headerContainer.menuOpen {
+  border-bottom: 1.5px solid transparent;
 }
 
 
@@ -268,11 +273,23 @@
     color: #0388ff;
     flex-shrink: 0;
     transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
   }
 
   .menuBtn:hover {
     background: rgba(3, 136, 255, 0.2);
     border-color: rgba(3, 136, 255, 0.35);
+  }
+
+  .menuBtn:active {
+    background: rgba(3, 136, 255, 0.3);
+    border-color: rgba(3, 136, 255, 0.4);
   }
 
   .menuBtn img {
