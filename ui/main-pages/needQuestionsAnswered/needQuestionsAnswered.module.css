@@ -2,75 +2,129 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4.8rem;
-  padding: 6rem 4% 8rem;
   width: 100%;
   max-width: 100%;
-  background: #000822;
+  background: linear-gradient(180deg, #000822 0%, #0a1835 100%);
   position: relative;
   overflow: hidden;
-  border-radius: 0;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  padding: 7.2rem 4% 9rem;
+  width: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  max-width: 100rem;
+  text-align: center;
 }
 
 .title {
   color: #fff;
-  text-align: center;
-  font-size: 4.8rem;
+  font-size: 5.2rem;
   font-weight: 700;
   line-height: 110%;
-  position: relative;
-  z-index: 2;
   letter-spacing: -0.02em;
   margin: 0;
-  max-width: 90rem;
 }
 
-.title span {
+.highlight {
   color: #0388FF;
   display: inline;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+  margin: 0;
 }
 
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.4rem;
-  max-width: 130rem;
+  gap: 2.8rem;
   width: 100%;
-  position: relative;
-  z-index: 2;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding: 2.4rem;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.05) 0%, rgba(3, 136, 255, 0.02) 100%);
-  border: 1px solid rgba(3, 136, 255, 0.12);
-  border-radius: 12px;
+  gap: 2rem;
+  padding: 3.2rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.03) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.15);
+  border-radius: 16px;
   position: relative;
   overflow: hidden;
-  min-height: 320px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #0388FF 0%, rgba(3, 136, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .card:hover {
-  border-color: rgba(3, 136, 255, 0.2);
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border-color: rgba(3, 136, 255, 0.3);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.06) 100%);
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(3, 136, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .cardIcon {
+  background: rgba(3, 136, 255, 0.2);
+  transform: scale(1.1);
 }
 
 .cardTitle {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 120%;
-  margin: 0;
   letter-spacing: -0.01em;
+  margin: 0;
 }
 
 .cardDescription {
-  color: rgba(255, 255, 255, 0.64);
-  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0;
@@ -78,54 +132,96 @@
   flex-grow: 1;
 }
 
-.cardButton {
-  align-self: flex-start;
+.cardLink {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   padding: 0;
   background: transparent;
   border: none;
   color: #0388FF;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 1rem;
   font-family: "Manrope", sans-serif;
+  align-self: flex-start;
+  margin-top: auto;
 }
 
-.cardButton:hover {
-  gap: 1.2rem;
+.cardLink:hover {
+  gap: 1.4rem;
 }
 
-.cardButton:hover svg {
+.cardLink:hover svg {
   transform: translateX(4px);
 }
 
-.cardButton svg {
+.cardLink svg {
   width: 20px;
   height: 20px;
   transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 1200px) {
-  .container {
-    gap: 4.4rem;
-    padding: 5.2rem 4% 7.2rem;
+  .content {
+    gap: 5.2rem;
+    padding: 6rem 4% 7.6rem;
   }
 
   .title {
-    font-size: 4rem;
+    font-size: 4.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
   }
 
   .cardsGrid {
+    gap: 2.4rem;
+  }
+
+  .card {
+    padding: 2.8rem;
+    gap: 1.8rem;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardDescription {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    gap: 4.4rem;
+    padding: 4.8rem 3% 6rem;
+  }
+
+  .title {
+    font-size: 3.6rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
   .card {
-    padding: 2.2rem;
-    min-height: 300px;
+    padding: 2.4rem;
+    gap: 1.6rem;
+  }
+
+  .cardIcon {
+    width: 48px;
+    height: 48px;
   }
 
   .cardTitle {
@@ -136,50 +232,15 @@
     font-size: 1.2rem;
   }
 
-  .cardButton {
-    font-size: 1.3rem;
+  .cardLink {
+    font-size: 1.2rem;
   }
 }
 
-@media screen and (max-width: 900px) {
-  .container {
-    padding: 4.4rem 3% 6rem;
-    gap: 3.8rem;
-  }
-
-  .title {
-    font-size: 3.2rem;
-    line-height: 110%;
-  }
-
-  .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 1.8rem;
-  }
-
-  .card {
-    padding: 2rem;
-    min-height: auto;
-  }
-
-  .cardTitle {
-    font-size: 1.5rem;
-  }
-
-  .cardDescription {
-    font-size: 1.2rem;
-  }
-
-  .cardButton {
-    font-size: 1.2rem;
-    margin-top: 0.8rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .container {
-    padding: 3.6rem 2% 5.2rem;
-    gap: 3.2rem;
+@media screen and (max-width: 640px) {
+  .content {
+    gap: 3.6rem;
+    padding: 3.8rem 3% 5.2rem;
   }
 
   .title {
@@ -187,13 +248,23 @@
     letter-spacing: -0.02em;
   }
 
+  .subtitle {
+    font-size: 1.2rem;
+    gap: 1.2rem;
+  }
+
   .cardsGrid {
-    gap: 1.6rem;
+    gap: 1.8rem;
   }
 
   .card {
-    padding: 1.8rem;
-    min-height: auto;
+    padding: 2rem;
+    gap: 1.4rem;
+  }
+
+  .cardIcon {
+    width: 44px;
+    height: 44px;
   }
 
   .cardTitle {
@@ -202,32 +273,44 @@
 
   .cardDescription {
     font-size: 1.1rem;
-    line-height: 145%;
   }
 
-  .cardButton {
+  .cardLink {
     font-size: 1.1rem;
-    margin-top: 0.8rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .container {
+  .content {
+    gap: 3.2rem;
     padding: 2.8rem 2% 4.4rem;
-    gap: 2.8rem;
   }
 
   .title {
     font-size: 2.4rem;
   }
 
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
   .cardsGrid {
-    gap: 1.4rem;
+    gap: 1.6rem;
   }
 
   .card {
-    padding: 1.6rem;
-    min-height: auto;
+    padding: 1.8rem;
+    gap: 1.2rem;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cardIcon svg {
+    width: 24px;
+    height: 24px;
   }
 
   .cardTitle {
@@ -239,27 +322,42 @@
     line-height: 140%;
   }
 
-  .cardButton {
+  .cardLink {
     font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 360px) {
-  .container {
-    padding: 2.4rem 1.5% 3.8rem;
-    gap: 2.4rem;
+  .content {
+    gap: 2.8rem;
+    padding: 2.2rem 1.5% 3.6rem;
   }
 
   .title {
-    font-size: 2.1rem;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
   }
 
   .cardsGrid {
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
   .card {
-    padding: 1.4rem;
+    padding: 1.6rem;
+    gap: 1rem;
+  }
+
+  .cardIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cardIcon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .cardTitle {
@@ -270,7 +368,7 @@
     font-size: 0.95rem;
   }
 
-  .cardButton {
+  .cardLink {
     font-size: 0.95rem;
   }
 }
