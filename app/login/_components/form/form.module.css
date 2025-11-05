@@ -273,13 +273,13 @@
 
 /* Footer */
 .footer {
-  padding-top: 2.8rem;
+  padding-top: 3.2rem;
   border-top: 1px solid rgba(3, 136, 255, 0.06);
   text-align: center;
 }
 
 .footerText {
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   color: #6b7c8f;
   margin: 0;
   font-weight: 400;
@@ -291,7 +291,7 @@
   text-decoration: none;
   font-weight: 700;
   transition: color 0.28s ease;
-  margin-left: 0.6rem;
+  margin-left: 0.8rem;
 }
 
 .signupLink:hover {
