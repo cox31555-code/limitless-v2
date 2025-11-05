@@ -33,7 +33,7 @@ const NeedQuestionsAnswered = () => {
           <div className={styles.card}>
             <div className={styles.cardIcon}>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2C8.27 2 2 8.27 2 16s6.27 14 14 14 14-6.27 14-14S23.73 2 16 2zm-2 20h4v4h-4v-4zm0-14h4v12h-4V8z" fill="#0388FF"/>
+                <path d="M16 2C8.27 2 2 8.27 2 16s6.27 14 14 14 14-6.27 14-14S23.73 2 16 2zm0 24c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm3.5-15h-7v2h7v-2zm0 4h-7v2h7v-2zm0 4h-7v2h7v-2z" fill="#0388FF"/>
               </svg>
             </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
@@ -57,7 +57,7 @@ const NeedQuestionsAnswered = () => {
           <div className={styles.card}>
             <div className={styles.cardIcon}>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2C8.27 2 2 8.27 2 16s6.27 14 14 14 14-6.27 14-14S23.73 2 16 2zm-3 19h2v2h-2v-2zm0-12h2v10h-2V9z" fill="#0388FF"/>
+                <path d="M26 2H6C3.9 2 2.1 3.9 2.1 6L2 26c0 2.1 1.9 4 4 4h20c2.1 0 4-1.9 4-4V6c0-2.1-1.9-4-4-4zm0 24H6V6h20v20zm-2-16h-4v2h4v-2zm0 4h-4v2h4v-2zm0 4h-4v2h4v-2z" fill="#0388FF"/>
               </svg>
             </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
@@ -81,7 +81,7 @@ const NeedQuestionsAnswered = () => {
           <div className={styles.card}>
             <div className={styles.cardIcon}>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2C8.27 2 2 8.27 2 16s6.27 14 14 14 14-6.27 14-14S23.73 2 16 2zm0 26c-6.63 0-12-5.37-12-12s5.37-12 12-12 12 5.37 12 12-5.37 12-12 12zm3.5-9c.83 0 1.5-.67 1.5-1.5S20.33 14 19.5 14 18 14.67 18 15.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S13.33 14 12.5 14 11 14.67 11 15.5 11.67 17 12.5 17zm3.5 6c2.33 0 4.31-1.46 5.11-3.5H10.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="#0388FF"/>
+                <path d="M16 2C8.27 2 2 8.27 2 16c0 2.56.64 5.04 1.76 7.2L2 30l5.8-1.76C11 29.36 13.44 30 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2zm0 24c-2.04 0-3.96-.44-5.72-1.24l-.4-.2-4.16 1.24 1.24-4.16-.2-.4c-.8-1.76-1.24-3.68-1.24-5.72 0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10z" fill="#0388FF"/>
               </svg>
             </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
