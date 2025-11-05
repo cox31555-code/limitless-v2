@@ -633,6 +633,11 @@
     padding-bottom: 29px;
   }
 
+  .convictedSvg {
+    width: 97px !important;
+    height: 101px !important;
+  }
+
   .iconWrapper {
     width: 3rem;
     height: 4.2rem;
