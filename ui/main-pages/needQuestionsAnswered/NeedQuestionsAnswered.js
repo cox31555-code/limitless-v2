@@ -50,14 +50,6 @@ const NeedQuestionsAnswered = () => {
           </div>
 
           <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="16" cy="16" r="8" stroke="#0388FF" strokeWidth="1.5" fill="none"/>
-                <circle cx="16" cy="16" r="5" fill="none" stroke="#000822" strokeWidth="1.5"/>
-                <circle cx="16" cy="12" r="1.5" fill="#0388FF"/>
-                <path d="M16 16L19 20" stroke="#0388FF" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-            </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
               Documentation & Guides
             </h3>
