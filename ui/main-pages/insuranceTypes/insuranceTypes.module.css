@@ -441,6 +441,8 @@
 
   .bar1 {
     height: 2.4rem;
+    width: 1rem;
+    top: 1.5rem;
   }
 
   .bar2 {
