@@ -79,11 +79,13 @@ const Footer = () => {
   // Only apply special styles if mounted and pathname is available
   const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname);
 
+  const isLoginPage = isMounted && pathname === "/login";
+
   return (
     <footer
-      className={styles.container}
+      className={`${styles.container} ${isLoginPage ? styles.lightTheme : ""}`}
       style={{
-        background: shouldApplySpecialStyles ? "#F2F5FE" : "",
+        background: shouldApplySpecialStyles ? "#F2F5FE" : isLoginPage ? "#ffffff" : "",
       }}
       suppressHydrationWarning
     >
