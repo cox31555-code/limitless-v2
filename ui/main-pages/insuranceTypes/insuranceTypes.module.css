@@ -91,6 +91,8 @@
   .iconContainer {
     width: 156px;
     height: 86px;
+    margin-top: -11px;
+    padding-bottom: 29px;
   }
 }
 
