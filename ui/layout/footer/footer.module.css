@@ -375,3 +375,46 @@
     line-height: 150%;
   }
 }
+
+/* Light Theme (for Login Page) */
+.lightTheme {
+  background: #ffffff;
+}
+
+.lightTheme::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(3, 136, 255, 0.08) 50%, transparent 100%);
+}
+
+.lightTheme .menuTitle {
+  color: #000822;
+  opacity: 1;
+}
+
+.lightTheme .menuItem {
+  color: #5a6b7d;
+}
+
+.lightTheme .menuItem:hover {
+  color: #0388ff;
+}
+
+.lightTheme .socialsTitle {
+  color: #000822;
+}
+
+.lightTheme .socialsItem {
+  background: #f0f6ff;
+}
+
+.lightTheme .socialsItem:hover {
+  background: #e6f0ff;
+}
+
+.lightTheme .socialsIcon {
+  color: #0388ff;
+}
+
+.lightTheme .copyright {
+  color: #6b7c8f;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+}
