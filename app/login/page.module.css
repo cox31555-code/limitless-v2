@@ -45,9 +45,16 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .mainContent {
+    padding-top: calc(4.4rem + 100px);
+  }
+}
+
 @media screen and (max-width: 600px) {
   .mainContent {
     padding: 4.4rem 1.6rem;
+    padding-top: calc(4.4rem + 100px);
   }
 
   .formContainer {
@@ -58,6 +65,7 @@
 @media screen and (max-width: 480px) {
   .mainContent {
     padding: 3.8rem 1.4rem;
+    padding-top: calc(3.8rem + 100px);
   }
 
   .formContainer {
@@ -65,9 +73,16 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .mainContent {
+    padding-top: calc(3.2rem + 100px);
+  }
+}
+
 @media screen and (max-width: 360px) {
   .mainContent {
     padding: 3.2rem 1.2rem;
+    padding-top: calc(3.2rem + 100px);
   }
 
   .formContainer {
