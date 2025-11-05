@@ -359,7 +359,6 @@ const CarIcon = () => (
       <ellipse cx="15.1172" cy="57.3359" rx="6" ry="3" fill="#0388FF" />
       <ellipse cx="77.3281" cy="57.3359" rx="6" ry="3" fill="#0388FF" />
     </svg>
-    <div className={styles.gradientEffect}></div>
   </div>
 );
 
