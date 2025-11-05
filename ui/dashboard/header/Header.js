@@ -63,7 +63,7 @@ const Header = ({ page }) => {
   };
 
   return (
-    <div className={`${styles.headerContainer} ${isMenuOpen ? styles.menuOpen : ''}`}>
+    <div className={isMenuOpen ? `${styles.headerContainer} ${styles.menuOpen}` : styles.headerContainer}>
       <div className={styles.headerContent}>
         <div className={styles.logoWrapper}>
           <Image
