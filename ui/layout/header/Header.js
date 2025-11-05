@@ -488,7 +488,7 @@ const Header = () => {
 
               <span
                 className={`${styles.mobileMenuLink} ${
-                  pathname === "/impound" ? styles.activeMenuLink : ""
+                  mounted && pathname === "/impound" ? styles.activeMenuLink : ""
                 }`}
                 onClick={() => {
                   setIsOpen(false);
@@ -500,7 +500,7 @@ const Header = () => {
 
               <span
                 className={`${styles.mobileMenuLink} ${
-                  pathname === "/coming-soon" ? styles.activeMenuLink : ""
+                  mounted && pathname === "/coming-soon" ? styles.activeMenuLink : ""
                 }`}
                 onClick={() => {
                   setIsOpen(false);
@@ -512,7 +512,7 @@ const Header = () => {
 
               <span
                 className={`${styles.mobileMenuLink} ${
-                  pathname === "/contact" ? styles.activeMenuLink : ""
+                  mounted && pathname === "/contact" ? styles.activeMenuLink : ""
                 }`}
                 onClick={() => {
                   setIsOpen(false);
@@ -524,7 +524,7 @@ const Header = () => {
 
               <span
                 className={`${styles.mobileMenuLink} ${
-                  pathname === "/FAQ" ? styles.activeMenuLink : ""
+                  mounted && pathname === "/FAQ" ? styles.activeMenuLink : ""
                 }`}
                 onClick={() => {
                   setIsOpen(false);
@@ -536,7 +536,7 @@ const Header = () => {
 
               <span
                 className={`${styles.mobileMenuLink} ${
-                  pathname === "/login" ? styles.activeMenuLink : ""
+                  mounted && pathname === "/login" ? styles.activeMenuLink : ""
                 }`}
                 onClick={() => {
                   setIsOpen(false);
