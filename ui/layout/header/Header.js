@@ -107,6 +107,7 @@ const Header = () => {
   ];
 
   const shouldHideHeader = (
+    pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname.startsWith("/dashboard") ||
