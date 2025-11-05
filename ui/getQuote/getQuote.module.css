@@ -818,6 +818,15 @@
   .quickQuoteSubtitle {
     font-size: 1.2rem;
   }
+
+  .regInputField {
+    margin-top: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .regInputField :global(input) {
+    height: 5.6rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
