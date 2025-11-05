@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import Image from "next/image";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
+import React from "react";
 
 const Header = ({ page }) => {
   const { user } = useAuth();
@@ -57,14 +58,6 @@ const Header = ({ page }) => {
     </svg>
   );
 
-  const MenuIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="4" y1="12" x2="20" y2="12" />
-      <line x1="4" y1="18" x2="20" y2="18" />
-    </svg>
-  );
-
   const handleNavigate = (path) => {
     router.push(path);
     setIsMenuOpen(false);
@@ -106,10 +99,14 @@ const Header = ({ page }) => {
             <button
               className={styles.menuBtn}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              title="Menu"
+              title={isMenuOpen ? "Close menu" : "Open menu"}
               aria-label="Dashboard menu"
             >
-              <MenuIcon />
+              {isMenuOpen ? (
+                <Image src="/svg/close.svg" alt="close" width={20} height={20} />
+              ) : (
+                <Image src="/svg/menu.svg" alt="menu" width={24} height={24} />
+              )}
             </button>
 
             {/* Mobile Menu Backdrop */}
@@ -138,7 +135,6 @@ const Header = ({ page }) => {
                 <button className={styles.menuItem} onClick={() => handleNavigate("/dashboard/submit-claim")}>
                   Submit a Claim
                 </button>
-                <div className={styles.menuDivider}></div>
                 <button className={styles.menuItem} onClick={() => handleNavigate("/login")}>
                   Logout
                 </button>
