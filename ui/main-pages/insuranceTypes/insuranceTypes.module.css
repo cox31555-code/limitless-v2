@@ -635,6 +635,11 @@
     height: 27px;
   }
 
+  .gradientEffect {
+    width: 33px;
+    height: 52px;
+  }
+
   .content {
     gap: 1rem;
   }
