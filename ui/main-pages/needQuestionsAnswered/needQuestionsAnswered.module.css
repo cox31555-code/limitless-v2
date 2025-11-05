@@ -85,12 +85,6 @@
   justify-content: center;
   background: rgba(3, 136, 255, 0.1);
   border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.card:hover .cardIcon {
-  background: rgba(3, 136, 255, 0.2);
-  transform: scale(1.1);
 }
 
 .cardTitle {
