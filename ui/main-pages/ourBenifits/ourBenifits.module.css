@@ -190,6 +190,16 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 0 6.2%;
+  }
+
+  .description {
+    margin: 0 -3px 0 -4px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     width: 100%;
