@@ -321,7 +321,7 @@
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 37px;
   }
 
   .card {
@@ -597,7 +597,7 @@
   }
 
   .grid {
-    gap: 1.4rem;
+    gap: 37px;
   }
 
   .card {
@@ -743,7 +743,7 @@
   }
 
   .grid {
-    gap: 1.2rem;
+    gap: 37px;
   }
 
   .card {
@@ -889,7 +889,7 @@
   }
 
   .grid {
-    gap: 1.2rem;
+    gap: 37px;
   }
 
   .card {
