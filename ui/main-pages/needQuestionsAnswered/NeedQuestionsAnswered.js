@@ -69,14 +69,6 @@ const NeedQuestionsAnswered = () => {
           </div>
 
           <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 14C8 12.9 8.9 12 10 12H22C23.1 12 24 12.9 24 14V20C24 21.1 23.1 22 22 22H10C8.9 22 8 21.1 8 20V14Z" stroke="#0388FF" strokeWidth="1.5" fill="none"/>
-                <path d="M8 14L16 18L24 14" stroke="#000822" strokeWidth="1.5" fill="none"/>
-                <path d="M12 16V20" stroke="#0388FF" strokeWidth="1" strokeLinecap="round"/>
-                <path d="M20 16V20" stroke="#0388FF" strokeWidth="1" strokeLinecap="round"/>
-              </svg>
-            </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
               Customer Support
             </h3>
