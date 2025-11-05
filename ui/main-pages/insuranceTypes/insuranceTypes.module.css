@@ -156,10 +156,8 @@
 
 @media screen and (max-width: 640px) {
   .carVehicle {
-    width: 6.656rem;
-    height: 5.438rem;
-    top: -0.179rem;
-    left: 0.313rem;
+    width: 68px;
+    height: 47px;
   }
 }
 
