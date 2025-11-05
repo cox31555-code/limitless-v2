@@ -134,6 +134,7 @@
 
   .cardsGrid {
     gap: 2.4rem;
+    padding: 0 1.3rem;
   }
 
   .card {
