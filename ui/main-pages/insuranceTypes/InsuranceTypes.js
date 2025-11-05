@@ -331,6 +331,7 @@ const CarIcon = () => (
         strokeLinecap="round"
       />
     </svg>
+    <div className={styles.gradientEffect}></div>
     <svg
       width="93"
       height="68"
