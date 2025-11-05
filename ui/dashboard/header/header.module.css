@@ -179,22 +179,11 @@
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
-}
-
-.menuItem:last-of-type {
-  border-bottom: none;
 }
 
 .menuItem:hover {
   background: rgba(3, 136, 255, 0.08);
   color: #ffffff;
-}
-
-.menuDivider {
-  height: 1px;
-  background: rgba(3, 136, 255, 0.15);
-  margin: 0;
 }
 
 @keyframes slideUp {
@@ -257,6 +246,7 @@
   .logoutBtn svg {
     width: 1.8rem !important;
     height: 1.8rem !important;
+    stroke: currentColor;
   }
 
   .mobileMenuWrapper {
@@ -285,9 +275,10 @@
     border-color: rgba(3, 136, 255, 0.35);
   }
 
-  .menuBtn svg {
+  .menuBtn img {
     width: 1.8rem !important;
     height: 1.8rem !important;
+    filter: brightness(0) invert(1);
   }
 
   .helpDropdown,
@@ -324,6 +315,7 @@
   .menuItem {
     padding: 1.6rem 2.4rem;
     font-size: 1.5rem;
+    border-bottom: none;
   }
 
   .helpDropdown,
