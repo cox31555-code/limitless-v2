@@ -779,7 +779,7 @@
   }
 
   .title {
-    font-size: 1.7rem;
+    font-size: 1.7rem !important;
     margin-bottom: 0.1rem;
     font-weight: 700;
     line-height: 110%;
