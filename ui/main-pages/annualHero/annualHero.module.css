@@ -337,6 +337,10 @@
   .buttons {
     gap: 2.4rem;
   }
+
+  .trustStat:last-child {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
