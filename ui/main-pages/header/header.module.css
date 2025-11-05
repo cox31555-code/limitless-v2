@@ -305,6 +305,13 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .description {
+    padding-top: 10px;
+    margin-bottom: -16px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .subTitle {
     display: none;
