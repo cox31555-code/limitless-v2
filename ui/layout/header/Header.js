@@ -230,7 +230,10 @@ const Header = () => {
       <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
-            onClick={() => router.push("/")}
+            onClick={() => {
+              setIsOpen(false);
+              router.push("/");
+            }}
             className={styles.logo}
             src="/svg/logo.svg"
             alt="logo"
