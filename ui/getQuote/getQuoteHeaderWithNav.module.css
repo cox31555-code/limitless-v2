@@ -301,12 +301,32 @@
 }
 
 @media screen and (max-width: 900px) {
+  .headerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    width: 100vw;
+    margin: 0;
+  }
+
   .navigationBar {
     display: none;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .headerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    width: 100vw;
+    margin: 0;
+  }
+
   .headerElement {
     padding: 1.6rem 1.6rem;
     flex-direction: column;
