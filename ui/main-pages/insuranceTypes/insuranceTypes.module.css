@@ -274,64 +274,6 @@
   }
 
   .iconContainer {
-    height: 120px;
-    margin-bottom: 2.2rem;
-  }
-
-  .content {
-    gap: 2.4rem;
-  }
-
-  .title {
-    font-size: 2.2rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .description {
-    font-size: 1.3rem;
-  }
-
-  .featureList {
-    gap: 1.5rem;
-  }
-
-  .feature {
-    gap: 1.4rem;
-  }
-
-  .feature span {
-    font-size: 1.35rem;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .container {
-    padding: 8rem 4.4rem;
-  }
-
-  .heading {
-    font-size: 4rem;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-  }
-
-  .headerWrapper {
-    margin-bottom: 6rem;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .card {
-    min-height: auto;
-    padding: 2.4rem;
-  }
-
-  .iconContainer {
     height: 80px;
     margin-bottom: 1.6rem;
   }
@@ -407,8 +349,16 @@
     font-size: 1.8rem;
   }
 
+  .description {
+    font-size: 1.3rem;
+  }
+
   .featureList {
     gap: 1rem;
+  }
+
+  .feature {
+    gap: 1.4rem;
   }
 
   .feature svg {
@@ -417,7 +367,7 @@
   }
 
   .feature span {
-    font-size: 1.1rem;
+    font-size: 0.875rem !important;
   }
 }
 
