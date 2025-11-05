@@ -61,10 +61,10 @@ const Footer = () => {
     setIsMounted(true);
   }, []);
 
-  // Don't render footer on dashboard and login pages
+  // Don't render footer on dashboard and password pages
   if (isMounted && (
     pathname?.startsWith("/dashboard") ||
-    ["/login", "/forget-password", "/change-password"].includes(pathname)
+    ["/forget-password", "/change-password"].includes(pathname)
   )) {
     return null;
   }
