@@ -769,6 +769,11 @@
     font-size: 1.4rem !important;
     line-height: 130%;
   }
+
+  .checkIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
