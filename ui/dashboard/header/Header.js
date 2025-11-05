@@ -100,6 +100,43 @@ const Header = ({ page }) => {
               <line x1="21" y1="12" x2="9" y2="12"></line>
             </svg>
           </button>
+
+          {/* Mobile Menu Button */}
+          <div className={styles.mobileMenuWrapper}>
+            <button
+              className={styles.menuBtn}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              title="Menu"
+              aria-label="Dashboard menu"
+            >
+              <MenuIcon />
+            </button>
+
+            {/* Mobile Menu Dropdown */}
+            {isMenuOpen && (
+              <div className={styles.menuDropdown}>
+                <button className={styles.menuItem} onClick={() => handleNavigate("/dashboard")}>
+                  Dashboard
+                </button>
+                <button className={styles.menuItem} onClick={() => handleNavigate("/dashboard/policy")}>
+                  Manage Policy
+                </button>
+                <button className={styles.menuItem} onClick={() => handleNavigate("/dashboard/documents")}>
+                  Documents
+                </button>
+                <button className={styles.menuItem} onClick={() => handleNavigate("/dashboard/claims")}>
+                  Manage Claims
+                </button>
+                <button className={styles.menuItem} onClick={() => handleNavigate("/dashboard/submit-claim")}>
+                  Submit a Claim
+                </button>
+                <div className={styles.menuDivider}></div>
+                <button className={styles.menuItem} onClick={() => handleNavigate("/login")}>
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
