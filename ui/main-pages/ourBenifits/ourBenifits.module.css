@@ -156,25 +156,29 @@
 }
 
 @media screen and (max-width: 640px) {
+  .container {
+    padding: 5rem 4.5%;
+  }
+
   .title {
-    font-size: 3.2rem;
+    font-size: 3rem;
   }
 
   .description {
-    font-size: 1.45rem;
+    font-size: 1.38rem;
   }
 
   .imgContainer {
-    width: 7.2rem;
-    height: 7.2rem;
+    width: 6.8rem;
+    height: 6.8rem;
   }
 
   .benifitTitle {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .benifitDescription {
-    font-size: 1.4rem;
+    font-size: 1.32rem;
   }
 }
 
