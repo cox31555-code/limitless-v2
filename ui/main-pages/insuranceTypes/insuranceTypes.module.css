@@ -452,9 +452,10 @@
   }
 
   .lBadge {
-    width: 5.2rem;
-    height: 5.5rem;
-    top: 1.2rem;
+    width: 3.0625rem;
+    height: 3.9375rem;
+    top: -0.25rem;
+    left: 0.3125rem;
   }
 
   .checkBadge {
