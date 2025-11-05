@@ -360,6 +360,7 @@
   .card {
     padding: 5.2rem 3.6rem;
     border-radius: 12px;
+    max-width: 100%;
   }
 
   .header {
