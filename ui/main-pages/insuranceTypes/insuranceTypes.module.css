@@ -83,6 +83,11 @@
 }
 
 @media (max-width: 640px) {
+  .card {
+    margin: 0 8px;
+    padding: 25px 22px 28px 0;
+  }
+
   .iconContainer {
     width: 156px;
     height: 86px;
