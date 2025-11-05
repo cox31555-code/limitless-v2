@@ -421,6 +421,136 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 4rem 1.6rem;
+  }
+
+  .heading {
+    font-size: 2.4rem;
+    line-height: 120%;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 2.8rem;
+  }
+
+  .grid {
+    gap: 1.4rem;
+  }
+
+  .card {
+    padding: 1.5rem 1.2rem;
+    min-height: auto;
+  }
+
+  .iconContainer {
+    height: 1.9rem;
+    margin-bottom: 5.6rem;
+    align-items: flex-start;
+    width: 8rem;
+  }
+
+  .iconWrapper {
+    width: 7rem;
+    height: 8.6rem;
+  }
+
+  .motorcycleWrapper {
+    width: 7rem;
+    height: 8.6rem;
+  }
+
+  .carWrapper {
+    width: 7rem;
+    height: 8.6rem;
+  }
+
+  .gradientBars {
+    width: 13.1rem;
+    height: 8.6rem;
+  }
+
+  .bar {
+    width: 2.6rem;
+  }
+
+  .bar1 {
+    height: 2.4rem;
+  }
+
+  .bar2 {
+    height: 3.6rem;
+    left: 2.6rem;
+  }
+
+  .bar3 {
+    height: 4.4rem;
+    left: 5.2rem;
+  }
+
+  .lBadge {
+    width: 5.2rem;
+    height: 5.5rem;
+    top: 1.2rem;
+  }
+
+  .checkBadge {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .carCheck {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .carVehicle {
+    width: 4rem;
+    height: 2.9rem;
+  }
+
+  .gradientEffect {
+    width: 7.2rem;
+    height: 5.8rem;
+  }
+
+  .content {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+    margin-bottom: 1.6rem;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  .featureList {
+    gap: 2rem;
+    margin-top: auto;
+  }
+
+  .feature {
+    gap: 0.9rem;
+  }
+
+  .feature svg {
+    width: 1.7rem;
+    height: 1.7rem;
+    flex-shrink: 0;
+  }
+
+  .feature span {
+    font-size: 1.2rem;
+    line-height: 130%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     padding: 4rem 1.6rem;
@@ -444,77 +574,77 @@
   }
 
   .card {
-    padding: 1.8rem 1.4rem;
+    padding: 1.5rem 1.2rem;
     min-height: auto;
   }
 
   .iconContainer {
-    height: 50px;
+    height: 5rem;
     margin-bottom: 1.4rem;
     align-items: center;
   }
 
   .iconWrapper {
-    width: 30px;
-    height: 42px;
+    width: 3rem;
+    height: 4.2rem;
   }
 
   .motorcycleWrapper {
-    width: 50px;
-    height: 36px;
+    width: 5rem;
+    height: 3.6rem;
   }
 
   .carWrapper {
-    width: 46px;
-    height: 40px;
+    width: 4.6rem;
+    height: 4rem;
   }
 
   .gradientBars {
-    width: 30px;
-    height: 42px;
+    width: 3rem;
+    height: 4.2rem;
   }
 
   .bar {
-    width: 10px;
+    width: 1rem;
   }
 
   .bar1 {
-    height: 22px;
+    height: 2.2rem;
   }
 
   .bar2 {
-    height: 34px;
-    left: 10px;
+    height: 3.4rem;
+    left: 1rem;
   }
 
   .bar3 {
-    height: 42px;
-    left: 20px;
+    height: 4.2rem;
+    left: 2rem;
   }
 
   .lBadge {
-    width: 24px;
-    height: 30px;
+    width: 2.4rem;
+    height: 3rem;
   }
 
   .checkBadge {
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .carCheck {
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .carVehicle {
-    width: 38px;
-    height: 28px;
+    width: 3.8rem;
+    height: 2.8rem;
   }
 
   .gradientEffect {
-    width: 34px;
-    height: 56px;
+    width: 3.4rem;
+    height: 5.6rem;
   }
 
   .content {
