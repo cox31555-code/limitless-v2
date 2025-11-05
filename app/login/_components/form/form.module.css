@@ -9,12 +9,11 @@
 
 .card {
   width: 100%;
-  max-width: 540px;
+  max-width: 700px;
   background: #ffffff;
   border-radius: 16px;
-  padding: 4.8rem 4rem;
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04), 0 4px 16px rgba(3, 136, 255, 0.08);
-  border: 1px solid rgba(3, 136, 255, 0.08);
+  padding: 6.4rem 6rem;
+  border: 1px solid rgba(3, 136, 255, 0.06);
 }
 
 /* Header Section */
