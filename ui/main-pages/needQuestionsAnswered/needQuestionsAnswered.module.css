@@ -291,14 +291,14 @@
   }
 
   .cardTitle {
-    font-size: 1.3rem;
-  }
-
-  .cardDescription {
     font-size: 1rem;
   }
 
+  .cardDescription {
+    font-size: 0.75rem;
+  }
+
   .cardLink {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
   }
 }
