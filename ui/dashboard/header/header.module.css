@@ -273,13 +273,8 @@
     color: #0388ff;
     flex-shrink: 0;
     transition: all 0.3s ease;
-    -webkit-appearance: none;
-    -webkit-touch-callout: none;
-    user-select: none;
-    -webkit-user-select: none;
     padding: 0;
     margin: 0;
-    font-size: inherit;
   }
 
   .menuBtn:hover {
