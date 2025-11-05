@@ -398,3 +398,27 @@
     height: 100%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .headerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    width: 100vw;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .headerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    width: 100vw;
+    margin: 0;
+  }
+}
