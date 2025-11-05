@@ -33,7 +33,10 @@ const NeedQuestionsAnswered = () => {
           <div className={styles.card}>
             <div className={styles.cardIcon}>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2C8.27 2 2 8.27 2 16s6.27 14 14 14 14-6.27 14-14S23.73 2 16 2zm0 24c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm3.5-15h-7v2h7v-2zm0 4h-7v2h7v-2zm0 4h-7v2h7v-2z" fill="#000822"/>
+                <circle cx="16" cy="16" r="14" fill="none" stroke="#0388FF" strokeWidth="2"/>
+                <rect x="9" y="10" width="14" height="2" fill="#000822"/>
+                <rect x="9" y="14" width="14" height="2" fill="#000822"/>
+                <rect x="9" y="18" width="14" height="2" fill="#000822"/>
               </svg>
             </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
@@ -57,7 +60,10 @@ const NeedQuestionsAnswered = () => {
           <div className={styles.card}>
             <div className={styles.cardIcon}>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26 2H6C3.9 2 2.1 3.9 2.1 6L2 26c0 2.1 1.9 4 4 4h20c2.1 0 4-1.9 4-4V6c0-2.1-1.9-4-4-4zm0 24H6V6h20v20zm-2-16h-4v2h4v-2zm0 4h-4v2h4v-2zm0 4h-4v2h4v-2z" fill="#000822"/>
+                <path d="M26 4H6C4.9 4 4 4.9 4 6v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" fill="none" stroke="#0388FF" strokeWidth="2"/>
+                <rect x="8" y="9" width="3" height="3" fill="#000822"/>
+                <rect x="8" y="13" width="3" height="3" fill="#000822"/>
+                <rect x="8" y="17" width="3" height="3" fill="#000822"/>
               </svg>
             </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
@@ -81,7 +87,10 @@ const NeedQuestionsAnswered = () => {
           <div className={styles.card}>
             <div className={styles.cardIcon}>
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2C8.27 2 2 8.27 2 16c0 2.56.64 5.04 1.76 7.2L2 30l5.8-1.76C11 29.36 13.44 30 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2zm0 24c-2.04 0-3.96-.44-5.72-1.24l-.4-.2-4.16 1.24 1.24-4.16-.2-.4c-.8-1.76-1.24-3.68-1.24-5.72 0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10z" fill="#000822"/>
+                <path d="M16 3C9.38 3 4 8.37 4 15c0 2.1.52 4.1 1.42 5.88L3 30l9.48-2.84C14.37 29.4 15.17 29.4 16 29.4c6.62 0 12-5.38 12-12S22.62 3 16 3z" fill="none" stroke="#0388FF" strokeWidth="2"/>
+                <circle cx="12" cy="16" r="1.5" fill="#000822"/>
+                <circle cx="16" cy="16" r="1.5" fill="#000822"/>
+                <circle cx="20" cy="16" r="1.5" fill="#000822"/>
               </svg>
             </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
