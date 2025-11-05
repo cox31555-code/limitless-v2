@@ -196,12 +196,12 @@
   }
 
   .title {
-    font-size: 2.8rem;
+    font-size: 3rem;
     letter-spacing: -0.02em;
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     gap: 1.2rem;
   }
 
@@ -235,11 +235,11 @@
   }
 
   .title {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .cardsGrid {
@@ -273,11 +273,11 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .cardsGrid {
