@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import styles from "./page.module.css";
 import Form from "./_components/form/Form";
 import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
-import GetQuoteFooterBanner from "@/ui/layout/getQuoteFooterBanner/GetQuoteFooterBanner";
 
 export const metadata = {
   title: "Login | Limitless Cover",
@@ -25,7 +24,6 @@ const LoginPage = () => {
           </Suspense>
         </div>
       </div>
-      <GetQuoteFooterBanner />
     </div>
   );
 };
