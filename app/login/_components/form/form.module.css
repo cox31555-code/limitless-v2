@@ -261,8 +261,8 @@
 }
 
 .buttonIcon {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2.2rem;
+  height: 2.2rem;
   flex-shrink: 0;
   transition: transform 0.3s ease;
 }
