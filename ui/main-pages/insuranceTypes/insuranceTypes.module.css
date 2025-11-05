@@ -213,6 +213,11 @@
   letter-spacing: 0.56px;
 }
 
+.checkIcon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
 @media screen and (max-width: 1200px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
