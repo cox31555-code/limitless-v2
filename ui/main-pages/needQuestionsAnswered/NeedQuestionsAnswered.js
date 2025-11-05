@@ -31,13 +31,6 @@ const NeedQuestionsAnswered = () => {
 
         <div className={styles.cardsGrid}>
           <div className={styles.card}>
-            <div className={styles.cardIcon}>
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 12C8 10.9 8.9 10 10 10H22C23.1 10 24 10.9 24 12V22C24 23.1 23.1 24 22 24H10C8.9 24 8 23.1 8 22V12Z" stroke="#0388FF" strokeWidth="1.5" fill="none"/>
-                <path d="M12 14L16 18L20 14" stroke="#0388FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M16 18V10" stroke="#000822" strokeWidth="1.5" fill="#000822"/>
-              </svg>
-            </div>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
               Frequently Asked Questions
             </h3>
