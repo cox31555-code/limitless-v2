@@ -1018,6 +1018,15 @@
     border-radius: 0.8rem;
   }
 
+  .regInputField {
+    margin-top: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .regInputField :global(input) {
+    height: 5.4rem;
+  }
+
   .sectionLabel {
     font-size: 1.6rem;
   }
