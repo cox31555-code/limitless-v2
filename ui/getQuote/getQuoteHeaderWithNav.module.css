@@ -456,6 +456,27 @@
     margin: 0 !important;
     margin-left: 0 !important;
   }
+
+  .navigationBar {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+  }
+
+  .logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .helpBtn {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -468,5 +489,26 @@
     width: 100vw !important;
     margin: 0 !important;
     margin-left: 0 !important;
+  }
+
+  .navigationBar {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+  }
+
+  .logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .helpBtn {
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 0.95rem;
   }
 }
