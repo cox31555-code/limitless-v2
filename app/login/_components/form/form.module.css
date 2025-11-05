@@ -198,25 +198,22 @@
 
 /* Forgot Password Link */
 .forgotLink {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: #0388ff;
   text-decoration: none;
   transition: color 0.28s ease;
   display: inline-block;
-  margin-top: 0.4rem;
-  padding: 0.2rem 0;
+  margin-top: 0.6rem;
+  padding: 0;
 }
 
 .forgotLink:hover {
   color: #0270cc;
-  text-decoration: underline;
 }
 
 .forgotLink:focus {
-  outline: 2px solid #0388ff;
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: none;
 }
 
 /* Submit Button */
