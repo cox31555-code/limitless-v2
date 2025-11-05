@@ -97,6 +97,10 @@
     margin-top: -11px;
     padding-bottom: 29px;
   }
+
+  .featureList {
+    gap: 11px;
+  }
 }
 
 .iconWrapper {
