@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./page.module.css";
-import Header from "./_components/header/Header";
+import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
 import QuestionsGroup from "./_components/questionsGroup/QuestionsGroup";
 import { data } from "./data";
 
@@ -12,7 +12,7 @@ const Page = () => {
 
   return (
     <div className={styles.container}>
-      <Header  title="Frequently Asked Questions" />
+      <GetQuoteHeaderWithNav title="Frequently Asked Questions" />
 
       <div className={"centeredContent"}>
         <div className={styles.wrapper}>
