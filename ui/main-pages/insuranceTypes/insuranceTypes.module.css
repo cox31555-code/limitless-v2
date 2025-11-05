@@ -333,24 +333,24 @@
   }
 
   .iconContainer {
-    height: 100px;
-    margin-bottom: 1.8rem;
+    height: 90px;
+    margin-bottom: 1.6rem;
   }
 
   .iconWrapper,
   .motorcycleWrapper,
   .carWrapper {
-    transform: scale(0.8);
+    transform: scale(0.65);
     transform-origin: left top;
   }
 
   .content {
-    gap: 2rem;
+    gap: 1.8rem;
   }
 
   .title {
-    font-size: 2rem;
-    margin-bottom: 0.6rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.4rem;
   }
 
   .description {
@@ -358,21 +358,168 @@
   }
 
   .featureList {
-    gap: 1.3rem;
-  }
-
-  .feature {
     gap: 1.2rem;
   }
 
+  .feature {
+    gap: 1rem;
+  }
+
   .feature svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
     margin-top: 0.2rem;
   }
 
   .feature span {
+    font-size: 1.15rem;
+    line-height: 140%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 5rem 1.8rem;
+  }
+
+  .heading {
+    font-size: 2.8rem;
+    line-height: 110%;
+    margin-bottom: 0.8rem;
+  }
+
+  .subtitle {
     font-size: 1.2rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 3.5rem;
+  }
+
+  .grid {
+    gap: 1.4rem;
+  }
+
+  .card {
+    padding: 1.6rem;
+    min-height: auto;
+  }
+
+  .iconContainer {
+    height: 80px;
+    margin-bottom: 1.4rem;
+  }
+
+  .iconWrapper,
+  .motorcycleWrapper,
+  .carWrapper {
+    transform: scale(0.55);
+    transform-origin: left top;
+  }
+
+  .content {
+    gap: 1.6rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .featureList {
+    gap: 1rem;
+  }
+
+  .feature {
+    gap: 0.8rem;
+  }
+
+  .feature svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: 0.2rem;
+  }
+
+  .feature span {
+    font-size: 1.1rem;
+    line-height: 140%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 4.5rem 1.4rem;
+  }
+
+  .heading {
+    font-size: 2.4rem;
+    line-height: 110%;
+    margin-bottom: 0.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    gap: 1.2rem;
+  }
+
+  .card {
+    padding: 1.4rem;
+    min-height: auto;
+  }
+
+  .iconContainer {
+    height: 70px;
+    margin-bottom: 1.2rem;
+  }
+
+  .iconWrapper,
+  .motorcycleWrapper,
+  .carWrapper {
+    transform: scale(0.45);
+    transform-origin: left top;
+  }
+
+  .content {
+    gap: 1.4rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .featureList {
+    gap: 0.8rem;
+  }
+
+  .feature {
+    gap: 0.6rem;
+  }
+
+  .feature svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-top: 0;
+  }
+
+  .feature span {
+    font-size: 1rem;
     line-height: 140%;
   }
 }
