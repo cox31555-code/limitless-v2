@@ -248,13 +248,15 @@
   }
 
   .logoutBtn {
-    width: 4.4rem;
-    height: 4.4rem;
+    width: 4.4rem !important;
+    height: 4.4rem !important;
+    display: flex !important;
+    flex-shrink: 0;
   }
 
   .logoutBtn svg {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.8rem !important;
+    height: 1.8rem !important;
   }
 
   .mobileMenuWrapper {
