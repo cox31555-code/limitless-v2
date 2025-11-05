@@ -95,7 +95,7 @@
 
 .menuBackdrop {
   position: fixed;
-  top: 100px;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -142,7 +142,7 @@
 
 .menuDropdown {
   position: fixed;
-  top: 100px;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -151,18 +151,19 @@
   animation: slideDown 0.3s ease;
   overflow-y: auto;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 80px);
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
     max-height: 0;
-    transform: translateY(-10px);
   }
   to {
     opacity: 1;
     max-height: 100vh;
-    transform: translateY(0);
   }
 }
 
