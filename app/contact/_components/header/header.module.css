@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8rem 4.4% 10.3rem 2.6%;
+  padding: 16rem 4.4% 10.3rem 2.6%;
   width: 100%;
 }
 .headers {
@@ -110,7 +110,7 @@
 
   .content {
     z-index: 1.8;
-    padding: 12rem 3.96% 6.435% 2.34%;
+    padding: 16rem 3.96% 6.435% 2.34%;
   }
 
   .left {
