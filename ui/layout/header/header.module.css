@@ -425,43 +425,31 @@
 
   .mobileHelpBtn {
     display: flex;
-    width: 4.4rem;
-    height: 4.4rem;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 4.6rem;
+    height: 4.6rem;
     border-radius: 10px;
-    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(3, 136, 255, 0.25);
+    background: rgba(3, 136, 255, 0.1);
+    color: #0388ff;
     cursor: pointer;
-    background: transparent;
-    transition: all 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
     flex-shrink: 0;
-    color: white;
     padding: 0;
   }
 
   .mobileHelpBtn:hover {
-    border-color: rgba(3, 136, 255, 0.4);
-    background: rgba(3, 136, 255, 0.08);
-  }
-
-  .mobileHelpBtn:active {
-    background: rgba(3, 136, 255, 0.12);
     border-color: rgba(3, 136, 255, 0.5);
-  }
-
-  .mobileHelpBtn:focus-visible {
-    outline: 2px solid #0388ff;
-    outline-offset: 2px;
+    background: rgba(3, 136, 255, 0.15);
   }
 
   .mobileHelpBtn svg {
     width: 24px;
     height: 24px;
-    color: white;
-  }
-
-  .mobileHelpBtn:hover svg {
-    filter: drop-shadow(0 0 2px rgba(3, 136, 255, 0.3));
+    color: #0388ff;
   }
 
   .mobileBackdrop {
