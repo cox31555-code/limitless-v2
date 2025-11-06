@@ -344,6 +344,25 @@
     padding: 0.3rem 0.8rem;
     font-size: 0.75rem;
   }
+
+  .modal {
+    padding: 1.8rem;
+    max-width: 90%;
+  }
+
+  .modalTitle {
+    font-size: 1.4rem;
+  }
+
+  .modalMessage {
+    font-size: 1rem;
+  }
+
+  .contactLink,
+  .closeActionBtn {
+    padding: 0.8rem 1.4rem;
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -399,5 +418,32 @@
     font-size: 0.7rem;
     top: 2px;
     right: 0;
+  }
+
+  .modal {
+    padding: 1.6rem;
+    max-width: 95%;
+  }
+
+  .closeBtn {
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .modalTitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .modalMessage {
+    font-size: 0.95rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .contactLink,
+  .closeActionBtn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
