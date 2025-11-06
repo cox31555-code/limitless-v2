@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import Selection1 from "@/ui/inputs/selections/selection1/Selection1";
 import { useRouter } from "next/navigation";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ const Calculator = () => {
     type: "1 Hour",
   });
   const router = useRouter();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
 
   const priceMap = {
     "1 Hour": "£12",
@@ -83,7 +85,7 @@ const Calculator = () => {
               </div>
 
               <button
-                onClick={() => router.push("/temporary/get-quote")}
+                onClick={() => setIsInsuranceModalOpen(true)}
                 className={`${styles.button} ${plusJakartaSans.className}`}
               >
                 <span>Get a quote</span>
