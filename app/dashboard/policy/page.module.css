@@ -50,6 +50,8 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .button::before {
@@ -155,6 +157,8 @@
   text-align: left;
   position: relative;
   overflow: hidden;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .dropdownOption::before {
