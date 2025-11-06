@@ -120,107 +120,85 @@ const PolicyDetailsReview = ({ policy }) => {
         )}
 
         {/* PERSONAL DETAILS SECTION */}
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Personal Details</h3>
-          <div className={styles.sectionContent}>
-            <div className={styles.row}>
-              {renderField("First Name", userDetails?.firstName)}
-              {renderField("Surname", userDetails?.surname)}
-              {renderField("Date of Birth", userDetails?.dateOfBirth)}
-            </div>
-            <div className={styles.row}>
-              {renderField("Email", userDetails?.email)}
-              {renderField("Phone", userDetails?.phone)}
-              {renderField("Postcode", userDetails?.postCode)}
-            </div>
-            <div className={styles.row}>
-              {renderField("Address", userDetails?.address)}
-            </div>
+        {renderSectionWithButton("Personal Details", <>
+          <div className={styles.row}>
+            {renderField("First Name", userDetails?.firstName)}
+            {renderField("Surname", userDetails?.surname)}
+            {renderField("Date of Birth", userDetails?.dateOfBirth)}
           </div>
-        </div>
+          <div className={styles.row}>
+            {renderField("Email", userDetails?.email)}
+            {renderField("Phone", userDetails?.phone)}
+            {renderField("Postcode", userDetails?.postCode)}
+          </div>
+          <div className={styles.row}>
+            {renderField("Address", userDetails?.address)}
+          </div>
+        </>)}
 
         {/* EMPLOYMENT DETAILS SECTION */}
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Employment Details</h3>
-          <div className={styles.sectionContent}>
-            <div className={styles.row}>
-              {renderField("Employment Status", userDetails?.employmentStatus)}
-              {renderField("Industry", userDetails?.industry)}
-              {renderField("Occupation", userDetails?.occupation)}
-            </div>
+        {renderSectionWithButton("Employment Details",
+          <div className={styles.row}>
+            {renderField("Employment Status", userDetails?.employmentStatus)}
+            {renderField("Industry", userDetails?.industry)}
+            {renderField("Occupation", userDetails?.occupation)}
           </div>
-        </div>
+        )}
 
         {/* CAR PARKING & USAGE SECTION */}
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Car Parking & Usage</h3>
-          <div className={styles.sectionContent}>
-            <div className={styles.row}>
-              {renderField("Keeping Car During Day", carUsage?.keepingCarDuringDay)}
-              {renderField("Keeping Car During Night", carUsage?.keepingCarDuringNight)}
-              {renderField("What Do You Use Car For", carUsage?.usageType)}
-            </div>
-
-            {/* ANNUAL-SPECIFIC CAR USAGE */}
-            {insuranceType === "Annual" && (
-              <>
-                <div className={styles.row}>
-                  {renderField("Own Other Vehicles", carUsage?.otherVehicles)}
-                  {carUsage?.otherVehicles === "Yes" && renderField("Other Vehicles Type", carUsage?.otherVehiclesType)}
-                  {renderField("Additional Qualifications", carUsage?.hasAdditionalQualifications)}
-                </div>
-                {carUsage?.hasAdditionalQualifications === "Yes" && (
-                  <div className={styles.row}>
-                    {renderField("Qualification Type", carUsage?.additionalQualificationType)}
-                    {renderField("Month/Year", `${carUsage?.qualificationMonth || "N/A"} ${carUsage?.qualificationYear || ""}`)}
-                  </div>
-                )}
-              </>
-            )}
+        {renderSectionWithButton("Car Parking & Usage", <>
+          <div className={styles.row}>
+            {renderField("Keeping Car During Day", carUsage?.keepingCarDuringDay)}
+            {renderField("Keeping Car During Night", carUsage?.keepingCarDuringNight)}
+            {renderField("What Do You Use Car For", carUsage?.usageType)}
           </div>
-        </div>
+
+          {/* ANNUAL-SPECIFIC CAR USAGE */}
+          {insuranceType === "Annual" && (
+            <>
+              <div className={styles.row}>
+                {renderField("Own Other Vehicles", carUsage?.otherVehicles)}
+                {carUsage?.otherVehicles === "Yes" && renderField("Other Vehicles Type", carUsage?.otherVehiclesType)}
+                {renderField("Additional Qualifications", carUsage?.hasAdditionalQualifications)}
+              </div>
+              {carUsage?.hasAdditionalQualifications === "Yes" && (
+                <div className={styles.row}>
+                  {renderField("Qualification Type", carUsage?.additionalQualificationType)}
+                  {renderField("Month/Year", `${carUsage?.qualificationMonth || "N/A"} ${carUsage?.qualificationYear || ""}`)}
+                </div>
+              )}
+            </>
+          )}
+        </>)}
 
         {/* LICENSE & CLAIMS SECTION */}
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>License & Claims</h3>
-          <div className={styles.sectionContent}>
-            <div className={styles.row}>
-              {renderField("License Type", carUsage?.licenseType)}
-              {renderField("License Held Since", carUsage?.licenseHeld)}
-              {renderField("License Number", carUsage?.licenseNumber)}
-            </div>
-            <div className={styles.row}>
-              {renderField("No Claims Bonus", carUsage?.NCB)}
-              {renderField("Voluntary Excess", carUsage?.voluntaryExcess)}
-            </div>
+        {renderSectionWithButton("License & Claims", <>
+          <div className={styles.row}>
+            {renderField("License Type", carUsage?.licenseType)}
+            {renderField("License Held Since", carUsage?.licenseHeld)}
+            {renderField("License Number", carUsage?.licenseNumber)}
           </div>
-        </div>
+          <div className={styles.row}>
+            {renderField("No Claims Bonus", carUsage?.NCB)}
+            {renderField("Voluntary Excess", carUsage?.voluntaryExcess)}
+          </div>
+        </>)}
 
         {/* DECLARATIONS SECTION */}
-        {insuranceType !== "Impound" && (
-          <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Declarations</h3>
-            <div className={styles.sectionContent}>
-              <div className={styles.row}>
-                {renderField("Criminal Convictions", carUsage?.criminalConvictions)}
-                {renderField("Medical Conditions", carUsage?.medicalConditions)}
-                {renderField("Insurance Cancelled or Claim Refused", carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}
-              </div>
-            </div>
+        {insuranceType !== "Impound" && renderSectionWithButton("Declarations",
+          <div className={styles.row}>
+            {renderField("Criminal Convictions", carUsage?.criminalConvictions)}
+            {renderField("Medical Conditions", carUsage?.medicalConditions)}
+            {renderField("Insurance Cancelled or Claim Refused", carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}
           </div>
         )}
 
         {/* OPTIONAL EXTRAS SECTION - ANNUAL ONLY */}
-        {insuranceType === "Annual" && (
-          <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>Optional Extras</h3>
-            <div className={styles.sectionContent}>
-              <div className={styles.row}>
-                {renderField("Courtesy Car", optionalExtras?.courtesyCar)}
-                {renderField("Breakdown Cover", optionalExtras?.breakdownCover)}
-                {renderField("Foreign Use Cover", optionalExtras?.foreignUseCover)}
-              </div>
-            </div>
+        {insuranceType === "Annual" && renderSectionWithButton("Optional Extras",
+          <div className={styles.row}>
+            {renderField("Courtesy Car", optionalExtras?.courtesyCar)}
+            {renderField("Breakdown Cover", optionalExtras?.breakdownCover)}
+            {renderField("Foreign Use Cover", optionalExtras?.foreignUseCover)}
           </div>
         )}
 
@@ -236,17 +214,6 @@ const PolicyDetailsReview = ({ policy }) => {
               <p className={styles.premiumStatus}>{policy?.quote?.paid ? "Paid" : "Pending"}</p>
             </div>
           </div>
-        </div>
-
-        {/* MAKE CHANGES BUTTON */}
-        <div className={styles.actionsSection}>
-          <button
-            className={styles.makeChangesBtn}
-            onClick={handleMakeChanges}
-            aria-label="Make changes to your policy"
-          >
-            Make Changes
-          </button>
         </div>
       </div>
     </div>
