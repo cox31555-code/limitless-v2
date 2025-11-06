@@ -7,15 +7,21 @@
   align-items: stretch;
   gap: 0.8rem;
   flex-shrink: 0;
-  background: #ffffff;
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
   margin: 1.6rem 0 1.6rem 1.6rem;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: none;
+  transition: all 0.3s ease;
   height: calc(47vh - 47px);
   position: relative;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
+}
+
+.container:hover {
+  border-color: rgba(3, 136, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
 }
 
 .sidebarOpen {
@@ -67,13 +73,19 @@
   font-weight: 500;
   line-height: 130%;
   letter-spacing: 0.3px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: none;
+  transition: all 0.2s ease;
   opacity: 0;
   position: relative;
   overflow: hidden;
-  border: none;
+  border: 1.5px solid transparent;
+}
+
+.navItem:hover {
+  background: rgba(3, 136, 255, 0.06);
+  border-color: rgba(3, 136, 255, 0.12);
+  color: #0388ff;
 }
 
 .sidebarOpen .navItem {
@@ -82,13 +94,18 @@
 
 .activeNavItem {
   color: #fff;
-  background: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border: none;
   font-weight: 600;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 .activeNavItem .icon {
   color: #fff;
+}
+
+.activeNavItem:hover {
+  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.4);
 }
 
 .icon {
