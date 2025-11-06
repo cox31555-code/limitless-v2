@@ -1,0 +1,224 @@
+.reviewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  padding: 0;
+  margin: 0;
+}
+
+.reviewTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.6rem 0;
+  padding: 0;
+}
+
+.reviewSections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  border-radius: 12px;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.field label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #5a6b7d;
+}
+
+.field p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #000822;
+  margin: 0;
+}
+
+.premiumSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border-radius: 12px;
+  margin-top: 1.6rem;
+}
+
+.premiumContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.premiumContent > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.premiumLabel {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.premiumAmount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.premiumStatus {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .reviewContainer {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .premiumContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .premiumAmount {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviewContainer {
+    gap: 2rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .reviewTitle {
+    font-size: 1.6rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .field label {
+    font-size: 1rem;
+  }
+
+  .field p {
+    font-size: 1.2rem;
+  }
+
+  .premiumSection {
+    padding: 1.6rem;
+  }
+
+  .premiumAmount {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .reviewContainer {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+
+  .reviewTitle {
+    font-size: 1.5rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .field label {
+    font-size: 0.95rem;
+  }
+
+  .field p {
+    font-size: 1.1rem;
+  }
+
+  .premiumSection {
+    padding: 1.2rem;
+  }
+
+  .premiumLabel {
+    font-size: 1rem;
+  }
+
+  .premiumAmount {
+    font-size: 1.4rem;
+  }
+
+  .premiumStatus {
+    font-size: 1.2rem;
+  }
+}
