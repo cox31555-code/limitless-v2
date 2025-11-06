@@ -114,6 +114,42 @@
   margin: 0;
 }
 
+.actionsSection {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.makeChangesBtn {
+  padding: 1rem 2.4rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.2);
+  align-self: flex-start;
+}
+
+.makeChangesBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(3, 136, 255, 0.3);
+  background: linear-gradient(135deg, #0395ff 0%, #0277d4 100%);
+}
+
+.makeChangesBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
+}
+
+.makeChangesBtn:focus-visible {
+  outline: 2px solid #0388ff;
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
   .reviewContainer {
     padding-left: 1.6rem;
@@ -131,6 +167,11 @@
 
   .premiumAmount {
     font-size: 1.8rem;
+  }
+
+  .makeChangesBtn {
+    width: 100%;
+    padding: 1rem 2rem;
   }
 }
 
@@ -172,6 +213,12 @@
 
   .premiumAmount {
     font-size: 1.6rem;
+  }
+
+  .makeChangesBtn {
+    width: 100%;
+    padding: 0.9rem 1.8rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -220,5 +267,11 @@
 
   .premiumStatus {
     font-size: 1.2rem;
+  }
+
+  .makeChangesBtn {
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.1rem;
   }
 }
