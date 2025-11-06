@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import GetQuote from "../../getQuote/getQuote";
 import { useRouter } from "next/navigation";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -17,6 +18,7 @@ const manrope = Manrope({
 });
 const Header = ({ subTitle, title, description, features }) => {
   const router = useRouter();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
   const [isQuoteExpanded, setIsQuoteExpanded] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -70,11 +72,7 @@ const Header = ({ subTitle, title, description, features }) => {
               <div className={styles.buttonWrapper}>
                 <button
                   className={styles.confirmBtn}
-                  onClick={() => {
-                    title === "Impound Insurance"
-                      ? router.push("/impound/get-quote")
-                      : router.push("/annual/get-quote");
-                  }}
+                  onClick={() => setIsInsuranceModalOpen(true)}
                 >
                   Get a Quote
                 </button>
