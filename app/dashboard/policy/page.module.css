@@ -289,6 +289,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .page {
+    padding: 0 5%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .dropdown {
     min-width: 100%;
