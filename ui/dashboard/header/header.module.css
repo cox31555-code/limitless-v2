@@ -1,6 +1,6 @@
 .headerContainer {
   background: #000822;
-  border-bottom: 1.5px solid rgba(3, 136, 255, 0.2);
+  border-bottom: 1.5px solid rgba(3, 136, 255, 0.15);
   padding: 2.6rem 4.4% 0;
   position: fixed;
   top: 0;
@@ -11,7 +11,6 @@
   overflow: hidden;
   min-height: 100px;
   margin-bottom: 0;
-  transition: border-color 0.3s ease;
 }
 
 .headerContainer.menuOpen {
