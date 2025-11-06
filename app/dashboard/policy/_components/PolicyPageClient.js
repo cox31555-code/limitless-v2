@@ -135,7 +135,7 @@ const PolicyPageClient = ({
         </div>
       </div>
 
-      {activePolicies.length > 0 && (
+      {mockActivePolicies.length > 0 && (
         <Table
           title="Active Policies"
           tableType="active"
@@ -146,11 +146,11 @@ const PolicyPageClient = ({
             "Vehicle Reg",
             "Details",
           ]}
-          data={activePolicies}
+          data={mockActivePolicies}
         />
       )}
 
-      {expiredPolicies.length > 0 && (
+      {activePolicies && activePolicies.length > 0 && (
         <Table
           title="Expired/Unpaid Policies"
           tableType="inactive"
@@ -161,18 +161,10 @@ const PolicyPageClient = ({
             "Vehicle Reg",
             "Details",
           ]}
-          data={expiredPolicies}
+          data={activePolicies}
           showViewButton={false}
           theme="expired"
         />
-      )}
-
-      {activePolicies.length === 0 && expiredPolicies.length === 0 && (
-        <div style={{ padding: "40px", textAlign: "center" }}>
-          <p style={{ fontSize: "16px", color: "#666" }}>
-            No policies found. Create your first policy to get started.
-          </p>
-        </div>
       )}
     </>
   );
