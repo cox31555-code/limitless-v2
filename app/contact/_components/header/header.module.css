@@ -53,6 +53,18 @@
   width: 100%;
   height: auto;
 }
+.left {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .contactOptions {
   display: flex;
   flex-direction: column;
@@ -99,6 +111,14 @@
   .content {
     z-index: 1.8;
     padding: 12rem 3.96% 6.435% 2.34%;
+  }
+
+  .left {
+    flex: 0 0 35%;
+  }
+
+  .right {
+    flex: 0 0 65%;
   }
 
   .headers {
