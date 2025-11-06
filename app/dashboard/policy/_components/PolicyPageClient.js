@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import Table from "./table/Table";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { mockPolicies } from "../../mockPoliciesData";
 
 const PolicyPageClient = ({
   activePolicies,
@@ -10,6 +11,17 @@ const PolicyPageClient = ({
   styles,
   plusJakartaSans,
 }) => {
+  // Prepare mock policy data for display
+  const mockActivePolicies = useMemo(() => {
+    return Object.values(mockPolicies).map(policy => ({
+      id: policy._id,
+      policyNumber: policy.policyNumber,
+      vehicleReg: policy.vehicleDetails.registrationNumber,
+      name: `${policy.userDetails.firstName} ${policy.userDetails.surname}`,
+      remaining: policy.type === "Annual" ? "365 days" : (policy.type === "Temporary" ? "7 days" : "30 days"),
+      type: policy.type
+    }));
+  }, []);
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
