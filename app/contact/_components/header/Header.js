@@ -16,13 +16,6 @@ const Header = () => {
   return (
     <div className="headerContainer">
       <div className="centeredContent">
-        <Image
-          src="/svg/squares-2.svg"
-          alt="squares"
-          width={1394}
-          height={706}
-          className={styles.squares}
-        />
         <div className={styles.content}>
           <Image
             src="/svg/contact.svg"
