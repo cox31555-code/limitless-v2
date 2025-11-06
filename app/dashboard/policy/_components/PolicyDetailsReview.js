@@ -58,72 +58,66 @@ const PolicyDetailsReview = ({ policy }) => {
 
       <div className={styles.reviewSections}>
         {/* VEHICLE DETAILS SECTION */}
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Vehicle Details</h3>
-          <div className={styles.sectionContent}>
-            <div className={styles.row}>
-              {renderField("Registration", vehicleDetails?.registrationNumber)}
-              {renderField("Make", vehicleDetails?.make)}
-              {renderField("Model", vehicleDetails?.model)}
-            </div>
-            <div className={styles.row}>
-              {renderField("Year", vehicleDetails?.year)}
-              {renderField("Type", vehicleDetails?.type)}
-              {renderField("Colour", vehicleDetails?.colour)}
-            </div>
-            <div className={styles.row}>
-              {renderField("Fuel Type", vehicleDetails?.fuel)}
-              {renderField("Transmission", vehicleDetails?.transmission)}
-              {renderField("Doors", vehicleDetails?.doors)}
-            </div>
-            {vehicleDetails?.worth && (
-              <div className={styles.row}>
-                {renderField("Value", vehicleDetails?.worth)}
-              </div>
-            )}
-
-            {/* ANNUAL-SPECIFIC VEHICLE FIELDS */}
-            {insuranceType === "Annual" && (
-              <>
-                <div className={styles.row}>
-                  {renderField("Tracking Device", vehicleDetails?.trackingDevice)}
-                  {renderField("Alarm/Immobiliser", vehicleDetails?.alarmImmobiliser)}
-                  {renderField("Imported Vehicle", vehicleDetails?.importedVehicle)}
-                </div>
-                <div className={styles.row}>
-                  {renderField("Vehicle Modified", vehicleDetails?.vehicleModified)}
-                  {vehicleDetails?.vehicleModifications && vehicleDetails.vehicleModifications.length > 0 && 
-                    renderField("Modifications", vehicleDetails.vehicleModifications.join(", "))}
-                  {renderField("Purchase Date", vehicleDetails?.purchaseDate)}
-                </div>
-                <div className={styles.row}>
-                  {renderField("Legal Owner", vehicleDetails?.legalOwner)}
-                  {renderField("Owner", vehicleDetails?.owner)}
-                  {renderField("Registered Keeper", vehicleDetails?.registeredKeeper)}
-                </div>
-              </>
-            )}
+        {renderSectionWithButton("Vehicle Details", <>
+          <div className={styles.row}>
+            {renderField("Registration", vehicleDetails?.registrationNumber)}
+            {renderField("Make", vehicleDetails?.make)}
+            {renderField("Model", vehicleDetails?.model)}
           </div>
-        </div>
+          <div className={styles.row}>
+            {renderField("Year", vehicleDetails?.year)}
+            {renderField("Type", vehicleDetails?.type)}
+            {renderField("Colour", vehicleDetails?.colour)}
+          </div>
+          <div className={styles.row}>
+            {renderField("Fuel Type", vehicleDetails?.fuel)}
+            {renderField("Transmission", vehicleDetails?.transmission)}
+            {renderField("Doors", vehicleDetails?.doors)}
+          </div>
+          {vehicleDetails?.worth && (
+            <div className={styles.row}>
+              {renderField("Value", vehicleDetails?.worth)}
+            </div>
+          )}
+
+          {/* ANNUAL-SPECIFIC VEHICLE FIELDS */}
+          {insuranceType === "Annual" && (
+            <>
+              <div className={styles.row}>
+                {renderField("Tracking Device", vehicleDetails?.trackingDevice)}
+                {renderField("Alarm/Immobiliser", vehicleDetails?.alarmImmobiliser)}
+                {renderField("Imported Vehicle", vehicleDetails?.importedVehicle)}
+              </div>
+              <div className={styles.row}>
+                {renderField("Vehicle Modified", vehicleDetails?.vehicleModified)}
+                {vehicleDetails?.vehicleModifications && vehicleDetails.vehicleModifications.length > 0 &&
+                  renderField("Modifications", vehicleDetails.vehicleModifications.join(", "))}
+                {renderField("Purchase Date", vehicleDetails?.purchaseDate)}
+              </div>
+              <div className={styles.row}>
+                {renderField("Legal Owner", vehicleDetails?.legalOwner)}
+                {renderField("Owner", vehicleDetails?.owner)}
+                {renderField("Registered Keeper", vehicleDetails?.registeredKeeper)}
+              </div>
+            </>
+          )}
+        </>)}
 
         {/* COVER DETAILS SECTION */}
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Cover Details</h3>
-          <div className={styles.sectionContent}>
-            {insuranceType === "Annual" ? (
-              <div className={styles.row}>
-                {renderField("Cover Level", coverDetails?.level)}
-                {renderField("Start Date", coverDetails?.startDate)}
-              </div>
-            ) : (
-              <div className={styles.row}>
-                {renderField("Duration", `${coverDetails?.period || "N/A"} ${coverDetails?.type || ""}`)}
-                {renderField("Start Date", coverDetails?.startDate)}
-                {renderField("Start Time", coverDetails?.startTime)}
-              </div>
-            )}
-          </div>
-        </div>
+        {renderSectionWithButton("Cover Details",
+          insuranceType === "Annual" ? (
+            <div className={styles.row}>
+              {renderField("Cover Level", coverDetails?.level)}
+              {renderField("Start Date", coverDetails?.startDate)}
+            </div>
+          ) : (
+            <div className={styles.row}>
+              {renderField("Duration", `${coverDetails?.period || "N/A"} ${coverDetails?.type || ""}`)}
+              {renderField("Start Date", coverDetails?.startDate)}
+              {renderField("Start Time", coverDetails?.startTime)}
+            </div>
+          )
+        )}
 
         {/* PERSONAL DETAILS SECTION */}
         <div className={styles.section}>
