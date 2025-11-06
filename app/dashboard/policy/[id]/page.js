@@ -1,11 +1,11 @@
 import React from "react";
-import PolicyDetails from "../_components/policyDetails/PolicyDetails";
+import PolicyDetailsReview from "../_components/PolicyDetailsReview";
 import styles from "./page.module.css";
-import CoverDetails from "../_components/coverDetails/CoverDetails";
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { serverFetch } from "@/utils/serverFetch";
+import { mockPolicies } from "../../mockPoliciesData";
 
 const page = async ({ params }) => {
   const cookieStore = await cookies();
@@ -21,30 +21,13 @@ const page = async ({ params }) => {
 
   // Dev mode: return mock data
   if (devMode && !token) {
-    insurance = {
-      _id: id,
-      type: "Temporary",
-      userDetails: {
-        firstName: "Dev",
-        surname: "User",
-        email: "dev@test.com"
-      },
-      vehicleDetails: {
-        registrationNumber: "AB21DEV",
-        make: "BMW",
-        model: "3 Series"
-      },
-      coverDetails: {
-        type: "Days",
-        period: 7,
-        startDate: "2024-01-15",
-        startTime: "09:00"
-      },
-      quote: {
-        paid: true,
-        amount: 50
-      }
-    };
+    // Check if ID matches mock policy IDs
+    if (mockPolicies[id]) {
+      insurance = mockPolicies[id];
+    } else {
+      // Default to first mock policy
+      insurance = mockPolicies["ANNUAL-001"];
+    }
   } else {
     try {
       const response = await serverFetch(`${API_BASE_URL}/api/insurance/${id}`, {
@@ -60,21 +43,23 @@ const page = async ({ params }) => {
       }
     } catch (error) {
       console.error("Error fetching insurance:", error);
+      // Fallback to mock data on error in dev mode
+      if (devMode) {
+        insurance = mockPolicies[id] || mockPolicies["ANNUAL-001"];
+      }
     }
   }
 
-  // Generate policy number
-  const policyNumber = `${insurance.type
-    .substring(0, 2)
-    .toUpperCase()}-${insurance._id.substring(insurance._id.length - 6)}`;
+  if (!insurance) {
+    redirect("/dashboard/policy");
+  }
 
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <h1 className={styles.title}>{policyNumber}</h1>
+        <h1 className={styles.title}>{insurance.policyNumber}</h1>
       </div>
-      <PolicyDetails insurance={insurance} />
-      <CoverDetails insurance={insurance} policyNumber={policyNumber} />
+      <PolicyDetailsReview policy={insurance} />
     </div>
   );
 };
