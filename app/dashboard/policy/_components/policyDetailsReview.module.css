@@ -30,6 +30,13 @@
   border-radius: 12px;
 }
 
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+}
+
 .sectionTitle {
   font-size: 1.4rem;
   font-weight: 600;
@@ -37,6 +44,35 @@
   margin: 0;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+  flex: 1;
+}
+
+.sectionMakeChangesBtn {
+  padding: 0.6rem 1.4rem;
+  background: rgba(3, 136, 255, 0.08);
+  color: #0388ff;
+  border: 1px solid rgba(3, 136, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sectionMakeChangesBtn:hover {
+  background: rgba(3, 136, 255, 0.12);
+  border-color: rgba(3, 136, 255, 0.3);
+}
+
+.sectionMakeChangesBtn:active {
+  background: rgba(3, 136, 255, 0.1);
+}
+
+.sectionMakeChangesBtn:focus-visible {
+  outline: 2px solid #0388ff;
+  outline-offset: 1px;
 }
 
 .sectionContent {
