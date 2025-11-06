@@ -72,6 +72,7 @@ const Footer = () => {
     pathname?.startsWith("/annual/get-quote"));
   const isPaymentSummaryPage = isMounted && pathname === "/payment-summary";
   const isPaymentPage = isMounted && pathname?.startsWith("/payment") && !isPaymentSummaryPage;
+  const isDashboardPage = isMounted && pathname?.startsWith("/dashboard");
 
   // Only apply special styles if mounted and pathname is available
   const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname);
