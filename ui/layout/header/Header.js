@@ -122,6 +122,7 @@ const Header = () => {
     pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
+    pathname === "/retrieve-quote" ||
     pathname.startsWith("/dashboard") ||
     (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary"))
   );
