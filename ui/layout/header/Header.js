@@ -608,6 +608,39 @@ const Header = () => {
           </>
         )}
       </header>
+
+      {/* HELP MODAL POPUP */}
+      {showHelpModal && (
+        <>
+          <div className={styles.helpModalOverlay} onClick={handleCloseHelpModal} />
+          <div className={styles.helpModalContainer}>
+            <div className={styles.helpModal}>
+              <button
+                className={styles.helpModalCloseBtn}
+                onClick={handleCloseHelpModal}
+                aria-label="Close help modal"
+              >
+                ✕
+              </button>
+              <h3 className={styles.helpModalTitle}>Need Help?</h3>
+              <p className={styles.helpModalMessage}>
+                Have questions or need support? Get in touch with our team for assistance.
+              </p>
+              <div className={styles.helpModalActions}>
+                <a href="/contact" className={styles.helpContactLink}>
+                  Contact Us
+                </a>
+                <button
+                  className={styles.helpModalCloseAction}
+                  onClick={handleCloseHelpModal}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
     </>
   );
