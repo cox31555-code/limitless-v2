@@ -12,15 +12,22 @@
 
 /* Welcome Section */
 .welcomeSection {
-  background: #ffffff;
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
   padding: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.welcomeSection:hover {
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.12);
 }
 
 .welcomeContent {
@@ -61,14 +68,21 @@
   align-items: center;
   gap: 0.8rem;
   padding: 1.2rem 2.4rem;
-  background: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1.3rem;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.liveChat:hover {
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 .liveChat svg {
@@ -88,9 +102,9 @@
 }
 
 .statCard {
-  background: #ffffff;
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fbff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
   padding: 2.4rem;
   display: flex;
   align-items: center;
@@ -98,19 +112,33 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  transition: all 0.2s ease;
+}
+
+.statCard:hover {
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+  transform: translateY(-2px);
 }
 
 .statIconWrapper {
   width: 60px;
   height: 60px;
-  border-radius: 10px;
-  background: var(--stat-color);
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--stat-color) 0%, var(--stat-color) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   flex-shrink: 0;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
+}
+
+.statCard:hover .statIconWrapper {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.3);
 }
 
 .statIcon {
@@ -166,15 +194,40 @@
 }
 
 .infoCard {
-  background: #ffffff;
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
   padding: 2.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.08);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.infoCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(3, 136, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.infoCard:hover {
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.12);
+}
+
+.infoCard:hover::before {
+  opacity: 1;
 }
 
 .infoIconWrapper {
