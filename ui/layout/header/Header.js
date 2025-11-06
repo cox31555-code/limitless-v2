@@ -382,7 +382,7 @@ const Header = () => {
             height={50}
           />
           <div className={styles.mobileHeaderActions}>
-            {!isDashboard && (
+            {!isDashboard && !isGetQuotePage && pathname !== "/login" && (
               <button
                 className={styles.mobileQuoteBtn}
                 onClick={() => {
@@ -393,22 +393,24 @@ const Header = () => {
                 Get a Quote
               </button>
             )}
-            <button
-              onClick={() => {
-                if (isDashboard) {
-                  setIsDashboardSidebarOpen(!isDashboardSidebarOpen);
-                } else {
-                  setIsOpen(!isOpen);
-                }
-              }}
-              className={styles.menuBtn}
-            >
-              {(isDashboard ? isDashboardSidebarOpen : isOpen) ? (
-                <Image src="/svg/close.svg" alt="close" width={13} height={13} />
-              ) : (
-                <Image src="/svg/menu.svg" alt="menu" width={24} height={24} />
-              )}
-            </button>
+            {!isGetQuotePage && pathname !== "/login" && (
+              <button
+                onClick={() => {
+                  if (isDashboard) {
+                    setIsDashboardSidebarOpen(!isDashboardSidebarOpen);
+                  } else {
+                    setIsOpen(!isOpen);
+                  }
+                }}
+                className={styles.menuBtn}
+              >
+                {(isDashboard ? isDashboardSidebarOpen : isOpen) ? (
+                  <Image src="/svg/close.svg" alt="close" width={13} height={13} />
+                ) : (
+                  <Image src="/svg/menu.svg" alt="menu" width={24} height={24} />
+                )}
+              </button>
+            )}
           </div>
         </div>
         {isDashboard ? (
