@@ -109,14 +109,14 @@ const Header = () => {
     { label: "Annual car insurance", href: "/annual", icon: "calendar" },
     { label: "Hourly car insurance", href: "/temporary", icon: "clock" },
     { label: "Temporary car insurance", href: "/temporary", icon: "calendar" },
-    { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
+    { label: "International driving licenses", href: "/annual/get-quote", icon: "globe" },
   ];
 
   const motorbakeItems = [
-    { label: "Annual bike insurance", href: "/coming-soon", icon: "calendar" },
-    { label: "Hourly bike insurance", href: "/coming-soon", icon: "clock" },
-    { label: "Weekly bike insurance", href: "/coming-soon", icon: "calendar" },
-    { label: "International driving licenses", href: "/coming-soon", icon: "globe" },
+    { label: "Annual bike insurance", href: "/annual/get-quote", icon: "calendar" },
+    { label: "Hourly bike insurance", href: "/temporary/get-quote", icon: "clock" },
+    { label: "Weekly bike insurance", href: "/temporary/get-quote", icon: "calendar" },
+    { label: "International driving licenses", href: "/annual/get-quote", icon: "globe" },
   ];
 
   const shouldHideHeader = (
