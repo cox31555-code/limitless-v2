@@ -16,9 +16,8 @@ const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-const Header = ({ subTitle, title, description, features }) => {
+const Header = ({ subTitle, title, description, features, insuranceType = "annual" }) => {
   const router = useRouter();
-  const { setIsInsuranceModalOpen } = useInsuranceModal();
   const [isQuoteExpanded, setIsQuoteExpanded] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -72,7 +71,7 @@ const Header = ({ subTitle, title, description, features }) => {
               <div className={styles.buttonWrapper}>
                 <button
                   className={styles.confirmBtn}
-                  onClick={() => setIsInsuranceModalOpen(true)}
+                  onClick={() => router.push(`/${insuranceType}/get-quote`)}
                 >
                   Get a Quote
                 </button>
@@ -86,7 +85,7 @@ const Header = ({ subTitle, title, description, features }) => {
                 )}
               </div>
             </div>
-            <GetQuote onExpand={setIsQuoteExpanded} insuranceType="annual" />
+            <GetQuote onExpand={setIsQuoteExpanded} insuranceType={insuranceType} />
           </div>
           <div className={styles.features}>
             {features.map((feature) => (
