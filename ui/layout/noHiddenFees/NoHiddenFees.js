@@ -3,9 +3,11 @@
 import React from "react";
 import styles from "./noHiddenFees.module.css";
 import { useRouter } from "next/navigation";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 
 const NoHiddenFees = () => {
   const router = useRouter();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
 
   return (
     <div className={styles.container}>
@@ -16,7 +18,7 @@ const NoHiddenFees = () => {
         </div>
         <div className={styles.buttons}>
           <button
-            onClick={() => router.push("/annual/get-quote")}
+            onClick={() => setIsInsuranceModalOpen(true)}
             className={styles.getQuoteBtn}
             aria-label="Get a quote"
           >

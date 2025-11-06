@@ -3,12 +3,14 @@ import styles from "./transparency.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "@/fonts/fonts";
 import { useRouter } from "next/navigation";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700"],
 });
 const Transparency = () => {
   const router = useRouter();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
   return (
     <div className={styles.container}>
       <div className={styles.content}></div>
@@ -28,9 +30,7 @@ const Transparency = () => {
         </h2>
         <div className={styles.buttons}>
           <button
-            onClick={() => {
-              router.push("/annual/get-quote");
-            }}
+            onClick={() => setIsInsuranceModalOpen(true)}
             className={styles.getQuoteBtn}
           >
             Get a quote

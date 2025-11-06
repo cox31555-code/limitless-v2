@@ -4,12 +4,14 @@ import styles from "./serviceDescription.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700", "500"],
 });
 const ServiceDescription = ({ services, title, description, button, img }) => {
   const router = useRouter();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
   const words = title.split(" ");
   const lastWord = words[words.length - 1];
   const withoutLastWord = words.slice(0, -1).join(" ");
@@ -52,11 +54,7 @@ const ServiceDescription = ({ services, title, description, button, img }) => {
         </div>
         <button
           className={styles.confirmBtn}
-          onClick={() => {
-            title === "Impound Vehicle Insurance"
-              ? router.push("/impound/get-quote")
-              : router.push("/annual/get-quote");
-          }}
+          onClick={() => setIsInsuranceModalOpen(true)}
         >
           Get a Quote
         </button>
