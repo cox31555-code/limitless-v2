@@ -1,9 +1,18 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import styles from "./policyDetailsReview.module.css";
 
 const PolicyDetailsReview = ({ policy }) => {
+  const router = useRouter();
+
+  const handleMakeChanges = () => {
+    // Navigate to edit page or initiate policy modification flow
+    // For now, redirect back to policy management page
+    router.push("/dashboard/policy");
+  };
+
   const formatValue = (value) => {
     if (value === null || value === undefined || value === "") return "N/A";
     if (typeof value === "boolean") return value ? "Yes" : "No";
@@ -215,6 +224,17 @@ const PolicyDetailsReview = ({ policy }) => {
               <p className={styles.premiumStatus}>{policy?.quote?.paid ? "Paid" : "Pending"}</p>
             </div>
           </div>
+        </div>
+
+        {/* MAKE CHANGES BUTTON */}
+        <div className={styles.actionsSection}>
+          <button
+            className={styles.makeChangesBtn}
+            onClick={handleMakeChanges}
+            aria-label="Make changes to your policy"
+          >
+            Make Changes
+          </button>
         </div>
       </div>
     </div>
