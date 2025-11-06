@@ -91,8 +91,8 @@ const Footer = () => {
         <div suppressHydrationWarning>
           {isMounted ? (
             <>
-              {(isGetQuotePage || isPaymentSummaryPage) && <GetQuoteFooterBanner key="quote-banner" />}
-              {!isPaymentPage && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && <NoHiddenFees key="hidden-fees" />}
+              {(isGetQuotePage || isPaymentSummaryPage) && !isDashboardPage && <GetQuoteFooterBanner key="quote-banner" />}
+              {!isPaymentPage && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && !isDashboardPage && <NoHiddenFees key="hidden-fees" />}
             </>
           ) : (
             <NoHiddenFees key="hidden-fees" />
