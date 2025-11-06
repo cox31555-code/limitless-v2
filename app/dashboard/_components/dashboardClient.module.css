@@ -274,7 +274,6 @@
   }
 
   .statsGrid,
-  .actionsGrid,
   .infoSection {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.6rem;
@@ -313,10 +312,6 @@
     grid-template-columns: 1fr;
   }
 
-  .actionsGrid {
-    grid-template-columns: 1fr;
-  }
-
   .infoSection {
     grid-template-columns: 1fr;
   }
@@ -326,12 +321,8 @@
     margin-bottom: 1.4rem;
   }
 
-  .actionCard,
   .statCard {
     padding: 1.6rem;
-  }
-
-  .statCard {
     justify-content: space-between;
   }
 
