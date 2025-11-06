@@ -110,6 +110,7 @@ const Header = () => {
   ];
 
   const shouldHideHeader = mounted && (
+    pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname.startsWith("/dashboard") ||
