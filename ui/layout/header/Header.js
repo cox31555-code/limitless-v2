@@ -222,7 +222,7 @@ const Header = () => {
                   </button>
                   <button
                     className={styles.stickyQuoteBtn}
-                    onClick={() => router.push("/annual/get-quote")}
+                    onClick={() => setIsInsuranceModalOpen(true)}
                   >
                     Get a Quote
                   </button>
@@ -376,7 +376,7 @@ const Header = () => {
             </button>
             <button
               className={styles.quoteBtn}
-              onClick={() => router.push("/temporary/get-quote")}
+              onClick={() => setIsInsuranceModalOpen(true)}
             >
               Get a Quote
             </button>
