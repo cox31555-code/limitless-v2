@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import GetQuote from "../../getQuote/getQuote";
 import { useRouter } from "next/navigation";
-import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
