@@ -61,7 +61,7 @@
 
 @media screen and (max-width: 900px) {
   .page {
-    margin: 1.6rem 0 1.6rem;
+    margin: 0;
     padding: 0 1.5%;
   }
 
