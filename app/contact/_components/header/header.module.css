@@ -1,14 +1,15 @@
 .squares {
   position: absolute;
-  top: calc(0rem + 1.1%);
+  top: calc(12rem + 1.1%);
   right: calc(-39rem - 1.1%);
+  z-index: 0;
 }
 .contact {
   position: absolute;
-  /* top: 17.5rem; */
-  top: -6rem;
+  top: 12rem;
   left: 55%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 /* .container {
   overflow: hidden;
@@ -99,13 +100,15 @@
 }
 @media screen and (max-width: 1200px) {
   .squares {
-    top: calc(0rem + 0.99%);
+    top: calc(12rem + 0.99%);
     right: calc(-35.1rem - 0.99%);
+    z-index: 0;
   }
 
   .contact {
-    top: -5.4rem;
+    top: 12rem;
     left: 49.5%;
+    z-index: 1;
   }
 
   .content {
