@@ -19,6 +19,12 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
     return reg.replace(/^(.{4})(.{3})$/, '$1 $2');
   };
 
+  const getMockPolicyId = (index) => {
+    // Map to mock policy IDs based on index
+    const mockIds = ["ANNUAL-001", "TEMP-001", "IMPOUND-001"];
+    return mockIds[index % mockIds.length];
+  };
+
   return (
     <div className={`${styles.section} ${theme === "expired" ? styles.expiredSection : ""}`}>
       <h3 className={`${styles.sectionTitle} ${theme === "expired" ? styles.expiredTitle : ""}`}>{title}</h3>
@@ -52,7 +58,7 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
               <div className={styles.cardFooter}>
                 <button
                   className={styles.viewButton}
-                  onClick={() => router.push(`/dashboard/policy/${row.id}`)}
+                  onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
                 >
                   View Policy Details
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
