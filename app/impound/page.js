@@ -34,6 +34,7 @@ const Page = () => {
         title="Impound Insurance"
         description="Impound insurance is a specialized type of vehicle insurance required to release a car from a police impound. Most car insurance policies don’t meet the requirements for impounded vehicles, which is where impound insurance comes in."
         features={features}
+        insuranceType="impound"
       />
       <div className={"centeredContent"}>
         <ServiceDescription
