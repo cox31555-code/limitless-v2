@@ -68,22 +68,15 @@
 .logoutBtn {
   width: 4.4rem;
   height: 4.4rem;
-  border-radius: 10px;
-  background: rgba(220, 38, 38, 0.15);
-  border: 1.5px solid rgba(220, 38, 38, 0.35);
+  border-radius: 8px;
+  background: transparent;
+  border: 1.5px solid rgba(220, 38, 38, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
   color: #dc2626;
   flex-shrink: 0;
-}
-
-.logoutBtn:hover {
-  background: rgba(220, 38, 38, 0.25);
-  border-color: rgba(220, 38, 38, 0.5);
-  color: #b91c1c;
 }
 
 .logoutBtn svg {
@@ -128,22 +121,15 @@
 .menuBtn {
   width: 4.4rem;
   height: 4.4rem;
-  border-radius: 10px;
-  background: rgba(3, 136, 255, 0.1);
-  border: 1.5px solid rgba(3, 136, 255, 0.25);
+  border-radius: 8px;
+  background: transparent;
+  border: 1.5px solid rgba(3, 136, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
   color: #0388ff;
   flex-shrink: 0;
-}
-
-.menuBtn:hover {
-  background: rgba(3, 136, 255, 0.2);
-  border-color: rgba(3, 136, 255, 0.35);
-  color: #0270cc;
 }
 
 .menuBtn svg {
@@ -190,12 +176,7 @@
   font-weight: 400;
   text-align: left;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.menuItem:hover {
-  background: rgba(3, 136, 255, 0.08);
-  color: #ffffff;
+  transition: none;
 }
 
 @keyframes slideUp {
@@ -265,27 +246,16 @@
     width: 4.4rem !important;
     height: 4.4rem !important;
     display: flex !important;
-    border-radius: 10px;
-    background: rgba(3, 136, 255, 0.1);
-    border: 1.5px solid rgba(3, 136, 255, 0.25);
+    border-radius: 8px;
+    background: transparent;
+    border: 1.5px solid rgba(3, 136, 255, 0.3);
     align-items: center;
     justify-content: center;
     cursor: pointer;
     color: #0388ff;
     flex-shrink: 0;
-    transition: all 0.3s ease;
     padding: 0;
     margin: 0;
-  }
-
-  .menuBtn:hover {
-    background: rgba(3, 136, 255, 0.2);
-    border-color: rgba(3, 136, 255, 0.35);
-  }
-
-  .menuBtn:active {
-    background: rgba(3, 136, 255, 0.3);
-    border-color: rgba(3, 136, 255, 0.4);
   }
 
   .menuBtn img {
@@ -362,12 +332,7 @@
     font-weight: 400;
     text-align: left;
     cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .menuItem:hover {
-    background: rgba(3, 136, 255, 0.08) !important;
-    color: #ffffff !important;
+    transition: none;
   }
 
   .helpDropdown,
@@ -415,12 +380,7 @@
     font-weight: 400 !important;
     text-align: left !important;
     cursor: pointer !important;
-    transition: all 0.2s ease !important;
-  }
-
-  .menuItem:hover {
-    background: rgba(3, 136, 255, 0.08) !important;
-    color: #ffffff !important;
+    transition: none !important;
   }
 }
 
@@ -461,11 +421,6 @@
     font-weight: 400 !important;
     text-align: left !important;
     cursor: pointer !important;
-    transition: all 0.2s ease !important;
-  }
-
-  .menuItem:hover {
-    background: rgba(3, 136, 255, 0.08) !important;
-    color: #ffffff !important;
+    transition: none !important;
   }
 }
