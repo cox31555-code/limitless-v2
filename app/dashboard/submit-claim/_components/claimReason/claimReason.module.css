@@ -2,110 +2,116 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6rem;
+  gap: 2.2rem;
   width: 100%;
-  margin-top: 8.6rem;
+  margin-top: 1.6rem;
 }
 .title {
   color: #000822;
-  font-size: 4.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   line-height: 100%;
 }
 .reasons {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 0.8rem;
   width: 100%;
 }
 .reason {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 2.8rem 2.5rem 2.3rem;
-  border-radius: 18px;
-  background: #fdfdfd;
+  padding: 1rem 1.4rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reason:hover {
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.1);
 }
 
 .content {
   display: flex;
   align-items: center;
-  gap: 3.8rem;
+  gap: 1.2rem;
 }
 
 .reasonTitle {
   color: #000822;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
+  line-height: 120%;
+  letter-spacing: 0;
 }
 @media screen and (max-width: 1200px) {
   .container {
-    gap: 2.76rem; 
-    margin-top: 5.75rem; 
-    align-items: flex-start;
-    justify-content: flex-start;
+    gap: 1.8rem;
+    margin-top: 1.4rem;
   }
 
   .title {
-    font-size: 2.76rem; 
+    font-size: 1.7rem;
   }
 
   .reasons {
-    gap: 0.92rem; 
+    gap: 0.7rem;
   }
 
   .reason {
-    padding: 1.96rem 2.07rem 1.96rem 2.42rem; 
+    padding: 0.9rem 1.2rem;
   }
 
   .content {
-    gap: 1.38rem; 
+    gap: 1rem;
   }
 
   .reasonTitle {
-    font-size: 1.84rem; 
+    font-size: 1.15rem;
   }
 
   .arrow {
-    width: 2.76rem; 
-    height: 2.76rem; 
+    width: 2rem;
+    height: 2rem;
   }
 
   .img {
-    width: 4.6rem; 
-    height: 3.22rem; 
+    width: 3.2rem;
+    height: 2.4rem;
   }
 }
 @media screen and (max-width: 900px) {
   .container {
-    gap: 2.4rem;
-    margin-top: 5rem;
+    gap: 1.6rem;
+    margin-top: 1.2rem;
   }
   .title {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
   }
   .reasons {
-    gap: 0.8rem;
+    gap: 0.6rem;
   }
   .reason {
-    padding: 1.7rem 1.8rem 1.7rem 2.1rem;
+    padding: 0.8rem 1rem;
   }
 
   .content {
-    gap: 1.2rem;
+    gap: 0.8rem;
   }
 
   .reasonTitle {
-    font-size: 1.6rem;
+    font-size: 1.1rem;
   }
   .arrow {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
   .img {
-    width: 4rem;
-    height: 2.8rem;
+    width: 2.8rem;
+    height: 2.2rem;
   }
 }
