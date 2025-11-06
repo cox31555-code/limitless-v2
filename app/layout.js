@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ClientLayout from "./clientLayout";
+import { InsuranceModalProvider } from "@/contexts/InsuranceModalContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,8 +20,10 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
         <AuthProvider>
-          <ClientLayout>{children}</ClientLayout>
-          <Footer />
+          <InsuranceModalProvider>
+            <ClientLayout>{children}</ClientLayout>
+            <Footer />
+          </InsuranceModalProvider>
         </AuthProvider>
       </body>
     </html>
