@@ -31,9 +31,9 @@
 }
 
 .sectionHeader {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.2rem;
 }
 
@@ -48,17 +48,20 @@
 }
 
 .sectionMakeChangesBtn {
-  padding: 0.6rem 1.4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.4rem 1rem;
   background: rgba(3, 136, 255, 0.08);
   color: #0388ff;
   border: 1px solid rgba(3, 136, 255, 0.2);
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
   white-space: nowrap;
-  flex-shrink: 0;
+  min-width: fit-content;
 }
 
 .sectionMakeChangesBtn:hover {
@@ -169,13 +172,9 @@
     font-size: 1.8rem;
   }
 
-  .sectionHeader {
-    flex-wrap: wrap;
-  }
-
   .sectionMakeChangesBtn {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.95rem;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -199,14 +198,9 @@
     gap: 1rem;
   }
 
-  .sectionHeader {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .sectionTitle {
     font-size: 1.2rem;
-    width: 100%;
+    padding-right: 6.5rem;
   }
 
   .field label {
@@ -226,9 +220,8 @@
   }
 
   .sectionMakeChangesBtn {
-    width: 100%;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -251,14 +244,9 @@
     gap: 0.8rem;
   }
 
-  .sectionHeader {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .sectionTitle {
     font-size: 1.1rem;
-    width: 100%;
+    padding-right: 6rem;
   }
 
   .field label {
@@ -286,8 +274,9 @@
   }
 
   .sectionMakeChangesBtn {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.7rem;
+    top: 2px;
+    right: 0;
   }
 }
