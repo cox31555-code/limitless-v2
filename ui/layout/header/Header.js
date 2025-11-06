@@ -6,6 +6,7 @@ import styles from "./header.module.css";
 import { useRouter } from "next/navigation";
 import SideNavbar from "@/ui/dashboard/layout/sideNavbar/SideNavbar";
 import InsuranceTypeModal from "@/ui/layout/insuranceTypeModal/InsuranceTypeModal";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 
 const IconComponent = ({ type }) => {
   switch (type) {
@@ -48,7 +49,7 @@ const Header = () => {
   const [isDashboardSidebarOpen, setIsDashboardSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [isInsuranceModalOpen, setIsInsuranceModalOpen] = useState(false);
+  const { isInsuranceModalOpen, setIsInsuranceModalOpen } = useInsuranceModal();
 
   const [mounted, setMounted] = useState(false);
   const [openStickyDropdown, setOpenStickyDropdown] = useState(null);
