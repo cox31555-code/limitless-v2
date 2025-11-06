@@ -1,16 +1,17 @@
 "use client";
 
-import React from "react";
-import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 import styles from "./policyDetailsReview.module.css";
 
 const PolicyDetailsReview = ({ policy }) => {
-  const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
 
   const handleMakeChanges = () => {
-    // Navigate to edit page or initiate policy modification flow
-    // For now, redirect back to policy management page
-    router.push("/dashboard/policy");
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const formatValue = (value) => {
@@ -216,6 +217,39 @@ const PolicyDetailsReview = ({ policy }) => {
           </div>
         </div>
       </div>
+
+      {/* CONTACT MODAL POPUP */}
+      {showModal && (
+        <>
+          <div className={styles.modalOverlay} onClick={handleCloseModal} />
+          <div className={styles.modalContainer}>
+            <div className={styles.modal}>
+              <button
+                className={styles.closeBtn}
+                onClick={handleCloseModal}
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+              <h3 className={styles.modalTitle}>Make Changes to Your Policy</h3>
+              <p className={styles.modalMessage}>
+                To make changes to your policy, please contact our support team.
+              </p>
+              <div className={styles.modalActions}>
+                <a href="/contact" className={styles.contactLink}>
+                  Contact Us
+                </a>
+                <button
+                  className={styles.closeActionBtn}
+                  onClick={handleCloseModal}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
