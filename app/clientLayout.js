@@ -2,10 +2,11 @@
 
 import Header from "@/ui/layout/header/Header";
 import { ToastContainer } from "react-toastify";
+import { InsuranceModalProvider } from "@/contexts/InsuranceModalContext";
 
 export default function ClientLayout({ children }) {
   return (
-    <>
+    <InsuranceModalProvider>
       <Header />
       {children}
       <ToastContainer
@@ -20,6 +21,6 @@ export default function ClientLayout({ children }) {
         pauseOnHover
         theme="light"
       />
-    </>
+    </InsuranceModalProvider>
   );
 }
