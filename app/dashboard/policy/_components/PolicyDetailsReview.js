@@ -27,6 +27,24 @@ const PolicyDetailsReview = ({ policy }) => {
     </div>
   );
 
+  const renderSectionWithButton = (title, children) => (
+    <div className={styles.section}>
+      <div className={styles.sectionHeader}>
+        <h3 className={styles.sectionTitle}>{title}</h3>
+        <button
+          className={styles.sectionMakeChangesBtn}
+          onClick={handleMakeChanges}
+          aria-label={`Make changes to ${title}`}
+        >
+          Make Changes
+        </button>
+      </div>
+      <div className={styles.sectionContent}>
+        {children}
+      </div>
+    </div>
+  );
+
   const vehicleDetails = policy?.vehicleDetails || {};
   const coverDetails = policy?.coverDetails || {};
   const userDetails = policy?.userDetails || {};
