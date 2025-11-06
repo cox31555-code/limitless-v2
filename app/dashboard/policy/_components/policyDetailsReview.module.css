@@ -109,6 +109,127 @@
   margin: 0;
 }
 
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  cursor: pointer;
+}
+
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.6rem;
+}
+
+.modal {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.4rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #5a6b7d;
+  cursor: pointer;
+  padding: 0.4rem;
+  transition: color 0.25s ease;
+}
+
+.closeBtn:hover {
+  color: #000822;
+}
+
+.modalTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.2rem 0;
+  padding-right: 2rem;
+}
+
+.modalMessage {
+  font-size: 1.1rem;
+  color: #5a6b7d;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.6rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.contactLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+}
+
+.closeActionBtn {
+  padding: 1rem 1.6rem;
+  background: rgba(3, 136, 255, 0.08);
+  color: #0388ff;
+  border: 1px solid rgba(3, 136, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.closeActionBtn:hover {
+  background: rgba(3, 136, 255, 0.12);
+  border-color: rgba(3, 136, 255, 0.3);
+}
+
 .premiumSection {
   display: flex;
   flex-direction: column;
