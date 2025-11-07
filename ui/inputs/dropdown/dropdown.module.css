@@ -159,6 +159,108 @@
   letter-spacing: 0.2px;
 }
 
+/* Custom Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.6rem;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  cursor: pointer;
+  min-height: 5.2rem;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown:hover {
+  border-color: rgba(3, 136, 255, 0.3);
+}
+
+.dropdown:focus-within,
+.dropdown.open {
+  border-color: #0388ff;
+  box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
+}
+
+.selected {
+  color: #6b7c8f;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  flex: 1;
+  text-align: left;
+}
+
+.dropdownOptions {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  max-height: 20rem;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 8, 34, 0.1);
+}
+
+.dropdownOption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.6rem;
+  color: #6b7c8f;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.06);
+}
+
+.dropdownOption:last-child {
+  border-bottom: none;
+}
+
+.dropdownOption:hover {
+  background: rgba(3, 136, 255, 0.04);
+}
+
+.selectedOption {
+  background: rgba(3, 136, 255, 0.08);
+  color: #0388ff;
+  font-weight: 600;
+}
+
+.selectionSpan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 4px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.selectedSpan {
+  background: #0388ff;
+  border-color: #0388ff;
+}
+
+.selectedSpan::after {
+  content: "✓";
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 900px) {
   .container {
     margin-bottom: 0;
