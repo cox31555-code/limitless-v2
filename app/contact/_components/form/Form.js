@@ -90,7 +90,7 @@ const Form = () => {
       <div className={styles.inputGroup}>
         <label className={styles.label}>Select the Appropriate Option</label>
         <Selection1
-          items={["Sales", "Marketing", "Policy Enquires", "Question", "Complaint", "Other"]}
+          items={["Marketing", "Policy Enquires", "Question", "Complaint", "Other", "Cancellations"]}
           selectedItem={data.type}
           setSelectedItem={(item) => {
             setData({ ...data, type: item });
@@ -110,12 +110,12 @@ const Form = () => {
           className={styles.nativeSelect}
         >
           <option value="">Select the Appropriate Option</option>
-          <option value="Sales">Sales</option>
           <option value="Marketing">Marketing</option>
           <option value="Policy Enquires">Policy Enquires</option>
           <option value="Question">Question</option>
           <option value="Complaint">Complaint</option>
           <option value="Other">Other</option>
+          <option value="Cancellations">Cancellations</option>
         </select>
         {errors.type && <span className={styles.error}>{errors.type}</span>}
       </div>
