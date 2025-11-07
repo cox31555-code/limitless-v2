@@ -3,8 +3,16 @@ export const menus = [
     title: "Product",
     items: [
       {
+        title: "Annual Insurance",
+        link: "/annual",
+      },
+      {
         title: "Temporary Insurance",
         link: "/temporary/get-quote",
+      },
+      {
+        title: "Weekly Insurance",
+        link: "/temporary",
       },
       {
         title: "Impound Insurance",
@@ -15,8 +23,8 @@ export const menus = [
         link: "/coming-soon",
       },
       {
-        title: "1 Week Insurance",
-        link: "/temporary",
+        title: "International Driving Licenses",
+        link: "/coming-soon",
       },
     ],
   },
