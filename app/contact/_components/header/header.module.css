@@ -313,24 +313,30 @@
 
 @media screen and (max-width: 400px) {
   .content {
-    padding: 2rem 1.6rem 1.2rem;
-    margin: -90px 0 0 0;
+    padding: 1.8rem 1.6rem 1.2rem;
+    margin: 0;
   }
 
   .headers {
+    display: flex;
+    flex-direction: column;
     gap: 0.6rem;
-    margin-bottom: 2.8rem;
+    margin-bottom: 1.8rem;
+    visibility: visible;
+    width: 100%;
   }
 
   .subTitle {
-    font-size: 1.3rem;
-    letter-spacing: 0.52px;
+    font-size: 1.1rem;
+    letter-spacing: 0.44px;
     font-weight: 500;
+    display: block;
   }
 
   .title {
-    font-size: 3.6rem;
+    font-size: 2rem;
     line-height: 110%;
+    display: block;
   }
 
   .contactOptions {
