@@ -17,6 +17,7 @@
   padding: 6rem 5.6rem;
   border: 1px solid rgba(3, 136, 255, 0.08);
   box-sizing: border-box;
+  box-shadow: 0 4px 24px rgba(3, 136, 255, 0.12), 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
 /* Header Section */
@@ -314,6 +315,7 @@
     padding: 5.6rem 4.8rem;
     border-radius: 14px;
     max-width: 750px;
+    box-shadow: 0 3px 16px rgba(3, 136, 255, 0.1), 0 1px 4px rgba(0, 8, 34, 0.03);
   }
 
   .header {
@@ -371,6 +373,7 @@
     padding: 5.2rem 3.6rem;
     border-radius: 12px;
     max-width: 100%;
+    box-shadow: 0 2px 12px rgba(3, 136, 255, 0.08), 0 1px 3px rgba(0, 8, 34, 0.02);
   }
 
   .header {
