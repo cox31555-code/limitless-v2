@@ -421,17 +421,6 @@ body .react-datepicker__navigation--previous:hover {
   justify-content: center;
 }
 
-.Toastify__progress-bar {
-  display: none;
-}
-
-.Toastify__progress-bar--error {
-  display: none;
-}
-
-.Toastify__progress-bar--success {
-  display: none;
-}
 
 .Toastify__close-button {
   display: none;
