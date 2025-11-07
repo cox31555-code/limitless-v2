@@ -91,7 +91,7 @@ const Footer = () => {
           {isMounted ? (
             <>
               {(isGetQuotePage || isPaymentSummaryPage) && !isDashboardPage && <GetQuoteFooterBanner key="quote-banner" />}
-              {!isPaymentPage && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && !isDashboardPage && <NoHiddenFees key="hidden-fees" />}
+              {!isPaymentPage && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && !isDashboardPage && !isContactPage && <NoHiddenFees key="hidden-fees" />}
             </>
           ) : (
             <NoHiddenFees key="hidden-fees" />
