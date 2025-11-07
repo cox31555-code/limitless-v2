@@ -249,6 +249,7 @@
 @media screen and (max-width: 600px) {
   .content {
     padding: 2.4rem 2rem 1.4rem;
+    margin: -90px 0 0 0;
   }
 
   .headers {
