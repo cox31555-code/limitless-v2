@@ -22,7 +22,7 @@ const page = () => {
 
   return (
     <div className={styles.page}>
-      <GetQuoteHeaderWithNav title="Cookies Policy" hideNav={true} />
+      <GetQuoteHeaderWithNav title="Cookies Policy" />
       <nav className={styles.policyNav}>
         <div className={styles.policyNavContent}>
           {menuItems.map((item, index) => (
