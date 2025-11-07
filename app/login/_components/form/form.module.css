@@ -436,11 +436,11 @@
 /* Responsive - Mobile */
 @media screen and (max-width: 600px) {
   .cardWrapper {
-    padding: 1rem 0.4rem;
+    padding: 1rem 0.6rem;
   }
 
   .card {
-    padding: 3.2rem 1.2rem;
+    padding: 3.2rem 1.4rem;
     border-radius: 12px;
     max-width: 100%;
     width: 100%;
