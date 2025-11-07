@@ -191,6 +191,7 @@
     display: flex;
     justify-content: center;
     gap: 4.6rem;
+    margin: -90px 0 0 0;
   }
 
   .headers {
