@@ -193,29 +193,29 @@
 
 @media screen and (max-width: 640px) {
   .container {
-    padding: 5.2rem 1.6rem;
-    gap: 2.4rem;
+    padding: 6rem 1.6rem;
+    gap: 3.2rem;
   }
 
   .title {
-    font-size: 1.8rem;
-    line-height: 2.2rem;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
   }
 
   .titleSpan {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 
   .getQuoteBtn,
   .membersPortalBtn {
-    padding: 1.2rem 2.8rem;
-    font-size: 1.35rem;
-    height: 5rem;
+    padding: 1.6rem 3.2rem;
+    font-size: 1.5rem;
+    height: 5.6rem;
   }
 
   .buttons {
-    gap: 1.2rem;
-    margin-top: 1rem;
+    gap: 1.4rem;
+    margin-top: 1.2rem;
   }
 }
 
@@ -254,36 +254,36 @@
 
 @media screen and (max-width: 650px) {
   .container {
-    padding: 4.8rem 2rem;
-    gap: 2.2rem;
+    padding: 5.5rem 2rem;
+    gap: 2.8rem;
     margin: 2.8rem 1rem;
   }
 
   .content {
-    gap: 1.8rem;
+    gap: 2.2rem;
   }
 
   .title {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 
   .titleSpan {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 
   .buttons {
-    gap: 1rem;
+    gap: 1.2rem;
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
   }
 
   .getQuoteBtn,
   .membersPortalBtn {
-    padding: 1rem 2.2rem;
-    font-size: 1.25rem;
-    height: 4.8rem;
+    padding: 1.4rem 2.8rem;
+    font-size: 1.4rem;
+    height: 5.4rem;
     width: auto;
     min-width: fit-content;
     flex: 0 1 auto;
@@ -292,33 +292,33 @@
 
 @media screen and (max-width: 500px) {
   .container {
-    padding: 4.4rem 1.6rem;
-    gap: 2rem;
+    padding: 5rem 1.6rem;
+    gap: 2.4rem;
     margin: 2.4rem 0;
   }
 
   .content {
-    gap: 1.6rem;
+    gap: 2rem;
   }
 
   .title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .titleSpan {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .buttons {
-    gap: 0.8rem;
+    gap: 1rem;
     width: 100%;
   }
 
   .getQuoteBtn,
   .membersPortalBtn {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    height: 4.6rem;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.3rem;
+    height: 5.2rem;
     width: auto;
     min-width: fit-content;
     flex: 0 1 auto;
@@ -333,13 +333,13 @@
 
 @media screen and (max-width: 380px) {
   .container {
-    padding: 3.8rem 1.2rem;
-    gap: 1.8rem;
+    padding: 4.6rem 1.2rem;
+    gap: 2.2rem;
     margin: 2rem 0;
   }
 
   .content {
-    gap: 1.4rem;
+    gap: 1.8rem;
   }
 
   .title {
