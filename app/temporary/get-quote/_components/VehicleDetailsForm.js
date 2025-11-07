@@ -321,7 +321,7 @@ const VehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup = fals
       clearErrors("vehicleDetails.model");
 
       setIsLoadingVehicleData(false);
-    }, 300);
+    }, 3000);
   }, [watch, setError, onVehicleDataFound, setValue, clearErrors]);
 
   const handleChangeVehicle = () => {
