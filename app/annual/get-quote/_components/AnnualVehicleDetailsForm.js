@@ -319,7 +319,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
       clearErrors("vehicleDetails.model");
 
       setIsLoadingVehicleData(false);
-    }, 300);
+    }, 3000);
   }, [watch, setError, onVehicleDataFound, setValue, clearErrors]);
 
   const handleChangeVehicle = () => {
