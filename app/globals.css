@@ -70,9 +70,6 @@ body {
   margin-left: calc(-50vw + 50%);
 }
 
-.headerContainer.expanded {
-  height: 102.5rem;
-}
 
 .headerContainer::before,
 .headerDashboardContainer::before {
