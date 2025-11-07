@@ -98,6 +98,7 @@
 
   .inputGroup {
     gap: 0.6rem;
+    display: none;
   }
 
   .inputGroup:first-child {
@@ -107,6 +108,22 @@
   .dropdown {
     display: flex;
     width: 100%;
+    flex-direction: column;
+  }
+
+  .dropdown :global(.container) {
+    width: 100%;
+  }
+
+  .dropdown :global(.selectWrapper) {
+    height: 5.2rem;
+    width: 100%;
+  }
+
+  .dropdown :global(.select) {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1.2rem 1.6rem;
   }
 
   .row {
