@@ -91,7 +91,7 @@ const Form = () => {
       <div className={styles.inputGroup}>
         <label className={styles.label}>Select the Appropriate Option</label>
         <Selection1
-          items={["Question", "Complaint", "Other"]}
+          items={["Sales", "Marketing", "Policy Enquires", "Question", "Complaint", "Other"]}
           selectedItem={data.type}
           setSelectedItem={(item) => {
             setData({ ...data, type: item });
@@ -102,15 +102,22 @@ const Form = () => {
         {errors.type && <span className={styles.error}>{errors.type}</span>}
       </div>
       <div className={styles.dropdown}>
-        <Dropdown
-          label="Select the Appropriate Option"
-          selected={data.type}
-          options={["Question", "Complaint", "Other"]}
-          setSelected={(item) => {
-            setData({ ...data, type: item });
+        <select
+          value={data.type}
+          onChange={(e) => {
+            setData({ ...data, type: e.target.value });
             setErrors({ ...errors, type: "" });
           }}
-        />
+          className={styles.nativeSelect}
+        >
+          <option value="">Select the Appropriate Option</option>
+          <option value="Sales">Sales</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Policy Enquires">Policy Enquires</option>
+          <option value="Question">Question</option>
+          <option value="Complaint">Complaint</option>
+          <option value="Other">Other</option>
+        </select>
         {errors.type && <span className={styles.error}>{errors.type}</span>}
       </div>
       <div className={styles.row}>
