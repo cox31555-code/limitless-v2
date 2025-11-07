@@ -71,12 +71,12 @@ const Footer = () => {
   const isPaymentPage = isMounted && pathname?.startsWith("/payment") && !isPaymentSummaryPage;
   const isDashboardPage = isMounted && pathname?.startsWith("/dashboard");
 
-  // Only apply special styles if mounted and pathname is available
-  const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname);
-
   const isLoginPage = isMounted && pathname === "/login";
   const isRetrieveQuotePage = isMounted && pathname === "/retrieve-quote";
   const isContactPage = isMounted && pathname === "/contact";
+
+  // Only apply special styles if mounted and pathname is available, but NOT for login or retrieve-quote pages
+  const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname) && !isLoginPage && !isRetrieveQuotePage;
 
   return (
     <footer
