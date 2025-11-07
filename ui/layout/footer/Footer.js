@@ -116,9 +116,7 @@ const Footer = () => {
                       <Link
                         href={item.link}
                         style={{
-                          color: shouldApplySpecialStyles
-                            ? "#000822"
-                            : isLoginPage ? "#5a6b7d" : "",
+                          color: shouldApplySpecialStyles ? "#000822" : "",
                         }}
                       >
                         {item.title}
