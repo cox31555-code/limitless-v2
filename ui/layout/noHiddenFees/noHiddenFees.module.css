@@ -195,6 +195,7 @@
   .container {
     padding: 6rem 1.6rem;
     gap: 3.2rem;
+    margin-top: -3px;
   }
 
   .title {
