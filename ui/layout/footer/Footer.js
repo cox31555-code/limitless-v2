@@ -75,13 +75,14 @@ const Footer = () => {
   const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname);
 
   const isLoginPage = isMounted && pathname === "/login";
+  const isRetrieveQuotePage = isMounted && pathname === "/retrieve-quote";
   const isContactPage = isMounted && pathname === "/contact";
 
   return (
     <footer
-      className={`${styles.container} ${isLoginPage ? styles.lightTheme : ""}`}
+      className={styles.container}
       style={{
-        background: shouldApplySpecialStyles ? "#F2F5FE" : isLoginPage ? "#ffffff" : "",
+        background: shouldApplySpecialStyles ? "#F2F5FE" : "",
         marginTop: isContactPage ? "-125px" : "0",
       }}
       suppressHydrationWarning
