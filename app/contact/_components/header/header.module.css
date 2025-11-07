@@ -112,7 +112,7 @@
   }
 
   .content {
-    z-index: 1.8;
+    z-index: 0;
     padding: 18rem 3.96% 6.435% 2.34%;
   }
 
