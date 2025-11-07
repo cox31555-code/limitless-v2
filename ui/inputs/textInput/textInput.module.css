@@ -153,8 +153,7 @@
   line-height: 130%;
   letter-spacing: 0.2px;
   background: transparent;
-  padding: 0;
-  padding-left: 6.5rem;
+  padding: 0 1.6rem;
   width: 100%;
   height: 100%;
 }
