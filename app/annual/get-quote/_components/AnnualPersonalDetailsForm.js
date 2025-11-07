@@ -419,6 +419,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               placeholder="Enter your postcode"
               {...register("userDetails.postCode")}
               error={errors.userDetails?.postCode}
+              disabled={isLoadingAddress}
               inputStyle={{ paddingLeft: "14px" }}
             />
             <button
