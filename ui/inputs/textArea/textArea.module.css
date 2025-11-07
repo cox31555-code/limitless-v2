@@ -22,10 +22,10 @@
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   outline: none;
   color: #6b7c8f;
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
   padding: 1.2rem 1.6rem;
   resize: none;
   transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
