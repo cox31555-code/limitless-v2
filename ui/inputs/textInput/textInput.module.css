@@ -166,6 +166,12 @@
   letter-spacing: 0.2px;
 }
 
+.input:disabled {
+  color: #7a8a9d;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .input.reg {
   letter-spacing: 1px;
   font-weight: 400;
