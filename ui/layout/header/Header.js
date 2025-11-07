@@ -119,12 +119,15 @@ const Header = () => {
     { label: "International driving licenses", href: "/annual/get-quote", icon: "globe" },
   ];
 
+  const isCookiesPolicy = pathname === "/cookies-policy";
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 900;
+
   const shouldHideHeader = (
     pathname === "/login" ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname === "/retrieve-quote" ||
-    pathname === "/cookies-policy" ||
+    (isCookiesPolicy && !isMobile) ||
     pathname.startsWith("/dashboard") ||
     (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary"))
   );
