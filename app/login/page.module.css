@@ -46,6 +46,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .formContainer {
+    margin-top: -144px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .mainContent {
     padding: 4.4rem 1.6rem;
