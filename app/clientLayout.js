@@ -9,7 +9,7 @@ export default function ClientLayout({ children }) {
       <Header />
       {children}
       <ToastContainer
-        position="top-right"
+        position="bottom-center"
         autoClose={4000}
         hideProgressBar={false}
         newestOnTop={true}
@@ -19,7 +19,7 @@ export default function ClientLayout({ children }) {
         draggable={false}
         pauseOnHover={true}
         theme="light"
-        limit={3}
+        limit={1}
       />
     </>
   );
