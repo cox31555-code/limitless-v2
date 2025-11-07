@@ -4,5 +4,10 @@
 .squareLight {
   display: none;
 }
+
+:global(footer) {
+  margin-top: -88px;
+}
+
 @media screen and (max-width: 900px) {
 }
