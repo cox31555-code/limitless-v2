@@ -5,8 +5,8 @@
   display: none;
 }
 
-:global(footer) {
-  margin-top: -88px;
+.page :global(footer) {
+  margin-top: -88px !important;
 }
 
 @media screen and (max-width: 900px) {
