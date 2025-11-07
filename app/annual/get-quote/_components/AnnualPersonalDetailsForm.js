@@ -282,9 +282,14 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     }
   }, [dateOfBirth, setValue, watch]);
 
+  const [isLoadingAddress, setIsLoadingAddress] = useState(false);
+
   const handleFindAddress = () => {
-    // For now, just set a default address
-    setValue("userDetails.address", "2 KINGS ROAD");
+    setIsLoadingAddress(true);
+    setTimeout(() => {
+      setValue("userDetails.address", "2 KINGS ROAD");
+      setIsLoadingAddress(false);
+    }, 3000);
   };
 
   const isDriverComplete = (driver) => {
