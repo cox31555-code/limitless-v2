@@ -90,7 +90,7 @@ const Form = () => {
       <div className={styles.inputGroup}>
         <label className={styles.label}>Select the Appropriate Option</label>
         <Selection1
-          items={["Marketing", "Policy Enquires", "Question", "Complaint", "Other", "Cancellations"]}
+          items={["Marketing", "Policy Enquires", "Question", "Complaint", "Cancellations", "Other"]}
           selectedItem={data.type}
           setSelectedItem={(item) => {
             setData({ ...data, type: item });
@@ -114,8 +114,8 @@ const Form = () => {
           <option value="Policy Enquires">Policy Enquires</option>
           <option value="Question">Question</option>
           <option value="Complaint">Complaint</option>
-          <option value="Other">Other</option>
           <option value="Cancellations">Cancellations</option>
+          <option value="Other">Other</option>
         </select>
         {errors.type && <span className={styles.error}>{errors.type}</span>}
       </div>
