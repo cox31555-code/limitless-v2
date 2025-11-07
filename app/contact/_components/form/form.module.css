@@ -63,8 +63,6 @@
 
 .button:hover:not(:disabled) {
   background: #0266cc;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.4);
 }
 
 .button:disabled {
