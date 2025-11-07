@@ -190,7 +190,7 @@ const Footer = () => {
                   onClick={() => router.push("/coming-soon")}
                   className={styles.store}
                   src={`${
-                    shouldApplySpecialStyles || isLoginPage
+                    shouldApplySpecialStyles
                       ? "/svg/light-google-store.svg"
                       : "/svg/google-store.svg"
                   }`}
