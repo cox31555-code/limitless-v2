@@ -10,15 +10,16 @@ export default function ClientLayout({ children }) {
       {children}
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={4000}
         hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
+        newestOnTop={true}
+        closeOnClick={false}
         rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
+        pauseOnFocusLoss={true}
+        draggable={false}
+        pauseOnHover={true}
         theme="light"
+        limit={3}
       />
     </>
   );
