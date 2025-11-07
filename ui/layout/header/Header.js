@@ -128,7 +128,7 @@ const Header = () => {
   const isMobile = typeof window !== "undefined" && window.innerWidth <= 900;
 
   const shouldHideHeader = (
-    pathname === "/login" ||
+    (pathname === "/login" && !isMobile) ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname === "/retrieve-quote" ||
