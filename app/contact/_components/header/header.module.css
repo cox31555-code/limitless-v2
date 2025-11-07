@@ -254,44 +254,44 @@
 
 @media screen and (max-width: 640px) {
   .content {
-    padding: 0 16px 80px 16px;
+    padding: 4rem 16px 80px 16px;
   }
 
   .headers {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2.8rem;
+    gap: 1.2rem;
+    margin-bottom: 4rem;
     visibility: visible;
     width: 100%;
   }
 
   .subTitle {
-    font-size: 1.1rem;
-    letter-spacing: 0.44px;
+    font-size: 1.4rem;
+    letter-spacing: 0.56px;
     font-weight: 600;
     display: block;
     color: #049cff;
   }
 
   .title {
-    font-size: 2.8rem;
-    line-height: 115%;
+    font-size: 4rem;
+    line-height: 120%;
     display: block;
     font-weight: 700;
   }
 
   .curvedBorder {
-    bottom: -6px;
+    bottom: -8px;
   }
 
   .formMobile {
-    margin-bottom: 2.4rem;
+    margin-bottom: 4.5rem;
   }
 
   .contactOptions {
-    gap: 2rem;
-    margin-top: 2.4rem;
+    gap: 3rem;
+    margin-top: 4rem;
   }
 
   .contactOption {
