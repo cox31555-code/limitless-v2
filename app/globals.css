@@ -340,7 +340,7 @@ body .react-datepicker__navigation--previous:hover {
   border-color: #ffffff !important;
 }
 
-/* Modern Red Bottom Center Toast Notifications */
+/* Modern Red Bottom Center Toast Notifications - Rounded Pill Style */
 .Toastify__toast-container {
   width: auto;
   padding: 0;
@@ -359,18 +359,18 @@ body .react-datepicker__navigation--previous:hover {
 
 .Toastify__toast {
   font-family: inherit;
-  border-radius: 12px;
-  padding: 16px 24px;
+  border-radius: 50px;
+  padding: 14px 28px;
   min-height: auto;
   margin-bottom: 0;
   background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
   color: #ffffff;
-  box-shadow: 0 8px 32px rgba(220, 38, 38, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 40px rgba(220, 38, 38, 0.35), 0 4px 16px rgba(0, 0, 0, 0.25);
   border: none;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.5;
-  max-width: 480px;
+  max-width: 500px;
   animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -422,41 +422,32 @@ body .react-datepicker__navigation--previous:hover {
 }
 
 .Toastify__progress-bar {
-  height: 3px;
-  background: rgba(255, 255, 255, 0.4);
+  display: none;
 }
 
 .Toastify__progress-bar--error {
-  background: rgba(255, 255, 255, 0.5);
+  display: none;
 }
 
 .Toastify__progress-bar--success {
-  background: rgba(255, 255, 255, 0.5);
+  display: none;
 }
 
 .Toastify__close-button {
-  opacity: 0.7;
-  padding: 0 8px;
-  min-width: auto;
-  width: 24px;
-  height: 24px;
-  color: #ffffff;
-  transition: opacity 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
 
 .Toastify__close-button:hover {
-  opacity: 1;
+  display: none;
 }
 
 @media (max-width: 640px) {
   .Toastify__toast {
     max-width: calc(100vw - 2rem);
-    padding: 12px 16px;
+    padding: 12px 24px;
     font-size: 14px;
     margin: 0 1rem;
+    border-radius: 50px;
   }
 
   .Toastify__toast-container--bottom-center {
