@@ -426,8 +426,9 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               className={styles.findAddressButton}
               onClick={handleFindAddress}
               type="button"
+              disabled={isLoadingAddress}
             >
-              Find Address
+              {isLoadingAddress ? "Searching..." : "Find Address"}
             </button>
           </div>
 
@@ -438,6 +439,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               placeholder="Select your address"
               {...register("userDetails.address")}
               error={errors.userDetails?.address}
+              disabled={!address}
               inputStyle={{ paddingLeft: "14px" }}
             />
             </div>
