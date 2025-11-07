@@ -140,56 +140,38 @@ const Footer = () => {
               <div className={styles.socialsItems}>
                 <div
                   className={`${styles.socialsItem} ${
-                    shouldApplySpecialStyles
-                      ? styles["socials-item-black"]
-                      : isLoginPage ? styles["socials-item-light"] : ""
+                    shouldApplySpecialStyles ? styles["socials-item-black"] : ""
                   }`}
-                  style={isLoginPage ? { background: "#f0f6ff" } : {}}
                 >
                   <BiLogoInstagramAlt
                     className={`${styles.socialsIcon} ${
-                      shouldApplySpecialStyles
-                        ? styles["socials-icon-black"]
-                        : isLoginPage ? styles["socials-icon-light"] : ""
+                      shouldApplySpecialStyles ? styles["socials-icon-black"] : ""
                     }`}
                     size={20}
-                    style={isLoginPage ? { color: "#9ca3af" } : {}}
                   />
                 </div>
                 <div
                   className={`${styles.socialsItem} ${
-                    shouldApplySpecialStyles
-                      ? styles["socials-item-black"]
-                      : isLoginPage ? styles["socials-item-light"] : ""
+                    shouldApplySpecialStyles ? styles["socials-item-black"] : ""
                   }`}
-                  style={isLoginPage ? { background: "#f0f6ff" } : {}}
                 >
                   <BiLogoFacebook
                     className={`${styles.socialsIcon} ${
-                      shouldApplySpecialStyles
-                        ? styles["socials-icon-black"]
-                        : isLoginPage ? styles["socials-icon-light"] : ""
+                      shouldApplySpecialStyles ? styles["socials-icon-black"] : ""
                     }`}
                     size={20}
-                    style={isLoginPage ? { color: "#9ca3af" } : {}}
                   />
                 </div>
                 <div
                   className={`${styles.socialsItem} ${
-                    shouldApplySpecialStyles
-                      ? styles["socials-item-black"]
-                      : isLoginPage ? styles["socials-item-light"] : ""
+                    shouldApplySpecialStyles ? styles["socials-item-black"] : ""
                   }`}
-                  style={isLoginPage ? { background: "#f0f6ff" } : {}}
                 >
                   <BiLogoTwitter
                     className={`${styles.socialsIcon} ${
-                      shouldApplySpecialStyles
-                        ? styles["socials-icon-black"]
-                        : isLoginPage ? styles["socials-icon-light"] : ""
+                      shouldApplySpecialStyles ? styles["socials-icon-black"] : ""
                     }`}
                     size={20}
-                    style={isLoginPage ? { color: "#9ca3af" } : {}}
                   />
                 </div>
               </div>
