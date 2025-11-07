@@ -104,9 +104,7 @@ const Footer = () => {
               <div key={index} className={styles.menu}>
                 <h3
                   style={{
-                    color: shouldApplySpecialStyles
-                      ? "rgba(0, 8, 34, 0.34)"
-                      : isLoginPage ? "#000822" : "",
+                    color: shouldApplySpecialStyles ? "rgba(0, 8, 34, 0.34)" : "",
                   }}
                   className={styles.menuTitle}
                 >
