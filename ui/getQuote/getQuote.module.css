@@ -10,7 +10,6 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   max-height: 2000px;
 }
 
@@ -20,7 +19,6 @@
   flex-direction: column;
   border-bottom: 1px solid #e8ecf1;
   padding: 3.4rem 3.8rem 2.5rem;
-  transition: padding 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Quick Quote Header */
@@ -188,7 +186,6 @@
   padding: 2.4rem 3.8rem 3rem 3.8rem;
   display: flex;
   flex-direction: column;
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   min-height: auto;
   max-height: 1500px;
@@ -203,7 +200,6 @@
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all 1.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes expandAccordion {
@@ -223,7 +219,6 @@
   visibility: visible;
   opacity: 1;
   max-height: 1000px;
-  animation: expandAccordion 1.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Step Header */
