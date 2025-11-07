@@ -131,7 +131,7 @@ const Header = () => {
     (pathname === "/login" && !isMobile) ||
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
-    pathname === "/retrieve-quote" ||
+    (pathname === "/retrieve-quote" && !isMobile) ||
     (isPolicyPage && !isMobile) ||
     pathname.startsWith("/dashboard") ||
     (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary"))
