@@ -304,8 +304,76 @@
 
 /* Responsive - Small Mobile */
 @media screen and (max-width: 640px) {
+  .cardWrapper {
+    padding: 1.2rem;
+  }
+
   .card {
-    padding: 0 15px 0 19px;
+    padding: 4rem 2rem;
+    border-radius: 12px;
+  }
+
+  .header {
+    margin-bottom: 3.6rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .formGroup {
+    gap: 2.2rem;
+  }
+
+  .fieldLabel {
+    font-size: 1.3rem;
+  }
+
+  .inputField {
+    height: 6rem;
+    padding: 1.6rem;
+    gap: 1rem;
+    border-radius: 10px;
+  }
+
+  .fieldIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .input {
+    font-size: 1.6rem;
+  }
+
+  .submitButton {
+    height: 6rem;
+    font-size: 1.4rem;
+    padding: 1.6rem 2rem;
+    margin-top: 1.6rem;
+    border-radius: 10px;
+  }
+
+  .buttonIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .successMessage,
+  .errorMessage {
+    padding: 1.2rem 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .footer {
+    padding-top: 2.2rem;
+  }
+
+  .footerText {
+    font-size: 1.3rem;
   }
 }
 
