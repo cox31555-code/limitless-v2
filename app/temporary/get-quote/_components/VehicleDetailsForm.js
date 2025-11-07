@@ -408,7 +408,7 @@ const VehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup = fals
                       });
                     }}
                     error={errors.vehicleDetails?.registrationNumber}
-                    disabled={showFoundData}
+                    disabled={showFoundData || isLoadingVehicleData}
                     button={
                       <ConfirmBtn
                         title={isLoadingVehicleData ? "Searching..." : "Find Vehicle"}
