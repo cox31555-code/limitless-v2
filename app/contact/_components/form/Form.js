@@ -5,7 +5,6 @@ import Image from "next/image";
 import TextInput from "@/ui/inputs/textInput/TextInput";
 import TextArea from "@/ui/inputs/textArea/TextArea";
 import Selection1 from "@/ui/inputs/selections/selection1/Selection1";
-import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
 const Form = () => {
