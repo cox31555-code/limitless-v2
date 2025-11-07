@@ -193,13 +193,30 @@
 }
 
 @media screen and (max-width: 640px) {
+  .container {
+    padding: 5.2rem 1.6rem;
+    gap: 2.4rem;
+  }
+
   .title {
-    font-size: 1.7rem;
-    line-height: 1.81rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
   }
 
   .titleSpan {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+  }
+
+  .getQuoteBtn,
+  .membersPortalBtn {
+    padding: 1.2rem 2.8rem;
+    font-size: 1.35rem;
+    height: 5rem;
+  }
+
+  .buttons {
+    gap: 1.2rem;
+    margin-top: 1rem;
   }
 }
 
