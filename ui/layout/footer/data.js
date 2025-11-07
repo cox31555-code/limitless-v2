@@ -8,7 +8,7 @@ export const menus = [
       },
       {
         title: "Temporary Insurance",
-        link: "/temporary/get-quote",
+        link: "/temporary",
       },
       {
         title: "Weekly Insurance",
@@ -16,15 +16,15 @@ export const menus = [
       },
       {
         title: "Impound Insurance",
-        link: "/impound/get-quote",
+        link: "/impound",
       },
       {
         title: "Courier Insurance",
-        link: "/coming-soon",
+        link: "/courier",
       },
       {
         title: "International Driving Licenses",
-        link: "/coming-soon",
+        link: "/annual",
       },
     ],
   },
