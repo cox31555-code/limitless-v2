@@ -252,6 +252,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .content {
+    padding: 0 20px 150px 24px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .content {
     padding: 2rem 2rem 1.4rem;
