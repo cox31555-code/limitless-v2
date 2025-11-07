@@ -82,7 +82,7 @@ const Footer = () => {
       className={`${styles.container} ${isLoginPage ? styles.lightTheme : ""}`}
       style={{
         background: shouldApplySpecialStyles ? "#F2F5FE" : isLoginPage ? "#ffffff" : "",
-        marginTop: isContactPage ? "-100px" : "0",
+        marginTop: isContactPage ? "-110px" : "0",
       }}
       suppressHydrationWarning
     >
