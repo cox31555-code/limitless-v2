@@ -1,0 +1,92 @@
+.page {
+  width: 100%;
+}
+
+.policyNav {
+  background: linear-gradient(180deg, #000822 0%, #0a1835 100%);
+  padding: 2.4rem 0;
+  border-top: 1px solid rgba(100, 180, 255, 0.15);
+  border-bottom: 1px solid rgba(100, 180, 255, 0.15);
+}
+
+.policyNavContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.8rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+  flex-wrap: wrap;
+}
+
+.policyLink {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.policyLink:hover {
+  color: #049cff;
+  background: rgba(4, 156, 255, 0.08);
+}
+
+.activePolicyLink {
+  color: #049cff;
+  background: rgba(4, 156, 255, 0.12);
+}
+
+.content {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 900px) {
+  .policyNav {
+    padding: 1.8rem 0;
+  }
+
+  .policyNavContent {
+    gap: 1.6rem;
+    padding: 0 1.6rem;
+  }
+
+  .policyLink {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .policyNav {
+    padding: 1.6rem 0;
+  }
+
+  .policyNavContent {
+    gap: 1.2rem;
+    padding: 0 1.2rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .policyLink {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .content {
+    margin-bottom: 1.6rem;
+  }
+}
