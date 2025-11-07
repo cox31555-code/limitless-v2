@@ -45,6 +45,12 @@
   box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
 }
 
+.selectWrapper:has(select:disabled) {
+  background: rgba(3, 136, 255, 0.04);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  opacity: 0.65;
+}
+
 .select {
   width: 100%;
   padding: 1.2rem 1.6rem;
