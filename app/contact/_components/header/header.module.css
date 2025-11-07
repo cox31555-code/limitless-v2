@@ -6,7 +6,7 @@
 }
 .contact {
   position: absolute;
-  top: 45rem;
+  top: 21.6rem;
   left: 55%;
   transform: translateX(-50%);
   z-index: 1;
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28rem 4.4% 0.5rem 2.6%;
+  padding: 28rem 4.4% 6.5rem 2.6%;
   width: 100%;
   margin: -90px 0 0 calc(50% - 653.5px);
 }
