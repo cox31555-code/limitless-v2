@@ -393,45 +393,45 @@
 
 @media screen and (max-width: 400px) {
   .content {
-    padding: 0 14px 70px 14px;
+    padding: 3rem 14px 70px 14px;
     margin: 0;
   }
 
   .headers {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-    margin-bottom: 2.2rem;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
     visibility: visible;
     width: 100%;
   }
 
   .subTitle {
-    font-size: 1rem;
-    letter-spacing: 0.4px;
+    font-size: 1.2rem;
+    letter-spacing: 0.48px;
     font-weight: 600;
     display: block;
     color: #049cff;
   }
 
   .title {
-    font-size: 2.2rem;
-    line-height: 115%;
+    font-size: 3.2rem;
+    line-height: 120%;
     display: block;
     font-weight: 700;
   }
 
   .curvedBorder {
-    bottom: -4px;
+    bottom: -6px;
   }
 
   .formMobile {
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
   }
 
   .contactOptions {
-    gap: 1.8rem;
-    margin-top: 2rem;
+    gap: 2.5rem;
+    margin-top: 3.2rem;
   }
 
   .contactOption {
