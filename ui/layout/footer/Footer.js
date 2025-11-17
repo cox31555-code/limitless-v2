@@ -58,8 +58,8 @@ const Footer = () => {
     setIsMounted(true);
   }, []);
 
-  // Don't render footer on password pages
-  if (isMounted && ["/forget-password", "/change-password"].includes(pathname)) {
+  // Don't render footer on password change page
+  if (isMounted && pathname === "/change-password") {
     return null;
   }
 
