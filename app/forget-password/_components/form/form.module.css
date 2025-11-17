@@ -1,97 +1,82 @@
-:root {
-  --spacing-xs: 0.8rem;
-  --spacing-sm: 1.2rem;
-  --spacing-md: 1.6rem;
-  --spacing-lg: 2.4rem;
-  --spacing-xl: 3.2rem;
-  --color-black: #000822;
-  --color-text: #1c1c1c;
-  --color-subtitle: #525252;
-  --color-white: #ffffff;
-  --color-blue: #0388ff;
-  --color-blue-alt: #049cff;
-  --color-blue-hover: #0270cc;
-  --color-error: #ef4444;
-  --color-border: rgba(3, 136, 255, 0.12);
-  --color-border-focus: #0388ff;
-  --color-bg-input: #ffffff;
-  --color-bg-light: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
-  --color-bg-error: rgba(239, 68, 68, 0.04);
-  --border-radius: 14px;
-  --font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  --transition: all 0.3s ease;
-}
-
-/* Container */
-.container {
+.cardWrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 462px;
-  gap: 0;
+  max-width: 100%;
+  min-height: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Title */
+.card {
+  width: 100%;
+  max-width: 665px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 6rem 5.6rem;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  box-sizing: border-box;
+  box-shadow: 0 4px 24px rgba(3, 136, 255, 0.12), 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+/* Header Section */
+.header {
+  margin-bottom: 5.2rem;
+  text-align: center;
+}
+
 .title {
-  color: var(--color-black);
-  font-family: var(--font-family);
-  font-size: clamp(3.2rem, 5vw, 3.8rem);
+  font-size: 3.2rem;
   font-weight: 700;
-  line-height: 1;
-  text-transform: uppercase;
-  margin: 0 0 1.2rem 0;
-  text-align: center;
-  letter-spacing: -0.02em;
+  color: #000822;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
 }
 
-/* Subtitle */
 .subtitle {
-  color: var(--color-subtitle);
-  font-family: var(--font-family);
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-size: 1.6rem;
   font-weight: 400;
-  line-height: 1.4;
-  margin: 0 0 3.2rem 0;
-  text-align: center;
-  max-width: 426px;
+  color: #6b7c8f;
+  margin: 0;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
 }
 
 /* Messages */
 .successMessage {
   width: 100%;
-  padding: 1.2rem 1.6rem;
-  margin-bottom: var(--spacing-lg);
-  border-radius: var(--border-radius);
-  background: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-  font-size: 1.4rem;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #86efac;
+  font-size: 1.3rem;
   font-weight: 500;
   text-align: center;
-  font-family: var(--font-family);
   animation: slideDown 0.3s ease;
 }
 
 .errorMessage {
   width: 100%;
-  padding: 1.2rem 1.6rem;
-  margin-bottom: var(--spacing-lg);
-  border-radius: var(--border-radius);
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  font-size: 1.4rem;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  font-size: 1.3rem;
   font-weight: 500;
   text-align: center;
-  font-family: var(--font-family);
   animation: slideDown 0.3s ease;
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-12px);
   }
   to {
     opacity: 1;
@@ -103,160 +88,113 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 0;
   width: 100%;
+  margin-bottom: 2.8rem;
 }
 
-/* Input Label */
-.inputLabel {
-  color: #5a6b7d;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
-}
-
-/* Input Group */
-.inputGroup {
+/* Form Group */
+.formGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 3.2rem;
   width: 100%;
 }
 
-/* Input Wrapper */
-.inputWrapper {
+/* Field Wrapper */
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+/* Field Label */
+.fieldLabel {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Input Field Container */
+.inputField {
   display: flex;
   align-items: center;
-  gap: 0;
-  padding: 1.6rem;
-  background: var(--color-bg-input);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--border-radius);
-  min-height: 6.8rem;
-  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  gap: 1.6rem;
+  padding: 2rem 2.6rem;
+  background: #ffffff;
+  border: 1.5px solid rgba(3, 136, 255, 0.1);
+  border-radius: 12px;
+  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: text;
+  height: 7.2rem;
 }
 
-.inputWrapper.inputError {
-  border-color: var(--color-error);
-  background: var(--color-bg-error);
+.inputField:focus-within {
+  border-color: #0388ff;
+  background: #f8fbff;
 }
 
-.inputWrapper.inputError:focus-within {
-  border-color: var(--color-error);
-  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.12);
+.inputField.fieldError {
+  border-color: #ef4444;
+  background: #fef2f2;
 }
 
-/* Icon Container */
-.iconContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 5.4rem;
-  height: 5.4rem;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #f0f3f7 0%, #e8ecf2 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
+.inputField.fieldError:focus-within {
+  border-color: #ef4444;
+}
+
+/* Field Icon */
+.fieldIcon {
+  width: 2.2rem;
+  height: 2.2rem;
+  color: #6b7c8f;
   flex-shrink: 0;
+  transition: color 0.3s ease;
 }
 
-.inputWrapper.inputError .iconContainer {
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-  border-color: rgba(239, 68, 68, 0.2);
+.inputField:focus-within .fieldIcon {
+  color: #0388ff;
 }
 
-/* Icon */
-.icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  flex-shrink: 0;
-  color: #5a6b7d;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.inputField.fieldError .fieldIcon {
+  color: #ef4444;
 }
 
-.inputWrapper.inputError .icon {
-  color: #dc3545;
-}
-
-/* Input */
+/* Input Element */
 .input {
   flex: 1;
   border: none;
   background: transparent;
-  color: var(--color-text);
-  font-family: var(--font-family);
+  color: #000822;
   font-size: 1.5rem;
   font-weight: 500;
-  line-height: 1.3;
   outline: none;
-  min-width: 0;
   padding: 0;
+  font-family: inherit;
+  line-height: 1.4;
 }
 
 .input::placeholder {
-  color: rgba(0, 8, 34, 0.35);
+  color: rgba(0, 8, 34, 0.4);
   font-weight: 400;
 }
 
 .input:autofill {
-  -webkit-autofill-bg: transparent;
+  -webkit-autofill: none;
+  background-color: transparent !important;
+  color: #000822 !important;
 }
 
-/* Field Error */
-.fieldError {
-  color: var(--color-error);
-  font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 1.4;
-  padding: 0.4rem 0.8rem 0 0.8rem;
-  transition: var(--transition);
-}
-
-/* Forgot Password Wrapper */
-.forgotPasswordWrapper {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin: -0.4rem 0 1.2rem 0;
-}
-
-/* Forgot Password Link */
-.forgotPasswordLink {
-  color: var(--color-blue);
-  font-size: 1.3rem;
+/* Error Text */
+.errorText {
+  font-size: 1.2rem;
+  color: #ef4444;
   font-weight: 500;
-  text-decoration: none;
-  transition: var(--transition);
-  line-height: 1.2;
-}
-
-.forgotPasswordLink:hover {
-  color: var(--color-blue-hover);
-  text-decoration: underline;
-}
-
-.forgotPasswordLink:focus {
-  outline: 2px solid var(--color-blue);
-  outline-offset: 2px;
-}
-
-/* Arrow Icon */
-.arrowIcon {
-  width: 1.6rem;
-  height: 1.6rem;
-  flex-shrink: 0;
-  margin-left: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.submitButton:hover .arrowIcon {
-  transform: translateX(4px);
+  padding: 0 0.2rem;
+  line-height: 1.3;
 }
 
 /* Submit Button */
@@ -264,187 +202,298 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 1.1rem;
   width: 100%;
-  min-height: 5.8rem;
-  padding: 1.3rem 2.6rem;
-  margin: 1.2rem auto 0;
-  background: var(--color-blue);
+  height: 7rem;
+  padding: 1.8rem 2.6rem;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border: none;
-  border-radius: 28px;
-  color: var(--color-white);
-  font-family: var(--font-family);
-  font-size: 1.35rem;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  white-space: nowrap;
+  font-family: inherit;
+  text-transform: none;
 }
 
 .submitButton:hover:not(:disabled) {
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .submitButton:active:not(:disabled) {
-  opacity: 0.8;
+  opacity: 0.88;
 }
 
 .submitButton:disabled {
-  opacity: 0.6;
+  opacity: 0.65;
   cursor: not-allowed;
 }
 
 .submitButton:focus {
-  outline: 2px solid var(--color-blue);
-  outline-offset: 2px;
+  outline: none;
 }
 
-/* Back to Login */
-.backToLogin {
-  color: var(--color-blue);
-  font-size: 1.3rem;
-  font-weight: 500;
+/* Button Text & Icon */
+.buttonText {
+  font-weight: 700;
+}
+
+.buttonIcon {
+  width: 2.2rem;
+  height: 2.2rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) .buttonIcon {
+  transform: translateX(2px);
+}
+
+/* Footer */
+.footer {
+  padding-top: 3.2rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.06);
+  text-align: center;
+}
+
+.footerText {
+  font-size: 1.45rem;
+  color: #6b7c8f;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.signupLink {
+  color: #0388ff;
   text-decoration: none;
-  transition: var(--transition);
-  line-height: 1.2;
-  margin-top: 2rem;
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 0;
+  font-weight: 700;
+  transition: color 0.28s ease;
+  margin-left: 0.8rem;
 }
 
-.backToLogin:hover {
-  color: var(--color-blue-hover);
-  text-decoration: underline;
+.signupLink:hover {
+  color: #0270cc;
 }
 
-.backToLogin:focus {
-  outline: 2px solid var(--color-blue);
-  outline-offset: 2px;
-}
+/* Responsive - Small Mobile */
+@media screen and (max-width: 640px) {
+  .cardWrapper {
+    padding: 1rem 0.6rem;
+  }
 
-/* Responsive - Tablet */
-@media screen and (max-width: 1023px) {
-  .container {
+  .card {
+    padding: 3.2rem 1.4rem;
+    border-radius: 12px;
+    width: 100%;
     max-width: 100%;
-    padding: 0 var(--spacing-md);
+  }
+
+  .header {
+    margin-bottom: 3.2rem;
   }
 
   .title {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
   }
 
   .subtitle {
-    font-size: 1.6rem;
-    margin-bottom: 2.4rem;
-  }
-
-  .inputLabel {
-    font-size: 1rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .inputWrapper {
-    min-height: 6.2rem;
-    gap: 0;
-    padding: 1.4rem;
-  }
-
-  .input {
-    font-size: 1.4rem;
-    padding: 0;
-  }
-
-  .forgotPasswordLink {
     font-size: 1.2rem;
   }
 
-  .submitButton {
-    min-height: 5.6rem;
-    font-size: 1.3rem;
-    padding: 1.2rem 2.4rem;
+  .formGroup {
+    gap: 1.8rem;
   }
 
-  .backToLogin {
-    font-size: 1.2rem;
-  }
-}
-
-/* Responsive - Mobile */
-@media screen and (max-width: 599px) {
-  .container {
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .title {
-    font-size: 2.8rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-    max-width: 100%;
-  }
-
-  .inputLabel {
-    font-size: 0.95rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .form {
-    gap: 1.4rem;
-  }
-
-  .inputWrapper {
-    min-height: 5.6rem;
-    gap: 0;
-    padding: 1.2rem;
-  }
-
-  .input {
-    font-size: 1.3rem;
-    padding: 0;
-  }
-
-  .forgotPasswordWrapper {
-    margin: -0.2rem 0 0.8rem 0;
-  }
-
-  .forgotPasswordLink {
+  .fieldLabel {
     font-size: 1.2rem;
   }
 
-  .submitButton {
-    min-height: 5.2rem;
-    font-size: 1.25rem;
-    padding: 1rem 2rem;
-    border-radius: 24px;
+  .inputField {
+    height: 5.8rem;
+    padding: 1.4rem 1.2rem;
     gap: 0.8rem;
-    margin-top: 0.8rem;
+    border-radius: 10px;
   }
 
-  .arrowIcon {
-    width: 1.4rem;
-    height: 1.4rem;
+  .fieldIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .input {
+    font-size: 1.6rem;
+  }
+
+  .submitButton {
+    height: 5.8rem;
+    font-size: 1.3rem;
+    padding: 1.4rem 1.6rem;
+    margin-top: 1.4rem;
+    border-radius: 10px;
+  }
+
+  .buttonIcon {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .successMessage,
   .errorMessage {
     padding: 1rem 1.2rem;
-    font-size: 1.3rem;
-    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
   }
 
-  .backToLogin {
+  .footer {
+    padding-top: 1.8rem;
+  }
+
+  .footerText {
     font-size: 1.2rem;
-    margin-top: 1.6rem;
+  }
+}
+
+/* Responsive - Tablet */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 5.6rem 4.8rem;
+    border-radius: 14px;
+    max-width: 750px;
+    box-shadow: 0 3px 16px rgba(3, 136, 255, 0.1), 0 1px 4px rgba(0, 8, 34, 0.03);
+  }
+
+  .header {
+    margin-bottom: 4.8rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .formGroup {
+    gap: 3rem;
+  }
+
+  .fieldIcon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .inputField {
+    height: 6.8rem;
+    padding: 1.9rem 2.4rem;
+    gap: 1.4rem;
+  }
+
+  .input {
+    font-size: 1.45rem;
+  }
+
+  .submitButton {
+    height: 6.8rem;
+    font-size: 1.48rem;
+    padding: 1.8rem 2.6rem;
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  .buttonIcon {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media screen and (max-width: 600px) {
+  .cardWrapper {
+    padding: 1rem 0.6rem;
+  }
+
+  .card {
+    padding: 3.2rem 1.4rem;
+    border-radius: 12px;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(3, 136, 255, 0.08), 0 1px 3px rgba(0, 8, 34, 0.02);
+  }
+
+  .header {
+    margin-bottom: 3.2rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .formGroup {
+    gap: 1.8rem;
+  }
+
+  .fieldWrapper {
+    gap: 0.8rem;
+  }
+
+  .fieldLabel {
+    font-size: 1.2rem;
+  }
+
+  .inputField {
+    height: 5.8rem;
+    padding: 1.4rem 1.2rem;
+    gap: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .fieldIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .input {
+    font-size: 1.6rem;
+  }
+
+  .submitButton {
+    height: 5.8rem;
+    font-size: 1.3rem;
+    padding: 1.4rem 1.6rem;
+    gap: 0.8rem;
+    border-radius: 10px;
+    margin-top: 1.4rem;
+  }
+
+  .buttonIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .successMessage,
+  .errorMessage {
+    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .footer {
+    padding-top: 1.8rem;
+  }
+
+  .footerText {
+    font-size: 1.2rem;
   }
 }
