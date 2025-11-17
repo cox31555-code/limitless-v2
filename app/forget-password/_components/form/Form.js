@@ -43,89 +43,102 @@ const Form = () => {
 
   if (forgotPasswordSuccess) {
     return (
-      <div className={styles.container}>
-        <h1 className={styles.title}>Check Your Email</h1>
-        <p className={styles.subtitle}>
-          We've sent you a password reset link. Please check your email and follow the instructions to reset your password.
-        </p>
+      <div className={styles.cardWrapper}>
+        <div className={styles.card}>
+          <div className={styles.header}>
+            <h1 className={styles.title}>Check Your Email</h1>
+            <p className={styles.subtitle}>
+              We've sent you a password reset link. Please check your email and follow the instructions to reset your password.
+            </p>
+          </div>
 
-        <button
-          type="button"
-          className={styles.submitButton}
-          onClick={() => {
-            clearSuccessStates();
-            router.push("/login");
-          }}
-        >
-          GO TO LOGIN
-        </button>
+          <button
+            type="button"
+            className={styles.submitButton}
+            onClick={() => {
+              clearSuccessStates();
+              router.push("/login");
+            }}
+          >
+            <span className={styles.buttonText}>Go to Login</span>
+            <svg className={styles.buttonIcon} width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
     );
   }
 
-  const handleEmailChange = (e) => {
-    if (errors.email) {
-      setError("email", { message: undefined });
-    }
-  };
-
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Reset Password</h1>
-      <p className={styles.subtitle}>
-        Enter your email address and we'll send you a link to reset your password
-      </p>
-
-      {(error || errors.root) && (
-        <div className={styles.errorMessage}>
-          {error || errors.root?.message}
+    <div className={styles.cardWrapper}>
+      <div className={styles.card}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Reset Password</h1>
+          <p className={styles.subtitle}>Enter your email address and we'll send you a link to reset your password</p>
         </div>
-      )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <div className={styles.inputGroup}>
-          <label className={styles.inputLabel}>EMAIL ADDRESS</label>
-          <div
-            className={`${styles.inputWrapper} ${errors.email ? styles.inputError : ""}`}
-            onClick={() => emailInputRef.current?.focus()}
-          >
-            <input
-              type="email"
-              placeholder="Enter Email Address"
-              className={styles.input}
-              {...(() => {
-                const { ref, ...rest } = register("email");
-                return {
-                  ...rest,
-                  ref: (e) => {
-                    ref(e);
-                    emailInputRef.current = e;
-                  },
-                };
-              })()}
-            />
+        {(error || errors.root) && (
+          <div className={styles.errorMessage}>
+            {error || errors.root?.message}
           </div>
-          {errors.email && (
-            <span className={styles.fieldError}>{errors.email.message}</span>
-          )}
+        )}
+
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div className={styles.formGroup}>
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>Email Address</label>
+              <div
+                className={`${styles.inputField} ${errors.email ? styles.fieldError : ""}`}
+                onClick={() => emailInputRef.current?.focus()}
+              >
+                <svg className={styles.fieldIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 8L10.89 13.26C11.5475 13.7277 12.4525 13.7277 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  className={styles.input}
+                  {...(() => {
+                    const { ref, ...rest } = register("email");
+                    return {
+                      ...rest,
+                      ref: (e) => {
+                        ref(e);
+                        emailInputRef.current = e;
+                      },
+                    };
+                  })()}
+                />
+              </div>
+              {errors.email && (
+                <span className={styles.errorText}>{errors.email.message}</span>
+              )}
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={isLoading}
+          >
+            <span className={styles.buttonText}>
+              {isLoading ? "Sending..." : "Send Reset Link"}
+            </span>
+            {!isLoading && (
+              <svg className={styles.buttonIcon} width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </button>
+        </form>
+
+        <div className={styles.footer}>
+          <p className={styles.footerText}>
+            Remember your password? <a href="/login" className={styles.signupLink}>Sign In</a>
+          </p>
         </div>
-
-        <button
-          type="submit"
-          className={styles.submitButton}
-          disabled={isLoading}
-        >
-          {isLoading ? "Sending..." : "SEND RESET LINK"}
-        </button>
-      </form>
-
-      <button
-        className={styles.backToLogin}
-        onClick={() => router.push("/login")}
-        disabled={isLoading}
-      >
-        Back to Login
-      </button>
+      </div>
     </div>
   );
 };
