@@ -559,8 +559,19 @@
     padding: 0 1rem;
   }
 
+  .titleWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
   .reviewTitle {
     font-size: 1.6rem;
+  }
+
+  .statusBadge {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 
   .row {
