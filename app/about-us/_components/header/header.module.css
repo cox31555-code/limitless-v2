@@ -136,7 +136,7 @@
     /* max-width: 50rem; */
   }
 }
-@media screen and (max-width: 900) {
+@media screen and (max-width: 900px) {
   .squares {
     width: 485.816px;
     height: 246px;
@@ -144,19 +144,12 @@
     right: -20rem;
     left: auto;
   }
-  /* .headerContainer {
-    border-radius: 18px;
-    background: #000822;
-    margin: 2.6rem 2% 0;
-    padding: 0;
-    width: 96%;
-  } */
   .headerContainer {
-    border-radius: 18px;
+    border-radius: 0;
     background: #000822;
     padding: 0;
-    margin: 2.6rem 4% 0;
-    width: 92%;
+    margin: 0 0 8rem 0;
+    width: 100%;
   }
 
   .subTitle {
