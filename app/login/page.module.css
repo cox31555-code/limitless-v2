@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 3.2rem;
+  padding: 4rem 3.2rem;
   width: 100%;
   box-sizing: border-box;
   background: #ffffff;
@@ -20,7 +20,7 @@
 
 .formContainer {
   width: 100%;
-  max-width: 900px;
+  max-width: 520px;
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -28,21 +28,21 @@
 
 @media screen and (max-width: 1024px) {
   .mainContent {
-    padding: 5.6rem 2.8rem;
+    padding: 4rem 2.8rem;
   }
 
   .formContainer {
-    max-width: 850px;
+    max-width: 520px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .mainContent {
-    padding: 5.2rem 2.4rem;
+    padding: 3.6rem 2.4rem;
   }
 
   .formContainer {
-    max-width: 800px;
+    max-width: 520px;
   }
 }
 
