@@ -58,10 +58,6 @@ const Footer = () => {
     setIsMounted(true);
   }, []);
 
-  // Don't render footer on password change page
-  if (isMounted && pathname === "/change-password") {
-    return null;
-  }
 
   // Determine which banner to show
   const isGetQuotePage = isMounted && (pathname?.startsWith("/temporary/get-quote") ||
