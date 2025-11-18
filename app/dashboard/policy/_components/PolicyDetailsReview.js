@@ -79,7 +79,14 @@ const PolicyDetailsReview = ({ policy }) => {
 
   return (
     <div className={styles.reviewContainer}>
-      <h2 className={styles.reviewTitle}>Policy Details</h2>
+      <div className={styles.titleWrapper}>
+        <h2 className={styles.reviewTitle}>Policy Details</h2>
+        {policyStatus && (
+          <div className={`${styles.statusBadge} ${styles[`status${policyStatus.status.charAt(0).toUpperCase() + policyStatus.status.slice(1)}`]}`}>
+            {policyStatus.label}
+          </div>
+        )}
+      </div>
 
       <div className={styles.reviewSections}>
         {/* VEHICLE DETAILS SECTION */}
