@@ -1,10 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./form.module.css";
-import Image from "next/image";
-import ConfirmButton from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
-import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,15 +9,6 @@ import {
   clientSetPasswordSchema,
 } from "@/utils/authSchemas";
 import { useAuth } from "@/contexts/AuthContext";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 const Form = () => {
   const router = useRouter();
@@ -37,26 +24,22 @@ const Form = () => {
   } = useAuth();
 
   const [userInfo, setUserInfo] = useState(null);
-  const [pageType, setPageType] = useState("loading"); // "loading", "setPassword", "resetPassword", "error"
-  const [isSubmitting, setIsSubmitting] = useState(false); // Local loading state for form submission
+  const [pageType, setPageType] = useState("loading");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // track visibility for each input separately
   const [showPassword, setShowPassword] = useState({
     password: false,
     confirmPassword: false,
   });
 
-  // Refs for input focus
   const passwordInputRef = useRef(null);
   const confirmPasswordInputRef = useRef(null);
 
-  // Get URL parameters
   const email = searchParams.get("email");
   const userId = searchParams.get("userId");
   const token = searchParams.get("token");
-  const userType = searchParams.get("type"); // 'admin' or 'client'
+  const userType = searchParams.get("type");
 
-  // Determine which schema and API to use
   const getFormConfig = () => {
     if (token) {
       return {
@@ -81,7 +64,6 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
     setError,
-    reset,
   } = useForm({
     resolver: formConfig ? zodResolver(formConfig.schema) : undefined,
     defaultValues: formConfig?.defaultValues || {},
@@ -94,7 +76,6 @@ const Form = () => {
     }));
   };
 
-  // Fetch user info for set password flow
   useEffect(() => {
     const fetchUserInfo = async () => {
       if (email && userId && !token) {
@@ -117,8 +98,8 @@ const Form = () => {
 
   const onSubmit = async (data) => {
     clearError();
-    setIsSubmitting(true); // Start loading
-    
+    setIsSubmitting(true);
+
     try {
       let result;
 
@@ -139,7 +120,6 @@ const Form = () => {
       }
 
       if (result?.success) {
-        // Success - redirect to appropriate login page
         const loginPath =
           result.data?.userType === "admin" || userType === "admin"
             ? "/admin-login"
@@ -154,56 +134,49 @@ const Form = () => {
         setError("root", {
           message: result?.message || "Something went wrong. Please try again.",
         });
-        setIsSubmitting(false); // Stop loading on error
+        setIsSubmitting(false);
       }
-    } catch (error) {
-      console.error("Submit error:", error);
+    } catch (err) {
+      console.error("Submit error:", err);
       setError("root", {
         message: "An unexpected error occurred. Please try again.",
       });
-      setIsSubmitting(false); // Stop loading on error
+      setIsSubmitting(false);
     }
   };
 
-  // Loading state
   if (pageType === "loading") {
     return (
-      <div className={styles.container}>
-        <div className={styles.titleContainer}>
-          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Loading...
-          </h2>
-          <p className={`${styles.description} ${manrope.className}`}>
-            Please wait while we verify your request.
-          </p>
+      <div className={styles.cardWrapper}>
+        <div className={styles.card}>
+          <div className={styles.header}>
+            <h1 className={styles.title}>Loading</h1>
+            <p className={styles.subtitle}>Please wait while we verify your request.</p>
+          </div>
         </div>
       </div>
     );
   }
 
-  // Error state
   if (pageType === "error") {
     return (
-      <div className={styles.container}>
-        <div className={styles.titleContainer}>
-          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Invalid Link
-          </h2>
-          <p className={`${styles.description} ${manrope.className}`}>
-            This password reset link is invalid or has expired. Please request a
-            new one.
-          </p>
+      <div className={styles.cardWrapper}>
+        <div className={styles.card}>
+          <div className={styles.header}>
+            <h1 className={styles.title}>Invalid Link</h1>
+            <p className={styles.subtitle}>This password reset link is invalid or has expired. Please request a new one.</p>
+          </div>
+          <button
+            type="button"
+            className={styles.submitButton}
+            onClick={() => router.push("/login")}
+          >
+            <span className={styles.buttonText}>Go to Login</span>
+            <svg className={styles.buttonIcon} width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
-        <ConfirmButton
-          style={{
-            justifyContent: "center",
-            width: "100%",
-            marginTop: "2.6rem",
-          }}
-          title="Go to Login"
-          onClick={() => router.push("/login")}
-          // className={styles.button}
-        />
       </div>
     );
   }
@@ -215,7 +188,7 @@ const Form = () => {
     if (userType === "admin") {
       return "Reset Admin Password";
     }
-    return "Reset Your Password";
+    return "Create New Password";
   };
 
   const getPageDescription = () => {
@@ -233,168 +206,147 @@ const Form = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.titleContainer}>
-        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          {getPageTitle()}
-        </h2>
-        <p className={`${styles.description} ${manrope.className}`}>
-          {getPageDescription()}
-        </p>
-        {userInfo && (
-          <p
-            className={`${styles.description} ${manrope.className}`}
-            style={{ fontSize: "14px", marginTop: "0.5rem" }}
-          >
-            Setting up password for: <strong>{userInfo.email}</strong>
-          </p>
+    <div className={styles.cardWrapper}>
+      <div className={styles.card}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>{getPageTitle()}</h1>
+          <p className={styles.subtitle}>{getPageDescription()}</p>
+          {userInfo && (
+            <p className={styles.userEmail}>{userInfo.email}</p>
+          )}
+        </div>
+
+        {(error || errors.root) && (
+          <div className={styles.errorMessage}>
+            {error || errors.root?.message}
+          </div>
         )}
+
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div className={styles.formGroup}>
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>
+                {pageType === "setPassword" ? "Create Password" : "New Password"}
+              </label>
+              <div
+                className={`${styles.inputField} ${errors.password ? styles.fieldError : ""}`}
+                onClick={() => passwordInputRef.current?.focus()}
+              >
+                <svg className={styles.fieldIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 1C6.48 1 2 5.48 2 11V21C2 22.1046 2.89543 23 4 23H20C21.1046 23 22 22.1046 22 21V11C22 5.48 17.52 1 12 1ZM12 3C16.41 3 20 6.59 20 11H4C4 6.59 7.59 3 12 3ZM12 16C11.4477 16 11 15.5523 11 15C11 14.4477 11.4477 14 12 14C12.5523 14 13 14.4477 13 15C13 15.5523 12.5523 16 12 16Z" fill="currentColor"/>
+                </svg>
+                <input
+                  type={showPassword.password ? "text" : "password"}
+                  placeholder="••••••••"
+                  className={styles.input}
+                  {...(() => {
+                    const { ref, ...rest } = register("password");
+                    return {
+                      ...rest,
+                      ref: (e) => {
+                        ref(e);
+                        passwordInputRef.current = e;
+                      },
+                    };
+                  })()}
+                />
+                <button
+                  type="button"
+                  className={styles.eyeButton}
+                  onClick={() => togglePasswordVisibility("password")}
+                  aria-label={showPassword.password ? "Hide password" : "Show password"}
+                >
+                  {showPassword.password ? (
+                    <svg className={styles.eyeIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M2 5.27L3.28 4M19.73 21L21 19.73M9.88 9.88C9.4 10.14 9 10.6 9 11.17C9 12.63 10.37 14 11.83 14C12.4 14 12.86 13.6 13.12 13.12M6.61 6.61C5.59 7.62 4.74 8.92 4.2 10.4C3 13.41 4.84 17 8 17C9.48 17 10.78 16.41 11.79 15.39M12 3C7.04 3 2.77 6.05 1 10.5C2.77 14.95 7.04 18 12 18C16.96 18 21.23 14.95 23 10.5C21.23 6.05 16.96 3 12 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    </svg>
+                  ) : (
+                    <svg className={styles.eyeIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+                    </svg>
+                  )}
+                </button>
+              </div>
+              {errors.password && (
+                <span className={styles.errorText}>{errors.password.message}</span>
+              )}
+            </div>
+
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>Confirm Password</label>
+              <div
+                className={`${styles.inputField} ${errors[getPasswordFieldName()] ? styles.fieldError : ""}`}
+                onClick={() => confirmPasswordInputRef.current?.focus()}
+              >
+                <svg className={styles.fieldIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 1C6.48 1 2 5.48 2 11V21C2 22.1046 2.89543 23 4 23H20C21.1046 23 22 22.1046 22 21V11C22 5.48 17.52 1 12 1ZM12 3C16.41 3 20 6.59 20 11H4C4 6.59 7.59 3 12 3ZM12 16C11.4477 16 11 15.5523 11 15C11 14.4477 11.4477 14 12 14C12.5523 14 13 14.4477 13 15C13 15.5523 12.5523 16 12 16Z" fill="currentColor"/>
+                </svg>
+                <input
+                  type={showPassword.confirmPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  className={styles.input}
+                  {...(() => {
+                    const { ref, ...rest } = register(getPasswordFieldName());
+                    return {
+                      ...rest,
+                      ref: (e) => {
+                        ref(e);
+                        confirmPasswordInputRef.current = e;
+                      },
+                    };
+                  })()}
+                />
+                <button
+                  type="button"
+                  className={styles.eyeButton}
+                  onClick={() => togglePasswordVisibility("confirmPassword")}
+                  aria-label={showPassword.confirmPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword.confirmPassword ? (
+                    <svg className={styles.eyeIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M2 5.27L3.28 4M19.73 21L21 19.73M9.88 9.88C9.4 10.14 9 10.6 9 11.17C9 12.63 10.37 14 11.83 14C12.4 14 12.86 13.6 13.12 13.12M6.61 6.61C5.59 7.62 4.74 8.92 4.2 10.4C3 13.41 4.84 17 8 17C9.48 17 10.78 16.41 11.79 15.39M12 3C7.04 3 2.77 6.05 1 10.5C2.77 14.95 7.04 18 12 18C16.96 18 21.23 14.95 23 10.5C21.23 6.05 16.96 3 12 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    </svg>
+                  ) : (
+                    <svg className={styles.eyeIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+                    </svg>
+                  )}
+                </button>
+              </div>
+              {errors[getPasswordFieldName()] && (
+                <span className={styles.errorText}>{errors[getPasswordFieldName()].message}</span>
+              )}
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={isSubmitting}
+          >
+            <span className={styles.buttonText}>
+              {isSubmitting
+                ? pageType === "setPassword"
+                  ? "Setting..."
+                  : "Resetting..."
+                : pageType === "setPassword"
+                ? "Set Password"
+                : "Reset Password"}
+            </span>
+            {!isSubmitting && (
+              <svg className={styles.buttonIcon} width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </button>
+        </form>
+
+        <div className={styles.footer}>
+          <p className={styles.footerText}>
+            Remember your password? <a href="/login" className={styles.signupLink}>Sign In</a>
+          </p>
+        </div>
       </div>
-
-      {/* Error Message */}
-      {(error || errors.root) && (
-        <div
-          className={styles.errorMessage}
-          style={{
-            backgroundColor: "#f8d7da",
-            color: "#721c24",
-            padding: "0.75rem",
-            marginBottom: "1rem",
-            borderRadius: "0.25rem",
-            border: "1px solid #f5c6cb",
-          }}
-        >
-          {error || errors.root?.message}
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.inputsContainer}>
-          {/* New Password */}
-          <div className={styles.inputGroup}>
-            <label htmlFor="password" className={styles.label}>
-              {pageType === "setPassword" ? "Create Password" : "New Password"}
-            </label>
-            <div className={styles.inputContainer} onClick={() => passwordInputRef.current?.focus()}>
-              <div className={styles.iconWrapper}>
-                <Image
-                  src={"/svg/password.svg"}
-                  alt="password"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <input
-                type={showPassword.password ? "text" : "password"}
-                id="password"
-                placeholder="Enter your password.."
-                className={`${styles.input} ${
-                  errors.password ? styles.error : ""
-                }`}
-                {...(() => {
-                  const { ref, ...rest } = register("password");
-                  return {
-                    ...rest,
-                    ref: (e) => {
-                      ref(e);
-                      passwordInputRef.current = e;
-                    },
-                  };
-                })()}
-              />
-              <button
-                type="button"
-                className={styles.eyeButton}
-                onClick={() => togglePasswordVisibility("password")}
-                aria-label={
-                  showPassword.password ? "Hide password" : "Show password"
-                }
-              >
-                {showPassword.password ? (
-                  <IoEyeOffOutline className={styles.eyeIcon} />
-                ) : (
-                  <IoEyeOutline className={styles.eyeIcon} />
-                )}
-              </button>
-            </div>
-            {errors.password && (
-              <span className={styles.errorMessage}>
-                {errors.password.message}
-              </span>
-            )}
-          </div>
-
-          {/* Confirm Password */}
-          <div className={styles.inputGroup}>
-            <label htmlFor={getPasswordFieldName()} className={styles.label}>
-              Confirm Password
-            </label>
-            <div className={styles.inputContainer} onClick={() => confirmPasswordInputRef.current?.focus()}>
-              <div className={styles.iconWrapper}>
-                <Image
-                  src={"/svg/password.svg"}
-                  alt="confirm password"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <input
-                type={showPassword.confirmPassword ? "text" : "password"}
-                id={getPasswordFieldName()}
-                placeholder="Re-enter your password.."
-                className={`${styles.input} ${
-                  errors[getPasswordFieldName()] ? styles.error : ""
-                }`}
-                {...(() => {
-                  const { ref, ...rest } = register(getPasswordFieldName());
-                  return {
-                    ...rest,
-                    ref: (e) => {
-                      ref(e);
-                      confirmPasswordInputRef.current = e;
-                    },
-                  };
-                })()}
-              />
-              <button
-                type="button"
-                className={styles.eyeButton}
-                onClick={() => togglePasswordVisibility("confirmPassword")}
-                aria-label={
-                  showPassword.confirmPassword
-                    ? "Hide password"
-                    : "Show password"
-                }
-              >
-                {showPassword.confirmPassword ? (
-                  <IoEyeOffOutline className={styles.eyeIcon} />
-                ) : (
-                  <IoEyeOutline className={styles.eyeIcon} />
-                )}
-              </button>
-            </div>
-            {errors[getPasswordFieldName()] && (
-              <span className={styles.errorMessage}>
-                {errors[getPasswordFieldName()].message}
-              </span>
-            )}
-          </div>
-        </div>
-
-        <ConfirmButton
-          style={{ justifyContent: "center", width: "100%" }}
-          title={
-            isSubmitting
-              ? "Setting Password..."
-              : pageType === "setPassword"
-              ? "Set Password"
-              : "Reset Password"
-          }
-          onClick={handleSubmit(onSubmit)}
-          disabled={isSubmitting}
-          // className={styles.button}
-        />
-      </form>
     </div>
   );
 };
