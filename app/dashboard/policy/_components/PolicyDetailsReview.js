@@ -21,6 +21,30 @@ const PolicyDetailsReview = ({ policy }) => {
     return value;
   };
 
+  const calculatePolicyStatus = () => {
+    const endDate = policy?.coverDetails?.endDate;
+    if (!endDate) return null;
+
+    const today = new Date();
+    const end = new Date(endDate);
+    const start = new Date(policy?.coverDetails?.startDate);
+
+    if (today < start) {
+      return { status: "pending", label: "Not Started", daysRemaining: null };
+    }
+
+    if (today > end) {
+      return { status: "expired", label: "Policy Ended", daysRemaining: null };
+    }
+
+    const timeDiff = end.getTime() - today.getTime();
+    const daysRemaining = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    return { status: "active", label: `${daysRemaining} days left`, daysRemaining };
+  };
+
+  const policyStatus = calculatePolicyStatus();
+
   const renderField = (label, value) => (
     <div className={styles.field}>
       <label>{label}</label>
