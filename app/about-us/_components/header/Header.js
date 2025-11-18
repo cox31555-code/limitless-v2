@@ -22,13 +22,6 @@ const Header = () => {
   return (
     <div className={styles.headerContainer}>
       <div className="centeredContent">
-        <Image
-          src="/svg/squares-2.svg"
-          alt="squares"
-          width={1394}
-          height={706}
-          className={styles.squares}
-        />
         <div className={styles.container}>
           <div className={styles.content}>
             <p className={`${styles.subTitle} ${manrope.className}`}>
