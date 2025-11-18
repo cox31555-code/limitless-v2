@@ -73,7 +73,8 @@ export const mockPolicies = {
       paid: true,
       amount: 649.99,
       totalPremium: "£649.99 for 12 months"
-    }
+    },
+    policyPaid: true
   },
 
   // Temporary Policy
@@ -150,7 +151,7 @@ export const mockPolicies = {
       fuel: "Petrol",
       transmission: "Automatic",
       doors: "4",
-      worth: "��55,000"
+      worth: "£55,000"
     },
     coverDetails: {
       level: "Impound Insurance",
