@@ -27,8 +27,8 @@ export const mockPolicies = {
     },
     coverDetails: {
       level: "Comprehensive",
-      startDate: "2025-06-15",
-      endDate: "2026-06-15",
+      startDate: "2024-01-15",
+      endDate: "2026-12-31",
       startTime: "00:00",
       period: "12",
       type: "Months"
