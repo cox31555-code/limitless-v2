@@ -96,6 +96,7 @@ export const mockPolicies = {
     coverDetails: {
       level: "Third Party Fire and Theft",
       startDate: "2024-02-01",
+      endDate: "2024-02-08",
       startTime: "14:30",
       period: "7",
       type: "Days"
