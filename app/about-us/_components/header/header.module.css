@@ -117,7 +117,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0rem;
-    padding: 0;
+    padding: 0 5.5%;
   }
   .imageContainer {
     margin-top: -4rem;
@@ -131,7 +131,7 @@
   .content {
     gap: 2.7rem;
     flex-basis: 100%;
-    padding: 0 2.4rem;
+    padding: 0;
 
     /* max-width: 50rem; */
   }
