@@ -107,16 +107,26 @@ const PolicyDetailsReview = ({ policy }) => {
         {/* COVER DETAILS SECTION */}
         {renderSectionWithButton("Cover Details",
           insuranceType === "Annual" ? (
-            <div className={styles.row}>
-              {renderField("Cover Level", coverDetails?.level)}
-              {renderField("Start Date", coverDetails?.startDate)}
-            </div>
+            <>
+              <div className={styles.row}>
+                {renderField("Cover Level", coverDetails?.level)}
+                {renderField("Start Date", coverDetails?.startDate)}
+                {renderField("End Date", coverDetails?.endDate)}
+              </div>
+            </>
           ) : (
-            <div className={styles.row}>
-              {renderField("Duration", `${coverDetails?.period || "N/A"} ${coverDetails?.type || ""}`)}
-              {renderField("Start Date", coverDetails?.startDate)}
-              {renderField("Start Time", coverDetails?.startTime)}
-            </div>
+            <>
+              <div className={styles.row}>
+                {renderField("Duration", `${coverDetails?.period || "N/A"} ${coverDetails?.type || ""}`)}
+                {renderField("Start Date", coverDetails?.startDate)}
+                {renderField("Start Time", coverDetails?.startTime)}
+              </div>
+              {coverDetails?.endDate && (
+                <div className={styles.row}>
+                  {renderField("End Date", coverDetails?.endDate)}
+                </div>
+              )}
+            </>
           )
         )}
 
