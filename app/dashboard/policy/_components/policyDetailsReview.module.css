@@ -1,124 +1,157 @@
 .reviewContainer {
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
+  gap: 3.2rem;
   padding: 0;
   margin: 0;
 }
 
 .reviewTitle {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #000822;
-  margin: 0 0 1.6rem 0;
+  margin: 0 0 0.8rem 0;
   padding: 0;
+  letter-spacing: -0.5px;
 }
 
 .reviewSections {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.4rem;
 }
 
+/* Enhanced Section Cards */
 .section {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 1.6rem;
-  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
-  border-radius: 12px;
+  gap: 2rem;
+  padding: 2.4rem;
+  background: #ffffff;
+  border: 1px solid #e5ecf4;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(3, 136, 255, 0.06), 0 1px 4px rgba(0, 8, 34, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section:hover {
+  border-color: #d0e0f0;
+  box-shadow: 0 4px 20px rgba(3, 136, 255, 0.1), 0 2px 8px rgba(0, 8, 34, 0.06);
 }
 
 .sectionHeader {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.2rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 2px solid #f0f4f8;
 }
 
 .sectionTitle {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #000822;
   margin: 0;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
   flex: 1;
+  letter-spacing: -0.3px;
 }
 
+/* Enhanced Make Changes Button */
 .sectionMakeChangesBtn {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.4rem 1rem;
-  background: rgba(3, 136, 255, 0.08);
-  color: #0388ff;
-  border: 1px solid rgba(3, 136, 255, 0.2);
-  border-radius: 6px;
-  font-size: 0.85rem;
+  padding: 0.7rem 1.4rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: 0.3px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
   min-width: fit-content;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.15);
 }
 
 .sectionMakeChangesBtn:hover {
-  background: rgba(3, 136, 255, 0.12);
-  border-color: rgba(3, 136, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.25);
+  opacity: 0.95;
 }
 
 .sectionMakeChangesBtn:active {
-  background: rgba(3, 136, 255, 0.1);
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.15);
 }
 
 .sectionMakeChangesBtn:focus-visible {
   outline: 2px solid #0388ff;
-  outline-offset: 1px;
+  outline-offset: 2px;
 }
 
 .sectionContent {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.6rem;
 }
 
+/* Improved Row Grid */
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  gap: 2.4rem;
 }
 
+/* Enhanced Field Styling */
 .field {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.8rem;
+  padding: 1.4rem;
+  background: #f9fbfd;
+  border-radius: 10px;
+  border: 1px solid #e9f0f7;
+  transition: all 0.3s ease;
+}
+
+.field:hover {
+  background: #f5f9fc;
+  border-color: #d9e5f0;
 }
 
 .field label {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #5a6b7d;
-}
-
-.field p {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #000822;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7c8f;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   margin: 0;
 }
 
+.field p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Modal Styling */
 .modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
   z-index: 999;
   cursor: pointer;
+  animation: fadeIn 0.25s ease;
 }
 
 .modalContainer {
@@ -131,24 +164,25 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 1.6rem;
+  padding: 2rem;
 }
 
 .modal {
   position: relative;
   background: #ffffff;
-  border-radius: 12px;
-  padding: 2.4rem;
-  max-width: 420px;
+  border-radius: 16px;
+  padding: 3.2rem;
+  max-width: 480px;
   width: 100%;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  animation: slideUp 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(3, 136, 255, 0.12);
+  animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -156,41 +190,59 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .closeBtn {
   position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  color: #5a6b7d;
+  top: 1.6rem;
+  right: 1.6rem;
+  background: rgba(3, 136, 255, 0.08);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  font-size: 1.8rem;
+  color: #6b7c8f;
   cursor: pointer;
-  padding: 0.4rem;
-  transition: color 0.25s ease;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .closeBtn:hover {
+  background: rgba(3, 136, 255, 0.15);
   color: #000822;
+  border-color: rgba(3, 136, 255, 0.2);
 }
 
 .modalTitle {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #000822;
   margin: 0 0 1.2rem 0;
-  padding-right: 2rem;
+  padding-right: 2.8rem;
+  letter-spacing: -0.3px;
 }
 
 .modalMessage {
-  font-size: 1.1rem;
-  color: #5a6b7d;
-  line-height: 1.6;
-  margin: 0 0 2rem 0;
+  font-size: 1.2rem;
+  color: #6b7c8f;
+  line-height: 1.8;
+  margin: 0 0 2.4rem 0;
 }
 
 .modalActions {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   flex-direction: column;
 }
 
@@ -198,53 +250,82 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 1.6rem;
+  padding: 1.2rem 2rem;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #ffffff;
   text-decoration: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.25s ease;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.25);
 }
 
 .contactLink:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.35);
+  opacity: 0.95;
+}
+
+.contactLink:active {
+  transform: translateY(0);
 }
 
 .closeActionBtn {
-  padding: 1rem 1.6rem;
-  background: rgba(3, 136, 255, 0.08);
+  padding: 1.2rem 2rem;
+  background: #f5f9fc;
   color: #0388ff;
-  border: 1px solid rgba(3, 136, 255, 0.2);
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  border: 1.5px solid #d0e0f0;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .closeActionBtn:hover {
-  background: rgba(3, 136, 255, 0.12);
-  border-color: rgba(3, 136, 255, 0.3);
+  background: #e9f0f7;
+  border-color: #b8cde8;
+  color: #0270cc;
 }
 
+/* Enhanced Premium Section */
 .premiumSection {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 2rem;
+  gap: 2rem;
+  padding: 3.2rem;
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  border-radius: 12px;
-  margin-top: 1.6rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.premiumSection::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .premiumContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .premiumContent > div {
@@ -255,55 +336,166 @@
 
 .premiumLabel {
   font-size: 1.1rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .premiumAmount {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.4rem;
+  font-weight: 800;
   color: #ffffff;
   margin: 0;
+  letter-spacing: -0.5px;
 }
 
 .premiumStatus {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .row {
+    gap: 2rem;
+  }
+
+  .field {
+    padding: 1.2rem;
+  }
 }
 
 @media (max-width: 900px) {
   .reviewContainer {
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
+    gap: 2.8rem;
+  }
+
+  .reviewTitle {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 2rem;
+    gap: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
   }
 
   .row {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .field {
+    padding: 1.2rem;
+  }
+
+  .field label {
+    font-size: 0.95rem;
+  }
+
+  .field p {
+    font-size: 1.3rem;
+  }
+
+  .premiumContent {
+    gap: 2rem;
+  }
+
+  .sectionMakeChangesBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviewContainer {
+    gap: 2.4rem;
+    padding: 0 1.2rem;
+  }
+
+  .reviewTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+  }
+
+  .section {
+    padding: 1.8rem;
+    gap: 1.4rem;
+  }
+
+  .sectionHeader {
+    padding-bottom: 1.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .field {
+    padding: 1rem;
+  }
+
+  .field label {
+    font-size: 0.9rem;
+  }
+
+  .field p {
+    font-size: 1.2rem;
+  }
+
+  .premiumSection {
+    padding: 2.4rem;
+    margin-top: 1.6rem;
   }
 
   .premiumContent {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 1.6rem;
   }
 
   .premiumAmount {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .sectionMakeChangesBtn {
-    padding: 0.4rem 0.9rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .modal {
+    padding: 2.4rem;
+    max-width: 90%;
+  }
+
+  .modalTitle {
+    font-size: 1.6rem;
+    padding-right: 2.4rem;
+  }
+
+  .modalMessage {
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
   }
 }
 
 @media (max-width: 600px) {
   .reviewContainer {
     gap: 2rem;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
+    padding: 0 1rem;
   }
 
   .reviewTitle {
@@ -312,85 +504,37 @@
 
   .row {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
   .section {
-    padding: 1.2rem;
-    gap: 1rem;
+    padding: 1.6rem;
+    gap: 1.2rem;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    padding-bottom: 1rem;
   }
 
   .sectionTitle {
     font-size: 1.2rem;
-    padding-right: 6.5rem;
-  }
-
-  .field label {
-    font-size: 1rem;
-  }
-
-  .field p {
-    font-size: 1.2rem;
-  }
-
-  .premiumSection {
-    padding: 1.6rem;
-  }
-
-  .premiumAmount {
-    font-size: 1.6rem;
   }
 
   .sectionMakeChangesBtn {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.75rem;
-  }
-
-  .modal {
-    padding: 1.8rem;
-    max-width: 90%;
-  }
-
-  .modalTitle {
-    font-size: 1.4rem;
-  }
-
-  .modalMessage {
-    font-size: 1rem;
-  }
-
-  .contactLink,
-  .closeActionBtn {
-    padding: 0.8rem 1.4rem;
+    position: static;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
     font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .reviewContainer {
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
+    text-align: center;
   }
 
-  .reviewTitle {
-    font-size: 1.5rem;
-  }
-
-  .row {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
+  .field {
     padding: 1rem;
-    gap: 0.8rem;
-  }
-
-  .sectionTitle {
-    font-size: 1.1rem;
-    padding-right: 6rem;
   }
 
   .field label {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .field p {
@@ -398,7 +542,12 @@
   }
 
   .premiumSection {
-    padding: 1.2rem;
+    padding: 2rem;
+  }
+
+  .premiumContent {
+    flex-direction: column;
+    gap: 1.2rem;
   }
 
   .premiumLabel {
@@ -406,34 +555,119 @@
   }
 
   .premiumAmount {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .premiumStatus {
     font-size: 1.2rem;
   }
 
-  .sectionMakeChangesBtn {
-    padding: 0.3rem 0.7rem;
-    font-size: 0.7rem;
-    top: 2px;
-    right: 0;
-  }
-
   .modal {
-    padding: 1.6rem;
+    padding: 2rem;
     max-width: 95%;
   }
 
   .closeBtn {
-    top: 1rem;
-    right: 1rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1.6rem;
+  }
+
+  .modalTitle {
+    font-size: 1.4rem;
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .modalMessage {
+    font-size: 1rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .contactLink,
+  .closeActionBtn {
+    padding: 1rem 1.6rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .reviewContainer {
+    gap: 1.6rem;
+    padding: 0 0.8rem;
+  }
+
+  .reviewTitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 1.4rem;
+    gap: 1rem;
+    border-radius: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .sectionMakeChangesBtn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .field {
+    padding: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .field label {
+    font-size: 0.85rem;
+  }
+
+  .field p {
+    font-size: 1rem;
+  }
+
+  .premiumSection {
+    padding: 1.8rem;
+    border-radius: 12px;
+  }
+
+  .premiumLabel {
+    font-size: 0.9rem;
+  }
+
+  .premiumAmount {
+    font-size: 1.6rem;
+  }
+
+  .premiumStatus {
+    font-size: 1.1rem;
+  }
+
+  .modal {
+    padding: 1.6rem;
+    border-radius: 12px;
+  }
+
+  .closeBtn {
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     font-size: 1.4rem;
   }
 
   .modalTitle {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   .modalMessage {
@@ -443,7 +677,7 @@
 
   .contactLink,
   .closeActionBtn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 0.9rem 1.4rem;
+    font-size: 0.95rem;
   }
 }
