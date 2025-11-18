@@ -150,11 +150,12 @@ export const mockPolicies = {
       fuel: "Petrol",
       transmission: "Automatic",
       doors: "4",
-      worth: "£55,000"
+      worth: "��55,000"
     },
     coverDetails: {
       level: "Impound Insurance",
       startDate: "2024-01-20",
+      endDate: "2024-02-19",
       startTime: "09:00",
       period: "30",
       type: "Days"
