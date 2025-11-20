@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./convictionModal.module.css";
 import FormDropdown from "@/ui/inputs/FormDropdown";
 import FormTextInput from "@/ui/inputs/FormTextInput";
@@ -26,9 +26,9 @@ const convictionTypeOptions = [
   "Z0 - Other Offences",
 ];
 
-const ConvictionModal = ({ isOpen, onClose, onAdd }) => {
+const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, editingIndex = null }) => {
   const [formData, setFormData] = useState({
-    location: "GB",
+    location: "",
     type: "",
     day: "",
     month: "",
@@ -43,9 +43,31 @@ const ConvictionModal = ({ isOpen, onClose, onAdd }) => {
 
   const [errors, setErrors] = useState({});
 
+  useEffect(() => {
+    if (editingConviction) {
+      setFormData(editingConviction);
+    } else {
+      setFormData({
+        location: "",
+        type: "",
+        day: "",
+        month: "",
+        year: "",
+        penaltyPoints: false,
+        pointsNumber: "",
+        resultedInFine: false,
+        fineAmount: "",
+        resultedInBan: false,
+        banMonths: "",
+      });
+    }
+    setErrors({});
+  }, [isOpen, editingConviction]);
+
   const validateForm = () => {
     const newErrors = {};
 
+    if (!formData.location) newErrors.location = "Location is required";
     if (!formData.type) newErrors.type = "Conviction type is required";
     if (!formData.day) newErrors.day = "Day is required";
     if (!formData.month) newErrors.month = "Month is required";
@@ -88,9 +110,9 @@ const ConvictionModal = ({ isOpen, onClose, onAdd }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      onAdd(formData);
+      onAdd(formData, editingIndex);
       setFormData({
-        location: "GB",
+        location: "",
         type: "",
         day: "",
         month: "",
@@ -113,7 +135,7 @@ const ConvictionModal = ({ isOpen, onClose, onAdd }) => {
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <div className={styles.modalHeader}>
-          <h2>Add Driving Conviction</h2>
+          <h2>{editingIndex !== null ? "Edit Driving Conviction" : "Add Driving Conviction"}</h2>
           <button className={styles.closeBtn} onClick={onClose}>
             ×
           </button>
@@ -144,6 +166,7 @@ const ConvictionModal = ({ isOpen, onClose, onAdd }) => {
                 Northern Ireland
               </label>
             </div>
+            {errors.location && <span className={styles.error}>{errors.location}</span>}
           </div>
 
           <div className={styles.formSection}>
@@ -325,7 +348,7 @@ const ConvictionModal = ({ isOpen, onClose, onAdd }) => {
               Cancel
             </button>
             <button type="submit" className={styles.submitBtn}>
-              Add Conviction
+              {editingIndex !== null ? "Update Conviction" : "Add Conviction"}
             </button>
           </div>
         </form>
