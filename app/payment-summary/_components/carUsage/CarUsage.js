@@ -78,6 +78,14 @@ const CarUsage = ({ carUsage }) => {
             value: carUsage?.medicalConditions ? "Yes" : "No" || "N/A",
           }}
         />
+        {carUsage?.medicalConditions && (
+          <InputWithData2
+            item={{
+              label: "DVLA Condition Status",
+              value: carUsage?.dvlaConditionType || "N/A",
+            }}
+          />
+        )}
         <InputWithData2
           item={{
             label:
