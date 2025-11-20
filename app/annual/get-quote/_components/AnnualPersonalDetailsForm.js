@@ -924,9 +924,6 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
               {watch("carUsage.medicalConditions") === true && (
                 <div className={styles.cleanDeclarationItem} style={{ marginTop: "16px" }}>
-                  <p className={styles.cleanDeclarationQuestion}>
-                    Does the DVLA know about the medical condition or disability?
-                  </p>
                   <FormDropdown
                     label="Select DVLA status"
                     options={[
