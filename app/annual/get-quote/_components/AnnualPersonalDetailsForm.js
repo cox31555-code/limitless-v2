@@ -1022,10 +1022,22 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
       <ConvictionModal
         isOpen={isConvictionModalOpen}
-        onClose={() => setIsConvictionModalOpen(false)}
-        onAdd={(conviction) => {
-          setConvictions([...convictions, conviction]);
+        onClose={() => {
           setIsConvictionModalOpen(false);
+          setEditingConvictionIndex(null);
+        }}
+        editingConviction={editingConvictionIndex !== null ? convictions[editingConvictionIndex] : null}
+        editingIndex={editingConvictionIndex}
+        onAdd={(conviction, indexToUpdate) => {
+          if (indexToUpdate !== null) {
+            const updatedConvictions = [...convictions];
+            updatedConvictions[indexToUpdate] = conviction;
+            setConvictions(updatedConvictions);
+          } else {
+            setConvictions([...convictions, conviction]);
+          }
+          setIsConvictionModalOpen(false);
+          setEditingConvictionIndex(null);
         }}
       />
     </>
