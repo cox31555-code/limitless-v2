@@ -929,7 +929,6 @@ const AnnualPersonalDetailsForm = ({ form }) => {
                   </p>
                   <FormDropdown
                     label="Select DVLA status"
-                    name="carUsage.dvlaConditionType"
                     options={[
                       "DVLA aware - No restrictions",
                       "DVLA aware - 1 year restricted Licence",
@@ -938,8 +937,10 @@ const AnnualPersonalDetailsForm = ({ form }) => {
                       "DVLA aware - 5 year restricted Licence",
                       "DVLA unaware"
                     ]}
-                    register={register}
-                    errors={errors}
+                    placeholder="Please select"
+                    {...register("carUsage.dvlaConditionType")}
+                    error={errors.carUsage?.dvlaConditionType}
+                    inputStyle={{ paddingLeft: "14px" }}
                   />
                 </div>
               )}
