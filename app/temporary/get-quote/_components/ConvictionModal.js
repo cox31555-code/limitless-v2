@@ -109,9 +109,9 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      onAdd(formData);
+      onAdd(formData, editingIndex);
       setFormData({
-        location: "GB",
+        location: "",
         type: "",
         day: "",
         month: "",
