@@ -34,7 +34,8 @@ const PersonalDetailsForm = ({ form }) => {
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
 
   const employmentStatus = watch("userDetails.employmentStatus");
-  const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
+  const isStudent = employmentStatus === "Student";
+  const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Houseperson"].includes(employmentStatus);
   const isRetiredOrUnemployed = isIndustryOccupationDisabled;
   const dateOfBirth = watch("userDetails.dateOfBirth");
 
