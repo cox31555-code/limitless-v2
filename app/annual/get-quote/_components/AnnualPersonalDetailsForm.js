@@ -233,6 +233,9 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     if (isRetiredOrUnemployed) {
       setValue("userDetails.industry", "N/A");
       setValue("userDetails.occupation", "N/A");
+    } else if (isStudent) {
+      setValue("userDetails.industry", "");
+      setValue("userDetails.occupation", "");
     } else {
       const currentIndustry = watch("userDetails.industry");
       const currentOccupation = watch("userDetails.occupation");
@@ -244,7 +247,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
         setValue("userDetails.occupation", "");
       }
     }
-  }, [isRetiredOrUnemployed, setValue, watch]);
+  }, [isRetiredOrUnemployed, isStudent, setValue, watch]);
 
   React.useEffect(() => {
     if (dateOfBirth) {
