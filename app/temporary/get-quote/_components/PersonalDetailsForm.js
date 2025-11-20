@@ -362,7 +362,7 @@ const PersonalDetailsForm = ({ form }) => {
           <div className={styles.cleanDeclarationsContainer}>
             <div className={styles.cleanDeclarationItem}>
               <p className={styles.cleanDeclarationQuestion}>
-                Do you have any unspent or outstanding criminal convictions?
+                Have you had any driving related convictions, endorsements, penalties, disqualifications or bans in the past 5 years?
               </p>
               <YesORNo
                 value={watch("carUsage.criminalConvictions")}
@@ -375,7 +375,81 @@ const PersonalDetailsForm = ({ form }) => {
                   {errors.carUsage.criminalConvictions.message}
                 </span>
               )}
+
+              {watch("carUsage.criminalConvictions") === true && (
+                <div style={{ marginTop: "16px" }}>
+                  <button
+                    type="button"
+                    onClick={() => setIsConvictionModalOpen(true)}
+                    style={{
+                      padding: "10px 16px",
+                      backgroundColor: "#0388ff",
+                      color: "#ffffff",
+                      border: "none",
+                      borderRadius: "6px",
+                      fontSize: "14px",
+                      fontWeight: "500",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#0270cc")}
+                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#0388ff")}
+                  >
+                    Add Conviction
+                  </button>
+
+                  {convictions.length > 0 && (
+                    <div style={{ marginTop: "16px" }}>
+                      <p style={{ fontSize: "14px", fontWeight: "600", color: "#000822", marginBottom: "12px" }}>
+                        Convictions Added ({convictions.length}):
+                      </p>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                        {convictions.map((conviction, index) => (
+                          <div
+                            key={index}
+                            style={{
+                              padding: "12px",
+                              backgroundColor: "#f3f4f6",
+                              borderRadius: "6px",
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div style={{ fontSize: "13px", color: "#333" }}>
+                              <strong>{conviction.type}</strong> - {conviction.day}/{conviction.month}/{conviction.year}
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => setConvictions(convictions.filter((_, i) => i !== index))}
+                              style={{
+                                background: "none",
+                                border: "none",
+                                color: "#dc2626",
+                                cursor: "pointer",
+                                fontSize: "18px",
+                                padding: "4px 8px",
+                              }}
+                            >
+                              ×
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
+
+            <ConvictionModal
+              isOpen={isConvictionModalOpen}
+              onClose={() => setIsConvictionModalOpen(false)}
+              onAdd={(conviction) => {
+                setConvictions([...convictions, conviction]);
+                setIsConvictionModalOpen(false);
+              }}
+            />
 
             <div className={styles.cleanDeclarationItem}>
               <p className={styles.cleanDeclarationQuestion}>
