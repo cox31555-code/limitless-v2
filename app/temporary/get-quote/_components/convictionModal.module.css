@@ -160,16 +160,16 @@
 
 .dateInputs {
   display: grid;
-  grid-template-columns: 50px 50px 80px;
-  gap: 8px;
-  max-width: 200px;
+  grid-template-columns: 55px 55px 90px;
+  gap: 12px;
+  max-width: 100%;
 }
 
 .dateInput {
-  padding: 10px 8px;
+  padding: 11px 12px;
   border: 1px solid #dae1e7;
-  border-radius: 8px;
-  font-size: 13px;
+  border-radius: 10px;
+  font-size: 14px;
   color: #0a1425;
   transition: all 0.25s ease;
   font-weight: 500;
@@ -342,14 +342,14 @@
   }
 
   .dateInputs {
-    grid-template-columns: 45px 45px 70px;
-    gap: 6px;
-    max-width: 180px;
+    grid-template-columns: 50px 50px 80px;
+    gap: 10px;
+    max-width: 100%;
   }
 
   .dateInput {
-    font-size: 12px;
-    padding: 9px 6px;
+    font-size: 13px;
+    padding: 10px 10px;
   }
 
   .formLabel {
