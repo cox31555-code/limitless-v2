@@ -405,16 +405,13 @@ const AdditionalDriversModal = ({
                           />
                         </div>
                         <div className={modalStyles.field}>
-                          <FormDataAndTime
-                            dateLabel="Date of Birth"
-                            type="date"
-                            allowPastDates={true}
-                            isDateOfBirth={true}
-                            maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())}
-                            defaultYear={2009}
-                            reducedPadding={true}
-                            value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""}
-                            onChange={(e) => onUpdateDriver(index, "dateOfBirth", e.target.value)}
+                          <FormDropdown
+                            label="Relationship to You"
+                            options={["Spouse", "Child", "Parent", "Sibling", "Friend", "Other"]}
+                            placeholder="Select"
+                            value={watch(`carUsage.additionalDrivers.${index}.relationship`) || ""}
+                            onChange={(e) => onUpdateDriver(index, "relationship", e.target.value)}
+                            inputStyle={{ paddingLeft: "14px" }}
                           />
                         </div>
                       </div>
