@@ -240,6 +240,7 @@ export const carUsageSchema = z.object({
   licenseNumber: z.string().optional(),
   NCB: z.string().min(1, "No claims bonus years is required"),
   voluntaryExcess: z.string().min(1, "Voluntary excess is required"),
+  annualMileage: z.string().optional().nullable(),
   criminalConvictions: z.boolean({
     required_error: "Please select Yes or No for criminal convictions",
     invalid_type_error: "Please select Yes or No for criminal convictions",
