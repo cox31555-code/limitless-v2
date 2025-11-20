@@ -660,6 +660,18 @@ const AnnualPersonalDetailsForm = ({ form }) => {
           </div>
 
           <div className={`${styles.cleanFormGrid1Col} ${styles.cleanFormGrid1ColWithTopGap}`}>
+            <p className={styles.cleanLabel}>What's the annual personal mileage for this car?</p>
+            <p className={styles.cleanSubLabel}>Try to be as accurate as possible. Underestimating your mileage could affect your cover or lead to increased charges.</p>
+            <FormTextInput
+              label="Annual Mileage (miles)"
+              placeholder="Enter annual mileage"
+              {...register("carUsage.annualMileage")}
+              error={errors.carUsage?.annualMileage}
+              inputStyle={{ paddingLeft: "14px" }}
+            />
+          </div>
+
+          <div className={`${styles.cleanFormGrid1Col} ${styles.cleanFormGrid1ColWithTopGap}`}>
             <p className={styles.cleanLabel}>Do you use any other vehicles?</p>
             <YesORNo
               value={watch("carUsage.otherVehicles")}
