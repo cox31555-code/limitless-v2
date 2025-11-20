@@ -343,12 +343,40 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
           )}
 
           <div className={styles.formActions}>
-            <button type="button" className={styles.cancelBtn} onClick={onClose}>
-              Cancel
-            </button>
-            <button type="button" className={styles.submitBtn} onClick={handleSubmit}>
-              {editingIndex !== null ? "Update Conviction" : "Add Conviction"}
-            </button>
+            {editingIndex !== null && (
+              <button
+                type="button"
+                className={styles.removeBtn}
+                onClick={() => {
+                  onAdd(null, editingIndex, true);
+                  setFormData({
+                    location: "",
+                    type: "",
+                    day: "",
+                    month: "",
+                    year: "",
+                    penaltyPoints: false,
+                    pointsNumber: "",
+                    resultedInFine: false,
+                    fineAmount: "",
+                    resultedInBan: false,
+                    banMonths: "",
+                  });
+                  setErrors({});
+                  onClose();
+                }}
+              >
+                Delete Conviction
+              </button>
+            )}
+            <div style={{ marginLeft: "auto", display: "flex", gap: "12px" }}>
+              <button type="button" className={styles.cancelBtn} onClick={onClose}>
+                Cancel
+              </button>
+              <button type="button" className={styles.submitBtn} onClick={handleSubmit}>
+                {editingIndex !== null ? "Update Conviction" : "Add Conviction"}
+              </button>
+            </div>
           </div>
         </div>
       </div>
