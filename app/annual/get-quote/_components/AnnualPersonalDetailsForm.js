@@ -1015,6 +1015,15 @@ const AnnualPersonalDetailsForm = ({ form }) => {
           onUpdateDriver={handleUpdateDriver}
         />
       )}
+
+      <ConvictionModal
+        isOpen={isConvictionModalOpen}
+        onClose={() => setIsConvictionModalOpen(false)}
+        onAdd={(conviction) => {
+          setConvictions([...convictions, conviction]);
+          setIsConvictionModalOpen(false);
+        }}
+      />
     </>
   );
 };
