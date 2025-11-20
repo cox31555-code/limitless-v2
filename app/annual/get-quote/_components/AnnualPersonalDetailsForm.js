@@ -65,7 +65,8 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const insuranceCancelledStatus = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
   const additionalDrivers = watch("carUsage.additionalDrivers") || [];
   const hasAdditionalDrivers = watch("carUsage.hasAdditionalDrivers");
-  const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Student", "Houseperson"].includes(employmentStatus);
+  const isStudent = employmentStatus === "Student";
+  const isIndustryOccupationDisabled = ["Retired", "Unemployed", "Houseperson"].includes(employmentStatus);
   const isRetiredOrUnemployed = isIndustryOccupationDisabled;
 
   const getTileOrder = () => ['about', 'location', 'employment', 'parking', 'usage', 'driving', 'additional', 'declarations', 'additionalDrivers'];
