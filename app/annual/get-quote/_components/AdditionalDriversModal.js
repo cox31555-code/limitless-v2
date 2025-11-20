@@ -388,12 +388,18 @@ const AdditionalDriversModal = ({
                           <FormDropdown label="Employment Status" options={employmentStatusOptions} placeholder="Select status" value={watch(`carUsage.additionalDrivers.${index}.employmentStatus`) || ""} onChange={(e) => onUpdateDriver(index, "employmentStatus", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                         <div className={modalStyles.field}>
-                          <FormAutocomplete label="Occupation" options={occupationOptions} placeholder="Type your occupation..." value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "occupation", value); }} disabled={["Retired", "Unemployed", "Student", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
+                          {watch(`carUsage.additionalDrivers.${index}.employmentStatus`) === "Student" ? (
+                            <FormDropdown label="Type of Student" options={studentTypeOptions} placeholder="Select student type" value={watch(`carUsage.additionalDrivers.${index}.occupation`) || ""} onChange={(e) => onUpdateDriver(index, "occupation", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
+                          ) : (
+                            <FormAutocomplete label="Occupation" options={occupationOptions} placeholder="Type your occupation..." value={["Retired", "Unemployed", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`)) ? "N/A" : (watch(`carUsage.additionalDrivers.${index}.occupation`) || "")} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "occupation", value); }} disabled={["Retired", "Unemployed", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
+                          )}
                         </div>
                       </div>
-                      <div className={modalStyles.field}>
-                        <FormAutocomplete label="Industry" options={industryOptions} placeholder="Type your industry..." value={watch(`carUsage.additionalDrivers.${index}.industry`) || ""} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "industry", value); }} disabled={["Retired", "Unemployed", "Student", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
-                      </div>
+                      {watch(`carUsage.additionalDrivers.${index}.employmentStatus`) !== "Student" && (
+                        <div className={modalStyles.field}>
+                          <FormAutocomplete label="Industry" options={industryOptions} placeholder="Type your industry..." value={["Retired", "Unemployed", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`)) ? "N/A" : (watch(`carUsage.additionalDrivers.${index}.industry`) || "")} onChange={(e) => { const value = typeof e === "string" ? e : (e?.target?.value || ""); onUpdateDriver(index, "industry", value); }} disabled={["Retired", "Unemployed", "Houseperson"].includes(watch(`carUsage.additionalDrivers.${index}.employmentStatus`))} inputStyle={{ paddingLeft: "14px" }} />
+                        </div>
+                      )}
                     </>}
                   </div>
 
