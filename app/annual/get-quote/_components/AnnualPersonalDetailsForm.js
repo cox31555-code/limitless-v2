@@ -40,6 +40,8 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expandedTiles, setExpandedTiles] = useState(new Set(['about']));
+  const [isConvictionModalOpen, setIsConvictionModalOpen] = useState(false);
+  const [convictions, setConvictions] = useState([]);
 
   // Watch all form values early to use in dependencies and trigger re-evaluation
   const firstName = watch("userDetails.firstName");
