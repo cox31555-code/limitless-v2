@@ -72,8 +72,10 @@ const TemporaryInsuranceContent = () => {
         startTime: "",
       },
       userDetails: {
+        title: "",
         firstName: "",
         surname: "",
+        maritalStatus: "",
         email: "",
         phone: "",
         dateOfBirth: "",
