@@ -277,7 +277,19 @@ export const carUsageSchema = z.object({
     dvlaConditionType: z.string().optional().nullable(),
     insuranceHistory: z.boolean().nullable(),
     criminalConvictions: z.boolean().nullable(),
-  })).default([]).optional(),
+  }).refine(
+    (driver) => {
+      // If medical conditions is true, dvlaConditionType must be selected
+      if (driver.medicalConditions === true && !driver.dvlaConditionType) {
+        return false;
+      }
+      return true;
+    },
+    {
+      message: "Please select a DVLA status for your medical condition",
+      path: ["dvlaConditionType"],
+    }
+  )).default([]).optional(),
 }).refine(
   (data) => {
     // If medical conditions is true, dvlaConditionType must be selected
