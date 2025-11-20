@@ -478,34 +478,47 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.employmentStatus}
               inputStyle={{ paddingLeft: "14px" }}
             />
-            <FormAutocomplete
-              label="Occupation"
-              options={occupationOptions}
-              placeholder="Type your occupation..."
-              value={isRetiredOrUnemployed ? "N/A" : (watch("userDetails.occupation") || "")}
-              onChange={(e) => {
-                const value = typeof e === "string" ? e : (e?.target?.value || "");
-                setValue("userDetails.occupation", value);
-              }}
-              disabled={isRetiredOrUnemployed}
-              inputStyle={{ paddingLeft: "14px" }}
-            />
+            {isStudent ? (
+              <FormDropdown
+                label="Type of Student"
+                options={studentTypeOptions}
+                placeholder="Select student type"
+                {...register("userDetails.occupation")}
+                error={errors.userDetails?.occupation}
+                inputStyle={{ paddingLeft: "14px" }}
+              />
+            ) : (
+              <FormAutocomplete
+                label="Occupation"
+                options={occupationOptions}
+                placeholder="Type your occupation..."
+                value={isRetiredOrUnemployed ? "N/A" : (watch("userDetails.occupation") || "")}
+                onChange={(e) => {
+                  const value = typeof e === "string" ? e : (e?.target?.value || "");
+                  setValue("userDetails.occupation", value);
+                }}
+                disabled={isRetiredOrUnemployed}
+                inputStyle={{ paddingLeft: "14px" }}
+              />
+            )}
           </div>
 
-          <div className={styles.cleanFormGrid1Col}>
-            <FormAutocomplete
-              label="Industry"
-              options={industryOptions}
-              placeholder="Type your industry..."
-              value={isRetiredOrUnemployed ? "N/A" : (watch("userDetails.industry") || "")}
-              onChange={(e) => {
-                const value = typeof e === "string" ? e : (e?.target?.value || "");
-                setValue("userDetails.industry", value);
-              }}
-              disabled={isRetiredOrUnemployed}
-              inputStyle={{ paddingLeft: "14px" }}
-            />
-          </div>
+          {!isStudent && (
+            <div className={styles.cleanFormGrid1Col}>
+              <FormAutocomplete
+                label="Industry"
+                options={industryOptions}
+                placeholder="Type your industry..."
+                value={isRetiredOrUnemployed ? "N/A" : (watch("userDetails.industry") || "")}
+                onChange={(e) => {
+                  const value = typeof e === "string" ? e : (e?.target?.value || "");
+                  setValue("userDetails.industry", value);
+                }}
+                disabled={isRetiredOrUnemployed}
+                inputStyle={{ paddingLeft: "14px" }}
+              />
+            </div>
+          )}
           </>}
         </section>
 
