@@ -90,8 +90,10 @@ const AnnualInsuranceContent = () => {
         foreignUseCover: null,
       },
       userDetails: {
+        title: "",
         firstName: "",
         surname: "",
+        maritalStatus: "",
         email: "",
         phone: "",
         dateOfBirth: "",
