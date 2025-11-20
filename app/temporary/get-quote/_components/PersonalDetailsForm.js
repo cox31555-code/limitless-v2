@@ -379,76 +379,91 @@ const PersonalDetailsForm = ({ form }) => {
 
               {watch("carUsage.criminalConvictions") === true && (
                 <div style={{ marginTop: "16px" }}>
-                  <button
-                    type="button"
-                    onClick={() => setIsConvictionModalOpen(true)}
-                    style={{
-                      padding: "10px 16px",
-                      backgroundColor: "#0388ff",
-                      color: "#ffffff",
-                      border: "none",
-                      borderRadius: "6px",
-                      fontSize: "14px",
-                      fontWeight: "500",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => (e.target.style.backgroundColor = "#0270cc")}
-                    onMouseLeave={(e) => (e.target.style.backgroundColor = "#0388ff")}
-                  >
-                    Add Conviction
-                  </button>
+                  <div style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEditingConvictionIndex(null);
+                        setIsConvictionModalOpen(true);
+                      }}
+                      style={{
+                        padding: "10px 16px",
+                        backgroundColor: "#0388ff",
+                        color: "#ffffff",
+                        border: "none",
+                        borderRadius: "6px",
+                        fontSize: "14px",
+                        fontWeight: "500",
+                        cursor: "pointer",
+                        transition: "all 0.3s ease",
+                      }}
+                      onMouseEnter={(e) => (e.target.style.backgroundColor = "#0270cc")}
+                      onMouseLeave={(e) => (e.target.style.backgroundColor = "#0388ff")}
+                    >
+                      Add Conviction
+                    </button>
 
-                  {convictions.length > 0 && (
-                    <div style={{ marginTop: "16px" }}>
-                      <p style={{ fontSize: "14px", fontWeight: "600", color: "#000822", marginBottom: "12px" }}>
-                        Convictions Added ({convictions.length}):
-                      </p>
-                      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                        {convictions.map((conviction, index) => (
-                          <div
-                            key={index}
-                            style={{
-                              padding: "12px",
-                              backgroundColor: "#f3f4f6",
-                              borderRadius: "6px",
-                              display: "flex",
-                              justifyContent: "space-between",
-                              alignItems: "center",
-                            }}
-                          >
-                            <div style={{ fontSize: "13px", color: "#333" }}>
-                              <strong>{conviction.type}</strong> - {conviction.day}/{conviction.month}/{conviction.year}
-                            </div>
-                            <button
-                              type="button"
-                              onClick={() => setConvictions(convictions.filter((_, i) => i !== index))}
-                              style={{
-                                background: "none",
-                                border: "none",
-                                color: "#dc2626",
-                                cursor: "pointer",
-                                fontSize: "18px",
-                                padding: "4px 8px",
-                              }}
-                            >
-                              ×
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                    {convictions.map((conviction, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        onClick={() => {
+                          setEditingConvictionIndex(index);
+                          setIsConvictionModalOpen(true);
+                        }}
+                        style={{
+                          padding: "8px 14px",
+                          backgroundColor: "#e8f4ff",
+                          color: "#0388ff",
+                          border: "1px solid #0388ff",
+                          borderRadius: "6px",
+                          fontSize: "13px",
+                          fontWeight: "500",
+                          cursor: "pointer",
+                          transition: "all 0.2s ease",
+                          maxWidth: "200px",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.backgroundColor = "#d4ebf7";
+                          e.target.style.borderColor = "#0270cc";
+                          e.target.style.color = "#0270cc";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.backgroundColor = "#e8f4ff";
+                          e.target.style.borderColor = "#0388ff";
+                          e.target.style.color = "#0388ff";
+                        }}
+                        title={`Click to edit: ${conviction.type}`}
+                      >
+                        {conviction.type}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
 
             <ConvictionModal
               isOpen={isConvictionModalOpen}
-              onClose={() => setIsConvictionModalOpen(false)}
-              onAdd={(conviction) => {
-                setConvictions([...convictions, conviction]);
+              onClose={() => {
                 setIsConvictionModalOpen(false);
+                setEditingConvictionIndex(null);
+              }}
+              editingConviction={editingConvictionIndex !== null ? convictions[editingConvictionIndex] : null}
+              editingIndex={editingConvictionIndex}
+              onAdd={(conviction, indexToUpdate) => {
+                if (indexToUpdate !== null) {
+                  const updatedConvictions = [...convictions];
+                  updatedConvictions[indexToUpdate] = conviction;
+                  setConvictions(updatedConvictions);
+                } else {
+                  setConvictions([...convictions, conviction]);
+                }
+                setIsConvictionModalOpen(false);
+                setEditingConvictionIndex(null);
               }}
             />
 
