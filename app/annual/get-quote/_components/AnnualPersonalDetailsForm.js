@@ -169,10 +169,31 @@ const AnnualPersonalDetailsForm = ({ form }) => {
     };
 
     const fieldsToCheck = requiredFields[tileKey] || [];
-    return fieldsToCheck.every(field => {
+    const baseComplete = fieldsToCheck.every(field => {
       const value = watch(field);
       return value !== null && value !== undefined && value !== '';
     });
+
+    // Additional validation for declarations
+    if (tileKey === 'declarations' && baseComplete) {
+      const criminalConvictionsValue = watch('carUsage.criminalConvictions');
+      const medicalConditionsValue = watch('carUsage.medicalConditions');
+
+      // If criminal convictions is true, at least 1 conviction must be added
+      if (criminalConvictionsValue === true && convictions.length === 0) {
+        return false;
+      }
+
+      // If medical conditions is true, dvlaConditionType must be selected
+      if (medicalConditionsValue === true) {
+        const dvlaConditionType = watch('carUsage.dvlaConditionType');
+        if (!dvlaConditionType) {
+          return false;
+        }
+      }
+    }
+
+    return baseComplete;
   };
 
   const isTileDisabled = (tileKey) => {
