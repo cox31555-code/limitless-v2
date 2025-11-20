@@ -33,6 +33,8 @@ const PersonalDetailsForm = ({ form }) => {
   } = form;
 
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
+  const [isConvictionModalOpen, setIsConvictionModalOpen] = useState(false);
+  const [convictions, setConvictions] = useState([]);
 
   const employmentStatus = watch("userDetails.employmentStatus");
   const isStudent = employmentStatus === "Student";
