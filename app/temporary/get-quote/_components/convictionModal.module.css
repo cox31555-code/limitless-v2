@@ -166,7 +166,9 @@
 }
 
 .dateInput {
-  padding: 11px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 8px;
   border: 1px solid #dae1e7;
   border-radius: 10px;
   font-size: 14px;
