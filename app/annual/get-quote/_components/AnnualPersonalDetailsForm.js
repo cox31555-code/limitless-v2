@@ -85,7 +85,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
       driving: 'Driving Record',
       additional: 'Additional Information',
       declarations: 'Declarations',
-      additionalDrivers: 'Share Your Car'
+      additionalDrivers: 'Additional Drivers'
     };
     return labels[tileKey] || tileKey;
   };
@@ -996,7 +996,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             className={`${modalButtonStyles.tileHeader} ${isTileExpanded('additionalDrivers') ? modalButtonStyles.expanded : ''} ${isTileDisabled('additionalDrivers') ? modalButtonStyles.disabled : ''}`}
             onClick={() => toggleTile('additionalDrivers')}
           >
-            <h3 className={modalButtonStyles.sectionLabel}>Share Your Car</h3>
+            <h3 className={modalButtonStyles.sectionLabel}>Additional Drivers</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
           {isTileExpanded('additionalDrivers') && isTileDisabled('additionalDrivers') && (
