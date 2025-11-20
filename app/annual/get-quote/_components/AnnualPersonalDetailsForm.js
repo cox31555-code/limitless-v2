@@ -375,25 +375,6 @@ const AnnualPersonalDetailsForm = ({ form }) => {
           {isTileExpanded('about') && !isTileDisabled('about') && <>
 
           <div className={styles.cleanFormGrid2Col}>
-            <FormDropdown
-              label="Title"
-              options={["Mr", "Mrs", "Miss", "Ms", "Dr", "Mx"]}
-              placeholder="Select"
-              {...register("userDetails.title")}
-              error={errors.userDetails?.title}
-              inputStyle={{ paddingLeft: "14px" }}
-            />
-            <FormDropdown
-              label="Marital Status"
-              options={["Single", "Married", "Divorced", "Widowed", "In a civil partnership"]}
-              placeholder="Select"
-              {...register("userDetails.maritalStatus")}
-              error={errors.userDetails?.maritalStatus}
-              inputStyle={{ paddingLeft: "14px" }}
-            />
-          </div>
-
-          <div className={styles.cleanFormGrid2Col}>
             <FormTextInput
               label="First Name"
               placeholder="Enter your first name"
@@ -422,6 +403,25 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               {...register("userDetails.dateOfBirth")}
               value={watch("userDetails.dateOfBirth")}
               error={errors.userDetails?.dateOfBirth}
+            />
+            <FormDropdown
+              label="Title"
+              options={["Mr", "Mrs", "Miss", "Ms", "Dr", "Mx"]}
+              placeholder="Select"
+              {...register("userDetails.title")}
+              error={errors.userDetails?.title}
+              inputStyle={{ paddingLeft: "14px" }}
+            />
+          </div>
+
+          <div className={styles.cleanFormGrid2Col}>
+            <FormDropdown
+              label="Marital Status"
+              options={["Single", "Married", "Divorced", "Widowed", "In a civil partnership"]}
+              placeholder="Select"
+              {...register("userDetails.maritalStatus")}
+              error={errors.userDetails?.maritalStatus}
+              inputStyle={{ paddingLeft: "14px" }}
             />
             <FormTextInput
               label="Email Address"
