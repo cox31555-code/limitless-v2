@@ -362,13 +362,48 @@ const AdditionalDriversModal = ({
                     {isTileExpanded(index, 'about') && !isTileDisabled(index, 'about') && <>
                       <div className={modalStyles.fieldRow2Col}>
                         <div className={modalStyles.field}>
-                          <FormTextInput label="First Name" placeholder="Enter first name" value={watch(`carUsage.additionalDrivers.${index}.firstName`) || ""} onChange={(e) => onUpdateDriver(index, "firstName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
+                          <FormDropdown
+                            label="Title"
+                            options={["Mr", "Mrs", "Miss", "Ms", "Dr", "Mx"]}
+                            placeholder="Select"
+                            value={watch(`carUsage.additionalDrivers.${index}.title`) || ""}
+                            onChange={(e) => onUpdateDriver(index, "title", e.target.value)}
+                            inputStyle={{ paddingLeft: "14px" }}
+                          />
                         </div>
                         <div className={modalStyles.field}>
-                          <FormTextInput label="Last Name" placeholder="Enter last name" value={watch(`carUsage.additionalDrivers.${index}.lastName`) || ""} onChange={(e) => onUpdateDriver(index, "lastName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
+                          <FormTextInput label="First Name" placeholder="Enter first name" value={watch(`carUsage.additionalDrivers.${index}.firstName`) || ""} onChange={(e) => onUpdateDriver(index, "firstName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
                         </div>
                       </div>
                       <div className={modalStyles.fieldRow2Col}>
+                        <div className={modalStyles.field}>
+                          <FormTextInput label="Last Name" placeholder="Enter last name" value={watch(`carUsage.additionalDrivers.${index}.lastName`) || ""} onChange={(e) => onUpdateDriver(index, "lastName", e.target.value)} inputStyle={{ paddingLeft: "14px" }} />
+                        </div>
+                        <div className={modalStyles.field}>
+                          <FormDataAndTime
+                            dateLabel="Date of Birth"
+                            type="date"
+                            allowPastDates={true}
+                            isDateOfBirth={true}
+                            maxDate={new Date(new Date().getFullYear() - 16, new Date().getMonth(), new Date().getDate())}
+                            defaultYear={2009}
+                            reducedPadding={true}
+                            value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""}
+                            onChange={(value) => onUpdateDriver(index, "dateOfBirth", value)}
+                          />
+                        </div>
+                      </div>
+                      <div className={modalStyles.fieldRow2Col}>
+                        <div className={modalStyles.field}>
+                          <FormDropdown
+                            label="Marital Status"
+                            options={["Single", "Married", "Divorced", "Widowed", "In a civil partnership"]}
+                            placeholder="Select"
+                            value={watch(`carUsage.additionalDrivers.${index}.relationshipStatus`) || ""}
+                            onChange={(e) => onUpdateDriver(index, "relationshipStatus", e.target.value)}
+                            inputStyle={{ paddingLeft: "14px" }}
+                          />
+                        </div>
                         <div className={modalStyles.field}>
                           <FormDataAndTime
                             dateLabel="Date of Birth"
