@@ -99,6 +99,11 @@ const AdditionalDriversModal = ({
 
     // Additional validation for declarations
     if (tileKey === 'declarations' && baseComplete) {
+      // If criminal convictions is true, at least 1 conviction must be added
+      if (driver.criminalConvictions === true && (driverConvictions[driverIndex] || []).length === 0) {
+        return false;
+      }
+
       // If medical conditions is true, dvlaConditionType must be selected
       if (driver.medicalConditions === true) {
         if (!driver.dvlaConditionType) {
