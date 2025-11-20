@@ -188,31 +188,48 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
           <div className={styles.formSection}>
             <label className={styles.formLabel}>When did you receive the conviction?</label>
             <div className={styles.dateInputs}>
-              <input
-                type="number"
-                placeholder="Day"
-                min="1"
-                max="31"
-                className={styles.dateInput}
-                value={formData.day}
-                onChange={(e) => setFormData({ ...formData, day: e.target.value })}
-              />
-              <input
-                type="number"
-                placeholder="Month"
-                min="1"
-                max="12"
-                className={styles.dateInput}
-                value={formData.month}
-                onChange={(e) => setFormData({ ...formData, month: e.target.value })}
-              />
-              <input
-                type="number"
-                placeholder="Year"
-                className={styles.dateInput}
-                value={formData.year}
-                onChange={(e) => setFormData({ ...formData, year: e.target.value })}
-              />
+              <div className={styles.dateField}>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="DD"
+                  className={styles.dateInput}
+                  value={formData.day}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, "").slice(0, 2);
+                    setFormData({ ...formData, day: val });
+                  }}
+                  maxLength="2"
+                />
+              </div>
+              <div className={styles.dateField}>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="MM"
+                  className={styles.dateInput}
+                  value={formData.month}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, "").slice(0, 2);
+                    setFormData({ ...formData, month: val });
+                  }}
+                  maxLength="2"
+                />
+              </div>
+              <div className={styles.dateField}>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="YYYY"
+                  className={styles.dateInput}
+                  value={formData.year}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, "").slice(0, 4);
+                    setFormData({ ...formData, year: val });
+                  }}
+                  maxLength="4"
+                />
+              </div>
             </div>
             {errors.day && <span className={styles.error}>{errors.day}</span>}
             {errors.month && <span className={styles.error}>{errors.month}</span>}
