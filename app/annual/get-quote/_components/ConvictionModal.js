@@ -80,9 +80,39 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
 
     if (!formData.location) newErrors.location = "Location is required";
     if (!formData.type) newErrors.type = "Conviction type is required";
-    if (!formData.day) newErrors.day = "Day is required";
-    if (!formData.month) newErrors.month = "Month is required";
-    if (!formData.year) newErrors.year = "Year is required";
+
+    if (!formData.day) {
+      newErrors.day = "Day is required";
+    } else {
+      const day = parseInt(formData.day);
+      if (isNaN(day) || day < 1 || day > 31) {
+        newErrors.day = "Day must be between 1 and 31";
+      } else if (formData.month) {
+        const maxDays = getDaysInMonth(formData.month, formData.year);
+        if (day > maxDays) {
+          newErrors.day = `Day must be between 1 and ${maxDays} for this month`;
+        }
+      }
+    }
+
+    if (!formData.month) {
+      newErrors.month = "Month is required";
+    } else {
+      const month = parseInt(formData.month);
+      if (isNaN(month) || month < 1 || month > 12) {
+        newErrors.month = "Month must be between 1 and 12";
+      }
+    }
+
+    if (!formData.year) {
+      newErrors.year = "Year is required";
+    } else {
+      const year = parseInt(formData.year);
+      const currentYear = new Date().getFullYear();
+      if (isNaN(year) || year < 1950 || year > currentYear) {
+        newErrors.year = `Year must be between 1950 and ${currentYear}`;
+      }
+    }
 
     if (formData.penaltyPoints && !formData.pointsNumber) {
       newErrors.pointsNumber = "Number of points is required";
