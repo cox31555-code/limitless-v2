@@ -43,6 +43,17 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
 
   const [errors, setErrors] = useState({});
 
+  const getDaysInMonth = (month, year) => {
+    if (!month || !year) return 31;
+    const monthNum = parseInt(month);
+    const yearNum = parseInt(year);
+    if (monthNum === 2) {
+      return (yearNum % 4 === 0 && yearNum % 100 !== 0) || yearNum % 400 === 0 ? 29 : 28;
+    }
+    if ([4, 6, 9, 11].includes(monthNum)) return 30;
+    return 31;
+  };
+
   useEffect(() => {
     if (editingConviction) {
       setFormData(editingConviction);
@@ -67,10 +78,41 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
   const validateForm = () => {
     const newErrors = {};
 
+    if (!formData.location) newErrors.location = "Location is required";
     if (!formData.type) newErrors.type = "Conviction type is required";
-    if (!formData.day) newErrors.day = "Day is required";
-    if (!formData.month) newErrors.month = "Month is required";
-    if (!formData.year) newErrors.year = "Year is required";
+
+    if (!formData.day) {
+      newErrors.day = "Day is required";
+    } else {
+      const day = parseInt(formData.day);
+      if (isNaN(day) || day < 1 || day > 31) {
+        newErrors.day = "Day must be between 1 and 31";
+      } else if (formData.month) {
+        const maxDays = getDaysInMonth(formData.month, formData.year);
+        if (day > maxDays) {
+          newErrors.day = `Day must be between 1 and ${maxDays} for this month`;
+        }
+      }
+    }
+
+    if (!formData.month) {
+      newErrors.month = "Month is required";
+    } else {
+      const month = parseInt(formData.month);
+      if (isNaN(month) || month < 1 || month > 12) {
+        newErrors.month = "Month must be between 1 and 12";
+      }
+    }
+
+    if (!formData.year) {
+      newErrors.year = "Year is required";
+    } else {
+      const year = parseInt(formData.year);
+      const currentYear = new Date().getFullYear();
+      if (isNaN(year) || year < 1950 || year > currentYear) {
+        newErrors.year = `Year must be between 1950 and ${currentYear}`;
+      }
+    }
 
     if (formData.penaltyPoints && !formData.pointsNumber) {
       newErrors.pointsNumber = "Number of points is required";
@@ -133,7 +175,7 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <div className={styles.modalHeader}>
-          <h2>Add Driving Conviction</h2>
+          <h2>{editingIndex !== null ? "Edit Driving Conviction" : "Add Driving Conviction"}</h2>
           <button className={styles.closeBtn} onClick={onClose}>
             ×
           </button>
@@ -164,6 +206,7 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
                 Northern Ireland
               </label>
             </div>
+            {errors.location && <span className={styles.error}>{errors.location}</span>}
           </div>
 
           <div className={styles.formSection}>
@@ -186,31 +229,48 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
           <div className={styles.formSection}>
             <label className={styles.formLabel}>When did you receive the conviction?</label>
             <div className={styles.dateInputs}>
-              <input
-                type="number"
-                placeholder="Day"
-                min="1"
-                max="31"
-                className={styles.dateInput}
-                value={formData.day}
-                onChange={(e) => setFormData({ ...formData, day: e.target.value })}
-              />
-              <input
-                type="number"
-                placeholder="Month"
-                min="1"
-                max="12"
-                className={styles.dateInput}
-                value={formData.month}
-                onChange={(e) => setFormData({ ...formData, month: e.target.value })}
-              />
-              <input
-                type="number"
-                placeholder="Year"
-                className={styles.dateInput}
-                value={formData.year}
-                onChange={(e) => setFormData({ ...formData, year: e.target.value })}
-              />
+              <div className={styles.dateField}>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="DD"
+                  className={styles.dateInput}
+                  value={formData.day}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, "").slice(0, 2);
+                    setFormData({ ...formData, day: val });
+                  }}
+                  maxLength="2"
+                />
+              </div>
+              <div className={styles.dateField}>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="MM"
+                  className={styles.dateInput}
+                  value={formData.month}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, "").slice(0, 2);
+                    setFormData({ ...formData, month: val });
+                  }}
+                  maxLength="2"
+                />
+              </div>
+              <div className={styles.dateField}>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="YYYY"
+                  className={styles.dateInput}
+                  value={formData.year}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/\D/g, "").slice(0, 4);
+                    setFormData({ ...formData, year: val });
+                  }}
+                  maxLength="4"
+                />
+              </div>
             </div>
             {errors.day && <span className={styles.error}>{errors.day}</span>}
             {errors.month && <span className={styles.error}>{errors.month}</span>}
@@ -341,12 +401,40 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
           )}
 
           <div className={styles.formActions}>
-            <button type="button" className={styles.cancelBtn} onClick={onClose}>
-              Cancel
-            </button>
-            <button type="button" className={styles.submitBtn} onClick={handleSubmit}>
-              {editingIndex !== null ? "Update Conviction" : "Add Conviction"}
-            </button>
+            {editingIndex !== null && (
+              <button
+                type="button"
+                className={styles.removeBtn}
+                onClick={() => {
+                  onAdd(null, editingIndex, true);
+                  setFormData({
+                    location: "",
+                    type: "",
+                    day: "",
+                    month: "",
+                    year: "",
+                    penaltyPoints: false,
+                    pointsNumber: "",
+                    resultedInFine: false,
+                    fineAmount: "",
+                    resultedInBan: false,
+                    banMonths: "",
+                  });
+                  setErrors({});
+                  onClose();
+                }}
+              >
+                Delete Conviction
+              </button>
+            )}
+            <div style={{ marginLeft: "auto", display: "flex", gap: "12px" }}>
+              <button type="button" className={styles.cancelBtn} onClick={onClose}>
+                Cancel
+              </button>
+              <button type="button" className={styles.submitBtn} onClick={handleSubmit}>
+                {editingIndex !== null ? "Update Conviction" : "Add Conviction"}
+              </button>
+            </div>
           </div>
         </div>
       </div>
