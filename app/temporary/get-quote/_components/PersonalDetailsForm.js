@@ -110,6 +110,14 @@ const PersonalDetailsForm = ({ form }) => {
           <h3 className={styles.cleanSectionTitle} data-section="1">About You</h3>
 
           <div className={styles.cleanFormGrid2Col}>
+            <FormDropdown
+              label="Title"
+              options={["Mr", "Mrs", "Miss", "Ms", "Dr", "Mx"]}
+              placeholder="Select"
+              {...register("userDetails.title")}
+              error={errors.userDetails?.title}
+              inputStyle={{ paddingLeft: "14px" }}
+            />
             <FormTextInput
               label="First Name"
               placeholder="Enter your first name"
@@ -117,6 +125,9 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.firstName}
               inputStyle={{ paddingLeft: "14px" }}
             />
+          </div>
+
+          <div className={styles.cleanFormGrid2Col}>
             <FormTextInput
               label="Last Name"
               placeholder="Enter your last name"
@@ -124,9 +135,6 @@ const PersonalDetailsForm = ({ form }) => {
               error={errors.userDetails?.surname}
               inputStyle={{ paddingLeft: "14px" }}
             />
-          </div>
-
-          <div className={styles.cleanFormGrid2Col}>
             <FormDataAndTime
               dateLabel="Date of Birth"
               type="date"
@@ -138,14 +146,6 @@ const PersonalDetailsForm = ({ form }) => {
               {...register("userDetails.dateOfBirth")}
               value={watch("userDetails.dateOfBirth")}
               error={errors.userDetails?.dateOfBirth}
-            />
-            <FormDropdown
-              label="Title"
-              options={["Mr", "Mrs", "Miss", "Ms", "Dr", "Mx"]}
-              placeholder="Select"
-              {...register("userDetails.title")}
-              error={errors.userDetails?.title}
-              inputStyle={{ paddingLeft: "14px" }}
             />
           </div>
 
