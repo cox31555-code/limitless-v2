@@ -95,6 +95,7 @@ const TemporaryInsuranceContent = () => {
         voluntaryExcess: "",
         criminalConvictions: null,
         medicalConditions: null,
+        dvlaConditionType: null,
         insuranceCancelledOrClaimRefusedOrPolicyVoided: null,
       },
       terms: {
