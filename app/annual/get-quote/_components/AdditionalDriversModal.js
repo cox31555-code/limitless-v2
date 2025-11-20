@@ -542,14 +542,85 @@ const AdditionalDriversModal = ({
                     )}
                     {isTileExpanded(index, 'declarations') && !isTileDisabled(index, 'declarations') && <>
                       <div className={modalStyles.field}>
-                        <label className={modalStyles.inputLabel}>Do you have any unspent or outstanding criminal convictions?</label>
-                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => onUpdateDriver(index, "criminalConvictions", value)} />
+                        <label className={modalStyles.inputLabel}>Have you had any driving related convictions, endorsements, penalties, disqualifications or bans in the past 5 years?</label>
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => {
+                          onUpdateDriver(index, "criminalConvictions", value);
+                          if (!value) {
+                            setDriverConvictions({ ...driverConvictions, [index]: [] });
+                          }
+                        }} />
                       </div>
 
                       {watch(`carUsage.additionalDrivers.${index}.criminalConvictions`) === true && (
                         <div className={modalStyles.field}>
-                          <p className={modalStyles.inputLabel} style={{ marginTop: "12px" }}>Please provide details of your convictions</p>
-                          <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "8px" }}>Contact your broker for assistance with entering conviction details</p>
+                          <div style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap", marginTop: "12px" }}>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setEditingConvictionIndex({ ...editingConvictionIndex, [index]: null });
+                                setConvictionModalOpen({ ...convictionModalOpen, [index]: true });
+                              }}
+                              style={{
+                                padding: "10px 16px",
+                                backgroundColor: "#0388ff",
+                                color: "#ffffff",
+                                border: "none",
+                                borderRadius: "6px",
+                                fontSize: "14px",
+                                fontWeight: "500",
+                                cursor: "pointer",
+                                transition: "all 0.3s ease",
+                              }}
+                              onMouseEnter={(e) => (e.target.style.backgroundColor = "#0270cc")}
+                              onMouseLeave={(e) => (e.target.style.backgroundColor = "#0388ff")}
+                            >
+                              Add Conviction
+                            </button>
+
+                            {(driverConvictions[index] || []).map((conviction, convIndex) => (
+                              <button
+                                key={convIndex}
+                                type="button"
+                                onClick={() => {
+                                  setEditingConvictionIndex({ ...editingConvictionIndex, [index]: convIndex });
+                                  setConvictionModalOpen({ ...convictionModalOpen, [index]: true });
+                                }}
+                                style={{
+                                  padding: "8px 14px",
+                                  backgroundColor: "#e8f4ff",
+                                  color: "#0388ff",
+                                  border: "1px solid #0388ff",
+                                  borderRadius: "6px",
+                                  fontSize: "13px",
+                                  fontWeight: "500",
+                                  cursor: "pointer",
+                                  transition: "all 0.2s ease",
+                                  maxWidth: "200px",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "nowrap",
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.target.style.backgroundColor = "#d4ebf7";
+                                  e.target.style.borderColor = "#0270cc";
+                                  e.target.style.color = "#0270cc";
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.target.style.backgroundColor = "#e8f4ff";
+                                  e.target.style.borderColor = "#0388ff";
+                                  e.target.style.color = "#0388ff";
+                                }}
+                                title={`Click to edit: ${conviction.type}`}
+                              >
+                                {conviction.type}
+                              </button>
+                            ))}
+                          </div>
+                          {watch(`carUsage.additionalDrivers.${index}.criminalConvictions`) === true && (driverConvictions[index] || []).length === 0 && (
+                            <div style={{ marginTop: "12px", padding: "10px 12px", backgroundColor: "#fee2e2", border: "1px solid #fca5a5", borderRadius: "8px", color: "#dc2626", fontSize: "13px", fontWeight: "500" }}>
+                              Please add at least one conviction
+                            </div>
+                          )}
                         </div>
                       )}
 
