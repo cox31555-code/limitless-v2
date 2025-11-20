@@ -253,18 +253,7 @@ export const carUsageSchema = z.object({
   }).nullable().refine(val => val !== null && val !== undefined, {
     message: "Please select Yes or No for medical conditions"
   }),
-  dvlaConditionType: z.string().optional().nullable().refine(
-    (val, ctx) => {
-      // If medicalConditions is true, dvlaConditionType is required
-      if (ctx.parent.medicalConditions === true && !val) {
-        return false;
-      }
-      return true;
-    },
-    {
-      message: "Please select a DVLA status for your medical condition"
-    }
-  ),
+  dvlaConditionType: z.string().optional().nullable(),
   insuranceCancelledOrClaimRefusedOrPolicyVoided: z.boolean({
     required_error: "Please select Yes or No for insurance history",
     invalid_type_error: "Please select Yes or No for insurance history",
