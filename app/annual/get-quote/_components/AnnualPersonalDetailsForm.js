@@ -85,7 +85,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
       driving: 'Driving Record',
       additional: 'Additional Information',
       declarations: 'Declarations',
-      additionalDrivers: 'Additional Drivers'
+      additionalDrivers: 'Share Your Car'
     };
     return labels[tileKey] || tileKey;
   };
