@@ -108,7 +108,26 @@ const PersonalDetailsForm = ({ form }) => {
         {/* About You Section */}
         <section className={styles.cleanSection}>
           <h3 className={styles.cleanSectionTitle} data-section="1">About You</h3>
-          
+
+          <div className={styles.cleanFormGrid2Col}>
+            <FormDropdown
+              label="Title"
+              options={["Mr", "Mrs", "Miss", "Ms", "Dr", "Mx"]}
+              placeholder="Select"
+              {...register("userDetails.title")}
+              error={errors.userDetails?.title}
+              inputStyle={{ paddingLeft: "14px" }}
+            />
+            <FormDropdown
+              label="Marital Status"
+              options={["Single", "Married", "Divorced", "Widowed", "In a civil partnership"]}
+              placeholder="Select"
+              {...register("userDetails.maritalStatus")}
+              error={errors.userDetails?.maritalStatus}
+              inputStyle={{ paddingLeft: "14px" }}
+            />
+          </div>
+
           <div className={styles.cleanFormGrid2Col}>
             <FormTextInput
               label="First Name"
