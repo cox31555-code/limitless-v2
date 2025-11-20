@@ -925,6 +925,11 @@ const AnnualPersonalDetailsForm = ({ form }) => {
                       </button>
                     ))}
                   </div>
+                  {watch("carUsage.criminalConvictions") === true && convictions.length === 0 && (
+                    <div style={{ marginTop: "12px", padding: "10px 12px", backgroundColor: "#fee2e2", border: "1px solid #fca5a5", borderRadius: "8px", color: "#dc2626", fontSize: "13px", fontWeight: "500" }}>
+                      Please add at least one conviction
+                    </div>
+                  )}
                 </div>
               )}
             </div>
