@@ -1028,8 +1028,11 @@ const AnnualPersonalDetailsForm = ({ form }) => {
         }}
         editingConviction={editingConvictionIndex !== null ? convictions[editingConvictionIndex] : null}
         editingIndex={editingConvictionIndex}
-        onAdd={(conviction, indexToUpdate) => {
-          if (indexToUpdate !== null) {
+        onAdd={(conviction, indexToUpdate, isDelete) => {
+          if (isDelete && indexToUpdate !== null) {
+            const updatedConvictions = convictions.filter((_, i) => i !== indexToUpdate);
+            setConvictions(updatedConvictions);
+          } else if (indexToUpdate !== null) {
             const updatedConvictions = [...convictions];
             updatedConvictions[indexToUpdate] = conviction;
             setConvictions(updatedConvictions);
