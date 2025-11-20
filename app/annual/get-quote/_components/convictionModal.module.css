@@ -284,12 +284,10 @@
 .submitBtn {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #ffffff;
-  box-shadow: 0 8px 16px rgba(3, 136, 255, 0.35);
 }
 
 .submitBtn:hover {
   background: linear-gradient(135deg, #0270cc 0%, #0258b0 100%);
-  box-shadow: 0 12px 24px rgba(3, 136, 255, 0.45);
   transform: translateY(-2px);
 }
 
