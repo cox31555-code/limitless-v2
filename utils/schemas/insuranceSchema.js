@@ -112,6 +112,7 @@ export const annualCoverDetailsSchema = z.object({
 // User Details Schema
 export const userDetailsSchema = z
   .object({
+    title: z.string().min(1, "Title is required"),
     firstName: z
       .string()
       .min(2, "First name must be at least 2 characters")
@@ -122,6 +123,7 @@ export const userDetailsSchema = z
       .min(2, "Last name must be at least 2 characters")
       .max(50, "Last name cannot exceed 50 characters")
       .trim(),
+    maritalStatus: z.string().min(1, "Marital status is required"),
     email: z
       .string()
       .email("Please enter a valid email")
