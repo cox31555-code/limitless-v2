@@ -43,6 +43,17 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
 
   const [errors, setErrors] = useState({});
 
+  const getDaysInMonth = (month, year) => {
+    if (!month || !year) return 31;
+    const monthNum = parseInt(month);
+    const yearNum = parseInt(year);
+    if (monthNum === 2) {
+      return (yearNum % 4 === 0 && yearNum % 100 !== 0) || yearNum % 400 === 0 ? 29 : 28;
+    }
+    if ([4, 6, 9, 11].includes(monthNum)) return 30;
+    return 31;
+  };
+
   useEffect(() => {
     if (editingConviction) {
       setFormData(editingConviction);
