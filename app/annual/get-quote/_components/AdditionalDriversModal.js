@@ -72,7 +72,7 @@ const AdditionalDriversModal = ({
     if (!driver) return false;
 
     const requiredFields = {
-      about: ['firstName', 'lastName', 'dateOfBirth', 'livedInUKSinceBirth'],
+      about: ['title', 'firstName', 'lastName', 'dateOfBirth', 'relationshipStatus', 'livedInUKSinceBirth'],
       employment: ['employmentStatus', 'occupation', 'industry'],
       usage: ['otherVehicles'],
       driving: ['licenseType', 'licenseHeld', 'hasAdditionalQualifications'],
