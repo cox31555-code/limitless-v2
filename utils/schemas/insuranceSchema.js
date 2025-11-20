@@ -141,34 +141,33 @@ export const userDetailsSchema = z
   })
   .refine(
     (data) => {
-      // If employment status is Retired or Unemployed, industry and occupation can be N/A
-      if (data.employmentStatus === "Retired" || data.employmentStatus === "Unemployed") {
+      // If employment status is Retired, Unemployed, or Student, industry is not required
+      if (["Retired", "Unemployed", "Student"].includes(data.employmentStatus)) {
         return true;
       }
-      // Otherwise, industry and occupation are required
-      return (
-        data.industry &&
-        data.industry.trim().length > 0 &&
-        data.occupation &&
-        data.occupation.trim().length > 0
-      );
+      // If Houseperson, industry and occupation can be N/A
+      if (data.employmentStatus === "Houseperson") {
+        return true;
+      }
+      // Otherwise, industry is required
+      return data.industry && data.industry.trim().length > 0;
     },
     {
-      message: "Industry and occupation are required unless you are retired or unemployed",
+      message: "Industry is required for this employment status",
       path: ["industry"],
     }
   )
   .refine(
     (data) => {
-      // If employment status is Retired or Unemployed, industry and occupation can be N/A
-      if (data.employmentStatus === "Retired" || data.employmentStatus === "Unemployed") {
+      // If employment status is Retired, Unemployed, Houseperson, or Student, occupation is not required
+      if (["Retired", "Unemployed", "Houseperson", "Student"].includes(data.employmentStatus)) {
         return true;
       }
-      // Otherwise, industry and occupation are required
+      // Otherwise, occupation is required
       return data.occupation && data.occupation.trim().length > 0;
     },
     {
-      message: "Occupation is required unless you are retired or unemployed",
+      message: "Occupation is required for this employment status",
       path: ["occupation"],
     }
   );
