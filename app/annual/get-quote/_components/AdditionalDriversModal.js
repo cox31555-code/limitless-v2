@@ -12,6 +12,7 @@ import {
   occupationOptions,
   industryOptions,
   otherVehiclesOptions,
+  studentTypeOptions,
   additionalQualificationsOptions,
   monthOptions,
   yearOptions,
