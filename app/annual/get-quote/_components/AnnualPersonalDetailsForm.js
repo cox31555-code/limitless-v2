@@ -157,7 +157,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
   const checkTileCompletion = (tileKey) => {
     const requiredFields = {
-      about: ['userDetails.firstName', 'userDetails.surname', 'userDetails.dateOfBirth', 'userDetails.email', 'userDetails.phone'],
+      about: ['userDetails.title', 'userDetails.firstName', 'userDetails.surname', 'userDetails.maritalStatus', 'userDetails.dateOfBirth', 'userDetails.email', 'userDetails.phone'],
       location: ['userDetails.postCode', 'userDetails.address'],
       employment: ['userDetails.employmentStatus', 'userDetails.occupation', 'userDetails.industry'],
       parking: ['carUsage.keepingCarDuringDay', 'carUsage.keepingCarDuringNight'],
