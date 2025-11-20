@@ -42,6 +42,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const [expandedTiles, setExpandedTiles] = useState(new Set(['about']));
   const [isConvictionModalOpen, setIsConvictionModalOpen] = useState(false);
   const [convictions, setConvictions] = useState([]);
+  const [editingConvictionIndex, setEditingConvictionIndex] = useState(null);
 
   // Watch all form values early to use in dependencies and trigger re-evaluation
   const firstName = watch("userDetails.firstName");
