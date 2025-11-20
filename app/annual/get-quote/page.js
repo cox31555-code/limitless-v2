@@ -119,6 +119,7 @@ const AnnualInsuranceContent = () => {
         licenseNumber: "",
         NCB: "",
         voluntaryExcess: "",
+        annualMileage: "",
         ownsHome: null,
         childrenUnder16: null,
         livedInUKSinceBirth: null,
