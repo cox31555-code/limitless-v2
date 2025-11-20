@@ -346,7 +346,7 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
               Cancel
             </button>
             <button type="submit" className={styles.submitBtn}>
-              Add Conviction
+              {editingIndex !== null ? "Update Conviction" : "Add Conviction"}
             </button>
           </div>
         </form>
