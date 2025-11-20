@@ -991,7 +991,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             className={`${modalButtonStyles.tileHeader} ${isTileExpanded('additionalDrivers') ? modalButtonStyles.expanded : ''} ${isTileDisabled('additionalDrivers') ? modalButtonStyles.disabled : ''}`}
             onClick={() => toggleTile('additionalDrivers')}
           >
-            <h3 className={modalButtonStyles.sectionLabel}>Additional Drivers</h3>
+            <h3 className={modalButtonStyles.sectionLabel}>Share Your Car</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
           {isTileExpanded('additionalDrivers') && isTileDisabled('additionalDrivers') && (
@@ -1004,7 +1004,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
           <div className={styles.cleanAdditionalInfoContainer}>
             <div className={styles.cleanFormGrid1Col}>
-              <p className={styles.cleanFormFieldLabel}>Additional Drivers</p>
+              <p className={styles.cleanFormFieldLabel}>Who Else Drives Your Car?</p>
               <p className={styles.cleanSubLabel}>Do you want to add any additional drivers? You can add up to 5 additional drivers. Include any drivers who share the car for business use.</p>
               <YesORNo
                 value={watch("carUsage.hasAdditionalDrivers")}
