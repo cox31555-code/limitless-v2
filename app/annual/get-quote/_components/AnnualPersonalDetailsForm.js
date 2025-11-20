@@ -914,10 +914,35 @@ const AnnualPersonalDetailsForm = ({ form }) => {
               </p>
               <YesORNo
                 value={watch("carUsage.medicalConditions")}
-                onChange={(value) =>
-                  setValue("carUsage.medicalConditions", value)
-                }
+                onChange={(value) => {
+                  setValue("carUsage.medicalConditions", value);
+                  if (!value) {
+                    setValue("carUsage.dvlaConditionType", null);
+                  }
+                }}
               />
+
+              {watch("carUsage.medicalConditions") === true && (
+                <div className={styles.cleanDeclarationItem} style={{ marginTop: "16px" }}>
+                  <p className={styles.cleanDeclarationQuestion}>
+                    Does the DVLA know about the medical condition or disability?
+                  </p>
+                  <FormDropdown
+                    label="Select DVLA status"
+                    name="carUsage.dvlaConditionType"
+                    options={[
+                      "DVLA aware - No restrictions",
+                      "DVLA aware - 1 year restricted Licence",
+                      "DVLA aware - 2 year restricted Licence",
+                      "DVLA aware - 3 year restricted Licence",
+                      "DVLA aware - 5 year restricted Licence",
+                      "DVLA unaware"
+                    ]}
+                    register={register}
+                    errors={errors}
+                  />
+                </div>
+              )}
             </div>
 
             <div className={styles.cleanDeclarationItem}>
