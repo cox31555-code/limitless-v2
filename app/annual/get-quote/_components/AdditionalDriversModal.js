@@ -329,7 +329,7 @@ const AdditionalDriversModal = ({
                 {isDriverExpanded(index) && isDriverDisabled(index) && (
                   <div className={modalStyles.errorMessage}>
                     <span className={modalStyles.errorIcon}>!</span>
-                    <span>Complete Driver {index} details first</span>
+                    <span>Complete Driver {index + 2} details first</span>
                   </div>
                 )}
 
