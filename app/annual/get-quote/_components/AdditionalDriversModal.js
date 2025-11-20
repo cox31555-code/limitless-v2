@@ -309,7 +309,7 @@ const AdditionalDriversModal = ({
               <div key={index} className={modalStyles.driverItem}>
                 <div className={`${modalStyles.driverHeader} ${isDriverExpanded(index) ? modalStyles.expanded : ''} ${isDriverDisabled(index) ? modalStyles.disabled : ''}`} onClick={() => !isDriverDisabled(index) && toggleDriver(index)} role="button" tabIndex={isDriverDisabled(index) ? -1 : 0}>
                   <span className={modalStyles.driverNumber}>
-                    {driver.firstName && driver.lastName ? `${driver.firstName} ${driver.lastName}` : `Driver ${index + 1}`}
+                    {driver.firstName && driver.lastName ? `${driver.firstName} ${driver.lastName}` : `Driver ${index + 2}`}
                   </span>
                   <div className={modalStyles.driverHeaderActions}>
                     <span className={modalStyles.expandIcon}>+</span>
@@ -497,10 +497,44 @@ const AdditionalDriversModal = ({
                         <label className={modalStyles.inputLabel}>Do you have any unspent or outstanding criminal convictions?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => onUpdateDriver(index, "criminalConvictions", value)} />
                       </div>
+
+                      {watch(`carUsage.additionalDrivers.${index}.criminalConvictions`) === true && (
+                        <div className={modalStyles.field}>
+                          <p className={modalStyles.inputLabel} style={{ marginTop: "12px" }}>Please provide details of your convictions</p>
+                          <p style={{ fontSize: "12px", color: "#6b7280", marginBottom: "8px" }}>Contact your broker for assistance with entering conviction details</p>
+                        </div>
+                      )}
+
                       <div className={modalStyles.field}>
                         <label className={modalStyles.inputLabel}>Do you have any medical conditions that are notifiable to the DVLA?</label>
-                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)} onChange={(value) => onUpdateDriver(index, "medicalConditions", value)} />
+                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)} onChange={(value) => {
+                          onUpdateDriver(index, "medicalConditions", value);
+                          if (!value) {
+                            onUpdateDriver(index, "dvlaConditionType", null);
+                          }
+                        }} />
                       </div>
+
+                      {watch(`carUsage.additionalDrivers.${index}.medicalConditions`) === true && (
+                        <div className={modalStyles.field}>
+                          <FormDropdown
+                            label="Select DVLA status"
+                            options={[
+                              "DVLA aware - No restrictions",
+                              "DVLA aware - 1 year restricted Licence",
+                              "DVLA aware - 2 year restricted Licence",
+                              "DVLA aware - 3 year restricted Licence",
+                              "DVLA aware - 5 year restricted Licence",
+                              "DVLA unaware"
+                            ]}
+                            placeholder="Please select"
+                            value={watch(`carUsage.additionalDrivers.${index}.dvlaConditionType`) || ""}
+                            onChange={(e) => onUpdateDriver(index, "dvlaConditionType", e.target.value)}
+                            inputStyle={{ paddingLeft: "14px" }}
+                          />
+                        </div>
+                      )}
+
                       <div className={modalStyles.field}>
                         <label className={modalStyles.inputLabel}>Have you ever had insurance cancelled, a claim refused, a policy voided, or any special terms imposed?</label>
                         <YesORNo value={watch(`carUsage.additionalDrivers.${index}.insuranceCancelledOrClaimRefusedOrPolicyVoided`)} onChange={(value) => onUpdateDriver(index, "insuranceCancelledOrClaimRefusedOrPolicyVoided", value)} />
