@@ -19,6 +19,7 @@ import {
   ncbOptions,
   occupationOptions,
   otherVehiclesOptions,
+  studentTypeOptions,
   voluntaryExcessOptions,
 } from "../data";
 
