@@ -5,6 +5,7 @@ import FormDropdown from "@/ui/inputs/FormDropdown";
 import FormDataAndTime from "@/ui/inputs/FormDataAndTime";
 import FormAutocomplete from "@/ui/inputs/FormAutocomplete";
 import YesORNo from "@/ui/inputs/selections/yesORNo/YesORNo";
+import ConvictionModal from "./ConvictionModal";
 import modalStyles from "./additionalDriversModal.module.css";
 import {
   employmentStatusOptions,
@@ -38,6 +39,9 @@ const AdditionalDriversModal = ({
   const [expandedTiles, setExpandedTiles] = useState({});
   const [expandedDriver, setExpandedDriver] = useState({});
   const [validationError, setValidationError] = useState("");
+  const [driverConvictions, setDriverConvictions] = useState({});
+  const [convictionModalOpen, setConvictionModalOpen] = useState({});
+  const [editingConvictionIndex, setEditingConvictionIndex] = useState({});
 
   const toggleDriver = (driverIndex) => {
     setExpandedDriver(prev => ({
