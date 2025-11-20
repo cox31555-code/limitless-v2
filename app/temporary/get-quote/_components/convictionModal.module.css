@@ -281,6 +281,31 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+.removeBtn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid #fee2e2;
+  background: #fef2f2;
+  color: #dc2626;
+  letter-spacing: 0.3px;
+}
+
+.removeBtn:hover {
+  background: #fecaca;
+  color: #991b1b;
+  border-color: #fca5a5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+}
+
+.dateField {
+  flex: 1;
+}
+
 .submitBtn {
   background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   color: #ffffff;
