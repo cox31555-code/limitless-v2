@@ -114,6 +114,24 @@ export const employmentStatusOptions = [
   "Houseperson",
 ];
 
+export const studentTypeOptions = [
+  "Mature Student - Living At Home",
+  "Mature Student - Living Away",
+  "Medical Student - Living At Home",
+  "Medical Student - Living Away",
+  "Post Graduate Student Living at Home",
+  "Post Graduate Student Living Away from Home",
+  "School Student",
+  "Student - Living at Home",
+  "Student - Living Away",
+  "Student Nurse - Living At Home",
+  "Student Nurse - Living Away",
+  "Student Teacher - Living At Home",
+  "Student Teacher - Living Away",
+  "Undergraduate Student - Living At Home",
+  "Undergraduate Student - Living Away from Home",
+];
+
 export const voluntaryExcessOptions = [
   "£0",
   "£100",
