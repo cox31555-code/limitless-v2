@@ -79,7 +79,15 @@ const AdditionalDriversModal = ({
       declarations: ['criminalConvictions', 'medicalConditions', 'insuranceCancelledOrClaimRefusedOrPolicyVoided']
     };
 
-    const fieldsToCheck = requiredFields[tileKey] || [];
+    let fieldsToCheck = requiredFields[tileKey] || [];
+
+    // For employment tile, don't require industry if student or certain other statuses
+    if (tileKey === 'employment') {
+      if (["Student", "Retired", "Unemployed", "Houseperson"].includes(driver.employmentStatus)) {
+        fieldsToCheck = fieldsToCheck.filter(field => field !== 'industry');
+      }
+    }
+
     return fieldsToCheck.every(field => {
       const value = driver[field];
       return value !== null && value !== undefined && value !== '';
