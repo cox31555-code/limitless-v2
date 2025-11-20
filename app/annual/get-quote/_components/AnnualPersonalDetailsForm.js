@@ -21,6 +21,7 @@ import {
   ncbOptions,
   occupationOptions,
   otherVehiclesOptions,
+  studentTypeOptions,
   voluntaryExcessOptions,
   additionalQualificationsOptions,
   monthOptions,
