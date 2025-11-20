@@ -671,6 +671,35 @@ const AdditionalDriversModal = ({
           </div>
         </div>
 
+        {/* Conviction Modals for each driver */}
+        {drivers.map((driver, driverIndex) => (
+          <ConvictionModal
+            key={`conviction-${driverIndex}`}
+            isOpen={convictionModalOpen[driverIndex] || false}
+            onClose={() => {
+              setConvictionModalOpen({ ...convictionModalOpen, [driverIndex]: false });
+              setEditingConvictionIndex({ ...editingConvictionIndex, [driverIndex]: null });
+            }}
+            editingConviction={editingConvictionIndex[driverIndex] !== null && editingConvictionIndex[driverIndex] !== undefined ? (driverConvictions[driverIndex] || [])[editingConvictionIndex[driverIndex]] : null}
+            editingIndex={editingConvictionIndex[driverIndex] || null}
+            onAdd={(conviction, indexToUpdate, isDelete) => {
+              const driverConv = driverConvictions[driverIndex] || [];
+              if (isDelete && indexToUpdate !== null) {
+                const updatedConvictions = driverConv.filter((_, i) => i !== indexToUpdate);
+                setDriverConvictions({ ...driverConvictions, [driverIndex]: updatedConvictions });
+              } else if (indexToUpdate !== null) {
+                const updatedConvictions = [...driverConv];
+                updatedConvictions[indexToUpdate] = conviction;
+                setDriverConvictions({ ...driverConvictions, [driverIndex]: updatedConvictions });
+              } else {
+                setDriverConvictions({ ...driverConvictions, [driverIndex]: [...driverConv, conviction] });
+              }
+              setConvictionModalOpen({ ...convictionModalOpen, [driverIndex]: false });
+              setEditingConvictionIndex({ ...editingConvictionIndex, [driverIndex]: null });
+            }}
+          />
+        ))}
+
         {validationError && (
           <div className={modalStyles.validationErrorBox}>
             <span className={modalStyles.errorIcon}>!</span>
