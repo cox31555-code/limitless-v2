@@ -285,6 +285,7 @@ export const carUsageSchema = z.object({
     licenseHeld: z.string().min(1, "License held is required"),
     otherVehicles: z.boolean().nullable(),
     medicalConditions: z.boolean().nullable(),
+    dvlaConditionType: z.string().optional().nullable(),
     insuranceHistory: z.boolean().nullable(),
     criminalConvictions: z.boolean().nullable(),
   })).default([]).optional(),
