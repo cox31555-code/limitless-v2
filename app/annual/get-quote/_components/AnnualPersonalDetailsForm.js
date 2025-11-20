@@ -238,6 +238,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
       livedInUKSinceBirth: null,
       criminalConvictions: null,
       medicalConditions: null,
+      dvlaConditionType: null,
       insuranceCancelledOrClaimRefusedOrPolicyVoided: null,
     };
     setValue("carUsage.additionalDrivers", [...additionalDrivers, newDriver]);
