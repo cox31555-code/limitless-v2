@@ -183,7 +183,7 @@
 .pickerContainer {
   pointer-events: auto;
   position: fixed;
-  z-index: 99999;
+  z-index: 99999999;
   will-change: transform, opacity;
   backface-visibility: hidden;
   perspective: 1000px;
@@ -193,6 +193,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 900px) {

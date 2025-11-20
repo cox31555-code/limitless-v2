@@ -38,7 +38,7 @@
   display: flex;
   flex-direction: column;
   animation: slideInModal 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: visible;
+  overflow: visible !important;
 }
 
 @keyframes slideInModal {
@@ -104,6 +104,8 @@
   flex: 1;
   overflow-y: auto;
   padding: 2.4rem 1rem;
+  overflow-x: visible !important;
+  position: relative;
 }
 
 .driversList {
@@ -216,6 +218,8 @@
   flex-direction: column;
   gap: 2.4rem;
   padding: 2rem 1rem 2rem;
+  overflow: visible !important;
+  position: relative;
 }
 
 .formSection {
@@ -226,9 +230,10 @@
   border: none !important;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
-  overflow: visible;
+  overflow: visible !important;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   padding-bottom: 18px;
+  position: relative;
 }
 
 .formSection.disabled {
