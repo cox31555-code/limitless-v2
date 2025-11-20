@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./convictionModal.module.css";
 import FormDropdown from "@/ui/inputs/FormDropdown";
 import FormTextInput from "@/ui/inputs/FormTextInput";
@@ -26,9 +26,9 @@ const convictionTypeOptions = [
   "Z0 - Other Offences",
 ];
 
-const ConvictionModal = ({ isOpen, onClose, onAdd }) => {
+const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, editingIndex = null }) => {
   const [formData, setFormData] = useState({
-    location: "GB",
+    location: "",
     type: "",
     day: "",
     month: "",
@@ -42,6 +42,27 @@ const ConvictionModal = ({ isOpen, onClose, onAdd }) => {
   });
 
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (editingConviction) {
+      setFormData(editingConviction);
+    } else {
+      setFormData({
+        location: "",
+        type: "",
+        day: "",
+        month: "",
+        year: "",
+        penaltyPoints: false,
+        pointsNumber: "",
+        resultedInFine: false,
+        fineAmount: "",
+        resultedInBan: false,
+        banMonths: "",
+      });
+    }
+    setErrors({});
+  }, [isOpen, editingConviction]);
 
   const validateForm = () => {
     const newErrors = {};
