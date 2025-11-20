@@ -140,7 +140,7 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className={styles.modalForm}>
+        <div className={styles.modalForm}>
           <div className={styles.formSection}>
             <label className={styles.formLabel}>Where did you get this conviction?</label>
             <div className={styles.radioGroup}>
@@ -346,11 +346,11 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
             <button type="button" className={styles.cancelBtn} onClick={onClose}>
               Cancel
             </button>
-            <button type="submit" className={styles.submitBtn}>
+            <button type="button" className={styles.submitBtn} onClick={handleSubmit}>
               {editingIndex !== null ? "Update Conviction" : "Add Conviction"}
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );
