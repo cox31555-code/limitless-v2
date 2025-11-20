@@ -88,10 +88,22 @@ const AdditionalDriversModal = ({
       }
     }
 
-    return fieldsToCheck.every(field => {
+    const baseComplete = fieldsToCheck.every(field => {
       const value = driver[field];
       return value !== null && value !== undefined && value !== '';
     });
+
+    // Additional validation for declarations
+    if (tileKey === 'declarations' && baseComplete) {
+      // If medical conditions is true, dvlaConditionType must be selected
+      if (driver.medicalConditions === true) {
+        if (!driver.dvlaConditionType) {
+          return false;
+        }
+      }
+    }
+
+    return baseComplete;
   };
 
 
