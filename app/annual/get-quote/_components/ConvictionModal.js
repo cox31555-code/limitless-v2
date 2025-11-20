@@ -107,8 +107,7 @@ const ConvictionModal = ({ isOpen, onClose, onAdd, editingConviction = null, edi
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     if (validateForm()) {
       onAdd(formData, editingIndex);
       setFormData({
