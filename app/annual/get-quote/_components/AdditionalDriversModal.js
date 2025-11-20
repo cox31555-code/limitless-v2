@@ -122,6 +122,10 @@ const AdditionalDriversModal = ({
       if (!expandedTiles[index]) {
         setExpandedTiles(prev => ({ ...prev, [index]: new Set(['about']) }));
       }
+      // Initialize convictions array for new drivers
+      if (!driverConvictions[index]) {
+        setDriverConvictions(prev => ({ ...prev, [index]: [] }));
+      }
       // Auto-expand drivers that are newly added or become available
       if (!isDriverDisabled(index)) {
         setExpandedDriver(prev => ({ ...prev, [index]: true }));
