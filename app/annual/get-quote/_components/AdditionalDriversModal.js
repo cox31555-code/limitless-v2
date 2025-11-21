@@ -552,12 +552,18 @@ const AdditionalDriversModal = ({
                     {isTileExpanded(index, 'declarations') && !isTileDisabled(index, 'declarations') && <>
                       <div className={modalStyles.field}>
                         <label className={modalStyles.inputLabel}>Have you had any driving related convictions, endorsements, penalties, disqualifications or bans in the past 5 years?</label>
-                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)} onChange={(value) => {
-                          onUpdateDriver(index, "criminalConvictions", value);
-                          if (!value) {
-                            setDriverConvictions({ ...driverConvictions, [index]: [] });
-                          }
-                        }} />
+                        <YesORNo
+                          value={watch(`carUsage.additionalDrivers.${index}.criminalConvictions`)}
+                          onChange={(value) => {
+                            onUpdateDriver(index, "criminalConvictions", value);
+                            if (value === false) {
+                              // Clear convictions when switching to No
+                              setTimeout(() => {
+                                setDriverConvictions({ ...driverConvictions, [index]: [] });
+                              }, 0);
+                            }
+                          }}
+                        />
                       </div>
 
                       {watch(`carUsage.additionalDrivers.${index}.criminalConvictions`) === true && (
