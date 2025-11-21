@@ -452,51 +452,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 1.5rem 3.5rem;
-  background: rgba(0, 61, 122, 0.5);
+  gap: 0.8rem;
+  padding: 1.2rem;
+  background: #f5f7fa;
+  border-top: 1px solid #e0e6f0;
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: #ddd;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
   padding: 0;
 }
 
-.dot:hover {
-  background: rgba(255, 255, 255, 0.6);
-}
-
 .dot.active {
-  background: #ffffff;
-  width: 10px;
-  height: 10px;
+  background: #0052a3;
 }
 
 .nextButton {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #0052a3;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
   padding: 0;
   margin-left: auto;
-}
-
-.nextButton:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .nextButton svg {
