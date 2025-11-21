@@ -150,7 +150,7 @@ const PolicyPageClient = ({
         />
       )}
 
-      {activePolicies && activePolicies.length > 0 && (
+      {expiredPolicies && expiredPolicies.length > 0 && (
         <Table
           title="Expired/Unpaid Policies"
           tableType="inactive"
@@ -161,7 +161,7 @@ const PolicyPageClient = ({
             "Vehicle Reg",
             "Details",
           ]}
-          data={activePolicies}
+          data={expiredPolicies}
           showViewButton={true}
           theme="expired"
         />
