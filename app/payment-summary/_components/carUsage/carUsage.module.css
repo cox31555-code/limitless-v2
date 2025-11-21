@@ -178,46 +178,62 @@
 
 @media (max-width: 600px) {
   .container {
-    gap: 1rem;
+    gap: 1.4rem;
   }
 
   .mainCard {
-    padding: 1.2rem;
+    padding: 1.6rem;
   }
 
   .cardContent {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .iconWrapper {
-    width: 55px;
-    height: 55px;
-    min-width: 55px;
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
   }
 
   .icon {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
   }
 
   .mainTitle {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+  }
+
+  .usageDesc {
+    font-size: 1.1rem;
+  }
+
+  .licenseInfo {
+    font-size: 1.05rem;
   }
 
   .expandButton {
-    padding: 1.2rem;
+    padding: 1.6rem;
   }
 
   .additionalContent {
-    padding: 1.2rem;
+    padding: 1.6rem;
   }
 
   .detailsGrid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .buttonText {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+
+  .value {
+    font-size: 1.2rem;
   }
 }
