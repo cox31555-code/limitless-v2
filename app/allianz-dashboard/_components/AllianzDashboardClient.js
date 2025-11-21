@@ -162,14 +162,15 @@ const AllianzDashboardClient = () => {
         </div>
       </section>
 
-      {/* Policy Card Section */}
+      {/* Policy Card Section with Promotional Banners */}
       <section className={styles.policiesSection}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Your Active Policy</h2>
         </div>
-        <div className={styles.policiesGrid}>
-          {activePolicies.map((policy) => (
-            <div key={policy.id} className={styles.policyCard}>
+        <div className={styles.policiesBannerContainer}>
+          <div className={styles.policiesGrid}>
+            {activePolicies.map((policy) => (
+              <div key={policy.id} className={styles.policyCard}>
               <div className={styles.policyCardHeader}>
                 <div className={styles.policyIcon}>
                   <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -206,8 +207,49 @@ const AllianzDashboardClient = () => {
                   <p className={styles.coverInfoValue}>{policy.coverEnd}</p>
                 </div>
               </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Promotional Banners Carousel */}
+          <div className={styles.bannerCarousel}>
+            <div className={styles.bannerContent}>
+              <div className={styles.bannerIconWrapper}>
+                <div className={styles.bannerIcon}>
+                  <BannerIcon type={promotionalBanners[bannerIndex].icon} />
+                </div>
+              </div>
+              <div className={styles.bannerText}>
+                <h3 className={styles.bannerTitle}>{promotionalBanners[bannerIndex].title}</h3>
+                <p className={styles.bannerDescription}>{promotionalBanners[bannerIndex].description}</p>
+                <button
+                  className={styles.bannerCta}
+                  onClick={promotionalBanners[bannerIndex].ctaAction}
+                >
+                  {promotionalBanners[bannerIndex].cta}
+                </button>
+              </div>
             </div>
-          ))}
+            <div className={styles.bannerDots}>
+              {promotionalBanners.map((_, index) => (
+                <button
+                  key={index}
+                  className={`${styles.dot} ${index === bannerIndex ? styles.active : ''}`}
+                  onClick={() => setBannerIndex(index)}
+                  aria-label={`Slide ${index + 1}`}
+                />
+              ))}
+              <button
+                className={styles.nextButton}
+                onClick={() => setBannerIndex((bannerIndex + 1) % promotionalBanners.length)}
+                aria-label="Next slide"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
