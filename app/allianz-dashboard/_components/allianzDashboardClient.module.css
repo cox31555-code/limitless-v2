@@ -180,7 +180,7 @@
 }
 
 .policyDetails {
-  padding: 2.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -189,8 +189,8 @@
 .detailItem {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.2rem 0;
+  gap: 0.5rem;
+  padding: 1rem 0;
 }
 
 .detailLabel {
