@@ -9,8 +9,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["700"],
 });
 
-const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65 }) => {
-  const [selectedPayment, setSelectedPayment] = useState("monthly");
+const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65, defaultPayment = "annual" }) => {
+  const [selectedPayment, setSelectedPayment] = useState(defaultPayment);
 
   const totalMonthly = (monthlyPrice * 12).toFixed(2);
   const monthlySavings = (totalMonthly - annualPrice).toFixed(2);
