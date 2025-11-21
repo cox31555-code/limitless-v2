@@ -168,6 +168,7 @@
   background: rgba(76, 175, 80, 0.08);
   border-left: 3px solid #4caf50;
   border-radius: 6px;
+  min-height: 2rem;
 }
 
 .savingsLabel {
@@ -175,6 +176,24 @@
   font-weight: 500;
   color: #2e7d32;
   margin: 0;
+}
+
+.badgeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.badge {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 0;
+}
+
+.badgeSeparator {
+  color: #2e7d32;
+  opacity: 0.5;
 }
 
 .infoBanner {
