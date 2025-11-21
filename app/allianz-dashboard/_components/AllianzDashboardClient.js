@@ -72,7 +72,7 @@ const AllianzDashboardClient = () => {
   const activePolicies = [
     {
       id: 1,
-      name: "Allianz Online Car Insurance",
+      name: "Limitless Cover Car Insurance",
       policyNumber: "LN60AYT",
       vehicle: "VW GOLF TWIST",
       coverEnd: "24 November 2026",
@@ -121,7 +121,7 @@ const AllianzDashboardClient = () => {
             <p className={styles.greetingSubtitle}>Welcome back to your insurance hub</p>
           </div>
           <div className={styles.badgeArea}>
-            <span className={styles.allianzBadge}>Allianz Online</span>
+            <span className={styles.allianzBadge}>Limitless Cover</span>
           </div>
         </div>
       </section>

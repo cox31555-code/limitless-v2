@@ -62,7 +62,7 @@ const DashboardFooter = () => {
         {/* Legal Disclaimer */}
         <div className={styles.disclaimer}>
           <p className={styles.disclaimerText}>
-            This insurance is arranged, underwritten and administered by Liverpool Victoria Insurance Company Limited, which is an Allianz Group company, registered in England and Wales number 3232514. Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, register number 202965. Registered address: 57 Ladymead, Guildford, Surrey, GU1 1DB. Allianz Online is a trading name of Liverpool Victoria Insurance Company Limited.
+            This insurance is arranged, underwritten and administered by Liverpool Victoria Insurance Company Limited, which is an Allianz Group company, registered in England and Wales number 3232514. Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, register number 202965. Registered address: 57 Ladymead, Guildford, Surrey, GU1 1DB. Limitless Cover is a trading name of Liverpool Victoria Insurance Company Limited.
           </p>
         </div>
       </div>
