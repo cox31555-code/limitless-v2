@@ -202,6 +202,71 @@
   opacity: 0.5;
 }
 
+.paymentBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
+}
+
+.breakdownTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.6rem 0;
+}
+
+.breakdownItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.breakdownLabel {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #003e7e;
+  margin: 0;
+  flex: 1;
+}
+
+.breakdownValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #003e7e;
+  margin: 0;
+  text-align: right;
+  min-width: 100px;
+}
+
+.breakdownDivider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 0;
+}
+
+.breakdownTotal {
+  font-weight: 700;
+  color: #000822;
+}
+
+.breakdownTotalValue {
+  color: #000822;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.creditNote {
+  font-size: 0.9rem;
+  color: #5a6b7d;
+  margin: 1.6rem 0 0 0;
+  line-height: 1.5;
+}
+
 .infoBanner {
   display: flex;
   gap: 1.2rem;
