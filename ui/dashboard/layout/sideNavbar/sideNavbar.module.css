@@ -98,16 +98,16 @@
 
 .activeNavItem {
   color: #ffffff;
-  background: linear-gradient(135deg, #0b6dd4 0%, #0a5db3 100%);
+  background: #0052a3;
   border: none;
   border-radius: 12px;
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(11, 109, 212, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 52, 122, 0.2);
   padding: 1.1rem 1.4rem;
 }
 
 .activeNavItem:hover {
-  box-shadow: 0 6px 18px rgba(11, 109, 212, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.3);
   transform: translateY(-1px);
 }
 
