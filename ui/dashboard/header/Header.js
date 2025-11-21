@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
 import { useAuth } from "@/contexts/AuthContext";
@@ -12,6 +12,11 @@ const Header = ({ page }) => {
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const getTitle = () => {
     if (page) {
@@ -28,6 +33,10 @@ const Header = ({ page }) => {
         default:
           return "MyInsurance";
       }
+    }
+
+    if (!mounted) {
+      return "MyInsurance";
     }
 
     if (pathname.includes("/claims")) {
