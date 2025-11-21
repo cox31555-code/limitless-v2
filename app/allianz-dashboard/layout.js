@@ -13,7 +13,7 @@ export default function AllianzDashboardLayout({ children }) {
   return (
     <div>
       <Header />
-      <main className="dashboard-main" style={{ marginTop: "80px" }}>
+      <main className="dashboard-main" style={{ marginTop: "75px" }}>
         <div className="dashboardContainer">{children}</div>
       </main>
       <DashboardFooter />
