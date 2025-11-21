@@ -56,32 +56,68 @@
   z-index: 20;
 }
 
-.headerRight {
+.desktopNav {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  position: relative;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: center;
 }
 
-
-.logoutBtn {
-  width: 4.4rem;
-  height: 4.4rem;
-  border-radius: 8px;
-  background: transparent;
-  border: 1.5px solid rgba(220, 38, 38, 0.3);
+.navItems {
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  gap: 0.8rem;
+}
+
+.navItem {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.navItem:hover {
+  color: #ffffff;
+  background: rgba(3, 136, 255, 0.08);
+}
+
+.navItem.active {
+  color: #049cff;
+  background: rgba(3, 136, 255, 0.12);
+  border-bottom: 2px solid #049cff;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   color: #dc2626;
+  background: transparent;
+  border: 1.5px solid rgba(220, 38, 38, 0.3);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
-.logoutBtn svg {
-  width: 1.8rem;
-  height: 1.8rem;
-  stroke: currentColor;
+.logoutButton:hover {
+  color: #ef4444;
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+.logoutButton svg {
+  width: 16px;
+  height: 16px;
 }
 
 .mobileMenuWrapper {
