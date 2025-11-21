@@ -6,11 +6,11 @@
 }
 
 .mainCard {
-  padding: 1.6rem;
   background: #ffffff;
   border: 1px solid #d4e4f7;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
 }
 
 .cardContent {
