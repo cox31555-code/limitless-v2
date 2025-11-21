@@ -372,6 +372,151 @@
   height: 20px;
 }
 
+/* Banner Carousel */
+.bannerCarousel {
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
+}
+
+.bannerCarousel:hover {
+  border-color: #003d7a;
+  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
+}
+
+.bannerContent {
+  background: linear-gradient(135deg, #e8f0ff 0%, #f0f4fb 100%);
+  padding: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.8rem;
+  min-height: 280px;
+}
+
+.bannerIconWrapper {
+  flex-shrink: 0;
+}
+
+.bannerIcon {
+  width: 70px;
+  height: 70px;
+  background: #0052a3;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.bannerIcon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.bannerText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.bannerTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 120%;
+}
+
+.bannerDescription {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  line-height: 150%;
+}
+
+.bannerCta {
+  align-self: flex-start;
+  background: transparent;
+  color: #0052a3;
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: underline;
+  text-decoration-color: #0052a3;
+}
+
+.bannerCta:hover {
+  color: #003d7a;
+  text-decoration-color: #003d7a;
+}
+
+.bannerDots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e0e6f0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  background: #bbb;
+}
+
+.dot.active {
+  background: #0052a3;
+  width: 12px;
+  height: 12px;
+}
+
+.nextButton {
+  background: transparent;
+  border: 1px solid #0052a3;
+  color: #0052a3;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  margin-left: auto;
+}
+
+.nextButton:hover {
+  background: #0052a3;
+  color: #ffffff;
+}
+
+.nextButton svg {
+  width: 18px;
+  height: 18px;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .container {
