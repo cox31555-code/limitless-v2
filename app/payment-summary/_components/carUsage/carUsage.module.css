@@ -1,20 +1,22 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #d4e4f7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   overflow: hidden;
 }
 
 .title {
-  color: #5a6b7d;
-  font-size: 1.4rem;
+  color: #003366;
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 130%;
-  letter-spacing: 0.56px;
+  letter-spacing: 0px;
   margin: 0;
-  padding-top: 0.4rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #e8f0f7;
 }
 
 .row {
@@ -34,12 +36,12 @@
 .first {
   gap: 1.4rem;
   padding: 1.6rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+  border-bottom: 1px solid #e8f0f7;
 }
 
 .second {
   padding: 1.6rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+  border-bottom: 1px solid #e8f0f7;
 }
 
 .third {
