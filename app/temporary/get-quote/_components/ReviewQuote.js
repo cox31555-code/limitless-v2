@@ -286,6 +286,51 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
               {renderField("Medical Conditions", carUsage?.medicalConditions)}
               {renderField("Insurance Cancelled or Claim Refused", carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}
             </div>
+
+            {/* CONVICTION DETAILS */}
+            {carUsage?.criminalConvictions && carUsage?.convictions?.length > 0 && (
+              <div className={styles.convictionsContainer}>
+                <h4 className={styles.convictionsTitle}>Conviction Details</h4>
+                {carUsage.convictions.map((conviction, index) => (
+                  <div key={index} className={styles.convictionItem}>
+                    <div className={styles.convictionRow}>
+                      <span className={styles.convictionLabel}>Conviction {index + 1}:</span>
+                      <span className={styles.convictionValue}>{conviction.type || "N/A"}</span>
+                    </div>
+                    <div className={styles.convictionRow}>
+                      <span className={styles.convictionLabel}>Location:</span>
+                      <span className={styles.convictionValue}>{conviction.location || "N/A"}</span>
+                    </div>
+                    <div className={styles.convictionRow}>
+                      <span className={styles.convictionLabel}>Date:</span>
+                      <span className={styles.convictionValue}>
+                        {conviction.day && conviction.month && conviction.year
+                          ? `${conviction.day}/${conviction.month}/${conviction.year}`
+                          : "N/A"}
+                      </span>
+                    </div>
+                    {conviction.penaltyPoints && (
+                      <div className={styles.convictionRow}>
+                        <span className={styles.convictionLabel}>Penalty Points:</span>
+                        <span className={styles.convictionValue}>{conviction.pointsNumber || "N/A"}</span>
+                      </div>
+                    )}
+                    {conviction.resultedInFine && (
+                      <div className={styles.convictionRow}>
+                        <span className={styles.convictionLabel}>Fine Amount:</span>
+                        <span className={styles.convictionValue}>£{conviction.fineAmount || "N/A"}</span>
+                      </div>
+                    )}
+                    {conviction.resultedInBan && (
+                      <div className={styles.convictionRow}>
+                        <span className={styles.convictionLabel}>Ban Period:</span>
+                        <span className={styles.convictionValue}>{conviction.banMonths || "N/A"} months</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
