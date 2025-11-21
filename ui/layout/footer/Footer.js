@@ -66,7 +66,7 @@ const Footer = () => {
     pathname?.startsWith("/annual/get-quote"));
   const isPaymentSummaryPage = isMounted && pathname === "/payment-summary";
   const isPaymentPage = isMounted && pathname?.startsWith("/payment") && !isPaymentSummaryPage;
-  const isDashboardPage = isMounted && pathname?.startsWith("/dashboard");
+  const isDashboardPage = isMounted && (pathname?.startsWith("/dashboard") || pathname?.startsWith("/allianz-dashboard"));
 
   const isLoginPage = isMounted && pathname === "/login";
   const isRetrieveQuotePage = isMounted && pathname === "/retrieve-quote";
