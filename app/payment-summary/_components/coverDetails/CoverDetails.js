@@ -45,8 +45,9 @@ const CoverDetails = ({ data, insuranceType }) => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <circle cx="12" cy="12" r="1"/>
-              <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"/>
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <path d="M16 2v4M8 2v4M3 10h18"/>
+              <circle cx="12" cy="16" r="1.5"/>
             </svg>
           </div>
           <div className={styles.mainInfo}>
