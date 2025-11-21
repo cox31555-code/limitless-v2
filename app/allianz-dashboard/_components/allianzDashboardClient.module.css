@@ -1,8 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 3rem 4.4%;
+  gap: 3rem;
+  padding: 2rem 4.4%;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -10,162 +10,311 @@
   z-index: 2;
 }
 
-/* Greeting Section */
-.greetingSection {
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
+  border-radius: 16px;
+  padding: 3rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.15);
+  position: relative;
+  overflow: hidden;
 }
 
-.greetingContent {
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroContent {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.greetingArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .greetingTitle {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: #003d7a;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
   margin: 0;
   line-height: 110%;
   letter-spacing: -0.5px;
 }
 
+.greetingSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 140%;
+}
+
+.badgeArea {
+  display: flex;
+  align-items: center;
+}
+
 .allianzBadge {
   display: inline-block;
-  background: #003d7a;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
   color: #ffffff;
-  padding: 0.6rem 1.4rem;
-  border-radius: 20px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 1rem;
   font-weight: 600;
   white-space: nowrap;
 }
 
-/* Policies Section */
-.policiesSection {
-  margin: 1rem 0;
+/* Section Header */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .sectionTitle {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #003d7a;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
   line-height: 120%;
+}
+
+.sectionDescription {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Policies Section */
+.policiesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .policiesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
 
 .policyCard {
   background: #ffffff;
-  border: 2px solid #d0d9e8;
-  border-radius: 16px;
-  padding: 2rem;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
-  gap: 1.5rem;
-  transition: all 0.2s ease;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
 }
 
 .policyCard:hover {
   border-color: #003d7a;
-  box-shadow: 0 4px 12px rgba(0, 61, 122, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
+  transform: translateY(-4px);
+}
+
+.policyCardHeader {
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f0ff 100%);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border-bottom: 1px solid #e0e6f0;
 }
 
 .policyIcon {
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.policyIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.policyHeaderInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex-grow: 1;
+}
+
+.policyName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #003d7a;
+  margin: 0;
+  line-height: 120%;
+}
+
+.policyStatus {
+  display: inline-block;
+  width: fit-content;
+  background: #e3f2fd;
+  color: #003d7a;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.policyDetails {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.8rem 0;
+}
+
+.detailLabel {
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailValue {
+  font-size: 1rem;
+  color: #003d7a;
+  font-weight: 600;
+}
+
+.detailDivider {
+  height: 1px;
+  background: #e8e8e8;
+  margin: 0.5rem 0;
+}
+
+.policyCoverInfo {
+  background: #f8fafc;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid #e0e6f0;
+}
+
+.coverInfoIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: #e3f2fd;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #003d7a;
 }
 
-.policyIcon svg {
-  width: 32px;
-  height: 32px;
+.coverInfoIcon svg {
+  width: 20px;
+  height: 20px;
 }
 
-.policyContent {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  flex-grow: 1;
-}
-
-.policyName {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #003d7a;
-  margin: 0;
-  line-height: 120%;
-}
-
-.policyNumber {
-  font-size: 0.95rem;
-  color: #666;
-  margin: 0;
-  font-weight: 500;
-}
-
-.policyVehicle {
-  font-size: 1rem;
-  color: #003d7a;
-  margin: 0;
-  font-weight: 600;
-}
-
-.policyCoverEnd {
-  font-size: 0.9rem;
+.coverInfoLabel {
+  font-size: 0.85rem;
   color: #999;
   margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coverInfoValue {
+  font-size: 1rem;
+  color: #003d7a;
+  margin: 0.2rem 0 0 0;
+  font-weight: 600;
 }
 
 /* Menu Section */
 .menuSection {
-  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .menuGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
 }
 
 .menuItem {
   background: #ffffff;
-  border: 2px solid #e8e8e8;
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
+  border: 1px solid #e0e6f0;
+  border-radius: 10px;
+  padding: 1.5rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 1.2rem;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
-  color: #003d7a;
+  color: inherit;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .menuItem:hover {
+  background: #f8fafc;
   border-color: #003d7a;
   box-shadow: 0 4px 12px rgba(0, 61, 122, 0.1);
-  transform: translateY(-2px);
+  transform: translateX(2px);
+}
+
+.menuItemIconWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .menuItemIcon {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #e8f2ff 0%, #d4e8ff 100%);
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #e3f2fd 0%, #d4e8ff 100%);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -174,70 +323,97 @@
   transition: all 0.2s ease;
 }
 
+.menuItem:hover .menuItemIcon {
+  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
 .menuItemIcon svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
+}
+
+.menuItemContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .menuItemLabel {
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #003d7a;
+  line-height: 120%;
+}
+
+.menuItemDescription {
+  font-size: 0.85rem;
+  color: #999;
   line-height: 130%;
+}
+
+.menuItemArrow {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #003d7a;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+.menuItem:hover .menuItemArrow {
+  opacity: 1;
+  color: #003d7a;
+  transform: translateX(4px);
+}
+
+.menuItemArrow svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .container {
-    gap: 1.8rem;
-    padding: 2.5rem 3%;
+    gap: 2.5rem;
+    padding: 2rem 3%;
   }
 
-  .greetingTitle {
-    font-size: 2.8rem;
-  }
-
-  .menuGrid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-
-  .footerSection {
-    margin: 2.5rem -3% -2.5rem -3%;
-    padding: 2.5rem 3%;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .container {
-    gap: 1.5rem;
-    padding: 2rem 2%;
+  .heroSection {
+    padding: 2.5rem;
   }
 
   .greetingTitle {
     font-size: 2.4rem;
   }
 
-  .menuGrid {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  }
-
   .policiesGrid {
     grid-template-columns: 1fr;
   }
 
-  .footerSection {
-    margin: 2rem -2% -2rem -2%;
-    padding: 2rem 2%;
+  .menuGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .container {
-    gap: 1.2rem;
-    padding: 1.5rem 4%;
+    gap: 2rem;
+    padding: 1.5rem 2%;
   }
 
-  .greetingContent {
+  .heroSection {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heroContent {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -248,40 +424,84 @@
 
   .sectionTitle {
     font-size: 1.4rem;
-    margin-bottom: 1.2rem;
   }
 
   .menuGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .menuItem {
+    padding: 1.2rem;
+  }
+
+  .policyCard {
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 1.5rem;
+    padding: 1rem 4%;
+  }
+
+  .heroSection {
+    padding: 1.5rem;
+  }
+
+  .greetingTitle {
+    font-size: 1.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.85rem;
+  }
+
+  .menuGrid {
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
   .menuItem {
-    padding: 1.5rem 1rem;
-    gap: 0.8rem;
+    padding: 1.2rem;
+    gap: 1rem;
   }
 
   .menuItemLabel {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
-  .policyCard {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
+  .menuItemDescription {
+    font-size: 0.8rem;
+  }
+
+  .policyCardHeader {
+    padding: 1.2rem;
+  }
+
+  .policyDetails {
+    padding: 1.2rem;
+  }
+
+  .policyCoverInfo {
+    padding: 1.2rem;
   }
 
   .policyIcon {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
   }
 
-  .partnersLogos {
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .legalLinks {
-    gap: 1rem;
+  .policyIcon svg {
+    width: 24px;
+    height: 24px;
   }
 }
