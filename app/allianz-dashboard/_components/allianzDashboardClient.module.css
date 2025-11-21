@@ -374,28 +374,22 @@
 
 /* Banner Carousel */
 .bannerCarousel {
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  border: none;
-  border-radius: 14px;
+  background: #f5f7fa;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(0, 52, 163, 0.15);
-}
-
-.bannerCarousel:hover {
-  box-shadow: 0 12px 32px rgba(0, 52, 163, 0.25);
-  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
 }
 
 .bannerContent {
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  padding: 3.5rem;
+  background: #f5f7fa;
+  padding: 2.5rem;
   display: flex;
   align-items: center;
-  gap: 2.5rem;
-  min-height: 200px;
+  gap: 2rem;
+  min-height: 180px;
 }
 
 .bannerIconWrapper {
@@ -403,21 +397,20 @@
 }
 
 .bannerIcon {
-  width: 90px;
-  height: 90px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 14px;
+  width: 70px;
+  height: 70px;
+  background: #e8eef5;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #0052a3;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .bannerIcon svg {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 }
 
 .bannerText {
