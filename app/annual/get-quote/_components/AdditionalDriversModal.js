@@ -635,12 +635,18 @@ const AdditionalDriversModal = ({
 
                       <div className={modalStyles.field}>
                         <label className={modalStyles.inputLabel}>Do you have any medical conditions that are notifiable to the DVLA?</label>
-                        <YesORNo value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)} onChange={(value) => {
-                          onUpdateDriver(index, "medicalConditions", value);
-                          if (!value) {
-                            onUpdateDriver(index, "dvlaConditionType", null);
-                          }
-                        }} />
+                        <YesORNo
+                          value={watch(`carUsage.additionalDrivers.${index}.medicalConditions`)}
+                          onChange={(value) => {
+                            onUpdateDriver(index, "medicalConditions", value);
+                            if (value === false) {
+                              // Clear DVLA condition type when switching to No
+                              setTimeout(() => {
+                                onUpdateDriver(index, "dvlaConditionType", null);
+                              }, 0);
+                            }
+                          }}
+                        />
                       </div>
 
                       {watch(`carUsage.additionalDrivers.${index}.medicalConditions`) === true && (
