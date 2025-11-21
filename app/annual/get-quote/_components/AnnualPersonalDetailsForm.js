@@ -170,10 +170,14 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
     let fieldsToCheck = baseRequiredFields[tileKey] || [];
 
-    // For employment tile, conditionally add occupation and industry if not a student
+    // For employment tile, conditionally add fields based on employment status
     if (tileKey === 'employment') {
       const employmentStatus = watch('userDetails.employmentStatus');
-      if (employmentStatus !== 'Student') {
+      if (employmentStatus === 'Student') {
+        // For students, only require the Type of Student field (stored in occupation)
+        fieldsToCheck = [...fieldsToCheck, 'userDetails.occupation'];
+      } else if (!['Retired', 'Unemployed', 'Houseperson'].includes(employmentStatus)) {
+        // For other employment statuses, require occupation and industry
         fieldsToCheck = [...fieldsToCheck, 'userDetails.occupation', 'userDetails.industry'];
       }
     }
