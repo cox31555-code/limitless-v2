@@ -53,6 +53,7 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
               priceLabel={displayLabel}
               userName={insuranceData.userDetails?.firstName || "there"}
               insuranceType={insuranceData.type === "Temp" ? "Temporary Insurance" : insuranceData.type === "Impound" ? "Impound Insurance" : "Annual Insurance"}
+              quoteRef={insuranceData.quote?.quoteRef || "N/A"}
             />
             <PaymentOptions
               monthlyPrice={monthlyPrice}
