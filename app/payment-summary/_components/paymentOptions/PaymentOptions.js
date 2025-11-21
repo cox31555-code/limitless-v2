@@ -31,7 +31,7 @@ const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65, defaultPay
           className={`${styles.paymentCard} ${
             selectedPayment === "monthly" ? styles.paymentCardActive : ""
           }`}
-          onClick={() => setSelectedPayment("monthly")}
+          onClick={() => handlePaymentChange("monthly")}
         >
           <div className={styles.cardHeader}>
             <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
