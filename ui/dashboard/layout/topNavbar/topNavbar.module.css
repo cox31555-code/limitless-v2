@@ -27,7 +27,7 @@
 }
 
 .navItem {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -40,13 +40,13 @@
 
 .navItem:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(3, 136, 255, 0.08);
 }
 
 .navItem.active {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.2);
-  border-bottom: 3px solid #ffffff;
+  color: #049cff;
+  background: rgba(3, 136, 255, 0.12);
+  border-bottom: 3px solid #049cff;
   padding-bottom: 0.3rem;
 }
 
