@@ -26,6 +26,7 @@ const validPages = [
   "/courier",
   "/courier-insurance",
   "/dashboard",
+  "/allianz-dashboard",
   "/delivery",
   "/error-404",
   "/faq",
@@ -46,7 +47,7 @@ const validPages = [
 const shouldUseSpecialStyles = (pathname) => {
   // Use special styles for any page that doesn't exist in our valid pages list
   // This covers 404/not-found scenarios
-  return !validPages.includes(pathname) && !pathname.startsWith("/dashboard");
+  return !validPages.includes(pathname) && !pathname.startsWith("/dashboard") && !pathname.startsWith("/allianz-dashboard");
 };
 
 const Footer = () => {
