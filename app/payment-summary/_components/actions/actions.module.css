@@ -115,19 +115,20 @@
     height: 5.2rem;
     font-size: 1.3rem;
     border-radius: 12px;
-    order: -1;
+    order: 2;
   }
 
   .cancelButton {
     height: 5.2rem;
     font-size: 1.3rem;
     border-radius: 12px;
-    order: 1;
+    order: 3;
   }
 
   .rightToCancel {
     padding: 2rem;
-    margin-top: 1.8rem;
+    margin-top: 0;
+    order: 1;
   }
 
   .rightToCancelTitle {
