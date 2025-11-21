@@ -388,29 +388,7 @@
   padding: 2.5rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
-  min-height: 180px;
-}
-
-.bannerIconWrapper {
-  flex-shrink: 0;
-}
-
-.bannerIcon {
-  width: 70px;
-  height: 70px;
-  background: #e8eef5;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0052a3;
-  flex-shrink: 0;
-}
-
-.bannerIcon svg {
-  width: 40px;
-  height: 40px;
+  min-height: 150px;
 }
 
 .bannerText {
