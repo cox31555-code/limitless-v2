@@ -608,17 +608,6 @@
     align-items: center;
     text-align: center;
     padding: 2rem 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .bannerIcon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .bannerIcon svg {
-    width: 32px;
-    height: 32px;
   }
 
   .bannerTitle {
