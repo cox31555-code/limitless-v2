@@ -30,9 +30,14 @@ const VehicleDetails = ({ data, carUsage, insuranceType }) => {
 
   return (
     <div className={styles.container}>
-      <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-        Your car cover
-      </h3>
+      <div className={styles.titleSection}>
+        <h2 className={`${styles.mainTitle} ${plusJakartaSans.className}`}>
+          Your car cover in short
+        </h2>
+        <p className={styles.subtitle}>
+          (Full details on the next page)
+        </p>
+      </div>
       <div className={styles.vehicleCard}>
         <div className={styles.cardContent}>
           <div className={styles.iconWrapper}>
