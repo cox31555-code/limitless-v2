@@ -402,7 +402,7 @@ const AdditionalDriversModal = ({
                             defaultYear={2009}
                             reducedPadding={true}
                             value={watch(`carUsage.additionalDrivers.${index}.dateOfBirth`) || ""}
-                            onChange={(value) => onUpdateDriver(index, "dateOfBirth", value)}
+                            onChange={(e) => onUpdateDriver(index, "dateOfBirth", e.target.value)}
                           />
                         </div>
                       </div>
