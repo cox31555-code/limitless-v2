@@ -78,8 +78,8 @@ const PolicyPageClient = ({
               >
                 <div className={styles.optionIcon}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="1" />
-                    <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m2.12 2.12l4.24 4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m2.12-2.12l4.24-4.24M19.78 19.78l-4.24-4.24m-2.12-2.12l-4.24-4.24M19.78 4.22l-4.24 4.24m-2.12 2.12l-4.24 4.24M23 12h-6m-6 0H5" />
+                    <circle cx="12" cy="12" r="9" />
+                    <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
                 </div>
                 <div className={styles.optionContent}>
@@ -87,7 +87,7 @@ const PolicyPageClient = ({
                   <p>Short-term coverage from 1 hour to 30 days</p>
                 </div>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.arrowIcon}>
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+                  <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
               <button
@@ -98,8 +98,8 @@ const PolicyPageClient = ({
               >
                 <div className={styles.optionIcon}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="3" y="6" width="18" height="14" rx="2" />
-                    <path d="M9 9h6M9 12h6M9 15h6" />
+                    <rect x="4" y="6" width="16" height="12" rx="2"></rect>
+                    <path d="M7 10h10M7 14h10"></path>
                   </svg>
                 </div>
                 <div className={styles.optionContent}>
@@ -107,7 +107,7 @@ const PolicyPageClient = ({
                   <p>Protection for impounded or seized vehicles</p>
                 </div>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.arrowIcon}>
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+                  <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
               <button
@@ -119,7 +119,7 @@ const PolicyPageClient = ({
                 <div className={styles.optionIcon}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="12" cy="12" r="9" />
-                    <path d="M12 6v6l4 2" />
+                    <path d="M12 7v5l3 2"></path>
                   </svg>
                 </div>
                 <div className={styles.optionContent}>
@@ -127,7 +127,7 @@ const PolicyPageClient = ({
                   <p>Full year coverage for continuous protection</p>
                 </div>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.arrowIcon}>
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+                  <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
             </div>
