@@ -1,0 +1,225 @@
+.container {
+  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
+  border-bottom: 1px solid rgba(0, 61, 122, 0.1);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.1);
+}
+
+.navContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4.4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-grow: 1;
+}
+
+.navItem {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.navItem:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navItem.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 3px solid #ffffff;
+  padding-bottom: 0.3rem;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutButton:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.logoutButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.mobileMenuToggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobileMenuToggle span {
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobileMenuToggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobileMenuToggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuToggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.mobileMenu {
+  display: none;
+  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
+  border-bottom: 1px solid rgba(0, 61, 122, 0.1);
+  padding: 1rem 4.4%;
+  position: relative;
+}
+
+.mobileMenuItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobileMenuItem {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.mobileMenuItem:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenuItem.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mobileLogout {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.mobileLogout:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.mobileLogout svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .navContent {
+    padding: 0 3%;
+  }
+
+  .navItems {
+    gap: 1.5rem;
+  }
+
+  .navItem {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navContent {
+    padding: 0 2%;
+  }
+
+  .navItems {
+    display: none;
+  }
+
+  .logoutButton {
+    display: none;
+  }
+
+  .mobileMenuToggle {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: block;
+    padding: 1rem 2%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navContent {
+    padding: 0 4%;
+    height: 60px;
+  }
+
+  .mobileMenu {
+    padding: 1rem 4%;
+  }
+
+  .mobileMenuItem {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
