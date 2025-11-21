@@ -201,42 +201,42 @@
 
 @media (max-width: 400px) {
   .container {
-    padding: 1.6rem;
-    gap: 1.4rem;
+    padding: 2rem;
+    gap: 1.6rem;
   }
 
   .refLabel {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .refValue {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .greeting {
-    font-size: 1.8rem;
-    letter-spacing: -0.2px;
-  }
-
-  .subtitle {
-    font-size: 1.6rem;
-  }
-
-  .priceDisplay {
-    gap: 0.4rem;
-  }
-
-  .price {
     font-size: 2rem;
     letter-spacing: -0.2px;
   }
 
+  .subtitle {
+    font-size: 1.8rem;
+  }
+
+  .priceDisplay {
+    gap: 0.5rem;
+  }
+
+  .price {
+    font-size: 2.4rem;
+    letter-spacing: -0.2px;
+  }
+
   .priceLabel {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .disclaimer {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     max-width: 100%;
   }
 
