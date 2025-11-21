@@ -136,8 +136,8 @@
 
 .policyIcon {
   flex-shrink: 0;
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   background: #0052a3;
   border-radius: 10px;
   display: flex;
@@ -147,8 +147,8 @@
 }
 
 .policyIcon svg {
-  width: 42px;
-  height: 42px;
+  width: 35px;
+  height: 35px;
 }
 
 .policyHeaderInfo {
