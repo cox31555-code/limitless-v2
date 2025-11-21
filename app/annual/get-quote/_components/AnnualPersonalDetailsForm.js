@@ -156,10 +156,10 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   ]);
 
   const checkTileCompletion = (tileKey) => {
-    const requiredFields = {
+    const baseRequiredFields = {
       about: ['userDetails.title', 'userDetails.firstName', 'userDetails.surname', 'userDetails.maritalStatus', 'userDetails.dateOfBirth', 'userDetails.email', 'userDetails.phone'],
       location: ['userDetails.postCode', 'userDetails.address'],
-      employment: ['userDetails.employmentStatus', 'userDetails.occupation', 'userDetails.industry'],
+      employment: ['userDetails.employmentStatus'],
       parking: ['carUsage.keepingCarDuringDay', 'carUsage.keepingCarDuringNight'],
       usage: ['carUsage.usageType'],
       driving: ['carUsage.licenseType', 'carUsage.licenseHeld', 'carUsage.NCB'],
@@ -168,7 +168,16 @@ const AnnualPersonalDetailsForm = ({ form }) => {
       additionalDrivers: []
     };
 
-    const fieldsToCheck = requiredFields[tileKey] || [];
+    let fieldsToCheck = baseRequiredFields[tileKey] || [];
+
+    // For employment tile, conditionally add occupation and industry if not a student
+    if (tileKey === 'employment') {
+      const employmentStatus = watch('userDetails.employmentStatus');
+      if (employmentStatus !== 'Student') {
+        fieldsToCheck = [...fieldsToCheck, 'userDetails.occupation', 'userDetails.industry'];
+      }
+    }
+
     const baseComplete = fieldsToCheck.every(field => {
       const value = watch(field);
       return value !== null && value !== undefined && value !== '';
