@@ -80,6 +80,42 @@ const AllianzDashboardClient = () => {
     },
   ];
 
+  const BannerIcon = ({ type }) => {
+    const icons = {
+      cars: (
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M8 18h4l2-6h16l2 6h4v8H8z"></path>
+          <circle cx="14" cy="32" r="3"></circle>
+          <circle cx="34" cy="32" r="3"></circle>
+          <path d="M8 26v6M40 26v6"></path>
+        </svg>
+      ),
+      calendar: (
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="6" y="8" width="36" height="28" rx="2"></rect>
+          <path d="M14 4v8M34 4v8M6 16h36"></path>
+          <circle cx="18" cy="26" r="3"></circle>
+          <circle cx="30" cy="26" r="3"></circle>
+        </svg>
+      ),
+      shield: (
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M24 4l16 8v12c0 8-16 12-16 12s-16-4-16-12v-12l16-8z"></path>
+          <polyline points="16 24 22 30 32 20"></polyline>
+        </svg>
+      ),
+      truck: (
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M6 20h28v14H6z"></path>
+          <path d="M34 20h8l4 6v8h-12v-14z"></path>
+          <circle cx="14" cy="36" r="3"></circle>
+          <circle cx="34" cy="36" r="3"></circle>
+        </svg>
+      ),
+    };
+    return icons[type] || icons.cars;
+  };
+
   const MenuIcon = ({ type }) => {
     const icons = {
       policy: (
