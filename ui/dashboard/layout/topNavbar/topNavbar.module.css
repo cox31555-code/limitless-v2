@@ -3,8 +3,8 @@
   border-bottom: none;
   padding: 0;
   position: sticky;
-  top: 0;
-  z-index: 100;
+  top: 80px;
+  z-index: 999;
   box-shadow: none;
 }
 
