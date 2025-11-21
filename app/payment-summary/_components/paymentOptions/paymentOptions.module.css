@@ -394,32 +394,32 @@
   }
 
   .badge {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .paymentBreakdown {
-    padding: 1.6rem;
+    padding: 2rem;
   }
 
   .breakdownTitle {
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
   }
 
   .breakdownItem {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
-    padding: 1rem 0;
+    padding: 1.2rem 0;
   }
 
   .breakdownLabel {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .breakdownValue {
     align-self: flex-end;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .infoBanner {
