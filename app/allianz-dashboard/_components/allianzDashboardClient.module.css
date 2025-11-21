@@ -39,7 +39,6 @@
 .heroBackgroundImage {
   width: 600px;
   height: auto;
-  object-fit: contain;
   margin-right: -100px;
 }
 
