@@ -83,8 +83,8 @@
   flex-direction: column;
   gap: 1.2rem;
   padding: 1.2rem;
-  background: rgba(3, 136, 255, 0.02);
-  border: 1px solid rgba(3, 136, 255, 0.08);
+  background: #f8fafb;
+  border: 1px solid #d4e4f7;
   border-radius: 8px;
 }
 
