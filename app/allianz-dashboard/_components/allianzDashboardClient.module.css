@@ -33,13 +33,13 @@
   align-items: center;
   justify-content: flex-end;
   overflow: hidden;
-  opacity: 0.15;
+  opacity: 0.2;
 }
 
 .heroBackgroundImage {
-  width: 600px;
+  width: 280px;
   height: auto;
-  margin-right: -100px;
+  margin-right: -20px;
 }
 
 .heroContent {
