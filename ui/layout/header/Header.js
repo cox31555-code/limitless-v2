@@ -134,6 +134,7 @@ const Header = () => {
     (pathname === "/retrieve-quote" && !isMobile) ||
     (isPolicyPage && !isMobile) ||
     pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/allianz-dashboard") ||
     (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary"))
   );
 
