@@ -320,12 +320,9 @@
     gap: 1rem;
   }
 
-  .mainCard {
-    padding: 1.2rem;
-  }
-
   .cardContent {
     gap: 1rem;
+    padding: 1.2rem;
   }
 
   .iconWrapper {
@@ -358,6 +355,14 @@
 
   .buttonText {
     font-size: 1rem;
+  }
+
+  .mainExpandButton {
+    padding: 1.2rem;
+  }
+
+  .mainAdditionalContent {
+    padding: 1.2rem;
   }
 
   .driverCardContent {
