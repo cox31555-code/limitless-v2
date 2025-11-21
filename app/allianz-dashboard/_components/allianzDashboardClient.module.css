@@ -572,6 +572,11 @@
     padding: 1.5rem;
   }
 
+  .heroBackgroundImage {
+    width: 280px;
+    margin-right: -60px;
+  }
+
   .greetingTitle {
     font-size: 1.8rem;
   }
