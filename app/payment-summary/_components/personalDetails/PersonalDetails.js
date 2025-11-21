@@ -17,6 +17,8 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
     declarations: false,
   });
 
+  const [expandedDrivers, setExpandedDrivers] = useState({});
+
   const formatDate = (dateString) => {
     if (!dateString) return "N/A";
     const date = new Date(dateString);
