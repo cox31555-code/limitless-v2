@@ -1,6 +1,5 @@
 import "../globals.css";
 import { Poppins } from "next/font/google";
-import TopNavbar from "@/ui/dashboard/layout/topNavbar/TopNavbar";
 import Header from "@/ui/dashboard/header/Header";
 import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
 import Script from "next/script";
@@ -14,8 +13,7 @@ export default function DashboardLayout({ children }) {
   return (
     <div>
       <Header />
-      <TopNavbar />
-      <main className="dashboard-main">
+      <main className="dashboard-main" style={{ marginTop: "75px" }}>
         <div className="dashboardContainer">{children}</div>
       </main>
       <DashboardFooter />
