@@ -572,8 +572,8 @@
   }
 
   .heroBackgroundImage {
-    width: 280px;
-    margin-right: -60px;
+    width: 180px;
+    margin-right: 0;
   }
 
   .greetingTitle {
