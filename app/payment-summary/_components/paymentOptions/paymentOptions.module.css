@@ -260,13 +260,6 @@
   font-size: 1.3rem;
 }
 
-.creditNote {
-  font-size: 0.9rem;
-  color: #5a6b7d;
-  margin: 1.6rem 0 0 0;
-  line-height: 1.5;
-}
-
 .infoBanner {
   display: flex;
   gap: 1.2rem;
