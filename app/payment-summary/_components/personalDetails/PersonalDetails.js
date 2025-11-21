@@ -78,6 +78,58 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
       <div className={styles.expandableSection}>
         <button
           className={styles.expandButton}
+          onClick={() => toggleSection("personalInfo")}
+        >
+          <span className={styles.buttonText}>Personal Information</span>
+          <svg
+            className={`${styles.expandIcon} ${expandedSections.personalInfo ? styles.expanded : ""}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        {expandedSections.personalInfo && (
+          <div className={styles.additionalContent}>
+            <div className={styles.detailsGrid}>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Email Address</span>
+                <span className={styles.value}>{data?.email || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Contact Number</span>
+                <span className={styles.value}>{data?.phone || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Post Code</span>
+                <span className={styles.value}>{data?.postCode || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Selected Address</span>
+                <span className={styles.value}>{data?.address || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Employment Status</span>
+                <span className={styles.value}>{data?.employmentStatus || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Occupation</span>
+                <span className={styles.value}>{data?.occupation || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Industry</span>
+                <span className={styles.value}>{data?.industry || "N/A"}</span>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className={styles.expandableSection}>
+        <button
+          className={styles.expandButton}
           onClick={() => toggleSection("location")}
         >
           <span className={styles.buttonText}>Vehicle Storage</span>
@@ -105,26 +157,6 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
                 <span className={styles.value}>
                   {carUsage?.keepingCarDuringNight || "N/A"}
                 </span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.label}>Post Code</span>
-                <span className={styles.value}>{data?.postCode || "N/A"}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.label}>Address</span>
-                <span className={styles.value}>{data?.address || "N/A"}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.label}>Employment Status</span>
-                <span className={styles.value}>{data?.employmentStatus || "N/A"}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.label}>Occupation</span>
-                <span className={styles.value}>{data?.occupation || "N/A"}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.label}>Industry</span>
-                <span className={styles.value}>{data?.industry || "N/A"}</span>
               </div>
             </div>
           </div>
