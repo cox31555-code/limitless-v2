@@ -359,7 +359,8 @@ const FormDateInput = forwardRef(
               left: isMobile ? '50%' : pickerPosition.left,
               right: isMobile ? 'auto' : 'auto',
               transform: isMobile ? 'translate(-50%, -50%)' : 'none',
-              zIndex: 99999
+              zIndex: 999999,
+              pointerEvents: 'auto'
             }}>
               <CustomDatePicker
                 selectedDate={parseDate(value)}
