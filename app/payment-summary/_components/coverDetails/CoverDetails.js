@@ -59,77 +59,63 @@ const CoverDetails = ({ data, insuranceType }) => {
         </div>
       </div>
 
-      <div className={styles.expandableSection}>
-        <button
-          className={styles.expandButton}
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          <span className={styles.buttonText}>Additional Details</span>
-          <svg
-            className={`${styles.expandIcon} ${isExpanded ? styles.expanded : ""}`}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+      {(insuranceType === "Annual" || insuranceType === "Impound") && (
+        <div className={styles.expandableSection}>
+          <button
+            className={styles.expandButton}
+            onClick={() => setIsExpanded(!isExpanded)}
           >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        {isExpanded && (
-          <div className={styles.additionalContent}>
-            <div className={styles.detailsGrid}>
-              {insuranceType === "Temp" && (
-                <>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Duration</span>
-                    <span className={styles.value}>{(data?.period || 0)} {data?.type || "Days"}</span>
-                  </div>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Start Date</span>
-                    <span className={styles.value}>{formatDate(data?.startDate)}</span>
-                  </div>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Start Time</span>
-                    <span className={styles.value}>{data?.startTime || "N/A"}</span>
-                  </div>
-                </>
-              )}
-              {insuranceType === "Annual" && (
-                <>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Coverage Type</span>
-                    <span className={styles.value}>{data?.level || "Comprehensive"}</span>
-                  </div>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Start Date</span>
-                    <span className={styles.value}>{formatDate(data?.startDate)}</span>
-                  </div>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Start Time</span>
-                    <span className={styles.value}>{data?.startTime || "N/A"}</span>
-                  </div>
-                </>
-              )}
-              {insuranceType === "Impound" && (
-                <>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Insurance Type</span>
-                    <span className={styles.value}>{data?.impoundType || "N/A"}</span>
-                  </div>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Start Date</span>
-                    <span className={styles.value}>{formatDate(data?.startDate)}</span>
-                  </div>
-                  <div className={styles.detailItem}>
-                    <span className={styles.label}>Start Time</span>
-                    <span className={styles.value}>{data?.startTime || "N/A"}</span>
-                  </div>
-                </>
-              )}
+            <span className={styles.buttonText}>Additional Details</span>
+            <svg
+              className={`${styles.expandIcon} ${isExpanded ? styles.expanded : ""}`}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          {isExpanded && (
+            <div className={styles.additionalContent}>
+              <div className={styles.detailsGrid}>
+                {insuranceType === "Annual" && (
+                  <>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Coverage Type</span>
+                      <span className={styles.value}>{data?.level || "Comprehensive"}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Start Date</span>
+                      <span className={styles.value}>{formatDate(data?.startDate)}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Start Time</span>
+                      <span className={styles.value}>{data?.startTime || "N/A"}</span>
+                    </div>
+                  </>
+                )}
+                {insuranceType === "Impound" && (
+                  <>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Insurance Type</span>
+                      <span className={styles.value}>{data?.impoundType || "N/A"}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Start Date</span>
+                      <span className={styles.value}>{formatDate(data?.startDate)}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Start Time</span>
+                      <span className={styles.value}>{data?.startTime || "N/A"}</span>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };
