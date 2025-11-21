@@ -12,6 +12,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
   const [expandedSections, setExpandedSections] = useState({
+    personalInfo: false,
     location: false,
     carUsageInfo: false,
     declarations: false,
