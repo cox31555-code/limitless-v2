@@ -86,7 +86,6 @@ const AnnualInsuranceContent = () => {
       coverDetails: {
         level: "",
         startDate: "",
-        startTime: "",
       },
       optionalExtras: {
         courtesyCar: null,
