@@ -153,7 +153,6 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
                   {renderField("Purchase Date", vehicleDetails?.purchaseDate)}
                 </div>
                 <div className={styles.row}>
-                  {renderField("Legal Owner", vehicleDetails?.legalOwner)}
                   {renderField("Owner", vehicleDetails?.owner)}
                   {renderField("Registered Keeper", vehicleDetails?.registeredKeeper)}
                 </div>
