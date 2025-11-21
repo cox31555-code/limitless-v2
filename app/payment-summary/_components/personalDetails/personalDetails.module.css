@@ -17,6 +17,8 @@
   display: flex;
   gap: 1.6rem;
   align-items: flex-start;
+  padding: 1.6rem;
+  border-bottom: 1px solid #e8f0f7;
 }
 
 .iconWrapper {
