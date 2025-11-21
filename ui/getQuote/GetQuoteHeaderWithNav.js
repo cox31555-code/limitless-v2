@@ -66,36 +66,38 @@ const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps, hideN
             </div>
           )}
 
-          <div className={styles.titleSection}>
-            <div className={styles.titleContent}>
-              <h1 className={`${styles.title} ${plusJakartaSans.className}`}>
-                <p>{withoutLastWord}</p>
-                <span className={styles.titleSpan}>
-                  {lastWord}
-                </span>
-              </h1>
-            </div>
+          {!hideTitle && (
+            <div className={styles.titleSection}>
+              <div className={styles.titleContent}>
+                <h1 className={`${styles.title} ${plusJakartaSans.className}`}>
+                  <p>{withoutLastWord}</p>
+                  <span className={styles.titleSpan}>
+                    {lastWord}
+                  </span>
+                </h1>
+              </div>
 
-            {subtitle ? (
-              <div className={styles.progressSection}>
-                <p className={`${styles.stepLabel} ${manrope.className}`}>
-                  {subtitle}
-                </p>
-              </div>
-            ) : totalSteps ? (
-              <div className={styles.progressSection}>
-                <p className={`${styles.stepLabel} ${manrope.className}`}>
-                  Step {currentStep} of {totalSteps}
-                </p>
-                <div className={styles.progressBar}>
-                  <div
-                    className={styles.progressFill}
-                    style={{ width: `${progressPercentage}%` }}
-                  />
+              {subtitle ? (
+                <div className={styles.progressSection}>
+                  <p className={`${styles.stepLabel} ${manrope.className}`}>
+                    {subtitle}
+                  </p>
                 </div>
-              </div>
-            ) : null}
-          </div>
+              ) : totalSteps ? (
+                <div className={styles.progressSection}>
+                  <p className={`${styles.stepLabel} ${manrope.className}`}>
+                    Step {currentStep} of {totalSteps}
+                  </p>
+                  <div className={styles.progressBar}>
+                    <div
+                      className={styles.progressFill}
+                      style={{ width: `${progressPercentage}%` }}
+                    />
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          )}
         </div>
       </header>
 
