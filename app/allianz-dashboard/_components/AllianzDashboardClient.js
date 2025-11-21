@@ -5,22 +5,6 @@ import styles from "./allianzDashboardClient.module.css";
 
 const AllianzDashboardClient = () => {
   const router = useRouter();
-  const [carouselIndex, setCarouselIndex] = useState(0);
-
-  const carouselItems = [
-    {
-      title: "Allianz Advantages",
-      description: "Don't forget to check out your latest offers and rewards in your new Allianz Advantages ones.",
-      icon: "gift",
-      link: "View my Allianz Advantages",
-    },
-    {
-      title: "More cars?",
-      description: "Just tell us about any additional cars you need covered, and we'll give you a quick quote based on your existing Allianz Online policy.",
-      icon: "cars",
-      link: "Get your car quote",
-    },
-  ];
 
   const menuItems = [
     {
@@ -60,34 +44,6 @@ const AllianzDashboardClient = () => {
     },
   ];
 
-  const handleCarouselNext = () => {
-    setCarouselIndex((prev) => (prev + 1) % carouselItems.length);
-  };
-
-  const handleCarouselPrev = () => {
-    setCarouselIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length);
-  };
-
-  const CarouselIcon = ({ type }) => {
-    const icons = {
-      gift: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <polyline points="20 12 20 22 4 22 4 12"></polyline>
-          <rect x="2" y="7" width="20" height="5"></rect>
-          <path d="M12 22V7M7 7h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-3.5a2 2 0 0 0-1.414.586l-.915.915A2 2 0 0 1 9.172 2H7a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2z"></path>
-        </svg>
-      ),
-      cars: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="5" cy="17" r="3"></circle>
-          <circle cx="19" cy="17" r="3"></circle>
-          <path d="M7 18h10v-5a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1z"></path>
-          <path d="M2 11h20v-2a1 1 0 0 0-1-1h-3l-4-5h-4l-4 5H3a1 1 0 0 0-1 1z"></path>
-        </svg>
-      ),
-    };
-    return icons[type] || icons.gift;
-  };
 
   const MenuIcon = ({ type }) => {
     const icons = {
