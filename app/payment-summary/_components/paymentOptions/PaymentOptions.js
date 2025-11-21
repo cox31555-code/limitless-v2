@@ -169,7 +169,7 @@ const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65, defaultPay
           </svg>
         </div>
         <p className={styles.infoText}>
-          The cost of your insurance and the interest charged is spread over the year, so paying for your insurance
+          The cost of your insurance and the interest charged is spread over the year, so paying for your insurance&nbsp;
           <span className={styles.highlight}>monthly will cost more than if you paid annually</span>. Please check you can afford the monthly payments.
           You'll just need your bank details ready so we can set up a Direct Debit for you.
         </p>
