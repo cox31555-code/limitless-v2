@@ -47,7 +47,7 @@ const VehicleDetails = ({ data, carUsage, insuranceType }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               stroke="#0388ff"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
