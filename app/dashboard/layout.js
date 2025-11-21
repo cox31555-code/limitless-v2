@@ -2,6 +2,7 @@ import "../globals.css";
 import { Poppins } from "next/font/google";
 import SideNavbar from "@/ui/dashboard/layout/sideNavbar/SideNavbar";
 import Header from "@/ui/dashboard/header/Header";
+import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
 import Script from "next/script";
 
 const poppins = Poppins({
@@ -19,6 +20,7 @@ export default function DashboardLayout({ children }) {
         </div>
         <div className="pageContainer">{children}</div>
       </main>
+      <DashboardFooter />
       <Script
         id="tawk-to-script"
         strategy="afterInteractive"
