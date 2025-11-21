@@ -1,10 +1,46 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./allianzDashboardClient.module.css";
 
 const AllianzDashboardClient = () => {
   const router = useRouter();
+  const [bannerIndex, setBannerIndex] = useState(0);
+
+  const promotionalBanners = [
+    {
+      id: "more-cars",
+      title: "More cars?",
+      description: "Just tell us about any additional cars you need covered, and we'll give you a quick quote based on your existing Allianz Online policy.",
+      cta: "Get your car quote",
+      ctaAction: () => router.push("/temporary/get-quote"),
+      icon: "cars",
+    },
+    {
+      id: "temporary",
+      title: "Need temporary cover?",
+      description: "Get quick and affordable temporary car insurance cover when you need it. Perfect for short-term driving needs.",
+      cta: "Get temporary cover",
+      ctaAction: () => router.push("/temporary/get-quote"),
+      icon: "calendar",
+    },
+    {
+      id: "impound",
+      title: "Impound cover",
+      description: "Protect yourself with impound insurance. Get coverage for vehicle recovery and storage costs.",
+      cta: "Explore impound cover",
+      ctaAction: () => router.push("/impound/get-quote"),
+      icon: "shield",
+    },
+    {
+      id: "courier",
+      title: "Courier insurance",
+      description: "Professional courier and delivery vehicle insurance. Comprehensive protection for your business.",
+      cta: "Get a quote",
+      ctaAction: () => router.push("/courier"),
+      icon: "truck",
+    },
+  ];
 
   const menuItems = [
     {
