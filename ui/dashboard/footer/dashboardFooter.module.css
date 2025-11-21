@@ -1,149 +1,159 @@
 .footer {
-  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-  border-top: 2px solid #e8ecf1;
-  padding: 4rem 4.4% 2rem;
+  background: #1a2332;
   margin-top: 5rem;
 }
 
-.container {
+/* Top Section - Light Background */
+.topSection {
+  background: #ffffff;
+  border-bottom: 1px solid #e8ecf1;
+  padding: 3rem 4.4%;
+}
+
+.topContainer {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-/* Top Section */
-.topSection {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  align-items: start;
-  padding-bottom: 3rem;
-  border-bottom: 1px solid #e8ecf1;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-/* Trust Section */
-.trustSection {
+/* Security Box */
+.securityBox {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: flex-start;
 }
 
-.trustItem {
+.securityBadge {
   flex-shrink: 0;
+  width: 150px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.sectigo {
-  width: 140px;
+.sectigoImage {
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-.securityContent {
+.securityInfo {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  flex-grow: 1;
 }
 
 .securityTitle {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #0052a3;
+  color: #1a2332;
   margin: 0;
   line-height: 120%;
 }
 
-.securityDescription {
+.securityText {
   font-size: 0.95rem;
   color: #555;
   margin: 0;
   line-height: 150%;
 }
 
-/* Partners Section */
-.partnersSection {
+/* Partners Box */
+.partnersBox {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  align-items: flex-start;
-  background: #f8f9fa;
+  gap: 1.2rem;
   padding: 2rem;
-  border-radius: 8px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e8ecf1;
 }
 
-.partnersLabel {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #0052a3;
+.partnersHeading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a2332;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   margin: 0;
 }
 
-.partnersLogos {
+.partnersList {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.partnerText {
+.partner {
   font-size: 1rem;
   font-weight: 600;
-  color: #0052a3;
+  color: #1a2332;
 }
 
-.partnerDivider {
-  color: #ccc;
-  font-weight: 300;
+/* Bottom Section - Dark Background */
+.bottomSection {
+  background: #1a2332;
+  padding: 3rem 4.4%;
+  color: #fff;
 }
 
-/* Links Section */
-.linksSection {
+.bottomContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Links Row */
+.linksRow {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.legalLink {
-  color: #0052a3;
+.footerLink {
+  color: #ffffff;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.2s ease;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
+  transition: color 0.2s ease;
+  position: relative;
 }
 
-.legalLink:hover {
-  color: #003d7a;
-  border-bottom-color: #0052a3;
+.footerLink::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #05afff;
+  transition: width 0.2s ease;
 }
 
-.linkDivider {
-  color: #d0d0d0;
-  font-weight: 300;
+.footerLink:hover::after {
+  width: 100%;
 }
 
-/* Disclaimer */
-.disclaimer {
-  border-top: 1px solid #e8ecf1;
-  padding-top: 2.5rem;
+/* Disclaimer Box */
+.disclaimerBox {
+  padding: 1.5rem 0;
 }
 
 .disclaimerText {
   font-size: 0.8rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.75);
   line-height: 160%;
   margin: 0;
   text-align: center;
@@ -151,142 +161,146 @@
   margin: 0 auto;
 }
 
-/* Footer Bottom */
-.footerBottom {
+/* Copyright Row */
+.copyrightRow {
   text-align: center;
   padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .copyright {
   font-size: 0.75rem;
-  color: #999;
+  color: rgba(255, 255, 255, 0.6);
   margin: 0;
   font-weight: 400;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .footer {
-    padding: 3rem 3% 1.5rem;
-    margin-top: 4rem;
-  }
-
-  .container {
-    gap: 2.5rem;
-  }
-
   .topSection {
+    padding: 2.5rem 3%;
+  }
+
+  .topContainer {
+    gap: 3rem;
+  }
+
+  .securityBox {
     gap: 2rem;
   }
 
-  .sectigo {
-    width: 120px;
+  .securityBadge {
+    width: 130px;
+  }
+
+  .bottomSection {
+    padding: 2.5rem 3%;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .footer {
-    padding: 2.5rem 2% 1.2rem;
-    margin-top: 3rem;
-  }
-
-  .container {
-    gap: 2rem;
-  }
-
   .topSection {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-bottom: 2rem;
+    padding: 2.5rem 2%;
   }
 
-  .trustSection {
+  .topContainer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .securityBox {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .securityContent {
-    text-align: center;
+  .securityBadge {
+    width: 140px;
   }
 
-  .partnersSection {
-    align-items: center;
-  }
-
-  .partnersLabel {
-    text-align: center;
+  .securityInfo {
     width: 100%;
   }
 
-  .partnersLogos {
-    justify-content: center;
+  .partnersBox {
+    align-items: center;
+    text-align: center;
   }
 
-  .linksSection {
-    padding: 1.5rem 0;
+  .partnersHeading {
+    width: 100%;;
+  }
+
+  .partnersList {
+    align-items: center;
+  }
+
+  .bottomSection {
+    padding: 2rem 2%;
+  }
+
+  .linksRow {
+    gap: 1.5rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .footer {
-    padding: 2rem 4% 1rem;
-    margin-top: 2.5rem;
+  .topSection {
+    padding: 2rem 4%;
   }
 
-  .container {
+  .topContainer {
     gap: 1.8rem;
   }
 
-  .topSection {
-    padding-bottom: 1.5rem;
-  }
-
-  .trustSection {
+  .securityBox {
     gap: 1.5rem;
   }
 
-  .sectigo {
+  .securityBadge {
     width: 110px;
   }
 
   .securityTitle {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
-  .securityDescription {
-    font-size: 0.9rem;
-  }
-
-  .partnersSection {
-    padding: 1.5rem;
-  }
-
-  .partnersLabel {
+  .securityText {
     font-size: 0.85rem;
   }
 
-  .partnerText {
+  .partnersBox {
+    padding: 1.5rem;
+  }
+
+  .partnersHeading {
+    font-size: 0.75rem;
+  }
+
+  .partner {
     font-size: 0.95rem;
   }
 
-  .linksSection {
+  .bottomSection {
+    padding: 1.5rem 4%;
+    gap: 1.5rem;
+  }
+
+  .linksRow {
     flex-direction: column;
-    gap: 0.8rem;
-    padding: 1.2rem 0;
+    gap: 1rem;
+    padding: 1rem 0;
   }
 
-  .legalLink {
-    font-size: 0.9rem;
-    width: 100%;
-    text-align: center;
-  }
-
-  .linkDivider {
-    display: none;
+  .footerLink {
+    font-size: 0.85rem;
   }
 
   .disclaimerText {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
+  }
+
+  .copyright {
+    font-size: 0.7rem;
   }
 }
