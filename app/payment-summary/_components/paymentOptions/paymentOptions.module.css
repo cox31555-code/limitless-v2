@@ -483,6 +483,27 @@
     font-size: 0.8rem;
   }
 
+  .paymentBreakdown {
+    padding: 1.4rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .breakdownLabel {
+    font-size: 0.95rem;
+  }
+
+  .breakdownValue {
+    font-size: 0.95rem;
+  }
+
+  .creditNote {
+    font-size: 0.85rem;
+  }
+
   .infoText {
     font-size: 0.95rem;
   }
