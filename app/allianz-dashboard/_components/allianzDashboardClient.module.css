@@ -532,6 +532,11 @@
     font-size: 2.4rem;
   }
 
+  .policiesBannerContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .policiesGrid {
     grid-template-columns: 1fr;
   }
