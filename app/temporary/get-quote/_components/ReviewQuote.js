@@ -423,52 +423,14 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
               <div className={styles.section}>
                 <h3 className={styles.sectionTitle}>Optional Extras</h3>
                 <div className={styles.sectionContent}>
-                  <div className={styles.extrasGrid}>
-                    {optionalExtras?.protectedNCD === true && (
-                      <div className={styles.extraItem}>
-                        <div className={styles.extraItemHeader}>
-                          <span className={styles.extraItemTitle}>Protected no claim discount</span>
-                          <span className={styles.extraItemPrice}>£50/year</span>
-                        </div>
-                        <span className={styles.extraItemStatus}>Selected</span>
-                      </div>
-                    )}
-                    {optionalExtras?.motorLegal === true && (
-                      <div className={styles.extraItem}>
-                        <div className={styles.extraItemHeader}>
-                          <span className={styles.extraItemTitle}>Motor legal</span>
-                          <span className={styles.extraItemPrice}>£150/year</span>
-                        </div>
-                        <span className={styles.extraItemStatus}>Selected</span>
-                      </div>
-                    )}
-                    {optionalExtras?.courtesyCar === true && (
-                      <div className={styles.extraItem}>
-                        <div className={styles.extraItemHeader}>
-                          <span className={styles.extraItemTitle}>Courtesy car</span>
-                          <span className={styles.extraItemPrice}>£100/year</span>
-                        </div>
-                        <span className={styles.extraItemStatus}>Selected</span>
-                      </div>
-                    )}
-                    {optionalExtras?.breakdownCover === true && (
-                      <div className={styles.extraItem}>
-                        <div className={styles.extraItemHeader}>
-                          <span className={styles.extraItemTitle}>Breakdown cover</span>
-                          <span className={styles.extraItemPrice}>£110/year</span>
-                        </div>
-                        <span className={styles.extraItemStatus}>Selected</span>
-                      </div>
-                    )}
-                    {optionalExtras?.foreignUseCover === true && (
-                      <div className={styles.extraItem}>
-                        <div className={styles.extraItemHeader}>
-                          <span className={styles.extraItemTitle}>Foreign use cover</span>
-                          <span className={styles.extraItemPrice}>£50/year</span>
-                        </div>
-                        <span className={styles.extraItemStatus}>Selected</span>
-                      </div>
-                    )}
+                  <div className={styles.row}>
+                    {optionalExtras?.protectedNCD === true && renderField("Protected no claim discount", "£50/year")}
+                    {optionalExtras?.motorLegal === true && renderField("Motor legal", "£150/year")}
+                    {optionalExtras?.courtesyCar === true && renderField("Courtesy car", "£100/year")}
+                  </div>
+                  <div className={styles.row}>
+                    {optionalExtras?.breakdownCover === true && renderField("Breakdown cover", "£110/year")}
+                    {optionalExtras?.foreignUseCover === true && renderField("Foreign use cover", "£50/year")}
                   </div>
                 </div>
               </div>
