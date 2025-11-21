@@ -46,8 +46,8 @@ const PolicyPageClient = ({
   return (
     <>
       <div className={styles.header}>
-        <h2 className={styles.title}>
-          Your Policies
+        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+          Your Policy
         </h2>
         <div className={styles.buttonWrapper} ref={dropdownRef}>
           <button
