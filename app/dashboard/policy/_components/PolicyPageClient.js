@@ -152,7 +152,7 @@ const PolicyPageClient = ({
 
       {activePolicies && activePolicies.length > 0 && (
         <Table
-          title="Expired/Unpaid Policies"
+          title="Expired or Unpaid"
           tableType="inactive"
           columns={[
             "Policy Number",
@@ -162,7 +162,7 @@ const PolicyPageClient = ({
             "Details",
           ]}
           data={activePolicies}
-          showViewButton={false}
+          showViewButton={true}
           theme="expired"
         />
       )}
