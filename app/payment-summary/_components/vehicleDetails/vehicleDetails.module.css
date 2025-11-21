@@ -190,53 +190,62 @@
   }
 
   .mainTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .cardContent {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .iconWrapper {
-    width: 55px;
-    height: 55px;
-    min-width: 55px;
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
   }
 
   .carIcon {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
   }
 
   .vehicleName {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+  }
+
+  .registrationBadge {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .editLink {
+    font-size: 1.2rem;
   }
 
   .vehicleCard,
   .specificationSection {
-    padding: 1.2rem;
+    padding: 1.6rem;
   }
 
   .specGrid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .sectionHeading {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.8rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
   }
 
   .specLabel {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
   }
 
   .specValue {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
