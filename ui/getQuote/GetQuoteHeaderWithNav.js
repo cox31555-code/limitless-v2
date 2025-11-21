@@ -15,7 +15,7 @@ const manrope = Manrope({
   weight: ["500"],
 });
 
-const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps, hideNav = false }) => {
+const GetQuoteHeaderWithNav = ({ title, subtitle, currentStep, totalSteps, hideNav = false, hideTitle = false }) => {
   const router = useRouter();
   const [showHelpModal, setShowHelpModal] = useState(false);
 
