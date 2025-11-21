@@ -30,7 +30,6 @@ const INSURANCE_LEVELS = [
 const AnnualCoverDetailsForm = ({ form }) => {
   const selectedLevel = form.watch("coverDetails.level");
   const startDate = form.watch("coverDetails.startDate");
-  const startTime = form.watch("coverDetails.startTime");
 
   const handleLevelChange = (levelId) => {
     form.setValue("coverDetails.level", levelId, { shouldValidate: true });
@@ -38,10 +37,6 @@ const AnnualCoverDetailsForm = ({ form }) => {
 
   const handleDateChange = (e) => {
     form.setValue("coverDetails.startDate", e.target.value, { shouldValidate: true });
-  };
-
-  const handleTimeChange = (e) => {
-    form.setValue("coverDetails.startTime", e.target.value, { shouldValidate: true });
   };
 
   return (
