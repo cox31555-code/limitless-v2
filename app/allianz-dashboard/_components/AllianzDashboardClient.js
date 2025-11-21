@@ -113,7 +113,7 @@ const AllianzDashboardClient = () => {
           {menuItems.map((item, index) => (
             <button
               key={index}
-              className={`${styles.menuItem} ${item.label === "Account details" ? styles.highlighted : ""}`}
+              className={styles.menuItem}
               onClick={item.action}
             >
               <div className={styles.menuItemIcon}>
