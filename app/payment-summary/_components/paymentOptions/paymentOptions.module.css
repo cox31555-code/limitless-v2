@@ -444,7 +444,7 @@
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .optionsGrid {
@@ -457,23 +457,23 @@
   }
 
   .cardTitle {
-    font-size: 1.1rem;
-  }
-
-  .mainPrice {
-    font-size: 1.8rem;
-  }
-
-  .priceLabel {
-    font-size: 1rem;
-  }
-
-  .detailPrice {
     font-size: 1.2rem;
   }
 
+  .mainPrice {
+    font-size: 2rem;
+  }
+
+  .priceLabel {
+    font-size: 1.1rem;
+  }
+
+  .detailPrice {
+    font-size: 1.3rem;
+  }
+
   .badge {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .paymentBreakdown {
@@ -481,19 +481,19 @@
   }
 
   .breakdownTitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
   }
 
   .breakdownLabel {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 
   .breakdownValue {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 
   .infoText {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 }
