@@ -16,6 +16,7 @@ import styles from "@/app/temporary/get-quote/stepForm.module.css";
 const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { loading: () => <StepFallback /> });
 const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { loading: () => <StepFallback /> });
 const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPersonalDetailsForm"), { loading: () => <StepFallback /> });
+const AnnualOptionalExtrasForm = dynamic(() => import("./_components/AnnualOptionalExtrasForm"), { loading: () => <StepFallback /> });
 const ReviewQuote = dynamic(() => import("@/app/temporary/get-quote/_components/ReviewQuote"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
@@ -28,13 +29,15 @@ const STEPS = {
   VEHICLE: 1,
   COVER: 2,
   PERSONAL: 3,
-  REVIEW: 4,
+  OPTIONAL_EXTRAS: 4,
+  REVIEW: 5,
 };
 
 const STEP_TITLES = [
   "Vehicle Details",
   "Cover Details",
   "Personal Details",
+  "Optional Extras",
   "Review Your Quote",
 ];
 
@@ -233,12 +236,18 @@ const AnnualInsuranceContent = () => {
   };
 
   const handleNextStep = async () => {
+    if (currentStep === STEPS.OPTIONAL_EXTRAS) {
+      setCurrentStep(STEPS.REVIEW);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     const fieldsToValidate = getFieldsForStep(currentStep);
     const isValid = await trigger(fieldsToValidate);
 
     if (isValid) {
       if (currentStep === STEPS.PERSONAL) {
-        setCurrentStep(STEPS.REVIEW);
+        setCurrentStep(STEPS.OPTIONAL_EXTRAS);
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
@@ -283,7 +292,7 @@ const AnnualInsuranceContent = () => {
   return (
     <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
-      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={4} />
+      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={5} />
       <div className="centeredContent" suppressHydrationWarning>
         <form
           className={styles.stepFormContainer}
@@ -302,6 +311,9 @@ const AnnualInsuranceContent = () => {
             {currentStep === STEPS.PERSONAL && (
               <AnnualPersonalDetailsForm form={form} />
             )}
+            {currentStep === STEPS.OPTIONAL_EXTRAS && (
+              <AnnualOptionalExtrasForm form={form} />
+            )}
             {currentStep === STEPS.REVIEW && (
               <ReviewQuote form={form} insuranceType="Annual" />
             )}
@@ -309,7 +321,7 @@ const AnnualInsuranceContent = () => {
 
           <StepActions
             currentStep={currentStep}
-            totalSteps={4}
+            totalSteps={5}
             onNext={handleNextStep}
             onBack={handlePreviousStep}
             onSubmit={onSubmit}
@@ -325,7 +337,7 @@ const AnnualInsuranceContent = () => {
 
 const AnnualInsurancePage = () => {
   return (
-    <Suspense fallback={<GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={1} totalSteps={4} />}>
+    <Suspense fallback={<GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={1} totalSteps={5} />}>
       <AnnualInsuranceContent />
     </Suspense>
   );
