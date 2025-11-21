@@ -215,17 +215,17 @@
 
 .policyCoverInfo {
   background: #f8fafc;
-  padding: 1.5rem;
+  padding: 2.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   border-top: 1px solid #e0e6f0;
 }
 
 .coverInfoIcon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background: #e3f1fe;
   border-radius: 8px;
   display: flex;
@@ -235,8 +235,8 @@
 }
 
 .coverInfoIcon svg {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 .coverInfoLabel {
