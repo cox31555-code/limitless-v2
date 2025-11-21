@@ -226,7 +226,6 @@
   .dateSection {
     padding: 2rem;
     gap: 1.6rem;
-    grid-template-columns: 1fr;
   }
 
   .levelIconWrapper {
