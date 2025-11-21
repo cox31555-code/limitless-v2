@@ -138,10 +138,6 @@ const Header = () => {
     (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary"))
   );
 
-  if (!mounted) {
-    return null;
-  }
-
   if (shouldHideHeader) {
     return null;
   }
