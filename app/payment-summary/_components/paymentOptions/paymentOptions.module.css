@@ -340,6 +340,23 @@
   .badge {
     font-size: 0.9rem;
   }
+
+  .paymentBreakdown {
+    padding: 1.8rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .breakdownLabel {
+    font-size: 1rem;
+  }
+
+  .breakdownValue {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 600px) {
