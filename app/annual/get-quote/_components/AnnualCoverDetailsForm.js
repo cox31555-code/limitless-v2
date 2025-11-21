@@ -89,7 +89,7 @@ const AnnualCoverDetailsForm = ({ form }) => {
               When would you like your cover to start?
             </h2>
             <p className={styles.sectionSubtitle}>
-              Select your preferred cover start date
+              Select your preferred cover start date and time
             </p>
           </div>
 
@@ -102,6 +102,15 @@ const AnnualCoverDetailsForm = ({ form }) => {
               error={form.formState.errors.coverDetails?.startDate}
               minDate={new Date()}
               reducedPadding={true}
+            />
+            <FormDateInput
+              type="time"
+              timeLabel="Start Time"
+              value={startTime || ""}
+              onChange={handleTimeChange}
+              error={form.formState.errors.coverDetails?.startTime}
+              reducedPadding={true}
+              relatedDateValue={startDate}
             />
           </div>
         </div>
