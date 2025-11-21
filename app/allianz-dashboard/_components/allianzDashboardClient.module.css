@@ -416,43 +416,36 @@
 .bannerText {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
   flex-grow: 1;
 }
 
 .bannerTitle {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0052a3;
   margin: 0;
   line-height: 120%;
 }
 
 .bannerDescription {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  color: #666;
   margin: 0;
   line-height: 150%;
 }
 
 .bannerCta {
   align-self: flex-start;
-  background: #ffffff;
+  background: transparent;
   color: #0052a3;
   border: none;
-  padding: 0.8rem 1.6rem;
+  padding: 0;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-.bannerCta:hover {
-  background: rgba(255, 255, 255, 0.95);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 52, 163, 0.2);
+  text-decoration: underline;
+  text-decoration-color: #0052a3;
 }
 
 .bannerDots {
