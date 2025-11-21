@@ -141,7 +141,7 @@ const AnnualInsuranceContent = () => {
     },
   });
 
-  const { setValue, trigger, watch } = form;
+  const { setValue, trigger } = form;
 
   // Handle step parameter from URL (only on client)
   useEffect(() => {
