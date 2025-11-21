@@ -320,153 +320,38 @@
 
 @media screen and (max-width: 600px) {
   .headerContainer {
-    padding: 1.2rem 2.4rem;
-    margin-bottom: 0;
-    min-height: 80px;
+    padding: 0.8rem 2rem;
+    min-height: 65px;
+  }
+
+  .headerContent {
+    gap: 0.6rem;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
   }
 
   .pageTitle {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
 
-  .logoutBtn,
   .menuBtn {
-    width: 4.4rem;
-    height: 4.4rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
-  .logoutBtn svg,
-  .menuBtn svg {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-
-  .menuBackdrop {
-    position: fixed !important;
-    top: 80px !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(0, 8, 34, 0.6) !important;
-    z-index: 1999 !important;
-    display: block !important;
+  .menuBtn img {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
   }
 
   .menuDropdown {
-    position: fixed !important;
-    top: 80px !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: #000822 !important;
-    z-index: 2000 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+    top: 65px !important;
   }
 
-  .menuItem {
-    padding: 1.6rem 2.4rem;
-    font-size: 1.5rem;
-    border-bottom: none;
-    display: block !important;
-    width: 100% !important;
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 400;
-    text-align: left;
-    cursor: pointer;
-    transition: none;
-  }
-
-  .helpDropdown,
-  .profileDropdown {
-    min-width: 240px;
-    right: -80%;
-    transform: translateX(80%);
-  }
-}
-
-@media screen and (max-width: 400px) {
   .menuBackdrop {
-    position: fixed !important;
-    top: 80px !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(0, 8, 34, 0.6) !important;
-    z-index: 1999 !important;
-    display: block !important;
-  }
-
-  .menuDropdown {
-    position: fixed !important;
-    top: 80px !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: #000822 !important;
-    z-index: 2000 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-  }
-
-  .menuItem {
-    padding: 1.4rem 2rem !important;
-    font-size: 1.4rem !important;
-    display: block !important;
-    width: 100% !important;
-    background: transparent !important;
-    border: none !important;
-    color: rgba(255, 255, 255, 0.85) !important;
-    font-weight: 400 !important;
-    text-align: left !important;
-    cursor: pointer !important;
-    transition: none !important;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .menuBackdrop {
-    position: fixed !important;
-    top: 80px !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(0, 8, 34, 0.6) !important;
-    z-index: 1999 !important;
-    display: block !important;
-  }
-
-  .menuDropdown {
-    position: fixed !important;
-    top: 80px !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: #000822 !important;
-    z-index: 2000 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-  }
-
-  .menuItem {
-    padding: 1.2rem 1.8rem !important;
-    font-size: 1.3rem !important;
-    display: block !important;
-    width: 100% !important;
-    background: transparent !important;
-    border: none !important;
-    color: rgba(255, 255, 255, 0.85) !important;
-    font-weight: 400 !important;
-    text-align: left !important;
-    cursor: pointer !important;
-    transition: none !important;
+    top: 65px !important;
   }
 }
