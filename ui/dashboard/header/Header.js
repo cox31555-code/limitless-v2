@@ -26,7 +26,7 @@ const Header = ({ page }) => {
           return "Policy Documents";
         case "dashboard":
         default:
-          return "Dashboard";
+          return "MyInsurance";
       }
     }
 
@@ -39,7 +39,7 @@ const Header = ({ page }) => {
     } else if (pathname.includes("/documents")) {
       return "Policy Documents";
     } else {
-      return "Dashboard";
+      return "MyInsurance";
     }
   };
 
