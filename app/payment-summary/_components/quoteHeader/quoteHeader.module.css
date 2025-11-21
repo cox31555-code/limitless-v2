@@ -205,6 +205,14 @@
     gap: 1.4rem;
   }
 
+  .refLabel {
+    font-size: 0.9rem;
+  }
+
+  .refValue {
+    font-size: 1.1rem;
+  }
+
   .greeting {
     font-size: 1.8rem;
     letter-spacing: -0.2px;
