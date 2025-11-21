@@ -12,27 +12,15 @@
 
 /* Hero Section */
 .heroSection {
-  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
+  background: #0052a3;
   border-radius: 16px;
   padding: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.12);
   position: relative;
   overflow: hidden;
-}
-
-.heroSection::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
 }
 
 .heroContent {
