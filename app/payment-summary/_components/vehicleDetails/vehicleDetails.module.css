@@ -5,12 +5,26 @@
   width: 100%;
 }
 
-.sectionTitle {
-  font-size: 1.4rem;
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
   font-weight: 700;
   color: #003366;
-  margin: 0 0 0.8rem 0;
-  letter-spacing: -0.3px;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #5a7a94;
+  margin: 0;
+  letter-spacing: -0.2px;
 }
 
 .vehicleCard {
