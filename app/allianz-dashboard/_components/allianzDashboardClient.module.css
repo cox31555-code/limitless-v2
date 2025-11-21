@@ -470,10 +470,4 @@
   .legalLinks {
     gap: 1rem;
   }
-
-  .footerSection {
-    margin: 1.5rem -4% -1.5rem -4%;
-    padding: 1.5rem 4%;
-    gap: 1.5rem;
-  }
 }
