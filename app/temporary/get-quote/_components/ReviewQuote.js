@@ -5,26 +5,16 @@ import { useWatch } from "react-hook-form";
 import styles from "./reviewQuote.module.css";
 
 const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
-  const vehicleDetails = useWatch({
+  // Watch all form data to ensure ReviewQuote updates when any field changes
+  const allFormData = useWatch({
     control: form.control,
-    name: "vehicleDetails",
   });
-  const coverDetails = useWatch({
-    control: form.control,
-    name: "coverDetails",
-  });
-  const userDetails = useWatch({
-    control: form.control,
-    name: "userDetails",
-  });
-  const carUsage = useWatch({
-    control: form.control,
-    name: "carUsage",
-  });
-  const optionalExtras = useWatch({
-    control: form.control,
-    name: "optionalExtras",
-  });
+
+  const vehicleDetails = allFormData?.vehicleDetails;
+  const coverDetails = allFormData?.coverDetails;
+  const userDetails = allFormData?.userDetails;
+  const carUsage = allFormData?.carUsage;
+  const optionalExtras = allFormData?.optionalExtras;
 
   const formatValue = (value) => {
     if (value === null || value === undefined || value === "") return "N/A";
