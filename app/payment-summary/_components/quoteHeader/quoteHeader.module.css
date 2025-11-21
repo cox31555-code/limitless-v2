@@ -10,6 +10,32 @@
   overflow: hidden;
 }
 
+.quoteReference {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
+  z-index: 1;
+  align-items: flex-start;
+}
+
+.refLabel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.refValue {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0388ff;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
 .container::before {
   content: '';
   position: absolute;
