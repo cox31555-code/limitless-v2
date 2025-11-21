@@ -5,23 +5,23 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 0.6rem;
+  gap: 0.8rem;
   flex-shrink: 0;
   background: #ffffff;
-  border: 1px solid #e0e6f0;
-  border-radius: 12px;
+  border: 1px solid #e8edf6;
+  border-radius: 16px;
   margin: 1.6rem 0 1.6rem 1.6rem;
   overflow-y: auto;
   overflow-x: hidden;
   transition: all 0.3s ease;
-  height: calc(47vh - 47px);
+  height: auto;
   position: relative;
-  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.04);
+  box-shadow: 0 2px 12px rgba(0, 61, 122, 0.08);
 }
 
 .container:hover {
-  border-color: #d4e6f8;
-  box-shadow: 0 4px 12px rgba(0, 61, 122, 0.06);
+  border-color: #d4e0f0;
+  box-shadow: 0 4px 16px rgba(0, 61, 122, 0.12);
 }
 
 .sidebarOpen {
@@ -42,7 +42,7 @@
   opacity: 1;
   transform: translateX(0);
   transition: none;
-  height: calc(47vh - 47px);
+  height: auto;
 }
 
 .sidebarDesktop .navItem {
@@ -56,8 +56,8 @@
   align-items: stretch;
   justify-content: flex-start;
   width: 100%;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
+  gap: 0;
+  padding: 0;
 }
 
 .navItem {
@@ -66,52 +66,53 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 0.9rem 1rem;
-  gap: 0.8rem;
-  color: #666;
+  padding: 1rem 1.2rem;
+  gap: 0.9rem;
+  color: #7a8ba0;
   font-size: 0.95rem;
   font-weight: 500;
-  line-height: 120%;
-  letter-spacing: 0.3px;
-  border-radius: 8px;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   opacity: 0;
   position: relative;
   overflow: hidden;
-  border: 1px solid transparent;
+  border: none;
   text-decoration: none;
 }
 
 .navItem:hover {
   background: #f8fafc;
-  border-color: #e0e6f0;
-  color: #003d7a;
+  color: #5a7a9e;
 }
 
 .navItem:hover .icon {
-  color: #003d7a;
+  color: #5a7a9e;
 }
 
 .sidebarOpen .navItem {
-  animation: slideInLeft 0.5s cubic-bezier(0.23, 1, 0.320, 1) forwards;
+  animation: slideInLeft 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 .activeNavItem {
   color: #ffffff;
-  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
+  background: linear-gradient(135deg, #0b6dd4 0%, #0a5db3 100%);
   border: none;
+  border-radius: 12px;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0, 61, 122, 0.2);
+  box-shadow: 0 4px 14px rgba(11, 109, 212, 0.3);
+  padding: 1.1rem 1.4rem;
+}
+
+.activeNavItem:hover {
+  box-shadow: 0 6px 18px rgba(11, 109, 212, 0.35);
+  transform: translateY(-1px);
 }
 
 .activeNavItem .icon {
   color: #ffffff;
-}
-
-.activeNavItem:hover {
-  box-shadow: 0 6px 16px rgba(0, 61, 122, 0.3);
-  transform: translateY(-1px);
 }
 
 .navItemIconWrapper {
@@ -119,27 +120,28 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  width: 20px;
 }
 
 .navItemContent {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0;
   flex-grow: 1;
 }
 
 .navItemLabel {
   font-size: 0.95rem;
   font-weight: 500;
-  line-height: 120%;
+  line-height: 140%;
   color: inherit;
 }
 
 .icon {
   width: 20px;
   height: 20px;
-  color: #999;
-  transition: color 0.2s ease;
+  color: #b0b8c8;
+  transition: color 0.25s ease;
   flex-shrink: 0;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -148,7 +150,7 @@
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
@@ -156,7 +158,6 @@
   }
 }
 
-/* Scrollbar styling */
 .container::-webkit-scrollbar {
   width: 6px;
 }
@@ -179,13 +180,13 @@
   .container {
     width: calc(100% - 2rem);
     height: auto;
-    border: 1px solid #e0e6f0;
-    border-radius: 10px;
+    border: 1px solid #e8edf6;
+    border-radius: 14px;
     padding: 1rem 0.8rem;
     background: #ffffff;
     margin: 0.8rem 1rem;
-    gap: 0.4rem;
-    box-shadow: 0 2px 8px rgba(0, 61, 122, 0.04);
+    gap: 0.6rem;
+    box-shadow: 0 2px 12px rgba(0, 61, 122, 0.08);
   }
 
   .sidebarClosed {
@@ -201,12 +202,12 @@
   }
 
   .navItems {
-    padding: 0.5rem 0;
+    padding: 0;
     gap: 0.4rem;
   }
 
   .navItem {
-    padding: 0.85rem 1rem;
+    padding: 0.9rem 1.1rem;
     font-size: 0.9rem;
   }
 
