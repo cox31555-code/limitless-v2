@@ -74,29 +74,28 @@
 }
 
 .navItem {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
-  padding: 0.8rem 1.6rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0;
   transition: all 0.2s ease;
   position: relative;
   white-space: nowrap;
-  background: rgba(5, 175, 255, 0.1);
-  border: 1px solid rgba(5, 175, 255, 0.2);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
 }
 
 .navItem:hover {
   color: #ffffff;
-  background: rgba(5, 175, 255, 0.15);
-  border-color: rgba(5, 175, 255, 0.4);
+  border-bottom-color: #05afff;
 }
 
 .navItem.active {
   color: #ffffff;
-  background: rgba(5, 175, 255, 0.2);
-  border-color: #05afff;
+  border-bottom-color: #05afff;
   font-weight: 600;
 }
 
@@ -105,10 +104,10 @@
   align-items: center;
   gap: 0.7rem;
   color: rgba(255, 255, 255, 0.8);
-  background: rgba(5, 175, 255, 0.1);
-  border: 1px solid rgba(5, 175, 255, 0.2);
-  padding: 0.8rem 1.6rem;
-  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
@@ -118,8 +117,8 @@
 
 .logoutButton:hover {
   color: #ffffff;
-  background: rgba(5, 175, 255, 0.15);
-  border-color: rgba(5, 175, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .logoutButton svg {
@@ -174,14 +173,14 @@
 .menuBtn {
   width: 4.4rem;
   height: 4.4rem;
-  border-radius: 8px;
-  background: rgba(5, 175, 255, 0.1);
-  border: 1px solid rgba(5, 175, 255, 0.2);
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #05afff;
+  color: #ffffff;
   flex-shrink: 0;
   position: relative;
   z-index: 2001;
@@ -191,8 +190,8 @@
 }
 
 .menuBtn:hover {
-  background: rgba(5, 175, 255, 0.15);
-  border-color: rgba(5, 175, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .menuBtn svg {
@@ -235,10 +234,11 @@
   align-items: center;
   gap: 0.8rem;
   width: 100%;
-  padding: 1rem 2.4rem;
+  padding: 1.2rem 2.4rem;
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.85);
+  border-left: 3px solid transparent;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
@@ -250,12 +250,12 @@
 
 .menuItem:hover {
   color: #ffffff;
-  background: rgba(0, 52, 163, 0.1);
+  border-left-color: #05afff;
 }
 
 .menuItem.active {
   color: #ffffff;
-  background: rgba(0, 82, 163, 0.15);
+  border-left-color: #05afff;
   font-weight: 600;
 }
 
