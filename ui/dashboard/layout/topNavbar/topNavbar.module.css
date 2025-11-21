@@ -55,20 +55,21 @@
   align-items: center;
   gap: 0.6rem;
   color: rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border: 1.5px solid rgba(220, 38, 38, 0.3);
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: #dc2626;
 }
 
 .logoutButton:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  color: #ef4444;
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.5);
 }
 
 .logoutButton svg {
