@@ -291,6 +291,60 @@
   flex: 1;
 }
 
+.extrasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.extraItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.06) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.16);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.extraItem:hover {
+  border-color: rgba(3, 136, 255, 0.32);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.04) 100%);
+}
+
+.extraItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.extraItemTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000822;
+}
+
+.extraItemPrice {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0388ff;
+  flex-shrink: 0;
+}
+
+.extraItemStatus {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(76, 175, 80, 0.12);
+  color: #2e7d32;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid rgba(76, 175, 80, 0.24);
+  width: fit-content;
+}
+
 @media (max-width: 600px) {
   .reviewContainer {
     gap: 2rem;
