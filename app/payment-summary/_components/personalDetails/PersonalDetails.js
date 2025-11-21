@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./personalDetails.module.css";
-import SelectedItem from "../selectedItem/SelectedItem";
 import CarUsage from "../carUsage/CarUsage";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
