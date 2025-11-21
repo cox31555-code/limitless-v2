@@ -40,6 +40,13 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
     }));
   };
 
+  const toggleDriverSection = (driverIndex) => {
+    setExpandedDrivers((prev) => ({
+      ...prev,
+      [driverIndex]: !prev[driverIndex],
+    }));
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.mainCard}>
