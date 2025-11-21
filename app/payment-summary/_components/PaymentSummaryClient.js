@@ -5,7 +5,7 @@ import Header from "./header/Header";
 import PersonalDetails from "./personalDetails/PersonalDetails";
 import CoverDetails from "./coverDetails/CoverDetails";
 import VehicleDetails from "./vehicleDetails/VehicleDetails";
-import CoverLevel from "./coverLevel/CoverLevel";
+import QuoteHeader from "./quoteHeader/QuoteHeader";
 import PaymentOptions from "./paymentOptions/PaymentOptions";
 import Actions from "./actions/Actions";
 import PaymentIframe from "./PaymentIframe";
