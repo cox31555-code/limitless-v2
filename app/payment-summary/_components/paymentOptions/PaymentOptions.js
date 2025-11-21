@@ -113,8 +113,8 @@ const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65, defaultPay
           <h3 className={`${styles.breakdownTitle} ${plusJakartaSans.className}`}>Payment Breakdown</h3>
 
           <div className={styles.breakdownItem}>
-            <p className={styles.breakdownLabel}>First payment / deposit, 9% of the annual price (£525.65)</p>
-            <p className={`${styles.breakdownValue} ${plusJakartaSans.className}`}>£47.29</p>
+            <p className={styles.breakdownLabel}>First payment / deposit, 40% of the annual price (£{annualPrice.toFixed(2)})</p>
+            <p className={`${styles.breakdownValue} ${plusJakartaSans.className}`}>£{(annualPrice * 0.4).toFixed(2)}</p>
           </div>
 
           <div className={styles.breakdownDivider} />
