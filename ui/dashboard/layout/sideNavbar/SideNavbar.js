@@ -11,9 +11,8 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
   const { logout } = useAuth();
   const page = pathname.split("/")[2];
 
-  // Minimalist modern icons
-  const GridIcon = () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={styles.icon}>
+  const DashboardIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
       <rect x="3" y="3" width="7" height="7" rx="1" />
       <rect x="14" y="3" width="7" height="7" rx="1" />
       <rect x="3" y="14" width="7" height="7" rx="1" />
@@ -21,75 +20,69 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
     </svg>
   );
 
-  const BookmarkIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={styles.icon}>
-      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+  const PolicyIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="12" y1="13" x2="12" y2="17"></line>
+      <line x1="10" y1="15" x2="14" y2="15"></line>
     </svg>
   );
 
-  const FileIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={styles.icon}>
-      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
-      <polyline points="13 2 13 9 20 9" />
+  const DocumentsIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
     </svg>
   );
 
-  const CheckCircleIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={styles.icon}>
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+  const ClaimsIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M9 12l2 2 4-4m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
     </svg>
   );
 
-  const CloudIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={styles.icon}>
-      <path d="M19 14c1.49-1.46 2.5-3.48 2.5-5.75C21.5 5.36 18.86 2.5 15.5 2.5c-2.05 0-3.82 1.08-4.81 2.7C9.88 3.5 8.64 3 7.25 3 4.14 3 1.5 5.64 1.5 8.75c0 2.27 1.01 4.29 2.5 5.75" />
+  const SubmitIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M12 5v14m-7-7h14"></path>
     </svg>
   );
 
-  const UploadIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={styles.icon}>
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <polyline points="17 8 12 3 7 8" />
-      <line x1="12" y1="3" x2="12" y2="15" />
-    </svg>
-  );
-
-  const PowerIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={styles.icon}>
-      <path d="M18.36 6.64a9 9 0 1 1-12.73 0" />
-      <line x1="12" y1="2" x2="12" y2="12" />
+  const LogoutIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path>
     </svg>
   );
 
   const navItems = [
     {
       label: "Dashboard",
-      icon: <GridIcon />,
+      icon: <DashboardIcon />,
       href: "/dashboard",
     },
     {
       label: "Manage Policy",
-      icon: <BookmarkIcon />,
+      icon: <PolicyIcon />,
       href: "/dashboard/policy",
     },
     {
       label: "Documents",
-      icon: <FileIcon />,
+      icon: <DocumentsIcon />,
       href: "/dashboard/documents",
     },
     {
       label: "Manage Claims",
-      icon: <CheckCircleIcon />,
+      icon: <ClaimsIcon />,
       href: "/dashboard/claims",
     },
     {
       label: "Submit a Claim",
-      icon: <UploadIcon />,
+      icon: <SubmitIcon />,
       href: "/dashboard/submit-claim",
     },
     {
       label: "Logout",
-      icon: <PowerIcon />,
+      icon: <LogoutIcon />,
     },
   ];
 
@@ -120,9 +113,14 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
                 await logout();
                 router.push("/login");
               }}
+              title="Logout from your account"
             >
-              {item.icon}
-              <span>{item.label}</span>
+              <div className={styles.navItemIconWrapper}>
+                {item.icon}
+              </div>
+              <div className={styles.navItemContent}>
+                <span className={styles.navItemLabel}>{item.label}</span>
+              </div>
             </button>
           ) : (
             <Link
@@ -136,9 +134,14 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
               style={{
                 animationDelay: isOpen ? `${(index + 1) * 0.06}s` : "0s",
               }}
+              title={item.label}
             >
-              {item.icon}
-              <span>{item.label}</span>
+              <div className={styles.navItemIconWrapper}>
+                {item.icon}
+              </div>
+              <div className={styles.navItemContent}>
+                <span className={styles.navItemLabel}>{item.label}</span>
+              </div>
             </Link>
           )
         )}

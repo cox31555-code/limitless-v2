@@ -1,14 +1,14 @@
 .container {
   display: flex;
-  width: 26rem;
-  padding: 2rem 1.4rem;
+  width: 280px;
+  padding: 1.5rem 1rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 0.8rem;
+  gap: 0.6rem;
   flex-shrink: 0;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.12);
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
   border-radius: 12px;
   margin: 1.6rem 0 1.6rem 1.6rem;
   overflow-y: auto;
@@ -16,12 +16,12 @@
   transition: all 0.3s ease;
   height: calc(47vh - 47px);
   position: relative;
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.04);
 }
 
 .container:hover {
-  border-color: rgba(3, 136, 255, 0.15);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.1);
+  border-color: #d4e6f8;
+  box-shadow: 0 4px 12px rgba(0, 61, 122, 0.06);
 }
 
 .sidebarOpen {
@@ -34,7 +34,7 @@
   max-height: 0;
   opacity: 0;
   transform: translateX(-100%);
-  padding: 0 1.2rem;
+  padding: 0 1rem;
 }
 
 .sidebarDesktop {
@@ -56,8 +56,8 @@
   align-items: stretch;
   justify-content: flex-start;
   width: 100%;
-  gap: 0.4rem;
-  padding: 1.2rem 0.6rem 0.8rem;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .navItem {
@@ -66,26 +66,31 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 1.2rem 1.4rem;
-  gap: 1.2rem;
-  color: #5a6b7d;
-  font-size: 1.4rem;
+  padding: 0.9rem 1rem;
+  gap: 0.8rem;
+  color: #666;
+  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 130%;
+  line-height: 120%;
   letter-spacing: 0.3px;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   opacity: 0;
   position: relative;
   overflow: hidden;
-  border: 1.5px solid transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
 }
 
 .navItem:hover {
-  background: rgba(3, 136, 255, 0.06);
-  border-color: rgba(3, 136, 255, 0.12);
-  color: #0388ff;
+  background: #f8fafc;
+  border-color: #e0e6f0;
+  color: #003d7a;
+}
+
+.navItem:hover .icon {
+  color: #003d7a;
 }
 
 .sidebarOpen .navItem {
@@ -93,27 +98,51 @@
 }
 
 .activeNavItem {
-  color: #fff;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
   border: none;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 61, 122, 0.2);
 }
 
 .activeNavItem .icon {
-  color: #fff;
+  color: #ffffff;
 }
 
 .activeNavItem:hover {
-  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 61, 122, 0.3);
+  transform: translateY(-1px);
+}
+
+.navItemIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navItemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-grow: 1;
+}
+
+.navItemLabel {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 120%;
+  color: inherit;
 }
 
 .icon {
-  width: 2.2rem;
-  height: 2.2rem;
-  color: #7a8a9d;
-  transition: none;
+  width: 20px;
+  height: 20px;
+  color: #999;
+  transition: color 0.2s ease;
   flex-shrink: 0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 @keyframes slideInLeft {
@@ -137,32 +166,32 @@
 }
 
 .container::-webkit-scrollbar-thumb {
-  background: rgba(3, 136, 255, 0.15);
+  background: rgba(0, 61, 122, 0.1);
   border-radius: 3px;
   transition: all 0.2s ease;
 }
 
 .container::-webkit-scrollbar-thumb:hover {
-  background: rgba(3, 136, 255, 0.35);
+  background: rgba(0, 61, 122, 0.2);
 }
 
 @media screen and (max-width: 900px) {
   .container {
     width: calc(100% - 2rem);
     height: auto;
-    border: 1px solid rgba(3, 136, 255, 0.12);
-    border-radius: 12px;
-    padding: 1.2rem 1rem;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    border: 1px solid #e0e6f0;
+    border-radius: 10px;
+    padding: 1rem 0.8rem;
+    background: #ffffff;
     margin: 0.8rem 1rem;
     gap: 0.4rem;
-    box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
+    box-shadow: 0 2px 8px rgba(0, 61, 122, 0.04);
   }
 
   .sidebarClosed {
     max-height: 0;
     overflow: hidden;
-    padding: 0 1rem;
+    padding: 0 0.8rem;
     margin: 0;
   }
 
@@ -172,17 +201,17 @@
   }
 
   .navItems {
-    padding: 0.8rem 0;
-    gap: 0.6rem;
+    padding: 0.5rem 0;
+    gap: 0.4rem;
   }
 
   .navItem {
-    padding: 1.2rem 1.4rem;
-    font-size: 1.4rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
   }
 
   .navItem:hover {
-    transform: none;
+    transform: translateX(2px);
   }
 
   .sidebarDesktop {
