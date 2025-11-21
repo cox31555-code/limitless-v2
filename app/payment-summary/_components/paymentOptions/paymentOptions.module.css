@@ -428,12 +428,12 @@
   }
 
   .infoIcon {
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   .infoText {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
