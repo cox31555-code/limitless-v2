@@ -11,7 +11,7 @@ const AllianzDashboardClient = () => {
     {
       id: "more-cars",
       title: "More cars?",
-      description: "Just tell us about any additional cars you need covered, and we'll give you a quick quote based on your existing Allianz Online policy.",
+      description: "Just tell us about any additional cars you need covered, and we'll give you a quick quote based on your existing Limitless Cover policy.",
       cta: "Get your car quote",
       ctaAction: () => router.push("/temporary/get-quote"),
       icon: "cars",
