@@ -179,7 +179,7 @@ const Page = async () => {
       <PolicyPageClient
         activePolicies={activePolicies}
         expiredPolicies={expiredPolicies}
-        styles={styles}
+        pageStyles={styles}
         plusJakartaSans={plusJakartaSans}
       />
     </div>
