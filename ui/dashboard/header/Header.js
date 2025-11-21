@@ -93,9 +93,7 @@ const Header = ({ page }) => {
           />
         </div>
 
-        <div className={styles.headerLeft}>
-          <h1 className={styles.pageTitle}>{getTitle()}</h1>
-        </div>
+        <div className={styles.headerLeft} />
 
         {/* Desktop Navigation */}
         <div className={styles.desktopNav}>
