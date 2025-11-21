@@ -319,14 +319,6 @@
     font-size: 1.1rem;
   }
 
-  .extrasGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .extraItem {
-    padding: 1rem;
-  }
-
   .summaryCard {
     padding: 1.6rem;
   }
