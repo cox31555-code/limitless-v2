@@ -203,7 +203,7 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
           {carUsage?.additionalDrivers && carUsage?.additionalDrivers.length > 0 && (
             <div className={styles.driversSection}>
               {carUsage.additionalDrivers.map((driver, index) => (
-                <div key={index} className={styles.driverCard}>
+                <div key={index} className={styles.driverMainCard}>
                   <div className={styles.driverCardContent}>
                     <div className={styles.driverIconWrapper}>
                       <svg
@@ -221,53 +221,74 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
                     </div>
                     <div className={styles.driverInfo}>
                       <h4 className={`${styles.driverName} ${plusJakartaSans.className}`}>
-                        Driver {index + 2}
+                        {driver?.firstName} {driver?.surname}
                       </h4>
                       <p className={styles.driverDetail}>
-                        {driver?.firstName} {driver?.surname}
+                        Driver {index + 2}
                       </p>
                       <p className={styles.driverDetail}>
-                        {formatDate(driver?.dateOfBirth)}
+                        DOB: {formatDate(driver?.dateOfBirth)}
                       </p>
                     </div>
                   </div>
-                  <div className={styles.driverDetailsGrid}>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>Employment Status</span>
-                      <span className={styles.value}>{driver?.employmentStatus || "N/A"}</span>
-                    </div>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>Occupation</span>
-                      <span className={styles.value}>{driver?.occupation || "N/A"}</span>
-                    </div>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>Industry</span>
-                      <span className={styles.value}>{driver?.industry || "N/A"}</span>
-                    </div>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>License Type</span>
-                      <span className={styles.value}>{driver?.licenseType || "N/A"}</span>
-                    </div>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>License Held Since</span>
-                      <span className={styles.value}>{driver?.licenseHeld || "N/A"}</span>
-                    </div>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>No Claims Bonus</span>
-                      <span className={styles.value}>{driver?.NCB || "N/A"}</span>
-                    </div>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>Criminal Convictions</span>
-                      <span className={styles.value}>{formatBoolValue(driver?.criminalConvictions)}</span>
-                    </div>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>Medical Conditions</span>
-                      <span className={styles.value}>{formatBoolValue(driver?.medicalConditions)}</span>
-                    </div>
-                    <div className={styles.detailItem}>
-                      <span className={styles.label}>Uses Other Vehicles</span>
-                      <span className={styles.value}>{driver?.otherVehicles ? "Yes" : "No"}</span>
-                    </div>
+                  <div className={styles.driverExpandableSection}>
+                    <button
+                      className={styles.driverExpandButton}
+                      onClick={() => toggleDriverSection(index)}
+                    >
+                      <span className={styles.buttonText}>Additional Details</span>
+                      <svg
+                        className={`${styles.expandIcon} ${expandedDrivers[index] ? styles.expanded : ""}`}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </button>
+                    {expandedDrivers[index] && (
+                      <div className={styles.driverAdditionalContent}>
+                        <div className={styles.detailsGrid}>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Employment Status</span>
+                            <span className={styles.value}>{driver?.employmentStatus || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Occupation</span>
+                            <span className={styles.value}>{driver?.occupation || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Industry</span>
+                            <span className={styles.value}>{driver?.industry || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>License Type</span>
+                            <span className={styles.value}>{driver?.licenseType || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>License Held Since</span>
+                            <span className={styles.value}>{driver?.licenseHeld || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>No Claims Bonus</span>
+                            <span className={styles.value}>{driver?.NCB || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Criminal Convictions</span>
+                            <span className={styles.value}>{formatBoolValue(driver?.criminalConvictions)}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Medical Conditions</span>
+                            <span className={styles.value}>{formatBoolValue(driver?.medicalConditions)}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Uses Other Vehicles</span>
+                            <span className={styles.value}>{driver?.otherVehicles ? "Yes" : "No"}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
