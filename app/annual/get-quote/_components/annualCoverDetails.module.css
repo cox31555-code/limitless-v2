@@ -337,6 +337,5 @@
   .dateSection {
     padding: 1.4rem;
     gap: 1.2rem;
-    grid-template-columns: 1fr;
   }
 }
