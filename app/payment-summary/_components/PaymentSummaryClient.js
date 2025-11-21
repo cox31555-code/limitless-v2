@@ -42,6 +42,7 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
             />
           </div>
           <div className={styles.second}>
+            <PaymentOptions monthlyPrice={47.40} annualPrice={525.65} />
             <CoverLevel
               data={insuranceData.quote}
               insuranceType={insuranceData.type}
