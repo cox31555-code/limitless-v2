@@ -50,7 +50,7 @@ const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65, defaultPay
           </div>
 
           <div className={styles.details}>
-            <p className={styles.detailLabel}>Total paid</p>
+            <p className={styles.detailLabel}>In total</p>
             <p className={`${styles.detailPrice} ${plusJakartaSans.className}`}>
               £{totalMonthly}
             </p>
