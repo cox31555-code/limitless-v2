@@ -1,260 +1,123 @@
 .footer {
-  background: #1a2332;
-  margin-top: 5rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e8ecf1;
+  padding: 2.5rem 4.4%;
+  margin-top: 4rem;
 }
 
-/* Top Section - Light Background */
-.topSection {
-  background: #ffffff;
-  border-bottom: 1px solid #e8ecf1;
-  padding: 3rem 4.4%;
-}
-
-.topContainer {
+.footerContainer {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+}
+
+/* Main Row - Horizontal Layout */
+.mainRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: auto 1fr auto;
+  gap: 3rem;
   align-items: center;
 }
 
-/* Security Box */
-.securityBox {
+/* Left Section: Security Badge */
+.leftSection {
   display: flex;
-  gap: 2.5rem;
-  align-items: flex-start;
+  gap: 1.5rem;
+  align-items: center;
+  min-width: fit-content;
 }
 
 .securityBadge {
   flex-shrink: 0;
-  width: 150px;
+  width: 130px;
   height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .sectigoImage {
   width: 100%;
   height: auto;
   object-fit: contain;
+  display: block;
 }
 
 .securityInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.4rem;
 }
 
 .securityTitle {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: #1a2332;
+  color: #0052a3;
   margin: 0;
-  line-height: 120%;
+  line-height: 110%;
 }
 
 .securityText {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: #555;
   margin: 0;
-  line-height: 150%;
+  line-height: 140%;
 }
 
-/* Partners Box */
-.partnersBox {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  padding: 2rem;
-  background: #f8f9fa;
-  border-radius: 10px;
-  border: 1px solid #e8ecf1;
-}
-
-.partnersHeading {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #1a2332;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-.partnersList {
+/* Center Section: Links & Disclaimer */
+.centerSection {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.partner {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1a2332;
-}
-
-/* Bottom Section - Dark Background */
-.bottomSection {
-  background: #1a2332;
-  padding: 3rem 4.4%;
-  color: #fff;
-}
-
-.bottomContainer {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Links Row */
 .linksRow {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footerLink {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.9rem;
+  color: #0052a3;
+  text-decoration: underline;
+  font-size: 0.8rem;
   font-weight: 500;
   transition: color 0.2s ease;
-  position: relative;
 }
 
-.footerLink::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #05afff;
-  transition: width 0.2s ease;
-}
-
-.footerLink:hover::after {
-  width: 100%;
-}
-
-/* Disclaimer Box */
-.disclaimerBox {
-  padding: 1.5rem 0;
+.footerLink:hover {
+  color: #003d7a;
 }
 
 .disclaimerText {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 160%;
-  margin: 0;
-  text-align: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Copyright Row */
-.copyrightRow {
-  text-align: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.copyright {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #666;
+  line-height: 150%;
   margin: 0;
-  font-weight: 400;
+  text-align: center;
+}
+
+/* Right Section: Branding */
+.rightSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: fit-content;
+}
+
+.allianzBrand {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0052a3;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .topSection {
-    padding: 2.5rem 3%;
+  .footer {
+    padding: 2rem 3%;
   }
 
-  .topContainer {
-    gap: 3rem;
-  }
-
-  .securityBox {
+  .mainRow {
     gap: 2rem;
-  }
-
-  .securityBadge {
-    width: 130px;
-  }
-
-  .bottomSection {
-    padding: 2.5rem 3%;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .topSection {
-    padding: 2.5rem 2%;
-  }
-
-  .topContainer {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .securityBox {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .securityBadge {
-    width: 140px;
-  }
-
-  .securityInfo {
-    width: 100%;
-  }
-
-  .partnersBox {
-    align-items: center;
-    text-align: center;
-  }
-
-  .partnersHeading {
-    width: 100%;;
-  }
-
-  .partnersList {
-    align-items: center;
-  }
-
-  .bottomSection {
-    padding: 2rem 2%;
-  }
-
-  .linksRow {
-    gap: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topSection {
-    padding: 2rem 4%;
-  }
-
-  .topContainer {
-    gap: 1.8rem;
-  }
-
-  .securityBox {
-    gap: 1.5rem;
   }
 
   .securityBadge {
@@ -262,45 +125,91 @@
   }
 
   .securityTitle {
-    font-size: 1.1rem;
-  }
-
-  .securityText {
-    font-size: 0.85rem;
-  }
-
-  .partnersBox {
-    padding: 1.5rem;
-  }
-
-  .partnersHeading {
-    font-size: 0.75rem;
-  }
-
-  .partner {
     font-size: 0.95rem;
   }
 
-  .bottomSection {
-    padding: 1.5rem 4%;
+  .linksRow {
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: 1.8rem 2%;
+  }
+
+  .mainRow {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .leftSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .centerSection {
+    width: 100%;
+    align-items: center;
+  }
+
+  .rightSection {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .securityBadge {
+    width: 120px;
+  }
+
+  .linksRow {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 1.5rem 4%;
+    margin-top: 3rem;
+  }
+
+  .mainRow {
+    gap: 1.2rem;
+  }
+
+  .leftSection {
+    gap: 1rem;
+  }
+
+  .securityBadge {
+    width: 100px;
+  }
+
+  .securityTitle {
+    font-size: 0.9rem;
+  }
+
+  .securityText {
+    font-size: 0.75rem;
   }
 
   .linksRow {
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 0.6rem;
   }
 
   .footerLink {
-    font-size: 0.85rem;
-  }
-
-  .disclaimerText {
     font-size: 0.75rem;
   }
 
-  .copyright {
+  .disclaimerText {
     font-size: 0.7rem;
+  }
+
+  .allianzBrand {
+    font-size: 0.85rem;
   }
 }
