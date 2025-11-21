@@ -135,7 +135,7 @@ const AllianzDashboardClient = () => {
       {/* Policy Card Section with Promotional Banners */}
       <section className={styles.policiesSection}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Your active policies</h2>
+          <h2 className={styles.sectionTitle}>Your Active Policies</h2>
         </div>
         <div className={styles.policiesBannerContainer}>
           <div className={styles.policiesGrid}>
