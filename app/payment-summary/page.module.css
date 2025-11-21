@@ -125,6 +125,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    padding-bottom: 60px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     padding: 2rem 4.4%;
