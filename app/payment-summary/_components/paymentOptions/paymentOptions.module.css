@@ -372,6 +372,10 @@
     font-size: 1.2rem;
   }
 
+  .badge {
+    font-size: 0.8rem;
+  }
+
   .infoText {
     font-size: 0.95rem;
   }
