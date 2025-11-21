@@ -387,6 +387,9 @@
   flex-direction: column;
   gap: 0.6rem;
   margin-bottom: 0.4rem;
+  position: relative;
+  z-index: auto;
+  overflow: visible;
 }
 
 .fieldRow {
