@@ -20,7 +20,7 @@ const QuoteHeader = ({ priceAmount = "525.65", priceLabel = "/year", userName = 
         <h2 className={`${styles.greeting} ${plusJakartaSans.className}`}>
           Hi {userName},
         </h2>
-        <p className={styles.subtitle}>here's your {insuranceType.toLowerCase()}</p>
+        <p className={styles.subtitle}>here's your insurance quote</p>
       </div>
 
       <div className={styles.priceDisplay}>
