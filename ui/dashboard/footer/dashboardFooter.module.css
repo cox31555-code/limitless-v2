@@ -167,7 +167,26 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .footer {
-    padding: 2.5rem 3%;
+    padding: 3rem 3% 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .container {
+    gap: 2.5rem;
+  }
+
+  .topSection {
+    gap: 2rem;
+  }
+
+  .sectigo {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: 2.5rem 2% 1.2rem;
     margin-top: 3rem;
   }
 
@@ -175,14 +194,43 @@
     gap: 2rem;
   }
 
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .trustSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .securityContent {
+    text-align: center;
+  }
+
+  .partnersSection {
+    align-items: center;
+  }
+
+  .partnersLabel {
+    text-align: center;
+    width: 100%;
+  }
+
   .partnersLogos {
-    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .linksSection {
+    padding: 1.5rem 0;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
   .footer {
-    padding: 2rem 2%;
+    padding: 2rem 4% 1rem;
     margin-top: 2.5rem;
   }
 
@@ -190,78 +238,63 @@
     gap: 1.8rem;
   }
 
-  .securitySection {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .topSection {
+    padding-bottom: 1.5rem;
   }
 
-  .securityBadge {
-    width: 70px;
-    height: 70px;
-  }
-
-  .legalLinks {
-    gap: 1rem;
-  }
-
-  .partnersLogos {
-    gap: 1rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .footer {
-    padding: 1.5rem 4%;
-    margin-top: 2rem;
-  }
-
-  .container {
+  .trustSection {
     gap: 1.5rem;
   }
 
-  .securitySection {
-    gap: 1.2rem;
-  }
-
-  .securityBadge {
-    width: 60px;
-    height: 60px;
+  .sectigo {
+    width: 110px;
   }
 
   .securityTitle {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .securityDescription {
     font-size: 0.9rem;
   }
 
-  .partnersLogos {
-    flex-wrap: wrap;
+  .partnersSection {
+    padding: 1.5rem;
+  }
+
+  .partnersLabel {
+    font-size: 0.85rem;
+  }
+
+  .partnerText {
+    font-size: 0.95rem;
+  }
+
+  .linksSection {
     gap: 1rem;
-  }
-
-  .partnerLogo,
-  .paralympicsLogo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .allianzLogo {
-    font-size: 1rem;
-  }
-
-  .legalLinks {
-    flex-direction: column;
-    gap: 0.8rem;
+    padding: 1.2rem 0;
   }
 
   .legalLink {
     font-size: 0.9rem;
   }
 
+  .linkDivider {
+    display: none;
+  }
+
+  .linksSection a::before {
+    content: "• ";
+    color: #d0d0d0;
+    margin-right: 0.5rem;
+  }
+
+  .linksSection a:first-child::before {
+    content: "";
+    margin-right: 0;
+  }
+
   .disclaimerText {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
   }
 }
