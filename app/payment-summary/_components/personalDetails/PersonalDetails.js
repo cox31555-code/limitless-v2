@@ -14,6 +14,7 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
   const [expandedSections, setExpandedSections] = useState({
     location: false,
     carUsageInfo: false,
+    declarations: false,
   });
 
   const formatDate = (dateString) => {
