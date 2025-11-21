@@ -105,6 +105,55 @@ const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65, defaultPay
         </div>
       </div>
 
+      {/* Payment Breakdown - Show when Monthly is selected */}
+      {selectedPayment === "monthly" && (
+        <div className={styles.paymentBreakdown}>
+          <h3 className={`${styles.breakdownTitle} ${plusJakartaSans.className}`}>Payment Breakdown</h3>
+
+          <div className={styles.breakdownItem}>
+            <p className={styles.breakdownLabel}>First payment / deposit, 9% of the annual price (£525.65)</p>
+            <p className={`${styles.breakdownValue} ${plusJakartaSans.className}`}>£47.29</p>
+          </div>
+
+          <div className={styles.breakdownDivider} />
+
+          <div className={styles.breakdownItem}>
+            <p className={styles.breakdownLabel}>11 payments of</p>
+            <p className={`${styles.breakdownValue} ${plusJakartaSans.className}`}>£47.40</p>
+          </div>
+
+          <div className={styles.breakdownDivider} />
+
+          <div className={styles.breakdownItem}>
+            <p className={styles.breakdownLabel}>Interest rate</p>
+            <p className={`${styles.breakdownValue} ${plusJakartaSans.className}`}>9%</p>
+          </div>
+
+          <div className={styles.breakdownDivider} />
+
+          <div className={styles.breakdownItem}>
+            <p className={styles.breakdownLabel}>Credit representative APR</p>
+            <p className={`${styles.breakdownValue} ${plusJakartaSans.className}`}>19.1% *</p>
+          </div>
+
+          <div className={styles.breakdownDivider} />
+
+          <div className={styles.breakdownItem}>
+            <p className={styles.breakdownLabel}>Credit cost</p>
+            <p className={`${styles.breakdownValue} ${plusJakartaSans.className}`}>£43.04</p>
+          </div>
+
+          <div className={styles.breakdownDivider} />
+
+          <div className={styles.breakdownItem}>
+            <p className={`${styles.breakdownLabel} ${styles.breakdownTotal}`}>Total amount for 1 year</p>
+            <p className={`${styles.breakdownValue} ${styles.breakdownTotalValue} ${plusJakartaSans.className}`}>£568.69</p>
+          </div>
+
+          <p className={styles.creditNote}>* Credit supplied by Liverpool Victoria Insurance Company Limited, which is an Allianz Group company</p>
+        </div>
+      )}
+
       {/* Information Banner */}
       <div className={styles.infoBanner}>
         <div className={styles.infoIcon}>
