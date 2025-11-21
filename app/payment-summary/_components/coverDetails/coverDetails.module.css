@@ -48,13 +48,13 @@
   }
 
   .sectionTitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding-bottom: 0.8rem;
   }
 
   .row {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 }
 
@@ -69,11 +69,11 @@
   }
 
   .sectionTitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding-bottom: 0.6rem;
   }
 
   .row {
-    gap: 0.8rem;
+    gap: 1rem;
   }
 }
