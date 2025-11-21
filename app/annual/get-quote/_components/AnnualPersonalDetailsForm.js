@@ -45,8 +45,10 @@ const AnnualPersonalDetailsForm = ({ form }) => {
   const [editingConvictionIndex, setEditingConvictionIndex] = useState(null);
 
   // Watch all form values early to use in dependencies and trigger re-evaluation
+  const title = watch("userDetails.title");
   const firstName = watch("userDetails.firstName");
   const surname = watch("userDetails.surname");
+  const maritalStatus = watch("userDetails.maritalStatus");
   const dateOfBirth = watch("userDetails.dateOfBirth");
   const userEmail = watch("userDetails.email");
   const userPhone = watch("userDetails.phone");
@@ -149,7 +151,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
     return () => clearTimeout(timer);
   }, [
-    firstName, surname, dateOfBirth, userEmail, userPhone, postCode, address, employmentStatus, industry, occupation,
+    title, firstName, surname, maritalStatus, dateOfBirth, userEmail, userPhone, postCode, address, employmentStatus, industry, occupation,
     keepingCarDuringDay, keepingCarDuringNight, usageType, licenseType, licenseHeld, ncb,
     ownsHome, childrenUnder16, livedInUKSinceBirth, criminalConvictions, medicalConditions, insuranceCancelledStatus,
     additionalDrivers, hasAdditionalDrivers
