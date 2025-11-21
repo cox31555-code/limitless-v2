@@ -215,11 +215,6 @@ const AllianzDashboardClient = () => {
           {/* Promotional Banners Carousel */}
           <div className={styles.bannerCarousel}>
             <div className={styles.bannerContent}>
-              <div className={styles.bannerIconWrapper}>
-                <div className={styles.bannerIcon}>
-                  <BannerIcon type={promotionalBanners[bannerIndex].icon} />
-                </div>
-              </div>
               <div className={styles.bannerText}>
                 <h3 className={styles.bannerTitle}>{promotionalBanners[bannerIndex].title}</h3>
                 <p className={styles.bannerDescription}>{promotionalBanners[bannerIndex].description}</p>
