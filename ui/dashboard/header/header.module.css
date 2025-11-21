@@ -175,17 +175,23 @@
   height: 4.4rem;
   border-radius: 8px;
   background: transparent;
-  border: 1.5px solid rgba(3, 136, 255, 0.3);
+  border: 1px solid rgba(5, 175, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #0388ff;
+  color: #05afff;
   flex-shrink: 0;
   position: relative;
   z-index: 2001;
   pointer-events: auto;
   touch-action: manipulation;
+  transition: all 0.25s ease;
+}
+
+.menuBtn:hover {
+  background: rgba(5, 175, 255, 0.08);
+  border-color: rgba(5, 175, 255, 0.4);
 }
 
 .menuBtn svg {
