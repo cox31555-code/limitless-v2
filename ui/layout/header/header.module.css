@@ -8,6 +8,8 @@
   z-index: 2;
   width: 100%;
   background: #000822;
+  border-bottom: none;
+  box-shadow: none;
 }
 
 .mobileContainer {
