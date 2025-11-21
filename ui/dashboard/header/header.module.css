@@ -1,7 +1,7 @@
 .headerContainer {
   background: #000822;
   border-bottom: none;
-  padding: 2.6rem 4.4% 0;
+  padding: 1.6rem 4.4% 1.2rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   width: 100%;
   z-index: 1000;
   overflow: visible;
-  min-height: 100px;
+  min-height: auto;
   margin-bottom: 0;
 }
 
