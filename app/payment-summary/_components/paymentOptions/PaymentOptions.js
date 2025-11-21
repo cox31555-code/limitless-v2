@@ -95,7 +95,13 @@ const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65, defaultPay
             </p>
           </div>
 
-          <div className={styles.savings} />
+          <div className={styles.savings}>
+            <div className={styles.badgeWrapper}>
+              <span className={styles.badge}>Recommended</span>
+              <span className={styles.badgeSeparator}>•</span>
+              <span className={styles.badge}>Best value</span>
+            </div>
+          </div>
         </div>
       </div>
 
