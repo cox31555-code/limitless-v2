@@ -240,7 +240,16 @@ export const carUsageSchema = z.object({
   licenseNumber: z.string().optional(),
   NCB: z.string().min(1, "No claims bonus years is required"),
   voluntaryExcess: z.string().min(1, "Voluntary excess is required"),
-  annualMileage: z.string().optional().nullable(),
+  annualMileage: z.string().optional().nullable().refine(
+    (val) => {
+      if (!val || val.trim() === '') return true;
+      const num = parseInt(val, 10);
+      return !isNaN(num) && num >= 100 && num <= 20000;
+    },
+    {
+      message: "Annual mileage must be between 100 and 20,000 miles",
+    }
+  ),
   criminalConvictions: z.boolean({
     required_error: "Please select Yes or No for criminal convictions",
     invalid_type_error: "Please select Yes or No for criminal convictions",
