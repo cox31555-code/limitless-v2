@@ -531,6 +531,11 @@
     align-items: flex-start;
   }
 
+  .heroBackgroundImage {
+    width: 400px;
+    margin-right: -80px;
+  }
+
   .heroContent {
     flex-direction: column;
     align-items: flex-start;
