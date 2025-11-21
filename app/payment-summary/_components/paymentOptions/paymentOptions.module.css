@@ -41,14 +41,20 @@
   position: relative;
 }
 
-.paymentCard:hover {
+.paymentCard:not(.paymentCardActive):hover {
   border-color: rgba(3, 136, 255, 0.32);
-  background: #f5fafd;
+  background: #ffffff;
 }
 
 .paymentCardActive {
   background: linear-gradient(135deg, #0c1840 0%, #051c3a 100%);
   border-color: #0388ff;
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.16);
+}
+
+.paymentCardActive:hover {
+  border-color: #0388ff;
+  background: linear-gradient(135deg, #0c1840 0%, #051c3a 100%);
   box-shadow: 0 8px 24px rgba(3, 136, 255, 0.16);
 }
 
