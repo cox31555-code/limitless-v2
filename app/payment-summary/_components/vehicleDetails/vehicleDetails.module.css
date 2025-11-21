@@ -1,125 +1,204 @@
-.content {
+.container {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
   width: 100%;
 }
 
-.vehicleInfoSection {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  width: 100%;
+.vehicleCard {
   padding: 1.6rem;
-  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #d4e4f7;
   border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.sectionTitle {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #5a6b7d;
-  margin: 0;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+.cardContent {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
 }
 
-.sectionContent {
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  background: #e8f2fb;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.carIcon {
+  width: 36px;
+  height: 36px;
+  color: #0388ff;
+}
+
+.vehicleInfo {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.8rem;
+  flex: 1;
 }
 
-.row {
+.vehicleName {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.registrationBadge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #f0f5fa;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #5a7a94;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.editLink {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #0388ff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  width: fit-content;
+  transition: color 0.2s ease;
+}
+
+.editLink:hover {
+  color: #0270d9;
+}
+
+.specificationSection {
+  padding: 1.6rem;
+  background: #ffffff;
+  border: 1px solid #d4e4f7;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.sectionHeading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 1.2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e8f0f7;
+}
+
+.specGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-  width: 100%;
+  gap: 1.6rem;
 }
 
-.field {
+.specItem {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.4rem;
 }
 
-.field label {
+.specLabel {
+  font-size: 0.85rem;
+  color: #7a8fa3;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.specValue {
   font-size: 1.1rem;
-  font-weight: 500;
-  color: #6b7c8f;
-  opacity: 0.85;
-}
-
-.field p {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #6b7c8f;
-  margin: 0;
-  opacity: 0.85;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.6rem;
+  color: #003366;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
-  .content {
+  .cardContent {
     gap: 1.2rem;
   }
 
-  .vehicleInfoSection {
-    gap: 1.2rem;
-    padding: 1.4rem;
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
   }
 
-  .sectionTitle {
-    font-size: 1.3rem;
-    padding-bottom: 0.8rem;
+  .carIcon {
+    width: 32px;
+    height: 32px;
   }
 
-  .row {
+  .vehicleName {
+    font-size: 1.5rem;
+  }
+
+  .specGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+  .vehicleCard,
+  .specificationSection {
+    padding: 1.4rem;
   }
 }
 
 @media (max-width: 600px) {
-  .content {
+  .container {
+    gap: 1.2rem;
+  }
+
+  .cardContent {
     gap: 1rem;
   }
 
-  .vehicleInfoSection {
+  .iconWrapper {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+  }
+
+  .carIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .vehicleName {
+    font-size: 1.3rem;
+  }
+
+  .vehicleCard,
+  .specificationSection {
     padding: 1.2rem;
-    gap: 1rem;
   }
 
-  .sectionTitle {
-    font-size: 1.2rem;
-    padding-bottom: 0.6rem;
-  }
-
-  .row {
+  .specGrid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .cards {
-    gap: 1rem;
+  .sectionHeading {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
   }
 
-  .field label {
+  .specLabel {
+    font-size: 0.8rem;
+  }
+
+  .specValue {
     font-size: 1rem;
-  }
-
-  .field p {
-    font-size: 1.2rem;
   }
 }
