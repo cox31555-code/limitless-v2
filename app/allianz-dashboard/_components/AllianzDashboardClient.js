@@ -89,41 +89,6 @@ const AllianzDashboardClient = () => {
         </div>
       </section>
 
-      {/* Carousel Section */}
-      <section className={styles.carouselSection}>
-        <div className={styles.carouselContainer}>
-          <div className={styles.carouselContent}>
-            <div className={styles.carouselIcon}>
-              <CarouselIcon type={carouselIndex === 0 ? "gift" : "cars"} />
-            </div>
-            <h2 className={styles.carouselTitle}>{carouselItems[carouselIndex].title}</h2>
-            <p className={styles.carouselDescription}>{carouselItems[carouselIndex].description}</p>
-            <a href="#" className={styles.carouselLink}>
-              → {carouselItems[carouselIndex].link}
-            </a>
-          </div>
-          <div className={styles.carouselControls}>
-            <div className={styles.carouselDots}>
-              {carouselItems.map((_, index) => (
-                <button
-                  key={index}
-                  className={`${styles.dot} ${index === carouselIndex ? styles.active : ""}`}
-                  onClick={() => setCarouselIndex(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-            <div className={styles.carouselNavButtons}>
-              <button className={styles.navButton} onClick={handleCarouselPrev} aria-label="Previous slide">
-                ←
-              </button>
-              <button className={styles.navButton} onClick={handleCarouselNext} aria-label="Next slide">
-                →
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Active Policies Section */}
       <section className={styles.policiesSection}>
