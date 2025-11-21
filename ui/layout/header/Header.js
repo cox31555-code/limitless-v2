@@ -138,6 +138,10 @@ const Header = () => {
     (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary"))
   );
 
+  if (!mounted) {
+    return null;
+  }
+
   if (shouldHideHeader) {
     return null;
   }
@@ -151,7 +155,7 @@ const Header = () => {
           setIsOpen(false);
         }}
       />
-      <div className="centeredContent" suppressHydrationWarning>
+      <div className="centeredContent" suppressHydrationWarning={true}>
       {isScrolled && !isDashboard && (
         <div className={styles.stickyHeader}>
           <div className={styles.stickyContent}>
