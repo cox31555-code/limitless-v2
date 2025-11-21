@@ -115,6 +115,13 @@ const AllianzDashboardClient = () => {
     <div className={styles.container}>
       {/* Hero Greeting Section */}
       <section className={styles.heroSection}>
+        <div className={styles.heroBackground}>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F913b9bbf67874363af86356108dd5f45?format=webp&width=800"
+            alt=""
+            className={styles.heroBackgroundImage}
+          />
+        </div>
         <div className={styles.heroContent}>
           <div className={styles.greetingArea}>
             <h1 className={styles.greetingTitle}>Hi, Adnan</h1>
