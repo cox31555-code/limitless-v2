@@ -1,0 +1,330 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 2.4rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(3, 136, 255, 0.12);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+}
+
+.paymentCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: #f8fbfd;
+  border: 2px solid rgba(3, 136, 255, 0.16);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.paymentCard:hover {
+  border-color: rgba(3, 136, 255, 0.32);
+  background: #f5fafd;
+}
+
+.paymentCardActive {
+  background: linear-gradient(135deg, #0c1840 0%, #051c3a 100%);
+  border-color: #0388ff;
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.16);
+}
+
+.paymentCardActive .cardTitle,
+.paymentCardActive .priceLabel,
+.paymentCardActive .detailLabel,
+.paymentCardActive .savingsLabel,
+.paymentCardActive .mainPrice,
+.paymentCardActive .detailPrice {
+  color: #ffffff;
+}
+
+.paymentCardActive .detailLabel {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.paymentCardActive .savingsLabel {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+}
+
+.radioButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 2px solid rgba(3, 136, 255, 0.32);
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.paymentCardActive .radioButton {
+  border-color: #0388ff;
+  background: rgba(3, 136, 255, 0.12);
+}
+
+.radioDot {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: #0388ff;
+}
+
+.priceSection {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.mainPrice {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #000822;
+  margin: 0;
+  letter-spacing: -0.4px;
+}
+
+.priceLabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #5a6b7d;
+  margin: 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.2rem;
+  background: rgba(3, 136, 255, 0.06);
+  border-radius: 8px;
+}
+
+.paymentCardActive .details {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.detailLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5a6b7d;
+  margin: 0;
+}
+
+.detailPrice {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+}
+
+.savings {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(76, 175, 80, 0.08);
+  border-left: 3px solid #4caf50;
+  border-radius: 6px;
+}
+
+.savingsLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2e7d32;
+  margin: 0;
+}
+
+.infoBanner {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  background: rgba(3, 136, 255, 0.06);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+}
+
+.infoIcon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  color: #0388ff;
+  margin-top: 0.2rem;
+}
+
+.infoText {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000822;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.highlight {
+  font-weight: 700;
+  color: #0388ff;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .optionsGrid {
+    gap: 1.6rem;
+  }
+
+  .paymentCard {
+    padding: 1.8rem;
+    gap: 1.4rem;
+  }
+
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+
+  .mainPrice {
+    font-size: 2.2rem;
+  }
+
+  .radioButton {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .radioDot {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.6rem;
+    gap: 1.8rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .optionsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .paymentCard {
+    padding: 1.6rem;
+    gap: 1.2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .mainPrice {
+    font-size: 2rem;
+  }
+
+  .priceLabel {
+    font-size: 1.1rem;
+  }
+
+  .infoBanner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .infoIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .infoText {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 1.4rem;
+    gap: 1.6rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .optionsGrid {
+    gap: 1.2rem;
+  }
+
+  .paymentCard {
+    padding: 1.4rem;
+    gap: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .mainPrice {
+    font-size: 1.8rem;
+  }
+
+  .priceLabel {
+    font-size: 1rem;
+  }
+
+  .detailPrice {
+    font-size: 1.2rem;
+  }
+
+  .infoText {
+    font-size: 0.95rem;
+  }
+}
