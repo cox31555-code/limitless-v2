@@ -271,27 +271,19 @@
   }
 
   .linksSection {
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
     padding: 1.2rem 0;
   }
 
   .legalLink {
     font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
   }
 
   .linkDivider {
     display: none;
-  }
-
-  .linksSection a::before {
-    content: "• ";
-    color: #d0d0d0;
-    margin-right: 0.5rem;
-  }
-
-  .linksSection a:first-child::before {
-    content: "";
-    margin-right: 0;
   }
 
   .disclaimerText {
