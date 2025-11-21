@@ -63,7 +63,9 @@
 .paymentCardActive .detailLabel,
 .paymentCardActive .savingsLabel,
 .paymentCardActive .mainPrice,
-.paymentCardActive .detailPrice {
+.paymentCardActive .detailPrice,
+.paymentCardActive .badge,
+.paymentCardActive .badgeSeparator {
   color: #ffffff;
 }
 
@@ -73,6 +75,10 @@
 
 .paymentCardActive .savingsLabel {
   color: rgba(255, 255, 255, 0.75);
+}
+
+.paymentCardActive .badgeSeparator {
+  opacity: 0.5;
 }
 
 .cardHeader {
