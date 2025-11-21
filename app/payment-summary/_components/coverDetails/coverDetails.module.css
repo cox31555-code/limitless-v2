@@ -10,18 +10,19 @@
   flex-direction: column;
   gap: 1.2rem;
   padding: 1.6rem;
-  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #d4e4f7;
   border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .sectionTitle {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #5a6b7d;
+  color: #003366;
   margin: 0;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.12);
+  border-bottom: 1px solid #e8f0f7;
 }
 
 .sectionContent {
@@ -33,7 +34,7 @@
 .row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
+  gap: 1.6rem;
 }
 
 @media (max-width: 900px) {
