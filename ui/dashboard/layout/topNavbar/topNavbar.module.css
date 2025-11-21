@@ -1,11 +1,11 @@
 .container {
-  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
-  border-bottom: 1px solid rgba(0, 61, 122, 0.1);
+  background: #0052a3;
+  border-bottom: 1px solid rgba(0, 82, 163, 0.15);
   padding: 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 52, 122, 0.1);
 }
 
 .navContent {
@@ -108,8 +108,8 @@
 
 .mobileMenu {
   display: none;
-  background: linear-gradient(135deg, #003d7a 0%, #1a5a9c 100%);
-  border-bottom: 1px solid rgba(0, 61, 122, 0.1);
+  background: #0052a3;
+  border-bottom: 1px solid rgba(0, 82, 163, 0.15);
   padding: 1rem 4.4%;
   position: relative;
 }
