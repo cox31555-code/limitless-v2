@@ -8,29 +8,24 @@ const AllianzDashboardClient = () => {
 
   const menuItems = [
     {
-      icon: "products",
-      label: "Our products",
-      action: () => router.push("/products"),
+      icon: "policy",
+      label: "Manage Policy",
+      action: () => router.push("/dashboard/policy"),
     },
     {
-      icon: "account",
-      label: "Account details",
-      action: () => router.push("/account"),
+      icon: "documents",
+      label: "Documents",
+      action: () => router.push("/dashboard/documents"),
     },
     {
-      icon: "marketing",
-      label: "Marketing preferences",
-      action: () => router.push("/marketing"),
+      icon: "claims",
+      label: "Manage Claims",
+      action: () => router.push("/dashboard/claims"),
     },
     {
-      icon: "policies",
-      label: "Old policies",
-      action: () => router.push("/policies"),
-    },
-    {
-      icon: "advantages",
-      label: "Allianz Advantages",
-      action: () => router.push("/advantages"),
+      icon: "submitClaim",
+      label: "Submit a Claim",
+      action: () => router.push("/dashboard/submit-claim"),
     },
   ];
 
