@@ -208,10 +208,6 @@
     padding: 2.5rem 3%;
   }
 
-  .carouselSection {
-    padding: 2.5rem;
-  }
-
   .greetingTitle {
     font-size: 2.8rem;
   }
@@ -232,17 +228,8 @@
     padding: 2rem 2%;
   }
 
-  .carouselSection {
-    padding: 2rem;
-  }
-
   .greetingTitle {
     font-size: 2.4rem;
-  }
-
-  .carouselControls {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .menuGrid {
@@ -272,43 +259,6 @@
 
   .greetingTitle {
     font-size: 2rem;
-  }
-
-  .carouselSection {
-    padding: 1.5rem;
-  }
-
-  .carouselContent {
-    gap: 1rem;
-  }
-
-  .carouselIcon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .carouselTitle {
-    font-size: 1.4rem;
-  }
-
-  .carouselDescription {
-    font-size: 0.9rem;
-  }
-
-  .carouselControls {
-    width: 100%;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-
-  .carouselDots {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .carouselNavButtons {
-    width: 100%;
-    justify-content: center;
   }
 
   .sectionTitle {
