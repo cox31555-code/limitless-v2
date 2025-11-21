@@ -199,7 +199,7 @@ const AnnualInsuranceContent = () => {
     "coverDetails.startDate",
   ];
 
-  const personalFields = [
+  const basePersonalFields = [
     "userDetails.firstName",
     "userDetails.surname",
     "userDetails.email",
@@ -208,8 +208,6 @@ const AnnualInsuranceContent = () => {
     "userDetails.postCode",
     "userDetails.address",
     "userDetails.employmentStatus",
-    "userDetails.industry",
-    "userDetails.occupation",
     "carUsage.keepingCarDuringDay",
     "carUsage.keepingCarDuringNight",
     "carUsage.usageType",
@@ -228,8 +226,15 @@ const AnnualInsuranceContent = () => {
         return vehicleFields;
       case STEPS.COVER:
         return coverFields;
-      case STEPS.PERSONAL:
+      case STEPS.PERSONAL: {
+        const employmentStatus = watch("userDetails.employmentStatus");
+        // Only require industry and occupation if not a Student
+        const personalFields = [...basePersonalFields];
+        if (employmentStatus !== "Student") {
+          personalFields.push("userDetails.industry", "userDetails.occupation");
+        }
         return personalFields;
+      }
       default:
         return [];
     }
