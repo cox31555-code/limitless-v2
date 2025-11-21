@@ -279,7 +279,10 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
           <h3 className={styles.sectionTitle}>Declarations</h3>
           <div className={styles.sectionContent}>
             <div className={styles.row}>
-              {renderField("Criminal Convictions", carUsage?.criminalConvictions)}
+              {renderField(
+                "Criminal Convictions",
+                carUsage?.criminalConvictions ? `Yes (${carUsage?.convictions?.length || 0} conviction${carUsage?.convictions?.length !== 1 ? "s" : ""})` : "No"
+              )}
               {renderField("Medical Conditions", carUsage?.medicalConditions)}
               {renderField("Insurance Cancelled or Claim Refused", carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}
             </div>
