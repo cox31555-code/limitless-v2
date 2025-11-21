@@ -9,9 +9,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["700"],
 });
 
-const QuoteHeader = ({ priceAmount = "525.65", priceLabel = "/year", userName = "there", insuranceType = "Temporary Insurance" }) => {
+const QuoteHeader = ({ priceAmount = "525.65", priceLabel = "/year", userName = "there", insuranceType = "Temporary Insurance", quoteRef = "N/A" }) => {
   return (
     <div className={styles.container}>
+      <div className={styles.quoteReference}>
+        <p className={styles.refLabel}>Quote Reference</p>
+        <p className={styles.refValue}>#{quoteRef}</p>
+      </div>
       <div className={styles.headerTop}>
         <h2 className={`${styles.greeting} ${plusJakartaSans.className}`}>
           Hi {userName},
