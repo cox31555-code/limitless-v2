@@ -1,6 +1,6 @@
 import "../globals.css";
 import { Poppins } from "next/font/google";
-import SideNavbar from "@/ui/dashboard/layout/sideNavbar/SideNavbar";
+import TopNavbar from "@/ui/dashboard/layout/topNavbar/TopNavbar";
 import Header from "@/ui/dashboard/header/Header";
 import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
 import Script from "next/script";
@@ -14,11 +14,9 @@ export default function DashboardLayout({ children }) {
   return (
     <div>
       <Header />
-      <main className="dashboard-content">
-        <div className="nav">
-          <SideNavbar />
-        </div>
-        <div className="pageContainer">{children}</div>
+      <TopNavbar />
+      <main className="dashboard-main">
+        <div className="dashboardContainer">{children}</div>
       </main>
       <DashboardFooter />
       <Script
