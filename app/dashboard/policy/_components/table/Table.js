@@ -7,7 +7,9 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
   const router = useRouter();
 
   const getStatusColor = (remaining) => {
+    if (remaining === "Expired" || remaining === "Unpaid") return "low";
     const days = parseInt(remaining);
+    if (isNaN(days)) return "medium";
     if (days > 30) return "high";
     if (days > 7) return "medium";
     return "low";
@@ -15,26 +17,31 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
 
   const formatVehicleReg = (reg) => {
     if (!reg) return reg;
-    // Format as XXXX XXX (first 4 chars, space, last 3 chars)
     return reg.replace(/^(.{4})(.{3})$/, '$1 $2');
   };
 
   const getMockPolicyId = (index) => {
-    // Map to mock policy IDs based on index
     const mockIds = ["ANNUAL-001", "TEMP-001", "IMPOUND-001"];
     return mockIds[index % mockIds.length];
   };
 
   return (
     <div className={`${styles.section} ${theme === "expired" ? styles.expiredSection : ""}`}>
-      <h3 className={`${styles.sectionTitle} ${theme === "expired" ? styles.expiredTitle : ""}`}>{title}</h3>
+      <h3 className={`${styles.sectionTitle} ${theme === "expired" ? styles.expiredTitle : ""}`}>
+        {title}
+      </h3>
       <div className={styles.cardsGrid}>
         {data.map((row, index) => (
-          <div key={index} className={`${styles.policyCard} ${theme === "expired" ? styles.expiredCard : ""}`}>
+          <div
+            key={index}
+            className={`${styles.policyCard} ${theme === "expired" ? styles.expiredCard : ""}`}
+          >
             <div className={styles.cardHeader}>
               <div className={styles.policyNumberWrapper}>
                 <span className={styles.label}>Vehicle Reg</span>
-                <h4 className={styles.policyNumber}>{formatVehicleReg(row.vehicleReg)}</h4>
+                <h4 className={styles.policyNumber}>
+                  {formatVehicleReg(row.vehicleReg)}
+                </h4>
               </div>
               <span className={`${styles.badge} ${styles[getStatusColor(row.remaining)]}`}>
                 {row.remaining}
@@ -60,9 +67,9 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
                   className={styles.viewButton}
                   onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
                 >
-                  View Policy Details
+                  View Details
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
+                    <polyline points="9 18 15 12 9 6"></polyline>
                   </svg>
                 </button>
               </div>
