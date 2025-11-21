@@ -137,6 +137,37 @@
     font-size: 1.3rem;
     border-radius: 12px;
   }
+
+  .rightToCancel {
+    padding: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .rightToCancelTitle {
+    font-size: 1.4rem;
+  }
+
+  .rightToCancelText {
+    font-size: 1rem;
+  }
+
+  .autoRenewal {
+    padding: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .autoRenewalTitle {
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .autoRenewalItem strong {
+    font-size: 1rem;
+  }
+
+  .autoRenewalDescription {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
