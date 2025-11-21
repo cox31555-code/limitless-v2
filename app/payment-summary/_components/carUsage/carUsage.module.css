@@ -55,11 +55,11 @@
 
 @media screen and (max-width: 900px) {
   .container {
-    border-radius: 16px;
+    border-radius: 12px;
   }
 
   .title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .row {
@@ -80,13 +80,13 @@
 
   .first,
   .second {
-    border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+    border-bottom: 1px solid #e8f0f7;
   }
 }
 
 @media screen and (max-width: 600px) {
   .title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .row {
