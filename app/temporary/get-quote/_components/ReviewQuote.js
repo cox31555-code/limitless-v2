@@ -167,16 +167,33 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
           <h3 className={styles.sectionTitle}>Cover Details</h3>
           <div className={styles.sectionContent}>
             {insuranceType === "Annual" ? (
-              <div className={styles.row}>
-                {renderField("Cover Level", coverDetails?.level)}
-                {renderField("Start Date", coverDetails?.startDate)}
-              </div>
+              <>
+                <div className={styles.row}>
+                  {renderField("Cover Level", coverDetails?.level ? coverDetails.level.charAt(0).toUpperCase() + coverDetails.level.slice(1) : "N/A")}
+                </div>
+                <div className={styles.row}>
+                  {renderField("Start Date", coverDetails?.startDate)}
+                  {renderField("Start Time", coverDetails?.startTime)}
+                </div>
+                <div className={styles.row}>
+                  {renderField("End Date", calculateEndDate())}
+                  {renderField("End Time", getEndTime())}
+                </div>
+              </>
             ) : (
-              <div className={styles.row}>
-                {renderField("Duration", `${coverDetails?.period || "N/A"} ${coverDetails?.type || ""}`)}
-                {renderField("Start Date", coverDetails?.startDate)}
-                {renderField("Start Time", coverDetails?.startTime)}
-              </div>
+              <>
+                <div className={styles.row}>
+                  {renderField("Duration", `${coverDetails?.period || "N/A"} ${coverDetails?.type || ""}`)}
+                </div>
+                <div className={styles.row}>
+                  {renderField("Start Date", coverDetails?.startDate)}
+                  {renderField("Start Time", coverDetails?.startTime)}
+                </div>
+                <div className={styles.row}>
+                  {renderField("End Date", calculateEndDate())}
+                  {renderField("End Time", getEndTime())}
+                </div>
+              </>
             )}
           </div>
         </div>
