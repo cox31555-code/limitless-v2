@@ -317,79 +317,95 @@
 
 @media (max-width: 600px) {
   .container {
-    gap: 1rem;
+    gap: 1.4rem;
   }
 
   .cardContent {
-    gap: 1rem;
-    padding: 1.2rem;
+    gap: 1.2rem;
+    padding: 1.6rem;
   }
 
   .iconWrapper {
-    width: 55px;
-    height: 55px;
-    min-width: 55px;
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
   }
 
   .icon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 
   .mainTitle {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+  }
+
+  .mainDetail {
+    font-size: 1.1rem;
   }
 
   .expandButton {
-    padding: 1.2rem;
+    padding: 1.6rem;
   }
 
   .additionalContent {
-    padding: 1.2rem;
+    padding: 1.6rem;
   }
 
   .detailsGrid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
-  .buttonText {
-    font-size: 1rem;
+  .label {
+    font-size: 0.95rem;
   }
 
-  .mainExpandButton {
-    padding: 1.2rem;
-  }
-
-  .mainAdditionalContent {
-    padding: 1.2rem;
-  }
-
-  .driverCardContent {
-    gap: 1rem;
-    padding: 1.2rem;
-  }
-
-  .driverIconWrapper {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-  }
-
-  .driverIcon {
-    width: 26px;
-    height: 26px;
-  }
-
-  .driverName {
+  .value {
     font-size: 1.2rem;
   }
 
+  .buttonText {
+    font-size: 1.2rem;
+  }
+
+  .mainExpandButton {
+    padding: 1.6rem;
+  }
+
+  .mainAdditionalContent {
+    padding: 1.6rem;
+  }
+
+  .driverCardContent {
+    gap: 1.2rem;
+    padding: 1.6rem;
+  }
+
+  .driverIconWrapper {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .driverIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .driverName {
+    font-size: 1.4rem;
+  }
+
+  .driverDetail {
+    font-size: 1.05rem;
+  }
+
   .driverExpandButton {
-    padding: 1.2rem;
+    padding: 1.6rem;
   }
 
   .driverAdditionalContent {
-    padding: 1.2rem;
+    padding: 1.6rem;
   }
 }
