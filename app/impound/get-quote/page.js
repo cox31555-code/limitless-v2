@@ -103,7 +103,7 @@ const ImpoundInsuranceContent = () => {
     },
   });
 
-  const { setValue, trigger } = form;
+  const { setValue, trigger, watch } = form;
 
   // Handle step parameter from URL
   useEffect(() => {
