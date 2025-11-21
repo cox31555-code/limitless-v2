@@ -13,6 +13,7 @@ import styles from "../page.module.css";
 
 export default function PaymentSummaryClient({ insuranceData, id }) {
   const [showIframe, setShowIframe] = useState(false);
+  const [selectedPayment, setSelectedPayment] = useState("annual");
 
   const handlePayClick = () => {
     setShowIframe(true);
@@ -21,6 +22,11 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
   const handleCloseIframe = () => {
     setShowIframe(false);
   };
+
+  const monthlyPrice = 47.40;
+  const annualPrice = 525.65;
+  const displayPrice = selectedPayment === "monthly" ? monthlyPrice : annualPrice;
+  const displayLabel = selectedPayment === "monthly" ? "/month" : "/year";
 
   return (
     <div>
