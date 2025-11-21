@@ -37,10 +37,6 @@ const DashboardFooter = () => {
             </p>
           </div>
 
-          {/* Right Section: Logos/Branding */}
-          <div className={styles.rightSection}>
-            <div className={styles.allianzBrand}>Allianz</div>
-          </div>
         </div>
       </div>
     </footer>

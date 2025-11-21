@@ -1,8 +1,8 @@
 .footer {
   background: #f8f9fa;
   border-top: 1px solid #e8ecf1;
-  padding: 2.5rem 4.4%;
-  margin-top: 4rem;
+  padding: 3.5rem 4.4%;
+  margin-top: 5rem;
 }
 
 .footerContainer {
@@ -14,22 +14,22 @@
 /* Main Row - Horizontal Layout */
 .mainRow {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 3rem;
+  grid-template-columns: auto 1fr;
+  gap: 4rem;
   align-items: center;
 }
 
 /* Left Section: Security Badge */
 .leftSection {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
   min-width: fit-content;
 }
 
 .securityBadge {
   flex-shrink: 0;
-  width: 130px;
+  width: 160px;
   height: auto;
 }
 
@@ -43,43 +43,43 @@
 .securityInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.6rem;
 }
 
 .securityTitle {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
-  line-height: 110%;
+  line-height: 120%;
 }
 
 .securityText {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #555;
   margin: 0;
-  line-height: 140%;
+  line-height: 150%;
 }
 
 /* Center Section: Links & Disclaimer */
 .centerSection {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
 }
 
 .linksRow {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .footerLink {
   color: #0052a3;
   text-decoration: underline;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -89,58 +89,45 @@
 }
 
 .disclaimerText {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: #666;
-  line-height: 150%;
+  line-height: 160%;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
-/* Right Section: Branding */
-.rightSection {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  min-width: fit-content;
-}
-
-.allianzBrand {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #0052a3;
-}
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .footer {
-    padding: 2rem 3%;
+    padding: 3rem 3%;
   }
 
   .mainRow {
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .securityBadge {
-    width: 110px;
+    width: 140px;
   }
 
   .securityTitle {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 
   .linksRow {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 }
 
 @media screen and (max-width: 900px) {
   .footer {
-    padding: 1.8rem 2%;
+    padding: 2.5rem 2%;
   }
 
   .mainRow {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: flex-start;
   }
 
@@ -156,13 +143,8 @@
     align-items: center;
   }
 
-  .rightSection {
-    width: 100%;
-    justify-content: center;
-  }
-
   .securityBadge {
-    width: 120px;
+    width: 130px;
   }
 
   .linksRow {
@@ -172,44 +154,40 @@
 
 @media screen and (max-width: 600px) {
   .footer {
-    padding: 1.5rem 4%;
-    margin-top: 3rem;
+    padding: 2rem 4%;
+    margin-top: 3.5rem;
   }
 
   .mainRow {
-    gap: 1.2rem;
+    gap: 1.8rem;
   }
 
   .leftSection {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .securityBadge {
-    width: 100px;
+    width: 120px;
   }
 
   .securityTitle {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .securityText {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .linksRow {
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.8rem;
   }
 
   .footerLink {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .disclaimerText {
-    font-size: 0.7rem;
-  }
-
-  .allianzBrand {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
