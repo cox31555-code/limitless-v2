@@ -42,11 +42,12 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
             />
           </div>
           <div className={styles.second}>
-            <PaymentOptions monthlyPrice={47.40} annualPrice={525.65} />
-            <CoverLevel
-              data={insuranceData.quote}
-              insuranceType={insuranceData.type}
+            <QuoteHeader
+              priceAmount={insuranceData.quote?.priceAmount || "49.99"}
+              userName={insuranceData.userDetails?.firstName || "there"}
+              insuranceType={insuranceData.type === "Temp" ? "Temporary Insurance" : insuranceData.type === "Impound" ? "Impound Insurance" : "Annual Insurance"}
             />
+            <PaymentOptions monthlyPrice={47.40} annualPrice={525.65} />
             <Actions insuranceId={id} insuranceType={insuranceData.type} onPayClick={handlePayClick} />
           </div>
         </div>
