@@ -52,78 +52,29 @@
 
 .rightToCancel {
   margin-top: 2.4rem;
-  padding: 2rem;
+  padding: 2.8rem;
   background: #ffffff;
   border: 1px solid rgba(3, 136, 255, 0.12);
   border-radius: 12px;
 }
 
 .rightToCancelTitle {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #003366;
-  margin: 0 0 1.2rem 0;
-}
-
-.rightToCancelText {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #003e7e;
-  margin: 0 0 1.2rem 0;
-  line-height: 1.6;
-}
-
-.rightToCancelText:last-of-type {
-  margin-bottom: 0;
-}
-
-.autoRenewal {
-  margin-top: 2.4rem;
-  padding: 2rem;
-  background: #ffffff;
-  border: 1px solid rgba(3, 136, 255, 0.12);
-  border-radius: 12px;
-}
-
-.autoRenewalTitle {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #003366;
   margin: 0 0 1.6rem 0;
 }
 
-.autoRenewalList {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.autoRenewalItem {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-.checkmark {
-  color: #4caf50;
-  font-size: 1.6rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: -0.2rem;
-}
-
-.autoRenewalItem strong {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #003366;
-  display: block;
-}
-
-.autoRenewalDescription {
-  font-size: 1.1rem;
+.rightToCancelText {
+  font-size: 1.15rem;
   font-weight: 500;
   color: #003e7e;
-  display: inline;
+  margin: 0 0 1.4rem 0;
+  line-height: 1.7;
+}
+
+.rightToCancelText:last-of-type {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 900px) {
