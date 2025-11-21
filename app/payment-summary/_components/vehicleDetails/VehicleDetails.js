@@ -143,41 +143,6 @@ const VehicleDetails = ({ data, carUsage, insuranceType }) => {
         </>
       )}
 
-      {(insuranceType === "Temp" || insuranceType === "Impound") && (
-        <div className={styles.specificationSection}>
-          <h4 className={styles.sectionHeading}>Additional Details</h4>
-          <div className={styles.specGrid}>
-            <div className={styles.specItem}>
-              <span className={styles.specLabel}>Vehicle Worth</span>
-              <span className={styles.specValue}>{data?.worth || "N/A"}</span>
-            </div>
-            <div className={styles.specItem}>
-              <span className={styles.specLabel}>Vehicle Type</span>
-              <span className={styles.specValue}>{data?.type || "N/A"}</span>
-            </div>
-            <div className={styles.specItem}>
-              <span className={styles.specLabel}>Fuel Type</span>
-              <span className={styles.specValue}>{data?.fuel || "N/A"}</span>
-            </div>
-            <div className={styles.specItem}>
-              <span className={styles.specLabel}>Colour</span>
-              <span className={styles.specValue}>{data?.colour || "N/A"}</span>
-            </div>
-            <div className={styles.specItem}>
-              <span className={styles.specLabel}>Transmission</span>
-              <span className={styles.specValue}>{data?.transmission || "N/A"}</span>
-            </div>
-            <div className={styles.specItem}>
-              <span className={styles.specLabel}>Doors</span>
-              <span className={styles.specValue}>{data?.doors || "N/A"}</span>
-            </div>
-            <div className={styles.specItem}>
-              <span className={styles.specLabel}>Voluntary Excess</span>
-              <span className={styles.specValue}>£{carUsage?.voluntaryExcess || "0"}</span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
