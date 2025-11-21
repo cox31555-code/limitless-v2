@@ -189,4 +189,49 @@
     border-radius: 12px;
     order: 1;
   }
+
+  .rightToCancel {
+    padding: 1.6rem;
+    margin-top: 1.8rem;
+  }
+
+  .rightToCancelTitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .rightToCancelText {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .autoRenewal {
+    padding: 1.6rem;
+    margin-top: 1.8rem;
+  }
+
+  .autoRenewalTitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .autoRenewalList {
+    gap: 1rem;
+  }
+
+  .autoRenewalItem {
+    gap: 0.8rem;
+  }
+
+  .checkmark {
+    font-size: 1.4rem;
+  }
+
+  .autoRenewalItem strong {
+    font-size: 1rem;
+  }
+
+  .autoRenewalDescription {
+    font-size: 0.95rem;
+  }
 }
