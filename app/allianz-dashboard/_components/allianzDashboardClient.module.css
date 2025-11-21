@@ -162,16 +162,6 @@
   transform: translateY(-2px);
 }
 
-.menuItem.highlighted {
-  background: linear-gradient(135deg, #003d7a 0%, #2a5c9c 100%);
-  border-color: #003d7a;
-  color: #ffffff;
-}
-
-.menuItem.highlighted:hover {
-  box-shadow: 0 6px 16px rgba(0, 61, 122, 0.3);
-}
-
 .menuItemIcon {
   width: 50px;
   height: 50px;
@@ -182,11 +172,6 @@
   justify-content: center;
   color: #003d7a;
   transition: all 0.2s ease;
-}
-
-.menuItem.highlighted .menuItemIcon {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
 }
 
 .menuItemIcon svg {
