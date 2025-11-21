@@ -107,7 +107,7 @@ const TemporaryInsuranceContent = () => {
     },
   });
 
-  const { setValue, trigger } = form;
+  const { setValue, trigger, watch } = form;
 
   useEffect(() => {
     setFormReady(true);
