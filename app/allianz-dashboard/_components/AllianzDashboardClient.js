@@ -73,8 +73,8 @@ const AllianzDashboardClient = () => {
     {
       id: 1,
       name: "Limitless Cover Car Insurance",
-      policyNumber: "LN60AYT",
-      vehicle: "VW GOLF TWIST",
+      policyNumber: "LC-847291",
+      vehicle: "LN60AYT - VW GOLF TWIST",
       coverEnd: "24 November 2026",
       status: "Active",
     },
