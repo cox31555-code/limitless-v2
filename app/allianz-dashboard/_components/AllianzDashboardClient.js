@@ -83,33 +83,34 @@ const AllianzDashboardClient = () => {
   const BannerIcon = ({ type }) => {
     const icons = {
       cars: (
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M8 18h4l2-6h16l2 6h4v8H8z"></path>
-          <circle cx="14" cy="32" r="3"></circle>
-          <circle cx="34" cy="32" r="3"></circle>
-          <path d="M8 26v6M40 26v6"></path>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M10 20h28v10H10z"></path>
+          <path d="M13 20l2-4h18l2 4"></path>
+          <circle cx="15" cy="32" r="2.5"></circle>
+          <circle cx="33" cy="32" r="2.5"></circle>
         </svg>
       ),
       calendar: (
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="6" y="8" width="36" height="28" rx="2"></rect>
-          <path d="M14 4v8M34 4v8M6 16h36"></path>
-          <circle cx="18" cy="26" r="3"></circle>
-          <circle cx="30" cy="26" r="3"></circle>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <rect x="8" y="10" width="32" height="26" rx="1.5"></rect>
+          <path d="M14 6v8M34 6v8"></path>
+          <path d="M8 18h32"></path>
+          <rect x="16" y="24" width="3" height="3"></rect>
+          <rect x="29" y="24" width="3" height="3"></rect>
         </svg>
       ),
       shield: (
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M24 4l16 8v12c0 8-16 12-16 12s-16-4-16-12v-12l16-8z"></path>
-          <polyline points="16 24 22 30 32 20"></polyline>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <path d="M24 6l14 7v10c0 7-14 10-14 10s-14-3-14-10v-10l14-7z"></path>
+          <polyline points="18 24 22 28 30 20"></polyline>
         </svg>
       ),
       truck: (
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M6 20h28v14H6z"></path>
-          <path d="M34 20h8l4 6v8h-12v-14z"></path>
-          <circle cx="14" cy="36" r="3"></circle>
-          <circle cx="34" cy="36" r="3"></circle>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <rect x="8" y="18" width="24" height="12" rx="1"></rect>
+          <path d="M32 18h10l3 5v7H32"></path>
+          <circle cx="15" cy="32" r="2.5"></circle>
+          <circle cx="32" cy="32" r="2.5"></circle>
         </svg>
       ),
     };
