@@ -1,11 +1,11 @@
 .container {
   background: #0052a3;
-  border-bottom: 1px solid rgba(0, 82, 163, 0.15);
+  border-bottom: none;
   padding: 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 52, 122, 0.1);
+  box-shadow: none;
 }
 
 .navContent {

@@ -1,6 +1,6 @@
 .headerContainer {
   background: #000822;
-  border-bottom: 1.5px solid rgba(3, 136, 255, 0.15);
+  border-bottom: none;
   padding: 2.6rem 4.4% 0;
   position: fixed;
   top: 0;
