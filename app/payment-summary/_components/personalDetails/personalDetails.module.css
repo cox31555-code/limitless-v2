@@ -142,20 +142,19 @@
   width: 100%;
 }
 
-.driverCard {
-  padding: 1.6rem;
+.driverMainCard {
   background: #ffffff;
   border: 1px solid #d4e4f7;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
 }
 
 .driverCardContent {
   display: flex;
   gap: 1.6rem;
   align-items: flex-start;
-  margin-bottom: 1.6rem;
-  padding-bottom: 1.6rem;
+  padding: 1.6rem;
   border-bottom: 1px solid #e8f0f7;
 }
 
@@ -198,10 +197,34 @@
   margin: 0;
 }
 
-.driverDetailsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
+.driverExpandableSection {
+  width: 100%;
+}
+
+.driverExpandButton {
+  width: 100%;
+  padding: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #003366;
+  transition: background-color 0.2s ease;
+  border-top: 1px solid #e8f0f7;
+}
+
+.driverExpandButton:hover {
+  background-color: #f8fafb;
+}
+
+.driverAdditionalContent {
+  padding: 1.6rem;
+  border-top: 1px solid #e8f0f7;
+  background: #f8fafb;
 }
 
 @media (max-width: 900px) {
