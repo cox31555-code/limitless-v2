@@ -74,28 +74,29 @@
 }
 
 .navItem {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
-  padding: 0.6rem 1.4rem;
-  border-radius: 6px;
-  transition: all 0.25s ease;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   position: relative;
   white-space: nowrap;
-  border: 1px solid transparent;
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
 }
 
 .navItem:hover {
-  color: #ffffff;
-  background: rgba(5, 175, 255, 0.08);
-  border-color: rgba(5, 175, 255, 0.15);
+  color: #0052a3;
+  border-color: #0052a3;
+  box-shadow: 0 2px 8px rgba(0, 52, 122, 0.08);
 }
 
 .navItem.active {
-  color: #ffffff;
-  background: rgba(5, 175, 255, 0.12);
-  border-color: rgba(5, 175, 255, 0.3);
+  color: #0052a3;
+  border-color: #0052a3;
+  background: #f0f4fb;
   font-weight: 600;
 }
 
@@ -103,22 +104,22 @@
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  color: rgba(255, 255, 255, 0.8);
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0.65rem 1.4rem;
-  border-radius: 6px;
+  color: #666;
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
 .logoutButton:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.25);
+  color: #0052a3;
+  border-color: #0052a3;
+  box-shadow: 0 2px 8px rgba(0, 52, 122, 0.08);
 }
 
 .logoutButton svg {
@@ -174,24 +175,24 @@
   width: 4.4rem;
   height: 4.4rem;
   border-radius: 8px;
-  background: transparent;
-  border: 1px solid rgba(5, 175, 255, 0.25);
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #05afff;
+  color: #0052a3;
   flex-shrink: 0;
   position: relative;
   z-index: 2001;
   pointer-events: auto;
   touch-action: manipulation;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .menuBtn:hover {
-  background: rgba(5, 175, 255, 0.08);
-  border-color: rgba(5, 175, 255, 0.4);
+  border-color: #0052a3;
+  box-shadow: 0 2px 8px rgba(0, 52, 122, 0.1);
 }
 
 .menuBtn svg {
@@ -237,27 +238,24 @@
   padding: 1rem 2.4rem;
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   pointer-events: auto;
   touch-action: manipulation;
-  border-left: 3px solid transparent;
 }
 
 .menuItem:hover {
   color: #ffffff;
-  background: rgba(5, 175, 255, 0.08);
-  border-left-color: rgba(5, 175, 255, 0.3);
+  background: rgba(0, 52, 163, 0.1);
 }
 
 .menuItem.active {
   color: #ffffff;
-  background: rgba(5, 175, 255, 0.12);
-  border-left-color: #05afff;
+  background: rgba(0, 82, 163, 0.15);
   font-weight: 600;
 }
 
