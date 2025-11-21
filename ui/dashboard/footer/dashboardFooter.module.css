@@ -1,8 +1,8 @@
 .footer {
-  background: #f5f5f5;
-  border-top: 1px solid #e0e0e0;
-  padding: 3rem 4.4%;
-  margin-top: 4rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  border-top: 2px solid #e8ecf1;
+  padding: 4rem 4.4% 2rem;
+  margin-top: 5rem;
 }
 
 .container {
@@ -11,45 +11,57 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
-/* Security Section */
-.securitySection {
+/* Top Section */
+.topSection {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #e8ecf1;
+}
+
+/* Trust Section */
+.trustSection {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
 }
 
-.securityBadge {
+.trustItem {
   flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  color: #1abc9c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.securityBadge svg {
-  width: 100%;
-  height: 100%;
+.sectigo {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
 }
 
 .securityContent {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  flex-grow: 1;
 }
 
 .securityTitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #003d7a;
+  color: #0052a3;
   margin: 0;
   line-height: 120%;
 }
 
 .securityDescription {
   font-size: 0.95rem;
-  color: #666;
+  color: #555;
   margin: 0;
   line-height: 150%;
 }
@@ -58,94 +70,98 @@
 .partnersSection {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.partnersLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0052a3;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 
 .partnersLogos {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.partnerLogo {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #333;
-}
-
-.partnerLogo svg {
-  width: 100%;
-  height: 100%;
-}
-
-.allianzLogo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #003d7a;
-}
-
-.paralympicsLogo {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #d63384;
-}
-
-.paralympicsLogo svg {
-  width: 100%;
-  height: 100%;
-}
-
-.partnersText {
-  text-align: center;
-  font-size: 0.95rem;
-  color: #003d7a;
-  margin: 0;
-  font-weight: 600;
-}
-
-/* Legal Links */
-.legalLinks {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
+.partnerText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0052a3;
+}
+
+.partnerDivider {
+  color: #ccc;
+  font-weight: 300;
+}
+
+/* Links Section */
+.linksSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
 .legalLink {
-  color: #003d7a;
-  text-decoration: underline;
+  color: #0052a3;
+  text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 
 .legalLink:hover {
-  color: #2a5c9c;
-  text-decoration-thickness: 2px;
+  color: #003d7a;
+  border-bottom-color: #0052a3;
+}
+
+.linkDivider {
+  color: #d0d0d0;
+  font-weight: 300;
 }
 
 /* Disclaimer */
 .disclaimer {
-  border-top: 1px solid #ddd;
-  padding-top: 2rem;
+  border-top: 1px solid #e8ecf1;
+  padding-top: 2.5rem;
 }
 
 .disclaimerText {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #666;
   line-height: 160%;
   margin: 0;
   text-align: center;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+/* Footer Bottom */
+.footerBottom {
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: #999;
+  margin: 0;
+  font-weight: 400;
 }
 
 /* Responsive Design */
