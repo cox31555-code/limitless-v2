@@ -127,10 +127,10 @@
 
 .policyCardHeader {
   background: #f0f4fb;
-  padding: 2.5rem;
+  padding: 2rem;
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1.4rem;
   border-bottom: 1px solid #e0e6f0;
 }
 
