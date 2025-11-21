@@ -151,8 +151,6 @@ const PaymentOptions = ({ monthlyPrice = 47.40, annualPrice = 525.65, defaultPay
             <p className={`${styles.breakdownLabel} ${styles.breakdownTotal}`}>Total amount for 1 year</p>
             <p className={`${styles.breakdownValue} ${styles.breakdownTotalValue} ${plusJakartaSans.className}`}>£568.69</p>
           </div>
-
-          <p className={styles.creditNote}>* Credit supplied by Liverpool Victoria Insurance Company Limited, which is an Allianz Group company</p>
         </div>
       )}
 
