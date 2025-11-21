@@ -38,15 +38,15 @@ const VehicleDetails = ({ data, carUsage, insuranceType }) => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.5"
+              strokeWidth="1.2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M12 2C6 2 2 6 2 12c0 2 1 4 2 5v4h2v-1h12v1h2v-4c1-1 2-3 2-5 0-6-4-10-10-10z"/>
-              <circle cx="6" cy="14" r="1.5" fill="currentColor"/>
-              <circle cx="18" cy="14" r="1.5" fill="currentColor"/>
-              <path d="M5 8h14" strokeWidth="1"/>
-              <path d="M7 5h10"/>
+              <path d="M3 12h18M8 8h8c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2zM6 16h12v2H6z"/>
+              <circle cx="7" cy="18" r="1.2" fill="currentColor"/>
+              <circle cx="17" cy="18" r="1.2" fill="currentColor"/>
+              <path d="M9 8L5 5h14l-4 3"/>
+              <rect x="10" y="9" width="4" height="3" fill="none"/>
             </svg>
           </div>
           <div className={styles.vehicleInfo}>
