@@ -33,6 +33,74 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
     return value;
   };
 
+  const calculateEndDate = () => {
+    if (!coverDetails?.startDate) return null;
+
+    const startDate = new Date(coverDetails.startDate);
+    let endDate = new Date(startDate);
+
+    if (insuranceType === "Annual") {
+      // Add 1 year for annual insurance
+      endDate.setFullYear(endDate.getFullYear() + 1);
+    } else {
+      // For temporary/impound, calculate based on duration
+      const period = coverDetails.period || 0;
+      switch (coverDetails.type) {
+        case "Hours":
+          endDate.setHours(endDate.getHours() + period);
+          break;
+        case "Days":
+          endDate.setDate(endDate.getDate() + period);
+          break;
+        case "Weeks":
+          endDate.setDate(endDate.getDate() + period * 7);
+          break;
+        case "Months":
+          endDate.setMonth(endDate.getMonth() + period);
+          break;
+        case "Years":
+          endDate.setFullYear(endDate.getFullYear() + period);
+          break;
+      }
+    }
+
+    return endDate.toISOString().split('T')[0];
+  };
+
+  const getEndTime = () => {
+    if (!coverDetails?.startDate || !coverDetails?.startTime) return null;
+
+    const startDate = new Date(`${coverDetails.startDate}T${coverDetails.startTime}`);
+    let endDate = new Date(startDate);
+
+    if (insuranceType === "Annual") {
+      // Add 1 year for annual insurance
+      endDate.setFullYear(endDate.getFullYear() + 1);
+    } else {
+      // For temporary/impound, calculate based on duration
+      const period = coverDetails.period || 0;
+      switch (coverDetails.type) {
+        case "Hours":
+          endDate.setHours(endDate.getHours() + period);
+          break;
+        case "Days":
+          endDate.setDate(endDate.getDate() + period);
+          break;
+        case "Weeks":
+          endDate.setDate(endDate.getDate() + period * 7);
+          break;
+        case "Months":
+          endDate.setMonth(endDate.getMonth() + period);
+          break;
+        case "Years":
+          endDate.setFullYear(endDate.getFullYear() + period);
+          break;
+      }
+    }
+
+    return endDate.toTimeString().slice(0, 5);
+  };
+
   const renderField = (label, value) => (
     <div className={styles.field}>
       <label>{label}</label>
