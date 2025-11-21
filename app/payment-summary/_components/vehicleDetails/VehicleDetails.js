@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
 import styles from "./vehicleDetails.module.css";
-import VehicleCovered from "@/app/payment/_components/vehicleCovered/VehicleCovered";
-import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
-import Duration from "@/app/payment/_components/duration/Duration";
-import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
+import Image from "next/image";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 const VehicleDetails = ({ data, carUsage, insuranceType }) => {
   const formatDate = (dateString) => {
@@ -15,140 +20,163 @@ const VehicleDetails = ({ data, carUsage, insuranceType }) => {
     return `${day}/${month}/${year}`;
   };
 
+  const getVehicleDescription = () => {
+    if (!data) return "N/A";
+    const parts = [];
+    if (data.make) parts.push(data.make);
+    if (data.model) parts.push(data.model);
+    return parts.join(", ").toUpperCase();
+  };
+
   return (
-    <ComponentWrapper title="Vehicle Details" icon={{ width: 62, height: 62 }} isPaymentPage={true}>
-      <div className={styles.content}>
-        <VehicleCovered data={data} hideIcon={true} />
-        <div className={styles.vehicleInfoSection}>
-          <h3 className={styles.sectionTitle}>Vehicle Specification</h3>
-          <div className={styles.sectionContent}>
-            <div className={styles.row}>
-              <InputWithData2
-                item={{
-                  label: "Vehicle Type",
-                  value: data?.type || "N/A",
-                }}
-              />
-              <InputWithData2
-                item={{
-                  label: "Fuel Type",
-                  value: data?.fuel || "N/A",
-                }}
-              />
-              <InputWithData2
-                item={{
-                  label: "Colour",
-                  value: data?.colour || "N/A",
-                }}
-              />
+    <div className={styles.container}>
+      <div className={styles.vehicleCard}>
+        <div className={styles.cardContent}>
+          <div className={styles.iconWrapper}>
+            <svg
+              className={styles.carIcon}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M19 17h2v4h-2M1 17h2v4H1M6 17h12v-4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v4zM3 11h18a1 1 0 0 1 1 1v2H2v-2a1 1 0 0 1 1-1z"/>
+              <circle cx="7" cy="17" r="2" fill="currentColor"/>
+              <circle cx="17" cy="17" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div className={styles.vehicleInfo}>
+            <h3 className={`${styles.vehicleName} ${plusJakartaSans.className}`}>
+              {getVehicleDescription()}
+            </h3>
+            <div className={styles.registrationBadge}>
+              {data?.registrationNumber || "N/A"}
             </div>
-            <div className={styles.row}>
-              <InputWithData2
-                item={{
-                  label: "Transmission",
-                  value: data?.transmission || "N/A",
-                }}
-              />
-              <InputWithData2
-                item={{
-                  label: "Doors",
-                  value: data?.doors || "N/A",
-                }}
-              />
-              <InputWithData2
-                item={{
-                  label: "Voluntary Excess",
-                  value: carUsage?.voluntaryExcess || "N/A",
-                }}
-              />
+            <button className={styles.editLink}>
+              Edit car details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {insuranceType === "Annual" && (
+        <>
+          <div className={styles.specificationSection}>
+            <h4 className={styles.sectionHeading}>Vehicle Specification</h4>
+            <div className={styles.specGrid}>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Vehicle Type</span>
+                <span className={styles.specValue}>{data?.type || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Fuel Type</span>
+                <span className={styles.specValue}>{data?.fuel || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Colour</span>
+                <span className={styles.specValue}>{data?.colour || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Transmission</span>
+                <span className={styles.specValue}>{data?.transmission || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Doors</span>
+                <span className={styles.specValue}>{data?.doors || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Voluntary Excess</span>
+                <span className={styles.specValue}>£{carUsage?.voluntaryExcess || "0"}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.specificationSection}>
+            <h4 className={styles.sectionHeading}>Vehicle Worth & Purchase Details</h4>
+            <div className={styles.specGrid}>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Vehicle Worth</span>
+                <span className={styles.specValue}>{data?.worth || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Purchase Date</span>
+                <span className={styles.specValue}>{formatDate(data?.purchaseDate)}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Legal Owner</span>
+                <span className={styles.specValue}>{data?.legalOwner || "N/A"}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.specificationSection}>
+            <h4 className={styles.sectionHeading}>Safety & Security Features</h4>
+            <div className={styles.specGrid}>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Tracking Device</span>
+                <span className={styles.specValue}>{data?.trackingDevice || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Alarm / Immobiliser</span>
+                <span className={styles.specValue}>{data?.alarmImmobiliser || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Imported Vehicle</span>
+                <span className={styles.specValue}>{data?.importedVehicle || "N/A"}</span>
+              </div>
+              <div className={styles.specItem}>
+                <span className={styles.specLabel}>Vehicle Modified</span>
+                <span className={styles.specValue}>{data?.vehicleModified || "N/A"}</span>
+              </div>
+              {data?.vehicleModifications && data?.vehicleModifications.length > 0 && (
+                <div className={styles.specItem}>
+                  <span className={styles.specLabel}>Modifications</span>
+                  <span className={styles.specValue}>{data?.vehicleModifications.join(", ")}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </>
+      )}
+
+      {(insuranceType === "Temp" || insuranceType === "Impound") && (
+        <div className={styles.specificationSection}>
+          <h4 className={styles.sectionHeading}>Additional Details</h4>
+          <div className={styles.specGrid}>
+            <div className={styles.specItem}>
+              <span className={styles.specLabel}>Vehicle Worth</span>
+              <span className={styles.specValue}>{data?.worth || "N/A"}</span>
+            </div>
+            <div className={styles.specItem}>
+              <span className={styles.specLabel}>Vehicle Type</span>
+              <span className={styles.specValue}>{data?.type || "N/A"}</span>
+            </div>
+            <div className={styles.specItem}>
+              <span className={styles.specLabel}>Fuel Type</span>
+              <span className={styles.specValue}>{data?.fuel || "N/A"}</span>
+            </div>
+            <div className={styles.specItem}>
+              <span className={styles.specLabel}>Colour</span>
+              <span className={styles.specValue}>{data?.colour || "N/A"}</span>
+            </div>
+            <div className={styles.specItem}>
+              <span className={styles.specLabel}>Transmission</span>
+              <span className={styles.specValue}>{data?.transmission || "N/A"}</span>
+            </div>
+            <div className={styles.specItem}>
+              <span className={styles.specLabel}>Doors</span>
+              <span className={styles.specValue}>{data?.doors || "N/A"}</span>
+            </div>
+            <div className={styles.specItem}>
+              <span className={styles.specLabel}>Voluntary Excess</span>
+              <span className={styles.specValue}>£{carUsage?.voluntaryExcess || "0"}</span>
             </div>
           </div>
         </div>
-        {insuranceType === "Annual" && (
-          <>
-            <div className={styles.vehicleInfoSection}>
-              <h3 className={styles.sectionTitle}>Vehicle Worth & Purchase Details</h3>
-              <div className={styles.sectionContent}>
-                <div className={styles.row}>
-                  <InputWithData2
-                    item={{
-                      label: "Vehicle Worth",
-                      value: data?.worth || "N/A",
-                    }}
-                  />
-                  <InputWithData2
-                    item={{
-                      label: "Purchase Date",
-                      value: formatDate(data?.purchaseDate),
-                    }}
-                  />
-                  <InputWithData2
-                    item={{
-                      label: "Legal Owner",
-                      value: data?.legalOwner || "N/A",
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className={styles.vehicleInfoSection}>
-              <h3 className={styles.sectionTitle}>Safety & Security Features</h3>
-              <div className={styles.sectionContent}>
-                <div className={styles.row}>
-                  <InputWithData2
-                    item={{
-                      label: "Tracking Device",
-                      value: data?.trackingDevice || "N/A",
-                    }}
-                  />
-                  <InputWithData2
-                    item={{
-                      label: "Alarm / Immobiliser",
-                      value: data?.alarmImmobiliser || "N/A",
-                    }}
-                  />
-                  <InputWithData2
-                    item={{
-                      label: "Imported Vehicle",
-                      value: data?.importedVehicle || "N/A",
-                    }}
-                  />
-                </div>
-                <div className={styles.row}>
-                  <InputWithData2
-                    item={{
-                      label: "Vehicle Modified",
-                      value: data?.vehicleModified || "N/A",
-                    }}
-                  />
-                  {data?.vehicleModifications && data?.vehicleModifications.length > 0 && (
-                    <InputWithData2
-                      item={{
-                        label: "Modifications",
-                        value: data?.vehicleModifications.join(", "),
-                      }}
-                    />
-                  )}
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-        {(insuranceType === "Temp" || insuranceType === "Impound") && (
-          <div className={styles.vehicleInfoSection}>
-            <h3 className={styles.sectionTitle}>Additional Details</h3>
-            <div className={styles.sectionContent}>
-              <InputWithData2
-                item={{
-                  label: "Vehicle Worth",
-                  value: data?.worth || "N/A",
-                }}
-              />
-            </div>
-          </div>
-        )}
-      </div>
-    </ComponentWrapper>
+      )}
+    </div>
   );
 };
 
