@@ -337,11 +337,11 @@
   }
 
   .mainTitle {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .mainDetail {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .expandButton {
@@ -358,15 +358,15 @@
   }
 
   .label {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .value {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .buttonText {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .mainExpandButton {
@@ -394,11 +394,11 @@
   }
 
   .driverName {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .driverDetail {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
   .driverExpandButton {

@@ -190,11 +190,11 @@
   }
 
   .mainTitle {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .cardContent {
@@ -213,16 +213,16 @@
   }
 
   .vehicleName {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .registrationBadge {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 0.5rem 1rem;
   }
 
   .editLink {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .vehicleCard,
@@ -236,16 +236,16 @@
   }
 
   .sectionHeading {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 1.2rem;
     padding-bottom: 1rem;
   }
 
   .specLabel {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .specValue {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
