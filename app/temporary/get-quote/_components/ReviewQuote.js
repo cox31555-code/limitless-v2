@@ -172,11 +172,9 @@ const ReviewQuote = ({ form, insuranceType = "Temp" }) => {
                 </div>
                 <div className={styles.row}>
                   {renderField("Start Date", coverDetails?.startDate)}
-                  {renderField("Start Time", coverDetails?.startTime)}
                 </div>
                 <div className={styles.row}>
                   {renderField("End Date", calculateEndDate())}
-                  {renderField("End Time", getEndTime())}
                 </div>
               </>
             ) : (
