@@ -61,6 +61,18 @@ const FormDateInput = forwardRef(
       const pickerHeight = 400; // Approximate height of pickers
       const pickerWidth = Math.min(320, window.innerWidth - 32); // Max 320px or viewport minus padding
 
+      // Check if we're inside a modal by looking for overflow:auto parent
+      let isInsideModal = false;
+      let element = inputContainerRef.current;
+      while (element && element !== document.body) {
+        const style = window.getComputedStyle(element);
+        if (style.overflowY === 'auto' || style.overflowY === 'scroll' || style.overflow === 'auto' || style.overflow === 'scroll') {
+          isInsideModal = true;
+          break;
+        }
+        element = element.parentElement;
+      }
+
       // Calculate optimal left position to keep picker within viewport
       let leftPos = rect.left;
       const pickerRightEdge = leftPos + pickerWidth;
@@ -70,30 +82,67 @@ const FormDateInput = forwardRef(
         leftPos = Math.max(16, window.innerWidth - pickerWidth - 16);
       }
 
-      if (forceShowAbove) {
-        // Always show above when forceShowAbove is true
-        setPickerPosition({
-          top: "auto",
-          bottom: `${window.innerHeight - rect.top + 12}px`,
-          left: `${leftPos}px`,
-          showAbove: true,
-        });
-      } else if (spaceBelow < pickerHeight && spaceAbove > pickerHeight) {
-        // Show above
-        setPickerPosition({
-          top: "auto",
-          bottom: `${window.innerHeight - rect.top + 12}px`,
-          left: `${leftPos}px`,
-          showAbove: true,
-        });
+      // For modals, position relative to input; for normal flow, position relative to viewport
+      if (isInsideModal) {
+        // Inside modal: use absolute positioning relative to input
+        leftPos = 0; // Position from the input's left edge
+        if (forceShowAbove) {
+          setPickerPosition({
+            top: "auto",
+            bottom: `${rect.height + 12}px`,
+            left: `${leftPos}px`,
+            showAbove: true,
+            isAbsolute: true,
+          });
+        } else if (spaceBelow < pickerHeight) {
+          // Show above
+          setPickerPosition({
+            top: "auto",
+            bottom: `${rect.height + 12}px`,
+            left: `${leftPos}px`,
+            showAbove: true,
+            isAbsolute: true,
+          });
+        } else {
+          // Show below
+          setPickerPosition({
+            top: `${rect.height + 12}px`,
+            bottom: "auto",
+            left: `${leftPos}px`,
+            showAbove: false,
+            isAbsolute: true,
+          });
+        }
       } else {
-        // Show below (default)
-        setPickerPosition({
-          top: `${rect.bottom + 12}px`,
-          bottom: "auto",
-          left: `${leftPos}px`,
-          showAbove: false,
-        });
+        // Normal flow: use fixed positioning
+        if (forceShowAbove) {
+          // Always show above when forceShowAbove is true
+          setPickerPosition({
+            top: "auto",
+            bottom: `${window.innerHeight - rect.top + 12}px`,
+            left: `${leftPos}px`,
+            showAbove: true,
+            isAbsolute: false,
+          });
+        } else if (spaceBelow < pickerHeight && spaceAbove > pickerHeight) {
+          // Show above
+          setPickerPosition({
+            top: "auto",
+            bottom: `${window.innerHeight - rect.top + 12}px`,
+            left: `${leftPos}px`,
+            showAbove: true,
+            isAbsolute: false,
+          });
+        } else {
+          // Show below (default)
+          setPickerPosition({
+            top: `${rect.bottom + 12}px`,
+            bottom: "auto",
+            left: `${leftPos}px`,
+            showAbove: false,
+            isAbsolute: false,
+          });
+        }
       }
     };
 
@@ -304,7 +353,7 @@ const FormDateInput = forwardRef(
           )}
           {showDatePicker && (
             <div className={styles.pickerContainer} ref={datePickerRef} style={{
-              position: 'fixed',
+              position: isMobile ? 'fixed' : (pickerPosition.isAbsolute ? 'absolute' : 'fixed'),
               top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
               bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
               left: isMobile ? '50%' : pickerPosition.left,
@@ -406,7 +455,7 @@ const FormDateInput = forwardRef(
           )}
           {showTimePicker && (
             <div className={styles.pickerContainer} ref={timePickerRef} style={{
-              position: 'fixed',
+              position: isMobile ? 'fixed' : (pickerPosition.isAbsolute ? 'absolute' : 'fixed'),
               top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
               bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
               left: isMobile ? '50%' : pickerPosition.left,
