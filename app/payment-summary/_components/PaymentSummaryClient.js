@@ -49,12 +49,18 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
           </div>
           <div className={styles.second}>
             <QuoteHeader
-              priceAmount={insuranceData.quote?.annualPrice || "525.65"}
-              priceLabel="/year"
+              priceAmount={displayPrice.toFixed(2)}
+              priceLabel={displayLabel}
               userName={insuranceData.userDetails?.firstName || "there"}
               insuranceType={insuranceData.type === "Temp" ? "Temporary Insurance" : insuranceData.type === "Impound" ? "Impound Insurance" : "Annual Insurance"}
             />
-            <PaymentOptions monthlyPrice={47.40} annualPrice={525.65} defaultPayment="annual" />
+            <PaymentOptions
+              monthlyPrice={monthlyPrice}
+              annualPrice={annualPrice}
+              defaultPayment="annual"
+              selectedPayment={selectedPayment}
+              onPaymentChange={setSelectedPayment}
+            />
             <Actions insuranceId={id} insuranceType={insuranceData.type} onPayClick={handlePayClick} />
           </div>
         </div>
