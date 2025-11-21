@@ -9,7 +9,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["700"],
 });
 
-const QuoteHeader = ({ priceAmount = "49.99", userName = "there", insuranceType = "Temporary Insurance" }) => {
+const QuoteHeader = ({ priceAmount = "525.65", priceLabel = "/year", userName = "there", insuranceType = "Temporary Insurance" }) => {
   return (
     <div className={styles.container}>
       <div className={styles.headerTop}>
@@ -23,7 +23,7 @@ const QuoteHeader = ({ priceAmount = "49.99", userName = "there", insuranceType 
         <p className={`${styles.price} ${plusJakartaSans.className}`}>
           £{priceAmount}
         </p>
-        <p className={styles.priceLabel}>/month</p>
+        <p className={styles.priceLabel}>{priceLabel}</p>
       </div>
 
       <p className={styles.disclaimer}>
