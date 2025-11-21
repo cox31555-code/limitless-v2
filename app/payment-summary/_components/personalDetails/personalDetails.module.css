@@ -101,7 +101,7 @@
 @media (max-width: 900px) {
   .row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
   .sectionsWrapper {
@@ -114,12 +114,12 @@
   }
 
   .sectionTitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding-bottom: 0.8rem;
   }
 
   .selections {
-    margin-top: 0.8rem;
+    margin-top: 1.2rem;
     gap: 1.2rem;
   }
 }
@@ -127,7 +127,7 @@
 @media (max-width: 600px) {
   .row {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .sectionsWrapper {
@@ -140,7 +140,7 @@
   }
 
   .sectionTitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding-bottom: 0.6rem;
   }
 
