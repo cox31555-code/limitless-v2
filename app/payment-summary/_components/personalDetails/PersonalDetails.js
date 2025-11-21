@@ -1,13 +1,24 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./personalDetails.module.css";
 import SelectedItem from "../selectedItem/SelectedItem";
 import CarUsage from "../carUsage/CarUsage";
-import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
-import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
+  const [expandedSections, setExpandedSections] = useState({
+    location: false,
+    carUsageInfo: false,
+  });
+
   const formatDate = (dateString) => {
-    if (!dateString) return "";
+    if (!dateString) return "N/A";
     const date = new Date(dateString);
     const day = date.getDate().toString().padStart(2, "0");
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -20,267 +31,246 @@ const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
     return value === true ? "Yes" : "No";
   };
 
-  return (
-    <ComponentWrapper title="Personal Details" icon={{width: 62, height: 62}} isPaymentPage={true}>
-      <div className={styles.sectionsWrapper}>
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>Personal Information</h3>
-        <div className={styles.sectionContent}>
-          <div className={styles.row}>
-          <InputWithData2
-            item={{
-              label: "First Name",
-              value: data?.firstName || "N/A",
-            }}
-          />
-          <InputWithData2
-            item={{
-              label: "Surname",
-              value: data?.surname || "N/A",
-            }}
-          />{" "}
-          <InputWithData2
-            item={{
-              label: "Date of Birth",
-              value: formatDate(data?.dateOfBirth) || "N/A",
-            }}
-          />
-        </div>
-        <div className={styles.row}>
-          <InputWithData2
-            item={{
-              label: "Email Address",
-              value: data?.email || "N/A",
-            }}
-          />
-          <InputWithData2
-            item={{
-              label: "Contact Number",
-              value: data?.phone || "N/A",
-            }}
-          />
-        </div>
-        <InputWithData2
-          item={{
-            label: "Post Code",
-            value: data?.postCode || "N/A",
-          }}
-        />
-        <InputWithData2
-          item={{
-            label: "Selected Address",
-            value: data?.address || "N/A",
-          }}
-        />
-        <div className={styles.row}>
-          <InputWithData2
-            item={{
-              label: "Employment Status",
-              value: data?.employmentStatus || "N/A",
-            }}
-          />
-          <InputWithData2
-            item={{
-              label: "Occupation",
-              value: data?.occupation || "N/A",
-            }}
-          />
-          <InputWithData2
-            item={{
-              label: "Industry",
-              value: data?.industry || "N/A",
-            }}
-          />
-          </div>
-          </div>
-        </div>
-      </div>
-      <div className={styles.selections}>
-        <SelectedItem
-          item={carUsage?.keepingCarDuringDay}
-          title="Where do you keep your car during the day?"
-          description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
-          img="/svg/day.svg"
-        />
+  const toggleSection = (section) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
-        <SelectedItem
-          item={carUsage?.keepingCarDuringNight}
-          title="Where do you keep your car during the night?"
-          description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
-          img="/svg/night.svg"
-        />
-      </div>
-      {(insuranceType === "Temp" || insuranceType === "Impound") && (
-        <div style={{marginTop: '2rem'}}>
-          <ComponentWrapper title="Car Usage" isPaymentPage={true}>
-            <CarUsage carUsage={carUsage}/>
-          </ComponentWrapper>
+  return (
+    <div className={styles.container}>
+      <div className={styles.mainCard}>
+        <div className={styles.cardContent}>
+          <div className={styles.iconWrapper}>
+            <svg
+              className={styles.icon}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div className={styles.mainInfo}>
+            <h3 className={`${styles.mainTitle} ${plusJakartaSans.className}`}>
+              {data?.firstName} {data?.surname}
+            </h3>
+            <p className={styles.mainDetail}>{data?.email}</p>
+            <p className={styles.mainDetail}>{data?.phone}</p>
+          </div>
         </div>
-      )}
-      {insuranceType === "Annual" && (
-        <>
-          <div style={{marginTop: '2rem'}}>
-            <ComponentWrapper title="Car Usage" isPaymentPage={true}>
-            <div className={styles.sectionsWrapper}>
-              <div className={styles.section}>
-                <h3 className={styles.sectionTitle}>Additional Information</h3>
-                <div className={styles.sectionContent}>
-                  <div className={styles.row}>
-                    <InputWithData2
-                      item={{
-                        label: "Own Your Home",
-                        value: formatBoolValue(carUsage?.ownsHome),
-                      }}
-                    />
-                    <InputWithData2
-                      item={{
-                        label: "Children Under 16",
-                        value: formatBoolValue(carUsage?.childrenUnder16),
-                      }}
-                    />
-                    <InputWithData2
-                      item={{
-                        label: "Lived in UK Since Birth",
-                        value: formatBoolValue(carUsage?.livedInUKSinceBirth),
-                      }}
-                    />
-                  </div>
-                </div>
+      </div>
+
+      <div className={styles.expandableSection}>
+        <button
+          className={styles.expandButton}
+          onClick={() => toggleSection("location")}
+        >
+          <span className={styles.buttonText}>Vehicle Storage</span>
+          <svg
+            className={`${styles.expandIcon} ${expandedSections.location ? styles.expanded : ""}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        {expandedSections.location && (
+          <div className={styles.additionalContent}>
+            <div className={styles.detailsGrid}>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Day Storage</span>
+                <span className={styles.value}>
+                  {carUsage?.keepingCarDuringDay || "N/A"}
+                </span>
               </div>
-              <div className={styles.section}>
-                <h3 className={styles.sectionTitle}>Car Usage & License</h3>
-                <div className={styles.sectionContent}>
-                  <div className={styles.row}>
-                    <InputWithData2
-                      item={{
-                        label: "What do you use the car for?",
-                        value: carUsage?.usageType || "N/A",
-                      }}
-                    />
-                    <InputWithData2
-                      item={{
-                        label: "License Type",
-                        value: carUsage?.licenseType || "N/A",
-                      }}
-                    />
-                    <InputWithData2
-                      item={{
-                        label: "License Held Since",
-                        value: carUsage?.licenseHeld || "N/A",
-                      }}
-                    />
-                  </div>
-                  <div className={styles.row}>
-                    <InputWithData2
-                      item={{
-                        label: "License Number",
-                        value: carUsage?.licenseNumber || "N/A",
-                      }}
-                    />
-                    <InputWithData2
-                      item={{
-                        label: "No Claims Bonus",
-                        value: carUsage?.NCB || "N/A",
-                      }}
-                    />
-                    <InputWithData2
-                      item={{
-                        label: "Voluntary Excess",
-                        value: carUsage?.voluntaryExcess || "N/A",
-                      }}
-                    />
-                  </div>
-                </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Night Storage</span>
+                <span className={styles.value}>
+                  {carUsage?.keepingCarDuringNight || "N/A"}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Post Code</span>
+                <span className={styles.value}>{data?.postCode || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Address</span>
+                <span className={styles.value}>{data?.address || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Employment Status</span>
+                <span className={styles.value}>{data?.employmentStatus || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Occupation</span>
+                <span className={styles.value}>{data?.occupation || "N/A"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.label}>Industry</span>
+                <span className={styles.value}>{data?.industry || "N/A"}</span>
               </div>
             </div>
-          </ComponentWrapper>
           </div>
-          <div style={{marginTop: '2rem'}}>
-            <ComponentWrapper title="Declarations" isPaymentPage={true}>
-            <div className={styles.sectionsWrapper}>
-              <div className={styles.section}>
-                <div className={styles.sectionContent}>
-                  <div className={styles.row}>
-                    <InputWithData2
-                      item={{
-                        label: "Criminal Convictions",
-                        value: formatBoolValue(carUsage?.criminalConvictions),
-                      }}
-                    />
-                    <InputWithData2
-                      item={{
-                        label: "Medical Conditions",
-                        value: formatBoolValue(carUsage?.medicalConditions),
-                      }}
-                    />
-                    <InputWithData2
-                      item={{
-                        label: "Insurance Cancelled/Refused",
-                        value: formatBoolValue(carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided),
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ComponentWrapper>
-          </div>
-          {optionalExtras && (
-            <div style={{marginTop: '2rem'}}>
-              <ComponentWrapper title="Optional Extras" isPaymentPage={true}>
-              <div className={styles.sectionsWrapper}>
-                <div className={styles.section}>
-                  <div className={styles.sectionContent}>
-                    <div className={styles.row}>
-                      <InputWithData2 item={{ label: "Courtesy Car", value: optionalExtras?.courtesyCar ? "Yes" : "No" }} />
-                      <InputWithData2 item={{ label: "Breakdown Cover", value: optionalExtras?.breakdownCover ? "Yes" : "No" }} />
-                      <InputWithData2 item={{ label: "Foreign Use Cover", value: optionalExtras?.foreignUseCover ? "Yes" : "No" }} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ComponentWrapper>
+        )}
+      </div>
+
+      {(insuranceType === "Temp" || insuranceType === "Impound") && (
+        <div className={styles.expandableSection}>
+          <button
+            className={styles.expandButton}
+            onClick={() => toggleSection("carUsageInfo")}
+          >
+            <span className={styles.buttonText}>Car Usage</span>
+            <svg
+              className={`${styles.expandIcon} ${expandedSections.carUsageInfo ? styles.expanded : ""}`}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          {expandedSections.carUsageInfo && (
+            <div className={styles.additionalContent}>
+              <CarUsage carUsage={carUsage} />
             </div>
           )}
-          {carUsage?.additionalDrivers && carUsage?.additionalDrivers.length > 0 && (
-            <div style={{marginTop: '2rem'}}>
-              <ComponentWrapper title="Additional Drivers" isPaymentPage={true}>
-              <div className={styles.sectionsWrapper}>
-                <div className={styles.section}>
-                  <div className={styles.sectionContent}>
-                    {carUsage.additionalDrivers.map((driver, index) => (
-                      <div key={index} className={styles.driverBlock}>
-                        <div className={styles.row}>
-                          <InputWithData2 item={{ label: `Driver ${index + 1} - First Name`, value: driver?.firstName || "N/A" }} />
-                          <InputWithData2 item={{ label: "Surname", value: driver?.surname || "N/A" }} />
-                          <InputWithData2 item={{ label: "Date of Birth", value: formatDate(driver?.dateOfBirth) || "N/A" }} />
-                        </div>
-                        <div className={styles.row}>
-                          <InputWithData2 item={{ label: "Employment Status", value: driver?.employmentStatus || "N/A" }} />
-                          <InputWithData2 item={{ label: "Occupation", value: driver?.occupation || "N/A" }} />
-                          <InputWithData2 item={{ label: "Industry", value: driver?.industry || "N/A" }} />
-                        </div>
-                        <div className={styles.row}>
-                          <InputWithData2 item={{ label: "Uses Other Vehicles", value: driver?.otherVehicles ? "Yes" : "No" }} />
-                          <InputWithData2 item={{ label: "License Type", value: driver?.licenseType || "N/A" }} />
-                          <InputWithData2 item={{ label: "License Held Since", value: driver?.licenseHeld || "N/A" }} />
-                        </div>
-                        <div className={styles.row}>
-                          <InputWithData2 item={{ label: "No Claims Bonus", value: driver?.NCB || "N/A" }} />
-                          <InputWithData2 item={{ label: "Criminal Convictions", value: formatBoolValue(driver?.criminalConvictions) }} />
-                          <InputWithData2 item={{ label: "Medical Conditions", value: formatBoolValue(driver?.medicalConditions) }} />
-                        </div>
-                      </div>
-                    ))}
+        </div>
+      )}
+
+      {insuranceType === "Annual" && (
+        <>
+          <div className={styles.expandableSection}>
+            <button
+              className={styles.expandButton}
+              onClick={() => toggleSection("carUsageInfo")}
+            >
+              <span className={styles.buttonText}>Car Usage & License</span>
+              <svg
+                className={`${styles.expandIcon} ${expandedSections.carUsageInfo ? styles.expanded : ""}`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            {expandedSections.carUsageInfo && (
+              <div className={styles.additionalContent}>
+                <div className={styles.detailsGrid}>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>What do you use the car for?</span>
+                    <span className={styles.value}>{carUsage?.usageType || "N/A"}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>License Type</span>
+                    <span className={styles.value}>{carUsage?.licenseType || "N/A"}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>License Held Since</span>
+                    <span className={styles.value}>{carUsage?.licenseHeld || "N/A"}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>License Number</span>
+                    <span className={styles.value}>{carUsage?.licenseNumber || "N/A"}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>No Claims Bonus</span>
+                    <span className={styles.value}>{carUsage?.NCB || "N/A"}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>Voluntary Excess</span>
+                    <span className={styles.value}>£{carUsage?.voluntaryExcess || "0"}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>Own Home</span>
+                    <span className={styles.value}>{formatBoolValue(carUsage?.ownsHome)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>Children Under 16</span>
+                    <span className={styles.value}>{formatBoolValue(carUsage?.childrenUnder16)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.label}>Lived in UK Since Birth</span>
+                    <span className={styles.value}>{formatBoolValue(carUsage?.livedInUKSinceBirth)}</span>
                   </div>
                 </div>
               </div>
-            </ComponentWrapper>
+            )}
+          </div>
+
+          {(optionalExtras || carUsage?.criminalConvictions !== undefined || carUsage?.additionalDrivers?.length > 0) && (
+            <div className={styles.expandableSection}>
+              <button
+                className={styles.expandButton}
+                onClick={() => toggleSection("declarations")}
+              >
+                <span className={styles.buttonText}>Declarations & Extras</span>
+                <svg
+                  className={`${styles.expandIcon} ${expandedSections.declarations ? styles.expanded : ""}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              {expandedSections.declarations && (
+                <div className={styles.additionalContent}>
+                  <div className={styles.detailsGrid}>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Criminal Convictions</span>
+                      <span className={styles.value}>{formatBoolValue(carUsage?.criminalConvictions)}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Medical Conditions</span>
+                      <span className={styles.value}>{formatBoolValue(carUsage?.medicalConditions)}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Insurance Cancelled/Refused</span>
+                      <span className={styles.value}>{formatBoolValue(carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}</span>
+                    </div>
+                    {optionalExtras && (
+                      <>
+                        <div className={styles.detailItem}>
+                          <span className={styles.label}>Courtesy Car</span>
+                          <span className={styles.value}>{optionalExtras?.courtesyCar ? "Yes" : "No"}</span>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <span className={styles.label}>Breakdown Cover</span>
+                          <span className={styles.value}>{optionalExtras?.breakdownCover ? "Yes" : "No"}</span>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <span className={styles.label}>Foreign Use Cover</span>
+                          <span className={styles.value}>{optionalExtras?.foreignUseCover ? "Yes" : "No"}</span>
+                        </div>
+                      </>
+                    )}
+                    {carUsage?.additionalDrivers && carUsage?.additionalDrivers.length > 0 && (
+                      <div className={styles.detailItem}>
+                        <span className={styles.label}>Additional Drivers</span>
+                        <span className={styles.value}>{carUsage.additionalDrivers.length}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </>
       )}
-    </ComponentWrapper>
+    </div>
   );
 };
 
