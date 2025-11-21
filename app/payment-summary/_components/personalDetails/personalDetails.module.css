@@ -236,6 +236,21 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.4rem;
   }
+
+  .driverCard {
+    padding: 1.4rem;
+  }
+
+  .driverCardContent {
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+    padding-bottom: 1.4rem;
+  }
+
+  .driverDetailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
+  }
 }
 
 @media (max-width: 600px) {
