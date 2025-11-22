@@ -84,11 +84,16 @@ export default function DocumentsClient({ insurances }) {
             <h2 className={styles.sectionTitle}>Your documents</h2>
             <span className={styles.sectionBadge}>{tableData.length}</span>
           </div>
-          <Dropdown
-            insurances={insurances}
-            selectedInsuranceId={selectedInsuranceId}
-            onInsuranceChange={handleInsuranceChange}
-          />
+        </div>
+
+        <div style={{ display: "flex", gap: "2rem", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap" }}>
+          <div style={{ flex: 1, minWidth: "280px" }}>
+            <Dropdown
+              insurances={insurances}
+              selectedInsuranceId={selectedInsuranceId}
+              onInsuranceChange={handleInsuranceChange}
+            />
+          </div>
         </div>
 
         {tableData.length > 0 ? (
