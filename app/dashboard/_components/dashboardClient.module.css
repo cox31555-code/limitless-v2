@@ -393,8 +393,6 @@
 .menuItem:hover {
   background: rgba(255, 255, 255, 0.18);
   border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 24px rgba(0, 136, 255, 0.3);
-  transform: translateY(-4px);
 }
 
 .menuItemIconWrapper {
