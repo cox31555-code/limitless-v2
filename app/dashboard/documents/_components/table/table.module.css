@@ -51,8 +51,7 @@
 
 .tableRow:hover {
   border-color: #0052a3;
-  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
-  transform: translateY(-4px);
+  box-shadow: 0 2px 12px rgba(0, 61, 122, 0.1);
 }
 
 .tableCell {
