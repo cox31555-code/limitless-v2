@@ -3,29 +3,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
-  padding: 1.5rem 0;
+  gap: 1rem;
+  padding: 2rem 4.4%;
   border-bottom: 1px solid #e0e6f0;
   max-width: 100%;
   width: 100%;
 }
 
 .breadcrumbItem {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  color: #999;
+  color: #666;
   white-space: nowrap;
 }
 
 .breadcrumbItem.active {
-  color: #1a1a1a;
+  color: #0052a3;
   font-weight: 600;
 }
 
 .breadcrumbSeparator {
-  font-size: 0.8rem;
-  color: #ddd;
-  margin: 0 0.2rem;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 0 0.3rem;
   flex-shrink: 0;
 }
 
