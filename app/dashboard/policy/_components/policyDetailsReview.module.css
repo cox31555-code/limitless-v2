@@ -23,7 +23,7 @@
 .priceLabel {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #7a8fa3;
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -31,20 +31,20 @@
 .priceAmount {
   font-size: 2.4rem;
   font-weight: 800;
-  color: #003366;
+  color: #ffffff;
   line-height: 1;
 }
 
 .pricePeriod {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #999;
+  color: rgba(255, 255, 255, 0.75);
   margin-left: 0.4rem;
 }
 
 .priceMeta {
   font-size: 0.9rem;
-  color: #7a8fa3;
+  color: rgba(255, 255, 255, 0.75);
   margin-top: 0.3rem;
 }
 
