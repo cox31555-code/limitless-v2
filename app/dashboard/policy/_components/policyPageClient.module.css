@@ -21,7 +21,7 @@
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  margin-top: -3rem;
+  margin-top: -0.2rem;
   padding: 3rem calc(50vw - 50%);
 }
 
