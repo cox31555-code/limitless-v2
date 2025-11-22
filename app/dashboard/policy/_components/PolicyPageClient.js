@@ -67,6 +67,8 @@ const PolicyPageClient = ({
         </button>
       </section>
 
+      {/* Content Wrapper */}
+      <div className={styles.contentWrapper}>
       {/* Active Policies Section */}
       {mockActivePolicies.length > 0 && (
         <section className={styles.policiesSection}>
@@ -138,6 +140,7 @@ const PolicyPageClient = ({
           )}
         </section>
       )}
+      </div>
     </div>
   );
 };
