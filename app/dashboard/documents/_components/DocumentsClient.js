@@ -78,33 +78,38 @@ export default function DocumentsClient({ insurances }) {
 
   return (
     <div className={styles.contentWrapper}>
-      <div className={styles.top}>
-        <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Your documents
-        </h3>
-        <Dropdown
-          insurances={insurances}
-          selectedInsuranceId={selectedInsuranceId}
-          onInsuranceChange={handleInsuranceChange}
-        />
-      </div>
-
-      {tableData.length > 0 ? (
-        <Table
-          title="Policy documents"
-          columns={["Document", "Date", "Action"]}
-          data={tableData}
-        />
-      ) : (
-        <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
-          <p>No insurance policies found.</p>
-          <p style={{ fontSize: "14px", marginTop: "8px" }}>
-            Please complete your insurance application to view your documents.
-          </p>
+      <section className={styles.policiesSection}>
+        <div className={styles.sectionHeaderWrapper}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Your documents</h2>
+            <span className={styles.sectionBadge}>{tableData.length}</span>
+          </div>
+          <Dropdown
+            insurances={insurances}
+            selectedInsuranceId={selectedInsuranceId}
+            onInsuranceChange={handleInsuranceChange}
+          />
         </div>
-      )}
 
-      <Booklets />
+        {tableData.length > 0 ? (
+          <Table
+            title="Policy documents"
+            columns={["Document", "Date", "Action"]}
+            data={tableData}
+          />
+        ) : (
+          <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
+            <p>No insurance policies found.</p>
+            <p style={{ fontSize: "14px", marginTop: "8px" }}>
+              Please complete your insurance application to view your documents.
+            </p>
+          </div>
+        )}
+      </section>
+
+      <section>
+        <Booklets />
+      </section>
     </div>
   );
 }
