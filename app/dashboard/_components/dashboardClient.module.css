@@ -351,6 +351,11 @@
   pointer-events: none;
 }
 
+.menuSection .sectionHeader {
+  position: relative;
+  z-index: 1;
+}
+
 .menuSection .sectionTitle {
   color: #ffffff;
   position: relative;
