@@ -57,7 +57,8 @@ const page = async ({ params }) => {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <h1 className={styles.title}>{insurance.policyNumber}</h1>
+        <h1 className={styles.pageTitle}>Policy summary</h1>
+        <p className={styles.policyNumber}>Policy no: {insurance.policyNumber}</p>
       </div>
       <PolicyDetailsReview policy={insurance} />
     </div>
