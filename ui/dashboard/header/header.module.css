@@ -336,12 +336,13 @@
 
 @media screen and (max-width: 600px) {
   .headerContainer {
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 1.5rem;
     min-height: 65px;
   }
 
   .headerContent {
-    gap: 0.6rem;
+    gap: 0.8rem;
+    padding: 0;
   }
 
   .logo {
@@ -356,6 +357,7 @@
   .menuBtn {
     width: 3.5rem;
     height: 3.5rem;
+    flex-shrink: 0;
   }
 
   .menuBtn img {
