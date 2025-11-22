@@ -137,9 +137,7 @@
 .policyCoverInfo {
   background: #f8fafc;
   padding: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  display: block;
   border-top: 1px solid #e0e6f0;
 }
 
