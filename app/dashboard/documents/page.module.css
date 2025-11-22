@@ -307,6 +307,7 @@
 
   .sectionHeaderWrapper {
     gap: 0.6rem;
+    align-items: flex-end;
   }
 
   .dropdownWrapper {
