@@ -52,14 +52,14 @@
   color: #ffffff;
   padding: 0.3rem 0.8rem;
   border-radius: 4px;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   margin-bottom: 0.8rem;
 }
 
 .policyRef {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #666;
   font-weight: 500;
 }
@@ -78,7 +78,7 @@
 }
 
 .carMeta {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   color: #666;
   margin: 0 0 1rem 0;
   font-weight: 400;
@@ -90,7 +90,7 @@
   color: #ffffff;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -111,7 +111,7 @@
 }
 
 .infoLabel {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: #999;
   font-weight: 500;
   text-transform: uppercase;
@@ -133,7 +133,7 @@
   color: #ffffff;
   border: none;
   border-radius: 0;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -174,8 +174,28 @@
     padding: 0;
   }
 
+  .statusBadge {
+    font-size: 0.8rem;
+  }
+
+  .policyRef {
+    font-size: 1rem;
+  }
+
   .carTitle {
     font-size: 1.3rem;
+  }
+
+  .carMeta {
+    font-size: 1.05rem;
+  }
+
+  .regBadge {
+    font-size: 0.95rem;
+  }
+
+  .infoLabel {
+    font-size: 0.9rem;
   }
 
   .infoValue {
@@ -183,7 +203,7 @@
   }
 
   .viewButton {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     padding: 0.8rem;
   }
 }
@@ -215,20 +235,36 @@
     gap: 1rem;
   }
 
+  .statusBadge {
+    font-size: 0.85rem;
+  }
+
+  .policyRef {
+    font-size: 0.95rem;
+  }
+
   .carTitle {
     font-size: 1.2rem;
+  }
+
+  .carMeta {
+    font-size: 1.05rem;
+  }
+
+  .regBadge {
+    font-size: 0.9rem;
+  }
+
+  .infoLabel {
+    font-size: 0.85rem;
   }
 
   .infoValue {
     font-size: 1.1rem;
   }
 
-  .carMeta {
-    font-size: 0.9rem;
-  }
-
   .viewButton {
-    font-size: 0.85rem;
+    font-size: 1rem;
     padding: 0.7rem;
   }
 }
