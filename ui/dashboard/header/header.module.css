@@ -90,12 +90,12 @@
 
 .navItem:hover {
   color: #ffffff;
-  border-bottom-color: #05afff;
+  border-bottom-color: #ffffff;
 }
 
 .navItem.active {
   color: #ffffff;
-  border-bottom-color: #05afff;
+  border-bottom-color: #ffffff;
   font-weight: 600;
 }
 
