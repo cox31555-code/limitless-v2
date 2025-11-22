@@ -8,7 +8,6 @@ const DashboardClient = () => {
   const router = useRouter();
   const [bannerIndex, setBannerIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
-  const { setIsInsuranceModalOpen } = useInsuranceModal();
 
   useEffect(() => {
     setMounted(true);
