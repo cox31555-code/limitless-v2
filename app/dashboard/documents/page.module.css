@@ -298,6 +298,8 @@
   .policySection {
     width: 100%;
     gap: 0.8rem;
+    order: 2;
+    margin-left: 0;
   }
 
   .dropdownWrapper {
@@ -311,6 +313,7 @@
 
   .documentsTitle {
     font-size: 1.2rem;
+    order: 1;
   }
 
   .top {
