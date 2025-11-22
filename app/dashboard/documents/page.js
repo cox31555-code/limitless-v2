@@ -75,17 +75,6 @@ const page = async () => {
     return firstInsurance?.policyNumber || firstInsurance?._id?.slice(-8).toUpperCase() || "N/A";
   };
 
-  const getPolicyDetails = () => {
-    if (firstInsurance) {
-      const vehicleReg = firstInsurance.vehicleDetails?.registrationNumber || "N/A";
-      const userName = firstInsurance.userDetails?.firstName || "Policyholder";
-      return { policyNo: getPolicyNumber(), vehicleReg, userName };
-    }
-    return { policyNo: "N/A", vehicleReg: "N/A", userName: "Policyholder" };
-  };
-
-  const policyDetails = getPolicyDetails();
-
   return (
     <div className={styles.page}>
       <div className={styles.heroSection}>
