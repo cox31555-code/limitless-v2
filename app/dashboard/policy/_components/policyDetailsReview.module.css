@@ -7,8 +7,8 @@
 
 /* Price Card */
 .priceCard {
-  background: #ffffff;
-  border: 1px solid #d4e4f7;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border: none;
   border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   padding: 2rem 2.4rem;
