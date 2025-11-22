@@ -538,7 +538,7 @@
   }
 
   .heroSection {
-    padding: 2.5rem;
+    padding: 2.5rem calc(50vw - 50%);
   }
 
   .greetingTitle {
@@ -566,23 +566,39 @@
   }
 
   .heroSection {
-    padding: 2rem;
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .heroBackgroundImage {
-    width: 271px;
-    margin-right: -10px;
+    text-align: center;
+    padding: 2rem;
+    gap: 1.5rem;
   }
 
   .heroContent {
     flex-direction: column;
-    align-items: flex-start;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .greetingArea {
+    align-items: center;
+    width: 100%;
   }
 
   .greetingTitle {
     font-size: 2rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1rem;
+  }
+
+  .badgeArea {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .createPolicyBtn {
+    width: 100%;
+    justify-content: center;
   }
 
   .sectionTitle {
@@ -610,11 +626,11 @@
 
   .heroSection {
     padding: 1.5rem;
+    gap: 1.2rem;
   }
 
-  .heroBackgroundImage {
-    width: 204px;
-    margin-right: 0;
+  .heroBackground {
+    display: none;
   }
 
   .greetingTitle {
@@ -623,6 +639,22 @@
 
   .greetingSubtitle {
     font-size: 0.95rem;
+  }
+
+  .allianzBadge {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .createPolicyBtn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.4rem;
+    gap: 0.6rem;
+  }
+
+  .createPolicyBtn svg {
+    width: 18px;
+    height: 18px;
   }
 
   .sectionTitle {
