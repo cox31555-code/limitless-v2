@@ -84,21 +84,24 @@ export default function DocumentsClient({ insurances }) {
     <div className={styles.contentWrapper}>
       <section className={styles.policiesSection}>
         <div className={styles.sectionHeaderWrapper}>
-          <div className={styles.selectedPolicyLabel}>
-            <h2 className={styles.selectedPolicyTitle}>Selected Policy</h2>
+          <div className={styles.policySection}>
+            <div className={styles.selectedPolicyLabel}>
+              <h2 className={styles.selectedPolicyTitle}>Selected Policy</h2>
+            </div>
+            <div className={styles.dropdownWrapper}>
+              <Dropdown
+                insurances={insurances}
+                selectedInsuranceId={selectedInsuranceId}
+                onInsuranceChange={handleInsuranceChange}
+              />
+            </div>
           </div>
-          <div className={styles.dropdownWrapper}>
-            <Dropdown
-              insurances={insurances}
-              selectedInsuranceId={selectedInsuranceId}
-              onInsuranceChange={handleInsuranceChange}
-            />
-          </div>
+          <h2 className={styles.documentsTitle}>Your documents</h2>
         </div>
 
         {tableData.length > 0 ? (
           <Table
-            title="Your documents"
+            title=""
             columns={["Document", "Last updated", "Action"]}
             data={tableData}
           />
