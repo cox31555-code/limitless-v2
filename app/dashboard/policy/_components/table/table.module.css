@@ -176,13 +176,14 @@
 }
 
 .viewButton svg {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.2rem;
+  height: 1.2rem;
   transition: transform 0.2s ease;
+  stroke: currentColor;
 }
 
 .viewButton:hover svg {
-  transform: translateX(2px);
+  transform: translateX(3px);
 }
 
 /* Expired/Unpaid Policies Theme - Consistent with Active */
