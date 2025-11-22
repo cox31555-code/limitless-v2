@@ -460,6 +460,64 @@
   letter-spacing: 0.6px;
 }
 
+/* Action Buttons Container */
+.actionButtonsContainer {
+  display: flex;
+  gap: 1.5rem;
+  padding: 3.2rem 0 0 0;
+  border-top: 2px solid #f0f4f8;
+  margin-top: 3.2rem;
+}
+
+.makeClaimBtn {
+  flex: 1;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.makeClaimBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+  opacity: 0.95;
+}
+
+.makeClaimBtn:active {
+  transform: translateY(0);
+}
+
+.cancelPolicyBtn {
+  flex: 1;
+  padding: 1.2rem 2rem;
+  background: transparent;
+  color: #0052a3;
+  border: 1.5px solid #0052a3;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cancelPolicyBtn:hover {
+  background: rgba(0, 82, 163, 0.08);
+  border-color: #003d7a;
+  color: #003d7a;
+}
+
+.cancelPolicyBtn:active {
+  transform: scale(0.98);
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .row {
