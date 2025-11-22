@@ -87,10 +87,9 @@
 }
 
 .breakdownItem.totalRow {
-  padding-top: 1rem;
-  margin-top: 0.8rem;
-  border-top: 2px solid #e8f0f7;
+  border-top: none;
   border-bottom: none;
+  padding: 0.8rem 0;
 }
 
 .breakdownLabel {
