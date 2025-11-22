@@ -48,6 +48,40 @@
   margin-top: 0.3rem;
 }
 
+/* Next Instalment Info */
+.instalmentInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.6rem;
+  background: #e8f2fb;
+  border-radius: 10px;
+  border: 1px solid #d4e4f7;
+}
+
+.instalmentIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  flex-shrink: 0;
+}
+
+.instalmentIcon {
+  width: 24px;
+  height: 24px;
+  color: #5a8fc4;
+  stroke-width: 2;
+}
+
+.instalmentText {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
 /* Payment Breakdown Card */
 .paymentBreakdownCard {
   background: #ffffff;
