@@ -223,7 +223,7 @@ const DashboardClient = () => {
         {/* Menu Section */}
         <section className={styles.menuSection}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Quick Actions</h2>
+          <h2 className={styles.sectionTitle}>Get in Touch</h2>
         </div>
         <div className={styles.menuGrid}>
           {menuItems.map((item, index) => (
