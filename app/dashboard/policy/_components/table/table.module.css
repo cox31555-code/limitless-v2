@@ -6,7 +6,7 @@
 }
 
 .sectionTitle {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
@@ -17,7 +17,7 @@
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2rem;
   width: 100%;
 }
@@ -41,7 +41,7 @@
 
 .cardHeader {
   background: #f0f4fb;
-  padding: 1.8rem;
+  padding: 1.6rem;
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -73,19 +73,19 @@
 }
 
 .vehicleReg {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
   line-height: 120%;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
 }
 
 .badge {
   display: inline-flex;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.9rem;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   white-space: nowrap;
   align-items: center;
@@ -110,7 +110,7 @@
 
 .cardContent {
   flex: 1;
-  padding: 1.8rem;
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
 }
@@ -124,20 +124,20 @@
 .infoItem {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: #999;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   margin: 0;
 }
 
 .value {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #0052a3;
   margin: 0;
@@ -148,7 +148,7 @@
 .cardFooter {
   display: flex;
   gap: 1rem;
-  padding: 0 1.8rem 1.8rem 1.8rem;
+  padding: 0 1.6rem 1.6rem 1.6rem;
 }
 
 .viewButton {
@@ -162,7 +162,7 @@
   color: #0052a3;
   border: none;
   border-radius: 6px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -177,8 +177,8 @@
 }
 
 .viewButton svg {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
   transition: transform 0.2s ease;
 }
 
@@ -186,23 +186,22 @@
   transform: translateX(2px);
 }
 
-/* Expired/Unpaid Policies Theme */
+/* Expired/Unpaid Policies Theme - Consistent with Active */
 .expiredSection {
-  /* Add border styling if needed for expired section */
+  /* Same as default section */
 }
 
 .expiredCard {
-  border-color: #fecaca;
-  background: #fef2f2;
+  /* Same styling as active cards - no red */
 }
 
 .expiredCard:hover {
-  border-color: #ef4444;
-  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.12);
+  border-color: #0052a3;
+  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
 }
 
 .expiredCard .vehicleReg {
-  color: #ef4444;
+  color: #0052a3;
 }
 
 .expiredCard .badge {
@@ -211,31 +210,27 @@
 }
 
 .expiredCard .value {
-  color: #ef4444;
+  color: #0052a3;
 }
 
 .expiredCard .viewButton {
-  color: #ef4444;
-  text-decoration-color: #ef4444;
+  color: #0052a3;
+  text-decoration-color: #0052a3;
 }
 
 .expiredCard .viewButton:hover {
-  background: rgba(239, 68, 68, 0.08);
+  background: rgba(0, 52, 163, 0.08);
 }
 
 .expiredTitle {
-  color: #ef4444;
+  color: #0052a3;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .cardsGrid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
-  }
-
-  .policyCard {
-    border-radius: 10px;
   }
 }
 
@@ -245,7 +240,7 @@
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .cardsGrid {
@@ -254,17 +249,17 @@
   }
 
   .cardHeader {
-    padding: 1.5rem;
+    padding: 1.4rem;
   }
 
   .cardIcon {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
   }
 
   .cardIcon svg {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
 
   .vehicleReg {
@@ -272,7 +267,7 @@
   }
 
   .cardContent {
-    padding: 1.5rem;
+    padding: 1.4rem;
   }
 
   .infoRow {
@@ -281,11 +276,11 @@
   }
 
   .cardFooter {
-    padding: 0 1.5rem 1.5rem 1.5rem;
+    padding: 0 1.4rem 1.4rem 1.4rem;
   }
 
   .viewButton {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     padding: 0.7rem 1.2rem;
   }
 }
@@ -309,13 +304,13 @@
   }
 
   .cardIcon {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
   }
 
   .cardIcon svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
 
   .vehicleReg {
@@ -323,7 +318,7 @@
   }
 
   .badge {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     padding: 0.4rem 0.8rem;
   }
 
@@ -336,7 +331,7 @@
   }
 
   .label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .value {
@@ -348,7 +343,7 @@
   }
 
   .viewButton {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     padding: 0.6rem 1rem;
   }
 
