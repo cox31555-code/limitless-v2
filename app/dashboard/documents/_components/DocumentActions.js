@@ -165,7 +165,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "8px",
+          gap: "0",
           color: "#0052a3",
           fontSize: "1rem",
           fontWeight: "600",
@@ -177,6 +177,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           transition: "color 0.2s ease",
           opacity: isViewing ? 0.7 : 1,
           whiteSpace: "nowrap",
+          textDecoration: "underline",
         }}
         onMouseEnter={(e) => {
           if (!isViewing) {
@@ -189,7 +190,6 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           }
         }}
       >
-        <Image src="/svg/pdf.svg" alt="pdf" width={24} height={24} />
         <span>{isViewing ? "Loading..." : "View Document"}</span>
       </button>
 
