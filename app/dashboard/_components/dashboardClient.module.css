@@ -2,7 +2,7 @@
 .breadcrumb {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   padding: 2rem 4.4%;
   border-bottom: 1px solid #e0e6f0;
