@@ -165,7 +165,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "0.5rem",
+          gap: "0",
           color: "#0052a3",
           fontSize: "1rem",
           fontWeight: "600",
@@ -190,8 +190,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           }
         }}
       >
-        <Image src="/svg/pdf-doc.svg" alt="view document" width={16} height={16} />
-        <span>{isViewing ? "Loading..." : "View Document"}</span>
+        <span>{isViewing ? "Loading..." : "View Online"}</span>
       </button>
 
       <button
@@ -200,7 +199,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "0.5rem",
+          gap: "0",
           color: "#0052a3",
           fontSize: "1rem",
           fontWeight: "600",
@@ -225,8 +224,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           }
         }}
       >
-        <Image src="/svg/download.svg" alt="download" width={16} height={16} />
-        <span>{isDownloading ? "Downloading..." : "Download"}</span>
+        <span>{isDownloading ? "Downloading..." : "Download PDF"}</span>
       </button>
     </div>
   );
