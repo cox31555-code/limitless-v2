@@ -5,6 +5,7 @@ import Image from "next/image";
 import { toast } from "react-toastify";
 
 export default function DocumentActions({ insuranceId, pdfType }) {
+  const [isViewing, setIsViewing] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
 
   const handleView = async () => {
