@@ -94,8 +94,8 @@ const PolicyDetailsReview = ({ policy }) => {
       <div className={styles.priceCard}>
         <div className={styles.priceContent}>
           <span className={styles.priceLabel}>Price</span>
-          <div className={styles.priceAmount}>£{priceAmount}<span className={styles.pricePeriod}>{pricePeriod}</span></div>
-          <span className={styles.priceMeta}>You pay £{policy?.quote?.totalPremium || "—"} in total</span>
+          <div className={styles.priceAmount}>£{priceAmount}<span className={styles.pricePeriod}>/month*</span></div>
+          <span className={styles.priceMeta}>You pay £{totalPaid} in total</span>
         </div>
       </div>
 
