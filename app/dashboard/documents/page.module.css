@@ -143,7 +143,25 @@
   margin: 0;
 }
 
-/* Media Queries */
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .heroSection {
+    padding: 2.5rem;
+  }
+
+  .greetingTitle {
+    font-size: 2.4rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.9rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.05rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .heroSection {
     flex-direction: column;
@@ -173,7 +191,14 @@
 
   .contentWrapper {
     padding: 1.5rem 2%;
-    gap: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .sectionDescription {
+    font-size: 1rem;
   }
 
   .top {
@@ -183,7 +208,7 @@
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -208,10 +233,23 @@
 
   .contentWrapper {
     padding: 1rem 4%;
-    gap: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.95rem;
+  }
+
+  .sectionBadge {
+    min-width: 46px;
+    height: 46px;
+    font-size: 1.3rem;
   }
 
   .title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
