@@ -12,34 +12,43 @@
 
 /* Hero Section */
 .heroSection {
-  background: #0052a3;
-  border-radius: 16px;
-  padding: 3rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.12);
-  position: relative;
+  justify-content: center;
+  box-shadow: none;
   overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: -0.2rem;
+  padding: 3rem calc(50vw - 50%);
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .heroBackground {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  overflow: hidden;
-  opacity: 0.2;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 399px;
+  opacity: 0.3;
 }
 
 .heroBackgroundImage {
-  width: 317px;
-  height: auto;
-  margin-right: -20px;
+  width: 100%;
+  height: 100%;
 }
 
 .heroContent {
@@ -47,9 +56,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 2rem;
+  max-width: 1400px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  flex: 1;
+  gap: 3rem;
 }
 
 .greetingArea {
@@ -76,20 +87,50 @@
 }
 
 .badgeArea {
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
 .allianzBadge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
   padding: 0.8rem 1.6rem;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.createPolicyBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: #ffffff;
+  color: #0052a3;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.createPolicyBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.createPolicyBtn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
 }
 
 /* Section Header */
