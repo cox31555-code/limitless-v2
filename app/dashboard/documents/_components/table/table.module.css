@@ -238,6 +238,14 @@
     padding: 1.2rem;
   }
 
+  .tableCell::before {
+    font-size: 0.95rem;
+  }
+
+  .datacell {
+    font-size: 1.3rem;
+  }
+
   .mobile {
     display: none;
   }
