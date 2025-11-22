@@ -9,23 +9,25 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.2rem 1.6rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.15);
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
   gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
 }
 
 .selectedValue:hover {
-  border-color: rgba(3, 136, 255, 0.25);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
+  border-color: #003d7a;
+  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
+  transform: translateY(-2px);
 }
 
 .value_text {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  color: #000822;
+  color: #0052a3;
   flex: 1;
   line-height: 130%;
 }
@@ -33,7 +35,7 @@
 .arrow {
   width: 1.6rem;
   height: 1.6rem;
-  color: #0388ff;
+  color: #0052a3;
   transition: transform 0.3s ease;
   flex-shrink: 0;
 }
@@ -44,7 +46,7 @@
   left: 0;
   right: 0;
   background: #fff;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border: 1px solid #e0e6f0;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 8, 34, 0.16);
   max-height: 320px;
@@ -68,7 +70,7 @@
   padding: 1.2rem 1.6rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  border-bottom: 1px solid rgba(3, 136, 255, 0.06);
+  border-bottom: 1px solid #e0e6f0;
   background: transparent;
 }
 
@@ -77,19 +79,19 @@
 }
 
 .option:hover {
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, transparent 100%);
+  background: #f8fafc;
 }
 
 .option:hover .value_text {
-  color: #0388ff;
+  color: #0052a3;
 }
 
 .selectedOption {
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.1) 0%, rgba(3, 136, 255, 0.05) 100%);
+  background: #f0f4fb;
 }
 
 .selectedOption .value_text {
-  color: #0388ff;
+  color: #0052a3;
   font-weight: 600;
 }
 
