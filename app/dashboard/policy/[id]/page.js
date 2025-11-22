@@ -4,7 +4,10 @@ import styles from "./page.module.css";
 
 const PolicyDetailsReview = dynamic(
   () => import("../_components/PolicyDetailsReview"),
-  { ssr: false }
+  {
+    ssr: false,
+    loading: () => <div style={{ padding: "2rem", textAlign: "center" }}>Loading policy details...</div>
+  }
 );
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
