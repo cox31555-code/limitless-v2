@@ -1,11 +1,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1.875rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4.4% 1.25rem;
   position: relative;
-  z-index: 2;
-  margin: 0;
   width: 100%;
+  z-index: 2;
 }
 
 /* Hero Section */
