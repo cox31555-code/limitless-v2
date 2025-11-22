@@ -46,61 +46,49 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
       )}
       <div className={styles.cardsGrid}>
         {data.map((row, index) => {
+          const car = carData[index % carData.length];
           const statusType = getStatusColor(row.remaining);
-          
+
           return (
             <div
               key={index}
               className={styles.policyCard}
             >
-              {/* Card Header - Name/Status */}
+              {/* Card Header - Status Badge & Policy Number */}
               <div className={styles.policyCardHeader}>
-                <div className={styles.policyHeaderInfo}>
-                  <h3 className={styles.policyName}>
-                    Limitless Cover Car Insurance
-                  </h3>
-                  <span className={`${styles.policyStatus} ${styles[statusType]}`}>
-                    {statusType === "expired" ? "Expired" : "Active"}
-                  </span>
+                <div className={styles.statusBadge}>
+                  {statusType === "expired" ? "EXPIRED" : "ACTIVE"}
                 </div>
+                <div className={styles.policyRef}>{row.policyNumber}</div>
               </div>
 
-              {/* Policy Details */}
+              {/* Car Details */}
               <div className={styles.policyDetails}>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Policy Number</span>
-                  <span className={styles.detailValue}>{row.policyNumber}</span>
-                </div>
-                <div className={styles.detailDivider}></div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Vehicle</span>
-                  <span className={styles.detailValue}>
-                    {formatVehicleReg(row.vehicleReg)}
-                  </span>
-                </div>
+                <h3 className={styles.carTitle}>{car.make}</h3>
+                <p className={styles.carMeta}>{car.year} • {car.color}</p>
+                <div className={styles.regBadge}>{car.reg}</div>
               </div>
 
-              {/* Cover Info - Remaining Days */}
-              <div className={styles.policyCoverInfo}>
-                <div>
-                  <p className={styles.coverInfoLabel}>Status</p>
-                  <p className={styles.coverInfoValue}>{row.remaining}</p>
+              {/* Premium & Expiry Info */}
+              <div className={styles.policyInfo}>
+                <div className={styles.infoColumn}>
+                  <p className={styles.infoLabel}>Premium</p>
+                  <p className={styles.infoValue}>{car.premium}</p>
+                </div>
+                <div className={styles.infoColumn}>
+                  <p className={styles.infoLabel}>Expires</p>
+                  <p className={styles.infoValue}>{car.expires}</p>
                 </div>
               </div>
 
               {/* View Details Button */}
               {showViewButton && (
-                <div className={styles.cardFooter}>
-                  <button
-                    className={styles.viewButton}
-                    onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
-                  >
-                    View Policy Details
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
+                <button
+                  className={styles.viewButton}
+                  onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
+                >
+                  View Policy Details →
+                </button>
               )}
             </div>
           );
