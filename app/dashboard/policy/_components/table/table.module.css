@@ -145,9 +145,9 @@
 }
 
 .viewButton:hover {
-  background: #0052a3;
-  color: #ffffff;
+  background: rgba(0, 82, 163, 0.1);
   border-color: #0052a3;
+  color: #0052a3;
 }
 
 /* Responsive Design */
