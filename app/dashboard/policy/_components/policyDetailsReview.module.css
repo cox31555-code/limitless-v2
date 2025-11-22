@@ -1,307 +1,347 @@
-.reviewContainer {
+.container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
+  gap: 1.2rem;
+  width: 100%;
 }
 
 /* Price Card */
 .priceCard {
-  display: flex;
-  align-items: center;
-  padding: 2.4rem;
   background: #ffffff;
-  border: 1px solid #e5ecf4;
+  border: 1px solid #d4e4f7;
   border-radius: 12px;
-  gap: 3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 2rem 2.4rem;
 }
 
-.priceLeft {
+.priceContent {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
 .priceLabel {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #666;
+  color: #7a8fa3;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .priceAmount {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 800;
-  color: #0052a3;
+  color: #003366;
   line-height: 1;
 }
 
-.priceUnit {
-  font-size: 1.2rem;
+.pricePeriod {
+  font-size: 0.95rem;
   font-weight: 600;
   color: #999;
   margin-left: 0.4rem;
 }
 
 .priceMeta {
-  font-size: 0.95rem;
-  color: #999;
-  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #7a8fa3;
+  margin-top: 0.3rem;
 }
 
-/* Section Cards */
-.sectionCard {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  padding: 2.4rem;
+/* Expandable Card */
+.expandableCard {
   background: #ffffff;
-  border: 1px solid #e5ecf4;
+  border: 1px solid #d4e4f7;
   border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
 }
 
-.sectionHeader {
+.cardHeader {
+  width: 100%;
+  padding: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  transition: background-color 0.2s ease;
+}
+
+.cardHeader:hover {
+  background-color: #f8fafb;
+}
+
+.headerContent {
+  display: flex;
+  gap: 1.2rem;
   align-items: flex-start;
-  gap: 1.6rem;
-  padding-bottom: 1.6rem;
-  border-bottom: 1px solid #f0f4f8;
+  flex: 1;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background: #e8f2fb;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  color: #0388ff;
 }
 
 .sectionTitle {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #000;
+  color: #003366;
   margin: 0;
   letter-spacing: -0.3px;
+}
+
+.expandIcon {
+  width: 20px;
+  height: 20px;
+  color: #0388ff;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.expandIcon.expanded {
+  transform: rotate(180deg);
+}
+
+/* Card Content */
+.cardContent {
+  padding: 1.6rem;
+  border-top: 1px solid #e8f0f7;
+  background: #f8fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* Details Grid */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.detailLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #7a8fa3;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.detailValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #003366;
+  line-height: 1.5;
+}
+
+.disclaimer {
+  font-size: 0.85rem;
+  color: #7a8fa3;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Car Details */
+.carInfoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.carTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.carRegistration {
+  font-size: 0.9rem;
+  color: #7a8fa3;
+  margin: 0;
+}
+
+.carMeta {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0;
 }
 
 /* Action Buttons */
 .actionButtons {
   display: flex;
   gap: 0.8rem;
-  flex-shrink: 0;
 }
 
 .primaryBtn {
-  padding: 0.7rem 1.4rem;
-  background: #10b981;
+  padding: 0.7rem 1.6rem;
+  background: #1db584;
   color: #ffffff;
   border: none;
   border-radius: 6px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: background 0.2s ease;
   white-space: nowrap;
 }
 
 .primaryBtn:hover {
-  background: #059669;
+  background: #149966;
 }
 
 .secondaryBtn {
-  padding: 0.7rem 1.4rem;
+  padding: 0.7rem 1.6rem;
   background: transparent;
-  color: #0052a3;
-  border: 1.5px solid #0052a3;
+  color: #0388ff;
+  border: 1.5px solid #0388ff;
   border-radius: 6px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .secondaryBtn:hover {
-  background: rgba(0, 82, 163, 0.08);
-  border-color: #003d7a;
-  color: #003d7a;
-}
-
-.smallPrimaryBtn {
-  padding: 0.6rem 1.2rem;
-  background: #10b981;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.smallPrimaryBtn:hover {
-  background: #059669;
-}
-
-.smallSecondaryBtn {
-  padding: 0.6rem 1.2rem;
-  background: transparent;
-  color: #0052a3;
-  border: 1.5px solid #0052a3;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.smallSecondaryBtn:hover {
-  background: rgba(0, 82, 163, 0.08);
-  border-color: #003d7a;
-  color: #003d7a;
-}
-
-/* Info Grid */
-.infoGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
-}
-
-.infoItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.infoLabel {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #666;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.infoValue {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #000;
-  line-height: 1.4;
-}
-
-/* Car Details */
-.carInfo {
-  padding: 1.2rem 0;
-}
-
-.carTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0052a3;
-  margin: 0;
-}
-
-.carReg {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0.2rem 0;
-}
-
-.carMeta {
-  font-size: 0.9rem;
-  color: #999;
-  margin: 0.4rem 0 1rem 0;
-}
-
-.buttonGroup {
-  display: flex;
-  gap: 0.8rem;
-  margin: 1.2rem 0;
+  background: rgba(3, 136, 255, 0.08);
+  border-color: #0275dd;
+  color: #0275dd;
 }
 
 /* Excess Section */
 .excessSection {
-  padding: 1.6rem;
-  background: #f9fbfd;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  background: #f0f7ff;
   border-radius: 8px;
-  border-left: 4px solid #0052a3;
+  border-left: 4px solid #0388ff;
 }
 
 .excessTitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #000;
-  margin: 0 0 1rem 0;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.2px;
 }
 
-.excessList {
+.excessContent {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 1.2rem;
+  gap: 0.6rem;
 }
 
-.excessList p {
-  margin: 0;
+.excessItem {
   font-size: 0.95rem;
   color: #333;
+  margin: 0;
   line-height: 1.5;
 }
 
 .excessNote {
   font-size: 0.85rem;
-  color: #666;
+  color: #7a8fa3;
   margin: 0;
-  font-style: italic;
+  line-height: 1.6;
 }
 
 .excessGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 1.6rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid #e5ecf4;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #d4e4f7;
 }
 
-.excessItem h5 {
-  font-size: 1rem;
+.excessItemBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.excessSubtitle {
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #0052a3;
-  margin: 0 0 0.6rem 0;
-}
-
-.excessItem p {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0.3rem 0;
-}
-
-.excessItemNote {
-  font-size: 0.85rem;
-  color: #999;
-}
-
-/* Drivers */
-.driverName {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0052a3;
+  color: #003366;
   margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.excessValue {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0.2rem 0;
+}
+
+.excessValueNote {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0.4rem 0 0 0;
+  line-height: 1.5;
+}
+
+/* Driver Items */
+.driverItem {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+}
+
+.driverRole {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #7a8fa3;
 }
 
 /* Driver Card */
 .driverCard {
-  padding: 1.6rem;
-  background: #f9fbfd;
-  border-radius: 8px;
-  border: 1px solid #e5ecf4;
-}
-
-.driverCard .driverName {
-  font-size: 1.3rem;
-  margin-bottom: 1.6rem;
-}
-
-.driverCard .infoGrid {
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1.2rem;
-  margin-bottom: 1.6rem;
+  padding: 1.2rem;
+  background: #fff;
+  border: 1px solid #d4e4f7;
+  border-radius: 8px;
+}
+
+.driverName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.driverActionButtons {
+  display: flex;
+  gap: 0.8rem;
 }
 
 /* Documents */
@@ -314,8 +354,9 @@
 .documentLink {
   display: inline-flex;
   align-items: center;
+  gap: 0.8rem;
   padding: 0.8rem 0;
-  color: #0052a3;
+  color: #0388ff;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -324,31 +365,29 @@
 }
 
 .documentLink:hover {
-  color: #003d7a;
-  border-bottom-color: #003d7a;
+  color: #0275dd;
+  border-bottom-color: #0275dd;
 }
 
-/* Disclaimer */
-.disclaimer {
-  font-size: 0.85rem;
-  color: #999;
-  margin: 1.2rem 0 0 0;
-  line-height: 1.6;
+.documentIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 /* Action Buttons Container */
 .actionButtonsContainer {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   padding: 2rem 0 0 0;
-  border-top: 1px solid #e5ecf4;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
+  border-top: 1px solid #d4e4f7;
 }
 
 .makeClaimBtn {
   flex: 1;
   padding: 1rem 2rem;
-  background: #10b981;
+  background: #1db584;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -360,19 +399,15 @@
 }
 
 .makeClaimBtn:hover {
-  background: #059669;
-}
-
-.makeClaimBtn:active {
-  transform: scale(0.98);
+  background: #149966;
 }
 
 .cancelPolicyBtn {
   flex: 1;
   padding: 1rem 2rem;
   background: transparent;
-  color: #0052a3;
-  border: 1.5px solid #0052a3;
+  color: #0388ff;
+  border: 1.5px solid #0388ff;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 700;
@@ -382,269 +417,25 @@
 }
 
 .cancelPolicyBtn:hover {
-  background: rgba(0, 82, 163, 0.08);
-  border-color: #003d7a;
-  color: #003d7a;
-}
-
-/* Modal Styling */
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
-  z-index: 999;
-  cursor: pointer;
-}
-
-.modalContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
-}
-
-.modal {
-  position: relative;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 2.8rem;
-  max-width: 480px;
-  width: 100%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e5ecf4;
-}
-
-.closeBtn {
-  position: absolute;
-  top: 1.6rem;
-  right: 1.6rem;
-  background: #f5f9fc;
-  border: 1px solid #e5ecf4;
-  font-size: 1.6rem;
-  color: #666;
-  cursor: pointer;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.closeBtn:hover {
-  background: #e5ecf4;
-  color: #000;
-}
-
-.modalTitle {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #000;
-  margin: 0 0 0.8rem 0;
-  letter-spacing: -0.3px;
-}
-
-.modalMessage {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-  margin: 0 0 2rem 0;
-}
-
-.modalActions {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contactLink {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 1.6rem;
-  background: #0052a3;
-  color: #ffffff;
-  text-decoration: none;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  transition: background 0.2s ease;
-}
-
-.contactLink:hover {
-  background: #003d7a;
-}
-
-.closeActionBtn {
-  padding: 1rem 1.6rem;
-  background: #f5f9fc;
-  color: #0052a3;
-  border: 1.5px solid #0052a3;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.closeActionBtn:hover {
-  background: rgba(0, 82, 163, 0.08);
-  border-color: #003d7a;
-  color: #003d7a;
+  background: rgba(3, 136, 255, 0.08);
+  border-color: #0275dd;
+  color: #0275dd;
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .priceCard {
-    flex-direction: column;
-    gap: 2rem;
+@media (max-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .excessGrid {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
-  }
-
-  .infoGrid {
-    gap: 1.2rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .reviewContainer {
-    gap: 1.6rem;
-  }
-
-  .sectionCard {
-    padding: 1.8rem;
-    gap: 1.4rem;
-  }
-
-  .sectionTitle {
-    font-size: 1.4rem;
-  }
-
-  .infoGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .excessGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .actionButtons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .primaryBtn,
-  .secondaryBtn {
-    width: 100%;
-  }
-
-  .priceAmount {
-    font-size: 2.4rem;
-  }
-
-  .actionButtonsContainer {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .makeClaimBtn,
-  .cancelPolicyBtn {
-    padding: 0.95rem 1.6rem;
-    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 768px) {
-  .reviewContainer {
-    gap: 1.4rem;
-  }
-
-  .sectionCard {
-    padding: 1.6rem;
-    gap: 1.2rem;
-  }
-
-  .sectionHeader {
-    flex-direction: column;
+  .container {
     gap: 1rem;
-    padding-bottom: 1.2rem;
-  }
-
-  .actionButtons {
-    width: 100%;
-  }
-
-  .primaryBtn,
-  .secondaryBtn {
-    width: 100%;
-  }
-
-  .sectionTitle {
-    font-size: 1.3rem;
-  }
-
-  .infoLabel {
-    font-size: 0.8rem;
-  }
-
-  .infoValue {
-    font-size: 1.1rem;
-  }
-
-  .priceCard {
-    padding: 1.8rem;
-    gap: 1.2rem;
-  }
-
-  .priceAmount {
-    font-size: 2.2rem;
-  }
-
-  .excessGrid {
-    padding-top: 1.2rem;
-    gap: 1.2rem;
-  }
-
-  .buttonGroup {
-    margin: 1rem 0;
-    flex-direction: column;
-  }
-
-  .smallPrimaryBtn,
-  .smallSecondaryBtn {
-    width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .reviewContainer {
-    gap: 1.2rem;
-  }
-
-  .sectionCard {
-    padding: 1.4rem;
-    border-radius: 10px;
-  }
-
-  .sectionTitle {
-    font-size: 1.2rem;
   }
 
   .priceCard {
@@ -655,99 +446,123 @@
     font-size: 2rem;
   }
 
-  .carTitle {
-    font-size: 1.3rem;
-  }
-
-  .infoGrid {
-    gap: 1rem;
-  }
-
-  .infoLabel {
-    font-size: 0.8rem;
-  }
-
-  .infoValue {
-    font-size: 1rem;
-  }
-
-  .excessSection {
+  .cardHeader {
     padding: 1.2rem;
-    border-radius: 6px;
   }
 
-  .excessTitle {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .excessGrid {
+  .headerContent {
     gap: 1rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-  }
-
-  .actionButtonsContainer {
-    gap: 0.8rem;
-    padding: 1.6rem 0 0 0;
-  }
-
-  .makeClaimBtn,
-  .cancelPolicyBtn {
-    padding: 0.9rem 1.4rem;
-    font-size: 0.9rem;
-  }
-
-  .modal {
-    padding: 1.8rem;
-  }
-
-  .modalTitle {
-    font-size: 1.4rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .modalMessage {
-    font-size: 0.95rem;
-    margin-bottom: 1.6rem;
-  }
-
-  .contactLink,
-  .closeActionBtn {
-    padding: 0.9rem 1.4rem;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .sectionCard {
-    padding: 1.2rem;
-    border-radius: 8px;
   }
 
   .sectionTitle {
     font-size: 1.1rem;
   }
 
-  .priceAmount {
-    font-size: 1.8rem;
+  .cardContent {
+    padding: 1.2rem;
+    gap: 1.2rem;
   }
 
-  .infoLabel {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+  }
+
+  .excessSection {
+    padding: 1rem;
+  }
+
+  .excessGrid {
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .driverCard {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .actionButtonsContainer {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .makeClaimBtn,
+  .cancelPolicyBtn {
+    padding: 0.9rem 1.6rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: 0.8rem;
+  }
+
+  .priceCard {
+    padding: 1.2rem;
+  }
+
+  .priceAmount {
+    font-size: 1.6rem;
+  }
+
+  .cardHeader {
+    padding: 1rem;
+  }
+
+  .iconWrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .cardContent {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .detailLabel {
     font-size: 0.75rem;
   }
 
-  .infoValue {
-    font-size: 0.95rem;
+  .detailValue {
+    font-size: 0.9rem;
   }
 
-  .modal {
-    padding: 1.4rem;
+  .excessSection {
+    padding: 0.8rem;
   }
 
-  .closeBtn {
-    width: 2.4rem;
-    height: 2.4rem;
-    font-size: 1.4rem;
+  .carTitle {
+    font-size: 1.1rem;
+  }
+
+  .actionButtonsContainer {
+    gap: 0.6rem;
+    padding: 1.2rem 0 0 0;
+  }
+
+  .makeClaimBtn,
+  .cancelPolicyBtn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
   }
 }
