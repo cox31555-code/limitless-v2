@@ -540,11 +540,18 @@
 @media screen and (max-width: 1200px) {
   .container {
     gap: 2.5rem;
-    padding: 2rem 3%;
   }
 
   .heroSection {
     padding: 2.5rem calc(50vw - 50%);
+  }
+
+  .policiesSection {
+    padding: 2rem 3%;
+  }
+
+  .menuSection {
+    padding: 0 3% 2rem;
   }
 
   .greetingTitle {
@@ -568,7 +575,14 @@
 @media screen and (max-width: 900px) {
   .container {
     gap: 2rem;
+  }
+
+  .policiesSection {
     padding: 1.5rem 2%;
+  }
+
+  .menuSection {
+    padding: 0 2% 2rem;
   }
 
   .heroSection {
