@@ -298,10 +298,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .headerContainer {
-    padding: 16px 154px 19px 197px;
-  }
-
   .logo {
     width: 40px;
     height: 40px;
