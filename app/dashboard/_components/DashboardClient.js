@@ -136,18 +136,16 @@ const DashboardClient = () => {
             <span className={styles.allianzBadge}>Limitless Cover</span>
           </div>
         </div>
-        {mounted && (
-          <button
-            onClick={handleCreatePolicy}
-            className={styles.createPolicyBtn}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg>
-            <span>Create a new policy</span>
-          </button>
-        )}
+        <button
+          onClick={handleCreatePolicy}
+          className={styles.createPolicyBtn}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+          <span>Create a new policy</span>
+        </button>
       </section>
 
       <div className={styles.container}>
