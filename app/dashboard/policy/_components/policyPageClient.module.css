@@ -11,7 +11,6 @@
 /* Hero Section */
 .heroSection {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  border-radius: 20px;
   padding: 3rem;
   display: flex;
   align-items: center;
@@ -20,6 +19,8 @@
   box-shadow: 0 8px 32px rgba(0, 52, 122, 0.15);
   overflow: hidden;
   position: relative;
+  width: 100%;
+  margin: 0;
 }
 
 .heroSection::before {
