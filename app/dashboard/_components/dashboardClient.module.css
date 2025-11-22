@@ -741,7 +741,7 @@
 
   .menuSection {
     padding: 1.5rem 4% 2rem;
-    background: #0a0e27;
+    background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   }
 
   .menuSection .sectionTitle {
