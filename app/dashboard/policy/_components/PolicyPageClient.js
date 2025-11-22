@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Table from "./table/Table";
 import styles from "./policyPageClient.module.css";
 import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
@@ -11,6 +11,11 @@ const PolicyPageClient = ({
   pageStyles,
   plusJakartaSans,
 }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const mockActivePolicies = useMemo(() => {
     return Object.values(mockPolicies).map(policy => ({
       id: policy._id,
@@ -45,10 +50,10 @@ const PolicyPageClient = ({
         <div className={styles.heroContent}>
           <div className={styles.greetingArea}>
             <h1 className={`${styles.greetingTitle} ${plusJakartaSans.className}`}>
-              Hi, Adnan
+              {mounted ? "Manage your policies" : "Hi, Adnan"}
             </h1>
             <p className={styles.greetingSubtitle}>
-              Welcome back to your insurance hub
+              {mounted ? "Review, update and manage all your insurance policies in one secure place" : "Welcome back to your insurance hub"}
             </p>
           </div>
           <div className={styles.badgeArea}>
