@@ -28,7 +28,7 @@ export default function PolicyDocumentsSection({ selectedInsurance }) {
     <div className={styles.section}>
       <div className={styles.header}>
         <Image
-          src="/svg/pdf.svg"
+          src="/svg/pdf-doc.svg"
           alt="documents"
           width={32}
           height={32}
@@ -41,7 +41,7 @@ export default function PolicyDocumentsSection({ selectedInsurance }) {
           <div key={index} className={styles.documentItem}>
             <div className={styles.documentInfo}>
               <Image
-                src="/svg/doc.svg"
+                src="/svg/pdf-doc.svg"
                 alt="document"
                 width={20}
                 height={20}
