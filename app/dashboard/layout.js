@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Header from "@/ui/dashboard/header/Header";
 import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
 import Script from "next/script";
+import TawkWidget from "@/ui/layout/TawkWidget";
 
 const poppins = Poppins({
   subsets: ["latin"],
