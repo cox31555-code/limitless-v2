@@ -1,17 +1,17 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #003366;
+  color: #0052a3;
   margin: 0;
+  line-height: 120%;
   letter-spacing: -0.3px;
-  display: block;
 }
 
 .table {
@@ -32,64 +32,56 @@
 
 .tableBody {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.6rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   width: 100%;
 }
 
 .tableRow {
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border: 1px solid #d4e4f7;
-  border-radius: 12px;
-  padding: 2rem;
   transition: all 0.3s ease;
-  gap: 1.2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.tableRow::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
-  border-radius: 12px 12px 0 0;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
 }
 
 .tableRow:hover {
-  border-color: #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
-  transform: translateY(-2px);
+  border-color: #003d7a;
+  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
+  transform: translateY(-4px);
 }
 
 .tableCell {
-  padding: 0;
+  padding: 2rem;
   vertical-align: top;
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e0e6f0;
+}
+
+.tableCell:last-child {
+  border-bottom: none;
 }
 
 .tableCell::before {
   content: attr(data-label);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #7a8fa3;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #999;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .datacell {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #003366;
-  line-height: 1.4;
+  color: #0052a3;
+  line-height: 120%;
 }
 
 .documentType {
