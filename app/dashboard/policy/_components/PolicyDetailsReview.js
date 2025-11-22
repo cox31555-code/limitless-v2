@@ -59,17 +59,35 @@ const PolicyDetailsReview = ({ policy }) => {
     </div>
   );
 
-  const renderSectionWithButton = (title, children) => (
+  const renderSectionWithButton = (title, children, showActionButtons = false) => (
     <div className={styles.section}>
       <div className={styles.sectionHeader}>
         <h3 className={styles.sectionTitle}>{title}</h3>
-        <button
-          className={styles.sectionMakeChangesBtn}
-          onClick={handleMakeChanges}
-          aria-label={`Make changes to ${title}`}
-        >
-          Make Changes
-        </button>
+        {showActionButtons ? (
+          <div className={styles.actionButtonsGroup}>
+            <button
+              className={styles.editBtn}
+              onClick={handleMakeChanges}
+              aria-label={`Edit ${title}`}
+            >
+              Edit
+            </button>
+            <button
+              className={styles.secondaryBtn}
+              aria-label={`Replace car`}
+            >
+              Replace car
+            </button>
+          </div>
+        ) : (
+          <button
+            className={styles.sectionMakeChangesBtn}
+            onClick={handleMakeChanges}
+            aria-label={`Make changes to ${title}`}
+          >
+            Make Changes
+          </button>
+        )}
       </div>
       <div className={styles.sectionContent}>
         {children}
