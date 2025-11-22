@@ -154,25 +154,6 @@
   flex-shrink: 0;
 }
 
-.selectedPolicyCard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.2rem 1.6rem;
-  background: linear-gradient(135deg, #e3f1fe 0%, #f0f4fb 100%);
-  border: 2px solid #0052a3;
-  border-radius: 12px;
-  min-width: 340px;
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.1);
-}
-
-.selectedPolicyText {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #0052a3;
-  text-align: center;
-  line-height: 130%;
-}
 
 @media screen and (max-width: 900px) {
   .sectionHeaderWrapper {
