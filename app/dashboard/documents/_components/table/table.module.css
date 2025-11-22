@@ -166,6 +166,10 @@
   .title {
     font-size: 1.9rem;
   }
+
+  .tableBody {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -178,10 +182,11 @@
   }
 
   .tableBody {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
-  .tableCell {
+  .tableRow {
     padding: 1.5rem;
   }
 
