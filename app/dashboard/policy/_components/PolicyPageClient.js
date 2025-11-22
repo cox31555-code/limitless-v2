@@ -48,17 +48,28 @@ const PolicyPageClient = ({
 
   return (
     <div className={styles.container}>
-      {/* Header Section */}
-      <section className={styles.headerSection}>
-        <div className={styles.headerContent}>
-          <div className={styles.headerText}>
-            <h1 className={`${styles.pageTitle} ${plusJakartaSans.className}`}>
+      {/* Hero Banner */}
+      <section className={styles.heroBanner}>
+        <div className={styles.heroContent}>
+          <div className={styles.heroIcon}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <div className={styles.heroText}>
+            <h1 className={`${styles.heroTitle} ${plusJakartaSans.className}`}>
               Your Policy
             </h1>
-            <p className={styles.headerSubtitle}>
+            <p className={styles.heroSubtitle}>
               Manage and view all your insurance policies
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Header Section */}
+      <section className={styles.headerSection}>
+        <div className={styles.headerContent}>
           <div className={styles.buttonWrapper} ref={dropdownRef}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
