@@ -222,7 +222,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           }
         }}
       >
-        <Image src="/svg/download.svg" alt="download" width={20} height={20} />
+        <Image src="/svg/arrow-down.svg" alt="download" width={20} height={20} />
         <span>{isDownloading ? "Downloading..." : "Download"}</span>
       </button>
     </div>
