@@ -771,6 +771,10 @@
     font-size: 0.9rem;
   }
 
+  .menuItemHours {
+    font-size: 0.85rem;
+  }
+
   .policyCardHeader {
     padding: 1.2rem;
   }
