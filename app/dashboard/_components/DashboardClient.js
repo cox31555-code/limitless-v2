@@ -52,6 +52,7 @@ const DashboardClient = () => {
     {
       label: "Chat with us",
       description: "Live chat support available 24/7",
+      hours: null,
       icon: "chat",
       action: () => {
         // Trigger chat widget
@@ -63,6 +64,7 @@ const DashboardClient = () => {
     {
       label: "Call us",
       description: "Speak to our team directly",
+      hours: "9 AM - 6 PM, Mon - Fri",
       icon: "phone",
       action: () => {
         window.location.href = "tel:+1234567890";
@@ -71,6 +73,7 @@ const DashboardClient = () => {
     {
       label: "Email us",
       description: "Send us a message anytime",
+      hours: null,
       icon: "email",
       action: () => {
         window.location.href = "mailto:support@limitlesscover.com";
