@@ -132,6 +132,16 @@
   gap: 1.5rem;
 }
 
+.dropdownWrapper {
+  max-width: 340px;
+}
+
+@media screen and (max-width: 900px) {
+  .dropdownWrapper {
+    max-width: 100%;
+  }
+}
+
 .top {
   display: flex;
   justify-content: space-between;
