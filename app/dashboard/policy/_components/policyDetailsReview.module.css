@@ -107,6 +107,56 @@
   letter-spacing: -0.3px;
 }
 
+/* Action Buttons Group */
+.actionButtonsGroup {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.editBtn {
+  padding: 0.7rem 1.4rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  min-width: fit-content;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+.editBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+  opacity: 0.95;
+}
+
+.secondaryBtn {
+  padding: 0.7rem 1.4rem;
+  background: transparent;
+  color: #0052a3;
+  border: 1.5px solid #0052a3;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.secondaryBtn:hover {
+  background: rgba(0, 82, 163, 0.08);
+  border-color: #003d7a;
+  color: #003d7a;
+}
+
 /* Enhanced Make Changes Button */
 .sectionMakeChangesBtn {
   position: absolute;
