@@ -158,6 +158,7 @@
 @media screen and (max-width: 900px) {
   .sectionHeaderWrapper {
     flex-direction: column;
+    align-items: flex-end;
     gap: 1.2rem;
   }
 
