@@ -1,7 +1,7 @@
 .headerContainer {
   background: #000822;
   border-bottom: 2px solid #0052a3;
-  padding: 1.2rem 2rem;
+  padding: 1.2rem 12.4%;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,8 +11,6 @@
   overflow: visible;
   min-height: auto;
   margin-bottom: 0;
-  display: flex;
-  justify-content: center;
 }
 
 .headerContainer.menuOpen {
@@ -25,9 +23,9 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
   width: 100%;
-  gap: 1rem;
-  padding: 0 2rem;
 }
 
 .logoWrapper {
@@ -35,7 +33,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-right: auto;
 }
 
 .logo {
@@ -46,7 +43,6 @@
 
 .headerLeft {
   flex-shrink: 0;
-  display: none;
 }
 
 .pageTitle {
@@ -63,23 +59,24 @@
 .desktopNav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
 .navItems {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 26px;
   justify-content: flex-end;
-  flex-wrap: wrap;
+  flex: 1;
 }
 
 .navItem {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-size: 11.5px;
+  font-size: 1.15rem;
   font-weight: 500;
   padding: 3px 2px;
   border-radius: 0;
@@ -88,8 +85,7 @@
   white-space: nowrap;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-  display: block;
+  border-bottom: 1px solid transparent;
 }
 
 .navItem:hover {
@@ -100,7 +96,7 @@
 .navItem.active {
   color: #ffffff;
   border-bottom-color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .logoutButton {
@@ -110,7 +106,19 @@
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoutButton svg {
+  width: 20px;
+  height: 20px;
+  stroke: rgba(255, 255, 255, 0.8);
+}
+
+.logoutButton:hover svg {
+  stroke: #ffffff;
 }
 
 .mobileMenuWrapper {
@@ -264,21 +272,19 @@
 
 @media screen and (max-width: 900px) {
   .headerContainer {
-    padding: 1rem 2rem;
+    padding: 1rem 2.4rem;
     margin-bottom: 0;
     min-height: 70px;
     background: #000822;
   }
 
   .headerContent {
-    gap: 1rem;
+    gap: 0.8rem;
     align-items: center;
-    padding: 0;
   }
 
   .logoWrapper {
     flex-shrink: 0;
-    margin-right: auto;
   }
 
   .logo {
@@ -288,7 +294,6 @@
 
   .headerLeft {
     flex-shrink: 0;
-    display: none;
   }
 
   .pageTitle {
@@ -324,13 +329,12 @@
 
 @media screen and (max-width: 600px) {
   .headerContainer {
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 2rem;
     min-height: 65px;
   }
 
   .headerContent {
-    gap: 0.8rem;
-    padding: 0;
+    gap: 0.6rem;
   }
 
   .logo {
@@ -345,7 +349,6 @@
   .menuBtn {
     width: 3.5rem;
     height: 3.5rem;
-    flex-shrink: 0;
   }
 
   .menuBtn img {
