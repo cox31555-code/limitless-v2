@@ -1,7 +1,7 @@
 .reviewContainer {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2rem;
   padding: 0;
   margin: 0;
 }
@@ -9,116 +9,98 @@
 /* Price Card */
 .priceCard {
   display: flex;
-  gap: 2rem;
+  align-items: center;
   padding: 2.4rem;
   background: #ffffff;
   border: 1px solid #e5ecf4;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(3, 136, 255, 0.06);
+  border-radius: 12px;
+  gap: 3rem;
 }
 
-.priceContent {
-  flex: 1;
+.priceLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .priceLabel {
   font-size: 1rem;
   font-weight: 600;
-  color: #6b7c8f;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin: 0 0 0.5rem 0;
 }
 
 .priceAmount {
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: #0052a3;
-  margin: 0;
   line-height: 1;
 }
 
 .priceUnit {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #666;
+  color: #999;
+  margin-left: 0.4rem;
 }
 
-.priceNote {
-  font-size: 1rem;
-  color: #666;
-  margin: 0.8rem 0 0 0;
+.priceMeta {
+  font-size: 0.95rem;
+  color: #999;
+  margin-top: 0.4rem;
 }
 
 /* Section Cards */
 .sectionCard {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
   padding: 2.4rem;
   background: #ffffff;
   border: 1px solid #e5ecf4;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(3, 136, 255, 0.06);
-  transition: all 0.3s ease;
-}
-
-.sectionCard:hover {
-  border-color: #d0e0f0;
-  box-shadow: 0 4px 20px rgba(3, 136, 255, 0.1);
+  border-radius: 12px;
 }
 
 .sectionHeader {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 1.6rem;
   padding-bottom: 1.6rem;
-  border-bottom: 2px solid #f0f4f8;
-  position: relative;
-}
-
-.sectionIcon {
-  font-size: 2.8rem;
-  min-width: 3.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-bottom: 1px solid #f0f4f8;
 }
 
 .sectionTitle {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #000822;
+  color: #000;
   margin: 0;
-  flex: 1;
   letter-spacing: -0.3px;
 }
 
-.actionButtonsGroup {
+/* Action Buttons */
+.actionButtons {
   display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-left: auto;
+  gap: 0.8rem;
+  flex-shrink: 0;
 }
 
-.editBtn {
+.primaryBtn {
   padding: 0.7rem 1.4rem;
   background: #10b981;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.3px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background 0.2s ease;
   white-space: nowrap;
 }
 
-.editBtn:hover {
+.primaryBtn:hover {
   background: #059669;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
 .secondaryBtn {
@@ -126,12 +108,11 @@
   background: transparent;
   color: #0052a3;
   border: 1.5px solid #0052a3;
-  border-radius: 8px;
-  font-size: 0.95rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.3px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
@@ -141,10 +122,38 @@
   color: #003d7a;
 }
 
-.sectionBody {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
+.smallPrimaryBtn {
+  padding: 0.6rem 1.2rem;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.smallPrimaryBtn:hover {
+  background: #059669;
+}
+
+.smallSecondaryBtn {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  color: #0052a3;
+  border: 1.5px solid #0052a3;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.smallSecondaryBtn:hover {
+  background: rgba(0, 82, 163, 0.08);
+  border-color: #003d7a;
+  color: #003d7a;
 }
 
 /* Info Grid */
@@ -157,171 +166,136 @@
 .infoItem {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.3rem;
 }
 
 .infoLabel {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #6b7c8f;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
 
 .infoValue {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #000822;
+  color: #000;
   line-height: 1.4;
 }
 
 /* Car Details */
+.carInfo {
+  padding: 1.2rem 0;
+}
+
 .carTitle {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
 }
 
-.carMeta {
-  font-size: 1rem;
-  color: #6b7c8f;
-  margin: 0.4rem 0 0 0;
+.carReg {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.2rem 0;
 }
 
-.carDetails {
-  font-size: 1rem;
-  color: #666;
-  margin: 0.8rem 0 1.6rem 0;
+.carMeta {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0.4rem 0 1rem 0;
 }
 
 .buttonGroup {
   display: flex;
-  gap: 1rem;
-  margin: 1.6rem 0;
+  gap: 0.8rem;
+  margin: 1.2rem 0;
 }
 
-.smallEditBtn {
-  padding: 0.7rem 1.4rem;
-  background: #10b981;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.smallEditBtn:hover {
-  background: #059669;
-  transform: translateY(-1px);
-}
-
-.smallSecondaryBtn {
-  padding: 0.7rem 1.4rem;
-  background: transparent;
-  color: #0052a3;
-  border: 1.5px solid #0052a3;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.smallSecondaryBtn:hover {
-  background: rgba(0, 82, 163, 0.08);
-  border-color: #003d7a;
-  color: #003d7a;
-}
-
-/* Excesses */
-.subsectionTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #000822;
-  margin: 1.6rem 0 1rem 0;
-}
-
-.excessItems {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* Excess Section */
+.excessSection {
   padding: 1.6rem;
   background: #f9fbfd;
-  border-radius: 10px;
+  border-radius: 8px;
   border-left: 4px solid #0052a3;
 }
 
-.excessItems p {
+.excessTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 1rem 0;
+}
+
+.excessList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.excessList p {
   margin: 0;
-  font-size: 1rem;
-  color: #000822;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
 }
 
 .excessNote {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #666;
-  margin: 1rem 0;
+  margin: 0;
   font-style: italic;
 }
 
-.excessDetails {
+.excessGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-top: 1.6rem;
-  padding: 1.6rem;
-  background: #f9fbfd;
-  border-radius: 10px;
+  padding-top: 1.6rem;
+  border-top: 1px solid #e5ecf4;
 }
 
-.excessDetails h5 {
+.excessItem h5 {
   font-size: 1rem;
   font-weight: 700;
   color: #0052a3;
-  margin: 0 0 0.8rem 0;
+  margin: 0 0 0.6rem 0;
 }
 
-.excessDetails p {
-  font-size: 0.95rem;
-  color: #666;
-  margin: 0.4rem 0;
-}
-
-.smallNote {
+.excessItem p {
   font-size: 0.9rem;
+  color: #666;
+  margin: 0.3rem 0;
+}
+
+.excessItemNote {
+  font-size: 0.85rem;
   color: #999;
 }
 
-/* Drivers List */
+/* Drivers */
 .driverName {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
-  padding: 0.8rem 0;
 }
 
-/* Drivers Details Grid */
-.driversDetailsGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
+/* Driver Card */
 .driverCard {
   padding: 1.6rem;
   background: #f9fbfd;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #e5ecf4;
 }
 
 .driverCard .driverName {
+  font-size: 1.3rem;
   margin-bottom: 1.6rem;
-  font-size: 1.4rem;
 }
 
 .driverCard .infoGrid {
@@ -330,84 +304,81 @@
   margin-bottom: 1.6rem;
 }
 
-/* Documents List */
+/* Documents */
 .documentsList {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.8rem;
 }
 
 .documentLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 0;
   color: #0052a3;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
 }
 
 .documentLink:hover {
-  background: rgba(0, 82, 163, 0.08);
   color: #003d7a;
+  border-bottom-color: #003d7a;
 }
 
 /* Disclaimer */
 .disclaimer {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #999;
-  margin: 1.6rem 0 0 0;
+  margin: 1.2rem 0 0 0;
   line-height: 1.6;
 }
 
 /* Action Buttons Container */
 .actionButtonsContainer {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   padding: 2rem 0 0 0;
-  border-top: 2px solid #f0f4f8;
-  margin-top: 2rem;
+  border-top: 1px solid #e5ecf4;
+  margin-top: 1rem;
 }
 
 .makeClaimBtn {
   flex: 1;
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
   background: #10b981;
   color: #ffffff;
   border: none;
-  border-radius: 10px;
-  font-size: 1.15rem;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   cursor: pointer;
-  transition: all 0.28s ease;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  transition: background 0.2s ease;
 }
 
 .makeClaimBtn:hover {
   background: #059669;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
 }
 
 .makeClaimBtn:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
 .cancelPolicyBtn {
   flex: 1;
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
   background: transparent;
   color: #0052a3;
   border: 1.5px solid #0052a3;
-  border-radius: 10px;
-  font-size: 1.15rem;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
   cursor: pointer;
-  transition: all 0.28s ease;
+  transition: all 0.2s ease;
 }
 
 .cancelPolicyBtn:hover {
@@ -445,141 +416,141 @@
 .modal {
   position: relative;
   background: #ffffff;
-  border-radius: 16px;
-  padding: 3.2rem;
+  border-radius: 12px;
+  padding: 2.8rem;
   max-width: 480px;
   width: 100%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(3, 136, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5ecf4;
 }
 
 .closeBtn {
   position: absolute;
   top: 1.6rem;
   right: 1.6rem;
-  background: rgba(3, 136, 255, 0.08);
-  border: 1px solid rgba(3, 136, 255, 0.12);
-  font-size: 1.8rem;
-  color: #6b7c8f;
+  background: #f5f9fc;
+  border: 1px solid #e5ecf4;
+  font-size: 1.6rem;
+  color: #666;
   cursor: pointer;
   padding: 0.4rem 0.6rem;
-  border-radius: 8px;
-  transition: all 0.25s ease;
-  width: 3.2rem;
-  height: 3.2rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  width: 2.8rem;
+  height: 2.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .closeBtn:hover {
-  background: rgba(3, 136, 255, 0.15);
-  color: #000822;
+  background: #e5ecf4;
+  color: #000;
 }
 
 .modalTitle {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #000822;
-  margin: 0 0 1.2rem 0;
+  color: #000;
+  margin: 0 0 0.8rem 0;
   letter-spacing: -0.3px;
 }
 
 .modalMessage {
-  font-size: 1.2rem;
-  color: #6b7c8f;
-  line-height: 1.8;
-  margin: 0 0 2.4rem 0;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
 }
 
 .modalActions {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .contactLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.2rem 2rem;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  padding: 1rem 1.6rem;
+  background: #0052a3;
   color: #ffffff;
   text-decoration: none;
   border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 700;
-  transition: all 0.28s ease;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.25);
+  transition: background 0.2s ease;
 }
 
 .contactLink:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.35);
+  background: #003d7a;
 }
 
 .closeActionBtn {
-  padding: 1.2rem 2rem;
+  padding: 1rem 1.6rem;
   background: #f5f9fc;
-  color: #0388ff;
-  border: 1.5px solid #d0e0f0;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  color: #0052a3;
+  border: 1.5px solid #0052a3;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .closeActionBtn:hover {
-  background: #e9f0f7;
-  border-color: #b8cde8;
-  color: #0270cc;
+  background: rgba(0, 82, 163, 0.08);
+  border-color: #003d7a;
+  color: #003d7a;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .sectionCard {
-    padding: 2rem;
+  .priceCard {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .excessGrid {
+    grid-template-columns: 1fr;
     gap: 1.6rem;
   }
 
   .infoGrid {
     gap: 1.2rem;
-  }
-
-  .excessDetails {
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
   }
 }
 
 @media (max-width: 900px) {
   .reviewContainer {
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   .sectionCard {
-    padding: 1.6rem;
+    padding: 1.8rem;
     gap: 1.4rem;
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .infoGrid {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
   }
 
-  .actionButtonsGroup {
+  .excessGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actionButtons {
     flex-direction: column;
     width: 100%;
-    margin-left: 0;
   }
 
-  .editBtn,
+  .primaryBtn,
   .secondaryBtn {
     width: 100%;
   }
@@ -595,32 +566,34 @@
 
   .makeClaimBtn,
   .cancelPolicyBtn {
-    padding: 1rem 1.6rem;
+    padding: 0.95rem 1.6rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 768px) {
   .reviewContainer {
-    gap: 1.6rem;
+    gap: 1.4rem;
   }
 
   .sectionCard {
     padding: 1.6rem;
+    gap: 1.2rem;
   }
 
   .sectionHeader {
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 1rem;
+    padding-bottom: 1.2rem;
   }
 
-  .actionButtonsGroup {
+  .actionButtons {
     width: 100%;
-    order: 3;
   }
 
-  .sectionIcon {
-    font-size: 2.2rem;
-    min-width: 2.8rem;
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
   }
 
   .sectionTitle {
@@ -628,70 +601,54 @@
   }
 
   .infoLabel {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .infoValue {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .priceCard {
-    flex-direction: column;
-    gap: 1.6rem;
+    padding: 1.8rem;
+    gap: 1.2rem;
   }
 
-  .excessDetails {
-    padding: 1.2rem;
+  .priceAmount {
+    font-size: 2.2rem;
+  }
+
+  .excessGrid {
+    padding-top: 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .buttonGroup {
+    margin: 1rem 0;
+    flex-direction: column;
+  }
+
+  .smallPrimaryBtn,
+  .smallSecondaryBtn {
+    width: 100%;
   }
 }
 
 @media (max-width: 600px) {
   .reviewContainer {
-    gap: 1.4rem;
+    gap: 1.2rem;
   }
 
   .sectionCard {
-    padding: 1.2rem;
-    gap: 1.2rem;
-    border-radius: 12px;
-  }
-
-  .sectionIcon {
-    font-size: 2rem;
-    min-width: 2.4rem;
+    padding: 1.4rem;
+    border-radius: 10px;
   }
 
   .sectionTitle {
     font-size: 1.2rem;
   }
 
-  .sectionHeader {
-    padding-bottom: 1rem;
-  }
-
-  .actionButtonsGroup {
-    flex-direction: column;
-    gap: 0.6rem;
-    width: 100%;
-  }
-
-  .editBtn,
-  .secondaryBtn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-    width: 100%;
-  }
-
-  .buttonGroup {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .smallEditBtn,
-  .smallSecondaryBtn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
-    width: 100%;
+  .priceCard {
+    padding: 1.6rem;
   }
 
   .priceAmount {
@@ -699,78 +656,11 @@
   }
 
   .carTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .infoGrid {
     gap: 1rem;
-  }
-
-  .infoLabel {
-    font-size: 0.85rem;
-  }
-
-  .infoValue {
-    font-size: 1.1rem;
-  }
-
-  .excessDetails {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    gap: 1.2rem;
-  }
-
-  .actionButtonsContainer {
-    gap: 0.8rem;
-    padding: 1.6rem 0 0 0;
-    flex-direction: column;
-  }
-
-  .makeClaimBtn,
-  .cancelPolicyBtn {
-    padding: 0.95rem 1.4rem;
-    font-size: 1rem;
-  }
-
-  .modal {
-    padding: 1.8rem;
-    max-width: 90%;
-  }
-
-  .modalTitle {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-  }
-
-  .modalMessage {
-    font-size: 1rem;
-    margin-bottom: 1.6rem;
-  }
-
-  .contactLink,
-  .closeActionBtn {
-    padding: 0.95rem 1.4rem;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .sectionCard {
-    padding: 1rem;
-    gap: 1rem;
-    border-radius: 10px;
-  }
-
-  .sectionIcon {
-    font-size: 1.8rem;
-  }
-
-  .sectionTitle {
-    font-size: 1.1rem;
-  }
-
-  .priceAmount {
-    font-size: 1.8rem;
   }
 
   .infoLabel {
@@ -781,7 +671,83 @@
     font-size: 1rem;
   }
 
+  .excessSection {
+    padding: 1.2rem;
+    border-radius: 6px;
+  }
+
+  .excessTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .excessGrid {
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  .actionButtonsContainer {
+    gap: 0.8rem;
+    padding: 1.6rem 0 0 0;
+  }
+
+  .makeClaimBtn,
+  .cancelPolicyBtn {
+    padding: 0.9rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .modal {
+    padding: 1.8rem;
+  }
+
+  .modalTitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .modalMessage {
+    font-size: 0.95rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .contactLink,
+  .closeActionBtn {
+    padding: 0.9rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .sectionCard {
+    padding: 1.2rem;
+    border-radius: 8px;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .priceAmount {
+    font-size: 1.8rem;
+  }
+
+  .infoLabel {
+    font-size: 0.75rem;
+  }
+
+  .infoValue {
+    font-size: 0.95rem;
+  }
+
   .modal {
     padding: 1.4rem;
+  }
+
+  .closeBtn {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 1.4rem;
   }
 }
