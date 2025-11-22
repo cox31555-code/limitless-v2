@@ -251,6 +251,11 @@
     font-size: 1.3rem;
   }
 
+  .documentType {
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
   .mobile {
     display: none;
   }
