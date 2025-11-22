@@ -173,6 +173,12 @@
   gap: 1.5rem;
 }
 
+.sectionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .dropdownWrapper {
   width: 360px;
   flex-shrink: 0;
