@@ -90,6 +90,7 @@
   .documentActions {
     width: 100%;
     justify-content: flex-start;
+    gap: 1.2rem;
   }
 }
 
