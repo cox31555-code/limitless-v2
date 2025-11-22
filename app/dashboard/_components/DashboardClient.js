@@ -138,6 +138,15 @@ const DashboardClient = () => {
         </button>
       </section>
 
+      {/* Breadcrumb Navigation */}
+      <div className={styles.breadcrumb}>
+        <span className={styles.breadcrumbItem}>Home</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={styles.breadcrumbItem}>Profile</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Edit</span>
+      </div>
+
       <div className={styles.container}>
         {/* Policy Card Section with Promotional Banners */}
         <section className={styles.policiesSection}>
