@@ -198,8 +198,8 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "10px",
-          color: "#ffffff",
+          gap: "8px",
+          color: "#0052a3",
           fontSize: "1rem",
           fontWeight: "600",
           lineHeight: "130%",
@@ -213,17 +213,19 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         }}
         onMouseEnter={(e) => {
           if (!isDownloading) {
+            e.currentTarget.style.color = "#003d7a";
             const iconBg = e.currentTarget.querySelector('div');
             if (iconBg) {
-              iconBg.style.background = "#003d7a";
+              iconBg.style.background = "#d4e7f7";
             }
           }
         }}
         onMouseLeave={(e) => {
           if (!isDownloading) {
+            e.currentTarget.style.color = "#0052a3";
             const iconBg = e.currentTarget.querySelector('div');
             if (iconBg) {
-              iconBg.style.background = "#0052a3";
+              iconBg.style.background = "#e3f1fe";
             }
           }
         }}
@@ -233,7 +235,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
             width: "32px",
             height: "32px",
             borderRadius: "6px",
-            background: "#0052a3",
+            background: "#e3f1fe",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
