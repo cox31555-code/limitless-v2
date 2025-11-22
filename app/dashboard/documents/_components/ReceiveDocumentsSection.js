@@ -13,7 +13,7 @@ export default function ReceiveDocumentsSection() {
     <div className={styles.section}>
       <div className={styles.header}>
         <Image
-          src="/svg/envelope.svg"
+          src="/svg/message.svg"
           alt="envelope"
           width={32}
           height={32}
