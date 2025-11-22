@@ -5,7 +5,7 @@ import styles from "../page.module.css";
 import Table from "./table/Table";
 import Booklets from "./booklets/Booklets";
 import Dropdown from "./dropdown/Dropdown";
-import DownloadButton from "./DownloadButton";
+import DocumentActions from "./DocumentActions";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
