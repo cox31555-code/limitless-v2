@@ -195,7 +195,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
 
       <button
         onClick={handleDownload}
-        disabled={isDownloading || isViewing}
+        disabled={isDownloading}
         style={{
           display: "inline-flex",
           alignItems: "center",
@@ -206,19 +206,19 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           lineHeight: "130%",
           background: "transparent",
           border: "none",
-          cursor: isDownloading || isViewing ? "not-allowed" : "pointer",
+          cursor: isDownloading ? "not-allowed" : "pointer",
           padding: "0",
           transition: "color 0.2s ease",
-          opacity: isDownloading || isViewing ? 0.7 : 1,
+          opacity: isDownloading ? 0.7 : 1,
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
-          if (!isDownloading && !isViewing) {
+          if (!isDownloading) {
             e.currentTarget.style.color = "#001428";
           }
         }}
         onMouseLeave={(e) => {
-          if (!isDownloading && !isViewing) {
+          if (!isDownloading) {
             e.currentTarget.style.color = "#001f3f";
           }
         }}
