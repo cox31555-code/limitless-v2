@@ -23,7 +23,7 @@
   margin-left: calc(-50vw + 50%);
   margin-top: 0;
   margin-bottom: 5rem;
-  padding: 3.1875rem calc(50vw - 50%) 3.375rem;
+  padding: 4.125rem calc(50vw - 50%) 4rem;
 }
 
 .heroSection::before {
