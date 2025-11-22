@@ -1,7 +1,7 @@
 .headerContainer {
   background: #000822;
   border-bottom: 2px solid #0052a3;
-  padding: 1.2rem 15.4% 1.2rem 20.4%;
+  padding: 1.2rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,6 +11,7 @@
   overflow: visible;
   min-height: auto;
   margin-bottom: 0;
+  box-sizing: border-box;
 }
 
 .headerContainer.menuOpen {
@@ -145,7 +146,7 @@
 
 .menuBackdrop {
   position: fixed;
-  top: 80px;
+  top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -197,7 +198,7 @@
 
 .menuDropdown {
   position: fixed;
-  top: 80px;
+  top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -208,7 +209,7 @@
   overflow-x: hidden;
   display: flex !important;
   flex-direction: column;
-  max-height: calc(100vh - 80px);
+  max-height: calc(100vh - 70px);
   pointer-events: auto;
   padding: 1.2rem 0;
 }
@@ -271,36 +272,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .headerContainer {
-    padding: 1rem 2.4rem;
-    margin-bottom: 0;
-    min-height: 70px;
-    background: #000822;
-  }
-
-  .headerContent {
-    gap: 0.8rem;
-    align-items: center;
-  }
-
-  .logoWrapper {
-    flex-shrink: 0;
-  }
-
-  .logo {
-    width: 45px;
-    height: 45px;
-  }
-
-  .headerLeft {
-    flex-shrink: 0;
-  }
-
-  .pageTitle {
-    font-size: 1.3rem;
-    white-space: nowrap;
-  }
-
   .desktopNav {
     display: none;
   }
@@ -328,15 +299,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .headerContainer {
-    padding: 0.8rem 2rem;
-    min-height: 65px;
-  }
-
-  .headerContent {
-    gap: 0.6rem;
-  }
-
   .logo {
     width: 40px;
     height: 40px;
@@ -354,13 +316,5 @@
   .menuBtn img {
     width: 1.5rem !important;
     height: 1.5rem !important;
-  }
-
-  .menuDropdown {
-    top: 65px !important;
-  }
-
-  .menuBackdrop {
-    top: 65px !important;
   }
 }
