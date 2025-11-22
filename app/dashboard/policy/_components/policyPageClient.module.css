@@ -10,6 +10,19 @@
   z-index: 2;
 }
 
+/* Hero Wrapper */
+.heroWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.171875rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4.4% 0.78125rem;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
 /* Hero Section */
 .heroSection {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
