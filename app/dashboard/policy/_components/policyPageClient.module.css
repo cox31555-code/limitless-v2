@@ -127,6 +127,19 @@
   stroke: currentColor;
 }
 
+/* Content Wrapper */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 4.4%;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
 /* Policies Section */
 .policiesSection {
   display: flex;
