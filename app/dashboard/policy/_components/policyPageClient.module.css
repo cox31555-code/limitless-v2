@@ -272,11 +272,6 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .container {
-    gap: 2.5rem;
-    padding: 2rem 3%;
-  }
-
   .heroSection {
     padding: 2.5rem;
   }
