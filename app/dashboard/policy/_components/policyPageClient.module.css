@@ -53,9 +53,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 1400px;
   position: relative;
   z-index: 2;
   flex: 1;
+  gap: 3rem;
 }
 
 .greetingArea {
