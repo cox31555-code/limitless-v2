@@ -121,10 +121,17 @@ const DashboardClient = () => {
           </svg>
         </div>
         <div className={styles.heroContent}>
-          <div className={styles.greetingArea}>
-            <h1 className={styles.greetingTitle}>Manage your policies</h1>
-            <p className={styles.greetingSubtitle}>Review, update and manage all your insurance policies in one secure place</p>
-          </div>
+          {mounted ? (
+            <div className={styles.greetingArea}>
+              <h1 className={styles.greetingTitle}>Manage your policies</h1>
+              <p className={styles.greetingSubtitle}>Review, update and manage all your insurance policies in one secure place</p>
+            </div>
+          ) : (
+            <div className={styles.greetingArea}>
+              <h1 className={styles.greetingTitle}>Hi, Adnan</h1>
+              <p className={styles.greetingSubtitle}>Welcome back to your insurance hub</p>
+            </div>
+          )}
           <div className={styles.badgeArea}>
             <span className={styles.allianzBadge}>Limitless Cover</span>
           </div>
