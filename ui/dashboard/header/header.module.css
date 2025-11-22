@@ -61,18 +61,17 @@
 .desktopNav {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
   flex: 1;
-  justify-content: space-between;
-  padding: 0 2rem;
+  justify-content: flex-end;
 }
 
 .navItems {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 2rem;
   justify-content: flex-end;
-  flex: 1;
+  flex-wrap: wrap;
 }
 
 .navItem {
