@@ -120,10 +120,10 @@ export default function DownloadButton({
         display: "inline-flex",
         alignItems: "center",
         gap: "8px",
-        color: "#0388FF",
-        fontSize: "1.3rem",
-        fontWeight: "500",
-        lineHeight: "130%",
+        color: "#0052a3",
+        fontSize: "1rem",
+        fontWeight: "600",
+        lineHeight: "120%",
         background: "transparent",
         border: "none",
         cursor: isDownloading ? "not-allowed" : "pointer",
@@ -133,13 +133,13 @@ export default function DownloadButton({
       }}
       onMouseEnter={(e) => {
         if (!isDownloading) {
-          e.currentTarget.style.color = "#0270cc";
+          e.currentTarget.style.color = "#003d7a";
           e.currentTarget.style.transform = "translateX(2px)";
         }
       }}
       onMouseLeave={(e) => {
         if (!isDownloading) {
-          e.currentTarget.style.color = "#0388FF";
+          e.currentTarget.style.color = "#0052a3";
           e.currentTarget.style.transform = "translateX(0)";
         }
       }}
