@@ -63,17 +63,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  min-width: 24px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
   flex-shrink: 0;
 }
 
 .instalmentIcon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   color: #5a8fc4;
-  stroke-width: 2;
 }
 
 .instalmentText {
