@@ -24,6 +24,7 @@ const PolicyPageClient = ({
 
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isExpiredExpanded, setIsExpiredExpanded] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -159,27 +160,47 @@ const PolicyPageClient = ({
         </section>
       )}
 
-      {/* Expired Policies Section */}
+      {/* Expired Policies Expandable Section */}
       {expiredPolicies && expiredPolicies.length > 0 && (
-        <section className={styles.policiesSection}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.expiredSectionTitle}>Expired Policies</h2>
-          </div>
-          <Table
-            title="Expired Policies"
-            tableType="inactive"
-            columns={[
-              "Policy Number",
-              "Status",
-              "Name",
-              "Vehicle Reg",
-              "Details",
-            ]}
-            data={expiredPolicies}
-            showViewButton={true}
-            theme="default"
-            showTitle={false}
-          />
+        <section className={styles.expandableSection}>
+          <button
+            className={styles.expandableHeader}
+            onClick={() => setIsExpiredExpanded(!isExpiredExpanded)}
+            aria-expanded={isExpiredExpanded}
+          >
+            <div className={styles.expandableTitle}>
+              <h2 className={styles.sectionTitle}>Expired Policies</h2>
+              <span className={styles.expandableCount}>{expiredPolicies.length}</span>
+            </div>
+            <svg 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              className={`${styles.expandableIcon} ${isExpiredExpanded ? styles.expanded : ""}`}
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          {isExpiredExpanded && (
+            <div className={styles.expandableContent}>
+              <Table
+                title="Expired Policies"
+                tableType="inactive"
+                columns={[
+                  "Policy Number",
+                  "Status",
+                  "Name",
+                  "Vehicle Reg",
+                  "Details",
+                ]}
+                data={expiredPolicies}
+                showViewButton={true}
+                theme="default"
+                showTitle={false}
+              />
+            </div>
+          )}
         </section>
       )}
     </div>
