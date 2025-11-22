@@ -134,13 +134,11 @@ export default function DownloadButton({
       onMouseEnter={(e) => {
         if (!isDownloading) {
           e.currentTarget.style.color = "#003d7a";
-          e.currentTarget.style.transform = "translateX(2px)";
         }
       }}
       onMouseLeave={(e) => {
         if (!isDownloading) {
           e.currentTarget.style.color = "#0052a3";
-          e.currentTarget.style.transform = "translateX(0)";
         }
       }}
     >
