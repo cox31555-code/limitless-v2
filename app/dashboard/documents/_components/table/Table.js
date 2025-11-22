@@ -30,7 +30,7 @@ const Table = ({ title, columns, data }) => {
                 <td className={styles.tableCell} data-label="Document">
                   <span className={styles.datacell}>{row.document}</span>
                 </td>
-                <td className={styles.tableCell} data-label="Date">
+                <td className={styles.tableCell} data-label="Last updated">
                   <span className={styles.datacell}>{row.documentNumber}</span>
                 </td>
                 <td className={styles.tableCell} data-label="Action">
