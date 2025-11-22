@@ -69,7 +69,25 @@ const page = async () => {
     }
   }
 
-  return <DocumentsClient insurances={insurances} />;
+  // Get first insurance for hero display
+  const firstInsurance = insurances.length > 0 ? insurances[0] : null;
+  const getPolicyNumber = () => {
+    return firstInsurance?.policyNumber || firstInsurance?._id?.slice(-8).toUpperCase() || "N/A";
+  };
+
+  return (
+    <div className={styles.page}>
+      <div className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <div className={styles.greetingArea}>
+            <h1 className={styles.greetingTitle}>Policy documents</h1>
+            <p className={styles.greetingSubtitle}>Policy no: {getPolicyNumber()}</p>
+          </div>
+        </div>
+      </div>
+      <DocumentsClient insurances={insurances} />
+    </div>
+  );
 };
 
 export default page;
