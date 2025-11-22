@@ -202,12 +202,87 @@
   line-height: 120%;
 }
 
-.expiredSectionTitle {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #0052a3;
+/* Expandable Section for Expired Policies */
+.expandableSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
+}
+
+.expandableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.8rem 2rem;
+  background: #f8fafc;
+  border: none;
+  border-bottom: 1px solid #e0e6f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.expandableHeader:hover {
+  background: #f0f4fb;
+}
+
+.expandableTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.expandableTitle .sectionTitle {
+  font-size: 1.2rem;
   margin: 0;
-  line-height: 120%;
+}
+
+.expandableCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: #e0e6f0;
+  color: #0052a3;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.expandableIcon {
+  width: 20px;
+  height: 20px;
+  color: #0052a3;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.expandableIcon.expanded {
+  transform: rotate(180deg);
+}
+
+.expandableContent {
+  padding: 2rem;
+  border-top: 1px solid #e0e6f0;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
@@ -221,9 +296,12 @@
     font-size: 2rem;
   }
 
-  .sectionTitle,
-  .expiredSectionTitle {
+  .sectionTitle {
     font-size: 1.5rem;
+  }
+
+  .expandableTitle .sectionTitle {
+    font-size: 1.2rem;
   }
 }
 
@@ -251,9 +329,16 @@
     min-width: 100%;
   }
 
-  .sectionTitle,
-  .expiredSectionTitle {
+  .sectionTitle {
     font-size: 1.3rem;
+  }
+
+  .expandableHeader {
+    padding: 1.5rem;
+  }
+
+  .expandableContent {
+    padding: 1.5rem;
   }
 }
 
@@ -277,9 +362,12 @@
     padding: 0.7rem 1.2rem;
   }
 
-  .sectionTitle,
-  .expiredSectionTitle {
+  .sectionTitle {
     font-size: 1.1rem;
+  }
+
+  .expandableTitle .sectionTitle {
+    font-size: 1rem;
   }
 
   .dropdown {
@@ -293,5 +381,19 @@
   .optionIcon {
     width: 40px;
     height: 40px;
+  }
+
+  .expandableHeader {
+    padding: 1.2rem;
+  }
+
+  .expandableContent {
+    padding: 1.2rem;
+  }
+
+  .expandableCount {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
   }
 }
