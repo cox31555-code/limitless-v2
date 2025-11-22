@@ -99,7 +99,7 @@ export default function DocumentsClient({ insurances }) {
         {tableData.length > 0 ? (
           <Table
             title="Policy documents"
-            columns={["Document", "Date", "Action"]}
+            columns={["Document", "Last updated", "Action"]}
             data={tableData}
           />
         ) : (
