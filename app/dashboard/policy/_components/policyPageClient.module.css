@@ -570,6 +570,29 @@
     padding: 1rem 4%;
   }
 
+  .heroBanner {
+    padding: 1.5rem;
+    gap: 1.2rem;
+  }
+
+  .heroIcon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .heroIcon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .heroTitle {
+    font-size: 1.4rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+
   .headerContent {
     gap: 1rem;
   }
@@ -586,29 +609,6 @@
     width: 100%;
     font-size: 0.9rem;
     padding: 0.7rem 1.2rem;
-  }
-
-  .statsSection {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .statCard {
-    padding: 1.2rem;
-  }
-
-  .statIcon {
-    width: 45px;
-    height: 45px;
-  }
-
-  .statIcon svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .statValue {
-    font-size: 1.5rem;
   }
 
   .sectionTitle {
