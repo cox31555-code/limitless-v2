@@ -47,11 +47,8 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
               key={index}
               className={styles.policyCard}
             >
-              {/* Card Header - Icon & Name/Status */}
+              {/* Card Header - Name/Status */}
               <div className={styles.policyCardHeader}>
-                <div className={styles.policyIcon}>
-                  <PolicyIcon />
-                </div>
                 <div className={styles.policyHeaderInfo}>
                   <h3 className={styles.policyName}>
                     Limitless Cover Car Insurance
