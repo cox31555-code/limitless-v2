@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { toast } from "react-toastify";
 
 export default function DocumentActions({ insuranceId, pdfType }) {
