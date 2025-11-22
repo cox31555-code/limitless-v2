@@ -362,8 +362,8 @@
 }
 
 .menuItem {
-  background: #003d7a;
-  border: 1px solid #004a92;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 2rem;
   display: flex;
@@ -377,12 +377,14 @@
   text-align: left;
   font-family: inherit;
   font-size: inherit;
+  position: relative;
+  z-index: 1;
 }
 
 .menuItem:hover {
-  background: #0052a3;
-  border-color: #0070c9;
-  box-shadow: 0 8px 24px rgba(0, 136, 255, 0.2);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 136, 255, 0.3);
   transform: translateY(-4px);
 }
 
