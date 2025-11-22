@@ -694,6 +694,16 @@
     font-size: 1.2rem;
   }
 
+  .menuSection {
+    padding: 1.5rem 4% 2rem;
+    background: #0a0e27;
+  }
+
+  .menuSection .sectionTitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+
   .sectionDescription {
     font-size: 0.85rem;
   }
