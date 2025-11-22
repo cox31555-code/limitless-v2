@@ -119,15 +119,15 @@ export default function DownloadButton({
       style={{
         display: "inline-flex",
         alignItems: "center",
-        gap: "8px",
+        gap: "12px",
         color: "#0052a3",
-        fontSize: "1rem",
+        fontSize: "1.2rem",
         fontWeight: "600",
-        lineHeight: "120%",
+        lineHeight: "130%",
         background: "transparent",
         border: "none",
         cursor: isDownloading ? "not-allowed" : "pointer",
-        padding: "0.4rem 0",
+        padding: "0.6rem 0",
         transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
         opacity: isDownloading ? 0.7 : 1,
       }}
@@ -144,7 +144,7 @@ export default function DownloadButton({
         }
       }}
     >
-      <Image src="/svg/pdf.svg" alt="pdf" width={20} height={20} />
+      <Image src="/svg/pdf.svg" alt="pdf" width={28} height={28} />
       <span>{isDownloading ? "Downloading..." : label}</span>
     </button>
   );
