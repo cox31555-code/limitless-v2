@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 import { API_BASE_URL } from "@/utils/config";
 import { serverFetch } from "@/utils/serverFetch";
 import DocumentsClient from "./_components/DocumentsClient";
+import styles from "./page.module.css";
 
 export const metadata = {
   title: "Your Documentation | Limitless Cover",
