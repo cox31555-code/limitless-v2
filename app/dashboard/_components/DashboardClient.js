@@ -14,10 +14,6 @@ const DashboardClient = () => {
     setMounted(true);
   }, []);
 
-  const handleCreatePolicy = () => {
-    setIsInsuranceModalOpen(true);
-  };
-
   const activePolicies = [
     {
       id: 1,
