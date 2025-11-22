@@ -95,7 +95,7 @@
 .policySection {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
   flex-wrap: nowrap;
   flex-shrink: 0;
   order: 2;
