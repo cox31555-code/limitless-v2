@@ -282,6 +282,12 @@ const PolicyDetailsReview = ({ policy }) => {
             </div>
           </div>
         </div>
+
+        {/* ACTION BUTTONS */}
+        <div className={styles.actionButtonsContainer}>
+          <button className={styles.makeClaimBtn}>Make a claim</button>
+          <button className={styles.cancelPolicyBtn}>Cancel policy</button>
+        </div>
       </div>
 
       {/* CONTACT MODAL POPUP */}
