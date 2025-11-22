@@ -22,147 +22,118 @@
 }
 
 .policyCard {
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border: 1px solid #e0e6f0;
   border-radius: 12px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
 }
 
 .policyCard:hover {
-  border-color: #003d7a;
+  border-color: #0052a3;
   box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
   transform: translateY(-4px);
 }
 
 .policyCardHeader {
   background: #f0f4fb;
-  padding: 2rem;
+  padding: 1.5rem;
   display: block;
   border-bottom: 1px solid #e0e6f0;
+  position: relative;
 }
 
-.policyIcon {
-  display: none;
-}
-
-.policyHeaderInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.policyName {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #0052a3;
-  margin: 0;
-  line-height: 120%;
-}
-
-.policyStatus {
+.statusBadge {
   display: inline-block;
-  width: fit-content;
-  background: #d4edda;
-  color: #155724;
-  padding: 0.4rem 1rem;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-transform: uppercase;
+  background: #0052a3;
+  color: #ffffff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
 }
 
-.policyStatus.expired {
-  background: #f8d7da;
-  color: #721c24;
-}
-
-.policyStatus.active {
-  background: #d4edda;
-  color: #155724;
+.policyRef {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
 }
 
 .policyDetails {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  padding: 1.5rem;
+  flex: 1;
 }
 
-.detailItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem 0;
+.carTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0 0 0.5rem 0;
+  line-height: 130%;
 }
 
-.detailLabel {
-  font-size: 1rem;
-  color: #999;
-  font-weight: 500;
-  text-transform: uppercase;
+.carMeta {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+}
+
+.regBadge {
+  display: inline-block;
+  background: #000000;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
   letter-spacing: 0.5px;
 }
 
-.detailValue {
-  font-size: 1.3rem;
-  color: #0052a3;
-  font-weight: 600;
-}
-
-.detailDivider {
-  height: 1px;
-  background: #e8e8e8;
-  margin: 0.5rem 0;
-}
-
-.policyCoverInfo {
+.policyInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
   background: #f8fafc;
-  padding: 2rem;
-  display: block;
   border-top: 1px solid #e0e6f0;
 }
 
-.coverInfoIcon {
-  display: none;
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
-.coverInfoLabel {
-  font-size: 1rem;
+.infoLabel {
+  font-size: 0.8rem;
   color: #999;
-  margin: 0;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  margin: 0;
 }
 
-.coverInfoValue {
-  font-size: 1.3rem;
+.infoValue {
+  font-size: 1.1rem;
   color: #0052a3;
-  margin: 0.2rem 0 0 0;
-  font-weight: 600;
-}
-
-.cardFooter {
-  padding: 0 2rem 2rem 2rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 .viewButton {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 0.9rem 1.6rem;
+  padding: 1rem;
   background: #0052a3;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  border-radius: 0;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -171,60 +142,17 @@
 
 .viewButton:hover {
   background: #003d7a;
-  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.2);
-  transform: translateY(-2px);
-}
-
-.viewButton svg {
-  width: 1.2rem;
-  height: 1.2rem;
-  transition: transform 0.2s ease;
-  stroke: currentColor;
-}
-
-.viewButton:hover svg {
-  transform: translateX(3px);
-}
-
-/* Expired/Unpaid Policies Theme */
-.expiredSection {
-  /* Same styling */
-}
-
-.expiredCard {
-  /* Same styling as active cards */
-}
-
-.expiredTitle {
-  color: #0052a3;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .policyCardHeader {
-    padding: 1.8rem;
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem;
   }
 
-  .policyIcon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .policyIcon svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .policyDetails {
-    padding: 1.8rem;
-  }
-
-  .policyCoverInfo {
-    padding: 1.8rem;
-  }
-
-  .cardFooter {
-    padding: 0 1.8rem 1.8rem 1.8rem;
+  .policyCard {
+    padding: 0;
   }
 }
 
@@ -234,7 +162,7 @@
   }
 
   .sectionTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .cardsGrid {
@@ -242,71 +170,17 @@
     gap: 1.2rem;
   }
 
-  .policyCardHeader {
-    padding: 1.5rem;
-    gap: 1rem;
+  .policyCard {
+    padding: 0;
   }
 
-  .policyIcon {
-    width: 55px;
-    height: 55px;
-  }
-
-  .policyIcon svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .policyName {
-    font-size: 1.2rem;
-  }
-
-  .policyDetails {
-    padding: 1.5rem;
-  }
-
-  .detailItem {
-    padding: 0.8rem 0;
-  }
-
-  .detailLabel {
-    font-size: 0.9rem;
-  }
-
-  .detailValue {
+  .carTitle {
     font-size: 1.1rem;
-  }
-
-  .policyCoverInfo {
-    padding: 1.5rem;
-    gap: 1rem;
-  }
-
-  .coverInfoIcon {
-    width: 45px;
-    height: 45px;
-  }
-
-  .coverInfoIcon svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .coverInfoLabel {
-    font-size: 0.9rem;
-  }
-
-  .coverInfoValue {
-    font-size: 1.1rem;
-  }
-
-  .cardFooter {
-    padding: 0 1.5rem 1.5rem 1.5rem;
   }
 
   .viewButton {
-    font-size: 0.85rem;
-    padding: 0.8rem 1.4rem;
+    font-size: 0.9rem;
+    padding: 0.8rem;
   }
 }
 
@@ -316,86 +190,37 @@
   }
 
   .sectionTitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .cardsGrid {
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
   .policyCardHeader {
-    padding: 1.2rem;
-  }
-
-  .policyIcon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .policyIcon svg {
-    width: 26px;
-    height: 26px;
-  }
-
-  .policyName {
-    font-size: 1.1rem;
-  }
-
-  .policyStatus {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.8rem;
+    padding: 1rem;
   }
 
   .policyDetails {
-    padding: 1.2rem;
+    padding: 1rem;
   }
 
-  .detailItem {
-    padding: 0.7rem 0;
+  .policyInfo {
+    padding: 1rem;
+    gap: 1rem;
   }
 
-  .detailLabel {
-    font-size: 0.8rem;
-  }
-
-  .detailValue {
+  .carTitle {
     font-size: 1rem;
   }
 
-  .policyCoverInfo {
-    padding: 1.2rem;
-    gap: 0.8rem;
-  }
-
-  .coverInfoIcon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .coverInfoIcon svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .coverInfoLabel {
-    font-size: 0.8rem;
-  }
-
-  .coverInfoValue {
-    font-size: 1rem;
-  }
-
-  .cardFooter {
-    padding: 0 1.2rem 1.2rem 1.2rem;
+  .carMeta {
+    font-size: 0.9rem;
   }
 
   .viewButton {
-    font-size: 0.8rem;
-    padding: 0.7rem 1.2rem;
-  }
-
-  .viewButton svg {
-    width: 1rem;
-    height: 1rem;
+    font-size: 0.85rem;
+    padding: 0.7rem;
   }
 }
