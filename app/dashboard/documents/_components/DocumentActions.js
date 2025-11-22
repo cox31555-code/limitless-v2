@@ -199,7 +199,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           display: "inline-flex",
           alignItems: "center",
           gap: "8px",
-          color: "#003d6b",
+          color: "#001f3f",
           fontSize: "1rem",
           fontWeight: "600",
           lineHeight: "130%",
@@ -213,12 +213,12 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         }}
         onMouseEnter={(e) => {
           if (!isDownloading) {
-            e.currentTarget.style.color = "#002850";
+            e.currentTarget.style.color = "#001428";
           }
         }}
         onMouseLeave={(e) => {
           if (!isDownloading) {
-            e.currentTarget.style.color = "#003d6b";
+            e.currentTarget.style.color = "#001f3f";
           }
         }}
       >
@@ -227,7 +227,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
             width: "24px",
             height: "24px",
             borderRadius: "50%",
-            background: "#c5dff8",
+            background: "#003d7a",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
