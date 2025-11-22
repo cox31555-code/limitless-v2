@@ -594,6 +594,30 @@
     font-size: 1.6rem;
   }
 
+  .paymentBreakdownCard {
+    padding: 1rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1rem;
+  }
+
+  .breakdownItem {
+    padding: 0.6rem 0;
+  }
+
+  .breakdownItem.totalRow {
+    padding: 0.8rem;
+  }
+
+  .breakdownLabel {
+    font-size: 0.85rem;
+  }
+
+  .breakdownAmount {
+    font-size: 0.9rem;
+  }
+
   .cardHeader {
     padding: 1rem;
   }
