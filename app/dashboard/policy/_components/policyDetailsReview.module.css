@@ -649,6 +649,17 @@
     gap: 0.7rem;
   }
 
+  .instalmentIconWrapper {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+  }
+
+  .instalmentIcon {
+    width: 20px;
+    height: 20px;
+  }
+
   .instalmentText {
     font-size: 0.85rem;
   }
