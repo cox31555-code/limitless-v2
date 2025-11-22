@@ -51,8 +51,8 @@ const DashboardClient = () => {
   const menuItems = [
     {
       label: "Chat with us",
-      description: "Live chat support available 24/7",
-      hours: null,
+      description: "Live chat support",
+      hours: "9 AM - 6 PM, Mon - Fri",
       icon: "chat",
       action: () => {
         // Trigger chat widget
