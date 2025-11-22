@@ -433,13 +433,13 @@
 
 .menuItemDescription {
   font-size: 1rem;
-  color: #b0c4d9;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 130%;
 }
 
 .menuItemHours {
   font-size: 0.9rem;
-  color: #89a8c2;
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 500;
   margin-top: 0.3rem;
   line-height: 130%;
