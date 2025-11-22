@@ -334,9 +334,21 @@
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-  background: #002147;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border-radius: 35px;
   overflow: hidden;
+  position: relative;
+}
+
+.menuSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .menuSection .sectionTitle {
