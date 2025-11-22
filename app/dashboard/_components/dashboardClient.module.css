@@ -590,7 +590,7 @@
   .heroSection {
     flex-direction: column;
     text-align: center;
-    padding: 2rem;
+    padding: 2rem calc(50vw - 50%);
     gap: 1.5rem;
   }
 
