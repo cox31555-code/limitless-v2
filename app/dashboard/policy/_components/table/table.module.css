@@ -19,7 +19,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
-  padding: 1.6875rem 0 2.6875rem;
+  padding: 2.375rem 0 3.5rem;
 }
 
 .policyCard {
