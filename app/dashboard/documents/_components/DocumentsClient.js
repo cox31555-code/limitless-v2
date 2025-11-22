@@ -88,13 +88,13 @@ export default function DocumentsClient({ insurances }) {
             <h2 className={styles.sectionTitle}>Your documents</h2>
             <span className={styles.sectionBadge}>{tableData.length}</span>
           </div>
-          {selectedInsurance && (
-            <div className={styles.selectedPolicyCard}>
-              <span className={styles.selectedPolicyText}>
-                {getDisplayText(selectedInsurance)}
-              </span>
-            </div>
-          )}
+          <div className={styles.dropdownWrapper}>
+            <Dropdown
+              insurances={insurances}
+              selectedInsuranceId={selectedInsuranceId}
+              onInsuranceChange={handleInsuranceChange}
+            />
+          </div>
         </div>
 
         {tableData.length > 0 ? (
