@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./dashboardClient.module.css";
 import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
@@ -7,7 +7,12 @@ import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 const DashboardClient = () => {
   const router = useRouter();
   const [bannerIndex, setBannerIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const { setIsInsuranceModalOpen } = useInsuranceModal();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleCreatePolicy = () => {
     setIsInsuranceModalOpen(true);
