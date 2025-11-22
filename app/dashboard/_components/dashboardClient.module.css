@@ -545,6 +545,8 @@
   padding: 1.2rem;
   background: #f5f7fa;
   border-top: 1px solid #e0e6f0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dot {
