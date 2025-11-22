@@ -48,6 +48,69 @@
   margin-top: 0.3rem;
 }
 
+/* Payment Breakdown Card */
+.paymentBreakdownCard {
+  background: #ffffff;
+  border: 1px solid #d4e4f7;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.breakdownTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.breakdownContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.breakdownItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f0f4f8;
+}
+
+.breakdownItem:last-child {
+  border-bottom: none;
+}
+
+.breakdownItem.totalRow {
+  padding-top: 1rem;
+  border-top: 2px solid #0388ff;
+  background: #f8fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  border-bottom: none;
+}
+
+.breakdownLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.breakdownAmount {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #003366;
+}
+
+.breakdownItem.totalRow .breakdownAmount {
+  color: #0388ff;
+}
+
 /* Expandable Card */
 .expandableCard {
   background: #ffffff;
