@@ -45,10 +45,10 @@ const PolicyPageClient = ({
         <div className={styles.heroContent}>
           <div className={styles.greetingArea}>
             <h1 className={`${styles.greetingTitle} ${plusJakartaSans.className}`}>
-              Manage your policies
+              Hi, Adnan
             </h1>
             <p className={styles.greetingSubtitle}>
-              Review, update and manage all your insurance policies in one place
+              Review and manage all your insurance policies in one secure place
             </p>
           </div>
           <div className={styles.badgeArea}>
