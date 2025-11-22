@@ -70,8 +70,16 @@
 }
 
 @media screen and (max-width: 900px) {
-  .page {
+  .heroSection {
     padding: 2rem 2%;
+  }
+
+  .greetingTitle {
+    font-size: 2rem;
+  }
+
+  .contentWrapper {
+    padding: 0 2%;
     gap: 2rem;
   }
 
@@ -82,18 +90,25 @@
   }
 
   .title {
-    font-size: 2.4rem;
-    font-weight: 800;
+    font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .page {
+  .heroSection {
     padding: 1.5rem 2%;
+  }
+
+  .greetingTitle {
+    font-size: 1.6rem;
+  }
+
+  .contentWrapper {
+    padding: 0 2%;
     gap: 1.6rem;
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 }
