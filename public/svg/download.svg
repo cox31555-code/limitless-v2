@@ -4,10 +4,10 @@
 <path d="M29.3967 0.597412H0.59668V29.3974H29.3967V0.597412Z" fill="white"/>
 </mask>
 <g mask="url(#mask0_93_1024)">
-<path d="M11.4043 13.796V20.996L13.8043 18.596" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.401 20.9983L9.00098 18.5983" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M27.001 12.5976V18.5976C27.001 24.5976 24.601 26.9976 18.601 26.9976H11.401C5.40098 26.9976 3.00098 24.5976 3.00098 18.5976V11.3976C3.00098 5.39756 5.40098 2.99756 11.401 2.99756H17.401" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M27.0043 12.5976H22.2043C18.6043 12.5976 17.4043 11.3976 17.4043 7.79756V2.99756L27.0043 12.5976Z" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.4043 13.796V20.996L13.8043 18.596" stroke="#003d6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.401 20.9983L9.00098 18.5983" stroke="#003d6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.001 12.5976V18.5976C27.001 24.5976 24.601 26.9976 18.601 26.9976H11.401C5.40098 26.9976 3.00098 24.5976 3.00098 18.5976V11.3976C3.00098 5.39756 5.40098 2.99756 11.401 2.99756H17.401" stroke="#003d6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.0043 12.5976H22.2043C18.6043 12.5976 17.4043 11.3976 17.4043 7.79756V2.99756L27.0043 12.5976Z" stroke="#003d6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 </g>
 <defs>
