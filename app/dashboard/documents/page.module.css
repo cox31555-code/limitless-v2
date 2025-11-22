@@ -99,6 +99,7 @@
   margin: 0;
 }
 
+/* Media Queries */
 @media screen and (max-width: 900px) {
   .heroSection {
     flex-direction: column;
