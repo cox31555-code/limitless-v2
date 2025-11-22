@@ -514,6 +514,21 @@
     padding: 1.5rem 2%;
   }
 
+  .heroBanner {
+    padding: 1.8rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+
   .headerContent {
     flex-direction: column;
     align-items: flex-start;
@@ -534,10 +549,6 @@
 
   .dropdown {
     min-width: 100%;
-  }
-
-  .statsSection {
-    grid-template-columns: 1fr 1fr;
   }
 
   .sectionTitle {
