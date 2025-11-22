@@ -22,11 +22,10 @@
 .headerContent {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1400px;
+  max-width: auto;
+  width: 100%;
   margin: 0 auto;
   gap: 2rem;
-  width: 100%;
 }
 
 .logoWrapper {
