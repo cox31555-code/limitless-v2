@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect, useMemo } from "react";
 import Table from "./table/Table";
 import styles from "./policyPageClient.module.css";
 import { useRouter } from "next/navigation";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 import { mockPolicies } from "../../mockPoliciesData";
 
 const PolicyPageClient = ({
