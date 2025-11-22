@@ -1,9 +1,9 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.875rem;
   margin: 0;
-  padding: 0 4.4% 2rem;
+  padding: 0.0625rem 4.4% 1.25rem;
   width: 100%;
   position: relative;
   max-width: 1400px;
