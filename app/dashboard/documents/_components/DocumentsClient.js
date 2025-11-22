@@ -44,10 +44,9 @@ export default function DocumentsClient({ insurances }) {
           document: "Certificate of Motor Insurance",
           documentNumber: formatDate(selectedInsurance.createdAt),
           documentType: (
-            <DownloadButton
+            <DocumentActions
               insuranceId={selectedInsurance._id}
               pdfType="certificate"
-              label="Download"
             />
           ),
         },
@@ -55,10 +54,9 @@ export default function DocumentsClient({ insurances }) {
           document: "Policy Schedule",
           documentNumber: formatDate(selectedInsurance.createdAt),
           documentType: (
-            <DownloadButton
+            <DocumentActions
               insuranceId={selectedInsurance._id}
               pdfType="product-info"
-              label="Download"
             />
           ),
         },
@@ -66,10 +64,9 @@ export default function DocumentsClient({ insurances }) {
           document: "Statement of Fact",
           documentNumber: formatDate(selectedInsurance.createdAt),
           documentType: (
-            <DownloadButton
+            <DocumentActions
               insuranceId={selectedInsurance._id}
               pdfType="statement"
-              label="Download"
             />
           ),
         },
