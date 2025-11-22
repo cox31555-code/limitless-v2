@@ -126,6 +126,12 @@
   line-height: 140%;
 }
 
+.policiesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .top {
   display: flex;
   justify-content: space-between;
