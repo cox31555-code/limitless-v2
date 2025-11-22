@@ -28,20 +28,8 @@ const PolicyPageClient = ({
   const [isExpiredExpanded, setIsExpiredExpanded] = useState(false);
   const dropdownRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const handleOptionClick = (path) => {
-    setIsDropdownOpen(false);
-    router.push(path);
+  const handleCreatePolicy = () => {
+    setIsInsuranceModalOpen(true);
   };
 
   const totalExpired = expiredPolicies?.length || 0;
