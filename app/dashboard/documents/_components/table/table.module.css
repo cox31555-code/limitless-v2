@@ -134,31 +134,32 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
   padding: 2rem;
 }
 
 .label {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #999;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
 }
 
 .value {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #0052a3;
   margin: 0;
-  line-height: 120%;
+  line-height: 130%;
 }
 
 .date {
-  font-size: 1rem;
-  color: #999;
+  font-size: 1.1rem;
+  color: #666;
   margin: 0.5rem 0 0 0;
+  font-weight: 500;
 }
 
 /* Responsive Design */
