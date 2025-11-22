@@ -56,11 +56,17 @@ const page = async ({ params }) => {
 
   return (
     <div className={styles.page}>
-      <div className={styles.header}>
-        <h1 className={styles.pageTitle}>Policy summary</h1>
-        <p className={styles.policyNumber}>Policy no: {insurance.policyNumber}</p>
+      <div className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <div className={styles.greetingArea}>
+            <h1 className={styles.greetingTitle}>Policy summary</h1>
+            <p className={styles.greetingSubtitle}>Policy no: {insurance.policyNumber}</p>
+          </div>
+        </div>
       </div>
-      <PolicyDetailsReview policy={insurance} />
+      <div className={styles.contentWrapper}>
+        <PolicyDetailsReview policy={insurance} />
+      </div>
     </div>
   );
 };
