@@ -2,7 +2,7 @@
 
 'use client';
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./policyDetailsReview.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
@@ -20,12 +20,6 @@ const PolicyDetailsReview = ({ policy }) => {
     driverDetails: false,
     documents: false,
   });
-
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const formatValue = (value) => {
     if (value === null || value === undefined || value === "") return "—";
