@@ -213,12 +213,13 @@
 }
 
 .expiredCard .viewButton {
-  color: #0052a3;
-  text-decoration-color: #0052a3;
+  background: #0052a3;
+  color: #ffffff;
 }
 
 .expiredCard .viewButton:hover {
-  background: rgba(0, 52, 163, 0.08);
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.2);
 }
 
 .expiredTitle {
