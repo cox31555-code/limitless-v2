@@ -158,7 +158,7 @@ const PolicyDetailsReview = ({ policy }) => {
               </div>
             </>
           )}
-        </>)}
+        </>, true)}
 
         {/* COVER DETAILS SECTION */}
         {renderSectionWithButton("Cover Details",
