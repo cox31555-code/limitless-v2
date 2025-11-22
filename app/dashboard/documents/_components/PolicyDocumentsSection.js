@@ -27,12 +27,6 @@ export default function PolicyDocumentsSection({ selectedInsurance }) {
   return (
     <div className={styles.section}>
       <div className={styles.header}>
-        <Image
-          src="/svg/pdf-doc.svg"
-          alt="documents"
-          width={32}
-          height={32}
-        />
         <h3 className={styles.title}>Policy documents</h3>
       </div>
 
