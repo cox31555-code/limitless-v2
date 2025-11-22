@@ -2,16 +2,10 @@
 
 import { useState } from "react";
 import styles from "../page.module.css";
-import Table from "./table/Table";
 import Booklets from "./booklets/Booklets";
 import Dropdown from "./dropdown/Dropdown";
-import DocumentActions from "./DocumentActions";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+import PolicyDocumentsSection from "./PolicyDocumentsSection";
+import ReceiveDocumentsSection from "./ReceiveDocumentsSection";
 
 export default function DocumentsClient({ insurances }) {
   const [selectedInsuranceId, setSelectedInsuranceId] = useState(
@@ -26,59 +20,6 @@ export default function DocumentsClient({ insurances }) {
   const selectedInsurance = insurances.find(
     (ins) => ins._id === selectedInsuranceId
   );
-
-  // Format data for table - 3 documents per insurance
-  const formatDate = (dateString) => {
-    if (!dateString) return "—";
-    try {
-      const date = new Date(dateString);
-      return date.toLocaleDateString("en-GB");
-    } catch (e) {
-      return "—";
-    }
-  };
-
-  const tableData = selectedInsurance
-    ? [
-        {
-          document: "Certificate of Motor Insurance",
-          documentNumber: formatDate(selectedInsurance.createdAt),
-          documentType: (
-            <DocumentActions
-              insuranceId={selectedInsurance._id}
-              pdfType="certificate"
-            />
-          ),
-        },
-        {
-          document: "Policy Schedule",
-          documentNumber: formatDate(selectedInsurance.createdAt),
-          documentType: (
-            <DocumentActions
-              insuranceId={selectedInsurance._id}
-              pdfType="product-info"
-            />
-          ),
-        },
-        {
-          document: "Statement of Fact",
-          documentNumber: formatDate(selectedInsurance.createdAt),
-          documentType: (
-            <DocumentActions
-              insuranceId={selectedInsurance._id}
-              pdfType="statement"
-            />
-          ),
-        },
-      ]
-    : [];
-
-  const getDisplayText = (insurance) => {
-    const policyNumber = insurance._id.toString().slice(-8).toUpperCase();
-    const vehicleMake = insurance.vehicleDetails?.make || "N/A";
-    const vehicleModel = insurance.vehicleDetails?.model || "N/A";
-    return `LC-${policyNumber} - ${vehicleMake} ${vehicleModel}`;
-  };
 
   return (
     <div className={styles.contentWrapper}>
@@ -99,12 +40,11 @@ export default function DocumentsClient({ insurances }) {
           <h2 className={styles.documentsTitle}>Your documents</h2>
         </div>
 
-        {tableData.length > 0 ? (
-          <Table
-            title=""
-            columns={["Document", "Last updated", "Action"]}
-            data={tableData}
-          />
+        {selectedInsurance ? (
+          <div className={styles.sectionsContainer}>
+            <PolicyDocumentsSection selectedInsurance={selectedInsurance} />
+            <ReceiveDocumentsSection />
+          </div>
         ) : (
           <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
             <p>No insurance policies found.</p>
