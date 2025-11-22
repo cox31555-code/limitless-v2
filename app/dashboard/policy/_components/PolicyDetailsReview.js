@@ -163,7 +163,7 @@ const PolicyDetailsReview = ({ policy }) => {
                 <span className={styles.detailValue}>Not included</span>
               </div>
               <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>Guaranteed hire car if your car's stolen, written off or being repaired</span>
+                <span className={styles.detailLabel}>European coverage</span>
                 <span className={styles.detailValue}>Not included</span>
               </div>
             </div>
