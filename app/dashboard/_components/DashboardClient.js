@@ -243,6 +243,7 @@ const DashboardClient = () => {
               <div className={styles.menuItemContent}>
                 <p className={styles.menuItemLabel}>{item.label}</p>
                 <p className={styles.menuItemDescription}>{item.description}</p>
+                {item.hours && <p className={styles.menuItemHours}>{item.hours}</p>}
               </div>
               <div className={styles.menuItemArrow}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
