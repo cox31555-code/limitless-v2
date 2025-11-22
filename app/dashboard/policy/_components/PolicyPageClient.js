@@ -159,14 +159,14 @@ const PolicyPageClient = ({
         </section>
       )}
 
-      {/* Expired/Unpaid Policies Section */}
+      {/* Expired Policies Section */}
       {expiredPolicies && expiredPolicies.length > 0 && (
         <section className={styles.policiesSection}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.expiredSectionTitle}>Expired/Unpaid Policies</h2>
+            <h2 className={styles.expiredSectionTitle}>Expired Policies</h2>
           </div>
           <Table
-            title="Expired/Unpaid Policies"
+            title="Expired Policies"
             tableType="inactive"
             columns={[
               "Policy Number",
@@ -177,7 +177,7 @@ const PolicyPageClient = ({
             ]}
             data={expiredPolicies}
             showViewButton={true}
-            theme="expired"
+            theme="default"
             showTitle={false}
           />
         </section>
