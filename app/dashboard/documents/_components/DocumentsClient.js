@@ -76,35 +76,61 @@ export default function DocumentsClient({ insurances }) {
       ]
     : [];
 
+  // Format vehicle info for display
+  const getDisplayInfo = () => {
+    if (!selectedInsurance) return "No policy selected";
+    const vehicle = selectedInsurance?.vehicleDetails;
+    const firstName = selectedInsurance?.userDetails?.firstName || "User";
+    if (vehicle?.registrationNumber) {
+      return `${vehicle.registrationNumber}${vehicle.make && vehicle.model ? ` - ${vehicle.make} ${vehicle.model}` : ""}`;
+    }
+    return `${firstName}'s Policy`;
+  };
+
+  const getPolicyNumber = () => {
+    return selectedInsurance?.policyNumber || selectedInsurance?._id?.slice(-8).toUpperCase() || "N/A";
+  };
+
   return (
-    <div className={styles.page}>
-      <div className={styles.top}>
-        <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Your Policy documents
-        </h3>
-        <Dropdown
-          insurances={insurances}
-          selectedInsuranceId={selectedInsuranceId}
-          onInsuranceChange={handleInsuranceChange}
-        />
+    <>
+      <div className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <div className={styles.greetingArea}>
+            <h1 className={styles.greetingTitle}>Policy documents</h1>
+            <p className={styles.greetingSubtitle}>Policy no: {getPolicyNumber()}</p>
+          </div>
+        </div>
       </div>
 
-      {tableData.length > 0 ? (
-        <Table
-          title="Policy documents"
-          columns={["Policy Number", "Document number", "Document type"]}
-          data={tableData}
-        />
-      ) : (
-        <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
-          <p>No insurance policies found.</p>
-          <p style={{ fontSize: "14px", marginTop: "8px" }}>
-            Please complete your insurance application to view your documents.
-          </p>
+      <div className={styles.contentWrapper}>
+        <div className={styles.top}>
+          <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+            Your documents
+          </h3>
+          <Dropdown
+            insurances={insurances}
+            selectedInsuranceId={selectedInsuranceId}
+            onInsuranceChange={handleInsuranceChange}
+          />
         </div>
-      )}
 
-      <Booklets />
-    </div>
+        {tableData.length > 0 ? (
+          <Table
+            title="Policy documents"
+            columns={["Document", "Date", "Action"]}
+            data={tableData}
+          />
+        ) : (
+          <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
+            <p>No insurance policies found.</p>
+            <p style={{ fontSize: "14px", marginTop: "8px" }}>
+              Please complete your insurance application to view your documents.
+            </p>
+          </div>
+        )}
+
+        <Booklets />
+      </div>
+    </>
   );
 }
