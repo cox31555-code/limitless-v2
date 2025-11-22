@@ -164,22 +164,23 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 0.8rem;
-    flex-wrap: wrap;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    margin-bottom: 1.5rem;
   }
 
   .dropdownWrapper {
-    max-width: 100%;
-    min-width: auto;
     flex: 1;
-  }
-
-  .selectedPolicyLabel {
+    min-width: 0;
     width: auto;
   }
 
+  .selectedPolicyLabel {
+    flex-shrink: 0;
+  }
+
   .selectedPolicyTitle {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
 
