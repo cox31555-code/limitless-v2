@@ -635,19 +635,8 @@
   }
 
   .instalmentInfo {
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1.2rem;
     gap: 0.7rem;
-  }
-
-  .instalmentIconWrapper {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-  }
-
-  .instalmentIcon {
-    width: 16px;
-    height: 16px;
   }
 
   .instalmentText {
