@@ -93,6 +93,7 @@
   z-index: 2;
   flex: 1;
   gap: 3rem;
+  margin-left: 51px;
 }
 
 .greetingArea {
