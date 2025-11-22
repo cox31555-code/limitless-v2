@@ -489,7 +489,7 @@
   padding: 2.5rem;
   display: flex;
   align-items: center;
-  height: 200px;
+  min-height: 150px;
 }
 
 .bannerText {
