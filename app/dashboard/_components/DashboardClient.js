@@ -80,37 +80,28 @@ const DashboardClient = () => {
 
   const MenuIcon = ({ type }) => {
     const icons = {
-      policy: (
+      chat: (
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="40" y="30" width="120" height="140" rx="8" fill="none" stroke="currentColor" strokeWidth="8"/>
-          <line x1="60" y1="60" x2="140" y2="60" stroke="currentColor" strokeWidth="4"/>
-          <line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" strokeWidth="4"/>
-          <line x1="60" y1="120" x2="120" y2="120" stroke="currentColor" strokeWidth="4"/>
+          <path d="M 40 40 L 160 40 L 160 140 L 60 140 L 40 160 Z" fill="none" stroke="currentColor" strokeWidth="8"/>
+          <line x1="60" y1="70" x2="140" y2="70" stroke="currentColor" strokeWidth="4"/>
+          <line x1="60" y1="100" x2="140" y2="100" stroke="currentColor" strokeWidth="4"/>
         </svg>
       ),
-      document: (
+      phone: (
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 60 40 L 140 40 L 140 160 L 60 160 Z" fill="none" stroke="currentColor" strokeWidth="8"/>
-          <line x1="80" y1="70" x2="120" y2="70" stroke="currentColor" strokeWidth="4"/>
-          <line x1="80" y1="100" x2="120" y2="100" stroke="currentColor" strokeWidth="4"/>
-          <line x1="80" y1="130" x2="120" y2="130" stroke="currentColor" strokeWidth="4"/>
+          <rect x="50" y="30" width="100" height="140" rx="12" fill="none" stroke="currentColor" strokeWidth="8"/>
+          <circle cx="100" cy="155" r="8" fill="currentColor"/>
+          <path d="M 70 60 Q 100 100 130 140" fill="none" stroke="currentColor" strokeWidth="4"/>
         </svg>
       ),
-      claims: (
+      email: (
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="8"/>
-          <path d="M 75 100 L 95 120 L 130 80" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round"/>
-        </svg>
-      ),
-      submit: (
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 100 40 L 160 80 L 160 160 L 40 160 L 40 80 Z" fill="none" stroke="currentColor" strokeWidth="8"/>
-          <line x1="100" y1="80" x2="100" y2="130" stroke="currentColor" strokeWidth="6"/>
-          <line x1="75" y1="105" x2="125" y2="105" stroke="currentColor" strokeWidth="6"/>
+          <rect x="40" y="50" width="120" height="100" rx="8" fill="none" stroke="currentColor" strokeWidth="8"/>
+          <path d="M 40 50 L 100 100 L 160 50" fill="none" stroke="currentColor" strokeWidth="6"/>
         </svg>
       ),
     };
-    return icons[type] || icons.policy;
+    return icons[type] || icons.chat;
   };
 
   return (
