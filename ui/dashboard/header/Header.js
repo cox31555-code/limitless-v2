@@ -107,8 +107,23 @@ const Header = ({ page }) => {
                 {item.label}
               </Link>
             ))}
-            <div style={{ fontSize: "1.15rem", padding: "3px 2px" }}>
-              Logout
+            <div
+              style={{
+                display: "block",
+                borderBottomStyle: "solid",
+                borderBottomWidth: "1px",
+                borderColor: "rgba(255, 255, 255, 0.8) rgba(255, 255, 255, 0.8) rgba(0, 0, 0, 0)",
+                color: "rgba(255, 255, 255, 0.8)",
+                fontSize: "11.5px",
+                fontWeight: "500",
+                position: "relative",
+                textWrap: "nowrap",
+                transitionDuration: "0.2s",
+                whiteSpace: "nowrap",
+                padding: "3px 2px",
+              }}
+            >
+              <p>Log out</p>
             </div>
           </nav>
           <button
