@@ -9,7 +9,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
   const [isDownloading, setIsDownloading] = useState(false);
 
   const handleView = async () => {
-    setIsDownloading(true);
+    setIsViewing(true);
 
     try {
       const downloadUrl = `/api/download-pdf/${insuranceId}/${pdfType}`;
@@ -47,7 +47,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
       }
 
       const blob = await response.blob();
-      
+
       if (blob.size === 0) {
         toast.error("Downloaded file is empty.");
         return;
@@ -55,7 +55,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
 
       const pdfBlob = new Blob([blob], { type: "application/pdf" });
       const url = window.URL.createObjectURL(pdfBlob);
-      
+
       window.open(url, "_blank");
 
       setTimeout(() => {
@@ -67,7 +67,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
       console.error("View error:", error);
       toast.error("Failed to open PDF");
     } finally {
-      setIsDownloading(false);
+      setIsViewing(false);
     }
   };
 
