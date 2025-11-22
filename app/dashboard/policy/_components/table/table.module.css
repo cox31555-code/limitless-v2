@@ -70,7 +70,7 @@
 }
 
 .carTitle {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0 0 0.5rem 0;
@@ -120,7 +120,7 @@
 }
 
 .infoValue {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #0052a3;
   font-weight: 700;
   margin: 0;
@@ -175,7 +175,11 @@
   }
 
   .carTitle {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+  }
+
+  .infoValue {
+    font-size: 1.2rem;
   }
 
   .viewButton {
@@ -212,7 +216,11 @@
   }
 
   .carTitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .infoValue {
+    font-size: 1.1rem;
   }
 
   .carMeta {
