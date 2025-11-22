@@ -275,7 +275,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
   padding-top: 1.2rem;
-  border-top: 1px solid #d4e4f7;
+  margin-top: 0.8rem;
 }
 
 .excessItemBlock {
