@@ -397,18 +397,18 @@
 .menuItemIcon {
   width: 60px;
   height: 60px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0eb9ff;
+  color: rgba(255, 255, 255, 0.9);
   transition: all 0.2s ease;
 }
 
 .menuItem:hover .menuItemIcon {
-  background: #0eb9ff;
-  color: #002147;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
   transform: scale(1.05);
 }
 
