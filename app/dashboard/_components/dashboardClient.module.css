@@ -511,6 +511,8 @@
   color: #0052a3;
   margin: 0;
   line-height: 120%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .bannerDescription {
