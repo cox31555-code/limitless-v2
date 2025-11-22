@@ -129,23 +129,21 @@
 .viewButton {
   width: 100%;
   padding: 1rem 1.5rem;
-  background: transparent;
+  background: #f0f4fb;
   color: #0052a3;
   border: none;
-  border-bottom: 1px solid #0052a3;
   border-radius: 0;
   font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
   line-height: 130%;
   text-align: center;
   display: block;
 }
 
 .viewButton:hover {
-  color: #003d7a;
-  border-bottom-color: #003d7a;
+  background: #dce7f5;
 }
 
 /* Responsive Design */
