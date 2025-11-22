@@ -86,8 +86,7 @@
   .container {
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem;
-    gap: 1.6rem;
+    gap: 1.2rem;
   }
 
   .first {
@@ -99,36 +98,39 @@
     justify-content: flex-start;
   }
 
-  .download {
-    width: 4.4rem;
-    height: 4.4rem;
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
   }
 
   .downloadText {
-    font-size: 1.3rem;
+    font-size: 0.95rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 1.6rem;
-    gap: 1.2rem;
+    padding: 1.5rem;
+    gap: 1rem;
   }
 
   .title {
-    font-size: 1.4rem;
-  }
-
-  .description {
     font-size: 1.1rem;
   }
 
+  .description {
+    font-size: 0.9rem;
+  }
+
   .download {
-    width: 4rem;
-    height: 4rem;
+    width: 48px;
+    height: 48px;
   }
 
   .downloadText {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 }
