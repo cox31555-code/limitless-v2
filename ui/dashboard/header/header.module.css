@@ -1,7 +1,7 @@
 .headerContainer {
   background: #000822;
   border-bottom: 2px solid #0052a3;
-  padding: 1.2rem 12.4%;
+  padding: 1.2rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,6 +11,8 @@
   overflow: visible;
   min-height: auto;
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .headerContainer.menuOpen {
@@ -23,9 +25,9 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1400px;
-  margin: 0 auto;
-  gap: 2rem;
   width: 100%;
+  gap: 1rem;
+  padding: 0 2rem;
 }
 
 .logoWrapper {
