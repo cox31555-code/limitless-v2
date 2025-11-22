@@ -167,8 +167,7 @@
     width: 100%;
   }
 
-  .selectedPolicyCard {
-    min-width: auto;
+  .selectedPolicyLabel {
     width: 100%;
   }
 }
