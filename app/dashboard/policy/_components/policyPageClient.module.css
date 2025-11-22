@@ -286,11 +286,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .container {
-    gap: 2rem;
-    padding: 1.5rem 2%;
-  }
-
   .heroSection {
     flex-direction: column;
     text-align: center;
