@@ -2,7 +2,7 @@ import "../globals.css";
 import { Poppins } from "next/font/google";
 import Header from "@/ui/dashboard/header/Header";
 import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
-import Script from "next/script";
+import ChatWidget from "@/ui/layout/ChatWidget";
 
 const poppins = Poppins({
   subsets: ["latin"],
