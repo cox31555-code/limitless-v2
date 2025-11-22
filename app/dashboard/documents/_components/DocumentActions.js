@@ -161,7 +161,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
     >
       <button
         onClick={handleView}
-        disabled={isDownloading}
+        disabled={isViewing}
         style={{
           display: "inline-flex",
           alignItems: "center",
@@ -172,25 +172,25 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           lineHeight: "130%",
           background: "transparent",
           border: "none",
-          cursor: isDownloading ? "not-allowed" : "pointer",
+          cursor: isViewing ? "not-allowed" : "pointer",
           padding: "0",
           transition: "color 0.2s ease",
-          opacity: isDownloading ? 0.7 : 1,
+          opacity: isViewing ? 0.7 : 1,
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
-          if (!isDownloading) {
+          if (!isViewing) {
             e.currentTarget.style.color = "#003d7a";
           }
         }}
         onMouseLeave={(e) => {
-          if (!isDownloading) {
+          if (!isViewing) {
             e.currentTarget.style.color = "#0052a3";
           }
         }}
       >
         <Image src="/svg/pdf.svg" alt="pdf" width={24} height={24} />
-        <span>{isDownloading ? "Loading..." : "View Document"}</span>
+        <span>{isViewing ? "Loading..." : "View Document"}</span>
       </button>
 
       <button
