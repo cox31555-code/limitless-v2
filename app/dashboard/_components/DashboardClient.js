@@ -150,8 +150,9 @@ const DashboardClient = () => {
         )}
       </section>
 
-      {/* Policy Card Section with Promotional Banners */}
-      <section className={styles.policiesSection}>
+      <div className={styles.container}>
+        {/* Policy Card Section with Promotional Banners */}
+        <section className={styles.policiesSection}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Your Active Policies</h2>
         </div>
@@ -231,11 +232,11 @@ const DashboardClient = () => {
               </button>
             </div>
           </div>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Menu Section */}
-      <section className={styles.menuSection}>
+        {/* Menu Section */}
+        <section className={styles.menuSection}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Quick Actions</h2>
         </div>
@@ -262,9 +263,8 @@ const DashboardClient = () => {
               </div>
             </button>
           ))}
-        </div>
-      </section>
-      <div className={styles.container}>
+          </div>
+        </section>
       </div>
     </>
   );
