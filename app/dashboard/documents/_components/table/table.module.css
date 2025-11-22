@@ -213,21 +213,25 @@
   }
 
   .tableBody {
-    display: none;
-  }
-
-  .mobile {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.2rem;
   }
 
+  .tableRow {
+    padding: 1.4rem;
+  }
+
+  .mobile {
+    display: none;
+  }
+
   .mobileTitle {
-    display: block;
+    display: none;
   }
 
   .card {
-    display: flex;
+    display: none;
   }
 
   .cardContent {
