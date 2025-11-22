@@ -298,7 +298,7 @@
 
   .policySection {
     width: 100%;
-    gap: 0.8rem;
+    gap: 1rem;
     order: 2;
     margin-left: 0;
   }
@@ -306,6 +306,7 @@
   .dropdownWrapper {
     max-width: 100%;
     width: 100%;
+    max-width: none;
   }
 
   .selectedPolicyTitle {
