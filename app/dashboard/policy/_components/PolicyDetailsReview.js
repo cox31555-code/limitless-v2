@@ -107,10 +107,13 @@ const PolicyDetailsReview = ({ policy }) => {
           <svg
             className={styles.instalmentIcon}
             viewBox="0 0 24 24"
-            fill="currentColor"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
           >
             <circle cx="12" cy="12" r="10" />
-            <text x="12" y="16" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">!</text>
+            <line x1="12" y1="8" x2="12" y2="13" />
+            <circle cx="12" cy="17" r="0.5" fill="currentColor" />
           </svg>
         </div>
         <span className={styles.instalmentText}>
