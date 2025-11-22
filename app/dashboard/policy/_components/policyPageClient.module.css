@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
   padding: 2rem 4.4%;
   max-width: 1400px;
   margin: 0 auto;
@@ -24,6 +24,13 @@
   gap: 2rem;
 }
 
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
 .pageTitle {
   font-size: 2.4rem;
   font-weight: 700;
@@ -31,6 +38,13 @@
   margin: 0;
   line-height: 120%;
   letter-spacing: -0.3px;
+}
+
+.headerSubtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
 }
 
 /* Create Button & Dropdown */
@@ -181,6 +195,72 @@
   transform: translateX(4px);
 }
 
+/* Stats Section */
+.statsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.statCard {
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  padding: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
+}
+
+.statCard:hover {
+  border-color: #0052a3;
+  box-shadow: 0 4px 12px rgba(0, 61, 122, 0.1);
+  transform: translateY(-2px);
+}
+
+.statIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #e3f1fe;
+  border-radius: 10px;
+  color: #0052a3;
+  flex-shrink: 0;
+}
+
+.statIcon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: #999;
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  color: #0052a3;
+  margin: 0;
+  font-weight: 700;
+  line-height: 120%;
+}
+
 /* Policies Section */
 .policiesSection {
   display: flex;
@@ -188,10 +268,16 @@
   gap: 1.5rem;
 }
 
-.sectionHeader {
+.sectionHeaderWrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.8rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .sectionTitle {
@@ -200,6 +286,26 @@
   color: #0052a3;
   margin: 0;
   line-height: 120%;
+}
+
+.sectionBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  background: #e3f1fe;
+  color: #0052a3;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.sectionDescription {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
 }
 
 /* Expandable Section for Expired Policies */
@@ -243,7 +349,7 @@
   margin: 0;
 }
 
-.expandableCount {
+.expandableBadge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -288,7 +394,7 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .container {
-    gap: 3rem;
+    gap: 2.5rem;
     padding: 2rem 3%;
   }
 
@@ -300,14 +406,14 @@
     font-size: 1.5rem;
   }
 
-  .expandableTitle .sectionTitle {
-    font-size: 1.2rem;
+  .statsSection {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
 @media screen and (max-width: 900px) {
   .container {
-    gap: 2.5rem;
+    gap: 2rem;
     padding: 1.5rem 2%;
   }
 
@@ -320,6 +426,10 @@
     font-size: 1.8rem;
   }
 
+  .headerSubtitle {
+    font-size: 0.9rem;
+  }
+
   .createButton {
     width: 100%;
     justify-content: center;
@@ -327,6 +437,10 @@
 
   .dropdown {
     min-width: 100%;
+  }
+
+  .statsSection {
+    grid-template-columns: 1fr 1fr;
   }
 
   .sectionTitle {
@@ -344,7 +458,7 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 1rem 4%;
   }
 
@@ -356,18 +470,41 @@
     font-size: 1.5rem;
   }
 
+  .headerSubtitle {
+    font-size: 0.85rem;
+  }
+
   .createButton {
     width: 100%;
     font-size: 0.9rem;
     padding: 0.7rem 1.2rem;
   }
 
-  .sectionTitle {
-    font-size: 1.1rem;
+  .statsSection {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .expandableTitle .sectionTitle {
-    font-size: 1rem;
+  .statCard {
+    padding: 1.2rem;
+  }
+
+  .statIcon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .statIcon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
   }
 
   .dropdown {
@@ -391,7 +528,7 @@
     padding: 1.2rem;
   }
 
-  .expandableCount {
+  .expandableBadge {
     width: 24px;
     height: 24px;
     font-size: 0.75rem;
