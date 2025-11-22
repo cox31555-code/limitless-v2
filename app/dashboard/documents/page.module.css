@@ -99,13 +99,11 @@
 }
 
 @media screen and (max-width: 900px) {
-  .page {
-    margin: -1.5625rem 0 1.75rem;
-  }
-
   .heroSection {
-    padding: 24px 60px;
-    margin-bottom: 2.4rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem calc(50vw - 50%);
+    gap: 1.5rem;
   }
 
   .heroContent {
@@ -128,7 +126,7 @@
   }
 
   .contentWrapper {
-    padding: 0 2%;
+    padding: 1.5rem 2%;
     gap: 2rem;
   }
 
@@ -152,7 +150,6 @@
   .heroSection {
     padding: 1.5rem;
     gap: 1.2rem;
-    margin-bottom: 2.4rem;
   }
 
   .greetingTitle {
@@ -164,7 +161,7 @@
   }
 
   .contentWrapper {
-    padding: 0 4%;
+    padding: 1rem 4%;
     gap: 1.6rem;
   }
 
