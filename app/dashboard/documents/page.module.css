@@ -1,15 +1,22 @@
 .page {
   display: flex;
   flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: -1.5625rem 0 1.75rem;
   width: 100%;
   position: relative;
+  z-index: 2;
 }
 
 .heroSection {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   padding: 3rem 4.4%;
   color: white;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 3.2rem;
+  overflow: hidden;
 }
 
 .heroContent {
