@@ -100,24 +100,25 @@
 }
 
 .logoutButton {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 1.15rem;
-  font-weight: 500;
-  padding: 3px 2px;
-  border-radius: 0;
-  transition: all 0.2s ease;
-  position: relative;
-  white-space: nowrap;
   background: transparent;
   border: none;
-  border-bottom: 1px solid transparent;
+  padding: 0;
   cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logoutButton:hover {
-  color: #ffffff;
-  border-bottom-color: #ffffff;
+.logoutButton svg {
+  width: 20px;
+  height: 20px;
+  stroke: rgba(255, 255, 255, 0.8);
+}
+
+.logoutButton:hover svg {
+  stroke: #ffffff;
 }
 
 .mobileMenuWrapper {
