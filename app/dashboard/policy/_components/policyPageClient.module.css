@@ -83,8 +83,7 @@
 }
 
 .badgeArea {
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
 .allianzBadge {
