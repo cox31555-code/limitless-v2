@@ -73,6 +73,13 @@ export default function DocumentsClient({ insurances }) {
       ]
     : [];
 
+  const getDisplayText = (insurance) => {
+    const policyNumber = insurance._id.toString().slice(-8).toUpperCase();
+    const vehicleMake = insurance.vehicleDetails?.make || "N/A";
+    const vehicleModel = insurance.vehicleDetails?.model || "N/A";
+    return `LC-${policyNumber} - ${vehicleMake} ${vehicleModel}`;
+  };
+
   return (
     <div className={styles.contentWrapper}>
       <section className={styles.policiesSection}>
@@ -81,13 +88,13 @@ export default function DocumentsClient({ insurances }) {
             <h2 className={styles.sectionTitle}>Your documents</h2>
             <span className={styles.sectionBadge}>{tableData.length}</span>
           </div>
-          <div className={styles.dropdownWrapper}>
-            <Dropdown
-              insurances={insurances}
-              selectedInsuranceId={selectedInsuranceId}
-              onInsuranceChange={handleInsuranceChange}
-            />
-          </div>
+          {selectedInsurance && (
+            <div className={styles.selectedPolicyCard}>
+              <span className={styles.selectedPolicyText}>
+                {getDisplayText(selectedInsurance)}
+              </span>
+            </div>
+          )}
         </div>
 
         {tableData.length > 0 ? (
