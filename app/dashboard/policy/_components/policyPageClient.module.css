@@ -290,7 +290,11 @@
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.05rem;
   }
 }
 
@@ -332,7 +336,11 @@
   }
 
   .sectionTitle {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+  }
+
+  .sectionDescription {
+    font-size: 1rem;
   }
 
   .expandableHeader {
@@ -379,7 +387,17 @@
   }
 
   .sectionTitle {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.95rem;
+  }
+
+  .sectionBadge {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
   }
 
   .expandableHeader {
