@@ -98,6 +98,20 @@
   flex-wrap: wrap;
 }
 
+.selectedPolicyLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selectedPolicyTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0;
+  line-height: 130%;
+}
+
 .sectionTitle {
   font-size: 2.2rem;
   font-weight: 700;
