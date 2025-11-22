@@ -520,6 +520,8 @@
   color: #666;
   margin: 0;
   line-height: 150%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .bannerCta {
