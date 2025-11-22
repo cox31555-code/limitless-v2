@@ -1,11 +1,6 @@
 import React from "react";
-import dynamic from "next/dynamic";
+import PolicyDetailsReview from "../_components/PolicyDetailsReview";
 import styles from "./page.module.css";
-
-const PolicyDetailsReview = dynamic(
-  () => import("../_components/PolicyDetailsReview"),
-  { ssr: false }
-);
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
