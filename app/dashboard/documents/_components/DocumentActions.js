@@ -199,7 +199,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "8px",
+          gap: "0",
           color: "#0052a3",
           fontSize: "1rem",
           fontWeight: "600",
@@ -211,6 +211,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           transition: "color 0.2s ease",
           opacity: isDownloading ? 0.7 : 1,
           whiteSpace: "nowrap",
+          textDecoration: "underline",
         }}
         onMouseEnter={(e) => {
           if (!isDownloading) {
@@ -223,20 +224,6 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           }
         }}
       >
-        <div
-          style={{
-            width: "24px",
-            height: "24px",
-            borderRadius: "50%",
-            background: "#e3f1fe",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-          }}
-        >
-          <Image src="/svg/download.svg" alt="download" width={16} height={16} />
-        </div>
         <span>{isDownloading ? "Downloading..." : "Download"}</span>
       </button>
     </div>
