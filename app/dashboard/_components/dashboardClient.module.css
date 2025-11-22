@@ -466,7 +466,6 @@
 .menuItem:hover .menuItemArrow {
   opacity: 1;
   color: rgba(255, 255, 255, 0.9);
-  transform: translateX(4px);
 }
 
 .menuItemArrow svg {
