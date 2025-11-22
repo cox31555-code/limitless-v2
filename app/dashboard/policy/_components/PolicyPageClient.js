@@ -43,14 +43,22 @@ const PolicyPageClient = ({
     router.push(path);
   };
 
+  const totalExpired = expiredPolicies?.length || 0;
+  const totalActive = mockActivePolicies?.length || 0;
+
   return (
     <div className={styles.container}>
       {/* Header Section */}
       <section className={styles.headerSection}>
         <div className={styles.headerContent}>
-          <h1 className={`${styles.pageTitle} ${plusJakartaSans.className}`}>
-            Your Policy
-          </h1>
+          <div className={styles.headerText}>
+            <h1 className={`${styles.pageTitle} ${plusJakartaSans.className}`}>
+              Your Policy
+            </h1>
+            <p className={styles.headerSubtitle}>
+              Manage and view all your insurance policies
+            </p>
+          </div>
           <div className={styles.buttonWrapper} ref={dropdownRef}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -138,11 +146,60 @@ const PolicyPageClient = ({
         </div>
       </section>
 
+      {/* Stats Overview */}
+      <section className={styles.statsSection}>
+        <div className={styles.statCard}>
+          <div className={styles.statIcon}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+              <path d="M12.5 7H11v6l5.2 3.2"/>
+            </svg>
+          </div>
+          <div className={styles.statContent}>
+            <p className={styles.statLabel}>Active Policies</p>
+            <p className={styles.statValue}>{totalActive}</p>
+          </div>
+        </div>
+        {totalExpired > 0 && (
+          <div className={styles.statCard}>
+            <div className={styles.statIcon}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="6" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <div className={styles.statContent}>
+              <p className={styles.statLabel}>Expired Policies</p>
+              <p className={styles.statValue}>{totalExpired}</p>
+            </div>
+          </div>
+        )}
+        <div className={styles.statCard}>
+          <div className={styles.statIcon}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+              <path d="M9 11l3 3L20 5"/>
+            </svg>
+          </div>
+          <div className={styles.statContent}>
+            <p className={styles.statLabel}>Total Coverage</p>
+            <p className={styles.statValue}>{totalActive + totalExpired}</p>
+          </div>
+        </div>
+      </section>
+
       {/* Active Policies Section */}
       {mockActivePolicies.length > 0 && (
         <section className={styles.policiesSection}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Active Policies</h2>
+          <div className={styles.sectionHeaderWrapper}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Active Policies</h2>
+              <span className={styles.sectionBadge}>{totalActive}</span>
+            </div>
+            <p className={styles.sectionDescription}>
+              Your policies are currently active and providing coverage
+            </p>
           </div>
           <Table
             title="Active Policies"
@@ -170,7 +227,7 @@ const PolicyPageClient = ({
           >
             <div className={styles.expandableTitle}>
               <h2 className={styles.sectionTitle}>Expired Policies</h2>
-              <span className={styles.expandableCount}>{expiredPolicies.length}</span>
+              <span className={styles.expandableBadge}>{totalExpired}</span>
             </div>
             <svg 
               viewBox="0 0 24 24" 
