@@ -258,12 +258,17 @@
   }
 
   .sectionHeaderWrapper {
-    gap: 0.8rem;
-    align-items: flex-end;
+    gap: 0.6rem;
+    align-items: center;
   }
 
   .dropdownWrapper {
     max-width: 100%;
+    flex: 1;
+  }
+
+  .selectedPolicyTitle {
+    font-size: 0.9rem;
   }
 
   .top {
