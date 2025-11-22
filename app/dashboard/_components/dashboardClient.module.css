@@ -576,6 +576,7 @@
   cursor: pointer;
   padding: 0;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
 .nextButton svg {
