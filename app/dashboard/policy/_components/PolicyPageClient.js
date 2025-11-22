@@ -24,7 +24,7 @@ const PolicyPageClient = ({
   }, []);
 
   const router = useRouter();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
   const [isExpiredExpanded, setIsExpiredExpanded] = useState(false);
   const dropdownRef = useRef(null);
 
