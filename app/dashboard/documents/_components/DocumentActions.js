@@ -164,45 +164,31 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "10px",
-          color: "#ffffff",
+          gap: "8px",
+          color: "#0052a3",
           fontSize: "1rem",
           fontWeight: "600",
           lineHeight: "130%",
-          background: "#0052a3",
+          background: "transparent",
           border: "none",
-          borderRadius: "8px",
-          padding: "0.8rem 1.2rem",
           cursor: isDownloading ? "not-allowed" : "pointer",
-          transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+          padding: "0",
+          transition: "color 0.2s ease",
           opacity: isDownloading ? 0.7 : 1,
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
           if (!isDownloading) {
-            e.currentTarget.style.background = "#003d7a";
+            e.currentTarget.style.color = "#003d7a";
           }
         }}
         onMouseLeave={(e) => {
           if (!isDownloading) {
-            e.currentTarget.style.background = "#0052a3";
+            e.currentTarget.style.color = "#0052a3";
           }
         }}
       >
-        <div
-          style={{
-            width: "32px",
-            height: "32px",
-            borderRadius: "6px",
-            background: "rgba(255, 255, 255, 0.2)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-          }}
-        >
-          <Image src="/svg/pdf.svg" alt="pdf" width={18} height={18} />
-        </div>
+        <Image src="/svg/pdf.svg" alt="pdf" width={20} height={20} />
         <span>{isDownloading ? "Loading..." : "View Document"}</span>
       </button>
 
@@ -212,47 +198,31 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "10px",
+          gap: "8px",
           color: "#0052a3",
           fontSize: "1rem",
           fontWeight: "600",
           lineHeight: "130%",
-          background: "#f0f4fb",
-          border: "1px solid #e0e6f0",
-          borderRadius: "8px",
-          padding: "0.8rem 1.2rem",
+          background: "transparent",
+          border: "none",
           cursor: isDownloading ? "not-allowed" : "pointer",
-          transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+          padding: "0",
+          transition: "color 0.2s ease",
           opacity: isDownloading ? 0.7 : 1,
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
           if (!isDownloading) {
-            e.currentTarget.style.background = "#e3f1fe";
-            e.currentTarget.style.borderColor = "#0052a3";
+            e.currentTarget.style.color = "#003d7a";
           }
         }}
         onMouseLeave={(e) => {
           if (!isDownloading) {
-            e.currentTarget.style.background = "#f0f4fb";
-            e.currentTarget.style.borderColor = "#e0e6f0";
+            e.currentTarget.style.color = "#0052a3";
           }
         }}
       >
-        <div
-          style={{
-            width: "32px",
-            height: "32px",
-            borderRadius: "6px",
-            background: "#e3f1fe",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-          }}
-        >
-          <Image src="/svg/download.svg" alt="download" width={18} height={18} />
-        </div>
+        <Image src="/svg/download.svg" alt="download" width={20} height={20} />
         <span>{isDownloading ? "Downloading..." : "Download"}</span>
       </button>
     </div>
