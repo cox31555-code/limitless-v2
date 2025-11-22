@@ -99,39 +99,6 @@ const PolicyDetailsReview = ({ policy }) => {
         </div>
       </div>
 
-      {/* Payment Breakdown Section */}
-      <div className={styles.paymentBreakdownCard}>
-        <h3 className={`${styles.breakdownTitle} ${plusJakartaSans.className}`}>
-          Payment Breakdown
-        </h3>
-        <div className={styles.breakdownContent}>
-          <div className={styles.breakdownItem}>
-            <span className={styles.breakdownLabel}>First payment / deposit, 40% of the annual price (£525.65)</span>
-            <span className={styles.breakdownAmount}>£210.26</span>
-          </div>
-          <div className={styles.breakdownItem}>
-            <span className={styles.breakdownLabel}>11 payments of</span>
-            <span className={styles.breakdownAmount}>£47.40</span>
-          </div>
-          <div className={styles.breakdownItem}>
-            <span className={styles.breakdownLabel}>Interest rate</span>
-            <span className={styles.breakdownAmount}>9%</span>
-          </div>
-          <div className={styles.breakdownItem}>
-            <span className={styles.breakdownLabel}>Credit representative APR</span>
-            <span className={styles.breakdownAmount}>19.1% *</span>
-          </div>
-          <div className={styles.breakdownItem}>
-            <span className={styles.breakdownLabel}>Credit cost</span>
-            <span className={styles.breakdownAmount}>£43.04</span>
-          </div>
-          <div className={`${styles.breakdownItem} ${styles.totalRow}`}>
-            <span className={styles.breakdownLabel}>Total amount for 1 year</span>
-            <span className={styles.breakdownAmount}>£568.69</span>
-          </div>
-        </div>
-      </div>
-
       {/* Policy Details Section */}
       <div className={styles.expandableCard}>
         <button
