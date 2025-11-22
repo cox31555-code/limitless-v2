@@ -7,12 +7,12 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
   const router = useRouter();
 
   const getStatusColor = (remaining) => {
-    if (remaining === "Expired" || remaining === "Unpaid") return "low";
+    if (remaining === "Expired" || remaining === "Unpaid") return "expired";
     const days = parseInt(remaining);
-    if (isNaN(days)) return "medium";
-    if (days > 30) return "high";
-    if (days > 7) return "medium";
-    return "low";
+    if (isNaN(days)) return "active";
+    if (days > 30) return "active";
+    if (days > 7) return "active";
+    return "active";
   };
 
   const formatVehicleReg = (reg) => {
@@ -39,53 +39,75 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
         </h3>
       )}
       <div className={styles.cardsGrid}>
-        {data.map((row, index) => (
-          <div
-            key={index}
-            className={`${styles.policyCard} ${theme === "expired" ? styles.expiredCard : ""}`}
-          >
-            <div className={styles.cardHeader}>
-              <div className={styles.cardIcon}>
-                <PolicyIcon />
-              </div>
-              <div className={styles.headerInfo}>
-                <h4 className={styles.vehicleReg}>
-                  {formatVehicleReg(row.vehicleReg)}
-                </h4>
-                <span className={`${styles.badge} ${styles[getStatusColor(row.remaining)]}`}>
-                  {row.remaining}
-                </span>
-              </div>
-            </div>
-
-            <div className={styles.cardContent}>
-              <div className={styles.infoRow}>
-                <div className={styles.infoItem}>
-                  <span className={styles.label}>Policy Holder</span>
-                  <p className={styles.value}>{row.name}</p>
+        {data.map((row, index) => {
+          const statusType = getStatusColor(row.remaining);
+          
+          return (
+            <div
+              key={index}
+              className={styles.policyCard}
+            >
+              {/* Card Header - Icon & Name/Status */}
+              <div className={styles.policyCardHeader}>
+                <div className={styles.policyIcon}>
+                  <PolicyIcon />
                 </div>
-                <div className={styles.infoItem}>
-                  <span className={styles.label}>Policy Number</span>
-                  <p className={styles.value}>{row.policyNumber}</p>
+                <div className={styles.policyHeaderInfo}>
+                  <h3 className={styles.policyName}>
+                    Limitless Cover Car Insurance
+                  </h3>
+                  <span className={`${styles.policyStatus} ${styles[statusType]}`}>
+                    {statusType === "expired" ? "Expired" : "Active"}
+                  </span>
                 </div>
               </div>
-            </div>
 
-            {showViewButton && (
-              <div className={styles.cardFooter}>
-                <button
-                  className={styles.viewButton}
-                  onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
-                >
-                  View Policy Details
+              {/* Policy Details */}
+              <div className={styles.policyDetails}>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Policy Number</span>
+                  <span className={styles.detailValue}>{row.policyNumber}</span>
+                </div>
+                <div className={styles.detailDivider}></div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Vehicle</span>
+                  <span className={styles.detailValue}>
+                    {formatVehicleReg(row.vehicleReg)}
+                  </span>
+                </div>
+              </div>
+
+              {/* Cover Info - Remaining Days */}
+              <div className={styles.policyCoverInfo}>
+                <div className={styles.coverInfoIcon}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
-                </button>
+                </div>
+                <div>
+                  <p className={styles.coverInfoLabel}>Status</p>
+                  <p className={styles.coverInfoValue}>{row.remaining}</p>
+                </div>
               </div>
-            )}
-          </div>
-        ))}
+
+              {/* View Details Button */}
+              {showViewButton && (
+                <div className={styles.cardFooter}>
+                  <button
+                    className={styles.viewButton}
+                    onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
+                  >
+                    View Policy Details
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
