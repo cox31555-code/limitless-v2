@@ -23,7 +23,7 @@
   padding: 3rem calc(50vw - 50%);
 }
 
-.heroSection::before {
+>.heroSection::before {
   content: '';
   position: absolute;
   top: 0;
@@ -32,6 +32,16 @@
   bottom: 0;
   background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   pointer-events: none;
+}
+
+.heroSection > * {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
 }
 
 .heroBackground {
