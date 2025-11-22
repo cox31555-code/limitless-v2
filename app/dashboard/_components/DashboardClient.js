@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./dashboardClient.module.css";
-import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 
 const DashboardClient = () => {
   const router = useRouter();
