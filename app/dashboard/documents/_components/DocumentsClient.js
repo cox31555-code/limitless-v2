@@ -76,21 +76,6 @@ export default function DocumentsClient({ insurances }) {
       ]
     : [];
 
-  // Format vehicle info for display
-  const getDisplayInfo = () => {
-    if (!selectedInsurance) return "No policy selected";
-    const vehicle = selectedInsurance?.vehicleDetails;
-    const firstName = selectedInsurance?.userDetails?.firstName || "User";
-    if (vehicle?.registrationNumber) {
-      return `${vehicle.registrationNumber}${vehicle.make && vehicle.model ? ` - ${vehicle.make} ${vehicle.model}` : ""}`;
-    }
-    return `${firstName}'s Policy`;
-  };
-
-  const getPolicyNumber = () => {
-    return selectedInsurance?.policyNumber || selectedInsurance?._id?.slice(-8).toUpperCase() || "N/A";
-  };
-
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.top}>
