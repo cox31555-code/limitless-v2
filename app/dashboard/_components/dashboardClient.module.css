@@ -416,7 +416,6 @@
 .menuItem:hover .menuItemIcon {
   background: rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  transform: scale(1.05);
 }
 
 .menuItemIcon svg {
