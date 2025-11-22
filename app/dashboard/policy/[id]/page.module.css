@@ -20,7 +20,7 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-bottom: 3.2rem;
-  padding: 2rem 7.5rem 2.125rem 7.125rem;
+  padding: 32px 120px 34px 114px;
 }
 
 .heroSection::before {
