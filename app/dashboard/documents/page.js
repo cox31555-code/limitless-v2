@@ -93,7 +93,7 @@ const page = async () => {
           <div className={styles.greetingArea}>
             <h1 className={styles.greetingTitle}>Policy documents</h1>
             <p className={styles.greetingSubtitle}>
-              Access your insurance documents including certificate of motor insurance, policy schedule, and statement of fact. Policy {policyDetails.policyNo} | Vehicle {policyDetails.vehicleReg}
+              Access your insurance documents including certificate of motor insurance, policy schedule, and statement of fact.
             </p>
           </div>
         </div>
