@@ -353,6 +353,8 @@
 
 .menuSection .sectionTitle {
   color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 
 .menuGrid {
