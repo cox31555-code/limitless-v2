@@ -157,23 +157,22 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 0.8rem 1.4rem;
-  background: transparent;
-  color: #0052a3;
+  padding: 0.9rem 1.6rem;
+  background: #0052a3;
+  color: #ffffff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   line-height: 130%;
-  text-decoration: underline;
-  text-decoration-color: #0052a3;
 }
 
 .viewButton:hover {
-  text-decoration-color: transparent;
-  background: rgba(0, 52, 163, 0.08);
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.2);
+  transform: translateY(-2px);
 }
 
 .viewButton svg {
