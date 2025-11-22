@@ -330,10 +330,11 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 0 4.4% 2rem;
+  padding: 3rem 4.4% 2rem;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  background: #0a0e27;
 }
 
 .menuGrid {
@@ -343,8 +344,8 @@
 }
 
 .menuItem {
-  background: #ffffff;
-  border: 1px solid #e0e6f0;
+  background: #1a1f3a;
+  border: 1px solid #2a3050;
   border-radius: 10px;
   padding: 2rem;
   display: flex;
@@ -353,7 +354,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
-  color: inherit;
+  color: #ffffff;
   width: 100%;
   text-align: left;
   font-family: inherit;
@@ -361,9 +362,9 @@
 }
 
 .menuItem:hover {
-  background: #f8fafc;
-  border-color: #0052a3;
-  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.1);
+  background: #252d48;
+  border-color: #0088ff;
+  box-shadow: 0 4px 12px rgba(0, 136, 255, 0.2);
   transform: translateX(2px);
 }
 
@@ -376,17 +377,17 @@
 .menuItemIcon {
   width: 60px;
   height: 60px;
-  background: #e3f1fe;
+  background: rgba(0, 136, 255, 0.1);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0052a3;
+  color: #0088ff;
   transition: all 0.2s ease;
 }
 
 .menuItem:hover .menuItemIcon {
-  background: #0052a3;
+  background: #0088ff;
   color: #ffffff;
   transform: scale(1.05);
 }
@@ -406,13 +407,13 @@
 .menuItemLabel {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #0052a3;
+  color: #ffffff;
   line-height: 120%;
 }
 
 .menuItemDescription {
   font-size: 1rem;
-  color: #999;
+  color: #b0b5c8;
   line-height: 130%;
 }
 
@@ -423,14 +424,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0052a3;
+  color: #0088ff;
   opacity: 0.5;
   transition: all 0.2s ease;
 }
 
 .menuItem:hover .menuItemArrow {
   opacity: 1;
-  color: #0052a3;
+  color: #0088ff;
   transform: translateX(4px);
 }
 
