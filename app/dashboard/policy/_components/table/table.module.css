@@ -128,29 +128,22 @@
 
 .viewButton {
   width: 100%;
-  padding: 0.875rem 1.5rem;
-  background: transparent;
-  color: #0052a3;
+  padding: 1rem 1.5rem;
+  background: #0052a3;
+  color: #ffffff;
   border: none;
-  outline: 1.5px solid #0052a3;
-  outline-offset: -1.5px;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
   line-height: 130%;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  display: block;
 }
 
 .viewButton:hover {
-  background: rgba(0, 82, 163, 0.1);
-  outline-color: #0052a3;
-  color: #0052a3;
+  background: #003d7a;
 }
 
 /* Responsive Design */
