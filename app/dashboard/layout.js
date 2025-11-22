@@ -29,3 +29,8 @@ export default function DashboardLayout({ children }) {
     </div>
   );
 }
+
+export const metadata = {
+  title: "Dashboard",
+  description: "Manage your insurance policies",
+};
