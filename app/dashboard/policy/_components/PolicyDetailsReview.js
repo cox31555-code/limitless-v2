@@ -99,6 +99,26 @@ const PolicyDetailsReview = ({ policy }) => {
         </div>
       </div>
 
+      {/* Next Instalment Info */}
+      <div className={styles.instalmentInfo}>
+        <div className={styles.instalmentIconWrapper}>
+          <svg
+            className={styles.instalmentIcon}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+        </div>
+        <span className={styles.instalmentText}>
+          Your next instalment of <strong>£47.40</strong> is due on <strong>5 Jan 2026</strong>.
+        </span>
+      </div>
+
       {/* Policy Details Section */}
       <div className={styles.expandableCard}>
         <button
