@@ -48,7 +48,7 @@ const PolicyPageClient = ({
               Hi, Adnan
             </h1>
             <p className={styles.greetingSubtitle}>
-              Review and manage all your insurance policies in one secure place
+              Welcome back to your insurance hub
             </p>
           </div>
           <div className={styles.badgeArea}>
