@@ -178,18 +178,21 @@
 
 @media screen and (max-width: 900px) {
   .sectionHeaderWrapper {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
     margin-bottom: 1.5rem;
+  }
+
+  .policySection {
+    width: 100%;
+    gap: 1rem;
   }
 
   .dropdownWrapper {
     flex: 1;
     min-width: 0;
-    width: auto;
+    width: 100%;
   }
 
   .selectedPolicyLabel {
@@ -198,6 +201,10 @@
 
   .selectedPolicyTitle {
     font-size: 0.9rem;
+  }
+
+  .documentsTitle {
+    font-size: 1.3rem;
   }
 }
 
