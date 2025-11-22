@@ -50,28 +50,31 @@ const DashboardClient = () => {
 
   const menuItems = [
     {
-      label: "Manage Policy",
-      description: "View and update your policy details",
-      icon: "policy",
-      action: () => router.push("/dashboard/policy"),
+      label: "Chat with us",
+      description: "Live chat support available 24/7",
+      icon: "chat",
+      action: () => {
+        // Trigger chat widget
+        if (window.tawk) {
+          window.tawk.maximize();
+        }
+      },
     },
     {
-      label: "Documents",
-      description: "Access your policy documents and certificates",
-      icon: "document",
-      action: () => router.push("/dashboard/documents"),
+      label: "Call us",
+      description: "Speak to our team directly",
+      icon: "phone",
+      action: () => {
+        window.location.href = "tel:+1234567890";
+      },
     },
     {
-      label: "Manage Claims",
-      description: "Track and manage your claims",
-      icon: "claims",
-      action: () => router.push("/dashboard/claims"),
-    },
-    {
-      label: "Submit a Claim",
-      description: "Start a new insurance claim",
-      icon: "submit",
-      action: () => router.push("/dashboard/submit-claim"),
+      label: "Email us",
+      description: "Send us a message anytime",
+      icon: "email",
+      action: () => {
+        window.location.href = "mailto:support@limitlesscover.com";
+      },
     },
   ];
 
