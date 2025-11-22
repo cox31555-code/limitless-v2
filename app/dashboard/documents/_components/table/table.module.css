@@ -198,8 +198,12 @@
     padding: 1.2rem;
   }
 
+  .tableCell::before {
+    font-size: 1rem;
+  }
+
   .datacell {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
