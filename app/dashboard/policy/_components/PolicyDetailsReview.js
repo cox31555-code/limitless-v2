@@ -47,8 +47,46 @@ const PolicyDetailsReview = ({ policy }) => {
   const userDetails = policy?.userDetails || {};
   const insuranceType = policy?.type || "Annual";
 
-  const priceAmount = policy?.quote?.totalPremium || "—";
-  const pricePeriod = insuranceType === "Temp" ? "/month" : "/month";
+  // Extract price from totalPremium string if it contains format like "£649.99 for 12 months"
+  const getTotalPrice = () => {
+    const totalPremium = policy?.quote?.totalPremium;
+    if (!totalPremium) return "—";
+    if (typeof totalPremium === "string") {
+      // Extract just the currency amount
+      const match = totalPremium.match(/£([\d,.]+)/);
+      return match ? match[1] : totalPremium;
+    }
+    return totalPremium;
+  };
+
+  const getMonthlyPrice = () => {
+    const totalPremium = policy?.quote?.totalPremium;
+    if (!totalPremium || typeof totalPremium !== "string") return "—";
+
+    // Try to extract from format like "£649.99 for 12 months"
+    if (totalPremium.includes("12 months")) {
+      const match = totalPremium.match(/£([\d,.]+)/);
+      if (match) {
+        const total = parseFloat(match[1].replace(/,/g, ""));
+        return (total / 12).toFixed(2);
+      }
+    } else if (totalPremium.includes("7 days")) {
+      const match = totalPremium.match(/£([\d,.]+)/);
+      if (match) {
+        return match[1];
+      }
+    } else if (totalPremium.includes("30 days")) {
+      const match = totalPremium.match(/£([\d,.]+)/);
+      if (match) {
+        return match[1];
+      }
+    }
+
+    return "—";
+  };
+
+  const priceAmount = getMonthlyPrice();
+  const totalPaid = getTotalPrice();
 
   return (
     <div className={styles.container}>
