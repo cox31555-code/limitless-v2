@@ -96,12 +96,8 @@ const PolicyDetailsReview = ({ policy }) => {
   const priceAmount = getMonthlyPrice();
   const totalPaid = getTotalPrice();
 
-  if (!isMounted) {
-    return null;
-  }
-
   return (
-    <div className={styles.container}>
+    <div className={styles.container} suppressHydrationWarning>
       {/* Price Card */}
       <div className={styles.priceCard}>
         <div className={styles.priceContent}>
