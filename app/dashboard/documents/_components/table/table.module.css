@@ -206,6 +206,10 @@
   .datacell {
     font-size: 1.4rem;
   }
+
+  .documentType {
+    gap: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
