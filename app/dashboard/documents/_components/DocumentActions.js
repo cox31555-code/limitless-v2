@@ -198,8 +198,8 @@ export default function DocumentActions({ insuranceId, pdfType }) {
         style={{
           display: "inline-flex",
           alignItems: "center",
-          gap: "8px",
-          color: "#0052a3",
+          gap: "10px",
+          color: "#ffffff",
           fontSize: "1rem",
           fontWeight: "600",
           lineHeight: "130%",
@@ -207,22 +207,42 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           border: "none",
           cursor: isDownloading ? "not-allowed" : "pointer",
           padding: "0",
-          transition: "color 0.2s ease",
+          transition: "all 0.2s ease",
           opacity: isDownloading ? 0.7 : 1,
           whiteSpace: "nowrap",
         }}
         onMouseEnter={(e) => {
           if (!isDownloading) {
-            e.currentTarget.style.color = "#003d7a";
+            const iconBg = e.currentTarget.querySelector('div');
+            if (iconBg) {
+              iconBg.style.background = "#003d7a";
+            }
           }
         }}
         onMouseLeave={(e) => {
           if (!isDownloading) {
-            e.currentTarget.style.color = "#0052a3";
+            const iconBg = e.currentTarget.querySelector('div');
+            if (iconBg) {
+              iconBg.style.background = "#0052a3";
+            }
           }
         }}
       >
-        <Image src="/svg/arrow-down.svg" alt="download" width={20} height={20} />
+        <div
+          style={{
+            width: "32px",
+            height: "32px",
+            borderRadius: "6px",
+            background: "#0052a3",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            transition: "background 0.2s ease",
+          }}
+        >
+          <Image src="/svg/download.svg" alt="download" width={18} height={18} />
+        </div>
         <span>{isDownloading ? "Downloading..." : "Download"}</span>
       </button>
     </div>
