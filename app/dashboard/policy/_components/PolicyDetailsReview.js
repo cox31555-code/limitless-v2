@@ -91,7 +91,7 @@ const PolicyDetailsReview = ({ policy }) => {
   const totalPaid = getTotalPrice();
 
   return (
-    <div className={styles.container} suppressHydrationWarning>
+    <div className={styles.container}>
       {/* Price Card */}
       <div className={styles.priceCard}>
         <div className={styles.priceContent}>
