@@ -226,7 +226,7 @@ export default function DocumentActions({ insuranceId, pdfType }) {
           style={{
             width: "24px",
             height: "24px",
-            borderRadius: "4px",
+            borderRadius: "50%",
             background: "#e3f1fe",
             display: "flex",
             alignItems: "center",
