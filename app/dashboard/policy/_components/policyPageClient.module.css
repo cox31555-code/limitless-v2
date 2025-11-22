@@ -137,14 +137,13 @@
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.171875rem;
-  padding: 2.1875rem 4.4% 0.5rem;
+  gap: 1.5rem;
+  padding: 42px 4.4% 1.25rem;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   position: relative;
   z-index: 2;
-  background: #ffffff;
 }
 
 /* Policies Section */
