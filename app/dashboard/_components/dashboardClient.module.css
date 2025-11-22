@@ -1,3 +1,34 @@
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.breadcrumbItem {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #999;
+  white-space: nowrap;
+}
+
+.breadcrumbItem.active {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 0.8rem;
+  color: #ddd;
+  margin: 0 0.2rem;
+  flex-shrink: 0;
+}
+
 .container {
   display: flex;
   flex-direction: column;
