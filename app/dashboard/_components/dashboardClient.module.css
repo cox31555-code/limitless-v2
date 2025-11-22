@@ -759,16 +759,16 @@
   }
 
   .menuItem {
-    padding: 1.2rem;
-    gap: 1rem;
+    padding: 1.5rem;
+    gap: 1.2rem;
   }
 
   .menuItemLabel {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
   }
 
   .menuItemDescription {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .policyCardHeader {
