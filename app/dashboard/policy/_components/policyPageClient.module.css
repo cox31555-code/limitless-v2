@@ -485,16 +485,26 @@
     padding: 2rem 3%;
   }
 
-  .pageTitle {
-    font-size: 2rem;
+  .heroBanner {
+    padding: 2rem;
+  }
+
+  .heroIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .heroIcon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
   }
 
   .sectionTitle {
     font-size: 1.5rem;
-  }
-
-  .statsSection {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
