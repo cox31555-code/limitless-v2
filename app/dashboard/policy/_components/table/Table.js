@@ -76,12 +76,6 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
 
               {/* Cover Info - Remaining Days */}
               <div className={styles.policyCoverInfo}>
-                <div className={styles.coverInfoIcon}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                </div>
                 <div>
                   <p className={styles.coverInfoLabel}>Status</p>
                   <p className={styles.coverInfoValue}>{row.remaining}</p>
