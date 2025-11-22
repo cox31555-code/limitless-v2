@@ -96,6 +96,10 @@ const PolicyDetailsReview = ({ policy }) => {
   const priceAmount = getMonthlyPrice();
   const totalPaid = getTotalPrice();
 
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div className={styles.container}>
       {/* Price Card */}
