@@ -187,15 +187,19 @@
 
   .tableBody {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .tableRow {
-    padding: 1.5rem;
+    min-height: 280px;
+  }
+
+  .tableCell {
+    padding: 1.2rem;
   }
 
   .datacell {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
