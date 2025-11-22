@@ -37,11 +37,11 @@
 
 .heroBackground {
   position: absolute;
-  right: -20%;
+  right: -7%;
   top: 50%;
   transform: translateY(-50%);
   width: 400px;
-  height: 400px;
+  height: 399px;
   opacity: 0.3;
 }
 
