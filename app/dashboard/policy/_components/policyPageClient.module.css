@@ -112,10 +112,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
-  position: absolute;
-  right: calc(50vw - 50% + 4.4%);
+  position: relative;
   z-index: 2;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
 .createPolicyBtn:hover {
