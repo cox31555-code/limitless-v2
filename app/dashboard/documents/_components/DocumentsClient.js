@@ -84,9 +84,8 @@ export default function DocumentsClient({ insurances }) {
     <div className={styles.contentWrapper}>
       <section className={styles.policiesSection}>
         <div className={styles.sectionHeaderWrapper}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Your documents</h2>
-            <span className={styles.sectionBadge}>{tableData.length}</span>
+          <div className={styles.selectedPolicyLabel}>
+            <h2 className={styles.selectedPolicyTitle}>Selected Policy</h2>
           </div>
           <div className={styles.dropdownWrapper}>
             <Dropdown
