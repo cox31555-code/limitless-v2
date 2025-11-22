@@ -52,7 +52,7 @@
 .instalmentInfo {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.8rem;
   padding: 1rem 1.4rem;
   background: #e8f2fb;
   border-radius: 10px;
@@ -63,27 +63,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
   flex-shrink: 0;
-  background: rgba(90, 143, 196, 0.12);
-  border-radius: 6px;
 }
 
 .instalmentIcon {
-  width: 18px;
-  height: 18px;
-  color: #0388ff;
-  stroke-width: 2.5;
+  width: 20px;
+  height: 20px;
+  color: #5a8fc4;
+  stroke-width: 2;
 }
 
 .instalmentText {
   font-size: 0.95rem;
-  font-weight: 500;
   color: #2c3e50;
   line-height: 1.5;
-  margin: 0;
 }
 
 /* Payment Breakdown Card */
