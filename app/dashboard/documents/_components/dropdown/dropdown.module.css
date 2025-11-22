@@ -101,11 +101,11 @@
   }
 
   .selectedValue {
-    padding: 1rem 1.4rem;
+    padding: 1.2rem 1.6rem;
   }
 
   .value_text {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .options {
@@ -113,6 +113,6 @@
   }
 
   .option {
-    padding: 1rem 1.4rem;
+    padding: 1.1rem 1.6rem;
   }
 }
