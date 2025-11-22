@@ -68,7 +68,7 @@
 .navItems {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 37px;
   justify-content: center;
   flex: 1;
 }
