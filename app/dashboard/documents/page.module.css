@@ -291,9 +291,10 @@
   }
 
   .sectionHeaderWrapper {
-    gap: 0.8rem;
+    gap: 1rem;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 1.8rem;
   }
 
   .policySection {
