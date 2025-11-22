@@ -494,6 +494,7 @@
   min-height: 150px;
   width: 100%;
   box-sizing: border-box;
+  min-width: 0;
 }
 
 .bannerText {
