@@ -92,45 +92,34 @@ export default function DocumentsClient({ insurances }) {
   };
 
   return (
-    <>
-      <div className={styles.heroSection}>
-        <div className={styles.heroContent}>
-          <div className={styles.greetingArea}>
-            <h1 className={styles.greetingTitle}>Policy documents</h1>
-            <p className={styles.greetingSubtitle}>Policy no: {getPolicyNumber()}</p>
-          </div>
-        </div>
+    <div className={styles.contentWrapper}>
+      <div className={styles.top}>
+        <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+          Your documents
+        </h3>
+        <Dropdown
+          insurances={insurances}
+          selectedInsuranceId={selectedInsuranceId}
+          onInsuranceChange={handleInsuranceChange}
+        />
       </div>
 
-      <div className={styles.contentWrapper}>
-        <div className={styles.top}>
-          <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Your documents
-          </h3>
-          <Dropdown
-            insurances={insurances}
-            selectedInsuranceId={selectedInsuranceId}
-            onInsuranceChange={handleInsuranceChange}
-          />
+      {tableData.length > 0 ? (
+        <Table
+          title="Policy documents"
+          columns={["Document", "Date", "Action"]}
+          data={tableData}
+        />
+      ) : (
+        <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
+          <p>No insurance policies found.</p>
+          <p style={{ fontSize: "14px", marginTop: "8px" }}>
+            Please complete your insurance application to view your documents.
+          </p>
         </div>
+      )}
 
-        {tableData.length > 0 ? (
-          <Table
-            title="Policy documents"
-            columns={["Document", "Date", "Action"]}
-            data={tableData}
-          />
-        ) : (
-          <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
-            <p>No insurance policies found.</p>
-            <p style={{ fontSize: "14px", marginTop: "8px" }}>
-              Please complete your insurance application to view your documents.
-            </p>
-          </div>
-        )}
-
-        <Booklets />
-      </div>
-    </>
+      <Booklets />
+    </div>
   );
 }
