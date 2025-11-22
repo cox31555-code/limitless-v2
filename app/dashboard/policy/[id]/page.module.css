@@ -84,33 +84,74 @@
   margin: 0;
 }
 
+@media screen and (max-width: 1200px) {
+  .heroSection {
+    padding: 2.5rem calc(50vw - 50%);
+  }
+
+  .greetingTitle {
+    font-size: 2.4rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .page {
-    margin: 2.4rem 0;
-    gap: 2.8rem;
+    gap: 2rem;
   }
 
-  .header {
-    padding: 2rem 1.2rem 1.2rem 1.2rem;
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem calc(50vw - 50%);
+    gap: 1.5rem;
+    margin-bottom: 2.8rem;
   }
 
-  .title {
-    font-size: 2.8rem;
+  .heroContent {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .greetingArea {
+    align-items: center;
+    width: 100%;
+  }
+
+  .greetingTitle {
+    font-size: 2rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1rem;
+  }
+
+  .contentWrapper {
+    padding: 0 2%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .page {
-    margin: 1.6rem 0;
-    gap: 2.4rem;
+    margin: -1.5625rem 0 1.5rem;
+    gap: 1.5rem;
   }
 
-  .header {
-    padding: 1.6rem 1rem 1rem 1rem;
+  .heroSection {
+    padding: 1.5rem;
+    gap: 1.2rem;
+    margin-bottom: 2.4rem;
   }
 
-  .title {
-    font-size: 2.2rem;
-    letter-spacing: -0.4px;
+  .greetingTitle {
+    font-size: 1.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 0.95rem;
+  }
+
+  .contentWrapper {
+    padding: 0 4%;
   }
 }
