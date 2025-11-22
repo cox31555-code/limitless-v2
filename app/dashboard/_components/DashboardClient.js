@@ -111,7 +111,7 @@ const DashboardClient = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <>
       {/* Hero Greeting Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroBackground}>
@@ -264,7 +264,9 @@ const DashboardClient = () => {
           ))}
         </div>
       </section>
-    </div>
+      <div className={styles.container}>
+      </div>
+    </>
   );
 };
 
