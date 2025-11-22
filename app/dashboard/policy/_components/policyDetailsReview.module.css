@@ -88,10 +88,8 @@
 
 .breakdownItem.totalRow {
   padding-top: 1rem;
-  border-top: 2px solid #0388ff;
-  background: #f8fafb;
-  padding: 1rem;
-  border-radius: 8px;
+  margin-top: 0.8rem;
+  border-top: 2px solid #e8f0f7;
   border-bottom: none;
 }
 
