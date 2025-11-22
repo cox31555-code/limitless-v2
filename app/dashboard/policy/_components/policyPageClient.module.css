@@ -336,6 +336,10 @@
     justify-content: center;
   }
 
+  .contentWrapper {
+    padding: 1.5rem 2%;
+  }
+
   .sectionTitle {
     font-size: 1.6rem;
   }
