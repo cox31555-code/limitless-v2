@@ -33,7 +33,7 @@ const PolicyPageClient = ({
   const totalActive = mockActivePolicies?.length || 0;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} suppressHydrationWarning>
       {/* Breadcrumb Navigation */}
       <div className={styles.breadcrumb}>
         <span className={styles.breadcrumbItem}>Dashboard</span>
