@@ -403,7 +403,7 @@
 }
 
 .menuItem:hover {
-  transform: translateY(-8px);
+  opacity: 0.85;
 }
 
 .menuItemIconWrapper {
@@ -422,12 +422,8 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
   flex-shrink: 0;
-}
-
-.menuItem:hover .menuItemIcon {
-  transform: scale(1.15) rotate(5deg);
 }
 
 .menuItemIcon svg {
