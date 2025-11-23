@@ -97,25 +97,11 @@
   align-items: center;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.logoCircle {
-  width: 28px;
-  height: 28px;
-  background: #4285f4;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.logoText {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: -0.3px;
+.logoImage {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .copyrightSection {
