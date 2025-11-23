@@ -135,35 +135,6 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.createClaimBtn {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 1.2rem 2.4rem;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.25);
-  flex-shrink: 0;
-}
-
-.createClaimBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 82, 163, 0.35);
-}
-
-.createClaimBtn svg {
-  width: 18px;
-  height: 18px;
-  stroke: currentColor;
-  stroke-width: 2.5;
-}
 
 /* Content Wrapper */
 .contentWrapper {
@@ -485,11 +456,6 @@
     font-size: 1.2rem;
   }
 
-  .createClaimBtn {
-    width: 100%;
-    justify-content: center;
-  }
-
   .sectionTitle {
     font-size: 2.3rem;
   }
@@ -574,16 +540,6 @@
 
   .contentSubtitle {
     font-size: 1.15rem;
-  }
-
-  .createClaimBtn {
-    font-size: 0.95rem;
-    padding: 1rem 2rem;
-  }
-
-  .createClaimBtn svg {
-    width: 16px;
-    height: 16px;
   }
 
   .allianzBadge {

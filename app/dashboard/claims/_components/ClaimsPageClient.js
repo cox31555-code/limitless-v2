@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Table from "./table/Table";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
+import CreateBtn from "@/ui/dashboard/createBtn/CreateBtn";
 import styles from "./claimsPageClient.module.css";
 import { useRouter } from "next/navigation";
 
@@ -10,12 +11,7 @@ const ClaimsPageClient = ({
   completedClaims,
   plusJakartaSans,
 }) => {
-  const router = useRouter();
   const [activeTab, setActiveTab] = useState("pending");
-
-  const handleCreateClaim = () => {
-    router.push("/dashboard/submit-claim");
-  };
 
   const totalPending = pendingClaims?.length || 0;
   const totalCompleted = completedClaims?.length || 0;
@@ -60,16 +56,7 @@ const ClaimsPageClient = ({
             <h2 className={styles.contentTitle}>Your Claims</h2>
             <p className={styles.contentSubtitle}>Manage and track all your insurance claims</p>
           </div>
-          <button
-            onClick={handleCreateClaim}
-            className={styles.createClaimBtn}
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg>
-            <span>Create a new claim</span>
-          </button>
+          <CreateBtn title="Create a new claim" href="/dashboard/submit-claim" />
         </div>
 
         {/* Tabs Navigation */}
