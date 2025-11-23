@@ -611,6 +611,7 @@
 
   .menuSectionInner {
     padding: 1.5rem 3%;
+    margin: 0;
   }
 
   .greetingTitle {
