@@ -182,7 +182,7 @@
 /* Tabs Container */
 .tabsContainer {
   display: flex;
-  gap: 4rem;
+  gap: 5rem;
   border-bottom: 2px solid #e0e6f0;
   margin-bottom: 4rem;
   padding: 0;
