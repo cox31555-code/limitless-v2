@@ -38,23 +38,42 @@ export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }
 
   if (!isOpen || !mounted) return null;
 
+  const handleOpenInNewTab = () => {
+    window.open(pdfUrl, "_blank");
+  };
+
   const modalContent = (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <h3 className={styles.title}>{documentName || "Document Viewer"}</h3>
-          <button 
-            className={styles.closeButton}
-            onClick={onClose}
-            aria-label="Close modal"
-          >
-            <Image
-              src="/svg/close.svg"
-              alt="Close"
-              width={24}
-              height={24}
-            />
-          </button>
+          <div className={styles.headerActions}>
+            <button
+              className={styles.previewButton}
+              onClick={handleOpenInNewTab}
+              aria-label="Open PDF in new tab"
+              title="Open in new tab"
+            >
+              <Image
+                src="/svg/external-link.svg"
+                alt="Open in new tab"
+                width={20}
+                height={20}
+              />
+            </button>
+            <button
+              className={styles.closeButton}
+              onClick={onClose}
+              aria-label="Close modal"
+            >
+              <Image
+                src="/svg/close.svg"
+                alt="Close"
+                width={24}
+                height={24}
+              />
+            </button>
+          </div>
         </div>
         
         <div className={styles.pdfContainer}>
