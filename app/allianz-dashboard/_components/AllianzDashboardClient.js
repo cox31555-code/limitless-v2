@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./allianzDashboardClient.module.css";
 
@@ -13,7 +13,7 @@ const AllianzDashboardClient = () => {
       title: "More cars?",
       description: "Just tell us about any additional cars you need covered, and we'll give you a quick quote based on your existing Limitless Cover policy.",
       cta: "Get your car quote",
-      ctaAction: () => router.push("/temporary/get-quote"),
+      ctaAction: () => router.push("/annual/get-quote"),
       icon: "cars",
     },
     {
@@ -26,21 +26,44 @@ const AllianzDashboardClient = () => {
     },
     {
       id: "impound",
-      title: "Impound cover",
-      description: "Protect yourself with impound insurance. Get coverage for vehicle recovery and storage costs.",
+      title: "Impound Car Insurance",
+      description: "Protect yourself with comprehensive impound insurance. Get coverage for vehicle recovery and storage costs.",
       cta: "Explore impound cover",
       ctaAction: () => router.push("/impound/get-quote"),
       icon: "shield",
     },
     {
-      id: "courier",
-      title: "Courier insurance",
-      description: "Professional courier and delivery vehicle insurance. Comprehensive protection for your business.",
-      cta: "Get a quote",
-      ctaAction: () => router.push("/courier"),
-      icon: "truck",
+      id: "cheapest",
+      title: "Cheapest Car Insurance Prices",
+      description: "We offer competitive rates without compromising on quality. Get a quote today and see how much you could save.",
+      cta: "Compare our quotes",
+      ctaAction: () => router.push("/annual/get-quote"),
+      icon: "tag",
+    },
+    {
+      id: "all-aged-drivers",
+      title: "All Aged Drivers Welcome",
+      description: "Whether you're a young driver or an experienced one, we've got competitive quotes for everyone. No age restrictions.",
+      cta: "Get your quote now",
+      ctaAction: () => router.push("/annual/get-quote"),
+      icon: "users",
+    },
+    {
+      id: "finance",
+      title: "Monthly Finance - 9% APR",
+      description: "Spread your premiums with our affordable monthly payment plans. Flexible financing options available for all budgets.",
+      cta: "Learn more",
+      ctaAction: () => router.push("/annual/get-quote"),
+      icon: "credit-card",
     },
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBannerIndex((prev) => (prev + 1) % promotionalBanners.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [promotionalBanners.length]);
 
   const menuItems = [
     {
