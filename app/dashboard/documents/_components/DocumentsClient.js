@@ -36,7 +36,7 @@ export default function DocumentsClient({ insurances }) {
               />
             </div>
           </div>
-          <h2 className={styles.documentsTitle}>Your documents</h2>
+          <h2 className={styles.documentsTitle}>Your Motor Insurance Documents</h2>
         </div>
 
         {selectedInsurance ? (
