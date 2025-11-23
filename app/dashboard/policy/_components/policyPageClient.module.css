@@ -182,38 +182,41 @@
 /* Tabs Container */
 .tabsContainer {
   display: flex;
-  gap: 2rem;
-  border-bottom: 2px solid #e0e6f0;
-  margin-bottom: 3rem;
+  gap: 3rem;
+  border-bottom: 3px solid #e0e6f0;
+  margin-bottom: 4rem;
   overflow-x: auto;
+  padding: 0.5rem 0;
 }
 
 .tab {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 1.2rem 0 1.6rem 0;
+  gap: 1.2rem;
+  padding: 1.8rem 0 2.2rem 0;
   background: none;
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 4px solid transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   color: #666;
   font-family: inherit;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 500;
   white-space: nowrap;
   position: relative;
+  letter-spacing: -0.3px;
 }
 
 .tab:hover {
   color: #0052a3;
+  transform: translateY(-2px);
 }
 
 .tabActive {
   color: #0052a3;
   border-bottom-color: #0052a3;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .tabNumber {
@@ -221,7 +224,7 @@
 }
 
 .tabLabel {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: inherit;
   color: currentColor;
 }
@@ -230,14 +233,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 28px;
-  height: 28px;
+  min-width: 48px;
+  height: 48px;
   background: #e3f1fe;
   color: #0052a3;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-left: 0.4rem;
+  margin-left: 0.6rem;
 }
 
 .tabActive .tabBadge {
