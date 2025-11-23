@@ -230,11 +230,11 @@ const DashboardClient = () => {
         </section>
       </div>
 
-      {/* Get in Touch Footer Banner - Full Width */}
+      {/* Need Help Footer Banner - Full Width */}
       <section className={styles.menuSection}>
         <div className={styles.menuSectionInner}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Get in Touch</h2>
+            <h2 className={styles.sectionTitle}>Need help?</h2>
           </div>
           <div className={styles.menuGrid}>
             {menuItems.map((item, index) => (
