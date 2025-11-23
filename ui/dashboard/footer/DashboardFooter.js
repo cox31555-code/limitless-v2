@@ -75,12 +75,8 @@ const DashboardFooter = () => {
 
         {/* Bottom Section - Logo, Copyright, Socials */}
         <div className={styles.bottomSection}>
-          <div className={styles.logoSection}>
-            <img
-              src="/svg/logo.svg"
-              alt="Limitless Cover"
-              className={styles.logoImage}
-            />
+          <div className={styles.logoSection} ref={trustLogoRef}>
+            {/* Sectigo TrustLogo will be inserted here */}
           </div>
 
           <div className={styles.copyrightSection}>
