@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { extractVehicleMake, getVehicleIconUrl } from "@/utils/vehicleIcons";
+import { extractVehicleMake } from "@/utils/vehicleIcons";
+import { getBrandIcon } from "@/ui/dashboard/vehicleBrandIcons";
 import styles from "./dashboardClient.module.css";
 
 const DashboardClient = () => {
