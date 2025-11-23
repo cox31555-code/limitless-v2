@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Table from "./table/Table";
+import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import styles from "./policyPageClient.module.css";
 import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 
