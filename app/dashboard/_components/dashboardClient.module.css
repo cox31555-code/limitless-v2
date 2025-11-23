@@ -354,12 +354,13 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.5rem 4.4% 1.5rem 51px;
+  padding: 1.5rem 51px 1.5rem 4.4%;
   max-width: 100%;
   margin: 0;
   width: 100%;
   position: relative;
   z-index: 1;
+  align-items: flex-end;
 }
 
 .menuRowContainer {
