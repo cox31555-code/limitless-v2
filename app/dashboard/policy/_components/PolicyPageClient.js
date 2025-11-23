@@ -55,6 +55,13 @@ const PolicyPageClient = ({
         </button>
       </section>
 
+      {/* Breadcrumb Navigation */}
+      <div className={styles.breadcrumb}>
+        <span className={styles.breadcrumbItem}>Dashboard</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Manage Policy</span>
+      </div>
+
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
       {/* Active Policies Section */}
