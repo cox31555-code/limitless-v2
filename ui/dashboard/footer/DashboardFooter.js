@@ -36,11 +36,11 @@ const DashboardFooter = () => {
 
         {/* Footer Links Section */}
         <div className={styles.linksSection}>
-          <a href="#" className={styles.footerLink}>Complaints</a>
+          <a href="/complaints" className={styles.footerLink}>Complaints</a>
           <span className={styles.linkSeparator}>•</span>
-          <a href="#" className={styles.footerLink}>Our cookie policy</a>
+          <a href="/cookies-policy" className={styles.footerLink}>Our cookie policy</a>
           <span className={styles.linkSeparator}>•</span>
-          <a href="#" className={styles.footerLink}>Personal data rights</a>
+          <a href="/privacy-policy" className={styles.footerLink}>Personal data rights</a>
         </div>
 
         {/* Disclaimer Section */}
