@@ -178,6 +178,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 55px;
+  margin-right: 34px;
 }
 
 .policyCard {
