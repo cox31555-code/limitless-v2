@@ -15,13 +15,19 @@ export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }
 
   useEffect(() => {
     if (isOpen) {
+      // Disable scroll on both html and body
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      // Re-enable scroll
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = "unset";
+      // Cleanup
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
