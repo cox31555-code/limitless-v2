@@ -25,6 +25,7 @@ const DashboardClient = () => {
       transmission: "Auto",
       coverEnd: "24 November 2026",
       status: "Active",
+      insuranceType: "Annual",
     },
   ];
 
