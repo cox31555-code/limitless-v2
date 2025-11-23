@@ -1,7 +1,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 2.625rem;
   padding: 3.6rem;
   border: 1.5px solid #d1d5db;
   border-radius: 12px;
@@ -12,7 +12,7 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.4rem;
 }
 
 .title {
@@ -26,7 +26,7 @@
 
 .description {
   font-size: 1.25rem;
-  color: #4b5563;
+  color: #6b7280;
   margin: 0;
   line-height: 160%;
 }
@@ -34,25 +34,24 @@
 .requestButton {
   align-self: flex-start;
   padding: 1.2rem 2.4rem;
-  background: #1e7e34;
+  background: #0052a3;
   color: #ffffff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .requestButton:hover {
-  background: #186a2c;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(30, 126, 52, 0.2);
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
 }
 
 .requestButton:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
 @media screen and (max-width: 900px) {
