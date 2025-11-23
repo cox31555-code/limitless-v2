@@ -139,8 +139,20 @@
     padding: 1.6rem 1.2rem;
   }
 
+  .documentInfo {
+    width: 100%;
+  }
+
+  .documentDetails {
+    gap: 0.4rem;
+  }
+
   .documentName {
     font-size: 1.15rem;
+  }
+
+  .dateAdded {
+    font-size: 0.85rem;
   }
 
   .documentActions {
