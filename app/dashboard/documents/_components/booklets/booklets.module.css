@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3rem;
   background: linear-gradient(135deg, #1a1f3a 0%, #222d45 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.25);
   border-radius: 14px;
-  padding: 2.4rem;
+  padding: 3.2rem;
   position: relative;
   overflow: hidden;
 }
@@ -31,11 +31,11 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
@@ -44,10 +44,10 @@
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #d4dae6;
   margin: 0;
-  line-height: 130%;
+  line-height: 140%;
   font-weight: 400;
 }
 
@@ -55,14 +55,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.4rem;
   flex-shrink: 0;
   cursor: pointer;
 }
 
 .download {
-  width: 5rem;
-  height: 5rem;
+  width: 5.6rem;
+  height: 5.6rem;
   border-radius: 12px;
   background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
   display: flex;
@@ -79,7 +79,7 @@
 }
 
 .downloadText {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #64b5f6;
   margin: 0;
