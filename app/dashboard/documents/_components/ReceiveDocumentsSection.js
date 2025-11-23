@@ -15,8 +15,8 @@ export default function ReceiveDocumentsSection() {
         <Image
           src="/svg/message.svg"
           alt="envelope"
-          width={32}
-          height={32}
+          width={40}
+          height={40}
         />
         <h3 className={styles.title}>Receive my policy documents by post</h3>
       </div>
