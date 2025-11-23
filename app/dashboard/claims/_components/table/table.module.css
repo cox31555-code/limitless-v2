@@ -18,7 +18,7 @@
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
+  gap: 3rem;
   width: 100%;
   padding: 2.6rem 0 3rem;
 }
@@ -42,7 +42,7 @@
 
 .claimCardHeader {
   background: #fafbfc;
-  padding: 2rem 2.4rem;
+  padding: 2.4rem 2.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,9 +53,9 @@
 .statusBadge {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.3px;
   text-transform: uppercase;
@@ -80,22 +80,22 @@
 }
 
 .claimRef {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: #6b7280;
   font-weight: 500;
   letter-spacing: -0.01em;
 }
 
 .claimDetails {
-  padding: 2.4rem;
+  padding: 2.8rem;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 2rem;
 }
 
 .claimTitle {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #111827;
   margin: 0;
@@ -104,7 +104,7 @@
 }
 
 .claimMeta {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: #6b7280;
   margin: 0;
   font-weight: 400;
@@ -114,12 +114,12 @@
 .claimInfoRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 2.4rem;
   padding: 0;
   background: transparent;
   border-radius: 0;
   border-top: 1px solid #f0f2f5;
-  padding-top: 1.8rem;
+  padding-top: 2rem;
 }
 
 .infoItem {
@@ -129,16 +129,16 @@
 }
 
 .infoItem .infoLabel {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #9ca3af;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .infoItem .infoValue {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #374151;
   font-weight: 600;
 }
@@ -146,8 +146,8 @@
 .claimInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  padding: 2rem 2.4rem;
+  gap: 3.2rem;
+  padding: 2.4rem 2.8rem;
   background: #fafbfc;
   border-top: 1px solid #f0f2f5;
 }
@@ -159,16 +159,16 @@
 }
 
 .infoLabel {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #9ca3af;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin: 0 0 0.6rem 0;
+  margin: 0 0 0.7rem 0;
 }
 
 .infoValue {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #111827;
   font-weight: 600;
   margin: 0;
@@ -177,13 +177,13 @@
 
 .viewButton {
   width: 100%;
-  padding: 1.3rem 2.4rem;
+  padding: 1.5rem 2.8rem;
   background: #fafbfc;
   color: #0052a3;
   border: none;
   border-top: 1px solid #f0f2f5;
   border-radius: 0;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
