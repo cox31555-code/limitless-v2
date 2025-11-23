@@ -222,38 +222,72 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
         </button>
 
         <button
-          onClick={handleDownload}
-          disabled={isDownloading}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0",
-            color: "#0052a3",
-            fontSize: "1rem",
-            fontWeight: "600",
-            lineHeight: "130%",
-            background: "transparent",
-            border: "none",
-            cursor: isDownloading ? "not-allowed" : "pointer",
-            padding: "0",
-            transition: "color 0.2s ease",
-            opacity: isDownloading ? 0.7 : 1,
-            whiteSpace: "nowrap",
-            textDecoration: "underline",
-          }}
-          onMouseEnter={(e) => {
-            if (!isDownloading) {
-              e.currentTarget.style.color = "#003d7a";
-            }
-          }}
-          onMouseLeave={(e) => {
-            if (!isDownloading) {
-              e.currentTarget.style.color = "#0052a3";
-            }
-          }}
-        >
-          <span>{isDownloading ? "Downloading..." : "Download PDF"}</span>
-        </button>
+        onClick={handleDownload}
+        disabled={isDownloading}
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          color: "#0052a3",
+          fontSize: "1rem",
+          fontWeight: "600",
+          lineHeight: "130%",
+          background: "transparent",
+          border: "none",
+          cursor: isDownloading ? "not-allowed" : "pointer",
+          padding: "0",
+          transition: "color 0.2s ease",
+          opacity: isDownloading ? 0.7 : 1,
+          whiteSpace: "nowrap",
+          textDecoration: "underline",
+        }}
+        onMouseEnter={(e) => {
+          if (!isDownloading) {
+            e.currentTarget.style.color = "#003d7a";
+          }
+        }}
+        onMouseLeave={(e) => {
+          if (!isDownloading) {
+            e.currentTarget.style.color = "#0052a3";
+          }
+        }}
+      >
+        {isDownloading && (
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            style={{
+              animation: "spin 1s linear infinite",
+            }}
+          >
+            <style>{`
+              @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+              }
+            `}</style>
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeDasharray="60"
+              strokeDashoffset="20"
+              opacity="0.25"
+            />
+            <path
+              d="M12 2a10 10 0 0 1 10 10"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+          </svg>
+        )}
+        <span>{isDownloading ? "Downloading..." : "Download PDF"}</span>
+      </button>
       </div>
 
       <PdfViewerModal
