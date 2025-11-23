@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Script from "next/script";
+import Image from "next/image";
 import styles from "./dashboardFooter.module.css";
 import { BiLogoInstagramAlt, BiLogoFacebook, BiLogoTwitter, BiLogoLinkedin } from "react-icons/bi";
 
