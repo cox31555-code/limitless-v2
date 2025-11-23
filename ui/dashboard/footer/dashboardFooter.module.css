@@ -212,8 +212,8 @@
 @media screen and (max-width: 900px) {
   .topSection {
     flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 3%;
+    gap: 2.5rem;
+    padding: 3.5rem 3%;
     align-items: stretch;
   }
 
@@ -231,24 +231,32 @@
 
   .bottomSection {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+    padding: 3rem 3%;
+  }
+
+  .linksSection {
     padding: 2rem 3%;
   }
 
-  .linksSection {
-    padding: 1rem 3%;
-  }
-
   .disclaimerSection {
-    padding: 1rem 3%;
+    padding: 2.5rem 3%;
   }
 
-  .linksSection {
-    font-size: 0.85rem;
+  .securityTitle {
+    font-size: 1.1rem;
+  }
+
+  .securityText {
+    font-size: 0.95rem;
+  }
+
+  .partnershipText {
+    font-size: 0.95rem;
   }
 
   .copyrightText {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .logoSection {
