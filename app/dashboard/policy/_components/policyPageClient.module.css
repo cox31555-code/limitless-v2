@@ -488,23 +488,30 @@
     font-size: 1.15rem;
   }
 
-  .sectionBadge {
-    min-width: 60px;
-    height: 60px;
-    font-size: 1.7rem;
+  .tabsContainer {
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 0 -4%;
+    overflow-x: auto;
   }
 
-  .expandableHeader {
-    padding: 1.8rem;
+  .tab {
+    font-size: 0.9rem;
+    padding: 0.6rem 0 0.9rem 0;
+    gap: 0.6rem;
   }
 
-  .expandableContent {
-    padding: 1.8rem;
+  .tabNumber {
+    font-size: 0.85rem;
   }
 
-  .expandableBadge {
-    width: 35px;
-    height: 35px;
-    font-size: 0.95rem;
+  .tabLabel {
+    font-size: 0.9rem;
+  }
+
+  .tabBadge {
+    min-width: 22px;
+    height: 22px;
+    font-size: 0.8rem;
   }
 }
