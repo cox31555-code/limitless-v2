@@ -182,11 +182,11 @@
 /* Tabs Container */
 .tabsContainer {
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
   border-bottom: 2px solid #e0e6f0;
   margin-bottom: 4rem;
-  overflow-x: auto;
   padding: 0;
+  flex-wrap: nowrap;
 }
 
 .tab {
