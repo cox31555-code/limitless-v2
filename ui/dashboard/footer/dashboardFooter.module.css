@@ -189,6 +189,16 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
+  .footer {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: auto;
+    z-index: auto;
+    margin-top: 5rem;
+  }
+
   .topSection {
     gap: 3rem;
     padding: 4rem 3%;
