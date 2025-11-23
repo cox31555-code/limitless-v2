@@ -216,6 +216,21 @@
 }
 
 @media screen and (max-width: 600px) {
+  .breadcrumb {
+    margin-left: 20px;
+    gap: 0.6rem;
+    padding: 12px 3% 12px 0.4%;
+  }
+
+  .breadcrumbItem {
+    font-size: 1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.1rem;
+    margin: 0 0.3rem;
+  }
+
   .page {
     margin: -1.5625rem 0 1.5rem;
     gap: 1.5rem;
