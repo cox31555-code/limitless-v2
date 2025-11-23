@@ -6,9 +6,9 @@
 }
 
 .footerContainer {
-  max-width: 1178px;
-  margin: 0 12%;
-  width: 107%;
+  max-width: 1172px;
+  margin: 0 12% 0 13%;
+  width: 101%;
   display: flex;
   flex-direction: column;
 }
