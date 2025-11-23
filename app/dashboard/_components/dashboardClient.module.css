@@ -686,6 +686,10 @@
     font-size: 1.4rem;
   }
 
+  .menuSection .sectionTitle {
+    font-size: 1.5rem;
+  }
+
   .menuGrid {
     flex-wrap: wrap;
   }
