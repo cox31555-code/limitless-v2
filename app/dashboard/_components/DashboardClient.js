@@ -14,6 +14,13 @@ const DashboardClient = () => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBannerIndex((prev) => (prev + 1) % promotionalBanners.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   const activePolicies = [
     {
       id: 1,
