@@ -48,15 +48,20 @@ const DashboardFooter = () => {
         {/* Bottom Section - Logo, Copyright, Socials */}
         <div className={styles.bottomSection}>
           <div className={styles.logoSection}>
-            <Script
-              src="https://secure.trust-provider.com/trustlogo/javascript/trustlogo.js"
-              strategy="afterInteractive"
-              onLoad={() => {
-                if (window.TrustLogo) {
-                  window.TrustLogo("https://www.sectigo.com/images/seals/sectigo_trust_seal_lg_2x.png", "SECEV", "none");
-                }
-              }}
-            />
+            <a
+              href="https://www.sectigo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.trustLogoLink}
+            >
+              <Image
+                src="https://www.sectigo.com/images/seals/sectigo_trust_seal_lg_2x.png"
+                alt="Secured by Sectigo"
+                width={160}
+                height={160}
+                className={styles.trustLogoImage}
+              />
+            </a>
           </div>
 
           <div className={styles.copyrightSection}>
