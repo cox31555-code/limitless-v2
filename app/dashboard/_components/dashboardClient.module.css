@@ -414,8 +414,8 @@
 }
 
 .menuItemIcon {
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   display: flex;
@@ -423,6 +423,7 @@
   justify-content: center;
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .menuItem:hover .menuItemIcon {
@@ -431,8 +432,8 @@
 }
 
 .menuItemIcon svg {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 .menuItemContent {
