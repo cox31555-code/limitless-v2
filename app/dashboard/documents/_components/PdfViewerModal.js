@@ -1,10 +1,18 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import styles from "./pdfViewerModal.module.css";
 
 export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -28,9 +36,9 @@ export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }
     return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
-  return (
+  const modalContent = (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
@@ -59,4 +67,6 @@ export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 }
