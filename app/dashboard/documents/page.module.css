@@ -222,7 +222,8 @@
 }
 
 .dropdownWrapper {
-  width: 360px;
+  width: 100%;
+  max-width: 340px;
   flex-shrink: 0;
 }
 
