@@ -25,6 +25,10 @@
   background: #fafbfc;
 }
 
+.selectedValue:hover .arrow {
+  opacity: 1;
+}
+
 .selectedValue:focus-within {
   border-color: #0052a3;
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
