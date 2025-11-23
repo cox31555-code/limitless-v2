@@ -1,30 +1,31 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  border: 1px solid #e0e6f0;
+  gap: 1.8rem;
+  padding: 2.8rem;
+  border: 1.5px solid #d1d5db;
   border-radius: 12px;
   background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
 .header {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 
 .title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
   line-height: 130%;
+  letter-spacing: -0.2px;
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #4b5563;
   margin: 0;
   line-height: 160%;
@@ -32,12 +33,12 @@
 
 .requestButton {
   align-self: flex-start;
-  padding: 0.9rem 1.8rem;
+  padding: 1rem 2rem;
   background: #1e7e34;
   color: #ffffff;
   border: none;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
