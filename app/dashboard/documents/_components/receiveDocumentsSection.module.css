@@ -1,8 +1,8 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
-  padding: 2.8rem;
+  gap: 2.2rem;
+  padding: 3.6rem;
   border: 1.5px solid #d1d5db;
   border-radius: 12px;
   background: #ffffff;
@@ -12,20 +12,20 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.6rem;
 }
 
 .title {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
   line-height: 130%;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #4b5563;
   margin: 0;
   line-height: 160%;
@@ -33,12 +33,12 @@
 
 .requestButton {
   align-self: flex-start;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.4rem;
   background: #1e7e34;
   color: #ffffff;
   border: none;
   border-radius: 6px;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
