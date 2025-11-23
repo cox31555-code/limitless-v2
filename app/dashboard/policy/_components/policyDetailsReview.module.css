@@ -264,21 +264,21 @@
 }
 
 .carTitle {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  color: #003366;
+  color: #0052a3;
   margin: 0;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.35px;
 }
 
 .carRegistration {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #7a8fa3;
   margin: 0;
 }
 
 .carMeta {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #999;
   margin: 0;
 }
@@ -470,22 +470,22 @@
 /* Action Buttons Container */
 .actionButtonsContainer {
   display: flex;
-  gap: 1rem;
-  padding: 2rem 0 0 0;
-  margin-top: 1.2rem;
-  border-top: 1px solid #d4e4f7;
+  gap: 1.6rem;
+  padding: 2.6rem 0 0 0;
+  margin-top: 1.6rem;
+  border-top: 1px solid #e0e6f0;
 }
 
 .makeClaimBtn {
   flex: 1;
-  padding: 1rem 2rem;
+  padding: 1.3rem 2.6rem;
   background: #1db584;
   color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 11px;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -496,14 +496,14 @@
 
 .cancelPolicyBtn {
   flex: 1;
-  padding: 1rem 2rem;
+  padding: 1.3rem 2.6rem;
   background: transparent;
-  color: #0388ff;
-  border: 1.5px solid #0388ff;
-  border-radius: 8px;
-  font-size: 1rem;
+  color: #0052a3;
+  border: 1.5px solid #0052a3;
+  border-radius: 11px;
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
