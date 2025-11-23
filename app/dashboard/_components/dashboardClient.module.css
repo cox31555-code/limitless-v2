@@ -366,8 +366,8 @@
 .menuRowContainer {
   display: flex;
   align-items: center;
-  gap: 612px;
-  width: fit-content;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .menuSection .sectionHeader {
