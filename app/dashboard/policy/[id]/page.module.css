@@ -52,6 +52,38 @@
   height: 100%;
 }
 
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.3rem;
+  margin-left: 64px;
+  padding: 0 3% 14px 0.4%;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 91%;
+  width: 100%;
+}
+
+.breadcrumbItem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.55rem;
+  color: #ccc;
+  margin: 0 0.4rem;
+  flex-shrink: 0;
+}
+
 .heroContent {
   display: flex;
   align-items: center;
