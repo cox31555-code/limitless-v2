@@ -42,6 +42,19 @@ export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }
     window.open(pdfUrl, "_blank");
   };
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "https://drive.google.com/uc?export=download&id=1jHtgmKi03bMQ3sJia8L8ml6-BAZFJvnD";
+    link.download = `${documentName || 'Document'}.pdf`;
+    link.target = "_blank";
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => {
+      document.body.removeChild(link);
+    }, 100);
+  };
+
   const modalContent = (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
