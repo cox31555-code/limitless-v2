@@ -135,36 +135,6 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.createPolicyBtn {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 2rem;
-  background: #ffffff;
-  color: #0052a3;
-  border: none;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  flex-shrink: 0;
-}
-
-.createPolicyBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.createPolicyBtn svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-}
 
 /* Content Wrapper */
 .contentWrapper {
@@ -177,6 +147,77 @@
   width: 100%;
   position: relative;
   z-index: 2;
+}
+
+/* Content Header */
+.contentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.contentHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contentTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+}
+
+.contentSubtitle {
+  font-size: 1.35rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.createButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.3rem 2.6rem;
+  background: #ffffff;
+  color: #0052a3;
+  border: 2px solid #e0e6f0;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.08);
+  text-decoration: none;
+}
+
+.createButton:hover {
+  background: #0052a3;
+  color: #ffffff;
+  border-color: #0052a3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 82, 163, 0.2);
+}
+
+.createButton:hover .plusIcon {
+  color: #ffffff;
+}
+
+.plusIcon {
+  width: 20px;
+  height: 20px;
+  color: #0052a3;
+  transition: color 0.25s ease;
+  flex-shrink: 0;
 }
 
 /* Tabs Container */
@@ -412,6 +453,26 @@
     padding: 2.5rem 3%;
   }
 
+  .contentHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  .contentTitle {
+    font-size: 2.3rem;
+  }
+
+  .contentSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .createButton {
+    width: 100%;
+    justify-content: center;
+    padding: 1.2rem 2.2rem;
+  }
+
   .sectionTitle {
     font-size: 2.3rem;
   }
@@ -484,6 +545,28 @@
 
   .contentWrapper {
     padding: 2rem 4%;
+  }
+
+  .contentHeader {
+    gap: 1.4rem;
+  }
+
+  .contentTitle {
+    font-size: 2rem;
+  }
+
+  .contentSubtitle {
+    font-size: 1.15rem;
+  }
+
+  .createButton {
+    font-size: 1rem;
+    padding: 1.1rem 2rem;
+  }
+
+  .plusIcon {
+    width: 18px;
+    height: 18px;
   }
 
   .allianzBadge {

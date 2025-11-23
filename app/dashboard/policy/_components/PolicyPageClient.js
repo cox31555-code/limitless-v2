@@ -44,16 +44,6 @@ const PolicyPageClient = ({
             <span className={styles.allianzBadge}>Limitless Cover</span>
           </div>
         </div>
-        <button
-          onClick={handleCreatePolicy}
-          className={styles.createPolicyBtn}
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <line x1="12" y1="5" x2="12" y2="19" />
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-          <span>Create a new policy</span>
-        </button>
       </section>
 
       {/* Breadcrumb Navigation */}
@@ -65,6 +55,24 @@ const PolicyPageClient = ({
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
+        {/* Header with Create Button */}
+        <div className={styles.contentHeader}>
+          <div className={styles.contentHeaderText}>
+            <h2 className={styles.contentTitle}>Your Policies</h2>
+            <p className={styles.contentSubtitle}>Manage and review all your insurance policies</p>
+          </div>
+          <button
+            onClick={handleCreatePolicy}
+            className={styles.createButton}
+          >
+            <svg className={styles.plusIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            <span>Create a new policy</span>
+          </button>
+        </div>
+
         {/* Tabs Navigation */}
         <div className={styles.tabsContainer}>
           <button
