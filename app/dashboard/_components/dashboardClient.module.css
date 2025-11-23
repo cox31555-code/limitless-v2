@@ -678,29 +678,6 @@
     font-size: 1.5rem;
   }
 
-  .menuGrid {
-    flex-wrap: wrap;
-  }
-
-  .menuItem {
-    padding: 0.6rem 0.8rem;
-    gap: 0.5rem;
-  }
-
-  .menuItemIcon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .menuItemIcon svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .menuItemLabel {
-    font-size: 0.8rem;
-  }
-
   .policyCard {
     border-radius: 10px;
   }
