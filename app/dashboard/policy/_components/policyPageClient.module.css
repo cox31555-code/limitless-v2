@@ -316,10 +316,7 @@
   .breadcrumbSeparator {
     font-size: 1.3rem;
   }
-}
 
-/* Merged 1200px breakpoint */
-@media screen and (max-width: 1200px) {
   .heroSection {
     padding: 7rem calc(50vw - 50%) 7rem;
   }
@@ -334,6 +331,14 @@
 
   .sectionDescription {
     font-size: 1.3rem;
+  }
+
+  .tabsContainer {
+    gap: 1.5rem;
+  }
+
+  .tab {
+    font-size: 1rem;
   }
 }
 
