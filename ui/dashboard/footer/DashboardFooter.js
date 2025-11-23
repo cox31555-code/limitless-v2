@@ -55,7 +55,7 @@ const DashboardFooter = () => {
           </div>
 
           <div className={styles.copyrightSection}>
-            <p className={styles.copyrightText}>© 2025 TailGrids | All Rights Reserved</p>
+            <p className={styles.copyrightText}>© 2025 Limitless Cover | All Rights Reserved</p>
           </div>
 
           <div className={styles.socialsSection}>
