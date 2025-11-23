@@ -86,9 +86,8 @@ const DashboardClient = () => {
       ),
       phone: (
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="50" y="30" width="100" height="140" rx="12" fill="none" stroke="currentColor" strokeWidth="8"/>
-          <circle cx="100" cy="155" r="8" fill="currentColor"/>
-          <path d="M 70 60 Q 100 100 130 140" fill="none" stroke="currentColor" strokeWidth="4"/>
+          <path d="M 60 40 L 140 40 C 150 40 160 50 160 60 L 160 140 C 160 150 150 160 140 160 L 60 160 C 50 160 40 150 40 140 L 40 60 C 40 50 50 40 60 40" fill="none" stroke="currentColor" strokeWidth="6"/>
+          <path d="M 80 100 L 120 100 M 100 80 L 100 120" stroke="currentColor" strokeWidth="5" strokeLinecap="round"/>
         </svg>
       ),
       email: (
