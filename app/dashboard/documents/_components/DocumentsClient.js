@@ -59,6 +59,8 @@ export default function DocumentsClient({ insurances }) {
       <section>
         <Booklets />
       </section>
+
+      <NeedHelpSection />
     </div>
   );
 }
