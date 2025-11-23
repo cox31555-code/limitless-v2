@@ -177,7 +177,7 @@
 .policiesGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 55px;
 }
 
 .policyCard {
