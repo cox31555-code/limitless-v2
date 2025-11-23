@@ -66,7 +66,7 @@ const PolicyPageClient = ({
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
       {/* Active Policies Section */}
-      {mockActivePolicies.length > 0 && (
+      {activePolicies && activePolicies.length > 0 && (
         <section className={styles.policiesSection}>
           <div className={styles.sectionHeaderWrapper}>
             <div className={styles.sectionHeader}>
@@ -87,7 +87,7 @@ const PolicyPageClient = ({
               "Vehicle Reg",
               "Details",
             ]}
-            data={mockActivePolicies}
+            data={activePolicies}
             showTitle={false}
           />
         </section>
