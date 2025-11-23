@@ -76,6 +76,16 @@ const page = async ({ params }) => {
           </div>
         </div>
       </div>
+
+      {/* Breadcrumb Navigation */}
+      <div className={styles.breadcrumb}>
+        <span className={styles.breadcrumbItem}>Dashboard</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={styles.breadcrumbItem}>Manage Policy</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Policy summary</span>
+      </div>
+
       <div className={styles.contentWrapper}>
         <PolicyDetailsReview policy={insurance} />
       </div>
