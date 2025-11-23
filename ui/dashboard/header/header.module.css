@@ -60,7 +60,7 @@
 .desktopNav {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 10px;
   flex: 1;
   justify-content: flex-end;
 }
