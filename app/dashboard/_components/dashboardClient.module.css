@@ -229,8 +229,7 @@
   object-fit: contain;
   object-position: center;
   padding: 8px;
-  mix-blend-mode: multiply;
-  background: transparent;
+  filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
 }
 
 .policyHeaderInfo {
