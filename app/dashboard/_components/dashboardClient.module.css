@@ -327,19 +327,15 @@
   font-weight: 600;
 }
 
-/* Menu Section */
+/* Menu Section - Full Width Footer Banner */
 .menuSection {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 3rem 2% 2rem;
-  max-width: 1080px;
-  margin: 99px auto 0;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  border-radius: 35px;
   overflow: hidden;
   position: relative;
+  padding: 0;
+  margin-top: 5rem;
 }
 
 .menuSection::before {
@@ -351,6 +347,19 @@
   bottom: 0;
   background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 0;
+}
+
+.menuSectionInner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 3rem 4.4%;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .menuSection .sectionHeader {
