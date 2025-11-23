@@ -146,10 +146,11 @@
 
 .disclaimerText {
   font-size: 0.95rem;
-  color: #999;
+  color: #333;
   margin: 0;
   line-height: 160%;
   width: 100%;
+  font-weight: 600;
 }
 
 /* Bottom Section - Copyright */
