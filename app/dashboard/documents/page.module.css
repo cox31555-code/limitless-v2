@@ -459,7 +459,8 @@
   }
 
   .contentWrapper {
-    padding: 2rem 4%;
+    padding: 2.2rem 4%;
+    gap: 2rem;
   }
 
   .sectionTitle {
@@ -479,11 +480,13 @@
   .sectionHeaderWrapper {
     gap: 0.6rem;
     align-items: center;
+    margin-bottom: 1.6rem;
   }
 
   .policyContainer {
     width: 100%;
     max-width: 100%;
+    gap: 0.8rem;
   }
 
   .dropdownWrapper {
@@ -493,7 +496,11 @@
   }
 
   .policyLabel {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .documentsTitle {
+    font-size: 1.6rem;
   }
 
   .title {
