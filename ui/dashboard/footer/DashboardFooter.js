@@ -29,9 +29,7 @@ const DashboardFooter = () => {
           </div>
 
           <div className={styles.partnershipSection}>
-            <div className={styles.partnershipLogos}>
-              <img src="https://via.placeholder.com/120x60?text=Allianz" alt="Allianz" className={styles.partnerLogo} />
-            </div>
+            <div className={styles.partnershipLogos} />
             <p className={styles.partnershipText}>Proud Partner of Team GB and Paralympics GB</p>
           </div>
         </div>
