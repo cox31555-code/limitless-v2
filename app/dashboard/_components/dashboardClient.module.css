@@ -650,6 +650,11 @@
   .menuSectionInner {
     padding: 1.3rem 2%;
     margin: 0;
+    gap: 18px;
+  }
+
+  .menuRowContainer {
+    gap: 250px;
   }
 
   .heroSection {
