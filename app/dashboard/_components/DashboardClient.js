@@ -104,6 +104,12 @@ const DashboardClient = () => {
           <path d="M 40 50 L 100 100 L 160 50" fill="none" stroke="currentColor" strokeWidth="6"/>
         </svg>
       ),
+      faq: (
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="55" fill="none" stroke="currentColor" strokeWidth="8"/>
+          <text x="100" y="120" fontSize="80" fontWeight="bold" textAnchor="middle" fill="currentColor" fontFamily="Arial">?</text>
+        </svg>
+      ),
     };
     return icons[type] || icons.chat;
   };
