@@ -353,13 +353,20 @@
 .menuSectionInner {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 3rem 4.4%;
+  gap: 1rem;
+  padding: 1.5rem 4.4%;
   max-width: 1172px;
   margin: 0 auto;
   width: 100%;
   position: relative;
   z-index: 1;
+}
+
+.menuRowContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 }
 
 .menuSection .sectionHeader {
