@@ -304,20 +304,20 @@
   }
 
   .contentWrapper {
-    padding: 3.2rem 3%;
-    gap: 2.8rem;
+    padding: 4rem 3%;
+    gap: 3.6rem;
   }
 
   .sectionTitle {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .sectionDescription {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .documentsTitle {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
   }
 }
 
