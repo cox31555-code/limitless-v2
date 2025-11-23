@@ -372,12 +372,17 @@
 .menuSection .sectionHeader {
   position: relative;
   z-index: 1;
+  flex-shrink: 0;
+  margin-bottom: 0;
 }
 
 .menuSection .sectionTitle {
   color: #ffffff;
   position: relative;
   z-index: 1;
+  font-size: 1.4rem;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .menuGrid {
