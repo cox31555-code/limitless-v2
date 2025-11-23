@@ -40,7 +40,7 @@
 
 .policyCardHeader {
   background: #f0f4fb;
-  padding: 1.5rem;
+  padding: 2rem;
   display: block;
   border-bottom: 1px solid #e0e6f0;
   position: relative;
@@ -50,37 +50,37 @@
   display: inline-block;
   background: #0052a3;
   color: #ffffff;
-  padding: 0.3rem 0.8rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.8rem;
+  letter-spacing: 0.6px;
+  margin-bottom: 1rem;
 }
 
 .policyRef {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #666;
   font-weight: 500;
 }
 
 .policyDetails {
-  padding: 1.5rem;
+  padding: 2rem;
   flex: 1;
 }
 
 .carTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #0052a3;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.6rem 0;
   line-height: 130%;
 }
 
 .carMeta {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   color: #666;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.3rem 0;
   font-weight: 400;
 }
 
@@ -88,9 +88,9 @@
   display: inline-block;
   background: #000000;
   color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
