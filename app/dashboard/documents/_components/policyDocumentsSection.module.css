@@ -105,8 +105,8 @@
   .documentItem {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.2rem;
-    padding: 1.6rem 1.4rem;
+    gap: 1.4rem;
+    padding: 2rem 1.6rem;
   }
 
   .documentInfo {
@@ -114,11 +114,11 @@
   }
 
   .documentDetails {
-    gap: 0.4rem;
+    gap: 0.5rem;
   }
 
   .documentName {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
 
   .dateAdded {
@@ -128,7 +128,7 @@
   .documentActions {
     width: 100%;
     justify-content: flex-start;
-    gap: 1.6rem;
+    gap: 1.4rem;
   }
 }
 
@@ -143,7 +143,7 @@
   }
 
   .documentItem {
-    padding: 1.4rem 1.2rem;
+    padding: 1.8rem 1.4rem;
   }
 
   .documentInfo {
@@ -151,11 +151,11 @@
   }
 
   .documentDetails {
-    gap: 0.3rem;
+    gap: 0.4rem;
   }
 
   .documentName {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
 
   .dateAdded {
