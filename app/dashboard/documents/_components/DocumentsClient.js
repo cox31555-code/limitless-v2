@@ -42,7 +42,6 @@ export default function DocumentsClient({ insurances }) {
         {selectedInsurance ? (
           <div className={styles.sectionsContainer}>
             <PolicyDocumentsSection selectedInsurance={selectedInsurance} />
-            <ReceiveDocumentsSection />
           </div>
         ) : (
           <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
@@ -56,6 +55,10 @@ export default function DocumentsClient({ insurances }) {
 
       <section>
         <Booklets />
+      </section>
+
+      <section>
+        <ReceiveDocumentsSection />
       </section>
 
       <NeedHelpSection />
