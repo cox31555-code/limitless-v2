@@ -4,9 +4,10 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
-  padding: 2rem 4.4%;
+  margin-left: 49px;
+  padding: 20px 3% 20px 0.4%;
   border-bottom: 1px solid #e0e6f0;
-  max-width: 100%;
+  max-width: 91%;
   width: 100%;
 }
 
