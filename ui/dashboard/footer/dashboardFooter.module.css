@@ -184,55 +184,71 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .topSection {
-    gap: 4rem;
-    padding: 3.5rem 3%;
+    gap: 3rem;
+    padding: 2.5rem 3%;
   }
 
-  .mainHeading {
-    font-size: 1.5rem;
+  .partnershipSection {
+    align-items: flex-start;
   }
 
-  .contactColumnsWrapper {
-    gap: 4rem;
+  .partnershipText {
+    text-align: left;
   }
 
   .bottomSection {
     padding: 2rem 3%;
+  }
+
+  .linksSection {
+    padding: 1.2rem 3%;
+  }
+
+  .disclaimerSection {
+    padding: 1.2rem 3%;
   }
 }
 
 @media screen and (max-width: 900px) {
   .topSection {
     flex-direction: column;
-    gap: 3rem;
-    padding: 3rem 3%;
+    gap: 2rem;
+    padding: 2rem 3%;
     align-items: stretch;
   }
 
-  .headingSection {
-    max-width: none;
-  }
-
-  .mainHeading {
-    font-size: 1.4rem;
-  }
-
-  .contactColumnsWrapper {
+  .trustSection {
     flex-direction: column;
-    gap: 2.5rem;
-    justify-content: flex-start;
+  }
+
+  .partnershipSection {
+    align-items: flex-start;
+  }
+
+  .partnershipText {
+    text-align: left;
   }
 
   .bottomSection {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2.5rem 3%;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 3%;
   }
 
-  .copyrightSection {
-    order: 2;
-    flex-basis: 100%;
+  .linksSection {
+    padding: 1rem 3%;
+  }
+
+  .disclaimerSection {
+    padding: 1rem 3%;
+  }
+
+  .linksSection {
+    font-size: 0.85rem;
+  }
+
+  .copyrightText {
+    font-size: 0.85rem;
   }
 
   .logoSection {
