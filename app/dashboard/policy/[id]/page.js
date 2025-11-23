@@ -67,7 +67,7 @@ const page = async ({ params }) => {
             <path
               d="M280 0C313.137 0 340 26.8629 340 60V459C340 492.137 313.137 519 280 519H60C26.8629 519 0 492.137 0 459V60C0 26.8629 26.8629 0 60 0H280Z"
               fill="white"
-              fillOpacity="0.08"
+              fillOpacity="0.15"
             />
           </svg>
         </div>
