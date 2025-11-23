@@ -305,14 +305,16 @@
   .heroSection {
     flex-direction: column;
     text-align: center;
-    padding: 2rem calc(50vw - 50%);
-    gap: 1.5rem;
+    padding: 2.5rem calc(50vw - 50%);
+    gap: 1.8rem;
   }
 
   .heroContent {
     flex-direction: column;
     width: 100%;
-    gap: 1.5rem;
+    gap: 1.8rem;
+    padding-left: 0;
+    margin-right: 0;
   }
 
   .greetingArea {
@@ -321,11 +323,11 @@
   }
 
   .greetingTitle {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .greetingSubtitle {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .badgeArea {
@@ -339,23 +341,23 @@
   }
 
   .contentWrapper {
-    padding: 1.5rem 2%;
+    padding: 2rem 3%;
   }
 
   .sectionTitle {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
   .sectionDescription {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .expandableHeader {
-    padding: 1.5rem;
+    padding: 1.8rem;
   }
 
   .expandableContent {
-    padding: 1.5rem;
+    padding: 1.8rem;
   }
 }
 
