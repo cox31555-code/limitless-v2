@@ -3,13 +3,7 @@
 import React, { useState } from "react";
 import styles from "./booklets.module.css";
 import Image from "next/image";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { downloadStaticPDF } from "@/lib/pdfDownload";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Booklets = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -22,39 +16,37 @@ const Booklets = () => {
 
   return (
     <div className={styles.container}>
-      <span className={styles.blueBackground}></span>
-      <span className={styles.blueBackground2}></span>
-      <span className={styles.blueBackground3}></span>
-      <div className={styles.first}>
-        <h4 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Insurance policy booklets
-        </h4>
-        <p className={styles.description}>
-          For RAC breakdown cover claims, please call 0345 168 5586.
-        </p>
-      </div>{" "}
-      <div
-        className={styles.second}
-        onClick={handleDownload}
-        style={{ cursor: "pointer" }}
-      >
-        <div className={styles.download}>
-          {isDownloading ? (
-            <div style={{ fontSize: "12px" }}>...</div>
-          ) : (
-            <Image
-              src="/svg/download.svg"
-              alt="download"
-              width={24}
-              height={24}
-            />
-          )}
-        </div>
-
-        <p className={styles.downloadText}>
-          {isDownloading ? "Downloading..." : "Download car policy booklet"}
-        </p>
+      <div className={styles.header}>
+        <Image
+          src="/svg/document-text.svg"
+          alt="booklet"
+          width={32}
+          height={32}
+        />
+        <h3 className={styles.title}>Insurance policy booklets</h3>
       </div>
+
+      <p className={styles.description}>
+        For RAC breakdown cover claims, please call{" "}
+        <a href="tel:03451685586" className={styles.phoneLink}>
+          0345 168 5586
+        </a>
+        .
+      </p>
+
+      <button
+        onClick={handleDownload}
+        disabled={isDownloading}
+        className={styles.downloadButton}
+      >
+        <Image
+          src="/svg/download.svg"
+          alt="download"
+          width={20}
+          height={20}
+        />
+        <span>{isDownloading ? "Downloading..." : "Download car policy booklet"}</span>
+      </button>
     </div>
   );
 };
