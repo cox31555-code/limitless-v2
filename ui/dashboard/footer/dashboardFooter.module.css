@@ -1,16 +1,17 @@
 .footer {
-  background: rgba(252, 252, 252, 1);
-  border-top: 1px solid rgba(0, 82, 163, 0.2);
+  background: #fafbfc;
+  border-top: 1px solid #e0e6f0;
   padding: 0;
+  margin-top: 6rem;
 }
 
 .footerContainer {
-  max-width: 1170px;
+  max-width: 1400px;
   margin: 0 auto;
-  width: 1170px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  padding: 0 5%;
 }
 
 /* Top Section - Trust & Partnership Information */
@@ -18,19 +19,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2.6rem;
-  padding: 2.6rem 0;
-  border-bottom: 1px solid rgba(0, 82, 163, 0.2);
+  gap: 3rem;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid #e0e6f0;
   flex-wrap: wrap;
-  width: 100%;
 }
 
 .trustSection {
   display: flex;
-  gap: 19.5px;
+  gap: 2rem;
   align-items: center;
   flex: 1;
-  flex-wrap: nowrap;
   min-width: 0;
 }
 
@@ -39,73 +38,62 @@
 }
 
 .sectigoImage {
-  height: 78px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   display: block;
-  flex-shrink: 0;
 }
 
 .securityInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.26rem;
-  flex-wrap: nowrap;
-  padding-top: 0;
+  gap: 0.5rem;
   min-width: 0;
 }
 
 .securityTitle {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #1f2937;
   margin: 0;
-  line-height: 120%;
-  white-space: normal;
+  line-height: 1.3;
 }
 
 .securityText {
-  font-size: 1.17rem;
-  color: #666;
+  font-size: 1.05rem;
+  color: #6b7280;
   margin: 0;
-  line-height: 140%;
-  width: auto;
+  line-height: 1.5;
 }
 
 .partnershipSection {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.8rem;
   align-items: flex-end;
-  flex: 0 0 auto;
-  flex-wrap: nowrap;
-  padding-right: 7.3px;
+  flex-shrink: 0;
 }
 
 .partnershipLogos {
   display: flex;
   gap: 1rem;
   align-items: center;
-  flex-wrap: nowrap;
 }
 
 .partnerLogo {
-  height: 78px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   display: block;
-  flex-shrink: 0;
 }
 
 .partnershipText {
-  font-size: 1.17rem;
-  color: #666;
+  font-size: 1.05rem;
+  color: #6b7280;
   margin: 0;
-  line-height: 140%;
+  line-height: 1.5;
   text-align: right;
   white-space: nowrap;
-  width: auto;
-  display: block;
 }
 
 /* Links Section */
@@ -113,20 +101,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10.4px;
-  padding: 1.3rem 27.3px;
-  border-bottom: 1px solid rgba(0, 82, 163, 0.2);
-  flex-wrap: nowrap;
-  width: 100%;
+  gap: 1.2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e0e6f0;
 }
 
 .footerLink {
   color: #0052a3;
   text-decoration: none;
-  font-size: 1.17rem;
+  font-size: 1.05rem;
   font-weight: 500;
   transition: color 0.2s ease;
   white-space: nowrap;
+  line-height: 1.5;
 }
 
 .footerLink:hover {
@@ -135,25 +122,23 @@
 }
 
 .linkSeparator {
-  color: #ccc;
-  font-size: 1.17rem;
-  white-space: nowrap;
+  color: #d1d5db;
+  font-size: 1.05rem;
 }
 
 /* Disclaimer Section */
 .disclaimerSection {
-  padding: 1.95rem 27.3px;
-  border-bottom: 1px solid rgba(0, 82, 163, 0.2);
-  width: 100%;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #e0e6f0;
 }
 
 .disclaimerText {
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 0.95rem;
+  color: #6b7280;
   margin: 0;
-  line-height: 150%;
-  width: 100%;
-  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 400;
 }
 
 /* Bottom Section - Copyright */
@@ -161,50 +146,196 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.95rem 27.3px;
-  gap: 2.6rem;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
-.logoSection {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-}
-
-.logoImage {
-  height: 45px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.trustLogoLink {
-  display: block;
-  text-decoration: none;
-}
-
-.trustLogoImage {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  display: block;
+  padding: 2rem 0;
 }
 
 .copyrightSection {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .copyrightText {
-  font-size: 1.17rem;
-  color: #333;
+  font-size: 1rem;
+  color: #6b7280;
   margin: 0;
-  line-height: 140%;
-  letter-spacing: 0.39px;
-  white-space: nowrap;
+  line-height: 1.5;
   font-weight: 500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .footerContainer {
+    padding: 0 4%;
+  }
+
+  .topSection {
+    padding: 3rem 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footerContainer {
+    padding: 0 3%;
+  }
+
+  .topSection {
+    padding: 2.5rem 0;
+    gap: 2.5rem;
+  }
+
+  .trustSection {
+    gap: 1.5rem;
+  }
+
+  .sectigoImage {
+    height: 60px;
+  }
+
+  .securityTitle {
+    font-size: 1.15rem;
+  }
+
+  .securityText {
+    font-size: 1rem;
+  }
+
+  .partnerLogo {
+    height: 60px;
+  }
+
+  .partnershipText {
+    font-size: 1rem;
+  }
+
+  .linksSection {
+    padding: 1.8rem 0;
+    gap: 1rem;
+  }
+
+  .footerLink {
+    font-size: 1rem;
+  }
+
+  .disclaimerSection {
+    padding: 2rem 0;
+  }
+
+  .disclaimerText {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    margin-top: 4rem;
+  }
+
+  .footerContainer {
+    padding: 0 4%;
+  }
+
+  .topSection {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+
+  .trustSection {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .sectigoImage {
+    height: 55px;
+  }
+
+  .securityInfo {
+    width: 100%;
+  }
+
+  .securityTitle {
+    font-size: 1.1rem;
+  }
+
+  .securityText {
+    font-size: 0.95rem;
+  }
+
+  .partnershipSection {
+    width: 100%;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .partnerLogo {
+    height: 55px;
+  }
+
+  .partnershipText {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .linksSection {
+    padding: 1.5rem 0;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .footerLink {
+    font-size: 0.95rem;
+  }
+
+  .linkSeparator {
+    font-size: 0.95rem;
+  }
+
+  .disclaimerSection {
+    padding: 1.8rem 0;
+  }
+
+  .disclaimerText {
+    font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .bottomSection {
+    padding: 1.5rem 0;
+  }
+
+  .copyrightText {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .topSection {
+    padding: 1.8rem 0;
+  }
+
+  .sectigoImage,
+  .partnerLogo {
+    height: 50px;
+  }
+
+  .securityTitle {
+    font-size: 1.05rem;
+  }
+
+  .securityText,
+  .partnershipText {
+    font-size: 0.9rem;
+  }
+
+  .disclaimerText {
+    font-size: 0.8rem;
+  }
+
+  .copyrightText {
+    font-size: 0.85rem;
+  }
 }
