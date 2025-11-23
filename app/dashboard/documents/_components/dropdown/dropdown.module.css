@@ -110,27 +110,28 @@
   }
 
   .selectedValue {
-    padding: 1rem 1.3rem;
+    padding: 1.2rem 1.5rem;
+    min-height: 50px;
   }
 
   .value_text {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .arrow {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.7rem;
+    height: 1.7rem;
   }
 
   .options {
-    max-height: 280px;
+    max-height: 300px;
   }
 
   .option {
-    padding: 0.9rem 1.3rem;
+    padding: 1.1rem 1.5rem;
   }
 
   .option:hover .value_text {
-    font-weight: 500;
+    font-weight: 600;
   }
 }
