@@ -229,7 +229,7 @@
   object-fit: contain;
   object-position: center;
   padding: 8px;
-  mix-blend-mode: screen;
+  filter: contrast(1.2) brightness(1.1);
 }
 
 .policyHeaderInfo {
