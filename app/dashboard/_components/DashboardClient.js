@@ -44,7 +44,7 @@ const DashboardClient = () => {
 
   const menuItems = [
     {
-      label: "Live Chat",
+      label: "Chat Now",
       description: "Chat with our support team",
       hours: "9 AM - 6 PM, Mon - Fri",
       icon: "chat",
@@ -64,7 +64,7 @@ const DashboardClient = () => {
       },
     },
     {
-      label: "Email Support",
+      label: "Email Us",
       description: "Get help anytime via email",
       hours: null,
       icon: "email",
