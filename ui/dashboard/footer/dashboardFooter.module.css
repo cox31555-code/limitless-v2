@@ -26,7 +26,7 @@
 
 .trustSection {
   display: flex;
-  gap: 34rem;
+  gap: 27px;
   align-items: flex-start;
   flex: 0 0 50%;
   flex-wrap: nowrap;
@@ -49,7 +49,7 @@
   flex-direction: column;
   gap: 0.6rem;
   flex-wrap: nowrap;
-  padding-top: 17px;
+  padding-top: 13px;
 }
 
 .securityTitle {
