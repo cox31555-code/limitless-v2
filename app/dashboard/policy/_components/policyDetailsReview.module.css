@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -9,9 +9,9 @@
 .priceCard {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border: none;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  padding: 2rem 2.4rem;
+  border-radius: 15.6px;
+  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
+  padding: 3.25rem 3.25rem;
 }
 
 .priceContent {
@@ -21,41 +21,41 @@
 }
 
 .priceLabel {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.65px;
 }
 
 .priceAmount {
-  font-size: 2.4rem;
+  font-size: 3.25rem;
   font-weight: 800;
   color: #ffffff;
   line-height: 1;
 }
 
 .pricePeriod {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.75);
-  margin-left: 0.4rem;
+  margin-left: 0.5rem;
 }
 
 .priceMeta {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.75);
-  margin-top: 0.3rem;
+  margin-top: 0.4rem;
 }
 
 /* Next Instalment Info */
 .instalmentInfo {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 1.4rem;
+  gap: 1.3rem;
+  padding: 1.6rem 2rem;
   background: #e8f2fb;
-  border-radius: 10px;
+  border-radius: 13px;
   border: 1px solid #d4e4f7;
 }
 
@@ -63,20 +63,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
   flex-shrink: 0;
 }
 
 .instalmentIcon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   color: #5a8fc4;
 }
 
 .instalmentText {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #2c3e50;
   line-height: 1.5;
 }
