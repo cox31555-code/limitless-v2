@@ -57,6 +57,20 @@ const page = async ({ params }) => {
   return (
     <div className={styles.page}>
       <div className={styles.heroSection}>
+        <div className={styles.heroBackground}>
+          <svg
+            className={styles.heroBackgroundImage}
+            viewBox="0 0 520 519"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M280 0C313.137 0 340 26.8629 340 60V459C340 492.137 313.137 519 280 519H60C26.8629 519 0 492.137 0 459V60C0 26.8629 26.8629 0 60 0H280Z"
+              fill="white"
+              fillOpacity="0.05"
+            />
+          </svg>
+        </div>
         <div className={styles.heroContent}>
           <div className={styles.greetingArea}>
             <h1 className={styles.greetingTitle}>Policy summary</h1>
