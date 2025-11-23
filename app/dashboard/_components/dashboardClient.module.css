@@ -229,6 +229,8 @@
   object-fit: contain;
   object-position: center;
   padding: 8px;
+  mix-blend-mode: multiply;
+  background: transparent;
 }
 
 .policyHeaderInfo {
