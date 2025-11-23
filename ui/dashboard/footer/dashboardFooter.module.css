@@ -198,9 +198,10 @@
 
 .copyrightText {
   font-size: 1rem;
-  color: #999;
+  color: #333;
   margin: 0;
   line-height: 150%;
   letter-spacing: 0.3px;
   white-space: nowrap;
+  font-weight: 600;
 }
