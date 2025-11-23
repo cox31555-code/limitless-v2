@@ -111,6 +111,8 @@
   justify-content: center;
   gap: 1rem;
   padding: 2.5rem 0;
+  padding-left: 6.4rem;
+  padding-right: 6.4rem;
   border-bottom: 1px solid #f0f2f5;
   flex-wrap: nowrap;
   width: 100%;
