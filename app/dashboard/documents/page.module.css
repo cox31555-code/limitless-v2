@@ -472,12 +472,18 @@
     align-items: center;
   }
 
+  .policyContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .dropdownWrapper {
     max-width: 100%;
     flex: 1;
+    width: 100%;
   }
 
-  .selectedPolicyTitle {
+  .policyLabel {
     font-size: 0.85rem;
   }
 
