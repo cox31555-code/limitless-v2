@@ -68,32 +68,63 @@
   gap: 1.6rem;
   flex-shrink: 0;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.second:hover .download {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(3, 136, 255, 0.4), 0 0 32px rgba(3, 136, 255, 0.2);
+}
+
+.second:hover .downloadText {
+  color: #ffffff;
+}
+
+.second:active .download {
+  transform: translateY(-2px);
 }
 
 .download {
   width: 6.4rem;
   height: 6.4rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0388ff 0%, #0366cc 50%, #0388ff 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-size: 2.8rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
+  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.download::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .download img {
   filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.second:hover .download img {
+  transform: scale(1.1);
 }
 
 .downloadText {
   font-size: 1.7rem;
   font-weight: 600;
-  color: #64b5f6;
+  color: #5eb3ff;
   margin: 0;
   line-height: 140%;
+  transition: color 0.3s ease;
 }
 
 @media screen and (max-width: 900px) {
