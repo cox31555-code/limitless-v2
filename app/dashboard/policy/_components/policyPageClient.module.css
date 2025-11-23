@@ -406,12 +406,24 @@
     font-size: 1.2rem;
   }
 
-  .expandableHeader {
-    padding: 2rem;
+  .tabsContainer {
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
 
-  .expandableContent {
-    padding: 2rem;
+  .tab {
+    font-size: 0.95rem;
+    padding: 0.7rem 0 1rem 0;
+  }
+
+  .tabLabel {
+    font-size: 0.95rem;
+  }
+
+  .tabBadge {
+    min-width: 24px;
+    height: 24px;
+    font-size: 0.85rem;
   }
 }
 
