@@ -361,7 +361,7 @@
 
 @media screen and (max-width: 600px) {
   .heroSection {
-    padding: 2rem calc(50vw - 50%);
+    padding: 2.5rem calc(50vw - 50%);
     gap: 1.5rem;
   }
 
@@ -370,58 +370,58 @@
   }
 
   .greetingTitle {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 
   .greetingSubtitle {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .contentWrapper {
-    padding: 1.5rem 4%;
+    padding: 2rem 4%;
   }
 
   .allianzBadge {
-    font-size: 0.95rem;
-    padding: 0.7rem 1.4rem;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 
   .createPolicyBtn {
-    font-size: 1rem;
-    padding: 0.9rem 1.6rem;
-    gap: 0.7rem;
+    font-size: 1.05rem;
+    padding: 1rem 1.7rem;
+    gap: 0.8rem;
   }
 
   .createPolicyBtn svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
   }
 
   .sectionTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .sectionDescription {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
   .sectionBadge {
-    min-width: 54px;
-    height: 54px;
-    font-size: 1.5rem;
+    min-width: 60px;
+    height: 60px;
+    font-size: 1.7rem;
   }
 
   .expandableHeader {
-    padding: 1.5rem;
+    padding: 1.8rem;
   }
 
   .expandableContent {
-    padding: 1.5rem;
+    padding: 1.8rem;
   }
 
   .expandableBadge {
-    width: 30px;
-    height: 30px;
-    font-size: 0.9rem;
+    width: 35px;
+    height: 35px;
+    font-size: 0.95rem;
   }
 }
