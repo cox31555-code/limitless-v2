@@ -76,6 +76,28 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
     setIsDownloading(true);
 
     try {
+      // Use mock PDF from Google Drive for testing
+      const mockPdfUrl = "https://drive.google.com/uc?export=download&id=1jHtgmKi03bMQ3sJia8L8ml6-BAZFJvnD";
+
+      // Simulate download delay for loading animation
+      await new Promise(resolve => setTimeout(resolve, 800));
+
+      const link = document.createElement("a");
+      link.href = mockPdfUrl;
+      link.download = `${documentName || 'Document'}.pdf`;
+      link.target = "_blank";
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+
+      setTimeout(() => {
+        document.body.removeChild(link);
+      }, 100);
+
+      toast.success("PDF download started!");
+
+      // Real implementation (commented out for now)
+      /*
       const downloadUrl = `/api/download-pdf/${insuranceId}/${pdfType}`;
 
       const response = await fetch(downloadUrl, {
@@ -111,7 +133,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
       }
 
       const blob = await response.blob();
-      
+
       if (blob.size === 0) {
         toast.error("Downloaded file is empty.");
         return;
@@ -130,7 +152,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
 
       const pdfBlob = new Blob([blob], { type: "application/pdf" });
       const url = window.URL.createObjectURL(pdfBlob);
-      
+
       const link = document.createElement("a");
       link.href = url;
       link.download = filename;
@@ -144,6 +166,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
       }, 100);
 
       toast.success("PDF downloaded successfully!");
+      */
     } catch (error) {
       console.error("Download error:", error);
       toast.error("Failed to download PDF");
