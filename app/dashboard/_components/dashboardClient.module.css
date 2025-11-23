@@ -441,13 +441,18 @@
 }
 
 .menuItemLabel {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #ffffff;
-  line-height: 110%;
+  line-height: 120%;
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.menuItem:hover .menuItemLabel {
+  color: #ffffff;
+  font-weight: 800;
 }
 
 .menuItemDescription {
