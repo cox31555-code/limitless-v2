@@ -88,12 +88,43 @@
 
 @media screen and (max-width: 900px) {
   .container {
-    padding: 2.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.2rem;
     gap: 2.2rem;
   }
 
-  .header {
-    gap: 1.4rem;
+  .first {
+    width: 100%;
+  }
+
+  .second {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .download {
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+
+  .downloadText {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 2.6rem;
+    gap: 1.8rem;
   }
 
   .title {
@@ -101,34 +132,15 @@
   }
 
   .description {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
-  .downloadButton {
-    width: 100%;
-    justify-content: center;
-    padding: 1.1rem 2rem;
-    font-size: 1.05rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .container {
-    padding: 2.2rem;
-    gap: 1.8rem;
+  .download {
+    width: 5.2rem;
+    height: 5.2rem;
   }
 
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .description {
-    font-size: 1.05rem;
-  }
-
-  .downloadButton {
-    width: 100%;
-    padding: 1rem 1.8rem;
-    font-size: 1rem;
+  .downloadText {
+    font-size: 1.4rem;
   }
 }
