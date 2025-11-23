@@ -1,7 +1,7 @@
 .footer {
-  background: #f8f9fa;
-  border-top: 1px solid #e8ecf1;
-  padding: 3.5rem 4.4%;
+  background: #ffffff;
+  border-top: 1px solid #f0f2f5;
+  padding: 0;
   margin-top: 5rem;
 }
 
@@ -9,185 +9,257 @@
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
-}
-
-/* Main Row - Horizontal Layout */
-.mainRow {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* Left Section: Security Badge */
-.leftSection {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  min-width: fit-content;
-}
-
-.securityBadge {
-  flex-shrink: 0;
-  width: 160px;
-  height: auto;
-}
-
-.sectigoImage {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.securityInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
 }
 
-.securityTitle {
-  font-size: 1.15rem;
+/* Top Section - Contact Information */
+.topSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 6rem;
+  padding: 4rem 4.4%;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.headingSection {
+  flex: 0 0 auto;
+  max-width: 350px;
+}
+
+.mainHeading {
+  font-size: 1.75rem;
   font-weight: 700;
-  color: #0052a3;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.5px;
+}
+
+.contactColumnsWrapper {
+  display: flex;
+  gap: 6rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.contactColumn {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  flex: 0 1 auto;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4285f4;
+  margin-top: 0.2rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contactTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
   margin: 0;
   line-height: 120%;
 }
 
-.securityText {
-  font-size: 0.9rem;
-  color: #555;
+.contactText {
+  font-size: 0.95rem;
+  color: #666;
   margin: 0;
-  line-height: 150%;
+  line-height: 140%;
 }
 
-/* Center Section: Links & Disclaimer */
-.centerSection {
+/* Bottom Section - Logo, Copyright, Socials */
+.bottomSection {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 4.4%;
+  gap: 2rem;
+}
+
+.logoSection {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.copyrightSection {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyrightText {
+  font-size: 0.95rem;
+  color: #999;
+  margin: 0;
+  line-height: 140%;
+  letter-spacing: 0.3px;
+}
+
+.socialsSection {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
   gap: 1.2rem;
 }
 
-.linksRow {
+.socialIcon {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  color: #999;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid #f0f2f5;
 }
 
-.footerLink {
-  color: #0052a3;
-  text-decoration: underline;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+.socialIcon:hover {
+  color: #4285f4;
+  border-color: #4285f4;
+  background: #f8faff;
 }
-
-.footerLink:hover {
-  color: #003d7a;
-}
-
-.disclaimerText {
-  font-size: 0.85rem;
-  color: #666;
-  line-height: 160%;
-  margin: 0;
-  text-align: left;
-}
-
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .footer {
-    padding: 3rem 3%;
+  .topSection {
+    gap: 4rem;
+    padding: 3.5rem 3%;
   }
 
-  .mainRow {
-    gap: 3rem;
+  .mainHeading {
+    font-size: 1.5rem;
   }
 
-  .securityBadge {
-    width: 140px;
+  .contactColumnsWrapper {
+    gap: 4rem;
   }
 
-  .securityTitle {
-    font-size: 1.05rem;
-  }
-
-  .linksRow {
-    gap: 1.5rem;
+  .bottomSection {
+    padding: 2rem 3%;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .footer {
-    padding: 2.5rem 2%;
-  }
-
-  .mainRow {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-
-  .leftSection {
+  .topSection {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
+    gap: 3rem;
+    padding: 3rem 3%;
+    align-items: stretch;
   }
 
-  .centerSection {
-    width: 100%;
-    align-items: center;
+  .headingSection {
+    max-width: none;
   }
 
-  .securityBadge {
-    width: 130px;
+  .mainHeading {
+    font-size: 1.4rem;
   }
 
-  .linksRow {
+  .contactColumnsWrapper {
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: flex-start;
+  }
+
+  .bottomSection {
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem;
+    padding: 2.5rem 3%;
+  }
+
+  .copyrightSection {
+    order: 2;
+    flex-basis: 100%;
+  }
+
+  .logoSection {
+    order: 1;
+  }
+
+  .socialsSection {
+    order: 3;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .footer {
-    padding: 2rem 4%;
-    margin-top: 3.5rem;
+  .topSection {
+    gap: 2rem;
+    padding: 2.5rem 4%;
   }
 
-  .mainRow {
-    gap: 1.8rem;
+  .headingSection {
+    max-width: none;
   }
 
-  .leftSection {
-    gap: 1.5rem;
+  .mainHeading {
+    font-size: 1.25rem;
   }
 
-  .securityBadge {
-    width: 120px;
-  }
-
-  .securityTitle {
-    font-size: 1rem;
-  }
-
-  .securityText {
-    font-size: 0.85rem;
-  }
-
-  .linksRow {
+  .contactColumnsWrapper {
     flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contactColumn {
+    gap: 1rem;
+  }
+
+  .contactTitle {
+    font-size: 0.95rem;
+  }
+
+  .contactText {
+    font-size: 0.9rem;
+  }
+
+  .bottomSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem 4%;
+  }
+
+  .logoSection {
+    order: 1;
+  }
+
+  .copyrightSection {
+    order: 2;
+    flex-basis: auto;
+  }
+
+  .copyrightText {
+    font-size: 0.9rem;
+  }
+
+  .socialsSection {
+    order: 3;
     gap: 0.8rem;
   }
 
-  .footerLink {
-    font-size: 0.85rem;
-  }
-
-  .disclaimerText {
-    font-size: 0.8rem;
+  .socialIcon {
+    width: 36px;
+    height: 36px;
   }
 }

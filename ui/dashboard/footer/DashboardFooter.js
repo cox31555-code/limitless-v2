@@ -1,42 +1,78 @@
 "use client";
 import React from "react";
 import styles from "./dashboardFooter.module.css";
+import { BiLogoInstagramAlt, BiLogoFacebook, BiLogoTwitter, BiLogoLinkedin } from "react-icons/bi";
 
 const DashboardFooter = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-        {/* Main Content Row */}
-        <div className={styles.mainRow}>
-          {/* Left Section: Security Badge */}
-          <div className={styles.leftSection}>
-            <div className={styles.securityBadge}>
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fc65a318b451349e7a8e695f99b795110?format=webp&width=800"
-                alt="Secured by Sectigo"
-                className={styles.sectigoImage}
-              />
-            </div>
-            <div className={styles.securityInfo}>
-              <h3 className={styles.securityTitle}>We'll keep your details safe</h3>
-              <p className={styles.securityText}>
-                Our website is constantly monitored to check for harmful viruses or malware.
-              </p>
-            </div>
+        {/* Top Section - Contact Info */}
+        <div className={styles.topSection}>
+          <div className={styles.headingSection}>
+            <h2 className={styles.mainHeading}>Please feel free to get in touch with us</h2>
           </div>
 
-          {/* Center Section: Links & Disclaimer */}
-          <div className={styles.centerSection}>
-            <div className={styles.linksRow}>
-              <a href="#complaints" className={styles.footerLink}>Complaints</a>
-              <a href="#cookies" className={styles.footerLink}>Our cookie policy</a>
-              <a href="#privacy" className={styles.footerLink}>Personal data rights</a>
+          <div className={styles.contactColumnsWrapper}>
+            <div className={styles.contactColumn}>
+              <div className={styles.iconWrapper}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div className={styles.contactInfo}>
+                <h4 className={styles.contactTitle}>Our Location</h4>
+                <p className={styles.contactText}>401 Broadway, 24th Floor, Orchard Cloud</p>
+                <p className={styles.contactText}>View, London</p>
+              </div>
             </div>
-            <p className={styles.disclaimerText}>
-              This insurance is arranged, underwritten and administered by Liverpool Victoria Insurance Company Limited, which is an Allianz Group company, registered in England and Wales number 3232514. Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, register number 202965. Registered address: 57 Ladymead, Guildford, Surrey, GU1 1DB. Limitless Cover is a trading name of Liverpool Victoria Insurance Company Limited.
-            </p>
+
+            <div className={styles.contactColumn}>
+              <div className={styles.iconWrapper}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <div className={styles.contactInfo}>
+                <h4 className={styles.contactTitle}>How Can We Help?</h4>
+                <p className={styles.contactText}>info@yourdomain.com</p>
+                <p className={styles.contactText}>contact@yourdomain.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section - Logo, Copyright, Socials */}
+        <div className={styles.bottomSection}>
+          <div className={styles.logoSection}>
+            <svg width="120" height="32" viewBox="0 0 120 32" fill="none">
+              <circle cx="16" cy="16" r="14" fill="#4285F4"/>
+              <text x="35" y="22" fontFamily="Arial, sans-serif" fontSize="18" fontWeight="700" fill="#000">
+                TailGrids
+              </text>
+            </svg>
           </div>
 
+          <div className={styles.copyrightSection}>
+            <p className={styles.copyrightText}>© 2025 TailGrids | All Rights Reserved</p>
+          </div>
+
+          <div className={styles.socialsSection}>
+            <a href="#" className={styles.socialIcon} aria-label="Facebook">
+              <BiLogoFacebook size={18} />
+            </a>
+            <a href="#" className={styles.socialIcon} aria-label="Twitter">
+              <BiLogoTwitter size={18} />
+            </a>
+            <a href="#" className={styles.socialIcon} aria-label="Instagram">
+              <BiLogoInstagramAlt size={18} />
+            </a>
+            <a href="#" className={styles.socialIcon} aria-label="LinkedIn">
+              <BiLogoLinkedin size={18} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
