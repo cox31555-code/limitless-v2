@@ -11,9 +11,9 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
 
   const handleView = async () => {
     try {
-      // Use mock PDF for testing
-      const mockPdfUrl = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Impound-Certificate_d695470c-RCXlWSWUb1n1DgdlKP0JtMNUwxkWtM.pdf";
-      
+      // Use mock PDF from Google Drive for testing
+      const mockPdfUrl = "https://drive.google.com/file/d/1jHtgmKi03bMQ3sJia8L8ml6-BAZFJvnD/preview";
+
       setPdfUrl(mockPdfUrl);
       setIsPdfModalOpen(true);
 
