@@ -369,7 +369,8 @@
   }
 
   .contentWrapper {
-    padding: 2.5rem 3%;
+    padding: 2.8rem 3%;
+    gap: 2.4rem;
   }
 
   .sectionTitle {
@@ -387,25 +388,27 @@
     margin-bottom: 1.8rem;
   }
 
-  .policySection {
+  .policyContainer {
     width: 100%;
-    gap: 1rem;
+    gap: 0.8rem;
     order: 2;
     margin-left: 0;
   }
 
   .dropdownWrapper {
-    max-width: 100%;
+    flex: 1;
+    min-width: 0;
     width: 100%;
-    max-width: none;
+    max-width: 100%;
   }
 
-  .selectedPolicyTitle {
+  .policyLabel {
+    flex-shrink: 0;
     font-size: 0.95rem;
   }
 
   .documentsTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     order: 1;
   }
 
