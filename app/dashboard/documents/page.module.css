@@ -123,8 +123,8 @@
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 55px 4.4% 1.6rem;
+  gap: 3.2rem;
+  padding: 4rem 4.4% 2rem;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
