@@ -22,8 +22,8 @@
 .headerContent {
   display: flex;
   justify-content: space-between;
-  max-width: 1132px;
-  width: 100%;
+  max-width: 1130px;
+  width: 102%;
   align-items: center;
   margin: 0 auto;
   gap: 2rem;
