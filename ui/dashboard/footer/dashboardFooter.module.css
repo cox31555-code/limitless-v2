@@ -16,21 +16,23 @@
 /* Top Section - Trust & Partnership Information */
 .topSection {
   display: flex;
-  align-items: flex-start;
-  gap: 4rem;
-  padding: 4.5rem 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
   border-bottom: 1px solid rgba(0, 82, 163, 0.2);
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   width: 100%;
 }
 
 .trustSection {
   display: flex;
-  gap: 27px;
-  align-items: flex-start;
-  flex: 0 0 50%;
+  gap: 15px;
+  align-items: center;
+  flex: 1;
   flex-wrap: nowrap;
   padding-left: 21px;
+  min-width: 0;
 }
 
 .securityBadge {
@@ -38,43 +40,45 @@
 }
 
 .sectigoImage {
-  height: 75px;
+  height: 60px;
   width: auto;
   object-fit: contain;
   display: block;
+  flex-shrink: 0;
 }
 
 .securityInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.2rem;
   flex-wrap: nowrap;
-  padding-top: 13px;
+  padding-top: 0;
+  min-width: 0;
 }
 
 .securityTitle {
-  font-size: 1.35rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #1a1a1a;
   margin: 0;
-  line-height: 130%;
-  white-space: nowrap;
+  line-height: 120%;
+  white-space: normal;
 }
 
 .securityText {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #666;
   margin: 0;
-  line-height: 150%;
-  width: 350px;
+  line-height: 140%;
+  width: auto;
 }
 
 .partnershipSection {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.5rem;
   align-items: flex-end;
-  flex: 0 0 50%;
+  flex: 0 0 auto;
   flex-wrap: nowrap;
   padding-right: 21px;
 }
@@ -95,14 +99,14 @@
 }
 
 .partnershipText {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #666;
   margin: 0;
-  line-height: 150%;
+  line-height: 140%;
   text-align: right;
   white-space: nowrap;
-  width: 280px;
-  display: none;
+  width: auto;
+  display: block;
 }
 
 /* Links Section */
@@ -110,8 +114,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 25px 21px;
+  gap: 8px;
+  padding: 1rem 21px;
   border-bottom: 1px solid rgba(0, 82, 163, 0.2);
   flex-wrap: nowrap;
   width: 100%;
@@ -120,7 +124,7 @@
 .footerLink {
   color: #0052a3;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.2s ease;
   white-space: nowrap;
@@ -133,24 +137,24 @@
 
 .linkSeparator {
   color: #ccc;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   white-space: nowrap;
 }
 
 /* Disclaimer Section */
 .disclaimerSection {
-  padding: 3rem 21px;
+  padding: 1.5rem 21px;
   border-bottom: 1px solid rgba(0, 82, 163, 0.2);
   width: 100%;
 }
 
 .disclaimerText {
-  font-size: 1.05rem;
+  font-size: 0.85rem;
   color: #333;
   margin: 0;
-  line-height: 160%;
+  line-height: 150%;
   width: 100%;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Bottom Section - Copyright */
@@ -158,7 +162,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 21px;
+  padding: 1.5rem 21px;
   gap: 2rem;
   flex-wrap: nowrap;
   width: 100%;
@@ -197,11 +201,11 @@
 }
 
 .copyrightText {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #333;
   margin: 0;
-  line-height: 150%;
+  line-height: 140%;
   letter-spacing: 0.3px;
   white-space: nowrap;
-  font-weight: 600;
+  font-weight: 500;
 }
