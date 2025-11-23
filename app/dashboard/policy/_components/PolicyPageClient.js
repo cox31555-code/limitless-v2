@@ -51,7 +51,7 @@ const PolicyPageClient = ({
         </div>
         <div className={styles.heroContent}>
           <div className={styles.greetingArea}>
-            <h1 className={`${styles.greetingTitle} ${plusJakartaSans.className}`}>
+            <h1 className={`${styles.greetingTitle} ${plusJakartaSans?.className || ""}`}>
               Manage your policies
             </h1>
             <p className={styles.greetingSubtitle}>
