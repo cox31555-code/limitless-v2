@@ -22,13 +22,6 @@ const PolicyPageClient = ({
 
   return (
     <div className={styles.container} suppressHydrationWarning>
-      {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Manage Policy</span>
-      </div>
-
       {/* Hero Section - Full Width */}
       <section className={styles.heroSection}>
         <div className={styles.heroBackground}>
