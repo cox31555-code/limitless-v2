@@ -228,24 +228,26 @@ const DashboardClient = () => {
       {/* Need Help Footer Banner - Full Width */}
       <section className={styles.menuSection}>
         <div className={styles.menuSectionInner}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Need help?</h2>
-          </div>
-          <div className={styles.menuGrid}>
-            {menuItems.map((item, index) => (
-              <button
-                key={index}
-                className={styles.menuItem}
-                onClick={item.action}
-              >
-                <div className={styles.menuItemIconWrapper}>
-                  <div className={styles.menuItemIcon}>
-                    <MenuIcon type={item.icon} />
+          <div className={styles.menuRowContainer}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Need help?</h2>
+            </div>
+            <div className={styles.menuGrid}>
+              {menuItems.map((item, index) => (
+                <button
+                  key={index}
+                  className={styles.menuItem}
+                  onClick={item.action}
+                >
+                  <div className={styles.menuItemIconWrapper}>
+                    <div className={styles.menuItemIcon}>
+                      <MenuIcon type={item.icon} />
+                    </div>
                   </div>
-                </div>
-                <p className={styles.menuItemLabel}>{item.label}</p>
-              </button>
-            ))}
+                  <p className={styles.menuItemLabel}>{item.label}</p>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
