@@ -231,56 +231,58 @@
   }
 
   .claimCardHeader {
-    padding: 2rem;
+    padding: 1.6rem 2rem;
   }
 
   .claimDetails {
     padding: 2rem;
+    gap: 1.6rem;
   }
 
   .claimInfo {
-    padding: 2rem;
+    padding: 1.6rem 2rem;
+    gap: 2.4rem;
   }
 
   .claimInfoRow {
-    padding: 1.3rem;
+    padding-top: 1.6rem;
   }
 
   .statusBadge {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .claimRef {
-    font-size: 1.3rem;
-  }
-
-  .claimTitle {
-    font-size: 1.8rem;
-  }
-
-  .claimMeta {
-    font-size: 1.4rem;
-  }
-
-  .infoLabel {
     font-size: 1.1rem;
   }
 
+  .claimTitle {
+    font-size: 1.5rem;
+  }
+
+  .claimMeta {
+    font-size: 1.1rem;
+  }
+
+  .infoLabel {
+    font-size: 0.75rem;
+  }
+
   .infoValue {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 
   .infoItem .infoLabel {
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
 
   .infoItem .infoValue {
-    font-size: 1.3rem;
+    font-size: 1.05rem;
   }
 
   .viewButton {
-    font-size: 1.3rem;
-    padding: 1.2rem;
+    font-size: 1rem;
+    padding: 1.2rem 2rem;
   }
 }
 
@@ -299,58 +301,62 @@
   }
 
   .claimCardHeader {
-    padding: 1.5rem;
+    padding: 1.4rem 1.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .claimDetails {
-    padding: 1.5rem;
+    padding: 1.8rem;
+    gap: 1.4rem;
   }
 
   .claimInfo {
-    padding: 1.5rem;
-    gap: 1.5rem;
+    padding: 1.5rem 1.8rem;
+    gap: 2rem;
   }
 
   .claimInfoRow {
-    padding: 1.2rem;
+    padding-top: 1.4rem;
     gap: 1.5rem;
   }
 
   .statusBadge {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
   }
 
   .claimRef {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 
   .claimTitle {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .claimMeta {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
   }
 
   .infoLabel {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   .infoValue {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .infoItem .infoLabel {
-    font-size: 0.95rem;
+    font-size: 0.7rem;
   }
 
   .infoItem .infoValue {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .viewButton {
-    font-size: 1.25rem;
-    padding: 1.2rem;
+    font-size: 0.95rem;
+    padding: 1.1rem 1.8rem;
   }
 }
