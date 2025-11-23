@@ -138,9 +138,7 @@
 
 /* Disclaimer Section */
 .disclaimerSection {
-  padding: 3rem 0;
-  padding-left: 6.4rem;
-  padding-right: 6.4rem;
+  padding: 3rem 21px;
   border-bottom: 1px solid #f0f2f5;
   width: 100%;
 }
