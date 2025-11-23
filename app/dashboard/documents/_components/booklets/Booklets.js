@@ -37,8 +37,8 @@ const Booklets = () => {
             <Image
               src="/svg/download.svg"
               alt="download"
-              width={24}
-              height={24}
+              width={20}
+              height={20}
             />
           )}
         </div>
