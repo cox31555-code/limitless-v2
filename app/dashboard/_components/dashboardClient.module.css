@@ -386,11 +386,12 @@
 }
 
 .menuGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.2rem;
+  display: flex;
+  gap: 1.5rem;
   position: relative;
   z-index: 1;
+  flex: 1;
+  flex-wrap: wrap;
 }
 
 .menuItem {
