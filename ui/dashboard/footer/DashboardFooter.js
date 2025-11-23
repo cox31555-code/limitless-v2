@@ -1,9 +1,38 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./dashboardFooter.module.css";
 import { BiLogoInstagramAlt, BiLogoFacebook, BiLogoTwitter, BiLogoLinkedin } from "react-icons/bi";
 
 const DashboardFooter = () => {
+  const trustLogoRef = useRef(null);
+
+  useEffect(() => {
+    // Load Sectigo TrustLogo script
+    const tlJsHost = window.location.protocol === "https:" ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/";
+
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.async = true;
+    script.src = tlJsHost + "trustlogo/javascript/trustlogo.js";
+
+    script.onload = () => {
+      // Execute the TrustLogo function after script loads
+      if (window.TrustLogo) {
+        window.TrustLogo("https://www.sectigo.com/images/seals/sectigo_trust_seal_lg_2x.png", "SECEV", "none");
+      }
+    };
+
+    if (trustLogoRef.current) {
+      trustLogoRef.current.appendChild(script);
+    }
+
+    return () => {
+      if (trustLogoRef.current && script.parentNode === trustLogoRef.current) {
+        trustLogoRef.current.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
