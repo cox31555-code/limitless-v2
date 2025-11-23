@@ -91,6 +91,10 @@
     gap: 1.2rem;
   }
 
+  .header {
+    gap: 1.2rem;
+  }
+
   .title {
     font-size: 1.7rem;
   }
