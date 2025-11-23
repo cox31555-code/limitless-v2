@@ -110,13 +110,6 @@
   .second {
     width: 100%;
     justify-content: flex-start;
-    padding: 1.6rem;
-    margin: -0.8rem;
-    border-radius: 12px;
-  }
-
-  .second:hover {
-    background: rgba(3, 136, 255, 0.05);
   }
 
   .title {
