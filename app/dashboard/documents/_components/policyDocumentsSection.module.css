@@ -111,6 +111,7 @@
 
   .documentInfo {
     width: 100%;
+    gap: 1.4rem;
   }
 
   .documentDetails {
