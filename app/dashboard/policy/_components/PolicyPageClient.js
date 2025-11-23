@@ -11,11 +11,6 @@ const PolicyPageClient = ({
   pageStyles,
   plusJakartaSans,
 }) => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   const mockActivePolicies = useMemo(() => {
     return Object.values(mockPolicies).map(policy => ({
       id: policy._id,
