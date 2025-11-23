@@ -40,8 +40,8 @@ export default function PolicyDocumentsSection({ selectedInsurance }) {
               <Image
                 src="/svg/pdf-doc.svg"
                 alt="document"
-                width={20}
-                height={20}
+                width={32}
+                height={32}
               />
               <div className={styles.documentDetails}>
                 <span className={styles.documentName}>{doc.name}</span>
