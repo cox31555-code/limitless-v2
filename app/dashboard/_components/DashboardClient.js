@@ -18,7 +18,7 @@ const DashboardClient = () => {
       id: 1,
       name: "Limitless Cover Car Insurance",
       policyNumber: "LC-847291",
-      vehicle: "LN60AYT - VW GOLF TWIST",
+      vehicle: "LN60AYT - FIAT 500",
       coverEnd: "24 November 2026",
       status: "Active",
     },
