@@ -27,7 +27,7 @@
 .documentsList {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1.8rem;
 }
 
 .documentItem {
