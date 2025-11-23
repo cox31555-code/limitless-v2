@@ -416,24 +416,24 @@
 .menuItemIcon {
   width: 60px;
   height: 60px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
+  background: transparent;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.9);
-  transition: all 0.2s ease;
+  color: #ffffff;
+  transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
 .menuItem:hover .menuItemIcon {
-  background: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
+  transform: scale(1.15) rotate(5deg);
 }
 
 .menuItemIcon svg {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .menuItemContent {
