@@ -623,9 +623,6 @@
     grid-template-columns: 1fr;
   }
 
-  .menuGrid {
-    flex-wrap: wrap;
-  }
 }
 
 @media screen and (max-width: 900px) {
