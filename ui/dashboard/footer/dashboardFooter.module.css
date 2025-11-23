@@ -156,9 +156,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 0;
-  padding-left: 6.4rem;
-  padding-right: 6.4rem;
+  padding: 3rem 21px;
   gap: 2rem;
   flex-wrap: nowrap;
   width: 100%;
