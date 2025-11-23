@@ -35,7 +35,7 @@ const DashboardClient = () => {
       title: "More cars?",
       description: "Just tell us about any additional cars you need covered, and we'll give you a quick quote based on your existing Limitless Cover policy.",
       cta: "Get your car quote",
-      ctaAction: () => router.push("/dashboard"),
+      ctaAction: () => router.push("/annual/get-quote"),
       icon: "cars",
     },
     {
@@ -43,10 +43,41 @@ const DashboardClient = () => {
       title: "Need temporary cover?",
       description: "Get peace of mind with our flexible temporary cover. Quote in minutes, cover within hours.",
       cta: "Get temporary cover",
-      ctaAction: () => router.push("/dashboard"),
+      ctaAction: () => router.push("/temporary/get-quote"),
       icon: "calendar",
     },
+    {
+      id: 3,
+      title: "Impound Car Insurance",
+      description: "Protect yourself with comprehensive impound insurance. Get coverage for vehicle recovery and storage costs.",
+      cta: "Explore impound cover",
+      ctaAction: () => router.push("/impound/get-quote"),
+      icon: "shield",
+    },
+    {
+      id: 4,
+      title: "Cheapest Car Insurance Prices",
+      description: "We offer competitive rates without compromising on quality. Get a quote today and see how much you could save.",
+      cta: "Compare our quotes",
+      ctaAction: () => router.push("/annual/get-quote"),
+      icon: "tag",
+    },
+    {
+      id: 5,
+      title: "All Aged Drivers Welcome",
+      description: "Whether you're a young driver or an experienced one, we've got competitive quotes for everyone. No age restrictions.",
+      cta: "Get your quote now",
+      ctaAction: () => router.push("/annual/get-quote"),
+      icon: "users",
+    },
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBannerIndex((prev) => (prev + 1) % promotionalBanners.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [promotionalBanners.length]);
 
   const menuItems = [
     {
