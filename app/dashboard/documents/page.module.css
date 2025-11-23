@@ -152,13 +152,14 @@
 }
 
 .policyLabel {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #0052a3;
   margin: 0;
-  line-height: 130%;
+  line-height: 1.4;
   white-space: nowrap;
   display: block;
+  letter-spacing: -0.01em;
 }
 
 .sectionHeader {
