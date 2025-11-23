@@ -741,6 +741,7 @@
   .menuSectionInner {
     padding: 1rem 4%;
     margin: 0;
+    gap: 15px;
   }
 
   .heroSection {
