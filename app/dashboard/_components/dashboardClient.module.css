@@ -453,10 +453,11 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: #ffffff;
-  line-height: 110%;
+  line-height: 120%;
   margin: 0;
   letter-spacing: 0px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .menuItemDescription {
