@@ -147,9 +147,14 @@
     font-size: 1.4rem;
   }
 
+  .previewButton,
   .closeButton {
     width: 36px;
     height: 36px;
+  }
+
+  .headerActions {
+    gap: 0.8rem;
   }
 }
 
