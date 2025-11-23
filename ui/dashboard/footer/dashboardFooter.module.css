@@ -104,9 +104,15 @@
   display: block;
 }
 
-.logoSection img,
-.logoSection div {
-  height: auto;
+.trustLogoLink {
+  display: block;
+  text-decoration: none;
+}
+
+.trustLogoImage {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
   display: block;
 }
 
