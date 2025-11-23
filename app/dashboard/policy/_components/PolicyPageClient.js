@@ -65,77 +65,78 @@ const PolicyPageClient = ({
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
-      {/* Active Policies Section */}
-      {activePolicies && activePolicies.length > 0 && (
-        <section className={styles.policiesSection}>
-          <div className={styles.sectionHeaderWrapper}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Active Policies</h2>
-              <span className={styles.sectionBadge}>{totalActive}</span>
-            </div>
-            <p className={styles.sectionDescription}>
-              Your policies are currently active and providing coverage
-            </p>
-          </div>
-          <Table
-            title="Active Policies"
-            tableType="active"
-            columns={[
-              "Policy Number",
-              "Remaining",
-              "Name",
-              "Vehicle Reg",
-              "Details",
-            ]}
-            data={activePolicies}
-            showTitle={false}
-          />
-        </section>
-      )}
-
-      {/* Expired Policies Expandable Section */}
-      {expiredPolicies && expiredPolicies.length > 0 && (
-        <section className={styles.expandableSection}>
+        {/* Tabs Navigation */}
+        <div className={styles.tabsContainer}>
           <button
-            className={styles.expandableHeader}
-            onClick={() => setIsExpiredExpanded(!isExpiredExpanded)}
-            aria-expanded={isExpiredExpanded}
+            className={`${styles.tab} ${activeTab === "active" ? styles.tabActive : ""}`}
+            onClick={() => setActiveTab("active")}
           >
-            <div className={styles.expandableTitle}>
-              <h2 className={styles.sectionTitle}>Expired Policies</h2>
-              <span className={styles.expandableBadge}>{totalExpired}</span>
-            </div>
-            <svg 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              className={`${styles.expandableIcon} ${isExpiredExpanded ? styles.expanded : ""}`}
-            >
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
+            <span className={styles.tabNumber}>01</span>
+            <span className={styles.tabLabel}>Active Policies</span>
+            <span className={styles.tabBadge}>{totalActive}</span>
           </button>
-          {isExpiredExpanded && (
-            <div className={styles.expandableContent}>
-              <Table
-                title="Expired Policies"
-                tableType="inactive"
-                columns={[
-                  "Policy Number",
-                  "Status",
-                  "Name",
-                  "Vehicle Reg",
-                  "Details",
-                ]}
-                data={expiredPolicies}
-                showViewButton={true}
-                theme="default"
-                showTitle={false}
-              />
+          <button
+            className={`${styles.tab} ${activeTab === "expired" ? styles.tabActive : ""}`}
+            onClick={() => setActiveTab("expired")}
+          >
+            <span className={styles.tabNumber}>02</span>
+            <span className={styles.tabLabel}>Expired Policies</span>
+            <span className={styles.tabBadge}>{totalExpired}</span>
+          </button>
+        </div>
+
+        {/* Active Policies Tab Content */}
+        {activeTab === "active" && activePolicies && activePolicies.length > 0 && (
+          <section className={styles.policiesSection}>
+            <div className={styles.sectionHeaderWrapper}>
+              <div className={styles.sectionHeader}>
+                <h2 className={styles.sectionTitle}>Active Policies</h2>
+              </div>
+              <p className={styles.sectionDescription}>
+                Your policies are currently active and providing coverage
+              </p>
             </div>
-          )}
-        </section>
-      )}
+            <Table
+              title="Active Policies"
+              tableType="active"
+              columns={[
+                "Policy Number",
+                "Remaining",
+                "Name",
+                "Vehicle Reg",
+                "Details",
+              ]}
+              data={activePolicies}
+              showTitle={false}
+            />
+          </section>
+        )}
+
+        {/* Expired Policies Tab Content */}
+        {activeTab === "expired" && expiredPolicies && expiredPolicies.length > 0 && (
+          <section className={styles.policiesSection}>
+            <div className={styles.sectionHeaderWrapper}>
+              <div className={styles.sectionHeader}>
+                <h2 className={styles.sectionTitle}>Expired Policies</h2>
+              </div>
+            </div>
+            <Table
+              title="Expired Policies"
+              tableType="inactive"
+              columns={[
+                "Policy Number",
+                "Status",
+                "Name",
+                "Vehicle Reg",
+                "Details",
+              ]}
+              data={expiredPolicies}
+              showViewButton={true}
+              theme="default"
+              showTitle={false}
+            />
+          </section>
+        )}
       </div>
 
       <NeedHelpSection />
