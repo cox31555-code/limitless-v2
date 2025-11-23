@@ -414,12 +414,12 @@
   }
 
   .tab {
-    font-size: 0.95rem;
-    padding: 0.7rem 0 1rem 0;
+    font-size: 1.1rem;
+    padding: 0.9rem 0 1.3rem 0;
   }
 
   .tabLabel {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
   }
 
   .tabBadge {
