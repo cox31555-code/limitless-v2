@@ -27,85 +27,99 @@
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  border: 1px solid #e0e6f0;
-  border-radius: 16px;
+  border: 1px solid #e8ecf2;
+  border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 8, 34, 0.04);
 }
 
 .claimCard:hover {
-  border-color: #0052a3;
-  box-shadow: 0 2px 12px rgba(0, 61, 122, 0.1);
+  border-color: #d0d9e5;
+  box-shadow: 0 4px 12px rgba(0, 8, 34, 0.08);
+  transform: translateY(-2px);
 }
 
 .claimCardHeader {
-  background: #f0f4fb;
-  padding: 2.6rem;
-  display: block;
-  border-bottom: 1px solid #e0e6f0;
+  background: #fafbfc;
+  padding: 2rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f2f5;
   position: relative;
 }
 
 .statusBadge {
-  display: inline-block;
-  padding: 0.52rem 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
-  font-size: 1.17rem;
-  font-weight: 700;
-  letter-spacing: 0.52px;
-  margin-bottom: 1.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
 }
 
 .statusBadge.pending {
-  background: rgba(76, 175, 80, 0.15);
-  color: #2e7d32;
+  background: #ecfdf3;
+  color: #047857;
+  border: 1px solid #d1fae5;
 }
 
 .statusBadge.completed {
-  background: rgba(33, 150, 243, 0.15);
-  color: #1565c0;
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #dbeafe;
 }
 
 .statusBadge.cancelled {
-  background: rgba(244, 67, 54, 0.15);
-  color: #c62828;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
 }
 
 .claimRef {
-  font-size: 1.5rem;
-  color: #666;
+  font-size: 1.15rem;
+  color: #6b7280;
   font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .claimDetails {
-  padding: 2.6rem;
+  padding: 2.4rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
 }
 
 .claimTitle {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #0052a3;
-  margin: 0 0 0.65rem 0;
+  color: #111827;
+  margin: 0;
   line-height: 130%;
+  letter-spacing: -0.02em;
 }
 
 .claimMeta {
-  font-size: 1.6rem;
-  color: #666;
-  margin: 0 0 2rem 0;
+  font-size: 1.15rem;
+  color: #6b7280;
+  margin: 0;
   font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .claimInfoRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  padding: 1.5rem;
-  background: #f8fafc;
-  border-radius: 8px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  border-top: 1px solid #f0f2f5;
+  padding-top: 1.8rem;
 }
 
 .infoItem {
@@ -115,26 +129,27 @@
 }
 
 .infoItem .infoLabel {
-  font-size: 1.1rem;
-  color: #999;
-  font-weight: 500;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
 }
 
 .infoItem .infoValue {
-  font-size: 1.4rem;
-  color: #0052a3;
+  font-size: 1.1rem;
+  color: #374151;
   font-weight: 600;
 }
 
 .claimInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.6rem;
-  padding: 2.6rem;
-  background: #f8fafc;
-  border-top: 1px solid #e0e6f0;
+  gap: 3rem;
+  padding: 2rem 2.4rem;
+  background: #fafbfc;
+  border-top: 1px solid #f0f2f5;
 }
 
 .infoColumn {
@@ -144,39 +159,45 @@
 }
 
 .infoLabel {
-  font-size: 1.3rem;
-  color: #999;
-  font-weight: 500;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.65px;
-  margin: 0;
+  letter-spacing: 0.5px;
+  margin: 0 0 0.6rem 0;
 }
 
 .infoValue {
-  font-size: 1.95rem;
-  color: #0052a3;
-  font-weight: 700;
+  font-size: 1.4rem;
+  color: #111827;
+  font-weight: 600;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .viewButton {
   width: 100%;
-  padding: 1.5rem 2.6rem;
-  background: #f0f4fb;
+  padding: 1.3rem 2.4rem;
+  background: #fafbfc;
   color: #0052a3;
   border: none;
+  border-top: 1px solid #f0f2f5;
   border-radius: 0;
-  font-size: 1.5rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
   line-height: 130%;
   text-align: center;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .viewButton:hover {
-  background: #dce7f5;
+  background: #f0f4f8;
+  color: #003d7a;
 }
 
 /* Responsive Design */
