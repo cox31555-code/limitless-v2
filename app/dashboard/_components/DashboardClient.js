@@ -44,20 +44,19 @@ const DashboardClient = () => {
 
   const menuItems = [
     {
-      label: "Chat with us",
-      description: "Live chat support",
+      label: "Live Chat",
+      description: "Chat with our support team",
       hours: "9 AM - 6 PM, Mon - Fri",
       icon: "chat",
       action: () => {
-        // Trigger chat widget
         if (window.tawk) {
           window.tawk.maximize();
         }
       },
     },
     {
-      label: "Call us",
-      description: "Speak to our team directly",
+      label: "Call Us",
+      description: "Speak directly with our team",
       hours: "9 AM - 6 PM, Mon - Fri",
       icon: "phone",
       action: () => {
@@ -65,12 +64,21 @@ const DashboardClient = () => {
       },
     },
     {
-      label: "Email us",
-      description: "Send us a message anytime",
+      label: "Email Support",
+      description: "Get help anytime via email",
       hours: null,
       icon: "email",
       action: () => {
         window.location.href = "mailto:support@limitlesscover.com";
+      },
+    },
+    {
+      label: "FAQ",
+      description: "Find answers to common questions",
+      hours: null,
+      icon: "faq",
+      action: () => {
+        router.push("/faq");
       },
     },
   ];
