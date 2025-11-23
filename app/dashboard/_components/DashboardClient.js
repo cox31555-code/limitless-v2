@@ -175,6 +175,7 @@ const DashboardClient = () => {
                     <h3 className={styles.policyName}>{vehicleDisplayText}</h3>
                     <span className={styles.policyStatus}>{policy.status}</span>
                   </div>
+                  <div className={styles.insuranceTypeBadge}>{policy.insuranceType}</div>
                 </div>
                 <div className={styles.policyDetails}>
                   <div className={styles.detailItem}>
