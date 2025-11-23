@@ -57,46 +57,46 @@
 
 @media screen and (max-width: 900px) {
   .section {
-    padding: 2rem;
-    gap: 1.4rem;
+    padding: 2.8rem;
+    gap: 1.7rem;
   }
 
   .header {
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
   }
 
   .description {
-    font-size: 1rem;
+    font-size: 1.15rem;
+  }
+
+  .requestButton {
+    width: 100%;
+    padding: 1.1rem 2rem;
+    font-size: 1.05rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 2.2rem;
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
   }
 
   .requestButton {
     width: 100%;
     padding: 1rem 1.6rem;
     font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .section {
-    padding: 1.6rem;
-    gap: 1.2rem;
-  }
-
-  .title {
-    font-size: 1.2rem;
-  }
-
-  .description {
-    font-size: 0.95rem;
-  }
-
-  .requestButton {
-    width: 100%;
-    padding: 0.9rem 1.4rem;
-    font-size: 0.95rem;
   }
 }
