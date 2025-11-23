@@ -63,6 +63,42 @@ export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }
           <div className={styles.headerActions}>
             <button
               className={styles.previewButton}
+              onClick={handleDownload}
+              aria-label="Download PDF"
+              title="Download PDF"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M7 10l5 5 5-5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 15V3"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              className={styles.previewButton}
               onClick={handleOpenInNewTab}
               aria-label="Open PDF in new tab"
               title="Open in new tab"
