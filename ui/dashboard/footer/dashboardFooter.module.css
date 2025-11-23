@@ -185,7 +185,7 @@
 @media screen and (max-width: 1200px) {
   .topSection {
     gap: 3rem;
-    padding: 2.5rem 3%;
+    padding: 4rem 3%;
   }
 
   .partnershipSection {
@@ -197,15 +197,15 @@
   }
 
   .bottomSection {
-    padding: 2rem 3%;
+    padding: 2.5rem 3%;
   }
 
   .linksSection {
-    padding: 1.2rem 3%;
+    padding: 2rem 3%;
   }
 
   .disclaimerSection {
-    padding: 1.2rem 3%;
+    padding: 2.5rem 3%;
   }
 }
 
