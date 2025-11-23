@@ -89,9 +89,7 @@ const PolicyPageClient = ({
         {activeTab === "active" && activePolicies && activePolicies.length > 0 && (
           <section className={styles.policiesSection}>
             <div className={styles.sectionHeaderWrapper}>
-              <div className={styles.sectionHeader}>
-                <h2 className={styles.sectionTitle}>Active Policies</h2>
-              </div>
+              <div className={styles.sectionHeader} />
               <p className={styles.sectionDescription}>
                 Your policies are currently active and providing coverage
               </p>
