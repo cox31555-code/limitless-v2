@@ -11,17 +11,6 @@ const PolicyPageClient = ({
   pageStyles,
   plusJakartaSans,
 }) => {
-  const mockActivePolicies = useMemo(() => {
-    return Object.values(mockPolicies).map(policy => ({
-      id: policy._id,
-      policyNumber: policy.policyNumber,
-      vehicleReg: policy.vehicleDetails.registrationNumber,
-      name: `${policy.userDetails.firstName} ${policy.userDetails.surname}`,
-      remaining: policy.type === "Annual" ? "365 days" : (policy.type === "Temporary" ? "7 days" : "30 days"),
-      type: policy.type
-    }));
-  }, []);
-
   const { setIsInsuranceModalOpen } = useInsuranceModal();
   const [isExpiredExpanded, setIsExpiredExpanded] = useState(false);
 
@@ -30,7 +19,7 @@ const PolicyPageClient = ({
   };
 
   const totalExpired = expiredPolicies?.length || 0;
-  const totalActive = mockActivePolicies?.length || 0;
+  const totalActive = activePolicies?.length || 0;
 
   return (
     <div className={styles.container} suppressHydrationWarning>
