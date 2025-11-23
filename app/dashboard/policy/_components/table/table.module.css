@@ -18,9 +18,9 @@
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3.5rem;
+  gap: 4rem;
   width: 100%;
-  padding: 2rem 0 2.5rem;
+  padding: 2.6rem 0 3rem;
 }
 
 .policyCard {
@@ -28,10 +28,10 @@
   flex-direction: column;
   background: #ffffff;
   border: 1px solid #e0e6f0;
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
+  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
 }
 
 .policyCard:hover {
