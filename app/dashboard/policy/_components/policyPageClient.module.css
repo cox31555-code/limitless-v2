@@ -210,7 +210,6 @@
 
 .tab:hover {
   color: #0052a3;
-  transform: translateY(-2px);
 }
 
 .tabActive {
