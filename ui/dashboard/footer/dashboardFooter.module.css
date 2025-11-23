@@ -111,8 +111,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 2.5rem 21px;
+  gap: 10px;
+  padding: 25px 21px;
   border-bottom: 1px solid #f0f2f5;
   flex-wrap: nowrap;
   width: 100%;
