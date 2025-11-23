@@ -290,17 +290,7 @@
 }
 
 .sectionBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 71px;
-  height: 71px;
-  background: #e3f1fe;
-  color: #0052a3;
-  border-radius: 11px;
-  font-size: 2rem;
-  font-weight: 700;
-  border: none;
+  display: none;
 }
 
 .sectionDescription {
@@ -309,89 +299,6 @@
   margin: 0;
   font-weight: 400;
   line-height: 140%;
-}
-
-/* Expandable Section for Expired Policies */
-.expandableSection {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border: 1px solid #e0e6f0;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
-}
-
-.expandableHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 2.6rem 2.6rem;
-  background: #f8fafc;
-  border: none;
-  border-bottom: 1px solid #e0e6f0;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: left;
-}
-
-.expandableHeader:hover {
-  background: #f0f4fb;
-}
-
-.expandableTitle {
-  display: flex;
-  align-items: center;
-  gap: 1.3rem;
-}
-
-.expandableTitle .sectionTitle {
-  font-size: 1.7rem;
-  margin: 0;
-}
-
-.expandableBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  background: #e0e6f0;
-  color: #0052a3;
-  border-radius: 9px;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.expandableIcon {
-  width: 20px;
-  height: 20px;
-  color: #0052a3;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-
-.expandableIcon.expanded {
-  transform: rotate(180deg);
-}
-
-.expandableContent {
-  padding: 2rem;
-  border-top: 1px solid #e0e6f0;
-  animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Responsive Design */
