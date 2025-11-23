@@ -459,34 +459,34 @@
   }
 
   .contentWrapper {
-    padding: 2.2rem 4%;
-    gap: 2rem;
+    padding: 2.8rem 4%;
+    gap: 2.6rem;
   }
 
   .sectionTitle {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .sectionDescription {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .sectionBadge {
-    min-width: 46px;
-    height: 46px;
-    font-size: 1.3rem;
+    min-width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
   }
 
   .sectionHeaderWrapper {
-    gap: 0.6rem;
+    gap: 0.8rem;
     align-items: center;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.8rem;
   }
 
   .policyContainer {
     width: 100%;
     max-width: 100%;
-    gap: 0.8rem;
+    gap: 0.9rem;
   }
 
   .dropdownWrapper {
@@ -496,14 +496,14 @@
   }
 
   .policyLabel {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .documentsTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
