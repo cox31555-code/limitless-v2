@@ -142,14 +142,23 @@
   flex-wrap: nowrap;
 }
 
-.policySection {
+.policyContainer {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 0.8rem;
   flex-shrink: 0;
   order: 2;
   margin-left: auto;
+}
+
+.policyLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  line-height: 130%;
+  white-space: nowrap;
+  display: block;
 }
 
 .sectionHeader {
@@ -157,23 +166,6 @@
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-.selectedPolicyLabel {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-}
-
-.selectedPolicyTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #6b7280;
-  margin: 0;
-  line-height: 130%;
-  white-space: nowrap;
 }
 
 .documentsTitle {
