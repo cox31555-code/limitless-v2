@@ -55,7 +55,7 @@ export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }
               title="Open in new tab"
             >
               <Image
-                src="/svg/external-link.svg"
+                src="/svg/eye.svg"
                 alt="Open in new tab"
                 width={20}
                 height={20}
