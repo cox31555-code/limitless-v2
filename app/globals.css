@@ -478,3 +478,23 @@ body .react-datepicker__navigation--previous:hover {
     bottom: 1rem;
   }
 }
+
+/* Hide Crisp watermark/branding */
+.crisp-client .crisp-chatbox-meta,
+.crisp-chatbox-meta {
+  display: none !important;
+}
+
+/* Alternative selectors for Crisp branding */
+.crisp-client .crisp-powered-by,
+.crisp-powered-by,
+[class*="crisp-client-meta"],
+[class*="powered-by"] {
+  display: none !important;
+}
+
+/* Hide "We run on Crisp" text specifically */
+.crisp-client-meta-text,
+.crisp-client-footer-branding {
+  display: none !important;
+}
