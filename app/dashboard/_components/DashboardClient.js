@@ -86,28 +86,23 @@ const DashboardClient = () => {
   const MenuIcon = ({ type }) => {
     const icons = {
       chat: (
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 40 40 L 160 40 L 160 140 L 60 140 L 40 160 Z" fill="none" stroke="currentColor" strokeWidth="8"/>
-          <line x1="60" y1="70" x2="140" y2="70" stroke="currentColor" strokeWidth="4"/>
-          <line x1="60" y1="100" x2="140" y2="100" stroke="currentColor" strokeWidth="4"/>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
         </svg>
       ),
       phone: (
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 60 50 L 60 140 C 60 155 72 165 85 165 L 115 165 C 128 165 140 155 140 140 L 140 50 C 140 50 50 50 60 50" fill="none" stroke="currentColor" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
-          <circle cx="100" cy="155" r="6" fill="currentColor"/>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
         </svg>
       ),
       email: (
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="40" y="50" width="120" height="100" rx="8" fill="none" stroke="currentColor" strokeWidth="8"/>
-          <path d="M 40 50 L 100 100 L 160 50" fill="none" stroke="currentColor" strokeWidth="6"/>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
       ),
       faq: (
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="100" r="55" fill="none" stroke="currentColor" strokeWidth="8"/>
-          <text x="100" y="120" fontSize="80" fontWeight="bold" textAnchor="middle" fill="currentColor" fontFamily="Arial">?</text>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+          <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/>
         </svg>
       ),
     };
