@@ -151,7 +151,7 @@
 @media screen and (max-width: 1200px) {
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.4rem;
+    gap: 3.5rem;
   }
 
   .policyCard {
