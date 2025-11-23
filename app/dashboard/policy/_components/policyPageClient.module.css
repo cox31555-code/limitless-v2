@@ -193,7 +193,7 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  padding: 1.6rem 0;
+  padding: 1.4rem 0;
   background: none;
   border: none;
   border-bottom: 4px solid transparent;
@@ -201,11 +201,11 @@
   transition: all 0.3s ease;
   color: #666;
   font-family: inherit;
-  font-size: 2.86rem;
+  font-size: 2.4rem;
   font-weight: 500;
   white-space: nowrap;
   position: relative;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
   margin-bottom: -2px;
 }
 
@@ -224,7 +224,7 @@
 }
 
 .tabLabel {
-  font-size: 2.86rem;
+  font-size: 2.4rem;
   font-weight: inherit;
   color: currentColor;
 }
