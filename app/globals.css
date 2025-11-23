@@ -485,6 +485,18 @@ body .react-datepicker__navigation--previous:hover {
   display: none !important;
 }
 
+/* Hide dynamically generated Crisp watermark classes */
+.cc-73utt,
+[class^="cc-"] > a[href*="crisp.chat"],
+a[href*="crisp.chat/en/livechat"] {
+  display: none !important;
+}
+
+/* Hide parent container of Crisp watermark */
+div[class^="cc-"] {
+  display: none !important;
+}
+
 /* Alternative selectors for Crisp branding */
 .crisp-client .crisp-powered-by,
 .crisp-powered-by,
