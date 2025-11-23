@@ -132,26 +132,25 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 2.6rem;
-    gap: 2rem;
+    padding: 2.2rem;
+    gap: 1.6rem;
   }
 
-
   .title {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .description {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 
   .download {
-    width: 5.2rem;
-    height: 5.2rem;
-    border-radius: 12px;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 10px;
   }
 
   .downloadText {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
