@@ -104,6 +104,12 @@
   display: block;
 }
 
+.logoSection img,
+.logoSection div {
+  height: auto;
+  display: block;
+}
+
 .copyrightSection {
   flex: 1;
   display: flex;
