@@ -47,12 +47,10 @@ const DashboardFooter = () => {
         {/* Bottom Section - Logo, Copyright, Socials */}
         <div className={styles.bottomSection}>
           <div className={styles.logoSection}>
-            <svg width="120" height="32" viewBox="0 0 120 32" fill="none">
-              <circle cx="16" cy="16" r="14" fill="#4285F4"/>
-              <text x="35" y="22" fontFamily="Arial, sans-serif" fontSize="18" fontWeight="700" fill="#000">
-                TailGrids
-              </text>
-            </svg>
+            <div className={styles.logo}>
+              <div className={styles.logoCircle}></div>
+              <span className={styles.logoText}>TailGrids</span>
+            </div>
           </div>
 
           <div className={styles.copyrightSection}>
