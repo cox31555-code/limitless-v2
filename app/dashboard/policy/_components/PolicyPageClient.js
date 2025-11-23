@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import Table from "./table/Table";
 import styles from "./policyPageClient.module.css";
 import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
