@@ -1,7 +1,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.625rem;
   padding: 3.6rem;
   border: 1.5px solid #d1d5db;
   border-radius: 12px;
