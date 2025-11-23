@@ -53,11 +53,9 @@ const DashboardFooter = () => {
               rel="noopener noreferrer"
               className={styles.trustLogoLink}
             >
-              <Image
+              <img
                 src="https://www.sectigo.com/images/seals/sectigo_trust_seal_lg_2x.png"
                 alt="Secured by Sectigo"
-                width={160}
-                height={160}
                 className={styles.trustLogoImage}
               />
             </a>
