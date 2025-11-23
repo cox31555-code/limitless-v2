@@ -13,14 +13,17 @@ export default function PolicyDocumentsSection({ selectedInsurance }) {
     {
       name: "Certificate of Motor Insurance",
       pdfType: "certificate",
+      dateAdded: selectedInsurance?.createdAt ? new Date(selectedInsurance.createdAt).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : "N/A",
     },
     {
       name: "Policy Schedule",
       pdfType: "product-info",
+      dateAdded: selectedInsurance?.createdAt ? new Date(selectedInsurance.createdAt).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : "N/A",
     },
     {
       name: "Statement of Fact",
       pdfType: "statement",
+      dateAdded: selectedInsurance?.createdAt ? new Date(selectedInsurance.createdAt).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }) : "N/A",
     },
   ];
 
