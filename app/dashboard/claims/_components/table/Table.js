@@ -1,127 +1,97 @@
 "use client";
 import React from "react";
 import styles from "./table.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
-const Table = ({ title, columns, data }) => {
+const Table = ({ title, data, claimType, showTitle = true }) => {
   const router = useRouter();
+
+  const getStatusColor = (status) => {
+    if (status === "Pending") return "pending";
+    if (status === "Completed") return "completed";
+    if (status === "Cancelled") return "cancelled";
+    return "pending";
+  };
+
+  const formatDate = (dateString) => {
+    if (!dateString) return "N/A";
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-GB', { 
+        day: '2-digit', 
+        month: 'short', 
+        year: 'numeric' 
+      });
+    } catch {
+      return dateString;
+    }
+  };
+
   return (
-    <>
-      <div className={styles.container}>
-        <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+    <div className={styles.section}>
+      {showTitle && (
+        <h3 className={styles.sectionTitle}>
           {title}
         </h3>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              {columns.map((column, index) => (
-                <th key={index}>
-                  {column}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className={styles.tableBody}>
-            {data.map((row, index) => (
-              <tr key={index} className={styles.tableRow}>
-                <td className={styles.tableCell} data-label="Date of Claim">
-                  <div className={styles.dateAndRef}>
-                    <p className={styles.date}>{row.date}</p>
-                    <p className={styles.ref}>{row.ref}</p>
-                  </div>
-                </td>
-                <td className={styles.tableCell} data-label="Status">
-                  <span
-                    className={`${styles.statusBadge} ${
-                      row.status === "Pending"
-                        ? styles.pending
-                        : row.status === "Cancelled"
-                        ? styles.cancelled
-                        : row.status === "Completed"
-                        ? styles.completed
-                        : ""
-                    }`}
-                  >
-                    {row.status}
-                  </span>
-                </td>
-                <td className={styles.tableCell} data-label="Claimant">
-                  <span className={styles.claimant}>{row.claimant}</span>
-                </td>
-                <td className={styles.tableCell} data-label="Last Updated">
-                  <div className={styles.pendingActionsCell}>
-                    <p className={styles.pendingActions}>
-                      Estimated resolution Date:
-                    </p>
-                    <p className={styles.pendingActions}>
-                      {row.pendingActions}
-                    </p>
-                  </div>
-                </td>
-                <td className={styles.tableCell} data-label="Actions">
-                  <button
-                    onClick={() => router.push(`/dashboard/claims/${row.id}`)}
-                    className={styles.view}
-                  >
-                    View
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className={styles.mobile}>
-        <h1 className={styles.mobileTitle}>Pending Claims</h1>
-        {data.map((row, index) => (
-          <div className={styles.card} key={index}>
-            <div className={styles.first}>
-              <div className={styles.data}>
-                <p className={styles.label}>Date of Claim</p>
-                <div className={styles.dateAndRef}>
-                  <p className={styles.date}>{row.date}</p>
-                  <p className={styles.ref}>{row.ref}</p>
+      )}
+      <div className={styles.cardsGrid}>
+        {data.map((row, index) => {
+          const statusType = getStatusColor(row.status);
+
+          return (
+            <div
+              key={index}
+              className={styles.claimCard}
+            >
+              {/* Card Header - Status Badge & Claim Reference */}
+              <div className={styles.claimCardHeader}>
+                <div className={`${styles.statusBadge} ${styles[statusType]}`}>
+                  {row.status || "PENDING"}
                 </div>
-              </div>
-              <div className={styles.claimant}>{row.claimant}</div>
-              <div className={styles.pendingActionsCell}>
-                <p className={styles.pendingActions}>
-                  Estimated resolution Date:
-                </p>
-                <p className={styles.pendingActions}>{row.pendingActions}</p>
-              </div>
-            </div>
-            <div className={styles.second}>
-              <div
-                className={`${styles.statusBadge} ${
-                  row.status === "Pending"
-                    ? styles.pending
-                    : row.status === "Cancelled"
-                    ? styles.cancelled
-                    : row.status === "Completed"
-                    ? styles.completed
-                    : ""
-                }`}
-              >
-                {row.status}
+                <div className={styles.claimRef}>{row.ref}</div>
               </div>
 
-              <div
-                onClick={() => router.push(`/dashboard/claims/${row.id}`)}
-                className={styles.actions}
-              >
-                <button className={styles.view}>Details</button>
+              {/* Claim Details */}
+              <div className={styles.claimDetails}>
+                <h3 className={styles.claimTitle}>Claim by {row.claimant}</h3>
+                <p className={styles.claimMeta}>Filed on {formatDate(row.date)}</p>
+                
+                <div className={styles.claimInfoRow}>
+                  <div className={styles.infoItem}>
+                    <span className={styles.infoLabel}>Status</span>
+                    <span className={styles.infoValue}>{row.status}</span>
+                  </div>
+                  <div className={styles.infoItem}>
+                    <span className={styles.infoLabel}>Last Updated</span>
+                    <span className={styles.infoValue}>{formatDate(row.pendingActions)}</span>
+                  </div>
+                </div>
               </div>
+
+              {/* Claim Info */}
+              <div className={styles.claimInfo}>
+                <div className={styles.infoColumn}>
+                  <p className={styles.infoLabel}>Estimated Resolution</p>
+                  <p className={styles.infoValue}>{formatDate(row.pendingActions)}</p>
+                </div>
+                <div className={styles.infoColumn}>
+                  <p className={styles.infoLabel}>Claim Date</p>
+                  <p className={styles.infoValue}>{formatDate(row.date)}</p>
+                </div>
+              </div>
+
+              {/* View Details Button */}
+              <button
+                className={styles.viewButton}
+                onClick={() => router.push(`/dashboard/claims/${row.id}`)}
+              >
+                View Claim Details →
+              </button>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-    </>
+    </div>
   );
 };
 
