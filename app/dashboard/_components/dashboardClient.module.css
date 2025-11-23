@@ -766,9 +766,10 @@
   }
 
   .menuSection .sectionTitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #ffffff;
     white-space: nowrap;
+    font-weight: 700;
   }
 
   .sectionDescription {
