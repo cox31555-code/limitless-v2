@@ -90,12 +90,54 @@
   text-align: right;
 }
 
-/* Bottom Section - Logo, Copyright, Socials */
+/* Links Section */
+.linksSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.5rem 4.4%;
+  border-bottom: 1px solid #f0f2f5;
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  color: #0052a3;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: #003d7a;
+  text-decoration: underline;
+}
+
+.linkSeparator {
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+/* Disclaimer Section */
+.disclaimerSection {
+  padding: 1.5rem 4.4%;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.disclaimerText {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0;
+  line-height: 150%;
+}
+
+/* Bottom Section - Copyright */
 .bottomSection {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2.5rem 4.4%;
+  justify-content: center;
+  padding: 2rem 4.4%;
   gap: 2rem;
 }
 
@@ -132,37 +174,11 @@
 }
 
 .copyrightText {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #999;
   margin: 0;
   line-height: 140%;
   letter-spacing: 0.3px;
-}
-
-.socialsSection {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.socialIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-  color: #999;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  border: 1px solid #f0f2f5;
-}
-
-.socialIcon:hover {
-  color: #4285f4;
-  border-color: #4285f4;
-  background: #f8faff;
 }
 
 /* Responsive Design */
