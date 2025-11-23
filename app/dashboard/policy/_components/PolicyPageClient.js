@@ -12,7 +12,7 @@ const PolicyPageClient = ({
   plusJakartaSans,
 }) => {
   const { setIsInsuranceModalOpen } = useInsuranceModal();
-  const [isExpiredExpanded, setIsExpiredExpanded] = useState(false);
+  const [activeTab, setActiveTab] = useState("active");
 
   const handleCreatePolicy = () => {
     setIsInsuranceModalOpen(true);
