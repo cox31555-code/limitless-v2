@@ -57,7 +57,7 @@
 @media screen and (max-width: 900px) {
   .section {
     padding: 2.8rem;
-    gap: 1.7rem;
+    gap: 2.2rem;
   }
 
   .header {
@@ -82,7 +82,7 @@
 @media screen and (max-width: 600px) {
   .section {
     padding: 2.2rem;
-    gap: 1.5rem;
+    gap: 1.8rem;
   }
 
   .title {
@@ -95,7 +95,7 @@
 
   .requestButton {
     width: 100%;
-    padding: 1rem 1.6rem;
+    padding: 1rem 1.8rem;
     font-size: 1rem;
   }
 }
