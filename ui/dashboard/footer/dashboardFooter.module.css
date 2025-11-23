@@ -31,7 +31,6 @@
   align-items: center;
   flex: 1;
   flex-wrap: nowrap;
-  padding-left: 27.3px;
   min-width: 0;
 }
 
@@ -80,7 +79,7 @@
   align-items: flex-end;
   flex: 0 0 auto;
   flex-wrap: nowrap;
-  padding-right: 27.3px;
+  padding-right: 7.3px;
 }
 
 .partnershipLogos {
