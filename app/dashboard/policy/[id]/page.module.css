@@ -38,12 +38,12 @@
 
 .heroBackground {
   position: absolute;
-  right: 13%;
+  right: 8%;
   top: 50%;
   transform: translateY(-50%);
-  width: 520px;
-  height: 519px;
-  opacity: 0.3;
+  width: 600px;
+  height: 600px;
+  opacity: 0.25;
   z-index: 1;
 }
 
