@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "../page.module.css";
+import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import Booklets from "./booklets/Booklets";
 import Dropdown from "./dropdown/Dropdown";
 import PolicyDocumentsSection from "./PolicyDocumentsSection";
