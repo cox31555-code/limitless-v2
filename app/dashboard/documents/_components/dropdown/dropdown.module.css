@@ -1,61 +1,66 @@
 .dropdown {
   position: relative;
   width: 100%;
-  max-width: 340px;
+  max-width: 360px;
 }
 
 .selectedValue {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.1rem 1.4rem;
+  padding: 1.3rem 1.6rem;
   background: #ffffff;
-  border: 1.5px solid #d1d5db;
-  border-radius: 8px;
+  border: 1.5px solid #d1dae5;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  gap: 1rem;
-  box-shadow: none;
+  transition: all 0.25s ease;
+  gap: 1.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  min-height: 52px;
 }
 
 .selectedValue:hover {
-  border-color: #9ca3af;
+  border-color: #0052a3;
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.08);
+  background: #fafbfc;
 }
 
 .selectedValue:focus-within {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  border-color: #0052a3;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
 }
 
 .value_text {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.05rem;
+  font-weight: 500;
   color: #1f2937;
   flex: 1;
-  line-height: 140%;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
 }
 
 .arrow {
-  width: 1.6rem;
-  height: 1.6rem;
-  color: #6b7280;
-  transition: transform 0.2s ease;
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #0052a3;
+  transition: transform 0.25s ease;
   flex-shrink: 0;
+  opacity: 0.7;
 }
 
 .options {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(100% + 10px);
   left: 0;
   right: 0;
   background: #ffffff;
-  border: 1.5px solid #d1d5db;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  max-height: 320px;
+  border: 1.5px solid #d1dae5;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 82, 163, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  max-height: 340px;
   overflow-y: auto;
   z-index: 50;
-  animation: dropdownSlideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: dropdownSlideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes dropdownSlideDown {
@@ -70,10 +75,10 @@
 }
 
 .option {
-  padding: 1rem 1.4rem;
+  padding: 1.2rem 1.6rem;
   cursor: pointer;
-  transition: all 0.15s ease;
-  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f3f7;
   background: transparent;
 }
 
@@ -82,20 +87,20 @@
 }
 
 .option:hover {
-  background: #f9fafb;
+  background: #f0f6ff;
 }
 
 .option:hover .value_text {
-  color: #1f2937;
-  font-weight: 500;
+  color: #0052a3;
+  font-weight: 600;
 }
 
 .selectedOption {
-  background: #f3f4f6;
+  background: #e3f1fe;
 }
 
 .selectedOption .value_text {
-  color: #1f2937;
+  color: #0052a3;
   font-weight: 600;
 }
 
