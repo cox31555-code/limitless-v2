@@ -19,7 +19,7 @@
   align-items: flex-start;
   gap: 4rem;
   padding: 4.5rem 0;
-  border-bottom: 1px solid rgba(0, 82, 163, 0.5);
+  border-bottom: 1px solid rgba(0, 82, 163, 0.2);
   flex-wrap: nowrap;
   width: 100%;
 }
@@ -112,7 +112,7 @@
   justify-content: center;
   gap: 10px;
   padding: 25px 21px;
-  border-bottom: 1px solid rgba(0, 82, 163, 0.5);
+  border-bottom: 1px solid rgba(0, 82, 163, 0.2);
   flex-wrap: nowrap;
   width: 100%;
 }
@@ -140,7 +140,7 @@
 /* Disclaimer Section */
 .disclaimerSection {
   padding: 3rem 21px;
-  border-bottom: 1px solid rgba(0, 82, 163, 0.5);
+  border-bottom: 1px solid rgba(0, 82, 163, 0.2);
   width: 100%;
 }
 
