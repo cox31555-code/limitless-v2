@@ -339,18 +339,20 @@
   }
 
   .tab {
-    font-size: 1.5rem;
-    padding: 1.6rem 0 2rem 0;
+    font-size: 2.6rem;
+    padding: 1.4rem 0;
+    margin-bottom: -2px;
   }
 
   .tabLabel {
-    font-size: 1.5rem;
+    font-size: 2.6rem;
   }
 
   .tabBadge {
-    min-width: 32px;
-    height: 32px;
-    font-size: 1.1rem;
+    min-width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+    margin-left: 0.8rem;
   }
 }
 
