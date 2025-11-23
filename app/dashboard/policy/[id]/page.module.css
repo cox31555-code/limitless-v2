@@ -126,6 +126,10 @@
     margin-bottom: 2.5rem;
   }
 
+  .heroBackground {
+    display: none;
+  }
+
   .heroContent {
     flex-direction: column;
     width: 100%;
