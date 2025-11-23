@@ -1,0 +1,240 @@
+/* Menu Section - Full Width Footer Banner */
+.menuSection {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  margin-top: 5rem;
+}
+
+.menuSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.menuSectionInner {
+  display: flex;
+  flex-direction: column;
+  gap: 50.7px;
+  padding: 11.7px 110px 11.7px 131.2px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.menuRowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sectionHeader {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  font-size: 2.34rem;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.menuGrid {
+  display: flex;
+  gap: 1.95rem;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.menuItem {
+  background: transparent;
+  border: none;
+  border-radius: 15.6px;
+  padding: 1.04rem 1.3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.78rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: left;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.menuItem:hover {
+  opacity: 0.85;
+}
+
+.menuItemIconWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuItemIcon {
+  width: 46.8px;
+  height: 46.8px;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.menuItemIcon svg {
+  width: 36.4px;
+  height: 36.4px;
+  filter: drop-shadow(0 2.6px 5.2px rgba(0, 0, 0, 0.1));
+}
+
+.menuItemContent {
+  display: none;
+}
+
+.menuItemLabel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 120%;
+  margin: 0;
+  letter-spacing: 0px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menuItemDescription {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 120%;
+  display: none;
+}
+
+.menuItemHours {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  margin-top: 0.26rem;
+  line-height: 110%;
+  display: none;
+}
+
+.menuItemArrow {
+  display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .menuSectionInner {
+    padding: 2rem 3%;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .menuSection .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .menuGrid {
+    gap: 1.2rem;
+  }
+
+  .menuItem {
+    padding: 0.8rem 1rem;
+  }
+
+  .menuItemIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menuItemIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menuSection {
+    margin-top: 3rem;
+  }
+
+  .menuSectionInner {
+    gap: 2rem;
+    padding: 2rem 1rem;
+    align-items: stretch;
+  }
+
+  .menuRowContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sectionHeader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+    color: #ffffff;
+    white-space: normal;
+    font-weight: 700;
+  }
+
+  .menuGrid {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .menuItem {
+    flex: 1;
+    min-width: 80px;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .menuItemLabel {
+    font-size: 0.9rem;
+    white-space: normal;
+  }
+}
