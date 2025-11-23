@@ -8,35 +8,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4rem 1.8rem;
+  padding: 1.1rem 1.4rem;
   background: #ffffff;
-  border: 1px solid #e0e6f0;
-  border-radius: 12px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
+  box-shadow: none;
 }
 
 .selectedValue:hover {
-  border-color: #003d7a;
-  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
-  transform: translateY(-2px);
+  border-color: #9ca3af;
+}
+
+.selectedValue:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .value_text {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #0052a3;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1f2937;
   flex: 1;
-  line-height: 130%;
+  line-height: 140%;
 }
 
 .arrow {
-  width: 1.8rem;
-  height: 1.8rem;
-  color: #0052a3;
-  transition: transform 0.3s ease;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: #6b7280;
+  transition: transform 0.2s ease;
   flex-shrink: 0;
 }
 
