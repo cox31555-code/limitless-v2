@@ -1,17 +1,18 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.6rem;
   width: 100%;
 }
 
 .sectionTitle {
-  font-size: 2.2rem;
+  font-size: 2.86rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
   padding: 0;
   line-height: 120%;
+  letter-spacing: -0.35px;
 }
 
 .cardsGrid {
