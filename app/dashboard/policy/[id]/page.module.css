@@ -101,11 +101,15 @@
 
 @media screen and (max-width: 1200px) {
   .heroSection {
-    padding: 2.5rem calc(50vw - 50%);
+    padding: 7rem calc(50vw - 50%) 7rem;
   }
 
   .greetingTitle {
-    font-size: 2.4rem;
+    font-size: 3.5rem;
+  }
+
+  .contentWrapper {
+    padding: 3rem 3%;
   }
 }
 
@@ -117,15 +121,20 @@
   .heroSection {
     flex-direction: column;
     text-align: center;
-    padding: 2rem calc(50vw - 50%);
-    gap: 1.5rem;
-    margin-bottom: 2.8rem;
+    padding: 3.5rem calc(50vw - 50%);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .heroBackground {
+    display: none;
   }
 
   .heroContent {
     flex-direction: column;
     width: 100%;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-left: 0;
   }
 
   .greetingArea {
@@ -134,15 +143,15 @@
   }
 
   .greetingTitle {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .greetingSubtitle {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .contentWrapper {
-    padding: 0 2%;
+    padding: 2.5rem 3%;
   }
 }
 
@@ -153,20 +162,20 @@
   }
 
   .heroSection {
-    padding: 1.5rem;
-    gap: 1.2rem;
-    margin-bottom: 2.4rem;
+    padding: 2.5rem calc(50vw - 50%);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .greetingTitle {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
   }
 
   .greetingSubtitle {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
   }
 
   .contentWrapper {
-    padding: 0 4%;
+    padding: 2rem 4%;
   }
 }
