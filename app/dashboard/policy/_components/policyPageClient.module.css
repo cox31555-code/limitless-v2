@@ -507,20 +507,26 @@
   }
 
   .tabsContainer {
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
     padding: 0 -4%;
     overflow-x: auto;
   }
 
   .tab {
-    font-size: 1rem;
-    padding: 0.9rem 0 1.2rem 0;
-    gap: 0.6rem;
+    font-size: 1.15rem;
+    padding: 1.2rem 0 1.6rem 0;
+    gap: 0.8rem;
   }
 
   .tabLabel {
-    font-size: 1rem;
+    font-size: 1.15rem;
+  }
+
+  .tabBadge {
+    min-width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
   }
 
   .tabBadge {
