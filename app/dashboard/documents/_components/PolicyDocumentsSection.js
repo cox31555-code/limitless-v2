@@ -43,7 +43,10 @@ export default function PolicyDocumentsSection({ selectedInsurance }) {
                 width={20}
                 height={20}
               />
-              <span className={styles.documentName}>{doc.name}</span>
+              <div className={styles.documentDetails}>
+                <span className={styles.documentName}>{doc.name}</span>
+                <span className={styles.dateAdded}>Date added: {doc.dateAdded}</span>
+              </div>
             </div>
             <div className={styles.documentActions}>
               <DocumentActions
