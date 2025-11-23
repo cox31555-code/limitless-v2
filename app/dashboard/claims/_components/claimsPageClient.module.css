@@ -139,31 +139,30 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  padding: 1rem 2rem;
-  background: #ffffff;
-  color: #0052a3;
+  padding: 1.2rem 2.4rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  color: #ffffff;
   border: none;
-  border-radius: 12px;
-  font-size: 0.95rem;
+  border-radius: 10px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.25);
   flex-shrink: 0;
 }
 
 .createClaimBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 82, 163, 0.35);
 }
 
 .createClaimBtn svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   stroke: currentColor;
+  stroke-width: 2.5;
 }
 
 /* Content Wrapper */
@@ -177,6 +176,39 @@
   width: 100%;
   position: relative;
   z-index: 2;
+}
+
+/* Content Header */
+.contentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.contentHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contentTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+}
+
+.contentSubtitle {
+  font-size: 1.35rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+  line-height: 140%;
 }
 
 /* Tabs Container */
@@ -439,6 +471,25 @@
     padding: 2.5rem 3%;
   }
 
+  .contentHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  .contentTitle {
+    font-size: 2.3rem;
+  }
+
+  .contentSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .createClaimBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .sectionTitle {
     font-size: 2.3rem;
   }
@@ -511,6 +562,28 @@
 
   .contentWrapper {
     padding: 2rem 4%;
+  }
+
+  .contentHeader {
+    gap: 1.4rem;
+  }
+
+  .contentTitle {
+    font-size: 2rem;
+  }
+
+  .contentSubtitle {
+    font-size: 1.15rem;
+  }
+
+  .createClaimBtn {
+    font-size: 0.95rem;
+    padding: 1rem 2rem;
+  }
+
+  .createClaimBtn svg {
+    width: 16px;
+    height: 16px;
   }
 
   .allianzBadge {
