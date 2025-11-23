@@ -443,12 +443,6 @@
   line-height: 120%;
   margin: 0;
   letter-spacing: 0.3px;
-  transition: all 0.3s ease;
-}
-
-.menuItem:hover .menuItemLabel {
-  color: #ffffff;
-  font-weight: 800;
 }
 
 .menuItemDescription {
