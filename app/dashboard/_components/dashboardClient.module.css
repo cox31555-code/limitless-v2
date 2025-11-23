@@ -202,8 +202,10 @@
   padding: 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1.4rem;
   border-bottom: 1px solid #e0e6f0;
+  position: relative;
 }
 
 .policyIcon {
@@ -232,6 +234,23 @@
   object-position: center;
 }
 
+.insuranceTypeBadge {
+  flex-shrink: 0;
+  background: #0052a3;
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .policyHeaderInfo {
   display: flex;
   flex-direction: column;
@@ -240,24 +259,26 @@
 }
 
 .policyName {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #0052a3;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #003d7a;
   margin: 0;
-  line-height: 120%;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-shadow: none;
 }
 
 .policyStatus {
   display: inline-block;
   width: fit-content;
-  background: #d4edda;
-  color: #155724;
-  padding: 0.4rem 1rem;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  background: #e7f3ff;
+  color: #0052a3;
+  padding: 0.35rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .policyDetails {
