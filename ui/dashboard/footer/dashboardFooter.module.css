@@ -50,6 +50,7 @@
   flex-direction: column;
   gap: 0.6rem;
   flex-wrap: nowrap;
+  padding-top: 17px;
 }
 
 .securityTitle {
