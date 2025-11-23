@@ -771,19 +771,21 @@
   }
 
   .menuRowContainer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .menuGrid {
-    flex-wrap: wrap;
-    gap: 0.8rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
     width: 100%;
   }
 
+  .menuGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    flex: 1;
+  }
+
   .menuItem {
-    padding: 0.6rem 0.8rem;
+    padding: 0.5rem 0.7rem;
     gap: 0.4rem;
   }
 
