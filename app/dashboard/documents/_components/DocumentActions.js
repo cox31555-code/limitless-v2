@@ -2,15 +2,23 @@
 
 import { useState } from "react";
 import { toast } from "react-toastify";
+import PdfViewerModal from "./PdfViewerModal";
 
-export default function DocumentActions({ insuranceId, pdfType }) {
-  const [isViewing, setIsViewing] = useState(false);
+export default function DocumentActions({ insuranceId, pdfType, documentName }) {
   const [isDownloading, setIsDownloading] = useState(false);
+  const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState(null);
 
   const handleView = async () => {
-    setIsViewing(true);
-
     try {
+      // Use mock PDF for testing
+      const mockPdfUrl = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Impound-Certificate_d695470c-RCXlWSWUb1n1DgdlKP0JtMNUwxkWtM.pdf";
+      
+      setPdfUrl(mockPdfUrl);
+      setIsPdfModalOpen(true);
+
+      // Real implementation (commented out for now)
+      /*
       const downloadUrl = `/api/download-pdf/${insuranceId}/${pdfType}`;
 
       const response = await fetch(downloadUrl, {
@@ -55,18 +63,12 @@ export default function DocumentActions({ insuranceId, pdfType }) {
       const pdfBlob = new Blob([blob], { type: "application/pdf" });
       const url = window.URL.createObjectURL(pdfBlob);
 
-      window.open(url, "_blank");
-
-      setTimeout(() => {
-        window.URL.revokeObjectURL(url);
-      }, 100);
-
-      toast.success("PDF opened successfully!");
+      setPdfUrl(url);
+      setIsPdfModalOpen(true);
+      */
     } catch (error) {
       console.error("View error:", error);
       toast.error("Failed to open PDF");
-    } finally {
-      setIsViewing(false);
     }
   };
 
@@ -150,81 +152,93 @@ export default function DocumentActions({ insuranceId, pdfType }) {
     }
   };
 
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: "2rem",
-        alignItems: "center",
-      }}
-    >
-      <button
-        onClick={handleView}
-        disabled={isViewing}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "0",
-          color: "#0052a3",
-          fontSize: "1rem",
-          fontWeight: "600",
-          lineHeight: "130%",
-          background: "transparent",
-          border: "none",
-          cursor: isViewing ? "not-allowed" : "pointer",
-          padding: "0",
-          transition: "color 0.2s ease",
-          opacity: isViewing ? 0.7 : 1,
-          whiteSpace: "nowrap",
-          textDecoration: "underline",
-        }}
-        onMouseEnter={(e) => {
-          if (!isViewing) {
-            e.currentTarget.style.color = "#003d7a";
-          }
-        }}
-        onMouseLeave={(e) => {
-          if (!isViewing) {
-            e.currentTarget.style.color = "#0052a3";
-          }
-        }}
-      >
-        <span>{isViewing ? "Loading..." : "View Online"}</span>
-      </button>
+  const handleCloseModal = () => {
+    setIsPdfModalOpen(false);
+    // Clean up blob URL if it was created
+    if (pdfUrl && pdfUrl.startsWith("blob:")) {
+      window.URL.revokeObjectURL(pdfUrl);
+    }
+    setPdfUrl(null);
+  };
 
-      <button
-        onClick={handleDownload}
-        disabled={isDownloading}
+  return (
+    <>
+      <div
         style={{
-          display: "inline-flex",
+          display: "flex",
+          gap: "2rem",
           alignItems: "center",
-          gap: "0",
-          color: "#0052a3",
-          fontSize: "1rem",
-          fontWeight: "600",
-          lineHeight: "130%",
-          background: "transparent",
-          border: "none",
-          cursor: isDownloading ? "not-allowed" : "pointer",
-          padding: "0",
-          transition: "color 0.2s ease",
-          opacity: isDownloading ? 0.7 : 1,
-          whiteSpace: "nowrap",
-          textDecoration: "underline",
-        }}
-        onMouseEnter={(e) => {
-          if (!isDownloading) {
-            e.currentTarget.style.color = "#003d7a";
-          }
-        }}
-        onMouseLeave={(e) => {
-          if (!isDownloading) {
-            e.currentTarget.style.color = "#0052a3";
-          }
         }}
       >
-        <span>{isDownloading ? "Downloading..." : "Download PDF"}</span>
-      </button>
-    </div>
+        <button
+          onClick={handleView}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0",
+            color: "#0052a3",
+            fontSize: "1rem",
+            fontWeight: "600",
+            lineHeight: "130%",
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            padding: "0",
+            transition: "color 0.2s ease",
+            whiteSpace: "nowrap",
+            textDecoration: "underline",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = "#003d7a";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = "#0052a3";
+          }}
+        >
+          <span>View Online</span>
+        </button>
+
+        <button
+          onClick={handleDownload}
+          disabled={isDownloading}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0",
+            color: "#0052a3",
+            fontSize: "1rem",
+            fontWeight: "600",
+            lineHeight: "130%",
+            background: "transparent",
+            border: "none",
+            cursor: isDownloading ? "not-allowed" : "pointer",
+            padding: "0",
+            transition: "color 0.2s ease",
+            opacity: isDownloading ? 0.7 : 1,
+            whiteSpace: "nowrap",
+            textDecoration: "underline",
+          }}
+          onMouseEnter={(e) => {
+            if (!isDownloading) {
+              e.currentTarget.style.color = "#003d7a";
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!isDownloading) {
+              e.currentTarget.style.color = "#0052a3";
+            }
+          }}
+        >
+          <span>{isDownloading ? "Downloading..." : "Download PDF"}</span>
+        </button>
+      </div>
+
+      <PdfViewerModal
+        isOpen={isPdfModalOpen}
+        onClose={handleCloseModal}
+        pdfUrl={pdfUrl}
+        documentName={documentName}
+      />
+    </>
   );
 }

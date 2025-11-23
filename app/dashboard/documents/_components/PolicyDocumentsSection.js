@@ -52,6 +52,7 @@ export default function PolicyDocumentsSection({ selectedInsurance }) {
               <DocumentActions
                 insuranceId={selectedInsurance._id}
                 pdfType={doc.pdfType}
+                documentName={doc.name}
               />
             </div>
           </div>

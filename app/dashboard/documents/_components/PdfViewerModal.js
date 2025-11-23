@@ -1,0 +1,62 @@
+"use client";
+
+import { useEffect } from "react";
+import Image from "next/image";
+import styles from "./pdfViewerModal.module.css";
+
+export default function PdfViewerModal({ isOpen, onClose, pdfUrl, documentName }) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.header}>
+          <h3 className={styles.title}>{documentName || "Document Viewer"}</h3>
+          <button 
+            className={styles.closeButton}
+            onClick={onClose}
+            aria-label="Close modal"
+          >
+            <Image
+              src="/svg/close.svg"
+              alt="Close"
+              width={24}
+              height={24}
+            />
+          </button>
+        </div>
+        
+        <div className={styles.pdfContainer}>
+          <iframe
+            src={pdfUrl}
+            className={styles.pdfViewer}
+            title={documentName || "PDF Document"}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
