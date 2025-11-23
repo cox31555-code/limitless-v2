@@ -155,6 +155,9 @@ const DashboardClient = () => {
             {activePolicies.map((policy) => {
               const make = extractVehicleMake(policy.vehicle);
               const BrandIconComponent = getBrandIcon(make);
+              const vehicleModelMatch = policy.vehicle.match(/- (.+)$/);
+              const vehicleModel = vehicleModelMatch ? vehicleModelMatch[1] : "Vehicle";
+              const vehicleDisplayText = `${vehicleModel} ${policy.vehicleYear} ${policy.engineSize} ${policy.transmission}`;
               return (
               <div key={policy.id} className={styles.policyCard}>
                 <div className={styles.policyCardHeader}>
@@ -168,7 +171,7 @@ const DashboardClient = () => {
                     )}
                   </div>
                   <div className={styles.policyHeaderInfo}>
-                    <h3 className={styles.policyName}>{policy.name}</h3>
+                    <h3 className={styles.policyName}>{vehicleDisplayText}</h3>
                     <span className={styles.policyStatus}>{policy.status}</span>
                   </div>
                 </div>
