@@ -130,7 +130,8 @@
 
   .modal {
     border-radius: 8px;
-    max-height: 98vh;
+    height: 96vh;
+    max-height: 96vh;
   }
 
   .header {
