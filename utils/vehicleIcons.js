@@ -1,6 +1,6 @@
 // Vehicle make to brand icon mapping
 const vehicleIconMap = {
-  FIAT: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F0a9826b0c3b64ee5bb99eca3b149492d",
+  FIAT: "https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fc1dd7526dafb4da0ac21083a71d98291",
   // Add more brands as they're uploaded
   // VW: "URL_TO_VW_ICON",
   // FORD: "URL_TO_FORD_ICON",
