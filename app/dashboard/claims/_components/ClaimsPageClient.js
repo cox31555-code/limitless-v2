@@ -2,9 +2,8 @@
 import React, { useState } from "react";
 import Table from "./table/Table";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
-import CreateBtn from "@/ui/dashboard/createBtn/CreateBtn";
 import styles from "./claimsPageClient.module.css";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const ClaimsPageClient = ({
   pendingClaims,
@@ -56,7 +55,13 @@ const ClaimsPageClient = ({
             <h2 className={styles.contentTitle}>Your Claims</h2>
             <p className={styles.contentSubtitle}>Manage and track all your insurance claims</p>
           </div>
-          <CreateBtn title="Create a new claim" href="/dashboard/submit-claim" />
+          <Link href="/dashboard/submit-claim" className={styles.createButton}>
+            <svg className={styles.plusIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            <span>Create a new claim</span>
+          </Link>
         </div>
 
         {/* Tabs Navigation */}
