@@ -145,7 +145,7 @@
 .policyContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   flex-shrink: 0;
   order: 2;
   margin-left: auto;
