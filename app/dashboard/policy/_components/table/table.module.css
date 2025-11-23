@@ -225,61 +225,61 @@
 
 @media screen and (max-width: 600px) {
   .section {
-    gap: 1.3rem;
+    gap: 1.5rem;
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .cardsGrid {
     grid-template-columns: 1fr;
-    gap: 1.3rem;
+    gap: 1.5rem;
   }
 
   .policyCardHeader {
-    padding: 1.3rem;
+    padding: 1.5rem;
   }
 
   .policyDetails {
-    padding: 1.3rem;
+    padding: 1.5rem;
   }
 
   .policyInfo {
-    padding: 1.3rem;
-    gap: 1.3rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
 
   .statusBadge {
-    font-size: 0.9rem;
-  }
-
-  .policyRef {
-    font-size: 1.1rem;
-  }
-
-  .carTitle {
-    font-size: 1.4rem;
-  }
-
-  .carMeta {
-    font-size: 1.15rem;
-  }
-
-  .regBadge {
-    font-size: 1rem;
-  }
-
-  .infoLabel {
     font-size: 0.95rem;
   }
 
-  .infoValue {
+  .policyRef {
+    font-size: 1.2rem;
+  }
+
+  .carTitle {
+    font-size: 1.6rem;
+  }
+
+  .carMeta {
     font-size: 1.3rem;
   }
 
-  .viewButton {
+  .regBadge {
     font-size: 1.15rem;
-    padding: 1rem;
+  }
+
+  .infoLabel {
+    font-size: 1rem;
+  }
+
+  .infoValue {
+    font-size: 1.5rem;
+  }
+
+  .viewButton {
+    font-size: 1.25rem;
+    padding: 1.2rem;
   }
 }
