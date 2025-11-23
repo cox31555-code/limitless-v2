@@ -613,11 +613,6 @@
   .menuSectionInner {
     padding: 1.5rem 3%;
     margin: 0;
-    gap: 20px;
-  }
-
-  .menuRowContainer {
-    gap: 350px;
   }
 
   .greetingTitle {
