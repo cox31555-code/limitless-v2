@@ -48,20 +48,20 @@
   top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: #fff;
-  border: 1px solid #e0e6f0;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 8, 34, 0.16);
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   max-height: 320px;
   overflow-y: auto;
   z-index: 50;
-  animation: dropdownSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: dropdownSlideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes dropdownSlideDown {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-4px);
   }
   to {
     opacity: 1;
@@ -70,10 +70,10 @@
 }
 
 .option {
-  padding: 1.3rem 1.8rem;
+  padding: 1rem 1.4rem;
   cursor: pointer;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid #e0e6f0;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid #f3f4f6;
   background: transparent;
 }
 
@@ -82,19 +82,20 @@
 }
 
 .option:hover {
-  background: #f8fafc;
+  background: #f9fafb;
 }
 
 .option:hover .value_text {
-  color: #0052a3;
+  color: #1f2937;
+  font-weight: 500;
 }
 
 .selectedOption {
-  background: #f0f4fb;
+  background: #f3f4f6;
 }
 
 .selectedOption .value_text {
-  color: #0052a3;
+  color: #1f2937;
   font-weight: 600;
 }
 
