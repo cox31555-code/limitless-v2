@@ -686,6 +686,16 @@
     padding: 1.5rem 1.2rem;
   }
 
+  .menuItemIcon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .menuItemIcon svg {
+    width: 40px;
+    height: 40px;
+  }
+
   .policyCard {
     border-radius: 10px;
   }
