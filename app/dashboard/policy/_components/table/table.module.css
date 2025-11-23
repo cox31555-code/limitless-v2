@@ -224,61 +224,61 @@
 
 @media screen and (max-width: 600px) {
   .section {
-    gap: 1rem;
+    gap: 1.3rem;
   }
 
   .sectionTitle {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 
   .cardsGrid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.3rem;
   }
 
   .policyCardHeader {
-    padding: 1rem;
+    padding: 1.3rem;
   }
 
   .policyDetails {
-    padding: 1rem;
+    padding: 1.3rem;
   }
 
   .policyInfo {
-    padding: 1rem;
-    gap: 1rem;
+    padding: 1.3rem;
+    gap: 1.3rem;
   }
 
   .statusBadge {
-    font-size: 0.85rem;
-  }
-
-  .policyRef {
-    font-size: 0.95rem;
-  }
-
-  .carTitle {
-    font-size: 1.2rem;
-  }
-
-  .carMeta {
-    font-size: 1.05rem;
-  }
-
-  .regBadge {
     font-size: 0.9rem;
   }
 
-  .infoLabel {
-    font-size: 0.85rem;
-  }
-
-  .infoValue {
+  .policyRef {
     font-size: 1.1rem;
   }
 
-  .viewButton {
+  .carTitle {
+    font-size: 1.4rem;
+  }
+
+  .carMeta {
+    font-size: 1.15rem;
+  }
+
+  .regBadge {
     font-size: 1rem;
-    padding: 0.7rem;
+  }
+
+  .infoLabel {
+    font-size: 0.95rem;
+  }
+
+  .infoValue {
+    font-size: 1.3rem;
+  }
+
+  .viewButton {
+    font-size: 1.15rem;
+    padding: 1rem;
   }
 }
