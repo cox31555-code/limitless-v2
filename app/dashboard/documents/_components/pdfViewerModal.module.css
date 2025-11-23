@@ -105,7 +105,8 @@
   }
 
   .modal {
-    max-height: 95vh;
+    height: 92vh;
+    max-height: 92vh;
   }
 
   .header {
