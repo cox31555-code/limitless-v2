@@ -161,6 +161,8 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 0;
+  padding-left: 6.4rem;
+  padding-right: 6.4rem;
   gap: 2rem;
   flex-wrap: nowrap;
   width: 100%;
