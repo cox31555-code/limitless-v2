@@ -1,9 +1,8 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import Table from "./table/Table";
 import styles from "./policyPageClient.module.css";
 import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
-import { mockPolicies } from "../../mockPoliciesData";
 
 const PolicyPageClient = ({
   activePolicies,
