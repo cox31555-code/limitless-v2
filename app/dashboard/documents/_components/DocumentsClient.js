@@ -26,10 +26,8 @@ export default function DocumentsClient({ insurances }) {
     <div className={styles.contentWrapper}>
       <section className={styles.policiesSection}>
         <div className={styles.sectionHeaderWrapper}>
-          <div className={styles.policySection}>
-            <div className={styles.selectedPolicyLabel}>
-              <h2 className={styles.selectedPolicyTitle}>Selected Policy</h2>
-            </div>
+          <div className={styles.policyContainer}>
+            <label className={styles.policyLabel}>Selected Policy</label>
             <div className={styles.dropdownWrapper}>
               <Dropdown
                 insurances={insurances}
