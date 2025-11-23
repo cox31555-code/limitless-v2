@@ -330,6 +330,7 @@
   }
 }
 
+/* Merged 1200px breakpoint */
 @media screen and (max-width: 1200px) {
   .heroSection {
     padding: 7rem calc(50vw - 50%) 7rem;
