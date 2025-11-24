@@ -32,9 +32,14 @@
   outline: none;
 }
 
-.dropdown:hover:not(.dropdownDisabled) {
+.dropdown:hover:not(.dropdownDisabled):not(.dropdownError) {
   border-color: #0052a3;
   box-shadow: 0 1px 3px rgba(0, 82, 163, 0.08);
+}
+
+.dropdownDisabled:hover {
+  border-color: #e0e6f0;
+  box-shadow: none;
 }
 
 .dropdown:focus,
@@ -55,7 +60,16 @@
 .dropdownDisabled {
   background: #f8f9fb;
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.dropdownDisabled .selected {
+  color: #a8b2bd;
+}
+
+.dropdownDisabled .arrowIcon {
+  color: #cbd4dd;
 }
 
 .selected {
