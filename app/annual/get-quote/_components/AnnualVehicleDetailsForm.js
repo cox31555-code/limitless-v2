@@ -478,7 +478,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     onChange={(value) => handleDropdownChange("type", value || "")}
                     disabled={!!foundVehicleData}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.type ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.type && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.type.message}</span>
@@ -494,7 +494,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                       onChange={(value) => handleDropdownChange("make", value || "")}
                       disabled={!!foundVehicleData}
                       className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.make ? styles.error : ""}`}
-                      style={{ width: "100%" }}
+                      style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                     />
                     {errors.vehicleDetails?.make && (
                       <span className={styles.errorMessage}>{errors.vehicleDetails.make.message}</span>
@@ -516,7 +516,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     value={state.values.model || selectedModel || null}
                     onChange={(value) => handleDropdownChange("model", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.model ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.model && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.model.message}</span>
@@ -532,7 +532,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     value={state.values.year || selectedYear || null}
                     onChange={(value) => handleDropdownChange("year", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.year ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.year && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.year.message}</span>
@@ -553,7 +553,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     value={state.values.doors || selectedDoors || null}
                     onChange={(value) => handleDropdownChange("doors", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.doors ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.doors && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.doors.message}</span>
@@ -569,7 +569,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     value={state.values.fuel || selectedFuel || null}
                     onChange={(value) => handleDropdownChange("fuel", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.fuel ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.fuel && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.fuel.message}</span>
@@ -590,7 +590,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     value={state.values.transmission || watch("vehicleDetails.transmission") || null}
                     onChange={(value) => handleDropdownChange("transmission", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.transmission ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.transmission && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.transmission.message}</span>
@@ -605,7 +605,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     onChange={(value) => handleDropdownChange("colour", value || "")}
                     disabled={!!foundVehicleData}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.colour ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.colour && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.colour.message}</span>
@@ -632,7 +632,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 value={watch("vehicleDetails.trackingDevice") || null}
                 onChange={(value) => setValue("vehicleDetails.trackingDevice", value || "")}
                 className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.trackingDevice ? styles.error : ""}`}
-                style={{ width: "100%" }}
+                style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
               />
               {errors.vehicleDetails?.trackingDevice && (
                 <span className={styles.errorMessage}>{errors.vehicleDetails.trackingDevice.message}</span>
@@ -646,7 +646,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 value={watch("vehicleDetails.alarmImmobiliser") || null}
                 onChange={(value) => setValue("vehicleDetails.alarmImmobiliser", value || "")}
                 className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.alarmImmobiliser ? styles.error : ""}`}
-                style={{ width: "100%" }}
+                style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
               />
               {errors.vehicleDetails?.alarmImmobiliser && (
                 <span className={styles.errorMessage}>{errors.vehicleDetails.alarmImmobiliser.message}</span>
@@ -663,7 +663,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 value={watch("vehicleDetails.importedVehicle") || null}
                 onChange={(value) => setValue("vehicleDetails.importedVehicle", value || "")}
                 className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.importedVehicle ? styles.error : ""}`}
-                style={{ width: "100%" }}
+                style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
               />
               {errors.vehicleDetails?.importedVehicle && (
                 <span className={styles.errorMessage}>{errors.vehicleDetails.importedVehicle.message}</span>
@@ -677,7 +677,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 value={watch("vehicleDetails.vehicleModified") || null}
                 onChange={(value) => setValue("vehicleDetails.vehicleModified", value || "")}
                 className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.vehicleModified ? styles.error : ""}`}
-                style={{ width: "100%" }}
+                style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
               />
               {errors.vehicleDetails?.vehicleModified && (
                 <span className={styles.errorMessage}>{errors.vehicleDetails.vehicleModified.message}</span>
@@ -716,7 +716,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 value={watch("vehicleDetails.worth") || null}
                 onChange={(value) => setValue("vehicleDetails.worth", value || "")}
                 className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.worth ? styles.error : ""}`}
-                style={{ width: "100%" }}
+                style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
               />
               {errors.vehicleDetails?.worth && (
                 <span className={styles.errorMessage}>{errors.vehicleDetails.worth.message}</span>
@@ -766,7 +766,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                   value={watch("vehicleDetails.legalOwner") || null}
                   onChange={(value) => setValue("vehicleDetails.legalOwner", value || "")}
                   className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.legalOwner ? styles.error : ""}`}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                 />
                 {errors.vehicleDetails?.legalOwner && (
                   <span className={styles.errorMessage}>{errors.vehicleDetails.legalOwner.message}</span>
@@ -786,7 +786,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     value={watch("vehicleDetails.owner") || null}
                     onChange={(value) => setValue("vehicleDetails.owner", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.owner ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.owner && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.owner.message}</span>
@@ -816,7 +816,7 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     value={watch("vehicleDetails.registeredKeeper") || null}
                     onChange={(value) => setValue("vehicleDetails.registeredKeeper", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.registeredKeeper ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.registeredKeeper && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.registeredKeeper.message}</span>
