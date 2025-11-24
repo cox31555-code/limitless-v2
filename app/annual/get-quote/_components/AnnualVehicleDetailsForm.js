@@ -624,37 +624,65 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
           </div>
           <div className={styles.additionalDetailsSection}>
           <div className={styles.cleanFormGrid2Col}>
-            <FormDropdown
-              label="Tracking device"
-              options={trackingDeviceOptions}
-              placeholder="Please select"
-              {...register("vehicleDetails.trackingDevice")}
-              error={errors.vehicleDetails?.trackingDevice}
-            />
-            <FormDropdown
-              label="Alarm / Immobiliser"
-              options={alarmImmobiliserOptions}
-              placeholder="Please select"
-              {...register("vehicleDetails.alarmImmobiliser")}
-              error={errors.vehicleDetails?.alarmImmobiliser}
-            />
+            <div className={styles.rsuiteFormGroup}>
+              <label className={styles.label}>Tracking device</label>
+              <SelectPicker
+                data={trackingDeviceOptions.map((option) => ({ label: option, value: option }))}
+                placeholder="Please select"
+                value={watch("vehicleDetails.trackingDevice") || null}
+                onChange={(value) => setValue("vehicleDetails.trackingDevice", value || "")}
+                className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.trackingDevice ? styles.error : ""}`}
+                style={{ width: "100%" }}
+              />
+              {errors.vehicleDetails?.trackingDevice && (
+                <span className={styles.errorMessage}>{errors.vehicleDetails.trackingDevice.message}</span>
+              )}
+            </div>
+            <div className={styles.rsuiteFormGroup}>
+              <label className={styles.label}>Alarm / Immobiliser</label>
+              <SelectPicker
+                data={alarmImmobiliserOptions.map((option) => ({ label: option, value: option }))}
+                placeholder="Please select"
+                value={watch("vehicleDetails.alarmImmobiliser") || null}
+                onChange={(value) => setValue("vehicleDetails.alarmImmobiliser", value || "")}
+                className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.alarmImmobiliser ? styles.error : ""}`}
+                style={{ width: "100%" }}
+              />
+              {errors.vehicleDetails?.alarmImmobiliser && (
+                <span className={styles.errorMessage}>{errors.vehicleDetails.alarmImmobiliser.message}</span>
+              )}
+            </div>
           </div>
 
           <div className={styles.cleanFormGrid2Col}>
-            <FormDropdown
-              label="Imported vehicle"
-              options={yesNoOptions}
-              placeholder="Please select"
-              {...register("vehicleDetails.importedVehicle")}
-              error={errors.vehicleDetails?.importedVehicle}
-            />
-            <FormDropdown
-              label="Has your vehicle been modified?"
-              options={yesNoOptions}
-              placeholder="Please select"
-              {...register("vehicleDetails.vehicleModified")}
-              error={errors.vehicleDetails?.vehicleModified}
-            />
+            <div className={styles.rsuiteFormGroup}>
+              <label className={styles.label}>Imported vehicle</label>
+              <SelectPicker
+                data={yesNoOptions.map((option) => ({ label: option, value: option }))}
+                placeholder="Please select"
+                value={watch("vehicleDetails.importedVehicle") || null}
+                onChange={(value) => setValue("vehicleDetails.importedVehicle", value || "")}
+                className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.importedVehicle ? styles.error : ""}`}
+                style={{ width: "100%" }}
+              />
+              {errors.vehicleDetails?.importedVehicle && (
+                <span className={styles.errorMessage}>{errors.vehicleDetails.importedVehicle.message}</span>
+              )}
+            </div>
+            <div className={styles.rsuiteFormGroup}>
+              <label className={styles.label}>Has your vehicle been modified?</label>
+              <SelectPicker
+                data={yesNoOptions.map((option) => ({ label: option, value: option }))}
+                placeholder="Please select"
+                value={watch("vehicleDetails.vehicleModified") || null}
+                onChange={(value) => setValue("vehicleDetails.vehicleModified", value || "")}
+                className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.vehicleModified ? styles.error : ""}`}
+                style={{ width: "100%" }}
+              />
+              {errors.vehicleDetails?.vehicleModified && (
+                <span className={styles.errorMessage}>{errors.vehicleDetails.vehicleModified.message}</span>
+              )}
+            </div>
           </div>
           {vehicleModified === "Yes" && vehicleModifications.length > 0 && (
             <div className={styles.modificationsListContainer}>
