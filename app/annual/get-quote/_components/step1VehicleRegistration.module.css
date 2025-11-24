@@ -4,7 +4,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2rem;
 }
 
 .header {
@@ -35,7 +35,7 @@
 .inputSection {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.2rem;
 }
 
 .regInputWrapper {
@@ -147,47 +147,38 @@
   }
 }
 
-.divider {
-  position: relative;
+.alternativeOption {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin: 0.4rem 0 0;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: -0.8rem 0 0;
 }
 
 .dividerText {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 400;
-  color: #a8b2bd;
+  color: #b8c1cc;
   text-transform: lowercase;
-  letter-spacing: 0;
 }
 
 .manualEntryBtn {
-  width: auto;
   padding: 0;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 400;
   color: #7a8a9d;
   background: transparent;
   border: none;
-  border-bottom: 1px solid transparent;
-  border-radius: 0;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: right;
   text-decoration: underline;
-  text-decoration-color: #d5dce3;
-  text-underline-offset: 3px;
+  text-decoration-color: #cbd4dd;
+  text-underline-offset: 2px;
 }
 
 .manualEntryBtn:hover {
   color: #0052a3;
   text-decoration-color: #0052a3;
-}
-
-.manualEntryBtn:active {
-  transform: translateY(0);
 }
 
 .infoBox {
@@ -336,7 +327,7 @@
 @media (max-width: 768px) {
   .container {
     padding: 0;
-    gap: 2rem;
+    gap: 1.8rem;
   }
 
   .header {
@@ -376,8 +367,12 @@
 @media (max-width: 600px) {
   .container {
     padding: 0;
-    gap: 1.6rem;
+    gap: 1.4rem;
     margin: 0;
+  }
+
+  .alternativeOption {
+    margin: -0.6rem 0 0;
   }
 
   .header {
@@ -403,7 +398,11 @@
   }
 
   .manualEntryBtn {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .dividerText {
+    font-size: 1rem;
   }
 
   .infoBox {
