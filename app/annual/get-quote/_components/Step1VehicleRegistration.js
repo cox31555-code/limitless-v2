@@ -345,22 +345,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
             </div>
 
             {selectedType && (
-              <div className={styles.formRow}>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Make</label>
-                  <SelectPicker
-                    data={state.makes.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select make"
-                    value={selectedMake || null}
-                    onChange={(value) => handleDropdownChange("make", value || "")}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.make ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.make && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.make.message}</span>
-                  )}
-                </div>
-              </div>
+              <Dropdown
+                label="Make"
+                selected={selectedMake || ""}
+                options={state.makes}
+                setSelected={(value) => handleDropdownChange("make", value)}
+                placeholder="Select make"
+              />
             )}
 
             {selectedMake && (
