@@ -34,6 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .progressText {
@@ -43,20 +44,29 @@
   letter-spacing: -0.01em;
 }
 
-.collapseBtn {
+.controlBtns {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.controlBtn {
   background: transparent;
   border: none;
   color: #5a6b7d;
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.25s ease;
+  transition: all 0.25s ease;
+  border-radius: 6px;
+  line-height: 1;
 }
 
-.collapseBtn:hover {
+.controlBtn:hover {
   color: #0388ff;
+  background: rgba(3, 136, 255, 0.08);
 }
 
 .progressBar {
@@ -170,17 +180,7 @@
   border-radius: 50%;
   background: #0388ff;
   border: 5px solid rgba(3, 136, 255, 0.25);
-  animation: pulse 2s ease-in-out infinite;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(3, 136, 255, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(3, 136, 255, 0);
-  }
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
 }
 
 .stepContent {
