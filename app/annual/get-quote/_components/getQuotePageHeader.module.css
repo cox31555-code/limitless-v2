@@ -5,7 +5,7 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  padding: 1.2rem 5%;
+  padding: 1.2rem 2%;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
 }
@@ -97,7 +97,7 @@
 
 @media (max-width: 600px) {
   .header {
-    padding: 1rem 4%;
+    padding: 1rem 2%;
   }
 
   .logoContainer {
