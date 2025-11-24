@@ -395,23 +395,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
             )}
 
             {selectedFuel && (
-              <div className={styles.formRow}>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Transmission</label>
-                  <SelectPicker
-                    data={state.options.transmissions.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select transmission"
-                    value={watch("vehicleDetails.transmission") || null}
-                    onChange={(value) => handleDropdownChange("transmission", value || "")}
-                    disabled={state.options.transmissions.length === 0}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.transmission ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.transmission && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.transmission.message}</span>
-                  )}
-                </div>
-              </div>
+              <Dropdown
+                label="Transmission"
+                selected={watch("vehicleDetails.transmission") || ""}
+                options={state.options.transmissions}
+                setSelected={(value) => handleDropdownChange("transmission", value)}
+                placeholder="Select transmission"
+              />
             )}
 
             {watch("vehicleDetails.transmission") && (
