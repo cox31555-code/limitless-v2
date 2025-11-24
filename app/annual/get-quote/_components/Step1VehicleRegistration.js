@@ -280,45 +280,41 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
         <>
           <div className={styles.inputSection}>
             <div className={styles.regInputWrapper}>
-              <input
-                type="text"
-                className={`${styles.regInput} ${errors.vehicleDetails?.registrationNumber ? styles.regInputError : ""}`}
-                placeholder="Enter car registration..."
-                value={registrationNumber || ""}
-                onChange={(e) => {
-                  const formatted = e.target.value.toUpperCase();
-                  setValue("vehicleDetails.registrationNumber", formatted, {
-                    shouldValidate: false,
-                    shouldDirty: true,
-                  });
-                  if (errors.vehicleDetails?.registrationNumber) {
-                    clearErrors("vehicleDetails.registrationNumber");
-                  }
-                }}
-                onKeyPress={handleKeyPress}
-                disabled={isLoadingVehicle}
-                maxLength={8}
-              />
-              {errors.vehicleDetails?.registrationNumber && (
-                <p className={styles.errorText}>{errors.vehicleDetails.registrationNumber.message}</p>
-              )}
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Registration Number</label>
+                <InputGroup className={styles.regInputGroup}>
+                  <Input
+                    type="text"
+                    placeholder="Enter car registration..."
+                    value={registrationNumber || ""}
+                    onChange={(e) => {
+                      const formatted = e.toUpperCase();
+                      setValue("vehicleDetails.registrationNumber", formatted, {
+                        shouldValidate: false,
+                        shouldDirty: true,
+                      });
+                      if (errors.vehicleDetails?.registrationNumber) {
+                        clearErrors("vehicleDetails.registrationNumber");
+                      }
+                    }}
+                    onKeyPress={handleKeyPress}
+                    disabled={isLoadingVehicle}
+                    maxLength={8}
+                  />
+                  <Button
+                    onClick={handleFindVehicle}
+                    disabled={isLoadingVehicle || !registrationNumber?.trim()}
+                    loading={isLoadingVehicle}
+                    appearance="primary"
+                  >
+                    {isLoadingVehicle ? "Searching..." : "Find my car"}
+                  </Button>
+                </InputGroup>
+                {errors.vehicleDetails?.registrationNumber && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.registrationNumber.message}</span>
+                )}
+              </div>
             </div>
-
-            <button
-              type="button"
-              className={styles.findBtn}
-              onClick={handleFindVehicle}
-              disabled={isLoadingVehicle || !registrationNumber?.trim()}
-            >
-              {isLoadingVehicle ? (
-                <>
-                  <div className={styles.spinner} />
-                  Searching...
-                </>
-              ) : (
-                "Find my car"
-              )}
-            </button>
           </div>
 
           <div className={styles.alternativeOption}>
