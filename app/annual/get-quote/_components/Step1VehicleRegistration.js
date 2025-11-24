@@ -374,7 +374,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                     value={selectedMake || null}
                     onChange={(value) => handleDropdownChange("make", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.make ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.make && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.make.message}</span>
@@ -394,7 +394,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                     onChange={(value) => handleDropdownChange("model", value || "")}
                     disabled={state.options.models.length === 0}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.model ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.model && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.model.message}</span>
@@ -414,7 +414,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                     onChange={(value) => handleDropdownChange("year", value || "")}
                     disabled={state.options.years.length === 0}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.year ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.year && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.year.message}</span>
@@ -434,7 +434,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                     onChange={(value) => handleDropdownChange("doors", value || "")}
                     disabled={state.options.doors.length === 0}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.doors ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.doors && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.doors.message}</span>
@@ -454,7 +454,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                     onChange={(value) => handleDropdownChange("fuel", value || "")}
                     disabled={state.options.fuels.length === 0}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.fuel ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.fuel && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.fuel.message}</span>
@@ -474,7 +474,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                     onChange={(value) => handleDropdownChange("transmission", value || "")}
                     disabled={state.options.transmissions.length === 0}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.transmission ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.transmission && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.transmission.message}</span>
@@ -493,7 +493,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                     value={watch("vehicleDetails.colour") || null}
                     onChange={(value) => handleDropdownChange("colour", value || "")}
                     className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.colour ? styles.error : ""}`}
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                   />
                   {errors.vehicleDetails?.colour && (
                     <span className={styles.errorMessage}>{errors.vehicleDetails.colour.message}</span>
