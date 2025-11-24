@@ -10,7 +10,7 @@
 .label {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1a1a2e;
+  color: #0052a3;
   margin: 0;
   line-height: 1.4;
 }
@@ -24,8 +24,8 @@
   min-height: 5rem;
   padding: 1.2rem 1.6rem;
   background: #ffffff;
-  border: 1px solid #e0e6f0;
-  border-radius: 6px;
+  border: 2px solid #0052a3;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   box-sizing: border-box;
@@ -33,19 +33,19 @@
 }
 
 .dropdown:hover:not(.dropdownDisabled):not(.dropdownError) {
-  border-color: #0052a3;
-  box-shadow: 0 1px 3px rgba(0, 82, 163, 0.08);
+  border-color: #003d7a;
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.15);
 }
 
 .dropdownDisabled:hover {
-  border-color: #e0e6f0;
+  border-color: #cbd4dd;
   box-shadow: none;
 }
 
 .dropdown:focus,
 .dropdownOpen {
-  border-color: #0052a3;
-  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
+  border-color: #003d7a;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.12);
 }
 
 .dropdownError {
@@ -58,10 +58,12 @@
 }
 
 .dropdownDisabled {
-  background: #f8f9fb;
+  background: #ffffff;
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
+  border-color: #cbd4dd;
+  border-width: 2px;
 }
 
 .dropdownDisabled .selected {
@@ -91,11 +93,12 @@
 
 .dropdown:not(.dropdownDisabled):has(.selected:not(.placeholder)) {
   border-color: #0052a3;
-  background: #f8fbff;
+  background: #ffffff;
 }
 
 .dropdown:not(.dropdownDisabled):has(.selected:not(.placeholder)):hover {
-  box-shadow: 0 1px 3px rgba(0, 82, 163, 0.1);
+  border-color: #003d7a;
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.15);
 }
 
 .arrowIcon {
@@ -116,9 +119,9 @@
   left: 0;
   right: 0;
   background: #ffffff;
-  border: 1px solid #e0e6f0;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 2px solid #0052a3;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 82, 163, 0.15), 0 2px 6px rgba(0, 82, 163, 0.1);
   z-index: 1000;
   max-height: 32rem;
   display: flex;
@@ -129,7 +132,7 @@
 .searchWrapper {
   position: relative;
   padding: 1rem;
-  border-bottom: 1px solid #e8ecf1;
+  border-bottom: 1px solid #d4ebf7;
   background: #ffffff;
   flex-shrink: 0;
 }
@@ -151,9 +154,9 @@
   font-size: 1.4rem;
   font-weight: 400;
   color: #1a1a2e;
-  background: #f8f9fb;
-  border: 1px solid #e8ecf1;
-  border-radius: 4px;
+  background: #f8fbff;
+  border: 1px solid #d4ebf7;
+  border-radius: 6px;
   outline: none;
   transition: all 0.2s ease;
   box-sizing: border-box;
@@ -166,7 +169,7 @@
 .searchInput:focus {
   background: #ffffff;
   border-color: #0052a3;
-  box-shadow: 0 0 0 2px rgba(0, 82, 163, 0.08);
+  box-shadow: 0 0 0 2px rgba(0, 82, 163, 0.12);
 }
 
 .optionsList {
@@ -211,6 +214,7 @@
 .optionSelected {
   background: #e8f4ff;
   color: #0052a3;
+  font-weight: 600;
 }
 
 .optionSelected:hover {
