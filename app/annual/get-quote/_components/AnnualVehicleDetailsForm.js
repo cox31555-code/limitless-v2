@@ -580,25 +580,37 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
 
             {selectedFuel && !foundVehicleData && (
               <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                <FormDropdown
-                  key={`transmission-${forceUpdate}`}
-                  label="Transmission"
-                  options={state.options.transmissions}
-                  placeholder="Select Transmission"
-                  disabled={!!foundVehicleData || !selectedFuel || state.options.transmissions.length === 0}
-                  value={state.values.transmission || watch("vehicleDetails.transmission") || ""}
-                  onChange={(e) => handleDropdownChange("transmission", e.target.value)}
-                  {...register("vehicleDetails.transmission")}
-                  error={errors.vehicleDetails?.transmission}
-                />
-                <FormDropdown
-                  label="Vehicle Color"
-                  options={carColors}
-                  placeholder="Select Color"
-                  {...register("vehicleDetails.colour")}
-                  error={errors.vehicleDetails?.colour}
-                  disabled={!!foundVehicleData}
-                />
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>Transmission</label>
+                  <SelectPicker
+                    key={`transmission-${forceUpdate}`}
+                    data={state.options.transmissions.map((option) => ({ label: option, value: option }))}
+                    placeholder="Select Transmission"
+                    disabled={!!foundVehicleData || !selectedFuel || state.options.transmissions.length === 0}
+                    value={state.values.transmission || watch("vehicleDetails.transmission") || null}
+                    onChange={(value) => handleDropdownChange("transmission", value || "")}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.transmission ? styles.error : ""}`}
+                    style={{ width: "100%" }}
+                  />
+                  {errors.vehicleDetails?.transmission && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.transmission.message}</span>
+                  )}
+                </div>
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>Vehicle Color</label>
+                  <SelectPicker
+                    data={carColors.map((option) => ({ label: option, value: option }))}
+                    placeholder="Select Color"
+                    value={watch("vehicleDetails.colour") || null}
+                    onChange={(value) => handleDropdownChange("colour", value || "")}
+                    disabled={!!foundVehicleData}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.colour ? styles.error : ""}`}
+                    style={{ width: "100%" }}
+                  />
+                  {errors.vehicleDetails?.colour && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.colour.message}</span>
+                  )}
+                </div>
               </div>
             )}
           </div>
