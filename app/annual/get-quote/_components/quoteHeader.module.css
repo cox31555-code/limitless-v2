@@ -121,6 +121,10 @@
 }
 
 @media (max-width: 600px) {
+  .headerContainer {
+    position: relative;
+  }
+
   .headerContent {
     padding: 1rem 1.2rem;
   }
