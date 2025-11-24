@@ -113,11 +113,6 @@
     padding: 1.2rem 2rem;
     font-size: 1.3rem;
   }
-
-  .nextBtn svg {
-    width: 18px;
-    height: 18px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -146,10 +141,5 @@
     padding: 1.4rem 1.8rem;
     font-size: 1.3rem;
     margin-left: 0;
-  }
-
-  .nextBtn svg {
-    width: 18px;
-    height: 18px;
   }
 }
