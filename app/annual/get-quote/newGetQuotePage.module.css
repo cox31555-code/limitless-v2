@@ -46,14 +46,16 @@
 @media (max-width: 900px) {
   .pageWrapper {
     flex-direction: column;
+    min-height: auto;
   }
 
   .mainContent {
     width: 100%;
+    order: 2;
   }
 
   .stepContent {
-    min-height: calc(100vh - 280px);
+    min-height: auto;
   }
 }
 
