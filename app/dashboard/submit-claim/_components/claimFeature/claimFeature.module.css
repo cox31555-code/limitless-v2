@@ -1,189 +1,211 @@
-.container {
-  width: 100%;
-  height: auto;
-  flex-shrink: 0;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.12);
-  padding: 1.6rem;
+.card {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  position: relative;
+  background: #ffffff;
+  border: 1px solid #e8ecf2;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
   transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.06), 0 1px 2px rgba(0, 8, 34, 0.02);
+  height: 100%;
 }
 
-.container:hover {
-  border-color: rgba(3, 136, 255, 0.18);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.12);
+.card:hover {
+  border-color: #d0d9e5;
+  box-shadow: 0 8px 20px rgba(0, 8, 34, 0.12), 0 2px 4px rgba(0, 8, 34, 0.04);
+  transform: translateY(-2px);
 }
 
-.container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
-  border-radius: 12px 12px 0 0;
+.cardHeader {
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
+  padding: 2.4rem 2.8rem;
+  border-bottom: 1px solid #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
 }
 
-.img {
-  width: 100%;
-  max-width: 140px;
+.icon {
+  width: 140px;
   height: auto;
-  object-fit: contain;
-  margin: 0 auto;
 }
 
-.claimFeatureText {
+.cardBody {
+  padding: 2.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.titleSection {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
 
-.claimFeatureTitle {
-  color: #000822;
-  font-size: 1.5rem;
+.title {
+  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 120%;
-  letter-spacing: -0.2px;
+  color: #111827;
   margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.02em;
 }
 
-.claimFeatureDescription {
-  color: #5a6b7d;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0;
+.description {
+  font-size: 1.15rem;
+  color: #6b7280;
   margin: 0;
-  min-height: auto;
+  font-weight: 400;
+  line-height: 150%;
 }
 
 .features {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  padding: 1.2rem;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
-  border: 1px solid rgba(3, 136, 255, 0.1);
-  min-height: auto;
+  gap: 1.2rem;
+  padding-top: 0.5rem;
 }
 
 .feature {
   display: flex;
   align-items: flex-start;
-  gap: 0.8rem;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: #374151;
+  line-height: 150%;
 }
 
-.feature img {
-  width: 20px;
-  height: 20px;
+.checkIcon {
   flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: #10b981;
   margin-top: 0.1rem;
 }
 
-.featureText {
-  color: #000822;
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 130%;
-  letter-spacing: 0;
-  margin: 0;
+.cardFooter {
+  border-top: 1px solid #f0f2f5;
+  padding: 0;
 }
 
-.btn {
-  display: flex;
-  height: 4rem;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 120%;
-  border: none;
-  cursor: pointer;
+.button {
   width: 100%;
-  margin-top: 0.6rem;
+  padding: 1.5rem 2.8rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
   transition: all 0.2s ease;
+  line-height: 130%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
-.btn:hover {
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
-  transform: translateY(-1px);
+.button:hover {
+  background: linear-gradient(135deg, #003d7a 0%, #002954 100%);
 }
 
+.button:active {
+  transform: scale(0.98);
+}
 
+.buttonIcon {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.5;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 900px) {
-  .container {
-    padding: 1.4rem;
-    gap: 1rem;
+  .cardHeader {
+    padding: 2rem;
+    min-height: 180px;
   }
 
-  .img {
-    max-width: 120px;
+  .icon {
+    width: 120px;
   }
 
-  .claimFeatureTitle {
-    font-size: 1.4rem;
+  .cardBody {
+    padding: 2.4rem;
+    gap: 1.8rem;
   }
 
-  .claimFeatureDescription {
-    font-size: 1.05rem;
+  .title {
+    font-size: 1.6rem;
   }
 
-  .features {
-    padding: 1rem;
-    gap: 0.7rem;
-  }
-
-  .featureText {
-    font-size: 1.05rem;
-  }
-
-  .btn {
-    height: 3.6rem;
+  .description {
     font-size: 1.1rem;
+  }
+
+  .feature {
+    font-size: 1.05rem;
+  }
+
+  .checkIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .button {
+    padding: 1.3rem 2.4rem;
+    font-size: 1.05rem;
+  }
+
+  .buttonIcon {
+    width: 16px;
+    height: 16px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .container {
-    padding: 1.2rem;
-    gap: 0.8rem;
+  .cardHeader {
+    padding: 1.8rem;
+    min-height: 160px;
   }
 
-  .img {
-    max-width: 100px;
+  .icon {
+    width: 100px;
   }
 
-  .claimFeatureTitle {
-    font-size: 1.3rem;
+  .cardBody {
+    padding: 2rem;
+    gap: 1.6rem;
   }
 
-  .claimFeatureDescription {
-    font-size: 1rem;
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
   }
 
   .features {
-    padding: 0.8rem;
-    gap: 0.6rem;
+    gap: 1rem;
   }
 
-  .featureText {
+  .feature {
     font-size: 1rem;
   }
 
-  .btn {
-    height: 3.4rem;
-    font-size: 1.05rem;
+  .checkIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .button {
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
   }
 }
