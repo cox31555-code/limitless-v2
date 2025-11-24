@@ -102,7 +102,17 @@
 }
 
 .stepWrapper:not(:last-child) {
-  padding-bottom: 0;
+  padding-bottom: 0.8rem;
+}
+
+.stepWrapper:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 52px;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(3, 136, 255, 0.1) 0%, transparent 100%);
 }
 
 .step {
