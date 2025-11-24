@@ -89,6 +89,15 @@
   font-weight: 400;
 }
 
+.dropdown:not(.dropdownDisabled):has(.selected:not(.placeholder)) {
+  border-color: #0052a3;
+  background: #f8fbff;
+}
+
+.dropdown:not(.dropdownDisabled):has(.selected:not(.placeholder)):hover {
+  box-shadow: 0 1px 3px rgba(0, 82, 163, 0.1);
+}
+
 .arrowIcon {
   flex-shrink: 0;
   color: #6b7c8f;
