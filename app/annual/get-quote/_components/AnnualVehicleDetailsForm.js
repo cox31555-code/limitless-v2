@@ -777,37 +777,63 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
           {legalOwner !== "Yes" && (
             <div className={styles.cleanFormGrid2Col}>
               <div className={styles.ownerFieldWrapper}>
-                <FormDropdown
-                  label={haventBoughtYet ? "Who will be the owner?" : "Who is the owner?"}
-                  options={ownerOptions}
-                  placeholder="Please select"
-                  {...register("vehicleDetails.owner")}
-                  error={errors.vehicleDetails?.owner}
-                />
-                {owner === "Other" && (
-                  <FormTextInput
-                    label="Please specify owner"
-                    placeholder="Enter owner details"
-                    {...register("vehicleDetails.ownerOther")}
-                    error={errors.vehicleDetails?.ownerOther}
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>{haventBoughtYet ? "Who will be the owner?" : "Who is the owner?"}</label>
+                  <SelectPicker
+                    data={ownerOptions.map((option) => ({ label: option, value: option }))}
+                    placeholder="Please select"
+                    value={watch("vehicleDetails.owner") || null}
+                    onChange={(value) => setValue("vehicleDetails.owner", value || "")}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.owner ? styles.error : ""}`}
+                    style={{ width: "100%" }}
                   />
+                  {errors.vehicleDetails?.owner && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.owner.message}</span>
+                  )}
+                </div>
+                {owner === "Other" && (
+                  <div className={styles.rsuiteFormGroup}>
+                    <label className={styles.label}>Please specify owner</label>
+                    <Input
+                      type="text"
+                      placeholder="Enter owner details"
+                      value={watch("vehicleDetails.ownerOther") || ""}
+                      onChange={(value) => setValue("vehicleDetails.ownerOther", value)}
+                    />
+                    {errors.vehicleDetails?.ownerOther && (
+                      <span className={styles.errorMessage}>{errors.vehicleDetails.ownerOther.message}</span>
+                    )}
+                  </div>
                 )}
               </div>
               <div className={styles.keeperFieldWrapper}>
-                <FormDropdown
-                  label={haventBoughtYet ? "Who will be the registered keeper?" : "Who is the registered keeper?"}
-                  options={keeperOptions}
-                  placeholder="Please select"
-                  {...register("vehicleDetails.registeredKeeper")}
-                  error={errors.vehicleDetails?.registeredKeeper}
-                />
-                {registeredKeeper === "Other" && (
-                  <FormTextInput
-                    label="Please specify registered keeper"
-                    placeholder="Enter registered keeper details"
-                    {...register("vehicleDetails.registeredKeeperOther")}
-                    error={errors.vehicleDetails?.registeredKeeperOther}
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>{haventBoughtYet ? "Who will be the registered keeper?" : "Who is the registered keeper?"}</label>
+                  <SelectPicker
+                    data={keeperOptions.map((option) => ({ label: option, value: option }))}
+                    placeholder="Please select"
+                    value={watch("vehicleDetails.registeredKeeper") || null}
+                    onChange={(value) => setValue("vehicleDetails.registeredKeeper", value || "")}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.registeredKeeper ? styles.error : ""}`}
+                    style={{ width: "100%" }}
                   />
+                  {errors.vehicleDetails?.registeredKeeper && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.registeredKeeper.message}</span>
+                  )}
+                </div>
+                {registeredKeeper === "Other" && (
+                  <div className={styles.rsuiteFormGroup}>
+                    <label className={styles.label}>Please specify registered keeper</label>
+                    <Input
+                      type="text"
+                      placeholder="Enter registered keeper details"
+                      value={watch("vehicleDetails.registeredKeeperOther") || ""}
+                      onChange={(value) => setValue("vehicleDetails.registeredKeeperOther", value)}
+                    />
+                    {errors.vehicleDetails?.registeredKeeperOther && (
+                      <span className={styles.errorMessage}>{errors.vehicleDetails.registeredKeeperOther.message}</span>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
