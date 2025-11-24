@@ -1,17 +1,14 @@
-/* Hero Section */
 .heroSection {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: none;
   overflow: hidden;
   position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-top: 0;
-  margin-bottom: 6.5rem;
-  padding: 7.8rem calc(50vw - 50%) 7.8rem;
+  width: 100%;
+  margin: 0;
+  padding: 5.6rem 5% 5.6rem;
+  box-sizing: border-box;
 }
 
 .heroSection::before {
@@ -21,18 +18,19 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .heroBackground {
   position: absolute;
-  right: 13%;
+  right: 8%;
   top: 50%;
   transform: translateY(-50%);
-  width: 520px;
-  height: 519px;
-  opacity: 0.3;
+  width: 420px;
+  height: 420px;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
 .heroBackgroundImage {
@@ -43,73 +41,77 @@
 .heroContent {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
-  max-width: 1405px;
+  max-width: 1280px;
   position: relative;
   z-index: 2;
-  flex: 1;
-  gap: 3.9rem;
-  margin-left: 51px;
+  gap: 2rem;
 }
 
 .greetingArea {
   display: flex;
   flex-direction: column;
-  gap: 1.04rem;
+  gap: 1.2rem;
+  max-width: 680px;
 }
 
 .greetingTitle {
-  font-size: 3.9rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  line-height: 110%;
-  letter-spacing: -0.65px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .greetingSubtitle {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
   font-weight: 400;
+  line-height: 1.5;
 }
 
 .badgeArea {
   display: none;
 }
 
-.allianzBadge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  padding: 1.04rem 2.08rem;
-  border-radius: 50px;
-  font-size: 1.24rem;
-  font-weight: 600;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
 @media (max-width: 1024px) {
   .heroSection {
-    padding: 6rem calc(50vw - 50%) 6rem;
-    margin-bottom: 5rem;
+    padding: 4.8rem 5%;
   }
 
   .heroBackground {
-    width: 400px;
-    height: 400px;
-    right: 10%;
-  }
-
-  .heroContent {
-    margin-left: 32px;
-    gap: 2.4rem;
+    width: 360px;
+    height: 360px;
+    right: 5%;
+    opacity: 0.12;
   }
 
   .greetingTitle {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 4rem 5%;
+  }
+
+  .heroBackground {
+    width: 300px;
+    height: 300px;
+    right: 2%;
+    opacity: 0.1;
+  }
+
+  .greetingTitle {
+    font-size: 2.4rem;
   }
 
   .greetingSubtitle {
@@ -117,68 +119,20 @@
   }
 }
 
-@media (max-width: 768px) {
-  .heroSection {
-    padding: 5rem calc(50vw - 50%) 5rem;
-    margin-bottom: 4rem;
-  }
-
-  .heroBackground {
-    width: 320px;
-    height: 320px;
-    right: 5%;
-    opacity: 0.2;
-  }
-
-  .heroContent {
-    margin-left: 24px;
-    gap: 1.6rem;
-  }
-
-  .greetingTitle {
-    font-size: 2.6rem;
-  }
-
-  .greetingSubtitle {
-    font-size: 1.2rem;
-  }
-}
-
 @media (max-width: 600px) {
   .heroSection {
-    padding: 4rem 2rem 4rem;
-    margin-bottom: 3.2rem;
+    padding: 3.2rem 4%;
   }
 
   .heroBackground {
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
     right: -5%;
-    opacity: 0.15;
+    opacity: 0.08;
   }
 
-  .heroContent {
-    margin-left: 0;
-    gap: 1.2rem;
-  }
-
-  .greetingTitle {
-    font-size: 2.2rem;
-  }
-
-  .greetingSubtitle {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .heroSection {
-    padding: 3.2rem 1.6rem 3.2rem;
-    margin-bottom: 2.4rem;
-  }
-
-  .heroBackground {
-    display: none;
+  .greetingArea {
+    gap: 1rem;
   }
 
   .greetingTitle {
@@ -186,6 +140,24 @@
   }
 
   .greetingSubtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .heroSection {
+    padding: 2.8rem 4%;
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .greetingTitle {
+    font-size: 1.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.1rem;
   }
 }
