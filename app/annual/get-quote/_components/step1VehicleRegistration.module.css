@@ -626,11 +626,70 @@
   }
 }
 
+@media (max-width: 768px) {
+  .detailItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .detailLabel {
+    min-width: auto;
+    font-size: 1.3rem;
+  }
+
+  .detailValue {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .modificationQuestion {
+    font-size: 1.6rem;
+  }
+
+  .modificationHelper {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 0;
     gap: 2.8rem;
     margin: 0;
+  }
+
+  .detailsSectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .detailsGrid {
+    gap: 1.4rem;
+  }
+
+  .detailItem {
+    gap: 0.3rem;
+  }
+
+  .detailLabel {
+    font-size: 1.2rem;
+  }
+
+  .detailValue {
+    font-size: 1.4rem;
+  }
+
+  .modificationSection {
+    margin-top: 2.4rem;
+    padding-top: 2.4rem;
+  }
+
+  .modificationQuestion {
+    font-size: 1.5rem;
+  }
+
+  .radioLabel {
+    font-size: 1.4rem;
   }
 
   .stepTitle {
