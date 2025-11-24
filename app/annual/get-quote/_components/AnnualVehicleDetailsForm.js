@@ -506,28 +506,38 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
 
             {selectedMake && !foundVehicleData && (
               <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                <FormDropdown
-                  key={`model-${forceUpdate}`}
-                  label="Model"
-                  options={state.options.models}
-                  placeholder="Select Model"
-                  disabled={!!foundVehicleData || !selectedMake || state.options.models.length === 0}
-                  value={state.values.model || selectedModel || ""}
-                  onChange={(e) => handleDropdownChange("model", e.target.value)}
-                  {...register("vehicleDetails.model")}
-                  error={errors.vehicleDetails?.model}
-                />
-                <FormDropdown
-                  key={`year-${forceUpdate}`}
-                  label="Year"
-                  options={state.options.years}
-                  placeholder="Select Year"
-                  disabled={!!foundVehicleData || !selectedMake || state.options.years.length === 0}
-                  value={state.values.year || selectedYear || ""}
-                  onChange={(e) => handleDropdownChange("year", e.target.value)}
-                  {...register("vehicleDetails.year")}
-                  error={errors.vehicleDetails?.year}
-                />
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>Model</label>
+                  <SelectPicker
+                    key={`model-${forceUpdate}`}
+                    data={state.options.models.map((option) => ({ label: option, value: option }))}
+                    placeholder="Select Model"
+                    disabled={!!foundVehicleData || !selectedMake || state.options.models.length === 0}
+                    value={state.values.model || selectedModel || null}
+                    onChange={(value) => handleDropdownChange("model", value || "")}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.model ? styles.error : ""}`}
+                    style={{ width: "100%" }}
+                  />
+                  {errors.vehicleDetails?.model && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.model.message}</span>
+                  )}
+                </div>
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>Year</label>
+                  <SelectPicker
+                    key={`year-${forceUpdate}`}
+                    data={state.options.years.map((option) => ({ label: option, value: option }))}
+                    placeholder="Select Year"
+                    disabled={!!foundVehicleData || !selectedMake || state.options.years.length === 0}
+                    value={state.values.year || selectedYear || null}
+                    onChange={(value) => handleDropdownChange("year", value || "")}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.year ? styles.error : ""}`}
+                    style={{ width: "100%" }}
+                  />
+                  {errors.vehicleDetails?.year && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.year.message}</span>
+                  )}
+                </div>
               </div>
             )}
 
