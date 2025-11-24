@@ -1,15 +1,16 @@
 .header {
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 8, 34, 1);
+  border-bottom: 2px solid #0052a3;
   position: relative;
   z-index: 50;
   width: 100%;
+  padding: 1.6rem 5% 1.9rem;
+  box-sizing: border-box;
 }
 
 .headerContent {
-  max-width: 100%;
+  max-width: 1172px;
   margin: 0 auto;
-  padding: 1.6rem 3.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,10 +78,6 @@
 }
 
 @media (max-width: 1024px) {
-  .headerContent {
-    padding: 1.4rem 2.4rem;
-  }
-
   .headerTitle {
     font-size: 1.5rem;
   }
@@ -92,10 +89,6 @@
 }
 
 @media (max-width: 768px) {
-  .headerContent {
-    padding: 1.2rem 1.6rem;
-  }
-
   .logoContainer {
     gap: 0.8rem;
   }
@@ -116,8 +109,8 @@
 }
 
 @media (max-width: 600px) {
-  .headerContent {
-    padding: 1rem 1.2rem;
+  .header {
+    padding: 1.2rem 5% 1.4rem;
   }
 
   .logoContainer {
@@ -125,12 +118,12 @@
   }
 
   .logo {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
   }
 
   .headerTitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .helpBtn span {
