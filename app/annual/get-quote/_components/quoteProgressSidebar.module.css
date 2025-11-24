@@ -87,13 +87,28 @@
   position: relative;
 }
 
+.stepWrapper:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+
 .step {
   display: flex;
   align-items: flex-start;
   gap: 1.6rem;
-  padding: 1.4rem 0;
+  padding: 1.6rem 0;
   position: relative;
   z-index: 2;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  background: rgba(3, 136, 255, 0.02);
+  border-radius: 12px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin-left: -0.8rem;
+  margin-right: -0.8rem;
 }
 
 .stepIcon {
