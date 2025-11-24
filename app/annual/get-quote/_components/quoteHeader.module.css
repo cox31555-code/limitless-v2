@@ -2,11 +2,11 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   background: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e8ecf1;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: none;
 }
 
 .headerContent {
@@ -63,20 +63,19 @@
   gap: 0.8rem;
   padding: 1rem 1.6rem;
   background: transparent;
-  border: 1.5px solid #d5dce3;
-  border-radius: 8px;
-  color: #5a6b7d;
+  border: 1px solid #d5dce3;
+  border-radius: 4px;
+  color: #1a1a2e;
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .helpBtn:hover {
-  border-color: #0388ff;
-  color: #0388ff;
-  background: #f0f6ff;
+  border-color: #1a1a2e;
+  background: transparent;
 }
 
 .helpBtn svg {
