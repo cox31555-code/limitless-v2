@@ -747,22 +747,30 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                 maxDate={new Date()}
                 disabled={haventBoughtYet}
               />
-              <button
+              <Button
                 type="button"
                 className={styles.haventBoughtBtn}
                 onClick={(e) => handleHaventBoughtChange({ target: { checked: !haventBoughtYet } })}
+                appearance="default"
               >
                 I haven't bought it yet
-              </button>
+              </Button>
             </div>
             {haventBoughtYet && (
-              <FormDropdown
-                label="Will you be the legal and registered owner?"
-                options={yesNoOptions}
-                placeholder="Please select"
-                {...register("vehicleDetails.legalOwner")}
-                error={errors.vehicleDetails?.legalOwner}
-              />
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Will you be the legal and registered owner?</label>
+                <SelectPicker
+                  data={yesNoOptions.map((option) => ({ label: option, value: option }))}
+                  placeholder="Please select"
+                  value={watch("vehicleDetails.legalOwner") || null}
+                  onChange={(value) => setValue("vehicleDetails.legalOwner", value || "")}
+                  className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.legalOwner ? styles.error : ""}`}
+                  style={{ width: "100%" }}
+                />
+                {errors.vehicleDetails?.legalOwner && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.legalOwner.message}</span>
+                )}
+              </div>
             )}
           </div>
 
