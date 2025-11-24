@@ -89,15 +89,24 @@ const QuoteProgressCard = ({ currentStep }) => {
                 </div>
                 <span className={styles.stepTitle}>{step.title}</span>
                 {isActive && step.subSteps && (
-                  <svg
-                    className={`${styles.expandIcon} ${isExpanded ? styles.expanded : ""}`}
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
+                  <button
+                    className={styles.stepExpandBtn}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleStep(step.number);
+                    }}
+                    aria-label={isExpanded ? "Collapse" : "Expand"}
                   >
-                    <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                    {isExpanded ? (
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    ) : (
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M2 8H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    )}
+                  </button>
                 )}
               </button>
 
