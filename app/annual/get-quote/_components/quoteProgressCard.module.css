@@ -52,8 +52,8 @@
 .stepButton {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1rem 0;
+  gap: 1rem;
+  padding: 0.8rem 0;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -76,8 +76,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
   border-radius: 50%;
   background: transparent;
