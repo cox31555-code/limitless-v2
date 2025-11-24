@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useReducer, useCallback, useRef } from "react";
-import { SelectPicker, InputGroup, Input, Button, Loader } from "rsuite";
+import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import RegistrationInput from "./RegistrationInput";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import FormDateInput from "@/ui/inputs/FormDateInput";
 import Title from "@/ui/insurance-quotes/title/Title";
