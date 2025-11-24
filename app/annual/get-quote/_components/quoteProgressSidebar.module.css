@@ -190,31 +190,6 @@
   font-weight: 500;
 }
 
-.accountSection {
-  margin-top: auto;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.accountBtn {
-  width: 100%;
-  padding: 1.2rem 1.6rem;
-  background: #ffffff;
-  border: 1.5px solid #0388ff;
-  border-radius: 8px;
-  color: #0388ff;
-  font-size: 1.3rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.accountBtn:hover {
-  background: #f0f6ff;
-  border-color: #0270cc;
-  color: #0270cc;
-}
-
 @media (max-width: 1024px) {
   .sidebar {
     width: 280px;
@@ -278,10 +253,6 @@
   }
 
   .subSteps {
-    display: none;
-  }
-
-  .accountSection {
     display: none;
   }
 }

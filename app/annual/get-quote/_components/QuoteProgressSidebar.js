@@ -95,12 +95,6 @@ const QuoteProgressSidebar = ({ currentStep, currentSubStep = null }) => {
             );
           })}
         </div>
-
-        <div className={styles.accountSection}>
-          <button className={styles.accountBtn}>
-            Your account
-          </button>
-        </div>
       </div>
     </div>
   );
