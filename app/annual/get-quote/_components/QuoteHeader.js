@@ -1,32 +1,10 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./quoteHeader.module.css";
 
 const QuoteHeader = ({ title = "Annual Car Insurance", userName = null }) => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <section className={styles.heroSection}>
-        <div className={styles.heroBackground}>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style={{ visibility: 'hidden', position: 'absolute' }} />
-        </div>
-        <div className={styles.heroContent}>
-          <div className={styles.greetingArea}>
-            <h1 className={styles.greetingTitle}>{title}</h1>
-            <p className={styles.greetingSubtitle}>Get comprehensive cover in just a few simple steps</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} suppressHydrationWarning>
       <div className={styles.heroBackground}>
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.238px" height="176.262px" viewBox="0 0 106.238 140.262" className={styles.heroBackgroundImage}>
           <style>{`.st0{fill:#FFFFFF;}.st1{fill:#05AFFF;}.st2{fill:#0A0913;}`}</style>
