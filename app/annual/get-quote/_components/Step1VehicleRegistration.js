@@ -237,14 +237,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
             </p>
             <p className={styles.foundVehicleReg}>{foundVehicle.registrationNumber}</p>
           </div>
-          <Button
+          <button
             type="button"
             className={styles.changeVehicleBtn}
             onClick={handleChangeVehicle}
-            appearance="default"
           >
             Change
-          </Button>
+          </button>
         </div>
 
         <div className={styles.infoBox}>
@@ -307,14 +306,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
 
           <div className={styles.alternativeOption}>
             <span className={styles.dividerText}>Or</span>
-            <Button
+            <button
               type="button"
               className={styles.manualEntryBtn}
               onClick={() => setShowManualEntry(true)}
-              appearance="default"
             >
               enter make and model
-            </Button>
+            </button>
           </div>
         </>
       )}
@@ -323,14 +321,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
         <div className={styles.manualEntrySection}>
           <div className={styles.manualEntryHeader}>
             <h3 className={styles.manualEntryTitle}>Enter Vehicle Details</h3>
-            <Button
+            <button
               type="button"
               className={styles.backToRegBtn}
               onClick={() => setShowManualEntry(false)}
-              appearance="default"
             >
               ← Back to registration lookup
-            </Button>
+            </button>
           </div>
 
           <div className={styles.manualEntryForm}>
