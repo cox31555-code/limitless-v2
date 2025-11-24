@@ -389,37 +389,22 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             {!showFoundData ? (
               <div className={styles.registrationInputWrapper}>
                 <div className={styles.inputContainer}>
-                  <div className={styles.rsuiteFormGroup}>
-                    <label className={styles.label}>What is your registration number?</label>
-                    <InputGroup className={styles.regInputGroup}>
-                      <Input
-                        type="text"
-                        placeholder="Enter registration..."
-                        value={watch("vehicleDetails.registrationNumber") || ""}
-                        onChange={(e) => {
-                          const formattedValue = e.toUpperCase();
-                          setValue("vehicleDetails.registrationNumber", formattedValue, {
-                            shouldValidate: false,
-                            shouldDirty: true,
-                            shouldTouch: true,
-                          });
-                        }}
-                        disabled={showFoundData || isLoadingVehicleData}
-                        maxLength={8}
-                      />
-                      <Button
-                        onClick={handleFindVehicle}
-                        disabled={isLoadingVehicleData || !watch("vehicleDetails.registrationNumber")?.trim()}
-                        loading={isLoadingVehicleData}
-                        appearance="primary"
-                      >
-                        {isLoadingVehicleData ? "Searching..." : "Find Vehicle"}
-                      </Button>
-                    </InputGroup>
-                    {errors.vehicleDetails?.registrationNumber && (
-                      <span className={styles.errorMessage}>{errors.vehicleDetails.registrationNumber.message}</span>
-                    )}
-                  </div>
+                  <RegistrationInput
+                    label="What is your registration number?"
+                    value={watch("vehicleDetails.registrationNumber")}
+                    onChange={(e) => {
+                      const formattedValue = e.target.value.toUpperCase();
+                      setValue("vehicleDetails.registrationNumber", formattedValue, {
+                        shouldValidate: false,
+                        shouldDirty: true,
+                        shouldTouch: true,
+                      });
+                    }}
+                    onButtonClick={handleFindVehicle}
+                    disabled={showFoundData || isLoadingVehicleData}
+                    isLoading={isLoadingVehicleData}
+                    error={errors.vehicleDetails?.registrationNumber?.message}
+                  />
                 </div>
                 <div className={styles.dividerWithText}>
                   <span className={styles.dividerText}>OR</span>
