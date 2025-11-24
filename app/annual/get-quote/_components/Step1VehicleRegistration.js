@@ -283,40 +283,25 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
         <>
           <div className={styles.inputSection}>
             <div className={styles.regInputWrapper}>
-              <div className={styles.rsuiteFormGroup}>
-                <label className={styles.label}>Registration Number</label>
-                <InputGroup className={styles.regInputGroup}>
-                  <Input
-                    type="text"
-                    placeholder="Enter car registration..."
-                    value={registrationNumber || ""}
-                    onChange={(e) => {
-                      const formatted = e.toUpperCase();
-                      setValue("vehicleDetails.registrationNumber", formatted, {
-                        shouldValidate: false,
-                        shouldDirty: true,
-                      });
-                      if (errors.vehicleDetails?.registrationNumber) {
-                        clearErrors("vehicleDetails.registrationNumber");
-                      }
-                    }}
-                    onKeyPress={handleKeyPress}
-                    disabled={isLoadingVehicle}
-                    maxLength={8}
-                  />
-                  <Button
-                    onClick={handleFindVehicle}
-                    disabled={isLoadingVehicle || !registrationNumber?.trim()}
-                    loading={isLoadingVehicle}
-                    appearance="primary"
-                  >
-                    {isLoadingVehicle ? "Searching..." : "Find my car"}
-                  </Button>
-                </InputGroup>
-                {errors.vehicleDetails?.registrationNumber && (
-                  <span className={styles.errorMessage}>{errors.vehicleDetails.registrationNumber.message}</span>
-                )}
-              </div>
+              <RegistrationInput
+                label="Registration Number"
+                value={registrationNumber}
+                onChange={(e) => {
+                  const formatted = e.target.value.toUpperCase();
+                  setValue("vehicleDetails.registrationNumber", formatted, {
+                    shouldValidate: false,
+                    shouldDirty: true,
+                  });
+                  if (errors.vehicleDetails?.registrationNumber) {
+                    clearErrors("vehicleDetails.registrationNumber");
+                  }
+                }}
+                onKeyPress={handleKeyPress}
+                onButtonClick={handleFindVehicle}
+                disabled={isLoadingVehicle}
+                isLoading={isLoadingVehicle}
+                error={errors.vehicleDetails?.registrationNumber?.message}
+              />
             </div>
           </div>
 
