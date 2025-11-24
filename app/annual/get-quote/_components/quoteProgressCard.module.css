@@ -190,14 +190,24 @@
   font-weight: 600;
 }
 
-.expandIcon {
-  flex-shrink: 0;
+.stepExpandBtn {
+  background: transparent;
+  border: none;
   color: #5a6b7d;
-  transition: transform 0.25s ease;
+  cursor: pointer;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  border-radius: 6px;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
-.expandIcon.expanded {
-  transform: rotate(180deg);
+.stepExpandBtn:hover {
+  color: #0052a3;
+  background: rgba(0, 82, 163, 0.08);
 }
 
 .subStepsList {
