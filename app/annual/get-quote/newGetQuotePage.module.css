@@ -1,16 +1,16 @@
 .pageContainer {
   width: 100%;
-  background: #f8f9fb;
+  background: #ffffff;
   min-height: calc(100vh - 88px);
 }
 
 .contentWrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem 3.2rem;
+  padding: 5.6rem 3.2rem 4rem;
   display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 3.2rem;
+  grid-template-columns: 1fr 340px;
+  gap: 6.4rem;
   align-items: start;
 }
 
@@ -43,38 +43,36 @@
 
 @media (max-width: 1200px) {
   .contentWrapper {
-    grid-template-columns: 1fr 320px;
-    gap: 2.4rem;
-    padding: 3.2rem 2.4rem;
+    grid-template-columns: 1fr 300px;
+    gap: 4.8rem;
+    padding: 4.8rem 2.4rem 3.2rem;
   }
 }
 
 @media (max-width: 900px) {
   .contentWrapper {
     grid-template-columns: 1fr;
-    gap: 2.4rem;
-    padding: 2.4rem 1.6rem;
+    gap: 3.2rem;
+    padding: 3.2rem 1.6rem;
   }
 
   .sidebarArea {
     position: relative;
     top: 0;
     order: -1;
+    padding-bottom: 2.4rem;
+    border-bottom: 2px solid #e8ecf1;
   }
 }
 
 @media (max-width: 600px) {
-  .pageContainer {
-    background: #ffffff;
-  }
-
   .contentWrapper {
-    padding: 2rem 1.2rem;
-    gap: 2rem;
+    padding: 2.4rem 1.6rem;
+    gap: 2.4rem;
   }
 
   .sidebarArea {
-    margin: 0 -1.2rem;
-    border-radius: 0;
+    margin: 0;
+    padding-bottom: 2rem;
   }
 }

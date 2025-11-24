@@ -1,20 +1,19 @@
 .navContainer {
   width: 100%;
   background: transparent;
-  padding: 2.4rem 0 0;
-  margin-top: 2.4rem;
+  padding: 3.2rem 0 0;
+  margin-top: 0;
+  border-top: 1px solid #e8ecf1;
 }
 
 .navContent {
   max-width: 720px;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 2rem 3.2rem;
+  background: transparent;
+  padding: 2.4rem 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.6rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .backBtn {
@@ -90,12 +89,12 @@
 
 @media (max-width: 768px) {
   .navContainer {
-    padding: 2rem 0 0;
-    margin-top: 2rem;
+    padding: 2.4rem 0 0;
+    margin-top: 0;
   }
 
   .navContent {
-    padding: 1.6rem 2rem;
+    padding: 2rem 0 0;
     gap: 1.2rem;
   }
 
@@ -112,16 +111,15 @@
 
 @media (max-width: 600px) {
   .navContainer {
-    padding: 1.6rem 0 0;
-    margin-top: 1.6rem;
+    padding: 2rem 0 0;
+    margin-top: 0;
   }
 
   .navContent {
-    padding: 1.4rem 1.6rem;
+    padding: 1.6rem 0 0;
     gap: 1rem;
     flex-direction: column-reverse;
-    margin: 0 -1.2rem;
-    border-radius: 0;
+    margin: 0;
   }
 
   .backBtn {
