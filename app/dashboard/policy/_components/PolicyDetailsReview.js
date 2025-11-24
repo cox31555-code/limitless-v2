@@ -136,9 +136,15 @@ const PolicyDetailsReview = ({ policy }) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path d="M9 12h6m-6 4h6m2-13H7a2 2 0 00-2 2v16a2 2 0 002 2h10a2 2 0 002-2V3a2 2 0 00-2-2z"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <line x1="10" y1="9" x2="8" y2="9"/>
               </svg>
             </div>
             <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
@@ -209,14 +215,11 @@ const PolicyDetailsReview = ({ policy }) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <circle cx="9" cy="17" r="2"/>
-                <circle cx="15" cy="17" r="2"/>
-                <path d="M5 10H1v4a1 1 0 001 1h2a1 1 0 001-1v-4z"/>
-                <path d="M19 10h4v4a1 1 0 01-1 1h-2a1 1 0 01-1-1v-4z"/>
-                <path d="M2 7h20a1 1 0 011 1v2H1V8a1 1 0 011-1z"/>
-                <path d="M3 10h18v5a1 1 0 01-1 1H4a1 1 0 01-1-1v-5z"/>
+                <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.168-.555L19.512 8.7a1 1 0 0 0-.832-.445h-1.418M14 16v1.667a1.5 1.5 0 0 1-3 0V16m3 0h-3m-9 0v1.667a1.5 1.5 0 0 1-3 0V16m3 0H2m0 0h3v-3.15a1 1 0 0 1 .168-.555L7.488 8.7a1 1 0 0 1 .832-.445h1.418M5 16H2m0 0V8.255M19 16v-2M5 13.5V8.255m0 0h14M5 8.255 7.5 6h9l2.5 2.255"/>
               </svg>
             </div>
             <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
@@ -300,11 +303,13 @@ const PolicyDetailsReview = ({ policy }) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
@@ -344,9 +349,11 @@ const PolicyDetailsReview = ({ policy }) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>
             </div>
@@ -426,12 +433,12 @@ const PolicyDetailsReview = ({ policy }) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-                <line x1="12" y1="11" x2="12" y2="17"/>
-                <line x1="9" y1="14" x2="15" y2="14"/>
+                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                <polyline points="13 2 13 9 20 9"/>
               </svg>
             </div>
             <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
