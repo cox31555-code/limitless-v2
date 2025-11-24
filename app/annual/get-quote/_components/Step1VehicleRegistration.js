@@ -89,6 +89,9 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
   if (foundVehicle) {
     return (
       <div className={styles.container}>
+        <div className={styles.stepTitle}>
+          <h2 className={styles.stepTitleText}>Car details - Your car</h2>
+        </div>
         <div className={styles.header}>
           <h1 className={styles.mainQuestion}>What's your car's registration?</h1>
           <p className={styles.subText}>We can only show you quotes for cars registered in the UK.</p>
@@ -141,6 +144,9 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
 
   return (
     <div className={styles.container}>
+      <div className={styles.stepTitle}>
+        <h2 className={styles.stepTitleText}>Car details - Your car</h2>
+      </div>
       <div className={styles.header}>
         <h1 className={styles.mainQuestion}>What's your car's registration?</h1>
         <p className={styles.subText}>We can only show you quotes for cars registered in the UK.</p>
