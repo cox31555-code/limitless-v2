@@ -320,6 +320,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("make", value)}
                 placeholder="Select make"
                 disabled={!selectedType}
+                showSearch={true}
               />
             </div>
 
@@ -331,6 +332,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("model", value)}
                 placeholder="Select model"
                 disabled={!selectedMake}
+                showSearch={true}
               />
               <Dropdown
                 label="Year"
@@ -339,6 +341,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("year", value)}
                 placeholder="Select year"
                 disabled={!selectedModel}
+                showSearch={true}
               />
             </div>
 
@@ -377,6 +380,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("colour", value)}
                 placeholder="Select colour"
                 disabled={!watch("vehicleDetails.transmission")}
+                showSearch={true}
               />
             </div>
           </div>
