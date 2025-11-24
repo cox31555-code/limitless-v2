@@ -388,40 +388,45 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             {!showFoundData ? (
               <div className={styles.registrationInputWrapper}>
                 <div className={styles.inputContainer}>
-                  <FormTextInput
-                    reg={true}
-                    label="What is your registration number?"
-                    placeholder=""
-                    value={watch("vehicleDetails.registrationNumber") || ""}
-                    onChange={(e) => {
-                      const formattedValue = e.target.value.toUpperCase();
-                      setValue("vehicleDetails.registrationNumber", formattedValue, {
-                        shouldValidate: false,
-                        shouldDirty: true,
-                        shouldTouch: true,
-                      });
-                    }}
-                    error={errors.vehicleDetails?.registrationNumber}
-                    disabled={showFoundData || isLoadingVehicleData}
-                    button={
-                      <ConfirmBtn
-                        title={isLoadingVehicleData ? "Searching..." : "Find Vehicle"}
+                  <div className={styles.rsuiteFormGroup}>
+                    <label className={styles.label}>What is your registration number?</label>
+                    <InputGroup className={styles.regInputGroup}>
+                      <Input
+                        type="text"
+                        placeholder="Enter registration..."
+                        value={watch("vehicleDetails.registrationNumber") || ""}
+                        onChange={(e) => {
+                          const formattedValue = e.toUpperCase();
+                          setValue("vehicleDetails.registrationNumber", formattedValue, {
+                            shouldValidate: false,
+                            shouldDirty: true,
+                            shouldTouch: true,
+                          });
+                        }}
+                        disabled={showFoundData || isLoadingVehicleData}
+                        maxLength={8}
+                      />
+                      <Button
                         onClick={handleFindVehicle}
                         disabled={isLoadingVehicleData || !watch("vehicleDetails.registrationNumber")?.trim()}
-                        type="button"
-                        hideArrow={true}
-                        variant="primary"
-                      />
-                    }
-                  />
+                        loading={isLoadingVehicleData}
+                        appearance="primary"
+                      >
+                        {isLoadingVehicleData ? "Searching..." : "Find Vehicle"}
+                      </Button>
+                    </InputGroup>
+                    {errors.vehicleDetails?.registrationNumber && (
+                      <span className={styles.errorMessage}>{errors.vehicleDetails.registrationNumber.message}</span>
+                    )}
+                  </div>
                 </div>
                 <div className={styles.dividerWithText}>
                   <span className={styles.dividerText}>OR</span>
                 </div>
-                <button type="button" className={styles.manualEntryBtn} onClick={toggleVehicleDetails}>
+                <Button type="button" className={styles.manualEntryBtn} onClick={toggleVehicleDetails} appearance="default">
                   <span className={styles.manualEntryIcon}>✎</span>
                   <span className={styles.manualEntryText}>Enter Vehicle Details Manually</span>
-                </button>
+                </Button>
               </div>
             ) : (
               <>
@@ -433,13 +438,14 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
                     {foundVehicleData.registrationNumber}
                   </p>
                 </div>
-                <button
+                <Button
                   type="button"
                   className={styles.changeVehicleBtn}
                   onClick={handleChangeVehicle}
+                  appearance="default"
                 >
                   Change Vehicle
-                </button>
+                </Button>
               </>
             )}
           </div>
