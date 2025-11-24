@@ -241,10 +241,10 @@
 }
 
 .noResults {
-  padding: 2rem 1.6rem;
+  padding: 1.6rem 1.4rem;
   text-align: center;
-  font-size: 1.4rem;
-  color: #6b7c8f;
+  font-size: 1.3rem;
+  color: #a8b2bd;
   font-weight: 400;
 }
 
