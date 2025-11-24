@@ -324,6 +324,12 @@
     width: 3px;
   }
 
+  .connector {
+    left: 11px;
+    width: 3px;
+    top: 40px;
+  }
+
   .stepButton {
     padding: 1rem 0.6rem;
     gap: 1.2rem;
