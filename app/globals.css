@@ -666,3 +666,44 @@ div[class^="cc-"] {
   padding: 0.4rem 0.8rem !important;
   font-size: 1.3rem !important;
 }
+
+/* RSuite Picker Menu Items - Larger sizing */
+.rs-picker-menu {
+  font-size: 1.4rem !important;
+}
+
+.rs-picker-menu-item {
+  padding: 1rem 1.2rem !important;
+  font-size: 1.4rem !important;
+  line-height: 1.6 !important;
+  min-height: 3.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+}
+
+.rs-picker-menu-item:hover {
+  background: #f0f6ff !important;
+}
+
+.rs-picker-menu-item-content {
+  font-size: 1.4rem !important;
+}
+
+.rs-dropdown-menu-item {
+  padding: 1rem 1.2rem !important;
+  font-size: 1.4rem !important;
+  line-height: 1.6 !important;
+  min-height: 3.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+}
+
+.rs-dropdown-menu-item:hover {
+  background: #f0f6ff !important;
+}
+
+.rs-dropdown-menu-item-content {
+  font-size: 1.4rem !important;
+}
