@@ -543,28 +543,38 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
 
             {selectedYear && !foundVehicleData && (
               <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                <FormDropdown
-                  key={`doors-${forceUpdate}`}
-                  label="Doors"
-                  options={state.options.doors}
-                  placeholder="Select Doors"
-                  disabled={!!foundVehicleData || !selectedYear || state.options.doors.length === 0}
-                  value={state.values.doors || selectedDoors || ""}
-                  onChange={(e) => handleDropdownChange("doors", e.target.value)}
-                  {...register("vehicleDetails.doors")}
-                  error={errors.vehicleDetails?.doors}
-                />
-                <FormDropdown
-                  key={`fuel-${forceUpdate}`}
-                  label="Fuel Type"
-                  options={state.options.fuels}
-                  placeholder="Select Fuel Type"
-                  disabled={!!foundVehicleData || !selectedYear || state.options.fuels.length === 0}
-                  value={state.values.fuel || selectedFuel || ""}
-                  onChange={(e) => handleDropdownChange("fuel", e.target.value)}
-                  {...register("vehicleDetails.fuel")}
-                  error={errors.vehicleDetails?.fuel}
-                />
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>Doors</label>
+                  <SelectPicker
+                    key={`doors-${forceUpdate}`}
+                    data={state.options.doors.map((option) => ({ label: option, value: option }))}
+                    placeholder="Select Doors"
+                    disabled={!!foundVehicleData || !selectedYear || state.options.doors.length === 0}
+                    value={state.values.doors || selectedDoors || null}
+                    onChange={(value) => handleDropdownChange("doors", value || "")}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.doors ? styles.error : ""}`}
+                    style={{ width: "100%" }}
+                  />
+                  {errors.vehicleDetails?.doors && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.doors.message}</span>
+                  )}
+                </div>
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>Fuel Type</label>
+                  <SelectPicker
+                    key={`fuel-${forceUpdate}`}
+                    data={state.options.fuels.map((option) => ({ label: option, value: option }))}
+                    placeholder="Select Fuel Type"
+                    disabled={!!foundVehicleData || !selectedYear || state.options.fuels.length === 0}
+                    value={state.values.fuel || selectedFuel || null}
+                    onChange={(value) => handleDropdownChange("fuel", value || "")}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.fuel ? styles.error : ""}`}
+                    style={{ width: "100%" }}
+                  />
+                  {errors.vehicleDetails?.fuel && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.fuel.message}</span>
+                  )}
+                </div>
               </div>
             )}
 
