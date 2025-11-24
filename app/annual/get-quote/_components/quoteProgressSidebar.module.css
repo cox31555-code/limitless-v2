@@ -10,6 +10,7 @@
   z-index: 50;
   order: 2;
   max-height: calc(100vh - 88px);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.04);
 }
 
 .sidebarContent {
