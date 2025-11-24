@@ -257,20 +257,40 @@
     gap: 2.8rem;
   }
 
-  .logoText {
+  .progressText {
     font-size: 1.3rem;
   }
 
-  .progressText {
+  .stepIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .stepNumber {
+    width: 32px;
+    height: 32px;
     font-size: 1.2rem;
   }
 
+  .activeCircle {
+    width: 32px;
+    height: 32px;
+  }
+
   .stepTitle {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+  }
+
+  .stepActive .stepTitle {
+    font-size: 1.45rem;
   }
 
   .subStep {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+  }
+
+  .connector {
+    left: 14.5px;
   }
 }
 
