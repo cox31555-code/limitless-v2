@@ -1,16 +1,16 @@
 .pageContainer {
   width: 100%;
   background: #ffffff;
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh - 78px);
 }
 
 .contentWrapper {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 4.8rem 3.2rem 4rem;
+  padding: 5.2rem 3.2rem 4rem;
   display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 4.8rem;
+  grid-template-columns: 1fr 300px;
+  gap: 5.6rem;
   align-items: start;
 }
 
@@ -22,7 +22,7 @@
 
 .sidebarArea {
   position: sticky;
-  top: calc(76px + 2.4rem);
+  top: calc(78px + 2.8rem);
   align-self: start;
 }
 
@@ -43,9 +43,9 @@
 
 @media (max-width: 1200px) {
   .contentWrapper {
-    grid-template-columns: 1fr 260px;
-    gap: 3.2rem;
-    padding: 4rem 2.4rem 3.2rem;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+    padding: 4.4rem 2.4rem 3.2rem;
   }
 }
 

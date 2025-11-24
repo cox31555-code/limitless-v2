@@ -1,27 +1,27 @@
 .navContainer {
   width: 100%;
   background: transparent;
-  padding: 2.4rem 0 0;
+  padding: 2.8rem 0 0;
   margin-top: 0;
   border-top: 1px solid #e8ecf1;
 }
 
 .navContent {
-  max-width: 640px;
+  max-width: 680px;
   background: transparent;
-  padding: 2rem 0 0;
+  padding: 2.2rem 0 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.4rem;
+  gap: 1.6rem;
 }
 
 .backBtn {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 1.2rem 1.8rem;
-  font-size: 1.3rem;
+  padding: 1.3rem 2rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: #5a6b7d;
   background: transparent;
@@ -46,8 +46,8 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 1.2rem 2rem;
-  font-size: 1.3rem;
+  padding: 1.3rem 2.2rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #ffffff;
   background: #0388ff;
