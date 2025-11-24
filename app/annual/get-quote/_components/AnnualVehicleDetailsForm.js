@@ -455,37 +455,21 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
           <div className={styles.rows}>
             {!foundVehicleData && (
               <div className={styles.cleanFormGrid2Col}>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>My Vehicle is a....</label>
-                  <SelectPicker
-                    data={["Car", "Motorcycle", "Truck", "Bus"].map((option) => ({ label: option, value: option }))}
-                    placeholder="Choose Vehicle"
-                    value={watch("vehicleDetails.type") || null}
-                    onChange={(value) => handleDropdownChange("type", value || "")}
-                    disabled={!!foundVehicleData}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.type ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.type && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.type.message}</span>
-                  )}
-                </div>
+                <Dropdown
+                  label="My Vehicle is a...."
+                  selected={watch("vehicleDetails.type") || ""}
+                  options={["Car", "Motorcycle", "Truck", "Bus"]}
+                  setSelected={(value) => handleDropdownChange("type", value)}
+                  placeholder="Choose Vehicle"
+                />
                 {watch("vehicleDetails.type") && !foundVehicleData && (
-                  <div className={styles.rsuiteFormGroup}>
-                    <label className={styles.label}>Make</label>
-                    <SelectPicker
-                      data={state.makes.map((option) => ({ label: option, value: option }))}
-                      placeholder="Select Make"
-                      value={state.values.make || selectedMake || null}
-                      onChange={(value) => handleDropdownChange("make", value || "")}
-                      disabled={!!foundVehicleData}
-                      className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.make ? styles.error : ""}`}
-                      style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                    />
-                    {errors.vehicleDetails?.make && (
-                      <span className={styles.errorMessage}>{errors.vehicleDetails.make.message}</span>
-                    )}
-                  </div>
+                  <Dropdown
+                    label="Make"
+                    selected={state.values.make || selectedMake || ""}
+                    options={state.makes}
+                    setSelected={(value) => handleDropdownChange("make", value)}
+                    placeholder="Select Make"
+                  />
                 )}
               </div>
             )}
