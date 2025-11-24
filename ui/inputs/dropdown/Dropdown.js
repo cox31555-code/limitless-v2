@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./dropdown.module.css";
 import { useDropdownManager } from "./useDropdownManager";
 
-const Dropdown = ({ label, selected, options, setSelected, placeholder, error, disabled }) => {
+const Dropdown = ({ label, selected, options, setSelected, placeholder, error, disabled, showSearch = false }) => {
   const { isOpen, toggleDropdown, closeDropdown } = useDropdownManager();
   const [searchTerm, setSearchTerm] = useState("");
   const dropdownRef = useRef(null);
@@ -86,38 +86,40 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
             className={styles.dropdownMenu}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className={styles.searchWrapper}>
-              <svg
-                className={styles.searchIcon}
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <circle
-                  cx="7"
-                  cy="7"
-                  r="5.5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
+            {showSearch && (
+              <div className={styles.searchWrapper}>
+                <svg
+                  className={styles.searchIcon}
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <circle
+                    cx="7"
+                    cy="7"
+                    r="5.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M11 11L14.5 14.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  className={styles.searchInput}
+                  placeholder={`Search ${label?.toLowerCase() || "options"}...`}
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
                 />
-                <path
-                  d="M11 11L14.5 14.5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <input
-                ref={searchInputRef}
-                type="text"
-                className={styles.searchInput}
-                placeholder={`Search ${label?.toLowerCase() || "options"}...`}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onClick={(e) => e.stopPropagation()}
-              />
-            </div>
+              </div>
+            )}
 
             <div className={styles.optionsList}>
               {filteredOptions.length > 0 ? (
@@ -130,23 +132,6 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
                     onClick={() => handleSelect(option)}
                   >
                     <span className={styles.optionText}>{option}</span>
-                    {selected === option && (
-                      <svg
-                        className={styles.checkIcon}
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                      >
-                        <path
-                          d="M3 8L6.5 11.5L13 5"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    )}
                   </div>
                 ))
               ) : (
