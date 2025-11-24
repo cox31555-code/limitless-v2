@@ -84,47 +84,55 @@
 .stepWrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .step {
   display: flex;
   align-items: flex-start;
-  gap: 1.2rem;
-  padding: 0.8rem 0;
+  gap: 1.6rem;
+  padding: 1.4rem 0;
   position: relative;
+  z-index: 2;
 }
 
 .stepIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
-  margin-top: 0.2rem;
+  margin-top: 0;
+  background: #ffffff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
 }
 
 .stepNumber {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #ffffff;
-  border: 2px solid #d5dce3;
+  border: 3px solid #d5dce3;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #5a6b7d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .activeCircle {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #0388ff;
-  border: 4px solid rgba(3, 136, 255, 0.2);
+  border: 5px solid rgba(3, 136, 255, 0.25);
   animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 @keyframes pulse {
@@ -139,12 +147,13 @@
 .stepContent {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
   flex: 1;
+  padding-top: 0.4rem;
 }
 
 .stepTitle {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #5a6b7d;
   margin: 0;
@@ -155,43 +164,72 @@
 .stepActive .stepTitle {
   color: #0388ff;
   font-weight: 700;
+  font-size: 1.6rem;
 }
 
 .stepCompleted .stepTitle {
   color: #1a1a2e;
+  font-weight: 600;
 }
 
 .connector {
-  width: 2px;
-  height: 24px;
-  background: #d5dce3;
-  margin-left: 13px;
+  width: 3px;
+  height: 100%;
+  background: #e8ecf1;
+  position: absolute;
+  left: 16.5px;
+  top: 36px;
+  z-index: 1;
+  border-radius: 2px;
 }
 
 .connectorCompleted {
-  background: #0388ff;
+  background: linear-gradient(180deg, #0388ff 0%, #049cff 100%);
+  box-shadow: 0 0 8px rgba(3, 136, 255, 0.3);
 }
 
 .subSteps {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0.8rem 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
+  padding-left: 1.2rem;
+  border-left: 2px solid rgba(3, 136, 255, 0.15);
 }
 
 .subStep {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #7a8a9d;
-  padding-left: 0;
-  line-height: 1.5;
+  padding-left: 1.2rem;
+  line-height: 1.6;
   font-weight: 400;
+  position: relative;
+}
+
+.subStep::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #cbd4dd;
+  border-radius: 50%;
 }
 
 .subStepActive {
   color: #0388ff;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.subStepActive::before {
+  background: #0388ff;
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 8px rgba(3, 136, 255, 0.4);
 }
 
 @media (max-width: 1024px) {
