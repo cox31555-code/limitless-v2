@@ -204,8 +204,8 @@
 
 .infoBox {
   display: flex;
-  gap: 1.6rem;
-  padding: 2.4rem 2.8rem;
+  gap: 2rem;
+  padding: 2.8rem 3.2rem;
   background: #f8f9fb;
   border: 2px solid #e8ecf1;
   border-left: 4px solid #0052a3;
@@ -226,12 +226,12 @@
 .infoContent {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
   flex: 1;
 }
 
 .infoTitle {
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0 0 0.2rem 0;
@@ -239,10 +239,10 @@
 }
 
 .infoText {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: #5a6b7d;
   margin: 0;
-  line-height: 1.65;
+  line-height: 1.7;
   font-weight: 400;
 }
 
