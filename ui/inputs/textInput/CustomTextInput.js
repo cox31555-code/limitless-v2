@@ -17,9 +17,9 @@ const CustomTextInput = ({
       {label && <label className={styles.customInputLabel}>{label}</label>}
       <input
         type={type}
-        className={`${styles.customInput} ${error ? styles.customInputError : ''}`}
+        className={`${styles.customInput} ${error ? styles.customInputError : ''} ${disabled ? styles.customInputDisabled : ''}`}
         placeholder={placeholder}
-        value={value}
+        value={value || ''}
         onChange={onChange}
         onKeyPress={onKeyPress}
         disabled={disabled}
