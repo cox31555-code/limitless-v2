@@ -12,6 +12,7 @@ import QuoteProgressCard from "./_components/QuoteProgressCard";
 import QuoteNavButtons from "./_components/QuoteNavButtons";
 import Step1VehicleRegistration from "./_components/Step1VehicleRegistration";
 import QuoteHeader from "./_components/QuoteHeader";
+import GetQuotePageHeader from "./_components/GetQuotePageHeader";
 import styles from "./newGetQuotePage.module.css";
 
 const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { loading: () => <StepFallback /> });
@@ -274,6 +275,7 @@ const AnnualInsuranceContent = () => {
 
   return (
     <div suppressHydrationWarning>
+      <GetQuotePageHeader />
       <LoadingOverlay isVisible={showLoading} />
       <QuoteHeader title="Annual Car Insurance" />
       
