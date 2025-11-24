@@ -177,18 +177,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 65px;
-  height: 65px;
-  min-width: 65px;
-  background: #e3f1fe;
-  border-radius: 10.4px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background: linear-gradient(135deg, #e8f2fb 0%, #dae8f7 100%);
+  border-radius: 12px;
   flex-shrink: 0;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(0, 82, 163, 0.08);
+}
+
+.cardHeader:hover .iconWrapper {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.2);
+}
+
+.cardHeader:hover .icon {
+  color: #ffffff;
 }
 
 .icon {
-  width: 32.5px;
-  height: 32.5px;
+  width: 24px;
+  height: 24px;
   color: #0052a3;
+  transition: color 0.25s ease;
 }
 
 .sectionTitle {
