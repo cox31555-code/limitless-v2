@@ -10,7 +10,9 @@
 .header {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid #e8ecf1;
 }
 
 .mainQuestion {
@@ -142,7 +144,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1.2rem 0;
+  margin: 0.8rem 0;
 }
 
 .divider::before,
@@ -150,23 +152,23 @@
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, rgba(213, 220, 227, 0) 0%, #d5dce3 50%, rgba(213, 220, 227, 0) 100%);
+  background: #e8ecf1;
 }
 
 .divider::before {
-  margin-right: 1.6rem;
+  margin-right: 1.2rem;
 }
 
 .divider::after {
-  margin-left: 1.6rem;
+  margin-left: 1.2rem;
 }
 
 .dividerText {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #7a8a9d;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #a8b2bd;
+  text-transform: lowercase;
+  letter-spacing: 0;
 }
 
 .manualEntryBtn {
@@ -337,6 +339,10 @@
   .container {
     padding: 0;
     gap: 2.4rem;
+  }
+
+  .header {
+    padding-bottom: 2rem;
   }
 
   .mainQuestion {
