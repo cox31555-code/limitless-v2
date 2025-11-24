@@ -189,17 +189,16 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
         </button>
       </div>
 
-      <div className={styles.divider}>
+      <div className={styles.alternativeOption}>
         <span className={styles.dividerText}>Or</span>
+        <button
+          type="button"
+          className={styles.manualEntryBtn}
+          onClick={() => setShowManualEntry(true)}
+        >
+          enter make and model
+        </button>
       </div>
-
-      <button
-        type="button"
-        className={styles.manualEntryBtn}
-        onClick={() => setShowManualEntry(true)}
-      >
-        Enter make and model
-      </button>
 
       <div className={styles.infoBox}>
         <div className={styles.infoIcon}>
