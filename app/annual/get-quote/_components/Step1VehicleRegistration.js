@@ -311,7 +311,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
               className={styles.manualEntryBtn}
               onClick={() => setShowManualEntry(true)}
             >
-              enter make and model
+              Enter make and model
             </button>
           </div>
         </>
