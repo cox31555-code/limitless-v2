@@ -8,24 +8,12 @@
   gap: 3rem;
 }
 
-.progressCard.collapsed .stepsList {
-  display: none;
-}
-
 .progressHeader {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 2.4rem;
-  border-bottom: 1px solid #e0e6f0;
-}
-
-.progressHeaderContent {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-  flex: 1;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid #e0e6f0;
 }
 
 .progressBar {
@@ -48,26 +36,6 @@
   font-weight: 700;
   color: #1a1a2e;
   letter-spacing: -0.01em;
-}
-
-.collapseBtn {
-  background: transparent;
-  border: none;
-  color: #5a6b7d;
-  cursor: pointer;
-  padding: 0.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.25s ease;
-  border-radius: 6px;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.collapseBtn:hover {
-  color: #0052a3;
-  background: rgba(0, 82, 163, 0.08);
 }
 
 .stepsList {
