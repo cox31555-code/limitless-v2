@@ -352,24 +352,38 @@
 }
 
 @media (max-width: 600px) {
-  .logoSection {
-    padding-bottom: 1.2rem;
-  }
-
-  .logo {
-    width: 48px;
-    height: 48px;
-  }
-
-  .logoText {
+  .progressText {
     font-size: 1.2rem;
   }
 
-  .progressText {
+  .stepIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .stepNumber {
+    width: 28px;
+    height: 28px;
     font-size: 1.1rem;
+    border-width: 2px;
+  }
+
+  .activeCircle {
+    width: 28px;
+    height: 28px;
+    border-width: 4px;
   }
 
   .stepTitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .stepActive .stepTitle {
+    font-size: 1.4rem;
+  }
+
+  .connector {
+    width: 28px;
+    height: 2px;
   }
 }
