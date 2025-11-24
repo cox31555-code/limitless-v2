@@ -571,18 +571,24 @@
 }
 
 .rsuiteSelect {
-  width: 100%;
+  width: 100% !important;
+  display: block !important;
 }
 
 .rsuiteSelect :global(.rs-picker) {
   width: 100% !important;
+  height: 5rem !important;
   min-height: 5rem !important;
   padding: 1.2rem 1.6rem !important;
   font-size: 1.6rem !important;
+  line-height: 1.4 !important;
   border: 1px solid #e0e6f0 !important;
   border-radius: 6px !important;
   background: #ffffff !important;
   font-family: inherit !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
 }
 
 .rsuiteSelect :global(.rs-picker:focus) {
