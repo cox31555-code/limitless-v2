@@ -67,11 +67,11 @@
 }
 
 .dropdownDisabled .selected {
-  color: #a8b2bd;
+  color: #cbd4dd;
 }
 
 .dropdownDisabled .arrowIcon {
-  color: #cbd4dd;
+  color: #a8b2bd;
 }
 
 .selected {
@@ -87,7 +87,7 @@
 }
 
 .placeholder {
-  color: #a8b2bd;
+  color: #6b7c8f;
   font-weight: 400;
 }
 
@@ -103,7 +103,7 @@
 
 .arrowIcon {
   flex-shrink: 0;
-  color: #6b7c8f;
+  color: #0052a3;
   transition: transform 0.2s ease;
   width: 12px;
   height: 8px;
