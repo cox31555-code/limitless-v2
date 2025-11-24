@@ -662,6 +662,18 @@
     gap: 0.8rem;
   }
 
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 8px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+
   .priceCard {
     padding: 1.2rem;
   }
