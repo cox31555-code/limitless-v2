@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useCallback, useRef, useEffect, useReducer } from "react";
-import { SelectPicker, InputGroup, Input, Button } from "rsuite";
+import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step1VehicleRegistration.module.css";
 
 const initialState = {
