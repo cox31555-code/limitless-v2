@@ -667,43 +667,48 @@ div[class^="cc-"] {
   font-size: 1.3rem !important;
 }
 
-/* RSuite Picker Menu Items - Larger sizing */
-.rs-picker-menu {
+/* RSuite Picker Menu Items - Larger sizing - High specificity for portals */
+.rs-picker-menu,
+.rs-picker-popup .rs-picker-menu,
+[class*="rs-picker-menu"] {
   font-size: 1.4rem !important;
 }
 
-.rs-picker-menu-item {
+.rs-picker-menu-item,
+.rs-picker-popup .rs-picker-menu-item,
+[class*="rs-picker-popup"] .rs-picker-menu-item,
+.rs-picker-menu > .rs-picker-menu-item {
   padding: 1rem 1.2rem !important;
   font-size: 1.4rem !important;
   line-height: 1.6 !important;
   min-height: 3.5rem !important;
+  height: 3.5rem !important;
   display: flex !important;
   align-items: center !important;
-  height: auto !important;
 }
 
-.rs-picker-menu-item:hover {
+.rs-picker-menu-item span,
+.rs-picker-menu-item-content,
+[class*="rs-picker-menu"] span {
+  font-size: 1.4rem !important;
+}
+
+.rs-picker-menu-item:hover,
+.rs-picker-popup .rs-picker-menu-item:hover {
   background: #f0f6ff !important;
 }
 
-.rs-picker-menu-item-content {
-  font-size: 1.4rem !important;
-}
-
-.rs-dropdown-menu-item {
+.rs-dropdown-menu-item,
+.rs-picker-popup .rs-dropdown-menu-item {
   padding: 1rem 1.2rem !important;
   font-size: 1.4rem !important;
   line-height: 1.6 !important;
   min-height: 3.5rem !important;
+  height: 3.5rem !important;
   display: flex !important;
   align-items: center !important;
-  height: auto !important;
 }
 
 .rs-dropdown-menu-item:hover {
   background: #f0f6ff !important;
-}
-
-.rs-dropdown-menu-item-content {
-  font-size: 1.4rem !important;
 }
