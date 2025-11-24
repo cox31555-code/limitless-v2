@@ -119,9 +119,9 @@
   left: 0;
   right: 0;
   background: #ffffff;
-  border: 2px solid #0052a3;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e0e6f0;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   z-index: 1000;
   max-height: 32rem;
   display: flex;
@@ -130,11 +130,7 @@
 }
 
 .searchWrapper {
-  position: relative;
-  padding: 1.2rem 1.2rem 1rem 1.2rem;
-  border-bottom: none;
-  background: #ffffff;
-  flex-shrink: 0;
+  display: none;
 }
 
 .searchIcon {
@@ -175,12 +171,12 @@
 
 .optionsList {
   overflow-y: auto;
-  max-height: 26rem;
-  padding: 0;
+  max-height: 32rem;
+  padding: 0.4rem 0;
 }
 
 .optionsList::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .optionsList::-webkit-scrollbar-track {
@@ -188,38 +184,38 @@
 }
 
 .optionsList::-webkit-scrollbar-thumb {
-  background: #cbd4dd;
-  border-radius: 3px;
+  background: #e0e6f0;
+  border-radius: 2px;
 }
 
 .optionsList::-webkit-scrollbar-thumb:hover {
-  background: #a8b2bd;
+  background: #cbd4dd;
 }
 
 .option {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.2rem 1.6rem;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 1rem 1.4rem;
   cursor: pointer;
   border-radius: 0;
-  transition: background-color 0.15s ease;
-  border-bottom: none;
+  transition: background-color 0.1s ease;
+  border: none;
 }
 
 .option:hover {
-  background: #f0f6ff;
+  background: #f8f9fb;
 }
 
 .optionSelected {
-  background: #f0f6ff;
-  color: #0052a3;
-  font-weight: 500;
+  background: transparent;
+  color: #1a1a2e;
+  font-weight: 400;
 }
 
 .optionSelected:hover {
-  background: #e8f4ff;
+  background: #f8f9fb;
 }
 
 .optionText {
@@ -227,19 +223,16 @@
   font-size: 1.4rem;
   font-weight: 400;
   color: #1a1a2e;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .optionSelected .optionText {
-  color: #0052a3;
-  font-weight: 500;
+  color: #1a1a2e;
+  font-weight: 400;
 }
 
 .checkIcon {
-  flex-shrink: 0;
-  color: #0052a3;
-  width: 18px;
-  height: 18px;
+  display: none;
 }
 
 .noResults {
