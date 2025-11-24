@@ -510,3 +510,58 @@ div[class^="cc-"] {
 .crisp-client-footer-branding {
   display: none !important;
 }
+
+/* RSuite scaling resets to match app's 62.5% base font-size */
+.rs {
+  font-size: 1.4rem;
+}
+
+.rs-btn {
+  font-size: 1.4rem;
+}
+
+.rs-input,
+.rs-input-group {
+  font-size: 1.4rem;
+}
+
+.rs-input-group-addon {
+  font-size: 1.4rem;
+}
+
+.rs-picker,
+.rs-date-picker,
+.rs-time-picker {
+  font-size: 1.4rem;
+}
+
+.rs-dropdown,
+.rs-dropdown-menu {
+  font-size: 1.4rem;
+}
+
+.rs-form-control-label {
+  font-size: 1.4rem;
+}
+
+.rs-form-group {
+  margin-bottom: 1.6rem;
+}
+
+.rs-modal-body {
+  font-size: 1.4rem;
+}
+
+.rs-modal-header {
+  font-size: 1.6rem;
+}
+
+.rs-checkbox,
+.rs-radio {
+  font-size: 1.4rem;
+}
+
+.rs-select-picker,
+.rs-tag-picker {
+  font-size: 1.4rem;
+}
