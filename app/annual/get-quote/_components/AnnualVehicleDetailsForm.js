@@ -707,13 +707,20 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
           )}
 
           <div className={styles.cleanFormGrid2Col}>
-            <FormDropdown
-              label="How much is your vehicle worth?"
-              options={vehicleWorthOptions}
-              placeholder="Please select"
-              {...register("vehicleDetails.worth")}
-              error={errors.vehicleDetails?.worth}
-            />
+            <div className={styles.rsuiteFormGroup}>
+              <label className={styles.label}>How much is your vehicle worth?</label>
+              <SelectPicker
+                data={vehicleWorthOptions.map((option) => ({ label: option, value: option }))}
+                placeholder="Please select"
+                value={watch("vehicleDetails.worth") || null}
+                onChange={(value) => setValue("vehicleDetails.worth", value || "")}
+                className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.worth ? styles.error : ""}`}
+                style={{ width: "100%" }}
+              />
+              {errors.vehicleDetails?.worth && (
+                <span className={styles.errorMessage}>{errors.vehicleDetails.worth.message}</span>
+              )}
+            </div>
           </div>
           </div>
         </div>
