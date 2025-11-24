@@ -5,6 +5,7 @@ import { useDropdownManager } from "./useDropdownManager";
 const Dropdown = ({ label, selected, options, setSelected, placeholder, error, disabled, showSearch = false }) => {
   const { isOpen, toggleDropdown, closeDropdown } = useDropdownManager();
   const [searchTerm, setSearchTerm] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const dropdownRef = useRef(null);
   const searchInputRef = useRef(null);
 
@@ -12,6 +13,18 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
   const filteredOptions = options.filter((option) =>
     option.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // Handle search with loading simulation
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+    if (e.target.value.length > 0) {
+      setIsLoading(true);
+      // Simulate loading for 300ms
+      setTimeout(() => setIsLoading(false), 300);
+    } else {
+      setIsLoading(false);
+    }
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -88,34 +101,40 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
           >
             {showSearch && (
               <div className={styles.searchWrapper}>
-                <svg
-                  className={styles.searchIcon}
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                >
-                  <circle
-                    cx="7"
-                    cy="7"
-                    r="5.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M11 11L14.5 14.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
+                {isLoading ? (
+                  <div className={styles.loadingIcon}>
+                    <div className={styles.spinner}></div>
+                  </div>
+                ) : (
+                  <svg
+                    className={styles.searchIcon}
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <circle
+                      cx="7"
+                      cy="7"
+                      r="5.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                    <path
+                      d="M11 11L14.5 14.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                )}
                 <input
                   ref={searchInputRef}
                   type="text"
                   className={styles.searchInput}
                   placeholder={`Search ${label?.toLowerCase() || "options"}...`}
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={handleSearchChange}
                   onClick={(e) => e.stopPropagation()}
                 />
               </div>
