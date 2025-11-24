@@ -1,6 +1,6 @@
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import "rsuite/dist/rsuite.min.css";
+import "rsuite/dist/rsuite-no-reset.min.css";
 import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
