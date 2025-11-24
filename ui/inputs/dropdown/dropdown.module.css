@@ -121,7 +121,7 @@
   background: #ffffff;
   border: 2px solid #0052a3;
   border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 82, 163, 0.15), 0 2px 6px rgba(0, 82, 163, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
   z-index: 1000;
   max-height: 32rem;
   display: flex;
@@ -132,7 +132,7 @@
 .searchWrapper {
   position: relative;
   padding: 1rem;
-  border-bottom: 1px solid #d4ebf7;
+  border-bottom: none;
   background: #ffffff;
   flex-shrink: 0;
 }
@@ -154,8 +154,8 @@
   font-size: 1.4rem;
   font-weight: 400;
   color: #1a1a2e;
-  background: #f8fbff;
-  border: 1px solid #d4ebf7;
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
   border-radius: 6px;
   outline: none;
   transition: all 0.2s ease;
@@ -169,13 +169,13 @@
 .searchInput:focus {
   background: #ffffff;
   border-color: #0052a3;
-  box-shadow: 0 0 0 2px rgba(0, 82, 163, 0.12);
+  box-shadow: none;
 }
 
 .optionsList {
   overflow-y: auto;
   max-height: 26rem;
-  padding: 0.4rem;
+  padding: 0;
 }
 
 .optionsList::-webkit-scrollbar {
@@ -201,37 +201,38 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.6rem;
   cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.15s ease;
+  border-radius: 0;
+  transition: background-color 0.15s ease;
+  border-bottom: none;
 }
 
 .option:hover {
-  background: #f8f9fb;
+  background: #f0f6ff;
 }
 
 .optionSelected {
-  background: #e8f4ff;
+  background: #f0f6ff;
   color: #0052a3;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .optionSelected:hover {
-  background: #d4ebf7;
+  background: #e8f4ff;
 }
 
 .optionText {
   flex: 1;
   font-size: 1.4rem;
-  font-weight: 500;
-  color: inherit;
+  font-weight: 400;
+  color: #1a1a2e;
   line-height: 1.5;
 }
 
 .optionSelected .optionText {
   color: #0052a3;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .checkIcon {
