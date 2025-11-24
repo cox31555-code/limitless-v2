@@ -185,7 +185,7 @@
   border: 2px solid #0052a3;
   border-radius: 25px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -193,13 +193,11 @@
 }
 
 .manualEntryBtn:hover {
-  background: #e8f4ff;
-  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
-  transform: translateY(-1px);
+  background: #f0f6ff;
 }
 
 .manualEntryBtn:active {
-  transform: translateY(0);
+  background: #e8f4ff;
 }
 
 .infoBox {
