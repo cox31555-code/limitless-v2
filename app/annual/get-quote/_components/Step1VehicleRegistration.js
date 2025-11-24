@@ -235,13 +235,14 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
             </p>
             <p className={styles.foundVehicleReg}>{foundVehicle.registrationNumber}</p>
           </div>
-          <button 
-            type="button" 
+          <Button
+            type="button"
             className={styles.changeVehicleBtn}
             onClick={handleChangeVehicle}
+            appearance="default"
           >
             Change
-          </button>
+          </Button>
         </div>
 
         <div className={styles.infoBox}>
