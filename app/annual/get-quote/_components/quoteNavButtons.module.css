@@ -46,6 +46,7 @@
 .nextBtn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
   padding: 1.6rem 3rem;
   font-size: 1.4rem;
@@ -58,6 +59,7 @@
   transition: all 0.2s ease;
   margin-left: auto;
   box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
+  white-space: nowrap;
 }
 
 .nextBtn:hover:not(:disabled) {
@@ -73,6 +75,12 @@
   opacity: 0.6;
   cursor: not-allowed;
   box-shadow: none;
+}
+
+.nextBtn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .spinner {
