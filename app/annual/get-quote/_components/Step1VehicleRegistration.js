@@ -385,23 +385,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
             )}
 
             {selectedDoors && (
-              <div className={styles.formRow}>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Fuel Type</label>
-                  <SelectPicker
-                    data={state.options.fuels.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select fuel type"
-                    value={selectedFuel || null}
-                    onChange={(value) => handleDropdownChange("fuel", value || "")}
-                    disabled={state.options.fuels.length === 0}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.fuel ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.fuel && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.fuel.message}</span>
-                  )}
-                </div>
-              </div>
+              <Dropdown
+                label="Fuel Type"
+                selected={selectedFuel || ""}
+                options={state.options.fuels}
+                setSelected={(value) => handleDropdownChange("fuel", value)}
+                placeholder="Select fuel type"
+              />
             )}
 
             {selectedFuel && (
