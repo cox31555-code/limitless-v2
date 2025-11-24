@@ -247,21 +247,33 @@
     font-size: 1.4rem;
   }
 
+  .stepsList::before {
+    left: 15px;
+  }
+
   .stepTitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .stepButton.active .stepTitle {
+    font-size: 1.6rem;
   }
 
   .stepIcon {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
   }
 
   .stepNumber {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .subStepsList {
+    margin-left: 3.4rem;
   }
 
   .subStepItem {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }
 
