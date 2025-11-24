@@ -70,6 +70,11 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
   const selectedYear = watch("vehicleDetails.year");
   const selectedDoors = watch("vehicleDetails.doors");
   const selectedFuel = watch("vehicleDetails.fuel");
+  const selectedTransmission = watch("vehicleDetails.transmission");
+  const selectedColour = watch("vehicleDetails.colour");
+
+  // Check if all manual entry fields are complete
+  const isManualEntryComplete = selectedType && selectedMake && selectedModel && selectedYear && selectedDoors && selectedFuel && selectedTransmission && selectedColour;
 
   // Fetch makes on component mount
   useEffect(() => {
