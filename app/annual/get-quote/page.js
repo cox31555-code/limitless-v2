@@ -277,7 +277,7 @@ const AnnualInsuranceContent = () => {
     <div suppressHydrationWarning>
       <GetQuotePageHeader />
       <LoadingOverlay isVisible={showLoading} />
-      <QuoteHeader title="Annual Car Insurance" />
+      <QuoteHeader currentStep={currentStep} totalSteps={5} />
       
       <div className={styles.pageContainer}>
         <div className={styles.contentWrapper}>
