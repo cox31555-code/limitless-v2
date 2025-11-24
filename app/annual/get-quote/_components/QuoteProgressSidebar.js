@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./quoteProgressSidebar.module.css";
 import { useRouter } from "next/navigation";
 
 const QuoteProgressSidebar = ({ currentStep, currentSubStep = null }) => {
   const router = useRouter();
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const steps = [
     {
@@ -33,16 +34,29 @@ const QuoteProgressSidebar = ({ currentStep, currentSubStep = null }) => {
   const progressPercentage = ((currentStep - 1) / totalSteps) * 100;
 
   return (
-    <div className={styles.sidebar}>
+    <div className={`${styles.sidebar} ${isCollapsed ? styles.sidebarCollapsed : ""}`}>
       <div className={styles.sidebarContent}>
         <div className={styles.progressSection}>
           <div className={styles.progressHeader}>
-            <span className={styles.progressText}>{Math.round(progressPercentage)}% complete</span>
-            <button className={styles.collapseBtn} aria-label="Collapse">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
+            {!isCollapsed && <span className={styles.progressText}>{Math.round(progressPercentage)}% complete</span>}
+            <div className={styles.controlBtns}>
+              <button
+                className={styles.controlBtn}
+                onClick={() => setIsCollapsed(!isCollapsed)}
+                aria-label={isCollapsed ? "Expand" : "Collapse"}
+                title={isCollapsed ? "Expand" : "Collapse"}
+              >
+                {isCollapsed ? (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M2 8H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
           <div className={styles.progressBar}>
             <div 
