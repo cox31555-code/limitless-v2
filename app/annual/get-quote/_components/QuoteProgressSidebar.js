@@ -56,15 +56,16 @@ const QuoteProgressSidebar = ({ currentStep, currentSubStep = null }) => {
           {steps.map((step, index) => {
             const isActive = currentStep === step.number;
             const isCompleted = currentStep > step.number;
-            
+            const isNextStepCompleted = currentStep > step.number + 1;
+
             return (
               <div key={step.number} className={styles.stepWrapper}>
                 <div className={`${styles.step} ${isActive ? styles.stepActive : ""} ${isCompleted ? styles.stepCompleted : ""}`}>
                   <div className={styles.stepIcon}>
                     {isCompleted ? (
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <circle cx="10" cy="10" r="9" fill="#0388ff"/>
-                        <path d="M6 10L8.5 12.5L14 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="11" fill="#0388ff"/>
+                        <path d="M7 12L10.5 15.5L17 9" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     ) : isActive ? (
                       <div className={styles.activeCircle} />
@@ -77,8 +78,8 @@ const QuoteProgressSidebar = ({ currentStep, currentSubStep = null }) => {
                     {isActive && step.subSteps.length > 0 && (
                       <ul className={styles.subSteps}>
                         {step.subSteps.map((subStep, subIndex) => (
-                          <li 
-                            key={subIndex} 
+                          <li
+                            key={subIndex}
                             className={`${styles.subStep} ${currentSubStep === subIndex ? styles.subStepActive : ""}`}
                           >
                             {subStep}
@@ -89,7 +90,7 @@ const QuoteProgressSidebar = ({ currentStep, currentSubStep = null }) => {
                   </div>
                 </div>
                 {index < steps.length - 1 && (
-                  <div className={`${styles.connector} ${isCompleted ? styles.connectorCompleted : ""}`} />
+                  <div className={`${styles.connector} ${isCompleted || isActive ? styles.connectorCompleted : ""}`} />
                 )}
               </div>
             );
