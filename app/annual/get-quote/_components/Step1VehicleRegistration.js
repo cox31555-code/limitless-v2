@@ -299,6 +299,9 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
               ← Back to registration lookup
             </button>
           </div>
+          <p className={styles.manualEntryHelper}>
+            Please complete each field in order to unlock the next selection.
+          </p>
 
           <div className={styles.manualEntryForm}>
             <div className={styles.formRow}>
