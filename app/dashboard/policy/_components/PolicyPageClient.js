@@ -32,7 +32,7 @@ const PolicyPageClient = ({
           </svg>
         </div>
         <div className={styles.heroContent}>
-          <div className={styles.greetingArea}>
+          <div className={styles.greetingArea} suppressHydrationWarning>
             <h1 className={`${styles.greetingTitle} ${plusJakartaSans?.className || ""}`}>
               Manage your policies
             </h1>
