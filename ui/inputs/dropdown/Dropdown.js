@@ -31,12 +31,12 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
 
   // Focus search input when dropdown opens
   useEffect(() => {
-    if (isOpen && searchInputRef.current) {
+    if (isOpen && showSearch && searchInputRef.current) {
       setTimeout(() => {
         searchInputRef.current?.focus();
       }, 50);
     }
-  }, [isOpen]);
+  }, [isOpen, showSearch]);
 
   const handleSelect = (option) => {
     setSelected(option);
