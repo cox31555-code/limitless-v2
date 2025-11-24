@@ -163,24 +163,33 @@
 @media (max-width: 768px) {
   .progressCard {
     padding: 0;
-    gap: 1.6rem;
+    gap: 2rem;
   }
 
   .progressHeader {
-    gap: 0.8rem;
-    padding-bottom: 1.4rem;
+    gap: 1rem;
+    padding-bottom: 1.8rem;
   }
 
   .progressText {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .stepTitle {
+    font-size: 1.4rem;
+  }
+
+  .stepIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .stepNumber {
     font-size: 1.2rem;
   }
 
   .subStepItem {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
