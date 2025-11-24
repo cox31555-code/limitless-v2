@@ -356,7 +356,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                   value={selectedType || null}
                   onChange={(value) => handleDropdownChange("type", value || "")}
                   className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.type ? styles.error : ""}`}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                 />
                 {errors.vehicleDetails?.type && (
                   <span className={styles.errorMessage}>{errors.vehicleDetails.type.message}</span>
