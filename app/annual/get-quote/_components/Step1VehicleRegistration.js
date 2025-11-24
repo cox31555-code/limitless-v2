@@ -486,14 +486,20 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
 
             {watch("vehicleDetails.transmission") && (
               <div className={styles.formRow}>
-                <FormDropdown
-                  label="Colour"
-                  options={carColors}
-                  placeholder="Select colour"
-                  value={watch("vehicleDetails.colour") || ""}
-                  onChange={(e) => handleDropdownChange("colour", e.target.value)}
-                  error={errors.vehicleDetails?.colour}
-                />
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>Colour</label>
+                  <SelectPicker
+                    data={carColors.map((option) => ({ label: option, value: option }))}
+                    placeholder="Select colour"
+                    value={watch("vehicleDetails.colour") || null}
+                    onChange={(value) => handleDropdownChange("colour", value || "")}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.colour ? styles.error : ""}`}
+                    style={{ width: "100%" }}
+                  />
+                  {errors.vehicleDetails?.colour && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.colour.message}</span>
+                  )}
+                </div>
               </div>
             )}
           </div>
