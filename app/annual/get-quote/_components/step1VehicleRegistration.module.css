@@ -436,6 +436,24 @@
   .changeVehicleBtn {
     width: 100%;
   }
+
+  .manualEntryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .manualEntryTitle {
+    font-size: 1.7rem;
+  }
+
+  .backToRegBtn {
+    width: 100%;
+  }
+
+  .manualEntryForm {
+    gap: 1.8rem;
+  }
 }
 
 @media (max-width: 600px) {
