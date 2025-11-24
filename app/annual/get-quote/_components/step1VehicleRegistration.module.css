@@ -344,11 +344,11 @@
 @media (max-width: 768px) {
   .container {
     padding: 0;
-    gap: 2.4rem;
+    gap: 2rem;
   }
 
   .header {
-    padding-bottom: 2rem;
+    padding-bottom: 1.6rem;
   }
 
   .mainQuestion {
@@ -384,12 +384,12 @@
 @media (max-width: 600px) {
   .container {
     padding: 0;
-    gap: 2rem;
+    gap: 1.6rem;
     margin: 0;
   }
 
   .header {
-    padding-bottom: 1.6rem;
+    padding-bottom: 1.4rem;
   }
 
   .mainQuestion {
