@@ -25,7 +25,9 @@
 .progressSection {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .progressHeader {
@@ -35,9 +37,10 @@
 }
 
 .progressText {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: #1a1a2e;
+  letter-spacing: -0.01em;
 }
 
 .collapseBtn {
