@@ -896,28 +896,29 @@
 }
 
 .rsuiteSelect :global(.rs-picker) {
-  width: 100%;
-  min-height: 4rem;
-  padding: 0.8rem 1.2rem;
-  font-size: 1.4rem;
-  border: 1px solid #e0e6f0;
-  border-radius: 6px;
-  background: #ffffff;
-  font-family: inherit;
+  width: 100% !important;
+  min-height: 5rem !important;
+  padding: 1.2rem 1.6rem !important;
+  font-size: 1.6rem !important;
+  border: 1px solid #e0e6f0 !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  font-family: inherit !important;
 }
 
 .rsuiteSelect :global(.rs-picker:focus) {
-  border-color: #0052a3;
-  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
+  border-color: #0052a3 !important;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1) !important;
+  outline: none !important;
 }
 
 .rsuiteSelect :global(.rs-picker-disabled) {
-  background: #f8f9fb;
-  color: #a0aabe;
+  background: #f8f9fb !important;
+  color: #a0aabe !important;
 }
 
 .rsuiteSelect.error :global(.rs-picker) {
-  border-color: #ef4444;
+  border-color: #ef4444 !important;
 }
 
 .regInputGroup {
