@@ -88,7 +88,7 @@
 }
 
 .stepWrapper:not(:last-child) {
-  margin-bottom: 0.4rem;
+  padding-bottom: 0;
 }
 
 .step {
@@ -188,19 +188,20 @@
 }
 
 .connector {
-  width: 3px;
-  height: 100%;
+  width: 4px;
+  min-height: 40px;
   background: #e8ecf1;
   position: absolute;
-  left: 16.5px;
-  top: 36px;
+  left: 16px;
+  top: 52px;
+  bottom: 16px;
   z-index: 1;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .connectorCompleted {
   background: linear-gradient(180deg, #0388ff 0%, #049cff 100%);
-  box-shadow: 0 0 8px rgba(3, 136, 255, 0.3);
+  box-shadow: 0 0 12px rgba(3, 136, 255, 0.4);
 }
 
 .subSteps {
