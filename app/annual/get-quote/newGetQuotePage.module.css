@@ -22,7 +22,7 @@
 
 .sidebarArea {
   position: sticky;
-  top: calc(88px + 2rem);
+  top: calc(88px + 3.2rem);
   align-self: start;
 }
 
