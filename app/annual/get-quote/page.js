@@ -273,7 +273,7 @@ const AnnualInsuranceContent = () => {
   };
 
   return (
-    <>
+    <div suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
       <QuoteHeader title="Annual Car Insurance" />
       
@@ -313,7 +313,7 @@ const AnnualInsuranceContent = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
