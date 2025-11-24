@@ -390,13 +390,13 @@
 .manualEntryForm {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
 }
 
 .formRow {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
   animation: fadeInSlide 0.3s ease;
 }
 
@@ -465,7 +465,12 @@
   }
 
   .manualEntryForm {
-    gap: 1.8rem;
+    gap: 1.6rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
   }
 }
 
