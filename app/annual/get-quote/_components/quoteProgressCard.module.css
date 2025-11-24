@@ -178,6 +178,10 @@
   .progressCard {
     padding: 1.4rem;
     gap: 1.6rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 100%);
   }
 
   .progressHeader {
