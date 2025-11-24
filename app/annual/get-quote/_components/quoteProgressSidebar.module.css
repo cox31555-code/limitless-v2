@@ -227,13 +227,23 @@
     width: 100%;
     min-height: auto;
     border-left: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: none;
+    order: 0;
+    top: auto;
+    max-height: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 
   .sidebarContent {
     min-height: auto;
     padding: 1.6rem;
     gap: 2rem;
+  }
+
+  .progressSection {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
   .stepsContainer {
