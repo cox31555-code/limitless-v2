@@ -111,7 +111,7 @@
 .driversList {
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
+  gap: 1.8rem;
 }
 
 .driverItem {
@@ -216,8 +216,8 @@
 .driverFormContent {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  padding: 2rem 1rem 2rem;
+  gap: 1.6rem;
+  padding: 1.6rem 1rem 1.6rem;
   overflow: visible !important;
   position: relative;
 }
@@ -225,14 +225,14 @@
 .formSection {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.4rem;
   background: #ffffff;
   border: none !important;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
   overflow: visible !important;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  padding-bottom: 18px;
+  padding-bottom: 16px;
   position: relative;
 }
 
