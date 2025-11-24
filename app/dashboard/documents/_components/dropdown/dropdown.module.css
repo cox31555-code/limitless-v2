@@ -1,25 +1,27 @@
 .dropdown {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 440px;
 }
 
 .selectedValue {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4rem 1.6rem;
+  padding: 1.6rem 2rem;
   background: #ffffff;
-  border: 1px solid #d1d9e3;
-  border-radius: 8px;
+  border: 1.5px solid #d1d9e3;
+  border-radius: 10px;
   cursor: pointer;
-  transition: border-color 0.2s ease;
-  gap: 1.2rem;
-  min-height: 54px;
+  transition: all 0.2s ease;
+  gap: 1.4rem;
+  min-height: 62px;
+  box-shadow: 0 2px 6px rgba(0, 8, 34, 0.05);
 }
 
 .selectedValue:hover {
   border-color: #0052a3;
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.1);
 }
 
 .selectedValue:focus-within {
@@ -29,16 +31,17 @@
 }
 
 .value_text {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #1f2937;
   flex: 1;
-  line-height: 1.5;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
 .arrow {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
   color: #6b7280;
   transition: transform 0.2s ease;
   flex-shrink: 0;
@@ -59,11 +62,12 @@
 }
 
 .option {
-  padding: 1.2rem 1.6rem;
+  padding: 1.4rem 2rem;
   cursor: pointer;
   transition: background 0.15s ease;
   border-bottom: 1px solid #f3f4f6;
   background: #ffffff;
+  font-size: 1.15rem;
 }
 
 .option:last-child {
@@ -93,17 +97,17 @@
   }
 
   .selectedValue {
-    padding: 1.3rem 1.5rem;
-    min-height: 52px;
+    padding: 1.5rem 1.8rem;
+    min-height: 58px;
   }
 
   .value_text {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .arrow {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   .options {
@@ -111,21 +115,28 @@
   }
 
   .option {
-    padding: 1.1rem 1.5rem;
+    padding: 1.3rem 1.8rem;
+    font-size: 1.1rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .selectedValue {
-    padding: 1.2rem 1.4rem;
-    min-height: 50px;
+    padding: 1.4rem 1.6rem;
+    min-height: 56px;
   }
 
   .value_text {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+  }
+
+  .arrow {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .option {
-    padding: 1rem 1.4rem;
+    padding: 1.2rem 1.6rem;
+    font-size: 1.05rem;
   }
 }
