@@ -2,11 +2,11 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   background: #ffffff;
-  border-bottom: 1px solid #e8ecf1;
+  border-bottom: 1px solid #e0e6f0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .headerContent {
@@ -74,7 +74,8 @@
 }
 
 .helpBtn:hover {
-  border-color: #1a1a2e;
+  border-color: #0052a3;
+  color: #0052a3;
   background: transparent;
 }
 
