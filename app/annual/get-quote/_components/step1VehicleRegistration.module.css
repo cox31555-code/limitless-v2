@@ -264,12 +264,7 @@
 
 .foundVehicleIcon {
   flex-shrink: 0;
-}
-
-.foundVehicleIcon svg circle:first-child {
-  fill: transparent;
-  stroke: #4caf50;
-  stroke-width: 2;
+  display: none;
 }
 
 .foundVehicleInfo {
