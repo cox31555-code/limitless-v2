@@ -565,3 +565,108 @@ div[class^="cc-"] {
 .rs-tag-picker {
   font-size: 1.4rem;
 }
+
+/* RSuite button sizing */
+.rs-btn {
+  padding: 0.8rem 1.6rem !important;
+  min-height: 3.6rem !important;
+  font-size: 1.4rem !important;
+}
+
+.rs-btn-sm {
+  padding: 0.4rem 1.2rem !important;
+  min-height: 3.2rem !important;
+}
+
+/* RSuite input sizing */
+.rs-input {
+  padding: 0.8rem 1.2rem !important;
+  min-height: 4rem !important;
+  font-size: 1.4rem !important;
+}
+
+.rs-input-group {
+  font-size: 1.4rem !important;
+}
+
+/* RSuite picker sizing */
+.rs-picker-toggle {
+  min-height: 4rem !important;
+  padding: 0.8rem 1.2rem !important;
+}
+
+.rs-picker-default {
+  min-height: 4rem !important;
+}
+
+/* RSuite dropdown sizing */
+.rs-dropdown-toggle {
+  padding: 0.8rem 1.2rem !important;
+  min-height: 4rem !important;
+}
+
+.rs-dropdown-menu {
+  font-size: 1.4rem !important;
+  max-width: 40rem !important;
+}
+
+.rs-dropdown-menu-item {
+  padding: 0.8rem 1.2rem !important;
+  font-size: 1.4rem !important;
+}
+
+/* RSuite form spacing */
+.rs-form-group {
+  margin-bottom: 1.6rem !important;
+}
+
+.rs-form-control-label {
+  font-size: 1.4rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+/* RSuite modal sizing */
+.rs-modal {
+  font-size: 1.4rem !important;
+}
+
+.rs-modal-header {
+  padding: 1.6rem !important;
+  font-size: 1.6rem !important;
+}
+
+.rs-modal-body {
+  padding: 1.6rem !important;
+  font-size: 1.4rem !important;
+}
+
+.rs-modal-footer {
+  padding: 1.6rem !important;
+}
+
+/* RSuite checkbox and radio sizing */
+.rs-checkbox,
+.rs-radio {
+  font-size: 1.4rem !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.rs-checkbox-wrapper,
+.rs-radio-wrapper {
+  margin-bottom: 0.8rem !important;
+}
+
+/* RSuite table sizing */
+.rs-table {
+  font-size: 1.4rem !important;
+}
+
+.rs-table-cell {
+  padding: 1rem !important;
+}
+
+/* RSuite tag sizing */
+.rs-tag {
+  padding: 0.4rem 0.8rem !important;
+  font-size: 1.3rem !important;
+}
