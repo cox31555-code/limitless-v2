@@ -553,3 +553,159 @@
     gap: 1.6rem;
   }
 }
+
+/* RSuite Component Styling */
+.rsuiteFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.rsuiteSelect {
+  width: 100%;
+}
+
+.rsuiteSelect :global(.rs-picker) {
+  width: 100%;
+  min-height: 4rem;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.4rem;
+  border: 1px solid #e0e6f0;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.rsuiteSelect :global(.rs-picker:focus) {
+  border-color: #0052a3;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
+}
+
+.rsuiteSelect :global(.rs-picker-disabled) {
+  background: #f8f9fb;
+  color: #a0aabe;
+}
+
+.rsuiteSelect.error :global(.rs-picker) {
+  border-color: #ef4444;
+}
+
+.regInputGroup {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.regInputGroup :global(.rs-input) {
+  flex: 1;
+  min-height: 4rem;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.4rem;
+  border: 1px solid #e0e6f0;
+  border-radius: 6px;
+}
+
+.regInputGroup :global(.rs-input:focus) {
+  border-color: #0052a3;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
+}
+
+.regInputGroup :global(.rs-btn) {
+  min-height: 4rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.errorMessage {
+  font-size: 1.2rem;
+  color: #ef4444;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+.manualEntryBtn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem 1.6rem !important;
+  font-size: 1.3rem !important;
+  font-weight: 500 !important;
+  color: #0052a3 !important;
+  background: transparent !important;
+  border: 1px solid #e8ecf1 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.manualEntryBtn:hover {
+  background: #f8f9fb !important;
+  border-color: #0052a3 !important;
+  box-shadow: 0 1px 3px rgba(0, 82, 163, 0.15) !important;
+}
+
+.changeVehicleBtn :global(.rs-btn) {
+  width: 100%;
+  min-height: auto;
+  padding: 1rem 1.6rem !important;
+  font-size: 1.25rem !important;
+  font-weight: 500 !important;
+  color: #666 !important;
+  background: #ffffff !important;
+  border: 1px solid #e0e6f0 !important;
+  border-radius: 6px !important;
+}
+
+.changeVehicleBtn :global(.rs-btn:hover) {
+  background: #ffffff !important;
+  border-color: #0052a3 !important;
+  box-shadow: 0 1px 3px rgba(0, 82, 163, 0.15) !important;
+}
+
+@media (max-width: 768px) {
+  .regInputGroup {
+    flex-direction: column;
+  }
+
+  .regInputGroup :global(.rs-btn) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .rsuiteSelect :global(.rs-picker) {
+    min-height: 3.6rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.3rem;
+  }
+
+  .regInputGroup :global(.rs-input) {
+    min-height: 3.6rem;
+    padding: 0.6rem 1rem;
+    font-size: 1.3rem;
+  }
+
+  .regInputGroup :global(.rs-btn) {
+    min-height: 3.6rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .label {
+    font-size: 1.2rem;
+  }
+
+  .errorMessage {
+    font-size: 1.1rem;
+  }
+}
