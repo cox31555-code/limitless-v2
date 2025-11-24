@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useCallback, useRef, useEffect, useReducer } from "react";
-import FormDropdown from "@/ui/inputs/FormDropdown";
+import { SelectPicker, InputGroup, Input, Button } from "rsuite";
 import styles from "./step1VehicleRegistration.module.css";
 
 const initialState = {
