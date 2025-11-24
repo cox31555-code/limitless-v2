@@ -179,17 +179,16 @@
 }
 
 .optionsList::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .optionsList::-webkit-scrollbar-track {
-  background: #f8f9fb;
-  border-radius: 4px;
+  background: transparent;
 }
 
 .optionsList::-webkit-scrollbar-thumb {
   background: #cbd4dd;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .optionsList::-webkit-scrollbar-thumb:hover {
@@ -238,12 +237,12 @@
 .checkIcon {
   flex-shrink: 0;
   color: #0052a3;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 .noResults {
-  padding: 2rem 1.2rem;
+  padding: 2rem 1.6rem;
   text-align: center;
   font-size: 1.4rem;
   color: #6b7c8f;
