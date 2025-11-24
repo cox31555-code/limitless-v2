@@ -9,8 +9,8 @@
   margin: 0 auto;
   padding: 0 5% 4rem;
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 6rem;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 8rem;
   align-items: start;
 }
 
@@ -19,6 +19,7 @@
   flex-direction: column;
   background: transparent;
   padding-right: 0;
+  max-width: 720px;
 }
 
 .sidebarArea {
@@ -44,9 +45,13 @@
 
 @media (max-width: 1200px) {
   .contentWrapper {
-    grid-template-columns: 1fr 300px;
-    gap: 4rem;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 5rem;
     padding: 0 5% 3.2rem;
+  }
+
+  .mainContent {
+    max-width: 100%;
   }
 }
 
@@ -59,6 +64,7 @@
 
   .mainContent {
     padding-right: 0;
+    max-width: 100%;
   }
 
   .sidebarArea {
