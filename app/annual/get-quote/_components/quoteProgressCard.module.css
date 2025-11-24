@@ -283,7 +283,7 @@
     font-size: 1.5rem;
   }
 
-  .stepButton.active .stepTitle {
+  .stepButton.active .stepButtonContent .stepTitle {
     font-size: 1.6rem;
   }
 
