@@ -719,6 +719,7 @@
 
 @media (max-width: 600px) {
   .rsuiteSelect :global(.rs-picker) {
+    height: 4.4rem !important;
     min-height: 4.4rem !important;
     padding: 0.9rem 1.2rem !important;
     font-size: 1.4rem !important;
