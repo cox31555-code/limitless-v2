@@ -52,8 +52,8 @@
 .stepButton {
   display: flex;
   align-items: center;
-  gap: 1.1rem;
-  padding: 0.9rem 0;
+  gap: 1.4rem;
+  padding: 1.1rem 0;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -76,8 +76,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
   border-radius: 50%;
   background: transparent;
@@ -99,13 +99,13 @@
 }
 
 .stepNumber {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
 .stepTitle {
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #5a6b7d;
   flex: 1;
   transition: all 0.25s ease;
