@@ -187,7 +187,92 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
     }
   };
 
-  if (foundVehicle) {
+  const VehicleDetailsSection = () => (
+    <>
+      <div className={styles.detailsSection}>
+        <div className={styles.detailsSectionHeader}>
+          <h3 className={styles.detailsSectionTitle}>Car details</h3>
+          <button
+            type="button"
+            className={styles.changeLink}
+            onClick={handleChangeVehicle}
+          >
+            Change
+          </button>
+        </div>
+
+        <div className={styles.detailsGrid}>
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Alarm/Immobiliser</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.alarmImmobiliser") || "Factory Fitted Thatcham Approved Alarm/Immobiliser"}
+            </span>
+          </div>
+
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Tracking device</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.trackingDevice") || "No"}
+            </span>
+          </div>
+
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Import</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.importedVehicle") || "No"}
+            </span>
+          </div>
+
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Driver side</span>
+            <span className={styles.detailValue}>Right Hand</span>
+          </div>
+
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Seats</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.doors") === "2" ? "2" : "5"}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.modificationSection}>
+        <h3 className={styles.modificationQuestion}>Has the car been modified in any way?</h3>
+        <p className={styles.modificationHelper}>
+          Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.
+        </p>
+
+        <div className={styles.radioGroup}>
+          <label className={styles.radioOption}>
+            <input
+              type="radio"
+              {...register("vehicleDetails.vehicleModified")}
+              value="Yes"
+              className={styles.radioInput}
+            />
+            <span className={styles.radioLabel}>Yes</span>
+          </label>
+
+          <label className={styles.radioOption}>
+            <input
+              type="radio"
+              {...register("vehicleDetails.vehicleModified")}
+              value="No"
+              className={styles.radioInput}
+            />
+            <span className={styles.radioLabel}>No</span>
+          </label>
+        </div>
+
+        <button type="button" className={styles.helpLink}>
+          How can I find out if my car's been modified?
+        </button>
+      </div>
+    </>
+  );
+
+  if (foundVehicle || (showManualEntry && isManualEntryComplete)) {
     return (
       <div className={styles.container}>
         <div className={styles.stepTitle}>
@@ -198,28 +283,32 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
           <p className={styles.subText}>We can only show you quotes for cars registered in the UK.</p>
         </div>
 
-        <div className={styles.foundVehicleCard}>
-          <div className={styles.foundVehicleIcon}>
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="24" fill="#e8f5ff"/>
-              <path d="M18 24L22 28L30 20" stroke="#0388ff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+        {foundVehicle && (
+          <div className={styles.foundVehicleCard}>
+            <div className={styles.foundVehicleIcon}>
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="24" fill="#e8f5ff"/>
+                <path d="M18 24L22 28L30 20" stroke="#0388ff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <div className={styles.foundVehicleInfo}>
+              <h3 className={styles.foundVehicleTitle}>Vehicle Found</h3>
+              <p className={styles.foundVehicleDetails}>
+                {foundVehicle.make} {foundVehicle.model} ({foundVehicle.yearOfManufacture})
+              </p>
+              <p className={styles.foundVehicleReg}>{foundVehicle.registrationNumber}</p>
+            </div>
+            <button
+              type="button"
+              className={styles.changeVehicleBtn}
+              onClick={handleChangeVehicle}
+            >
+              Change
+            </button>
           </div>
-          <div className={styles.foundVehicleInfo}>
-            <h3 className={styles.foundVehicleTitle}>Vehicle Found</h3>
-            <p className={styles.foundVehicleDetails}>
-              {foundVehicle.make} {foundVehicle.model} ({foundVehicle.yearOfManufacture})
-            </p>
-            <p className={styles.foundVehicleReg}>{foundVehicle.registrationNumber}</p>
-          </div>
-          <button
-            type="button"
-            className={styles.changeVehicleBtn}
-            onClick={handleChangeVehicle}
-          >
-            Change
-          </button>
-        </div>
+        )}
+
+        <VehicleDetailsSection />
 
         <div className={styles.infoBox}>
           <div className={styles.infoIcon}>
@@ -232,9 +321,9 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
           <div className={styles.infoContent}>
             <h4 className={styles.infoTitle}>Honesty's the best policy</h4>
             <p className={styles.infoText}>
-              It's important you answer all questions honestly. Take care that the information you disclose throughout 
-              the quote is accurate and complete to the best of your knowledge. If you don't do this, your insurance 
-              provider could increase your premium, cancel your policy, treat it as if it never existed, refuse a 
+              It's important you answer all questions honestly. Take care that the information you disclose throughout
+              the quote is accurate and complete to the best of your knowledge. If you don't do this, your insurance
+              provider could increase your premium, cancel your policy, treat it as if it never existed, refuse a
               claim or not pay the claim in full.
             </p>
           </div>
