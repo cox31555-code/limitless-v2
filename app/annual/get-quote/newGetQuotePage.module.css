@@ -1,6 +1,6 @@
 .pageContainer {
   width: 100%;
-  background: #ffffff;
+  background: #fafbfc;
   min-height: calc(100vh - 78px);
 }
 
@@ -61,7 +61,7 @@
     top: 0;
     order: -1;
     padding-bottom: 2.2rem;
-    border-bottom: 2px solid #e8ecf1;
+    border-bottom: 1px solid #d5dce3;
   }
 }
 
