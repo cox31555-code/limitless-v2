@@ -41,27 +41,50 @@
 .stepsList {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0;
+  position: relative;
+  padding-left: 0;
+}
+
+.stepsList::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 28px;
+  bottom: 28px;
+  width: 4px;
+  background: #e8ecf1;
+  border-radius: 3px;
+  z-index: 0;
 }
 
 .stepItem {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.stepItem:not(:last-child) {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(224, 230, 240, 0.5);
+  margin-bottom: 0.8rem;
 }
 
 .stepButton {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
-  padding: 1.1rem 0;
+  gap: 1.6rem;
+  padding: 1.2rem 0;
   background: transparent;
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
-  border-radius: 0;
+  border-radius: 8px;
   font-family: inherit;
   width: 100%;
   text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
 .stepButton:disabled {
@@ -69,51 +92,75 @@
 }
 
 .stepButton:not(:disabled):hover {
-  background: transparent;
+  background: rgba(0, 82, 163, 0.03);
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  margin-left: -0.8rem;
+  margin-right: -0.8rem;
 }
 
 .stepIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: transparent;
-  border: 1.5px solid #d5dce3;
+  background: #ffffff;
+  border: 3px solid #d5dce3;
   color: #5a6b7d;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 3;
 }
 
 .stepButton.active .stepIcon {
   background: #0052a3;
   border-color: #0052a3;
   color: #ffffff;
+  border-width: 5px;
+  box-shadow: 0 4px 16px rgba(0, 82, 163, 0.35), 0 0 0 4px rgba(0, 82, 163, 0.15);
+  animation: pulseActive 2s ease-in-out infinite;
+}
+
+@keyframes pulseActive {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(0, 82, 163, 0.35), 0 0 0 4px rgba(0, 82, 163, 0.15);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(0, 82, 163, 0.35), 0 0 0 8px rgba(0, 82, 163, 0);
+  }
 }
 
 .stepButton.completed .stepIcon {
-  background: transparent;
+  background: #ffffff;
   border-color: #0052a3;
   color: #0052a3;
+  border-width: 3px;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
 }
 
 .stepNumber {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
+  line-height: 1;
 }
 
 .stepTitle {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #5a6b7d;
   flex: 1;
   transition: all 0.25s ease;
+  line-height: 1.3;
 }
 
 .stepButton.active .stepTitle {
   color: #0052a3;
   font-weight: 700;
+  font-size: 1.7rem;
 }
 
 .stepButton.completed .stepTitle {
@@ -134,12 +181,15 @@
 .subStepsList {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem 0;
+  margin: 0.8rem 0 0.6rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
-  padding-left: 4.6rem;
+  gap: 1rem;
+  padding-left: 5.4rem;
   animation: slideDown 0.3s ease;
+  border-left: 2px solid rgba(0, 82, 163, 0.15);
+  padding-left: 1.6rem;
+  margin-left: 4rem;
 }
 
 @keyframes slideDown {
@@ -154,10 +204,32 @@
 }
 
 .subStepItem {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   color: #7a8a9d;
-  padding: 0.3rem 0;
+  padding: 0.2rem 0 0.2rem 1.6rem;
   font-weight: 400;
+  line-height: 1.5;
+  position: relative;
+}
+
+.subStepItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  background: #cbd4dd;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.subStepItem:hover::before {
+  background: #0052a3;
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 8px rgba(0, 82, 163, 0.4);
 }
 
 @media (max-width: 768px) {
