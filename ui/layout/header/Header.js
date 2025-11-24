@@ -257,7 +257,7 @@ const Header = () => {
           </div>
         </div>
       )}
-      {!isGetQuotePage && !isFAQPage && (
+      {!isFAQPage && (
       <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
@@ -272,7 +272,7 @@ const Header = () => {
             height={66}
           />
         </div>
-        {!isDashboard && (
+        {!isDashboard && !isGetQuotePage && (
           <menu className={styles.menu} suppressHydrationWarning={true}>
             <li
               className={styles.menuItem}
