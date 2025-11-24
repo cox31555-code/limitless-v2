@@ -44,13 +44,14 @@
 
 .regInput {
   width: 100%;
-  padding: 1.8rem 2rem;
+  padding: 1.6rem 0;
   font-size: 1.6rem;
   font-weight: 500;
   color: #1a1a2e;
-  background: #ffffff;
-  border: 2px solid #d5dce3;
-  border-radius: 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #d5dce3;
+  border-radius: 0;
   outline: none;
   transition: all 0.25s ease;
   text-transform: uppercase;
@@ -67,8 +68,7 @@
 }
 
 .regInput:focus {
-  border-color: #0388ff;
-  box-shadow: 0 0 0 4px rgba(3, 136, 255, 0.1);
+  border-bottom-color: #0388ff;
 }
 
 .regInput:disabled {
@@ -77,11 +77,11 @@
 }
 
 .regInputError {
-  border-color: #ff4444;
+  border-bottom-color: #ff4444;
 }
 
 .regInputError:focus {
-  box-shadow: 0 0 0 4px rgba(255, 68, 68, 0.1);
+  border-bottom-color: #ff4444;
 }
 
 .errorText {
@@ -93,13 +93,13 @@
 
 .findBtn {
   width: 100%;
-  padding: 1.8rem 2.4rem;
+  padding: 1.6rem 2.4rem;
   font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: #0388ff;
   border: none;
-  border-radius: 12px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.25s ease;
   display: flex;
@@ -110,8 +110,7 @@
 }
 
 .findBtn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
+  background: #0270cc;
 }
 
 .findBtn:active:not(:disabled) {
@@ -172,20 +171,23 @@
 
 .manualEntryBtn {
   width: 100%;
-  padding: 1.6rem 2rem;
+  padding: 1.6rem 0;
   font-size: 1.4rem;
   font-weight: 600;
   color: #0388ff;
-  background: #ffffff;
-  border: 2px solid #0388ff;
-  border-radius: 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #e8ecf1;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.25s ease;
+  text-align: center;
 }
 
 .manualEntryBtn:hover {
-  background: #f0f6ff;
-  transform: translateY(-2px);
+  background: transparent;
+  border-bottom-color: #0388ff;
+  transform: none;
 }
 
 .manualEntryBtn:active {
@@ -195,10 +197,11 @@
 .infoBox {
   display: flex;
   gap: 1.6rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, #f0f6ff 0%, #e8f5ff 100%);
-  border: 1px solid rgba(3, 136, 255, 0.15);
-  border-radius: 12px;
+  padding: 2rem 0;
+  background: transparent;
+  border: none;
+  border-left: 3px solid #0388ff;
+  padding-left: 1.6rem;
 }
 
 .infoIcon {
@@ -237,10 +240,10 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 2.4rem;
-  background: linear-gradient(135deg, #e8f5ff 0%, #f0f6ff 100%);
-  border: 2px solid #0388ff;
-  border-radius: 16px;
+  padding: 2rem 0 2rem 1.6rem;
+  background: transparent;
+  border: none;
+  border-left: 3px solid #4caf50;
   animation: slideIn 0.4s ease;
 }
 
@@ -293,21 +296,22 @@
 }
 
 .changeVehicleBtn {
-  padding: 1.2rem 2rem;
+  padding: 1rem 1.6rem;
   font-size: 1.3rem;
   font-weight: 600;
   color: #0388ff;
-  background: #ffffff;
-  border: 2px solid #0388ff;
-  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #0388ff;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.25s ease;
   white-space: nowrap;
 }
 
 .changeVehicleBtn:hover {
-  background: #f0f6ff;
-  transform: translateY(-2px);
+  background: transparent;
+  border-color: #0270cc;
+  color: #0270cc;
 }
 
 .changeVehicleBtn:active {

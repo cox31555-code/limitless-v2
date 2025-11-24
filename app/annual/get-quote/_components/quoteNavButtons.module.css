@@ -24,9 +24,9 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: #5a6b7d;
-  background: #ffffff;
-  border: 2px solid #d5dce3;
-  border-radius: 10px;
+  background: transparent;
+  border: 1px solid #d5dce3;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -34,7 +34,7 @@
 .backBtn:hover:not(:disabled) {
   color: #1a1a2e;
   border-color: #a8b2bd;
-  background: #f8f9fb;
+  background: transparent;
 }
 
 .backBtn:disabled {
@@ -50,17 +50,16 @@
   font-size: 1.4rem;
   font-weight: 700;
   color: #ffffff;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: #0388ff;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.25s ease;
   margin-left: auto;
 }
 
 .nextBtn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
+  background: #0270cc;
 }
 
 .nextBtn:active:not(:disabled) {
