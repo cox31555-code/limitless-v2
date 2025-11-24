@@ -296,7 +296,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
               className={styles.backToRegBtn}
               onClick={() => setShowManualEntry(false)}
             >
-              ← Back to registration lookup
+              Back to registration lookup
             </button>
           </div>
           <p className={styles.manualEntryHelper}>
