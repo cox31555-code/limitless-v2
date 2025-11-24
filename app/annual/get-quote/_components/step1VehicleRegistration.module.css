@@ -47,16 +47,15 @@
 
 .regInput {
   width: 100%;
-  padding: 1.4rem 0 1.2rem;
+  padding: 1.6rem 1.8rem;
   font-size: 1.6rem;
   font-weight: 500;
   color: #1a1a2e;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #d5dce3;
-  border-radius: 0;
+  background: #ffffff;
+  border: 2px solid #e8ecf1;
+  border-radius: 8px;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: all 0.2s ease;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-family: 'Courier New', monospace;
@@ -65,26 +64,30 @@
 .regInput::placeholder {
   text-transform: none;
   letter-spacing: normal;
-  font-family: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #a8b2bd;
   font-weight: 400;
 }
 
 .regInput:focus {
-  border-bottom-color: #1a1a2e;
+  border-color: #1a1a2e;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.08);
 }
 
 .regInput:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
+  background: #f8f9fb;
 }
 
 .regInputError {
-  border-bottom-color: #d32f2f;
+  border-color: #d32f2f;
 }
 
 .regInputError:focus {
-  border-bottom-color: #d32f2f;
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.08);
 }
 
 .errorText {
@@ -102,18 +105,20 @@
   color: #ffffff;
   background: #1a1a2e;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
   letter-spacing: 0.01em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .findBtn:hover:not(:disabled) {
   background: #2d2d3f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .findBtn:active:not(:disabled) {
@@ -124,6 +129,7 @@
   opacity: 0.5;
   cursor: not-allowed;
   background: #a8b2bd;
+  box-shadow: none;
 }
 
 .spinner {
@@ -145,52 +151,39 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 1.2rem 0;
-}
-
-.divider::before,
-.divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: #d5dce3;
-}
-
-.divider::before {
-  margin-right: 1.6rem;
-}
-
-.divider::after {
-  margin-left: 1.6rem;
+  justify-content: flex-end;
+  margin: 2.4rem 0 0.8rem;
 }
 
 .dividerText {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #7a8a9d;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #a8b2bd;
   text-transform: lowercase;
   letter-spacing: 0;
 }
 
 .manualEntryBtn {
-  width: 100%;
-  padding: 1.3rem 0;
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #1a1a2e;
+  width: auto;
+  padding: 0;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #7a8a9d;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #d5dce3;
+  border-bottom: 1px solid transparent;
   border-radius: 0;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: center;
+  text-align: right;
+  text-decoration: underline;
+  text-decoration-color: #d5dce3;
+  text-underline-offset: 3px;
 }
 
 .manualEntryBtn:hover {
-  background: transparent;
-  border-bottom-color: #1a1a2e;
+  color: #1a1a2e;
+  text-decoration-color: #1a1a2e;
 }
 
 .manualEntryBtn:active {
