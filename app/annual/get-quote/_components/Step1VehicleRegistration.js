@@ -349,14 +349,20 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
 
           <div className={styles.manualEntryForm}>
             <div className={styles.formRow}>
-              <FormDropdown
-                label="Vehicle Type"
-                options={["Car", "Motorcycle", "Van"]}
-                placeholder="Select vehicle type"
-                value={selectedType || ""}
-                onChange={(e) => handleDropdownChange("type", e.target.value)}
-                error={errors.vehicleDetails?.type}
-              />
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Vehicle Type</label>
+                <SelectPicker
+                  data={["Car", "Motorcycle", "Van"].map((option) => ({ label: option, value: option }))}
+                  placeholder="Select vehicle type"
+                  value={selectedType || null}
+                  onChange={(value) => handleDropdownChange("type", value || "")}
+                  className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.type ? styles.error : ""}`}
+                  style={{ width: "100%" }}
+                />
+                {errors.vehicleDetails?.type && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.type.message}</span>
+                )}
+              </div>
             </div>
 
             {selectedType && (
