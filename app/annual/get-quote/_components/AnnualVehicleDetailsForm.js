@@ -469,25 +469,37 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
           <div className={styles.rows}>
             {!foundVehicleData && (
               <div className={styles.cleanFormGrid2Col}>
-                <FormDropdown
-                  label="My Vehicle is a...."
-                  options={["Car", "Motorcycle", "Truck", "Bus"]}
-                  placeholder="Choose Vehicle"
-                  {...register("vehicleDetails.type")}
-                  error={errors.vehicleDetails?.type}
-                  disabled={!!foundVehicleData}
-                />
-                {watch("vehicleDetails.type") && !foundVehicleData && (
-                  <FormDropdown
-                    label="Make"
-                    options={state.makes}
-                    placeholder="Select Make"
-                    value={state.values.make || selectedMake || ""}
-                    onChange={(e) => handleDropdownChange("make", e.target.value)}
-                    {...register("vehicleDetails.make")}
-                    error={errors.vehicleDetails?.make}
+                <div className={styles.rsuiteFormGroup}>
+                  <label className={styles.label}>My Vehicle is a....</label>
+                  <SelectPicker
+                    data={["Car", "Motorcycle", "Truck", "Bus"].map((option) => ({ label: option, value: option }))}
+                    placeholder="Choose Vehicle"
+                    value={watch("vehicleDetails.type") || null}
+                    onChange={(value) => handleDropdownChange("type", value || "")}
                     disabled={!!foundVehicleData}
+                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.type ? styles.error : ""}`}
+                    style={{ width: "100%" }}
                   />
+                  {errors.vehicleDetails?.type && (
+                    <span className={styles.errorMessage}>{errors.vehicleDetails.type.message}</span>
+                  )}
+                </div>
+                {watch("vehicleDetails.type") && !foundVehicleData && (
+                  <div className={styles.rsuiteFormGroup}>
+                    <label className={styles.label}>Make</label>
+                    <SelectPicker
+                      data={state.makes.map((option) => ({ label: option, value: option }))}
+                      placeholder="Select Make"
+                      value={state.values.make || selectedMake || null}
+                      onChange={(value) => handleDropdownChange("make", value || "")}
+                      disabled={!!foundVehicleData}
+                      className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.make ? styles.error : ""}`}
+                      style={{ width: "100%" }}
+                    />
+                    {errors.vehicleDetails?.make && (
+                      <span className={styles.errorMessage}>{errors.vehicleDetails.make.message}</span>
+                    )}
+                  </div>
                 )}
               </div>
             )}
