@@ -665,32 +665,25 @@
   cursor: pointer;
   white-space: nowrap;
   font-family: inherit;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
 }
 
 .findButton:hover:not(:disabled):not(.findButtonDisabled) {
   background: #003d7a;
   border-color: #003d7a;
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
-  transform: translateY(-1px);
 }
 
 .findButton:active:not(:disabled):not(.findButtonDisabled) {
-  transform: translateY(0);
+  background: #003d7a;
 }
 
 .findButton:disabled,
 .findButtonDisabled {
-  opacity: 0.5;
   cursor: not-allowed;
-  background: #a8b2bd;
-  border-color: #a8b2bd;
-  box-shadow: none;
 }
 
 .spinner {
