@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Stepper from "./_components/stepper/Stepper";
 import styles from "./page.module.css";
 import ClaimFeature from "./_components/claimFeature/ClaimFeature";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -10,7 +9,7 @@ import ClaimReason from "./_components/claimReason/ClaimReason";
 import Guidelines from "./_components/guidelines/Guidelines";
 import Form from "./_components/form/Form";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
-import { steps, firstClaim, secondClaim, guidelinesData } from "./data";
+import { firstClaim, secondClaim, guidelinesData } from "./data";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -90,7 +89,6 @@ const SubmitClaimContent = () => {
       if (step === "form") {
         return (
           <div className={styles.fullWidthContainer}>
-            <Stepper steps={steps} currentStep={2} />
             <Form claimReason={reason} />
           </div>
         );
@@ -100,7 +98,6 @@ const SubmitClaimContent = () => {
       if (step === "reason") {
         return (
           <div className={styles.fullWidthContainer}>
-            <Stepper steps={steps} currentStep={1} />
             <ClaimReason />
           </div>
         );
@@ -139,8 +136,6 @@ const SubmitClaimContent = () => {
 
         {/* Content Section */}
         <div className={styles.contentWrapper}>
-          <Stepper steps={steps} currentStep={0} />
-          
           <div className={styles.pageHeader}>
             <h2 className={styles.pageTitle}>Choose your claim type</h2>
             <p className={styles.pageSubtitle}>Select the type of claim you need to submit</p>
