@@ -92,11 +92,7 @@
 }
 
 .stepButton:not(:disabled):hover {
-  background: rgba(0, 82, 163, 0.03);
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
-  margin-left: -0.8rem;
-  margin-right: -0.8rem;
+  background: transparent;
 }
 
 .stepIcon {
@@ -161,21 +157,14 @@
 .stepExpandBtn {
   background: transparent;
   border: none;
-  color: #5a6b7d;
+  color: #0052a3;
   cursor: pointer;
   padding: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease;
-  border-radius: 6px;
   line-height: 1;
   flex-shrink: 0;
-}
-
-.stepExpandBtn:hover {
-  color: #0052a3;
-  background: rgba(0, 82, 163, 0.08);
 }
 
 .subStepsList {
