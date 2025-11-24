@@ -3,44 +3,34 @@ import React from "react";
 import styles from "./quoteHeader.module.css";
 
 const QuoteHeader = ({ currentStep = 1, totalSteps = 5 }) => {
-  const benefits = [
-    { icon: "⚡", text: "Instant quotes" },
-    { icon: "💰", text: "Competitive rates" },
-    { icon: "🛡️", text: "Comprehensive cover" },
-    { icon: "✓", text: "Quick & easy" }
-  ];
-
+  const stepNames = ["Car Details", "Cover Details", "Personal Details", "Optional Extras", "Review"];
+  
   return (
     <section className={styles.heroSection} suppressHydrationWarning>
       <div className={styles.heroContent}>
-        <div className={styles.leftContent}>
-          <div className={styles.titleArea}>
-            <h1 className={styles.title}>Get Your Annual Car Insurance Quote</h1>
-            <p className={styles.subtitle}>
-              Complete {totalSteps} simple steps to get your personalized quote
-            </p>
-          </div>
-          
-          <div className={styles.progressIndicator}>
-            <div className={styles.progressBar}>
-              <div 
-                className={styles.progressFill} 
-                style={{ width: `${(currentStep / totalSteps) * 100}%` }}
-              />
-            </div>
-            <span className={styles.progressText}>
-              Step {currentStep} of {totalSteps}
-            </span>
+        <div className={styles.mainInfo}>
+          <h1 className={styles.title}>Annual Car Insurance Quote</h1>
+          <div className={styles.stepInfo}>
+            <span className={styles.stepBadge}>Step {currentStep} of {totalSteps}</span>
+            <span className={styles.separator}>•</span>
+            <span className={styles.stepName}>{stepNames[currentStep - 1]}</span>
           </div>
         </div>
-
-        <div className={styles.benefitsGrid}>
-          {benefits.map((benefit, index) => (
-            <div key={index} className={styles.benefitItem}>
-              <span className={styles.benefitIcon}>{benefit.icon}</span>
-              <span className={styles.benefitText}>{benefit.text}</span>
-            </div>
-          ))}
+        
+        <div className={styles.trustInfo}>
+          <div className={styles.trustItem}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Secure & encrypted</span>
+          </div>
+          <div className={styles.trustItem}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>~5 minutes</span>
+          </div>
         </div>
       </div>
     </section>

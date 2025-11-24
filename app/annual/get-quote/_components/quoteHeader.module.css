@@ -3,20 +3,9 @@
   position: relative;
   width: 100%;
   margin: 0 0 3.2rem 0;
-  padding: 2.8rem 5%;
+  padding: 2rem 5%;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.heroSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
-  pointer-events: none;
 }
 
 .heroContent {
@@ -25,26 +14,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
-  position: relative;
-  z-index: 2;
+  gap: 2rem;
 }
 
-.leftContent {
-  flex: 1;
+.mainInfo {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-}
-
-.titleArea {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.8rem;
 }
 
 .title {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
@@ -52,173 +32,111 @@
   letter-spacing: -0.02em;
 }
 
-.subtitle {
-  font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.progressIndicator {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  max-width: 400px;
-}
-
-.progressBar {
-  width: 100%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progressFill {
-  height: 100%;
-  background: #ffffff;
-  border-radius: 10px;
-  transition: width 0.4s ease;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-}
-
-.progressText {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-}
-
-.benefitsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  flex-shrink: 0;
-}
-
-.benefitItem {
+.stepInfo {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  padding: 0.8rem 1.2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.benefitIcon {
-  font-size: 1.4rem;
-  flex-shrink: 0;
-}
-
-.benefitText {
-  font-size: 1.2rem;
+.stepBadge {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.15rem;
   color: #ffffff;
-  font-weight: 500;
-  white-space: nowrap;
 }
 
-@media (max-width: 1024px) {
-  .heroSection {
-    padding: 2.4rem 5%;
-  }
+.separator {
+  color: rgba(255, 255, 255, 0.5);
+}
 
-  .heroContent {
-    gap: 3rem;
-  }
+.stepName {
+  font-weight: 500;
+}
 
-  .title {
-    font-size: 2rem;
-  }
+.trustInfo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
 
-  .subtitle {
-    font-size: 1.2rem;
-  }
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 
-  .benefitsGrid {
-    gap: 1rem;
-  }
-
-  .benefitItem {
-    padding: 0.7rem 1rem;
-  }
-
-  .benefitText {
-    font-size: 1.1rem;
-  }
+.trustItem svg {
+  flex-shrink: 0;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    padding: 2rem 5%;
+    padding: 1.6rem 5%;
     margin-bottom: 2.4rem;
   }
 
   .heroContent {
     flex-direction: column;
-    gap: 2rem;
     align-items: flex-start;
-  }
-
-  .leftContent {
-    width: 100%;
+    gap: 1.2rem;
   }
 
   .title {
     font-size: 1.8rem;
   }
 
-  .progressIndicator {
-    max-width: 100%;
+  .stepInfo {
+    font-size: 1.2rem;
   }
 
-  .benefitsGrid {
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
+  .stepBadge {
+    font-size: 1.1rem;
+  }
+
+  .trustInfo {
+    gap: 1.6rem;
+  }
+
+  .trustItem {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 600px) {
   .heroSection {
-    padding: 1.6rem 4%;
+    padding: 1.4rem 4%;
     margin-bottom: 2rem;
-  }
-
-  .heroContent {
-    gap: 1.6rem;
-  }
-
-  .leftContent {
-    gap: 1.2rem;
   }
 
   .title {
     font-size: 1.6rem;
   }
 
-  .subtitle {
+  .stepInfo {
+    flex-wrap: wrap;
     font-size: 1.1rem;
   }
 
-  .benefitsGrid {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-
-  .benefitItem {
-    padding: 0.6rem 1rem;
-  }
-
-  .benefitIcon {
-    font-size: 1.2rem;
-  }
-
-  .benefitText {
+  .stepBadge {
     font-size: 1rem;
+    padding: 0.3rem 0.8rem;
   }
 
-  .progressText {
-    font-size: 1.1rem;
+  .trustInfo {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .trustItem {
+    font-size: 1rem;
   }
 }
