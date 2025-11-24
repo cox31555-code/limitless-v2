@@ -211,9 +211,9 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding-top: 0.2rem;
+  width: 24px;
+  height: 24px;
+  margin-top: 0.2rem;
 }
 
 .infoContent {
@@ -224,8 +224,8 @@
 }
 
 .infoTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: #1a1a2e;
   margin: 0;
   line-height: 1.4;
@@ -233,9 +233,9 @@
 
 .infoText {
   font-size: 1.3rem;
-  color: #5a6b7d;
+  color: #7a8a9d;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .foundVehicleCard {
@@ -382,6 +382,10 @@
     margin: 0;
   }
 
+  .header {
+    padding-bottom: 1.6rem;
+  }
+
   .mainQuestion {
     font-size: 1.8rem;
   }
@@ -391,7 +395,7 @@
   }
 
   .regInput {
-    padding: 1.4rem 1.6rem;
+    padding: 1.4rem 0;
     font-size: 1.3rem;
   }
 
@@ -401,23 +405,22 @@
   }
 
   .manualEntryBtn {
-    padding: 1.4rem 1.8rem;
+    padding: 1.4rem 0;
     font-size: 1.3rem;
   }
 
   .infoBox {
-    flex-direction: column;
-    padding: 1.6rem;
+    padding: 1.6rem 0 1.6rem 1.2rem;
     gap: 1.2rem;
   }
 
   .infoIcon {
-    width: 32px;
-    height: 32px;
+    width: 20px;
+    height: 20px;
   }
 
   .infoTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .infoText {
