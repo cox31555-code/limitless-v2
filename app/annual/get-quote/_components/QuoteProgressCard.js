@@ -61,8 +61,8 @@ const QuoteProgressCard = ({ currentStep }) => {
               >
                 <div className={styles.stepIcon}>
                   {isCompleted ? (
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8L6 11L13 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M4 10L8 14L16 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   ) : (
                     <span className={styles.stepNumber}>{step.number}</span>
@@ -70,11 +70,11 @@ const QuoteProgressCard = ({ currentStep }) => {
                 </div>
                 <span className={styles.stepTitle}>{step.title}</span>
                 {isActive && step.subSteps && (
-                  <svg 
+                  <svg
                     className={`${styles.expandIcon} ${isExpanded ? styles.expanded : ""}`}
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 16 16" 
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
                     fill="none"
                   >
                     <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -90,6 +90,10 @@ const QuoteProgressCard = ({ currentStep }) => {
                     </li>
                   ))}
                 </ul>
+              )}
+
+              {step.number < steps.length && (
+                <div className={`${styles.connector} ${(isCompleted || isActive) ? styles.connectorActive : ""}`} />
               )}
             </div>
           );
