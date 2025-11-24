@@ -688,13 +688,14 @@ const AnnualVehicleDetailsForm = ({ form, onVehicleDataFound, autoTriggerLookup 
             <div className={styles.modificationsListContainer}>
               <div className={styles.modificationsLabelWrapper}>
                 <p className={styles.modificationsLabel}>Selected Modifications:</p>
-                <button
+                <Button
                   type="button"
                   className={styles.editModificationsBtn}
                   onClick={() => setShowModificationsModal(true)}
+                  appearance="default"
                 >
                   Edit
-                </button>
+                </Button>
               </div>
               <div className={styles.modificationsTagsList}>
                 {vehicleModifications.map((modification) => (
