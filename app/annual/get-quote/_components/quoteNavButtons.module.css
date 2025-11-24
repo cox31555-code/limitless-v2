@@ -1,9 +1,9 @@
 .navContainer {
   width: 100%;
   background: transparent;
-  padding: 2.8rem 0 0;
+  padding: 3.2rem 0 0;
   margin-top: 0;
-  border-top: 1px solid #e8ecf1;
+  border-top: 1px solid #d5dce3;
 }
 
 .navContent {
@@ -20,20 +20,19 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 1.3rem 2rem;
+  padding: 1.4rem 2rem;
   font-size: 1.35rem;
-  font-weight: 600;
-  color: #5a6b7d;
+  font-weight: 500;
+  color: #1a1a2e;
   background: transparent;
   border: 1px solid #d5dce3;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .backBtn:hover:not(:disabled) {
-  color: #1a1a2e;
-  border-color: #a8b2bd;
+  border-color: #1a1a2e;
   background: transparent;
 }
 
@@ -46,20 +45,20 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 1.3rem 2.2rem;
+  padding: 1.4rem 2.4rem;
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
-  background: #0388ff;
+  background: #1a1a2e;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background-color 0.2s ease;
   margin-left: auto;
 }
 
 .nextBtn:hover:not(:disabled) {
-  background: #0270cc;
+  background: #2d2d3f;
 }
 
 .nextBtn:active:not(:disabled) {
