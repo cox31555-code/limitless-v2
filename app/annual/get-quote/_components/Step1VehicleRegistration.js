@@ -77,55 +77,25 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
     dispatch({ type: "SET_MAKES", payload: defaultMakes });
   }, []);
 
-  // Fetch options when make changes
+  // Load all options when manual entry is shown
   useEffect(() => {
-    if (selectedMake && showManualEntry) {
+    if (showManualEntry) {
       const defaultOptions = {
-        models: ["Model A", "Model B", "Model C", "Model D"],
-        years: ["2024", "2023", "2022", "2021", "2020", "2019", "2018"],
-        doors: ["2", "4", "5"],
-        fuels: ["Petrol", "Diesel", "Hybrid", "Electric"],
-        transmissions: ["Manual", "Automatic"],
+        models: ["Model A", "Model B", "Model C", "Model D", "Model E", "Model F"],
+        years: ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015"],
+        doors: ["2", "3", "4", "5"],
+        fuels: ["Petrol", "Diesel", "Hybrid", "Electric", "Petrol Hybrid", "Diesel Hybrid"],
+        transmissions: ["Manual", "Automatic", "Semi-Automatic"],
       };
       dispatch({ type: "SET_OPTIONS", payload: defaultOptions });
-    } else if (!selectedMake) {
-      dispatch({ type: "CLEAR_OPTIONS" });
     }
-  }, [selectedMake, showManualEntry]);
+  }, [showManualEntry]);
 
   const handleDropdownChange = (field, value) => {
     setValue(`vehicleDetails.${field}`, value, {
       shouldValidate: true,
       shouldDirty: true,
     });
-
-    // Clear dependent fields when a parent field changes
-    if (field === "make") {
-      setValue("vehicleDetails.model", "");
-      setValue("vehicleDetails.year", "");
-      setValue("vehicleDetails.doors", "");
-      setValue("vehicleDetails.fuel", "");
-      setValue("vehicleDetails.transmission", "");
-      clearErrors(["vehicleDetails.model", "vehicleDetails.year", "vehicleDetails.doors", "vehicleDetails.fuel", "vehicleDetails.transmission"]);
-    } else if (field === "model") {
-      setValue("vehicleDetails.year", "");
-      setValue("vehicleDetails.doors", "");
-      setValue("vehicleDetails.fuel", "");
-      setValue("vehicleDetails.transmission", "");
-      clearErrors(["vehicleDetails.year", "vehicleDetails.doors", "vehicleDetails.fuel", "vehicleDetails.transmission"]);
-    } else if (field === "year") {
-      setValue("vehicleDetails.doors", "");
-      setValue("vehicleDetails.fuel", "");
-      setValue("vehicleDetails.transmission", "");
-      clearErrors(["vehicleDetails.doors", "vehicleDetails.fuel", "vehicleDetails.transmission"]);
-    } else if (field === "doors") {
-      setValue("vehicleDetails.fuel", "");
-      setValue("vehicleDetails.transmission", "");
-      clearErrors(["vehicleDetails.fuel", "vehicleDetails.transmission"]);
-    } else if (field === "fuel") {
-      setValue("vehicleDetails.transmission", "");
-      clearErrors("vehicleDetails.transmission");
-    }
   };
 
   const handleFindVehicle = useCallback(async () => {
@@ -339,9 +309,6 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("type", value)}
                 placeholder="Select vehicle type"
               />
-            </div>
-
-            {selectedType && (
               <Dropdown
                 label="Make"
                 selected={selectedMake || ""}
@@ -349,9 +316,9 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("make", value)}
                 placeholder="Select make"
               />
-            )}
+            </div>
 
-            {selectedMake && (
+            <div className={styles.formRow}>
               <Dropdown
                 label="Model"
                 selected={selectedModel || ""}
@@ -359,9 +326,6 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("model", value)}
                 placeholder="Select model"
               />
-            )}
-
-            {selectedModel && (
               <Dropdown
                 label="Year"
                 selected={selectedYear || ""}
@@ -369,9 +333,9 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("year", value)}
                 placeholder="Select year"
               />
-            )}
+            </div>
 
-            {selectedYear && (
+            <div className={styles.formRow}>
               <Dropdown
                 label="Doors"
                 selected={selectedDoors || ""}
@@ -379,9 +343,6 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("doors", value)}
                 placeholder="Select doors"
               />
-            )}
-
-            {selectedDoors && (
               <Dropdown
                 label="Fuel Type"
                 selected={selectedFuel || ""}
@@ -389,9 +350,9 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("fuel", value)}
                 placeholder="Select fuel type"
               />
-            )}
+            </div>
 
-            {selectedFuel && (
+            <div className={styles.formRow}>
               <Dropdown
                 label="Transmission"
                 selected={watch("vehicleDetails.transmission") || ""}
@@ -399,9 +360,6 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("transmission", value)}
                 placeholder="Select transmission"
               />
-            )}
-
-            {watch("vehicleDetails.transmission") && (
               <Dropdown
                 label="Colour"
                 selected={watch("vehicleDetails.colour") || ""}
@@ -409,7 +367,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 setSelected={(value) => handleDropdownChange("colour", value)}
                 placeholder="Select colour"
               />
-            )}
+            </div>
           </div>
         </div>
       )}
