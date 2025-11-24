@@ -34,6 +34,7 @@
 
 .dropdown:hover:not(.dropdownDisabled):not(.dropdownError) {
   border-color: #003d7a;
+  background: #f0f4ff;
   box-shadow: 0 2px 6px rgba(0, 82, 163, 0.15);
 }
 
@@ -98,6 +99,7 @@
 
 .dropdown:not(.dropdownDisabled):has(.selected:not(.placeholder)):hover {
   border-color: #003d7a;
+  background: #f0f4ff;
   box-shadow: 0 2px 6px rgba(0, 82, 163, 0.15);
 }
 
