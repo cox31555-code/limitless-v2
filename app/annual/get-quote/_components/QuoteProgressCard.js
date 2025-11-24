@@ -4,6 +4,7 @@ import styles from "./quoteProgressCard.module.css";
 
 const QuoteProgressCard = ({ currentStep }) => {
   const [expandedStep, setExpandedStep] = useState(1);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const steps = [
     {
@@ -35,15 +36,33 @@ const QuoteProgressCard = ({ currentStep }) => {
   };
 
   return (
-    <div className={styles.progressCard}>
+    <div className={`${styles.progressCard} ${isCollapsed ? styles.collapsed : ""}`}>
       <div className={styles.progressHeader}>
-        <div className={styles.progressBar}>
-          <div 
-            className={styles.progressFill} 
-            style={{ width: `${progressPercentage}%` }}
-          />
+        <div className={styles.progressHeaderContent}>
+          <div className={styles.progressBar}>
+            <div 
+              className={styles.progressFill} 
+              style={{ width: `${progressPercentage}%` }}
+            />
+          </div>
+          {!isCollapsed && <span className={styles.progressText}>{progressPercentage}% complete</span>}
         </div>
-        <span className={styles.progressText}>{progressPercentage}% complete</span>
+        <button
+          className={styles.collapseBtn}
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          aria-label={isCollapsed ? "Expand" : "Collapse"}
+          title={isCollapsed ? "Expand" : "Collapse"}
+        >
+          {isCollapsed ? (
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M2 8H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          ) : (
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          )}
+        </button>
       </div>
 
       <div className={styles.stepsList}>
