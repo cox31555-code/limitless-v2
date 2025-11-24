@@ -1,6 +1,6 @@
 .pageWrapper {
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 88px);
   background: #ffffff;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -13,6 +13,7 @@
   flex-direction: column;
   overflow-x: hidden;
   background: #ffffff;
+  order: 1;
 }
 
 .contentWrapper {

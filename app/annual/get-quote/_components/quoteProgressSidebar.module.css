@@ -1,47 +1,23 @@
 .sidebar {
-  width: 320px;
+  width: 340px;
   min-height: 100vh;
   background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
-  left: 0;
+  right: 0;
   overflow-y: auto;
-  z-index: 100;
+  z-index: 50;
 }
 
 .sidebarContent {
   display: flex;
   flex-direction: column;
-  padding: 2.4rem 2rem;
+  padding: 3.2rem 2.4rem;
   gap: 3.2rem;
   min-height: 100vh;
 }
 
-.logoSection {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.logo {
-  cursor: pointer;
-  transition: opacity 0.25s ease;
-  border-radius: 8px;
-}
-
-.logo:hover {
-  opacity: 0.8;
-}
-
-.logoText {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1a1a2e;
-  letter-spacing: -0.01em;
-}
 
 .progressSection {
   display: flex;
@@ -269,7 +245,7 @@
     position: relative;
     width: 100%;
     min-height: auto;
-    border-right: none;
+    border-left: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 

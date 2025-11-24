@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./quoteProgressSidebar.module.css";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const QuoteProgressSidebar = ({ currentStep, currentSubStep = null }) => {
@@ -36,18 +35,6 @@ const QuoteProgressSidebar = ({ currentStep, currentSubStep = null }) => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebarContent}>
-        <div className={styles.logoSection}>
-          <Image
-            src="/svg/logo.svg"
-            alt="Limitless Cover"
-            width={60}
-            height={60}
-            className={styles.logo}
-            onClick={() => router.push("/")}
-          />
-          <span className={styles.logoText}>Car insurance</span>
-        </div>
-
         <div className={styles.progressSection}>
           <div className={styles.progressHeader}>
             <span className={styles.progressText}>{Math.round(progressPercentage)}% complete</span>

@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import QuoteProgressSidebar from "./_components/QuoteProgressSidebar";
 import QuoteNavButtons from "./_components/QuoteNavButtons";
 import Step1VehicleRegistration from "./_components/Step1VehicleRegistration";
+import QuoteHeader from "./_components/QuoteHeader";
 import styles from "./newGetQuotePage.module.css";
 
 const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { loading: () => <StepFallback /> });
@@ -273,12 +274,12 @@ const AnnualInsuranceContent = () => {
   };
 
   return (
-    <div className={styles.pageWrapper} suppressHydrationWarning>
+    <>
       <LoadingOverlay isVisible={showLoading} />
-      
-      <QuoteProgressSidebar currentStep={currentStep} currentSubStep={currentSubStep} />
+      <QuoteHeader title="Annual Car Insurance" />
 
-      <div className={styles.mainContent}>
+      <div className={styles.pageWrapper} suppressHydrationWarning>
+        <div className={styles.mainContent}>
         <div className={styles.contentWrapper}>
           <form noValidate suppressHydrationWarning>
             <div className={styles.stepContent}>
@@ -308,7 +309,10 @@ const AnnualInsuranceContent = () => {
           </form>
         </div>
       </div>
+
+      <QuoteProgressSidebar currentStep={currentStep} currentSubStep={currentSubStep} />
     </div>
+    </>
   );
 };
 
