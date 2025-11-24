@@ -539,4 +539,17 @@
   .foundVehicleReg {
     font-size: 1.2rem;
   }
+
+  .manualEntryTitle {
+    font-size: 1.6rem;
+  }
+
+  .backToRegBtn {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .manualEntryForm {
+    gap: 1.6rem;
+  }
 }
