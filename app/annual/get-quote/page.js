@@ -5,13 +5,13 @@ import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
-import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
-import StepActions from "@/app/temporary/get-quote/_components/StepActions";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import { useRouter, useSearchParams } from "next/navigation";
-import { API_BASE_URL } from "@/utils/config";
 import { toast } from "react-toastify";
-import styles from "@/app/temporary/get-quote/stepForm.module.css";
+import QuoteProgressSidebar from "./_components/QuoteProgressSidebar";
+import QuoteNavButtons from "./_components/QuoteNavButtons";
+import Step1VehicleRegistration from "./_components/Step1VehicleRegistration";
+import styles from "./newGetQuotePage.module.css";
 
 const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { loading: () => <StepFallback /> });
 const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { loading: () => <StepFallback /> });
@@ -33,19 +33,12 @@ const STEPS = {
   REVIEW: 5,
 };
 
-const STEP_TITLES = [
-  "Vehicle Details",
-  "Cover Details",
-  "Personal Details",
-  "Optional Extras",
-  "Review Your Quote",
-];
-
 const AnnualInsuranceContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isMounted, setIsMounted] = useState(false);
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
+  const [currentSubStep, setCurrentSubStep] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
@@ -142,37 +135,31 @@ const AnnualInsuranceContent = () => {
 
   const { setValue, trigger } = form;
 
-  // Handle step parameter from URL (only on client)
   useEffect(() => {
     if (!isMounted) return;
 
     const stepParam = searchParams.get("step");
     if (stepParam) {
       const step = parseInt(stepParam);
-      if (step >= STEPS.VEHICLE && step <= STEPS.TERMS) {
+      if (step >= STEPS.VEHICLE && step <= STEPS.REVIEW) {
         setCurrentStep(step);
       }
     }
   }, [isMounted, searchParams]);
 
-  // Populate form with URL parameters from GetQuote (only on client)
   useEffect(() => {
     if (!isMounted) return;
 
     const fromQuote = searchParams.get("fromQuote");
-
     if (fromQuote === "true") {
-      // Check if registration number was provided
       const registrationNumber = searchParams.get("registrationNumber");
       if (registrationNumber) {
         setValue("vehicleDetails.registrationNumber", registrationNumber.toUpperCase());
-        // Auto-trigger vehicle lookup
         setShouldAutoTrigger(true);
       }
     }
   }, [isMounted, searchParams, setValue]);
 
-  // Step validation fields
   const vehicleFields = [
     "vehicleDetails.registrationNumber",
     "vehicleDetails.type",
@@ -228,7 +215,6 @@ const AnnualInsuranceContent = () => {
         return coverFields;
       case STEPS.PERSONAL: {
         const employmentStatus = form.watch("userDetails.employmentStatus");
-        // Only require industry and occupation if not a Student
         const personalFields = [...basePersonalFields];
         if (employmentStatus !== "Student") {
           personalFields.push("userDetails.industry", "userDetails.occupation");
@@ -257,7 +243,6 @@ const AnnualInsuranceContent = () => {
         return;
       }
       if (currentStep === STEPS.REVIEW) {
-        // Final step - will be handled by form submission
         return;
       }
       setCurrentStep(currentStep + 1);
@@ -275,66 +260,53 @@ const AnnualInsuranceContent = () => {
   };
 
   const onSubmit = (data) => {
-    // Show loading overlay
     setShowLoading(true);
     setIsSubmitting(true);
 
-    // Generate an annual insurance ID for offline mode
     const insuranceId = `ANNUAL_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-
-    // Redirect to payment summary (review your quote) page
     const redirectUrl = `/payment-summary?id=${insuranceId}`;
-
-    // Generate random delay between 4-9 seconds for loading spinner
     const randomDelay = Math.floor(Math.random() * 5001) + 4000;
 
-    // Use window.location.href for reliable navigation
     setTimeout(() => {
       window.location.href = redirectUrl;
     }, randomDelay);
   };
 
   return (
-    <div suppressHydrationWarning>
+    <div className={styles.pageWrapper} suppressHydrationWarning>
       <LoadingOverlay isVisible={showLoading} />
-      <GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={currentStep} totalSteps={5} />
-      <div className="centeredContent" suppressHydrationWarning>
-        <form
-          className={styles.stepFormContainer}
-          noValidate
-          suppressHydrationWarning
-        >
-          <div className={styles.stepContent}>
-            {currentStep === STEPS.VEHICLE && (
-              <AnnualVehicleDetailsForm
-                form={form}
-                onVehicleDataFound={setFoundVehicleData}
-                autoTriggerLookup={shouldAutoTrigger}
-              />
-            )}
-            {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
-            {currentStep === STEPS.PERSONAL && (
-              <AnnualPersonalDetailsForm form={form} />
-            )}
-            {currentStep === STEPS.OPTIONAL_EXTRAS && (
-              <AnnualOptionalExtrasForm form={form} />
-            )}
-            {currentStep === STEPS.REVIEW && (
-              <ReviewQuote form={form} insuranceType="Annual" />
-            )}
-          </div>
+      
+      <QuoteProgressSidebar currentStep={currentStep} currentSubStep={currentSubStep} />
 
-          <StepActions
-            currentStep={currentStep}
-            totalSteps={5}
-            onNext={handleNextStep}
-            onBack={handlePreviousStep}
-            onSubmit={onSubmit}
-            isLoading={isSubmitting}
-            nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Next"}
-            backLabel="Back"
-          />
-        </form>
+      <div className={styles.mainContent}>
+        <div className={styles.contentWrapper}>
+          <form noValidate suppressHydrationWarning>
+            <div className={styles.stepContent}>
+              {currentStep === STEPS.VEHICLE && (
+                <Step1VehicleRegistration
+                  form={form}
+                  onVehicleFound={setFoundVehicleData}
+                  autoTriggerLookup={shouldAutoTrigger}
+                />
+              )}
+              {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
+              {currentStep === STEPS.PERSONAL && <AnnualPersonalDetailsForm form={form} />}
+              {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
+              {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
+            </div>
+
+            <QuoteNavButtons
+              currentStep={currentStep}
+              totalSteps={5}
+              onNext={handleNextStep}
+              onBack={handlePreviousStep}
+              onSubmit={onSubmit}
+              isLoading={isSubmitting}
+              nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Continue"}
+              backLabel="Back"
+            />
+          </form>
+        </div>
       </div>
     </div>
   );
@@ -342,7 +314,11 @@ const AnnualInsuranceContent = () => {
 
 const AnnualInsurancePage = () => {
   return (
-    <Suspense fallback={<GetQuoteHeaderWithNav title="Annual Insurance Quote" currentStep={1} totalSteps={5} />}>
+    <Suspense fallback={
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
+        Loading...
+      </div>
+    }>
       <AnnualInsuranceContent />
     </Suspense>
   );

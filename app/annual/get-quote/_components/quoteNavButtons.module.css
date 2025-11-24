@@ -1,0 +1,139 @@
+.navContainer {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(248, 249, 251, 0.95) 15%, rgba(248, 249, 251, 1) 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  padding: 2rem 0 2.4rem;
+}
+
+.navContent {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.4rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #5a6b7d;
+  background: #ffffff;
+  border: 2px solid #d5dce3;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.backBtn:hover:not(:disabled) {
+  color: #1a1a2e;
+  border-color: #a8b2bd;
+  background: #f8f9fb;
+}
+
+.backBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nextBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.4rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-left: auto;
+}
+
+.nextBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
+}
+
+.nextBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.nextBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 1.6rem 0 2rem;
+  }
+
+  .navContent {
+    padding: 0 1.6rem;
+    gap: 1.2rem;
+  }
+
+  .backBtn {
+    padding: 1.2rem 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .nextBtn {
+    padding: 1.2rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navContainer {
+    padding: 1.4rem 0 1.8rem;
+  }
+
+  .navContent {
+    padding: 0 1.2rem;
+    gap: 1rem;
+    flex-direction: column-reverse;
+  }
+
+  .backBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .nextBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 1.4rem;
+    font-size: 1.3rem;
+    margin-left: 0;
+  }
+}
