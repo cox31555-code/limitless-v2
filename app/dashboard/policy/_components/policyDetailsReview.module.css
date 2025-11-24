@@ -26,6 +26,7 @@
   color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
   letter-spacing: 0.65px;
+  margin: 0;
 }
 
 .priceAmount {
@@ -159,11 +160,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
 .cardHeader:hover {
   background-color: #f8fafb;
+}
+
+.cardHeader:focus {
+  outline: none;
+}
+
+.cardHeader:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: -3px;
+  background-color: #f0f7ff;
+}
+
+.cardHeader:active {
+  background-color: #e8f2fb;
 }
 
 .headerContent {
@@ -217,12 +233,16 @@
   width: 20px;
   height: 20px;
   color: #0388ff;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
 }
 
 .expandIcon.expanded {
   transform: rotate(180deg);
+}
+
+.cardHeader:hover .expandIcon {
+  color: #0275dd;
 }
 
 /* Card Content */
@@ -312,12 +332,28 @@
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .primaryBtn:hover {
   background: #0275dd;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
+}
+
+.primaryBtn:focus {
+  outline: none;
+}
+
+.primaryBtn:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: 2px;
+}
+
+.primaryBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.2);
 }
 
 .secondaryBtn {
@@ -337,6 +373,22 @@
   background: rgba(3, 136, 255, 0.08);
   border-color: #0275dd;
   color: #0275dd;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.15);
+}
+
+.secondaryBtn:focus {
+  outline: none;
+}
+
+.secondaryBtn:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: 2px;
+}
+
+.secondaryBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.1);
 }
 
 /* Excess Section */
@@ -466,13 +518,30 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
   border-bottom: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .documentLink:hover {
   color: #0275dd;
   border-bottom-color: #0275dd;
+}
+
+.documentLink:focus {
+  outline: none;
+}
+
+.documentLink:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: 2px;
+  background-color: rgba(3, 136, 255, 0.05);
+}
+
+.fileSize {
+  color: #7a8fa3;
+  font-weight: 400;
+  font-size: 0.85rem;
 }
 
 .documentIcon {
@@ -501,11 +570,27 @@
   font-weight: 700;
   letter-spacing: 0.4px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .makeClaimBtn:hover {
   background: #149966;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(29, 181, 132, 0.3);
+}
+
+.makeClaimBtn:focus {
+  outline: none;
+}
+
+.makeClaimBtn:focus-visible {
+  outline: 3px solid #1db584;
+  outline-offset: 3px;
+}
+
+.makeClaimBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(29, 181, 132, 0.2);
 }
 
 .cancelPolicyBtn {
@@ -526,6 +611,22 @@
   background: rgba(3, 136, 255, 0.08);
   border-color: #0275dd;
   color: #0275dd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 82, 163, 0.15);
+}
+
+.cancelPolicyBtn:focus {
+  outline: none;
+}
+
+.cancelPolicyBtn:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: 3px;
+}
+
+.cancelPolicyBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 82, 163, 0.1);
 }
 
 /* Responsive Design */
