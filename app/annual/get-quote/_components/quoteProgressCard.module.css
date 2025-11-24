@@ -66,8 +66,18 @@
 
 .stepItem:not(:last-child) {
   padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(224, 230, 240, 0.5);
   margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.stepItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -0.8rem;
+  left: 52px;
+  right: 0;
+  height: 1px;
+  background: rgba(224, 230, 240, 0.5);
 }
 
 .stepButton {
