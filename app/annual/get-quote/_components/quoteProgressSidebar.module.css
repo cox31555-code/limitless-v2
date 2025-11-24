@@ -85,11 +85,11 @@
 .stepsContainer::before {
   content: '';
   position: absolute;
-  left: 16px;
-  top: 20px;
-  bottom: 20px;
+  left: 17px;
+  top: 36px;
+  bottom: 60px;
   width: 4px;
-  background: linear-gradient(180deg, #e8ecf1 0%, #e8ecf1 25%, #0388ff 25%, #0388ff 100%);
+  background: #e8ecf1;
   border-radius: 3px;
   z-index: 0;
 }
