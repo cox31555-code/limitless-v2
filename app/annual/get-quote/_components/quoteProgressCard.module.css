@@ -337,8 +337,7 @@
     top: 40px;
   }
 
-  .stepButton {
-    padding: 1rem 0.6rem;
+  .stepButtonContent {
     gap: 1.2rem;
   }
 
