@@ -459,7 +459,7 @@
 @media (max-width: 900px) {
   .content {
     gap: 3.2rem;
-    padding: 0 1.4rem;
+    padding: 0;
   }
 
   .instructionBox {
@@ -494,16 +494,16 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 2rem;
   }
 
   .registrationSection,
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    padding: 2rem;
-    gap: 1.8rem;
-    margin-bottom: 3.4rem;
+    padding: 2.4rem;
+    gap: 2rem;
+    margin-bottom: 0;
   }
 
   .sectionTitle {
@@ -630,7 +630,7 @@
 @media (max-width: 600px) {
   .content {
     gap: 3.2rem;
-    padding: 0 1.6rem;
+    padding: 0;
   }
 
   .instructionBox {
@@ -675,11 +675,11 @@
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    padding: 1.8rem;
-    gap: 1.8rem;
+    padding: 2.4rem;
+    gap: 2rem;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 3.4rem;
+    margin-bottom: 0;
   }
 
   .sectionTitle {
