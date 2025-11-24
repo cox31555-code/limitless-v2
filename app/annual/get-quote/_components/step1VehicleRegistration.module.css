@@ -264,6 +264,12 @@
   flex-shrink: 0;
 }
 
+.foundVehicleIcon svg circle:first-child {
+  fill: transparent;
+  stroke: #4caf50;
+  stroke-width: 2;
+}
+
 .foundVehicleInfo {
   display: flex;
   flex-direction: column;
@@ -272,12 +278,12 @@
 }
 
 .foundVehicleTitle {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #0388ff;
+  color: #4caf50;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .foundVehicleDetails {
@@ -367,7 +373,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.6rem;
-    padding: 2rem;
+    padding: 2rem 0 2rem 1.6rem;
   }
 
   .changeVehicleBtn {
