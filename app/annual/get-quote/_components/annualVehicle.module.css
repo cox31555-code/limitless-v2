@@ -8,19 +8,19 @@
   border: none;
   box-shadow: none;
   width: 100%;
-  gap: 2rem;
+  gap: 3.2rem;
 }
 
 @media (max-width: 640px) {
   .content {
-    gap: 2rem;
+    gap: 3.2rem;
   }
 
   .registrationSection,
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    margin-bottom: 1.8rem;
+    margin-bottom: 0;
   }
 }
 
@@ -28,7 +28,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 2rem;
 }
 
 .sectionHeader {
@@ -104,14 +104,14 @@
 .cleanFormGrid2Col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
+  gap: 2rem;
   width: 100%;
 }
 
 .cleanFormGrid3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.6rem;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -130,8 +130,8 @@
 .registrationSection {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding: 2.4rem;
+  gap: 2rem;
+  padding: 3.2rem;
   border-radius: 12px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
@@ -144,8 +144,8 @@
 .rows {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2.4rem;
+  gap: 2.4rem;
+  padding: 3.2rem;
   border-radius: 12px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
@@ -359,7 +359,7 @@
 .row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
+  gap: 2rem;
   width: 100%;
   align-items: start;
 }
@@ -405,7 +405,7 @@
 .dateWithCheckbox {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.2rem;
   flex: 1;
 }
 
