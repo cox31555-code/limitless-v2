@@ -8,12 +8,24 @@
   gap: 3rem;
 }
 
+.progressCard.collapsed .stepsList {
+  display: none;
+}
+
 .progressHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid #e0e6f0;
+}
+
+.progressHeaderContent {
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-  padding-bottom: 2.4rem;
-  border-bottom: 1px solid #e0e6f0;
+  flex: 1;
 }
 
 .progressBar {
@@ -36,6 +48,26 @@
   font-weight: 700;
   color: #1a1a2e;
   letter-spacing: -0.01em;
+}
+
+.collapseBtn {
+  background: transparent;
+  border: none;
+  color: #5a6b7d;
+  cursor: pointer;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  border-radius: 6px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.collapseBtn:hover {
+  color: #0052a3;
+  background: rgba(0, 82, 163, 0.08);
 }
 
 .stepsList {
@@ -121,17 +153,7 @@
   border-color: #0052a3;
   color: #ffffff;
   border-width: 5px;
-  box-shadow: 0 4px 16px rgba(0, 82, 163, 0.35), 0 0 0 4px rgba(0, 82, 163, 0.15);
-  animation: pulseActive 2s ease-in-out infinite;
-}
-
-@keyframes pulseActive {
-  0%, 100% {
-    box-shadow: 0 4px 16px rgba(0, 82, 163, 0.35), 0 0 0 4px rgba(0, 82, 163, 0.15);
-  }
-  50% {
-    box-shadow: 0 4px 16px rgba(0, 82, 163, 0.35), 0 0 0 8px rgba(0, 82, 163, 0);
-  }
+  box-shadow: 0 4px 16px rgba(0, 82, 163, 0.2), 0 0 0 4px rgba(0, 82, 163, 0.1);
 }
 
 .stepButton.completed .stepIcon {
