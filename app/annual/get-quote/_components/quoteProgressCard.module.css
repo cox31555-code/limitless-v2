@@ -116,7 +116,8 @@
   background: #0052a3;
   border-color: #0052a3;
   color: #ffffff;
-  border-width: 5px;
+  border-style: none;
+  border-width: 1px;
   box-shadow: 0 4px 16px rgba(0, 82, 163, 0.2), 0 0 0 4px rgba(0, 82, 163, 0.1);
 }
 
