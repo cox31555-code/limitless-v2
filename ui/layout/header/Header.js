@@ -135,7 +135,8 @@ const Header = () => {
     (isPolicyPage && !isMobile) ||
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/allianz-dashboard") ||
-    (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary"))
+    (pathname.startsWith("/payment") && !pathname.startsWith("/payment-summary")) ||
+    pathname.includes("/get-quote")
   );
 
   if (shouldHideHeader) {
