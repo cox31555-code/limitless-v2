@@ -164,6 +164,7 @@
 
 .searchInput::placeholder {
   color: #a8b2bd;
+  font-weight: 400;
 }
 
 .searchInput:focus {
