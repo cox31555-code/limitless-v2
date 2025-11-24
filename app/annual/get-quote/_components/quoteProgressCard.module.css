@@ -113,8 +113,11 @@
 }
 
 .stepButton.active .stepIcon {
-  border-radius: 50%;
   background: #0052a3;
+  border-color: #0052a3;
+  color: #ffffff;
+  border-style: none;
+  border-width: 1px;
 }
 
 .stepButton.completed .stepIcon {
