@@ -7,7 +7,7 @@
 .contentWrapper {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 5.2rem 3.2rem 4rem;
+  padding: 5.2rem 5.8rem 4rem 5.3rem;
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 5.6rem;
