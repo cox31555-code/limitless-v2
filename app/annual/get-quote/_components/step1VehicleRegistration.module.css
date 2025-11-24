@@ -1,0 +1,432 @@
+.container {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.mainQuestion {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.subText {
+  font-size: 1.4rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.regInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.regInput {
+  width: 100%;
+  padding: 1.8rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  background: #ffffff;
+  border: 2px solid #d5dce3;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: 'Courier New', monospace;
+}
+
+.regInput::placeholder {
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: inherit;
+  color: #a8b2bd;
+  font-weight: 400;
+}
+
+.regInput:focus {
+  border-color: #0388ff;
+  box-shadow: 0 0 0 4px rgba(3, 136, 255, 0.1);
+}
+
+.regInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.regInputError {
+  border-color: #ff4444;
+}
+
+.regInputError:focus {
+  box-shadow: 0 0 0 4px rgba(255, 68, 68, 0.1);
+}
+
+.errorText {
+  font-size: 1.2rem;
+  color: #ff4444;
+  margin: 0;
+  font-weight: 500;
+}
+
+.findBtn {
+  width: 100%;
+  padding: 1.8rem 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.findBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.3);
+}
+
+.findBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.findBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.2rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(213, 220, 227, 0) 0%, #d5dce3 50%, rgba(213, 220, 227, 0) 100%);
+}
+
+.divider::before {
+  margin-right: 1.6rem;
+}
+
+.divider::after {
+  margin-left: 1.6rem;
+}
+
+.dividerText {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #7a8a9d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.manualEntryBtn {
+  width: 100%;
+  padding: 1.6rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0388ff;
+  background: #ffffff;
+  border: 2px solid #0388ff;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.manualEntryBtn:hover {
+  background: #f0f6ff;
+  transform: translateY(-2px);
+}
+
+.manualEntryBtn:active {
+  transform: translateY(0);
+}
+
+.infoBox {
+  display: flex;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0f6ff 0%, #e8f5ff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.15);
+  border-radius: 12px;
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding-top: 0.2rem;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.infoText {
+  font-size: 1.3rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.foundVehicleCard {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.4rem;
+  background: linear-gradient(135deg, #e8f5ff 0%, #f0f6ff 100%);
+  border: 2px solid #0388ff;
+  border-radius: 16px;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.foundVehicleIcon {
+  flex-shrink: 0;
+}
+
+.foundVehicleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.foundVehicleTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0388ff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.foundVehicleDetails {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.foundVehicleReg {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #5a6b7d;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.1em;
+}
+
+.changeVehicleBtn {
+  padding: 1.2rem 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0388ff;
+  background: #ffffff;
+  border: 2px solid #0388ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.changeVehicleBtn:hover {
+  background: #f0f6ff;
+  transform: translateY(-2px);
+}
+
+.changeVehicleBtn:active {
+  transform: translateY(0);
+}
+
+.manualEntryNotice {
+  padding: 1.6rem;
+  background: #fff9e6;
+  border: 1px solid #ffd966;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.manualEntryNotice p {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #664d00;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem 1.6rem;
+    gap: 2.4rem;
+  }
+
+  .mainQuestion {
+    font-size: 2rem;
+  }
+
+  .subText {
+    font-size: 1.3rem;
+  }
+
+  .regInput {
+    padding: 1.6rem 1.8rem;
+    font-size: 1.4rem;
+  }
+
+  .findBtn {
+    padding: 1.6rem 2rem;
+    font-size: 1.4rem;
+  }
+
+  .foundVehicleCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+    padding: 2rem;
+  }
+
+  .changeVehicleBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1.2rem;
+    gap: 2rem;
+  }
+
+  .mainQuestion {
+    font-size: 1.8rem;
+  }
+
+  .subText {
+    font-size: 1.2rem;
+  }
+
+  .regInput {
+    padding: 1.4rem 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .findBtn {
+    padding: 1.4rem 1.8rem;
+    font-size: 1.3rem;
+  }
+
+  .manualEntryBtn {
+    padding: 1.4rem 1.8rem;
+    font-size: 1.3rem;
+  }
+
+  .infoBox {
+    flex-direction: column;
+    padding: 1.6rem;
+    gap: 1.2rem;
+  }
+
+  .infoIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .infoTitle {
+    font-size: 1.4rem;
+  }
+
+  .infoText {
+    font-size: 1.2rem;
+  }
+
+  .foundVehicleCard {
+    padding: 1.6rem;
+  }
+
+  .foundVehicleIcon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .foundVehicleDetails {
+    font-size: 1.4rem;
+  }
+
+  .foundVehicleReg {
+    font-size: 1.2rem;
+  }
+}
