@@ -170,10 +170,9 @@
 }
 
 .dividerText {
-  font-size: 1.05rem;
+  font-size: 0.844rem;
   font-weight: 400;
   color: #414952;
-  text-transform: lowercase;
 }
 
 .manualEntryBtn {

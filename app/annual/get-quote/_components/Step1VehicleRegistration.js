@@ -275,7 +275,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
           </div>
 
           <div className={styles.alternativeOption}>
-            <span className={styles.dividerText}>Or</span>
+            <p className={styles.dividerText}>Or</p>
             <button
               type="button"
               className={styles.manualEntryBtn}
