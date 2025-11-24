@@ -2,6 +2,7 @@
 import React, { useState, useCallback, useRef, useEffect, useReducer } from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
+import RegistrationInput from "./RegistrationInput";
 import styles from "./step1VehicleRegistration.module.css";
 
 const initialState = {
