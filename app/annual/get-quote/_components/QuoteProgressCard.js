@@ -54,28 +54,27 @@ const QuoteProgressCard = ({ currentStep }) => {
           
           return (
             <div key={step.number} className={styles.stepItem}>
-              <button
-                className={`${styles.stepButton} ${isActive ? styles.active : ""} ${isCompleted ? styles.completed : ""}`}
-                onClick={() => toggleStep(step.number)}
-                disabled={!isActive}
-              >
-                <div className={styles.stepIcon}>
-                  {isCompleted ? (
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M4 10L8 14L16 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  ) : (
-                    <span className={styles.stepNumber}>{step.number}</span>
-                  )}
-                </div>
-                <span className={styles.stepTitle}>{step.title}</span>
+              <div className={`${styles.stepButton} ${isActive ? styles.active : ""} ${isCompleted ? styles.completed : ""}`}>
+                <button
+                  className={styles.stepButtonContent}
+                  onClick={() => toggleStep(step.number)}
+                  disabled={!isActive}
+                >
+                  <div className={styles.stepIcon}>
+                    {isCompleted ? (
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10L8 14L16 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    ) : (
+                      <span className={styles.stepNumber}>{step.number}</span>
+                    )}
+                  </div>
+                  <span className={styles.stepTitle}>{step.title}</span>
+                </button>
                 {isActive && step.subSteps && (
                   <button
                     className={styles.stepExpandBtn}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleStep(step.number);
-                    }}
+                    onClick={() => toggleStep(step.number)}
                     aria-label={isExpanded ? "Collapse" : "Expand"}
                   >
                     {isExpanded ? (
@@ -89,7 +88,7 @@ const QuoteProgressCard = ({ currentStep }) => {
                     )}
                   </button>
                 )}
-              </button>
+              </div>
 
               {isActive && isExpanded && step.subSteps && (
                 <ul className={styles.subStepsList}>
