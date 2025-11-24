@@ -195,8 +195,8 @@
 
 @media (max-width: 600px) {
   .progressCard {
-    padding: 1.6rem 0;
-    gap: 1.6rem;
+    padding: 1.8rem 0;
+    gap: 1.8rem;
     background: transparent;
     border-top: 1px solid #e8ecf1;
     border-bottom: 1px solid #e8ecf1;
@@ -204,33 +204,30 @@
 
   .progressHeader {
     border-bottom: 1px solid #e8ecf1;
-    padding-bottom: 1.2rem;
-  }
-
-  .progressHeader {
-    gap: 0.8rem;
-  }
-
-  .progressText {
-    font-size: 1.1rem;
-  }
-
-  .stepButton {
-    padding: 1rem 0.8rem;
+    padding-bottom: 1.4rem;
     gap: 1rem;
   }
 
+  .progressText {
+    font-size: 1.3rem;
+  }
+
+  .stepButton {
+    padding: 1.1rem 0.8rem;
+    gap: 1.1rem;
+  }
+
   .stepIcon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
   .stepNumber {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .stepTitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .subStepsList {
