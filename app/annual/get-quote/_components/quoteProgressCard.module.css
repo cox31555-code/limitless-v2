@@ -232,6 +232,23 @@
   box-shadow: 0 0 8px rgba(0, 82, 163, 0.4);
 }
 
+.connector {
+  position: absolute;
+  left: 13px;
+  top: 48px;
+  bottom: -8px;
+  width: 4px;
+  background: transparent;
+  border-radius: 3px;
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.connectorActive {
+  background: linear-gradient(180deg, #0052a3 0%, #003d7a 100%);
+  box-shadow: 0 0 12px rgba(0, 82, 163, 0.4);
+}
+
 @media (max-width: 768px) {
   .progressCard {
     padding: 0;
