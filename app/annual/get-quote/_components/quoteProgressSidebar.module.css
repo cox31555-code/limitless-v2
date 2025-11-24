@@ -352,6 +352,14 @@
     flex: none;
   }
 
+  .stepsContainer::before {
+    display: none;
+  }
+
+  .stepWrapper::after {
+    display: none;
+  }
+
   .stepWrapper {
     flex-direction: row;
     align-items: center;
