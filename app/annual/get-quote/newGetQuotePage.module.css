@@ -5,9 +5,9 @@
 }
 
 .contentWrapper {
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 4.8rem 6.4rem 4rem;
+  padding: 0 5% 4rem;
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 6rem;
@@ -46,7 +46,7 @@
   .contentWrapper {
     grid-template-columns: 1fr 300px;
     gap: 4rem;
-    padding: 4rem 3.2rem 3.2rem;
+    padding: 0 5% 3.2rem;
   }
 }
 
@@ -54,7 +54,7 @@
   .contentWrapper {
     grid-template-columns: 1fr;
     gap: 3.2rem;
-    padding: 3.2rem 2.4rem;
+    padding: 0 5% 2.4rem;
   }
 
   .mainContent {
@@ -72,7 +72,7 @@
 
 @media (max-width: 600px) {
   .contentWrapper {
-    padding: 2.4rem 2rem;
+    padding: 0 4% 2rem;
     gap: 2.4rem;
   }
 
