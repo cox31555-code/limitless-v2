@@ -685,6 +685,12 @@
 }
 
 @media (max-width: 768px) {
+  .rsuiteSelect :global(.rs-picker) {
+    min-height: 4.8rem !important;
+    padding: 1rem 1.4rem !important;
+    font-size: 1.5rem !important;
+  }
+
   .regInputGroup {
     flex-direction: column;
     gap: 1rem;
