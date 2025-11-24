@@ -201,6 +201,143 @@
   background: #e8f4ff;
 }
 
+.detailsSection {
+  width: 100%;
+  background: transparent;
+  margin: 2.4rem 0 0 0;
+}
+
+.detailsSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 2px solid #e8ecf1;
+}
+
+.detailsSectionTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #004a94;
+  margin: 0;
+}
+
+.changeLink {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.changeLink:hover {
+  color: #003d7a;
+}
+
+.detailsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  gap: 2rem;
+}
+
+.detailLabel {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  flex-shrink: 0;
+  min-width: 140px;
+}
+
+.detailValue {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  text-align: right;
+  flex: 1;
+}
+
+.modificationSection {
+  width: 100%;
+  margin-top: 3.2rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid #e8ecf1;
+}
+
+.modificationQuestion {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #004a94;
+  margin: 0 0 1.2rem 0;
+}
+
+.modificationHelper {
+  font-size: 1.3rem;
+  color: #6b7c8f;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.radioInput {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #0052a3;
+  flex-shrink: 0;
+}
+
+.radioLabel {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  cursor: pointer;
+}
+
+.helpLink {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #0052a3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.helpLink:hover {
+  color: #003d7a;
+}
+
 .infoBox {
   display: flex;
   gap: 2rem;
