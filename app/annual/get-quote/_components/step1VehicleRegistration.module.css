@@ -164,7 +164,7 @@
 .alternativeOption {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.6rem;
   margin: 0;
 }
@@ -754,6 +754,7 @@
   flex-direction: column;
   gap: 0.6rem;
   width: 100%;
+  padding-right: 19.5rem;
 }
 
 .label {
