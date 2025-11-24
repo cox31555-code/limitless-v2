@@ -165,11 +165,12 @@
 .searchInput::placeholder {
   color: #a8b2bd;
   font-weight: 400;
+  font-size: 1.3rem;
 }
 
 .searchInput:focus {
   background: #ffffff;
-  border-color: #0052a3;
+  border-color: #cbd4dd;
   box-shadow: none;
 }
 
