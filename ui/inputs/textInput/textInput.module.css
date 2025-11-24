@@ -416,18 +416,18 @@
   border-radius: 6px;
   outline: none;
   transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-family: 'Courier New', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   box-sizing: border-box;
 }
 
 .customInput::placeholder {
-  text-transform: none;
-  letter-spacing: normal;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #a8b2bd;
   font-weight: 400;
+}
+
+.customInput:hover:not(:disabled):not(.customInputError) {
+  border-color: #0052a3;
+  box-shadow: 0 1px 3px rgba(0, 82, 163, 0.08);
 }
 
 .customInput:focus {
@@ -436,8 +436,9 @@
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
 }
 
-.customInput:disabled {
-  opacity: 0.5;
+.customInput:disabled,
+.customInputDisabled {
+  opacity: 0.6;
   cursor: not-allowed;
   background: #f8f9fb;
 }
@@ -451,9 +452,13 @@
   box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.08) !important;
 }
 
+.customInputError:hover {
+  border-color: #d32f2f !important;
+}
+
 .customInputErrorMsg {
   font-size: 1.2rem;
-  color: #ef4444;
+  color: #d32f2f;
   margin-top: 0.4rem;
   line-height: 1.4;
 }
@@ -463,6 +468,10 @@
     min-height: 4.8rem;
     padding: 1rem 1.4rem;
     font-size: 1.5rem;
+  }
+
+  .customInputLabel {
+    font-size: 1.2rem;
   }
 }
 

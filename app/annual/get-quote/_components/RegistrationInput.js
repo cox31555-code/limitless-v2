@@ -13,7 +13,7 @@ const RegistrationInput = ({
 }) => {
   return (
     <div className={styles.rsuiteFormGroup}>
-      <label className={styles.label}>{label || 'Registration Number'}</label>
+      {label && <label className={styles.label}>{label}</label>}
       <div className={styles.regInputGroupContainer}>
         <input
           type="text"
@@ -22,15 +22,23 @@ const RegistrationInput = ({
           value={value || ""}
           onChange={onChange}
           onKeyPress={onKeyPress}
-          disabled={disabled}
+          disabled={disabled || isLoading}
           maxLength={8}
         />
         <button
-          className={styles.findButton}
+          className={`${styles.findButton} ${(disabled || !value?.trim()) ? styles.findButtonDisabled : ''}`}
           onClick={onButtonClick}
-          disabled={disabled || !value?.trim()}
+          disabled={disabled || !value?.trim() || isLoading}
+          type="button"
         >
-          {isLoading ? 'Searching...' : 'Find my car'}
+          {isLoading ? (
+            <>
+              <span className={styles.spinner}></span>
+              Searching...
+            </>
+          ) : (
+            'Find my car'
+          )}
         </button>
       </div>
       {error && <span className={styles.errorMessage}>{error}</span>}
