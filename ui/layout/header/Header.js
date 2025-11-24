@@ -374,7 +374,7 @@ const Header = () => {
             </li>
           </menu>
         )}
-        {!isDashboard && (
+        {!isDashboard && !isGetQuotePage && (
           <div
             style={{ gap: isDashboard ? "1.2rem" : "" }}
             className={styles.buttons}
@@ -392,6 +392,15 @@ const Header = () => {
               Get a Quote
             </button>
           </div>
+        )}
+        {isGetQuotePage && (
+          <button
+            className={styles.loginBtn}
+            onClick={handleHelpClick}
+            style={{ marginLeft: 'auto' }}
+          >
+            Need help?
+          </button>
         )}
       </header>
       )}
