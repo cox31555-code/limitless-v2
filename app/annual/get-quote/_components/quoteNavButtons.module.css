@@ -1,22 +1,20 @@
 .navContainer {
   width: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(248, 249, 251, 0.95) 15%, rgba(248, 249, 251, 1) 100%);
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  z-index: 50;
-  padding: 2rem 0 2.4rem;
+  background: transparent;
+  padding: 2.4rem 0 0;
+  margin-top: 2.4rem;
 }
 
 .navContent {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 3.2rem;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 3.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.6rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .backBtn {

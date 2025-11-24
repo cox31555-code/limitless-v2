@@ -1,0 +1,102 @@
+"use client";
+import React, { useState } from "react";
+import styles from "./quoteProgressCard.module.css";
+
+const QuoteProgressCard = ({ currentStep }) => {
+  const [expandedStep, setExpandedStep] = useState(1);
+
+  const steps = [
+    {
+      number: 1,
+      title: "Car details",
+      subSteps: ["Your car", "Car value", "Car usage", "Car storage", "Other cars"],
+    },
+    {
+      number: 2,
+      title: "Your details",
+    },
+    {
+      number: 3,
+      title: "Your policy",
+    },
+    {
+      number: 4,
+      title: "Check your answers",
+    },
+  ];
+
+  const totalSteps = 4;
+  const progressPercentage = Math.round(((currentStep - 1) / totalSteps) * 100);
+
+  const toggleStep = (stepNumber) => {
+    if (stepNumber === currentStep) {
+      setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
+    }
+  };
+
+  return (
+    <div className={styles.progressCard}>
+      <div className={styles.progressHeader}>
+        <div className={styles.progressBar}>
+          <div 
+            className={styles.progressFill} 
+            style={{ width: `${progressPercentage}%` }}
+          />
+        </div>
+        <span className={styles.progressText}>{progressPercentage}% complete</span>
+      </div>
+
+      <div className={styles.stepsList}>
+        {steps.map((step) => {
+          const isActive = currentStep === step.number;
+          const isCompleted = currentStep > step.number;
+          const isExpanded = expandedStep === step.number && step.subSteps;
+          
+          return (
+            <div key={step.number} className={styles.stepItem}>
+              <button
+                className={`${styles.stepButton} ${isActive ? styles.active : ""} ${isCompleted ? styles.completed : ""}`}
+                onClick={() => toggleStep(step.number)}
+                disabled={!isActive}
+              >
+                <div className={styles.stepIcon}>
+                  {isCompleted ? (
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <path d="M3 8L6 11L13 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  ) : (
+                    <span className={styles.stepNumber}>{step.number}</span>
+                  )}
+                </div>
+                <span className={styles.stepTitle}>{step.title}</span>
+                {isActive && step.subSteps && (
+                  <svg 
+                    className={`${styles.expandIcon} ${isExpanded ? styles.expanded : ""}`}
+                    width="16" 
+                    height="16" 
+                    viewBox="0 0 16 16" 
+                    fill="none"
+                  >
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+              </button>
+
+              {isActive && isExpanded && step.subSteps && (
+                <ul className={styles.subStepsList}>
+                  {step.subSteps.map((subStep, index) => (
+                    <li key={index} className={styles.subStepItem}>
+                      {subStep}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default QuoteProgressCard;

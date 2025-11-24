@@ -8,7 +8,7 @@ import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
-import QuoteProgressSidebar from "./_components/QuoteProgressSidebar";
+import QuoteProgressCard from "./_components/QuoteProgressCard";
 import QuoteNavButtons from "./_components/QuoteNavButtons";
 import Step1VehicleRegistration from "./_components/Step1VehicleRegistration";
 import QuoteHeader from "./_components/QuoteHeader";
@@ -39,7 +39,6 @@ const AnnualInsuranceContent = () => {
   const searchParams = useSearchParams();
   const [isMounted, setIsMounted] = useState(false);
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
-  const [currentSubStep, setCurrentSubStep] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
@@ -277,41 +276,43 @@ const AnnualInsuranceContent = () => {
     <>
       <LoadingOverlay isVisible={showLoading} />
       <QuoteHeader title="Annual Car Insurance" />
-
-      <div className={styles.pageWrapper} suppressHydrationWarning>
-        <div className={styles.mainContent}>
+      
+      <div className={styles.pageContainer}>
         <div className={styles.contentWrapper}>
-          <form noValidate suppressHydrationWarning>
-            <div className={styles.stepContent}>
-              {currentStep === STEPS.VEHICLE && (
-                <Step1VehicleRegistration
-                  form={form}
-                  onVehicleFound={setFoundVehicleData}
-                  autoTriggerLookup={shouldAutoTrigger}
-                />
-              )}
-              {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
-              {currentStep === STEPS.PERSONAL && <AnnualPersonalDetailsForm form={form} />}
-              {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
-              {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
-            </div>
+          <div className={styles.mainContent}>
+            <form noValidate suppressHydrationWarning>
+              <div className={styles.stepContent}>
+                {currentStep === STEPS.VEHICLE && (
+                  <Step1VehicleRegistration
+                    form={form}
+                    onVehicleFound={setFoundVehicleData}
+                    autoTriggerLookup={shouldAutoTrigger}
+                  />
+                )}
+                {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
+                {currentStep === STEPS.PERSONAL && <AnnualPersonalDetailsForm form={form} />}
+                {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
+                {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
+              </div>
 
-            <QuoteNavButtons
-              currentStep={currentStep}
-              totalSteps={5}
-              onNext={handleNextStep}
-              onBack={handlePreviousStep}
-              onSubmit={onSubmit}
-              isLoading={isSubmitting}
-              nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Continue"}
-              backLabel="Back"
-            />
-          </form>
+              <QuoteNavButtons
+                currentStep={currentStep}
+                totalSteps={5}
+                onNext={handleNextStep}
+                onBack={handlePreviousStep}
+                onSubmit={onSubmit}
+                isLoading={isSubmitting}
+                nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Continue"}
+                backLabel="Back"
+              />
+            </form>
+          </div>
+
+          <div className={styles.sidebarArea}>
+            <QuoteProgressCard currentStep={currentStep} />
+          </div>
         </div>
       </div>
-
-      <QuoteProgressSidebar currentStep={currentStep} currentSubStep={currentSubStep} />
-    </div>
     </>
   );
 };

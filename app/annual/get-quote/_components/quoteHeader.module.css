@@ -1,12 +1,12 @@
 .headerContainer {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  background: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .headerContent {
@@ -29,6 +29,7 @@
   cursor: pointer;
   transition: opacity 0.25s ease;
   flex-shrink: 0;
+  filter: brightness(0) invert(1);
 }
 
 .logo:hover {
@@ -43,7 +44,7 @@
 .title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #ffffff;
   margin: 0;
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -60,10 +61,10 @@
   align-items: center;
   gap: 0.8rem;
   padding: 1rem 1.6rem;
-  background: transparent;
-  border: 1.5px solid #d5dce3;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
-  color: #5a6b7d;
+  color: #ffffff;
   font-size: 1.3rem;
   font-weight: 600;
   cursor: pointer;
@@ -72,9 +73,9 @@
 }
 
 .helpBtn:hover {
-  border-color: #0388ff;
-  color: #0388ff;
-  background: #f0f6ff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
 }
 
 .helpBtn svg {
