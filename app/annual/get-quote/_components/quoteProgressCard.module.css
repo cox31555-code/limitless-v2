@@ -130,7 +130,7 @@
   z-index: 3;
 }
 
-.stepButton.active .stepIcon {
+.stepButton.active .stepButtonContent .stepIcon {
   background: #0052a3;
   border-color: #0052a3;
   color: #ffffff;
@@ -138,7 +138,7 @@
   border-width: 1px;
 }
 
-.stepButton.completed .stepIcon {
+.stepButton.completed .stepButtonContent .stepIcon {
   background: #ffffff;
   border-color: #0052a3;
   color: #0052a3;
