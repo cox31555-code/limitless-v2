@@ -1,13 +1,11 @@
 "use client";
 import React, { useState, useEffect, useReducer, useCallback, useRef } from "react";
+import { SelectPicker, InputGroup, Input, Button, Loader } from "rsuite";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
-import FormTextInput from "@/ui/inputs/FormTextInput";
-import FormDropdown from "@/ui/inputs/FormDropdown";
 import FormDateInput from "@/ui/inputs/FormDateInput";
 import Title from "@/ui/insurance-quotes/title/Title";
 import VehicleModificationsModal from "./VehicleModificationsModal";
 import styles from "./annualVehicle.module.css";
-import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
 import { buildVehicleQuery, clearDependentFields, shouldAutoSelect } from "../../../temporary/get-quote/helperFucntion";
 
 // Simplified state for vehicle data
