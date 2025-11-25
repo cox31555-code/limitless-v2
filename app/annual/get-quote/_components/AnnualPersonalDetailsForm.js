@@ -381,7 +381,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>About You</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('about') && !isTileDisabled('about') && <>
+          {isTileExpanded('about') && <>
 
           <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
@@ -464,7 +464,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Where You Live</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('location') && !isTileDisabled('location') && <>
+          {isTileExpanded('location') && <>
 
           <div className={styles.cleanPostcodeRow}>
             <FormTextInput
@@ -509,7 +509,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Your Employment</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('employment') && !isTileDisabled('employment') && <>
+          {isTileExpanded('employment') && <>
 
           <div className={styles.cleanFormGrid2Col}>
             <FormDropdown
@@ -574,7 +574,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Parking & Storage</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('parking') && !isTileDisabled('parking') && <>
+          {isTileExpanded('parking') && <>
 
           <div className={styles.cleanFormGrid2Col}>
             <div className={styles.cleanSelectionCard}>
@@ -626,7 +626,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Usage Details</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('usage') && !isTileDisabled('usage') && <>
+          {isTileExpanded('usage') && <>
 
           <div className={styles.cleanFormGrid1Col}>
             <p className={styles.cleanLabel}>What do you use the car for?</p>
@@ -693,7 +693,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Your Driving Record</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('driving') && !isTileDisabled('driving') && <>
+          {isTileExpanded('driving') && <>
 
           <div className={styles.cleanFormGrid3Col}>
             <FormDropdown
@@ -798,7 +798,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Additional Information</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('additional') && !isTileDisabled('additional') && <>
+          {isTileExpanded('additional') && <>
 
           <div className={styles.cleanAdditionalInfoContainer}>
             <div className={styles.cleanFormGrid1Col}>
@@ -845,7 +845,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Important Declarations</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('declarations') && !isTileDisabled('declarations') && <>
+          {isTileExpanded('declarations') && <>
 
           <div className={styles.cleanDeclarationsContainer}>
             <div className={styles.cleanDeclarationItem}>
@@ -998,7 +998,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
             <h3 className={modalButtonStyles.sectionLabel}>Additional Drivers</h3>
             <span className={modalButtonStyles.expandIcon}>+</span>
           </button>
-          {isTileExpanded('additionalDrivers') && !isTileDisabled('additionalDrivers') && <>
+          {isTileExpanded('additionalDrivers') && <>
 
           <div className={styles.cleanAdditionalInfoContainer}>
             <div className={styles.cleanFormGrid1Col}>
