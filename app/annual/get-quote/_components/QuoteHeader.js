@@ -2,9 +2,10 @@
 import React from "react";
 import styles from "./quoteHeader.module.css";
 
-const QuoteHeader = ({ currentStep = 1, totalSteps = 5 }) => {
+const QuoteHeader = ({ currentStep = 1, totalSteps = 5, subtitle }) => {
   const stepNames = ["Car Details", "Cover Details", "Personal Details", "Optional Extras", "Review"];
-  
+  const displayName = subtitle || stepNames[currentStep - 1];
+
   return (
     <section className={styles.heroSection} suppressHydrationWarning>
       <div className={styles.heroContent}>
@@ -13,7 +14,7 @@ const QuoteHeader = ({ currentStep = 1, totalSteps = 5 }) => {
           <div className={styles.stepInfo}>
             <span className={styles.stepBadge}>Step {currentStep} of {totalSteps}</span>
             <span className={styles.separator}>•</span>
-            <span className={styles.stepName}>{stepNames[currentStep - 1]}</span>
+            <span className={styles.stepName}>{displayName}</span>
           </div>
         </div>
         
