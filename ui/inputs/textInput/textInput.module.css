@@ -551,6 +551,14 @@
     padding: 0.9rem 1.2rem 1.05rem 4.25rem;
   }
 
+  .customInputWithSuffix {
+    padding: 0.9rem 4rem 1.05rem 1.2rem;
+  }
+
+  .customInputSuffix {
+    right: 1.2rem;
+  }
+
   .customInputPrefix {
     left: 1.2rem;
     font-size: 1.4rem;
