@@ -345,8 +345,32 @@
     flex-direction: column;
   }
 
+  .radioInput {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radioInput:checked::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  .checkbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkbox:checked::after {
+    width: 4px;
+    height: 7px;
+  }
+
+  .checkboxLabel {
+    font-size: 1.3rem;
+  }
+
   .radioLabel {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .radioDescription {
