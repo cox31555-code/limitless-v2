@@ -231,6 +231,10 @@ const AnnualInsuranceContent = () => {
     "userDetails.livedInUKSinceBirth",
   ];
 
+  const step2EmploymentFields = [
+    "userDetails.employmentStatus",
+  ];
+
   const basePersonalFields = [
     "userDetails.firstName",
     "userDetails.surname",
