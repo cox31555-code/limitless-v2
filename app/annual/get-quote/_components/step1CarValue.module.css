@@ -1,54 +1,67 @@
 .container {
   width: 100%;
+  background: transparent;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 5.5rem;
 }
 
-.header {
-  border-bottom: 1px solid #e8ecf1;
+.stepTitle {
   padding-bottom: 2rem;
+  border-bottom: 2px solid #e8ecf1;
+  margin-bottom: 2rem;
 }
 
-.title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.question {
-  font-size: 2rem;
+.stepTitleText {
+  font-size: 1.6rem;
   font-weight: 600;
-  color: #2855ac;
+  color: #004a94;
   margin: 0;
   line-height: 1.4;
 }
 
-.description {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #5a6b7d;
-  line-height: 1.6;
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.mainQuestion {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #004284;
   margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.subText {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 0;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
 }
 
 .estimatedInfo {
-  margin: 0.5rem 0;
+  margin: 0;
 }
 
 .estimatedLabel {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: #6b7c8f;
   margin: 0;
+  line-height: 1.6;
 }
 
 .estimatedAmount {
@@ -57,74 +70,76 @@
 }
 
 .inputWrapper {
-  max-width: 26rem;
-  margin: 1rem 0;
+  max-width: 100%;
 }
 
-.whyLink {
+.helpLink {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #0052a3;
   background: none;
   border: none;
-  color: #0f5c3e;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: underline;
   cursor: pointer;
+  text-decoration: underline;
   padding: 0;
   text-align: left;
   transition: color 0.2s ease;
 }
 
-.whyLink:hover {
-  color: #0a3d28;
+.helpLink:hover {
+  color: #003d7a;
 }
 
-.whyLink:focus {
-  outline: 2px solid #0f5c3e;
+.helpLink:focus {
+  outline: 2px solid #0052a3;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 768px) {
   .container {
-    gap: 2.4rem;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .question {
-    font-size: 1.8rem;
-  }
-
-  .description {
-    font-size: 1.4rem;
-  }
-
-  .estimatedLabel {
-    font-size: 1.4rem;
-  }
-
-  .whyLink {
-    font-size: 1.4rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .container {
-    gap: 2rem;
+    padding: 0;
+    gap: 3.2rem;
   }
 
   .header {
-    padding-bottom: 1.5rem;
+    padding-bottom: 0;
   }
 
-  .title {
+  .mainQuestion {
+    font-size: 2rem;
+  }
+
+  .subText {
+    font-size: 1.3rem;
+  }
+
+  .estimatedLabel {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+    gap: 2.8rem;
+    margin: 0;
+  }
+
+  .mainQuestion {
     font-size: 1.8rem;
   }
 
-  .question {
-    font-size: 1.6rem;
+  .subText {
+    font-size: 1.2rem;
+  }
+
+  .estimatedLabel {
+    font-size: 1.2rem;
+  }
+
+  .helpLink {
+    font-size: 1.2rem;
   }
 
   .inputWrapper {
