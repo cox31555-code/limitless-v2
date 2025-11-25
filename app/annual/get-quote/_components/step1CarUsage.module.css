@@ -261,7 +261,6 @@
 
 .mileageInputWrapper :global(.customInput) {
   min-height: 5rem;
-  padding: 1.2rem 1.6rem;
   font-size: 1.6rem;
 }
 
