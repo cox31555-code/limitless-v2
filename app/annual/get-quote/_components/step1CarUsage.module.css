@@ -411,4 +411,14 @@
   .radioGroup {
     gap: 1.6rem;
   }
+
+  .mileageInputWrapper {
+    max-width: 100%;
+  }
+
+  .mileageInputWrapper :global(.customInput) {
+    min-height: 4.4rem;
+    padding: 0.9rem 1.2rem;
+    font-size: 1.4rem;
+  }
 }
