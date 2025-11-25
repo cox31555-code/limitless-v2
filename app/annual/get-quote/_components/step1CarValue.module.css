@@ -131,15 +131,6 @@
   .estimatedLabel {
     font-size: 1.3rem;
   }
-
-  .currencyInput {
-    padding: 1.6rem 1.8rem 1.6rem 3.2rem;
-    font-size: 1.4rem;
-  }
-
-  .currencyPrefix {
-    font-size: 1.4rem;
-  }
 }
 
 @media (max-width: 600px) {
