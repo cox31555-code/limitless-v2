@@ -50,22 +50,26 @@ const Step2Household = ({ form }) => {
               />
             </div>
 
-            <button type="button" className={styles.findAddressBtn}>
-              Find address
-            </button>
-          </div>
+            <div className={styles.addressActionsRow}>
+              <button type="button" className={styles.findAddressBtn}>
+                Find address
+              </button>
 
-          <div className={styles.orDivider}>
-            <span>Or</span>
-          </div>
+              <div className={styles.orSection}>
+                <div className={styles.orDivider}>
+                  <span>Or</span>
+                </div>
 
-          <button 
-            type="button" 
-            className={styles.expandableLink}
-            onClick={() => setExpandedManualEntry(!expandedManualEntry)}
-          >
-            Enter the full address yourself
-          </button>
+                <button
+                  type="button"
+                  className={styles.expandableLink}
+                  onClick={() => setExpandedManualEntry(!expandedManualEntry)}
+                >
+                  Enter the full address yourself
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Home Ownership Section */}
