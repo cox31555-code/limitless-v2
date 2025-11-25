@@ -1,12 +1,19 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step2Employment.module.css";
 
 const Step2Employment = ({ form }) => {
   const { watch, setValue } = form;
+  const [expandedJobTitle, setExpandedJobTitle] = useState(false);
+  const [expandedWhyJobTitle, setExpandedWhyJobTitle] = useState(false);
+  const [expandedIndustry, setExpandedIndustry] = useState(false);
+  const [expandedWhyIndustry, setExpandedWhyIndustry] = useState(false);
 
   const employmentStatus = watch("userDetails.employmentStatus");
+  const occupation = watch("userDetails.occupation");
+  const industry = watch("userDetails.industry");
 
   const employmentOptions = [
     "Employed",
@@ -16,6 +23,8 @@ const Step2Employment = ({ form }) => {
     "Student",
     "Houseperson",
   ];
+
+  const isEmployedOrSelfEmployed = ["Employed", "Self Employed"].includes(employmentStatus);
 
   const handleEmploymentChange = (value) => {
     setValue("userDetails.employmentStatus", value, {
@@ -43,6 +52,116 @@ const Step2Employment = ({ form }) => {
             />
           </div>
         </div>
+
+        {isEmployedOrSelfEmployed && (
+          <>
+            <div className={styles.section}>
+              <h3 className={styles.mainQuestion}>What do you do for a living?</h3>
+              <p className={styles.subText}>Start typing and choose from the list.</p>
+
+              <div className={styles.fieldWrapper}>
+                <CustomTextInput
+                  type="text"
+                  placeholder=""
+                  value={occupation || ""}
+                  onChange={(e) => {
+                    setValue("userDetails.occupation", e.target.value, {
+                      shouldValidate: true,
+                      shouldDirty: true,
+                    });
+                  }}
+                />
+              </div>
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedJobTitle(!expandedJobTitle)}
+              >
+                <span className={styles.expandableIcon}>
+                  {expandedJobTitle ? "▼" : "▼"}
+                </span>
+                What if my job title isn't listed?
+              </button>
+
+              {expandedJobTitle && (
+                <div className={styles.expandableContent}>
+                  If you can't find your exact job title in the dropdown list, select the closest match or a general category. Our system will use this information to assess your insurance risk appropriately.
+                </div>
+              )}
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedWhyJobTitle(!expandedWhyJobTitle)}
+              >
+                <span className={styles.expandableIcon}>
+                  {expandedWhyJobTitle ? "▼" : "▼"}
+                </span>
+                Why are we asking?
+              </button>
+
+              {expandedWhyJobTitle && (
+                <div className={styles.expandableContent}>
+                  Your occupation helps us determine the appropriate insurance premium and coverage for your specific job role and associated risks.
+                </div>
+              )}
+            </div>
+
+            <div className={styles.section}>
+              <h3 className={styles.mainQuestion}>What type of industry do you work in?</h3>
+              <p className={styles.subText}>Start typing and choose from the list.</p>
+
+              <div className={styles.fieldWrapper}>
+                <CustomTextInput
+                  type="text"
+                  placeholder=""
+                  value={industry || ""}
+                  onChange={(e) => {
+                    setValue("userDetails.industry", e.target.value, {
+                      shouldValidate: true,
+                      shouldDirty: true,
+                    });
+                  }}
+                />
+              </div>
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedIndustry(!expandedIndustry)}
+              >
+                <span className={styles.expandableIcon}>
+                  {expandedIndustry ? "▼" : "▼"}
+                </span>
+                What if my industry isn't listed?
+              </button>
+
+              {expandedIndustry && (
+                <div className={styles.expandableContent}>
+                  If you can't find your specific industry, choose the closest category. This helps us accurately assess your insurance needs based on your professional sector.
+                </div>
+              )}
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedWhyIndustry(!expandedWhyIndustry)}
+              >
+                <span className={styles.expandableIcon}>
+                  {expandedWhyIndustry ? "▼" : "▼"}
+                </span>
+                Why are we asking?
+              </button>
+
+              {expandedWhyIndustry && (
+                <div className={styles.expandableContent}>
+                  Your industry helps us understand your work environment and the associated risks. This information is important for calculating an appropriate insurance premium.
+                </div>
+              )}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
