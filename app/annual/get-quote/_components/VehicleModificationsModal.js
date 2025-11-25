@@ -76,12 +76,18 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
   if (!isOpen) return null;
 
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+    <div className={styles.overlay} onClick={handleClose}>
+      <div
+        className={styles.modal}
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modifications-modal-title"
+      >
         {/* Header */}
         <div className={styles.header}>
-          <h3 className={styles.title}>Vehicle Modifications</h3>
-          <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
+          <h3 id="modifications-modal-title" className={styles.title}>Vehicle Modifications</h3>
+          <button className={styles.closeBtn} onClick={handleClose} aria-label="Close modal">
             ×
           </button>
         </div>
@@ -89,18 +95,50 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
         {/* Content */}
         <div className={styles.content}>
           <p className={styles.subtitle}>Select all modifications that apply to your vehicle:</p>
+
+          {/* Search Input */}
+          <div className={styles.searchContainer}>
+            <input
+              type="text"
+              placeholder="Search modifications..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={styles.searchInput}
+              aria-label="Search modifications"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery("")}
+                className={styles.clearSearchBtn}
+                aria-label="Clear search"
+              >
+                ×
+              </button>
+            )}
+          </div>
+
           <div className={styles.modificationsList}>
-            {MODIFICATION_OPTIONS.map((modification) => (
-              <label key={modification} className={styles.modificationItem}>
-                <input
-                  type="checkbox"
-                  checked={selected.includes(modification)}
-                  onChange={() => handleToggle(modification)}
-                  className={styles.checkbox}
-                />
-                <span className={styles.label}>{modification}</span>
-              </label>
-            ))}
+            {filteredModifications.length > 0 ? (
+              filteredModifications.map((modification, index) => (
+                <label
+                  key={modification}
+                  className={styles.modificationItem}
+                  style={{ animationDelay: `${index * 0.03}s` }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={selected.includes(modification)}
+                    onChange={() => handleToggle(modification)}
+                    className={styles.checkbox}
+                    aria-label={modification}
+                  />
+                  <span className={styles.label}>{modification}</span>
+                </label>
+              ))
+            ) : (
+              <p className={styles.noResults}>No modifications found matching "{searchQuery}"</p>
+            )}
           </div>
         </div>
 
@@ -110,10 +148,15 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
             Clear Selection
           </button>
           <div className={styles.actionButtons}>
-            <button className={styles.cancelBtn} onClick={onClose} type="button">
+            <button className={styles.cancelBtn} onClick={handleClose} type="button">
               Cancel
             </button>
-            <button className={styles.confirmBtn} onClick={handleConfirm} type="button">
+            <button
+              className={styles.confirmBtn}
+              onClick={handleConfirm}
+              type="button"
+              data-has-selection={selected.length > 0}
+            >
               Confirm ({selected.length})
             </button>
           </div>
