@@ -152,7 +152,7 @@
 .radioGroup {
   display: flex;
   flex-direction: column;
-  gap: 1.56rem;
+  gap: 0.975rem;
 }
 
 .radioOption {
