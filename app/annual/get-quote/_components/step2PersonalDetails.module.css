@@ -61,10 +61,18 @@
   gap: 2.4rem;
 }
 
+.fieldGroup .fieldWrapper {
+  max-width: 180px;
+}
+
 .fieldWrapper {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+}
+
+.fieldWrapper:not(.fieldGroup .fieldWrapper) {
+  max-width: 450px;
 }
 
 .fieldLabel {
