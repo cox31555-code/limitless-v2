@@ -854,6 +854,36 @@
     font-size: 1.4rem;
   }
 
+  .modificationsSection {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    gap: 1.4rem;
+  }
+
+  .modificationsHeading {
+    font-size: 1.6rem;
+  }
+
+  .addModificationBtn {
+    font-size: 1.3rem;
+    padding: 0.9rem 1.8rem;
+  }
+
+  .modificationsTagsList {
+    gap: 0.8rem;
+  }
+
+  .modificationTag {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .removeTagBtn {
+    width: 16px;
+    height: 16px;
+    font-size: 1.4rem;
+  }
+
   .stepTitle {
     padding-bottom: 1.4rem;
   }
