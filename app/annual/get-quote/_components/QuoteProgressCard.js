@@ -22,6 +22,7 @@ const QuoteProgressCard = ({ currentStep }) => {
     {
       number: STEPS.PERSONAL,
       title: "Your details",
+      subSteps: ["About you", "Your household"],
     },
     {
       number: STEPS.COVER,
