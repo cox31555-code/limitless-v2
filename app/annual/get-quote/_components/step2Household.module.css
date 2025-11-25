@@ -205,11 +205,13 @@
   transition: color 0.2s ease;
   margin: 0;
   display: inline;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-.orSection .expandableLink {
-  margin-top: 0;
-  margin-bottom: 0;
+.expandableLink:has(.expandableIcon) {
+  display: flex;
+  margin-top: 1.2rem;
 }
 
 .expandableLink:hover {
