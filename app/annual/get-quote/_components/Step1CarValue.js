@@ -1,12 +1,19 @@
 "use client";
-import React from "react";
-import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
+import React, { useEffect } from "react";
 import styles from "./step1CarValue.module.css";
 
 const Step1CarValue = ({ form }) => {
-  const { register, formState: { errors }, watch } = form;
-  
+  const { register, formState: { errors }, watch, setValue } = form;
+
   const estimatedValue = watch("vehicleDetails.estimatedValue");
+  const carValue = watch("vehicleDetails.carValue");
+
+  // Set carValue from estimatedValue on mount
+  useEffect(() => {
+    if (estimatedValue && !carValue) {
+      setValue("vehicleDetails.carValue", estimatedValue);
+    }
+  }, [estimatedValue, carValue, setValue]);
 
   return (
     <div className={styles.container}>
