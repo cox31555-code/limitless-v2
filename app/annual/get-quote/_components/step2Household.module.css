@@ -409,4 +409,21 @@
   .fieldWrapper {
     max-width: 100%;
   }
+
+  .foundAddressCard {
+    max-width: 100%;
+    padding: 1.6rem;
+  }
+
+  .foundAddressTitle {
+    font-size: 1.2rem;
+  }
+
+  .foundAddressDetails {
+    font-size: 1.3rem;
+  }
+
+  .changeAddressLink {
+    font-size: 1.3rem;
+  }
 }
