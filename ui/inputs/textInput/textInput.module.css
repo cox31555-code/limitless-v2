@@ -484,7 +484,7 @@
 }
 
 .customInputWithPrefix {
-  padding: 1.2rem 1.6rem 1.5rem 4.625rem;
+  padding: 1.2rem 1.6rem 1.5rem 7rem;
 }
 
 .customInput[type="number"]::-webkit-outer-spin-button,
