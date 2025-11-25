@@ -307,16 +307,23 @@ const AnnualInsuranceContent = () => {
   };
 
   const handlePreviousStep = () => {
-    // Handle Step 1 sub-step navigation
-    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
-      setVehicleSubStep("carStorage");
+    // Handle Step 2 sub-step navigation
+    if (currentStep === STEPS.PERSONAL && personalSubStep === "household") {
+      setPersonalSubStep("aboutYou");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
-    if (currentStep === STEPS.PERSONAL) {
+    if (currentStep === STEPS.PERSONAL && personalSubStep === "aboutYou") {
       setCurrentStep(STEPS.VEHICLE);
       setVehicleSubStep("otherCars");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // Handle Step 1 sub-step navigation
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
+      setVehicleSubStep("carStorage");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
