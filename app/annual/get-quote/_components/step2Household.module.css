@@ -202,12 +202,16 @@
   transition: color 0.2s ease;
   margin: 0;
   display: inline;
-  align-items: center;
-  gap: 0.6rem;
 }
 
-.expandableLink:has(.expandableIcon) {
+.orSection .expandableLink {
+  line-height: 1.4;
+}
+
+.expandableLink.withIcon {
   display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin-top: 1.2rem;
 }
 
