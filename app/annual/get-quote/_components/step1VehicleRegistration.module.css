@@ -430,6 +430,8 @@
   border-left: 3px solid #0052a3;
   border-radius: 8px;
   animation: slideIn 0.4s ease;
+  max-width: 680px;
+  width: 100%;
 }
 
 @keyframes slideIn {
@@ -473,9 +475,9 @@
 }
 
 .foundVehicleReg {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #6b7c8f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #5a6b7d;
   margin: 0;
   font-family: 'Courier New', monospace;
   letter-spacing: 0.12em;
