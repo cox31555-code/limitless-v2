@@ -208,6 +208,8 @@ const AnnualInsuranceContent = () => {
     "carUsage.keepingCarDuringDay",
     "carUsage.keepingCarDuringNight",
     "carUsage.usageType",
+    "carUsage.otherVehiclesType",
+    "carUsage.otherVehicles",
     "carUsage.licenseType",
     "carUsage.licenseHeld",
     "carUsage.NCB",
