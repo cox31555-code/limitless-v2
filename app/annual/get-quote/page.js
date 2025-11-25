@@ -266,6 +266,13 @@ const AnnualInsuranceContent = () => {
   };
 
   const handlePreviousStep = () => {
+    // Handle Step 1 sub-step navigation
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue") {
+      setVehicleSubStep("registration");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep > STEPS.VEHICLE) {
       setCurrentStep(currentStep - 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
