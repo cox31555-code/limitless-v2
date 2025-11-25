@@ -407,8 +407,11 @@ const AnnualInsuranceContent = () => {
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars" && (
                   <Step1OtherCars form={form} />
                 )}
-                {currentStep === STEPS.PERSONAL && (
+                {currentStep === STEPS.PERSONAL && personalSubStep === "aboutYou" && (
                   <Step2PersonalDetails form={form} />
+                )}
+                {currentStep === STEPS.PERSONAL && personalSubStep === "household" && (
+                  <Step2Household form={form} />
                 )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
