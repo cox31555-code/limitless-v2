@@ -180,14 +180,30 @@
   padding: 1rem 1.2rem;
   border-radius: 6px;
   background: transparent;
-  border: none;
+  border-left: 3px solid transparent;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.25s ease;
   user-select: none;
+  opacity: 0;
+  animation: fadeInItem 0.3s ease forwards;
+}
+
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modificationItem:hover {
-  background: rgba(3, 136, 255, 0.05);
+  background: rgba(3, 136, 255, 0.08);
+  border-left-color: #0388ff;
+  padding-left: calc(1.2rem - 3px);
+  transform: translateX(2px);
 }
 
 .modificationItem input:checked ~ .label {
