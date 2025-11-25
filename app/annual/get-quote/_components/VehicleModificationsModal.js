@@ -23,10 +23,29 @@ const MODIFICATION_OPTIONS = [
 
 const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModifications = [] }) => {
   const [selected, setSelected] = useState(selectedModifications);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     setSelected(selectedModifications);
   }, [selectedModifications, isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
 
   const handleToggle = (modification) => {
     setSelected((prev) =>
@@ -38,11 +57,21 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
 
   const handleConfirm = () => {
     onConfirm(selected);
+    setSearchQuery("");
   };
 
   const handleClear = () => {
     setSelected([]);
   };
+
+  const handleClose = () => {
+    setSearchQuery("");
+    onClose();
+  };
+
+  const filteredModifications = MODIFICATION_OPTIONS.filter((mod) =>
+    mod.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   if (!isOpen) return null;
 
