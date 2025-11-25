@@ -34,7 +34,7 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
 
     const handleEscape = (e) => {
       if (e.key === "Escape") {
-        onClose();
+        handleClose();
       }
     };
 
@@ -45,7 +45,7 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
       document.body.style.overflow = "";
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   const handleToggle = (modification) => {
     setSelected((prev) =>
@@ -76,88 +76,97 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
   if (!isOpen) return null;
 
   return (
-    <div className={styles.overlay} onClick={handleClose}>
-      <div
-        className={styles.modal}
+    <div className={styles.modalOverlay} onClick={handleClose}>
+      <div 
+        className={styles.modalContent} 
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="modifications-modal-title"
       >
-        {/* Header */}
-        <div className={styles.header}>
-          <h3 id="modifications-modal-title" className={styles.title}>Vehicle Modifications</h3>
+        <div className={styles.modalHeader}>
+          <h2 id="modifications-modal-title">Vehicle Modifications</h2>
           <button className={styles.closeBtn} onClick={handleClose} aria-label="Close modal">
             ×
           </button>
         </div>
 
-        {/* Content */}
-        <div className={styles.content}>
-          <p className={styles.subtitle}>Select all modifications that apply to your vehicle:</p>
-
-          {/* Search Input */}
-          <div className={styles.searchContainer}>
-            <input
-              type="text"
-              placeholder="Search modifications..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className={styles.searchInput}
-              aria-label="Search modifications"
-            />
-            {searchQuery && (
-              <button
-                type="button"
-                onClick={() => setSearchQuery("")}
-                className={styles.clearSearchBtn}
-                aria-label="Clear search"
-              >
-                ×
-              </button>
-            )}
+        <div className={styles.modalBody}>
+          <div className={styles.formSection}>
+            <label className={styles.formLabel}>Select all modifications that apply to your vehicle</label>
+            <p className={styles.helperText}>
+              Choose from the list below. You can search for specific modifications or scroll through all options.
+            </p>
           </div>
 
-          <div className={styles.modificationsList}>
-            {filteredModifications.length > 0 ? (
-              filteredModifications.map((modification, index) => (
-                <label
-                  key={modification}
-                  className={styles.modificationItem}
-                  style={{ animationDelay: `${index * 0.03}s` }}
+          <div className={styles.searchSection}>
+            <div className={styles.searchInputWrapper}>
+              <input
+                type="text"
+                placeholder="Search modifications..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className={styles.searchInput}
+                aria-label="Search modifications"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  className={styles.clearSearchBtn}
+                  aria-label="Clear search"
                 >
-                  <input
-                    type="checkbox"
-                    checked={selected.includes(modification)}
-                    onChange={() => handleToggle(modification)}
-                    className={styles.checkbox}
-                    aria-label={modification}
-                  />
-                  <span className={styles.label}>{modification}</span>
-                </label>
-              ))
+                  ×
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.modificationsListContainer}>
+            {filteredModifications.length > 0 ? (
+              <div className={styles.modificationsList}>
+                {filteredModifications.map((modification) => (
+                  <label key={modification} className={styles.checkboxLabel}>
+                    <input
+                      type="checkbox"
+                      checked={selected.includes(modification)}
+                      onChange={() => handleToggle(modification)}
+                      className={styles.checkbox}
+                      aria-label={modification}
+                    />
+                    <span className={styles.checkboxText}>{modification}</span>
+                  </label>
+                ))}
+              </div>
             ) : (
-              <p className={styles.noResults}>No modifications found matching "{searchQuery}"</p>
+              <div className={styles.noResults}>
+                <p>No modifications found matching "{searchQuery}"</p>
+              </div>
             )}
           </div>
+
+          {selected.length > 0 && (
+            <div className={styles.selectedCount}>
+              {selected.length} modification{selected.length !== 1 ? 's' : ''} selected
+            </div>
+          )}
         </div>
 
-        {/* Footer */}
-        <div className={styles.footer}>
-          <button className={styles.clearBtn} onClick={handleClear} type="button">
-            Clear Selection
+        <div className={styles.modalFooter}>
+          <button 
+            type="button" 
+            className={styles.clearBtn} 
+            onClick={handleClear}
+            disabled={selected.length === 0}
+          >
+            Clear All
           </button>
           <div className={styles.actionButtons}>
-            <button className={styles.cancelBtn} onClick={handleClose} type="button">
+            <button type="button" className={styles.cancelBtn} onClick={handleClose}>
               Cancel
             </button>
-            <button
-              className={styles.confirmBtn}
-              onClick={handleConfirm}
-              type="button"
-              data-has-selection={selected.length > 0}
-            >
-              Confirm ({selected.length})
+            <button type="button" className={styles.confirmBtn} onClick={handleConfirm}>
+              Confirm {selected.length > 0 && `(${selected.length})`}
             </button>
           </div>
         </div>
