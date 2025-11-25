@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
-import FormAutocomplete from "@/ui/inputs/FormAutocomplete";
 import styles from "./step2Employment.module.css";
 import { occupationOptions, industryOptions } from "@/app/temporary/get-quote/data";
 
