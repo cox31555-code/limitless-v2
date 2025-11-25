@@ -422,6 +422,10 @@
     max-width: 100%;
   }
 
+  .mileageInputWrapper :global(.customInputWithSuffix) {
+    padding: 0.9rem 6.5rem 1.05rem 1.2rem;
+  }
+
   .mileageInputWrapper :global(.customInput) {
     min-height: 4.4rem;
     font-size: 1.4rem;
