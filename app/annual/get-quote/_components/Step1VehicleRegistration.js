@@ -293,30 +293,41 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
       {vehicleModified === "Yes" && (
         <div className={styles.modificationsSection}>
           <h3 className={styles.modificationsHeading}>Your car modifications</h3>
+
+          {vehicleModifications.length > 0 && (
+            <div className={styles.modificationsTagsList}>
+              {vehicleModifications.map((mod) => (
+                <div key={mod} className={styles.modificationCard}>
+                  <span className={styles.modificationName}>{mod}</span>
+                  <div className={styles.modificationActions}>
+                    <button
+                      type="button"
+                      className={styles.removeTextBtn}
+                      onClick={() => handleRemoveModification(mod)}
+                      aria-label={`Remove ${mod}`}
+                    >
+                      Remove
+                    </button>
+                    <button
+                      type="button"
+                      className={styles.changeModificationBtn}
+                      onClick={() => setShowModificationsModal(true)}
+                    >
+                      Change modification
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
           <button
             type="button"
             className={styles.addModificationBtn}
             onClick={() => setShowModificationsModal(true)}
           >
-            Add a modification
+            Add another modification
           </button>
-          {vehicleModifications.length > 0 && (
-            <div className={styles.modificationsTagsList}>
-              {vehicleModifications.map((mod) => (
-                <span key={mod} className={styles.modificationTag}>
-                  {mod}
-                  <button
-                    type="button"
-                    className={styles.removeTagBtn}
-                    onClick={() => handleRemoveModification(mod)}
-                    aria-label={`Remove ${mod}`}
-                  >
-                    ×
-                  </button>
-                </span>
-              ))}
-            </div>
-          )}
         </div>
       )}
     </div>
