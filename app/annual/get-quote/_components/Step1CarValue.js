@@ -37,14 +37,18 @@ const Step1CarValue = ({ form }) => {
           </div>
 
           <div className={styles.inputWrapper}>
-            <CustomTextInput
-              label=""
-              type="number"
-              placeholder="4560"
-              prefix="£"
-              {...register("vehicleDetails.carValue")}
-              error={errors?.vehicleDetails?.carValue?.message}
-            />
+            <div className={styles.currencyInputContainer}>
+              <span className={styles.currencyPrefix}>£</span>
+              <input
+                type="number"
+                className={`${styles.currencyInput} ${errors?.vehicleDetails?.carValue ? styles.currencyInputError : ''}`}
+                placeholder="4560"
+                {...register("vehicleDetails.carValue")}
+              />
+            </div>
+            {errors?.vehicleDetails?.carValue && (
+              <span className={styles.errorText}>{errors.vehicleDetails.carValue.message}</span>
+            )}
           </div>
 
           <button type="button" className={styles.helpLink}>
