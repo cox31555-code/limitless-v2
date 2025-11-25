@@ -203,6 +203,7 @@
 
 .detailsSection {
   width: 100%;
+  max-width: 680px;
   background: transparent;
   margin: 2.4rem 0 0 0;
 }
@@ -271,8 +272,9 @@
 
 .modificationSection {
   width: 100%;
-  margin-top: 3.2rem;
-  padding-top: 3.2rem;
+  max-width: 680px;
+  margin-top: 2rem;
+  padding-top: 2rem;
   border-top: 1px solid #e8ecf1;
 }
 
@@ -312,6 +314,35 @@
   cursor: pointer;
   accent-color: #0052a3;
   flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radioInput:checked {
+  background-color: #0052a3;
+  border-color: #0052a3;
+}
+
+.radioInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.radioInput:hover:not(:checked) {
+  border-color: #0052a3;
+  background-color: #f0f6ff;
 }
 
 .radioLabel {
