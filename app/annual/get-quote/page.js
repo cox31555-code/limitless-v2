@@ -307,7 +307,8 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
-    const fieldsToValidate = getFieldsForStep(currentStep);
+    const subStep = currentStep === STEPS.VEHICLE ? vehicleSubStep : currentStep === STEPS.PERSONAL ? personalSubStep : undefined;
+    const fieldsToValidate = getFieldsForStep(currentStep, subStep);
     const isValid = await trigger(fieldsToValidate);
 
     if (isValid) {
