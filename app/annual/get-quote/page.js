@@ -249,6 +249,19 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage") {
+      setVehicleSubStep("carStorage");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage") {
+      setCurrentStep(STEPS.COVER);
+      setVehicleSubStep("registration");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep === STEPS.OPTIONAL_EXTRAS) {
       setCurrentStep(STEPS.REVIEW);
       window.scrollTo({ top: 0, behavior: "smooth" });
