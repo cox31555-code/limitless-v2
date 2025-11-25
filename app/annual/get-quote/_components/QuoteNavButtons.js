@@ -8,6 +8,7 @@ const QuoteNavButtons = ({
   onSubmit,
   currentStep,
   vehicleSubStep,
+  personalSubStep,
   totalSteps,
   isLoading = false,
   backLabel = "Back",
@@ -16,8 +17,11 @@ const QuoteNavButtons = ({
 }) => {
   const isFirstStep = currentStep === 1;
   const isLastStep = currentStep === totalSteps;
-  // Show back button if not on first step, or if on step 1 but in car value or car usage sub-step
-  const showBackButton = !isFirstStep || (currentStep === 1 && (vehicleSubStep === "carValue" || vehicleSubStep === "carUsage"));
+  // Show back button if:
+  // - Not on first step, OR
+  // - On step 1 but in a vehicle sub-step after registration, OR
+  // - On step 2 (PERSONAL) and in a personal sub-step
+  const showBackButton = !isFirstStep || (currentStep === 1 && vehicleSubStep !== "registration") || (currentStep === 2 && personalSubStep === "household");
 
   return (
     <div className={styles.navContainer}>
