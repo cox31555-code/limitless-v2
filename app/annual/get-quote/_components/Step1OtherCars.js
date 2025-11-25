@@ -64,6 +64,57 @@ const Step1OtherCars = ({ form }) => {
               <span className={styles.radioLabel}>No</span>
             </label>
           </div>
+
+          {otherVehicles === "Yes" && (
+            <div className={styles.conditionalSection}>
+              <h3 className={styles.mainQuestion}>What other vehicles do you have use of?</h3>
+              <p className={styles.subText}>
+                Select the most applicable option.
+              </p>
+
+              <div className={styles.radioGroup}>
+                <label className={styles.radioOption}>
+                  <input
+                    type="radio"
+                    {...register("carUsage.otherVehiclesType")}
+                    value="Own another car or van"
+                    className={styles.radioInput}
+                  />
+                  <span className={styles.radioLabel}>Own another car or van</span>
+                </label>
+
+                <label className={styles.radioOption}>
+                  <input
+                    type="radio"
+                    {...register("carUsage.otherVehiclesType")}
+                    value="Have use of another car"
+                    className={styles.radioInput}
+                  />
+                  <span className={styles.radioLabel}>Have use of another car</span>
+                </label>
+
+                <label className={styles.radioOption}>
+                  <input
+                    type="radio"
+                    {...register("carUsage.otherVehiclesType")}
+                    value="Company car (including personal use)"
+                    className={styles.radioInput}
+                  />
+                  <span className={styles.radioLabel}>Company car (including personal use)</span>
+                </label>
+
+                <label className={styles.radioOption}>
+                  <input
+                    type="radio"
+                    {...register("carUsage.otherVehiclesType")}
+                    value="Company car (excluding personal use)"
+                    className={styles.radioInput}
+                  />
+                  <span className={styles.radioLabel}>Company car (excluding personal use)</span>
+                </label>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
