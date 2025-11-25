@@ -10,21 +10,25 @@ const CustomTextInput = ({
   disabled,
   maxLength,
   error,
-  type = 'text'
+  type = 'text',
+  prefix
 }) => {
   return (
     <div className={styles.customInputGroup}>
       {label && <label className={styles.customInputLabel}>{label}</label>}
-      <input
-        type={type}
-        className={`${styles.customInput} ${error ? styles.customInputError : ''} ${disabled ? styles.customInputDisabled : ''}`}
-        placeholder={placeholder}
-        value={value || ''}
-        onChange={onChange}
-        onKeyPress={onKeyPress}
-        disabled={disabled}
-        maxLength={maxLength}
-      />
+      <div className={styles.customInputWrapper}>
+        {prefix && <span className={styles.customInputPrefix}>{prefix}</span>}
+        <input
+          type={type}
+          className={`${styles.customInput} ${error ? styles.customInputError : ''} ${disabled ? styles.customInputDisabled : ''} ${prefix ? styles.customInputWithPrefix : ''}`}
+          placeholder={placeholder}
+          value={value || ''}
+          onChange={onChange}
+          onKeyPress={onKeyPress}
+          disabled={disabled}
+          maxLength={maxLength}
+        />
+      </div>
       {error && <span className={styles.customInputErrorMsg}>{error}</span>}
     </div>
   );
