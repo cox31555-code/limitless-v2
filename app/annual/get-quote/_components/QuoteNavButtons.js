@@ -16,8 +16,8 @@ const QuoteNavButtons = ({
 }) => {
   const isFirstStep = currentStep === 1;
   const isLastStep = currentStep === totalSteps;
-  // Show back button if not on first step, or if on step 1 but in car value sub-step
-  const showBackButton = !isFirstStep || (currentStep === 1 && vehicleSubStep === "carValue");
+  // Show back button if not on first step, or if on step 1 but in car value or car usage sub-step
+  const showBackButton = !isFirstStep || (currentStep === 1 && (vehicleSubStep === "carValue" || vehicleSubStep === "carUsage"));
 
   return (
     <div className={styles.navContainer}>
