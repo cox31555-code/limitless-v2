@@ -427,7 +427,7 @@
 
 .customInput:hover:not(:disabled):not(.customInputError) {
   border-color: #0052a3;
-  background: #f8fbff;
+  background: #f0f6ff;
   box-shadow: none;
 }
 
