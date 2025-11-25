@@ -378,6 +378,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
             </p>
           </div>
         </div>
+
+        <VehicleModificationsModal
+          isOpen={showModificationsModal}
+          onClose={() => setShowModificationsModal(false)}
+          onConfirm={handleModificationsConfirm}
+          selectedModifications={vehicleModifications}
+        />
       </div>
     );
   }
