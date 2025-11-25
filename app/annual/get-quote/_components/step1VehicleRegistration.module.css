@@ -667,6 +667,7 @@
 @media (max-width: 768px) {
   .vehicleQuestionsWrapper {
     max-width: 100%;
+    padding-right: 0;
   }
 
   .detailItem {
