@@ -194,6 +194,10 @@
     max-width: 100%;
   }
 
+  .autocompleteWrapper {
+    max-width: 100%;
+  }
+
   .subText {
     font-size: 1.2rem;
   }
