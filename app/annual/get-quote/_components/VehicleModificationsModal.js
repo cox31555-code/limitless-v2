@@ -203,11 +203,9 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
       }
     };
 
-    document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.body.style.overflow = "";
       document.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen]);
