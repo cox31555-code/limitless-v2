@@ -270,6 +270,11 @@
   color: #0388ff;
 }
 
+.clearBtn:focus-visible {
+  outline: 2px solid #0388ff;
+  outline-offset: 2px;
+}
+
 .actionButtons {
   display: flex;
   gap: 1.2rem;
@@ -291,6 +296,11 @@
 .cancelBtn:hover {
   background: rgba(3, 136, 255, 0.05);
   color: #0388ff;
+}
+
+.cancelBtn:focus-visible {
+  outline: 2px solid #0388ff;
+  outline-offset: 2px;
 }
 
 .confirmBtn {
