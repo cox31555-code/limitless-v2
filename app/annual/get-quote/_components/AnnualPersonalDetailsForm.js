@@ -39,7 +39,7 @@ const AnnualPersonalDetailsForm = ({ form }) => {
 
   const [dynamicNcbOptions, setDynamicNcbOptions] = useState(ncbOptions);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [expandedTiles, setExpandedTiles] = useState(new Set(['about']));
+  const [expandedTiles, setExpandedTiles] = useState(new Set(['about', 'location', 'employment', 'parking', 'usage', 'driving', 'additional', 'declarations', 'additionalDrivers']));
   const [isConvictionModalOpen, setIsConvictionModalOpen] = useState(false);
   const [convictions, setConvictions] = useState([]);
   const [editingConvictionIndex, setEditingConvictionIndex] = useState(null);
