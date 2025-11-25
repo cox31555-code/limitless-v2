@@ -130,6 +130,37 @@ const Step1CarUsage = ({ form }) => {
             </label>
           </div>
         </div>
+
+        {/* Annual Mileage Section */}
+        <div className={styles.section}>
+          <h3 className={styles.mainQuestion}>What's the annual personal mileage for this car?</h3>
+          <p className={styles.subText}>
+            Try to be as accurate as possible. Underestimating your mileage could affect your cover or lead to increased charges.
+          </p>
+
+          <button type="button" className={styles.helpLink}>
+            How can I calculate this?
+          </button>
+
+          <div className={styles.mileageInputWrapper}>
+            <CustomTextInput
+              type="text"
+              placeholder="1500"
+              value={annualMileage || ""}
+              onChange={(e) => {
+                const value = e.target.value.replace(/[^0-9]/g, '');
+                if (form.setValue) {
+                  form.setValue("vehicleDetails.annualMileage", value);
+                }
+              }}
+              prefix="miles"
+            />
+          </div>
+
+          <button type="button" className={styles.helpLink}>
+            What's personal mileage?
+          </button>
+        </div>
       </div>
     </div>
   );
