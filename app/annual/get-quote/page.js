@@ -207,6 +207,14 @@ const AnnualInsuranceContent = () => {
     "userDetails.maritalStatus",
   ];
 
+  const step2HouseholdFields = [
+    "userDetails.houseNumber",
+    "userDetails.postcode",
+    "userDetails.ownsHome",
+    "userDetails.childrenUnder16",
+    "userDetails.livedInUKSinceBirth",
+  ];
+
   const basePersonalFields = [
     "userDetails.firstName",
     "userDetails.surname",
