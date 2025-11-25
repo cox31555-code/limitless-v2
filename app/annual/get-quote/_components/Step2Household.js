@@ -67,6 +67,65 @@ const Step2Household = ({ form }) => {
                 Enter the full address yourself
               </button>
             </div>
+
+            {expandedManualEntry && (
+              <div className={styles.manualAddressFields}>
+                <h4 className={styles.manualAddressTitle}>What's your address?</h4>
+
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Address line 1</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    value={watch("userDetails.addressLine1") || ""}
+                    onChange={(e) => setValue("userDetails.addressLine1", e.target.value)}
+                    error={errors?.userDetails?.addressLine1?.message}
+                  />
+                </div>
+
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Address line 2 (optional)</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    value={watch("userDetails.addressLine2") || ""}
+                    onChange={(e) => setValue("userDetails.addressLine2", e.target.value)}
+                  />
+                </div>
+
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Address line 3 (optional)</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    value={watch("userDetails.addressLine3") || ""}
+                    onChange={(e) => setValue("userDetails.addressLine3", e.target.value)}
+                  />
+                </div>
+
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Town/City</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    value={watch("userDetails.city") || ""}
+                    onChange={(e) => setValue("userDetails.city", e.target.value)}
+                    error={errors?.userDetails?.city?.message}
+                  />
+                </div>
+
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Postcode</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    value={watch("userDetails.manualPostcode") || ""}
+                    onChange={(e) => setValue("userDetails.manualPostcode", e.target.value)}
+                    error={errors?.userDetails?.manualPostcode?.message}
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
