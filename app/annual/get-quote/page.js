@@ -239,11 +239,16 @@ const AnnualInsuranceContent = () => {
     "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
   ];
 
-  const getFieldsForStep = (step) => {
+  const getFieldsForStep = (step, subStep) => {
     switch (step) {
       case STEPS.VEHICLE:
         return vehicleFields;
       case STEPS.PERSONAL:
+        if (subStep === "aboutYou") {
+          return step2PersonalFields;
+        } else if (subStep === "household") {
+          return step2HouseholdFields;
+        }
         return step2PersonalFields;
       case STEPS.COVER:
         return coverFields;
