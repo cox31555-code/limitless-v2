@@ -24,6 +24,7 @@ const Step1CarValue = dynamic(() => import("./_components/Step1CarValue"), { loa
 const Step1CarUsage = dynamic(() => import("./_components/Step1CarUsage"), { loading: () => <StepFallback /> });
 const Step1CarStorage = dynamic(() => import("./_components/Step1CarStorage"), { loading: () => <StepFallback /> });
 const Step1OtherCars = dynamic(() => import("./_components/Step1OtherCars"), { loading: () => <StepFallback /> });
+const Step2PersonalDetails = dynamic(() => import("./_components/Step2PersonalDetails"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
@@ -33,8 +34,8 @@ const StepFallback = () => (
 
 const STEPS = {
   VEHICLE: 1,
-  COVER: 2,
-  PERSONAL: 3,
+  PERSONAL: 2,
+  COVER: 3,
   OPTIONAL_EXTRAS: 4,
   REVIEW: 5,
 };
@@ -266,6 +267,13 @@ const AnnualInsuranceContent = () => {
     }
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
+      setCurrentStep(STEPS.PERSONAL);
+      setVehicleSubStep("registration");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.PERSONAL) {
       setCurrentStep(STEPS.COVER);
       setVehicleSubStep("registration");
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -302,6 +310,13 @@ const AnnualInsuranceContent = () => {
     // Handle Step 1 sub-step navigation
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
       setVehicleSubStep("carStorage");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.PERSONAL) {
+      setCurrentStep(STEPS.VEHICLE);
+      setVehicleSubStep("otherCars");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -355,6 +370,7 @@ const AnnualInsuranceContent = () => {
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" ? "Car Usage" :
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage" ? "Car Storage" :
           currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars" ? "Other cars" :
+          currentStep === STEPS.PERSONAL ? "About you" :
           undefined
         }
       />
@@ -382,6 +398,9 @@ const AnnualInsuranceContent = () => {
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars" && (
                   <Step1OtherCars form={form} />
+                )}
+                {currentStep === STEPS.PERSONAL && (
+                  <Step2PersonalDetails form={form} />
                 )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.PERSONAL && <AnnualPersonalDetailsForm form={form} />}
