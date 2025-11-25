@@ -134,6 +134,16 @@ export const userDetailsSchema = z
     employmentStatus: z.string().optional(),
     occupation: z.string().optional(),
     industry: z.string().optional(),
+    houseNumber: z.string().optional(),
+    postcode: z.string().optional(),
+    addressLine1: z.string().optional(),
+    addressLine2: z.string().optional(),
+    addressLine3: z.string().optional(),
+    city: z.string().optional(),
+    manualPostcode: z.string().optional(),
+    ownsHome: z.boolean().nullable().optional(),
+    childrenUnder16: z.boolean().nullable().optional(),
+    livedInUKSinceBirth: z.boolean().nullable().optional(),
   })
   .refine(
     (data) => {
