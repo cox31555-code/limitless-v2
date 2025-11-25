@@ -11,7 +11,8 @@ const CustomTextInput = ({
   maxLength,
   error,
   type = 'text',
-  prefix
+  prefix,
+  suffix
 }) => {
   return (
     <div className={styles.customInputGroup}>
@@ -20,7 +21,7 @@ const CustomTextInput = ({
         {prefix && <span className={styles.customInputPrefix}>{prefix}</span>}
         <input
           type={type}
-          className={`${styles.customInput} ${error ? styles.customInputError : ''} ${disabled ? styles.customInputDisabled : ''} ${prefix ? styles.customInputWithPrefix : ''}`}
+          className={`${styles.customInput} ${error ? styles.customInputError : ''} ${disabled ? styles.customInputDisabled : ''} ${prefix ? styles.customInputWithPrefix : ''} ${suffix ? styles.customInputWithSuffix : ''}`}
           placeholder={placeholder}
           value={value || ''}
           onChange={onChange}
@@ -28,6 +29,7 @@ const CustomTextInput = ({
           disabled={disabled}
           maxLength={maxLength}
         />
+        {suffix && <span className={styles.customInputSuffix}>{suffix}</span>}
       </div>
       {error && <span className={styles.customInputErrorMsg}>{error}</span>}
     </div>
