@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
+import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step1CarValue.module.css";
 
 const Step1CarValue = ({ form }) => {
