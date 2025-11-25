@@ -111,6 +111,11 @@
     gap: 3.2rem;
   }
 
+  .contentWrapper {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
   .header {
     padding-bottom: 0;
   }
