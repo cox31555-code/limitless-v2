@@ -448,7 +448,11 @@ const AnnualInsuranceContent = () => {
           </div>
 
           <div className={styles.sidebarArea}>
-            <QuoteProgressCard currentStep={currentStep} />
+            <QuoteProgressCard
+              currentStep={currentStep}
+              vehicleSubStep={vehicleSubStep}
+              personalSubStep={personalSubStep}
+            />
           </div>
         </div>
       </div>
