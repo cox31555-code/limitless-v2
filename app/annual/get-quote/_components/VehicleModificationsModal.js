@@ -251,26 +251,25 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
 
   return (
     <div className={styles.modalOverlay} onClick={handleClose}>
-      <div 
-        className={styles.modalContent} 
+      <div
+        className={styles.modalContent}
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="modifications-modal-title"
       >
-        <div className={styles.modalHeader}>
-          <div className={styles.headerContent}>
-            <h2 id="modifications-modal-title">Vehicle Modifications</h2>
-            {selected.length > 0 && (
-              <p className={styles.selectedCount}>{selected.length} selected</p>
-            )}
-          </div>
-          <button className={styles.closeBtn} onClick={handleClose} aria-label="Close modal">
-            ×
-          </button>
-        </div>
-
         <div className={styles.modalBody}>
+          <div className={styles.modalHeader}>
+            <div className={styles.headerContent}>
+              <h2 id="modifications-modal-title">Vehicle Modifications</h2>
+              {selected.length > 0 && (
+                <p className={styles.selectedCount}>{selected.length} selected</p>
+              )}
+            </div>
+            <button className={styles.closeBtn} onClick={handleClose} aria-label="Close modal">
+              ×
+            </button>
+          </div>
           <div className={styles.formSection}>
             <label className={styles.formLabel}>Select all modifications that apply to your vehicle</label>
             <p className={styles.helperText}>
