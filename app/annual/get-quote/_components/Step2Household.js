@@ -5,7 +5,7 @@ import styles from "./step2Household.module.css";
 
 const Step2Household = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
-  
+
   const houseNumber = watch("userDetails.houseNumber");
   const postcode = watch("userDetails.postcode");
   const ownsHome = watch("userDetails.ownsHome");
@@ -13,6 +13,44 @@ const Step2Household = ({ form }) => {
   const livedInUKSinceBirth = watch("userDetails.livedInUKSinceBirth");
   const [expandedWhyAsking, setExpandedWhyAsking] = useState(false);
   const [expandedManualEntry, setExpandedManualEntry] = useState(true);
+  const [isLoadingAddress, setIsLoadingAddress] = useState(false);
+  const [foundAddress, setFoundAddress] = useState(null);
+
+  const handleFindAddress = () => {
+    const trimmedPostcode = postcode?.trim();
+
+    if (!trimmedPostcode) {
+      return;
+    }
+
+    setIsLoadingAddress(true);
+
+    // Simulate API call
+    setTimeout(() => {
+      const mockAddress = {
+        line1: "2 Kings Road",
+        line2: "Waltham Cross",
+        postcode: trimmedPostcode.toUpperCase(),
+      };
+
+      setFoundAddress(mockAddress);
+      setValue("userDetails.addressLine1", mockAddress.line1);
+      setValue("userDetails.addressLine2", mockAddress.line2);
+      setValue("userDetails.manualPostcode", mockAddress.postcode);
+      setIsLoadingAddress(false);
+    }, 1500);
+  };
+
+  const handleChangeAddress = () => {
+    setFoundAddress(null);
+    setValue("userDetails.houseNumber", "");
+    setValue("userDetails.postcode", "");
+    setValue("userDetails.addressLine1", "");
+    setValue("userDetails.addressLine2", "");
+    setValue("userDetails.addressLine3", "");
+    setValue("userDetails.city", "");
+    setValue("userDetails.manualPostcode", "");
+  };
 
   return (
     <div className={styles.container}>
