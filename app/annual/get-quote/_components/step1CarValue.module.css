@@ -26,7 +26,7 @@
   max-width: 680px;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2.4rem;
   padding-right: 100px;
 }
 
