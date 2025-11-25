@@ -233,6 +233,8 @@ const AnnualInsuranceContent = () => {
 
   const step2EmploymentFields = [
     "userDetails.employmentStatus",
+    "userDetails.occupation",
+    "userDetails.industry",
   ];
 
   const basePersonalFields = [
