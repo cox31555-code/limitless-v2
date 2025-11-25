@@ -658,6 +658,11 @@
 }
 
 @media (max-width: 768px) {
+  .detailsSection,
+  .modificationSection {
+    max-width: 100%;
+  }
+
   .detailItem {
     flex-direction: column;
     align-items: flex-start;
@@ -680,6 +685,16 @@
 
   .modificationHelper {
     font-size: 1.2rem;
+  }
+
+  .radioInput {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radioInput:checked::after {
+    width: 7px;
+    height: 7px;
   }
 }
 
@@ -711,8 +726,18 @@
   }
 
   .modificationSection {
-    margin-top: 2.4rem;
-    padding-top: 2.4rem;
+    margin-top: 1.8rem;
+    padding-top: 1.8rem;
+  }
+
+  .radioInput {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radioInput:checked::after {
+    width: 6px;
+    height: 6px;
   }
 
   .modificationQuestion {
