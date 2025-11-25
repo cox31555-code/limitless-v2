@@ -280,7 +280,7 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
             </div>
 
             <div className={styles.searchSection}>
-            <div className={styles.searchInputWrapper}>
+              <div className={styles.searchInputWrapper}>
               <input
                 type="text"
                 placeholder="Search modifications..."
@@ -299,10 +299,10 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
                   ×
                 </button>
               )}
+              </div>
             </div>
-          </div>
 
-          <div className={styles.modificationsListContainer}>
+            <div className={styles.modificationsListContainer}>
             {hasResults ? (
               <div className={styles.categoriesList}>
                 {filteredCategories.map((categoryData) => (
