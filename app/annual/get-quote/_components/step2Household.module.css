@@ -243,6 +243,29 @@
   padding-bottom: 1.2rem;
 }
 
+.manualAddressFields {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e8ecf1;
+}
+
+.manualAddressTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.manualAddressFields .fieldWrapper {
+  max-width: 450px;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0;
