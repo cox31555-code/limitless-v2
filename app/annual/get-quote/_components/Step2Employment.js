@@ -115,13 +115,15 @@ const Step2Employment = ({ form }) => {
               <h3 className={styles.mainQuestion}>What type of industry do you work in?</h3>
               <p className={styles.subText}>Start typing and choose from the list.</p>
 
-              <div className={styles.fieldWrapper}>
-                <CustomTextInput
-                  type="text"
-                  placeholder=""
+              <div className={styles.autocompleteWrapper}>
+                <FormAutocomplete
+                  label=""
+                  options={industryOptions}
+                  placeholder="Type your industry..."
                   value={industry || ""}
                   onChange={(e) => {
-                    setValue("userDetails.industry", e.target.value, {
+                    const value = typeof e === "string" ? e : (e?.target?.value || "");
+                    setValue("userDetails.industry", value, {
                       shouldValidate: true,
                       shouldDirty: true,
                     });
