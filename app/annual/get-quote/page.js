@@ -360,6 +360,9 @@ const AnnualInsuranceContent = () => {
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" && (
                   <Step1CarUsage form={form} />
                 )}
+                {currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage" && (
+                  <Step1CarStorage form={form} />
+                )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.PERSONAL && <AnnualPersonalDetailsForm form={form} />}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
