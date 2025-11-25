@@ -232,6 +232,13 @@ const AnnualInsuranceContent = () => {
   };
 
   const handleNextStep = async () => {
+    // Handle Step 1 sub-step navigation
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "registration") {
+      setVehicleSubStep("carValue");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep === STEPS.OPTIONAL_EXTRAS) {
       setCurrentStep(STEPS.REVIEW);
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -251,6 +258,7 @@ const AnnualInsuranceContent = () => {
         return;
       }
       setCurrentStep(currentStep + 1);
+      setVehicleSubStep("registration"); // Reset vehicle sub-step when moving to next main step
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       toast.error("Please fill in all required fields");
