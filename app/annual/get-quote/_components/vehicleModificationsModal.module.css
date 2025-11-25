@@ -112,6 +112,14 @@
   flex-direction: column;
 }
 
+.bodyContent {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  flex: 1;
+}
+
 .formSection {
   display: flex;
   flex-direction: column;
