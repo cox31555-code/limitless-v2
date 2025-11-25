@@ -23,6 +23,7 @@ const ReviewQuote = dynamic(() => import("@/app/temporary/get-quote/_components/
 const Step1CarValue = dynamic(() => import("./_components/Step1CarValue"), { loading: () => <StepFallback /> });
 const Step1CarUsage = dynamic(() => import("./_components/Step1CarUsage"), { loading: () => <StepFallback /> });
 const Step1CarStorage = dynamic(() => import("./_components/Step1CarStorage"), { loading: () => <StepFallback /> });
+const Step1OtherCars = dynamic(() => import("./_components/Step1OtherCars"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
@@ -43,7 +44,7 @@ const AnnualInsuranceContent = () => {
   const searchParams = useSearchParams();
   const [isMounted, setIsMounted] = useState(false);
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
-  const [vehicleSubStep, setVehicleSubStep] = useState("registration"); // "registration" or "carValue"
+  const [vehicleSubStep, setVehicleSubStep] = useState("registration"); // "registration", "carValue", "carUsage", "carStorage", or "otherCars"
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
@@ -256,6 +257,12 @@ const AnnualInsuranceContent = () => {
     }
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage") {
+      setVehicleSubStep("otherCars");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
       setCurrentStep(STEPS.COVER);
       setVehicleSubStep("registration");
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -290,6 +297,12 @@ const AnnualInsuranceContent = () => {
 
   const handlePreviousStep = () => {
     // Handle Step 1 sub-step navigation
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
+      setVehicleSubStep("carStorage");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage") {
       setVehicleSubStep("carUsage");
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -338,6 +351,7 @@ const AnnualInsuranceContent = () => {
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" ? "Car Value" :
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" ? "Car Usage" :
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage" ? "Car Storage" :
+          currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars" ? "Other cars" :
           undefined
         }
       />
@@ -362,6 +376,9 @@ const AnnualInsuranceContent = () => {
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage" && (
                   <Step1CarStorage form={form} />
+                )}
+                {currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars" && (
+                  <Step1OtherCars form={form} />
                 )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.PERSONAL && <AnnualPersonalDetailsForm form={form} />}
