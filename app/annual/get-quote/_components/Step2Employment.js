@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
-import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
+import FormAutocomplete from "@/ui/inputs/FormAutocomplete";
 import styles from "./step2Employment.module.css";
+import { occupationOptions, industryOptions } from "@/app/temporary/get-quote/data";
 
 const Step2Employment = ({ form }) => {
   const { watch, setValue } = form;
