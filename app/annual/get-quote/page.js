@@ -25,6 +25,7 @@ const Step1CarUsage = dynamic(() => import("./_components/Step1CarUsage"), { loa
 const Step1CarStorage = dynamic(() => import("./_components/Step1CarStorage"), { loading: () => <StepFallback /> });
 const Step1OtherCars = dynamic(() => import("./_components/Step1OtherCars"), { loading: () => <StepFallback /> });
 const Step2PersonalDetails = dynamic(() => import("./_components/Step2PersonalDetails"), { loading: () => <StepFallback /> });
+const Step2Household = dynamic(() => import("./_components/Step2Household"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
