@@ -307,12 +307,15 @@ const AnnualInsuranceContent = () => {
           <div className={styles.mainContent}>
             <form noValidate suppressHydrationWarning>
               <div className={styles.stepContent}>
-                {currentStep === STEPS.VEHICLE && (
+                {currentStep === STEPS.VEHICLE && vehicleSubStep === "registration" && (
                   <Step1VehicleRegistration
                     form={form}
                     onVehicleFound={setFoundVehicleData}
                     autoTriggerLookup={shouldAutoTrigger}
                   />
+                )}
+                {currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" && (
+                  <Step1CarValue form={form} />
                 )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.PERSONAL && <AnnualPersonalDetailsForm form={form} />}
