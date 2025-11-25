@@ -21,6 +21,7 @@ const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPers
 const AnnualOptionalExtrasForm = dynamic(() => import("./_components/AnnualOptionalExtrasForm"), { loading: () => <StepFallback /> });
 const ReviewQuote = dynamic(() => import("@/app/temporary/get-quote/_components/ReviewQuote"), { loading: () => <StepFallback /> });
 const Step1CarValue = dynamic(() => import("./_components/Step1CarValue"), { loading: () => <StepFallback /> });
+const Step1CarUsage = dynamic(() => import("./_components/Step1CarUsage"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
