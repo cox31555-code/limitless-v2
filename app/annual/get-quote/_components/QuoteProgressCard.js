@@ -22,7 +22,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep }) => 
     {
       number: STEPS.PERSONAL,
       title: "Your details",
-      subSteps: ["About you", "Your household"],
+      subSteps: ["About you", "Your household", "Your employment"],
     },
     {
       number: STEPS.COVER,
