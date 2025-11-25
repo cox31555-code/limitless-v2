@@ -60,13 +60,15 @@ const Step2Employment = ({ form }) => {
               <h3 className={styles.mainQuestion}>What do you do for a living?</h3>
               <p className={styles.subText}>Start typing and choose from the list.</p>
 
-              <div className={styles.fieldWrapper}>
-                <CustomTextInput
-                  type="text"
-                  placeholder=""
+              <div className={styles.autocompleteWrapper}>
+                <FormAutocomplete
+                  label=""
+                  options={occupationOptions}
+                  placeholder="Type your occupation..."
                   value={occupation || ""}
                   onChange={(e) => {
-                    setValue("userDetails.occupation", e.target.value, {
+                    const value = typeof e === "string" ? e : (e?.target?.value || "");
+                    setValue("userDetails.occupation", value, {
                       shouldValidate: true,
                       shouldDirty: true,
                     });
