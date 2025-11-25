@@ -10,17 +10,18 @@ const Step1CarValue = ({ form }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>Car details - Car value</h2>
+      <div className={styles.stepTitle}>
+        <h2 className={styles.stepTitleText}>Car details - Car value</h2>
       </div>
 
-      <div className={styles.content}>
-        <h3 className={styles.question}>What's the current estimated value of the car?</h3>
-        
-        <p className={styles.description}>
+      <div className={styles.header}>
+        <h3 className={styles.mainQuestion}>What's the current estimated value of the car?</h3>
+        <p className={styles.subText}>
           We've estimated your car's current market value using an independent provider. If a value isn't shown or if it doesn't look right, feel free to change it.
         </p>
+      </div>
 
+      <div className={styles.inputSection}>
         <div className={styles.estimatedInfo}>
           <p className={styles.estimatedLabel}>
             Estimated value of <span className={styles.estimatedAmount}>£{estimatedValue || "4560"}</span>.
@@ -38,7 +39,7 @@ const Step1CarValue = ({ form }) => {
           />
         </div>
 
-        <button type="button" className={styles.whyLink}>
+        <button type="button" className={styles.helpLink}>
           Why do we ask this?
         </button>
       </div>
