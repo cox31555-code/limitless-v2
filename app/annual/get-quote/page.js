@@ -296,7 +296,11 @@ const AnnualInsuranceContent = () => {
     <div suppressHydrationWarning>
       <GetQuotePageHeader />
       <LoadingOverlay isVisible={showLoading} />
-      <QuoteHeader currentStep={currentStep} totalSteps={5} />
+      <QuoteHeader
+        currentStep={currentStep}
+        totalSteps={5}
+        subtitle={currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" ? "Car Value" : undefined}
+      />
       
       <div className={styles.pageContainer}>
         <div className={styles.contentWrapper}>
