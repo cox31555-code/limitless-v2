@@ -435,6 +435,7 @@ const AnnualInsuranceContent = () => {
               <QuoteNavButtons
                 currentStep={currentStep}
                 vehicleSubStep={vehicleSubStep}
+                personalSubStep={personalSubStep}
                 totalSteps={5}
                 onNext={handleNextStep}
                 onBack={handlePreviousStep}
