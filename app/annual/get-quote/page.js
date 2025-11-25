@@ -388,7 +388,6 @@ const AnnualInsuranceContent = () => {
                   <Step2PersonalDetails form={form} />
                 )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
-                {currentStep === STEPS.PERSONAL && <AnnualPersonalDetailsForm form={form} />}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
