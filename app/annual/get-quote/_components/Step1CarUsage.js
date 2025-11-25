@@ -5,10 +5,11 @@ import styles from "./step1CarUsage.module.css";
 
 const Step1CarUsage = ({ form }) => {
   const { register, formState: { errors }, watch } = form;
-  
+
   const purchaseDate = watch("vehicleDetails.purchaseDate");
   const haventBoughtYet = watch("vehicleDetails.haventBoughtYet");
   const usageType = watch("vehicleDetails.usageType");
+  const annualMileage = watch("vehicleDetails.annualMileage");
 
   return (
     <div className={styles.container}>
