@@ -84,6 +84,22 @@
   align-items: flex-start;
 }
 
+.disabledDateInputs {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.disabledDateInputs :global(.customInput) {
+  background-color: #f8f9fb;
+  color: #a8b2bd;
+  border-color: #cbd4dd;
+  cursor: not-allowed;
+}
+
+.disabledDateInputs :global(.customInputLabel) {
+  color: #a8b2bd;
+}
+
 .inputGroup {
   display: flex;
   flex-direction: column;
