@@ -210,6 +210,11 @@ const AnnualInsuranceContent = () => {
   const step2HouseholdFields = [
     "userDetails.houseNumber",
     "userDetails.postcode",
+    "userDetails.addressLine1",
+    "userDetails.addressLine2",
+    "userDetails.addressLine3",
+    "userDetails.city",
+    "userDetails.manualPostcode",
     "userDetails.ownsHome",
     "userDetails.childrenUnder16",
     "userDetails.livedInUKSinceBirth",
