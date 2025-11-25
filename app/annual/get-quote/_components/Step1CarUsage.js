@@ -31,20 +31,28 @@ const Step1CarUsage = ({ form }) => {
             </p>
           </div>
 
-          <div className={styles.dateInputsWrapper}>
+          <div className={`${styles.dateInputsWrapper} ${haventBoughtYet ? styles.disabledDateInputs : ''}`}>
             <div className={styles.inputGroup}>
               <label className={styles.inputLabel}>Month</label>
               <CustomTextInput
                 type="text"
-                placeholder="02"
-                value={purchaseDate ? purchaseDate.split('/')[0] : "02"}
+                placeholder="MM"
+                maxLength={2}
+                value={purchaseDate ? purchaseDate.split('/')[0] : ""}
                 onChange={(e) => {
-                  const month = e.target.value;
-                  const year = purchaseDate ? purchaseDate.split('/')[1] : "2025";
-                  if (form.setValue) {
+                  let month = e.target.value.replace(/[^0-9]/g, '');
+                  if (month.length > 2) {
+                    month = month.slice(0, 2);
+                  }
+                  if (month && (parseInt(month) < 1 || parseInt(month) > 12)) {
+                    return;
+                  }
+                  const year = purchaseDate ? purchaseDate.split('/')[1] : "";
+                  if (month || year) {
                     form.setValue("vehicleDetails.purchaseDate", `${month}/${year}`);
                   }
                 }}
+                disabled={haventBoughtYet}
               />
             </div>
 
@@ -52,15 +60,20 @@ const Step1CarUsage = ({ form }) => {
               <label className={styles.inputLabel}>Year</label>
               <CustomTextInput
                 type="text"
-                placeholder="2025"
-                value={purchaseDate ? purchaseDate.split('/')[1] : "2025"}
+                placeholder="YYYY"
+                maxLength={4}
+                value={purchaseDate ? purchaseDate.split('/')[1] : ""}
                 onChange={(e) => {
-                  const year = e.target.value;
-                  const month = purchaseDate ? purchaseDate.split('/')[0] : "02";
-                  if (form.setValue) {
+                  let year = e.target.value.replace(/[^0-9]/g, '');
+                  if (year.length > 4) {
+                    year = year.slice(0, 4);
+                  }
+                  const month = purchaseDate ? purchaseDate.split('/')[0] : "";
+                  if (month || year) {
                     form.setValue("vehicleDetails.purchaseDate", `${month}/${year}`);
                   }
                 }}
+                disabled={haventBoughtYet}
               />
             </div>
           </div>
