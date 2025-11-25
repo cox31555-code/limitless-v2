@@ -78,6 +78,8 @@ const AnnualInsuranceContent = () => {
         registeredKeeper: "",
         registeredKeeperOther: "",
         apiData: null,
+        carValue: "4560",
+        estimatedValue: "4560",
       },
       coverDetails: {
         level: "",
