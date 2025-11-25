@@ -19,7 +19,6 @@ const GetQuotePageHeader = () => {
             height={56}
             className={styles.logo}
           />
-          <h2 className={styles.headerTitle}>Limitless Cover</h2>
         </div>
 
         <button
