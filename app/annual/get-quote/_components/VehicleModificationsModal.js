@@ -273,7 +273,7 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
 
           <div className={styles.bodyContent}>
             <div className={styles.formSection}>
-            <label className={styles.formLabel}>Select all modifications that apply to your vehicle</label>
+              <label className={styles.formLabel}>Select all modifications that apply to your vehicle</label>
             <p className={styles.helperText}>
               Choose from the categories below. You can search for specific modifications or browse by category.
             </p>
