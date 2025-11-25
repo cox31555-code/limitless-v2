@@ -188,7 +188,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
   };
 
   const VehicleDetailsSection = () => (
-    <>
+    <div className={styles.vehicleQuestionsWrapper}>
       <div className={styles.detailsSection}>
         <div className={styles.detailsSectionHeader}>
           <h3 className={styles.detailsSectionTitle}>Car details</h3>
@@ -269,7 +269,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
           How can I find out if my car's been modified?
         </button>
       </div>
-    </>
+    </div>
   );
 
   if (foundVehicle || (showManualEntry && isManualEntryComplete)) {
