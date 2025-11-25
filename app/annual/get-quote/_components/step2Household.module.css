@@ -69,6 +69,20 @@
   max-width: 210px;
 }
 
+.addressActionsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 3.2rem;
+  margin-top: 0.8rem;
+}
+
+.orSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-start;
+}
+
 .fieldLabel {
   font-size: 1.3rem;
   font-weight: 500;
