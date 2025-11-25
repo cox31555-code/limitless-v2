@@ -197,6 +197,14 @@ const AnnualInsuranceContent = () => {
     "coverDetails.startDate",
   ];
 
+  const step2PersonalFields = [
+    "userDetails.title",
+    "userDetails.firstName",
+    "userDetails.surname",
+    "userDetails.dateOfBirth",
+    "userDetails.maritalStatus",
+  ];
+
   const basePersonalFields = [
     "userDetails.firstName",
     "userDetails.surname",
