@@ -240,6 +240,12 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue") {
+      setVehicleSubStep("carUsage");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep === STEPS.OPTIONAL_EXTRAS) {
       setCurrentStep(STEPS.REVIEW);
       window.scrollTo({ top: 0, behavior: "smooth" });
