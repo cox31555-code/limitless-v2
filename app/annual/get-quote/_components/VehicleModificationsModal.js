@@ -85,7 +85,12 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
         aria-labelledby="modifications-modal-title"
       >
         <div className={styles.modalHeader}>
-          <h2 id="modifications-modal-title">Vehicle Modifications</h2>
+          <div className={styles.headerContent}>
+            <h2 id="modifications-modal-title">Vehicle Modifications</h2>
+            {selected.length > 0 && (
+              <p className={styles.selectedCount}>{selected.length} selected</p>
+            )}
+          </div>
           <button className={styles.closeBtn} onClick={handleClose} aria-label="Close modal">
             ×
           </button>
@@ -144,12 +149,6 @@ const VehicleModificationsModal = ({ isOpen, onClose, onConfirm, selectedModific
               </div>
             )}
           </div>
-
-          {selected.length > 0 && (
-            <div className={styles.selectedCount}>
-              {selected.length} modification{selected.length !== 1 ? 's' : ''} selected
-            </div>
-          )}
         </div>
 
         <div className={styles.modalFooter}>
