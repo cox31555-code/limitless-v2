@@ -141,6 +141,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
       setValue("vehicleDetails.fuel", mockVehicleData.fuelType);
       setValue("vehicleDetails.transmission", mockVehicleData.transmission);
       setValue("vehicleDetails.colour", mockVehicleData.colour);
+      setValue("vehicleDetails.estimatedValue", "4560");
+      setValue("vehicleDetails.carValue", "4560");
 
       clearErrors("vehicleDetails.registrationNumber");
 
