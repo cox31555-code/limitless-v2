@@ -85,19 +85,19 @@
 }
 
 .disabledDateInputs {
-  opacity: 0.5;
+  opacity: 0.6;
   pointer-events: none;
 }
 
 .disabledDateInputs :global(.customInput) {
-  background-color: #f8f9fb;
-  color: #a8b2bd;
-  border-color: #cbd4dd;
+  background-color: #e8ecf1;
+  color: #6b7c8f;
+  border-color: #a8b2bd;
   cursor: not-allowed;
 }
 
 .disabledDateInputs :global(.customInputLabel) {
-  color: #a8b2bd;
+  color: #6b7c8f;
 }
 
 .inputGroup {
