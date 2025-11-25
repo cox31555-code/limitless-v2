@@ -140,6 +140,10 @@
     max-width: 100%;
   }
 
+  .autocompleteWrapper {
+    max-width: 100%;
+  }
+
   .expandableLink {
     font-size: 1.2rem;
   }
