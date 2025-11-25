@@ -277,8 +277,32 @@
     font-size: 1.3rem;
   }
 
+  .radioInput {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radioInput:checked::after {
+    width: 7px;
+    height: 7px;
+  }
+
+  .checkbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkbox:checked::after {
+    width: 4px;
+    height: 8px;
+  }
+
+  .checkboxLabel {
+    font-size: 1.4rem;
+  }
+
   .radioLabel {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .radioDescription {
