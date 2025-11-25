@@ -203,11 +203,13 @@
   padding: 0;
   text-align: left;
   transition: color 0.2s ease;
-  margin-top: 1.6rem;
+  margin: 0;
+  display: inline;
+}
+
+.orSection .expandableLink {
+  margin-top: 0;
   margin-bottom: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
 }
 
 .expandableLink:hover {
