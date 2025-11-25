@@ -26,52 +26,8 @@ const Step2Household = ({ form }) => {
           <h3 className={styles.mainQuestion}>What's your address?</h3>
 
           <div className={styles.addressGroup}>
-            <div className={styles.fieldWrapper}>
-              <label className={styles.fieldLabel}>House number or name (optional)</label>
-              <CustomTextInput
-                type="text"
-                placeholder=""
-                value={houseNumber || ""}
-                onChange={(e) => {
-                  setValue("userDetails.houseNumber", e.target.value);
-                }}
-              />
-            </div>
-
-            <div className={styles.fieldWrapper}>
-              <label className={styles.fieldLabel}>Postcode</label>
-              <CustomTextInput
-                type="text"
-                placeholder=""
-                value={postcode || ""}
-                onChange={(e) => {
-                  setValue("userDetails.postcode", e.target.value);
-                }}
-              />
-            </div>
-
-            <button type="button" className={styles.findAddressBtn}>
-              Find address
-            </button>
-
-            <div className={styles.orSection}>
-              <div className={styles.orDivider}>
-                <span>Or</span>
-              </div>
-
-              <button
-                type="button"
-                className={styles.expandableLink}
-                onClick={() => setExpandedManualEntry(!expandedManualEntry)}
-              >
-                Enter the full address yourself
-              </button>
-            </div>
-
-            {expandedManualEntry && (
-              <div className={styles.manualAddressFields}>
-                <h4 className={styles.manualAddressTitle}>What's your address?</h4>
-
+            {expandedManualEntry ? (
+              <>
                 <div className={styles.fieldWrapper}>
                   <label className={styles.fieldLabel}>Address line 1</label>
                   <CustomTextInput
@@ -124,7 +80,65 @@ const Step2Household = ({ form }) => {
                     error={errors?.userDetails?.manualPostcode?.message}
                   />
                 </div>
-              </div>
+
+                <div className={styles.orSection}>
+                  <div className={styles.orDivider}>
+                    <span>Or</span>
+                  </div>
+
+                  <button
+                    type="button"
+                    className={styles.expandableLink}
+                    onClick={() => setExpandedManualEntry(false)}
+                  >
+                    Use address lookup
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>House number or name (optional)</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    value={houseNumber || ""}
+                    onChange={(e) => {
+                      setValue("userDetails.houseNumber", e.target.value);
+                    }}
+                  />
+                </div>
+
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Postcode</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    value={postcode || ""}
+                    onChange={(e) => {
+                      setValue("userDetails.postcode", e.target.value);
+                    }}
+                  />
+                </div>
+
+                <button type="button" className={styles.findAddressBtn}>
+                  Find address
+                </button>
+
+                <div className={styles.orSection}>
+                  <div className={styles.orDivider}>
+                    <span>Or</span>
+                  </div>
+
+                  <button
+                    type="button"
+                    className={styles.expandableLink}
+                    onClick={() => setExpandedManualEntry(true)}
+                  >
+                    Enter the full address yourself
+                  </button>
+                </div>
+              </>
             )}
           </div>
         </div>
