@@ -102,28 +102,57 @@
 .checkboxLabel {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 1.4rem;
+  gap: 1.2rem;
+  font-size: 1.5rem;
   color: #1a1a2e;
   font-weight: 400;
   cursor: pointer;
   margin: 0;
-  line-height: 1.6;
+  padding: 0;
 }
 
 .checkbox {
-  width: 2rem;
-  height: 2rem;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  accent-color: #0052a3;
-  margin: 0;
   flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.checkbox:checked {
+  background-color: #0052a3;
+  border-color: #0052a3;
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 9px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+.checkbox:hover:not(:checked) {
+  border-color: #0052a3;
+  background-color: #f0f6ff;
 }
 
 .radioGroup {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
 }
 
 .radioOption {
@@ -136,12 +165,40 @@
 }
 
 .radioInput {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  accent-color: #0052a3;
-  margin-top: 0.2rem;
   flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 0.2rem;
+}
+
+.radioInput:checked {
+  background-color: #0052a3;
+  border-color: #0052a3;
+}
+
+.radioInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.radioInput:hover:not(:checked) {
+  border-color: #0052a3;
+  background-color: #f0f6ff;
 }
 
 .radioContent {
@@ -152,12 +209,12 @@
 }
 
 .radioLabel {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 400;
   color: #1a1a2e;
   margin: 0;
   line-height: 1.5;
-  display: block;
+  cursor: pointer;
 }
 
 .radioDescription {
