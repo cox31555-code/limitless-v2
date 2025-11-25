@@ -59,19 +59,18 @@ const Step2Employment = ({ form }) => {
               <h3 className={styles.mainQuestion}>What do you do for a living?</h3>
               <p className={styles.subText}>Start typing and choose from the list.</p>
 
-              <div className={styles.autocompleteWrapper}>
-                <FormAutocomplete
-                  label=""
+              <div className={styles.dropdownWrapper}>
+                <Dropdown
+                  selected={occupation || ""}
                   options={occupationOptions}
-                  placeholder="Type your occupation..."
-                  value={occupation || ""}
-                  onChange={(e) => {
-                    const value = typeof e === "string" ? e : (e?.target?.value || "");
+                  setSelected={(value) => {
                     setValue("userDetails.occupation", value, {
                       shouldValidate: true,
                       shouldDirty: true,
                     });
                   }}
+                  placeholder="Type your occupation..."
+                  showSearch={true}
                 />
               </div>
 
