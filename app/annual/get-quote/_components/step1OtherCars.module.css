@@ -120,6 +120,15 @@
   line-height: 1.5;
 }
 
+.conditionalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding-top: 2.4rem;
+  border-top: 2px solid #e8ecf1;
+  margin-top: 2.4rem;
+}
+
 .helpLink {
   font-size: 1.3rem;
   font-weight: 500;
