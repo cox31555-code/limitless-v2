@@ -290,6 +290,12 @@ const AnnualInsuranceContent = () => {
 
   const handlePreviousStep = () => {
     // Handle Step 1 sub-step navigation
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage") {
+      setVehicleSubStep("carUsage");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage") {
       setVehicleSubStep("carValue");
       window.scrollTo({ top: 0, behavior: "smooth" });
