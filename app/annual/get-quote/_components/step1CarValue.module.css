@@ -21,6 +21,15 @@
   line-height: 1.4;
 }
 
+.contentWrapper {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-right: 100px;
+}
+
 .header {
   display: flex;
   flex-direction: column;
