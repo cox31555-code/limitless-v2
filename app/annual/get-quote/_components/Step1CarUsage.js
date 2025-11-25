@@ -25,11 +25,7 @@ const Step1CarUsage = ({ form }) => {
             We may fill in your car's purchase/lease date using details from an independent provider. If the date is already filled in and isn't correct, feel free to change it.
           </p>
 
-          <div className={styles.dateInfoBox}>
-            <p className={styles.dateLabel}>
-              Last acquired date <span className={styles.dateValue}>02/2025</span>.
-            </p>
-          </div>
+          <div />
 
           <div className={`${styles.dateInputsWrapper} ${haventBoughtYet ? styles.disabledDateInputs : ''}`}>
             <div className={styles.inputGroup}>
