@@ -153,7 +153,7 @@ const Step1CarUsage = ({ form }) => {
                   form.setValue("vehicleDetails.annualMileage", value);
                 }
               }}
-              prefix="miles"
+              suffix="miles"
             />
           </div>
 
