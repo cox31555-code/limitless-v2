@@ -10,8 +10,8 @@ const STEPS = {
   REVIEW: 5,
 };
 
-const QuoteProgressCard = ({ currentStep }) => {
-  const [expandedStep, setExpandedStep] = useState(1);
+const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep }) => {
+  const [expandedStep, setExpandedStep] = useState(currentStep);
 
   const steps = [
     {
