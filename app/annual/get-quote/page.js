@@ -41,6 +41,7 @@ const AnnualInsuranceContent = () => {
   const searchParams = useSearchParams();
   const [isMounted, setIsMounted] = useState(false);
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
+  const [vehicleSubStep, setVehicleSubStep] = useState("registration"); // "registration" or "carValue"
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
