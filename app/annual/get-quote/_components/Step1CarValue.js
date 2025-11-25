@@ -40,11 +40,15 @@ const Step1CarValue = ({ form }) => {
           <div className={styles.inputWrapper}>
             <CustomTextInput
               label=""
-              type="number"
+              type="text"
+              inputMode="decimal"
               placeholder="4560"
               prefix="£"
-              value={carValue}
-              onChange={(e) => setValue("vehicleDetails.carValue", e.target.value)}
+              value={carValue || ""}
+              onChange={(e) => {
+                const val = e.target.value.replace(/[^0-9.]/g, "");
+                setValue("vehicleDetails.carValue", val);
+              }}
               error={errors?.vehicleDetails?.carValue?.message}
             />
           </div>
