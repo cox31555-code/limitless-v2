@@ -133,6 +133,31 @@ const Step2Household = ({ form }) => {
                   </button>
                 </div>
               </>
+            ) : foundAddress ? (
+              <>
+                <div className={styles.foundAddressCard}>
+                  <div className={styles.foundAddressInfo}>
+                    <h4 className={styles.foundAddressTitle}>Your address</h4>
+                    <p className={styles.foundAddressDetails}>
+                      {foundAddress.line1}
+                    </p>
+                    <p className={styles.foundAddressDetails}>
+                      {foundAddress.line2}
+                    </p>
+                    <p className={styles.foundAddressDetails}>
+                      {foundAddress.postcode}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  className={styles.changeAddressLink}
+                  onClick={handleChangeAddress}
+                >
+                  Change address
+                </button>
+              </>
             ) : (
               <>
                 <div className={styles.fieldWrapper}>
@@ -144,6 +169,7 @@ const Step2Household = ({ form }) => {
                     onChange={(e) => {
                       setValue("userDetails.houseNumber", e.target.value);
                     }}
+                    disabled={isLoadingAddress}
                   />
                 </div>
 
@@ -156,11 +182,24 @@ const Step2Household = ({ form }) => {
                     onChange={(e) => {
                       setValue("userDetails.postcode", e.target.value);
                     }}
+                    disabled={isLoadingAddress}
                   />
                 </div>
 
-                <button type="button" className={styles.findAddressBtn}>
-                  Find address
+                <button
+                  type="button"
+                  className={styles.findAddressBtn}
+                  onClick={handleFindAddress}
+                  disabled={!postcode?.trim() || isLoadingAddress}
+                >
+                  {isLoadingAddress ? (
+                    <>
+                      <span className={styles.spinner}></span>
+                      Searching...
+                    </>
+                  ) : (
+                    'Find address'
+                  )}
                 </button>
 
                 <div className={styles.orSection}>
