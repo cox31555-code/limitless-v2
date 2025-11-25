@@ -2,31 +2,43 @@
 import React, { useState } from "react";
 import styles from "./quoteProgressCard.module.css";
 
+const STEPS = {
+  VEHICLE: 1,
+  PERSONAL: 2,
+  COVER: 3,
+  OPTIONAL_EXTRAS: 4,
+  REVIEW: 5,
+};
+
 const QuoteProgressCard = ({ currentStep }) => {
   const [expandedStep, setExpandedStep] = useState(1);
 
   const steps = [
     {
-      number: 1,
+      number: STEPS.VEHICLE,
       title: "Car details",
       subSteps: ["Your car", "Car value", "Car usage", "Car storage", "Other cars"],
     },
     {
-      number: 2,
+      number: STEPS.PERSONAL,
       title: "Your details",
     },
     {
-      number: 3,
+      number: STEPS.COVER,
       title: "Your policy",
     },
     {
-      number: 4,
+      number: STEPS.OPTIONAL_EXTRAS,
+      title: "Optional extras",
+    },
+    {
+      number: STEPS.REVIEW,
       title: "Check your answers",
     },
   ];
 
-  const totalSteps = 4;
-  const progressPercentage = Math.round(((currentStep - 1) / totalSteps) * 100);
+  const totalSteps = steps.length;
+  const progressPercentage = Math.round(((currentStep - 1) / (totalSteps - 1)) * 100);
 
   const toggleStep = (stepNumber) => {
     if (stepNumber === currentStep) {
