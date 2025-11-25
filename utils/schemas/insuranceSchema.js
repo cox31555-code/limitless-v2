@@ -112,32 +112,24 @@ export const annualCoverDetailsSchema = z.object({
 // User Details Schema
 export const userDetailsSchema = z
   .object({
-    title: z.string().min(1, "Title is required"),
+    title: z.string().optional(),
     firstName: z
       .string()
-      .min(2, "First name must be at least 2 characters")
-      .max(50, "First name cannot exceed 50 characters")
-      .trim(),
+      .optional(),
     surname: z
       .string()
-      .min(2, "Last name must be at least 2 characters")
-      .max(50, "Last name cannot exceed 50 characters")
-      .trim(),
-    maritalStatus: z.string().min(1, "Marital status is required"),
+      .optional(),
+    maritalStatus: z.string().optional(),
     email: z
       .string()
-      .email("Please enter a valid email")
-      .max(100, "Email cannot exceed 100 characters")
-      .toLowerCase(),
+      .optional(),
     phone: z
       .string()
-      .min(7, "Phone number must be at least 7 characters")
-      .max(20, "Phone number cannot exceed 20 characters")
-      .regex(/^\+?[\d\s\-()]+$/, "Please enter a valid phone number"),
-    dateOfBirth: z.string().min(1, "Date of birth is required"),
+      .optional(),
+    dateOfBirth: z.string().optional(),
     postCode: z.string().optional(),
     address: z.string().optional(),
-    employmentStatus: z.string().min(1, "Employment status is required"),
+    employmentStatus: z.string().optional(),
     occupation: z.string().optional(),
     industry: z.string().optional(),
   })
