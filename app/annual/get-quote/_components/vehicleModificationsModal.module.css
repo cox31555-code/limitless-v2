@@ -494,6 +494,24 @@
     padding: 1.2rem 3.6rem 1.2rem 1.4rem;
   }
 
+  .categoriesList {
+    gap: 2.4rem;
+  }
+
+  .categorySection {
+    gap: 1.2rem;
+  }
+
+  .categoryHeader {
+    font-size: 1.4rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .categoryOptions {
+    gap: 0.9rem;
+    padding-left: 0.3rem;
+  }
+
   .checkboxLabel {
     font-size: 1.4rem;
   }
