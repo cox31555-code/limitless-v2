@@ -524,6 +524,15 @@
     font-size: 1.4rem;
   }
 
+  .customInputWithPrefix {
+    padding-left: 2.8rem;
+  }
+
+  .customInputPrefix {
+    left: 1.2rem;
+    font-size: 1.4rem;
+  }
+
   .customInputLabel {
     font-size: 1.2rem;
   }
