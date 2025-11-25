@@ -123,9 +123,9 @@ const Step2Household = ({ form }) => {
             </label>
           </div>
 
-          <button 
-            type="button" 
-            className={styles.expandableLink}
+          <button
+            type="button"
+            className={`${styles.expandableLink} ${styles.withIcon}`}
             onClick={() => setExpandedWhyAsking(!expandedWhyAsking)}
           >
             <span className={styles.expandableIcon}>
