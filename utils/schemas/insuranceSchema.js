@@ -176,11 +176,8 @@ export const carUsageSchema = z.object({
       "Open public car park",
       "Secure public car park",
       "Street away from home",
-    ],
-    {
-      required_error: "Please specify where you keep your car during the day",
-    }
-  ),
+    ]
+  ).optional(),
   keepingCarDuringNight: z.enum(
     [
       "Drive",
@@ -190,21 +187,15 @@ export const carUsageSchema = z.object({
       "Public car park",
       "Work car park",
       "Private property",
-    ],
-    {
-      required_error: "Please specify where you keep your car during the night",
-    }
-  ),
+    ]
+  ).optional(),
   usageType: z.enum(
     [
       "Social use only",
       "Social and commuting",
       "Social, commuting and business",
-    ],
-    {
-      required_error: "Please specify how you use your car",
-    }
-  ),
+    ]
+  ).optional(),
   otherVehicles: z.boolean().nullable(),
   otherVehiclesType: z.enum(
     [
@@ -227,11 +218,11 @@ export const carUsageSchema = z.object({
   ownsHome: z.boolean().nullable(),
   childrenUnder16: z.boolean().nullable(),
   livedInUKSinceBirth: z.boolean().nullable(),
-  licenseType: z.string().min(1, "License type is required"),
-  licenseHeld: z.string().min(1, "License held is required"),
+  licenseType: z.string().optional(),
+  licenseHeld: z.string().optional(),
   licenseNumber: z.string().optional(),
-  NCB: z.string().min(1, "No claims bonus years is required"),
-  voluntaryExcess: z.string().min(1, "Voluntary excess is required"),
+  NCB: z.string().optional(),
+  voluntaryExcess: z.string().optional(),
   annualMileage: z.string().optional().nullable().refine(
     (val) => {
       if (!val || val.trim() === '') return true;
@@ -242,38 +233,23 @@ export const carUsageSchema = z.object({
       message: "Annual mileage must be between 100 and 20,000 miles",
     }
   ),
-  criminalConvictions: z.boolean({
-    required_error: "Please select Yes or No for criminal convictions",
-    invalid_type_error: "Please select Yes or No for criminal convictions",
-  }).nullable().refine(val => val !== null && val !== undefined, {
-    message: "Please select Yes or No for criminal convictions"
-  }),
+  criminalConvictions: z.boolean().nullable(),
   convictions: z.array(z.any()).default([]),
-  medicalConditions: z.boolean({
-    required_error: "Please select Yes or No for medical conditions",
-    invalid_type_error: "Please select Yes or No for medical conditions",
-  }).nullable().refine(val => val !== null && val !== undefined, {
-    message: "Please select Yes or No for medical conditions"
-  }),
+  medicalConditions: z.boolean().nullable(),
   dvlaConditionType: z.string().optional().nullable(),
-  insuranceCancelledOrClaimRefusedOrPolicyVoided: z.boolean({
-    required_error: "Please select Yes or No for insurance history",
-    invalid_type_error: "Please select Yes or No for insurance history",
-  }).nullable().refine(val => val !== null && val !== undefined, {
-    message: "Please select Yes or No for insurance history"
-  }),
+  insuranceCancelledOrClaimRefusedOrPolicyVoided: z.boolean().nullable(),
   hasAdditionalDrivers: z.boolean().nullable().default(null),
   additionalDrivers: z.array(z.object({
-    relationship: z.string().min(1, "Relationship is required"),
-    title: z.string().min(1, "Title is required"),
-    firstName: z.string().min(1, "First name is required"),
-    lastName: z.string().min(1, "Last name is required"),
-    dateOfBirth: z.string().min(1, "Date of birth is required"),
-    relationshipStatus: z.string().min(1, "Relationship status is required"),
+    relationship: z.string().optional(),
+    title: z.string().optional(),
+    firstName: z.string().optional(),
+    lastName: z.string().optional(),
+    dateOfBirth: z.string().optional(),
+    relationshipStatus: z.string().optional(),
     livedInUKSinceBirth: z.boolean().nullable(),
-    employmentStatus: z.string().min(1, "Employment status is required"),
-    licenseType: z.string().min(1, "License type is required"),
-    licenseHeld: z.string().min(1, "License held is required"),
+    employmentStatus: z.string().optional(),
+    licenseType: z.string().optional(),
+    licenseHeld: z.string().optional(),
     otherVehicles: z.boolean().nullable(),
     medicalConditions: z.boolean().nullable(),
     dvlaConditionType: z.string().optional().nullable(),
@@ -292,19 +268,7 @@ export const carUsageSchema = z.object({
       path: ["dvlaConditionType"],
     }
   )).default([]).optional(),
-}).refine(
-  (data) => {
-    // If medical conditions is true, dvlaConditionType must be selected
-    if (data.medicalConditions === true && !data.dvlaConditionType) {
-      return false;
-    }
-    return true;
-  },
-  {
-    message: "Please select a DVLA status for your medical condition",
-    path: ["dvlaConditionType"],
-  }
-);
+});
 
 // Terms and Conditions Schema
 export const termsSchema = z.object({
