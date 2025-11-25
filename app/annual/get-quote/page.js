@@ -233,16 +233,10 @@ const AnnualInsuranceContent = () => {
     switch (step) {
       case STEPS.VEHICLE:
         return vehicleFields;
+      case STEPS.PERSONAL:
+        return step2PersonalFields;
       case STEPS.COVER:
         return coverFields;
-      case STEPS.PERSONAL: {
-        const employmentStatus = form.watch("userDetails.employmentStatus");
-        const personalFields = [...basePersonalFields];
-        if (employmentStatus !== "Student") {
-          personalFields.push("userDetails.industry", "userDetails.occupation");
-        }
-        return personalFields;
-      }
       default:
         return [];
     }
