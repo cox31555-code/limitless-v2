@@ -5,8 +5,8 @@ import styles from "./step1OtherCars.module.css";
 
 const Step1OtherCars = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
-  
-  const [householdCarsCount, setHouseholdCarsCount] = useState("");
+
+  const householdCarsCount = watch("carUsage.otherVehiclesType");
   const otherVehicles = watch("carUsage.otherVehicles");
 
   const carCountOptions = ["1", "2", "3", "4", "5"];
@@ -31,7 +31,6 @@ const Step1OtherCars = ({ form }) => {
               selected={householdCarsCount}
               options={carCountOptions}
               setSelected={(value) => {
-                setHouseholdCarsCount(value);
                 setValue("carUsage.otherVehiclesType", value);
               }}
               placeholder="Please select..."
