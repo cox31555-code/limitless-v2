@@ -273,16 +273,7 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
-    if (currentStep === STEPS.PERSONAL) {
-      setCurrentStep(STEPS.COVER);
-      setVehicleSubStep("registration");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    if (currentStep === STEPS.OPTIONAL_EXTRAS) {
-      setCurrentStep(STEPS.REVIEW);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (currentStep === STEPS.REVIEW) {
       return;
     }
 
@@ -290,14 +281,6 @@ const AnnualInsuranceContent = () => {
     const isValid = await trigger(fieldsToValidate);
 
     if (isValid) {
-      if (currentStep === STEPS.PERSONAL) {
-        setCurrentStep(STEPS.OPTIONAL_EXTRAS);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        return;
-      }
-      if (currentStep === STEPS.REVIEW) {
-        return;
-      }
       setCurrentStep(currentStep + 1);
       setVehicleSubStep("registration"); // Reset vehicle sub-step when moving to next main step
       window.scrollTo({ top: 0, behavior: "smooth" });
