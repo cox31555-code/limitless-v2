@@ -201,9 +201,16 @@
   background: #e8f4ff;
 }
 
-.detailsSection {
+.vehicleQuestionsWrapper {
   width: 100%;
   max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.detailsSection {
+  width: 100%;
   background: transparent;
   margin: 2.4rem 0 0 0;
 }
@@ -272,7 +279,6 @@
 
 .modificationSection {
   width: 100%;
-  max-width: 680px;
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid #e8ecf1;
@@ -658,8 +664,7 @@
 }
 
 @media (max-width: 768px) {
-  .detailsSection,
-  .modificationSection {
+  .vehicleQuestionsWrapper {
     max-width: 100%;
   }
 
