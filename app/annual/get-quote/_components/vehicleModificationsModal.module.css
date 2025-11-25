@@ -91,6 +91,11 @@
   color: #0388ff;
 }
 
+.closeBtn:focus-visible {
+  outline: 2px solid #0388ff;
+  outline-offset: 2px;
+}
+
 /* Content */
 .content {
   flex: 1;
