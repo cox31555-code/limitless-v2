@@ -461,6 +461,9 @@ const AnnualInsuranceContent = () => {
                 {currentStep === STEPS.PERSONAL && personalSubStep === "household" && (
                   <Step2Household form={form} />
                 )}
+                {currentStep === STEPS.PERSONAL && personalSubStep === "employment" && (
+                  <Step2Employment form={form} />
+                )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
