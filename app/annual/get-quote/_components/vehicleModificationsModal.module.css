@@ -658,6 +658,24 @@
     padding: 1.6rem;
   }
 
+  .categoriesList {
+    gap: 2rem;
+  }
+
+  .categorySection {
+    gap: 0.9rem;
+  }
+
+  .categoryHeader {
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .categoryOptions {
+    gap: 0.8rem;
+    padding-left: 0;
+  }
+
   .modalFooter {
     padding: 1.4rem 1.6rem;
     border-radius: 0;
