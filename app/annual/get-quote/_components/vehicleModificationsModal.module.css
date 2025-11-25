@@ -369,6 +369,8 @@
 
   .clearBtn {
     width: 100%;
+    min-height: 4.4rem;
+    padding: 1.2rem 1.6rem;
   }
 
   .actionButtons {
@@ -379,6 +381,8 @@
   .cancelBtn,
   .confirmBtn {
     flex: 1;
+    min-height: 4.4rem;
+    padding: 1.2rem 1.6rem;
   }
 
   .modificationsList {
@@ -386,7 +390,87 @@
   }
 
   .modificationItem {
-    padding: 1rem;
+    padding: 1.2rem 1rem;
+    min-height: 4.4rem;
+  }
+
+  .checkbox {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .searchInput {
+    min-height: 4.4rem;
+    padding: 1.2rem 3.5rem 1.2rem 1.4rem;
+  }
+
+  .clearSearchBtn {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .overlay {
+    padding: 0;
+  }
+
+  .modal {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .header {
+    border-radius: 0;
+    padding: 1.4rem;
+  }
+
+  .content {
+    padding: 1.4rem;
+  }
+
+  .footer {
+    padding: 1.4rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .closeBtn {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .modificationItem {
+    padding: 1.4rem 1.2rem;
+    min-height: 4.8rem;
+  }
+
+  .checkbox {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .label {
+    font-size: 1.4rem;
+  }
+
+  .cancelBtn,
+  .confirmBtn {
+    min-height: 4.8rem;
+    font-size: 1.4rem;
+  }
+
+  .clearBtn {
+    min-height: 4.8rem;
+    font-size: 1.3rem;
+  }
+
+  .searchInput {
+    min-height: 4.8rem;
+    font-size: 1.4rem;
   }
 }
 
