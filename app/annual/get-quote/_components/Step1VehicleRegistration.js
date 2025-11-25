@@ -3,6 +3,7 @@ import React, { useState, useCallback, useRef, useEffect, useReducer } from "rea
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import RegistrationInput from "./RegistrationInput";
+import VehicleModificationsModal from "./VehicleModificationsModal";
 import styles from "./step1VehicleRegistration.module.css";
 
 const initialState = {
@@ -58,6 +59,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
   const [isLoadingVehicle, setIsLoadingVehicle] = useState(false);
   const [foundVehicle, setFoundVehicle] = useState(null);
   const [showManualEntry, setShowManualEntry] = useState(false);
+  const [showModificationsModal, setShowModificationsModal] = useState(false);
   const [state, dispatch] = useReducer(vehicleReducer, initialState);
   const hasAutoTriggeredRef = useRef(false);
 
@@ -72,6 +74,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
   const selectedFuel = watch("vehicleDetails.fuel");
   const selectedTransmission = watch("vehicleDetails.transmission");
   const selectedColour = watch("vehicleDetails.colour");
+  const vehicleModified = watch("vehicleDetails.vehicleModified");
+  const vehicleModifications = watch("vehicleDetails.vehicleModifications") || [];
 
   // Check if all manual entry fields are complete
   const isManualEntryComplete = selectedType && selectedMake && selectedModel && selectedYear && selectedDoors && selectedFuel && selectedTransmission && selectedColour;
@@ -187,6 +191,22 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
     }
   };
 
+  const handleModificationsConfirm = (selected) => {
+    setValue("vehicleDetails.vehicleModifications", selected, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    setShowModificationsModal(false);
+  };
+
+  const handleRemoveModification = (modification) => {
+    const updatedModifications = vehicleModifications.filter((mod) => mod !== modification);
+    setValue("vehicleDetails.vehicleModifications", updatedModifications, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+  };
+
   const VehicleDetailsSection = () => (
     <div className={styles.vehicleQuestionsWrapper}>
       <div className={styles.detailsSection}>
@@ -269,6 +289,36 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
           How can I find out if my car's been modified?
         </button>
       </div>
+
+      {vehicleModified === "Yes" && (
+        <div className={styles.modificationsSection}>
+          <h3 className={styles.modificationsHeading}>Your car modifications</h3>
+          <button
+            type="button"
+            className={styles.addModificationBtn}
+            onClick={() => setShowModificationsModal(true)}
+          >
+            Add a modification
+          </button>
+          {vehicleModifications.length > 0 && (
+            <div className={styles.modificationsTagsList}>
+              {vehicleModifications.map((mod) => (
+                <span key={mod} className={styles.modificationTag}>
+                  {mod}
+                  <button
+                    type="button"
+                    className={styles.removeTagBtn}
+                    onClick={() => handleRemoveModification(mod)}
+                    aria-label={`Remove ${mod}`}
+                  >
+                    ×
+                  </button>
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 
@@ -499,6 +549,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
           </p>
         </div>
       </div>
+
+      <VehicleModificationsModal
+        isOpen={showModificationsModal}
+        onClose={() => setShowModificationsModal(false)}
+        onConfirm={handleModificationsConfirm}
+        selectedModifications={vehicleModifications}
+      />
     </div>
   );
 };
