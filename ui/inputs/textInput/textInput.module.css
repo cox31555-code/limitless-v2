@@ -487,6 +487,20 @@
   padding: 1.2rem 1.6rem 1.5rem 7rem;
 }
 
+.customInputSuffix {
+  position: absolute;
+  right: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0052a3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.customInputWithSuffix {
+  padding: 1.2rem 4.4rem 1.5rem 1.6rem;
+}
+
 .customInput[type="number"]::-webkit-outer-spin-button,
 .customInput[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
