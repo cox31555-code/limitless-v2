@@ -272,6 +272,19 @@ const AnnualInsuranceContent = () => {
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
       setCurrentStep(STEPS.PERSONAL);
+      setPersonalSubStep("aboutYou");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.PERSONAL && personalSubStep === "aboutYou") {
+      setPersonalSubStep("household");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.PERSONAL && personalSubStep === "household") {
+      setCurrentStep(STEPS.COVER);
       setVehicleSubStep("registration");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
