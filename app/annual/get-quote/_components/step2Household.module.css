@@ -102,27 +102,41 @@
 .orDivider {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 1.6rem 0;
-  position: relative;
+  justify-content: flex-start;
+  margin: 2.4rem 0;
+  gap: 1.2rem;
+  font-size: 1.4rem;
+  color: #6b7c8f;
 }
 
-.orDivider::before {
+.orDivider::before,
+.orDivider::after {
   content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
+  flex: 0 0 auto;
   height: 1px;
   background-color: #e8ecf1;
+  flex-grow: 1;
 }
 
 .orDivider span {
+  flex: 0 0 auto;
   background-color: white;
   padding: 0 1.2rem;
   font-size: 1.4rem;
   color: #6b7c8f;
-  position: relative;
-  z-index: 1;
+}
+
+.orDivider::before {
+  order: 1;
+  max-width: 0;
+}
+
+.orDivider span {
+  order: 2;
+}
+
+.orDivider::after {
+  order: 3;
 }
 
 .radioGroup {
