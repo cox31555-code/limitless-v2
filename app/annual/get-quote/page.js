@@ -312,7 +312,11 @@ const AnnualInsuranceContent = () => {
       <QuoteHeader
         currentStep={currentStep}
         totalSteps={5}
-        subtitle={currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" ? "Car Value" : undefined}
+        subtitle={
+          currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" ? "Car Value" :
+          currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" ? "Car Usage" :
+          undefined
+        }
       />
       
       <div className={styles.pageContainer}>
