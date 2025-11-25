@@ -337,6 +337,7 @@ const AnnualInsuranceContent = () => {
         subtitle={
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" ? "Car Value" :
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" ? "Car Usage" :
+          currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage" ? "Car Storage" :
           undefined
         }
       />
