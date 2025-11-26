@@ -240,7 +240,7 @@
   gap: 1rem;
   padding: 1rem;
   background: #e8f4ff;
-  border-radius: 8px;
+  border-radius: 110px;
 }
 
 .personName {
@@ -257,7 +257,7 @@
   color: #ffffff;
   background: #0052a3;
   border: none;
-  border-radius: 8px;
+  border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -273,7 +273,7 @@
 .changePersonBtn:focus {
   outline: 2px solid #0052a3;
   outline-offset: 2px;
-  border-radius: 8px;
+  border-radius: 110px;
 }
 
 .personActions {
@@ -327,7 +327,7 @@
   color: #0052a3;
   background: #ffffff;
   border: 2px solid #0052a3;
-  border-radius: 8px;
+  border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -351,7 +351,7 @@
   color: #ffffff;
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
