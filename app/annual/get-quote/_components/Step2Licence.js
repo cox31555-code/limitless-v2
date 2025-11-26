@@ -134,36 +134,6 @@ const Step2Licence = ({ form }) => {
           </div>
         </div>
 
-        {/* Additional Qualifications Section */}
-        <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Have you passed any additional driving qualifications?</h3>
-          <p className={styles.subText}>
-            Some insurance providers may offer a discount if you have an additional driving qualification.
-          </p>
-
-          <div className={styles.radioGroup}>
-            <label className={styles.radioOption}>
-              <input
-                type="radio"
-                {...register("carUsage.hasAdditionalQualifications")}
-                value="Yes"
-                className={styles.radioInput}
-              />
-              <span className={styles.radioLabel}>Yes</span>
-            </label>
-
-            <label className={styles.radioOption}>
-              <input
-                type="radio"
-                {...register("carUsage.hasAdditionalQualifications")}
-                value="No"
-                className={styles.radioInput}
-              />
-              <span className={styles.radioLabel}>No</span>
-            </label>
-          </div>
-        </div>
-
         {shouldShowLicenseNumberSection && (
           <div className={styles.section}>
             <h3 className={styles.mainQuestion}>Do you want to share your driving licence number?</h3>
@@ -239,6 +209,36 @@ const Step2Licence = ({ form }) => {
             )}
           </div>
         )}
+
+        {/* Additional Qualifications Section */}
+        <div className={styles.section}>
+          <h3 className={styles.mainQuestion}>Have you passed any additional driving qualifications?</h3>
+          <p className={styles.subText}>
+            Some insurance providers may offer a discount if you have an additional driving qualification.
+          </p>
+
+          <div className={styles.radioGroup}>
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                {...register("carUsage.hasAdditionalQualifications")}
+                value="Yes"
+                className={styles.radioInput}
+              />
+              <span className={styles.radioLabel}>Yes</span>
+            </label>
+
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                {...register("carUsage.hasAdditionalQualifications")}
+                value="No"
+                className={styles.radioInput}
+              />
+              <span className={styles.radioLabel}>No</span>
+            </label>
+          </div>
+        </div>
 
         {hasAdditionalQualifications === "Yes" && (
           <>
