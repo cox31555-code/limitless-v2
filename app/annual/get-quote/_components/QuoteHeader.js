@@ -2,8 +2,8 @@
 import React from "react";
 import styles from "./quoteHeader.module.css";
 
-const QuoteHeader = ({ currentStep = 1, totalSteps = 5, subtitle }) => {
-  const stepNames = ["Car Details", "Cover Details", "Personal Details", "Optional Extras", "Review"];
+const QuoteHeader = ({ currentStep = 1, totalSteps = 4, subtitle }) => {
+  const stepNames = ["Car Details", "Your Details", "Your Policy", "Check Your Answers"];
   const displayName = subtitle || stepNames[currentStep - 1];
 
   return (
