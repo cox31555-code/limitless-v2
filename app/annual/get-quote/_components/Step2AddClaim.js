@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import styles from "./step2AddClaim.module.css";
+import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
+import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 
 const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   const [formData, setFormData] = useState({
