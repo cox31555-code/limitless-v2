@@ -543,6 +543,21 @@
     width: 0.6rem;
     height: 0.6rem;
   }
+
+  .expandableDetails {
+    margin-top: 1.4rem;
+  }
+
+  .expandableSummary {
+    font-size: 1.2rem;
+  }
+
+  .expandableContent {
+    margin-top: 0.8rem;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
 }
 
 @media (max-width: 360px) {
