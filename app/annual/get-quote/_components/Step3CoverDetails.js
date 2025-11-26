@@ -101,6 +101,19 @@ const Step3CoverDetails = ({
     "£1000"
   ];
 
+  const ncdOptions = [
+    "No NCD",
+    "1 year",
+    "2 years"
+  ];
+
+  const namedDriverExperienceOptions = [
+    "No",
+    "Named driver on another car",
+    "Named driver on company car including personal use",
+    "Named driver on company car excluding personal use"
+  ];
+
   const validateForm = () => {
     const newErrors = {};
     if (!formData.coverLevel) newErrors.coverLevel = "Please select a cover level";
