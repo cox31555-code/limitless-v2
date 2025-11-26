@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./step3AdditionalDrivers.module.css";
 
-const Step3AdditionalDrivers = ({ 
-  additionaDrivers = [], 
-  onAddDriver = () => {}, 
+const Step3AdditionalDrivers = ({
+  additionaDrivers = [],
+  onAddDriver = () => {},
   onRemoveDriver = () => {},
   hasAdditionalDrivers = null,
   onHasAdditionalDriversChange = () => {}
@@ -77,8 +77,8 @@ const Step3AdditionalDrivers = ({
                   <div key={index} className={styles.driverCard}>
                     <div className={styles.driverInfo}>
                       <p className={styles.driverName}>
-                        {driver.firstName && driver.lastName 
-                          ? `${driver.firstName} ${driver.lastName}` 
+                        {driver.firstName && driver.lastName
+                          ? `${driver.firstName} ${driver.lastName}`
                           : `Driver ${index + 1}`}
                       </p>
                       {driver.dateOfBirth && (
