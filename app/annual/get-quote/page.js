@@ -88,39 +88,6 @@ const AnnualInsuranceContent = () => {
   const [productsData, setProductsData] = useState(null);
   const [contactInformationData, setContactInformationData] = useState(null);
 
-  useEffect(() => {
-    setIsMounted(true);
-
-    // Restore form state from sessionStorage on mount
-    const savedState = sessionStorage.getItem("annualQuoteFormState");
-    if (savedState) {
-      try {
-        const formState = JSON.parse(savedState);
-        // Restore form data
-        const formData = formState.formData;
-        Object.keys(formData).forEach(key => {
-          setValue(key, formData[key]);
-        });
-        // Restore step state
-        setCurrentStep(formState.currentStep || STEPS.VEHICLE);
-        setVehicleSubStep(formState.vehicleSubStep || "registration");
-        setPersonalSubStep(formState.personalSubStep || "aboutYou");
-        setCoverSubStep(formState.coverSubStep || "details");
-        // Restore component state
-        setAdditionalDrivers(formState.additionalDrivers || []);
-        setClaims(formState.claims || []);
-        setConvictions(formState.convictions || []);
-        setCarOwnerData(formState.carOwnerData || null);
-        setNcdData(formState.ncdData || null);
-        setProductsData(formState.productsData || null);
-        setContactInformationData(formState.contactInformationData || null);
-        setFoundVehicleData(formState.foundVehicleData || null);
-      } catch (e) {
-        console.error("Failed to restore form state on mount:", e);
-      }
-    }
-  }, [setValue]);
-
   const form = useForm({
     resolver: zodResolver(annualInsuranceSchema),
     defaultValues: {
