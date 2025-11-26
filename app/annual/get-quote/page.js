@@ -449,6 +449,35 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleAddCarOwnerPerson = (type) => {
+    setCarOwnerAddingType(type);
+    setCoverSubStep(type === "registeredKeeper" ? "carOwnerAddRegisteredKeeper" : "carOwnerAddLegalOwner");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleSaveCarOwnerPerson = (personData) => {
+    if (carOwnerAddingType === "registeredKeeper") {
+      setCarOwnerData({
+        ...carOwnerData,
+        registeredKeeperOtherPerson: personData
+      });
+    } else {
+      setCarOwnerData({
+        ...carOwnerData,
+        legalOwnerOtherPerson: personData
+      });
+    }
+    setCoverSubStep("carOwner");
+    setCarOwnerAddingType(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromAddCarOwnerPerson = () => {
+    setCoverSubStep("carOwner");
+    setCarOwnerAddingType(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleAddDriverClaimClick = (index) => {
     if (index !== undefined) {
       setEditingDriverClaimIndex(index);
