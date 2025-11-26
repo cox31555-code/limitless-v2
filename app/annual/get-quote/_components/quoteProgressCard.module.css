@@ -239,6 +239,32 @@
   box-shadow: 0 0 8px rgba(0, 82, 163, 0.4);
 }
 
+/* Active substep styling with blue dot */
+.activeSubStep {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.activeSubStep::before {
+  background: #0052a3;
+  width: 9px;
+  height: 9px;
+  box-shadow: 0 0 10px rgba(0, 82, 163, 0.5);
+}
+
+.activeSubStep::after {
+  content: '';
+  position: absolute;
+  left: -1.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #0052a3 0%, #003d7a 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0, 82, 163, 0.3);
+}
+
 .connector {
   position: absolute;
   left: 13px;
