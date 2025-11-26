@@ -31,6 +31,8 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
     criminalConvictions: "",
   });
 
+  const [declineShareLicenseNumber, setDeclineShareLicenseNumber] = useState(editingDriver?.declineShareLicenseNumber || false);
+
   const [errors, setErrors] = useState({});
   const [expandedUnder17, setExpandedUnder17] = useState(false);
   const [expandedWhereToFind, setExpandedWhereToFind] = useState(false);
@@ -377,24 +379,37 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
             <div className={styles.section}>
               <div className={styles.questionHeader}>
                 <h3 className={styles.mainQuestion}>Do you want to share their driving licence number?</h3>
+                <p className={styles.subText}>We're unable to accept Isle of Man or Channel Islands driving licence numbers.</p>
               </div>
 
-              {isGreatBritain && (
-                <div className={styles.fieldGroup}>
-                  <div className={styles.fieldWrapper}>
-                    <label className={styles.fieldLabel}>First 11 characters</label>
+              {!declineShareLicenseNumber && (
+                <div className={styles.licenseImageContainer}>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F78e152c1b10b432aa104583a5336f5b1?format=webp&width=800"
+                    alt="UK Driving Licence"
+                    className={styles.licenseImage}
+                  />
+                </div>
+              )}
+
+              {!declineShareLicenseNumber && isGreatBritain && (
+                <div className={styles.licenseNumberFields}>
+                  <div className={styles.licenseField}>
+                    <label className={styles.licenseFieldLabel}>First 11 characters</label>
                     <CustomTextInput
                       type="text"
                       placeholder=""
+                      maxLength="11"
                       value={formData.licenseNumberFirst || ""}
                       onChange={(e) => setFormData({ ...formData, licenseNumberFirst: e.target.value })}
                     />
                   </div>
-                  <div className={styles.fieldWrapper}>
-                    <label className={styles.fieldLabel}>Last 5 characters</label>
+                  <div className={styles.licenseField}>
+                    <label className={styles.licenseFieldLabel}>Last 5 characters</label>
                     <CustomTextInput
                       type="text"
                       placeholder=""
+                      maxLength="5"
                       value={formData.licenseNumberLast || ""}
                       onChange={(e) => setFormData({ ...formData, licenseNumberLast: e.target.value })}
                     />
@@ -402,31 +417,57 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
                 </div>
               )}
 
-              {isNorthernIreland && (
-                <div className={styles.fieldWrapper}>
-                  <label className={styles.fieldLabel}>Licence number</label>
-                  <CustomTextInput
-                    type="text"
-                    placeholder=""
-                    value={formData.licenseNumberNI || ""}
-                    onChange={(e) => setFormData({ ...formData, licenseNumberNI: e.target.value })}
-                  />
+              {!declineShareLicenseNumber && isNorthernIreland && (
+                <div className={styles.licenseNumberFields}>
+                  <div className={styles.licenseField}>
+                    <label className={styles.licenseFieldLabel}>Enter their 8 digit number</label>
+                    <CustomTextInput
+                      type="text"
+                      placeholder=""
+                      maxLength="8"
+                      value={formData.licenseNumberNI || ""}
+                      onChange={(e) => setFormData({ ...formData, licenseNumberNI: e.target.value })}
+                    />
+                  </div>
                 </div>
               )}
 
-              <button
-                type="button"
-                className={styles.expandableLink}
-                onClick={() => setExpandedWhatDo(!expandedWhatDo)}
-              >
-                <span className={`${styles.expandableIcon} ${expandedWhatDo ? styles.expandedIcon : ''}`}>▶</span>
-                What do we do with this information?
-              </button>
+              <div className={styles.checkboxWrapper}>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    type="checkbox"
+                    checked={declineShareLicenseNumber}
+                    onChange={(e) => {
+                      setDeclineShareLicenseNumber(e.target.checked);
+                      setFormData({ ...formData, declineShareLicenseNumber: e.target.checked });
+                    }}
+                    className={styles.checkbox}
+                  />
+                  I don't want to/can't provide this
+                </label>
+              </div>
 
-              {expandedWhatDo && (
-                <div className={styles.expandableContent}>
-                  We use this information to verify driving history with the DVLA and provide you with a more accurate quote.
-                </div>
+              {!declineShareLicenseNumber && (
+                <>
+                  <div className={styles.infoBox}>
+                    Did you know... you may get a better deal by sharing this with insurers.
+                  </div>
+
+                  <button
+                    type="button"
+                    className={styles.expandableLink}
+                    onClick={() => setExpandedWhatDo(!expandedWhatDo)}
+                  >
+                    <span className={`${styles.expandableIcon} ${expandedWhatDo ? styles.expandedIcon : ''}`}>▶</span>
+                    What do we do with this information?
+                  </button>
+
+                  {expandedWhatDo && (
+                    <div className={styles.expandableContent}>
+                      We use your driving licence information to verify your identity and driving history with the DVLA. This helps us provide you with accurate insurance quotes and ensure you're getting the best possible deal.
+                    </div>
+                  )}
+                </>
               )}
             </div>
           )}
