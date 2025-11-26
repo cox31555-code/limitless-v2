@@ -175,6 +175,14 @@
   min-width: 0;
 }
 
+.dateInputGroup :global(.customInputGroup) {
+  margin: 0;
+}
+
+.dateInputGroup :global(.customInputLabel) {
+  display: none;
+}
+
 .inputLabel {
   font-size: 1.2rem;
   font-weight: 600;
