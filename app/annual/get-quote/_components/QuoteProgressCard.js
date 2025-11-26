@@ -172,7 +172,6 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
                 <button
                   className={styles.stepButtonContent}
                   onClick={() => toggleStep(step.number)}
-                  disabled={!isActive}
                 >
                   <div className={styles.stepIcon}>
                     {isCompleted ? (
@@ -185,7 +184,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
                   </div>
                   <span className={styles.stepTitle}>{step.title}</span>
                 </button>
-                {isActive && step.subSteps && (
+                {step.subSteps && (
                   <button
                     className={styles.stepExpandBtn}
                     onClick={() => toggleStep(step.number)}
