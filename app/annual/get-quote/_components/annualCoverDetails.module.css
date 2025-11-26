@@ -440,6 +440,23 @@
   .levelDescription {
     font-size: 1.35rem;
   }
+
+  .expandableDetails {
+    margin-top: 1.6rem;
+  }
+
+  .expandableSummary {
+    font-size: 1.2rem;
+    gap: 0.6rem;
+  }
+
+  .expandableContent {
+    margin-top: 1rem;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    border-left-width: 3px;
+  }
 }
 
 @media (max-width: 400px) {
