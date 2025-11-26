@@ -21,6 +21,14 @@ const Step3CoverDetails = ({
   const [expandedStartDate, setExpandedStartDate] = useState(false);
   const [expandedPaymentEffect, setExpandedPaymentEffect] = useState(false);
 
+  // Calculate max date: 30 days from today
+  const getMaxDate = () => {
+    const today = new Date();
+    const maxDate = new Date(today);
+    maxDate.setDate(maxDate.getDate() + 30);
+    return maxDate;
+  };
+
   const coverLevels = [
     {
       id: "comprehensive",
