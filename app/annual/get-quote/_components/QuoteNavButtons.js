@@ -12,7 +12,7 @@ const QuoteNavButtons = ({
   totalSteps,
   isLoading = false,
   backLabel = "Back",
-  nextLabel = "Continue",
+  nextLabel = "Next",
   disabled = false,
 }) => {
   const isFirstStep = currentStep === 1;
