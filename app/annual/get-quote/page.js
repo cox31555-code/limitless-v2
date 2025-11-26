@@ -42,6 +42,7 @@ const Step3CarOwnerAddPerson = dynamic(() => import("./_components/Step3CarOwner
 const Step3CoverDetails = dynamic(() => import("./_components/Step3CoverDetails"), { loading: () => <StepFallback /> });
 const Step3NoClaimsDiscount = dynamic(() => import("./_components/Step3NoClaimsDiscount"), { loading: () => <StepFallback /> });
 const Step3AdditionalProducts = dynamic(() => import("./_components/Step3AdditionalProducts"), { loading: () => <StepFallback /> });
+const Step3ContactInformation = dynamic(() => import("./_components/Step3ContactInformation"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
@@ -64,7 +65,7 @@ const AnnualInsuranceContent = () => {
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
   const [vehicleSubStep, setVehicleSubStep] = useState("registration"); // "registration", "carValue", "carUsage", "carStorage", or "otherCars"
   const [personalSubStep, setPersonalSubStep] = useState("aboutYou"); // "aboutYou", "household", "employment", "licence", "restrictions", "claims", or "addClaim"
-  const [coverSubStep, setCoverSubStep] = useState("details"); // "details", "additionalDrivers", "addDriver", "addDriverClaimsAndConvictions", "addDriverClaim", "addDriverConviction", "carOwner", "carOwnerAddRegisteredKeeper", "carOwnerAddLegalOwner", "cover", "ncd", or "additionalProducts"
+  const [coverSubStep, setCoverSubStep] = useState("details"); // "details", "additionalDrivers", "addDriver", "addDriverClaimsAndConvictions", "addDriverClaim", "addDriverConviction", "carOwner", "carOwnerAddRegisteredKeeper", "carOwnerAddLegalOwner", "cover", "ncd", "additionalProducts", or "contactInformation"
   const [driverBeingAdded, setDriverBeingAdded] = useState(null);
   const [driverClaims, setDriverClaims] = useState([]);
   const [driverConvictions, setDriverConvictions] = useState([]);
@@ -85,6 +86,7 @@ const AnnualInsuranceContent = () => {
   const [carOwnerAddingType, setCarOwnerAddingType] = useState(null); // "registeredKeeper" or "legalOwner"
   const [ncdData, setNcdData] = useState(null);
   const [productsData, setProductsData] = useState(null);
+  const [contactInformationData, setContactInformationData] = useState(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -529,13 +531,27 @@ const AnnualInsuranceContent = () => {
     // Store products data in form
     setProductsData(data);
     form.setValue("productsData", data, { shouldValidate: true });
-    // Move to optional extras step
-    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    // Move to contact information step
+    setCoverSubStep("contactInformation");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleBackFromAdditionalProducts = () => {
     setCoverSubStep("ncd");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleContactInformationSubmit = (data) => {
+    // Store contact information data in form
+    setContactInformationData(data);
+    form.setValue("contactInformationData", data, { shouldValidate: true });
+    // Move to optional extras step
+    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromContactInformation = () => {
+    setCoverSubStep("additionalProducts");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -1076,6 +1092,13 @@ const AnnualInsuranceContent = () => {
                     productsData={productsData || {}}
                   />
                 )}
+                {currentStep === STEPS.COVER && coverSubStep === "contactInformation" && (
+                  <Step3ContactInformation
+                    onBack={handleBackFromContactInformation}
+                    onNext={handleContactInformationSubmit}
+                    contactInformationData={contactInformationData || {}}
+                  />
+                )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
@@ -1090,7 +1113,8 @@ const AnnualInsuranceContent = () => {
                 !(currentStep === STEPS.COVER && coverSubStep === "carOwnerAddLegalOwner") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "cover") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "ncd") &&
-                !(currentStep === STEPS.COVER && coverSubStep === "additionalProducts") && (
+                !(currentStep === STEPS.COVER && coverSubStep === "additionalProducts") &&
+                !(currentStep === STEPS.COVER && coverSubStep === "contactInformation") && (
                 <QuoteNavButtons
                   currentStep={currentStep}
                   vehicleSubStep={vehicleSubStep}
