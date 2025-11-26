@@ -134,9 +134,8 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
   }, [currentStep, vehicleSubStep, personalSubStep, coverSubStep, mainLineProgress]);
 
   const toggleStep = (stepNumber) => {
-    if (stepNumber === currentStep) {
-      setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
-    }
+    // Allow any step with substeps to be toggled
+    setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
   };
 
   return (
