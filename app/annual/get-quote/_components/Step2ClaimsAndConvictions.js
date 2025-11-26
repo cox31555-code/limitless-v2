@@ -1,11 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./step2ClaimsAndConvictions.module.css";
+import ClaimModal from "./ClaimModal";
 
 const Step2ClaimsAndConvictions = ({ form }) => {
   const { register, formState: { errors }, watch } = form;
   const [expandedClaimsWhatIf, setExpandedClaimsWhatIf] = useState(false);
   const [expandedConvictionsHow, setExpandedConvictionsHow] = useState(false);
+  const [isClaimModalOpen, setIsClaimModalOpen] = useState(false);
+  const [claims, setClaims] = useState([]);
+  const [editingClaimIndex, setEditingClaimIndex] = useState(null);
 
   const motorAccidentsClaims = watch("carUsage.motorAccidentsClaims");
   const drivingConvictions = watch("carUsage.drivingConvictions");
