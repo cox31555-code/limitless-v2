@@ -6,17 +6,6 @@ const DashboardFooter = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-        {/* Help Section */}
-        <div className={styles.helpSection}>
-          <h3 className={styles.helpTitle}>Need help?</h3>
-          <div className={styles.helpActions}>
-            <a href="#" className={styles.helpLink}>Chat Now</a>
-            <a href="#" className={styles.helpLink}>Call Us</a>
-            <a href="#" className={styles.helpLink}>Email Us</a>
-            <a href="/FAQ" className={styles.helpLink}>FAQ</a>
-          </div>
-        </div>
-
         {/* Top Section - Trust & Partnership Info */}
         <div className={styles.topSection}>
           <div className={styles.trustSection}>
