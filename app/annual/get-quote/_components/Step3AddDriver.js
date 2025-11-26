@@ -85,6 +85,10 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
     if (!formData.dateOfBirth) newErrors.dateOfBirth = "Please enter date of birth";
     if (!formData.relationshipStatus) newErrors.relationshipStatus = "Please select relationship status";
     if (!formData.livedInUKSinceBirth) newErrors.livedInUKSinceBirth = "Please answer this question";
+    if (!formData.employmentStatus) newErrors.employmentStatus = "Please select employment status";
+    if (isEmployedOrSelfEmployed && !formData.occupation) newErrors.occupation = "Please enter occupation";
+    if (isEmployedOrSelfEmployed && !formData.industry) newErrors.industry = "Please enter industry";
+    if (isStudent && !formData.occupation) newErrors.occupation = "Please select student type";
     if (!formData.licenseType) newErrors.licenseType = "Please select license type";
     if (!formData.licenseIssueCountry) newErrors.licenseIssueCountry = "Please select where license was issued";
     if (!formData.licenseHeld) newErrors.licenseHeld = "Please select how long held license";
