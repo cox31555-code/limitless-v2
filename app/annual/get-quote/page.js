@@ -611,7 +611,11 @@ const AnnualInsuranceContent = () => {
                 onBack={handlePreviousStep}
                 onSubmit={onSubmit}
                 isLoading={isSubmitting}
-                nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Next"}
+                nextLabel={
+                  currentStep === STEPS.REVIEW ? "Get Quote" :
+                  currentStep === STEPS.PERSONAL && personalSubStep === "addClaim" ? "Add claim" :
+                  "Next"
+                }
                 backLabel="Back"
               />
             </form>
