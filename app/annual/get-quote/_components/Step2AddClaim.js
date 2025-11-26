@@ -16,6 +16,7 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
     whoAtFault: "",
     whoWasDriving: "",
     wereThereInjuries: "",
+    theftType: "",
   });
 
   const [errors, setErrors] = useState({});
