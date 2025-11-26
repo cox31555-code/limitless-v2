@@ -298,8 +298,8 @@ export const carUsageSchema = z.object({
   )).default([]).optional(),
 }).refine(
   (data) => {
-    // If hasAdditionalQualifications is true, all qualification fields must be filled
-    if (data.hasAdditionalQualifications === true) {
+    // If hasAdditionalQualifications is "Yes", all qualification fields must be filled
+    if (data.hasAdditionalQualifications === "Yes") {
       return data.additionalQualificationType && data.qualificationMonth && data.qualificationYear;
     }
     return true;
