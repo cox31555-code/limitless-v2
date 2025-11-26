@@ -1,80 +1,77 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./step3AddDriver.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import { licenseHeldOptions, monthOptions, yearOptions, additionalQualificationsOptions } from "@/app/temporary/get-quote/data";
 
 const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
-  const [formData, setFormData] = useState({
-    relationship: "",
+  const [formData, setFormData] = useState(editingDriver || {
     title: "",
     firstName: "",
     lastName: "",
-    day: "",
-    month: "",
-    year: "",
+    dateOfBirth: "",
     relationshipStatus: "",
+    relationship: "",
     livedInUKSinceBirth: "",
-    employmentStatus: "",
     licenseType: "",
     licenseIssueCountry: "",
     licenseHeld: "",
-    licenseNumber: "",
-    otherVehicles: "",
+    licenseNumberFirst: "",
+    licenseNumberLast: "",
+    licenseNumberNI: "",
+    declineShareLicenseNumber: false,
+    hasAdditionalQualifications: "",
+    additionalQualificationType: "",
+    qualificationMonth: "",
+    qualificationYear: "",
     medicalConditions: "",
-    dvlaAwareOfCondition: "",
-    insuranceCancelledOrVoided: "",
+    dvlaConditionType: "",
+    insuranceCancelledOrClaimRefusedOrPolicyVoided: "",
     criminalConvictions: "",
   });
 
   const [errors, setErrors] = useState({});
-  const [expandedCanQuote, setExpandedCanQuote] = useState(false);
-  const [expandedWhyAsk, setExpandedWhyAsk] = useState(false);
-  const [expandedUKBirth, setExpandedUKBirth] = useState(false);
-  const [expandedLicenseDate, setExpandedLicenseDate] = useState(false);
-  const [expandedLicenseShare, setExpandedLicenseShare] = useState(false);
+  const [expandedUnder17, setExpandedUnder17] = useState(false);
+  const [expandedWhereToFind, setExpandedWhereToFind] = useState(false);
+  const [expandedWhatDo, setExpandedWhatDo] = useState(false);
   const [expandedMedical, setExpandedMedical] = useState(false);
   const [expandedSpecialTerms, setExpandedSpecialTerms] = useState(false);
   const [expandedConviction, setExpandedConviction] = useState(false);
   const [expandedConvictionSpent, setExpandedConvictionSpent] = useState(false);
 
+  const titleOptions = ["Mr", "Mrs", "Miss", "Ms", "Dr", "Prof"];
+  const maritalStatusOptions = ["Single", "Married", "Civil partnership", "Divorced", "Widowed"];
   const relationshipOptions = ["Spouse", "Child", "Parent", "Sibling", "Friend", "Other"];
-  const titleOptions = ["Mr", "Mrs", "Miss", "Ms", "Dr", "Mx"];
-  const relationshipStatusOptions = ["Single", "Married", "Divorced", "Widowed", "In a civil partnership"];
-  const employmentStatusOptions = ["Employed", "Self-employed", "Retired", "Unemployed", "Student", "Houseperson"];
-  const licenseTypeOptions = ["Full UK", "Provisional UK", "International", "Other"];
-  const licenseCountryOptions = ["UK", "EU/EEA", "Other"];
-  const licenseHeldOptions = ["Less than 1 year", "1 year", "2 years", "3 years", "4 years", "5 years", "6 years", "7 years", "8 years", "9 years", "10+ years"];
-  const yesNoOptions = ["Yes", "No"];
-  const dayOptions = Array.from({ length: 31 }, (_, i) => String(i + 1));
-  const monthOptions = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const yearOptions = Array.from({ length: 100 }, (_, i) => String(new Date().getFullYear() - i));
-
-  useEffect(() => {
-    if (editingDriver) {
-      setFormData(editingDriver);
-    }
-  }, [editingDriver]);
+  const licenseTypeOptions = [
+    "Full UK Car Licence",
+    "Provisional UK Car Licence",
+    "Full International Licence",
+    "Full EU Licence",
+    "Full European non-EU Licence",
+    "Full UK Car Licence (automatic only)",
+  ];
+  const licenseIssueCountryOptions = [
+    "England, Scotland or Wales (Great Britain)",
+    "Northern Ireland",
+  ];
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.relationship) newErrors.relationship = "Please select a relationship";
     if (!formData.title) newErrors.title = "Please select a title";
     if (!formData.firstName) newErrors.firstName = "Please enter first name";
     if (!formData.lastName) newErrors.lastName = "Please enter last name";
-    if (!formData.day || !formData.month || !formData.year) newErrors.dateOfBirth = "Please enter a valid date of birth";
+    if (!formData.dateOfBirth) newErrors.dateOfBirth = "Please enter date of birth";
     if (!formData.relationshipStatus) newErrors.relationshipStatus = "Please select relationship status";
     if (!formData.livedInUKSinceBirth) newErrors.livedInUKSinceBirth = "Please answer this question";
-    if (!formData.employmentStatus) newErrors.employmentStatus = "Please select employment status";
     if (!formData.licenseType) newErrors.licenseType = "Please select license type";
-    if (!formData.licenseIssueCountry) newErrors.licenseIssueCountry = "Please select license country";
+    if (!formData.licenseIssueCountry) newErrors.licenseIssueCountry = "Please select where license was issued";
     if (!formData.licenseHeld) newErrors.licenseHeld = "Please select how long held license";
-    if (!formData.otherVehicles) newErrors.otherVehicles = "Please answer this question";
     if (!formData.medicalConditions) newErrors.medicalConditions = "Please answer this question";
-    if (formData.medicalConditions === "Yes" && !formData.dvlaAwareOfCondition) {
-      newErrors.dvlaAwareOfCondition = "Please select DVLA status";
+    if (formData.medicalConditions === "Yes" && !formData.dvlaConditionType) {
+      newErrors.dvlaConditionType = "Please select DVLA status";
     }
-    if (!formData.insuranceCancelledOrVoided) newErrors.insuranceCancelledOrVoided = "Please answer this question";
+    if (!formData.insuranceCancelledOrClaimRefusedOrPolicyVoided) newErrors.insuranceCancelledOrClaimRefusedOrPolicyVoided = "Please answer this question";
     if (!formData.criminalConvictions) newErrors.criminalConvictions = "Please answer this question";
 
     return newErrors;
@@ -89,6 +86,15 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
     }
   };
 
+  const isNorthernIreland = formData.licenseIssueCountry === "Northern Ireland";
+  const isGreatBritain = formData.licenseIssueCountry === "England, Scotland or Wales (Great Britain)";
+  const nonUKLicenseTypes = [
+    "Full International Licence",
+    "Full EU Licence",
+    "Full European non-EU Licence",
+  ];
+  const shouldShowLicenseNumberSection = formData.licenseType && !nonUKLicenseTypes.includes(formData.licenseType);
+
   return (
     <div className={styles.container}>
       <div className={styles.stepTitle}>
@@ -99,56 +105,62 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
         <div className={styles.contentWrapper}>
           {/* Relationship Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>What's their relationship to you?</h3>
-            <Dropdown
-              label=""
-              selected={formData.relationship}
-              options={relationshipOptions}
-              setSelected={(value) => setFormData({ ...formData, relationship: value })}
-              placeholder="Please select…"
-              error={errors.relationship}
-            />
-            {errors.relationship && <span className={styles.error}>{errors.relationship}</span>}
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What's their relationship to you?</h3>
+            </div>
+            <div className={styles.fieldWrapper}>
+              <Dropdown
+                label=""
+                selected={formData.relationship}
+                options={relationshipOptions}
+                setSelected={(value) => setFormData({ ...formData, relationship: value })}
+                placeholder="Please select…"
+              />
+              {errors.relationship && <span className={styles.error}>{errors.relationship}</span>}
+            </div>
           </div>
 
-          {/* Personal Details Section */}
+          {/* Name Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>What's their name?</h3>
-            
-            <div className={styles.noteBox}>
-              <p className={styles.noteText}>If you select 'Dr' or 'Mx' as their title, you may see fewer results. A small number of providers are still updating their systems to support these options. We're working closely with them to ensure complete availability.</p>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What's their name?</h3>
+              <p className={styles.subText}>
+                If you select 'Dr' or 'Prof' as their title, you may see fewer results. A small number of providers are still updating their systems to support these options. We're working closely with them to ensure complete availability.
+              </p>
             </div>
 
-            <div className={styles.formRow}>
-              <div className={styles.field}>
-                <label className={styles.inputLabel}>Title</label>
+            <div className={styles.fieldGroup}>
+              <div className={styles.fieldWrapper}>
+                <label className={styles.fieldLabel}>Title</label>
                 <Dropdown
                   label=""
                   selected={formData.title}
                   options={titleOptions}
                   setSelected={(value) => setFormData({ ...formData, title: value })}
-                  placeholder="Select…"
-                  error={errors.title}
+                  placeholder="Select..."
                 />
                 {errors.title && <span className={styles.error}>{errors.title}</span>}
               </div>
-              <div className={styles.field}>
-                <label className={styles.inputLabel}>First name</label>
-                <CustomTextInput
-                  placeholder="Enter first name"
-                  value={formData.firstName}
-                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                  error={errors.firstName}
-                />
-                {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
-              </div>
             </div>
 
-            <div className={styles.field}>
-              <label className={styles.inputLabel}>Last name</label>
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>First name</label>
               <CustomTextInput
-                placeholder="Enter last name"
-                value={formData.lastName}
+                type="text"
+                placeholder=""
+                value={formData.firstName || ""}
+                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                error={errors.firstName}
+              />
+              {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
+            </div>
+
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>Last name</label>
+              <CustomTextInput
+                type="text"
+                placeholder=""
+                value={formData.lastName || ""}
                 onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                 error={errors.lastName}
               />
@@ -158,18 +170,20 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
 
           {/* Date of Birth Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>What's their date of birth?</h3>
-            
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What's their date of birth?</h3>
+            </div>
+
             <button
               type="button"
               className={styles.expandableLink}
-              onClick={() => setExpandedCanQuote(!expandedCanQuote)}
+              onClick={() => setExpandedUnder17(!expandedUnder17)}
             >
-              <span className={`${styles.expandableIcon} ${expandedCanQuote ? styles.expandedIcon : ''}`}>▶</span>
+              <span className={`${styles.expandableIcon} ${expandedUnder17 ? styles.expandedIcon : ''}`}>▶</span>
               Can I get a quote if they're under 17?
             </button>
 
-            {expandedCanQuote && (
+            {expandedUnder17 && (
               <div className={styles.expandableContent}>
                 Drivers under 17 cannot be added as they're not legally able to drive a motor vehicle on public roads in the UK.
               </div>
@@ -178,32 +192,55 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
             <div className={styles.dateInputsWrapper}>
               <div className={styles.dateInputGroup}>
                 <label className={styles.inputLabel}>Day</label>
-                <Dropdown
-                  label=""
-                  selected={formData.day}
-                  options={dayOptions}
-                  setSelected={(value) => setFormData({ ...formData, day: value })}
-                  placeholder="Day"
+                <CustomTextInput
+                  type="text"
+                  placeholder="DD"
+                  maxLength={2}
+                  value={formData.dateOfBirth ? formData.dateOfBirth.split('/')[0] : ""}
+                  onChange={(e) => {
+                    let day = e.target.value.replace(/[^0-9]/g, '');
+                    if (day.length > 2) day = day.slice(0, 2);
+                    if (day && (parseInt(day) < 1 || parseInt(day) > 31)) return;
+                    const parts = formData.dateOfBirth ? formData.dateOfBirth.split('/') : ['', '', ''];
+                    if (day || parts[1] || parts[2]) {
+                      setFormData({ ...formData, dateOfBirth: `${day}/${parts[1] || ''}/${parts[2] || ''}` });
+                    }
+                  }}
                 />
               </div>
               <div className={styles.dateInputGroup}>
                 <label className={styles.inputLabel}>Month</label>
-                <Dropdown
-                  label=""
-                  selected={formData.month}
-                  options={monthOptions}
-                  setSelected={(value) => setFormData({ ...formData, month: value })}
-                  placeholder="Month"
+                <CustomTextInput
+                  type="text"
+                  placeholder="MM"
+                  maxLength={2}
+                  value={formData.dateOfBirth ? formData.dateOfBirth.split('/')[1] : ""}
+                  onChange={(e) => {
+                    let month = e.target.value.replace(/[^0-9]/g, '');
+                    if (month.length > 2) month = month.slice(0, 2);
+                    if (month && (parseInt(month) < 1 || parseInt(month) > 12)) return;
+                    const parts = formData.dateOfBirth ? formData.dateOfBirth.split('/') : ['', '', ''];
+                    if (parts[0] || month || parts[2]) {
+                      setFormData({ ...formData, dateOfBirth: `${parts[0] || ''}/${month}/${parts[2] || ''}` });
+                    }
+                  }}
                 />
               </div>
               <div className={styles.dateInputGroup}>
                 <label className={styles.inputLabel}>Year</label>
-                <Dropdown
-                  label=""
-                  selected={formData.year}
-                  options={yearOptions}
-                  setSelected={(value) => setFormData({ ...formData, year: value })}
-                  placeholder="Year"
+                <CustomTextInput
+                  type="text"
+                  placeholder="YYYY"
+                  maxLength={4}
+                  value={formData.dateOfBirth ? formData.dateOfBirth.split('/')[2] : ""}
+                  onChange={(e) => {
+                    let year = e.target.value.replace(/[^0-9]/g, '');
+                    if (year.length > 4) year = year.slice(0, 4);
+                    const parts = formData.dateOfBirth ? formData.dateOfBirth.split('/') : ['', '', ''];
+                    if (parts[0] || parts[1] || year) {
+                      setFormData({ ...formData, dateOfBirth: `${parts[0] || ''}/${parts[1] || ''}/${year}` });
+                    }
+                  }}
                 />
               </div>
             </div>
@@ -212,40 +249,35 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
 
           {/* Relationship Status Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>What's their relationship status?</h3>
-            <Dropdown
-              label=""
-              selected={formData.relationshipStatus}
-              options={relationshipStatusOptions}
-              setSelected={(value) => setFormData({ ...formData, relationshipStatus: value })}
-              placeholder="Please select…"
-              error={errors.relationshipStatus}
-            />
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What's their relationship status?</h3>
+            </div>
+            <div className={styles.radioGroup}>
+              {maritalStatusOptions.map((option) => (
+                <label key={option} className={styles.radioOption}>
+                  <input
+                    type="radio"
+                    name="relationshipStatus"
+                    value={option}
+                    checked={formData.relationshipStatus === option}
+                    onChange={(e) => setFormData({ ...formData, relationshipStatus: e.target.value })}
+                    className={styles.radioInput}
+                  />
+                  <span className={styles.radioLabel}>{option}</span>
+                </label>
+              ))}
+            </div>
             {errors.relationshipStatus && <span className={styles.error}>{errors.relationshipStatus}</span>}
-
-            <button
-              type="button"
-              className={styles.expandableLink}
-              onClick={() => setExpandedWhyAsk(!expandedWhyAsk)}
-            >
-              <span className={`${styles.expandableIcon} ${expandedWhyAsk ? styles.expandedIcon : ''}`}>▶</span>
-              Why are we asking?
-            </button>
-
-            {expandedWhyAsk && (
-              <div className={styles.expandableContent}>
-                Insurance providers use this information to calculate risk and determine your premium.
-              </div>
-            )}
           </div>
 
           {/* UK Since Birth Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Have they continuously lived in the UK since birth?</h3>
-            <p className={styles.sectionDescription}>Insurance providers need to know how long they've lived in the UK on a continuous basis, without any breaks lasting 6 months or longer.</p>
-            
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>Have they continuously lived in the UK since birth?</h3>
+              <p className={styles.subText}>Insurance providers need to know how long they've lived in the UK on a continuous basis, without any breaks lasting 6 months or longer.</p>
+            </div>
             <div className={styles.radioGroup}>
-              {yesNoOptions.map((option) => (
+              {["Yes", "No"].map((option) => (
                 <label key={option} className={styles.radioOption}>
                   <input
                     type="radio"
@@ -262,144 +294,211 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
             {errors.livedInUKSinceBirth && <span className={styles.error}>{errors.livedInUKSinceBirth}</span>}
           </div>
 
-          {/* Employment Status Section */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>What's their employment status?</h3>
-            <Dropdown
-              label=""
-              selected={formData.employmentStatus}
-              options={employmentStatusOptions}
-              setSelected={(value) => setFormData({ ...formData, employmentStatus: value })}
-              placeholder="Please select…"
-              error={errors.employmentStatus}
-            />
-            {errors.employmentStatus && <span className={styles.error}>{errors.employmentStatus}</span>}
-          </div>
-
           {/* License Type Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>What type of driving licence do they have?</h3>
-            <p className={styles.sectionDescription}>Choose the type of licence they'll have at the time this policy starts.</p>
-            <Dropdown
-              label=""
-              selected={formData.licenseType}
-              options={licenseTypeOptions}
-              setSelected={(value) => setFormData({ ...formData, licenseType: value })}
-              placeholder="Please select…"
-              error={errors.licenseType}
-            />
-            {errors.licenseType && <span className={styles.error}>{errors.licenseType}</span>}
-          </div>
-
-          {/* License Country Section */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Where was their driving licence issued?</h3>
-            <p className={styles.sectionDescription}>This won't change the price of your policy.</p>
-            <Dropdown
-              label=""
-              selected={formData.licenseIssueCountry}
-              options={licenseCountryOptions}
-              setSelected={(value) => setFormData({ ...formData, licenseIssueCountry: value })}
-              placeholder="Please select…"
-              error={errors.licenseIssueCountry}
-            />
-            {errors.licenseIssueCountry && <span className={styles.error}>{errors.licenseIssueCountry}</span>}
-          </div>
-
-          {/* License Held Section */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>How long have they held this licence?</h3>
-            <p className={styles.sectionDescription}>Round down to the nearest full year they've held their driving licence for. So, if they passed their driving test 6 years and 11 months ago, your answer will be 6 years.</p>
-            <Dropdown
-              label=""
-              selected={formData.licenseHeld}
-              options={licenseHeldOptions}
-              setSelected={(value) => setFormData({ ...formData, licenseHeld: value })}
-              placeholder="Please select…"
-              error={errors.licenseHeld}
-            />
-            {errors.licenseHeld && <span className={styles.error}>{errors.licenseHeld}</span>}
-
-            <button
-              type="button"
-              className={styles.expandableLink}
-              onClick={() => setExpandedLicenseDate(!expandedLicenseDate)}
-            >
-              <span className={`${styles.expandableIcon} ${expandedLicenseDate ? styles.expandedIcon : ''}`}>▶</span>
-              Where can I find the date?
-            </button>
-
-            {expandedLicenseDate && (
-              <div className={styles.expandableContent}>
-                You can find this information on your driving licence card or DVLA records.
-              </div>
-            )}
-          </div>
-
-          {/* License Number Section */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Do you want to share their driving licence number?</h3>
-            <p className={styles.sectionDescription}>We're unable to accept Isle of Man or Channel Islands driving licence numbers.</p>
-            
-            <div className={styles.formRow}>
-              <div className={styles.field}>
-                <label className={styles.inputLabel}>First 11 characters</label>
-                <CustomTextInput
-                  placeholder="Optional"
-                  value={formData.licenseNumber || ""}
-                  onChange={(e) => setFormData({ ...formData, licenseNumber: e.target.value })}
-                />
-              </div>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What type of driving licence do they have?</h3>
+              <p className={styles.subText}>Choose the type of licence they'll have at the time this policy starts.</p>
             </div>
-
-            <div className={styles.infoBox}>
-              <p className={styles.infoText}>Did you know… you may get a better deal by sharing this with insurers.</p>
-            </div>
-
-            <button
-              type="button"
-              className={styles.expandableLink}
-              onClick={() => setExpandedLicenseShare(!expandedLicenseShare)}
-            >
-              <span className={`${styles.expandableIcon} ${expandedLicenseShare ? styles.expandedIcon : ''}`}>▶</span>
-              What do we do with this information?
-            </button>
-
-            {expandedLicenseShare && (
-              <div className={styles.expandableContent}>
-                We share this information with insurance providers to verify your driving history and give you accurate quotes.
-              </div>
-            )}
-          </div>
-
-          {/* Other Vehicles Section */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Do they use any other vehicles?</h3>
             <div className={styles.radioGroup}>
-              {yesNoOptions.map((option) => (
+              {licenseTypeOptions.map((option) => (
                 <label key={option} className={styles.radioOption}>
                   <input
                     type="radio"
-                    name="otherVehicles"
+                    name="licenseType"
                     value={option}
-                    checked={formData.otherVehicles === option}
-                    onChange={(e) => setFormData({ ...formData, otherVehicles: e.target.value })}
+                    checked={formData.licenseType === option}
+                    onChange={(e) => setFormData({ ...formData, licenseType: e.target.value })}
                     className={styles.radioInput}
                   />
                   <span className={styles.radioLabel}>{option}</span>
                 </label>
               ))}
             </div>
-            {errors.otherVehicles && <span className={styles.error}>{errors.otherVehicles}</span>}
+            {errors.licenseType && <span className={styles.error}>{errors.licenseType}</span>}
+          </div>
+
+          {/* License Issue Country Section */}
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>Where was their driving licence issued?</h3>
+            </div>
+            <div className={styles.radioGroup}>
+              {licenseIssueCountryOptions.map((option) => (
+                <label key={option} className={styles.radioOption}>
+                  <input
+                    type="radio"
+                    name="licenseIssueCountry"
+                    value={option}
+                    checked={formData.licenseIssueCountry === option}
+                    onChange={(e) => setFormData({ ...formData, licenseIssueCountry: e.target.value })}
+                    className={styles.radioInput}
+                  />
+                  <span className={styles.radioLabel}>{option}</span>
+                </label>
+              ))}
+            </div>
+            {errors.licenseIssueCountry && <span className={styles.error}>{errors.licenseIssueCountry}</span>}
+          </div>
+
+          {/* License Held Section */}
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>How long have they held this licence?</h3>
+              <p className={styles.subText}>Round down to the nearest full year they've held their driving licence for. So, if they passed their driving test 6 years and 11 months ago, your answer will be 6 years.</p>
+            </div>
+            <Dropdown
+              label=""
+              selected={formData.licenseHeld}
+              options={licenseHeldOptions}
+              setSelected={(value) => setFormData({ ...formData, licenseHeld: value })}
+              placeholder="Please select..."
+            />
+            {errors.licenseHeld && <span className={styles.error}>{errors.licenseHeld}</span>}
+
+            <button
+              type="button"
+              className={styles.expandableLink}
+              onClick={() => setExpandedWhereToFind(!expandedWhereToFind)}
+            >
+              <span className={`${styles.expandableIcon} ${expandedWhereToFind ? styles.expandedIcon : ''}`}>▶</span>
+              Where can I find the date?
+            </button>
+
+            {expandedWhereToFind && (
+              <div className={styles.expandableContent}>
+                You can find this information on your driving licence card or DVLA records. The date of issue or first issue date shows when you first got your license.
+              </div>
+            )}
+          </div>
+
+          {/* License Number Section */}
+          {shouldShowLicenseNumberSection && (
+            <div className={styles.section}>
+              <div className={styles.questionHeader}>
+                <h3 className={styles.mainQuestion}>Do you want to share their driving licence number?</h3>
+              </div>
+
+              {isGreatBritain && (
+                <div className={styles.fieldGroup}>
+                  <div className={styles.fieldWrapper}>
+                    <label className={styles.fieldLabel}>First 11 characters</label>
+                    <CustomTextInput
+                      type="text"
+                      placeholder=""
+                      value={formData.licenseNumberFirst || ""}
+                      onChange={(e) => setFormData({ ...formData, licenseNumberFirst: e.target.value })}
+                    />
+                  </div>
+                  <div className={styles.fieldWrapper}>
+                    <label className={styles.fieldLabel}>Last 5 characters</label>
+                    <CustomTextInput
+                      type="text"
+                      placeholder=""
+                      value={formData.licenseNumberLast || ""}
+                      onChange={(e) => setFormData({ ...formData, licenseNumberLast: e.target.value })}
+                    />
+                  </div>
+                </div>
+              )}
+
+              {isNorthernIreland && (
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Licence number</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    value={formData.licenseNumberNI || ""}
+                    onChange={(e) => setFormData({ ...formData, licenseNumberNI: e.target.value })}
+                  />
+                </div>
+              )}
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedWhatDo(!expandedWhatDo)}
+              >
+                <span className={`${styles.expandableIcon} ${expandedWhatDo ? styles.expandedIcon : ''}`}>▶</span>
+                What do we do with this information?
+              </button>
+
+              {expandedWhatDo && (
+                <div className={styles.expandableContent}>
+                  We use this information to verify driving history with the DVLA and provide you with a more accurate quote.
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Additional Qualifications Section */}
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>Do they have any additional driving qualifications?</h3>
+            </div>
+            <div className={styles.radioGroup}>
+              {["Yes", "No"].map((option) => (
+                <label key={option} className={styles.radioOption}>
+                  <input
+                    type="radio"
+                    name="hasAdditionalQualifications"
+                    value={option}
+                    checked={formData.hasAdditionalQualifications === option}
+                    onChange={(e) => setFormData({ ...formData, hasAdditionalQualifications: e.target.value })}
+                    className={styles.radioInput}
+                  />
+                  <span className={styles.radioLabel}>{option}</span>
+                </label>
+              ))}
+            </div>
+
+            {formData.hasAdditionalQualifications === "Yes" && (
+              <div className={styles.conditionalSection}>
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Qualification type</label>
+                  <Dropdown
+                    label=""
+                    selected={formData.additionalQualificationType}
+                    options={additionalQualificationsOptions}
+                    setSelected={(value) => setFormData({ ...formData, additionalQualificationType: value })}
+                    placeholder="Please select..."
+                  />
+                </div>
+
+                <div className={styles.fieldGroup}>
+                  <div className={styles.fieldWrapper}>
+                    <label className={styles.fieldLabel}>Month</label>
+                    <Dropdown
+                      label=""
+                      selected={formData.qualificationMonth}
+                      options={monthOptions}
+                      setSelected={(value) => setFormData({ ...formData, qualificationMonth: value })}
+                      placeholder="Please select..."
+                    />
+                  </div>
+                  <div className={styles.fieldWrapper}>
+                    <label className={styles.fieldLabel}>Year</label>
+                    <Dropdown
+                      label=""
+                      selected={formData.qualificationYear}
+                      options={yearOptions}
+                      setSelected={(value) => setFormData({ ...formData, qualificationYear: value })}
+                      placeholder="Please select..."
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Medical Conditions Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Do they have any medical conditions or disabilities that need to be reported to the DVLA (or DVA)?</h3>
-            <p className={styles.sectionDescription}>The DVLA (or DVA) and insurance providers need to know about any medical conditions, disabilities or licence conditions that may affect their ability to drive.</p>
-            
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>Do they have any medical conditions or disabilities that need to be reported to the DVLA (or DVA)?</h3>
+              <p className={styles.subText}>The DVLA (or DVA) and insurance providers need to know about any medical conditions, disabilities or licence conditions that may affect their ability to drive.</p>
+            </div>
             <div className={styles.radioGroup}>
-              {yesNoOptions.map((option) => (
+              {["Yes", "No"].map((option) => (
                 <label key={option} className={styles.radioOption}>
                   <input
                     type="radio"
@@ -417,39 +516,49 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
 
             {formData.medicalConditions === "Yes" && (
               <div className={styles.conditionalSection}>
-                <h3 className={styles.questionTitle}>Does the DVLA (or DVA) need to know about their condition?</h3>
-                <Dropdown
-                  label=""
-                  selected={formData.dvlaAwareOfCondition}
-                  options={["DVLA aware - No restrictions", "DVLA aware - 1 year restricted", "DVLA aware - 3 year restricted", "DVLA aware - 5 year restricted", "DVLA unaware"]}
-                  setSelected={(value) => setFormData({ ...formData, dvlaAwareOfCondition: value })}
-                  placeholder="Please select…"
-                  error={errors.dvlaAwareOfCondition}
-                />
-                {errors.dvlaAwareOfCondition && <span className={styles.error}>{errors.dvlaAwareOfCondition}</span>}
+                <div className={styles.fieldWrapper}>
+                  <label className={styles.fieldLabel}>Select DVLA status</label>
+                  <Dropdown
+                    label=""
+                    selected={formData.dvlaConditionType}
+                    options={[
+                      "DVLA aware - No restrictions",
+                      "DVLA aware - 1 year restricted Licence",
+                      "DVLA aware - 2 year restricted Licence",
+                      "DVLA aware - 3 year restricted Licence",
+                      "DVLA aware - 5 year restricted Licence",
+                      "DVLA unaware"
+                    ]}
+                    setSelected={(value) => setFormData({ ...formData, dvlaConditionType: value })}
+                    placeholder="Please select..."
+                  />
+                  {errors.dvlaConditionType && <span className={styles.error}>{errors.dvlaConditionType}</span>}
+                </div>
               </div>
             )}
           </div>
 
           {/* Insurance Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Has an insurance provider ever declined, cancelled, or voided their policy or imposed special terms?</h3>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>Has an insurance provider ever declined, cancelled, or voided their policy or imposed special terms?</h3>
+            </div>
             <div className={styles.radioGroup}>
-              {yesNoOptions.map((option) => (
+              {["Yes", "No"].map((option) => (
                 <label key={option} className={styles.radioOption}>
                   <input
                     type="radio"
-                    name="insuranceCancelledOrVoided"
+                    name="insuranceCancelledOrClaimRefusedOrPolicyVoided"
                     value={option}
-                    checked={formData.insuranceCancelledOrVoided === option}
-                    onChange={(e) => setFormData({ ...formData, insuranceCancelledOrVoided: e.target.value })}
+                    checked={formData.insuranceCancelledOrClaimRefusedOrPolicyVoided === option}
+                    onChange={(e) => setFormData({ ...formData, insuranceCancelledOrClaimRefusedOrPolicyVoided: e.target.value })}
                     className={styles.radioInput}
                   />
                   <span className={styles.radioLabel}>{option}</span>
                 </label>
               ))}
             </div>
-            {errors.insuranceCancelledOrVoided && <span className={styles.error}>{errors.insuranceCancelledOrVoided}</span>}
+            {errors.insuranceCancelledOrClaimRefusedOrPolicyVoided && <span className={styles.error}>{errors.insuranceCancelledOrClaimRefusedOrPolicyVoided}</span>}
 
             <button
               type="button"
@@ -469,9 +578,11 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
 
           {/* Criminal Convictions Section */}
           <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Have they got any unspent non-motoring-related criminal convictions?</h3>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>Have they got any unspent non-motoring-related criminal convictions?</h3>
+            </div>
             <div className={styles.radioGroup}>
-              {yesNoOptions.map((option) => (
+              {["Yes", "No"].map((option) => (
                 <label key={option} className={styles.radioOption}>
                   <input
                     type="radio"
