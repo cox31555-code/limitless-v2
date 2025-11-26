@@ -143,11 +143,27 @@ const Step3CoverDetails = ({
         {formData.coverLevel === "comprehensive" && (
           <div className={styles.section}>
             <div className={styles.questionHeader}>
-              <h3 className={styles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
+              <h3 className={styles.mainQuestion}>What's the maximum voluntary excess you'd like on this policy?</h3>
               <p className={styles.subText}>
-                The minimum level of cover is the excess amount you'd need to pay towards any claim. A higher minimum level can help reduce your premium, but you should ensure you're comfortable with the amount.
+                Voluntary excess is the amount you're willing to pay on top of the compulsory excess. Compulsory excess varies between insurance providers. If you're a new driver, insurance providers may also apply young or inexperienced driver excess.
               </p>
             </div>
+
+            <button
+              type="button"
+              className={styles.expandableLink}
+              onClick={() => setExpandedPaymentEffect(!expandedPaymentEffect)}
+            >
+              <span className={`${styles.expandableIcon} ${expandedPaymentEffect ? styles.expandedIcon : ''}`}>▼</span>
+              How does voluntary excess affect my quote?
+            </button>
+
+            {expandedPaymentEffect && (
+              <div className={styles.expandableContent}>
+                Choosing a higher voluntary excess may lower your premium, but make sure you're comfortable paying both the voluntary and compulsory excess amount in the event of a claim. You may find that some insurance providers quote with a lower voluntary excess than you've chosen. This won't affect the price of your policy but may save you money in the event of a claim.
+              </div>
+            )}
+
             <select
               value={formData.minimumCoverLevel || ""}
               onChange={(e) => setFormData({ ...formData, minimumCoverLevel: e.target.value })}
@@ -174,7 +190,8 @@ const Step3CoverDetails = ({
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "right 1.4rem center",
                 backgroundSize: "1.4rem 1.4rem",
-                paddingRight: "3.4rem"
+                paddingRight: "3.4rem",
+                marginTop: "1.6rem"
               }}
               onFocus={(e) => {
                 e.target.style.border = "1.5px solid #0388ff";
@@ -193,37 +210,6 @@ const Step3CoverDetails = ({
               ))}
             </select>
             {errors.minimumCoverLevel && <span className={styles.error}>{errors.minimumCoverLevel}</span>}
-
-            <details style={{ marginTop: "2rem", listStyle: "none", padding: 0 }}>
-              <summary style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.8rem",
-                cursor: "pointer",
-                fontSize: "1.3rem",
-                fontWeight: "600",
-                color: "#0052a3",
-                textDecoration: "underline",
-                padding: 0,
-                margin: 0,
-                transition: "color 0.2s ease"
-              }}>
-                How does minimum level of cover affect my quote?
-              </summary>
-              <div style={{
-                marginTop: "1.2rem",
-                padding: "1.6rem",
-                background: "#f0f6ff",
-                borderLeft: "4px solid #0052a3",
-                borderRadius: "4px",
-                fontSize: "1.3rem",
-                color: "#1a1a2e",
-                lineHeight: "1.6",
-                fontWeight: "400"
-              }}>
-                Choosing a higher minimum level of cover means you'll pay more towards any claim, which can lower your overall premium. However, you need to ensure you can afford to pay this amount if you make a claim. Different insurance providers may offer different options, and the choice you make here won't affect your eligibility but will influence your final premium price.
-              </div>
-            </details>
           </div>
         )}
 
