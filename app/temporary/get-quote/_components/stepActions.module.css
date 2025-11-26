@@ -11,7 +11,7 @@
 
 .backBtn,
 .nextBtn {
-  border-radius: 8px;
+  border-radius: 110px;
   font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.2px;
@@ -89,7 +89,7 @@
   .backBtn,
   .nextBtn {
     gap: 0.7rem;
-    border-radius: 8px;
+    border-radius: 110px;
   }
 
   .backBtn {
