@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import styles from "./step2LicenceRestrictions.module.css";
 
 const Step2LicenceRestrictions = ({ form }) => {
-  const { register, formState: { errors }, watch } = form;
+  const { register, formState: { errors }, watch, setValue } = form;
   const [expandedMedical, setExpandedMedical] = useState(false);
   const [expandedSpecialTerms, setExpandedSpecialTerms] = useState(false);
   const [expandedWhySpecialTerms, setExpandedWhySpecialTerms] = useState(false);
@@ -11,8 +12,18 @@ const Step2LicenceRestrictions = ({ form }) => {
   const [expandedWhatSpent, setExpandedWhatSpent] = useState(false);
 
   const medicalConditions = watch("carUsage.medicalConditions");
+  const dvlaConditionType = watch("carUsage.dvlaConditionType");
   const insuranceCancelledOrClaimRefused = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
   const criminalConvictions = watch("carUsage.criminalConvictions");
+
+  const dvlaConditionOptions = [
+    "DVLA aware - No restrictions",
+    "DVLA aware - 1 year restricted Licence",
+    "DVLA aware - 2 year restricted Licence",
+    "DVLA aware - 3 year restricted Licence",
+    "DVLA aware - 5 year restricted Licence",
+    "DVLA unaware",
+  ];
 
   return (
     <div className={styles.container}>
