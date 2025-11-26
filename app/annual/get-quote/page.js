@@ -449,8 +449,12 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleAddCarOwnerPerson = (type) => {
+  const handleAddCarOwnerPerson = (type, formState) => {
     setCarOwnerAddingType(type);
+    // Save the form state when navigating to add a person
+    if (formState) {
+      setCarOwnerData(formState);
+    }
     setCoverSubStep(type === "registeredKeeper" ? "carOwnerAddRegisteredKeeper" : "carOwnerAddLegalOwner");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
