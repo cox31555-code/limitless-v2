@@ -1,132 +1,126 @@
 .container {
   width: 100%;
+  background: transparent;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 2.8rem;
 }
 
 .stepTitle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 1.6rem;
-  border-bottom: 1px solid #e0e6f0;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e8ecf1;
+  margin-bottom: 2rem;
 }
 
 .stepTitleText {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #5a6b7d;
+  color: #004a94;
   margin: 0;
-  letter-spacing: -0.16px;
+  line-height: 1.4;
 }
 
-.header {
+.contentWrapper {
+  width: 100%;
+  max-width: 680px;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-}
-
-.mainQuestion {
-  font-size: 3.2rem;
-  font-weight: 700;
-  color: #000822;
-  margin: 0;
-  line-height: 1.2;
-  letter-spacing: -0.64px;
-}
-
-.subText {
-  font-size: 1.6rem;
-  color: #5a6b7d;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.formContent {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
+  gap: 3rem;
+  padding-right: 100px;
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.5rem;
+  padding-bottom: 3.2rem;
+  border-bottom: 2px solid #e8ecf1;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .questionTitle {
-  font-size: 2rem;
+  font-size: 2.05rem;
   font-weight: 600;
-  color: #000822;
+  color: #004284;
   margin: 0;
-  line-height: 1.4;
-  letter-spacing: -0.4px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
 }
 
-.helperText {
+.sectionDescription {
   font-size: 1.4rem;
-  color: #5a6b7d;
-  margin: -0.8rem 0 0 0;
-  line-height: 1.5;
+  color: #6b7c8f;
+  margin: 0;
+  line-height: 1.65;
+  font-weight: 400;
 }
 
 .helpLink {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0052a3;
   background: none;
   border: none;
-  color: #0388ff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-decoration: underline;
   cursor: pointer;
+  text-decoration: underline;
   padding: 0;
-  margin: -0.8rem 0 0 0;
-  width: fit-content;
-  transition: color 0.25s ease;
+  text-align: left;
+  transition: color 0.2s ease;
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .helpLink:hover {
-  color: #0270cc;
+  color: #003d7a;
+}
+
+.helpLink:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .radioGroup {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  margin-top: 0.8rem;
 }
 
 .radioOption {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.2rem;
   cursor: pointer;
-  padding: 1.8rem 2rem;
-  border: 2px solid #e0e6f0;
-  border-radius: 8px;
-  transition: all 0.25s ease;
-  background: #ffffff;
-}
-
-.radioOption:hover {
-  border-color: #0388ff;
-  background: rgba(3, 136, 255, 0.02);
+  padding: 0;
+  margin: 0;
 }
 
 .radioInput {
-  width: 2.2rem;
-  height: 2.2rem;
-  border: 2px solid #cbd4dd;
-  border-radius: 50%;
-  appearance: none;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  position: relative;
-  transition: all 0.25s ease;
   flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 0.2rem;
 }
 
 .radioInput:checked {
-  border-color: #0388ff;
-  background: #0388ff;
+  background-color: #0052a3;
+  border-color: #0052a3;
 }
 
 .radioInput:checked::after {
@@ -135,193 +129,238 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 0.8rem;
-  height: 0.8rem;
-  background: #ffffff;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.radioInput:hover:not(:checked) {
+  border-color: #0052a3;
+  background-color: #f0f6ff;
 }
 
 .radioLabel {
-  font-size: 1.6rem;
-  color: #000822;
+  font-size: 1.5rem;
   font-weight: 500;
-  line-height: 1.4;
-  flex: 1;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
 .inputWrapper {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 .numberInput {
   width: 100%;
-  max-width: 20rem;
-  padding: 1.6rem 2rem;
+  max-width: 200px;
+  padding: 1.2rem 1.6rem;
   border: 2px solid #e0e6f0;
   border-radius: 8px;
-  font-size: 1.6rem;
-  color: #000822;
-  transition: all 0.25s ease;
+  font-size: 1.5rem;
+  color: #1a1a2e;
+  transition: all 0.2s ease;
   font-weight: 500;
   background: #ffffff;
 }
 
 .numberInput:focus {
   outline: none;
-  border-color: #0388ff;
-  box-shadow: 0 0 0 3px rgba(3, 136, 255, 0.1);
+  border-color: #0052a3;
+  box-shadow: 0 0 0 3px rgba(5, 82, 163, 0.1);
 }
 
 .numberInput::placeholder {
   color: #a8b2bd;
 }
 
-.actionButtons {
+.buttonGroup {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-end;
+  margin-top: 3.2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e8ecf1;
+}
+
+.backBtn {
+  padding: 0.9rem 2.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0052a3;
+  background: #ffffff;
+  border: 2px solid #0052a3;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 4.4rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 1.6rem;
-  padding-top: 2.4rem;
-  border-top: 1px solid #e0e6f0;
+  justify-content: center;
 }
 
-.cancelBtn {
-  padding: 1.6rem 3.2rem;
-  background: transparent;
-  color: #5a6b7d;
-  border: 2px solid #e0e6f0;
-  border-radius: 8px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  min-width: 14rem;
+.backBtn:hover {
+  background: #f0f6ff;
+  border-color: #003d7a;
+  color: #003d7a;
 }
 
-.cancelBtn:hover {
-  background: #f5f7fa;
-  border-color: #cbd4dd;
-  color: #000822;
+.backBtn:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
 }
 
 .updateBtn {
-  padding: 1.6rem 3.2rem;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.6rem;
+  padding: 0.9rem 2.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  color: #ffffff;
+  background: #0052a3;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
-  transition: all 0.25s ease;
-  min-width: 14rem;
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.2);
+  transition: all 0.2s ease;
+  min-height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .updateBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
 
-/* Responsive Styles */
+.updateBtn:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
-  .container {
-    gap: 2.8rem;
-  }
-
-  .mainQuestion {
-    font-size: 2.8rem;
-  }
-
-  .formContent {
-    gap: 2.8rem;
+  .contentWrapper {
+    padding-right: 0;
   }
 
   .questionTitle {
     font-size: 1.8rem;
   }
+
+  .buttonGroup {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .backBtn,
+  .updateBtn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
-  .container {
-    gap: 2.4rem;
+  .stepTitle {
+    padding-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
   }
 
-  .mainQuestion {
-    font-size: 2.4rem;
-  }
-
-  .subText {
+  .stepTitleText {
     font-size: 1.5rem;
   }
 
-  .formContent {
+  .contentWrapper {
     gap: 2.4rem;
   }
 
   .section {
-    gap: 1.4rem;
+    gap: 1.2rem;
+    padding-bottom: 2.4rem;
   }
 
   .questionTitle {
     font-size: 1.7rem;
   }
 
-  .helperText {
+  .sectionDescription {
     font-size: 1.3rem;
   }
 
-  .helpLink {
-    font-size: 1.3rem;
-  }
-
-  .radioOption {
-    padding: 1.6rem 1.8rem;
-  }
-
-  .radioInput {
-    width: 2rem;
-    height: 2rem;
+  .radioGroup {
+    gap: 1rem;
   }
 
   .radioLabel {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .numberInput {
-    padding: 1.4rem 1.6rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    padding: 1.1rem 1.4rem;
   }
 
-  .actionButtons {
-    flex-direction: column-reverse;
-    gap: 1.2rem;
+  .buttonGroup {
+    gap: 0.8rem;
+    margin-top: 2.4rem;
+    padding-top: 1.6rem;
   }
 
-  .cancelBtn,
+  .backBtn,
   .updateBtn {
-    width: 100%;
-    padding: 1.8rem 2.4rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    min-height: 4rem;
+    padding: 0.8rem 1.6rem;
   }
 }
 
 @media (max-width: 400px) {
-  .mainQuestion {
-    font-size: 2.2rem;
+  .stepTitle {
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.4rem;
+  }
+
+  .contentWrapper {
+    gap: 2rem;
+  }
+
+  .section {
+    gap: 1rem;
+    padding-bottom: 2rem;
   }
 
   .questionTitle {
     font-size: 1.6rem;
   }
 
-  .radioOption {
-    padding: 1.4rem 1.6rem;
+  .sectionDescription {
+    font-size: 1.3rem;
   }
 
   .radioLabel {
     font-size: 1.4rem;
+  }
+
+  .numberInput {
+    font-size: 1.3rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .buttonGroup {
+    margin-top: 2rem;
+    padding-top: 1.4rem;
+    gap: 0.6rem;
+  }
+
+  .backBtn,
+  .updateBtn {
+    font-size: 1.3rem;
+    min-height: 3.8rem;
+    padding: 0.7rem 1.4rem;
   }
 }
