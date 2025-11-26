@@ -859,6 +859,22 @@ const AnnualInsuranceContent = () => {
                     driverData={driverBeingAdded}
                     onBack={handleBackFromDriverClaimsAndConvictions}
                     onAddDriver={handleCompleteDriverClaimsAndConvictions}
+                    onAddClaim={handleAddDriverClaimClick}
+                    onAddConviction={handleAddDriverConvictionClick}
+                  />
+                )}
+                {currentStep === STEPS.COVER && coverSubStep === "addDriverClaim" && (
+                  <Step3AddDriverClaim
+                    onBack={handleBackFromAddDriverClaim}
+                    onAddClaim={handleAddDriverClaimSubmit}
+                    editingClaim={editingDriverClaimIndex !== null ? driverClaims[editingDriverClaimIndex] : null}
+                  />
+                )}
+                {currentStep === STEPS.COVER && coverSubStep === "addDriverConviction" && (
+                  <Step3AddDriverConviction
+                    onBack={handleBackFromAddDriverConviction}
+                    onAddConviction={handleAddDriverConvictionSubmit}
+                    editingConviction={editingDriverConvictionIndex !== null ? driverConvictions[editingDriverConvictionIndex] : null}
                   />
                 )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
