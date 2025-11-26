@@ -6,11 +6,16 @@ const Step3AdditionalDrivers = ({
   additionaDrivers = [],
   onAddDriver = () => {},
   onRemoveDriver = () => {},
+  onEditDriver = () => {},
   hasAdditionalDrivers = null,
   onHasAdditionalDriversChange = () => {}
 }) => {
   const handleRemoveDriver = (index) => {
     onRemoveDriver(index);
+  };
+
+  const handleEditDriver = (index) => {
+    onEditDriver(index);
   };
 
   return (
