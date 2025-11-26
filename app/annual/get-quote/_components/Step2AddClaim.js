@@ -55,7 +55,12 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
       if (!formData.whoWasDriving) newErrors.whoWasDriving = "Please select who was driving";
       if (!formData.wereThereInjuries) newErrors.wereThereInjuries = "Please answer this question";
     }
-    
+
+    // Validate conditional theft question
+    if (formData.incidentType === "Theft") {
+      if (!formData.theftType) newErrors.theftType = "Please select type of theft";
+    }
+
     return newErrors;
   };
 
