@@ -241,6 +241,13 @@ const AnnualInsuranceContent = () => {
     "userDetails.studentType",
   ];
 
+  const step2LicenceFields = [
+    "carUsage.licenseType",
+    "carUsage.licenseIssueCountry",
+    "carUsage.licenseHeld",
+    "carUsage.hasAdditionalQualifications",
+  ];
+
   const basePersonalFields = [
     "userDetails.firstName",
     "userDetails.surname",
