@@ -58,8 +58,7 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
       </div>
 
       <div className={styles.contentWrapper}>
-        <form onSubmit={handleSubmit} noValidate>
-          {/* Incident Type */}
+        {/* Incident Type */}
           <div className={styles.section}>
             <h3 className={styles.questionTitle}>What type of incident was it?</h3>
             <div className={styles.radioGroup}>
@@ -209,16 +208,15 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
             {errors.ncdAffected && <span className={styles.error}>{errors.ncdAffected}</span>}
           </div>
 
-          {/* Buttons */}
-          <div className={styles.buttonGroup}>
-            <button type="button" className={styles.backBtn} onClick={onBack}>
-              Back
-            </button>
-            <button type="submit" className={styles.nextBtn}>
-              {editingClaim ? "Update claim" : "Add claim"}
-            </button>
-          </div>
-        </form>
+        {/* Buttons */}
+        <div className={styles.buttonGroup}>
+          <button type="button" className={styles.backBtn} onClick={onBack}>
+            Back
+          </button>
+          <button type="button" className={styles.nextBtn} onClick={handleSubmit}>
+            {editingClaim ? "Update claim" : "Add claim"}
+          </button>
+        </div>
       </div>
     </div>
   );
