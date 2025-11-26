@@ -115,6 +115,17 @@ const Step2ClaimsAndConvictions = ({ form }) => {
               You can check the DVLA website or request a driving record from your local police force. Convictions and driving-related endorsements are recorded on your driving licence and will show any points or bans. You can also check via the DVLA's online service.
             </div>
           )}
+
+          {drivingConvictions === "Yes" && (
+            <div className={styles.convictionsSection}>
+              <div className={styles.convictionsHeader}>
+                <h4 className={styles.convictionsTitle}>Your convictions</h4>
+                <button type="button" className={styles.addConvictionBtn}>
+                  Add conviction
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
