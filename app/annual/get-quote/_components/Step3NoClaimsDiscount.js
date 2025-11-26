@@ -225,6 +225,24 @@ const Step3NoClaimsDiscount = ({
               ))}
             </div>
             {errors.namedDriverExperience && <span className={styles.error}>{errors.namedDriverExperience}</span>}
+
+            {/* Named Driver Years Dropdown - Show if one of the three options is selected */}
+            {[
+              "Named driver on another car",
+              "Named driver on company car including personal use",
+              "Named driver on company car excluding personal use"
+            ].includes(formData.namedDriverExperience) && (
+              <div className={styles.fieldWrapper} style={{ marginTop: '1.6rem' }}>
+                <Dropdown
+                  label=""
+                  selected={formData.namedDriverYears || ""}
+                  options={namedDriverYearsOptions}
+                  setSelected={(value) => setFormData({ ...formData, namedDriverYears: value })}
+                  placeholder="Please select…"
+                />
+                {errors.namedDriverYears && <span className={styles.error}>{errors.namedDriverYears}</span>}
+              </div>
+            )}
           </div>
         )}
 
