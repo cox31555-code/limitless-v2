@@ -140,6 +140,24 @@
   line-height: 1.6;
 }
 
+.link {
+  color: #0388ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover {
+  color: #0270cc;
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: 2px solid #0388ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .radioGroup {
   display: flex;
   flex-direction: column;
