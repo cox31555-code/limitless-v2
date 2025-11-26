@@ -262,27 +262,28 @@
 }
 
 .editButton {
-  padding: 0;
+  padding: 1rem 2rem;
   font-size: 1.4rem;
-  font-weight: 500;
-  color: #0052a3;
-  background: transparent;
+  font-weight: 600;
+  color: #ffffff;
+  background: #0052a3;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-decoration: none;
+  white-space: nowrap;
   flex-shrink: 0;
 }
 
 .editButton:hover {
-  color: #003d7a;
-  text-decoration: underline;
+  background: #003d7a;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
 }
 
 .editButton:focus {
   outline: 2px solid #0052a3;
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .maxDriversMessage {
