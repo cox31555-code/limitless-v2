@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step3CarOwner.module.css";
+import personalDetailsStyles from "./step2PersonalDetails.module.css";
 
 const Step3ContactInformation = ({
   onBack = () => {},
@@ -73,9 +75,11 @@ const Step3ContactInformation = ({
             </p>
           </div>
 
-          <div className={styles.fieldWrapper}>
-            <input
+          <div className={personalDetailsStyles.fieldWrapper}>
+            <label className={personalDetailsStyles.fieldLabel}>Email address</label>
+            <CustomTextInput
               type="email"
+              placeholder=""
               value={formData.email}
               onChange={(e) => {
                 setFormData({ ...formData, email: e.target.value });
@@ -83,18 +87,8 @@ const Step3ContactInformation = ({
                   setErrors({ ...errors, email: "" });
                 }
               }}
-              placeholder="info@limitlessinsuranceservices.com"
-              style={{
-                width: '100%',
-                padding: '1.2rem',
-                borderRadius: '8px',
-                border: '2px solid #e5e5e5',
-                fontSize: '1.3rem',
-                fontFamily: 'inherit',
-                boxSizing: 'border-box'
-              }}
+              error={errors.email}
             />
-            {errors.email && <span className={styles.error}>{errors.email}</span>}
           </div>
         </div>
 
@@ -104,21 +98,13 @@ const Step3ContactInformation = ({
             <h3 className={styles.mainQuestion}>Main telephone number (optional)</h3>
           </div>
 
-          <div className={styles.fieldWrapper}>
-            <input
+          <div className={personalDetailsStyles.fieldWrapper}>
+            <label className={personalDetailsStyles.fieldLabel}>Telephone number</label>
+            <CustomTextInput
               type="tel"
+              placeholder=""
               value={formData.telephoneNumber || ""}
               onChange={(e) => setFormData({ ...formData, telephoneNumber: e.target.value })}
-              placeholder=""
-              style={{
-                width: '100%',
-                padding: '1.2rem',
-                borderRadius: '8px',
-                border: '2px solid #e5e5e5',
-                fontSize: '1.3rem',
-                fontFamily: 'inherit',
-                boxSizing: 'border-box'
-              }}
             />
           </div>
         </div>
