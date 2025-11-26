@@ -165,27 +165,6 @@ const Step3CoverDetails = ({
           </div>
         )}
 
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
-          </div>
-
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedMinimumCover(!expandedMinimumCover)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedMinimumCover ? styles.expandedIcon : ''}`}>▼</span>
-            What does minimum level of cover mean?
-          </button>
-
-          {expandedMinimumCover && (
-            <div className={styles.expandableContent}>
-              The minimum level of cover refers to the extent of protection your insurance policy provides. Comprehensive cover is the most extensive, offering protection for accidental damage, fire, theft, and third-party claims. Third party fire and theft covers damage from fire or theft plus third-party claims. Third party only covers only third-party claims and is the most basic option.
-            </div>
-          )}
-        </div>
-
         {/* Payment Frequency Question */}
         <div className={styles.section}>
           <div className={styles.questionHeader}>
