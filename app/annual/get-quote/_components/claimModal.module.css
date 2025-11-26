@@ -300,10 +300,12 @@
 
   .dateInputsWrapper {
     gap: 0.8rem;
+    flex-wrap: nowrap;
   }
 
   .dateInputGroup {
-    flex: 0 1 80px;
+    flex: 1;
+    min-width: 0;
   }
 
   .buttonGroup {
