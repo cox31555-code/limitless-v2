@@ -1200,7 +1200,7 @@ const AnnualInsuranceContent = () => {
                   onBack={handlePreviousStep}
                   onSubmit={onSubmit}
                   isLoading={isSubmitting}
-                  nextLabel={currentStep === STEPS.CHECK_ANSWERS ? "Get Quote" : "Next"}
+                  nextLabel={currentStep === STEPS.CHECK_ANSWERS ? "Get Quotes" : "Next"}
                   backLabel="Back"
                 />
               )}
