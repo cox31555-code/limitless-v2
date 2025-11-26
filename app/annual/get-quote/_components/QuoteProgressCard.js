@@ -110,7 +110,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
   const mainLineProgress = calculateMainLineProgress();
 
   // Calculate actual pixel height for the progress line
-  React.useEffect(() => {
+  useEffect(() => {
     if (stepsListRef.current) {
       const activeSubStepElement = stepsListRef.current.querySelector(`.${styles.activeSubStep}`);
       if (activeSubStepElement) {
