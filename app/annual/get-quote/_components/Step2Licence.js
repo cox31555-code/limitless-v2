@@ -146,13 +146,15 @@ const Step2Licence = ({ form }) => {
               We're unable to accept Isle of Man or Channel Islands driving licence numbers.
             </p>
 
-            <div className={styles.licenseImageContainer}>
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F78e152c1b10b432aa104583a5336f5b1?format=webp&width=800"
-                alt="UK Driving Licence"
-                className={styles.licenseImage}
-              />
-            </div>
+            {!declineShareLicenseNumber && (
+              <div className={styles.licenseImageContainer}>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F78e152c1b10b432aa104583a5336f5b1?format=webp&width=800"
+                  alt="UK Driving Licence"
+                  className={styles.licenseImage}
+                />
+              </div>
+            )}
 
             {!declineShareLicenseNumber && isGreatBritain && (
               <div className={styles.licenseNumberFields}>
