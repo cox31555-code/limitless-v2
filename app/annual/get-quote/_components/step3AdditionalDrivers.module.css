@@ -328,6 +328,11 @@
   line-height: 1.5;
 }
 
+.driverNumber {
+  font-weight: 500;
+  color: #0052a3;
+}
+
 .cardSubtitle {
   font-weight: 400;
   color: #6b7c8f;
