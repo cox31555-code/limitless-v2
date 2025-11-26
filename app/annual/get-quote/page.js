@@ -435,6 +435,14 @@ const AnnualInsuranceContent = () => {
   };
 
   const handlePreviousStep = () => {
+    // Handle going back from addClaim
+    if (currentStep === STEPS.PERSONAL && personalSubStep === "addClaim") {
+      setPersonalSubStep("claims");
+      setEditingClaimIndex(null);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     // Handle Step 2 sub-step navigation
     if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
       setPersonalSubStep("restrictions");
