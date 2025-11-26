@@ -146,11 +146,26 @@ const Step3CarOwner = ({
                 label=""
                 selected={formData.registeredKeeper}
                 options={ownerOptions}
-                setSelected={(value) => setFormData({ ...formData, registeredKeeper: value })}
+                setSelected={(value) => setFormData({ ...formData, registeredKeeper: value, registeredKeeperCompanyName: "" })}
                 placeholder="Select..."
               />
               {errors.registeredKeeper && <span className={styles.error}>{errors.registeredKeeper}</span>}
             </div>
+
+            {/* Company Name Input - Only shown for Company/Leased/Society types */}
+            {entityTypesRequiringName.includes(formData.registeredKeeper) && (
+              <div className={styles.fieldWrapper}>
+                <label className={styles.fieldLabel}>What's the company name?</label>
+                <CustomTextInput
+                  type="text"
+                  placeholder=""
+                  value={formData.registeredKeeperCompanyName || ""}
+                  onChange={(e) => setFormData({ ...formData, registeredKeeperCompanyName: e.target.value })}
+                  error={errors.registeredKeeperCompanyName}
+                />
+                {errors.registeredKeeperCompanyName && <span className={styles.error}>{errors.registeredKeeperCompanyName}</span>}
+              </div>
+            )}
           </div>
         )}
 
