@@ -119,12 +119,14 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         const containerPos = stepsListRef.current.getBoundingClientRect();
         const relativeTop = activePos.top - containerPos.top;
         const relativeBottom = relativeTop + activePos.height;
-        // Set line height to reach the middle of the active substep
-        setLineHeight(relativeBottom - 28); // 28px is the top offset
+        // Set line height to reach the active substep plus extra padding
+        const extraPadding = 12; // Extra padding on top of active substep
+        setLineHeight(relativeBottom - 28 + extraPadding); // 28px is the top offset
       } else {
         // If no active substep, calculate based on progress percentage
         const containerHeight = stepsListRef.current.offsetHeight;
-        setLineHeight((containerHeight - 56) * (mainLineProgress / 100));
+        const extraPadding = 12;
+        setLineHeight((containerHeight - 56) * (mainLineProgress / 100) + extraPadding);
       }
     }
   }, [currentStep, vehicleSubStep, personalSubStep, coverSubStep, mainLineProgress]);
