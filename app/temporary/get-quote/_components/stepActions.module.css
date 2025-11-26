@@ -86,7 +86,7 @@
 
   .backBtn,
   .nextBtn {
-    height: 5.4rem;
+    padding: 0.8rem 1.6rem;
     font-size: 1.3rem;
     gap: 0.7rem;
     border-radius: 10px;
@@ -100,9 +100,9 @@
 
 @media screen and (max-width: 600px) {
   .actionsContainer {
-    flex-direction: column;
-    gap: 1.4rem;
-    margin-top: 5.2rem;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    margin-top: 3.2rem;
     margin-bottom: 2rem;
     padding: 0 1.6rem;
   }
@@ -110,28 +110,25 @@
   .backBtn,
   .nextBtn {
     width: 100%;
-    height: 6.2rem;
-    font-size: 1.5rem;
-    border-radius: 12px;
-    padding: 1.8rem;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+    border-radius: 10px;
   }
 
   .nextBtn {
-    background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+    background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
     color: #fff;
-    order: -1;
   }
 
   .backBtn {
     background: #fff;
-    color: #0388ff;
-    border: 1.5px solid rgba(3, 136, 255, 0.2);
-    order: 1;
+    color: #0052a3;
+    border: 2px solid #0052a3;
   }
 
   .backIcon,
   .nextIcon {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .spacer {
@@ -141,9 +138,9 @@
 
 @media screen and (max-width: 400px) {
   .actionsContainer {
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-top: 4.8rem;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    margin-top: 2.8rem;
     margin-bottom: 1.6rem;
     padding: 0 1.4rem;
   }
@@ -151,28 +148,25 @@
   .backBtn,
   .nextBtn {
     width: 100%;
-    height: 5.8rem;
-    font-size: 1.4rem;
+    padding: 1rem 1.4rem;
+    font-size: 1.3rem;
     border-radius: 10px;
-    padding: 1.6rem;
   }
 
   .nextBtn {
-    background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+    background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
     color: #fff;
-    order: -1;
   }
 
   .backBtn {
     background: #fff;
-    color: #0388ff;
-    border: 1.5px solid rgba(3, 136, 255, 0.2);
-    order: 1;
+    color: #0052a3;
+    border: 2px solid #0052a3;
   }
 
   .backIcon,
   .nextIcon {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .spacer {
