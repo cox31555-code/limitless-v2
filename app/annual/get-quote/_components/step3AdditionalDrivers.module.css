@@ -203,6 +203,13 @@
   background: #e8f4ff;
 }
 
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .driverInfo {
   display: flex;
   flex-direction: column;
