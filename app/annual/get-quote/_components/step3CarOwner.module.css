@@ -418,11 +418,16 @@
     gap: 1rem;
   }
 
-  .backBtn,
-  .nextBtn {
+  .backBtn {
     width: 100%;
     font-size: 1.3rem;
-    padding: 1rem 1.6rem;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .nextBtn {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 1.6rem 1.6rem;
   }
 
   .radioLabel {
