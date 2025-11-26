@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import styles from "./step3AddDriver.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
-import { licenseHeldOptions, monthOptions, yearOptions, additionalQualificationsOptions } from "@/app/temporary/get-quote/data";
+import EmploymentAutocomplete from "./EmploymentAutocomplete";
+import { licenseHeldOptions, monthOptions, yearOptions, additionalQualificationsOptions, occupationOptions, industryOptions, studentTypeOptions } from "@/app/temporary/get-quote/data";
 
 const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
   const [formData, setFormData] = useState(editingDriver || {
@@ -37,6 +38,10 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
   const [expandedUnder17, setExpandedUnder17] = useState(false);
   const [expandedWhereToFind, setExpandedWhereToFind] = useState(false);
   const [expandedWhatDo, setExpandedWhatDo] = useState(false);
+  const [expandedJobTitle, setExpandedJobTitle] = useState(false);
+  const [expandedWhyJobTitle, setExpandedWhyJobTitle] = useState(false);
+  const [expandedIndustry, setExpandedIndustry] = useState(false);
+  const [expandedWhyIndustry, setExpandedWhyIndustry] = useState(false);
   const [expandedMedical, setExpandedMedical] = useState(false);
   const [expandedSpecialTerms, setExpandedSpecialTerms] = useState(false);
   const [expandedConviction, setExpandedConviction] = useState(false);
@@ -45,6 +50,14 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
   const titleOptions = ["Mr", "Mrs", "Miss", "Ms", "Dr", "Prof"];
   const maritalStatusOptions = ["Single", "Married", "Civil partnership", "Divorced", "Widowed"];
   const relationshipOptions = ["Spouse", "Child", "Parent", "Sibling", "Friend", "Other"];
+  const employmentOptions = [
+    "Employed",
+    "Self Employed",
+    "Retired",
+    "Unemployed",
+    "Student",
+    "Houseperson",
+  ];
   const licenseTypeOptions = [
     "Full UK Car Licence",
     "Provisional UK Car Licence",
@@ -57,6 +70,9 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
     "England, Scotland or Wales (Great Britain)",
     "Northern Ireland",
   ];
+
+  const isEmployedOrSelfEmployed = ["Employed", "Self Employed"].includes(formData.employmentStatus);
+  const isStudent = formData.employmentStatus === "Student";
 
   const validateForm = () => {
     const newErrors = {};
@@ -295,6 +311,139 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
             </div>
             {errors.livedInUKSinceBirth && <span className={styles.error}>{errors.livedInUKSinceBirth}</span>}
           </div>
+
+          {/* Employment Status Section */}
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What's their employment status?</h3>
+            </div>
+            <div className={styles.dropdownWrapper}>
+              <Dropdown
+                label=""
+                selected={formData.employmentStatus}
+                options={employmentOptions}
+                setSelected={(value) => setFormData({ ...formData, employmentStatus: value })}
+                placeholder="Please select..."
+              />
+              {errors.employmentStatus && <span className={styles.error}>{errors.employmentStatus}</span>}
+            </div>
+          </div>
+
+          {/* Occupation Section - Only for Employed/Self Employed */}
+          {isEmployedOrSelfEmployed && (
+            <div className={styles.section}>
+              <div className={styles.questionHeader}>
+                <h3 className={styles.mainQuestion}>What do they do for a living?</h3>
+                <p className={styles.subText}>Start typing and choose from the list.</p>
+              </div>
+
+              <div className={styles.dropdownWrapper}>
+                <EmploymentAutocomplete
+                  selected={formData.occupation || ""}
+                  options={occupationOptions}
+                  setSelected={(value) => setFormData({ ...formData, occupation: value })}
+                  placeholder="Type your occupation..."
+                />
+              </div>
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedJobTitle(!expandedJobTitle)}
+              >
+                <span className={`${styles.expandableIcon} ${expandedJobTitle ? styles.expandedIcon : ''}`}>▶</span>
+                What if their job title isn't listed?
+              </button>
+
+              {expandedJobTitle && (
+                <div className={styles.expandableContent}>
+                  If you can't find the exact job title in the dropdown list, select the closest match or a general category. Our system will use this information to assess insurance risk appropriately.
+                </div>
+              )}
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedWhyJobTitle(!expandedWhyJobTitle)}
+              >
+                <span className={`${styles.expandableIcon} ${expandedWhyJobTitle ? styles.expandedIcon : ''}`}>▶</span>
+                Why are we asking?
+              </button>
+
+              {expandedWhyJobTitle && (
+                <div className={styles.expandableContent}>
+                  Their occupation helps us determine the appropriate insurance premium and coverage for their specific job role and associated risks.
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Industry Section - Only for Employed/Self Employed */}
+          {isEmployedOrSelfEmployed && (
+            <div className={styles.section}>
+              <div className={styles.questionHeader}>
+                <h3 className={styles.mainQuestion}>What type of industry do they work in?</h3>
+                <p className={styles.subText}>Start typing and choose from the list.</p>
+              </div>
+
+              <div className={styles.dropdownWrapper}>
+                <EmploymentAutocomplete
+                  selected={formData.industry || ""}
+                  options={industryOptions}
+                  setSelected={(value) => setFormData({ ...formData, industry: value })}
+                  placeholder="Type your industry..."
+                />
+              </div>
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedIndustry(!expandedIndustry)}
+              >
+                <span className={`${styles.expandableIcon} ${expandedIndustry ? styles.expandedIcon : ''}`}>▶</span>
+                What if their industry isn't listed?
+              </button>
+
+              {expandedIndustry && (
+                <div className={styles.expandableContent}>
+                  If you can't find the exact industry in the dropdown list, select the closest match or a general category. Our system will use this information to assess insurance risk appropriately.
+                </div>
+              )}
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedWhyIndustry(!expandedWhyIndustry)}
+              >
+                <span className={`${styles.expandableIcon} ${expandedWhyIndustry ? styles.expandedIcon : ''}`}>▶</span>
+                Why are we asking?
+              </button>
+
+              {expandedWhyIndustry && (
+                <div className={styles.expandableContent}>
+                  Their industry helps us assess driving patterns, commute risks, and occupational hazards that may affect insurance coverage and pricing.
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Student Type Section - Only for Students */}
+          {isStudent && (
+            <div className={styles.section}>
+              <div className={styles.questionHeader}>
+                <h3 className={styles.mainQuestion}>What type of student are they?</h3>
+              </div>
+              <div className={styles.dropdownWrapper}>
+                <Dropdown
+                  label=""
+                  selected={formData.occupation}
+                  options={studentTypeOptions}
+                  setSelected={(value) => setFormData({ ...formData, occupation: value })}
+                  placeholder="Please select..."
+                />
+              </div>
+            </div>
+          )}
 
           {/* License Type Section */}
           <div className={styles.section}>
