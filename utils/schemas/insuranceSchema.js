@@ -311,6 +311,24 @@ export const carUsageSchema = z.object({
     message: "Please complete all qualification details",
     path: ["additionalQualificationType"],
   }
+).refine(
+  (data) => {
+    // If it's a UK licence type and user hasn't declined to share licence number
+    const nonUKTypes = ["Full International Licence", "Full EU Licence", "Full European non-EU Licence"];
+    const isUKLicence = data.licenseType && !nonUKTypes.includes(data.licenseType);
+
+    if (isUKLicence && !data.declineShareLicenseNumber) {
+      // Both first 11 and last 5 characters are required
+      return (data.licenseNumberFirst && data.licenseNumberFirst.length > 0) ||
+             (data.licenseNumberLast && data.licenseNumberLast.length > 0) ||
+             data.declineShareLicenseNumber === true;
+    }
+    return true;
+  },
+  {
+    message: "Please provide your licence number or decline to share it",
+    path: ["licenseNumberFirst"],
+  }
 );
 
 // Terms and Conditions Schema
