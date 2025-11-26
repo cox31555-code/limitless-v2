@@ -270,6 +270,8 @@ export const carUsageSchema = z.object({
   medicalConditions: z.string().optional(),
   dvlaConditionType: z.string().optional(),
   insuranceCancelledOrClaimRefusedOrPolicyVoided: z.string().optional(),
+  motorAccidentsClaims: z.string().optional(),
+  drivingConvictions: z.string().optional(),
   hasAdditionalDrivers: z.boolean().nullable().default(null),
   additionalDrivers: z.array(z.object({
     relationship: z.string().optional(),
