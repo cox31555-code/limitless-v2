@@ -324,12 +324,12 @@
   }
 
   .licenseImage {
-    max-width: 200px;
+    max-width: 160px;
   }
 
   .licenseNumberFields {
-    gap: 1.5rem;
-    margin: 1.2rem 0;
+    gap: 1rem;
+    margin: 0.8rem 0;
   }
 }
 
