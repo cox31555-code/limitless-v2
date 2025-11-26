@@ -20,13 +20,30 @@ const Step3CoverDetails = ({
   const [expandedStartDate, setExpandedStartDate] = useState(false);
   const [expandedPaymentEffect, setExpandedPaymentEffect] = useState(false);
 
-  // Calculate max date: 30 days from today
-  const getMaxDate = () => {
+  // Generate date options for next 30 days
+  const generateDateOptions = () => {
+    const options = [];
     const today = new Date();
-    const maxDate = new Date(today);
-    maxDate.setDate(maxDate.getDate() + 30);
-    return maxDate;
+
+    for (let i = 0; i < 30; i++) {
+      const date = new Date(today);
+      date.setDate(date.getDate() + i);
+
+      const dayName = date.toLocaleDateString('en-GB', { weekday: 'long' });
+      const dayNum = date.getDate();
+      const monthName = date.toLocaleDateString('en-GB', { month: 'long' });
+      const year = date.getFullYear();
+
+      const displayLabel = `${dayName}, ${dayNum} ${monthName} ${year}`;
+      const dateValue = date.toISOString().split('T')[0]; // YYYY-MM-DD format
+
+      options.push(displayLabel);
+    }
+
+    return options;
   };
+
+  const dateOptions = generateDateOptions();
 
   const coverLevels = [
     {
