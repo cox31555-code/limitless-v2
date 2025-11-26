@@ -279,19 +279,19 @@ const Step3CarOwner = ({
                     <div className={styles.personActions}>
                       <button
                         type="button"
-                        className={styles.changePersonBtn}
-                        onClick={() => onAddPerson("legalOwner", formData)}
-                      >
-                        Change
-                      </button>
-                      <button
-                        type="button"
                         className={styles.removePersonBtn}
                         onClick={() => {
                           setFormData({ ...formData, legalOwnerOtherPerson: null, legalOwner: "" });
                         }}
                       >
                         Remove
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.changePersonBtn}
+                        onClick={() => onAddPerson("legalOwner", formData)}
+                      >
+                        Change
                       </button>
                     </div>
                   </div>
