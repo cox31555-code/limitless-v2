@@ -18,6 +18,7 @@ const Step3CarOwner = ({
   });
 
   const [errors, setErrors] = useState({});
+  const [expandedWhoIsKeeper, setExpandedWhoIsKeeper] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
