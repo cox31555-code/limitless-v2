@@ -114,7 +114,7 @@ const Step2Employment = ({ form }) => {
               <p className={styles.subText}>Start typing and choose from the list.</p>
 
               <div className={styles.dropdownWrapper}>
-                <Dropdown
+                <EmploymentAutocomplete
                   selected={industry || ""}
                   options={industryOptions}
                   setSelected={(value) => {
@@ -124,7 +124,6 @@ const Step2Employment = ({ form }) => {
                     });
                   }}
                   placeholder="Type your industry..."
-                  showSearch={true}
                 />
               </div>
 
