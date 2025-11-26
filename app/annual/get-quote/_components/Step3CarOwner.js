@@ -26,6 +26,16 @@ const Step3CarOwner = ({
   const [errors, setErrors] = useState({});
   const [expandedWhoIsKeeper, setExpandedWhoIsKeeper] = useState(false);
 
+  // Sync carOwnerData with formData when it changes (e.g., when returning from adding a person)
+  React.useEffect(() => {
+    if (carOwnerData) {
+      setFormData((prev) => ({
+        ...prev,
+        ...carOwnerData,
+      }));
+    }
+  }, [carOwnerData]);
+
   const entityTypesRequiringName = ["Company", "Leased Private", "Leased Company", "Society or Club"];
 
   const validateForm = () => {
