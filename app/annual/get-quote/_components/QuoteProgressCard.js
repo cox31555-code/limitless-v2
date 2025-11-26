@@ -9,7 +9,7 @@ const STEPS = {
   CHECK_ANSWERS: 4,
 };
 
-const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, coverSubStep }) => {
+const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, coverSubStep, onSubStepClick }) => {
   // Auto-expand steps 2 and 3 (PERSONAL and COVER)
   const [expandedStep, setExpandedStep] = useState(currentStep);
   const [lineHeight, setLineHeight] = useState(0);
@@ -211,7 +211,13 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
                     const isActiveSubStep = isActive && activeSubStepIndex === index;
                     return (
                       <li key={index} className={`${styles.subStepItem} ${isActiveSubStep ? styles.activeSubStep : ""}`}>
-                        {subStep}
+                        <button
+                          className={styles.subStepButton}
+                          onClick={() => onSubStepClick?.(step.number, index)}
+                          type="button"
+                        >
+                          {subStep}
+                        </button>
                       </li>
                     );
                   })}
