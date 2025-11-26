@@ -29,6 +29,7 @@ const Step2Household = dynamic(() => import("./_components/Step2Household"), { l
 const Step2Employment = dynamic(() => import("./_components/Step2Employment"), { loading: () => <StepFallback /> });
 const Step2Licence = dynamic(() => import("./_components/Step2Licence"), { loading: () => <StepFallback /> });
 const Step2LicenceRestrictions = dynamic(() => import("./_components/Step2LicenceRestrictions"), { loading: () => <StepFallback /> });
+const Step2ClaimsAndConvictions = dynamic(() => import("./_components/Step2ClaimsAndConvictions"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
