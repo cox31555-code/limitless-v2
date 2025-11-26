@@ -190,17 +190,13 @@
 
 .driverCard {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 1.6rem 2rem;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
   background: #f0f6ff;
   border-radius: 12px;
   transition: all 0.2s ease;
-}
-
-.driverCard:hover {
-  background: #e8f4ff;
+  overflow: hidden;
 }
 
 .buttonGroup {
