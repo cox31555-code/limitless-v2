@@ -296,7 +296,19 @@ export const carUsageSchema = z.object({
       path: ["dvlaConditionType"],
     }
   )).default([]).optional(),
-});
+}).refine(
+  (data) => {
+    // If hasAdditionalQualifications is true, all qualification fields must be filled
+    if (data.hasAdditionalQualifications === true) {
+      return data.additionalQualificationType && data.qualificationMonth && data.qualificationYear;
+    }
+    return true;
+  },
+  {
+    message: "Please complete all qualification details",
+    path: ["additionalQualificationType"],
+  }
+);
 
 // Terms and Conditions Schema
 export const termsSchema = z.object({
