@@ -251,6 +251,7 @@ const AnnualInsuranceContent = () => {
     "carUsage.licenseHeld",
     "carUsage.licenseNumberFirst",
     "carUsage.licenseNumberLast",
+    "carUsage.licenseNumberNI",
     "carUsage.declineShareLicenseNumber",
     "carUsage.hasAdditionalQualifications",
     "carUsage.additionalQualificationType",
