@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
+import CourierLoadingOverlay from "./_components/CourierLoadingOverlay";
 import styles from "./page.module.css";
 
 const CourierPage = () => {
@@ -8,7 +8,7 @@ const CourierPage = () => {
 
   return (
     <div className={styles.container}>
-      <LoadingOverlay isVisible={isLoading} />
+      <CourierLoadingOverlay isVisible={isLoading} />
 
       <div className={styles.content}>
         <h1>Courier Insurance</h1>
