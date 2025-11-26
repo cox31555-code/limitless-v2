@@ -19,6 +19,8 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [expandedAtFault, setExpandedAtFault] = useState(false);
+  const [expandedNobodyInCar, setExpandedNobodyInCar] = useState(false);
 
   const damageTypeDropdownOptions = [
     "Damaged - Amount Known",
