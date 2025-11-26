@@ -13,9 +13,26 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
     damageType: "",
     mainPolicyholder: "",
     ncdAffected: "",
+    whoAtFault: "",
+    whoWasDriving: "",
+    wereThereInjuries: "",
   });
 
   const [errors, setErrors] = useState({});
+
+  const damageTypeDropdownOptions = [
+    "Windscreen damage",
+    "Fire/Theft/Vandalism",
+    "Accident - comprehensive",
+    "Accident - part loss",
+    "Glass only",
+    "Water damage",
+    "Attempted theft",
+  ];
+
+  const faultOptions = ["You were at fault", "The other party was at fault", "Can't say who was at fault"];
+  const drivingOptions = ["Policyholder", "Spouse/partner", "Other named driver", "Unnamed driver"];
+  const injuryOptions = ["Yes", "No"];
 
   const damageTypeOptions = [
     "Windscreen damage",
