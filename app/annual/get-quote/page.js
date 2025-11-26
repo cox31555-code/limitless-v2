@@ -32,6 +32,7 @@ const Step2LicenceRestrictions = dynamic(() => import("./_components/Step2Licenc
 const Step2ClaimsAndConvictions = dynamic(() => import("./_components/Step2ClaimsAndConvictions"), { loading: () => <StepFallback /> });
 const Step2AddClaim = dynamic(() => import("./_components/Step2AddClaim"), { loading: () => <StepFallback /> });
 const Step2AddConviction = dynamic(() => import("./_components/Step2AddConviction"), { loading: () => <StepFallback /> });
+const Step3AdditionalDrivers = dynamic(() => import("./_components/Step3AdditionalDrivers"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
@@ -54,6 +55,7 @@ const AnnualInsuranceContent = () => {
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
   const [vehicleSubStep, setVehicleSubStep] = useState("registration"); // "registration", "carValue", "carUsage", "carStorage", or "otherCars"
   const [personalSubStep, setPersonalSubStep] = useState("aboutYou"); // "aboutYou", "household", "employment", "licence", "restrictions", "claims", or "addClaim"
+  const [coverSubStep, setCoverSubStep] = useState("details"); // "details" or "additionalDrivers"
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
@@ -62,6 +64,8 @@ const AnnualInsuranceContent = () => {
   const [editingClaimIndex, setEditingClaimIndex] = useState(null);
   const [convictions, setConvictions] = useState([]);
   const [editingConvictionIndex, setEditingConvictionIndex] = useState(null);
+  const [additionalDrivers, setAdditionalDrivers] = useState([]);
+  const [hasAdditionalDrivers, setHasAdditionalDrivers] = useState(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -369,6 +373,39 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleAddDriver = () => {
+    const newDriver = {
+      title: "",
+      firstName: "",
+      lastName: "",
+      dateOfBirth: "",
+      relationshipStatus: "",
+      relationship: "",
+      livedInUKSinceBirth: null,
+      employmentStatus: "",
+      occupation: "",
+      industry: "",
+      otherVehicles: null,
+      otherVehiclesType: "",
+      licenseType: "",
+      licenseHeld: "",
+      licenseNumber: "",
+      hasAdditionalQualifications: null,
+      additionalQualificationType: "",
+      qualificationMonth: "",
+      qualificationYear: "",
+      criminalConvictions: null,
+      medicalConditions: null,
+      dvlaConditionType: "",
+      insuranceCancelledOrClaimRefusedOrPolicyVoided: null,
+    };
+    setAdditionalDrivers([...additionalDrivers, newDriver]);
+  };
+
+  const handleRemoveDriver = (index) => {
+    setAdditionalDrivers(additionalDrivers.filter((_, i) => i !== index));
+  };
+
   const handleNextStep = async () => {
     // Handle Step 1 sub-step navigation
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "registration") {
@@ -434,7 +471,19 @@ const AnnualInsuranceContent = () => {
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
       setCurrentStep(STEPS.COVER);
-      setVehicleSubStep("registration");
+      setCoverSubStep("details");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.COVER && coverSubStep === "details") {
+      setCoverSubStep("additionalDrivers");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
+      setCurrentStep(STEPS.OPTIONAL_EXTRAS);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -469,6 +518,21 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.PERSONAL && personalSubStep === "addConviction") {
       setPersonalSubStep("claims");
       setEditingConvictionIndex(null);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // Handle going back from additionalDrivers
+    if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
+      setCoverSubStep("details");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // Handle going back from cover details
+    if (currentStep === STEPS.COVER && coverSubStep === "details") {
+      setCurrentStep(STEPS.PERSONAL);
+      setPersonalSubStep("claims");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -575,6 +639,7 @@ const AnnualInsuranceContent = () => {
           currentStep === STEPS.PERSONAL && personalSubStep === "claims" ? "Claims and convictions" :
           currentStep === STEPS.PERSONAL && personalSubStep === "addClaim" ? "Add a claim" :
           currentStep === STEPS.PERSONAL && personalSubStep === "addConviction" ? "Add a conviction" :
+          currentStep === STEPS.COVER && coverSubStep === "additionalDrivers" ? "Additional drivers" :
           undefined
         }
       />
@@ -641,7 +706,16 @@ const AnnualInsuranceContent = () => {
                     editingConviction={editingConvictionIndex !== null ? convictions[editingConvictionIndex] : null}
                   />
                 )}
-                {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
+                {currentStep === STEPS.COVER && coverSubStep === "details" && <AnnualCoverDetailsForm form={form} />}
+                {currentStep === STEPS.COVER && coverSubStep === "additionalDrivers" && (
+                  <Step3AdditionalDrivers
+                    additionaDrivers={additionalDrivers}
+                    onAddDriver={handleAddDriver}
+                    onRemoveDriver={handleRemoveDriver}
+                    hasAdditionalDrivers={hasAdditionalDrivers}
+                    onHasAdditionalDriversChange={setHasAdditionalDrivers}
+                  />
+                )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
@@ -651,6 +725,7 @@ const AnnualInsuranceContent = () => {
                   currentStep={currentStep}
                   vehicleSubStep={vehicleSubStep}
                   personalSubStep={personalSubStep}
+                  coverSubStep={coverSubStep}
                   totalSteps={5}
                   onNext={handleNextStep}
                   onBack={handlePreviousStep}
@@ -668,6 +743,7 @@ const AnnualInsuranceContent = () => {
               currentStep={currentStep}
               vehicleSubStep={vehicleSubStep}
               personalSubStep={personalSubStep}
+              coverSubStep={coverSubStep}
             />
           </div>
         </div>
