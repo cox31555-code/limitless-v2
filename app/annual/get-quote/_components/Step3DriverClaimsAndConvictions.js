@@ -164,7 +164,7 @@ const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAd
                           className={styles.changeBtn}
                           onClick={() => handleChangeClaim(index)}
                         >
-                          Change claim
+                          Edit details
                         </button>
                       </div>
                     </div>
