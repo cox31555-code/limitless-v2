@@ -16,6 +16,8 @@ const Step3ContactInformation = ({
 
   const [errors, setErrors] = useState({});
   const [expandedDataUsage, setExpandedDataUsage] = useState(false);
+  const [expandedContactMethods, setExpandedContactMethods] = useState(false);
+  const [expandedPrivacy, setExpandedPrivacy] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -71,28 +73,29 @@ const Step3ContactInformation = ({
             </p>
           </div>
 
-          <input
-            type="email"
-            value={formData.email}
-            onChange={(e) => {
-              setFormData({ ...formData, email: e.target.value });
-              if (errors.email) {
-                setErrors({ ...errors, email: "" });
-              }
-            }}
-            placeholder="info@limitlessinsuranceservices.com"
-            className={styles.inputField}
-            style={{
-              width: '100%',
-              padding: '1.2rem',
-              borderRadius: '8px',
-              border: '2px solid #e5e5e5',
-              fontSize: '1.3rem',
-              fontFamily: 'inherit',
-              boxSizing: 'border-box'
-            }}
-          />
-          {errors.email && <span className={styles.error}>{errors.email}</span>}
+          <div className={styles.fieldWrapper}>
+            <input
+              type="email"
+              value={formData.email}
+              onChange={(e) => {
+                setFormData({ ...formData, email: e.target.value });
+                if (errors.email) {
+                  setErrors({ ...errors, email: "" });
+                }
+              }}
+              placeholder="info@limitlessinsuranceservices.com"
+              style={{
+                width: '100%',
+                padding: '1.2rem',
+                borderRadius: '8px',
+                border: '2px solid #e5e5e5',
+                fontSize: '1.3rem',
+                fontFamily: 'inherit',
+                boxSizing: 'border-box'
+              }}
+            />
+            {errors.email && <span className={styles.error}>{errors.email}</span>}
+          </div>
         </div>
 
         {/* Telephone Number Field */}
@@ -101,54 +104,33 @@ const Step3ContactInformation = ({
             <h3 className={styles.mainQuestion}>Main telephone number (optional)</h3>
           </div>
 
-          <input
-            type="tel"
-            value={formData.telephoneNumber || ""}
-            onChange={(e) => setFormData({ ...formData, telephoneNumber: e.target.value })}
-            placeholder=""
-            className={styles.inputField}
-            style={{
-              width: '100%',
-              padding: '1.2rem',
-              borderRadius: '8px',
-              border: '2px solid #e5e5e5',
-              fontSize: '1.3rem',
-              fontFamily: 'inherit',
-              boxSizing: 'border-box'
-            }}
-          />
+          <div className={styles.fieldWrapper}>
+            <input
+              type="tel"
+              value={formData.telephoneNumber || ""}
+              onChange={(e) => setFormData({ ...formData, telephoneNumber: e.target.value })}
+              placeholder=""
+              style={{
+                width: '100%',
+                padding: '1.2rem',
+                borderRadius: '8px',
+                border: '2px solid #e5e5e5',
+                fontSize: '1.3rem',
+                fontFamily: 'inherit',
+                boxSizing: 'border-box'
+              }}
+            />
+          </div>
         </div>
 
         {/* We'll do the work for you section */}
-        <div style={{
-          padding: '2rem',
-          backgroundColor: '#f8f9fa',
-          borderRadius: '10px',
-          marginBottom: '2rem',
-          marginTop: '2rem'
-        }}>
-          <h3 style={{
-            fontSize: '1.5rem',
-            fontWeight: '600',
-            color: '#1a1a2e',
-            margin: '0 0 1rem 0'
-          }}>We'll do the work for you</h3>
+        <div className={styles.section}>
+          <h3 className={styles.mainQuestion}>We'll do the work for you</h3>
           
-          <div style={{
-            fontSize: '1.3rem',
-            color: '#1a1a2e',
-            lineHeight: '1.6',
-            marginBottom: '1rem'
-          }}>
-            <p style={{ margin: '0 0 1rem 0', fontWeight: '600' }}>Make life simpler.</p>
-            <p style={{ margin: '0' }}>We'll send you renewal reminders to help you stay on top of your bills, the latest deals, and more ways to save you money.</p>
-          </div>
-
-          <div style={{
-            fontSize: '1.3rem',
-            color: '#1a1a2e',
-            lineHeight: '1.6'
-          }}>
+          <div style={{ fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6' }}>
+            <p style={{ margin: '0 0 1.6rem 0', fontWeight: '600' }}>Make life simpler.</p>
+            <p style={{ margin: '0 0 1.6rem 0' }}>We'll send you renewal reminders to help you stay on top of your bills, the latest deals, and more ways to save you money.</p>
+            
             <p style={{ margin: '0 0 1rem 0', fontWeight: '600' }}>We'll also send you...</p>
             <p style={{ margin: '0' }}>The latest on how to claim Meerkat Rewards® like restaurant discounts, and 2 for 1 cinema tickets – plus offers from partners we collaborate with or sponsor.</p>
           </div>
@@ -158,13 +140,14 @@ const Step3ContactInformation = ({
         <div className={styles.section}>
           <h3 className={styles.mainQuestion}>Choose how we contact you</h3>
 
-          <div style={{ marginTop: '1.6rem' }}>
+          <div className={styles.radioGroup}>
             {["Email", "Phone", "Text", "Post", "Do not contact me about the above"].map((method) => (
               <label key={method} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer', alignItems: 'flex-start' }}>
                 <input
                   type="checkbox"
                   checked={formData.contactMethod.includes(method)}
                   onChange={() => handleContactMethodChange(method)}
+                  className={styles.radioInput}
                   style={{
                     marginTop: '0.3rem',
                     flexShrink: 0,
@@ -176,10 +159,7 @@ const Step3ContactInformation = ({
                     accentColor: '#0052a3'
                   }}
                 />
-                <span style={{
-                  fontSize: '1.3rem',
-                  color: '#1a1a2e'
-                }}>{method}</span>
+                <span className={styles.radioLabel}>{method}</span>
               </label>
             ))}
           </div>
@@ -187,57 +167,26 @@ const Step3ContactInformation = ({
         </div>
 
         {/* What else will we contact you about */}
-        <div style={{
-          borderBottom: '1px solid #e5e5e5',
-          paddingBottom: '1.6rem',
-          marginBottom: '1.6rem'
-        }}>
+        <div className={styles.section}>
           <button
             type="button"
+            className={styles.expandableLink}
             onClick={() => setExpandedDataUsage(!expandedDataUsage)}
-            style={{
-              background: 'none',
-              border: 'none',
-              padding: '0',
-              cursor: 'pointer',
-              display: 'flex',
-              gap: '0.8rem',
-              alignItems: 'center',
-              fontSize: '1.3rem',
-              color: '#0052a3',
-              textDecoration: 'underline',
-              fontWeight: '600'
-            }}
           >
-            <span style={{
-              display: 'inline-block',
-              transform: expandedDataUsage ? 'rotate(180deg)' : 'rotate(0deg)',
-              transition: 'transform 0.3s ease'
-            }}>▲</span>
+            <span className={`${styles.expandableIcon} ${expandedDataUsage ? styles.expandedIcon : ''}`}>▼</span>
             What else will we contact you about?
           </button>
 
           {expandedDataUsage && (
-            <div style={{
-              marginTop: '1.6rem',
-              fontSize: '1.3rem',
-              color: '#1a1a2e',
-              lineHeight: '1.6'
-            }}>
-              <p>
-                We will contact you when necessary, including, but not limited to, the provision of our services. This may include notification of any issues that may affect you, as well as quote confirmations or renewal quotes.
-              </p>
+            <div className={styles.expandableContent}>
+              We will contact you when necessary, including, but not limited to, the provision of our services. This may include notification of any issues that may affect you, as well as quote confirmations or renewal quotes.
             </div>
           )}
         </div>
 
         {/* Data usage information */}
-        <div style={{
-          fontSize: '1.3rem',
-          color: '#1a1a2e',
-          lineHeight: '1.6'
-        }}>
-          <p style={{ margin: '0 0 1.6rem 0' }}>
+        <div className={styles.section}>
+          <p style={{ fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6', margin: '0 0 1.6rem 0' }}>
             To find out more read our <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Privacy policy</a> and <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Terms and conditions</a>.
           </p>
 
@@ -245,7 +194,7 @@ const Step3ContactInformation = ({
             What you need to know about how your data will be used:
           </h4>
 
-          <ul style={{ margin: '0 0 1.6rem 0', paddingLeft: '2rem' }}>
+          <ul style={{ margin: '0', paddingLeft: '2rem', fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6' }}>
             <li style={{ marginBottom: '1.2rem' }}>
               Full details of how your data will be used can be found in our <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Privacy policy</a>, including information about your rights.
             </li>
