@@ -102,10 +102,6 @@ const Step3CoverDetails = ({
     }
   };
 
-  const handleDateChange = (e) => {
-    setFormData({ ...formData, startDate: e.target.value });
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.stepTitle}>
