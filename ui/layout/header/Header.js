@@ -266,7 +266,7 @@ const Header = () => {
           </div>
         </div>
       )}
-      {!isFAQPage && (
+      {mounted && !isFAQPage && (
       <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
