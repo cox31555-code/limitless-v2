@@ -231,6 +231,57 @@ const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAd
               You can check the DVLA website or request a driving record from the local police force. Convictions and driving-related endorsements are recorded on the driving licence and will show any points or bans. You can also check via the DVLA's online service.
             </div>
           )}
+
+          {formData.drivingConvictions === "Yes" && (
+            <div className={styles.convictionsSection}>
+              <div className={styles.convictionsHeader}>
+                <h4 className={styles.convictionsTitle}>Their convictions</h4>
+                <button
+                  type="button"
+                  className={styles.addConvictionBtn}
+                  onClick={handleAddConvictionClick}
+                >
+                  Add conviction
+                </button>
+              </div>
+
+              {convictions.length > 0 && (
+                <div className={styles.convictionsList}>
+                  {convictions.map((conviction, index) => (
+                    <div key={index} className={styles.convictionCard}>
+                      <div className={styles.convictionInfo}>
+                        <p className={styles.convictionDetail}>
+                          <span className={styles.convictionLabel}>Date:</span> {conviction.day}/{conviction.month}/{conviction.year}
+                        </p>
+                        <p className={styles.convictionDetail}>
+                          <span className={styles.convictionLabel}>Type:</span> {conviction.convictionType}
+                        </p>
+                        <p className={styles.convictionDetail}>
+                          <span className={styles.convictionLabel}>Location:</span> {conviction.location}
+                        </p>
+                      </div>
+                      <div className={styles.convictionActions}>
+                        <button
+                          type="button"
+                          className={styles.removeConvictionBtn}
+                          onClick={() => handleRemoveConviction(index)}
+                        >
+                          Remove conviction
+                        </button>
+                        <button
+                          type="button"
+                          className={styles.changeConvictionBtn}
+                          onClick={() => handleChangeConviction(index)}
+                        >
+                          Change conviction
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
