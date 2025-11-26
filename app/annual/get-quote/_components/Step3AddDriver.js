@@ -883,7 +883,7 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
             Back
           </button>
           <button type="button" className={styles.nextBtn} onClick={handleSubmit}>
-            Add Driver
+            Next
           </button>
         </div>
       </div>
