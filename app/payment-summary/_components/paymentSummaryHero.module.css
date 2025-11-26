@@ -46,10 +46,10 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1220px;
   position: relative;
   z-index: 2;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .mainInfo {
