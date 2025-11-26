@@ -1063,6 +1063,13 @@ const AnnualInsuranceContent = () => {
                     ncdData={ncdData || {}}
                   />
                 )}
+                {currentStep === STEPS.COVER && coverSubStep === "additionalProducts" && (
+                  <Step3AdditionalProducts
+                    onBack={handleBackFromAdditionalProducts}
+                    onNext={handleAdditionalProductsSubmit}
+                    productsData={productsData || {}}
+                  />
+                )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
