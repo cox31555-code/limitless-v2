@@ -33,7 +33,7 @@
 
 .backBtn:hover:not(:disabled) {
   border-color: #0052a3;
-  color: #003d7a;
+  background: #f5f5f5;
 }
 
 .backBtn:disabled {
