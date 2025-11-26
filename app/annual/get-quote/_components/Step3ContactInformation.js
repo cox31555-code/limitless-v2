@@ -48,11 +48,25 @@ const Step3ContactInformation = ({
 
   const handleContactMethodChange = (method) => {
     let updated = [...formData.contactMethod];
-    if (updated.includes(method)) {
-      updated = updated.filter(m => m !== method);
+
+    if (method === "Do not contact me about the above") {
+      // If "Do not contact" is being checked, deselect all others
+      if (updated.includes(method)) {
+        updated = updated.filter(m => m !== method);
+      } else {
+        updated = ["Do not contact me about the above"];
+      }
     } else {
-      updated.push(method);
+      // If any other option is being checked, deselect "Do not contact"
+      updated = updated.filter(m => m !== "Do not contact me about the above");
+
+      if (updated.includes(method)) {
+        updated = updated.filter(m => m !== method);
+      } else {
+        updated.push(method);
+      }
     }
+
     setFormData({ ...formData, contactMethod: updated });
     if (errors.contactMethod) {
       setErrors({ ...errors, contactMethod: "" });
@@ -129,22 +143,49 @@ const Step3ContactInformation = ({
           <div className={styles.radioGroup}>
             {["Email", "Phone", "Text", "Post", "Do not contact me about the above"].map((method) => (
               <label key={method} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer', alignItems: 'flex-start' }}>
-                <input
-                  type="checkbox"
-                  checked={formData.contactMethod.includes(method)}
-                  onChange={() => handleContactMethodChange(method)}
-                  className={styles.radioInput}
-                  style={{
-                    marginTop: '0.3rem',
-                    flexShrink: 0,
-                    width: '20px',
-                    height: '20px',
-                    minWidth: '20px',
-                    minHeight: '20px',
-                    cursor: 'pointer',
-                    accentColor: '#0052a3'
-                  }}
-                />
+                <div style={{ position: 'relative', marginTop: '0.3rem' }}>
+                  <input
+                    type="checkbox"
+                    checked={formData.contactMethod.includes(method)}
+                    onChange={() => handleContactMethodChange(method)}
+                    style={{
+                      appearance: 'none',
+                      width: '24px',
+                      height: '24px',
+                      minWidth: '24px',
+                      minHeight: '24px',
+                      border: '2px solid #3b82f6',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      backgroundColor: formData.contactMethod.includes(method) ? '#3b82f6' : 'white',
+                      position: 'relative',
+                      flexShrink: 0
+                    }}
+                  />
+                  {formData.contactMethod.includes(method) && (
+                    <svg
+                      style={{
+                        position: 'absolute',
+                        top: '4px',
+                        left: '4px',
+                        width: '16px',
+                        height: '16px',
+                        pointerEvents: 'none'
+                      }}
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.5 4L6 11.5L2.5 8"
+                        stroke="white"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </div>
                 <span className={styles.radioLabel}>{method}</span>
               </label>
             ))}
