@@ -40,6 +40,7 @@ const Step3AddDriverConviction = dynamic(() => import("./_components/Step3AddDri
 const Step3CarOwner = dynamic(() => import("./_components/Step3CarOwner"), { loading: () => <StepFallback /> });
 const Step3CarOwnerAddPerson = dynamic(() => import("./_components/Step3CarOwnerAddPerson"), { loading: () => <StepFallback /> });
 const Step3CoverDetails = dynamic(() => import("./_components/Step3CoverDetails"), { loading: () => <StepFallback /> });
+const Step3NoClaimsDiscount = dynamic(() => import("./_components/Step3NoClaimsDiscount"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
