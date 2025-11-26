@@ -164,6 +164,82 @@ const Step2Licence = ({ form }) => {
           </div>
         </div>
 
+        {shouldShowLicenseNumberSection && (
+          <div className={styles.section}>
+            <h3 className={styles.mainQuestion}>Do you want to share your driving licence number?</h3>
+            <p className={styles.subText}>
+              We're unable to accept Isle of Man or Channel Islands driving licence numbers.
+            </p>
+
+            <div className={styles.licenseImageContainer}>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Ff0a6079ae26941aba96ed9a5098920ae?format=webp&width=800"
+                alt="UK Driving Licence"
+                className={styles.licenseImage}
+              />
+            </div>
+
+            <div className={styles.licenseNumberFields}>
+              <div className={styles.licenseField}>
+                <label className={styles.licenseFieldLabel}>First 11 characters</label>
+                <input
+                  type="text"
+                  {...register("carUsage.licenseNumberFirst")}
+                  placeholder=""
+                  maxLength="11"
+                  className={styles.licenseNumberInput}
+                />
+                {errors.carUsage?.licenseNumberFirst && (
+                  <span className={styles.error}>{errors.carUsage.licenseNumberFirst.message}</span>
+                )}
+              </div>
+
+              <div className={styles.licenseField}>
+                <label className={styles.licenseFieldLabel}>Last 5 characters</label>
+                <input
+                  type="text"
+                  {...register("carUsage.licenseNumberLast")}
+                  placeholder=""
+                  maxLength="5"
+                  className={styles.licenseNumberInput}
+                />
+                {errors.carUsage?.licenseNumberLast && (
+                  <span className={styles.error}>{errors.carUsage.licenseNumberLast.message}</span>
+                )}
+              </div>
+            </div>
+
+            <div className={styles.checkboxWrapper}>
+              <label className={styles.checkboxLabel}>
+                <input
+                  type="checkbox"
+                  {...register("carUsage.declineShareLicenseNumber")}
+                  className={styles.checkbox}
+                />
+                <span className={styles.checkboxText}>I don't want to/can't provide this</span>
+              </label>
+            </div>
+
+            <div className={styles.infoBox}>
+              Did you know... you may get a better deal by sharing this with insurers.
+            </div>
+
+            <button
+              type="button"
+              className={styles.expandableLink}
+              onClick={() => setExpandedWhatDo(!expandedWhatDo)}
+            >
+              What do we do with this information?
+            </button>
+
+            {expandedWhatDo && (
+              <div className={styles.expandableContent}>
+                We use your driving licence information to verify your identity and driving history with the DVLA. This helps us provide you with accurate insurance quotes and ensure you're getting the best possible deal.
+              </div>
+            )}
+          </div>
+        )}
+
         {hasAdditionalQualifications === "Yes" && (
           <>
             <div className={styles.section}>
