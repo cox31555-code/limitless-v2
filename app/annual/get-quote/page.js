@@ -50,7 +50,7 @@ const AnnualInsuranceContent = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
   const [vehicleSubStep, setVehicleSubStep] = useState("registration"); // "registration", "carValue", "carUsage", "carStorage", or "otherCars"
-  const [personalSubStep, setPersonalSubStep] = useState("aboutYou"); // "aboutYou", "household", "employment", or "licence"
+  const [personalSubStep, setPersonalSubStep] = useState("aboutYou"); // "aboutYou", "household", "employment", "licence", or "restrictions"
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
