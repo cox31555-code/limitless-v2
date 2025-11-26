@@ -280,7 +280,7 @@ const ImpoundInsuranceContent = () => {
             onBack={handlePreviousStep}
             onSubmit={onSubmit}
             isLoading={isSubmitting}
-            nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Next"}
+            nextLabel={currentStep === STEPS.REVIEW ? "Get Quotes" : "Next"}
             backLabel="Back"
           />
         </form>
