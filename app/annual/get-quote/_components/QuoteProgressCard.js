@@ -10,7 +10,25 @@ const STEPS = {
 };
 
 const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, coverSubStep }) => {
+  // Auto-expand steps 2 and 3 (PERSONAL and COVER)
   const [expandedStep, setExpandedStep] = useState(currentStep);
+
+  // Map substeps to their corresponding keys
+  const getActiveSubStepIndex = (stepNumber) => {
+    if (stepNumber === STEPS.VEHICLE) {
+      const subStepMap = { "registration": 0, "carValue": 1, "carUsage": 2, "carStorage": 3, "otherCars": 4 };
+      return subStepMap[vehicleSubStep] ?? -1;
+    }
+    if (stepNumber === STEPS.PERSONAL) {
+      const subStepMap = { "aboutYou": 0, "household": 1, "employment": 2, "licence": 3, "restrictions": 4, "claims": 5 };
+      return subStepMap[personalSubStep] ?? -1;
+    }
+    if (stepNumber === STEPS.COVER) {
+      const subStepMap = { "additionalDrivers": 0, "carOwner": 1, "cover": 2, "ncd": 3, "additionalProducts": 4, "contactInformation": 5 };
+      return subStepMap[coverSubStep] ?? -1;
+    }
+    return -1;
+  };
 
   const steps = [
     {
@@ -38,6 +56,10 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
   const progressPercentage = Math.round(((currentStep - 1) / (totalSteps - 1)) * 100);
 
   const toggleStep = (stepNumber) => {
+    // Steps 2 and 3 (PERSONAL and COVER) are always auto-expanded, don't allow collapse
+    if (stepNumber === STEPS.PERSONAL || stepNumber === STEPS.COVER) {
+      return;
+    }
     if (stepNumber === currentStep) {
       setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
     }
@@ -59,7 +81,9 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
-          const isExpanded = expandedStep === step.number && step.subSteps;
+          // Auto-expand steps 2 and 3 (PERSONAL and COVER)
+          const isExpanded = (step.number === STEPS.PERSONAL || step.number === STEPS.COVER || expandedStep === step.number) && step.subSteps;
+          const activeSubStepIndex = isActive ? getActiveSubStepIndex(step.number) : -1;
           
           return (
             <div key={step.number} className={styles.stepItem}>
@@ -99,13 +123,16 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
                 )}
               </div>
 
-              {isActive && isExpanded && step.subSteps && (
+              {isExpanded && step.subSteps && (
                 <ul className={styles.subStepsList}>
-                  {step.subSteps.map((subStep, index) => (
-                    <li key={index} className={styles.subStepItem}>
-                      {subStep}
-                    </li>
-                  ))}
+                  {step.subSteps.map((subStep, index) => {
+                    const isActiveSubStep = isActive && activeSubStepIndex === index;
+                    return (
+                      <li key={index} className={`${styles.subStepItem} ${isActiveSubStep ? styles.activeSubStep : ""}`}>
+                        {subStep}
+                      </li>
+                    );
+                  })}
                 </ul>
               )}
 
