@@ -417,4 +417,22 @@
   .dateField {
     width: 100%;
   }
+
+  .licenseImage {
+    max-width: 180px;
+  }
+
+  .licenseNumberFields {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .licenseField {
+    min-width: 100%;
+  }
+
+  .infoBox {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
 }
