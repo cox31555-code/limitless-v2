@@ -732,6 +732,13 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    // Handle going back from cover
+    if (currentStep === STEPS.COVER && coverSubStep === "cover") {
+      setCoverSubStep("carOwner");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     // Handle going back from carOwner
     if (currentStep === STEPS.COVER && coverSubStep === "carOwner") {
       setCoverSubStep("additionalDrivers");
