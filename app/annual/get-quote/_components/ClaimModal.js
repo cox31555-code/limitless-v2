@@ -79,7 +79,17 @@ const ClaimModal = ({ isOpen, onClose, onAdd, editingClaim = null, editingIndex 
     <div className={styles.backdrop} onClick={handleBackdropClick}>
       <div className={styles.modal}>
         <div className={styles.modalContent}>
-          <h2 className={styles.modalTitle}>Add a claim</h2>
+          <div className={styles.modalHeader}>
+            <h2 className={styles.modalTitle}>{editingIndex !== null ? "Edit claim" : "Add a claim"}</h2>
+            <button
+              type="button"
+              className={styles.closeButton}
+              onClick={onClose}
+              aria-label="Close modal"
+            >
+              ×
+            </button>
+          </div>
 
           {/* Incident Type */}
           <div className={styles.section}>
