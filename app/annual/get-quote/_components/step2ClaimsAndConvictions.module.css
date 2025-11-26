@@ -243,6 +243,15 @@
   .expandableContent {
     font-size: 1.3rem;
   }
+
+  .claimsHeader {
+    gap: 1rem;
+  }
+
+  .addClaimBtn {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.8rem;
+  }
 }
 
 @media (max-width: 600px) {
