@@ -514,7 +514,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 options={state.makes}
                 setSelected={(value) => handleDropdownChange("make", value)}
                 placeholder="Select make"
-                disabled={!selectedType}
+                disabled={!selectedType || loadingStates.make}
+                isLoading={loadingStates.make}
                 showSearch={true}
               />
             </div>
@@ -526,7 +527,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 options={state.options.models}
                 setSelected={(value) => handleDropdownChange("model", value)}
                 placeholder="Select model"
-                disabled={!selectedMake}
+                disabled={!selectedMake || loadingStates.model}
+                isLoading={loadingStates.model}
                 showSearch={true}
               />
               <Dropdown
@@ -535,7 +537,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 options={state.options.years}
                 setSelected={(value) => handleDropdownChange("year", value)}
                 placeholder="Select year"
-                disabled={!selectedModel}
+                disabled={!selectedModel || loadingStates.year}
+                isLoading={loadingStates.year}
                 showSearch={true}
               />
             </div>
@@ -547,7 +550,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 options={state.options.doors}
                 setSelected={(value) => handleDropdownChange("doors", value)}
                 placeholder="Select doors"
-                disabled={!selectedYear}
+                disabled={!selectedYear || loadingStates.doors}
+                isLoading={loadingStates.doors}
               />
               <Dropdown
                 label="Fuel Type"
@@ -555,7 +559,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 options={state.options.fuels}
                 setSelected={(value) => handleDropdownChange("fuel", value)}
                 placeholder="Select fuel type"
-                disabled={!selectedDoors}
+                disabled={!selectedDoors || loadingStates.fuel}
+                isLoading={loadingStates.fuel}
               />
             </div>
 
@@ -566,7 +571,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 options={state.options.transmissions}
                 setSelected={(value) => handleDropdownChange("transmission", value)}
                 placeholder="Select transmission"
-                disabled={!selectedFuel}
+                disabled={!selectedFuel || loadingStates.transmission}
+                isLoading={loadingStates.transmission}
               />
               <Dropdown
                 label="Colour"
@@ -574,7 +580,8 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
                 options={carColors}
                 setSelected={(value) => handleDropdownChange("colour", value)}
                 placeholder="Select colour"
-                disabled={!watch("vehicleDetails.transmission")}
+                disabled={!watch("vehicleDetails.transmission") || loadingStates.colour}
+                isLoading={loadingStates.colour}
                 showSearch={true}
               />
             </div>
