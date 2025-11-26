@@ -1222,7 +1222,8 @@ const AnnualInsuranceContent = () => {
                 !(currentStep === STEPS.COVER && coverSubStep === "ncd") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "additionalProducts") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "contactInformation") &&
-                !(currentStep === STEPS.CHECK_ANSWERS) && (
+                !(currentStep === STEPS.CHECK_ANSWERS) &&
+                !isEditingCarDetails && (
                 <QuoteNavButtons
                   currentStep={currentStep}
                   vehicleSubStep={vehicleSubStep}
