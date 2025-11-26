@@ -153,7 +153,7 @@ const Step3CarOwnerAddPerson = ({
             <h3 className={styles.mainQuestion}>What's their date of birth?</h3>
           </div>
 
-          <div className={styles.dateInputsWrapper}>
+          <div className={styles.fieldsRow}>
             <div className={styles.dateInputGroup}>
               <label className={styles.inputLabel}>Day</label>
               <CustomTextInput
