@@ -132,7 +132,7 @@ const AnnualInsuranceContent = () => {
         usageType: "",
         otherVehicles: null,
         otherVehiclesType: "",
-        hasAdditionalQualifications: null,
+        hasAdditionalQualifications: "",
         additionalQualificationType: "",
         qualificationMonth: "",
         qualificationYear: "",
