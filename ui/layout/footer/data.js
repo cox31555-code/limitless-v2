@@ -1,11 +1,7 @@
 export const menus = [
   {
-    title: "Our Products",
+    title: "Our Car Insurance",
     items: [
-      {
-        title: "About us",
-        link: "/about-us",
-      },
       {
         title: "Annual Insurance",
         link: "/annual",
@@ -22,11 +18,6 @@ export const menus = [
         title: "Courier Insurance",
         link: "/courier",
       },
-    ],
-  },
-  {
-    title: "Our Car Insurance",
-    items: [
       {
         title: "New Customers",
         link: "/annual",
@@ -81,6 +72,10 @@ export const menus = [
   {
     title: "Other Information",
     items: [
+      {
+        title: "About us",
+        link: "/about-us",
+      },
       {
         title: "Cookie Policy",
         link: "/cookies-policy",
