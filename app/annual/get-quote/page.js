@@ -219,9 +219,36 @@ const AnnualInsuranceContent = () => {
       const step = parseInt(stepParam);
       if (step >= STEPS.VEHICLE && step <= STEPS.REVIEW) {
         setCurrentStep(step);
+
+        // If returning from payment-summary (step 4), restore the saved form state
+        if (step === STEPS.CHECK_ANSWERS) {
+          const savedState = sessionStorage.getItem("annualQuoteFormState");
+          if (savedState) {
+            try {
+              const formState = JSON.parse(savedState);
+              // Restore form data
+              const formData = formState.formData;
+              Object.keys(formData).forEach(key => {
+                setValue(key, formData[key]);
+              });
+              // Restore component state
+              setAdditionalDrivers(formState.additionalDrivers || []);
+              setClaims(formState.claims || []);
+              setConvictions(formState.convictions || []);
+              setCarOwnerData(formState.carOwnerData || null);
+              setNcdData(formState.ncdData || null);
+              setProductsData(formState.productsData || null);
+              setContactInformationData(formState.contactInformationData || null);
+              setFoundVehicleData(formState.foundVehicleData || null);
+              setCoverSubStep("contactInformation");
+            } catch (e) {
+              console.error("Failed to restore form state:", e);
+            }
+          }
+        }
       }
     }
-  }, [isMounted, searchParams]);
+  }, [isMounted, searchParams, setValue]);
 
   useEffect(() => {
     if (!isMounted) return;
