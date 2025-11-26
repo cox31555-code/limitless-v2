@@ -268,11 +268,21 @@
   }
 
   .minimumCoverSection {
-    max-width: 100%;
+    gap: 0.8rem;
+  }
+
+  .minimumCoverLabel {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0;
   }
 
   .minimumCoverDropdown {
-    width: 100%;
+    height: 5.6rem;
+    min-height: 5.6rem;
+    padding: 1.4rem 1.6rem 1.4rem 0.5rem;
+    font-size: 1.5rem;
+    padding-right: 3.4rem;
   }
 
   .dateSection {
