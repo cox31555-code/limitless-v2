@@ -240,7 +240,7 @@ const AnnualInsuranceContent = () => {
         console.error("Failed to restore form state on mount:", e);
       }
     }
-  }, [setValue]);
+  }, []);
 
   // Save form state to sessionStorage whenever steps or form data change
   useEffect(() => {
