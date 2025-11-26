@@ -235,6 +235,25 @@
   position: relative;
 }
 
+.subStepButton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  transition: color 0.25s ease;
+}
+
+.subStepButton:hover {
+  color: #0052a3;
+}
+
 .subStepItem::before {
   content: '';
   position: absolute;
