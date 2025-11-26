@@ -4,6 +4,7 @@ import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import RegistrationInput from "./RegistrationInput";
 import VehicleModificationsModal from "./VehicleModificationsModal";
+import CarDetailsEditModal from "./CarDetailsEditModal";
 import styles from "./step1VehicleRegistration.module.css";
 
 const initialState = {
@@ -60,6 +61,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
   const [foundVehicle, setFoundVehicle] = useState(null);
   const [showManualEntry, setShowManualEntry] = useState(false);
   const [showModificationsModal, setShowModificationsModal] = useState(false);
+  const [showCarDetailsModal, setShowCarDetailsModal] = useState(false);
   const [state, dispatch] = useReducer(vehicleReducer, initialState);
   const hasAutoTriggeredRef = useRef(false);
 
@@ -248,7 +250,7 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
           <button
             type="button"
             className={styles.changeLink}
-            onClick={handleChangeVehicle}
+            onClick={() => setShowCarDetailsModal(true)}
           >
             Change
           </button>
@@ -278,13 +280,15 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
 
           <div className={styles.detailItem}>
             <span className={styles.detailLabel}>Driver side</span>
-            <span className={styles.detailValue}>Right Hand</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.driverSide") || "Right Hand"}
+            </span>
           </div>
 
           <div className={styles.detailItem}>
             <span className={styles.detailLabel}>Seats</span>
             <span className={styles.detailValue}>
-              {watch("vehicleDetails.doors") === "2" ? "2" : "5"}
+              {watch("vehicleDetails.seats") || "5"}
             </span>
           </div>
         </div>
