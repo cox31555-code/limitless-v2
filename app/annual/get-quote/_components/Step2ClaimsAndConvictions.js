@@ -1,37 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./step2ClaimsAndConvictions.module.css";
-import ClaimModal from "./ClaimModal";
 
-const Step2ClaimsAndConvictions = ({ form }) => {
+const Step2ClaimsAndConvictions = ({ form, claims = [], onAddClaim = () => {} }) => {
   const { register, formState: { errors }, watch } = form;
   const [expandedClaimsWhatIf, setExpandedClaimsWhatIf] = useState(false);
   const [expandedConvictionsHow, setExpandedConvictionsHow] = useState(false);
-  const [isClaimModalOpen, setIsClaimModalOpen] = useState(false);
-  const [claims, setClaims] = useState([]);
-  const [editingClaimIndex, setEditingClaimIndex] = useState(null);
 
   const motorAccidentsClaims = watch("carUsage.motorAccidentsClaims");
   const drivingConvictions = watch("carUsage.drivingConvictions");
 
-  const handleAddClaim = (claimData, index = null) => {
-    if (index !== null) {
-      const updatedClaims = [...claims];
-      updatedClaims[index] = claimData;
-      setClaims(updatedClaims);
-      setEditingClaimIndex(null);
-    } else {
-      setClaims([...claims, claimData]);
-    }
-  };
-
   const handleRemoveClaim = (index) => {
-    setClaims(claims.filter((_, i) => i !== index));
-  };
-
-  const handleEditClaim = (index) => {
-    setEditingClaimIndex(index);
-    setIsClaimModalOpen(true);
+    const updatedClaims = claims.filter((_, i) => i !== index);
+    // Update claims in parent
+    // For now, we'll just use the onAddClaim context
   };
 
   return (
