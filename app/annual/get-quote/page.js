@@ -270,6 +270,11 @@ const AnnualInsuranceContent = () => {
     "carUsage.criminalConvictions",
   ];
 
+  const step2ClaimsAndConvictionsFields = [
+    "carUsage.motorAccidentsClaims",
+    "carUsage.drivingConvictions",
+  ];
+
   const basePersonalFields = [
     "userDetails.firstName",
     "userDetails.surname",
