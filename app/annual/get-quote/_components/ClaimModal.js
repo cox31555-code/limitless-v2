@@ -41,6 +41,17 @@ const ClaimModal = ({ isOpen, onClose, onAdd, editingClaim = null, editingIndex 
     setErrors({});
   }, [isOpen, editingClaim]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   const validateForm = () => {
     const newErrors = {};
 
