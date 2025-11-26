@@ -1018,7 +1018,10 @@ const AnnualInsuranceContent = () => {
                     form={form}
                     onVehicleFound={setFoundVehicleData}
                     autoTriggerLookup={shouldAutoTrigger}
-                    onEditCarDetails={() => setIsEditingCarDetails(true)}
+                    onEditCarDetails={() => {
+                      setIsEditingCarDetails(true);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                     isEditingCarDetails={isEditingCarDetails}
                     onCarDetailsUpdated={() => {
                       setIsEditingCarDetails(false);
