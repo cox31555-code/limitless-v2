@@ -411,6 +411,31 @@
     gap: 1.2rem;
   }
 
+  .minimumCoverSection {
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .minimumCoverLabel {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .minimumCoverDropdown {
+    height: 5.6rem;
+    min-height: 5.6rem;
+    padding: 1.2rem 1.4rem 1.2rem 0.5rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+  }
+
+  .minimumCoverDropdown:active {
+    border: 1.5px solid #0388ff;
+  }
+
   .dateSection {
     padding: 1.6rem;
     gap: 1.4rem;
@@ -460,6 +485,25 @@
 
   .sectionTitle {
     font-size: 1.8rem;
+  }
+
+  .minimumCoverSection {
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .minimumCoverLabel {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .minimumCoverDropdown {
+    height: 5.6rem;
+    min-height: 5.6rem;
+    padding: 1rem 1.2rem 1rem 0.5rem;
+    font-size: 1.5rem;
   }
 
   .dateSection {
