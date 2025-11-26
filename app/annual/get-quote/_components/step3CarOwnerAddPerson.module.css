@@ -221,18 +221,19 @@
 .buttonGroup {
   display: flex;
   gap: 1rem;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 2rem;
 }
 
 .backBtn {
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2.4rem;
   font-size: 1.4rem;
   font-weight: 600;
   color: #0052a3;
   background: #ffffff;
   border: 2px solid #0052a3;
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -247,30 +248,28 @@
 .backBtn:focus {
   outline: 2px solid #0052a3;
   outline-offset: 2px;
-  border-radius: 25px;
 }
 
 .nextBtn {
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2.4rem;
   font-size: 1.4rem;
   font-weight: 600;
   color: #ffffff;
-  background: #0052a3;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border: none;
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .nextBtn:hover {
-  background: #003d7a;
+  background: linear-gradient(135deg, #003d7a 0%, #002d5a 100%);
 }
 
 .nextBtn:focus {
   outline: 2px solid #0052a3;
   outline-offset: 2px;
-  border-radius: 25px;
 }
 
 .removePersonBtn {
