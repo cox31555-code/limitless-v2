@@ -80,6 +80,14 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
           // Auto-expand current step
           const isExpanded = (step.number === currentStep || expandedStep === step.number) && step.subSteps;
           const activeSubStepIndex = isActive ? getActiveSubStepIndex(step.number) : -1;
+
+          // Calculate substep progress percentage
+          let substepProgress = 0;
+          if (isActive && step.subSteps && activeSubStepIndex >= 0) {
+            substepProgress = ((activeSubStepIndex + 1) / step.subSteps.length) * 100;
+          } else if (isCompleted) {
+            substepProgress = 100;
+          }
           
           return (
             <div key={step.number} className={styles.stepItem}>
@@ -133,7 +141,12 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
               )}
 
               {step.number < steps.length && (
-                <div className={`${styles.connector} ${(isCompleted || isActive) ? styles.connectorActive : ""}`} />
+                <div
+                  className={`${styles.connector} ${(isCompleted || isActive) ? styles.connectorActive : ""}`}
+                  style={{
+                    '--substep-progress': `${substepProgress}%`
+                  }}
+                />
               )}
             </div>
           );
