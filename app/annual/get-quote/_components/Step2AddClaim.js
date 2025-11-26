@@ -190,6 +190,22 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
               </div>
             </>
           )}
+
+          {/* Conditional Theft Question - Directly under incident type */}
+          {formData.incidentType === "Theft" && (
+            <div className={styles.conditionalSection}>
+              <h3 className={styles.questionTitle}>What type of theft was it?</h3>
+              <Dropdown
+                label=""
+                selected={formData.theftType}
+                options={theftTypeOptions}
+                setSelected={(value) => setFormData({ ...formData, theftType: value })}
+                placeholder="Please select..."
+                error={errors.theftType}
+              />
+              {errors.theftType && <span className={styles.error}>{errors.theftType}</span>}
+            </div>
+          )}
         </div>
 
         {/* Date of Incident */}
