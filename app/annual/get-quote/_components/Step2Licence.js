@@ -154,35 +154,55 @@ const Step2Licence = ({ form }) => {
               />
             </div>
 
-            <div className={styles.licenseNumberFields}>
-              <div className={styles.licenseField}>
-                <label className={styles.licenseFieldLabel}>First 11 characters</label>
-                <CustomTextInput
-                  type="text"
-                  placeholder=""
-                  maxLength="11"
-                  value={licenseNumberFirst || ""}
-                  onChange={(e) => {
-                    setValue("carUsage.licenseNumberFirst", e.target.value);
-                  }}
-                  error={errors.carUsage?.licenseNumberFirst?.message}
-                />
-              </div>
+            {isGreatBritain && (
+              <div className={styles.licenseNumberFields}>
+                <div className={styles.licenseField}>
+                  <label className={styles.licenseFieldLabel}>First 11 characters</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    maxLength="11"
+                    value={licenseNumberFirst || ""}
+                    onChange={(e) => {
+                      setValue("carUsage.licenseNumberFirst", e.target.value);
+                    }}
+                    error={errors.carUsage?.licenseNumberFirst?.message}
+                  />
+                </div>
 
-              <div className={styles.licenseField}>
-                <label className={styles.licenseFieldLabel}>Last 5 characters</label>
-                <CustomTextInput
-                  type="text"
-                  placeholder=""
-                  maxLength="5"
-                  value={licenseNumberLast || ""}
-                  onChange={(e) => {
-                    setValue("carUsage.licenseNumberLast", e.target.value);
-                  }}
-                  error={errors.carUsage?.licenseNumberLast?.message}
-                />
+                <div className={styles.licenseField}>
+                  <label className={styles.licenseFieldLabel}>Last 5 characters</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    maxLength="5"
+                    value={licenseNumberLast || ""}
+                    onChange={(e) => {
+                      setValue("carUsage.licenseNumberLast", e.target.value);
+                    }}
+                    error={errors.carUsage?.licenseNumberLast?.message}
+                  />
+                </div>
               </div>
-            </div>
+            )}
+
+            {isNorthernIreland && (
+              <div className={styles.licenseNumberFields}>
+                <div className={styles.licenseField}>
+                  <label className={styles.licenseFieldLabel}>Enter your 8 digit number</label>
+                  <CustomTextInput
+                    type="text"
+                    placeholder=""
+                    maxLength="8"
+                    value={licenseNumberNI || ""}
+                    onChange={(e) => {
+                      setValue("carUsage.licenseNumberNI", e.target.value);
+                    }}
+                    error={errors.carUsage?.licenseNumberNI?.message}
+                  />
+                </div>
+              </div>
+            )}
 
             <div className={styles.checkboxWrapper}>
               <label className={styles.checkboxLabel}>
