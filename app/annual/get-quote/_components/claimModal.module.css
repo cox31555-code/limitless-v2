@@ -310,6 +310,16 @@
     min-width: 0;
   }
 
+  .textInput {
+    padding: 0.8rem 0.8rem;
+    font-size: 1.3rem;
+    min-height: 3.8rem;
+  }
+
+  .inputLabel {
+    font-size: 1.15rem;
+  }
+
   .buttonGroup {
     flex-direction: column-reverse;
     gap: 1rem;
