@@ -8,6 +8,7 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
   const [formData, setFormData] = useState({
     location: "",
     convictionType: "",
+    convictionReason: "",
     day: "",
     month: "",
     year: "",
