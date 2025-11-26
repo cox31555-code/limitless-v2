@@ -44,7 +44,9 @@ const Step2Employment = ({ form }) => {
 
       <div className={styles.contentWrapper}>
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>What's your employment status?</h3>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>What's your employment status?</h3>
+          </div>
 
           <div className={styles.dropdownWrapper}>
             <Dropdown
