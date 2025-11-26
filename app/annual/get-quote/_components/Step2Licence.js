@@ -144,7 +144,7 @@ const Step2Licence = ({ form }) => {
 
             <div className={styles.licenseImageContainer}>
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Ff0a6079ae26941aba96ed9a5098920ae?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F7fbdb9cd9244469e824185fe7dd0a853?format=webp&width=800"
                 alt="UK Driving Licence"
                 className={styles.licenseImage}
               />
