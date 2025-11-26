@@ -556,6 +556,9 @@ const AnnualInsuranceContent = () => {
                 {currentStep === STEPS.PERSONAL && personalSubStep === "restrictions" && (
                   <Step2LicenceRestrictions form={form} />
                 )}
+                {currentStep === STEPS.PERSONAL && personalSubStep === "claims" && (
+                  <Step2ClaimsAndConvictions form={form} />
+                )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
