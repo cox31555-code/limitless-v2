@@ -91,17 +91,26 @@ const Step3AdditionalDrivers = ({
                       )}
                       {driver.relationshipStatus && (
                         <p className={styles.driverDetail}>
-                          <span className={styles.label}>Status:</span> {driver.relationshipStatus}
+                          <span className={styles.label}>Relationship:</span> {driver.relationshipStatus}
                         </p>
                       )}
                     </div>
-                    <button
-                      type="button"
-                      className={styles.removeButton}
-                      onClick={() => handleRemoveDriver(index)}
-                    >
-                      Remove
-                    </button>
+                    <div className={styles.buttonGroup}>
+                      <button
+                        type="button"
+                        className={styles.removeButton}
+                        onClick={() => handleRemoveDriver(index)}
+                      >
+                        Remove
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.editButton}
+                        onClick={() => handleEditDriver(index)}
+                      >
+                        Edit details
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
