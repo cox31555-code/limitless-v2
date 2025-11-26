@@ -60,6 +60,12 @@
   font-weight: 400;
 }
 
+.questionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .dateInfoBox {
   background: transparent;
   margin: 0;
