@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step2Licence.module.css";
 import { licenseHeldOptions, monthOptions, yearOptions } from "@/app/temporary/get-quote/data";
 
