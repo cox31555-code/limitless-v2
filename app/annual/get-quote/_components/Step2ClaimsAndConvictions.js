@@ -19,10 +19,12 @@ const Step2ClaimsAndConvictions = ({ form }) => {
       <div className={styles.contentWrapper}>
         {/* Motor Accidents and Claims Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Have you had any motor accidents, claims or losses in the past 5 years, no matter who was at fault or if a claim was made?</h3>
-          <p className={styles.subText}>
-            We need to know about any claims (including unsettled claims), accidents, or losses involving any car, van, motorbike, or other vehicle.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>Have you had any motor accidents, claims or losses in the past 5 years, no matter who was at fault or if a claim was made?</h3>
+            <p className={styles.subText}>
+              We need to know about any claims (including unsettled claims), accidents, or losses involving any car, van, motorbike, or other vehicle.
+            </p>
+          </div>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
