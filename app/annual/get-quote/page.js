@@ -125,6 +125,10 @@ const AnnualInsuranceContent = () => {
         minimumCoverLevel: "",
         startDate: "",
       },
+      ncdData: {
+        noClaimsDiscount: "",
+        namedDriverExperience: "",
+      },
       optionalExtras: {
         courtesyCar: null,
         breakdownCover: null,
