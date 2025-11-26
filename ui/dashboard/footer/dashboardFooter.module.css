@@ -402,6 +402,19 @@
 }
 
 @media screen and (max-width: 400px) {
+  .helpSection {
+    padding: 1.8rem 0;
+  }
+
+  .helpTitle {
+    font-size: 1.2rem;
+  }
+
+  .helpLink {
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+  }
+
   .topSection {
     padding: 1.8rem 0;
   }
