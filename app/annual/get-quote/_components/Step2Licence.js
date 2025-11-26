@@ -20,7 +20,11 @@ const Step2Licence = ({ form }) => {
   const licenseNumber = watch("carUsage.licenseNumber");
   const licenseNumberFirst = watch("carUsage.licenseNumberFirst");
   const licenseNumberLast = watch("carUsage.licenseNumberLast");
+  const licenseNumberNI = watch("carUsage.licenseNumberNI");
   const declineShareLicenseNumber = watch("carUsage.declineShareLicenseNumber");
+
+  const isNorthernIreland = licenseIssueCountry === "Northern Ireland";
+  const isGreatBritain = licenseIssueCountry === "England, Scotland or Wales (Great Britain)";
 
   const nonUKLicenseTypes = [
     "Full International Licence",
