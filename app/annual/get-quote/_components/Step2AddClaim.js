@@ -148,11 +148,16 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
                 <button
                   type="button"
                   className={styles.expandableLink}
-                  onClick={() => {}}
+                  onClick={() => setExpandedNobodyInCar(!expandedNobodyInCar)}
                 >
-                  <span className={styles.expandableIcon}>▶</span>
+                  <span className={`${styles.expandableIcon} ${expandedNobodyInCar ? styles.expandedIcon : ''}`}>▶</span>
                   What if nobody was in the car?
                 </button>
+                {expandedNobodyInCar && (
+                  <div className={styles.expandableContent}>
+                    If the car was unoccupied, then it's the person who was responsible for it at this point.
+                  </div>
+                )}
                 {errors.whoWasDriving && <span className={styles.error}>{errors.whoWasDriving}</span>}
               </div>
 
