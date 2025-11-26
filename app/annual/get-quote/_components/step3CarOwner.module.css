@@ -458,7 +458,17 @@
     gap: 0.8rem;
   }
 
+  .personActions {
+    flex-direction: row;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
   .changePersonBtn {
+    font-size: 1.3rem;
+  }
+
+  .removePersonBtn {
     font-size: 1.3rem;
   }
 }
