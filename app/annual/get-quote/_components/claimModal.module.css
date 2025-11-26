@@ -365,8 +365,8 @@
 
   .textInput,
   .selectInput {
-    min-height: 4.2rem;
-    padding: 0.8rem 1rem;
+    min-height: 4rem;
+    padding: 0.8rem 0.8rem;
     font-size: 1.4rem;
   }
 
