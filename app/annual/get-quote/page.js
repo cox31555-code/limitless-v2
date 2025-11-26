@@ -489,13 +489,27 @@ const AnnualInsuranceContent = () => {
   const handleCoverDetailsSubmit = (data) => {
     // Store cover details in form
     form.setValue("coverDetails", data, { shouldValidate: true });
-    // Move to next step (optional extras)
-    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    // Move to NCD step
+    setCoverSubStep("ncd");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleBackFromCoverDetails = () => {
     setCoverSubStep("carOwner");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleNcdDataSubmit = (data) => {
+    // Store NCD data in form
+    setNcdData(data);
+    form.setValue("ncdData", data, { shouldValidate: true });
+    // Move to next step (optional extras)
+    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromNcd = () => {
+    setCoverSubStep("cover");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
