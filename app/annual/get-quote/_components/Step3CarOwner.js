@@ -40,7 +40,6 @@ const Step3CarOwner = ({
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.mainDriver) newErrors.mainDriver = "Please select the main driver";
     if (!formData.isRegisteredKeeperAndOwner) newErrors.isRegisteredKeeperAndOwner = "Please answer this question";
     if (formData.isRegisteredKeeperAndOwner === "No") {
       if (!formData.registeredKeeper) newErrors.registeredKeeper = "Please select the registered keeper";
