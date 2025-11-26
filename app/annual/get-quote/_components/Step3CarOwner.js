@@ -115,7 +115,7 @@ const Step3CarOwner = ({
               selected={formData.mainDriver}
               options={driverOptions}
               setSelected={(value) => setFormData({ ...formData, mainDriver: value })}
-              placeholder="Please select��"
+              placeholder="Please select…"
             />
             {errors.mainDriver && <span className={styles.error}>{errors.mainDriver}</span>}
           </div>
@@ -276,13 +276,24 @@ const Step3CarOwner = ({
                     <p className={styles.personName}>
                       {formData.legalOwnerOtherPerson.title} {formData.legalOwnerOtherPerson.firstName} {formData.legalOwnerOtherPerson.lastName}
                     </p>
-                    <button
-                      type="button"
-                      className={styles.changePersonBtn}
-                      onClick={() => onAddPerson("legalOwner", formData)}
-                    >
-                      Change
-                    </button>
+                    <div className={styles.personActions}>
+                      <button
+                        type="button"
+                        className={styles.changePersonBtn}
+                        onClick={() => onAddPerson("legalOwner", formData)}
+                      >
+                        Change
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.removePersonBtn}
+                        onClick={() => {
+                          setFormData({ ...formData, legalOwnerOtherPerson: null, legalOwner: "" });
+                        }}
+                      >
+                        Remove
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <button
