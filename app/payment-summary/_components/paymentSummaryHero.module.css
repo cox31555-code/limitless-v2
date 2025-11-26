@@ -96,15 +96,15 @@
 .trustInfo {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .trustItem {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.6rem;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
