@@ -248,12 +248,6 @@
   transition: all 0.25s ease;
 }
 
-.subStepItem:hover::before {
-  background: #0052a3;
-  width: 8px;
-  height: 8px;
-  box-shadow: 0 0 8px rgba(0, 82, 163, 0.4);
-}
 
 /* Active substep styling with blue dot */
 .activeSubStep {
