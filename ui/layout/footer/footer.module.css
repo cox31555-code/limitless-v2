@@ -4,11 +4,20 @@
   gap: 0;
   padding: 0;
   margin: 0;
-  border-radius: 0;
-  background: #1e3a8a;
+  background: #000822;
   position: relative;
   overflow: hidden;
   width: 100%;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(3, 136, 255, 0.15) 50%, transparent 100%);
 }
 
 .contentContainer {
@@ -26,25 +35,26 @@
 }
 
 .logoSection {
-  padding: 4rem 5% 0;
-  max-width: 120rem;
+  padding: 5rem 4% 0;
+  max-width: 140rem;
   width: 100%;
   margin: 0 auto;
 }
 
 .logo {
   width: auto;
-  height: 80px;
+  height: 70px;
   cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.85;
 }
 
 .content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 3rem 5% 4rem;
-  max-width: 120rem;
+  padding: 3.5rem 4% 3rem;
+  max-width: 140rem;
   width: 100%;
   margin: 0 auto;
 }
@@ -54,42 +64,43 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .menus {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 3rem;
+  gap: 4rem;
   flex: 1;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.6rem;
 }
 
 .menuTitle {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   line-height: 1.3;
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 0.2rem 0;
+  letter-spacing: 0.02em;
 }
 
 .menuItems {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
 
 .menuItem {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.5;
   cursor: pointer;
@@ -104,14 +115,15 @@
 }
 
 .menuItem a:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .socialsSection {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1.2rem;
+  gap: 0;
+  padding-top: 0.2rem;
 }
 
 .socialsItems {
@@ -127,29 +139,32 @@
   width: 3.6rem;
   height: 3.6rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .socialsItem:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(3, 136, 255, 0.15);
 }
 
 .socialsIcon {
-  color: #fff;
-  width: 1.8rem;
-  height: 1.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  width: 1.7rem;
+  height: 1.7rem;
+  transition: color 0.2s ease;
+}
+
+.socialsItem:hover .socialsIcon {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .socials-item-black {
   background: rgba(0, 8, 34, 0.08);
-  border-color: rgba(0, 8, 34, 0.15);
 }
 
 .socials-item-black:hover {
   background: rgba(0, 8, 34, 0.15);
-  border-color: rgba(0, 8, 34, 0.3);
 }
 
 .socials-icon-black {
@@ -163,91 +178,117 @@
 }
 
 .legal {
-  padding: 2rem 5% 1.5rem;
-  max-width: 120rem;
+  padding: 2.5rem 4% 0.8rem;
+  max-width: 140rem;
   width: 100%;
   margin: 0 auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .legalText {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
-  padding: 0.3rem 0;
+  padding: 0.25rem 0;
 }
 
 .copyright {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.15rem;
   font-weight: 400;
   line-height: 1.5;
-  padding: 1.5rem 5% 2.5rem;
+  padding: 2rem 4% 3rem;
   text-align: right;
-  max-width: 120rem;
+  max-width: 140rem;
   width: 100%;
   margin: 0 auto;
 }
 
-/* Responsive Design */
+/* Tablet */
 @media (max-width: 1200px) {
-  .menus {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+  .logoSection {
+    padding: 4.5rem 4% 0;
+  }
+
+  .logo {
+    height: 65px;
   }
 
   .content {
-    padding: 3rem 4% 3.5rem;
+    padding: 3.5rem 4% 2.5rem;
   }
 
-  .logoSection {
-    padding: 3.5rem 4% 0;
+  .mainContent {
+    gap: 3.5rem;
+  }
+
+  .menus {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+  }
+
+  .menu {
+    gap: 1.5rem;
+  }
+
+  .menuTitle {
+    font-size: 1.28rem;
+  }
+
+  .menuItem {
+    font-size: 1.22rem;
   }
 
   .legal {
-    padding: 2rem 4% 1.5rem;
+    padding: 2.2rem 4% 0.8rem;
   }
 
   .copyright {
-    padding: 1.5rem 4% 2.5rem;
+    padding: 1.8rem 4% 2.8rem;
   }
 }
 
+/* Mobile */
 @media (max-width: 900px) {
   .logoSection {
-    padding: 3rem 4% 0;
+    padding: 4rem 4% 0;
     text-align: center;
   }
 
   .logo {
-    height: 70px;
+    height: 60px;
   }
 
   .content {
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    padding: 2.5rem 4% 3rem;
+    padding: 3rem 4% 2.5rem;
   }
 
   .mainContent {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    gap: 3rem;
+    gap: 3.5rem;
   }
 
   .menus {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 3.5rem;
     width: 100%;
   }
 
   .menu {
     align-items: flex-start;
     text-align: left;
+    gap: 1.4rem;
+  }
+
+  .menuTitle {
+    font-size: 1.3rem;
+  }
+
+  .menuItem {
+    font-size: 1.25rem;
   }
 
   .socialsSection {
@@ -260,83 +301,24 @@
   }
 
   .legal {
-    padding: 2rem 4% 1.5rem;
+    padding: 2rem 4% 0.8rem;
     text-align: center;
   }
 
   .legalText {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
   }
 
   .copyright {
     text-align: center;
-    padding: 1.5rem 4% 2.5rem;
+    padding: 1.8rem 4% 2.5rem;
+    font-size: 1.12rem;
   }
 }
 
 @media (max-width: 650px) {
   .logoSection {
-    padding: 2.5rem 3% 0;
-  }
-
-  .logo {
-    height: 60px;
-  }
-
-  .content {
-    gap: 2.5rem;
-    padding: 2rem 3% 2.5rem;
-  }
-
-  .menus {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .menu {
-    align-items: center;
-    text-align: center;
-  }
-
-  .menuTitle {
-    font-size: 1.4rem;
-  }
-
-  .menuItem {
-    font-size: 1.3rem;
-  }
-
-  .socialsItems {
-    gap: 1.2rem;
-  }
-
-  .socialsItem {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .socialsIcon {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .legal {
-    padding: 1.8rem 3% 1.2rem;
-  }
-
-  .legalText {
-    font-size: 1.05rem;
-  }
-
-  .copyright {
-    padding: 1.2rem 3% 2rem;
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 450px) {
-  .logoSection {
-    padding: 2rem 3% 0;
+    padding: 3.5rem 4% 0;
   }
 
   .logo {
@@ -344,33 +326,38 @@
   }
 
   .content {
-    padding: 1.8rem 3% 2rem;
-    gap: 2rem;
+    padding: 2.5rem 4% 2rem;
+  }
+
+  .mainContent {
+    gap: 3rem;
   }
 
   .menus {
-    gap: 2.2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .menu {
-    gap: 1.2rem;
+    align-items: center;
+    text-align: center;
+    gap: 1.3rem;
   }
 
   .menuTitle {
-    font-size: 1.35rem;
-    margin: 0 0 0.3rem 0;
+    font-size: 1.32rem;
   }
 
   .menuItem {
-    font-size: 1.25rem;
+    font-size: 1.27rem;
   }
 
   .menuItems {
-    gap: 0.8rem;
+    gap: 0.95rem;
   }
 
   .socialsItems {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .socialsItem {
@@ -384,32 +371,102 @@
   }
 
   .legal {
-    padding: 1.5rem 3% 1rem;
+    padding: 1.8rem 4% 0.6rem;
   }
 
   .legalText {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.75;
   }
 
   .copyright {
-    padding: 1rem 3% 1.8rem;
-    font-size: 1.05rem;
+    padding: 1.6rem 4% 2.2rem;
+    font-size: 1.1rem;
   }
 }
 
-/* Light Theme (for special pages) */
+@media (max-width: 450px) {
+  .logoSection {
+    padding: 3rem 4% 0;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .content {
+    padding: 2.2rem 4% 1.8rem;
+  }
+
+  .mainContent {
+    gap: 2.8rem;
+  }
+
+  .menus {
+    gap: 2.8rem;
+  }
+
+  .menu {
+    gap: 1.2rem;
+  }
+
+  .menuTitle {
+    font-size: 1.3rem;
+    margin: 0 0 0.15rem 0;
+  }
+
+  .menuItem {
+    font-size: 1.25rem;
+  }
+
+  .menuItems {
+    gap: 0.9rem;
+  }
+
+  .socialsItems {
+    gap: 1.1rem;
+  }
+
+  .socialsItem {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .socialsIcon {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .legal {
+    padding: 1.6rem 4% 0.5rem;
+  }
+
+  .legalText {
+    font-size: 1.02rem;
+    line-height: 1.8;
+  }
+
+  .copyright {
+    padding: 1.4rem 4% 2rem;
+    font-size: 1.08rem;
+  }
+}
+
+/* Light Theme */
 .lightTheme {
   background: #ffffff;
 }
 
+.lightTheme::before {
+  background: linear-gradient(90deg, transparent 0%, rgba(3, 136, 255, 0.08) 50%, transparent 100%);
+}
+
 .lightTheme .menuTitle {
-  color: #000822;
-  opacity: 1;
+  color: rgba(0, 8, 34, 0.34);
 }
 
 .lightTheme .menuItem {
-  color: #5a6b7d;
+  color: #000822;
 }
 
 .lightTheme .menuItem a:hover {
