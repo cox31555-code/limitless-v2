@@ -910,7 +910,7 @@ const AnnualInsuranceContent = () => {
   return (
     <div suppressHydrationWarning>
       <GetQuotePageHeader />
-      <LoadingOverlay isVisible={showLoading} />
+      <CourierLoadingOverlay isVisible={showLoading} />
       <QuoteHeader
         currentStep={currentStep}
         totalSteps={4}
