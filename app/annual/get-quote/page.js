@@ -146,6 +146,7 @@ const AnnualInsuranceContent = () => {
         licenseNumberNI: "",
         declineShareLicenseNumber: false,
         medicalConditions: "",
+        dvlaConditionType: "",
         insuranceCancelledOrClaimRefusedOrPolicyVoided: "",
         criminalConvictions: "",
         NCB: "",
@@ -156,10 +157,6 @@ const AnnualInsuranceContent = () => {
         livedInUKSinceBirth: null,
         hasAdditionalDrivers: null,
         additionalDrivers: [],
-        criminalConvictions: null,
-        medicalConditions: null,
-        dvlaConditionType: null,
-        insuranceCancelledOrClaimRefusedOrPolicyVoided: null,
       },
       terms: {
         acceptTerms: false,
