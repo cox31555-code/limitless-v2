@@ -106,42 +106,44 @@ const Step3CarOwnerAddPerson = ({
             </p>
           </div>
 
-          <div className={styles.fieldGroup}>
-            <div className={styles.fieldWrapper}>
-              <label className={styles.fieldLabel}>Title</label>
-              <Dropdown
-                label=""
-                selected={formData.title}
-                options={titleOptions}
-                setSelected={(value) => setFormData({ ...formData, title: value })}
-                placeholder="Select..."
-              />
-              {errors.title && <span className={styles.error}>{errors.title}</span>}
+          <div className={styles.fieldsRow}>
+            <div className={styles.fieldGroup}>
+              <div className={styles.fieldWrapper}>
+                <label className={styles.fieldLabel}>Title</label>
+                <Dropdown
+                  label=""
+                  selected={formData.title}
+                  options={titleOptions}
+                  setSelected={(value) => setFormData({ ...formData, title: value })}
+                  placeholder="Select..."
+                />
+                {errors.title && <span className={styles.error}>{errors.title}</span>}
+              </div>
             </div>
-          </div>
 
-          <div className={styles.fieldWrapper}>
-            <label className={styles.fieldLabel}>First name</label>
-            <CustomTextInput
-              type="text"
-              placeholder=""
-              value={formData.firstName || ""}
-              onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-              error={errors.firstName}
-            />
-            {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
-          </div>
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>First name</label>
+              <CustomTextInput
+                type="text"
+                placeholder=""
+                value={formData.firstName || ""}
+                onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                error={errors.firstName}
+              />
+              {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
+            </div>
 
-          <div className={styles.fieldWrapper}>
-            <label className={styles.fieldLabel}>Last name</label>
-            <CustomTextInput
-              type="text"
-              placeholder=""
-              value={formData.lastName || ""}
-              onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-              error={errors.lastName}
-            />
-            {errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>Last name</label>
+              <CustomTextInput
+                type="text"
+                placeholder=""
+                value={formData.lastName || ""}
+                onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                error={errors.lastName}
+              />
+              {errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
+            </div>
           </div>
         </div>
 
