@@ -13,8 +13,8 @@ const NoHiddenFees = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.title}>
-          Need help?
-          <span className={styles.titleSpan}>We're here for you</span>
+          No Hidden Fees
+          <span className={styles.titleSpan}>Limitless Cover</span>
         </div>
         <div className={styles.buttons}>
           <button
