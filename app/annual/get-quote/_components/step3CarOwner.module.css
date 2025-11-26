@@ -321,13 +321,13 @@
 }
 
 .backBtn {
-  padding: 0.9rem 2.4rem;
+  padding: 1.6rem 2.4rem;
   font-size: 1.4rem;
   font-weight: 600;
   color: #0052a3;
   background: #ffffff;
   border: 2px solid #0052a3;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -345,13 +345,13 @@
 }
 
 .nextBtn {
-  padding: 0.9rem 2.4rem;
-  font-size: 1.4rem;
+  padding: 1.8rem 3.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
