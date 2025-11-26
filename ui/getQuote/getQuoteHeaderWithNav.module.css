@@ -48,7 +48,7 @@
   align-items: flex-start;
   margin: 0 auto 0.9rem;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .navigationBar {
