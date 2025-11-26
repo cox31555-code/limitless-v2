@@ -131,6 +131,11 @@
   width: 50%;
 }
 
+.menuLink:hover .chevronIcon,
+.menuItem:hover .menuLink .chevronIcon {
+  color: #0388ff;
+}
+
 .activeMenuLink {
   color: #049cff;
   background: rgba(3, 136, 255, 0.12);
