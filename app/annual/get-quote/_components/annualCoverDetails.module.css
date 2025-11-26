@@ -322,6 +322,35 @@
     align-items: flex-start;
   }
 
+  .minimumCoverSection {
+    width: 100%;
+    box-sizing: border-box;
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .minimumCoverLabel {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .minimumCoverDropdown {
+    height: 5.6rem;
+    min-height: 5.6rem;
+    padding: 1.4rem 1.6rem 1.4rem 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    border-radius: 12px;
+  }
+
+  .minimumCoverDropdown:active {
+    border: 1.5px solid #0388ff;
+    background: rgba(3, 136, 255, 0.02);
+  }
+
   .dateSection {
     padding: 2rem;
     gap: 1.6rem;
