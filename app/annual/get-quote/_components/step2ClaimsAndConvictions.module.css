@@ -491,4 +491,26 @@
     font-size: 1.3rem;
     padding: 0.7rem 1.6rem;
   }
+
+  .claimCard {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .claimDetail {
+    font-size: 1.3rem;
+  }
+
+  .claimActions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.6rem;
+  }
+
+  .editBtn,
+  .deleteBtn {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+  }
 }
