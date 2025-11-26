@@ -91,6 +91,7 @@ const ClaimModal = ({ isOpen, onClose, onAdd, editingClaim = null, editingIndex 
             </button>
           </div>
 
+          <div className={styles.scrollContent}>
           {/* Incident Type */}
           <div className={styles.section}>
             <h3 className={styles.questionTitle}>What type of incident was it?</h3>
@@ -237,6 +238,7 @@ const ClaimModal = ({ isOpen, onClose, onAdd, editingClaim = null, editingIndex 
               ))}
             </div>
             {errors.ncdAffected && <span className={styles.error}>{errors.ncdAffected}</span>}
+          </div>
           </div>
 
           {/* Buttons */}
