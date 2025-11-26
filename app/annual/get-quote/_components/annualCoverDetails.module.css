@@ -451,7 +451,8 @@
   }
 
   .expandableDetails {
-    margin-top: 1.6rem;
+    margin-top: 1.4rem;
+    margin-bottom: 1.6rem;
   }
 
   .expandableSummary {
@@ -465,6 +466,10 @@
     font-size: 1.2rem;
     line-height: 1.5;
     border-left-width: 3px;
+  }
+
+  .sectionSubtitle {
+    margin: 1.2rem 0 0 0;
   }
 }
 
