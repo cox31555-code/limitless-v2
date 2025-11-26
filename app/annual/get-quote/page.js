@@ -906,6 +906,15 @@ const AnnualInsuranceContent = () => {
                     editingConviction={editingDriverConvictionIndex !== null ? driverConvictions[editingDriverConvictionIndex] : null}
                   />
                 )}
+                {currentStep === STEPS.COVER && coverSubStep === "carOwner" && (
+                  <Step3CarOwner
+                    onBack={handleBackFromCarOwner}
+                    onNext={handleCarOwnerSubmit}
+                    userData={form.getValues("userDetails")}
+                    additionalDrivers={additionalDrivers}
+                    carOwnerData={carOwnerData}
+                  />
+                )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
