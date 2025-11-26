@@ -80,7 +80,14 @@ const Step3CoverDetails = ({
                   checked={formData.coverLevel === level.id}
                   onChange={(e) => setFormData({ ...formData, coverLevel: e.target.value })}
                   className={styles.radioInput}
-                  style={{ marginTop: '0.3rem', flexShrink: 0 }}
+                  style={{
+                    marginTop: '0.3rem',
+                    flexShrink: 0,
+                    width: '24px',
+                    height: '24px',
+                    minWidth: '24px',
+                    minHeight: '24px'
+                  }}
                 />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', flex: 1 }}>
                   <span className={styles.radioLabel}>{level.title}</span>
