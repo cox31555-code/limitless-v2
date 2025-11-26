@@ -458,7 +458,8 @@
 .buttonGroup {
   display: flex;
   gap: 1.2rem;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 3.2rem;
   padding-top: 2rem;
   border-top: 2px solid #e8ecf1;
@@ -471,13 +472,14 @@
   color: #0052a3;
   background: #ffffff;
   border: 2px solid #0052a3;
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   min-height: 4.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .backBtn:hover {
@@ -496,19 +498,20 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
-  background: #0052a3;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border: none;
-  border-radius: 25px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   min-height: 4.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .nextBtn:hover {
-  background: #003d7a;
+  background: linear-gradient(135deg, #003d7a 0%, #002d5a 100%);
   box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
 
