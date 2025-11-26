@@ -350,6 +350,25 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleAddConviction = (convictionData) => {
+    if (editingConvictionIndex !== null) {
+      const updatedConvictions = [...convictions];
+      updatedConvictions[editingConvictionIndex] = convictionData;
+      setConvictions(updatedConvictions);
+      setEditingConvictionIndex(null);
+    } else {
+      setConvictions([...convictions, convictionData]);
+    }
+    setPersonalSubStep("claims");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleNavigateToAddConviction = (index = null) => {
+    setEditingConvictionIndex(index);
+    setPersonalSubStep("addConviction");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleNextStep = async () => {
     // Handle Step 1 sub-step navigation
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "registration") {
