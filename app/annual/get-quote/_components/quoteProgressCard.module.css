@@ -325,10 +325,16 @@
 
   .subStepsList {
     margin-left: 3.4rem;
+    border-left-width: 2.5px;
   }
 
   .subStepItem {
     font-size: 1.25rem;
+  }
+
+  .activeSubStep::before {
+    width: 8px;
+    height: 8px;
   }
 }
 
