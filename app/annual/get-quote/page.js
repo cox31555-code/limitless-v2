@@ -217,7 +217,7 @@ const AnnualInsuranceContent = () => {
     const stepParam = searchParams.get("step");
     if (stepParam) {
       const step = parseInt(stepParam);
-      if (step >= STEPS.VEHICLE && step <= STEPS.REVIEW) {
+      if (step >= STEPS.VEHICLE && step <= STEPS.CHECK_ANSWERS) {
         setCurrentStep(step);
 
         // If returning from payment-summary (step 4), restore the saved form state
