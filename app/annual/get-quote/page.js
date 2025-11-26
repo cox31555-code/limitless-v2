@@ -553,6 +553,12 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleBackFromCheckAnswers = () => {
+    setCurrentStep(STEPS.COVER);
+    setCoverSubStep("contactInformation");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleAddDriverClaimClick = (index) => {
     if (index !== undefined) {
       setEditingDriverClaimIndex(index);
@@ -1108,6 +1114,8 @@ const AnnualInsuranceContent = () => {
                     contactInformationData={contactInformationData}
                     claims={claims}
                     convictions={convictions}
+                    onBack={handleBackFromCheckAnswers}
+                    onSubmit={form.handleSubmit(onSubmit)}
                   />
                 )}
               </div>
