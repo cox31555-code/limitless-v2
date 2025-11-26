@@ -422,7 +422,67 @@ const AnnualInsuranceContent = () => {
 
   const handleBackFromDriverClaimsAndConvictions = () => {
     setDriverBeingAdded(null);
+    setDriverClaims([]);
+    setDriverConvictions([]);
     setCoverSubStep("addDriver");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleAddDriverClaimClick = (index) => {
+    if (index !== undefined) {
+      setEditingDriverClaimIndex(index);
+    } else {
+      setEditingDriverClaimIndex(null);
+    }
+    setCoverSubStep("addDriverClaim");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleAddDriverConvictionClick = (index) => {
+    if (index !== undefined) {
+      setEditingDriverConvictionIndex(index);
+    } else {
+      setEditingDriverConvictionIndex(null);
+    }
+    setCoverSubStep("addDriverConviction");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleAddDriverClaimSubmit = (claimData) => {
+    if (editingDriverClaimIndex !== null) {
+      const updatedClaims = [...driverClaims];
+      updatedClaims[editingDriverClaimIndex] = claimData;
+      setDriverClaims(updatedClaims);
+      setEditingDriverClaimIndex(null);
+    } else {
+      setDriverClaims([...driverClaims, claimData]);
+    }
+    setCoverSubStep("addDriverClaimsAndConvictions");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleAddDriverConvictionSubmit = (convictionData) => {
+    if (editingDriverConvictionIndex !== null) {
+      const updatedConvictions = [...driverConvictions];
+      updatedConvictions[editingDriverConvictionIndex] = convictionData;
+      setDriverConvictions(updatedConvictions);
+      setEditingDriverConvictionIndex(null);
+    } else {
+      setDriverConvictions([...driverConvictions, convictionData]);
+    }
+    setCoverSubStep("addDriverClaimsAndConvictions");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromAddDriverClaim = () => {
+    setEditingDriverClaimIndex(null);
+    setCoverSubStep("addDriverClaimsAndConvictions");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromAddDriverConviction = () => {
+    setEditingDriverConvictionIndex(null);
+    setCoverSubStep("addDriverClaimsAndConvictions");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
