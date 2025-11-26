@@ -700,6 +700,45 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
             )}
           </div>
 
+          {/* Other Vehicles Section */}
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>Do they use any other vehicles?</h3>
+            </div>
+            <div className={styles.radioGroup}>
+              {["Yes", "No"].map((option) => (
+                <label key={option} className={styles.radioOption}>
+                  <input
+                    type="radio"
+                    name="otherVehicles"
+                    value={option}
+                    checked={formData.otherVehicles === option}
+                    onChange={(e) => setFormData({ ...formData, otherVehicles: e.target.value })}
+                    className={styles.radioInput}
+                  />
+                  <span className={styles.radioLabel}>{option}</span>
+                </label>
+              ))}
+            </div>
+            {errors.otherVehicles && <span className={styles.error}>{errors.otherVehicles}</span>}
+
+            {formData.otherVehicles === "Yes" && (
+              <div className={styles.conditionalSection}>
+                <div className={styles.dropdownWrapper}>
+                  <label className={styles.fieldLabel}>What other vehicles do they use?</label>
+                  <Dropdown
+                    label=""
+                    selected={formData.otherVehiclesType}
+                    options={otherVehiclesOptions}
+                    setSelected={(value) => setFormData({ ...formData, otherVehiclesType: value })}
+                    placeholder="Please select..."
+                  />
+                  {errors.otherVehiclesType && <span className={styles.error}>{errors.otherVehiclesType}</span>}
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Medical Conditions Section */}
           <div className={styles.section}>
             <div className={styles.questionHeader}>
@@ -742,45 +781,6 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
                     placeholder="Please select..."
                   />
                   {errors.dvlaConditionType && <span className={styles.error}>{errors.dvlaConditionType}</span>}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Other Vehicles Section */}
-          <div className={styles.section}>
-            <div className={styles.questionHeader}>
-              <h3 className={styles.mainQuestion}>Do they use any other vehicles?</h3>
-            </div>
-            <div className={styles.radioGroup}>
-              {["Yes", "No"].map((option) => (
-                <label key={option} className={styles.radioOption}>
-                  <input
-                    type="radio"
-                    name="otherVehicles"
-                    value={option}
-                    checked={formData.otherVehicles === option}
-                    onChange={(e) => setFormData({ ...formData, otherVehicles: e.target.value })}
-                    className={styles.radioInput}
-                  />
-                  <span className={styles.radioLabel}>{option}</span>
-                </label>
-              ))}
-            </div>
-            {errors.otherVehicles && <span className={styles.error}>{errors.otherVehicles}</span>}
-
-            {formData.otherVehicles === "Yes" && (
-              <div className={styles.conditionalSection}>
-                <div className={styles.dropdownWrapper}>
-                  <label className={styles.fieldLabel}>What other vehicles do they use?</label>
-                  <Dropdown
-                    label=""
-                    selected={formData.otherVehiclesType}
-                    options={otherVehiclesOptions}
-                    setSelected={(value) => setFormData({ ...formData, otherVehiclesType: value })}
-                    placeholder="Please select..."
-                  />
-                  {errors.otherVehiclesType && <span className={styles.error}>{errors.otherVehiclesType}</span>}
                 </div>
               </div>
             )}
