@@ -122,6 +122,53 @@ const Step3CoverDetails = ({
             ))}
           </div>
           {errors.coverLevel && <span className={styles.error}>{errors.coverLevel}</span>}
+        </div>
+
+        {formData.coverLevel === "comprehensive" && (
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
+              <p className={styles.subText}>
+                Select your preferred minimum cover level
+              </p>
+            </div>
+            <select
+              value={formData.minimumCoverLevel || ""}
+              onChange={(e) => setFormData({ ...formData, minimumCoverLevel: e.target.value })}
+              style={{
+                padding: "1rem 1.2rem",
+                border: "2px solid #cbd4dd",
+                borderRadius: "8px",
+                fontSize: "1.3rem",
+                color: "#1a1a2e",
+                backgroundColor: "#ffffff",
+                cursor: "pointer",
+                fontFamily: "inherit",
+                height: "48px",
+                boxSizing: "border-box",
+                appearance: "none",
+                backgroundImage: "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "right 1rem center",
+                backgroundSize: "1.4rem",
+                paddingRight: "3rem"
+              }}
+            >
+              <option value="">Please select...</option>
+              {minimumCoverOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            {errors.minimumCoverLevel && <span className={styles.error}>{errors.minimumCoverLevel}</span>}
+          </div>
+        )}
+
+        <div className={styles.section}>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
+          </div>
 
           <button
             type="button"
