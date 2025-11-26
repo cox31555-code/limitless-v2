@@ -53,7 +53,59 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
   ];
 
   const totalSteps = steps.length;
-  const progressPercentage = Math.round(((currentStep - 1) / (totalSteps - 1)) * 100);
+
+  // Calculate detailed progress including substeps
+  const calculateOverallProgress = () => {
+    let totalSubSteps = 0;
+    let completedSubSteps = 0;
+
+    steps.forEach((step) => {
+      const stepSubStepsCount = step.subSteps ? step.subSteps.length : 1;
+      totalSubSteps += stepSubStepsCount;
+
+      if (step.number < currentStep) {
+        // Completed steps
+        completedSubSteps += stepSubStepsCount;
+      } else if (step.number === currentStep) {
+        // Current step - add progress based on current substep
+        const activeIndex = getActiveSubStepIndex(step.number);
+        if (activeIndex >= 0) {
+          completedSubSteps += activeIndex + 1;
+        } else {
+          // If no substeps, count as 1 completed
+          completedSubSteps += 1;
+        }
+      }
+    });
+
+    return Math.round((completedSubSteps / totalSubSteps) * 100);
+  };
+
+  const progressPercentage = calculateOverallProgress();
+
+  // Calculate main vertical line fill percentage
+  const calculateMainLineProgress = () => {
+    const totalStepGaps = totalSteps - 1; // 3 gaps between 4 steps
+
+    let progress = 0;
+
+    steps.forEach((step, index) => {
+      if (step.number < currentStep) {
+        // Completed step - fill this segment 100%
+        progress += (1 / totalStepGaps) * 100;
+      } else if (step.number === currentStep && index < totalSteps - 1) {
+        // Current step - partial fill based on substep progress
+        const stepSubStepsCount = step.subSteps ? step.subSteps.length : 1;
+        const activeIndex = getActiveSubStepIndex(step.number);
+        const substepProgress = activeIndex >= 0 ? (activeIndex + 1) / stepSubStepsCount : 0;
+        progress += (substepProgress / totalStepGaps) * 100;
+      }
+    });
+
+    return Math.min(progress, 100);
+  };
+
+  const mainLineProgress = calculateMainLineProgress();
 
   const toggleStep = (stepNumber) => {
     if (stepNumber === currentStep) {
@@ -73,7 +125,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         <span className={styles.progressText}>{progressPercentage}% complete</span>
       </div>
 
-      <div className={styles.stepsList}>
+      <div className={styles.stepsList} style={{ '--main-line-progress': `${mainLineProgress}%` }}>
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
