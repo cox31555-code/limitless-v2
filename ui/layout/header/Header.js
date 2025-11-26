@@ -135,9 +135,11 @@ const Header = () => {
     pathname === "/change-password" ||
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/allianz-dashboard") ||
-    pathname.startsWith("/payment") ||
     pathname.includes("/get-quote")
   );
+
+  // Routes that should hide header immediately (payment routes need to hide on both server and client)
+  const shouldHidePaymentHeader = pathname.startsWith("/payment");
 
   // Routes that depend on mobile detection (only check after mount)
   const shouldHideHeaderMobileDependent = mounted && (
