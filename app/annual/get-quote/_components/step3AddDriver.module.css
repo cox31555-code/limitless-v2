@@ -375,6 +375,10 @@
     gap: 1.2rem;
   }
 
+  .fieldGroup {
+    gap: 1.2rem;
+  }
+
   .dateInputsWrapper {
     gap: 0.8rem;
   }
@@ -428,6 +432,11 @@
   }
 
   .formRow {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .fieldGroup {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
