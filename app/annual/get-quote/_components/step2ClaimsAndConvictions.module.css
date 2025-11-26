@@ -301,6 +301,89 @@
   box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
 }
 
+.convictionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.convictionCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.6rem 2rem;
+  background: #f0f6ff;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.convictionCard:hover {
+  background: #e8f4ff;
+}
+
+.convictionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.convictionDetail {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.convictionLabel {
+  font-weight: 600;
+  color: #004284;
+}
+
+.convictionActions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-shrink: 0;
+}
+
+.removeConvictionBtn {
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.removeConvictionBtn:hover {
+  color: #003d7a;
+  text-decoration: underline;
+}
+
+.changeConvictionBtn {
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #0052a3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.changeConvictionBtn:hover {
+  background: #003d7a;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
+}
+
 .convictionsSection {
   display: flex;
   flex-direction: column;
