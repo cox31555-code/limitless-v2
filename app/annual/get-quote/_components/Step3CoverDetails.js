@@ -10,6 +10,7 @@ const Step3CoverDetails = ({
 }) => {
   const [formData, setFormData] = useState(coverData || {
     coverLevel: "",
+    minimumCoverLevel: "",
     paymentFrequency: "",
     startDate: ""
   });
