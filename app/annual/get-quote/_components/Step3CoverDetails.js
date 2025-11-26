@@ -254,7 +254,7 @@ const Step3CoverDetails = ({
           <div className={styles.fieldWrapper}>
             <Dropdown
               label=""
-              selected={formData.startDate || ""}
+              selected={getSelectedDateLabel()}
               options={dateOptions}
               setSelected={(value) => {
                 // Find the index of selected date and convert back to YYYY-MM-DD format
