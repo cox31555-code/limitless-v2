@@ -118,16 +118,10 @@ const AnnualCoverDetailsForm = ({ form }) => {
 
         {selectedLevel === "comprehensive" && (
           <div className={styles.section}>
-            <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>
-                What's the minimum level of cover you're looking for?
-              </h2>
-              <p className={styles.sectionSubtitle}>
-                Select your preferred minimum cover level
-              </p>
-            </div>
-
             <div className={styles.minimumCoverSection}>
+              <label className={styles.minimumCoverLabel}>
+                Minimum level of cover
+              </label>
               <select
                 value={minimumCoverLevel || ""}
                 onChange={handleMinimumCoverChange}
