@@ -13,27 +13,26 @@ const NoHiddenFees = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.title}>
-          No hidden fees
+          No Hidden Fees
           <span className={styles.titleSpan}>Limitless Cover</span>
         </div>
         <div className={styles.buttons}>
           <button
             onClick={() => setIsInsuranceModalOpen(true)}
             className={styles.getQuoteBtn}
-            aria-label="Get a quote"
+            aria-label="Get a Quote"
           >
-            Get a quote
+            Get a Quote
           </button>
           <button
             onClick={() => router.push("/login")}
             className={styles.membersPortalBtn}
-            aria-label="Members Portal"
+            aria-label="Customer Login"
           >
-            Members Portal
+            Customer Login
           </button>
         </div>
       </div>
-      <div className={styles.imageContainer} />
     </div>
   );
 };
