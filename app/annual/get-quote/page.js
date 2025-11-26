@@ -388,21 +388,35 @@ const AnnualInsuranceContent = () => {
   };
 
   const handleAddDriver = (driverData) => {
+    setDriverBeingAdded(driverData);
+    setCoverSubStep("addDriverClaimsAndConvictions");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleCompleteDriverClaimsAndConvictions = (completeDriverData) => {
     if (editingDriverIndex !== null) {
       const updatedDrivers = [...additionalDrivers];
-      updatedDrivers[editingDriverIndex] = driverData;
+      updatedDrivers[editingDriverIndex] = completeDriverData;
       setAdditionalDrivers(updatedDrivers);
       setEditingDriverIndex(null);
     } else {
-      setAdditionalDrivers([...additionalDrivers, driverData]);
+      setAdditionalDrivers([...additionalDrivers, completeDriverData]);
     }
+    setDriverBeingAdded(null);
     setCoverSubStep("additionalDrivers");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleBackFromAddDriver = () => {
     setEditingDriverIndex(null);
+    setDriverBeingAdded(null);
     setCoverSubStep("additionalDrivers");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromDriverClaimsAndConvictions = () => {
+    setDriverBeingAdded(null);
+    setCoverSubStep("addDriver");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -478,6 +492,12 @@ const AnnualInsuranceContent = () => {
 
     if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
       setCoverSubStep("details");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions") {
+      setCoverSubStep("addDriver");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
