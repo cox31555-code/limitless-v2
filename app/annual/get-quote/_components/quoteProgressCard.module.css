@@ -120,11 +120,7 @@
   padding: 0;
 }
 
-.stepButtonContent:disabled {
-  cursor: default;
-}
-
-.stepButtonContent:not(:disabled):hover {
+.stepButtonContent:hover {
   background: transparent;
 }
 
