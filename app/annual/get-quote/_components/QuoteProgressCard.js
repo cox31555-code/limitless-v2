@@ -56,10 +56,6 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
   const progressPercentage = Math.round(((currentStep - 1) / (totalSteps - 1)) * 100);
 
   const toggleStep = (stepNumber) => {
-    // Steps 2 and 3 (PERSONAL and COVER) are always auto-expanded, don't allow collapse
-    if (stepNumber === STEPS.PERSONAL || stepNumber === STEPS.COVER) {
-      return;
-    }
     if (stepNumber === currentStep) {
       setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
     }
@@ -81,8 +77,8 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
-          // Auto-expand steps 2 and 3 (PERSONAL and COVER)
-          const isExpanded = (step.number === STEPS.PERSONAL || step.number === STEPS.COVER || expandedStep === step.number) && step.subSteps;
+          // Auto-expand current step
+          const isExpanded = (step.number === currentStep || expandedStep === step.number) && step.subSteps;
           const activeSubStepIndex = isActive ? getActiveSubStepIndex(step.number) : -1;
           
           return (
@@ -104,7 +100,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
                   </div>
                   <span className={styles.stepTitle}>{step.title}</span>
                 </button>
-                {isActive && step.subSteps && step.number !== STEPS.PERSONAL && step.number !== STEPS.COVER && (
+                {isActive && step.subSteps && (
                   <button
                     className={styles.stepExpandBtn}
                     onClick={() => toggleStep(step.number)}
