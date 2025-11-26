@@ -63,13 +63,14 @@
   position: absolute;
   left: 13px;
   top: 28px;
+  bottom: auto;
   width: 4px;
   background: linear-gradient(180deg, #0052a3 0%, #003d7a 100%);
   border-radius: 3px;
   z-index: 1;
   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 12px rgba(0, 82, 163, 0.3);
-  height: var(--main-line-height, 0px);
+  height: clamp(0px, calc((100% - 56px) * var(--main-line-progress, 0) / 100), 100%);
 }
 
 .stepItem {
