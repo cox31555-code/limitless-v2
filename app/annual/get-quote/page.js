@@ -430,6 +430,23 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleNavigateToCarOwner = () => {
+    setCoverSubStep("carOwner");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleCarOwnerSubmit = (data) => {
+    setCarOwnerData(data);
+    // Move to next step (optional extras or review)
+    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromCarOwner = () => {
+    setCoverSubStep("additionalDrivers");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleAddDriverClaimClick = (index) => {
     if (index !== undefined) {
       setEditingDriverClaimIndex(index);
