@@ -411,7 +411,7 @@ const Header = () => {
           </button>
         )}
       </header>
-      )}
+
       <header className={styles.mobileContainer}>
         <div className={styles.top}>
           <Image
