@@ -105,8 +105,6 @@ const Step3CoverDetails = ({
     }
     if (!formData.paymentFrequency) newErrors.paymentFrequency = "Please select payment frequency";
     if (!formData.startDate) newErrors.startDate = "Please select a start date";
-    if (!formData.noClaimsDiscount) newErrors.noClaimsDiscount = "Please select your NCD";
-    if (!formData.namedDriverExperience) newErrors.namedDriverExperience = "Please answer this question";
     return newErrors;
   };
 
