@@ -282,20 +282,15 @@
 }
 
 .infoBox {
-  background-color: #fef9e7;
-  border: 2px solid #f0d86d;
+  padding: 1.6rem;
+  background: #f8f9fb;
+  border: 2px solid #e8ecf1;
+  border-left: 4px solid #0052a3;
   border-radius: 8px;
-  padding: 1.2rem;
   margin: 1.5rem 0;
   font-size: 1.4rem;
   color: #6b7c8f;
   line-height: 1.65;
-}
-
-.error {
-  font-size: 1.2rem;
-  color: #d32f2f;
-  margin: 0;
   font-weight: 400;
 }
 
