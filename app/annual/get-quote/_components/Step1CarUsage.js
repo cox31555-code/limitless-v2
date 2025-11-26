@@ -92,7 +92,9 @@ const Step1CarUsage = ({ form }) => {
 
         {/* Usage Type Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>What do you use the car for?</h3>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>What do you use the car for?</h3>
+          </div>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
