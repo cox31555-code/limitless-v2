@@ -93,6 +93,22 @@ const Step3CoverDetails = ({
           <div className={styles.questionHeader}>
             <h3 className={styles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
           </div>
+
+          <button
+            type="button"
+            className={styles.expandableLink}
+            onClick={() => setExpandedMinimumCover(!expandedMinimumCover)}
+          >
+            <span className={`${styles.expandableIcon} ${expandedMinimumCover ? styles.expandedIcon : ''}`}>▼</span>
+            What does minimum level of cover mean?
+          </button>
+
+          {expandedMinimumCover && (
+            <div className={styles.expandableContent}>
+              Cover levels vary between insurance providers, which means some providers may show you more cover than you need if it's their cheapest price or they can't offer a lower level. Always check you're happy with the level of cover on the provider's website before you buy.
+            </div>
+          )}
+
           <div className={styles.radioGroup}>
             {coverLevels.map((level) => (
               <label key={level.id} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
