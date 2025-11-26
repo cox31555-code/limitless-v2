@@ -120,6 +120,7 @@ const AnnualInsuranceContent = () => {
       },
       coverDetails: {
         level: "",
+        minimumCoverLevel: "",
         startDate: "",
       },
       optionalExtras: {
