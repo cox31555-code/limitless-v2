@@ -156,7 +156,7 @@ const Header = () => {
   }
 
   return (
-    <>
+    <div suppressHydrationWarning={true}>
       <InsuranceTypeModal
         isOpen={isInsuranceModalOpen}
         onClose={() => {
@@ -676,7 +676,7 @@ const Header = () => {
         </>
       )}
     </div>
-    </>
+    </div>
   );
 };
 
