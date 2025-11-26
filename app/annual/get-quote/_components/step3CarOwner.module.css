@@ -419,6 +419,16 @@
     padding: 0.7rem 1.6rem;
     width: 100%;
   }
+
+  .personAdded {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .changePersonBtn {
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 400px) {
