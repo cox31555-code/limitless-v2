@@ -472,7 +472,7 @@
   color: #0052a3;
   background: #ffffff;
   border: 2px solid #0052a3;
-  border-radius: 8px;
+  border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
@@ -499,7 +499,7 @@
   color: #ffffff;
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
