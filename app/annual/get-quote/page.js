@@ -440,8 +440,8 @@ const AnnualInsuranceContent = () => {
 
   const handleCarOwnerSubmit = (data) => {
     setCarOwnerData(data);
-    // Move to next step (optional extras or review)
-    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    // Move to cover substep
+    setCoverSubStep("cover");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
