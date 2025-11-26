@@ -790,11 +790,51 @@
     font-size: 1.2rem;
   }
 
+  .menuSection {
+    margin-top: 3rem;
+  }
+
   .menuSection .sectionTitle {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: #ffffff;
-    white-space: nowrap;
+    white-space: normal;
     font-weight: 700;
+  }
+
+  .menuSectionInner {
+    padding: 2.5rem 4%;
+  }
+
+  .menuRowContainer {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .menuGrid {
+    width: 100%;
+    gap: 1.2rem;
+    margin-left: 0;
+  }
+
+  .menuItem {
+    padding: 1rem 1.3rem;
+    width: calc(50% - 0.6rem);
+    justify-content: flex-start;
+  }
+
+  .menuItemIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menuItemIcon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .menuItemLabel {
+    font-size: 1.05rem;
   }
 
   .sectionDescription {
