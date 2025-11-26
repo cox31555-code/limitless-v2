@@ -136,22 +136,37 @@ const Step3CoverDetails = ({
               value={formData.minimumCoverLevel || ""}
               onChange={(e) => setFormData({ ...formData, minimumCoverLevel: e.target.value })}
               style={{
-                padding: "1rem 1.2rem",
-                border: "2px solid #cbd4dd",
-                borderRadius: "8px",
-                fontSize: "1.3rem",
-                color: "#1a1a2e",
-                backgroundColor: "#ffffff",
-                cursor: "pointer",
-                fontFamily: "inherit",
-                height: "48px",
+                display: "flex",
+                alignItems: "center",
+                gap: 0,
+                padding: "1.2rem 1.6rem",
+                width: "100%",
                 boxSizing: "border-box",
+                borderRadius: "10px",
+                background: "#fff",
+                border: "1.5px solid rgba(3, 136, 255, 0.12)",
+                height: "5.2rem",
+                position: "relative",
+                cursor: "pointer",
+                transition: "border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
+                fontSize: "1.5rem",
+                fontWeight: "500",
+                color: "#1a1a2e",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
                 appearance: "none",
-                backgroundImage: "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
+                backgroundImage: "url(\"data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230388ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e\")",
                 backgroundRepeat: "no-repeat",
-                backgroundPosition: "right 1rem center",
-                backgroundSize: "1.4rem",
-                paddingRight: "3rem"
+                backgroundPosition: "right 1.4rem center",
+                backgroundSize: "1.4rem 1.4rem",
+                paddingRight: "3.4rem"
+              }}
+              onFocus={(e) => {
+                e.target.style.border = "1.5px solid #0388ff";
+                e.target.style.boxShadow = "0 0 0 2px rgba(3, 136, 255, 0.1)";
+              }}
+              onBlur={(e) => {
+                e.target.style.border = "1.5px solid rgba(3, 136, 255, 0.12)";
+                e.target.style.boxShadow = "none";
               }}
             >
               <option value="">Please select...</option>
