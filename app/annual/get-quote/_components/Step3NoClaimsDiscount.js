@@ -130,51 +130,41 @@ const Step3NoClaimsDiscount = ({
           )}
         </div>
 
-        {/* Named Driver Experience Question - Only show if No NCD selected */}
-        {formData.noClaimsDiscount === "No NCD" ? (
-          <div className={styles.section}>
+        {/* Named Driver Experience Question */}
+        <div className={styles.section}>
+          {formData.noClaimsDiscount === "No NCD" && (
             <div className={styles.questionHeader}>
               <h3 className={styles.mainQuestion}>Do you have any named driver experience?</h3>
               <p className={styles.subText}>
                 In some cases, insurance providers may offer you a discount if you have named driver experience on another person's insurance policy.
               </p>
             </div>
-            <div className={styles.radioGroup}>
-              {namedDriverExperienceOptions.map((option) => (
-                <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
-                  <input
-                    type="radio"
-                    name="namedDriverExperience"
-                    value={option}
-                    checked={formData.namedDriverExperience === option}
-                    onChange={(e) => setFormData({ ...formData, namedDriverExperience: e.target.value })}
-                    className={styles.radioInput}
-                    style={{
-                      marginTop: '0.3rem',
-                      flexShrink: 0,
-                      width: '20px',
-                      height: '20px',
-                      minWidth: '20px',
-                      minHeight: '20px'
-                    }}
-                  />
-                  <span className={styles.radioLabel}>{option}</span>
-                </label>
-              ))}
-            </div>
-            {errors.namedDriverExperience && <span className={styles.error}>{errors.namedDriverExperience}</span>}
+          )}
+          <div className={styles.radioGroup}>
+            {namedDriverExperienceOptions.map((option) => (
+              <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+                <input
+                  type="radio"
+                  name="namedDriverExperience"
+                  value={option}
+                  checked={formData.namedDriverExperience === option}
+                  onChange={(e) => setFormData({ ...formData, namedDriverExperience: e.target.value })}
+                  className={styles.radioInput}
+                  style={{
+                    marginTop: '0.3rem',
+                    flexShrink: 0,
+                    width: '20px',
+                    height: '20px',
+                    minWidth: '20px',
+                    minHeight: '20px'
+                  }}
+                />
+                <span className={styles.radioLabel}>{option}</span>
+              </label>
+            ))}
           </div>
-        ) : (
-          <div className={styles.section} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '2rem' }}>
-            <Image
-              src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fd9a3446e9571429ba7a779c80d9fcb4a?format=webp&width=800"
-              alt="Named driver experience question"
-              width={600}
-              height={400}
-              style={{ maxWidth: '100%', height: 'auto' }}
-            />
-          </div>
-        )}
+          {errors.namedDriverExperience && <span className={styles.error}>{errors.namedDriverExperience}</span>}
+        </div>
       </div>
 
       <div className={styles.buttonGroup}>
