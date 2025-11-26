@@ -2,14 +2,12 @@
 import React, { useState } from "react";
 import styles from "./step3DriverClaimsAndConvictions.module.css";
 
-const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAddClaim, onAddConviction, editingClaimIndex, editingConvictionIndex }) => {
+const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAddClaim, onAddConviction, claims = [], convictions = [] }) => {
   const [formData, setFormData] = useState({
     motorAccidentsClaims: "",
     drivingConvictions: "",
   });
 
-  const [claims, setClaims] = useState([]);
-  const [convictions, setConvictions] = useState([]);
   const [errors, setErrors] = useState({});
   const [expandedClaimsWhatIf, setExpandedClaimsWhatIf] = useState(false);
   const [expandedConvictionsHow, setExpandedConvictionsHow] = useState(false);
