@@ -232,7 +232,7 @@ export const carUsageSchema = z.object({
       "Company car (excluding personal use)",
     ]
   ).optional(),
-  hasAdditionalQualifications: z.boolean().nullable(),
+  hasAdditionalQualifications: z.string().optional(),
   additionalQualificationType: z.enum(
     [
       "AA Proficiency",
