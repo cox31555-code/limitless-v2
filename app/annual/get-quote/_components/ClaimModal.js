@@ -148,6 +148,7 @@ const ClaimModal = ({ isOpen, onClose, onAdd, editingClaim = null, editingIndex 
           {/* Date of Incident */}
           <div className={styles.section}>
             <h3 className={styles.questionTitle}>When did the incident happen?</h3>
+            <p className={styles.sectionDescription}>If you're unsure, you can check with the insurance provider you were with at the time. You can request info about your previous insurance providers within the last 7 years by visiting <a href="http://www.mib.org.uk" target="_blank" rel="noopener noreferrer" className={styles.link}>www.mib.org.uk</a>.</p>
             <div className={styles.dateInputsWrapper}>
               <div className={styles.dateInputGroup}>
                 <label className={styles.inputLabel}>Day</label>
