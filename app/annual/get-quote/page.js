@@ -471,18 +471,18 @@ const AnnualInsuranceContent = () => {
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
       setCurrentStep(STEPS.COVER);
-      setCoverSubStep("details");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    if (currentStep === STEPS.COVER && coverSubStep === "details") {
       setCoverSubStep("additionalDrivers");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
+      setCoverSubStep("details");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.COVER && coverSubStep === "details") {
       setCurrentStep(STEPS.OPTIONAL_EXTRAS);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
@@ -522,15 +522,15 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
-    // Handle going back from additionalDrivers
-    if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
-      setCoverSubStep("details");
+    // Handle going back from cover details
+    if (currentStep === STEPS.COVER && coverSubStep === "details") {
+      setCoverSubStep("additionalDrivers");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
-    // Handle going back from cover details
-    if (currentStep === STEPS.COVER && coverSubStep === "details") {
+    // Handle going back from additionalDrivers
+    if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
       setCurrentStep(STEPS.PERSONAL);
       setPersonalSubStep("claims");
       window.scrollTo({ top: 0, behavior: "smooth" });
