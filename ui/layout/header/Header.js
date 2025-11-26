@@ -149,7 +149,7 @@ const Header = () => {
   );
 
   // Hide for specific routes (after mount to avoid hydration issues)
-  if (shouldHideHeaderAlways || shouldHideHeaderMobileDependent) {
+  if (shouldHideHeaderAlways || shouldHideHeaderMobileDependent || shouldHidePaymentHeader) {
     return null;
   }
 
