@@ -333,6 +333,18 @@ export const carUsageSchema = z.object({
     message: "Please provide your licence number or decline to share it",
     path: ["licenseNumberFirst"],
   }
+).refine(
+  (data) => {
+    // If medicalConditions is "Yes", dvlaConditionType must be provided
+    if (data.medicalConditions === "Yes") {
+      return data.dvlaConditionType && data.dvlaConditionType.length > 0;
+    }
+    return true;
+  },
+  {
+    message: "Please select a DVLA status for your medical condition",
+    path: ["dvlaConditionType"],
+  }
 );
 
 // Terms and Conditions Schema
