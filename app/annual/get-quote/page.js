@@ -283,6 +283,8 @@ const AnnualInsuranceContent = () => {
           return step2HouseholdFields;
         } else if (subStep === "employment") {
           return step2EmploymentFields;
+        } else if (subStep === "licence") {
+          return step2LicenceFields;
         }
         return step2PersonalFields;
       case STEPS.COVER:
