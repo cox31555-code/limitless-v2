@@ -771,7 +771,8 @@ const AnnualInsuranceContent = () => {
               </div>
 
               {!(currentStep === STEPS.PERSONAL && (personalSubStep === "addClaim" || personalSubStep === "addConviction")) &&
-                !(currentStep === STEPS.COVER && coverSubStep === "addDriver") && (
+                !(currentStep === STEPS.COVER && coverSubStep === "addDriver") &&
+                !(currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions") && (
                 <QuoteNavButtons
                   currentStep={currentStep}
                   vehicleSubStep={vehicleSubStep}
