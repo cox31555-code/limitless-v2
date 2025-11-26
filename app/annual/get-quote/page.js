@@ -265,6 +265,7 @@ const AnnualInsuranceContent = () => {
 
   const step2LicenceRestrictionsFields = [
     "carUsage.medicalConditions",
+    "carUsage.dvlaConditionType",
     "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
     "carUsage.criminalConvictions",
   ];
