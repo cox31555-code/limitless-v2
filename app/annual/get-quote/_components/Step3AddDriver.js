@@ -4,7 +4,7 @@ import styles from "./step3AddDriver.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import EmploymentAutocomplete from "./EmploymentAutocomplete";
-import { licenseHeldOptions, monthOptions, yearOptions, additionalQualificationsOptions, occupationOptions, industryOptions, studentTypeOptions } from "@/app/temporary/get-quote/data";
+import { licenseHeldOptions, monthOptions, yearOptions, additionalQualificationsOptions, occupationOptions, industryOptions, studentTypeOptions, otherVehiclesOptions } from "@/app/temporary/get-quote/data";
 
 const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
   const [formData, setFormData] = useState(editingDriver || {
