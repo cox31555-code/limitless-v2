@@ -363,6 +363,20 @@
     font-size: 1.3rem;
     padding: 1rem 1.2rem;
   }
+
+  .otherPersonSection {
+    padding: 1.2rem;
+  }
+
+  .otherPersonTitle {
+    font-size: 1.3rem;
+  }
+
+  .addPersonBtn {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.6rem;
+    width: 100%;
+  }
 }
 
 @media (max-width: 400px) {
