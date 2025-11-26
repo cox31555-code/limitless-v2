@@ -559,18 +559,16 @@
     padding-bottom: 2.4rem;
   }
 
-  .questionTitle {
+  .mainQuestion {
     font-size: 1.7rem;
   }
 
-  .formRow {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+  .fieldGroup {
+    max-width: 100%;
   }
 
-  .fieldGroup {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+  .fieldWrapper {
+    max-width: 100%;
   }
 
   .radioGroup {
@@ -581,14 +579,18 @@
     gap: 0.6rem;
   }
 
+  .dropdownWrapper {
+    max-width: 100%;
+  }
+
   .licenseNumberFields {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 1.2rem;
     margin: 1.2rem 0;
   }
 
-  .licenseImage {
-    max-width: 80%;
+  .licenseField {
+    min-width: 100%;
   }
 
   .buttonGroup {
