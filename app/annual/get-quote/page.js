@@ -899,6 +899,24 @@ const AnnualInsuranceContent = () => {
     setShowLoading(true);
     setIsSubmitting(true);
 
+    // Save form state to sessionStorage before navigating
+    const formState = {
+      formData: form.getValues(),
+      currentStep: STEPS.CHECK_ANSWERS,
+      vehicleSubStep: "registration",
+      personalSubStep: "aboutYou",
+      coverSubStep: "details",
+      additionalDrivers,
+      claims,
+      convictions,
+      carOwnerData,
+      ncdData,
+      productsData,
+      contactInformationData,
+      foundVehicleData,
+    };
+    sessionStorage.setItem("annualQuoteFormState", JSON.stringify(formState));
+
     const insuranceId = `ANNUAL_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const redirectUrl = `/payment-summary?id=${insuranceId}`;
     const randomDelay = Math.floor(Math.random() * 5001) + 4000;
