@@ -388,6 +388,8 @@
 
   .buttonGroup {
     padding: 1.8rem 2.4rem;
+    flex-direction: column-reverse;
+    gap: 1rem;
   }
 
   .section {
@@ -417,11 +419,6 @@
 
   .inputLabel {
     font-size: 1.15rem;
-  }
-
-  .buttonGroup {
-    flex-direction: column-reverse;
-    gap: 1rem;
   }
 
   .backBtn,
