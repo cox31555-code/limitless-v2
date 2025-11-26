@@ -233,6 +233,34 @@
   display: inline-flex;
   align-items: center;
   transition: transform 0.2s ease;
+  transform: rotate(0deg);
+}
+
+.expandableIcon.expandedIcon {
+  transform: rotate(90deg);
+}
+
+.expandableContent {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 1.2rem 0 0 0;
+  line-height: 1.65;
+  font-weight: 400;
+  padding-left: 1.6rem;
+  border-left: 3px solid #0052a3;
+  padding-bottom: 1.2rem;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .error {
