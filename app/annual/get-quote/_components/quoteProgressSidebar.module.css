@@ -51,7 +51,7 @@
 
 .progressText {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #1a1a2e;
   letter-spacing: -0.01em;
 }
@@ -186,7 +186,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #5a6b7d;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -219,7 +219,7 @@
 
 .stepActive .stepTitle {
   color: #0388ff;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.6rem;
 }
 
