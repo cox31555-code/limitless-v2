@@ -61,6 +61,23 @@ const Step2LicenceRestrictions = ({ form }) => {
             </label>
           </div>
 
+          {medicalConditions === "Yes" && (
+            <div className={styles.dropdownWrapper}>
+              <h4 className={styles.subQuestion}>Does the DVLA or DVA know about the medical condition or disability?</h4>
+              <Dropdown
+                selected={dvlaConditionType || ""}
+                options={dvlaConditionOptions}
+                setSelected={(value) => {
+                  setValue("carUsage.dvlaConditionType", value, {
+                    shouldValidate: true,
+                    shouldDirty: true,
+                  });
+                }}
+                placeholder="Please select..."
+              />
+            </div>
+          )}
+
           <button
             type="button"
             className={styles.expandableLink}
