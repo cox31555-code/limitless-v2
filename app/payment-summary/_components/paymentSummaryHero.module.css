@@ -35,6 +35,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .mainInfo {
