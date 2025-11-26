@@ -11,7 +11,8 @@ const Step3NoClaimsDiscount = ({
   const [formData, setFormData] = useState(ncdData || {
     noClaimsDiscount: "",
     namedDriverExperience: "",
-    ncdEarnedHow: ""
+    ncdEarnedHow: "",
+    namedDriverYears: ""
   });
 
   const [errors, setErrors] = useState({});
