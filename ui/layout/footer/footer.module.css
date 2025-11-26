@@ -34,11 +34,25 @@
   width: 100%;
 }
 
-.logoSection {
-  padding: 5rem 4% 0;
+.content {
+  padding: 5rem 4% 3rem;
   max-width: 140rem;
   width: 100%;
   margin: 0 auto;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: auto repeat(4, 1fr) auto;
+  gap: 4rem;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.logoColumn {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0;
 }
 
 .logo {
@@ -52,26 +66,8 @@
   opacity: 0.85;
 }
 
-.content {
-  padding: 3.5rem 4% 3rem;
-  max-width: 140rem;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.mainContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  gap: 4rem;
-}
-
 .menus {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 4rem;
-  flex: 1;
+  display: contents;
 }
 
 .menu {
@@ -177,21 +173,26 @@
   opacity: 1;
 }
 
-.legal {
-  padding: 2.5rem 4% 0.8rem;
+.legalSection {
+  padding: 2.5rem 4% 3rem;
   max-width: 140rem;
   width: 100%;
   margin: 0 auto;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.legalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .legalText {
   color: rgba(255, 255, 255, 0.4);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   margin: 0;
-  padding: 0.25rem 0;
 }
 
 .copyright {
@@ -199,34 +200,23 @@
   font-size: 1.15rem;
   font-weight: 400;
   line-height: 1.5;
-  padding: 2rem 4% 3rem;
-  text-align: right;
-  max-width: 140rem;
-  width: 100%;
-  margin: 0 auto;
+  margin: 1.2rem 0 0 0;
+  padding: 0;
 }
 
 /* Tablet */
 @media (max-width: 1200px) {
-  .logoSection {
-    padding: 4.5rem 4% 0;
+  .content {
+    padding: 4.5rem 4% 2.5rem;
+  }
+
+  .mainContent {
+    grid-template-columns: auto repeat(2, 1fr) auto;
+    gap: 3.5rem;
   }
 
   .logo {
     height: 65px;
-  }
-
-  .content {
-    padding: 3.5rem 4% 2.5rem;
-  }
-
-  .mainContent {
-    gap: 3.5rem;
-  }
-
-  .menus {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3.5rem;
   }
 
   .menu {
@@ -241,37 +231,43 @@
     font-size: 1.22rem;
   }
 
-  .legal {
-    padding: 2.2rem 4% 0.8rem;
+  .legalSection {
+    padding: 2.2rem 4% 2.8rem;
+  }
+
+  .legalText {
+    font-size: 1.12rem;
   }
 
   .copyright {
-    padding: 1.8rem 4% 2.8rem;
+    font-size: 1.12rem;
   }
 }
 
 /* Mobile */
 @media (max-width: 900px) {
-  .logoSection {
-    padding: 4rem 4% 0;
-    text-align: center;
+  .content {
+    padding: 4rem 4% 2.5rem;
+  }
+
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+  }
+
+  .logoColumn {
+    width: 100%;
+    justify-content: center;
   }
 
   .logo {
     height: 60px;
   }
 
-  .content {
-    padding: 3rem 4% 2.5rem;
-  }
-
-  .mainContent {
-    flex-direction: column;
-    align-items: center;
-    gap: 3.5rem;
-  }
-
   .menus {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3.5rem;
     width: 100%;
@@ -300,8 +296,11 @@
     justify-content: center;
   }
 
-  .legal {
-    padding: 2rem 4% 0.8rem;
+  .legalSection {
+    padding: 2rem 4% 2.5rem;
+  }
+
+  .legalContent {
     text-align: center;
   }
 
@@ -310,27 +309,21 @@
   }
 
   .copyright {
-    text-align: center;
-    padding: 1.8rem 4% 2.5rem;
-    font-size: 1.12rem;
+    font-size: 1.08rem;
   }
 }
 
 @media (max-width: 650px) {
-  .logoSection {
-    padding: 3.5rem 4% 0;
-  }
-
-  .logo {
-    height: 55px;
-  }
-
   .content {
-    padding: 2.5rem 4% 2rem;
+    padding: 3.5rem 4% 2rem;
   }
 
   .mainContent {
     gap: 3rem;
+  }
+
+  .logo {
+    height: 55px;
   }
 
   .menus {
@@ -370,8 +363,8 @@
     height: 1.8rem;
   }
 
-  .legal {
-    padding: 1.8rem 4% 0.6rem;
+  .legalSection {
+    padding: 1.8rem 4% 2.2rem;
   }
 
   .legalText {
@@ -380,22 +373,17 @@
   }
 
   .copyright {
-    padding: 1.6rem 4% 2.2rem;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 }
 
 @media (max-width: 450px) {
-  .logoSection {
-    padding: 3rem 4% 0;
+  .content {
+    padding: 3rem 4% 1.8rem;
   }
 
   .logo {
     height: 50px;
-  }
-
-  .content {
-    padding: 2.2rem 4% 1.8rem;
   }
 
   .mainContent {
@@ -437,8 +425,8 @@
     height: 1.7rem;
   }
 
-  .legal {
-    padding: 1.6rem 4% 0.5rem;
+  .legalSection {
+    padding: 1.6rem 4% 2rem;
   }
 
   .legalText {
@@ -447,8 +435,7 @@
   }
 
   .copyright {
-    padding: 1.4rem 4% 2rem;
-    font-size: 1.08rem;
+    font-size: 1.02rem;
   }
 }
 
