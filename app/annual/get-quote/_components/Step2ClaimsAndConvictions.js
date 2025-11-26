@@ -90,12 +90,66 @@ const Step2ClaimsAndConvictions = ({ form }) => {
             <div className={styles.claimsSection}>
               <div className={styles.claimsHeader}>
                 <h4 className={styles.claimsTitle}>Your claims</h4>
-                <button type="button" className={styles.addClaimBtn}>
+                <button
+                  type="button"
+                  className={styles.addClaimBtn}
+                  onClick={() => {
+                    setEditingClaimIndex(null);
+                    setIsClaimModalOpen(true);
+                  }}
+                >
                   Add claim
                 </button>
               </div>
+
+              {claims.length > 0 && (
+                <div className={styles.claimsList}>
+                  {claims.map((claim, index) => (
+                    <div key={index} className={styles.claimCard}>
+                      <div className={styles.claimInfo}>
+                        <p className={styles.claimDetail}>
+                          <span className={styles.claimLabel}>Type:</span> {claim.incidentType}
+                        </p>
+                        <p className={styles.claimDetail}>
+                          <span className={styles.claimLabel}>Date:</span> {claim.day}/{claim.month}/{claim.year}
+                        </p>
+                        <p className={styles.claimDetail}>
+                          <span className={styles.claimLabel}>Damage:</span> {claim.damageType}
+                        </p>
+                      </div>
+                      <div className={styles.claimActions}>
+                        <button
+                          type="button"
+                          className={styles.editBtn}
+                          onClick={() => handleEditClaim(index)}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          type="button"
+                          className={styles.deleteBtn}
+                          onClick={() => handleRemoveClaim(index)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
+
+          <ClaimModal
+            isOpen={isClaimModalOpen}
+            onClose={() => {
+              setIsClaimModalOpen(false);
+              setEditingClaimIndex(null);
+            }}
+            onAdd={handleAddClaim}
+            editingClaim={editingClaimIndex !== null ? claims[editingClaimIndex] : null}
+            editingIndex={editingClaimIndex}
+          />
         </div>
 
         {/* Driving Convictions Section */}
