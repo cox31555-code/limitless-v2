@@ -207,7 +207,7 @@
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  margin: 2rem 0;
+  margin: 1.2rem 0;
 }
 
 .licenseField {
@@ -215,35 +215,14 @@
   flex-direction: column;
   gap: 0.8rem;
   flex: 1;
-  min-width: 200px;
+  min-width: 180px;
 }
 
 .licenseFieldLabel {
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #004284;
   margin: 0;
-}
-
-.licenseNumberInput {
-  padding: 1rem;
-  border: 2px solid #cbd4dd;
-  border-radius: 8px;
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: #1a1a2e;
-  transition: all 0.2s ease;
-  font-family: inherit;
-}
-
-.licenseNumberInput:focus {
-  outline: none;
-  border-color: #0052a3;
-  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
-}
-
-.licenseNumberInput::placeholder {
-  color: #cbd4dd;
 }
 
 .checkboxWrapper {
