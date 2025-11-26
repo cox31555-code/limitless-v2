@@ -52,7 +52,10 @@ const Step3NoClaimsDiscount = ({
   const validateForm = () => {
     const newErrors = {};
     if (!formData.noClaimsDiscount) newErrors.noClaimsDiscount = "Please select your NCD";
-    if (!formData.namedDriverExperience) newErrors.namedDriverExperience = "Please answer this question";
+    // Only require named driver experience if "No NCD" is selected
+    if (formData.noClaimsDiscount === "No NCD" && !formData.namedDriverExperience) {
+      newErrors.namedDriverExperience = "Please answer this question";
+    }
     return newErrors;
   };
 
