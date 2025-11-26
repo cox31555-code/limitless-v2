@@ -128,19 +128,28 @@ const Header = () => {
     "/complaints",
   ].includes(pathname);
 
-  const shouldHideHeader = (
-    (pathname === "/login" && !isMobile) ||
+  // Hide header on specific routes (check isMobile only after mount to avoid hydration issues)
+  const shouldHideHeaderAlways = (
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
-    (pathname === "/retrieve-quote" && !isMobile) ||
-    (isPolicyPage && !isMobile) ||
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/allianz-dashboard") ||
     pathname.startsWith("/payment") ||
     pathname.includes("/get-quote")
   );
 
-  if (!mounted || shouldHideHeader) {
+  const shouldHideHeaderMobileDependent = mounted && (
+    (pathname === "/login" && !isMobile) ||
+    (pathname === "/retrieve-quote" && !isMobile) ||
+    (isPolicyPage && !isMobile)
+  );
+
+  if (shouldHideHeaderAlways || shouldHideHeaderMobileDependent) {
+    return null;
+  }
+
+  // Don't render anything until mounted for mobile-dependent UI
+  if (!mounted) {
     return null;
   }
 
