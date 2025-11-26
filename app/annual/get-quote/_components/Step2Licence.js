@@ -85,7 +85,9 @@ const Step2Licence = ({ form }) => {
 
         {/* Licence Issue Country Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Where was your driving licence issued?</h3>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>Where was your driving licence issued?</h3>
+          </div>
 
           <div className={styles.radioGroup}>
             {licenseIssueCountryOptions.map((option) => (
