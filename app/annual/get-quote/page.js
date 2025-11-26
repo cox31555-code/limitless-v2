@@ -721,6 +721,14 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    // Handle going back from carOwnerAddRegisteredKeeper and carOwnerAddLegalOwner
+    if (currentStep === STEPS.COVER && (coverSubStep === "carOwnerAddRegisteredKeeper" || coverSubStep === "carOwnerAddLegalOwner")) {
+      setCoverSubStep("carOwner");
+      setCarOwnerAddingType(null);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     // Handle Step 2 sub-step navigation
     if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
       setPersonalSubStep("restrictions");
