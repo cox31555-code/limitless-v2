@@ -843,6 +843,7 @@ const AnnualInsuranceContent = () => {
                     additionaDrivers={additionalDrivers}
                     onAddDriver={() => handleNavigateToAddDriver()}
                     onRemoveDriver={handleRemoveDriver}
+                    onEditDriver={handleNavigateToAddDriver}
                     hasAdditionalDrivers={hasAdditionalDrivers}
                     onHasAdditionalDriversChange={setHasAdditionalDrivers}
                   />
