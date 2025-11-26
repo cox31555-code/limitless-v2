@@ -465,6 +465,14 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    // Handle going back from addConviction
+    if (currentStep === STEPS.PERSONAL && personalSubStep === "addConviction") {
+      setPersonalSubStep("claims");
+      setEditingConvictionIndex(null);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     // Handle Step 2 sub-step navigation
     if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
       setPersonalSubStep("restrictions");
