@@ -165,6 +165,26 @@ const Step2Employment = ({ form }) => {
             </div>
           </>
         )}
+
+        {isStudent && (
+          <div className={styles.section}>
+            <h3 className={styles.mainQuestion}>What type of student are you?</h3>
+
+            <div className={styles.dropdownWrapper}>
+              <Dropdown
+                selected={studentType || ""}
+                options={studentTypeOptions}
+                setSelected={(value) => {
+                  setValue("userDetails.studentType", value, {
+                    shouldValidate: true,
+                    shouldDirty: true,
+                  });
+                }}
+                placeholder="Please select..."
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
