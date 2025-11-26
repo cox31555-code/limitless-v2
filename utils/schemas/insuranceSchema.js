@@ -246,6 +246,7 @@ export const carUsageSchema = z.object({
   childrenUnder16: z.boolean().nullable(),
   livedInUKSinceBirth: z.boolean().nullable(),
   licenseType: z.string().optional(),
+  licenseIssueCountry: z.string().optional(),
   licenseHeld: z.string().optional(),
   licenseNumber: z.string().optional(),
   NCB: z.string().optional(),
