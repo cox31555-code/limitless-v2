@@ -177,20 +177,86 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           {/* Damage Type */}
           <div className={styles.section}>
             <h3 className={styles.questionTitle}>What type of damage was suffered?</h3>
-            <select
-              value={formData.damageType}
-              onChange={(e) => setFormData({ ...formData, damageType: e.target.value })}
-              className={styles.selectInput}
-            >
-              <option value="">Please select...</option>
-              {damageTypeOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
+            <Dropdown
+              label=""
+              selected={formData.damageType}
+              options={damageTypeDropdownOptions}
+              setSelected={(value) => setFormData({ ...formData, damageType: value })}
+              placeholder="Please select..."
+              error={errors.damageType}
+            />
             {errors.damageType && <span className={styles.error}>{errors.damageType}</span>}
           </div>
+
+          {/* Conditional Accident Questions */}
+          {formData.incidentType === "Accident" && (
+            <>
+              {/* Who was at fault */}
+              <div className={styles.section}>
+                <h3 className={styles.questionTitle}>Who was at fault?</h3>
+                <Dropdown
+                  label=""
+                  selected={formData.whoAtFault}
+                  options={faultOptions}
+                  setSelected={(value) => setFormData({ ...formData, whoAtFault: value })}
+                  placeholder="Please select..."
+                  error={errors.whoAtFault}
+                />
+                <button
+                  type="button"
+                  className={styles.expandableLink}
+                  onClick={() => {}}
+                >
+                  <span className={styles.expandableIcon}>▶</span>
+                  How can I tell who was at fault?
+                </button>
+                {errors.whoAtFault && <span className={styles.error}>{errors.whoAtFault}</span>}
+              </div>
+
+              {/* Who was driving */}
+              <div className={styles.section}>
+                <h3 className={styles.questionTitle}>Who was driving?</h3>
+                <Dropdown
+                  label=""
+                  selected={formData.whoWasDriving}
+                  options={drivingOptions}
+                  setSelected={(value) => setFormData({ ...formData, whoWasDriving: value })}
+                  placeholder="Please select..."
+                  error={errors.whoWasDriving}
+                />
+                <button
+                  type="button"
+                  className={styles.expandableLink}
+                  onClick={() => {}}
+                >
+                  <span className={styles.expandableIcon}>▶</span>
+                  What if nobody was in the car?
+                </button>
+                {errors.whoWasDriving && <span className={styles.error}>{errors.whoWasDriving}</span>}
+              </div>
+
+              {/* Were there injuries */}
+              <div className={styles.section}>
+                <h3 className={styles.questionTitle}>Were there any injuries?</h3>
+                <div className={styles.radioGroup}>
+                  {injuryOptions.map((option) => (
+                    <label key={option} className={styles.radioOption}>
+                      <input
+                        type="radio"
+                        name="wereThereInjuries"
+                        value={option}
+                        checked={formData.wereThereInjuries === option}
+                        onChange={(e) => setFormData({ ...formData, wereThereInjuries: e.target.value })}
+                        className={styles.radioInput}
+                      />
+                      <span className={styles.radioLabel}>{option}</span>
+                    </label>
+                  ))}
+                </div>
+                {errors.wereThereInjuries && <span className={styles.error}>{errors.wereThereInjuries}</span>}
+              </div>
+            </>
+          )}
 
           {/* Main Policyholder */}
           <div className={styles.section}>
