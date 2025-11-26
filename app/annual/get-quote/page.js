@@ -31,6 +31,7 @@ const Step2Licence = dynamic(() => import("./_components/Step2Licence"), { loadi
 const Step2LicenceRestrictions = dynamic(() => import("./_components/Step2LicenceRestrictions"), { loading: () => <StepFallback /> });
 const Step2ClaimsAndConvictions = dynamic(() => import("./_components/Step2ClaimsAndConvictions"), { loading: () => <StepFallback /> });
 const Step2AddClaim = dynamic(() => import("./_components/Step2AddClaim"), { loading: () => <StepFallback /> });
+const Step2AddConviction = dynamic(() => import("./_components/Step2AddConviction"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
