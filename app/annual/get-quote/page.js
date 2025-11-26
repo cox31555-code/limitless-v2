@@ -858,9 +858,18 @@ const AnnualInsuranceContent = () => {
                   <Step3DriverClaimsAndConvictions
                     driverData={driverBeingAdded}
                     onBack={handleBackFromDriverClaimsAndConvictions}
-                    onAddDriver={handleCompleteDriverClaimsAndConvictions}
+                    onAddDriver={() => {
+                      const completeData = {
+                        ...driverBeingAdded,
+                        claims: driverClaims,
+                        convictions: driverConvictions
+                      };
+                      handleCompleteDriverClaimsAndConvictions(completeData);
+                    }}
                     onAddClaim={handleAddDriverClaimClick}
                     onAddConviction={handleAddDriverConvictionClick}
+                    claims={driverClaims}
+                    convictions={driverConvictions}
                   />
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "addDriverClaim" && (
