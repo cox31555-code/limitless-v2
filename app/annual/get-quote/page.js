@@ -587,6 +587,29 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleSubStepClick = (stepNumber, subStepIndex) => {
+    const subStepMaps = {
+      [STEPS.VEHICLE]: ["registration", "carValue", "carUsage", "carStorage", "otherCars"],
+      [STEPS.PERSONAL]: ["aboutYou", "household", "employment", "licence", "restrictions", "claims"],
+      [STEPS.COVER]: ["additionalDrivers", "carOwner", "cover", "ncd", "additionalProducts", "contactInformation"],
+    };
+
+    const subStepKey = subStepMaps[stepNumber]?.[subStepIndex];
+    if (!subStepKey) return;
+
+    if (stepNumber === STEPS.VEHICLE) {
+      setCurrentStep(STEPS.VEHICLE);
+      setVehicleSubStep(subStepKey);
+    } else if (stepNumber === STEPS.PERSONAL) {
+      setCurrentStep(STEPS.PERSONAL);
+      setPersonalSubStep(subStepKey);
+    } else if (stepNumber === STEPS.COVER) {
+      setCurrentStep(STEPS.COVER);
+      setCoverSubStep(subStepKey);
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleAddDriverClaimClick = (index) => {
     if (index !== undefined) {
       setEditingDriverClaimIndex(index);
@@ -1213,6 +1236,7 @@ const AnnualInsuranceContent = () => {
               vehicleSubStep={vehicleSubStep}
               personalSubStep={personalSubStep}
               coverSubStep={coverSubStep}
+              onSubStepClick={handleSubStepClick}
             />
           </div>
         </div>
