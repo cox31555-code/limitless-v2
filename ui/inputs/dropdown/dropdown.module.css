@@ -115,6 +115,24 @@
   transform: rotate(180deg);
 }
 
+.loadingSpinnerIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.loadingSpinnerIcon .spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 82, 163, 0.2);
+  border-top-color: #0052a3;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
 .dropdownMenu {
   position: absolute;
   top: calc(100% + 0.4rem);
