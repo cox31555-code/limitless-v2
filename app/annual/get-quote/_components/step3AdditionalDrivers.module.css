@@ -486,6 +486,7 @@
 
   .editButton {
     font-size: 1.2rem;
+    padding: 0.8rem 1.4rem;
   }
 
   .maxDriversMessage {
