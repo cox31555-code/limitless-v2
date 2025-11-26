@@ -75,7 +75,9 @@ const Step2PersonalDetails = ({ form }) => {
 
         {/* Date of Birth Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>What's your date of birth?</h3>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>What's your date of birth?</h3>
+          </div>
 
           <div className={styles.dateInputsWrapper}>
             <div className={styles.dateInputGroup}>
