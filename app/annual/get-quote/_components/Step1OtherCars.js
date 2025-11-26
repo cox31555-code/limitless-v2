@@ -20,10 +20,12 @@ const Step1OtherCars = ({ form }) => {
       <div className={styles.contentWrapper}>
         {/* Household Cars Count Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>How many cars are kept at your household (including this one)?</h3>
-          <p className={styles.subText}>
-            Exclude motorbikes, vans, and commercial vehicles.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>How many cars are kept at your household (including this one)?</h3>
+            <p className={styles.subText}>
+              Exclude motorbikes, vans, and commercial vehicles.
+            </p>
+          </div>
 
           <div className={styles.dropdownWrapper}>
             <Dropdown
