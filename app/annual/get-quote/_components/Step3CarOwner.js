@@ -226,6 +226,24 @@ const Step3CarOwner = ({
                 {errors.legalOwnerCompanyName && <span className={styles.error}>{errors.legalOwnerCompanyName}</span>}
               </div>
             )}
+
+            {/* Other Person Section - Only shown when "Other" is selected */}
+            {formData.legalOwner === "Other" && (
+              <div className={styles.otherPersonSection}>
+                <h4 className={styles.otherPersonTitle}>Legal owner</h4>
+                <button
+                  type="button"
+                  className={styles.addPersonBtn}
+                  onClick={() => {
+                    // This will open a modal/form to add person details
+                    setFormData({ ...formData, legalOwnerOtherPerson: "true" });
+                  }}
+                >
+                  Add a person
+                </button>
+                {errors.legalOwnerOtherPerson && <span className={styles.error}>{errors.legalOwnerOtherPerson}</span>}
+              </div>
+            )}
           </div>
         )}
       </div>
