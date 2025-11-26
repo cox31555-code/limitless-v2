@@ -34,6 +34,7 @@ const Step2AddClaim = dynamic(() => import("./_components/Step2AddClaim"), { loa
 const Step2AddConviction = dynamic(() => import("./_components/Step2AddConviction"), { loading: () => <StepFallback /> });
 const Step3AdditionalDrivers = dynamic(() => import("./_components/Step3AdditionalDrivers"), { loading: () => <StepFallback /> });
 const Step3AddDriver = dynamic(() => import("./_components/Step3AddDriver"), { loading: () => <StepFallback /> });
+const Step3DriverClaimsAndConvictions = dynamic(() => import("./_components/Step3DriverClaimsAndConvictions"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
