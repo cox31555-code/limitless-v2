@@ -297,9 +297,10 @@
   display: flex;
   gap: 1.2rem;
   justify-content: flex-end;
-  margin-top: 3.2rem;
-  padding-top: 2rem;
-  border-top: 1px solid #e8ecf1;
+  padding: 2rem 3.2rem;
+  border-top: 1.5px solid rgba(3, 136, 255, 0.08);
+  background: transparent;
+  flex-shrink: 0;
 }
 
 .backBtn {
