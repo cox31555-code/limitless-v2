@@ -54,6 +54,7 @@ const Step3CarOwner = ({
       if (entityTypesRequiringName.includes(formData.legalOwner) && !formData.legalOwnerCompanyName) {
         newErrors.legalOwnerCompanyName = "Please enter the company name";
       }
+      // Only require adding a person if "Other" is selected and it's not the same as registered keeper person
       if (formData.legalOwner === "Other" && !formData.legalOwnerOtherPerson) {
         newErrors.legalOwnerOtherPerson = "Please add a person";
       }
