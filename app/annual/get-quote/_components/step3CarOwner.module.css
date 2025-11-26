@@ -188,6 +188,51 @@
   line-height: 1.65;
 }
 
+.otherPersonSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.6rem;
+  background: #f0f6ff;
+  border-left: 3px solid #0052a3;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.otherPersonTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.addPersonBtn {
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+  background: #ffffff;
+  border: 2px solid #0052a3;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+.addPersonBtn:hover {
+  background: #f0f6ff;
+  border-color: #003d7a;
+  color: #003d7a;
+}
+
+.addPersonBtn:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+  border-radius: 25px;
+}
+
 .dropdownWrapper {
   width: 100%;
 }
