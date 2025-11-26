@@ -20,10 +20,12 @@ const Step1CarUsage = ({ form }) => {
       <div className={styles.contentWrapper}>
         {/* Purchase Date Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>When did you buy or start to lease this car?</h3>
-          <p className={styles.subText}>
-            We may fill in your car's purchase/lease date using details from an independent provider. If the date is already filled in and isn't correct, feel free to change it.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>When did you buy or start to lease this car?</h3>
+            <p className={styles.subText}>
+              We may fill in your car's purchase/lease date using details from an independent provider. If the date is already filled in and isn't correct, feel free to change it.
+            </p>
+          </div>
 
           <div />
 
