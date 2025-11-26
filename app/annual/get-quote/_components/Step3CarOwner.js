@@ -9,7 +9,8 @@ const Step3CarOwner = ({
   onNext = () => {},
   userData = null,
   additionalDrivers = [],
-  carOwnerData = null
+  carOwnerData = null,
+  onAddPerson = () => {}
 }) => {
   const [formData, setFormData] = useState(carOwnerData || {
     mainDriver: "",
