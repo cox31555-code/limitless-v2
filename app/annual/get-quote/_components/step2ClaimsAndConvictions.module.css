@@ -386,6 +386,16 @@
     padding: 0.7rem 1.8rem;
   }
 
+  .claimCard {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .claimActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
   .convictionsHeader {
     gap: 1rem;
   }
