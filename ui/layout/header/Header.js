@@ -52,6 +52,7 @@ const Header = () => {
   const { isInsuranceModalOpen, setIsInsuranceModalOpen } = useInsuranceModal();
 
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [openStickyDropdown, setOpenStickyDropdown] = useState(null);
   const [showHelpModal, setShowHelpModal] = useState(false);
 
@@ -65,6 +66,7 @@ const Header = () => {
 
   useEffect(() => {
     setMounted(true);
+    setIsMobile(window.innerWidth <= 900);
   }, []);
 
   useEffect(() => {
