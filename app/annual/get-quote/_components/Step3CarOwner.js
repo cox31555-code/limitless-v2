@@ -192,15 +192,15 @@ const Step3CarOwner = ({
             {formData.registeredKeeper === "Other" && (
               <div className={styles.otherPersonSection}>
                 <h4 className={styles.otherPersonTitle}>Registered keeper</h4>
-                {carOwnerData?.registeredKeeperOtherPerson ? (
+                {formData.registeredKeeperOtherPerson ? (
                   <div className={styles.personAdded}>
                     <p className={styles.personName}>
-                      {carOwnerData.registeredKeeperOtherPerson.title} {carOwnerData.registeredKeeperOtherPerson.firstName} {carOwnerData.registeredKeeperOtherPerson.lastName}
+                      {formData.registeredKeeperOtherPerson.title} {formData.registeredKeeperOtherPerson.firstName} {formData.registeredKeeperOtherPerson.lastName}
                     </p>
                     <button
                       type="button"
                       className={styles.changePersonBtn}
-                      onClick={() => onAddPerson("registeredKeeper")}
+                      onClick={() => onAddPerson("registeredKeeper", formData)}
                     >
                       Change
                     </button>
@@ -209,7 +209,7 @@ const Step3CarOwner = ({
                   <button
                     type="button"
                     className={styles.addPersonBtn}
-                    onClick={() => onAddPerson("registeredKeeper")}
+                    onClick={() => onAddPerson("registeredKeeper", formData)}
                   >
                     Add a person
                   </button>
