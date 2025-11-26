@@ -46,6 +46,133 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
     "ZO - Other Offences",
   ];
 
+  const convictionReasonMap = {
+    "SP - Speed Limits": [
+      "SP10 – Exceeding goods vehicle speed limits",
+      "SP12 – Aiding and abetting SP10",
+      "SP14 – Causing or permitting SP10",
+      "SP16 – Inciting SP10",
+      "SP20 – Exceeding speed limit for type of vehicle",
+      "SP22 – Aiding and abetting SP20",
+      "SP24 – Causing or permitting SP20",
+      "SP26 – Inciting SP20",
+      "SP30 – Exceeding statutory speed limit on a public road",
+      "SP32 – Aiding and abetting SP30",
+      "SP34 – Causing or permitting SP30",
+      "SP36 – Inciting SP30",
+      "SP40 – Exceeding passenger vehicle speed limit",
+      "SP42 – Aiding and abetting SP40",
+      "SP44 – Causing or permitting SP40",
+      "SP46 – Inciting SP40",
+      "SP50 – Exceeding speed limit on a motorway",
+      "SP52 – Aiding and abetting SP50",
+      "SP54 – Causing or permitting SP50",
+      "SP56 – Inciting SP50",
+    ],
+    "CU - Construction & Uses Offences": [
+      "CU10 – Using a vehicle with defective brakes",
+      "CU20 – Causing/Permitting defective brakes",
+      "CU30 – Using a vehicle with defective tyres",
+      "CU40 – Using a vehicle with defective steering",
+      "CU50 – Causing/Permitting vehicle with unsafe load",
+      "CU80 – Using a hand-held mobile phone while driving",
+    ],
+    "TS - Traffic Direction & Signs": [
+      "TS10 – Failing to comply with traffic light signals",
+      "TS20 – Failing to comply with stop sign",
+      "TS30 – Failing to comply with 'give way' sign",
+      "TS40 – Failing to comply with direction of traffic officer",
+      "TS50 – Failing to comply with traffic sign",
+      "TS60 – Failing to comply with school crossing patrol",
+      "TS70 – Undefined failure to obey traffic direction sign",
+    ],
+    "DR - Drink": [
+      "DR10 – Driving with alcohol level above limit",
+      "DR20 – Driving while unfit through drink",
+      "DR30 – Failing to provide specimen for analysis",
+      "DR40 – In charge of vehicle while alcohol level above limit",
+      "DR50 – In charge while unfit through drink",
+      "DR60 – Failing to provide specimen (in charge)",
+      "DR70 – Failing to provide specimen (other)",
+    ],
+    "DG - Drugs": [
+      "DG10 – Driving with drug level above limit",
+      "DG20 – Driving while unfit through drugs",
+      "DG30 – Failing to provide a specimen",
+      "DG40 – In charge with drug level above limit",
+      "DG50 – In charge while unfit through drugs",
+    ],
+    "IN - Insurance Offences": [
+      "IN10 – Using a vehicle uninsured against third-party risks",
+      "IN12 – Aiding/Permitting uninsured use",
+    ],
+    "LC - Licence Offences": [
+      "LC20 – Driving otherwise than in accordance with a licence",
+      "LC30 – Driving after making a false declaration about fitness",
+      "LC40 – Driving after failing to notify disability",
+      "LC50 – Driving after licence has been revoked/refused",
+    ],
+    "CD - Careless Driving": [
+      "CD10 – Driving without due care and attention",
+      "CD20 – Driving without reasonable consideration",
+      "CD30 – Driving without due care AND reasonable consideration",
+      "CD40 – Causing death through careless driving when unfit",
+      "CD50 – Causing death by careless driving under influence",
+      "CD60 – Causing death by careless driving (road rage etc.)",
+      "CD70 – Causing death by careless driving while unlicensed/uninsured/unlawfully on road",
+    ],
+    "MS - Miscellaneous Offences": [
+      "MS10 – Leaving vehicle in dangerous position",
+      "MS20 – Unlawful pillion carrying",
+      "MS30 – Play street offences",
+      "MS40 – Driving with uncorrected defective eyesight",
+      "MS50 – Motor racing on highway",
+      "MS60 – Offences not covered by other codes",
+      "MS70 – Driving with unfit or defective tyres",
+      "MS80 – Refusing to submit to an eyesight test",
+      "MS90 – Failure to give information regarding driver identity",
+    ],
+    "PC - Pedestrian Crossings": [
+      "PC10 – Failing to stop at pedestrian crossing",
+      "PC20 – Failing to give precedence at pedestrian crossing",
+      "PC30 – Overtaking at/near pedestrian crossing",
+    ],
+    "TT - Special Code": [
+      "TT99 – Disqualified under 'totting-up' (12+ points)",
+    ],
+    "AC - Accident Offences": [
+      "AC10 – Failing to stop after an accident",
+      "AC20 – Failing to give particulars after an accident",
+      "AC30 – Undefined accident offence",
+    ],
+    "DD - Reckless & Dangerous Driving": [
+      "DD10 – Driving dangerously",
+      "DD20 – Attempting to drive dangerously",
+      "DD40 – Dangerous driving",
+      "DD60 – Manslaughter or culpable homicide while driving",
+      "DD80 – Causing death by dangerous driving",
+    ],
+    "MW - Motorway Offences": [
+      "MW10 – Contravention of special road regulations",
+    ],
+    "BA - Disqualified Driver": [
+      "BA10 – Driving while disqualified by court",
+      "BA30 – Attempting to drive while disqualified",
+    ],
+    "UT - Theft or Unauthorised Taking": [
+      "UT20 – Taking a motor vehicle without consent",
+      "UT30 – Going equipped for stealing/taking a vehicle",
+      "UT50 – Aggravated vehicle taking",
+    ],
+    "MR - Mutual Recognition": [
+      "MR09 – Disqualification from another jurisdiction",
+      "MR19 – Other recognition offences",
+    ],
+    "ZO - Other Offences": [
+      "Generic category for offences without a specific DVLA code",
+    ],
+  };
+
   useEffect(() => {
     if (editingConviction) {
       setFormData(editingConviction);
