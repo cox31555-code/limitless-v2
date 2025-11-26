@@ -118,10 +118,16 @@ const AnnualCoverDetailsForm = ({ form }) => {
 
         {selectedLevel === "comprehensive" && (
           <div className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>
+                What's the minimum level of cover you're looking for?
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                The minimum level of cover is the excess amount you'd need to pay towards any claim. A higher minimum level can help reduce your premium, but you should ensure you're comfortable with the amount.
+              </p>
+            </div>
+
             <div className={styles.minimumCoverSection}>
-              <label className={styles.minimumCoverLabel}>
-                Minimum level of cover
-              </label>
               <select
                 value={minimumCoverLevel || ""}
                 onChange={handleMinimumCoverChange}
@@ -140,6 +146,15 @@ const AnnualCoverDetailsForm = ({ form }) => {
                 </span>
               )}
             </div>
+
+            <details className={styles.expandableDetails}>
+              <summary className={styles.expandableSummary}>
+                How does minimum level of cover affect my quote?
+              </summary>
+              <div className={styles.expandableContent}>
+                Choosing a higher minimum level of cover means you'll pay more towards any claim, which can lower your overall premium. However, you need to ensure you can afford to pay this amount if you make a claim. Different insurance providers may offer different options, and the choice you make here won't affect your eligibility but will influence your final premium price.
+              </div>
+            </details>
           </div>
         )}
 
