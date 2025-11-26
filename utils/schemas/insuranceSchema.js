@@ -249,6 +249,9 @@ export const carUsageSchema = z.object({
   licenseIssueCountry: z.string().optional(),
   licenseHeld: z.string().optional(),
   licenseNumber: z.string().optional(),
+  licenseNumberFirst: z.string().optional(),
+  licenseNumberLast: z.string().optional(),
+  declineShareLicenseNumber: z.boolean().optional(),
   NCB: z.string().optional(),
   voluntaryExcess: z.string().optional(),
   annualMileage: z.string().optional().nullable().refine(
