@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./step3CarOwner.module.css";
 import FormDateInput from "@/ui/inputs/FormDateInput";
+import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 
 const Step3CoverDetails = ({
   onBack = () => {},
