@@ -555,9 +555,18 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    // Handle going back from addDriverClaimsAndConvictions
+    if (currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions") {
+      setDriverBeingAdded(null);
+      setCoverSubStep("addDriver");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     // Handle going back from addDriver
     if (currentStep === STEPS.COVER && coverSubStep === "addDriver") {
       setEditingDriverIndex(null);
+      setDriverBeingAdded(null);
       setCoverSubStep("additionalDrivers");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
