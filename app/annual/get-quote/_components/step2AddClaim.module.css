@@ -354,6 +354,11 @@
     margin-top: 0.8rem;
   }
 
+  .expandableContent {
+    font-size: 1.3rem;
+    padding-left: 1.4rem;
+  }
+
   .buttonGroup {
     flex-direction: column-reverse;
     gap: 1rem;
