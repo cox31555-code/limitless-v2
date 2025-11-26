@@ -77,6 +77,12 @@
   border-top: 1px solid #f0f6ff;
 }
 
+.questionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .questionTitle {
   font-size: 2.05rem;
   font-weight: 600;
@@ -84,6 +90,23 @@
   margin: 0;
   line-height: 1.3;
   letter-spacing: -0.02em;
+}
+
+.mainQuestion {
+  font-size: 2.05rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.subText {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 0.4rem 0 0 0;
+  line-height: 1.65;
+  font-weight: 400;
 }
 
 .sectionDescription {
