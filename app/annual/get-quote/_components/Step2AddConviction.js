@@ -130,7 +130,7 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
       "MS60 – Offences not covered by other codes",
       "MS70 – Driving with unfit or defective tyres",
       "MS80 – Refusing to submit to an eyesight test",
-      "MS90 – Failure to give information regarding driver identity",
+      "MS90 ��� Failure to give information regarding driver identity",
     ],
     "PC - Pedestrian Crossings": [
       "PC10 – Failing to stop at pedestrian crossing",
@@ -272,6 +272,22 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
             </div>
           )}
           {errors.convictionType && <span className={styles.error}>{errors.convictionType}</span>}
+
+          {/* Conditional: Conviction Reason */}
+          {formData.convictionType && (
+            <div className={styles.conditionalSection}>
+              <h3 className={styles.questionTitle}>What was the conviction for?</h3>
+              <Dropdown
+                label=""
+                selected={formData.convictionReason}
+                options={convictionReasonMap[formData.convictionType] || []}
+                setSelected={(value) => setFormData({ ...formData, convictionReason: value })}
+                placeholder="Please select..."
+                error={errors.convictionReason}
+              />
+              {errors.convictionReason && <span className={styles.error}>{errors.convictionReason}</span>}
+            </div>
+          )}
         </div>
 
         {/* Date of Conviction */}
