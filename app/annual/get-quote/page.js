@@ -588,7 +588,14 @@ const AnnualInsuranceContent = () => {
                   <Step2LicenceRestrictions form={form} />
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "claims" && (
-                  <Step2ClaimsAndConvictions form={form} />
+                  <Step2ClaimsAndConvictions form={form} claims={claims} onAddClaim={handleNavigateToAddClaim} />
+                )}
+                {currentStep === STEPS.PERSONAL && personalSubStep === "addClaim" && (
+                  <Step2AddClaim
+                    onBack={handlePreviousStep}
+                    onAddClaim={handleAddClaim}
+                    editingClaim={editingClaimIndex !== null ? claims[editingClaimIndex] : null}
+                  />
                 )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
