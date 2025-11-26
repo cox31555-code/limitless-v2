@@ -493,6 +493,22 @@
     font-size: 1.3rem;
     padding: 0.7rem 1.8rem;
   }
+
+  .convictionCard {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .convictionActions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .changeConvictionBtn {
+    padding: 0.9rem 1.6rem;
+  }
 }
 
 @media (max-width: 600px) {
