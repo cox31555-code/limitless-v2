@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import CourierLoadingOverlay from "@/app/courier/_components/CourierLoadingOverlay";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { toast } from "react-toastify";
 import QuoteProgressCard from "./_components/QuoteProgressCard";
 import QuoteNavButtons from "./_components/QuoteNavButtons";
