@@ -268,7 +268,7 @@ export const carUsageSchema = z.object({
   criminalConvictions: z.string().optional(),
   convictions: z.array(z.any()).default([]),
   medicalConditions: z.string().optional(),
-  dvlaConditionType: z.string().optional().nullable(),
+  dvlaConditionType: z.string().optional(),
   insuranceCancelledOrClaimRefusedOrPolicyVoided: z.string().optional(),
   hasAdditionalDrivers: z.boolean().nullable().default(null),
   additionalDrivers: z.array(z.object({
