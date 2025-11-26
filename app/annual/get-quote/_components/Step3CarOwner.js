@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./step3CarOwner.module.css";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 
 const Step3CarOwner = ({
   onBack = () => {},
