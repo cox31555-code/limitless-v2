@@ -50,6 +50,12 @@ const Step3NoClaimsDiscount = ({
     "Named driver on company car excluding personal use"
   ];
 
+  const ncdEarnedHowOptions = [
+    "With this vehicle or a previous vehicle",
+    "With a company vehicle",
+    "In another country"
+  ];
+
   const validateForm = () => {
     const newErrors = {};
     if (!formData.noClaimsDiscount) newErrors.noClaimsDiscount = "Please select your NCD";
