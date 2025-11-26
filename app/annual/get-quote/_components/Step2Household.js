@@ -295,10 +295,12 @@ const Step2Household = ({ form }) => {
 
         {/* UK Residency Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Have you continuously lived in the UK since birth?</h3>
-          <p className={styles.subText}>
-            Insurance providers need to know how long you've lived in the UK on a continuous basis, without any breaks lasting 6 months or longer.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>Have you continuously lived in the UK since birth?</h3>
+            <p className={styles.subText}>
+              Insurance providers need to know how long you've lived in the UK on a continuous basis, without any breaks lasting 6 months or longer.
+            </p>
+          </div>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
