@@ -33,6 +33,7 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   const faultOptions = ["Both parties", "No other vehicle involved", "Other party", "Our Driver", "Unoccupied Vehicle"];
   const drivingOptions = ["Policyholder", "Spouse/partner", "Other named driver", "Unnamed driver"];
   const injuryOptions = ["Yes", "No"];
+  const theftTypeOptions = ["Theft - Accessories", "Theft - Personal Effects", "Theft - Sound Equipment", "Theft Of Vehicle", "Theft Related Damage"];
 
   useEffect(() => {
     if (editingClaim) {
