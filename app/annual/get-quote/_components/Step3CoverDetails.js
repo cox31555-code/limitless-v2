@@ -126,7 +126,7 @@ const Step3CoverDetails = ({
           </div>
           <div className={styles.radioGroup}>
             {["One annual payment", "Monthly instalments"].map((option) => (
-              <label key={option} className={styles.radioOption}>
+              <label key={option} className={styles.radioOption} style={{ cursor: 'pointer' }}>
                 <input
                   type="radio"
                   name="paymentFrequency"
@@ -134,6 +134,12 @@ const Step3CoverDetails = ({
                   checked={formData.paymentFrequency === option}
                   onChange={(e) => setFormData({ ...formData, paymentFrequency: e.target.value })}
                   className={styles.radioInput}
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    minWidth: '24px',
+                    minHeight: '24px'
+                  }}
                 />
                 <span className={styles.radioLabel}>{option}</span>
               </label>
