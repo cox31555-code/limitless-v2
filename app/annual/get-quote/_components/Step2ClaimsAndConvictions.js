@@ -14,6 +14,26 @@ const Step2ClaimsAndConvictions = ({ form }) => {
   const motorAccidentsClaims = watch("carUsage.motorAccidentsClaims");
   const drivingConvictions = watch("carUsage.drivingConvictions");
 
+  const handleAddClaim = (claimData, index = null) => {
+    if (index !== null) {
+      const updatedClaims = [...claims];
+      updatedClaims[index] = claimData;
+      setClaims(updatedClaims);
+      setEditingClaimIndex(null);
+    } else {
+      setClaims([...claims, claimData]);
+    }
+  };
+
+  const handleRemoveClaim = (index) => {
+    setClaims(claims.filter((_, i) => i !== index));
+  };
+
+  const handleEditClaim = (index) => {
+    setEditingClaimIndex(index);
+    setIsClaimModalOpen(true);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.stepTitle}>
