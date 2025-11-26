@@ -24,9 +24,7 @@ const Step3AdditionalDrivers = ({
         <div className={styles.section}>
           <div className={styles.questionHeader}>
             <h3 className={styles.mainQuestion}>Do you want to add any additional drivers?</h3>
-            <p className={styles.subText}>
-              You can add up to 5 additional drivers. Include any drivers who share the car for business use.
-            </p>
+            <p className={styles.subText}>You can add up to 5 additional drivers. Include any drivers who share the car for business use.</p>
           </div>
 
           <div className={styles.radioGroup}>
