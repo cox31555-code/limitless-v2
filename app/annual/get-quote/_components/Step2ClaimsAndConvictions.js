@@ -75,10 +75,7 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], onAddClaim = () => {} })
                 <button
                   type="button"
                   className={styles.addClaimBtn}
-                  onClick={() => {
-                    setEditingClaimIndex(null);
-                    setIsClaimModalOpen(true);
-                  }}
+                  onClick={() => onAddClaim()}
                 >
                   Add claim
                 </button>
@@ -103,7 +100,7 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], onAddClaim = () => {} })
                         <button
                           type="button"
                           className={styles.editBtn}
-                          onClick={() => handleEditClaim(index)}
+                          onClick={() => onAddClaim(index)}
                         >
                           Edit
                         </button>
@@ -121,17 +118,6 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], onAddClaim = () => {} })
               )}
             </div>
           )}
-
-          <ClaimModal
-            isOpen={isClaimModalOpen}
-            onClose={() => {
-              setIsClaimModalOpen(false);
-              setEditingClaimIndex(null);
-            }}
-            onAdd={handleAddClaim}
-            editingClaim={editingClaimIndex !== null ? claims[editingClaimIndex] : null}
-            editingIndex={editingClaimIndex}
-          />
         </div>
 
         {/* Driving Convictions Section */}
