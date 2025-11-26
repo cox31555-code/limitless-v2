@@ -212,6 +212,28 @@ const AnnualInsuranceContent = () => {
 
   const { setValue, trigger } = form;
 
+  // Save form state to sessionStorage whenever steps or form data change
+  useEffect(() => {
+    if (!isMounted) return;
+
+    const formState = {
+      formData: form.getValues(),
+      currentStep,
+      vehicleSubStep,
+      personalSubStep,
+      coverSubStep,
+      additionalDrivers,
+      claims,
+      convictions,
+      carOwnerData,
+      ncdData,
+      productsData,
+      contactInformationData,
+      foundVehicleData,
+    };
+    sessionStorage.setItem("annualQuoteFormState", JSON.stringify(formState));
+  }, [isMounted, currentStep, vehicleSubStep, personalSubStep, coverSubStep, form, additionalDrivers, claims, convictions, carOwnerData, ncdData, productsData, contactInformationData, foundVehicleData]);
+
   useEffect(() => {
     if (!isMounted) return;
 
