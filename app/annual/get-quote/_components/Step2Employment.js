@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import EmploymentAutocomplete from "./EmploymentAutocomplete";
 import styles from "./step2Employment.module.css";
-import { occupationOptions, industryOptions } from "@/app/temporary/get-quote/data";
+import { occupationOptions, industryOptions, studentTypeOptions } from "@/app/temporary/get-quote/data";
 
 const Step2Employment = ({ form }) => {
   const { watch, setValue } = form;
@@ -15,6 +15,7 @@ const Step2Employment = ({ form }) => {
   const employmentStatus = watch("userDetails.employmentStatus");
   const occupation = watch("userDetails.occupation");
   const industry = watch("userDetails.industry");
+  const studentType = watch("userDetails.studentType");
 
   const employmentOptions = [
     "Employed",
@@ -26,6 +27,7 @@ const Step2Employment = ({ form }) => {
   ];
 
   const isEmployedOrSelfEmployed = ["Employed", "Self Employed"].includes(employmentStatus);
+  const isStudent = employmentStatus === "Student";
 
   const handleEmploymentChange = (value) => {
     setValue("userDetails.employmentStatus", value, {
