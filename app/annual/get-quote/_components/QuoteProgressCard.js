@@ -6,8 +6,7 @@ const STEPS = {
   VEHICLE: 1,
   PERSONAL: 2,
   COVER: 3,
-  OPTIONAL_EXTRAS: 4,
-  REVIEW: 5,
+  CHECK_ANSWERS: 4,
 };
 
 const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, coverSubStep }) => {
@@ -27,14 +26,10 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
     {
       number: STEPS.COVER,
       title: "Your policy",
-      subSteps: ["Additional drivers", "Add a driver", "Cover details"],
+      subSteps: ["Additional drivers", "Car owner", "Cover details", "No claims discount", "Additional products", "Contact information"],
     },
     {
-      number: STEPS.OPTIONAL_EXTRAS,
-      title: "Optional extras",
-    },
-    {
-      number: STEPS.REVIEW,
+      number: STEPS.CHECK_ANSWERS,
       title: "Check your answers",
     },
   ];
