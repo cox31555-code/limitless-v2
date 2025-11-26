@@ -77,6 +77,7 @@ const AnnualInsuranceContent = () => {
   const [additionalDrivers, setAdditionalDrivers] = useState([]);
   const [hasAdditionalDrivers, setHasAdditionalDrivers] = useState(null);
   const [editingDriverIndex, setEditingDriverIndex] = useState(null);
+  const [carOwnerData, setCarOwnerData] = useState(null);
 
   useEffect(() => {
     setIsMounted(true);
