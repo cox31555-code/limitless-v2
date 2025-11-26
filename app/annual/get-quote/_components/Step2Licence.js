@@ -154,7 +154,7 @@ const Step2Licence = ({ form }) => {
               />
             </div>
 
-            {isGreatBritain && (
+            {!declineShareLicenseNumber && isGreatBritain && (
               <div className={styles.licenseNumberFields}>
                 <div className={styles.licenseField}>
                   <label className={styles.licenseFieldLabel}>First 11 characters</label>
@@ -186,7 +186,7 @@ const Step2Licence = ({ form }) => {
               </div>
             )}
 
-            {isNorthernIreland && (
+            {!declineShareLicenseNumber && isNorthernIreland && (
               <div className={styles.licenseNumberFields}>
                 <div className={styles.licenseField}>
                   <label className={styles.licenseFieldLabel}>Enter your 8 digit number</label>
