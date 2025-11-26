@@ -140,15 +140,16 @@
 
 .dateInputsWrapper {
   display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
 
 .dateInputGroup {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  flex: 0 1 100px;
+  flex: 1;
+  min-width: 0;
 }
 
 .inputLabel {
