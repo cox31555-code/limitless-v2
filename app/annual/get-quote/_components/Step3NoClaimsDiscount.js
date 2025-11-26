@@ -76,10 +76,15 @@ const Step3NoClaimsDiscount = ({
   const handleSubmit = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      // If NCD is not "No NCD", clear the namedDriverExperience field
-      const submitData = formData.noClaimsDiscount === "No NCD"
-        ? formData
-        : { ...formData, namedDriverExperience: "" };
+      // Clean up fields based on NCD selection
+      let submitData = { ...formData };
+      if (formData.noClaimsDiscount === "No NCD") {
+        // Clear ncdEarnedHow when No NCD is selected
+        submitData.ncdEarnedHow = "";
+      } else {
+        // Clear namedDriverExperience when a year is selected
+        submitData.namedDriverExperience = "";
+      }
       onNext(submitData);
     } else {
       setErrors(newErrors);
