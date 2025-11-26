@@ -133,7 +133,7 @@ const Step2Licence = ({ form }) => {
               <input
                 type="radio"
                 {...register("carUsage.hasAdditionalQualifications")}
-                value={true}
+                value="Yes"
                 className={styles.radioInput}
               />
               <span className={styles.radioLabel}>Yes</span>
@@ -143,7 +143,7 @@ const Step2Licence = ({ form }) => {
               <input
                 type="radio"
                 {...register("carUsage.hasAdditionalQualifications")}
-                value={false}
+                value="No"
                 className={styles.radioInput}
               />
               <span className={styles.radioLabel}>No</span>
@@ -151,7 +151,7 @@ const Step2Licence = ({ form }) => {
           </div>
         </div>
 
-        {hasAdditionalQualifications === true && (
+        {hasAdditionalQualifications === "Yes" && (
           <>
             <div className={styles.section}>
               <h3 className={styles.mainQuestion}>What type of driving qualification do you have?</h3>
