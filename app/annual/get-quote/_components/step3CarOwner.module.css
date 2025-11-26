@@ -486,4 +486,19 @@
     padding: 0.6rem 1.4rem;
     width: 100%;
   }
+
+  .personAdded {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.8rem;
+  }
+
+  .personName {
+    font-size: 1.3rem;
+  }
+
+  .changePersonBtn {
+    font-size: 1.2rem;
+  }
 }
