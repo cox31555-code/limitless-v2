@@ -69,10 +69,12 @@ const Step1OtherCars = ({ form }) => {
 
           {otherVehicles === "Yes" && (
             <div className={styles.conditionalSection}>
-              <h3 className={styles.mainQuestion}>What other vehicles do you have use of?</h3>
-              <p className={styles.subText}>
-                Select the most applicable option.
-              </p>
+              <div className={styles.questionHeader}>
+                <h3 className={styles.mainQuestion}>What other vehicles do you have use of?</h3>
+                <p className={styles.subText}>
+                  Select the most applicable option.
+                </p>
+              </div>
 
               <div className={styles.radioGroup}>
                 <label className={styles.radioOption}>
