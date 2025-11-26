@@ -130,7 +130,7 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
       "MS60 – Offences not covered by other codes",
       "MS70 – Driving with unfit or defective tyres",
       "MS80 – Refusing to submit to an eyesight test",
-      "MS90 ��� Failure to give information regarding driver identity",
+      "MS90 – Failure to give information regarding driver identity",
     ],
     "PC - Pedestrian Crossings": [
       "PC10 – Failing to stop at pedestrian crossing",
@@ -254,7 +254,7 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
             label=""
             selected={formData.convictionType}
             options={convictionTypeOptions}
-            setSelected={(value) => setFormData({ ...formData, convictionType: value })}
+            setSelected={(value) => setFormData({ ...formData, convictionType: value, convictionReason: "" })}
             placeholder="Please select..."
             error={errors.convictionType}
           />
