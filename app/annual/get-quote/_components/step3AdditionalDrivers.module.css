@@ -428,24 +428,37 @@
     padding: 0.7rem 1.8rem;
   }
 
-  .driverCard {
+  .cardHeader {
     flex-direction: column;
-    gap: 1.2rem;
     align-items: flex-start;
-  }
-
-  .buttonGroup {
-    width: 100%;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .removeButton {
     font-size: 1.3rem;
   }
 
-  .editButton {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .changeButton {
     font-size: 1.3rem;
-    padding: 0.9rem 1.6rem;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row .label {
+    min-width: auto;
+  }
+
+  .row .value {
+    text-align: left;
   }
 }
 
