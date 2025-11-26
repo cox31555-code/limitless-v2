@@ -170,6 +170,26 @@
   padding-bottom: 1.2rem;
 }
 
+.dateFieldGroup {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.dateFieldLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0;
