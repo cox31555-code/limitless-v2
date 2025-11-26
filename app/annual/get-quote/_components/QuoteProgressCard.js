@@ -154,8 +154,8 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
-          // Auto-expand current step
-          const isExpanded = (step.number === currentStep || expandedStep === step.number) && step.subSteps;
+          // Check if step is expanded (auto-expands current step by default via useState)
+          const isExpanded = expandedStep === step.number && step.subSteps;
           const activeSubStepIndex = isActive ? getActiveSubStepIndex(step.number) : -1;
 
           // Calculate substep progress percentage
