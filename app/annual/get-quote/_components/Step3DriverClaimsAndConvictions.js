@@ -130,6 +130,57 @@ const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAd
               You should still declare any accidents or claims, even if they weren't directly involved or if you believe they weren't at fault. This includes any incidents reported to an insurer or other parties. It helps us assess your insurance accurately.
             </div>
           )}
+
+          {formData.motorAccidentsClaims === "Yes" && (
+            <div className={styles.claimsSection}>
+              <div className={styles.claimsHeader}>
+                <h4 className={styles.claimsTitle}>Their claims</h4>
+                <button
+                  type="button"
+                  className={styles.addClaimBtn}
+                  onClick={handleAddClaimClick}
+                >
+                  Add claim
+                </button>
+              </div>
+
+              {claims.length > 0 && (
+                <div className={styles.claimsList}>
+                  {claims.map((claim, index) => (
+                    <div key={index} className={styles.claimCard}>
+                      <div className={styles.claimInfo}>
+                        <p className={styles.claimDetail}>
+                          <span className={styles.claimLabel}>Type:</span> {claim.incidentType}
+                        </p>
+                        <p className={styles.claimDetail}>
+                          <span className={styles.claimLabel}>Date:</span> {claim.day}/{claim.month}/{claim.year}
+                        </p>
+                        <p className={styles.claimDetail}>
+                          <span className={styles.claimLabel}>Damage:</span> {claim.damageType}
+                        </p>
+                      </div>
+                      <div className={styles.claimActions}>
+                        <button
+                          type="button"
+                          className={styles.removeBtn}
+                          onClick={() => handleRemoveClaim(index)}
+                        >
+                          Remove claim
+                        </button>
+                        <button
+                          type="button"
+                          className={styles.changeBtn}
+                          onClick={() => handleChangeClaim(index)}
+                        >
+                          Change claim
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Driving Convictions Section */}
