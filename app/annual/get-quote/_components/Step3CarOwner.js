@@ -36,9 +36,15 @@ const Step3CarOwner = ({
       if (entityTypesRequiringName.includes(formData.registeredKeeper) && !formData.registeredKeeperCompanyName) {
         newErrors.registeredKeeperCompanyName = "Please enter the company name";
       }
+      if (formData.registeredKeeper === "Other" && !formData.registeredKeeperOtherPerson) {
+        newErrors.registeredKeeperOtherPerson = "Please add a person";
+      }
       if (!formData.legalOwner) newErrors.legalOwner = "Please select the legal owner";
       if (entityTypesRequiringName.includes(formData.legalOwner) && !formData.legalOwnerCompanyName) {
         newErrors.legalOwnerCompanyName = "Please enter the company name";
+      }
+      if (formData.legalOwner === "Other" && !formData.legalOwnerOtherPerson) {
+        newErrors.legalOwnerOtherPerson = "Please add a person";
       }
     }
     return newErrors;
