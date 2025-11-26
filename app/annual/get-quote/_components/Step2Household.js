@@ -61,7 +61,9 @@ const Step2Household = ({ form }) => {
       <div className={styles.contentWrapper}>
         {/* Address Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>What's your address?</h3>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>What's your address?</h3>
+          </div>
 
           <div className={styles.addressGroup}>
             {expandedManualEntry ? (
