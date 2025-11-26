@@ -14,6 +14,53 @@
   padding: 0 5%;
 }
 
+/* Help Section */
+.helpSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.helpTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.helpActions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.helpLink {
+  color: #049cff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  background: rgba(3, 136, 255, 0.08);
+  border: 1px solid rgba(3, 136, 255, 0.2);
+}
+
+.helpLink:hover {
+  background: rgba(3, 136, 255, 0.15);
+  border-color: rgba(3, 136, 255, 0.4);
+  color: #0388ff;
+  transform: translateY(-1px);
+}
+
 /* Top Section - Trust & Partnership Information */
 .topSection {
   display: flex;
