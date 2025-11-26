@@ -602,22 +602,20 @@ const AnnualInsuranceContent = () => {
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
 
-              <QuoteNavButtons
-                currentStep={currentStep}
-                vehicleSubStep={vehicleSubStep}
-                personalSubStep={personalSubStep}
-                totalSteps={5}
-                onNext={handleNextStep}
-                onBack={handlePreviousStep}
-                onSubmit={onSubmit}
-                isLoading={isSubmitting}
-                nextLabel={
-                  currentStep === STEPS.REVIEW ? "Get Quote" :
-                  currentStep === STEPS.PERSONAL && personalSubStep === "addClaim" ? "Add claim" :
-                  "Next"
-                }
-                backLabel="Back"
-              />
+              {!(currentStep === STEPS.PERSONAL && personalSubStep === "addClaim") && (
+                <QuoteNavButtons
+                  currentStep={currentStep}
+                  vehicleSubStep={vehicleSubStep}
+                  personalSubStep={personalSubStep}
+                  totalSteps={5}
+                  onNext={handleNextStep}
+                  onBack={handlePreviousStep}
+                  onSubmit={onSubmit}
+                  isLoading={isSubmitting}
+                  nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Next"}
+                  backLabel="Back"
+                />
+              )}
             </form>
           </div>
 
