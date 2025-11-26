@@ -509,6 +509,12 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    if (currentStep === STEPS.COVER && coverSubStep === "addDriver") {
+      setCoverSubStep("additionalDrivers");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep === STEPS.COVER && coverSubStep === "details") {
       setCurrentStep(STEPS.OPTIONAL_EXTRAS);
       window.scrollTo({ top: 0, behavior: "smooth" });
