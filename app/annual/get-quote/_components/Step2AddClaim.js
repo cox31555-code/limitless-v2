@@ -57,6 +57,14 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
     if (!formData.damageType) newErrors.damageType = "Please select damage type";
     if (!formData.mainPolicyholder) newErrors.mainPolicyholder = "Please answer this question";
     if (!formData.ncdAffected) newErrors.ncdAffected = "Please answer this question";
+
+    // Validate conditional accident questions
+    if (formData.incidentType === "Accident") {
+      if (!formData.whoAtFault) newErrors.whoAtFault = "Please select who was at fault";
+      if (!formData.whoWasDriving) newErrors.whoWasDriving = "Please select who was driving";
+      if (!formData.wereThereInjuries) newErrors.wereThereInjuries = "Please answer this question";
+    }
+
     return newErrors;
   };
 
