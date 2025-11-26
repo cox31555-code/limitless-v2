@@ -369,6 +369,17 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
     </div>
   );
 
+  // Show car details edit sub-step
+  if (isEditingCarDetails) {
+    return (
+      <Step1CarDetailsEdit
+        form={form}
+        onUpdate={onCarDetailsUpdated}
+        onCancel={onCarDetailsUpdated}
+      />
+    );
+  }
+
   if (foundVehicle || (showManualEntry && isManualEntryComplete)) {
     return (
       <div className={styles.container}>
