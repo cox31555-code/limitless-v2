@@ -61,6 +61,17 @@ const Step2ClaimsAndConvictions = ({ form }) => {
               You should still declare any accidents or claims, even if you weren't directly involved or if you believe you weren't at fault. This includes any incidents reported to your insurer or other parties. It helps us assess your insurance accurately.
             </div>
           )}
+
+          {motorAccidentsClaims === "Yes" && (
+            <div className={styles.claimsSection}>
+              <div className={styles.claimsHeader}>
+                <h4 className={styles.claimsTitle}>Your claims</h4>
+                <button type="button" className={styles.addClaimBtn}>
+                  Add claim
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Driving Convictions Section */}
