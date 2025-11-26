@@ -7,8 +7,10 @@ import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 const Step3CarOwnerAddPerson = ({
   onBack = () => {},
   onSave = () => {},
+  onRemove = () => {},
   personType = "registeredKeeper", // "registeredKeeper" or "legalOwner"
-  personData = null
+  personData = null,
+  isEditing = false
 }) => {
   const [formData, setFormData] = useState(personData || {
     relationship: "",
