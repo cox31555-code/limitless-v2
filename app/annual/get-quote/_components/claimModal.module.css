@@ -366,13 +366,28 @@
     max-height: min(80vh, 100dvh - 80px);
   }
 
-  .modalContent {
-    padding: 2.4rem;
+  .modalHeader {
+    padding: 2rem 2.4rem;
   }
 
   .modalTitle {
     font-size: 1.8rem;
-    margin-bottom: 2rem;
+  }
+
+  .closeButton {
+    width: 3.2rem;
+    height: 3.2rem;
+    top: 1.6rem;
+    right: 1.6rem;
+    font-size: 2.2rem;
+  }
+
+  .scrollContent {
+    padding: 2rem 2.4rem;
+  }
+
+  .buttonGroup {
+    padding: 1.8rem 2.4rem;
   }
 
   .section {
@@ -439,13 +454,28 @@
     }
   }
 
-  .modalContent {
-    padding: 2rem;
+  .modalHeader {
+    padding: 1.8rem 2rem;
   }
 
   .modalTitle {
-    font-size: 1.6rem;
-    margin-bottom: 1.6rem;
+    font-size: 1.7rem;
+  }
+
+  .closeButton {
+    width: 3rem;
+    height: 3rem;
+    top: 1.4rem;
+    right: 1.4rem;
+    font-size: 2rem;
+  }
+
+  .scrollContent {
+    padding: 1.6rem 2rem;
+  }
+
+  .buttonGroup {
+    padding: 1.6rem 2rem;
   }
 
   .questionTitle {
