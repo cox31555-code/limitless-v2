@@ -87,7 +87,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Car value</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Current vehicle market value</span>
@@ -98,7 +100,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Car usage</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>When you bought the car</span>
@@ -117,7 +121,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Car storage</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Daytime storage</span>
@@ -136,7 +142,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Other cars</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Number of cars at your household</span>
@@ -160,7 +168,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>About you</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Name</span>
@@ -181,7 +191,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Your household</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Home address</span>
@@ -209,7 +221,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Your employment</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Employment status</span>
@@ -226,7 +240,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Your licence</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Licence type</span>
@@ -245,7 +261,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Licence restrictions</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>DVLA reportable conditions</span>
@@ -264,7 +282,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Claims in the last 5 years</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             {claims.length > 0 ? (
               claims.map((claim, index) => (
@@ -283,7 +303,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Motoring convictions in the last 5 years</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             {convictions.length > 0 ? (
               convictions.map((conviction, index) => (
@@ -307,7 +329,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Additional drivers</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             {additionalDrivers.length > 0 ? (
               additionalDrivers.map((driver, index) => (
@@ -338,7 +362,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Car owner</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Main driver</span>
@@ -359,7 +385,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Your cover</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Cover type</span>
@@ -382,7 +410,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Your no claims discount</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>No claims discount</span>
@@ -397,7 +427,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Additional products</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Personal accident cover</span>
@@ -420,7 +452,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Contact information</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Email address</span>
