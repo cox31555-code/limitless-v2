@@ -25,12 +25,46 @@ const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAd
     return newErrors;
   };
 
+  const handleAddClaimClick = () => {
+    if (onAddClaim) {
+      onAddClaim();
+    }
+  };
+
+  const handleAddConvictionClick = () => {
+    if (onAddConviction) {
+      onAddConviction();
+    }
+  };
+
+  const handleRemoveClaim = (index) => {
+    setClaims(claims.filter((_, i) => i !== index));
+  };
+
+  const handleRemoveConviction = (index) => {
+    setConvictions(convictions.filter((_, i) => i !== index));
+  };
+
+  const handleChangeClaim = (index) => {
+    if (onAddClaim) {
+      onAddClaim(index);
+    }
+  };
+
+  const handleChangeConviction = (index) => {
+    if (onAddConviction) {
+      onAddConviction(index);
+    }
+  };
+
   const handleSubmit = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
       const completeDriverData = {
         ...driverData,
         ...formData,
+        claims,
+        convictions,
       };
       onAddDriver(completeDriverData);
     } else {
