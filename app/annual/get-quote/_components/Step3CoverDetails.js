@@ -12,17 +12,13 @@ const Step3CoverDetails = ({
     coverLevel: "",
     minimumCoverLevel: "",
     paymentFrequency: "",
-    startDate: "",
-    noClaimsDiscount: "",
-    namedDriverExperience: ""
+    startDate: ""
   });
 
   const [errors, setErrors] = useState({});
   const [expandedMinimumCover, setExpandedMinimumCover] = useState(false);
   const [expandedStartDate, setExpandedStartDate] = useState(false);
   const [expandedPaymentEffect, setExpandedPaymentEffect] = useState(false);
-  const [expandedHowFindNCD, setExpandedHowFindNCD] = useState(false);
-  const [expandedNamedDriver, setExpandedNamedDriver] = useState(false);
 
   // Generate date options for next 30 days
   const generateDateOptions = () => {
