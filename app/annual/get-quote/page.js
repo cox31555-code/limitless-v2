@@ -150,6 +150,8 @@ const AnnualInsuranceContent = () => {
         dvlaConditionType: "",
         insuranceCancelledOrClaimRefusedOrPolicyVoided: "",
         criminalConvictions: "",
+        motorAccidentsClaims: "",
+        drivingConvictions: "",
         NCB: "",
         voluntaryExcess: "",
         annualMileage: "",
