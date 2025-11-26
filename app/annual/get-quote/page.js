@@ -60,6 +60,8 @@ const AnnualInsuranceContent = () => {
   const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
   const [claims, setClaims] = useState([]);
   const [editingClaimIndex, setEditingClaimIndex] = useState(null);
+  const [convictions, setConvictions] = useState([]);
+  const [editingConvictionIndex, setEditingConvictionIndex] = useState(null);
 
   useEffect(() => {
     setIsMounted(true);
