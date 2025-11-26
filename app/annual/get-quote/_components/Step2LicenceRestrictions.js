@@ -97,7 +97,9 @@ const Step2LicenceRestrictions = ({ form }) => {
 
         {/* Insurance History Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Has an insurance provider ever declined, cancelled, or voided your policy or imposed special terms?</h3>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>Has an insurance provider ever declined, cancelled, or voided your policy or imposed special terms?</h3>
+          </div>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
