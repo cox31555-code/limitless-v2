@@ -26,22 +26,6 @@ export const menus = [
         title: "Existing Customers",
         link: "/login",
       },
-      {
-        title: "Temporary Cover",
-        link: "/temporary",
-      },
-      {
-        title: "Hourly Insurance",
-        link: "/temporary",
-      },
-      {
-        title: "Weekly Insurance",
-        link: "/temporary",
-      },
-      {
-        title: "Impound Release",
-        link: "/impound",
-      },
     ],
   },
   {
