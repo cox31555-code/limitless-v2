@@ -98,6 +98,10 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
     if (formData.medicalConditions === "Yes" && !formData.dvlaConditionType) {
       newErrors.dvlaConditionType = "Please select DVLA status";
     }
+    if (!formData.otherVehicles) newErrors.otherVehicles = "Please answer this question";
+    if (formData.otherVehicles === "Yes" && !formData.otherVehiclesType) {
+      newErrors.otherVehiclesType = "Please select vehicle type";
+    }
     if (!formData.insuranceCancelledOrClaimRefusedOrPolicyVoided) newErrors.insuranceCancelledOrClaimRefusedOrPolicyVoided = "Please answer this question";
     if (!formData.criminalConvictions) newErrors.criminalConvictions = "Please answer this question";
 
