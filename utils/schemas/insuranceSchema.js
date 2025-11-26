@@ -251,6 +251,7 @@ export const carUsageSchema = z.object({
   licenseNumber: z.string().optional(),
   licenseNumberFirst: z.string().optional(),
   licenseNumberLast: z.string().optional(),
+  licenseNumberNI: z.string().optional(),
   declineShareLicenseNumber: z.boolean().optional(),
   NCB: z.string().optional(),
   voluntaryExcess: z.string().optional(),
