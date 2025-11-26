@@ -370,10 +370,12 @@
 
   .dateInputsWrapper {
     gap: 0.6rem;
+    flex-wrap: nowrap;
   }
 
   .dateInputGroup {
-    flex: 0 1 70px;
+    flex: 1;
+    min-width: 0;
   }
 
   .inputLabel {
