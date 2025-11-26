@@ -46,7 +46,7 @@
 .questionHeader {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
 }
 
 .mainQuestion {
@@ -61,7 +61,7 @@
 .subText {
   font-size: 1.4rem;
   color: #6b7c8f;
-  margin: 0;
+  margin: 0.4rem 0 0 0;
   line-height: 1.65;
   font-weight: 400;
 }
@@ -69,46 +69,79 @@
 .radioGroup {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.1rem;
   margin-top: 0.8rem;
 }
 
 .radioOption {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.2rem;
   cursor: pointer;
+  padding: 0;
+  margin: 0;
 }
 
 .radioInput {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  accent-color: #0388ff;
-  margin-top: 0.2rem;
   flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.radioInput:checked {
+  background-color: #0052a3;
+  border-color: #0052a3;
+}
+
+.radioInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.radioInput:hover:not(:checked) {
+  border-color: #0052a3;
+  background-color: #f0f6ff;
 }
 
 .radioLabel {
-  font-size: 1.05rem;
-  color: #333;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  cursor: pointer;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .driversSection {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-top: 2.4rem;
-  margin-top: 2.4rem;
-  border-top: 1px solid #f0f6ff;
+  margin-top: 1.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8ecf1;
 }
 
 .driversHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1.2rem;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
 .driversTitle {
@@ -116,141 +149,204 @@
   font-weight: 600;
   color: #004284;
   margin: 0;
+  line-height: 1.3;
 }
 
 .addDriverBtn {
-  padding: 0.75rem 1.5rem;
-  background: transparent;
-  border: 2px solid #0388ff;
-  color: #0388ff;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 500;
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+  background: #ffffff;
+  border: 2px solid #0052a3;
+  border-radius: 25px;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .addDriverBtn:hover:not(:disabled) {
-  background-color: #e8f4ff;
+  background: #f0f6ff;
+  border-color: #003d7a;
+  color: #003d7a;
 }
 
 .addDriverBtn:disabled {
-  border-color: #ccc;
-  color: #ccc;
+  border-color: #cbd4dd;
+  color: #cbd4dd;
   cursor: not-allowed;
+}
+
+.addDriverBtn:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+  border-radius: 25px;
 }
 
 .driversList {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .driverCard {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 1.6rem;
-  border: 1px solid #e8ecf1;
-  border-radius: 8px;
-  background: #f9fafb;
-  gap: 1.2rem;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: center;
+  gap: 2rem;
+  padding: 1.6rem 2rem;
+  background: #f0f6ff;
+  border-radius: 12px;
+  transition: all 0.2s ease;
 }
 
 .driverCard:hover {
-  background-color: #fafbff;
-  border-color: #d4e3f7;
+  background: #e8f4ff;
 }
 
 .driverInfo {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  flex: 1;
 }
 
 .driverName {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #004284;
+  font-size: 1.4rem;
+  color: #1a1a2e;
   margin: 0;
+  line-height: 1.5;
+  font-weight: 600;
 }
 
 .driverDetail {
-  font-size: 0.95rem;
-  color: #666;
+  font-size: 1.4rem;
+  color: #1a1a2e;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .label {
-  font-weight: 500;
-  color: #333;
+  font-weight: 600;
+  color: #004284;
 }
 
 .removeButton {
-  padding: 0.6rem 1.2rem;
-  background: transparent;
-  border: 1px solid #e8ecf1;
-  color: #666;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  padding: 0;
+  font-size: 1.4rem;
   font-weight: 500;
+  color: #0052a3;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
-  height: fit-content;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
 .removeButton:hover {
-  background-color: #fee2e2;
-  border-color: #fca5a5;
-  color: #dc2626;
+  color: #003d7a;
+  text-decoration: underline;
+}
+
+.removeButton:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .maxDriversMessage {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.8rem;
   padding: 1.2rem 1.6rem;
   background-color: #d1fae5;
   border: 1px solid #6ee7b7;
   border-radius: 8px;
   color: #065f46;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 1.5rem;
 }
 
 .maxDriversIcon {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
   .contentWrapper {
-    padding-right: 60px;
-    gap: 2.5rem;
+    padding-right: 0;
   }
 
   .mainQuestion {
-    font-size: 1.85rem;
+    font-size: 1.8rem;
   }
 
   .driversTitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .driversHeader {
+    gap: 1rem;
+  }
+
+  .addDriverBtn {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.8rem;
+  }
+
+  .driverCard {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .removeButton {
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 600px) {
-  .contentWrapper {
-    padding-right: 0;
-    gap: 2rem;
+  .container {
+    padding: 0;
+    gap: 2.8rem;
+    margin: 0;
+  }
+
+  .stepTitle {
+    padding-bottom: 1.4rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.35rem;
   }
 
   .mainQuestion {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding-bottom: 2rem;
+    gap: 2rem;
+  }
+
+  .contentWrapper {
+    padding-right: 0;
+    gap: 3.2rem;
+  }
+
+  .subText {
+    font-size: 1.2rem;
+  }
+
+  .driversSection {
+    margin-top: 1rem;
+    padding-top: 1.2rem;
   }
 
   .driversHeader {
@@ -259,50 +355,64 @@
     gap: 1rem;
   }
 
+  .driversTitle {
+    font-size: 1.5rem;
+  }
+
   .addDriverBtn {
     width: 100%;
+    font-size: 1.3rem;
+    padding: 0.7rem 1.6rem;
   }
 
   .driverCard {
     flex-direction: column;
+    gap: 1rem;
     padding: 1.2rem;
   }
 
+  .driverName {
+    font-size: 1.3rem;
+  }
+
+  .driverDetail {
+    font-size: 1.3rem;
+  }
+
   .removeButton {
-    width: 100%;
+    font-size: 1.3rem;
   }
 
-  .stepTitle {
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .section {
-    padding-bottom: 2.4rem;
-    gap: 1.2rem;
-  }
-
-  .driversSection {
-    margin-top: 1.8rem;
-    padding-top: 1.8rem;
+  .maxDriversMessage {
+    font-size: 1.3rem;
+    padding: 1rem 1.2rem;
   }
 }
 
 @media (max-width: 400px) {
-  .contentWrapper {
-    gap: 1.6rem;
-  }
-
-  .mainQuestion {
-    font-size: 1.3rem;
+  .stepTitle {
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
   }
 
   .stepTitleText {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+
+  .mainQuestion {
+    font-size: 1.6rem;
   }
 
   .section {
-    padding-bottom: 1.8rem;
+    padding-bottom: 2rem;
+    gap: 1rem;
+  }
+
+  .contentWrapper {
+    gap: 2rem;
+  }
+
+  .radioGroup {
     gap: 1rem;
   }
 
@@ -311,7 +421,17 @@
     gap: 0.8rem;
   }
 
-  .radioGroup {
-    gap: 1rem;
+  .addDriverBtn {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .removeButton {
+    font-size: 1.2rem;
+  }
+
+  .maxDriversMessage {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
   }
 }
