@@ -25,15 +25,24 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
 
   const locationOptions = ["England, Scotland or Wales (Great Britain)", "Northern Ireland"];
   const convictionTypeOptions = [
-    "Speeding",
-    "Drink Driving",
-    "Drug Driving",
-    "Driving Without Insurance",
-    "Dangerous Driving",
-    "Careless Driving",
-    "Using Mobile Phone While Driving",
-    "Failing to Stop",
-    "Other",
+    "SP - Speed Limits",
+    "CU - Construction & Uses Offences",
+    "TS - Traffic Direction & Signs",
+    "DR - Drink",
+    "DG - Drugs",
+    "IN - Insurance Offences",
+    "LC - Licence Offences",
+    "CD - Careless Driving",
+    "MS - Miscellaneous Offences",
+    "PC - Pedestrian Crossings",
+    "TT - Special Code",
+    "AC - Accident Offences",
+    "DD - Reckless & Dangerous Driving",
+    "MW - Motorway Offences",
+    "BA - Disqualified Driver",
+    "UT - Theft or Unauthorised Taking",
+    "MR - Mutual Recognition",
+    "ZO - Other Offences",
   ];
 
   useEffect(() => {
