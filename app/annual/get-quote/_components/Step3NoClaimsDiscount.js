@@ -91,6 +91,16 @@ const Step3NoClaimsDiscount = ({
       newErrors.ncdEarnedHow = "Please answer this question";
     }
 
+    // Require namedDriverYears if one of the three named driver options is selected
+    const requiresNamedDriverYears = [
+      "Named driver on another car",
+      "Named driver on company car including personal use",
+      "Named driver on company car excluding personal use"
+    ];
+    if (requiresNamedDriverYears.includes(formData.namedDriverExperience) && !formData.namedDriverYears) {
+      newErrors.namedDriverYears = "Please select how many years";
+    }
+
     return newErrors;
   };
 
