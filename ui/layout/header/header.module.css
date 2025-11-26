@@ -1310,19 +1310,38 @@
   justify-content: center;
   align-items: center;
   border-radius: 10.4px;
-  border: 1.95px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
   font-size: 1.82rem;
-  font-weight: 500;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  font-weight: 600;
+  transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.mobileLoginBtn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #0388ff, #049cff);
+  border-radius: 10.4px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.2s ease;
 }
 
 .mobileLoginBtn:active {
   transform: scale(0.98);
+  border-color: transparent;
+  background: transparent;
+}
+
+.mobileLoginBtn:active::before {
+  opacity: 1;
 }
 
 /* Help Modal Popup */
