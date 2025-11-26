@@ -232,6 +232,7 @@ const Step3CoverDetails = ({
               onChange={handleDateChange}
               error={errors.startDate}
               minDate={new Date()}
+              maxDate={getMaxDate()}
               reducedPadding={true}
             />
             {errors.startDate && <span className={styles.error}>{errors.startDate}</span>}
