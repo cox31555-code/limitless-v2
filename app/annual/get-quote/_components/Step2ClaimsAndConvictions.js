@@ -65,7 +65,9 @@ const Step2ClaimsAndConvictions = ({ form }) => {
 
         {/* Driving Convictions Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Have you had any driving related convictions, endorsements, penalties, disqualifications or bans in the past 5 years?</h3>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>Have you had any driving related convictions, endorsements, penalties, disqualifications or bans in the past 5 years?</h3>
+          </div>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
