@@ -32,9 +32,8 @@
 }
 
 .backBtn:hover:not(:disabled) {
-  border-color: #003d7a;
+  border-color: #0052a3;
   color: #003d7a;
-  background: #f5f8fc;
 }
 
 .backBtn:disabled {
