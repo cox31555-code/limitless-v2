@@ -131,6 +131,12 @@ const AnnualInsuranceContent = () => {
         noClaimsDiscount: "",
         namedDriverExperience: "",
       },
+      productsData: {
+        personalAccidentCover: "",
+        courtesyCar: "",
+        breakdownCover: "",
+        motorLegalProtection: "",
+      },
       optionalExtras: {
         courtesyCar: null,
         breakdownCover: null,
