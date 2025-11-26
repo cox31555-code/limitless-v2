@@ -495,24 +495,20 @@
     padding-right: 0;
   }
 
-  .questionTitle {
+  .mainQuestion {
     font-size: 1.8rem;
   }
 
-  .formRow {
-    gap: 1.2rem;
+  .dropdownWrapper {
+    max-width: 100%;
   }
 
-  .fieldGroup {
-    gap: 1.2rem;
+  .fieldWrapper {
+    max-width: 100%;
   }
 
   .dateInputsWrapper {
     gap: 0.8rem;
-  }
-
-  .inputLabel {
-    font-size: 1.15rem;
   }
 
   .expandableLink {
@@ -533,6 +529,14 @@
   .backBtn,
   .nextBtn {
     width: 100%;
+  }
+
+  .licenseNumberFields {
+    flex-direction: column;
+  }
+
+  .licenseField {
+    min-width: 100%;
   }
 }
 
