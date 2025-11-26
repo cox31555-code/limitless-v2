@@ -55,6 +55,12 @@
   font-weight: 400;
 }
 
+.questionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .dropdownWrapper {
   margin-top: 1.2rem;
 }
