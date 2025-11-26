@@ -971,7 +971,9 @@ const AnnualInsuranceContent = () => {
                 !(currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "addDriverClaim") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "addDriverConviction") &&
-                !(currentStep === STEPS.COVER && coverSubStep === "carOwner") && (
+                !(currentStep === STEPS.COVER && coverSubStep === "carOwner") &&
+                !(currentStep === STEPS.COVER && coverSubStep === "carOwnerAddRegisteredKeeper") &&
+                !(currentStep === STEPS.COVER && coverSubStep === "carOwnerAddLegalOwner") && (
                 <QuoteNavButtons
                   currentStep={currentStep}
                   vehicleSubStep={vehicleSubStep}
