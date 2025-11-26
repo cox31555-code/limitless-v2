@@ -129,7 +129,7 @@ const Step3CoverDetails = ({
             <div className={styles.questionHeader}>
               <h3 className={styles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
               <p className={styles.subText}>
-                Select your preferred minimum cover level
+                The minimum level of cover is the excess amount you'd need to pay towards any claim. A higher minimum level can help reduce your premium, but you should ensure you're comfortable with the amount.
               </p>
             </div>
             <select
@@ -177,6 +177,37 @@ const Step3CoverDetails = ({
               ))}
             </select>
             {errors.minimumCoverLevel && <span className={styles.error}>{errors.minimumCoverLevel}</span>}
+
+            <details style={{ marginTop: "2rem", listStyle: "none", padding: 0 }}>
+              <summary style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.8rem",
+                cursor: "pointer",
+                fontSize: "1.3rem",
+                fontWeight: "600",
+                color: "#0052a3",
+                textDecoration: "underline",
+                padding: 0,
+                margin: 0,
+                transition: "color 0.2s ease"
+              }}>
+                How does minimum level of cover affect my quote?
+              </summary>
+              <div style={{
+                marginTop: "1.2rem",
+                padding: "1.6rem",
+                background: "#f0f6ff",
+                borderLeft: "4px solid #0052a3",
+                borderRadius: "4px",
+                fontSize: "1.3rem",
+                color: "#1a1a2e",
+                lineHeight: "1.6",
+                fontWeight: "400"
+              }}>
+                Choosing a higher minimum level of cover means you'll pay more towards any claim, which can lower your overall premium. However, you need to ensure you can afford to pay this amount if you make a claim. Different insurance providers may offer different options, and the choice you make here won't affect your eligibility but will influence your final premium price.
+              </div>
+            </details>
           </div>
         )}
 
