@@ -472,7 +472,16 @@
     padding: 0.6rem 1.4rem;
   }
 
+  .buttonGroup {
+    width: 100%;
+    gap: 1rem;
+  }
+
   .removeButton {
+    font-size: 1.2rem;
+  }
+
+  .editButton {
     font-size: 1.2rem;
   }
 
