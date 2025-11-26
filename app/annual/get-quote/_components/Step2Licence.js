@@ -215,22 +215,26 @@ const Step2Licence = ({ form }) => {
               </label>
             </div>
 
-            <div className={styles.infoBox}>
-              Did you know... you may get a better deal by sharing this with insurers.
-            </div>
+            {!declineShareLicenseNumber && (
+              <>
+                <div className={styles.infoBox}>
+                  Did you know... you may get a better deal by sharing this with insurers.
+                </div>
 
-            <button
-              type="button"
-              className={styles.expandableLink}
-              onClick={() => setExpandedWhatDo(!expandedWhatDo)}
-            >
-              What do we do with this information?
-            </button>
+                <button
+                  type="button"
+                  className={styles.expandableLink}
+                  onClick={() => setExpandedWhatDo(!expandedWhatDo)}
+                >
+                  What do we do with this information?
+                </button>
 
-            {expandedWhatDo && (
-              <div className={styles.expandableContent}>
-                We use your driving licence information to verify your identity and driving history with the DVLA. This helps us provide you with accurate insurance quotes and ensure you're getting the best possible deal.
-              </div>
+                {expandedWhatDo && (
+                  <div className={styles.expandableContent}>
+                    We use your driving licence information to verify your identity and driving history with the DVLA. This helps us provide you with accurate insurance quotes and ensure you're getting the best possible deal.
+                  </div>
+                )}
+              </>
             )}
           </div>
         )}
