@@ -108,8 +108,21 @@ export const annualCoverDetailsSchema = z.object({
   level: z.enum(["comprehensive", "tpft", "tpo"], {
     required_error: "Please select a cover level",
   }),
+  minimumCoverLevel: z.string().optional(),
   startDate: z.string().min(1, "Start date is required"),
-});
+}).refine(
+  (data) => {
+    // If comprehensive cover is selected, minimumCoverLevel is required
+    if (data.level === "comprehensive") {
+      return data.minimumCoverLevel && data.minimumCoverLevel.trim().length > 0;
+    }
+    return true;
+  },
+  {
+    message: "Please select a minimum level of cover for comprehensive cover",
+    path: ["minimumCoverLevel"],
+  }
+);
 
 // User Details Schema
 export const userDetailsSchema = z
