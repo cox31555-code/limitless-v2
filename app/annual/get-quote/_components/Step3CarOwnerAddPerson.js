@@ -239,7 +239,7 @@ const Step3CarOwnerAddPerson = ({
         <button type="button" className={styles.backBtn} onClick={onBack}>
           Back
         </button>
-        <button type="button" className={styles.saveBtn} onClick={handleSave}>
+        <button type="button" className={styles.nextBtn} onClick={handleSave}>
           Save
         </button>
       </div>
