@@ -42,13 +42,23 @@ const Step3CarOwner = ({
   // Build driver options: include userData (Driver 1) + additional drivers
   const driverOptions = [];
   if (userData && userData.firstName && userData.lastName) {
-    driverOptions.push(`${userData.firstName} ${userData.lastName}`);
+    driverOptions.push(`${userData.title ? userData.title + ' ' : ''}${userData.firstName} ${userData.lastName}`);
   }
   additionalDrivers.forEach((driver) => {
     if (driver.firstName && driver.lastName) {
-      driverOptions.push(`${driver.firstName} ${driver.lastName}`);
+      driverOptions.push(`${driver.title ? driver.title + ' ' : ''}${driver.firstName} ${driver.lastName}`);
     }
   });
+
+  // Build owner options: drivers first, then other owner types
+  const ownerOptions = [
+    ...driverOptions,
+    "Company",
+    "Other",
+    "Leased Private",
+    "Leased Company",
+    "Society or Club"
+  ];
 
   return (
     <div className={styles.container}>
