@@ -22,13 +22,21 @@ const Step3CarOwner = ({
   const [errors, setErrors] = useState({});
   const [expandedWhoIsKeeper, setExpandedWhoIsKeeper] = useState(false);
 
+  const entityTypesRequiringName = ["Company", "Leased Private", "Leased Company", "Society or Club"];
+
   const validateForm = () => {
     const newErrors = {};
     if (!formData.mainDriver) newErrors.mainDriver = "Please select the main driver";
     if (!formData.isRegisteredKeeperAndOwner) newErrors.isRegisteredKeeperAndOwner = "Please answer this question";
     if (formData.isRegisteredKeeperAndOwner === "No") {
       if (!formData.registeredKeeper) newErrors.registeredKeeper = "Please select the registered keeper";
+      if (entityTypesRequiringName.includes(formData.registeredKeeper) && !formData.registeredKeeperCompanyName) {
+        newErrors.registeredKeeperCompanyName = "Please enter the company name";
+      }
       if (!formData.legalOwner) newErrors.legalOwner = "Please select the legal owner";
+      if (entityTypesRequiringName.includes(formData.legalOwner) && !formData.legalOwnerCompanyName) {
+        newErrors.legalOwnerCompanyName = "Please enter the company name";
+      }
     }
     return newErrors;
   };
