@@ -180,11 +180,26 @@ const Step3CarOwner = ({
                 label=""
                 selected={formData.legalOwner}
                 options={ownerOptions}
-                setSelected={(value) => setFormData({ ...formData, legalOwner: value })}
+                setSelected={(value) => setFormData({ ...formData, legalOwner: value, legalOwnerCompanyName: "" })}
                 placeholder="Select..."
               />
               {errors.legalOwner && <span className={styles.error}>{errors.legalOwner}</span>}
             </div>
+
+            {/* Company Name Input - Only shown for Company/Leased/Society types */}
+            {entityTypesRequiringName.includes(formData.legalOwner) && (
+              <div className={styles.fieldWrapper}>
+                <label className={styles.fieldLabel}>What's the company name?</label>
+                <CustomTextInput
+                  type="text"
+                  placeholder=""
+                  value={formData.legalOwnerCompanyName || ""}
+                  onChange={(e) => setFormData({ ...formData, legalOwnerCompanyName: e.target.value })}
+                  error={errors.legalOwnerCompanyName}
+                />
+                {errors.legalOwnerCompanyName && <span className={styles.error}>{errors.legalOwnerCompanyName}</span>}
+              </div>
+            )}
           </div>
         )}
       </div>
