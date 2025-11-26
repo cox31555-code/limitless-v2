@@ -19,8 +19,8 @@ const ServiceCovered = ({ title, description, covered, unCovered }) => {
 
   const CheckIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="12" fill="#39FD8B" />
-      <path d="M7.42969 11.9225L9.67756 14.9847C10.2259 15.7316 11.3468 15.7159 11.8739 14.9538L16.6904 7.99023" stroke="#07102D" strokeWidth="1.67832" strokeLinecap="round"/>
+      <circle cx="12" cy="12" r="12" fill="#0052a3" />
+      <path d="M7.42969 11.9225L9.67756 14.9847C10.2259 15.7316 11.3468 15.7159 11.8739 14.9538L16.6904 7.99023" stroke="#FFFFFF" strokeWidth="1.67832" strokeLinecap="round"/>
     </svg>
   );
 
