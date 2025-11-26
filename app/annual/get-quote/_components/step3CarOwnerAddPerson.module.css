@@ -242,7 +242,7 @@
   border-radius: 25px;
 }
 
-.saveBtn {
+.nextBtn {
   padding: 0.8rem 2rem;
   font-size: 1.4rem;
   font-weight: 600;
@@ -255,14 +255,39 @@
   white-space: nowrap;
 }
 
-.saveBtn:hover {
+.nextBtn:hover {
   background: #003d7a;
 }
 
-.saveBtn:focus {
+.nextBtn:focus {
   outline: 2px solid #0052a3;
   outline-offset: 2px;
   border-radius: 25px;
+}
+
+.removePersonBtn {
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #d32f2f;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.removePersonBtn:hover {
+  color: #b71c1c;
+  text-decoration: underline;
+}
+
+.removePersonBtn:focus {
+  outline: 2px solid #d32f2f;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 @media (max-width: 900px) {
