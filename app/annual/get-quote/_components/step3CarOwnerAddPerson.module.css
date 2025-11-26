@@ -196,24 +196,18 @@
   line-height: 1.5;
 }
 
-.dateInputsWrapper {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
 .dateInputGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  flex: 1;
-  min-width: 100px;
+  gap: 0.8rem;
+  max-width: 180px;
 }
 
 .inputLabel {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  color: #1a1a2e;
+  color: #004284;
+  margin: 0;
 }
 
 .buttonGroup {
