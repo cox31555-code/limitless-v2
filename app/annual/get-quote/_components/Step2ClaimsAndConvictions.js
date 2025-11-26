@@ -99,17 +99,17 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], onAddClaim = () => {} })
                       <div className={styles.claimActions}>
                         <button
                           type="button"
-                          className={styles.editBtn}
-                          onClick={() => onAddClaim(index)}
+                          className={styles.removeBtn}
+                          onClick={() => handleRemoveClaim(index)}
                         >
-                          Edit
+                          Remove claim
                         </button>
                         <button
                           type="button"
-                          className={styles.deleteBtn}
-                          onClick={() => handleRemoveClaim(index)}
+                          className={styles.changeBtn}
+                          onClick={() => onAddClaim(index)}
                         >
-                          Delete
+                          Change claim
                         </button>
                       </div>
                     </div>
