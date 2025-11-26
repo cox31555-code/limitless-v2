@@ -23,10 +23,12 @@ const Step2PersonalDetails = ({ form }) => {
       <div className={styles.contentWrapper}>
         {/* Name Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>What's your name?</h3>
-          <p className={styles.subText}>
-            If you select 'Dr' or 'Mx' as your title, you may see fewer results. A small number of providers are still updating their systems to support these options. We're working closely with them to ensure complete availability.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>What's your name?</h3>
+            <p className={styles.subText}>
+              If you select 'Dr' or 'Mx' as your title, you may see fewer results. A small number of providers are still updating their systems to support these options. We're working closely with them to ensure complete availability.
+            </p>
+          </div>
 
           <div className={styles.fieldGroup}>
             <div className={styles.fieldWrapper}>
