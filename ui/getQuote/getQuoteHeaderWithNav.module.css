@@ -19,6 +19,27 @@
   z-index: 2;
   flex-direction: column;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heroBackgroundImage {
+  opacity: 0.15;
+  width: auto;
+  height: 100%;
+  max-width: 400px;
 }
 
 .headerContent {
