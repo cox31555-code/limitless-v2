@@ -178,51 +178,38 @@
   letter-spacing: -0.01em;
 }
 
-.textInput {
-  padding: 0.8rem 0.8rem;
-  font-size: 1.4rem;
-  border: 2px solid #e8ecf1;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #1a1a2e;
-  outline: none;
-  transition: border-color 0.2s ease;
-  font-weight: 500;
-  text-align: center;
-  min-height: 4rem;
-  width: 100%;
-}
-
-.textInput:focus {
-  border-color: #0052a3;
-  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
-}
-
-.textInput::placeholder {
-  color: #a8b2bd;
-}
-
-.selectInput {
-  padding: 0.9rem 1.2rem;
-  font-size: 1.5rem;
-  border: 2px solid #e8ecf1;
-  border-radius: 8px;
-  background: #ffffff;
-  color: #1a1a2e;
-  outline: none;
-  transition: border-color 0.2s ease;
+.expandableLink {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0052a3;
+  background: none;
+  border: none;
   cursor: pointer;
-  min-height: 4.4rem;
-  font-weight: 400;
+  text-decoration: underline;
+  padding: 0;
+  text-align: left;
+  transition: color 0.2s ease;
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-.selectInput:focus {
-  border-color: #0052a3;
-  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
+.expandableLink:hover {
+  color: #003d7a;
 }
 
-.selectInput:hover:not(:disabled) {
-  border-color: #0052a3;
+.expandableLink:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.expandableIcon {
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
 }
 
 .error {
