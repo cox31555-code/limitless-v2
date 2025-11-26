@@ -71,9 +71,10 @@ const Step3CarOwner = ({
     }
   });
 
-  // Build owner options: drivers first, then other owner types
+  // Build owner options: drivers first, added persons, then other owner types
   const ownerOptions = [
     ...driverOptions,
+    ...(formData.registeredKeeperOtherPerson ? [`${formData.registeredKeeperOtherPerson.title} ${formData.registeredKeeperOtherPerson.firstName} ${formData.registeredKeeperOtherPerson.lastName}`] : []),
     "Company",
     "Other",
     "Leased Private",
