@@ -942,7 +942,7 @@ const AnnualInsuranceContent = () => {
       <div className={styles.pageContainer}>
         <div className={styles.contentWrapper}>
           <div className={styles.mainContent}>
-            <form noValidate suppressHydrationWarning>
+            <form noValidate suppressHydrationWarning onSubmit={form.handleSubmit(onSubmit)}>
               <div className={styles.stepContent}>
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "registration" && (
                   <Step1VehicleRegistration
