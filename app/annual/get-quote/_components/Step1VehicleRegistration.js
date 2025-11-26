@@ -56,9 +56,9 @@ const carColors = [
   "Yellow",
 ];
 
-const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = false, onEditCarDetails, isEditingCarDetails, onCarDetailsUpdated }) => {
+const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = false, onEditCarDetails, isEditingCarDetails, onCarDetailsUpdated, foundVehicleData = null }) => {
   const [isLoadingVehicle, setIsLoadingVehicle] = useState(false);
-  const [foundVehicle, setFoundVehicle] = useState(null);
+  const [foundVehicle, setFoundVehicle] = useState(foundVehicleData || null);
   const [showManualEntry, setShowManualEntry] = useState(false);
   const [showModificationsModal, setShowModificationsModal] = useState(false);
   const [state, dispatch] = useReducer(vehicleReducer, initialState);
