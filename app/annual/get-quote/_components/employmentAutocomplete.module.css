@@ -1,0 +1,271 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 5rem;
+  padding: 0;
+  background: #ffffff;
+  border: 2px solid #0052a3;
+  border-radius: 10px;
+  cursor: text;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.dropdown:hover:not(.dropdownDisabled):not(.dropdownError) {
+  border-color: #003d7a;
+  background: #f0f4ff;
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.15);
+}
+
+.dropdownDisabled:hover {
+  border-color: #cbd4dd;
+  box-shadow: none;
+}
+
+.dropdown:focus-within,
+.dropdownOpen {
+  border-color: #003d7a;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.12);
+}
+
+.dropdownError {
+  border-color: #d32f2f !important;
+}
+
+.dropdownError:focus-within,
+.dropdownError.dropdownOpen {
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.08) !important;
+}
+
+.dropdownDisabled {
+  background: #ffffff;
+  cursor: not-allowed;
+  opacity: 1;
+  pointer-events: none;
+  border-color: #cbd4dd;
+  border-width: 2px;
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  line-height: 1.4;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.input::placeholder {
+  color: #6b7c8f;
+  font-weight: 400;
+}
+
+.input:disabled {
+  color: #cbd4dd;
+  cursor: not-allowed;
+}
+
+.placeholder {
+  color: #6b7c8f;
+  font-weight: 400;
+}
+
+.loadingIcon {
+  flex-shrink: 0;
+  margin-right: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(0, 82, 163, 0.2);
+  border-top-color: #0052a3;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.arrowIcon {
+  flex-shrink: 0;
+  color: #0052a3;
+  transition: transform 0.2s ease;
+  width: 12px;
+  height: 8px;
+  margin-right: 1.6rem;
+}
+
+.arrowIconOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  max-height: 32rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.optionsList {
+  overflow-y: auto;
+  max-height: 32rem;
+  padding: 0.4rem 0;
+}
+
+.optionsList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.optionsList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.optionsList::-webkit-scrollbar-thumb {
+  background: #e0e6f0;
+  border-radius: 2px;
+}
+
+.optionsList::-webkit-scrollbar-thumb:hover {
+  background: #cbd4dd;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.1s ease;
+  border: none;
+}
+
+.option:hover {
+  background: #f8f9fb;
+}
+
+.optionSelected {
+  background: #f0f6ff;
+  color: #1a1a2e;
+  font-weight: 400;
+}
+
+.optionSelected:hover {
+  background: #e8f4ff;
+}
+
+.optionText {
+  flex: 1;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  line-height: 1.6;
+}
+
+.optionSelected .optionText {
+  color: #1a1a2e;
+  font-weight: 400;
+}
+
+.noResults {
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #a8b2bd;
+  font-weight: 400;
+}
+
+.errorMessage {
+  font-size: 1.2rem;
+  color: #d32f2f;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .dropdown {
+    min-height: 4.8rem;
+  }
+
+  .input {
+    padding: 1rem 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .optionText {
+    font-size: 1.3rem;
+  }
+
+  .dropdownMenu {
+    max-height: 28rem;
+  }
+
+  .optionsList {
+    max-height: 22rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dropdown {
+    min-height: 4.4rem;
+  }
+
+  .input {
+    padding: 0.9rem 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .errorMessage {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .dropdown {
+    min-height: 4.4rem;
+  }
+
+  .input {
+    padding: 0.8rem 1rem;
+    font-size: 1.4rem;
+  }
+}
