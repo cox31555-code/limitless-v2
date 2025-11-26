@@ -483,6 +483,19 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleCoverDetailsSubmit = (data) => {
+    // Store cover details in form
+    form.setValue("coverDetails", data, { shouldValidate: true });
+    // Move to next step (optional extras)
+    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromCoverDetails = () => {
+    setCoverSubStep("carOwner");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleAddDriverClaimClick = (index) => {
     if (index !== undefined) {
       setEditingDriverClaimIndex(index);
