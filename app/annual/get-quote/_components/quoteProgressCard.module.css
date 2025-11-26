@@ -275,12 +275,26 @@
   background: transparent;
   border-radius: 3px;
   z-index: 1;
-  transition: background 0.4s ease;
+  transition: all 0.4s ease;
+  overflow: hidden;
 }
 
 .connectorActive {
+  background: #e8ecf1;
+  position: relative;
+}
+
+.connectorActive::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: var(--substep-progress, 100%);
   background: linear-gradient(180deg, #0052a3 0%, #003d7a 100%);
   box-shadow: 0 0 12px rgba(0, 82, 163, 0.4);
+  border-radius: 3px;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (max-width: 768px) {
