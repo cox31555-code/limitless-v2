@@ -133,7 +133,7 @@ const Step3CarOwner = ({
               <Dropdown
                 label=""
                 selected={formData.registeredKeeper}
-                options={driverOptions}
+                options={ownerOptions}
                 setSelected={(value) => setFormData({ ...formData, registeredKeeper: value })}
                 placeholder="Select..."
               />
@@ -152,7 +152,7 @@ const Step3CarOwner = ({
               <Dropdown
                 label=""
                 selected={formData.legalOwner}
-                options={driverOptions}
+                options={ownerOptions}
                 setSelected={(value) => setFormData({ ...formData, legalOwner: value })}
                 placeholder="Select..."
               />
