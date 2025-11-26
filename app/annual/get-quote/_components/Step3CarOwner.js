@@ -180,16 +180,28 @@ const Step3CarOwner = ({
             {formData.registeredKeeper === "Other" && (
               <div className={styles.otherPersonSection}>
                 <h4 className={styles.otherPersonTitle}>Registered keeper</h4>
-                <button
-                  type="button"
-                  className={styles.addPersonBtn}
-                  onClick={() => {
-                    // This will open a modal/form to add person details
-                    setFormData({ ...formData, registeredKeeperOtherPerson: "true" });
-                  }}
-                >
-                  Add a person
-                </button>
+                {carOwnerData?.registeredKeeperOtherPerson ? (
+                  <div className={styles.personAdded}>
+                    <p className={styles.personName}>
+                      {carOwnerData.registeredKeeperOtherPerson.title} {carOwnerData.registeredKeeperOtherPerson.firstName} {carOwnerData.registeredKeeperOtherPerson.lastName}
+                    </p>
+                    <button
+                      type="button"
+                      className={styles.changePersonBtn}
+                      onClick={() => onAddPerson("registeredKeeper")}
+                    >
+                      Change
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    className={styles.addPersonBtn}
+                    onClick={() => onAddPerson("registeredKeeper")}
+                  >
+                    Add a person
+                  </button>
+                )}
                 {errors.registeredKeeperOtherPerson && <span className={styles.error}>{errors.registeredKeeperOtherPerson}</span>}
               </div>
             )}
