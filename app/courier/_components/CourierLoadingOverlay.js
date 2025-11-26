@@ -29,7 +29,7 @@ const CourierLoadingOverlay = ({ isVisible = true }) => {
       <div className={styles.modal}>
         <div className={styles.logoContainer}>
           <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fa5470607b0aa45bb9ec7fa562d56a817?format=webp&width=800"
+            src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2Fa5470607b0aa45bb9ec7fa562d56a817"
             alt="Limitless Cover Logo"
             className={styles.logo}
           />
