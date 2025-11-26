@@ -473,11 +473,11 @@
 }
 
 .lightTheme .legalText {
-  color: #6b7c8f;
+  color: rgba(107, 124, 143, 0.85);
 }
 
 .lightTheme .copyright {
-  color: #6b7c8f;
+  color: rgba(107, 124, 143, 0.8);
 }
 
 .lightTheme .legalSection {
