@@ -45,6 +45,21 @@ const Step3CoverDetails = ({
 
   const dateOptions = generateDateOptions();
 
+  // Get the display label for the selected date
+  const getSelectedDateLabel = () => {
+    if (!formData.startDate) return "";
+    const selectedDate = new Date(formData.startDate);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const daysFromToday = Math.floor((selectedDate - today) / (1000 * 60 * 60 * 24));
+
+    if (daysFromToday >= 0 && daysFromToday < dateOptions.length) {
+      return dateOptions[daysFromToday];
+    }
+    return "";
+  };
+
   const coverLevels = [
     {
       id: "comprehensive",
