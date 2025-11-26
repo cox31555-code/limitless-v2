@@ -222,19 +222,27 @@
   line-height: 1.5;
 }
 
+.dropdownWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 450px;
+  margin-top: 0.8rem;
+}
+
 .dateInputsWrapper {
   display: flex;
-  gap: 1rem;
-  flex-wrap: nowrap;
-  margin-top: 0.8rem;
+  gap: 1.6rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
 }
 
 .dateInputGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  flex: 1;
-  min-width: 0;
+  gap: 0.8rem;
+  flex: 0 1 100px;
+  max-width: 100px;
 }
 
 .dateInputGroup :global(.customInputGroup) {
@@ -246,12 +254,10 @@
 }
 
 .inputLabel {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #0052a3;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #004284;
   margin: 0;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
 }
 
 .licenseImageContainer {
