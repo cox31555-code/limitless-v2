@@ -130,12 +130,21 @@ const AnnualCoverDetailsForm = ({ form }) => {
           <div className={styles.section}>
             <div className={styles.sectionHeader}>
               <h2 className={styles.sectionTitle}>
-                What's the minimum level of cover you're looking for?
+                What's the maximum voluntary excess you'd like on this policy?
               </h2>
               <p className={styles.sectionSubtitle}>
-                The minimum level of cover is the excess amount you'd need to pay towards any claim. A higher minimum level can help reduce your premium, but you should ensure you're comfortable with the amount.
+                Voluntary excess is the amount you're willing to pay on top of the compulsory excess. Compulsory excess varies between insurance providers. If you're a new driver, insurance providers may also apply young or inexperienced driver excess.
               </p>
             </div>
+
+            <details className={styles.expandableDetails}>
+              <summary className={styles.expandableSummary}>
+                How does voluntary excess affect my quote?
+              </summary>
+              <div className={styles.expandableContent}>
+                Choosing a higher voluntary excess may lower your premium, but make sure you're comfortable paying both the voluntary and compulsory excess amount in the event of a claim. You may find that some insurance providers quote with a lower voluntary excess than you've chosen. This won't affect the price of your policy but may save you money in the event of a claim.
+              </div>
+            </details>
 
             <div className={styles.minimumCoverSection}>
               <select
@@ -156,15 +165,6 @@ const AnnualCoverDetailsForm = ({ form }) => {
                 </span>
               )}
             </div>
-
-            <details className={styles.expandableDetails}>
-              <summary className={styles.expandableSummary}>
-                How does minimum level of cover affect my quote?
-              </summary>
-              <div className={styles.expandableContent}>
-                Choosing a higher minimum level of cover means you'll pay more towards any claim, which can lower your overall premium. However, you need to ensure you can afford to pay this amount if you make a claim. Different insurance providers may offer different options, and the choice you make here won't affect your eligibility but will influence your final premium price.
-              </div>
-            </details>
           </div>
         )}
 
