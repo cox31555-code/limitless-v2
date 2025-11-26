@@ -284,7 +284,7 @@ export const carUsageSchema = z.object({
     licenseHeld: z.string().optional(),
     otherVehicles: z.boolean().nullable(),
     medicalConditions: z.boolean().nullable(),
-    dvlaConditionType: z.string().optional().nullable(),
+    dvlaConditionType: z.string().optional(),
     insuranceHistory: z.boolean().nullable(),
     criminalConvictions: z.boolean().nullable(),
   }).refine(
