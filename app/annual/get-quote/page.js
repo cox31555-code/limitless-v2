@@ -759,6 +759,13 @@ const AnnualInsuranceContent = () => {
                     editingDriver={editingDriverIndex !== null ? additionalDrivers[editingDriverIndex] : null}
                   />
                 )}
+                {currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions" && (
+                  <Step3DriverClaimsAndConvictions
+                    driverData={driverBeingAdded}
+                    onBack={handleBackFromDriverClaimsAndConvictions}
+                    onAddDriver={handleCompleteDriverClaimsAndConvictions}
+                  />
+                )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
