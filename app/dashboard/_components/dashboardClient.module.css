@@ -886,3 +886,32 @@
     padding: 1rem;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .menuSection .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .menuSectionInner {
+    padding: 2rem 4%;
+  }
+
+  .menuItem {
+    width: 100%;
+    padding: 1rem 1.2rem;
+  }
+
+  .menuItemIcon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menuItemIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .menuItemLabel {
+    font-size: 1rem;
+  }
+}
