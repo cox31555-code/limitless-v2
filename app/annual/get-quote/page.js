@@ -112,6 +112,7 @@ const AnnualInsuranceContent = () => {
         employmentStatus: "",
         occupation: "",
         industry: "",
+        studentType: "",
         houseNumber: "",
         postcode: "",
         addressLine1: "",
