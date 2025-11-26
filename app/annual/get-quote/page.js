@@ -142,6 +142,7 @@ const AnnualInsuranceContent = () => {
         licenseNumber: "",
         licenseNumberFirst: "",
         licenseNumberLast: "",
+        licenseNumberNI: "",
         declineShareLicenseNumber: false,
         NCB: "",
         voluntaryExcess: "",
