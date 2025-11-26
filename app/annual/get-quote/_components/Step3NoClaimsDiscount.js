@@ -143,10 +143,10 @@ const Step3NoClaimsDiscount = ({
                   style={{
                     marginTop: '0.3rem',
                     flexShrink: 0,
-                    width: '24px',
-                    height: '24px',
-                    minWidth: '24px',
-                    minHeight: '24px'
+                    width: '20px',
+                    height: '20px',
+                    minWidth: '20px',
+                    minHeight: '20px'
                   }}
                 />
                 <span className={styles.radioLabel}>{option}</span>
