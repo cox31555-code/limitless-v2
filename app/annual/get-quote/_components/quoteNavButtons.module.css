@@ -32,9 +32,10 @@
 }
 
 .backBtn:hover:not(:disabled) {
-  border-color: #0052a3;
-  background: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 82, 163, 0.1);
+  border-color: #003d7a;
+  color: #003d7a;
+  background: #f5f8fc;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
 }
 
 .backBtn:disabled {
