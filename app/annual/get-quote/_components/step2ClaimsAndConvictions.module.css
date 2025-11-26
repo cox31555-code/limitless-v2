@@ -504,13 +504,17 @@
 
   .claimActions {
     width: 100%;
-    justify-content: flex-end;
-    gap: 0.6rem;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
-  .editBtn,
-  .deleteBtn {
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
+  .removeBtn {
+    font-size: 1.3rem;
+  }
+
+  .changeBtn {
+    padding: 0.9rem 1.6rem;
+    font-size: 1.3rem;
   }
 }
