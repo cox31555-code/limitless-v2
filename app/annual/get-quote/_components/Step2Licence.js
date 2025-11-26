@@ -269,65 +269,65 @@ const Step2Licence = ({ form }) => {
               <span className={styles.radioLabel}>No</span>
             </label>
           </div>
-        </div>
 
-        {hasAdditionalQualifications === "Yes" && (
-          <>
-            <div className={styles.section}>
-              <h3 className={styles.mainQuestion}>What type of driving qualification do you have?</h3>
+          {hasAdditionalQualifications === "Yes" && (
+            <>
+              <div className={styles.qualificationSection}>
+                <h4 className={styles.subQuestion}>What type of driving qualification do you have?</h4>
 
-              <div className={styles.radioGroup}>
-                {additionalQualificationsOptions.map((option) => (
-                  <label key={option} className={styles.radioOption}>
-                    <input
-                      type="radio"
-                      {...register("carUsage.additionalQualificationType")}
-                      value={option}
-                      className={styles.radioInput}
+                <div className={styles.radioGroup}>
+                  {additionalQualificationsOptions.map((option) => (
+                    <label key={option} className={styles.radioOption}>
+                      <input
+                        type="radio"
+                        {...register("carUsage.additionalQualificationType")}
+                        value={option}
+                        className={styles.radioInput}
+                      />
+                      <span className={styles.radioLabel}>{option}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.qualificationSection}>
+                <h4 className={styles.subQuestion}>When did you get this qualification?</h4>
+
+                <div className={styles.dateFieldGroup}>
+                  <div className={styles.dateField}>
+                    <label className={styles.dateFieldLabel}>Month</label>
+                    <Dropdown
+                      selected={qualificationMonth || ""}
+                      options={monthOptions}
+                      setSelected={(value) => {
+                        setValue("carUsage.qualificationMonth", value, {
+                          shouldValidate: true,
+                          shouldDirty: true,
+                        });
+                      }}
+                      placeholder="Select..."
                     />
-                    <span className={styles.radioLabel}>{option}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
+                  </div>
 
-            <div className={styles.section}>
-              <h3 className={styles.mainQuestion}>When did you get this qualification?</h3>
-
-              <div className={styles.dateFieldGroup}>
-                <div className={styles.dateField}>
-                  <label className={styles.dateFieldLabel}>Month</label>
-                  <Dropdown
-                    selected={qualificationMonth || ""}
-                    options={monthOptions}
-                    setSelected={(value) => {
-                      setValue("carUsage.qualificationMonth", value, {
-                        shouldValidate: true,
-                        shouldDirty: true,
-                      });
-                    }}
-                    placeholder="Select..."
-                  />
-                </div>
-
-                <div className={styles.dateField}>
-                  <label className={styles.dateFieldLabel}>Year</label>
-                  <Dropdown
-                    selected={qualificationYear || ""}
-                    options={yearOptions}
-                    setSelected={(value) => {
-                      setValue("carUsage.qualificationYear", value, {
-                        shouldValidate: true,
-                        shouldDirty: true,
-                      });
-                    }}
-                    placeholder="Select..."
-                  />
+                  <div className={styles.dateField}>
+                    <label className={styles.dateFieldLabel}>Year</label>
+                    <Dropdown
+                      selected={qualificationYear || ""}
+                      options={yearOptions}
+                      setSelected={(value) => {
+                        setValue("carUsage.qualificationYear", value, {
+                          shouldValidate: true,
+                          shouldDirty: true,
+                        });
+                      }}
+                      placeholder="Select..."
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
