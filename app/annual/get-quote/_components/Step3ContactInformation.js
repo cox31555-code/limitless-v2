@@ -7,11 +7,11 @@ const Step3ContactInformation = ({
   onNext = () => {},
   contactInformationData = null
 }) => {
-  const [formData, setFormData] = useState(contactInformationData || {
-    email: "",
-    telephoneNumber: "",
-    contactMethod: [],
-    dataUsageConsent: true
+  const [formData, setFormData] = useState({
+    email: contactInformationData?.email || "",
+    telephoneNumber: contactInformationData?.telephoneNumber || "",
+    contactMethod: contactInformationData?.contactMethod || [],
+    dataUsageConsent: contactInformationData?.dataUsageConsent !== undefined ? contactInformationData.dataUsageConsent : true
   });
 
   const [errors, setErrors] = useState({});
