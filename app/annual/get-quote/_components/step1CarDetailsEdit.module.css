@@ -110,7 +110,7 @@
   height: 20px;
   cursor: pointer;
   flex-shrink: 0;
-  border: 2px solid #cbd4dd;
+  border: 2px solid #0052a3; /* Dark blue border */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -121,8 +121,8 @@
 }
 
 .radioInput:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: #0052a3; /* Dark blue background */
+  border-color: #0052a3; /* Dark blue border */
 }
 
 .radioInput:checked::after {
@@ -134,11 +134,11 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #ffffff; /* White dot inside */
 }
 
 .radioInput:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: #0052a3; /* Dark blue on hover */
   background-color: #f0f6ff;
 }
 
