@@ -146,10 +146,12 @@ const Step1CarUsage = ({ form }) => {
 
         {/* Annual Mileage Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>What's the annual personal mileage for this car?</h3>
-          <p className={styles.subText}>
-            Try to be as accurate as possible. Underestimating your mileage could affect your cover or lead to increased charges.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>What's the annual personal mileage for this car?</h3>
+            <p className={styles.subText}>
+              Try to be as accurate as possible. Underestimating your mileage could affect your cover or lead to increased charges.
+            </p>
+          </div>
 
           <button type="button" className={styles.helpLink}>
             How can I calculate this?
