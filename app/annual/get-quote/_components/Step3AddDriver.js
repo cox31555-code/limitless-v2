@@ -349,14 +349,6 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
               <h3 className={styles.mainQuestion}>How long have they held this licence?</h3>
               <p className={styles.subText}>Round down to the nearest full year they've held their driving licence for. So, if they passed their driving test 6 years and 11 months ago, your answer will be 6 years.</p>
             </div>
-            <Dropdown
-              label=""
-              selected={formData.licenseHeld}
-              options={licenseHeldOptions}
-              setSelected={(value) => setFormData({ ...formData, licenseHeld: value })}
-              placeholder="Please select..."
-            />
-            {errors.licenseHeld && <span className={styles.error}>{errors.licenseHeld}</span>}
 
             <button
               type="button"
@@ -372,6 +364,17 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
                 You can find this information on your driving licence card or DVLA records. The date of issue or first issue date shows when you first got your license.
               </div>
             )}
+
+            <div className={styles.dropdownWrapper}>
+              <Dropdown
+                label=""
+                selected={formData.licenseHeld}
+                options={licenseHeldOptions}
+                setSelected={(value) => setFormData({ ...formData, licenseHeld: value })}
+                placeholder="Please select..."
+              />
+              {errors.licenseHeld && <span className={styles.error}>{errors.licenseHeld}</span>}
+            </div>
           </div>
 
           {/* License Number Section */}
@@ -494,9 +497,9 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
             </div>
 
             {formData.hasAdditionalQualifications === "Yes" && (
-              <div className={styles.conditionalSection}>
-                <div className={styles.fieldWrapper}>
-                  <label className={styles.fieldLabel}>Qualification type</label>
+              <div className={styles.qualificationSection}>
+                <div className={styles.dropdownWrapper}>
+                  <label className={styles.fieldLabel}>What type of driving qualification do you have?</label>
                   <Dropdown
                     label=""
                     selected={formData.additionalQualificationType}
@@ -506,9 +509,9 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
                   />
                 </div>
 
-                <div className={styles.fieldGroup}>
-                  <div className={styles.fieldWrapper}>
-                    <label className={styles.fieldLabel}>Month</label>
+                <div className={styles.dateFieldGroup}>
+                  <div className={styles.dateField}>
+                    <label className={styles.dateFieldLabel}>Month</label>
                     <Dropdown
                       label=""
                       selected={formData.qualificationMonth}
@@ -517,8 +520,8 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
                       placeholder="Please select..."
                     />
                   </div>
-                  <div className={styles.fieldWrapper}>
-                    <label className={styles.fieldLabel}>Year</label>
+                  <div className={styles.dateField}>
+                    <label className={styles.dateFieldLabel}>Year</label>
                     <Dropdown
                       label=""
                       selected={formData.qualificationYear}
