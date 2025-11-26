@@ -27,7 +27,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
     {
       number: STEPS.COVER,
       title: "Your policy",
-      subSteps: ["Additional drivers", "Cover details"],
+      subSteps: ["Additional drivers", "Add a driver", "Cover details"],
     },
     {
       number: STEPS.OPTIONAL_EXTRAS,
