@@ -352,6 +352,24 @@
     border-radius: 80px;
     padding: 1.04rem 1.45rem;
   }
+
+  .dropdown,
+  .stickyDropdown {
+    min-width: 220px;
+    border-radius: 10px;
+  }
+
+  .dropdownItem,
+  .stickyDropdownItem {
+    padding: 1rem 1.4rem;
+    font-size: 1.4rem;
+    gap: 1rem;
+  }
+
+  .dropdownIcon svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 /* Mobile */
