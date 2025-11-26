@@ -256,10 +256,10 @@ const Step3CarOwner = ({
             {formData.legalOwner === "Other" && (
               <div className={styles.otherPersonSection}>
                 <h4 className={styles.otherPersonTitle}>Legal owner</h4>
-                {carOwnerData?.legalOwnerOtherPerson ? (
+                {formData.legalOwnerOtherPerson ? (
                   <div className={styles.personAdded}>
                     <p className={styles.personName}>
-                      {carOwnerData.legalOwnerOtherPerson.title} {carOwnerData.legalOwnerOtherPerson.firstName} {carOwnerData.legalOwnerOtherPerson.lastName}
+                      {formData.legalOwnerOtherPerson.title} {formData.legalOwnerOtherPerson.firstName} {formData.legalOwnerOtherPerson.lastName}
                     </p>
                     <button
                       type="button"
@@ -279,6 +279,26 @@ const Step3CarOwner = ({
                   </button>
                 )}
                 {errors.legalOwnerOtherPerson && <span className={styles.error}>{errors.legalOwnerOtherPerson}</span>}
+              </div>
+            )}
+
+            {/* Show registered keeper person as selected in legal owner if applicable */}
+            {formData.registeredKeeperOtherPerson &&
+             formData.legalOwner === `${formData.registeredKeeperOtherPerson.title} ${formData.registeredKeeperOtherPerson.firstName} ${formData.registeredKeeperOtherPerson.lastName}` && (
+              <div className={styles.otherPersonSection}>
+                <h4 className={styles.otherPersonTitle}>Legal owner</h4>
+                <div className={styles.personAdded}>
+                  <p className={styles.personName}>
+                    {formData.registeredKeeperOtherPerson.title} {formData.registeredKeeperOtherPerson.firstName} {formData.registeredKeeperOtherPerson.lastName}
+                  </p>
+                  <button
+                    type="button"
+                    className={styles.changePersonBtn}
+                    onClick={() => onAddPerson("legalOwner")}
+                  >
+                    Change
+                  </button>
+                </div>
               </div>
             )}
           </div>
