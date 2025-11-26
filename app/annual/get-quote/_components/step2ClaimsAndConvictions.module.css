@@ -297,4 +297,25 @@
     margin-top: 1rem;
     padding-left: 1.2rem;
   }
+
+  .claimsSection {
+    margin-top: 1rem;
+    padding-top: 1.2rem;
+  }
+
+  .claimsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .claimsTitle {
+    font-size: 1.5rem;
+  }
+
+  .addClaimBtn {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0.7rem 1.6rem;
+  }
 }
