@@ -302,6 +302,15 @@
     font-size: 1.3rem;
     padding: 0.7rem 1.8rem;
   }
+
+  .convictionsHeader {
+    gap: 1rem;
+  }
+
+  .addConvictionBtn {
+    font-size: 1.3rem;
+    padding: 0.7rem 1.8rem;
+  }
 }
 
 @media (max-width: 600px) {
