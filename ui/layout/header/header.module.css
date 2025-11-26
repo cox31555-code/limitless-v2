@@ -12,6 +12,10 @@
   box-shadow: none;
 }
 
+.container.hidden {
+  display: none;
+}
+
 .mobileContainer {
   display: none;
   width: 100%;
