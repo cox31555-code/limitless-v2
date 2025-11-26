@@ -346,6 +346,10 @@
     gap: 1rem;
     margin: 0.4rem 0;
   }
+
+  .qualificationSection {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 600px) {
