@@ -183,7 +183,7 @@
 
 .policyCard {
   background: #ffffff;
-  border: 1px solid #e0e6f0;
+  border: 2px solid #003d7a;
   border-radius: 15.6px;
   overflow: hidden;
   display: flex;
@@ -193,7 +193,7 @@
 }
 
 .policyCard:hover {
-  border-color: #003d7a;
+  border-color: #0052a3;
   box-shadow: 0 10.4px 31.2px rgba(0, 61, 122, 0.12);
   transform: translateY(-5.2px);
 }
