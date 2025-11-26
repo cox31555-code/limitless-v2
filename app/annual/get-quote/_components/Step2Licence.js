@@ -63,8 +63,10 @@ const Step2Licence = ({ form }) => {
       <div className={styles.contentWrapper}>
         {/* Licence Type Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>What type of driving licence do you have?</h3>
-          <p className={styles.subText}>Choose the type of licence you'll have at the time this policy starts.</p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>What type of driving licence do you have?</h3>
+            <p className={styles.subText}>Choose the type of licence you'll have at the time this policy starts.</p>
+          </div>
 
           <div className={styles.radioGroup}>
             {licenseTypeOptions.map((option) => (
