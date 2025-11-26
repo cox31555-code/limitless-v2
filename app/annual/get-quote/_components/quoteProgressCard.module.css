@@ -194,9 +194,10 @@
   gap: 1rem;
   padding-left: 5.4rem;
   animation: slideDown 0.3s ease;
-  border-left: 2px solid rgba(0, 82, 163, 0.15);
+  border-left: 3px solid rgba(0, 82, 163, 0.2);
   padding-left: 1.6rem;
   margin-left: 4rem;
+  position: relative;
 }
 
 @keyframes slideDown {
