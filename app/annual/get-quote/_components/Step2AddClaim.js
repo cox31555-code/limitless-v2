@@ -116,50 +116,59 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
             <div className={styles.dateInputsWrapper}>
               <div className={styles.dateInputGroup}>
                 <label className={styles.inputLabel}>Day</label>
-                <input
+                <CustomTextInput
                   type="text"
                   placeholder="DD"
                   maxLength={2}
                   value={formData.day}
                   onChange={(e) => {
-                    const val = e.target.value.replace(/[^0-9]/g, "");
-                    setFormData({ ...formData, day: val });
+                    let day = e.target.value.replace(/[^0-9]/g, "");
+                    if (day.length > 2) {
+                      day = day.slice(0, 2);
+                    }
+                    if (day && (parseInt(day) < 1 || parseInt(day) > 31)) {
+                      return;
+                    }
+                    setFormData({ ...formData, day });
                   }}
-                  className={styles.textInput}
                 />
-                {errors.day && <span className={styles.error}>{errors.day}</span>}
               </div>
 
               <div className={styles.dateInputGroup}>
                 <label className={styles.inputLabel}>Month</label>
-                <input
+                <CustomTextInput
                   type="text"
                   placeholder="MM"
                   maxLength={2}
                   value={formData.month}
                   onChange={(e) => {
-                    const val = e.target.value.replace(/[^0-9]/g, "");
-                    setFormData({ ...formData, month: val });
+                    let month = e.target.value.replace(/[^0-9]/g, "");
+                    if (month.length > 2) {
+                      month = month.slice(0, 2);
+                    }
+                    if (month && (parseInt(month) < 1 || parseInt(month) > 12)) {
+                      return;
+                    }
+                    setFormData({ ...formData, month });
                   }}
-                  className={styles.textInput}
                 />
-                {errors.month && <span className={styles.error}>{errors.month}</span>}
               </div>
 
               <div className={styles.dateInputGroup}>
                 <label className={styles.inputLabel}>Year</label>
-                <input
+                <CustomTextInput
                   type="text"
                   placeholder="YYYY"
                   maxLength={4}
                   value={formData.year}
                   onChange={(e) => {
-                    const val = e.target.value.replace(/[^0-9]/g, "");
-                    setFormData({ ...formData, year: val });
+                    let year = e.target.value.replace(/[^0-9]/g, "");
+                    if (year.length > 4) {
+                      year = year.slice(0, 4);
+                    }
+                    setFormData({ ...formData, year });
                   }}
-                  className={styles.textInput}
                 />
-                {errors.year && <span className={styles.error}>{errors.year}</span>}
               </div>
             </div>
             {errors.date && <span className={styles.error}>{errors.date}</span>}
