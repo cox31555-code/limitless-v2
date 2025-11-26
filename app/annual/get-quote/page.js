@@ -951,6 +951,15 @@ const AnnualInsuranceContent = () => {
                     userData={form.getValues("userDetails")}
                     additionalDrivers={additionalDrivers}
                     carOwnerData={carOwnerData}
+                    onAddPerson={handleAddCarOwnerPerson}
+                  />
+                )}
+                {currentStep === STEPS.COVER && (coverSubStep === "carOwnerAddRegisteredKeeper" || coverSubStep === "carOwnerAddLegalOwner") && (
+                  <Step3CarOwnerAddPerson
+                    onBack={handleBackFromAddCarOwnerPerson}
+                    onSave={handleSaveCarOwnerPerson}
+                    personType={carOwnerAddingType}
+                    personData={carOwnerAddingType === "registeredKeeper" ? carOwnerData?.registeredKeeperOtherPerson : carOwnerData?.legalOwnerOtherPerson}
                   />
                 )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
