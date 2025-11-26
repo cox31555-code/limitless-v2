@@ -187,7 +187,7 @@ const Step2Licence = ({ form }) => {
                   {...register("carUsage.declineShareLicenseNumber")}
                   className={styles.checkbox}
                 />
-                <span className={styles.checkboxText}>I don't want to/can't provide this</span>
+                I don't want to/can't provide this
               </label>
             </div>
 
