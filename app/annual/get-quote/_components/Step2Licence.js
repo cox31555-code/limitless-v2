@@ -7,6 +7,7 @@ import { licenseHeldOptions, monthOptions, yearOptions } from "@/app/temporary/g
 const Step2Licence = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
   const [expandedWhereToFind, setExpandedWhereToFind] = useState(false);
+  const [expandedWhatDo, setExpandedWhatDo] = useState(false);
 
   const licenseType = watch("carUsage.licenseType");
   const licenseIssueCountry = watch("carUsage.licenseIssueCountry");
@@ -15,6 +16,18 @@ const Step2Licence = ({ form }) => {
   const additionalQualificationType = watch("carUsage.additionalQualificationType");
   const qualificationMonth = watch("carUsage.qualificationMonth");
   const qualificationYear = watch("carUsage.qualificationYear");
+  const licenseNumber = watch("carUsage.licenseNumber");
+  const licenseNumberFirst = watch("carUsage.licenseNumberFirst");
+  const licenseNumberLast = watch("carUsage.licenseNumberLast");
+  const declineShareLicenseNumber = watch("carUsage.declineShareLicenseNumber");
+
+  const nonUKLicenseTypes = [
+    "Full International Licence",
+    "Full EU Licence",
+    "Full European non-EU Licence",
+  ];
+
+  const shouldShowLicenseNumberSection = licenseType && !nonUKLicenseTypes.includes(licenseType);
 
   const additionalQualificationsOptions = [
     "AA Proficiency",
