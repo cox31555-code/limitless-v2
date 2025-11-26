@@ -14,7 +14,9 @@ const Step3CarOwner = ({
     mainDriver: "",
     isRegisteredKeeperAndOwner: "",
     registeredKeeper: "",
+    registeredKeeperCompanyName: "",
     legalOwner: "",
+    legalOwnerCompanyName: "",
   });
 
   const [errors, setErrors] = useState({});
