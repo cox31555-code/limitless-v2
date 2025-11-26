@@ -59,8 +59,12 @@ const AnnualInsuranceContent = () => {
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
   const [vehicleSubStep, setVehicleSubStep] = useState("registration"); // "registration", "carValue", "carUsage", "carStorage", or "otherCars"
   const [personalSubStep, setPersonalSubStep] = useState("aboutYou"); // "aboutYou", "household", "employment", "licence", "restrictions", "claims", or "addClaim"
-  const [coverSubStep, setCoverSubStep] = useState("details"); // "details", "additionalDrivers", "addDriver", or "addDriverClaimsAndConvictions"
+  const [coverSubStep, setCoverSubStep] = useState("details"); // "details", "additionalDrivers", "addDriver", "addDriverClaimsAndConvictions", "addDriverClaim", or "addDriverConviction"
   const [driverBeingAdded, setDriverBeingAdded] = useState(null);
+  const [driverClaims, setDriverClaims] = useState([]);
+  const [driverConvictions, setDriverConvictions] = useState([]);
+  const [editingDriverClaimIndex, setEditingDriverClaimIndex] = useState(null);
+  const [editingDriverConvictionIndex, setEditingDriverConvictionIndex] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [foundVehicleData, setFoundVehicleData] = useState(null);
