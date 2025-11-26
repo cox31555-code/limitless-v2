@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./step2ClaimsAndConvictions.module.css";
 
-const Step2ClaimsAndConvictions = ({ form, claims = [], onAddClaim = () => {} }) => {
+const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddClaim = () => {}, onAddConviction = () => {} }) => {
   const { register, formState: { errors }, watch } = form;
   const [expandedClaimsWhatIf, setExpandedClaimsWhatIf] = useState(false);
   const [expandedConvictionsHow, setExpandedConvictionsHow] = useState(false);
@@ -11,9 +11,11 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], onAddClaim = () => {} })
   const drivingConvictions = watch("carUsage.drivingConvictions");
 
   const handleRemoveClaim = (index) => {
-    const updatedClaims = claims.filter((_, i) => i !== index);
-    // Update claims in parent
-    // For now, we'll just use the onAddClaim context
+    // This will be handled by parent component
+  };
+
+  const handleRemoveConviction = (index) => {
+    // This will be handled by parent component
   };
 
   return (
