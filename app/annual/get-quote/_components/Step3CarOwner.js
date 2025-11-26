@@ -264,7 +264,7 @@ const Step3CarOwner = ({
                     <button
                       type="button"
                       className={styles.changePersonBtn}
-                      onClick={() => onAddPerson("legalOwner")}
+                      onClick={() => onAddPerson("legalOwner", formData)}
                     >
                       Change
                     </button>
@@ -273,7 +273,7 @@ const Step3CarOwner = ({
                   <button
                     type="button"
                     className={styles.addPersonBtn}
-                    onClick={() => onAddPerson("legalOwner")}
+                    onClick={() => onAddPerson("legalOwner", formData)}
                   >
                     Add a person
                   </button>
@@ -294,7 +294,7 @@ const Step3CarOwner = ({
                   <button
                     type="button"
                     className={styles.changePersonBtn}
-                    onClick={() => onAddPerson("legalOwner")}
+                    onClick={() => onAddPerson("legalOwner", formData)}
                   >
                     Change
                   </button>
