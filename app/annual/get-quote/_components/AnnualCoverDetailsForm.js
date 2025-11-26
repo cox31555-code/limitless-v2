@@ -39,7 +39,7 @@ const INSURANCE_LEVELS = [
 
 const MINIMUM_COVER_OPTIONS = [
   "None",
-  "��50",
+  "£50",
   "£100",
   "£150",
   "£200",
@@ -115,6 +115,39 @@ const AnnualCoverDetailsForm = ({ form }) => {
             ))}
           </div>
         </div>
+
+        {selectedLevel === "comprehensive" && (
+          <div className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>
+                What's the minimum level of cover you're looking for?
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                Select your preferred minimum cover level
+              </p>
+            </div>
+
+            <div className={styles.minimumCoverSection}>
+              <select
+                value={minimumCoverLevel || ""}
+                onChange={handleMinimumCoverChange}
+                className={styles.minimumCoverDropdown}
+              >
+                <option value="">Please select...</option>
+                {MINIMUM_COVER_OPTIONS.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+              {form.formState.errors.coverDetails?.minimumCoverLevel && (
+                <span className={styles.error}>
+                  {form.formState.errors.coverDetails.minimumCoverLevel.message}
+                </span>
+              )}
+            </div>
+          </div>
+        )}
 
         <div className={styles.section}>
           <div className={styles.sectionHeader}>
