@@ -265,11 +265,11 @@ export const carUsageSchema = z.object({
       message: "Annual mileage must be between 100 and 20,000 miles",
     }
   ),
-  criminalConvictions: z.boolean().nullable(),
+  criminalConvictions: z.string().optional(),
   convictions: z.array(z.any()).default([]),
-  medicalConditions: z.boolean().nullable(),
+  medicalConditions: z.string().optional(),
   dvlaConditionType: z.string().optional().nullable(),
-  insuranceCancelledOrClaimRefusedOrPolicyVoided: z.boolean().nullable(),
+  insuranceCancelledOrClaimRefusedOrPolicyVoided: z.string().optional(),
   hasAdditionalDrivers: z.boolean().nullable().default(null),
   additionalDrivers: z.array(z.object({
     relationship: z.string().optional(),
