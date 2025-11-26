@@ -168,10 +168,50 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddC
             <div className={styles.convictionsSection}>
               <div className={styles.convictionsHeader}>
                 <h4 className={styles.convictionsTitle}>Your convictions</h4>
-                <button type="button" className={styles.addConvictionBtn}>
+                <button
+                  type="button"
+                  className={styles.addConvictionBtn}
+                  onClick={() => onAddConviction()}
+                >
                   Add conviction
                 </button>
               </div>
+
+              {convictions.length > 0 && (
+                <div className={styles.convictionsList}>
+                  {convictions.map((conviction, index) => (
+                    <div key={index} className={styles.convictionCard}>
+                      <div className={styles.convictionInfo}>
+                        <p className={styles.convictionDetail}>
+                          <span className={styles.convictionLabel}>Date:</span> {conviction.day}/{conviction.month}/{conviction.year}
+                        </p>
+                        <p className={styles.convictionDetail}>
+                          <span className={styles.convictionLabel}>Type:</span> {conviction.convictionType}
+                        </p>
+                        <p className={styles.convictionDetail}>
+                          <span className={styles.convictionLabel}>Location:</span> {conviction.location}
+                        </p>
+                      </div>
+                      <div className={styles.convictionActions}>
+                        <button
+                          type="button"
+                          className={styles.removeConvictionBtn}
+                          onClick={() => handleRemoveConviction(index)}
+                        >
+                          Remove conviction
+                        </button>
+                        <button
+                          type="button"
+                          className={styles.changeConvictionBtn}
+                          onClick={() => onAddConviction(index)}
+                        >
+                          Change conviction
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
