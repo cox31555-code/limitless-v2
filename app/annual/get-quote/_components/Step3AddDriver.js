@@ -80,8 +80,7 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
       onAddDriver(formData);
@@ -96,7 +95,7 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
         <h2 className={styles.stepTitleText}>Add a driver</h2>
       </div>
 
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.form}>
         <div className={styles.contentWrapper}>
           {/* Relationship Section */}
           <div className={styles.section}>
@@ -524,11 +523,11 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
           <button type="button" className={styles.backBtn} onClick={onBack}>
             Back
           </button>
-          <button type="submit" className={styles.nextBtn}>
+          <button type="button" className={styles.nextBtn} onClick={handleSubmit}>
             Add Driver
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
