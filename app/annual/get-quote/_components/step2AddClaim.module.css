@@ -412,12 +412,6 @@
     font-size: 1.1rem;
   }
 
-  .textInput,
-  .selectInput {
-    font-size: 1.3rem;
-    min-height: 3.8rem;
-  }
-
   .buttonGroup {
     margin-top: 2rem;
     padding-top: 1.4rem;
