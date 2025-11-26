@@ -127,7 +127,6 @@ const Header = () => {
     "/cookies-policy",
     "/complaints",
   ].includes(pathname);
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 900;
 
   const shouldHideHeader = (
     (pathname === "/login" && !isMobile) ||
@@ -141,7 +140,7 @@ const Header = () => {
     pathname.includes("/get-quote")
   );
 
-  if (shouldHideHeader) {
+  if (!mounted || shouldHideHeader) {
     return null;
   }
 
