@@ -128,7 +128,7 @@ const Header = () => {
     "/complaints",
   ].includes(pathname);
 
-  // Hide header on specific routes (check isMobile only after mount to avoid hydration issues)
+  // Routes that always hide the header (checked on both server and client)
   const shouldHideHeaderAlways = (
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
@@ -138,18 +138,25 @@ const Header = () => {
     pathname.includes("/get-quote")
   );
 
-  const shouldHideHeaderMobileDependent = mounted && (
+  // Routes that depend on mobile detection (only check after mount)
+  const shouldHideHeaderMobileDependent = (
     (pathname === "/login" && !isMobile) ||
     (pathname === "/retrieve-quote" && !isMobile) ||
     (isPolicyPage && !isMobile)
   );
 
-  if (shouldHideHeaderAlways || shouldHideHeaderMobileDependent) {
+  // Always hide for specific routes
+  if (shouldHideHeaderAlways) {
     return null;
   }
 
-  // Don't render anything until mounted for mobile-dependent UI
+  // Only show component after mount for routes with mobile-dependent logic
   if (!mounted) {
+    return null;
+  }
+
+  // Apply mobile-dependent hiding logic
+  if (shouldHideHeaderMobileDependent) {
     return null;
   }
 
