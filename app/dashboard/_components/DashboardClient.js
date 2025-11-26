@@ -110,12 +110,21 @@ const DashboardClient = () => {
       },
     },
     {
+      label: "Submit Ticket",
+      description: "Create a support ticket",
+      hours: null,
+      icon: "ticket",
+      action: () => {
+        router.push("/contact");
+      },
+    },
+    {
       label: "FAQ",
       description: "Find answers to common questions",
       hours: null,
       icon: "faq",
       action: () => {
-        router.push("/faq");
+        router.push("/FAQ");
       },
     },
   ];
