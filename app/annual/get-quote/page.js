@@ -314,6 +314,8 @@ const AnnualInsuranceContent = () => {
           return step2LicenceFields;
         } else if (subStep === "restrictions") {
           return step2LicenceRestrictionsFields;
+        } else if (subStep === "claims") {
+          return step2ClaimsAndConvictionsFields;
         }
         return step2PersonalFields;
       case STEPS.COVER:
