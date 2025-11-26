@@ -177,6 +177,20 @@ export const userDetailsSchema = z
       message: "Occupation is required for this employment status",
       path: ["occupation"],
     }
+  )
+  .refine(
+    (data) => {
+      // If employment status is Student, studentType is required
+      if (data.employmentStatus === "Student") {
+        return data.studentType && data.studentType.trim().length > 0;
+      }
+      // For all other employment statuses, studentType is not required
+      return true;
+    },
+    {
+      message: "Please select a student type",
+      path: ["studentType"],
+    }
   );
 
 // Car Usage Schema
