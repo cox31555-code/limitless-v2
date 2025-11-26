@@ -22,7 +22,7 @@
   gap: 0.8rem;
   padding: 1.6rem 2.4rem;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #0052a3;
   background: #ffffff;
   border: 2px solid #0052a3;
@@ -35,7 +35,6 @@
   border-color: #003d7a;
   color: #003d7a;
   background: #f5f8fc;
-  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
 }
 
 .backBtn:disabled {
