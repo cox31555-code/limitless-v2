@@ -1,6 +1,6 @@
 .footer {
-  background: #f5f7fa;
-  border-top: 2px solid #d1dae5;
+  background: linear-gradient(180deg, #0a0f1e 0%, #050811 100%);
+  border-top: 1px solid rgba(3, 136, 255, 0.15);
   padding: 0;
   margin-top: 0;
 }
@@ -21,7 +21,7 @@
   justify-content: space-between;
   gap: 3rem;
   padding: 3.5rem 0;
-  border-bottom: 1px solid #e0e6f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   flex-wrap: wrap;
 }
 
@@ -42,6 +42,7 @@
   width: auto;
   object-fit: contain;
   display: block;
+  filter: brightness(0.95);
 }
 
 .securityInfo {
@@ -54,14 +55,14 @@
 .securityTitle {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #ffffff;
   margin: 0;
   line-height: 1.3;
 }
 
 .securityText {
   font-size: 1.05rem;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.65);
   margin: 0;
   line-height: 1.5;
 }
@@ -85,11 +86,12 @@
   width: auto;
   object-fit: contain;
   display: block;
+  filter: brightness(0.95);
 }
 
 .partnershipText {
   font-size: 1.05rem;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.65);
   margin: 0;
   line-height: 1.5;
   text-align: right;
@@ -103,11 +105,11 @@
   justify-content: center;
   gap: 1.2rem;
   padding: 2rem 0;
-  border-bottom: 1px solid #e0e6f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footerLink {
-  color: #0052a3;
+  color: #049cff;
   text-decoration: none;
   font-size: 1.05rem;
   font-weight: 500;
@@ -117,24 +119,24 @@
 }
 
 .footerLink:hover {
-  color: #003d7a;
+  color: #0388ff;
   text-decoration: underline;
 }
 
 .linkSeparator {
-  color: #d1d5db;
+  color: rgba(255, 255, 255, 0.25);
   font-size: 1.05rem;
 }
 
 /* Disclaimer Section */
 .disclaimerSection {
   padding: 2.5rem 0;
-  border-bottom: 1px solid #e0e6f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .disclaimerText {
   font-size: 0.95rem;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.55);
   margin: 0;
   line-height: 1.6;
   text-align: center;
@@ -157,7 +159,7 @@
 
 .copyrightText {
   font-size: 1rem;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.6);
   margin: 0;
   line-height: 1.5;
   font-weight: 500;
