@@ -33,6 +33,7 @@ const Step2ClaimsAndConvictions = dynamic(() => import("./_components/Step2Claim
 const Step2AddClaim = dynamic(() => import("./_components/Step2AddClaim"), { loading: () => <StepFallback /> });
 const Step2AddConviction = dynamic(() => import("./_components/Step2AddConviction"), { loading: () => <StepFallback /> });
 const Step3AdditionalDrivers = dynamic(() => import("./_components/Step3AdditionalDrivers"), { loading: () => <StepFallback /> });
+const Step3AddDriver = dynamic(() => import("./_components/Step3AddDriver"), { loading: () => <StepFallback /> });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
@@ -66,6 +67,7 @@ const AnnualInsuranceContent = () => {
   const [editingConvictionIndex, setEditingConvictionIndex] = useState(null);
   const [additionalDrivers, setAdditionalDrivers] = useState([]);
   const [hasAdditionalDrivers, setHasAdditionalDrivers] = useState(null);
+  const [editingDriverIndex, setEditingDriverIndex] = useState(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -406,6 +408,31 @@ const AnnualInsuranceContent = () => {
     setAdditionalDrivers(additionalDrivers.filter((_, i) => i !== index));
   };
 
+  const handleNavigateToAddDriver = (index = null) => {
+    setEditingDriverIndex(index);
+    setCoverSubStep("addDriver");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleAddDriver = (driverData) => {
+    if (editingDriverIndex !== null) {
+      const updatedDrivers = [...additionalDrivers];
+      updatedDrivers[editingDriverIndex] = driverData;
+      setAdditionalDrivers(updatedDrivers);
+      setEditingDriverIndex(null);
+    } else {
+      setAdditionalDrivers([...additionalDrivers, driverData]);
+    }
+    setCoverSubStep("additionalDrivers");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromAddDriver = () => {
+    setEditingDriverIndex(null);
+    setCoverSubStep("additionalDrivers");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleNextStep = async () => {
     // Handle Step 1 sub-step navigation
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "registration") {
@@ -529,6 +556,14 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    // Handle going back from addDriver
+    if (currentStep === STEPS.COVER && coverSubStep === "addDriver") {
+      setEditingDriverIndex(null);
+      setCoverSubStep("additionalDrivers");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     // Handle going back from additionalDrivers
     if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
       setCurrentStep(STEPS.PERSONAL);
@@ -640,6 +675,7 @@ const AnnualInsuranceContent = () => {
           currentStep === STEPS.PERSONAL && personalSubStep === "addClaim" ? "Add a claim" :
           currentStep === STEPS.PERSONAL && personalSubStep === "addConviction" ? "Add a conviction" :
           currentStep === STEPS.COVER && coverSubStep === "additionalDrivers" ? "Additional drivers" :
+          currentStep === STEPS.COVER && coverSubStep === "addDriver" ? "Add a driver" :
           undefined
         }
       />
@@ -710,17 +746,25 @@ const AnnualInsuranceContent = () => {
                 {currentStep === STEPS.COVER && coverSubStep === "additionalDrivers" && (
                   <Step3AdditionalDrivers
                     additionaDrivers={additionalDrivers}
-                    onAddDriver={handleAddDriver}
+                    onAddDriver={() => handleNavigateToAddDriver()}
                     onRemoveDriver={handleRemoveDriver}
                     hasAdditionalDrivers={hasAdditionalDrivers}
                     onHasAdditionalDriversChange={setHasAdditionalDrivers}
+                  />
+                )}
+                {currentStep === STEPS.COVER && coverSubStep === "addDriver" && (
+                  <Step3AddDriver
+                    onBack={handleBackFromAddDriver}
+                    onAddDriver={handleAddDriver}
+                    editingDriver={editingDriverIndex !== null ? additionalDrivers[editingDriverIndex] : null}
                   />
                 )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
 
-              {!(currentStep === STEPS.PERSONAL && (personalSubStep === "addClaim" || personalSubStep === "addConviction")) && (
+              {!(currentStep === STEPS.PERSONAL && (personalSubStep === "addClaim" || personalSubStep === "addConviction")) &&
+                !(currentStep === STEPS.COVER && coverSubStep === "addDriver") && (
                 <QuoteNavButtons
                   currentStep={currentStep}
                   vehicleSubStep={vehicleSubStep}
