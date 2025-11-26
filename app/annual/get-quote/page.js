@@ -82,6 +82,7 @@ const AnnualInsuranceContent = () => {
   const [editingDriverIndex, setEditingDriverIndex] = useState(null);
   const [carOwnerData, setCarOwnerData] = useState(null);
   const [carOwnerAddingType, setCarOwnerAddingType] = useState(null); // "registeredKeeper" or "legalOwner"
+  const [ncdData, setNcdData] = useState(null);
 
   useEffect(() => {
     setIsMounted(true);
