@@ -25,6 +25,27 @@
   width: 100%;
 }
 
+.fieldGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fieldLabel {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0052a3;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
 .contentWrapper {
   width: 100%;
   max-width: 680px;
