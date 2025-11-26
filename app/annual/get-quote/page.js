@@ -236,6 +236,7 @@ const AnnualInsuranceContent = () => {
     "userDetails.employmentStatus",
     "userDetails.occupation",
     "userDetails.industry",
+    "userDetails.studentType",
   ];
 
   const basePersonalFields = [
