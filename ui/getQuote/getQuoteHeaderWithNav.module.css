@@ -51,6 +51,8 @@
   gap: 1rem;
   align-items: flex-start;
   margin: 0 auto 0.9rem;
+  position: relative;
+  z-index: 2;
 }
 
 .navigationBar {
