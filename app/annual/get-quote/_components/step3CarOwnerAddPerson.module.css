@@ -436,7 +436,13 @@
     gap: 1rem;
   }
 
+  .dateInputsWrapper {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
   .dateInputGroup {
+    flex: 1 1 auto;
     max-width: 100%;
   }
 
