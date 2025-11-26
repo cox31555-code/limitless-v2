@@ -34,10 +34,12 @@ const Step2LicenceRestrictions = ({ form }) => {
       <div className={styles.contentWrapper}>
         {/* Medical Conditions Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Do you have any medical conditions or disabilities that the DVA need to know about?</h3>
-          <p className={styles.subText}>
-            The DVA and insurance providers need to know about any medical conditions, disabilities or licence conditions that may affect your ability to drive.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>Do you have any medical conditions or disabilities that the DVA need to know about?</h3>
+            <p className={styles.subText}>
+              The DVA and insurance providers need to know about any medical conditions, disabilities or licence conditions that may affect your ability to drive.
+            </p>
+          </div>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
