@@ -55,11 +55,11 @@
 .mainInfo {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.4rem;
 }
 
 .title {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
@@ -70,8 +70,8 @@
 .stepInfo {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 1.3rem;
+  gap: 1.2rem;
+  font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.85);
 }
 
