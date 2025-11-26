@@ -33,6 +33,57 @@
   text-align: center;
 }
 
+.logoContainer {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2.4rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulseRing {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.2) 0%, rgba(3, 136, 255, 0) 70%);
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+}
+
 .title {
   font-size: 2.4rem;
   font-weight: 600;
@@ -91,6 +142,22 @@
     max-width: 480px;
   }
 
+  .logoContainer {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .pulseRing {
+    width: 70px;
+    height: 70px;
+  }
+
   .title {
     font-size: 2rem;
   }
@@ -105,6 +172,22 @@
   .modal {
     padding: 2.4rem 2rem;
     border-radius: 10px;
+  }
+
+  .logoContainer {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.6rem auto;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pulseRing {
+    width: 60px;
+    height: 60px;
   }
 
   .title {
