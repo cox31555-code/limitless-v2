@@ -249,10 +249,12 @@ const Step2Licence = ({ form }) => {
 
         {/* Additional Qualifications Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Have you passed any additional driving qualifications?</h3>
-          <p className={styles.subText}>
-            Some insurance providers may offer a discount if you have an additional driving qualification.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>Have you passed any additional driving qualifications?</h3>
+            <p className={styles.subText}>
+              Some insurance providers may offer a discount if you have an additional driving qualification.
+            </p>
+          </div>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
