@@ -71,8 +71,8 @@ const Header = () => {
 
   useEffect(() => {
     // Disable scroll listener on mobile to avoid iOS keyboard issues
-    const isMobile = window.innerWidth <= 900;
-    if (isMobile) {
+    const checkMobile = window.innerWidth <= 900;
+    if (checkMobile) {
       // On mobile, always keep header hidden (fixed at top)
       setIsScrolled(false);
       return;
