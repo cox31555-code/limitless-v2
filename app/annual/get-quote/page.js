@@ -18,8 +18,7 @@ import styles from "./newGetQuotePage.module.css";
 const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { loading: () => <StepFallback /> });
 const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { loading: () => <StepFallback /> });
 const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPersonalDetailsForm"), { loading: () => <StepFallback /> });
-const AnnualOptionalExtrasForm = dynamic(() => import("./_components/AnnualOptionalExtrasForm"), { loading: () => <StepFallback /> });
-const ReviewQuote = dynamic(() => import("@/app/temporary/get-quote/_components/ReviewQuote"), { loading: () => <StepFallback /> });
+const Step4CheckYourAnswers = dynamic(() => import("./_components/Step4CheckYourAnswers"), { loading: () => <StepFallback /> });
 const Step1CarValue = dynamic(() => import("./_components/Step1CarValue"), { loading: () => <StepFallback /> });
 const Step1CarUsage = dynamic(() => import("./_components/Step1CarUsage"), { loading: () => <StepFallback /> });
 const Step1CarStorage = dynamic(() => import("./_components/Step1CarStorage"), { loading: () => <StepFallback /> });
@@ -54,8 +53,7 @@ const STEPS = {
   VEHICLE: 1,
   PERSONAL: 2,
   COVER: 3,
-  OPTIONAL_EXTRAS: 4,
-  REVIEW: 5,
+  CHECK_ANSWERS: 4,
 };
 
 const AnnualInsuranceContent = () => {
@@ -545,8 +543,8 @@ const AnnualInsuranceContent = () => {
     // Store contact information data in form
     setContactInformationData(data);
     form.setValue("contactInformationData", data, { shouldValidate: true });
-    // Move to optional extras step
-    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    // Move to check answers step
+    setCurrentStep(STEPS.CHECK_ANSWERS);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -702,12 +700,12 @@ const AnnualInsuranceContent = () => {
     }
 
     if (currentStep === STEPS.COVER && coverSubStep === "details") {
-      setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+      setCurrentStep(STEPS.CHECK_ANSWERS);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
-    if (currentStep === STEPS.REVIEW) {
+    if (currentStep === STEPS.CHECK_ANSWERS) {
       return;
     }
 
@@ -901,7 +899,7 @@ const AnnualInsuranceContent = () => {
       <LoadingOverlay isVisible={showLoading} />
       <QuoteHeader
         currentStep={currentStep}
-        totalSteps={5}
+        totalSteps={4}
         subtitle={
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" ? "Car Value" :
           currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" ? "Car Usage" :
@@ -1099,8 +1097,19 @@ const AnnualInsuranceContent = () => {
                     contactInformationData={contactInformationData || {}}
                   />
                 )}
-                {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
-                {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
+                {currentStep === STEPS.CHECK_ANSWERS && (
+                  <Step4CheckYourAnswers
+                    form={form}
+                    foundVehicleData={foundVehicleData}
+                    additionalDrivers={additionalDrivers}
+                    carOwnerData={carOwnerData}
+                    ncdData={ncdData}
+                    productsData={productsData}
+                    contactInformationData={contactInformationData}
+                    claims={claims}
+                    convictions={convictions}
+                  />
+                )}
               </div>
 
               {!(currentStep === STEPS.PERSONAL && (personalSubStep === "addClaim" || personalSubStep === "addConviction")) &&
@@ -1114,7 +1123,8 @@ const AnnualInsuranceContent = () => {
                 !(currentStep === STEPS.COVER && coverSubStep === "cover") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "ncd") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "additionalProducts") &&
-                !(currentStep === STEPS.COVER && coverSubStep === "contactInformation") && (
+                !(currentStep === STEPS.COVER && coverSubStep === "contactInformation") &&
+                !(currentStep === STEPS.CHECK_ANSWERS) && (
                 <QuoteNavButtons
                   currentStep={currentStep}
                   vehicleSubStep={vehicleSubStep}
@@ -1125,7 +1135,7 @@ const AnnualInsuranceContent = () => {
                   onBack={handlePreviousStep}
                   onSubmit={onSubmit}
                   isLoading={isSubmitting}
-                  nextLabel={currentStep === STEPS.REVIEW ? "Get Quote" : "Next"}
+                  nextLabel={currentStep === STEPS.CHECK_ANSWERS ? "Get Quote" : "Next"}
                   backLabel="Back"
                 />
               )}
