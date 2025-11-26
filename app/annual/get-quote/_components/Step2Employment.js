@@ -61,8 +61,10 @@ const Step2Employment = ({ form }) => {
         {isEmployedOrSelfEmployed && (
           <>
             <div className={styles.section}>
-              <h3 className={styles.mainQuestion}>What do you do for a living?</h3>
-              <p className={styles.subText}>Start typing and choose from the list.</p>
+              <div className={styles.questionHeader}>
+                <h3 className={styles.mainQuestion}>What do you do for a living?</h3>
+                <p className={styles.subText}>Start typing and choose from the list.</p>
+              </div>
 
               <div className={styles.dropdownWrapper}>
                 <EmploymentAutocomplete
