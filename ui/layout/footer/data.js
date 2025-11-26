@@ -1,17 +1,17 @@
 export const menus = [
   {
-    title: "Product",
+    title: "Our Products",
     items: [
+      {
+        title: "About us",
+        link: "/about-us",
+      },
       {
         title: "Annual Insurance",
         link: "/annual",
       },
       {
         title: "Temporary Insurance",
-        link: "/temporary",
-      },
-      {
-        title: "Weekly Insurance",
         link: "/temporary",
       },
       {
@@ -22,14 +22,39 @@ export const menus = [
         title: "Courier Insurance",
         link: "/courier",
       },
+    ],
+  },
+  {
+    title: "Our Car Insurance",
+    items: [
       {
-        title: "International Driving Licenses",
+        title: "New Customers",
         link: "/annual",
+      },
+      {
+        title: "Existing Customers",
+        link: "/login",
+      },
+      {
+        title: "Temporary Cover",
+        link: "/temporary",
+      },
+      {
+        title: "Hourly Insurance",
+        link: "/temporary",
+      },
+      {
+        title: "Weekly Insurance",
+        link: "/temporary",
+      },
+      {
+        title: "Impound Release",
+        link: "/impound",
       },
     ],
   },
   {
-    title: "Help",
+    title: "More from us",
     items: [
       {
         title: "FAQs",
@@ -40,29 +65,54 @@ export const menus = [
         link: "/dashboard/submit-claim",
       },
       {
-        title: "Complaints",
-        link: "/complaints",
+        title: "Support Services",
+        link: "/contact",
+      },
+      {
+        title: "Customer Hub",
+        link: "/dashboard",
+      },
+      {
+        title: "Contact Us",
+        link: "/contact",
       },
     ],
   },
   {
-    title: "Company",
+    title: "Other Information",
     items: [
       {
-        title: "About Us",
-        link: "/about-us",
+        title: "Cookie Policy",
+        link: "/cookies-policy",
       },
       {
         title: "Privacy Policy",
         link: "/privacy-policy",
       },
       {
-        title: "Terms & Conditions",
+        title: "Terms and Conditions",
         link: "/terms-and-conditions",
       },
       {
-        title: "Cookie Policy",
-        link: "/cookies-policy",
+        title: "Complaints",
+        link: "/complaints",
+      },
+    ],
+  },
+  {
+    title: "Contact us",
+    items: [
+      {
+        title: "Get in Touch",
+        link: "/contact",
+      },
+      {
+        title: "Make a Complaint",
+        link: "/complaints",
+      },
+      {
+        title: "Log in to Dashboard",
+        link: "/login",
       },
     ],
   },
