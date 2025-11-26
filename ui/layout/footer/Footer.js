@@ -100,17 +100,18 @@ const Footer = () => {
             <NoHiddenFees key="hidden-fees" />
           )}
         </div>
-        <div className={styles.logoSection}>
-          <Image
-            src="/svg/logo.svg"
-            alt="Limitless Cover"
-            width={120}
-            height={120}
-            className={styles.logo}
-          />
-        </div>
         <div className={styles.content}>
           <div className={styles.mainContent}>
+            <div className={styles.logoColumn}>
+              <Image
+                src="/svg/logo.svg"
+                alt="Limitless Cover"
+                width={120}
+                height={120}
+                className={styles.logo}
+                onClick={() => router.push("/")}
+              />
+            </div>
             <div className={styles.menus}>
               {menus.map((menu, index) => (
                 <div key={index} className={styles.menu}>
@@ -169,16 +170,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className={styles.legal}>
-          <p className={styles.legalText}>
-            Limitless Cover Services Limited is registered in England and Wales (Company No. 12345678). Authorised and regulated by the Financial Conduct Authority (FCA No. 123456).
-          </p>
-          <p className={styles.legalText}>
-            Registered office: 8 Pancras Square, London, United Kingdom, N1C 4AG
-          </p>
-        </div>
-        <div className={styles.copyright}>
-          © Limitless Cover 2025
+        <div className={styles.legalSection}>
+          <div className={styles.legalContent}>
+            <p className={styles.legalText}>
+              Limitless Cover Services Limited is registered in England and Wales (Company No. 12345678). Authorised and regulated by the Financial Conduct Authority (FCA No. 123456).
+            </p>
+            <p className={styles.legalText}>
+              Registered office: 8 Pancras Square, London, United Kingdom, N1C 4AG
+            </p>
+            <p className={styles.copyright}>
+              © Limitless Cover 2025
+            </p>
+          </div>
         </div>
       </div>
     </footer>
