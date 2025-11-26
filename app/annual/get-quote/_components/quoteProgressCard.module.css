@@ -70,7 +70,7 @@
   z-index: 1;
   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 12px rgba(0, 82, 163, 0.3);
-  height: clamp(0px, calc((100% - 56px) * var(--main-line-progress, 0) / 100), 100%);
+  height: var(--line-height, 0px);
 }
 
 .stepItem {
