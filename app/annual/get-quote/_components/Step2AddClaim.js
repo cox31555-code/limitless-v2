@@ -34,16 +34,6 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   const drivingOptions = ["Policyholder", "Spouse/partner", "Other named driver", "Unnamed driver"];
   const injuryOptions = ["Yes", "No"];
 
-  const damageTypeOptions = [
-    "Windscreen damage",
-    "Fire/Theft/Vandalism",
-    "Accident - comprehensive",
-    "Accident - part loss",
-    "Glass only",
-    "Water damage",
-    "Attempted theft",
-  ];
-
   useEffect(() => {
     if (editingClaim) {
       setFormData(editingClaim);
