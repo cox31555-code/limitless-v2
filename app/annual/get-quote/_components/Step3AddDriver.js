@@ -31,6 +31,8 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
     qualificationYear: "",
     medicalConditions: "",
     dvlaConditionType: "",
+    otherVehicles: "",
+    otherVehiclesType: "",
     insuranceCancelledOrClaimRefusedOrPolicyVoided: "",
     criminalConvictions: "",
   });
