@@ -72,7 +72,7 @@ const Step3CoverDetails = ({
           </div>
           <div className={styles.radioGroup}>
             {coverLevels.map((level) => (
-              <label key={level.id} className={styles.radioOption}>
+              <div key={level.id} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem' }}>
                 <input
                   type="radio"
                   name="coverLevel"
@@ -80,15 +80,15 @@ const Step3CoverDetails = ({
                   checked={formData.coverLevel === level.id}
                   onChange={(e) => setFormData({ ...formData, coverLevel: e.target.value })}
                   className={styles.radioInput}
-                  style={{ marginTop: '0.2rem' }}
+                  style={{ marginTop: '0.3rem', flexShrink: 0 }}
                 />
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', flex: 1 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', flex: 1 }}>
                   <span className={styles.radioLabel}>{level.title}</span>
-                  <span style={{ fontSize: '1.3rem', color: '#6b7c8f', fontWeight: '400', lineHeight: '1.5' }}>
+                  <span style={{ fontSize: '1.3rem', color: '#6b7c8f', fontWeight: '400', lineHeight: '1.65', marginTop: '-0.2rem' }}>
                     {level.description}
                   </span>
                 </div>
-              </label>
+              </div>
             ))}
           </div>
           {errors.coverLevel && <span className={styles.error}>{errors.coverLevel}</span>}
