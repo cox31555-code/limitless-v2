@@ -92,6 +92,13 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
   // Check if all manual entry fields are complete
   const isManualEntryComplete = selectedType && selectedMake && selectedModel && selectedYear && selectedDoors && selectedFuel && selectedTransmission && selectedColour;
 
+  // Sync foundVehicle state with foundVehicleData prop
+  useEffect(() => {
+    if (foundVehicleData) {
+      setFoundVehicle(foundVehicleData);
+    }
+  }, [foundVehicleData]);
+
   // Fetch makes on component mount
   useEffect(() => {
     const defaultMakes = ["Audi", "BMW", "Ford", "Honda", "Mercedes-Benz", "Toyota", "Volkswagen", "Volvo"];
