@@ -78,6 +78,7 @@ const AnnualInsuranceContent = () => {
   const [editingClaimIndex, setEditingClaimIndex] = useState(null);
   const [convictions, setConvictions] = useState([]);
   const [editingConvictionIndex, setEditingConvictionIndex] = useState(null);
+  const [isEditingCarDetails, setIsEditingCarDetails] = useState(false);
   const [additionalDrivers, setAdditionalDrivers] = useState([]);
   const [hasAdditionalDrivers, setHasAdditionalDrivers] = useState(null);
   const [editingDriverIndex, setEditingDriverIndex] = useState(null);
@@ -1017,6 +1018,12 @@ const AnnualInsuranceContent = () => {
                     form={form}
                     onVehicleFound={setFoundVehicleData}
                     autoTriggerLookup={shouldAutoTrigger}
+                    onEditCarDetails={() => setIsEditingCarDetails(true)}
+                    isEditingCarDetails={isEditingCarDetails}
+                    onCarDetailsUpdated={() => {
+                      setIsEditingCarDetails(false);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                   />
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" && (
