@@ -328,6 +328,25 @@ const AnnualInsuranceContent = () => {
     }
   };
 
+  const handleAddClaim = (claimData) => {
+    if (editingClaimIndex !== null) {
+      const updatedClaims = [...claims];
+      updatedClaims[editingClaimIndex] = claimData;
+      setClaims(updatedClaims);
+      setEditingClaimIndex(null);
+    } else {
+      setClaims([...claims, claimData]);
+    }
+    setPersonalSubStep("claims");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleNavigateToAddClaim = (index = null) => {
+    setEditingClaimIndex(index);
+    setPersonalSubStep("addClaim");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const handleNextStep = async () => {
     // Handle Step 1 sub-step navigation
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "registration") {
