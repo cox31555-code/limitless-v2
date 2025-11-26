@@ -85,10 +85,20 @@ const AnnualCoverDetailsForm = ({ form }) => {
             <h2 className={styles.sectionTitle}>
               What's the minimum level of cover you're looking for?
             </h2>
-            <p className={styles.sectionSubtitle}>
-              Comprehensive cover can cost less than third party or third party fire and theft
-            </p>
           </div>
+
+          <details className={styles.expandableDetails}>
+            <summary className={styles.expandableSummary}>
+              What does minimum level of cover mean?
+            </summary>
+            <div className={styles.expandableContent}>
+              Cover levels vary between insurance providers, which means some providers may show you more cover than you need if it's their cheapest price or they can't offer a lower level. Always check you're happy with the level of cover on the provider's website before you buy.
+            </div>
+          </details>
+
+          <p className={styles.sectionSubtitle}>
+            Comprehensive cover can cost less than third party or third party fire and theft
+          </p>
 
           <div className={styles.levelsGrid}>
             {INSURANCE_LEVELS.map((level) => (
