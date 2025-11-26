@@ -351,6 +351,14 @@
   .dateFieldGroup {
     gap: 1.5rem;
   }
+
+  .licenseImage {
+    max-width: 200px;
+  }
+
+  .licenseNumberFields {
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 600px) {
