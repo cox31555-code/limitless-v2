@@ -985,6 +985,11 @@
   width: 80%;
 }
 
+.stickyMenuButton:hover .chevronIcon,
+.stickyDropdownContainer:hover .stickyMenuButton .chevronIcon {
+  color: #0388ff;
+}
+
 .stickyMenuButton.activeMenuLink {
   color: #049cff;
   background: rgba(3, 136, 255, 0.12);
