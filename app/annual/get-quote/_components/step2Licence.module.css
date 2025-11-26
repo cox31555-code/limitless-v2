@@ -190,6 +190,138 @@
   margin: 0;
 }
 
+.licenseImageContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.licenseImage {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.licenseNumberFields {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.licenseField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.licenseFieldLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.licenseNumberInput {
+  padding: 1rem;
+  border: 2px solid #cbd4dd;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.licenseNumberInput:focus {
+  outline: none;
+  border-color: #0052a3;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1);
+}
+
+.licenseNumberInput::placeholder {
+  color: #cbd4dd;
+}
+
+.checkboxWrapper {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.checkbox:checked {
+  background-color: #0052a3;
+  border-color: #0052a3;
+}
+
+.checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.checkbox:hover:not(:checked) {
+  border-color: #0052a3;
+  background-color: #f0f6ff;
+}
+
+.checkboxText {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.infoBox {
+  background-color: #fef9e7;
+  border: 2px solid #f0d86d;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  line-height: 1.65;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: #d32f2f;
+  margin: 0;
+  font-weight: 400;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0;
