@@ -240,11 +240,11 @@
   }
 
   .legalText {
-    font-size: 1.12rem;
+    font-size: 1.3rem;
   }
 
   .copyright {
-    font-size: 1.12rem;
+    font-size: 1.35rem;
   }
 }
 
@@ -304,16 +304,12 @@
     padding: 2rem 4% 2.5rem;
   }
 
-  .legalContent {
-    text-align: center;
-  }
-
   .legalText {
-    font-size: 1.08rem;
+    font-size: 1.28rem;
   }
 
   .copyright {
-    font-size: 1.08rem;
+    font-size: 1.32rem;
   }
 }
 
@@ -372,12 +368,12 @@
   }
 
   .legalText {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     line-height: 1.75;
   }
 
   .copyright {
-    font-size: 1.05rem;
+    font-size: 1.28rem;
   }
 }
 
@@ -434,12 +430,12 @@
   }
 
   .legalText {
-    font-size: 1.02rem;
+    font-size: 1.22rem;
     line-height: 1.8;
   }
 
   .copyright {
-    font-size: 1.02rem;
+    font-size: 1.25rem;
   }
 }
 
