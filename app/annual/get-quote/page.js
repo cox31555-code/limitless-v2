@@ -640,7 +640,7 @@ const AnnualInsuranceContent = () => {
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
 
-              {!(currentStep === STEPS.PERSONAL && personalSubStep === "addClaim") && (
+              {!(currentStep === STEPS.PERSONAL && (personalSubStep === "addClaim" || personalSubStep === "addConviction")) && (
                 <QuoteNavButtons
                   currentStep={currentStep}
                   vehicleSubStep={vehicleSubStep}
