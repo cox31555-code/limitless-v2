@@ -246,6 +246,9 @@ const AnnualInsuranceContent = () => {
     "carUsage.licenseIssueCountry",
     "carUsage.licenseHeld",
     "carUsage.hasAdditionalQualifications",
+    "carUsage.additionalQualificationType",
+    "carUsage.qualificationMonth",
+    "carUsage.qualificationYear",
   ];
 
   const basePersonalFields = [
