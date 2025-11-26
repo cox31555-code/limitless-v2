@@ -400,7 +400,7 @@
   .stepsList::after {
     left: 11px;
     width: 3px;
-    height: calc((100% - 48px) * var(--main-line-progress, 0%) / 100);
+    height: calc(100% * var(--main-line-progress, 0));
     top: 24px;
   }
 
