@@ -75,7 +75,7 @@ const Step3ContactInformation = ({
             </p>
           </div>
 
-          <div className={personalDetailsStyles.fieldWrapper}>
+          <div className={personalDetailsStyles.fieldWrapper} style={{ display: 'none' }}>
             <label className={personalDetailsStyles.fieldLabel}>Email address</label>
             <CustomTextInput
               type="email"
@@ -98,7 +98,7 @@ const Step3ContactInformation = ({
             <h3 className={styles.mainQuestion}>Main telephone number (optional)</h3>
           </div>
 
-          <div className={personalDetailsStyles.fieldWrapper}>
+          <div className={personalDetailsStyles.fieldWrapper} style={{ display: 'none' }}>
             <label className={personalDetailsStyles.fieldLabel}>Telephone number</label>
             <CustomTextInput
               type="tel"
