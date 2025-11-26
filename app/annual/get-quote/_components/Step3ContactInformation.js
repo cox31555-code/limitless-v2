@@ -112,12 +112,12 @@ const Step3ContactInformation = ({
         {/* We'll do the work for you section */}
         <div className={styles.section}>
           <h3 className={styles.mainQuestion}>We'll do the work for you</h3>
-          
+
           <div style={{ fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6' }}>
-            <p style={{ margin: '0 0 1.6rem 0', fontWeight: '600' }}>Make life simpler.</p>
+            <p style={{ margin: '0 0 0.8rem 0', fontWeight: '600' }}>Make life simples.</p>
             <p style={{ margin: '0 0 1.6rem 0' }}>We'll send you renewal reminders to help you stay on top of your bills, the latest deals, and more ways to save you money.</p>
-            
-            <p style={{ margin: '0 0 1rem 0', fontWeight: '600' }}>We'll also send you...</p>
+
+            <p style={{ margin: '0 0 0.4rem 0', fontWeight: '600' }}>We'll also send you...</p>
             <p style={{ margin: '0' }}>The latest on how to claim Meerkat Rewards® like restaurant discounts, and 2 for 1 cinema tickets – plus offers from partners we collaborate with or sponsor.</p>
           </div>
         </div>
