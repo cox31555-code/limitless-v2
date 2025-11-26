@@ -1,26 +1,35 @@
 .container {
-  background: linear-gradient(180deg, #000a1f 0%, #000822 100%);
+  background: linear-gradient(135deg, #001a3d 0%, #00234d 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
   width: 100%;
-  padding: 7rem 4%;
-  border-top: 2px solid rgba(3, 136, 255, 0.3);
-  border-bottom: 1px solid rgba(3, 136, 255, 0.15);
+  padding: 8rem 4%;
+  margin-bottom: 4rem;
+  box-shadow: 0 -8px 24px rgba(3, 136, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .container::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, rgba(3, 136, 255, 0.6) 50%, transparent 100%);
-  filter: blur(1px);
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #0388ff 20%, #049cff 50%, #0388ff 80%, transparent 100%);
+  box-shadow: 0 0 20px rgba(3, 136, 255, 0.5);
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(3, 136, 255, 0.3) 50%, transparent 100%);
 }
 
 .content {
@@ -87,29 +96,31 @@
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.24;
-  box-shadow: 0 4px 20px rgba(0, 8, 34, 0.04);
+  box-shadow: 0 4px 20px rgba(3, 136, 255, 0.3);
 }
 
 .getQuoteBtn:hover {
-  background: rgba(3, 136, 255, 0.8);
+  background: #049cff;
+  box-shadow: 0 6px 24px rgba(3, 136, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 .membersPortalBtn {
   background: transparent;
   border: none;
-  color: #0388ff;
+  color: #049cff;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.24;
   text-decoration: underline;
-  text-decoration-color: #0388ff;
+  text-decoration-color: #049cff;
   text-underline-offset: 0.5rem;
   padding: 0;
 }
 
 .membersPortalBtn:hover {
-  color: #0270cc;
-  text-decoration-color: #0270cc;
+  color: #0388ff;
+  text-decoration-color: #0388ff;
 }
 
 .imageContainer,
@@ -124,7 +135,8 @@
 /* Tablet */
 @media screen and (max-width: 1200px) {
   .container {
-    padding: 6rem 4%;
+    padding: 7rem 4%;
+    margin-bottom: 3.5rem;
   }
 
   .content {
@@ -157,7 +169,8 @@
 /* Mobile */
 @media screen and (max-width: 900px) {
   .container {
-    padding: 5rem 4%;
+    padding: 6rem 4%;
+    margin-bottom: 3rem;
   }
 
   .content {
@@ -195,7 +208,8 @@
 
 @media screen and (max-width: 650px) {
   .container {
-    padding: 4.5rem 4%;
+    padding: 5rem 4%;
+    margin-bottom: 2.5rem;
   }
 
   .content {
@@ -230,7 +244,8 @@
 
 @media screen and (max-width: 500px) {
   .container {
-    padding: 4rem 4%;
+    padding: 4.5rem 4%;
+    margin-bottom: 2rem;
   }
 
   .content {
@@ -261,7 +276,8 @@
 
 @media screen and (max-width: 380px) {
   .container {
-    padding: 3.5rem 4%;
+    padding: 4rem 4%;
+    margin-bottom: 1.5rem;
   }
 
   .content {
