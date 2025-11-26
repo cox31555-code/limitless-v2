@@ -479,6 +479,10 @@
     font-size: 1.2rem;
   }
 
+  .subStepButton {
+    font-size: 1.2rem;
+  }
+
   .activeSubStep::before {
     width: 7.5px;
     height: 7.5px;
