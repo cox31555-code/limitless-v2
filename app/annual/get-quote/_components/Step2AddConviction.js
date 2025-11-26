@@ -183,6 +183,7 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
     const newErrors = {};
     if (!formData.location) newErrors.location = "Please select a location";
     if (!formData.convictionType) newErrors.convictionType = "Please select conviction type";
+    if (!formData.convictionReason) newErrors.convictionReason = "Please select what the conviction was for";
     if (!formData.day || !formData.month || !formData.year) newErrors.date = "Please enter a valid date";
     if (!formData.penaltyPoints) newErrors.penaltyPoints = "Please answer this question";
     if (!formData.resultedInFine) newErrors.resultedInFine = "Please answer this question";
