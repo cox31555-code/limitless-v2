@@ -509,13 +509,27 @@ const AnnualInsuranceContent = () => {
     // Store NCD data in form
     setNcdData(data);
     form.setValue("ncdData", data, { shouldValidate: true });
-    // Move to next step (optional extras)
-    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    // Move to additional products step
+    setCoverSubStep("additionalProducts");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleBackFromNcd = () => {
     setCoverSubStep("cover");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleAdditionalProductsSubmit = (data) => {
+    // Store products data in form
+    setProductsData(data);
+    form.setValue("productsData", data, { shouldValidate: true });
+    // Move to optional extras step
+    setCurrentStep(STEPS.OPTIONAL_EXTRAS);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromAdditionalProducts = () => {
+    setCoverSubStep("ncd");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
