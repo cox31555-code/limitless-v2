@@ -38,15 +38,11 @@ const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
         <h2 className={styles.stepTitleText}>Car details - Your car</h2>
       </div>
 
-      <div className={styles.header}>
-        <h1 className={styles.mainQuestion}>Update your car details</h1>
-        <p className={styles.subText}>Make changes to your car's details below.</p>
-      </div>
-
-      <div className={styles.formContent}>
+      <div className={styles.contentWrapper}>
+        {/* Alarm/Immobiliser Section */}
         <div className={styles.section}>
           <h3 className={styles.questionTitle}>What type of alarm and/or immobiliser does the car have?</h3>
-          <p className={styles.helperText}>Check your car's manual if you're unsure.</p>
+          <p className={styles.sectionDescription}>Check your car's manual if you're unsure.</p>
           
           <div className={styles.radioGroup}>
             {[
@@ -70,6 +66,7 @@ const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
           </div>
         </div>
 
+        {/* Tracking Device Section */}
         <div className={styles.section}>
           <h3 className={styles.questionTitle}>Is the car fitted with a tracking device?</h3>
           
@@ -88,6 +85,7 @@ const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
           </div>
         </div>
 
+        {/* Import Section */}
         <div className={styles.section}>
           <h3 className={styles.questionTitle}>Is the car an import?</h3>
           <button type="button" className={styles.helpLink}>
@@ -109,9 +107,10 @@ const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
           </div>
         </div>
 
+        {/* Driver Side Section */}
         <div className={styles.section}>
           <h3 className={styles.questionTitle}>Is the car left or right-hand drive?</h3>
-          <p className={styles.helperText}>
+          <p className={styles.sectionDescription}>
             The UK standard is right-hand drive. This means that when you are sat in the vehicle facing the windscreen, the steering wheel is on the right side.
           </p>
           
@@ -130,9 +129,10 @@ const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
           </div>
         </div>
 
+        {/* Seats Section */}
         <div className={styles.section}>
           <h3 className={styles.questionTitle}>How many seats are there in the car?</h3>
-          <p className={styles.helperText}>Count the number of seatbelts if you're unsure.</p>
+          <p className={styles.sectionDescription}>Count the number of seatbelts if you're unsure.</p>
           
           <div className={styles.inputWrapper}>
             <input
@@ -146,23 +146,24 @@ const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
             />
           </div>
         </div>
-      </div>
 
-      <div className={styles.actionButtons}>
-        <button
-          type="button"
-          className={styles.cancelBtn}
-          onClick={onCancel}
-        >
-          Cancel
-        </button>
-        <button
-          type="button"
-          className={styles.updateBtn}
-          onClick={handleUpdate}
-        >
-          Update
-        </button>
+        {/* Button Group */}
+        <div className={styles.buttonGroup}>
+          <button
+            type="button"
+            className={styles.backBtn}
+            onClick={onCancel}
+          >
+            Back
+          </button>
+          <button
+            type="button"
+            className={styles.updateBtn}
+            onClick={handleUpdate}
+          >
+            Update
+          </button>
+        </div>
       </div>
     </div>
   );
