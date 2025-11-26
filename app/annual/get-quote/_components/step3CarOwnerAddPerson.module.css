@@ -21,6 +21,35 @@
   line-height: 1.4;
 }
 
+.personHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.6rem 2rem;
+  background: #f0f6ff;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.personHeaderInfo {
+  flex: 1;
+}
+
+.personHeaderName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.personHeaderActions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
 .contentWrapper {
   width: 100%;
   max-width: 680px;
