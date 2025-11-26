@@ -106,10 +106,12 @@ const Step2Licence = ({ form }) => {
 
         {/* Licence Held Duration Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>How long have you held this licence?</h3>
-          <p className={styles.subText}>
-            Round down to the nearest full year you've held your driving licence for. So, if you passed your driving test 6 years and 11 months ago, your answer will be 6 years.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>How long have you held this licence?</h3>
+            <p className={styles.subText}>
+              Round down to the nearest full year you've held your driving licence for. So, if you passed your driving test 6 years and 11 months ago, your answer will be 6 years.
+            </p>
+          </div>
 
           <button
             type="button"
