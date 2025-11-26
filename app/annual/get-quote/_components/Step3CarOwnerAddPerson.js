@@ -60,6 +60,25 @@ const Step3CarOwnerAddPerson = ({
         <h2 className={styles.stepTitleText}>{getTitle()}</h2>
       </div>
 
+      {isEditing && personData && (
+        <div className={styles.personHeader}>
+          <div className={styles.personHeaderInfo}>
+            <p className={styles.personHeaderName}>
+              {personData.title} {personData.firstName} {personData.lastName}
+            </p>
+          </div>
+          <div className={styles.personHeaderActions}>
+            <button
+              type="button"
+              className={styles.removePersonBtn}
+              onClick={onRemove}
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className={styles.contentWrapper}>
         {/* Relationship Question */}
         <div className={styles.section}>
