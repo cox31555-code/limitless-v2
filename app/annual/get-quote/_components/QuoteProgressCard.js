@@ -125,7 +125,14 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         <span className={styles.progressText}>{progressPercentage}% complete</span>
       </div>
 
-      <div className={styles.stepsList} style={{ '--main-line-progress': mainLineProgress }}>
+      {/* Calculate total height of steps list */}
+      {/* Each step: ~60px (padding + icon), substeps: ~32px each */}
+      <div
+        className={styles.stepsList}
+        style={{
+          '--main-line-height': `calc(${mainLineProgress}% * (${steps.length * 60 + steps.reduce((sum, s) => sum + (s.subSteps ? s.subSteps.length * 32 : 0), 0)}px - 56px) / 100)`
+        }}
+      >
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
