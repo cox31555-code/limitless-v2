@@ -334,7 +334,16 @@
     align-items: flex-start;
   }
 
+  .buttonGroup {
+    width: 100%;
+    gap: 1.5rem;
+  }
+
   .removeButton {
+    font-size: 1.3rem;
+  }
+
+  .editButton {
     font-size: 1.3rem;
   }
 }
