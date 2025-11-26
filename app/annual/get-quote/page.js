@@ -675,6 +675,7 @@ const AnnualInsuranceContent = () => {
           currentStep === STEPS.PERSONAL && personalSubStep === "addConviction" ? "Add a conviction" :
           currentStep === STEPS.COVER && coverSubStep === "additionalDrivers" ? "Additional drivers" :
           currentStep === STEPS.COVER && coverSubStep === "addDriver" ? "Add a driver" :
+          currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions" ? "Additional drivers - Claims and convictions" :
           undefined
         }
       />
