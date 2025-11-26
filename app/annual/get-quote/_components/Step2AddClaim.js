@@ -29,7 +29,7 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
     "Write-Off",
   ];
 
-  const faultOptions = ["You were at fault", "The other party was at fault", "Can't say who was at fault"];
+  const faultOptions = ["Both parties", "No other vehicle involved", "Other party", "Our Driver", "Unoccupied Vehicle"];
   const drivingOptions = ["Policyholder", "Spouse/partner", "Other named driver", "Unnamed driver"];
   const injuryOptions = ["Yes", "No"];
 
