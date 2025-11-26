@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step2Licence.module.css";
-import { licenseHeldOptions } from "@/app/temporary/get-quote/data";
+import { licenseHeldOptions, monthOptions, yearOptions } from "@/app/temporary/get-quote/data";
 
 const Step2Licence = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
@@ -12,6 +13,15 @@ const Step2Licence = ({ form }) => {
   const licenseIssueCountry = watch("carUsage.licenseIssueCountry");
   const licenseHeld = watch("carUsage.licenseHeld");
   const hasAdditionalQualifications = watch("carUsage.hasAdditionalQualifications");
+  const additionalQualificationType = watch("carUsage.additionalQualificationType");
+  const qualificationMonth = watch("carUsage.qualificationMonth");
+  const qualificationYear = watch("carUsage.qualificationYear");
+
+  const additionalQualificationsOptions = [
+    "AA Proficiency",
+    "Institute of Advanced Motorists",
+    "Pass Plus",
+  ];
 
   const licenseTypeOptions = [
     "Full UK Car Licence",
