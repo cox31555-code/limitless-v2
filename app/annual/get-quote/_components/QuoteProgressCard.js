@@ -12,6 +12,8 @@ const STEPS = {
 const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, coverSubStep }) => {
   // Auto-expand steps 2 and 3 (PERSONAL and COVER)
   const [expandedStep, setExpandedStep] = useState(currentStep);
+  const [lineHeight, setLineHeight] = useState(0);
+  const stepsListRef = React.useRef(null);
 
   // Map substeps to their corresponding keys
   const getActiveSubStepIndex = (stepNumber) => {
@@ -107,6 +109,26 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
 
   const mainLineProgress = calculateMainLineProgress();
 
+  // Calculate actual pixel height for the progress line
+  React.useEffect(() => {
+    if (stepsListRef.current) {
+      const activeSubStepElement = stepsListRef.current.querySelector(`.${styles.activeSubStep}`);
+      if (activeSubStepElement) {
+        // Get the position of the active substep
+        const activePos = activeSubStepElement.getBoundingClientRect();
+        const containerPos = stepsListRef.current.getBoundingClientRect();
+        const relativeTop = activePos.top - containerPos.top;
+        const relativeBottom = relativeTop + activePos.height;
+        // Set line height to reach the middle of the active substep
+        setLineHeight(relativeBottom - 28); // 28px is the top offset
+      } else {
+        // If no active substep, calculate based on progress percentage
+        const containerHeight = stepsListRef.current.offsetHeight;
+        setLineHeight((containerHeight - 56) * (mainLineProgress / 100));
+      }
+    }
+  }, [currentStep, vehicleSubStep, personalSubStep, coverSubStep, mainLineProgress]);
+
   const toggleStep = (stepNumber) => {
     if (stepNumber === currentStep) {
       setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
@@ -125,7 +147,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         <span className={styles.progressText}>{progressPercentage}% complete</span>
       </div>
 
-      <div className={styles.stepsList} style={{ '--main-line-progress': mainLineProgress }}>
+      <div ref={stepsListRef} className={styles.stepsList} style={{ '--line-height': `${Math.max(0, lineHeight)}px` }}>
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
