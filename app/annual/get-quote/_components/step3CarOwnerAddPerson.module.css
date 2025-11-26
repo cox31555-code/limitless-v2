@@ -387,6 +387,14 @@
     font-size: 1.4rem;
   }
 
+  .personHeader {
+    padding: 1rem;
+  }
+
+  .personHeaderName {
+    font-size: 1.3rem;
+  }
+
   .mainQuestion {
     font-size: 1.5rem;
   }
@@ -401,7 +409,7 @@
   }
 
   .backBtn,
-  .saveBtn {
+  .nextBtn {
     font-size: 1.2rem;
     padding: 0.6rem 1.4rem;
   }
@@ -410,12 +418,15 @@
     font-size: 1.3rem;
   }
 
-  .dateInputsWrapper {
-    flex-direction: column;
+  .fieldsRow {
     gap: 1rem;
   }
 
   .dateInputGroup {
-    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .removePersonBtn {
+    font-size: 1.2rem;
   }
 }
