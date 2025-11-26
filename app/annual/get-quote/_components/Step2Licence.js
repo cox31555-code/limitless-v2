@@ -153,30 +153,30 @@ const Step2Licence = ({ form }) => {
             <div className={styles.licenseNumberFields}>
               <div className={styles.licenseField}>
                 <label className={styles.licenseFieldLabel}>First 11 characters</label>
-                <input
+                <CustomTextInput
                   type="text"
-                  {...register("carUsage.licenseNumberFirst")}
                   placeholder=""
                   maxLength="11"
-                  className={styles.licenseNumberInput}
+                  value={licenseNumberFirst || ""}
+                  onChange={(e) => {
+                    setValue("carUsage.licenseNumberFirst", e.target.value);
+                  }}
+                  error={errors.carUsage?.licenseNumberFirst?.message}
                 />
-                {errors.carUsage?.licenseNumberFirst && (
-                  <span className={styles.error}>{errors.carUsage.licenseNumberFirst.message}</span>
-                )}
               </div>
 
               <div className={styles.licenseField}>
                 <label className={styles.licenseFieldLabel}>Last 5 characters</label>
-                <input
+                <CustomTextInput
                   type="text"
-                  {...register("carUsage.licenseNumberLast")}
                   placeholder=""
                   maxLength="5"
-                  className={styles.licenseNumberInput}
+                  value={licenseNumberLast || ""}
+                  onChange={(e) => {
+                    setValue("carUsage.licenseNumberLast", e.target.value);
+                  }}
+                  error={errors.carUsage?.licenseNumberLast?.message}
                 />
-                {errors.carUsage?.licenseNumberLast && (
-                  <span className={styles.error}>{errors.carUsage.licenseNumberLast.message}</span>
-                )}
               </div>
             </div>
 
