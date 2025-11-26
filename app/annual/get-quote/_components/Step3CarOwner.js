@@ -317,13 +317,15 @@ const Step3CarOwner = ({
                   <p className={styles.personName}>
                     {formData.registeredKeeperOtherPerson.title} {formData.registeredKeeperOtherPerson.firstName} {formData.registeredKeeperOtherPerson.lastName}
                   </p>
-                  <button
-                    type="button"
-                    className={styles.changePersonBtn}
-                    onClick={() => onAddPerson("legalOwner", formData)}
-                  >
-                    Change
-                  </button>
+                  <div className={styles.personActions}>
+                    <button
+                      type="button"
+                      className={styles.changePersonBtn}
+                      onClick={() => onAddPerson("legalOwner", formData)}
+                    >
+                      Change
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
