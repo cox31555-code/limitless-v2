@@ -710,7 +710,33 @@
   }
 
   .menuSection .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .menuSectionInner {
+    padding: 3rem 4%;
+  }
+
+  .menuGrid {
+    gap: 1.5rem;
+  }
+
+  .menuItem {
+    padding: 1rem 1.5rem;
+  }
+
+  .menuItemIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menuItemIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .menuItemLabel {
+    font-size: 1.1rem;
   }
 
   .policyCard {
