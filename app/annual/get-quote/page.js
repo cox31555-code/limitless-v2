@@ -894,7 +894,8 @@ const AnnualInsuranceContent = () => {
     }
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    // Set loading state first to show the overlay
     setShowLoading(true);
     setIsSubmitting(true);
 
@@ -902,9 +903,11 @@ const AnnualInsuranceContent = () => {
     const redirectUrl = `/payment-summary?id=${insuranceId}`;
     const randomDelay = Math.floor(Math.random() * 5001) + 4000;
 
-    setTimeout(() => {
-      window.location.href = redirectUrl;
-    }, randomDelay);
+    // Wait for the specified delay, then navigate
+    await new Promise(resolve => setTimeout(resolve, randomDelay));
+
+    // Navigate to payment summary
+    router.push(redirectUrl);
   };
 
   return (
