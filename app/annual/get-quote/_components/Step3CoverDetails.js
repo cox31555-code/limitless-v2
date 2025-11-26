@@ -165,18 +165,13 @@ const Step3CoverDetails = ({
               </div>
             )}
 
-            <select
-              value={formData.minimumCoverLevel || ""}
-              onChange={(e) => setFormData({ ...formData, minimumCoverLevel: e.target.value })}
-              className={styles.voluntaryExcessDropdown}
-            >
-              <option value="">Please select...</option>
-              {minimumCoverOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
+            <Dropdown
+              label=""
+              selected={formData.minimumCoverLevel || ""}
+              options={minimumCoverOptions}
+              setSelected={(value) => setFormData({ ...formData, minimumCoverLevel: value })}
+              placeholder="Please select…"
+            />
             {errors.minimumCoverLevel && <span className={styles.error}>{errors.minimumCoverLevel}</span>}
           </div>
         )}
