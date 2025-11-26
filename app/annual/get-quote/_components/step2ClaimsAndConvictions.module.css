@@ -377,4 +377,25 @@
     font-size: 1.3rem;
     padding: 0.7rem 1.6rem;
   }
+
+  .convictionsSection {
+    margin-top: 1rem;
+    padding-top: 1.2rem;
+  }
+
+  .convictionsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .convictionsTitle {
+    font-size: 1.5rem;
+  }
+
+  .addConvictionBtn {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0.7rem 1.6rem;
+  }
 }
