@@ -172,10 +172,18 @@
   line-height: 1.3;
 }
 
+.stepButtonContent:hover .stepTitle {
+  color: #0052a3;
+}
+
 .stepButton.active .stepButtonContent .stepTitle {
   color: #0052a3;
   font-weight: 600;
   font-size: 1.7rem;
+}
+
+.stepButton.active .stepButtonContent:hover .stepTitle {
+  color: #0052a3;
 }
 
 .stepButton.completed .stepButtonContent .stepTitle {
