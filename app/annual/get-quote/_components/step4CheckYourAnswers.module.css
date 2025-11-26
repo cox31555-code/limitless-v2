@@ -98,7 +98,7 @@
   color: #0052a3;
   font-size: 1.3rem;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
   padding: 0.4rem 0.8rem;
   display: flex;
