@@ -472,11 +472,11 @@ const Step4CheckYourAnswers = ({
       </div>
 
       <div className={buttonStyles.buttonGroup}>
-        <button type="button" className={buttonStyles.backBtn} onClick={onBack}>
+        <button type="button" className={buttonStyles.backBtn} onClick={onBack} disabled={isLoading}>
           Back
         </button>
-        <button type="button" className={buttonStyles.nextBtn} onClick={onSubmit}>
-          Get Quote
+        <button type="submit" className={buttonStyles.nextBtn} onClick={onSubmit} disabled={isLoading}>
+          {isLoading ? "Processing..." : "Get Quote"}
         </button>
       </div>
     </div>
