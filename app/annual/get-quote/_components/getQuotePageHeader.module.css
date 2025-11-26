@@ -5,7 +5,7 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  padding: 1.2rem 2%;
+  padding: 1.2rem 6%;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
 }
