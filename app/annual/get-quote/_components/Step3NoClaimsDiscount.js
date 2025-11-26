@@ -57,6 +57,26 @@ const Step3NoClaimsDiscount = ({
     "In another country"
   ];
 
+  const namedDriverYearsOptions = [
+    "0 years",
+    "1 year",
+    "2 years",
+    "3 years",
+    "4 years",
+    "5 years",
+    "6 years",
+    "7 years",
+    "8 years",
+    "9 years",
+    "10 years",
+    "11 years",
+    "12 years",
+    "13 years",
+    "14 years",
+    "15 years",
+    "15+ years"
+  ];
+
   const validateForm = () => {
     const newErrors = {};
     if (!formData.noClaimsDiscount) newErrors.noClaimsDiscount = "Please select your NCD";
