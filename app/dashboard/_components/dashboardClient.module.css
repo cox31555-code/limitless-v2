@@ -422,7 +422,7 @@
 
 .menuGrid {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   position: relative;
   z-index: 1;
   flex-wrap: wrap;
@@ -433,11 +433,11 @@
   background: transparent;
   border: none;
   border-radius: 0;
-  padding: 0.5rem 0.8rem;
+  padding: 0.6rem 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -462,8 +462,8 @@
 }
 
 .menuItemIcon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   background: transparent;
   border-radius: 0;
   display: flex;
@@ -475,8 +475,8 @@
 }
 
 .menuItemIcon svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   filter: none;
 }
 
@@ -485,7 +485,7 @@
 }
 
 .menuItemLabel {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: #ffffff;
   line-height: 120%;
