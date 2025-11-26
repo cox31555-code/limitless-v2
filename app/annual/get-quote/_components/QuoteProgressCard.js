@@ -10,7 +10,7 @@ const STEPS = {
   REVIEW: 5,
 };
 
-const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep }) => {
+const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, coverSubStep }) => {
   const [expandedStep, setExpandedStep] = useState(currentStep);
 
   const steps = [
@@ -27,6 +27,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep }) => 
     {
       number: STEPS.COVER,
       title: "Your policy",
+      subSteps: ["Cover details", "Additional drivers"],
     },
     {
       number: STEPS.OPTIONAL_EXTRAS,
