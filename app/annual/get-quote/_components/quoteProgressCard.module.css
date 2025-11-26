@@ -330,6 +330,10 @@
     left: 15px;
   }
 
+  .stepsList::after {
+    left: 15px;
+  }
+
   .connector {
     left: 15px;
   }
