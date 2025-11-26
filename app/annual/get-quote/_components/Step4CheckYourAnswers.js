@@ -48,7 +48,9 @@ const Step4CheckYourAnswers = ({
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
               <h3 className={styles.subsectionTitle}>Your car</h3>
-              <button className={styles.changeLink}>Change</button>
+              <button className={styles.changeLink}>
+                <span className={styles.changeLinkText}>Change</span>
+              </button>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Car make and model</span>
