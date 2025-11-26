@@ -619,7 +619,13 @@ const AnnualInsuranceContent = () => {
                   <Step2LicenceRestrictions form={form} />
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "claims" && (
-                  <Step2ClaimsAndConvictions form={form} claims={claims} onAddClaim={handleNavigateToAddClaim} />
+                  <Step2ClaimsAndConvictions
+                    form={form}
+                    claims={claims}
+                    convictions={convictions}
+                    onAddClaim={handleNavigateToAddClaim}
+                    onAddConviction={handleNavigateToAddConviction}
+                  />
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "addClaim" && (
                   <Step2AddClaim
