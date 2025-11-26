@@ -121,11 +121,16 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
                 <button
                   type="button"
                   className={styles.expandableLink}
-                  onClick={() => {}}
+                  onClick={() => setExpandedAtFault(!expandedAtFault)}
                 >
-                  <span className={styles.expandableIcon}>▶</span>
+                  <span className={`${styles.expandableIcon} ${expandedAtFault ? styles.expandedIcon : ''}`}>▶</span>
                   How can I tell who was at fault?
                 </button>
+                {expandedAtFault && (
+                  <div className={styles.expandableContent}>
+                    You're considered 'at fault' if you were held liable for this claim. If your claim is unsettled, please declare that you were at fault.
+                  </div>
+                )}
                 {errors.whoAtFault && <span className={styles.error}>{errors.whoAtFault}</span>}
               </div>
 
