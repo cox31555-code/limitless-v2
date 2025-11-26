@@ -125,7 +125,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         <span className={styles.progressText}>{progressPercentage}% complete</span>
       </div>
 
-      <div className={styles.stepsList} style={{ '--main-line-progress': mainLineProgress / 100 }}>
+      <div className={styles.stepsList} style={{ '--main-line-progress': mainLineProgress }}>
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
