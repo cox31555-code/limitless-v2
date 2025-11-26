@@ -85,6 +85,7 @@ const Step3AdditionalDrivers = ({
                           {driver.firstName && driver.lastName
                             ? `${driver.firstName} ${driver.lastName}`
                             : `Driver ${index + 1}`}
+                          <span className={styles.driverNumber}> (Driver {index + 1})</span>
                           {driver.relationship && (
                             <span className={styles.cardSubtitle}>, {driver.relationship}</span>
                           )}
