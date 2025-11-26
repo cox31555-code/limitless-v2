@@ -104,7 +104,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
                   </div>
                   <span className={styles.stepTitle}>{step.title}</span>
                 </button>
-                {isActive && step.subSteps && (
+                {isActive && step.subSteps && step.number !== STEPS.PERSONAL && step.number !== STEPS.COVER && (
                   <button
                     className={styles.stepExpandBtn}
                     onClick={() => toggleStep(step.number)}
