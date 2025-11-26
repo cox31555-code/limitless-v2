@@ -450,6 +450,7 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
                   setSelected={(value) => setFormData({ ...formData, occupation: value })}
                   placeholder="Please select..."
                 />
+                {errors.occupation && <span className={styles.error}>{errors.occupation}</span>}
               </div>
             </div>
           )}
