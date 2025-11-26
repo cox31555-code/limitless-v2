@@ -351,6 +351,7 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
                   setSelected={(value) => setFormData({ ...formData, occupation: value })}
                   placeholder="Type your occupation..."
                 />
+                {errors.occupation && <span className={styles.error}>{errors.occupation}</span>}
               </div>
 
               <button
@@ -400,6 +401,7 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
                   setSelected={(value) => setFormData({ ...formData, industry: value })}
                   placeholder="Type your industry..."
                 />
+                {errors.industry && <span className={styles.error}>{errors.industry}</span>}
               </div>
 
               <button
