@@ -282,14 +282,14 @@
 }
 
 .infoBox {
-  padding: 1.2rem 1.6rem;
+  padding: 1rem 1.2rem;
   background: #fef9e7;
   border: 2px solid #f0d86d;
-  border-radius: 8px;
-  margin: 0.8rem 0 1.2rem 0;
-  font-size: 1.3rem;
+  border-radius: 6px;
+  margin: 0.4rem 0 0.6rem 0;
+  font-size: 1.2rem;
   color: #6b7c8f;
-  line-height: 1.5;
+  line-height: 1.4;
   font-weight: 400;
 }
 
