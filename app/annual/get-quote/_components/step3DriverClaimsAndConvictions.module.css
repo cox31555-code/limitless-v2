@@ -240,6 +240,272 @@
   transform: scale(0.98);
 }
 
+.claimsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8ecf1;
+}
+
+.claimsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.claimsTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.addClaimBtn {
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+  background: #ffffff;
+  border: 2px solid #0052a3;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.addClaimBtn:hover {
+  background: #f0f6ff;
+  border-color: #003d7a;
+  color: #003d7a;
+}
+
+.addClaimBtn:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+  border-radius: 25px;
+}
+
+.claimsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.claimCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.6rem 2rem;
+  background: #f0f6ff;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.claimCard:hover {
+  background: #e8f4ff;
+}
+
+.claimInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.claimDetail {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.claimLabel {
+  font-weight: 600;
+  color: #004284;
+}
+
+.claimActions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-shrink: 0;
+}
+
+.removeBtn {
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.removeBtn:hover {
+  color: #003d7a;
+  text-decoration: underline;
+}
+
+.changeBtn {
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #0052a3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.changeBtn:hover {
+  background: #003d7a;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
+}
+
+.convictionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8ecf1;
+}
+
+.convictionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.convictionsTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.addConvictionBtn {
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+  background: #ffffff;
+  border: 2px solid #0052a3;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.addConvictionBtn:hover {
+  background: #f0f6ff;
+  border-color: #003d7a;
+  color: #003d7a;
+}
+
+.addConvictionBtn:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+  border-radius: 25px;
+}
+
+.convictionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.convictionCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.6rem 2rem;
+  background: #f0f6ff;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.convictionCard:hover {
+  background: #e8f4ff;
+}
+
+.convictionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.convictionDetail {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.convictionLabel {
+  font-weight: 600;
+  color: #004284;
+}
+
+.convictionActions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-shrink: 0;
+}
+
+.removeConvictionBtn {
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.removeConvictionBtn:hover {
+  color: #003d7a;
+  text-decoration: underline;
+}
+
+.changeConvictionBtn {
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #0052a3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.changeConvictionBtn:hover {
+  background: #003d7a;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0;
