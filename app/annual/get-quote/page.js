@@ -263,6 +263,12 @@ const AnnualInsuranceContent = () => {
     "carUsage.qualificationYear",
   ];
 
+  const step2LicenceRestrictionsFields = [
+    "carUsage.medicalConditions",
+    "carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided",
+    "carUsage.criminalConvictions",
+  ];
+
   const basePersonalFields = [
     "userDetails.firstName",
     "userDetails.surname",
