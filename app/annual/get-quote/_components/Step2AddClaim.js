@@ -47,19 +47,18 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
     if (!formData.damageType) newErrors.damageType = "Please select damage type";
     if (!formData.mainPolicyholder) newErrors.mainPolicyholder = "Please answer this question";
     if (!formData.ncdAffected) newErrors.ncdAffected = "Please answer this question";
-
+    
     // Validate conditional accident questions
     if (formData.incidentType === "Accident") {
       if (!formData.whoAtFault) newErrors.whoAtFault = "Please select who was at fault";
       if (!formData.whoWasDriving) newErrors.whoWasDriving = "Please select who was driving";
       if (!formData.wereThereInjuries) newErrors.wereThereInjuries = "Please answer this question";
     }
-
+    
     return newErrors;
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
       onAddClaim(formData);
@@ -76,121 +75,41 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
 
       <div className={styles.contentWrapper}>
         {/* Incident Type */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>What type of incident was it?</h3>
-            <div className={styles.radioGroup}>
-              {["Accident", "Theft", "Other"].map((type) => (
-                <label key={type} className={styles.radioOption}>
-                  <input
-                    type="radio"
-                    name="incidentType"
-                    value={type}
-                    checked={formData.incidentType === type}
-                    onChange={(e) => setFormData({ ...formData, incidentType: e.target.value })}
-                    className={styles.radioInput}
-                  />
-                  <div className={styles.radioContent}>
-                    <span className={styles.radioLabel}>{type}</span>
-                    {type === "Accident" && (
-                      <span className={styles.radioDescription}>This can include incidents where you weren't in the vehicle at the time</span>
-                    )}
-                    {type === "Theft" && (
-                      <span className={styles.radioDescription}>Theft or attempted theft of items within your vehicle or of the actual vehicle itself</span>
-                    )}
-                    {type === "Other" && (
-                      <span className={styles.radioDescription}>Claims for incidents such as storm damage or windscreen claims</span>
-                    )}
-                  </div>
-                </label>
-              ))}
-            </div>
-            {errors.incidentType && <span className={styles.error}>{errors.incidentType}</span>}
-          </div>
-
-          {/* Date of Incident */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>When did the incident happen?</h3>
-            <p className={styles.sectionDescription}>If you're unsure, you can check with the insurance provider you were with at the time. You can request info about your previous insurance providers within the last 7 years by visiting <a href="http://www.mib.org.uk" target="_blank" rel="noopener noreferrer" className={styles.link}>www.mib.org.uk</a>.</p>
-            <div className={styles.dateInputsWrapper}>
-              <div className={styles.dateInputGroup}>
-                <label className={styles.inputLabel}>Day</label>
-                <CustomTextInput
-                  type="text"
-                  placeholder="DD"
-                  maxLength={2}
-                  value={formData.day}
-                  onChange={(e) => {
-                    let day = e.target.value.replace(/[^0-9]/g, "");
-                    if (day.length > 2) {
-                      day = day.slice(0, 2);
-                    }
-                    if (day && (parseInt(day) < 1 || parseInt(day) > 31)) {
-                      return;
-                    }
-                    setFormData({ ...formData, day });
-                  }}
+        <div className={styles.section}>
+          <h3 className={styles.questionTitle}>What type of incident was it?</h3>
+          <div className={styles.radioGroup}>
+            {["Accident", "Theft", "Other"].map((type) => (
+              <label key={type} className={styles.radioOption}>
+                <input
+                  type="radio"
+                  name="incidentType"
+                  value={type}
+                  checked={formData.incidentType === type}
+                  onChange={(e) => setFormData({ ...formData, incidentType: e.target.value })}
+                  className={styles.radioInput}
                 />
-              </div>
-
-              <div className={styles.dateInputGroup}>
-                <label className={styles.inputLabel}>Month</label>
-                <CustomTextInput
-                  type="text"
-                  placeholder="MM"
-                  maxLength={2}
-                  value={formData.month}
-                  onChange={(e) => {
-                    let month = e.target.value.replace(/[^0-9]/g, "");
-                    if (month.length > 2) {
-                      month = month.slice(0, 2);
-                    }
-                    if (month && (parseInt(month) < 1 || parseInt(month) > 12)) {
-                      return;
-                    }
-                    setFormData({ ...formData, month });
-                  }}
-                />
-              </div>
-
-              <div className={styles.dateInputGroup}>
-                <label className={styles.inputLabel}>Year</label>
-                <CustomTextInput
-                  type="text"
-                  placeholder="YYYY"
-                  maxLength={4}
-                  value={formData.year}
-                  onChange={(e) => {
-                    let year = e.target.value.replace(/[^0-9]/g, "");
-                    if (year.length > 4) {
-                      year = year.slice(0, 4);
-                    }
-                    setFormData({ ...formData, year });
-                  }}
-                />
-              </div>
-            </div>
-            {errors.date && <span className={styles.error}>{errors.date}</span>}
+                <div className={styles.radioContent}>
+                  <span className={styles.radioLabel}>{type}</span>
+                  {type === "Accident" && (
+                    <span className={styles.radioDescription}>This can include incidents where you weren't in the vehicle at the time</span>
+                  )}
+                  {type === "Theft" && (
+                    <span className={styles.radioDescription}>Theft or attempted theft of items within your vehicle or of the actual vehicle itself</span>
+                  )}
+                  {type === "Other" && (
+                    <span className={styles.radioDescription}>Claims for incidents such as storm damage or windscreen claims</span>
+                  )}
+                </div>
+              </label>
+            ))}
           </div>
+          {errors.incidentType && <span className={styles.error}>{errors.incidentType}</span>}
 
-          {/* Damage Type */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>What type of damage was suffered?</h3>
-            <Dropdown
-              label=""
-              selected={formData.damageType}
-              options={damageTypeDropdownOptions}
-              setSelected={(value) => setFormData({ ...formData, damageType: value })}
-              placeholder="Please select..."
-              error={errors.damageType}
-            />
-            {errors.damageType && <span className={styles.error}>{errors.damageType}</span>}
-          </div>
-
-          {/* Conditional Accident Questions */}
+          {/* Conditional Accident Questions - Directly under incident type */}
           {formData.incidentType === "Accident" && (
             <>
               {/* Who was at fault */}
-              <div className={styles.section}>
+              <div className={styles.conditionalSection}>
                 <h3 className={styles.questionTitle}>Who was at fault?</h3>
                 <Dropdown
                   label=""
@@ -212,7 +131,7 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
               </div>
 
               {/* Who was driving */}
-              <div className={styles.section}>
+              <div className={styles.conditionalSection}>
                 <h3 className={styles.questionTitle}>Who was driving?</h3>
                 <Dropdown
                   label=""
@@ -234,7 +153,7 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
               </div>
 
               {/* Were there injuries */}
-              <div className={styles.section}>
+              <div className={styles.conditionalSection}>
                 <h3 className={styles.questionTitle}>Were there any injuries?</h3>
                 <div className={styles.radioGroup}>
                   {injuryOptions.map((option) => (
@@ -255,50 +174,130 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
               </div>
             </>
           )}
+        </div>
 
-          {/* Main Policyholder */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Was the claim made against your insurance policy?</h3>
-            <p className={styles.sectionDescription}>We want to know if you were the main policyholder when the claim was made.</p>
-            <div className={styles.radioGroup}>
-              {["Yes", "No"].map((option) => (
-                <label key={option} className={styles.radioOption}>
-                  <input
-                    type="radio"
-                    name="mainPolicyholder"
-                    value={option}
-                    checked={formData.mainPolicyholder === option}
-                    onChange={(e) => setFormData({ ...formData, mainPolicyholder: e.target.value })}
-                    className={styles.radioInput}
-                  />
-                  <span className={styles.radioLabel}>{option}</span>
-                </label>
-              ))}
+        {/* Date of Incident */}
+        <div className={styles.section}>
+          <h3 className={styles.questionTitle}>When did the incident happen?</h3>
+          <p className={styles.sectionDescription}>If you're unsure, you can check with the insurance provider you were with at the time. You can request info about your previous insurance providers within the last 7 years by visiting <a href="http://www.mib.org.uk" target="_blank" rel="noopener noreferrer" className={styles.link}>www.mib.org.uk</a>.</p>
+          <div className={styles.dateInputsWrapper}>
+            <div className={styles.dateInputGroup}>
+              <label className={styles.inputLabel}>Day</label>
+              <CustomTextInput
+                type="text"
+                placeholder="DD"
+                maxLength={2}
+                value={formData.day}
+                onChange={(e) => {
+                  let day = e.target.value.replace(/[^0-9]/g, "");
+                  if (day.length > 2) {
+                    day = day.slice(0, 2);
+                  }
+                  if (day && (parseInt(day) < 1 || parseInt(day) > 31)) {
+                    return;
+                  }
+                  setFormData({ ...formData, day });
+                }}
+              />
             </div>
-            {errors.mainPolicyholder && <span className={styles.error}>{errors.mainPolicyholder}</span>}
-          </div>
 
-          {/* NCD Affected */}
-          <div className={styles.section}>
-            <h3 className={styles.questionTitle}>Was the no claims discount affected?</h3>
-            <p className={styles.sectionDescription}>No Claims Discount (NCD) is sometimes referred to as No Claims Bonus.</p>
-            <div className={styles.radioGroup}>
-              {["Yes", "No"].map((option) => (
-                <label key={option} className={styles.radioOption}>
-                  <input
-                    type="radio"
-                    name="ncdAffected"
-                    value={option}
-                    checked={formData.ncdAffected === option}
-                    onChange={(e) => setFormData({ ...formData, ncdAffected: e.target.value })}
-                    className={styles.radioInput}
-                  />
-                  <span className={styles.radioLabel}>{option}</span>
-                </label>
-              ))}
+            <div className={styles.dateInputGroup}>
+              <label className={styles.inputLabel}>Month</label>
+              <CustomTextInput
+                type="text"
+                placeholder="MM"
+                maxLength={2}
+                value={formData.month}
+                onChange={(e) => {
+                  let month = e.target.value.replace(/[^0-9]/g, "");
+                  if (month.length > 2) {
+                    month = month.slice(0, 2);
+                  }
+                  if (month && (parseInt(month) < 1 || parseInt(month) > 12)) {
+                    return;
+                  }
+                  setFormData({ ...formData, month });
+                }}
+              />
             </div>
-            {errors.ncdAffected && <span className={styles.error}>{errors.ncdAffected}</span>}
+
+            <div className={styles.dateInputGroup}>
+              <label className={styles.inputLabel}>Year</label>
+              <CustomTextInput
+                type="text"
+                placeholder="YYYY"
+                maxLength={4}
+                value={formData.year}
+                onChange={(e) => {
+                  let year = e.target.value.replace(/[^0-9]/g, "");
+                  if (year.length > 4) {
+                    year = year.slice(0, 4);
+                  }
+                  setFormData({ ...formData, year });
+                }}
+              />
+            </div>
           </div>
+          {errors.date && <span className={styles.error}>{errors.date}</span>}
+        </div>
+
+        {/* Damage Type */}
+        <div className={styles.section}>
+          <h3 className={styles.questionTitle}>What type of damage was suffered?</h3>
+          <Dropdown
+            label=""
+            selected={formData.damageType}
+            options={damageTypeDropdownOptions}
+            setSelected={(value) => setFormData({ ...formData, damageType: value })}
+            placeholder="Please select..."
+            error={errors.damageType}
+          />
+          {errors.damageType && <span className={styles.error}>{errors.damageType}</span>}
+        </div>
+
+        {/* Main Policyholder */}
+        <div className={styles.section}>
+          <h3 className={styles.questionTitle}>Was the claim made against your insurance policy?</h3>
+          <p className={styles.sectionDescription}>We want to know if you were the main policyholder when the claim was made.</p>
+          <div className={styles.radioGroup}>
+            {["Yes", "No"].map((option) => (
+              <label key={option} className={styles.radioOption}>
+                <input
+                  type="radio"
+                  name="mainPolicyholder"
+                  value={option}
+                  checked={formData.mainPolicyholder === option}
+                  onChange={(e) => setFormData({ ...formData, mainPolicyholder: e.target.value })}
+                  className={styles.radioInput}
+                />
+                <span className={styles.radioLabel}>{option}</span>
+              </label>
+            ))}
+          </div>
+          {errors.mainPolicyholder && <span className={styles.error}>{errors.mainPolicyholder}</span>}
+        </div>
+
+        {/* NCD Affected */}
+        <div className={styles.section}>
+          <h3 className={styles.questionTitle}>Was the no claims discount affected?</h3>
+          <p className={styles.sectionDescription}>No Claims Discount (NCD) is sometimes referred to as No Claims Bonus.</p>
+          <div className={styles.radioGroup}>
+            {["Yes", "No"].map((option) => (
+              <label key={option} className={styles.radioOption}>
+                <input
+                  type="radio"
+                  name="ncdAffected"
+                  value={option}
+                  checked={formData.ncdAffected === option}
+                  onChange={(e) => setFormData({ ...formData, ncdAffected: e.target.value })}
+                  className={styles.radioInput}
+                />
+                <span className={styles.radioLabel}>{option}</span>
+              </label>
+            ))}
+          </div>
+          {errors.ncdAffected && <span className={styles.error}>{errors.ncdAffected}</span>}
+        </div>
 
         {/* Buttons */}
         <div className={styles.buttonGroup}>
