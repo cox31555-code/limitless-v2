@@ -18,9 +18,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 8, 34, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 8, 34, 0.88);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
 
 .spinnerContainer {
