@@ -110,12 +110,24 @@ const Step3NoClaimsDiscount = ({
       // Clean up fields based on NCD selection
       let submitData = { ...formData };
       if (formData.noClaimsDiscount === "No NCD") {
-        // Clear ncdEarnedHow when No NCD is selected
+        // Clear ncdEarnedHow and namedDriverYears when No NCD is selected
         submitData.ncdEarnedHow = "";
+        submitData.namedDriverYears = "";
       } else {
         // Clear namedDriverExperience when a year is selected
         submitData.namedDriverExperience = "";
       }
+
+      // Clear namedDriverYears if not one of the three named driver options
+      const requiresNamedDriverYears = [
+        "Named driver on another car",
+        "Named driver on company car including personal use",
+        "Named driver on company car excluding personal use"
+      ];
+      if (!requiresNamedDriverYears.includes(formData.namedDriverExperience)) {
+        submitData.namedDriverYears = "";
+      }
+
       onNext(submitData);
     } else {
       setErrors(newErrors);
