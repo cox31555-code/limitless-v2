@@ -147,6 +147,12 @@
   cursor: pointer;
 }
 
+.injuryOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .radioDescription {
   font-size: 1.3rem;
   color: #6b7c8f;
