@@ -79,10 +79,12 @@ const Step1CarStorage = ({ form }) => {
 
         {/* Night Storage Section */}
         <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Where do you keep your car during the night?</h3>
-          <p className={styles.subText}>
-            If you leave your car in different places throughout the week, just tell us where the car's kept most of the time.
-          </p>
+          <div className={styles.questionHeader}>
+            <h3 className={styles.mainQuestion}>Where do you keep your car during the night?</h3>
+            <p className={styles.subText}>
+              If you leave your car in different places throughout the week, just tell us where the car's kept most of the time.
+            </p>
+          </div>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
