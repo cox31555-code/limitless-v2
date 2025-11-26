@@ -621,9 +621,27 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    // Handle going back from addDriverConviction
+    if (currentStep === STEPS.COVER && coverSubStep === "addDriverConviction") {
+      setEditingDriverConvictionIndex(null);
+      setCoverSubStep("addDriverClaimsAndConvictions");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // Handle going back from addDriverClaim
+    if (currentStep === STEPS.COVER && coverSubStep === "addDriverClaim") {
+      setEditingDriverClaimIndex(null);
+      setCoverSubStep("addDriverClaimsAndConvictions");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     // Handle going back from addDriverClaimsAndConvictions
     if (currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions") {
       setDriverBeingAdded(null);
+      setDriverClaims([]);
+      setDriverConvictions([]);
       setCoverSubStep("addDriver");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
