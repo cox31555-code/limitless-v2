@@ -319,10 +319,13 @@ export const carUsageSchema = z.object({
     const isUKLicence = data.licenseType && !nonUKTypes.includes(data.licenseType);
 
     if (isUKLicence && !data.declineShareLicenseNumber) {
-      // Both first 11 and last 5 characters are required
-      return (data.licenseNumberFirst && data.licenseNumberFirst.length > 0) ||
-             (data.licenseNumberLast && data.licenseNumberLast.length > 0) ||
-             data.declineShareLicenseNumber === true;
+      // Check based on country: Northern Ireland requires 8 digits, Great Britain requires First 11 + Last 5
+      if (data.licenseIssueCountry === "Northern Ireland") {
+        return data.licenseNumberNI && data.licenseNumberNI.length > 0;
+      } else if (data.licenseIssueCountry === "England, Scotland or Wales (Great Britain)") {
+        return (data.licenseNumberFirst && data.licenseNumberFirst.length > 0) &&
+               (data.licenseNumberLast && data.licenseNumberLast.length > 0);
+      }
     }
     return true;
   },
