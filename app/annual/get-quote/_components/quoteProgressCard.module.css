@@ -402,4 +402,9 @@
   .subStepItem {
     font-size: 1.2rem;
   }
+
+  .activeSubStep::after {
+    left: -1.6rem;
+    width: 2.5px;
+  }
 }
