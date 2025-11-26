@@ -627,6 +627,13 @@ const AnnualInsuranceContent = () => {
                     editingClaim={editingClaimIndex !== null ? claims[editingClaimIndex] : null}
                   />
                 )}
+                {currentStep === STEPS.PERSONAL && personalSubStep === "addConviction" && (
+                  <Step2AddConviction
+                    onBack={handlePreviousStep}
+                    onAddConviction={handleAddConviction}
+                    editingConviction={editingConvictionIndex !== null ? convictions[editingConvictionIndex] : null}
+                  />
+                )}
                 {currentStep === STEPS.COVER && <AnnualCoverDetailsForm form={form} />}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
