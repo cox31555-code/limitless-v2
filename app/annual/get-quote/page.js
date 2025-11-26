@@ -1126,7 +1126,7 @@ const AnnualInsuranceContent = () => {
                     claims={claims}
                     convictions={convictions}
                     onBack={handleBackFromCheckAnswers}
-                    onSubmit={form.handleSubmit(onSubmit)}
+                    onSubmit={() => {}}
                     isLoading={showLoading}
                   />
                 )}
