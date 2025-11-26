@@ -179,11 +179,11 @@
   }
 
   .securityTitle {
-    font-size: 1.35rem;
+    font-size: 1.6rem;
   }
 
   .securityText {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .partnershipImage {
@@ -196,7 +196,7 @@
   }
 
   .footerLink {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .disclaimerSection {
@@ -204,7 +204,7 @@
   }
 
   .disclaimerText {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -240,11 +240,11 @@
   }
 
   .securityTitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .securityText {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
   .partnershipSection {
@@ -263,11 +263,11 @@
   }
 
   .footerLink {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
   .linkSeparator {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 
   .disclaimerSection {
@@ -275,7 +275,7 @@
   }
 
   .disclaimerText {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     text-align: left;
   }
 
@@ -284,7 +284,7 @@
   }
 
   .copyrightText {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -302,18 +302,18 @@
   }
 
   .securityTitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .securityText {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .disclaimerText {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .copyrightText {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 }
