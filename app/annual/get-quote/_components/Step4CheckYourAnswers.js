@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
 import styles from "./step4CheckYourAnswers.module.css";
+import buttonStyles from "./step3CarOwner.module.css";
 
-const Step4CheckYourAnswers = ({ 
-  form, 
+const Step4CheckYourAnswers = ({
+  form,
   foundVehicleData,
   additionalDrivers = [],
   carOwnerData = {},
@@ -11,7 +12,9 @@ const Step4CheckYourAnswers = ({
   productsData = {},
   contactInformationData = {},
   claims = [],
-  convictions = []
+  convictions = [],
+  onBack = () => {},
+  onSubmit = () => {}
 }) => {
   const formData = form.getValues();
   
@@ -429,6 +432,15 @@ const Step4CheckYourAnswers = ({
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={buttonStyles.buttonGroup}>
+        <button type="button" className={buttonStyles.backBtn} onClick={onBack}>
+          Back
+        </button>
+        <button type="button" className={buttonStyles.nextBtn} onClick={onSubmit}>
+          Get Quote
+        </button>
       </div>
     </div>
   );
