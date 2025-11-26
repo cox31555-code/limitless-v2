@@ -716,25 +716,25 @@
   }
 
   .menuGrid {
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
 
   .menuItem {
-    padding: 0.5rem 0.7rem;
+    padding: 0.6rem 0.9rem;
   }
 
   .menuItemIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .menuItemIcon svg {
     width: 22px;
     height: 22px;
   }
 
-  .menuItemIcon svg {
-    width: 18px;
-    height: 18px;
-  }
-
   .menuItemLabel {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .policyCard {
@@ -811,28 +811,28 @@
 
   .menuGrid {
     width: 100%;
-    gap: 1rem;
+    gap: 1.2rem;
     margin-left: 0;
   }
 
   .menuItem {
-    padding: 0.5rem 0.6rem;
-    width: calc(50% - 0.5rem);
+    padding: 0.6rem 0.8rem;
+    width: calc(50% - 0.6rem);
     justify-content: flex-start;
   }
 
   .menuItemIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .menuItemIcon svg {
     width: 20px;
     height: 20px;
   }
 
-  .menuItemIcon svg {
-    width: 18px;
-    height: 18px;
-  }
-
   .menuItemLabel {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .sectionDescription {
@@ -896,20 +896,20 @@
 
   .menuItem {
     width: 100%;
-    padding: 0.5rem 0.6rem;
+    padding: 0.6rem 0.8rem;
   }
 
   .menuItemIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .menuItemIcon svg {
     width: 20px;
     height: 20px;
   }
 
-  .menuItemIcon svg {
-    width: 18px;
-    height: 18px;
-  }
-
   .menuItemLabel {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
