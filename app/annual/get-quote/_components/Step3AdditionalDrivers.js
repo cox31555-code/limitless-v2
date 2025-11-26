@@ -89,9 +89,9 @@ const Step3AdditionalDrivers = ({
                           <span className={styles.label}>Date of birth:</span> {driver.dateOfBirth}
                         </p>
                       )}
-                      {driver.relationshipStatus && (
+                      {driver.relationship && (
                         <p className={styles.driverDetail}>
-                          <span className={styles.label}>Relationship:</span> {driver.relationshipStatus}
+                          <span className={styles.label}>Relationship:</span> {driver.relationship}
                         </p>
                       )}
                     </div>
