@@ -414,6 +414,12 @@ const AnnualInsuranceContent = () => {
 
   const handlePreviousStep = () => {
     // Handle Step 2 sub-step navigation
+    if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
+      setPersonalSubStep("restrictions");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep === STEPS.PERSONAL && personalSubStep === "restrictions") {
       setPersonalSubStep("licence");
       window.scrollTo({ top: 0, behavior: "smooth" });
