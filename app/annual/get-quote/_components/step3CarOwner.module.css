@@ -420,4 +420,18 @@
     font-size: 1.2rem;
     padding: 0.8rem 1rem;
   }
+
+  .otherPersonSection {
+    padding: 1rem;
+  }
+
+  .otherPersonTitle {
+    font-size: 1.2rem;
+  }
+
+  .addPersonBtn {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.4rem;
+    width: 100%;
+  }
 }
