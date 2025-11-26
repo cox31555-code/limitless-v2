@@ -1012,6 +1012,13 @@ const AnnualInsuranceContent = () => {
                     isEditing={carOwnerAddingType === "registeredKeeper" ? !!carOwnerData?.registeredKeeperOtherPerson : !!carOwnerData?.legalOwnerOtherPerson}
                   />
                 )}
+                {currentStep === STEPS.COVER && coverSubStep === "cover" && (
+                  <Step3CoverDetails
+                    onBack={handleBackFromCoverDetails}
+                    onNext={handleCoverDetailsSubmit}
+                    coverData={form.getValues("coverDetails") || {}}
+                  />
+                )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
                 {currentStep === STEPS.REVIEW && <ReviewQuote form={form} insuranceType="Annual" />}
               </div>
