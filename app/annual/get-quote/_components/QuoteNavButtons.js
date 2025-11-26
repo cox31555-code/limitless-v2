@@ -52,7 +52,7 @@ const QuoteNavButtons = ({
               Loading...
             </>
           ) : (
-            isLastStep ? nextLabel : "Continue"
+            nextLabel
           )}
         </button>
       </div>
