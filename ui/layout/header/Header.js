@@ -266,8 +266,8 @@ const Header = () => {
           </div>
         </div>
       )}
-      {!isFAQPage && (
-      <header suppressHydrationWarning className={styles.container}>
+      {(!isFAQPage || !mounted) && (
+      <header className={styles.container}>
         <div className={styles.logoContainer}>
           <Image
             onClick={() => {
