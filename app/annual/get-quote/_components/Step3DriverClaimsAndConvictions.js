@@ -36,11 +36,11 @@ const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAd
   };
 
   const handleRemoveClaim = (index) => {
-    setClaims(claims.filter((_, i) => i !== index));
+    // This would be handled by parent component if needed
   };
 
   const handleRemoveConviction = (index) => {
-    setConvictions(convictions.filter((_, i) => i !== index));
+    // This would be handled by parent component if needed
   };
 
   const handleChangeClaim = (index) => {
@@ -58,13 +58,7 @@ const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAd
   const handleSubmit = () => {
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      const completeDriverData = {
-        ...driverData,
-        ...formData,
-        claims,
-        convictions,
-      };
-      onAddDriver(completeDriverData);
+      onAddDriver();
     } else {
       setErrors(newErrors);
     }
