@@ -476,7 +476,7 @@ const Step4CheckYourAnswers = ({
           Back
         </button>
         <button type="button" className={buttonStyles.nextBtn} onClick={onSubmit} disabled={isLoading}>
-          {isLoading ? "Processing..." : "Get Quote"}
+          {isLoading ? "Searching..." : "Get Quotes"}
         </button>
       </div>
     </div>
