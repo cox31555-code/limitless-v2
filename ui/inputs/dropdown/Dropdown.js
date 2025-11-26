@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./dropdown.module.css";
 import { useDropdownManager } from "./useDropdownManager";
 
-const Dropdown = ({ label, selected, options, setSelected, placeholder, error, disabled, showSearch = false }) => {
+const Dropdown = ({ label, selected, options, setSelected, placeholder, error, disabled, showSearch = false, isLoading: externalIsLoading = false }) => {
   const { isOpen, toggleDropdown, closeDropdown } = useDropdownManager();
   const [searchTerm, setSearchTerm] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isSearchLoading, setIsSearchLoading] = useState(false);
   const dropdownRef = useRef(null);
   const searchInputRef = useRef(null);
 
@@ -18,11 +18,11 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
     if (e.target.value.length > 0) {
-      setIsLoading(true);
+      setIsSearchLoading(true);
       // Simulate loading for 300ms
-      setTimeout(() => setIsLoading(false), 300);
+      setTimeout(() => setIsSearchLoading(false), 300);
     } else {
-      setIsLoading(false);
+      setIsSearchLoading(false);
     }
   };
 
@@ -76,23 +76,29 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
         onClick={handleToggle}
       >
         <span className={`${styles.selected} ${!selected ? styles.placeholder : ""}`}>
-          {selected || placeholder || "Select..."}
+          {externalIsLoading ? "Loading..." : (selected || placeholder || "Select...")}
         </span>
-        <svg
-          className={`${styles.arrowIcon} ${isOpen ? styles.arrowIconOpen : ""}`}
-          width="12"
-          height="8"
-          viewBox="0 0 12 8"
-          fill="none"
-        >
-          <path
-            d="M1 1.5L6 6.5L11 1.5"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        {externalIsLoading ? (
+          <div className={styles.loadingSpinnerIcon}>
+            <div className={styles.spinner}></div>
+          </div>
+        ) : (
+          <svg
+            className={`${styles.arrowIcon} ${isOpen ? styles.arrowIconOpen : ""}`}
+            width="12"
+            height="8"
+            viewBox="0 0 12 8"
+            fill="none"
+          >
+            <path
+              d="M1 1.5L6 6.5L11 1.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        )}
 
         {isOpen && !disabled && (
           <div
@@ -101,7 +107,7 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
           >
             {showSearch && (
               <div className={styles.searchWrapper}>
-                {isLoading ? (
+                {isSearchLoading ? (
                   <div className={styles.loadingIcon}>
                     <div className={styles.spinner}></div>
                   </div>
