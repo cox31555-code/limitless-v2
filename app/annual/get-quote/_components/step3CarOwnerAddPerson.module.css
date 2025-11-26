@@ -95,16 +95,31 @@
   font-weight: 400;
 }
 
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  max-width: 180px;
+}
+
 .fieldWrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.8rem;
+  max-width: 450px;
 }
 
 .fieldLabel {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  color: #1a1a2e;
+  color: #004284;
+  margin: 0;
+}
+
+.fieldsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .fieldGroup {
