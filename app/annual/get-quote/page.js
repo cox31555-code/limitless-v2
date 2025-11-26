@@ -375,35 +375,6 @@ const AnnualInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleAddDriver = () => {
-    const newDriver = {
-      title: "",
-      firstName: "",
-      lastName: "",
-      dateOfBirth: "",
-      relationshipStatus: "",
-      relationship: "",
-      livedInUKSinceBirth: null,
-      employmentStatus: "",
-      occupation: "",
-      industry: "",
-      otherVehicles: null,
-      otherVehiclesType: "",
-      licenseType: "",
-      licenseHeld: "",
-      licenseNumber: "",
-      hasAdditionalQualifications: null,
-      additionalQualificationType: "",
-      qualificationMonth: "",
-      qualificationYear: "",
-      criminalConvictions: null,
-      medicalConditions: null,
-      dvlaConditionType: "",
-      insuranceCancelledOrClaimRefusedOrPolicyVoided: null,
-    };
-    setAdditionalDrivers([...additionalDrivers, newDriver]);
-  };
-
   const handleRemoveDriver = (index) => {
     setAdditionalDrivers(additionalDrivers.filter((_, i) => i !== index));
   };
