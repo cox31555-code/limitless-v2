@@ -134,6 +134,7 @@ export const userDetailsSchema = z
     employmentStatus: z.string().optional(),
     occupation: z.string().optional(),
     industry: z.string().optional(),
+    studentType: z.string().optional(),
     houseNumber: z.string().optional(),
     postcode: z.string().optional(),
     addressLine1: z.string().optional(),
