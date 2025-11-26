@@ -149,41 +149,93 @@ const Step3NoClaimsDiscount = ({
           )}
         </div>
 
-        {/* Named Driver Experience Question */}
-        <div className={styles.section}>
-          {formData.noClaimsDiscount === "No NCD" && (
+        {/* Named Driver Experience Question - Show if No NCD */}
+        {formData.noClaimsDiscount === "No NCD" && (
+          <div className={styles.section}>
             <div className={styles.questionHeader}>
               <h3 className={styles.mainQuestion}>Do you have any named driver experience?</h3>
               <p className={styles.subText}>
                 In some cases, insurance providers may offer you a discount if you have named driver experience on another person's insurance policy.
               </p>
             </div>
-          )}
-          <div className={styles.radioGroup}>
-            {namedDriverExperienceOptions.map((option) => (
-              <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="namedDriverExperience"
-                  value={option}
-                  checked={formData.namedDriverExperience === option}
-                  onChange={(e) => setFormData({ ...formData, namedDriverExperience: e.target.value })}
-                  className={styles.radioInput}
-                  style={{
-                    marginTop: '0.3rem',
-                    flexShrink: 0,
-                    width: '20px',
-                    height: '20px',
-                    minWidth: '20px',
-                    minHeight: '20px'
-                  }}
-                />
-                <span className={styles.radioLabel}>{option}</span>
-              </label>
-            ))}
+            <div className={styles.radioGroup}>
+              {namedDriverExperienceOptions.map((option) => (
+                <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+                  <input
+                    type="radio"
+                    name="namedDriverExperience"
+                    value={option}
+                    checked={formData.namedDriverExperience === option}
+                    onChange={(e) => setFormData({ ...formData, namedDriverExperience: e.target.value })}
+                    className={styles.radioInput}
+                    style={{
+                      marginTop: '0.3rem',
+                      flexShrink: 0,
+                      width: '20px',
+                      height: '20px',
+                      minWidth: '20px',
+                      minHeight: '20px'
+                    }}
+                  />
+                  <span className={styles.radioLabel}>{option}</span>
+                </label>
+              ))}
+            </div>
+            {errors.namedDriverExperience && <span className={styles.error}>{errors.namedDriverExperience}</span>}
           </div>
-          {errors.namedDriverExperience && <span className={styles.error}>{errors.namedDriverExperience}</span>}
-        </div>
+        )}
+
+        {/* How did you earn NCD Question - Show if any year is selected */}
+        {formData.noClaimsDiscount && formData.noClaimsDiscount !== "No NCD" && (
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>How did you earn your no claims discount?</h3>
+              <p className={styles.subText}>
+                Some insurance providers will recognise NCD earned using a company vehicle or a vehicle driven outside of the UK. Please check with them before you purchase.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              className={styles.expandableLink}
+              onClick={() => setExpandedProof(!expandedProof)}
+            >
+              <span className={`${styles.expandableIcon} ${expandedProof ? styles.expandedIcon : ''}`}>▼</span>
+              What proof do I need?
+            </button>
+
+            {expandedProof && (
+              <div className={styles.expandableContent}>
+                You'll typically need proof of your no claims discount from your previous insurer, such as a reference number, renewal document, or cancellation notice.
+              </div>
+            )}
+
+            <div className={styles.radioGroup}>
+              {ncdEarnedHowOptions.map((option) => (
+                <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+                  <input
+                    type="radio"
+                    name="ncdEarnedHow"
+                    value={option}
+                    checked={formData.ncdEarnedHow === option}
+                    onChange={(e) => setFormData({ ...formData, ncdEarnedHow: e.target.value })}
+                    className={styles.radioInput}
+                    style={{
+                      marginTop: '0.3rem',
+                      flexShrink: 0,
+                      width: '20px',
+                      height: '20px',
+                      minWidth: '20px',
+                      minHeight: '20px'
+                    }}
+                  />
+                  <span className={styles.radioLabel}>{option}</span>
+                </label>
+              ))}
+            </div>
+            {errors.ncdEarnedHow && <span className={styles.error}>{errors.ncdEarnedHow}</span>}
+          </div>
+        )}
       </div>
 
       <div className={styles.buttonGroup}>
