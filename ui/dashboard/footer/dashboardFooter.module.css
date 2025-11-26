@@ -181,24 +181,6 @@
     padding: 0 3%;
   }
 
-  .helpSection {
-    padding: 2.5rem 0;
-    gap: 1.3rem;
-  }
-
-  .helpTitle {
-    font-size: 1.45rem;
-  }
-
-  .helpActions {
-    gap: 1.5rem;
-  }
-
-  .helpLink {
-    font-size: 1.05rem;
-    padding: 0.7rem 1.3rem;
-  }
-
   .topSection {
     padding: 2.5rem 0;
     gap: 2.5rem;
