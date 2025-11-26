@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 import styles from "./step3CarOwner.module.css";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 
