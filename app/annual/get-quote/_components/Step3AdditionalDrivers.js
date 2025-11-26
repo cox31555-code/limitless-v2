@@ -78,39 +78,233 @@ const Step3AdditionalDrivers = ({
               <div className={styles.driversList}>
                 {additionaDrivers.map((driver, index) => (
                   <div key={index} className={styles.driverCard}>
-                    <div className={styles.driverInfo}>
-                      <p className={styles.driverName}>
-                        {driver.firstName && driver.lastName
-                          ? `${driver.firstName} ${driver.lastName}`
-                          : `Driver ${index + 1}`}
-                      </p>
-                      {driver.dateOfBirth && (
-                        <p className={styles.driverDetail}>
-                          <span className={styles.label}>Date of birth:</span> {driver.dateOfBirth}
-                        </p>
-                      )}
-                      {driver.relationship && (
-                        <p className={styles.driverDetail}>
-                          <span className={styles.label}>Relationship:</span> {driver.relationship}
-                        </p>
-                      )}
-                    </div>
-                    <div className={styles.buttonGroup}>
+                    {/* Header with Driver Name and Remove Button */}
+                    <div className={styles.cardHeader}>
+                      <div className={styles.driverHeading}>
+                        <h3 className={styles.cardTitle}>
+                          {driver.firstName && driver.lastName
+                            ? `${driver.firstName} ${driver.lastName}`
+                            : `Driver ${index + 1}`}
+                          {driver.relationship && (
+                            <span className={styles.cardSubtitle}>, {driver.relationship}</span>
+                          )}
+                          {driver.dateOfBirth && (
+                            <span className={styles.cardSubtitle}> ({driver.dateOfBirth})</span>
+                          )}
+                        </h3>
+                      </div>
                       <button
                         type="button"
                         className={styles.removeButton}
                         onClick={() => handleRemoveDriver(index)}
                       >
-                        Remove
-                      </button>
-                      <button
-                        type="button"
-                        className={styles.editButton}
-                        onClick={() => handleEditDriver(index)}
-                      >
-                        Edit details
+                        Remove driver
                       </button>
                     </div>
+
+                    {/* About Them Section */}
+                    <div className={styles.section}>
+                      <div className={styles.sectionHeader}>
+                        <h4 className={styles.sectionTitle}>About them</h4>
+                        <button
+                          type="button"
+                          className={styles.changeButton}
+                          onClick={() => handleEditDriver(index)}
+                        >
+                          Change
+                        </button>
+                      </div>
+                      <div className={styles.sectionContent}>
+                        {driver.firstName && (
+                          <div className={styles.row}>
+                            <span className={styles.label}>Name</span>
+                            <span className={styles.value}>{driver.firstName} {driver.lastName}</span>
+                          </div>
+                        )}
+                        {driver.dateOfBirth && (
+                          <div className={styles.row}>
+                            <span className={styles.label}>Date of birth</span>
+                            <span className={styles.value}>{driver.dateOfBirth}</span>
+                          </div>
+                        )}
+                        {driver.relationshipStatus && (
+                          <div className={styles.row}>
+                            <span className={styles.label}>Relationship status</span>
+                            <span className={styles.value}>{driver.relationshipStatus}</span>
+                          </div>
+                        )}
+                        {driver.livedInUKSinceBirth && (
+                          <div className={styles.row}>
+                            <span className={styles.label}>Lived in the UK</span>
+                            <span className={styles.value}>{driver.livedInUKSinceBirth === 'Yes' ? 'Since birth' : driver.livedInUKSinceBirth}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Their Employment Section */}
+                    {driver.employmentStatus && (
+                      <div className={styles.section}>
+                        <div className={styles.sectionHeader}>
+                          <h4 className={styles.sectionTitle}>Their employment</h4>
+                          <button
+                            type="button"
+                            className={styles.changeButton}
+                            onClick={() => handleEditDriver(index)}
+                          >
+                            Change
+                          </button>
+                        </div>
+                        <div className={styles.sectionContent}>
+                          <div className={styles.row}>
+                            <span className={styles.label}>Employment status</span>
+                            <span className={styles.value}>{driver.employmentStatus}</span>
+                          </div>
+                          {driver.occupation && (
+                            <div className={styles.row}>
+                              <span className={styles.label}>Occupation</span>
+                              <span className={styles.value}>{driver.occupation}</span>
+                            </div>
+                          )}
+                          {driver.industry && (
+                            <div className={styles.row}>
+                              <span className={styles.label}>Industry</span>
+                              <span className={styles.value}>{driver.industry}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Their Licence Section */}
+                    {driver.licenseType && (
+                      <div className={styles.section}>
+                        <div className={styles.sectionHeader}>
+                          <h4 className={styles.sectionTitle}>Their licence</h4>
+                          <button
+                            type="button"
+                            className={styles.changeButton}
+                            onClick={() => handleEditDriver(index)}
+                          >
+                            Change
+                          </button>
+                        </div>
+                        <div className={styles.sectionContent}>
+                          <div className={styles.row}>
+                            <span className={styles.label}>Licence type</span>
+                            <span className={styles.value}>{driver.licenseType}</span>
+                          </div>
+                          {driver.licenseHeld && (
+                            <div className={styles.row}>
+                              <span className={styles.label}>Licence held for</span>
+                              <span className={styles.value}>{driver.licenseHeld}</span>
+                            </div>
+                          )}
+                          <div className={styles.row}>
+                            <span className={styles.label}>Driving licence number</span>
+                            <span className={styles.value}>
+                              {driver.licenseNumberFirst || driver.licenseNumberNI ? `${driver.licenseNumberFirst || driver.licenseNumberNI}` : 'NOT PROVIDED'}
+                            </span>
+                          </div>
+                          {driver.otherVehicles && (
+                            <div className={styles.row}>
+                              <span className={styles.label}>Access to other vehicles</span>
+                              <span className={styles.value}>{driver.otherVehicles}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Licence Restrictions Section */}
+                    <div className={styles.section}>
+                      <div className={styles.sectionHeader}>
+                        <h4 className={styles.sectionTitle}>Licence restrictions</h4>
+                        <button
+                          type="button"
+                          className={styles.changeButton}
+                          onClick={() => handleEditDriver(index)}
+                        >
+                          Change
+                        </button>
+                      </div>
+                      <div className={styles.sectionContent}>
+                        {driver.medicalConditions && (
+                          <div className={styles.row}>
+                            <span className={styles.label}>DVLA reportable conditions</span>
+                            <span className={styles.value}>
+                              {driver.medicalConditions === 'Yes' ? (driver.dvlaConditionType || 'Yes') : 'No'}
+                            </span>
+                          </div>
+                        )}
+                        {driver.insuranceCancelledOrClaimRefusedOrPolicyVoided && (
+                          <div className={styles.row}>
+                            <span className={styles.label}>Had insurance denied before</span>
+                            <span className={styles.value}>{driver.insuranceCancelledOrClaimRefusedOrPolicyVoided}</span>
+                          </div>
+                        )}
+                        {driver.criminalConvictions && (
+                          <div className={styles.row}>
+                            <span className={styles.label}>Unspent non-motoring convictions</span>
+                            <span className={styles.value}>{driver.criminalConvictions}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Claims in the last 5 years */}
+                    {driver.claims && (
+                      <div className={styles.section}>
+                        <div className={styles.sectionHeader}>
+                          <h4 className={styles.sectionTitle}>Claims in the last 5 years</h4>
+                          <button
+                            type="button"
+                            className={styles.changeButton}
+                            onClick={() => handleEditDriver(index)}
+                          >
+                            Change
+                          </button>
+                        </div>
+                        <div className={styles.sectionContent}>
+                          {driver.claims.length > 0 ? (
+                            driver.claims.map((claim, claimIndex) => (
+                              <div key={claimIndex} className={styles.listItem}>
+                                {claim.incidentType && <p>{claim.incidentType}</p>}
+                              </div>
+                            ))
+                          ) : (
+                            <p className={styles.none}>None</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Motoring convictions in the last 5 years */}
+                    {driver.convictions && (
+                      <div className={styles.section}>
+                        <div className={styles.sectionHeader}>
+                          <h4 className={styles.sectionTitle}>Motoring convictions in the last 5 years</h4>
+                          <button
+                            type="button"
+                            className={styles.changeButton}
+                            onClick={() => handleEditDriver(index)}
+                          >
+                            Change
+                          </button>
+                        </div>
+                        <div className={styles.sectionContent}>
+                          {driver.convictions.length > 0 ? (
+                            driver.convictions.map((conviction, convictionIndex) => (
+                              <div key={convictionIndex} className={styles.listItem}>
+                                {conviction.convictionType && <p>{conviction.convictionType}</p>}
+                              </div>
+                            ))
+                          ) : (
+                            <p className={styles.none}>None</p>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
