@@ -970,8 +970,25 @@ const AnnualInsuranceContent = () => {
                   <Step3CarOwnerAddPerson
                     onBack={handleBackFromAddCarOwnerPerson}
                     onSave={handleSaveCarOwnerPerson}
+                    onRemove={() => {
+                      if (carOwnerAddingType === "registeredKeeper") {
+                        setCarOwnerData({
+                          ...carOwnerData,
+                          registeredKeeperOtherPerson: null
+                        });
+                      } else {
+                        setCarOwnerData({
+                          ...carOwnerData,
+                          legalOwnerOtherPerson: null
+                        });
+                      }
+                      setCoverSubStep("carOwner");
+                      setCarOwnerAddingType(null);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                     personType={carOwnerAddingType}
                     personData={carOwnerAddingType === "registeredKeeper" ? carOwnerData?.registeredKeeperOtherPerson : carOwnerData?.legalOwnerOtherPerson}
+                    isEditing={carOwnerAddingType === "registeredKeeper" ? !!carOwnerData?.registeredKeeperOtherPerson : !!carOwnerData?.legalOwnerOtherPerson}
                   />
                 )}
                 {currentStep === STEPS.OPTIONAL_EXTRAS && <AnnualOptionalExtrasForm form={form} />}
