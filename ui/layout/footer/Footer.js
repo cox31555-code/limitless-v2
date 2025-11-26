@@ -100,56 +100,57 @@ const Footer = () => {
             <NoHiddenFees key="hidden-fees" />
           )}
         </div>
+        <div className={styles.logoSection}>
+          <Image
+            src="/svg/logo.svg"
+            alt="Limitless Cover"
+            width={120}
+            height={120}
+            className={styles.logo}
+          />
+        </div>
         <div className={styles.content}>
-          <div className={styles.menus}>
-            {menus.map((menu, index) => (
-              <div key={index} className={styles.menu}>
-                <h3
-                  style={{
-                    color: shouldApplySpecialStyles ? "rgba(0, 8, 34, 0.34)" : "",
-                  }}
-                  className={styles.menuTitle}
-                >
-                  {menu.title}
-                </h3>
-                <menu className={styles.menuItems}>
-                  {menu.items.map((item, index) => (
-                    <li key={index} className={styles.menuItem}>
-                      <Link
-                        href={item.link}
-                        style={{
-                          color: shouldApplySpecialStyles ? "#000822" : "",
-                        }}
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </menu>
-              </div>
-            ))}
-          </div>
-          <div className={styles.socials}>
-            <div className={styles.socialsContainer}>
-              <h3
-                className={styles.socialsTitle}
-                style={{
-                  color: shouldApplySpecialStyles ? "rgba(0, 8, 34, 0.34)" : "",
-                }}
-              >
-                Social Media
-              </h3>
+          <div className={styles.mainContent}>
+            <div className={styles.menus}>
+              {menus.map((menu, index) => (
+                <div key={index} className={styles.menu}>
+                  <h3
+                    style={{
+                      color: shouldApplySpecialStyles ? "rgba(0, 8, 34, 0.34)" : "",
+                    }}
+                    className={styles.menuTitle}
+                  >
+                    {menu.title}
+                  </h3>
+                  <menu className={styles.menuItems}>
+                    {menu.items.map((item, index) => (
+                      <li key={index} className={styles.menuItem}>
+                        <Link
+                          href={item.link}
+                          style={{
+                            color: shouldApplySpecialStyles ? "#000822" : "",
+                          }}
+                        >
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </menu>
+                </div>
+              ))}
+            </div>
+            <div className={styles.socialsSection}>
               <div className={styles.socialsItems}>
                 <div
                   className={`${styles.socialsItem} ${
                     shouldApplySpecialStyles ? styles["socials-item-black"] : ""
                   }`}
                 >
-                  <BiLogoInstagramAlt
+                  <BiLogoTwitter
                     className={`${styles.socialsIcon} ${
                       shouldApplySpecialStyles ? styles["socials-icon-black"] : ""
                     }`}
-                    size={20}
+                    size={18}
                   />
                 </div>
                 <div
@@ -161,64 +162,23 @@ const Footer = () => {
                     className={`${styles.socialsIcon} ${
                       shouldApplySpecialStyles ? styles["socials-icon-black"] : ""
                     }`}
-                    size={20}
+                    size={18}
                   />
                 </div>
-                <div
-                  className={`${styles.socialsItem} ${
-                    shouldApplySpecialStyles ? styles["socials-item-black"] : ""
-                  }`}
-                >
-                  <BiLogoTwitter
-                    className={`${styles.socialsIcon} ${
-                      shouldApplySpecialStyles ? styles["socials-icon-black"] : ""
-                    }`}
-                    size={20}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className={styles.stores}>
-              <h3
-                className={styles.socialsTitle}
-                style={{
-                  color: shouldApplySpecialStyles ? "rgba(0, 8, 34, 0.34)" : "",
-                }}
-              >
-                Download Our App
-              </h3>
-              <div className={styles.storesContainer}>
-                <Image
-                  onClick={() => router.push("/coming-soon")}
-                  className={styles.store}
-                  src={`${
-                    shouldApplySpecialStyles
-                      ? "/svg/light-google-store.svg"
-                      : "/svg/google-store.svg"
-                  }`}
-                  alt="logo"
-                  width={161}
-                  height={54}
-                />
-
-                <Image
-                  onClick={() => router.push("/coming-soon")}
-                  className={styles.store}
-                  src={`${
-                    shouldApplySpecialStyles
-                      ? "/svg/light-apple-store.svg"
-                      : "/svg/apple-store.svg"
-                  }`}
-                  alt="logo"
-                  width={161}
-                  height={54}
-                />
               </div>
             </div>
           </div>
         </div>
+        <div className={styles.legal}>
+          <p className={styles.legalText}>
+            Limitless Cover Services Limited is registered in England and Wales (Company No. 12345678). Authorised and regulated by the Financial Conduct Authority (FCA No. 123456).
+          </p>
+          <p className={styles.legalText}>
+            Registered office: 8 Pancras Square, London, United Kingdom, N1C 4AG
+          </p>
+        </div>
         <div className={styles.copyright}>
-          © 2025 Limitless Cover Services . All Rights Reserved
+          © Limitless Cover 2025
         </div>
       </div>
     </footer>
