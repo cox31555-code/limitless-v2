@@ -241,15 +241,22 @@ const Step3CoverDetails = ({
             </p>
           </div>
           <div className={styles.fieldWrapper}>
-            <FormDateInput
-              type="date"
-              dateLabel="Start Date"
-              value={formData.startDate || ""}
-              onChange={handleDateChange}
-              error={errors.startDate}
-              minDate={new Date()}
-              maxDate={getMaxDate()}
-              reducedPadding={true}
+            <Dropdown
+              label=""
+              selected={formData.startDate || ""}
+              options={dateOptions}
+              setSelected={(value) => {
+                // Find the index of selected date and convert back to YYYY-MM-DD format
+                const selectedIndex = dateOptions.indexOf(value);
+                if (selectedIndex >= 0) {
+                  const today = new Date();
+                  const selectedDate = new Date(today);
+                  selectedDate.setDate(selectedDate.getDate() + selectedIndex);
+                  const dateString = selectedDate.toISOString().split('T')[0];
+                  setFormData({ ...formData, startDate: dateString });
+                }
+              }}
+              placeholder="Please select…"
             />
             {errors.startDate && <span className={styles.error}>{errors.startDate}</span>}
           </div>
