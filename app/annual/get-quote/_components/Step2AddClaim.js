@@ -21,13 +21,10 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   const [errors, setErrors] = useState({});
 
   const damageTypeDropdownOptions = [
-    "Windscreen damage",
-    "Fire/Theft/Vandalism",
-    "Accident - comprehensive",
-    "Accident - part loss",
-    "Glass only",
-    "Water damage",
-    "Attempted theft",
+    "Damaged - Amount Known",
+    "No Damage",
+    "Unknown",
+    "Write-Off",
   ];
 
   const faultOptions = ["You were at fault", "The other party was at fault", "Can't say who was at fault"];
