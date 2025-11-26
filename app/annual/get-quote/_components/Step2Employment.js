@@ -116,8 +116,10 @@ const Step2Employment = ({ form }) => {
             </div>
 
             <div className={styles.section}>
-              <h3 className={styles.mainQuestion}>What type of industry do you work in?</h3>
-              <p className={styles.subText}>Start typing and choose from the list.</p>
+              <div className={styles.questionHeader}>
+                <h3 className={styles.mainQuestion}>What type of industry do you work in?</h3>
+                <p className={styles.subText}>Start typing and choose from the list.</p>
+              </div>
 
               <div className={styles.dropdownWrapper}>
                 <EmploymentAutocomplete
