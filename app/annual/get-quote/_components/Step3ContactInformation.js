@@ -191,24 +191,24 @@ const Step3ContactInformation = ({
             ))}
           </div>
           {errors.contactMethod && <span className={styles.error}>{errors.contactMethod}</span>}
-        </div>
 
-        {/* What else will we contact you about */}
-        <div className={styles.section}>
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedDataUsage(!expandedDataUsage)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedDataUsage ? styles.expandedIcon : ''}`}>▼</span>
-            What else will we contact you about?
-          </button>
+          {/* What else will we contact you about */}
+          <div style={{ marginTop: '2.4rem' }}>
+            <button
+              type="button"
+              className={styles.expandableLink}
+              onClick={() => setExpandedDataUsage(!expandedDataUsage)}
+            >
+              <span className={`${styles.expandableIcon} ${expandedDataUsage ? styles.expandedIcon : ''}`}>▼</span>
+              What else will we contact you about?
+            </button>
 
-          {expandedDataUsage && (
-            <div className={styles.expandableContent}>
-              We will contact you when necessary, including, but not limited to, the provision of our services. This may include notification of any issues that may affect you, as well as quote confirmations or renewal quotes.
-            </div>
-          )}
+            {expandedDataUsage && (
+              <div className={styles.expandableContent}>
+                We will contact you when necessary, including, but not limited to, the provision of our services. This may include notification of any issues that may affect you, as well as quote confirmations or renewal quotes.
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Data usage information */}
