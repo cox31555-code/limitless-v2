@@ -154,10 +154,10 @@ const Step3ContactInformation = ({
                       height: '24px',
                       minWidth: '24px',
                       minHeight: '24px',
-                      border: '2px solid #3b82f6',
+                      border: '2px solid #0052a3',
                       borderRadius: '4px',
                       cursor: 'pointer',
-                      backgroundColor: formData.contactMethod.includes(method) ? '#3b82f6' : 'white',
+                      backgroundColor: formData.contactMethod.includes(method) ? '#0052a3' : 'white',
                       position: 'relative',
                       flexShrink: 0
                     }}
