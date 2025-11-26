@@ -42,19 +42,6 @@ const IconComponent = ({ type }) => {
 const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
-
-  // Routes that should never show the global header (checked immediately, before any state)
-  const shouldNeverShowHeader = !pathname ||
-    pathname === "/forget-password" ||
-    pathname === "/change-password" ||
-    pathname.startsWith("/dashboard") ||
-    pathname.startsWith("/allianz-dashboard") ||
-    pathname.startsWith("/payment") ||
-    pathname.includes("/get-quote");
-
-  const isDashboard = pathname.startsWith("/dashboard");
-  const isGetQuotePage = pathname.includes("/get-quote");
-  const isFAQPage = pathname === "/FAQ";
   const [isOpen, setIsOpen] = useState(false);
   const [isDashboardSidebarOpen, setIsDashboardSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,10 +53,9 @@ const Header = () => {
   const [openStickyDropdown, setOpenStickyDropdown] = useState(null);
   const [showHelpModal, setShowHelpModal] = useState(false);
 
-  // Early return if this route should never show the global header
-  if (shouldNeverShowHeader) {
-    return null;
-  }
+  const isDashboard = pathname.startsWith("/dashboard");
+  const isGetQuotePage = pathname.includes("/get-quote");
+  const isFAQPage = pathname === "/FAQ";
 
   const handleHelpClick = () => {
     setShowHelpModal(true);
