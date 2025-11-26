@@ -174,33 +174,33 @@
 
 @media (max-width: 600px) {
   .heroSection {
-    padding: 2.4rem 2%;
-    margin-bottom: 2.8rem;
+    padding: 1.6rem 2%;
+    margin-bottom: 2rem;
   }
 
   .mainInfo {
-    gap: 1rem;
+    gap: 0.6rem;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .stepInfo {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .stepBadge {
-    font-size: 1.1rem;
-    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    padding: 0.3rem 0.8rem;
   }
 
   .trustInfo {
     width: 100%;
-    gap: 1.6rem;
+    gap: 1.2rem;
   }
 
   .trustItem {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 }
