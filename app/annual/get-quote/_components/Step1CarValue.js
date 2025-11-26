@@ -23,7 +23,7 @@ const Step1CarValue = ({ form }) => {
       </div>
 
       <div className={styles.contentWrapper}>
-        <div className={styles.header}>
+        <div className={styles.questionHeader}>
           <h3 className={styles.mainQuestion}>What's the current estimated value of the car?</h3>
           <p className={styles.subText}>
             We've estimated your car's current market value using an independent provider. If a value isn't shown or if it doesn't look right, feel free to change it.
