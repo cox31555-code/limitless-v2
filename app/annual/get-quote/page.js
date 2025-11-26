@@ -543,6 +543,7 @@ const AnnualInsuranceContent = () => {
           currentStep === STEPS.PERSONAL && personalSubStep === "licence" ? "Your licence" :
           currentStep === STEPS.PERSONAL && personalSubStep === "restrictions" ? "Licence restrictions" :
           currentStep === STEPS.PERSONAL && personalSubStep === "claims" ? "Claims and convictions" :
+          currentStep === STEPS.PERSONAL && personalSubStep === "addClaim" ? "Add a claim" :
           undefined
         }
       />
