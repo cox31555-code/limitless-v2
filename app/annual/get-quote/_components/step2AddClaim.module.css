@@ -308,13 +308,13 @@
     gap: 0.8rem;
   }
 
-  .textInput {
-    font-size: 1.3rem;
-    min-height: 3.8rem;
-  }
-
   .inputLabel {
     font-size: 1.15rem;
+  }
+
+  .expandableLink {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
   }
 
   .buttonGroup {
