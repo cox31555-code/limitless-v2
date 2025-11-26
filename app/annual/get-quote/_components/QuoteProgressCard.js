@@ -13,7 +13,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
   // Auto-expand steps 2 and 3 (PERSONAL and COVER)
   const [expandedStep, setExpandedStep] = useState(currentStep);
   const [lineHeight, setLineHeight] = useState(0);
-  const stepsListRef = React.useRef(null);
+  const stepsListRef = useRef(null);
 
   // Map substeps to their corresponding keys
   const getActiveSubStepIndex = (stepNumber) => {
