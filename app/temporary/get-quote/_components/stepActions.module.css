@@ -11,8 +11,7 @@
 
 .backBtn,
 .nextBtn {
-  flex: 1;
-  height: 5.2rem;
+  padding: 0.9rem 2.4rem;
   border-radius: 10px;
   font-size: 1.5rem;
   font-weight: 600;
@@ -26,17 +25,19 @@
   justify-content: center;
   gap: 0.8rem;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 
 .backBtn {
   background: #fff;
-  color: #0388ff;
-  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  color: #0052a3;
+  border: 2px solid #0052a3;
 }
 
 .backBtn:hover:not(:disabled) {
-  background: #f8fbff;
-  border-color: #0388ff;
+  background: #f0f6ff;
+  border-color: #003d7a;
+  color: #003d7a;
 }
 
 .backBtn:active:not(:disabled) {
@@ -48,11 +49,12 @@
 }
 
 .nextBtn {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   color: #fff;
 }
 
 .nextBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #003d7a 0%, #002d5a 100%);
 }
 
 .nextBtn:active:not(:disabled) {
