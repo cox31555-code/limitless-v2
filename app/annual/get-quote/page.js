@@ -137,6 +137,7 @@ const AnnualInsuranceContent = () => {
         qualificationMonth: "",
         qualificationYear: "",
         licenseType: "",
+        licenseIssueCountry: "",
         licenseHeld: "",
         licenseNumber: "",
         NCB: "",
