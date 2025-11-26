@@ -218,6 +218,89 @@
   border-radius: 25px;
 }
 
+.claimsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.claimCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  background: #f8f9fb;
+  border: 1px solid #e8ecf1;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.claimCard:hover {
+  background: #f0f4fa;
+  border-color: #cbd4dd;
+}
+
+.claimInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.claimDetail {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.claimLabel {
+  font-weight: 600;
+  color: #004284;
+}
+
+.claimActions {
+  display: flex;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+.editBtn,
+.deleteBtn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: none;
+  border: 2px solid #0052a3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.editBtn {
+  color: #0052a3;
+}
+
+.editBtn:hover {
+  background: #f0f6ff;
+  border-color: #003d7a;
+  color: #003d7a;
+}
+
+.deleteBtn {
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.deleteBtn:hover {
+  background: #ffebee;
+  border-color: #b71c1c;
+  color: #b71c1c;
+}
+
 .convictionsSection {
   display: flex;
   flex-direction: column;
