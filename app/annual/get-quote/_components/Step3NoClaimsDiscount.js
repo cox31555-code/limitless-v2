@@ -10,12 +10,14 @@ const Step3NoClaimsDiscount = ({
 }) => {
   const [formData, setFormData] = useState(ncdData || {
     noClaimsDiscount: "",
-    namedDriverExperience: ""
+    namedDriverExperience: "",
+    ncdEarnedHow: ""
   });
 
   const [errors, setErrors] = useState({});
   const [expandedHowFindNCD, setExpandedHowFindNCD] = useState(false);
   const [expandedNamedDriver, setExpandedNamedDriver] = useState(false);
+  const [expandedProof, setExpandedProof] = useState(false);
 
   const ncdOptions = [
     "No NCD",
