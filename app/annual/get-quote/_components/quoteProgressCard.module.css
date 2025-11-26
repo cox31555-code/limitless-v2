@@ -332,6 +332,7 @@
 
   .stepsList::after {
     left: 15px;
+    height: calc(100% * var(--main-line-progress, 0));
   }
 
   .connector {
