@@ -422,7 +422,7 @@
 
 .menuGrid {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.5rem;
   position: relative;
   z-index: 1;
   flex-wrap: wrap;
@@ -430,16 +430,16 @@
 }
 
 .menuItem {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 1.2rem 1.8rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 0.8rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
   color: #ffffff;
   text-align: left;
@@ -451,9 +451,7 @@
 }
 
 .menuItem:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  opacity: 0.8;
 }
 
 .menuItemIconWrapper {
@@ -464,22 +462,22 @@
 }
 
 .menuItemIcon {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
 .menuItemIcon svg {
-  width: 28px;
-  height: 28px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  width: 20px;
+  height: 20px;
+  filter: none;
 }
 
 .menuItemContent {
@@ -487,8 +485,8 @@
 }
 
 .menuItemLabel {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   color: #ffffff;
   line-height: 120%;
   margin: 0;
