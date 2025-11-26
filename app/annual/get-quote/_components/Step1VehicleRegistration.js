@@ -63,6 +63,17 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
   const [state, dispatch] = useReducer(vehicleReducer, initialState);
   const hasAutoTriggeredRef = useRef(false);
 
+  // Loading states for each dropdown
+  const [loadingStates, setLoadingStates] = useState({
+    make: false,
+    model: false,
+    year: false,
+    doors: false,
+    fuel: false,
+    transmission: false,
+    colour: false,
+  });
+
   const { register, formState: { errors }, watch, setValue, setError, clearErrors } = form;
 
   const registrationNumber = watch("vehicleDetails.registrationNumber");
@@ -105,6 +116,26 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
       shouldValidate: true,
       shouldDirty: true,
     });
+
+    // Trigger loading state for the next field
+    const fieldSequence = {
+      type: 'make',
+      make: 'model',
+      model: 'year',
+      year: 'doors',
+      doors: 'fuel',
+      fuel: 'transmission',
+      transmission: 'colour',
+    };
+
+    const nextField = fieldSequence[field];
+    if (nextField) {
+      setLoadingStates(prev => ({ ...prev, [nextField]: true }));
+
+      setTimeout(() => {
+        setLoadingStates(prev => ({ ...prev, [nextField]: false }));
+      }, 4000);
+    }
   };
 
   const handleFindVehicle = useCallback(async () => {
