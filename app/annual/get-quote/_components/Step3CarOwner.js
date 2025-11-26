@@ -17,10 +17,10 @@ const Step3CarOwner = ({
     isRegisteredKeeperAndOwner: "",
     registeredKeeper: "",
     registeredKeeperCompanyName: "",
-    registeredKeeperOtherPerson: "",
+    registeredKeeperOtherPerson: null,
     legalOwner: "",
     legalOwnerCompanyName: "",
-    legalOwnerOtherPerson: "",
+    legalOwnerOtherPerson: null,
   });
 
   const [errors, setErrors] = useState({});
