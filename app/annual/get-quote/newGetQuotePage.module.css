@@ -28,6 +28,27 @@
   align-self: start;
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd4dd #f5f7fa;
+}
+
+.sidebarArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebarArea::-webkit-scrollbar-track {
+  background: #f5f7fa;
+  border-radius: 3px;
+}
+
+.sidebarArea::-webkit-scrollbar-thumb {
+  background: #cbd4dd;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.sidebarArea::-webkit-scrollbar-thumb:hover {
+  background: #0052a3;
 }
 
 .stepContent {
