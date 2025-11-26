@@ -880,6 +880,13 @@ const AnnualInsuranceContent = () => {
       return;
     }
 
+    if (currentStep === STEPS.CHECK_ANSWERS) {
+      setCurrentStep(STEPS.COVER);
+      setCoverSubStep("contactInformation");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (currentStep > STEPS.VEHICLE) {
       setCurrentStep(currentStep - 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
