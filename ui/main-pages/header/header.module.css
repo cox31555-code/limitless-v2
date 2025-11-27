@@ -79,6 +79,8 @@
   flex-direction: column;
   gap: 6rem;
   width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
   position: relative;
   align-items: flex-start;
   justify-items: flex-start;
