@@ -157,6 +157,19 @@
   gap: 2.4rem;
 }
 
+.sectionHeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .sectionTitle {
   font-size: 2.4rem;
   font-weight: 700;
@@ -164,6 +177,14 @@
   margin: 0;
   line-height: 120%;
   letter-spacing: -0.5px;
+}
+
+.sectionDescription {
+  font-size: 1.4rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+  line-height: 140%;
 }
 
 /* Policy Card */
