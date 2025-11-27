@@ -895,4 +895,8 @@
   .footerSubtext {
     font-size: 1.1rem;
   }
+
+  .policiesGrid {
+    grid-template-columns: 1fr;
+  }
 }
