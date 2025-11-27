@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Form from "./_components/form/Form";
 import Image from "next/image";
 import Link from "next/link";
+import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
 
 export const metadata = {
   title: "Login | Limitless Cover",
@@ -56,6 +57,8 @@ const LoginPage = () => {
           </Suspense>
         </div>
       </div>
+
+      <DashboardFooter />
     </div>
   );
 };
