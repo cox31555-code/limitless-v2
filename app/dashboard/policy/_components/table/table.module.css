@@ -127,8 +127,8 @@
 }
 
 .policyStatus.active {
-  background: #0052a3;
-  color: #ffffff;
+  background: #D1FAE5;
+  color: #065F46;
 }
 
 .policyStatus.expired {
