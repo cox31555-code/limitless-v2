@@ -21,12 +21,12 @@
 }
 
 .title {
-  color: #1D1F2C;
-  font-size: 4.8rem;
-  font-weight: 700;
+  color: #000822;
+  font-size: 5.6rem;
+  font-weight: 800;
   line-height: 120%;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -1.2px;
 }
 
 .navigation {
@@ -142,24 +142,6 @@
   border-radius: 8px;
   box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.04);
   flex-shrink: 0;
-  transition: all 0.3s ease;
-  animation: fadeInScale 0.6s ease-out forwards;
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.summaryCard:hover {
-  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
-  border-color: #00B67A;
 }
 
 .excellent {
@@ -182,11 +164,6 @@
   width: 3.3rem;
   height: 3.4rem;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.largeStars svg:hover {
-  transform: scale(1.1);
 }
 
 .largeStars > div {
@@ -214,11 +191,6 @@
 .trustpilotBadge svg {
   width: 2.54rem;
   height: 2.4rem;
-  transition: transform 0.2s ease;
-}
-
-.summaryCard:hover .trustpilotBadge svg {
-  transform: scale(1.05);
 }
 
 .trustpilotText {
@@ -248,7 +220,6 @@
   border: 1px solid #E8EBF0;
   border-radius: 8px;
   box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
   animation: pageSwipeIn 0.5s ease-out forwards;
 }
 
@@ -260,11 +231,6 @@
   animation-delay: 0.2s;
 }
 
-.reviewCard:hover {
-  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-  border-color: #D1D5DB;
-}
 
 @keyframes pageSwipeIn {
   from {
