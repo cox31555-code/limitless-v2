@@ -770,9 +770,6 @@
     font-size: 1.1rem;
   }
 
-  .policiesGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -896,7 +893,4 @@
     font-size: 1.1rem;
   }
 
-  .policiesGrid {
-    grid-template-columns: 1fr;
-  }
 }
