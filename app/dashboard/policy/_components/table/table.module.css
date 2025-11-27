@@ -340,6 +340,11 @@
     font-size: 1.8rem;
   }
 
+  .carMeta {
+    font-size: 1.15rem;
+    margin: 0 0 1rem 0;
+  }
+
   .policyCardInfo {
     gap: 1.5rem;
     padding: 1.5rem;
