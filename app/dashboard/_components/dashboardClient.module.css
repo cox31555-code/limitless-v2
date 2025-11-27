@@ -620,7 +620,11 @@
   }
 
   .sectionTitle {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.3rem;
   }
 
   .emergencyCard {
@@ -682,7 +686,11 @@
   }
 
   .sectionTitle {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.2rem;
   }
 
   .policyCardHeader {
