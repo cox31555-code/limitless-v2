@@ -232,7 +232,6 @@
 
 .brandedBadge:hover {
   box-shadow: 0 4px 12px rgba(0, 82, 163, 0.25);
-  transform: translateY(-1px);
 }
 
 .policyBadge {
