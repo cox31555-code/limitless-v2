@@ -271,11 +271,17 @@ const Reviews = () => {
   const maxIndex = Math.max(0, reviewsData.length - reviewsPerPage);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + reviewsPerPage > maxIndex ? 0 : prev + reviewsPerPage));
+    setCurrentIndex((prev) => {
+      const next = prev + reviewsPerPage;
+      return next > maxIndex ? 0 : next;
+    });
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - reviewsPerPage < 0 ? maxIndex : prev - reviewsPerPage));
+    setCurrentIndex((prev) => {
+      const next = prev - reviewsPerPage;
+      return next < 0 ? maxIndex : next;
+    });
   };
 
   const handleTouchStart = (e) => {
