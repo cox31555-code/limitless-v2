@@ -139,7 +139,14 @@ const DashboardClient = () => {
       <div className={styles.contentWrapper}>
         {/* My Policies Section */}
         <section className={styles.policiesSection}>
-          <h2 className={styles.sectionTitle}>My Policies</h2>
+          <div className={styles.sectionHeaderWrapper}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>My Policies</h2>
+            </div>
+            <p className={styles.sectionDescription}>
+              Review, update and manage all your insurance policies in one secure place
+            </p>
+          </div>
           <div className={styles.policiesGrid}>
             {activePolicies.map((policy) => (
               <div key={policy.id} className={styles.policyCard} onClick={() => router.push("/dashboard/policy")}>
@@ -188,7 +195,14 @@ const DashboardClient = () => {
 
         {/* Useful Links Section */}
         <section className={styles.usefulLinksSection}>
-          <h2 className={styles.sectionTitle}>Useful Links</h2>
+          <div className={styles.sectionHeaderWrapper}>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Useful Links</h2>
+            </div>
+            <p className={styles.sectionDescription}>
+              Quick access to important tools and documents
+            </p>
+          </div>
           <div className={styles.usefulLinksGrid}>
             {usefulLinks.map((link) => (
               <button
