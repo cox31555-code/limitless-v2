@@ -131,12 +131,14 @@ const DashboardClient = () => {
               <div key={policy.id} className={styles.policyCard} onClick={() => router.push("/dashboard/policy")}>
                 <div className={styles.policyCardHeader}>
                   <div className={styles.policyBadgeWrapper}>
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F5f655402e5e54b5782ffee63c1df405c?format=webp&width=800"
-                      alt="Limitless Cover"
-                      className={styles.policyLogo}
-                    />
-                    <span className={styles.policyBadgeType}>{policy.badge}</span>
+                    <div className={styles.brandedBadge}>
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F5f655402e5e54b5782ffee63c1df405c?format=webp&width=800"
+                        alt="Limitless Cover"
+                        className={styles.policyLogo}
+                      />
+                      <span className={styles.policyBadgeType}>{policy.badge}</span>
+                    </div>
                     {policy.isNew && <span className={styles.newBadge}>NEW</span>}
                   </div>
                   <div className={styles.policyStatusWrapper}>
