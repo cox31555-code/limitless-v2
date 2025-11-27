@@ -75,8 +75,8 @@ const Footer = () => {
   // Only apply special styles if mounted and pathname is available, but NOT for login or retrieve-quote pages
   const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname) && !isLoginPage && !isRetrieveQuotePage;
 
-  // Hide footer for all dashboard pages
-  if (isDashboardPage) {
+  // Hide footer for all dashboard pages and login page
+  if (isDashboardPage || isLoginPage) {
     return null;
   }
 
