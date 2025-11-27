@@ -81,6 +81,7 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
                   <span className={styles.licensePlateText}>{formatVehicleReg(car.reg)}</span>
                 </div>
                 <h3 className={styles.vehicleName}>{car.make}</h3>
+                <p className={styles.carMeta}>{car.year} • {car.color}</p>
               </div>
 
               {/* Info Section with Premium and Expiry */}
