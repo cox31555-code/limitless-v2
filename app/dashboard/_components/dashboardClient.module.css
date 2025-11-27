@@ -820,8 +820,19 @@
     gap: 0.8rem;
   }
 
+  .brandedBadge {
+    gap: 0.9rem;
+    padding: 0.7rem 1.1rem;
+  }
+
   .policyLogo {
-    height: 26px;
+    height: 24px;
+  }
+
+  .policyBadgeType {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.85rem;
+    letter-spacing: 0.7px;
   }
 
   .licensePlate {
