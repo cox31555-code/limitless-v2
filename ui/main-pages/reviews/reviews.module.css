@@ -350,7 +350,7 @@
 
 @media screen and (max-width: 1200px) {
   .wrapper {
-    padding: 6rem 0;
+    padding: 5rem 0 10rem;
   }
 
   .container {
@@ -391,7 +391,7 @@
 
 @media screen and (max-width: 900px) {
   .wrapper {
-    padding: 2rem 0 8rem 0;
+    padding: 3rem 0 6rem 0;
   }
 
   .container {
@@ -492,7 +492,7 @@
 
 @media screen and (max-width: 600px) {
   .wrapper {
-    padding: 1.5rem 0 6rem 0;
+    padding: 2rem 0 5rem 0;
   }
 
   .container {
@@ -643,7 +643,7 @@
 
 @media screen and (max-width: 480px) {
   .wrapper {
-    padding: 1rem 0 5rem 0;
+    padding: 1.5rem 0 4rem 0;
   }
 
   .container {
