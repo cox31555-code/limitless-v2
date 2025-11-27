@@ -605,6 +605,10 @@
   .emergencyCard {
     padding: 2.5rem;
   }
+
+  .policiesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 900px) {
