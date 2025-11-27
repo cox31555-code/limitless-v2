@@ -6,6 +6,7 @@ import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import Booklets from "./booklets/Booklets";
 import Dropdown from "./dropdown/Dropdown";
 import PolicyDocumentsSection from "./PolicyDocumentsSection";
+import NcdInfoSection from "./NcdInfoSection";
 import ReceiveDocumentsSection from "./ReceiveDocumentsSection";
 
 export default function DocumentsClient({ insurances }) {
@@ -55,6 +56,10 @@ export default function DocumentsClient({ insurances }) {
 
       <section>
         <Booklets />
+      </section>
+
+      <section>
+        <NcdInfoSection />
       </section>
 
       <section>
