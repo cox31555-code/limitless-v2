@@ -71,14 +71,9 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
       href: "/dashboard/documents",
     },
     {
-      label: "Manage Claims",
+      label: "Claims",
       icon: <ClaimsIcon />,
       href: "/dashboard/claims",
-    },
-    {
-      label: "Submit a Claim",
-      icon: <SubmitIcon />,
-      href: "/dashboard/submit-claim",
     },
     {
       label: "Logout",
