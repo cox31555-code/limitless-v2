@@ -78,7 +78,7 @@ const SubmitClaimContent = () => {
       return <Submitted />;
     }
 
-    // If optional cover claims selected - show guidelines only
+    // If optional cover claims selected - show guidelines with full structure
     if (type === "optional-cover") {
       return <Guidelines data={guidelinesData} />;
     }
