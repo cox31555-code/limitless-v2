@@ -84,7 +84,7 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
                 <p className={styles.carMeta}>{car.year} • {car.color}</p>
               </div>
 
-              {/* Info Section with Premium and Expiry */}
+              {/* Info Section with Premium, Expiry and Arrow */}
               <div className={styles.policyCardInfo}>
                 <div className={styles.infoColumn}>
                   <span className={styles.infoLabel}>Premium</span>
@@ -94,10 +94,6 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
                   <span className={styles.infoLabel}>Expires</span>
                   <span className={styles.infoValue}>{car.expires}</span>
                 </div>
-              </div>
-
-              {/* Footer with Arrow */}
-              <div className={styles.policyCardFooter}>
                 <div className={styles.policyArrow}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
