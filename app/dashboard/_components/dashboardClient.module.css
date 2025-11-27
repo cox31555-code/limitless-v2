@@ -495,9 +495,8 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .breadcrumb {
-    margin-left: 40px;
     gap: 1rem;
-    padding: 20px 3% 20px 0.4%;
+    padding: 20px 5% 20px;
   }
 
   .breadcrumbItem {
@@ -517,7 +516,7 @@
   }
 
   .contentWrapper {
-    padding: 2.5rem 3%;
+    padding: 2.5rem 5%;
     gap: 3.5rem;
   }
 
