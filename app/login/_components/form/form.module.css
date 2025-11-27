@@ -11,36 +11,13 @@
 
 .card {
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   background: #ffffff;
-  border-radius: 20px;
-  padding: 5rem 4.5rem;
-  border: 1px solid rgba(0, 8, 34, 0.08);
+  border-radius: 12px;
+  padding: 4rem 4.5rem;
+  border: 1px solid rgba(0, 8, 34, 0.1);
   box-sizing: border-box;
-  box-shadow: 0 2px 16px rgba(0, 8, 34, 0.08);
-}
-
-/* Header Section */
-.header {
-  margin-bottom: 3.5rem;
-  text-align: center;
-}
-
-.title {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #000822;
-  margin: 0 0 1rem 0;
-  letter-spacing: -0.4px;
-  line-height: 1.2;
-}
-
-.subtitle {
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: #6b7c8f;
-  margin: 0;
-  line-height: 1.5;
+  box-shadow: 0 2px 20px rgba(0, 8, 34, 0.06);
 }
 
 /* Messages */
@@ -48,7 +25,7 @@
   width: 100%;
   padding: 1.2rem 1.4rem;
   margin-bottom: 2rem;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #f0fdf4;
   color: #166534;
   border: 1px solid #86efac;
@@ -62,7 +39,7 @@
   width: 100%;
   padding: 1.2rem 1.4rem;
   margin-bottom: 2rem;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #fef2f2;
   color: #991b1b;
   border: 1px solid #fca5a5;
@@ -87,16 +64,15 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2.5rem;
   width: 100%;
-  margin-bottom: 2.8rem;
 }
 
 /* Form Group */
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 0;
   width: 100%;
 }
 
@@ -104,31 +80,22 @@
 .fieldWrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
   width: 100%;
-}
-
-/* Field Label */
-.fieldLabel {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #000822;
-  margin: 0;
-  letter-spacing: 0.3px;
 }
 
 /* Input Field Container */
 .inputField {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 0;
   padding: 1.8rem 2.2rem;
   background: #fafbfc;
   border: 1.5px solid rgba(0, 8, 34, 0.12);
-  border-radius: 10px;
+  border-radius: 8px;
   transition: all 0.25s ease;
   cursor: text;
-  height: 6.5rem;
+  height: 6rem;
 }
 
 .inputField:focus-within {
@@ -144,23 +111,7 @@
 
 .inputField.fieldError:focus-within {
   border-color: #ef4444;
-}
-
-/* Field Icon */
-.fieldIcon {
-  width: 2.2rem;
-  height: 2.2rem;
-  color: #6b7c8f;
-  flex-shrink: 0;
-  transition: color 0.3s ease;
-}
-
-.inputField:focus-within .fieldIcon {
-  color: #0388ff;
-}
-
-.inputField.fieldError .fieldIcon {
-  color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08);
 }
 
 /* Input Element */
@@ -170,11 +121,12 @@
   background: transparent;
   color: #000822;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
   outline: none;
   padding: 0;
   font-family: inherit;
   line-height: 1.4;
+  width: 100%;
 }
 
 .input::placeholder {
@@ -197,43 +149,23 @@
   line-height: 1.3;
 }
 
-/* Forgot Password Link */
-.forgotLink {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #0388ff;
-  text-decoration: none;
-  transition: color 0.28s ease;
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0;
-}
-
-.forgotLink:hover {
-  color: #0270cc;
-}
-
-.forgotLink:focus {
-  outline: none;
-}
-
 /* Submit Button */
 .submitButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0;
   width: 100%;
-  height: 6.5rem;
-  padding: 1.6rem 2.4rem;
-  margin-top: 2rem;
-  background: #0052a3;
+  height: 5.5rem;
+  padding: 1.5rem 2.4rem;
+  margin-top: 0;
+  background: #0a7ea4;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   color: #ffffff;
   font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   cursor: pointer;
   transition: all 0.25s ease;
   position: relative;
@@ -243,14 +175,14 @@
 }
 
 .submitButton:hover:not(:disabled) {
-  background: #003d7a;
+  background: #086a8a;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.25);
+  box-shadow: 0 4px 12px rgba(10, 126, 164, 0.3);
 }
 
 .submitButton:active:not(:disabled) {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
+  box-shadow: 0 2px 8px rgba(10, 126, 164, 0.25);
 }
 
 .submitButton:disabled {
@@ -262,160 +194,21 @@
   outline: none;
 }
 
-/* Button Text & Icon */
+/* Button Text */
 .buttonText {
-  font-weight: 700;
-}
-
-.buttonIcon {
-  width: 2.2rem;
-  height: 2.2rem;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.submitButton:hover:not(:disabled) .buttonIcon {
-  transform: translateX(2px);
-}
-
-/* Footer */
-.footer {
-  padding-top: 3.2rem;
-  border-top: 1px solid rgba(3, 136, 255, 0.06);
-  text-align: center;
-}
-
-.footerText {
-  font-size: 1.45rem;
-  color: #6b7c8f;
-  margin: 0;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-.signupLink {
-  color: #0388ff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.28s ease;
-  margin-left: 0.8rem;
-}
-
-.signupLink:hover {
-  color: #0270cc;
-}
-
-/* Responsive - Small Mobile */
-@media screen and (max-width: 640px) {
-  .cardWrapper {
-    padding: 1rem 0.6rem;
-  }
-
-  .card {
-    padding: 3.2rem 1.4rem;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .header {
-    margin-bottom: 3.2rem;
-  }
-
-  .title {
-    font-size: 2.2rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .formGroup {
-    gap: 1.8rem;
-  }
-
-  .fieldLabel {
-    font-size: 1.2rem;
-  }
-
-  .inputField {
-    height: 5.8rem;
-    padding: 1.4rem 1.2rem;
-    gap: 0.8rem;
-    border-radius: 10px;
-  }
-
-  .fieldIcon {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-
-  .input {
-    font-size: 1.6rem;
-  }
-
-  .submitButton {
-    height: 5.8rem;
-    font-size: 1.3rem;
-    padding: 1.4rem 1.6rem;
-    margin-top: 1.4rem;
-    border-radius: 10px;
-  }
-
-  .buttonIcon {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-
-  .successMessage,
-  .errorMessage {
-    padding: 1rem 1.2rem;
-    font-size: 1.2rem;
-  }
-
-  .footer {
-    padding-top: 1.8rem;
-  }
-
-  .footerText {
-    font-size: 1.2rem;
-  }
+  font-weight: 600;
 }
 
 /* Responsive - Tablet */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .card {
-    padding: 5.6rem 4.8rem;
-    border-radius: 14px;
-    max-width: 750px;
-    box-shadow: 0 3px 16px rgba(3, 136, 255, 0.1), 0 1px 4px rgba(0, 8, 34, 0.03);
-  }
-
-  .header {
-    margin-bottom: 4.8rem;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-  }
-
-  .formGroup {
-    gap: 3rem;
-  }
-
-  .fieldIcon {
-    width: 2.2rem;
-    height: 2.2rem;
+    padding: 3.5rem 4rem;
+    max-width: 540px;
   }
 
   .inputField {
-    height: 6.8rem;
-    padding: 1.9rem 2.4rem;
-    gap: 1.4rem;
+    height: 5.8rem;
+    padding: 1.6rem 2rem;
   }
 
   .input {
@@ -423,104 +216,71 @@
   }
 
   .submitButton {
-    height: 6.8rem;
-    font-size: 1.48rem;
-    padding: 1.8rem 2.6rem;
-    gap: 1rem;
-    margin-top: 1.8rem;
-  }
-
-  .buttonIcon {
-    width: 2.1rem;
-    height: 2.1rem;
+    height: 5.3rem;
+    font-size: 1.45rem;
   }
 }
 
 /* Responsive - Mobile */
 @media screen and (max-width: 600px) {
   .cardWrapper {
-    padding: 1rem 0.6rem;
+    padding: 0;
   }
 
   .card {
-    padding: 3.2rem 1.4rem;
-    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    border-radius: 10px;
     max-width: 100%;
     width: 100%;
-    box-shadow: 0 2px 12px rgba(3, 136, 255, 0.08), 0 1px 3px rgba(0, 8, 34, 0.02);
+    box-shadow: 0 2px 12px rgba(0, 8, 34, 0.05);
   }
 
-  .header {
-    margin-bottom: 3.2rem;
-  }
-
-  .title {
-    font-size: 2.2rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .formGroup {
-    gap: 1.8rem;
-  }
-
-  .fieldWrapper {
-    gap: 0.8rem;
-  }
-
-  .fieldLabel {
-    font-size: 1.2rem;
-  }
-
-  .forgotLink {
-    font-size: 1.2rem;
+  .form {
+    gap: 2rem;
   }
 
   .inputField {
-    height: 5.8rem;
-    padding: 1.4rem 1.2rem;
-    gap: 0.8rem;
-    border-radius: 10px;
-  }
-
-  .fieldIcon {
-    width: 1.8rem;
-    height: 1.8rem;
+    height: 5.5rem;
+    padding: 1.4rem 1.8rem;
+    border-radius: 8px;
   }
 
   .input {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .submitButton {
-    height: 5.8rem;
-    font-size: 1.3rem;
-    padding: 1.4rem 1.6rem;
-    gap: 0.8rem;
-    border-radius: 10px;
-    margin-top: 1.4rem;
-  }
-
-  .buttonIcon {
-    width: 1.8rem;
-    height: 1.8rem;
+    height: 5.2rem;
+    font-size: 1.4rem;
+    padding: 1.4rem 2rem;
+    border-radius: 8px;
   }
 
   .successMessage,
   .errorMessage {
     padding: 1rem 1.2rem;
-    font-size: 1.2rem;
-    margin-bottom: 1.8rem;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media screen and (max-width: 400px) {
+  .card {
+    padding: 2.5rem 2rem;
   }
 
-  .footer {
-    padding-top: 1.8rem;
+  .inputField {
+    height: 5.2rem;
+    padding: 1.3rem 1.6rem;
   }
 
-  .footerText {
-    font-size: 1.2rem;
+  .input {
+    font-size: 1.4rem;
+  }
+
+  .submitButton {
+    height: 5rem;
+    font-size: 1.35rem;
   }
 }
