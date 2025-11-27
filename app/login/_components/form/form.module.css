@@ -152,18 +152,19 @@
 /* Forgot Password Link */
 .forgotLink {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.38rem;
   font-weight: 500;
   color: #0388ff;
   text-decoration: none;
-  transition: color 0.28s ease;
-  margin-top: -0.5rem;
-  margin-bottom: 0.5rem;
-  padding: 0;
+  transition: all 0.25s ease;
+  margin-top: 0.8rem;
+  margin-bottom: 1.2rem;
+  padding: 0.4rem 0;
 }
 
 .forgotLink:hover {
   color: #0052a3;
+  text-decoration: underline;
 }
 
 /* Submit Button */
@@ -218,30 +219,32 @@
 
 /* Footer */
 .footer {
-  margin-top: 2.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid rgba(0, 8, 34, 0.08);
+  margin-top: 3rem;
+  padding-top: 2.8rem;
+  border-top: 1px solid rgba(0, 8, 34, 0.1);
   text-align: center;
 }
 
 .footerText {
-  font-size: 1.45rem;
-  color: #6b7c8f;
+  font-size: 1.42rem;
+  color: #8a95a3;
   margin: 0;
   font-weight: 400;
   line-height: 1.6;
+  letter-spacing: 0.1px;
 }
 
 .signupLink {
   color: #0388ff;
   text-decoration: none;
-  font-weight: 700;
-  transition: color 0.28s ease;
-  margin-left: 0.4rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  margin-left: 0.3rem;
 }
 
 .signupLink:hover {
   color: #0052a3;
+  text-decoration: underline;
 }
 
 /* Responsive - Tablet */
