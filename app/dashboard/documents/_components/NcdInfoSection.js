@@ -8,8 +8,8 @@ export default function NcdInfoSection() {
     <div className={styles.section}>
       <div className={styles.header}>
         <Image
-          src="/svg/info-circle.svg"
-          alt="info"
+          src="/svg/document-text.svg"
+          alt="document"
           width={32}
           height={32}
         />
