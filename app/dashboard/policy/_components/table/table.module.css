@@ -16,151 +16,203 @@
 }
 
 .cardsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 100%;
-  padding: 2.6rem 0 3rem;
+}
+
+/* Smooth entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .policyCard {
-  display: flex;
-  flex-direction: column;
   background: #ffffff;
-  border: 1px solid #e0e6f0;
+  border: 2px solid #E5E7EB;
   border-radius: 16px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.5s ease-out 0.1s both;
 }
 
 .policyCard:hover {
   border-color: #0052a3;
-  box-shadow: 0 2px 12px rgba(0, 61, 122, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 82, 163, 0.15), 0 2px 8px rgba(0, 82, 163, 0.08);
+  transform: translateY(-4px);
 }
 
 .policyCardHeader {
-  background: #f0f4fb;
-  padding: 2.4rem 2.8rem;
-  display: block;
-  border-bottom: 1px solid #e0e6f0;
-  position: relative;
+  background: #ffffff;
+  padding: 2.4rem 2.4rem 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
-.statusBadge {
-  display: inline-block;
+.policyBadgeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brandedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
   background: #0052a3;
-  color: #ffffff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.52px;
-  margin-bottom: 1.3rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
+  transition: all 0.2s ease;
 }
 
-.policyRef {
-  font-size: 1.25rem;
-  color: #666;
+.policyLogo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: crisp-edges;
+}
+
+.policyBadgeType {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  box-shadow: none;
+  flex-shrink: 0;
+  backdrop-filter: blur(2px);
+}
+
+.policyStatusWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.policyStatusLabel {
+  font-size: 1.3rem;
+  color: #6B7280;
   font-weight: 500;
 }
 
-.policyDetails {
-  padding: 2.8rem;
-  flex: 1;
-}
-
-.carTitle {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #0052a3;
-  margin: 0 0 0.65rem 0;
-  line-height: 130%;
-}
-
-.carMeta {
-  font-size: 1.25rem;
-  color: #666;
-  margin: 0 0 1.5rem 0;
-  font-weight: 400;
-}
-
-.regBadge {
+.policyStatus {
   display: inline-block;
-  background: #000000;
-  color: #ffffff;
-  padding: 0.8rem 1.5rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 6px;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.52px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
-.policyInfo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.2rem;
-  padding: 2.4rem 2.8rem;
-  background: #f8fafc;
-  border-top: 1px solid #e0e6f0;
+.policyStatus.active {
+  background: #0052a3;
+  color: #ffffff;
 }
 
-.infoColumn {
+.policyStatus.expired {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.policyCardBody {
+  padding: 0 2.4rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 1.4rem;
 }
 
-.infoLabel {
-  font-size: 0.85rem;
-  color: #999;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.65px;
-  margin: 0 0 0.7rem 0;
-}
-
-.infoValue {
-  font-size: 1.5rem;
-  color: #0052a3;
-  font-weight: 600;
-  margin: 0;
-}
-
-.viewButton {
-  width: 100%;
-  padding: 1.5rem 2.8rem;
-  background: #f0f4fb;
-  color: #0052a3;
-  border: none;
-  border-radius: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  line-height: 130%;
-  text-align: center;
-  display: flex;
+.licensePlate {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  background: #FFD500;
+  border: 3px solid #000000;
+  border-radius: 6px;
+  padding: 0.9rem 1.4rem;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.viewButton:hover {
-  background: #dce7f5;
+.licensePlateText {
+  font-family: 'UKNumberPlate', monospace, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.vehicleName {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+}
+
+.policyCardFooter {
+  background: #FAFBFC;
+  padding: 1.8rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #F0F1F3;
+}
+
+.policyEndDate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.endDateLabel {
+  font-size: 1.3rem;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.endDateValue {
+  font-size: 1.4rem;
+  color: #1F2937;
+  font-weight: 600;
+}
+
+.policyArrow {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #9CA3AF;
+}
+
+.policyArrow svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* Responsive Design */
-@media screen and (max-width: 1200px) {
-  .cardsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3.5rem;
-  }
-
-  .policyCard {
-    padding: 0;
-  }
-}
-
 @media screen and (max-width: 900px) {
   .section {
     gap: 2rem;
@@ -171,57 +223,49 @@
   }
 
   .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .policyCard {
-    padding: 0;
+    gap: 1.6rem;
   }
 
   .policyCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 2rem;
   }
 
-  .policyDetails {
-    padding: 2rem;
+  .brandedBadge {
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
   }
 
-  .policyInfo {
-    padding: 2rem;
+  .policyLogo {
+    height: 26px;
   }
 
-  .statusBadge {
-    font-size: 1rem;
+  .policyBadgeType {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
   }
 
-  .policyRef {
-    font-size: 1.3rem;
+  .policyStatusWrapper {
+    align-items: flex-start;
+    width: 100%;
   }
 
-  .carTitle {
-    font-size: 1.8rem;
+  .policyCardBody {
+    padding: 0 2rem 1.6rem;
   }
 
-  .carMeta {
-    font-size: 1.4rem;
+  .licensePlateText {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
   }
 
-  .regBadge {
-    font-size: 1.2rem;
+  .vehicleName {
+    font-size: 1.5rem;
   }
 
-  .infoLabel {
-    font-size: 1.1rem;
-  }
-
-  .infoValue {
-    font-size: 1.6rem;
-  }
-
-  .viewButton {
-    font-size: 1.3rem;
-    padding: 1.2rem;
+  .policyCardFooter {
+    padding: 1.6rem 2rem;
   }
 }
 
@@ -234,54 +278,32 @@
     font-size: 1.8rem;
   }
 
-  .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .policyBadgeWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
-  .policyCardHeader {
-    padding: 1.5rem;
+  .brandedBadge {
+    gap: 0.9rem;
+    padding: 0.7rem 1.1rem;
   }
 
-  .policyDetails {
-    padding: 1.5rem;
+  .policyLogo {
+    height: 24px;
   }
 
-  .policyInfo {
-    padding: 1.5rem;
-    gap: 1.5rem;
+  .policyBadgeType {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.85rem;
+    letter-spacing: 0.7px;
   }
 
-  .statusBadge {
-    font-size: 0.95rem;
+  .licensePlate {
+    padding: 0.6rem 1rem;
   }
 
-  .policyRef {
-    font-size: 1.2rem;
-  }
-
-  .carTitle {
-    font-size: 1.6rem;
-  }
-
-  .carMeta {
-    font-size: 1.3rem;
-  }
-
-  .regBadge {
-    font-size: 1.15rem;
-  }
-
-  .infoLabel {
-    font-size: 1rem;
-  }
-
-  .infoValue {
-    font-size: 1.5rem;
-  }
-
-  .viewButton {
-    font-size: 1.25rem;
-    padding: 1.2rem;
+  .licensePlateText {
+    font-size: 1.8rem;
   }
 }
