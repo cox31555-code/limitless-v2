@@ -97,6 +97,7 @@ body {
   margin: 0 auto;
   margin-top: 145px;
   width: calc(100% - 8.8%);
+  max-width: 110rem;
   display: flex;
   align-items: flex-start;
   gap: 4.7rem;
@@ -128,7 +129,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  max-width: 130rem;
+  max-width: 110rem;
   width: 100%;
 }
 @media (max-width: 1200px) {
