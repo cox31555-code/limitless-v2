@@ -8,6 +8,8 @@ import Dropdown from "./dropdown/Dropdown";
 import PolicyDocumentsSection from "./PolicyDocumentsSection";
 import NcdInfoSection from "./NcdInfoSection";
 import ReceiveDocumentsSection from "./ReceiveDocumentsSection";
+import DownloadedDocumentsInfo from "./DownloadedDocumentsInfo";
+import OlderDocuments from "./OlderDocuments";
 
 export default function DocumentsClient({ insurances }) {
   const [selectedInsuranceId, setSelectedInsuranceId] = useState(
@@ -64,6 +66,14 @@ export default function DocumentsClient({ insurances }) {
 
       <section>
         <ReceiveDocumentsSection />
+      </section>
+
+      <section>
+        <DownloadedDocumentsInfo />
+      </section>
+
+      <section>
+        <OlderDocuments />
       </section>
 
       <NeedHelpSection />
