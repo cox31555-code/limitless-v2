@@ -22,8 +22,8 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-top: 0;
-  margin-bottom: 6.5rem;
-  padding: 7.8rem calc(50vw - 50%) 7.8rem;
+  margin-bottom: 4rem;
+  padding: 5rem calc(50vw - 50%) 5rem;
 }
 
 .heroSection::before {
@@ -42,8 +42,8 @@
   right: 13%;
   top: 50%;
   transform: translateY(-50%);
-  width: 400px;
-  height: 399px;
+  width: 300px;
+  height: 300px;
   opacity: 0.3;
 }
 
@@ -62,26 +62,26 @@
   position: relative;
   z-index: 2;
   flex: 1;
-  gap: 3.9rem;
+  gap: 3rem;
 }
 
 .greetingArea {
   display: flex;
   flex-direction: column;
-  gap: 1.04rem;
+  gap: 0.6rem;
 }
 
 .greetingTitle {
-  font-size: 3.9rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
   line-height: 110%;
-  letter-spacing: -0.65px;
+  letter-spacing: -0.5px;
 }
 
 .greetingSubtitle {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.85);
   margin: 0;
   font-weight: 400;
@@ -92,8 +92,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 1.3rem;
-  padding: 0 5% 14px;
+  gap: 0.8rem;
+  padding: 0 5% 10px;
   border-bottom: 1px solid #e0e6f0;
   max-width: 1000px;
   margin: 0 auto;
@@ -101,7 +101,7 @@
 }
 
 .breadcrumbItem {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #666;
   white-space: nowrap;
@@ -113,9 +113,9 @@
 }
 
 .breadcrumbSeparator {
-  font-size: 1.55rem;
+  font-size: 1rem;
   color: #ccc;
-  margin: 0 0.4rem;
+  margin: 0 0.2rem;
   flex-shrink: 0;
 }
 
@@ -123,8 +123,8 @@
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 55px 5% 1.6rem;
+  gap: 1rem;
+  padding: 30px 5% 1.6rem;
   max-width: 1000px;
   margin: 0 auto;
   width: 100%;
@@ -137,7 +137,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 0.5rem;
   flex-wrap: wrap;
 }
@@ -145,20 +145,20 @@
 .contentHeaderText {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.3rem;
 }
 
 .contentTitle {
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #0052a3;
   margin: 0;
   line-height: 120%;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
 }
 
 .contentSubtitle {
-  font-size: 1.35rem;
+  font-size: 0.95rem;
   color: #666;
   margin: 0;
   font-weight: 400;
@@ -168,66 +168,67 @@
 /* Quotes Grid */
 .quotesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
   width: 100%;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .breadcrumb {
-    gap: 1rem;
-    padding: 20px 5% 20px;
+    gap: 0.7rem;
+    padding: 0 5% 10px;
   }
 
   .breadcrumbItem {
-    font-size: 1.2rem;
+    font-size: 0.85rem;
   }
 
   .breadcrumbSeparator {
-    font-size: 1.3rem;
+    font-size: 0.95rem;
   }
 
   .heroSection {
-    padding: 7rem calc(50vw - 50%) 7rem;
+    padding: 4.5rem calc(50vw - 50%) 4.5rem;
   }
 
   .greetingTitle {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1rem;
   }
 
   .contentTitle {
-    font-size: 2.6rem;
+    font-size: 1.7rem;
   }
 
   .contentSubtitle {
-    font-size: 1.3rem;
-  }
-
-  .quotesGrid {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    font-size: 0.9rem;
   }
 }
 
 @media screen and (max-width: 900px) {
   .breadcrumb {
-    gap: 0.8rem;
-    padding: 15px 5% 15px;
+    gap: 0.6rem;
+    padding: 0 5% 8px;
   }
 
   .breadcrumbItem {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 
   .breadcrumbSeparator {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   .heroSection {
     flex-direction: column;
     text-align: center;
-    padding: 3.5rem calc(50vw - 50%);
-    gap: 2rem;
+    padding: 3rem calc(50vw - 50%);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .heroBackground {
@@ -237,7 +238,7 @@
   .heroContent {
     flex-direction: column;
     width: 100%;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .greetingArea {
@@ -246,84 +247,80 @@
   }
 
   .greetingTitle {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 
   .greetingSubtitle {
-    font-size: 1.25rem;
+    font-size: 0.95rem;
   }
 
   .contentWrapper {
-    padding: 2.5rem 5%;
+    padding: 25px 5% 1.6rem;
   }
 
   .contentHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.2rem;
+    gap: 0.8rem;
   }
 
   .contentTitle {
-    font-size: 2.3rem;
+    font-size: 1.6rem;
   }
 
   .contentSubtitle {
-    font-size: 1.2rem;
-  }
-
-  .quotesGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    font-size: 0.85rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .breadcrumb {
-    gap: 0.6rem;
-    padding: 12px 5% 12px;
+    gap: 0.5rem;
+    padding: 0 4% 8px;
   }
 
   .breadcrumbItem {
-    font-size: 1rem;
+    font-size: 0.75rem;
   }
 
   .breadcrumbSeparator {
-    font-size: 1.1rem;
-    margin: 0 0.3rem;
+    font-size: 0.85rem;
+    margin: 0 0.15rem;
   }
 
   .heroSection {
     padding: 2.5rem calc(50vw - 50%);
-    gap: 1.5rem;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
   }
 
   .greetingTitle {
-    font-size: 2.3rem;
+    font-size: 1.9rem;
   }
 
   .greetingSubtitle {
-    font-size: 1.15rem;
+    font-size: 0.9rem;
   }
 
   .contentWrapper {
-    padding: 2rem 4%;
-    gap: 1.2rem;
+    padding: 20px 4% 1.6rem;
+    gap: 0.85rem;
   }
 
   .contentHeader {
-    gap: 1rem;
+    gap: 0.6rem;
     margin-bottom: 0.3rem;
   }
 
   .contentTitle {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   .contentSubtitle {
-    font-size: 1.15rem;
+    font-size: 0.8rem;
   }
 
   .quotesGrid {
-    gap: 0.85rem;
+    gap: 0.75rem;
   }
 }
