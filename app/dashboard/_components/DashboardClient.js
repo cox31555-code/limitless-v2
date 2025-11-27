@@ -28,6 +28,20 @@ const DashboardClient = () => {
       endTime: "23:59",
       insuranceType: "Annual",
     },
+    {
+      id: 2,
+      name: "Limitless Cover",
+      badge: "ANNUAL",
+      isNew: false,
+      policyNumber: "LC-923847",
+      registrationNumber: "SM21 UOL",
+      vehicle: "BMW 3 SERIES M340i",
+      status: "Active",
+      statusType: "active",
+      endDate: "15th December 2025",
+      endTime: "23:59",
+      insuranceType: "Annual",
+    },
   ];
 
   const usefulLinks = [
