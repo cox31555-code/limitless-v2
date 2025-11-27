@@ -21,11 +21,9 @@ const Header = ({ page }) => {
     if (page) {
       switch (page) {
         case "claims":
-          return "Manage Claims";
+          return "Claims";
         case "policy":
           return "Manage Policy";
-        case "submit-claim":
-          return "Submit Claim";
         case "documents":
           return "Policy Documents";
         case "dashboard":
@@ -39,11 +37,9 @@ const Header = ({ page }) => {
     }
 
     if (pathname.includes("/claims")) {
-      return "Manage Claims";
+      return "Claims";
     } else if (pathname.includes("/policy")) {
       return "Manage Policy";
-    } else if (pathname.includes("/submit-claim")) {
-      return "Submit Claim";
     } else if (pathname.includes("/documents")) {
       return "Policy Documents";
     } else {
@@ -55,7 +51,6 @@ const Header = ({ page }) => {
     if (pathname.includes("/policy")) return "policy";
     if (pathname.includes("/documents")) return "documents";
     if (pathname.includes("/claims")) return "claims";
-    if (pathname.includes("/submit-claim")) return "submit-claim";
     return "dashboard";
   };
 
@@ -63,8 +58,7 @@ const Header = ({ page }) => {
     { label: "Dashboard", href: "/dashboard", id: "dashboard" },
     { label: "Manage Policy", href: "/dashboard/policy", id: "policy" },
     { label: "Documents", href: "/dashboard/documents", id: "documents" },
-    { label: "Manage Claims", href: "/dashboard/claims", id: "claims" },
-    { label: "Submit a Claim", href: "/dashboard/submit-claim", id: "submit-claim" },
+    { label: "Claims", href: "/dashboard/claims", id: "claims" },
   ];
 
   const activePage = getActivePage();
