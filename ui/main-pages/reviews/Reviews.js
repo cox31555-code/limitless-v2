@@ -1,7 +1,7 @@
 "use client";
 import React, { memo, useState } from "react";
 import styles from "./reviews.module.css";
-import { Jost, Poppins, Roboto } from "next/font/google";
+import { Jost, Poppins, Roboto, Plus_Jakarta_Sans } from "next/font/google";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -16,6 +16,11 @@ const poppins = Poppins({
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700", "800"],
 });
 
 const StarIcon = memo(() => (
@@ -306,7 +311,7 @@ const Reviews = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={`${styles.title} ${poppins.className}`}>
+          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
             Trustpilot Reviews
           </h2>
         </div>
