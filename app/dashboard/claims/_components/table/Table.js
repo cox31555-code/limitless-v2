@@ -42,51 +42,43 @@ const Table = ({ title, data, claimType, showTitle = true }) => {
             <div
               key={index}
               className={styles.claimCard}
+              onClick={() => router.push(`/dashboard/claims/${row.id}`)}
             >
               {/* Card Header - Status Badge & Claim Reference */}
               <div className={styles.claimCardHeader}>
-                <div className={`${styles.statusBadge} ${styles[statusType]}`}>
-                  {row.status || "PENDING"}
+                <div className={styles.claimBadgeWrapper}>
+                  <div className={`${styles.statusBadge} ${styles[statusType]}`}>
+                    {row.status || "PENDING"}
+                  </div>
                 </div>
-                <div className={styles.claimRef}>{row.ref}</div>
+                <div className={styles.claimRefWrapper}>
+                  <span className={styles.claimRefLabel}>Claim Reference</span>
+                  <span className={styles.claimRef}>{row.ref}</span>
+                </div>
               </div>
 
               {/* Claim Details */}
-              <div className={styles.claimDetails}>
+              <div className={styles.claimCardBody}>
                 <h3 className={styles.claimTitle}>Claim by {row.claimant}</h3>
                 <p className={styles.claimMeta}>Filed on {formatDate(row.date)}</p>
-                
-                <div className={styles.claimInfoRow}>
-                  <div className={styles.infoItem}>
-                    <span className={styles.infoLabel}>Status</span>
-                    <span className={styles.infoValue}>{row.status}</span>
-                  </div>
-                  <div className={styles.infoItem}>
-                    <span className={styles.infoLabel}>Last Updated</span>
-                    <span className={styles.infoValue}>{formatDate(row.pendingActions)}</span>
-                  </div>
-                </div>
               </div>
 
               {/* Claim Info */}
-              <div className={styles.claimInfo}>
+              <div className={styles.claimCardInfo}>
                 <div className={styles.infoColumn}>
-                  <p className={styles.infoLabel}>Estimated Resolution</p>
-                  <p className={styles.infoValue}>{formatDate(row.pendingActions)}</p>
+                  <p className={styles.infoLabel}>Status</p>
+                  <p className={styles.infoValue}>{row.status}</p>
                 </div>
                 <div className={styles.infoColumn}>
                   <p className={styles.infoLabel}>Claim Date</p>
                   <p className={styles.infoValue}>{formatDate(row.date)}</p>
                 </div>
+                <div className={styles.claimArrow}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
               </div>
-
-              {/* View Details Button */}
-              <button
-                className={styles.viewButton}
-                onClick={() => router.push(`/dashboard/claims/${row.id}`)}
-              >
-                View Claim Details →
-              </button>
             </div>
           );
         })}
