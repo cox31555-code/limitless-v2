@@ -429,6 +429,8 @@
     max-width: 40rem;
     margin: 0 auto 0 auto;
     text-align: center;
+    padding: 2rem;
+    gap: 0.8rem;
   }
 
   .reviewsContainer {
@@ -522,8 +524,8 @@
   .summaryCard {
     width: 100%;
     max-width: 100%;
-    padding: 1.2rem;
-    gap: 0.6rem;
+    padding: 2rem 1.6rem;
+    gap: 0.8rem;
     margin: 0;
     height: auto;
     text-align: center;
@@ -593,7 +595,7 @@
   }
 
   .reviewCard {
-    padding: 1.6rem;
+    padding: 2rem;
     min-height: 20rem;
     flex: 0 0 100%;
     animation: smoothSwipeIn 1.2s ease-out forwards;
@@ -670,8 +672,8 @@
   }
 
   .summaryCard {
-    padding: 1rem;
-    gap: 0.5rem;
+    padding: 1.8rem 1.4rem;
+    gap: 0.7rem;
     margin: 0;
     height: auto;
     text-align: center;
@@ -735,7 +737,7 @@
   }
 
   .reviewCard {
-    padding: 1.4rem;
+    padding: 1.8rem;
     flex: 0 0 100%;
     animation: smoothSwipeIn 1.2s ease-out forwards;
     box-shadow: none;
