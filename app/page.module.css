@@ -1,8 +1,13 @@
 .reviewsContainer {
-  padding: 12rem 0 0;
+  padding: 10rem 0 0;
 }
 @media (max-width: 900px) {
   .reviewsContainer {
-    padding: 8.6rem 2% 0;
+    padding: 6rem 2% 0;
+  }
+}
+@media (max-width: 600px) {
+  .reviewsContainer {
+    padding: 4rem 0 0;
   }
 }
