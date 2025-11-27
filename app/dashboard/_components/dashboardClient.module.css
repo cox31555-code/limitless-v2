@@ -225,6 +225,12 @@
   line-height: 1;
 }
 
+.policyLogo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
 .policyBadgeType {
   display: inline-block;
   background: #0052a3;
