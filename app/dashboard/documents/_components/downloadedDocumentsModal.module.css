@@ -8,10 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10000;
+  z-index: 999999;
   padding: 2rem;
   overflow-y: auto;
   animation: fadeIn 0.2s ease-out;
+  inset: 0;
 }
 
 @keyframes fadeIn {
