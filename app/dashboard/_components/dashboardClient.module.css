@@ -173,6 +173,18 @@
   gap: 2rem;
 }
 
+/* Smooth entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .policyCard {
   background: #ffffff;
   border: 1px solid #E5E7EB;
@@ -181,6 +193,7 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.5s ease-out 0.1s both;
 }
 
 .policyCard:hover {
@@ -381,7 +394,13 @@
   text-align: left;
   font-family: inherit;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.5s ease-out both;
 }
+
+.usefulLinkCard:nth-child(1) { animation-delay: 0.2s; }
+.usefulLinkCard:nth-child(2) { animation-delay: 0.25s; }
+.usefulLinkCard:nth-child(3) { animation-delay: 0.3s; }
+.usefulLinkCard:nth-child(4) { animation-delay: 0.35s; }
 
 .usefulLinkCard:hover {
   border-color: #0052a3;
@@ -438,6 +457,7 @@
   text-align: center;
   gap: 1.8rem;
   box-shadow: 0 2px 8px rgba(0, 82, 163, 0.05);
+  animation: fadeInUp 0.5s ease-out 0.4s both;
 }
 
 .emergencyIcon {
