@@ -669,8 +669,18 @@
     padding: 2rem;
   }
 
+  .brandedBadge {
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+
   .policyLogo {
-    height: 28px;
+    height: 26px;
+  }
+
+  .policyBadgeType {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
   }
 
   .policyStatusWrapper {
