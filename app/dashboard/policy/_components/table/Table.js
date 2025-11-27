@@ -83,12 +83,20 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
                 <h3 className={styles.vehicleName}>{car.make}</h3>
               </div>
 
-              {/* Footer with Expiry Info */}
-              <div className={styles.policyCardFooter}>
-                <div className={styles.policyEndDate}>
-                  <span className={styles.endDateLabel}>Expires on:</span>
-                  <span className={styles.endDateValue}>{car.expires}</span>
+              {/* Info Section with Premium and Expiry */}
+              <div className={styles.policyCardInfo}>
+                <div className={styles.infoColumn}>
+                  <span className={styles.infoLabel}>Premium</span>
+                  <span className={styles.infoValue}>{car.premium}</span>
                 </div>
+                <div className={styles.infoColumn}>
+                  <span className={styles.infoLabel}>Expires</span>
+                  <span className={styles.infoValue}>{car.expires}</span>
+                </div>
+              </div>
+
+              {/* Footer with Arrow */}
+              <div className={styles.policyCardFooter}>
                 <div className={styles.policyArrow}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
