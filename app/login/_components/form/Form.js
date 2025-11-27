@@ -137,6 +137,10 @@ const Form = () => {
             </div>
           </div>
 
+          <a href="/forget-password" className={styles.forgotLink}>
+            Forgot your password?
+          </a>
+
           <button
             type="submit"
             className={styles.submitButton}
@@ -147,6 +151,15 @@ const Form = () => {
             </span>
           </button>
         </form>
+
+        <div className={styles.footer}>
+          <p className={styles.footerText}>
+            New to Limitless Cover?{" "}
+            <a href="/temporary/get-quote" className={styles.signupLink}>
+              Get a quote
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
