@@ -218,6 +218,23 @@
   flex-wrap: wrap;
 }
 
+.brandedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: linear-gradient(135deg, #F8FAFB 0%, #F0F4F8 100%);
+  border: 2px solid #E1E8ED;
+  border-radius: 12px;
+  padding: 0.9rem 1.4rem;
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brandedBadge:hover {
+  border-color: #0052a3;
+  box-shadow: 0 3px 10px rgba(0, 82, 163, 0.15);
+}
+
 .policyBadge {
   font-size: 1.5rem;
   font-weight: 700;
@@ -226,23 +243,26 @@
 }
 
 .policyLogo {
-  height: 32px;
+  height: 28px;
   width: auto;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .policyBadgeType {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background: #0052a3;
   color: #ffffff;
-  padding: 0.5rem 1.1rem;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.8px;
   line-height: 1;
-  box-shadow: 0 2px 4px rgba(0, 82, 163, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 82, 163, 0.2);
+  flex-shrink: 0;
 }
 
 .newBadge {
