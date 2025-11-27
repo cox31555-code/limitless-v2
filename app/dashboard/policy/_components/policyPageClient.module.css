@@ -16,10 +16,10 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1.3rem;
-  margin-left: 64px;
-  padding: 0 3% 14px 0.4%;
+  padding: 0 5% 14px;
   border-bottom: 1px solid #e0e6f0;
-  max-width: 91%;
+  max-width: 1000px;
+  margin: 0 auto;
   width: 100%;
 }
 
