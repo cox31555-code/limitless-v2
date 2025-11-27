@@ -1,0 +1,90 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.625rem;
+  padding: 3.6rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.3px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listItem {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 160%;
+  position: relative;
+  padding-left: 0;
+}
+
+.listItem strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 2.8rem;
+    gap: 2.2rem;
+  }
+
+  .header {
+    gap: 1.4rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .list {
+    gap: 1.6rem;
+  }
+
+  .listItem {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 2.2rem;
+    gap: 1.8rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .list {
+    gap: 1.4rem;
+  }
+
+  .listItem {
+    font-size: 1.05rem;
+  }
+}
