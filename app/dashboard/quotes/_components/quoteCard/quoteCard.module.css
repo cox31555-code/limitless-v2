@@ -1,59 +1,108 @@
 .card {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  overflow: visible;
+  border: 2px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
   position: relative;
-  transition: box-shadow 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-color: #0052a3;
+  box-shadow: 0 12px 32px rgba(0, 82, 163, 0.15), 0 2px 8px rgba(0, 82, 163, 0.08);
+  transform: translateY(-4px);
 }
 
 .cashbackBadge {
   position: absolute;
-  top: -8px;
-  right: 16px;
+  top: 18px;
+  right: 20px;
   background: #FFD500;
   color: #000000;
-  padding: 4px 12px;
-  border-radius: 4px;
+  padding: 7px 14px;
+  border-radius: 6px;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(255, 213, 0, 0.3);
+}
+
+.cardHeader {
+  background: #ffffff;
+  padding: 18px 20px 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brandedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0052a3;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 12px;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
+  transition: all 0.2s ease;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: crisp-edges;
+}
+
+.policyType {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  box-shadow: none;
+  flex-shrink: 0;
+  backdrop-filter: blur(2px);
 }
 
 .mainContent {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 24px;
-  padding: 20px;
+  padding: 0 20px 20px;
   align-items: start;
 }
 
 .leftColumn {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   min-width: 0;
 }
 
 .title {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: #111827;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .description {
-  font-size: 12px;
+  font-size: 13px;
   color: #6b7280;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .detailsRow {
@@ -66,42 +115,55 @@
 .detailSection {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .sectionTitle {
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   color: #111827;
   margin: 0;
-  letter-spacing: 0.5px;
 }
 
-.detailList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.excessList {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-
-.detailList li {
-  font-size: 12px;
-  color: #374151;
-  line-height: 1.4;
-  display: flex;
-  align-items: center;
   gap: 6px;
 }
 
-.detailList li::before {
-  content: '';
-  width: 4px;
-  height: 4px;
-  background: #9ca3af;
-  border-radius: 50%;
-  flex-shrink: 0;
+.excessRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.excessRow.excessTotal {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 6px;
+  margin-top: 2px;
+}
+
+.excessLabel {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.excessRow.excessTotal .excessLabel {
+  font-weight: 600;
+  color: #111827;
+}
+
+.excessValue {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.excessRow.excessTotal .excessValue {
+  font-weight: 700;
+  font-size: 15px;
 }
 
 .extrasList {
@@ -110,11 +172,11 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .extrasList li {
-  font-size: 12px;
+  font-size: 13px;
   color: #374151;
   line-height: 1.4;
   display: flex;
@@ -147,6 +209,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 12px;
+  background: #F9FAFB;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
 }
 
 .priceRow {
@@ -213,18 +279,20 @@
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .mainContent {
     grid-template-columns: 1fr;
     gap: 16px;
+    padding: 0 16px 16px;
+  }
+
+  .cardHeader {
     padding: 16px;
   }
 
   .cashbackBadge {
-    top: -6px;
-    right: 12px;
-    padding: 3px 10px;
-    font-size: 10px;
+    top: 14px;
+    right: 16px;
   }
 
   .rightColumn {
@@ -233,27 +301,67 @@
 
   .detailsRow {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .mainContent {
-    padding: 14px;
+    padding: 0 14px 14px;
     gap: 14px;
   }
 
+  .cardHeader {
+    padding: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cashbackBadge {
+    top: 12px;
+    right: 14px;
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .brandedBadge {
+    gap: 9px;
+    padding: 7px 11px;
+  }
+
+  .logo {
+    height: 28px;
+  }
+
+  .policyType {
+    font-size: 9px;
+    padding: 4px 8px;
+    letter-spacing: 0.7px;
+  }
+
   .title {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .description {
-    font-size: 11px;
+    font-size: 12px;
   }
 
-  .detailList li,
+  .sectionTitle {
+    font-size: 12px;
+  }
+
+  .excessLabel,
   .extrasList li {
-    font-size: 11px;
+    font-size: 12px;
+  }
+
+  .excessValue {
+    font-size: 13px;
+  }
+
+  .priceSection {
+    padding: 10px;
   }
 
   .priceLabel {

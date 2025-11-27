@@ -10,6 +10,17 @@ const QuoteCard = ({ quote }) => {
     <div className={styles.card}>
       <div className={styles.cashbackBadge}>{quote.cashback}</div>
       
+      <div className={styles.cardHeader}>
+        <div className={styles.brandedBadge}>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F5f655402e5e54b5782ffee63c1df405c?format=png&width=800"
+            alt="Limitless Cover"
+            className={styles.logo}
+          />
+          <span className={styles.policyType}>{quote.policyType}</span>
+        </div>
+      </div>
+      
       <div className={styles.mainContent}>
         <div className={styles.leftColumn}>
           <h3 className={styles.title}>{quote.title}</h3>
@@ -17,16 +28,25 @@ const QuoteCard = ({ quote }) => {
           
           <div className={styles.detailsRow}>
             <div className={styles.detailSection}>
-              <h4 className={styles.sectionTitle}>EXCESS</h4>
-              <ul className={styles.detailList}>
-                {quote.excessDetails.map((detail, index) => (
-                  <li key={index}>{detail}</li>
-                ))}
-              </ul>
+              <h4 className={styles.sectionTitle}>Excess details</h4>
+              <div className={styles.excessList}>
+                <div className={styles.excessRow}>
+                  <span className={styles.excessLabel}>Voluntary</span>
+                  <span className={styles.excessValue}>£{quote.excessDetails.voluntary}</span>
+                </div>
+                <div className={styles.excessRow}>
+                  <span className={styles.excessLabel}>Compulsory</span>
+                  <span className={styles.excessValue}>£{quote.excessDetails.compulsory}</span>
+                </div>
+                <div className={`${styles.excessRow} ${styles.excessTotal}`}>
+                  <span className={styles.excessLabel}>Total</span>
+                  <span className={styles.excessValue}>£{quote.excessDetails.total}</span>
+                </div>
+              </div>
             </div>
             
             <div className={styles.detailSection}>
-              <h4 className={styles.sectionTitle}>EXTRAS</h4>
+              <h4 className={styles.sectionTitle}>Optional extras</h4>
               <ul className={styles.extrasList}>
                 {quote.optionalExtras.map((extra, index) => (
                   <li key={index} className={extra.included ? styles.included : styles.notIncluded}>

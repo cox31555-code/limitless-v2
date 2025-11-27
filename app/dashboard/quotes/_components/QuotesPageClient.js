@@ -17,16 +17,18 @@ const QuotesPageClient = () => {
     {
       id: 1,
       cashback: "£49 Cashback",
+      policyType: "PAY PER MILE",
       title: "Pay Per Mile",
       description: "Requires self-installed mileage tracker for mileage tracking. Flat-rate option available.",
-      pricePerMonth: "£13.50",
+      pricePerMonth: "13.50",
       times: "x12",
-      deposit: "£121.87",
-      total: "£283.87",
-      excessDetails: [
-        "Standard £200",
-        "Comprehensive £100",
-      ],
+      deposit: "121.87",
+      total: "283.87",
+      excessDetails: {
+        voluntary: "250",
+        compulsory: "350",
+        total: "600",
+      },
       optionalExtras: [
         { label: "Legal Cover", included: true },
         { label: "Courtesy Car", included: true },
@@ -39,16 +41,18 @@ const QuotesPageClient = () => {
     {
       id: 2,
       cashback: "£35 Cashback",
+      policyType: "ANNUAL",
       title: "Annual Premium",
       description: "Standard annual insurance with fixed premium and comprehensive coverage.",
-      pricePerMonth: "£28.99",
-      times: "x1",
-      deposit: "£0",
-      total: "£347.88",
-      excessDetails: [
-        "Standard £250",
-        "Comprehensive £150",
-      ],
+      pricePerMonth: "28.99",
+      times: "x12",
+      deposit: "0",
+      total: "347.88",
+      excessDetails: {
+        voluntary: "250",
+        compulsory: "350",
+        total: "600",
+      },
       optionalExtras: [
         { label: "Legal Cover", included: true },
         { label: "Courtesy Car", included: true },
