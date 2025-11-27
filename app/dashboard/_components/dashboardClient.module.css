@@ -222,16 +222,17 @@
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  background: transparent;
+  background: #0052a3;
   border: none;
-  border-radius: 0;
-  padding: 0.6rem 0;
-  box-shadow: none;
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
   transition: all 0.2s ease;
 }
 
 .brandedBadge:hover {
-  opacity: 0.85;
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.25);
+  transform: translateY(-1px);
 }
 
 .policyBadge {
