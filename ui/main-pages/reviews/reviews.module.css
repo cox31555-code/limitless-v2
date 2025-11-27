@@ -324,35 +324,22 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .wrapper {
-    padding: 5rem 0 10rem;
-  }
-
   .container {
-    gap: 3.2rem;
-    grid-template-columns: 1fr auto;
+    padding: 5rem 4.4% 10rem;
+    gap: 6rem;
   }
 
-  .header {
-    grid-column: 1;
-    grid-row: 1;
-    margin-bottom: 0;
-  }
-
-  .navigation {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .content {
-    gap: 1.6rem;
-    grid-column: 1 / -1;
-    grid-row: 2;
+  .top {
+    gap: 2rem;
   }
 
   .title {
     font-size: 4.4rem;
     letter-spacing: -1px;
+  }
+
+  .content {
+    gap: 1.6rem;
   }
 
   .reviewsContainer {
@@ -366,25 +353,19 @@
 }
 
 @media screen and (max-width: 900px) {
-  .wrapper {
-    padding: 3rem 0 6rem 0;
-  }
-
   .container {
-    grid-template-columns: 1fr;
-    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 3rem 4% 6rem;
+    gap: 5rem;
   }
 
-  .header {
-    grid-column: 1;
-    grid-row: 1;
-    margin-bottom: 2rem;
-    text-align: center;
+  .top {
+    gap: 2rem;
   }
 
   .title {
     font-size: 3.8rem;
-    margin: 0;
     letter-spacing: -0.8px;
   }
 
@@ -393,9 +374,6 @@
     gap: 0.2rem;
     justify-content: flex-start;
     align-items: stretch;
-    grid-column: 1;
-    grid-row: 2;
-    margin-bottom: 3rem;
   }
 
   .navigation {
@@ -403,8 +381,6 @@
     gap: 1.6rem;
     width: 100%;
     justify-content: center;
-    grid-column: 1;
-    grid-row: 3;
   }
 
   .prevButton,
@@ -468,33 +444,24 @@
 }
 
 @media screen and (max-width: 600px) {
-  .wrapper {
-    padding: 2rem 0 5rem 0;
-  }
-
   .container {
-    grid-template-columns: 1fr;
-    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 3.2% 5rem;
+    gap: 4rem;
   }
 
-  .header {
-    grid-column: 1;
-    grid-row: 1;
-    margin-bottom: 2rem;
-    text-align: center;
+  .top {
+    gap: 1.8rem;
   }
 
   .title {
     font-size: 2.9rem;
-    margin: 0;
     letter-spacing: -0.6px;
   }
 
   .content {
     gap: 0rem;
-    grid-column: 1;
-    grid-row: 2;
-    margin-bottom: 2.5rem;
   }
 
   .navigation {
@@ -502,8 +469,6 @@
     width: 100%;
     justify-content: center;
     gap: 1.4rem;
-    grid-column: 1;
-    grid-row: 3;
   }
 
   .prevButton,
@@ -620,32 +585,18 @@
 }
 
 @media screen and (max-width: 480px) {
-  .wrapper {
-    padding: 1.5rem 0 4rem 0;
+  .container {
+    padding: 1.5rem 4% 4rem;
+    gap: 3.5rem;
   }
 
-  .container {
-    grid-template-columns: 1fr;
-    gap: 0;
+  .top {
+    gap: 1.6rem;
   }
 
   .title {
     font-size: 2.5rem;
-    margin: 0;
     letter-spacing: -0.5px;
-  }
-
-  .header {
-    grid-column: 1;
-    grid-row: 1;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .content {
-    grid-column: 1;
-    grid-row: 2;
-    margin-bottom: 2rem;
   }
 
   .navigation {
@@ -653,8 +604,6 @@
     width: 100%;
     justify-content: center;
     gap: 1.2rem;
-    grid-column: 1;
-    grid-row: 3;
   }
 
   .prevButton,
