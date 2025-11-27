@@ -18,7 +18,7 @@
 .cardsGrid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
   width: 100%;
 }
 
@@ -53,11 +53,11 @@
 
 .policyCardHeader {
   background: #ffffff;
-  padding: 2.4rem 2.4rem 1.8rem;
+  padding: 1.8rem 2rem 1.4rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .policyBadgeWrapper {
@@ -137,10 +137,10 @@
 }
 
 .policyCardBody {
-  padding: 0 2.4rem 2rem;
+  padding: 0 2rem 1.6rem;
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.2rem;
 }
 
 .licensePlate {
@@ -182,8 +182,8 @@
 .policyCardInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.4rem;
-  padding: 2.4rem;
+  gap: 1.8rem;
+  padding: 1.8rem 2rem;
   background: #FAFBFC;
   border-top: 1px solid #F0F1F3;
 }
