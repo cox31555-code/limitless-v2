@@ -94,7 +94,7 @@ const DashboardClient = () => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroBackground}>
@@ -108,10 +108,21 @@ const DashboardClient = () => {
             <h1 className={styles.greetingTitle}>Hi, John</h1>
             <p className={styles.greetingSubtitle}>Welcome back. Manage and review your insurance policies anytime, anywhere</p>
           </div>
+          <div className={styles.badgeArea}>
+            <span className={styles.allianzBadge}>Limitless Cover</span>
+          </div>
         </div>
       </section>
 
-      <div className={styles.container}>
+      {/* Breadcrumb Navigation */}
+      <div className={styles.breadcrumb}>
+        <span className={styles.breadcrumbItem}>Dashboard</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Home</span>
+      </div>
+
+      {/* Content Wrapper */}
+      <div className={styles.contentWrapper}>
         {/* My Policies Section */}
         <section className={styles.policiesSection}>
           <h2 className={styles.sectionTitle}>My Policies</h2>
@@ -203,7 +214,7 @@ const DashboardClient = () => {
           </p>
         </section>
       </div>
-    </>
+    </div>
   );
 };
 
