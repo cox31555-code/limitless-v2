@@ -16,7 +16,7 @@ const QuotesPageClient = () => {
   const quotes = [
     {
       id: 1,
-      cashback: "£49 Cashback",
+      cashback: "£49",
       policyType: "PAY PER MILE",
       title: "Pay Per Mile",
       description: "Requires self-installed mileage tracker for mileage tracking. Flat-rate option available.",
@@ -27,7 +27,7 @@ const QuotesPageClient = () => {
       createdDate: "15 Jan 2024",
       expiresInDays: 28,
       pricePerMonth: "13.50",
-      times: "x12",
+      times: "11x",
       deposit: "121.87",
       total: "283.87",
       excessDetails: {
@@ -46,7 +46,7 @@ const QuotesPageClient = () => {
     },
     {
       id: 2,
-      cashback: "£35 Cashback",
+      cashback: "£35",
       policyType: "ANNUAL",
       title: "Annual Premium",
       description: "Standard annual insurance with fixed premium and comprehensive coverage.",
@@ -57,7 +57,7 @@ const QuotesPageClient = () => {
       createdDate: "18 Jan 2024",
       expiresInDays: 25,
       pricePerMonth: "28.99",
-      times: "x12",
+      times: "11x",
       deposit: "0",
       total: "347.88",
       excessDetails: {
