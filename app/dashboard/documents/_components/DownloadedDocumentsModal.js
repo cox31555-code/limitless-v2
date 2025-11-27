@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import styles from "./downloadedDocumentsModal.module.css";
 
 export default function DownloadedDocumentsModal({ isOpen, onClose }) {
@@ -17,7 +18,7 @@ export default function DownloadedDocumentsModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  return (
+  const content = (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
@@ -87,4 +88,6 @@ export default function DownloadedDocumentsModal({ isOpen, onClose }) {
       </div>
     </div>
   );
+
+  return createPortal(content, document.body);
 }
