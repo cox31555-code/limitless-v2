@@ -202,8 +202,8 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .cardsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
   }
 
   .claimCard {
@@ -222,7 +222,7 @@
 
   .cardsGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   .claimCard {
@@ -230,12 +230,12 @@
   }
 
   .claimCardHeader {
-    padding: 1.6rem 2rem;
+    padding: 1.6rem;
   }
 
   .claimDetails {
-    padding: 2rem;
-    gap: 1.6rem;
+    padding: 0 1.6rem 1.4rem;
+    gap: 1.2rem;
   }
 
   .claimInfo {
@@ -296,7 +296,7 @@
 
   .cardsGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.6rem;
   }
 
   .claimCardHeader {
