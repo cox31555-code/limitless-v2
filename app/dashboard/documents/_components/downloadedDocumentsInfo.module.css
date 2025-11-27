@@ -1,24 +1,25 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
-  padding: 2.4rem 3.6rem;
+  gap: 1.6rem;
+  padding: 3.6rem;
   border: 1.5px solid #d1d5db;
   border-radius: 12px;
-  background: #fafbfc;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
 }
 
 .title {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #0052a3;
   margin: 0;
   line-height: 130%;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
 }
 
 .description {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: #6b7280;
   margin: 0;
   line-height: 160%;
@@ -27,7 +28,7 @@
 .link {
   color: #0052a3;
   text-decoration: underline;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .link:hover {
