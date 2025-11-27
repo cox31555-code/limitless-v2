@@ -1,7 +1,7 @@
 .wrapper {
   width: 100%;
-  padding: 3.4rem 0 16.4rem;
-  background: transparent;
+  padding: 4rem 0 12rem;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0) 0%, rgba(248, 250, 252, 0.4) 50%, rgba(248, 250, 252, 0) 100%);
 }
 
 .container {
