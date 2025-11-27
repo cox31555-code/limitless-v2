@@ -36,6 +36,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
+  padding-right: 140px;
 }
 
 .brandedBadge {
@@ -75,19 +76,119 @@
   backdrop-filter: blur(2px);
 }
 
+.expiryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FEF3C7;
+  color: #92400E;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #FDE68A;
+}
+
+.clockIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: #92400E;
+}
+
+.vehicleSection {
+  padding: 0 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #F0F1F3;
+}
+
+.licensePlate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFD500;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  padding: 9px 14px;
+  flex-shrink: 0;
+}
+
+.licensePlateText {
+  font-family: 'UKNumberPlate', monospace, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.vehicleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vehicleName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.policyholderName {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 0;
+  font-weight: 400;
+}
+
 .mainContent {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 24px;
-  padding: 0 20px 20px;
+  padding: 16px 20px 20px;
   align-items: start;
 }
 
 .leftColumn {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   min-width: 0;
+}
+
+.quoteMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.metaIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: #9CA3AF;
+}
+
+.metaLabel {
+  font-weight: 500;
+}
+
+.metaValue {
+  font-weight: 600;
+  color: #374151;
 }
 
 .title {
@@ -283,11 +384,17 @@
   .mainContent {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 0 16px 16px;
+    padding: 16px 16px 16px;
   }
 
   .cardHeader {
     padding: 16px;
+    padding-right: 120px;
+    flex-wrap: wrap;
+  }
+
+  .vehicleSection {
+    padding: 0 16px 16px;
   }
 
   .cashbackBadge {
@@ -307,14 +414,22 @@
 
 @media screen and (max-width: 600px) {
   .mainContent {
-    padding: 0 14px 14px;
+    padding: 14px 14px 14px;
     gap: 14px;
   }
 
   .cardHeader {
     padding: 14px;
+    padding-right: 14px;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .vehicleSection {
+    padding: 0 14px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .cashbackBadge {
@@ -322,6 +437,16 @@
     right: 14px;
     padding: 5px 10px;
     font-size: 10px;
+  }
+
+  .expiryBadge {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .clockIcon {
+    width: 12px;
+    height: 12px;
   }
 
   .brandedBadge {
@@ -337,6 +462,35 @@
     font-size: 9px;
     padding: 4px 8px;
     letter-spacing: 0.7px;
+  }
+
+  .licensePlate {
+    padding: 6px 10px;
+  }
+
+  .licensePlateText {
+    font-size: 18px;
+  }
+
+  .vehicleName {
+    font-size: 15px;
+  }
+
+  .policyholderName {
+    font-size: 12px;
+  }
+
+  .quoteMetaRow {
+    gap: 12px;
+  }
+
+  .metaItem {
+    font-size: 11px;
+  }
+
+  .metaIcon {
+    width: 12px;
+    height: 12px;
   }
 
   .title {
