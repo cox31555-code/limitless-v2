@@ -37,27 +37,27 @@
 
 @media screen and (max-width: 900px) {
   .section {
-    padding: 2rem 2.8rem;
-    gap: 1.2rem;
+    padding: 2.8rem;
+    gap: 1.4rem;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .description {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .section {
-    padding: 1.6rem 2.2rem;
-    gap: 1rem;
+    padding: 2.2rem;
+    gap: 1.2rem;
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .description {
