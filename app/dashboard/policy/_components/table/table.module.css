@@ -273,6 +273,19 @@
     font-size: 1.5rem;
   }
 
+  .policyCardInfo {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .infoLabel {
+    font-size: 1.2rem;
+  }
+
+  .infoValue {
+    font-size: 1.3rem;
+  }
+
   .policyCardFooter {
     padding: 1.6rem 2rem;
   }
