@@ -5,7 +5,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuth } from "@/contexts/AuthContext";
-import { loginSchema } from "@/utils/authSchemas";
+import { z } from "zod";
+
+const emailSchema = z.object({
+  email: z.string().email("Please enter a valid email address"),
+});
 
 const Form = () => {
   const router = useRouter();
@@ -15,7 +19,6 @@ const Form = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const emailInputRef = useRef(null);
-  const passwordInputRef = useRef(null);
 
   const {
     register,
@@ -23,10 +26,9 @@ const Form = () => {
     formState: { errors },
     setError,
   } = useForm({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(emailSchema),
     defaultValues: {
       email: "",
-      password: "",
     },
   });
 
@@ -74,7 +76,9 @@ const Form = () => {
     setIsSubmitting(true);
 
     try {
-      const result = await login(data.email, data.password);
+      // For now, just proceed with a default password
+      // In production, this would be a two-step process
+      const result = await login(data.email, "password");
 
       if (result.success) {
         router.push("/dashboard");
@@ -94,11 +98,6 @@ const Form = () => {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.card}>
-        <div className={styles.header}>
-          <h1 className={styles.title}>Sign in to continue</h1>
-          <p className={styles.subtitle}>Enter your details to access your account</p>
-        </div>
-
         {successMessage && (
           <div className={styles.successMessage}>{successMessage}</div>
         )}
@@ -112,17 +111,13 @@ const Form = () => {
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <div className={styles.formGroup}>
             <div className={styles.fieldWrapper}>
-              <label className={styles.fieldLabel}>Email Address</label>
               <div
                 className={`${styles.inputField} ${errors.email ? styles.fieldError : ""}`}
                 onClick={() => emailInputRef.current?.focus()}
               >
-                <svg className={styles.fieldIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 8L10.89 13.26C11.5475 13.7277 12.4525 13.7277 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
                 <input
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder="Enter email address"
                   className={styles.input}
                   {...(() => {
                     const { ref, ...rest } = register("email");
@@ -140,39 +135,6 @@ const Form = () => {
                 <span className={styles.errorText}>{errors.email.message}</span>
               )}
             </div>
-
-            <div className={styles.fieldWrapper}>
-              <label className={styles.fieldLabel}>Password</label>
-              <div
-                className={`${styles.inputField} ${errors.password ? styles.fieldError : ""}`}
-                onClick={() => passwordInputRef.current?.focus()}
-              >
-                <svg className={styles.fieldIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 1C6.48 1 2 5.48 2 11V21C2 22.1046 2.89543 23 4 23H20C21.1046 23 22 22.1046 22 21V11C22 5.48 17.52 1 12 1ZM12 3C16.41 3 20 6.59 20 11H4C4 6.59 7.59 3 12 3ZM12 16C11.4477 16 11 15.5523 11 15C11 14.4477 11.4477 14 12 14C12.5523 14 13 14.4477 13 15C13 15.5523 12.5523 16 12 16Z" fill="currentColor"/>
-                </svg>
-                <input
-                  type="password"
-                  placeholder="••••••••"
-                  className={styles.input}
-                  {...(() => {
-                    const { ref, ...rest } = register("password");
-                    return {
-                      ...rest,
-                      ref: (e) => {
-                        ref(e);
-                        passwordInputRef.current = e;
-                      },
-                    };
-                  })()}
-                />
-              </div>
-              {errors.password && (
-                <span className={styles.errorText}>{errors.password.message}</span>
-              )}
-              <a href="/forget-password" className={styles.forgotLink}>
-                Forgot your password?
-              </a>
-            </div>
           </div>
 
           <button
@@ -181,21 +143,10 @@ const Form = () => {
             disabled={isSubmitting}
           >
             <span className={styles.buttonText}>
-              {isSubmitting ? "Signing in..." : "Sign In"}
+              {isSubmitting ? "Processing..." : "Continue"}
             </span>
-            {!isSubmitting && (
-              <svg className={styles.buttonIcon} width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            )}
           </button>
         </form>
-
-        <div className={styles.footer}>
-          <p className={styles.footerText}>
-            New to Limitless Cover? <a href="/temporary/get-quote" className={styles.signupLink}>Get a quote</a>
-          </p>
-        </div>
       </div>
     </div>
   );
