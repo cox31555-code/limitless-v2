@@ -10,66 +10,63 @@ const QuoteCard = ({ quote }) => {
     <div className={styles.card}>
       <div className={styles.cashbackBadge}>{quote.cashback}</div>
       
-      <div className={styles.cardLayout}>
-        <div className={styles.leftSection}>
-          <div className={styles.header}>
-            <h3 className={styles.title}>{quote.title}</h3>
-            <p className={styles.description}>{quote.description}</p>
-          </div>
-
-          <div className={styles.detailsCompact}>
-            <div className={styles.detailBlock}>
-              <span className={styles.detailBlockTitle}>Excess</span>
-              <div className={styles.detailItems}>
+      <div className={styles.mainContent}>
+        <div className={styles.leftColumn}>
+          <h3 className={styles.title}>{quote.title}</h3>
+          <p className={styles.description}>{quote.description}</p>
+          
+          <div className={styles.detailsRow}>
+            <div className={styles.detailSection}>
+              <h4 className={styles.sectionTitle}>EXCESS</h4>
+              <ul className={styles.detailList}>
                 {quote.excessDetails.map((detail, index) => (
-                  <span key={index} className={styles.detailText}>{detail}</span>
+                  <li key={index}>{detail}</li>
                 ))}
-              </div>
+              </ul>
             </div>
-
-            <div className={styles.detailBlock}>
-              <span className={styles.detailBlockTitle}>Extras</span>
-              <div className={styles.extrasCompact}>
+            
+            <div className={styles.detailSection}>
+              <h4 className={styles.sectionTitle}>EXTRAS</h4>
+              <ul className={styles.extrasList}>
                 {quote.optionalExtras.map((extra, index) => (
-                  <div key={index} className={styles.extraTag}>
-                    <svg className={`${styles.checkIcon} ${extra.included ? styles.included : ''}`} viewBox="0 0 16 16" fill="currentColor">
+                  <li key={index} className={extra.included ? styles.included : styles.notIncluded}>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
                       {extra.included ? (
-                        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                       ) : (
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
                       )}
                     </svg>
                     <span>{extra.label}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
-
-        <div className={styles.rightSection}>
-          <div className={styles.priceBlock}>
+        
+        <div className={styles.rightColumn}>
+          <div className={styles.priceSection}>
             <div className={styles.priceRow}>
-              <span className={styles.label}>Monthly</span>
-              <div className={styles.value}>
-                <span className={styles.amount}>£{quote.pricePerMonth}</span>
-                <span className={styles.meta}>{quote.times}</span>
+              <span className={styles.priceLabel}>Monthly</span>
+              <div className={styles.priceAmount}>
+                <span className={styles.price}>£{quote.pricePerMonth}</span>
               </div>
             </div>
             <div className={styles.priceRow}>
-              <span className={styles.label}>Deposit</span>
-              <span className={styles.amount}>£{quote.deposit}</span>
+              <span className={styles.priceLabel}>Deposit</span>
+              <span className={styles.price}>£{quote.deposit}</span>
             </div>
-            <div className={`${styles.priceRow} ${styles.total}`}>
-              <span className={styles.label}>Total</span>
-              <span className={styles.totalAmount}>£{quote.total}</span>
+            <div className={`${styles.priceRow} ${styles.totalRow}`}>
+              <span className={styles.priceLabel}>Total</span>
+              <span className={styles.totalPrice}>£{quote.total}</span>
             </div>
           </div>
-
-          <button className={styles.viewBtn}>
+          
+          <button className={styles.viewQuoteBtn}>
             {quote.buttonText}
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 12l4-4-4-4"/>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"/>
             </svg>
           </button>
         </div>
