@@ -10,6 +10,19 @@
   background: linear-gradient(180deg, rgba(248, 250, 252, 0) 0%, rgba(248, 250, 252, 0.4) 50%, rgba(248, 250, 252, 0) 100%);
 }
 
+.container::before {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 45rem;
+  height: 45rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .top {
   display: flex;
   flex-direction: column;
