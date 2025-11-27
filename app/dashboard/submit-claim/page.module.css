@@ -67,12 +67,12 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1405px;
+  max-width: 1000px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
   flex: 1;
   gap: 3.9rem;
-  margin-left: 51px;
 }
 
 .greetingArea {
@@ -103,10 +103,10 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1.3rem;
-  margin-left: 64px;
-  padding: 0 3% 14px 0.4%;
+  padding: 0 5% 14px;
   border-bottom: 1px solid #e0e6f0;
-  max-width: 91%;
+  max-width: 1000px;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -133,9 +133,9 @@
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding: 55px 4.4% 1.6rem;
-  max-width: 1400px;
+  gap: 2rem;
+  padding: 55px 5% 1.6rem;
+  max-width: 1000px;
   margin: 0 auto;
   width: 100%;
   position: relative;
@@ -170,8 +170,8 @@
 /* Claims Grid */
 .claimsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
   width: 100%;
 }
 
@@ -186,9 +186,8 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .breadcrumb {
-    margin-left: 40px;
     gap: 1rem;
-    padding: 20px 3% 20px 0.4%;
+    padding: 20px 5% 20px;
   }
 
   .breadcrumbItem {
@@ -216,15 +215,14 @@
   }
 
   .claimsGrid {
-    gap: 2.5rem;
+    gap: 1.6rem;
   }
 }
 
 @media screen and (max-width: 900px) {
   .breadcrumb {
-    margin-left: 30px;
     gap: 0.8rem;
-    padding: 15px 3% 15px 0.4%;
+    padding: 15px 5% 15px;
   }
 
   .breadcrumbItem {
@@ -267,8 +265,8 @@
   }
 
   .contentWrapper {
-    padding: 2.5rem 3%;
-    gap: 2.5rem;
+    padding: 2.5rem 5%;
+    gap: 2rem;
   }
 
   .pageTitle {
@@ -281,15 +279,14 @@
 
   .claimsGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.6rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .breadcrumb {
-    margin-left: 20px;
     gap: 0.6rem;
-    padding: 12px 3% 12px 0.4%;
+    padding: 12px 5% 12px;
   }
 
   .breadcrumbItem {
@@ -316,7 +313,7 @@
 
   .contentWrapper {
     padding: 2rem 4%;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .pageTitle {
@@ -328,6 +325,6 @@
   }
 
   .claimsGrid {
-    gap: 1.5rem;
+    gap: 1.6rem;
   }
 }
