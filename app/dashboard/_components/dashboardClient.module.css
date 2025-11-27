@@ -623,7 +623,7 @@
   .policyCardHeader {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   .policyStatusWrapper {
@@ -632,7 +632,7 @@
   }
 
   .policyCardBody {
-    padding: 0 1.5rem 1.2rem;
+    padding: 0 2rem 1.6rem;
   }
 
   .licensePlateText {
@@ -645,18 +645,18 @@
   }
 
   .policyCardFooter {
-    padding: 1.2rem 1.5rem;
+    padding: 1.6rem 2rem;
   }
 
   .usefulLinksGrid {
-    gap: 1.2rem;
+    gap: 1.6rem;
   }
 
   .usefulLinkCard {
-    padding: 1.5rem;
+    padding: 2rem;
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .linkIcon {
@@ -669,8 +669,8 @@
   }
 
   .emergencyCard {
-    padding: 2.5rem;
-    gap: 1.2rem;
+    padding: 3rem;
+    gap: 1.6rem;
   }
 
   .emergencyIcon {
