@@ -53,43 +53,48 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
             <div
               key={index}
               className={styles.policyCard}
+              onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
             >
-              {/* Card Header - Status Badge & Policy Number */}
+              {/* Card Header - Logo Badge & Status */}
               <div className={styles.policyCardHeader}>
-                <div className={styles.statusBadge}>
-                  {statusType === "expired" ? "EXPIRED" : "ACTIVE"}
+                <div className={styles.policyBadgeWrapper}>
+                  <div className={styles.brandedBadge}>
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F5f655402e5e54b5782ffee63c1df405c?format=png&width=800"
+                      alt="Limitless Cover"
+                      className={styles.policyLogo}
+                    />
+                    <span className={styles.policyBadgeType}>ANNUAL</span>
+                  </div>
                 </div>
-                <div className={styles.policyRef}>{row.policyNumber}</div>
+                <div className={styles.policyStatusWrapper}>
+                  <span className={styles.policyStatusLabel}>Status:</span>
+                  <span className={`${styles.policyStatus} ${styles[statusType]}`}>
+                    {statusType === "expired" ? "Expired" : "Active"}
+                  </span>
+                </div>
               </div>
 
               {/* Car Details */}
-              <div className={styles.policyDetails}>
-                <h3 className={styles.carTitle}>{car.make}</h3>
-                <p className={styles.carMeta}>{car.year} • {car.color}</p>
-                <div className={styles.regBadge}>{car.reg}</div>
+              <div className={styles.policyCardBody}>
+                <div className={styles.licensePlate}>
+                  <span className={styles.licensePlateText}>{formatVehicleReg(car.reg)}</span>
+                </div>
+                <h3 className={styles.vehicleName}>{car.make}</h3>
               </div>
 
-              {/* Premium & Expiry Info */}
-              <div className={styles.policyInfo}>
-                <div className={styles.infoColumn}>
-                  <p className={styles.infoLabel}>Premium</p>
-                  <p className={styles.infoValue}>{car.premium}</p>
+              {/* Footer with Expiry Info */}
+              <div className={styles.policyCardFooter}>
+                <div className={styles.policyEndDate}>
+                  <span className={styles.endDateLabel}>Expires on:</span>
+                  <span className={styles.endDateValue}>{car.expires}</span>
                 </div>
-                <div className={styles.infoColumn}>
-                  <p className={styles.infoLabel}>Expires</p>
-                  <p className={styles.infoValue}>{car.expires}</p>
+                <div className={styles.policyArrow}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
                 </div>
               </div>
-
-              {/* View Details Button */}
-              {showViewButton && (
-                <button
-                  className={styles.viewButton}
-                  onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
-                >
-                  View Policy Details →
-                </button>
-              )}
             </div>
           );
         })}
