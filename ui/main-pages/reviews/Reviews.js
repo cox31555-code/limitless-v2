@@ -308,54 +308,52 @@ const Reviews = () => {
   const isAtEnd = currentIndex >= maxIndex;
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Trustpilot Reviews
-          </h2>
-        </div>
+    <div className={styles.container}>
+      <div className={styles.top}>
+        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+          Trustpilot Reviews
+        </h2>
+      </div>
 
-        <div className={styles.content}>
-          <div className={styles.summaryCard}>
-            <div className={`${styles.excellent} ${jost.className}`}>
-              Excellent
-            </div>
-            <div className={styles.largeStars}>
-              <LargeStarIcon />
-              <LargeStarIcon />
-              <LargeStarIcon />
-              <LargeStarIcon />
-              <HalfStarIcon />
-            </div>
-            <div className={`${styles.reviewsCount} ${poppins.className}`}>
-              1,593 reviews on
-            </div>
-            <div className={styles.trustpilotBadge}>
-              <TrustpilotLogo />
-              <span className={`${styles.trustpilotText} ${roboto.className}`}>Trustpilot</span>
-            </div>
+      <div className={styles.content}>
+        <div className={styles.summaryCard}>
+          <div className={`${styles.excellent} ${jost.className}`}>
+            Excellent
           </div>
-
-          <div className={styles.reviewsContainer} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-            {displayedReviews.map((review) => (
-              <ReviewCard key={review.id} review={review} />
-            ))}
+          <div className={styles.largeStars}>
+            <LargeStarIcon />
+            <LargeStarIcon />
+            <LargeStarIcon />
+            <LargeStarIcon />
+            <HalfStarIcon />
+          </div>
+          <div className={`${styles.reviewsCount} ${poppins.className}`}>
+            1,593 reviews on
+          </div>
+          <div className={styles.trustpilotBadge}>
+            <TrustpilotLogo />
+            <span className={`${styles.trustpilotText} ${roboto.className}`}>Trustpilot</span>
           </div>
         </div>
 
-        <div className={styles.navigation}>
-          <button className={`${styles.prevButton} ${!isAtStart ? styles.prevButtonActive : ''}`} onClick={handlePrev} aria-label="Previous review" disabled={isAtStart}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <button className={`${styles.nextButton} ${!isAtEnd ? styles.nextButtonActive : ''}`} onClick={handleNext} aria-label="Next review" disabled={isAtEnd}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
+        <div className={styles.reviewsContainer} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+          {displayedReviews.map((review) => (
+            <ReviewCard key={review.id} review={review} />
+          ))}
         </div>
+      </div>
+
+      <div className={styles.navigation}>
+        <button className={`${styles.prevButton} ${!isAtStart ? styles.prevButtonActive : ''}`} onClick={handlePrev} aria-label="Previous review" disabled={isAtStart}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        <button className={`${styles.nextButton} ${!isAtEnd ? styles.nextButtonActive : ''}`} onClick={handleNext} aria-label="Next review" disabled={isAtEnd}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   );
