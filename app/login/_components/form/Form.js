@@ -95,8 +95,8 @@ const Form = () => {
     <div className={styles.cardWrapper}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Welcome back</h1>
-          <p className={styles.subtitle}>Access your insurance dashboard</p>
+          <h1 className={styles.title}>Sign in to continue</h1>
+          <p className={styles.subtitle}>Enter your details to access your account</p>
         </div>
 
         {successMessage && (
