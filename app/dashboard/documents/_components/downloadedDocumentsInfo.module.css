@@ -29,6 +29,13 @@
   color: #0052a3;
   text-decoration: underline;
   font-weight: 600;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .link:hover {
