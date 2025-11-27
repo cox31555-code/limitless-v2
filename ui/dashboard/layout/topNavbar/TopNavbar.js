@@ -15,7 +15,6 @@ const TopNavbar = () => {
     if (pathname.includes("/policy")) return "policy";
     if (pathname.includes("/documents")) return "documents";
     if (pathname.includes("/claims")) return "claims";
-    if (pathname.includes("/submit-claim")) return "submit-claim";
     return "dashboard";
   };
 
@@ -23,8 +22,7 @@ const TopNavbar = () => {
     { label: "Dashboard", href: "/dashboard", id: "dashboard" },
     { label: "Manage Policy", href: "/dashboard/policy", id: "policy" },
     { label: "Documents", href: "/dashboard/documents", id: "documents" },
-    { label: "Manage Claims", href: "/dashboard/claims", id: "claims" },
-    { label: "Submit a Claim", href: "/dashboard/submit-claim", id: "submit-claim" },
+    { label: "Claims", href: "/dashboard/claims", id: "claims" },
   ];
 
   const activePage = getActivePage();
