@@ -216,26 +216,38 @@
   display: inline-block;
   background: #0052a3;
   color: #ffffff;
-  padding: 0.4rem 1rem;
-  border-radius: 4px;
-  font-size: 1.1rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  font-size: 1.05rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   line-height: 1;
+  box-shadow: 0 2px 4px rgba(0, 82, 163, 0.15);
 }
 
 .newBadge {
   display: inline-block;
-  background: #10B981;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   color: #ffffff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   line-height: 1;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+  }
 }
 
 .policyStatusWrapper {
@@ -253,21 +265,24 @@
 
 .policyStatus {
   display: inline-block;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
   font-size: 1.3rem;
   font-weight: 600;
   text-transform: capitalize;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .policyStatus.active {
-  background: #D1FAE5;
+  background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
   color: #065F46;
+  border: 1px solid #6EE7B7;
 }
 
 .policyStatus.cancelled {
-  background: #FEE2E2;
+  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
   color: #991B1B;
+  border: 1px solid #FCA5A5;
 }
 
 .policyCardBody {
@@ -299,11 +314,12 @@
 }
 
 .vehicleName {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  color: #1F2937;
+  color: #111827;
   margin: 0;
   line-height: 140%;
+  letter-spacing: -0.2px;
 }
 
 .policyCardFooter {
@@ -401,8 +417,9 @@
 .linkLabel {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #1F2937;
+  color: #111827;
   line-height: 1.2;
+  letter-spacing: -0.2px;
 }
 
 /* Emergency Section */
@@ -424,14 +441,15 @@
 }
 
 .emergencyIcon {
-  width: 64px;
-  height: 64px;
-  background: #0052a3;
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.25);
 }
 
 .emergencyIcon svg {
@@ -441,11 +459,12 @@
 }
 
 .emergencyTitle {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   font-weight: 700;
-  color: #1F2937;
+  color: #111827;
   margin: 0;
   line-height: 120%;
+  letter-spacing: -0.3px;
 }
 
 .emergencyText {
