@@ -139,7 +139,7 @@
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  gap: 80px;
   padding: 55px 5% 1.6rem;
   max-width: 1000px;
   margin: 0 auto;
