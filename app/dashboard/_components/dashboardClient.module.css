@@ -649,6 +649,10 @@
     padding: 2rem;
   }
 
+  .policyLogo {
+    height: 28px;
+  }
+
   .policyStatusWrapper {
     align-items: flex-start;
     width: 100%;
