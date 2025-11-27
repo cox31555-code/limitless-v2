@@ -283,9 +283,10 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .breadcrumb {
-    margin-left: 40px;
     gap: 1rem;
-    padding: 20px 3% 20px 0.4%;
+    padding: 0 5% 14px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .breadcrumbItem {
