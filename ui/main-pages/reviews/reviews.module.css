@@ -80,9 +80,8 @@
 }
 
 .prevButton:hover:not(:disabled) {
-  border-color: #0388ff;
   color: #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.15);
+  border-color: #D1D5DB;
 }
 
 .prevButton:disabled {
@@ -98,9 +97,7 @@
 }
 
 .prevButtonActive:hover:not(:disabled) {
-  background: #0388ff;
-  color: #FFFFFF;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.25);
+  border-color: #0270cc;
 }
 
 .nextButton {
@@ -127,9 +124,8 @@
 }
 
 .nextButton:hover:not(:disabled) {
-  border-color: #0388ff;
   color: #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.15);
+  border-color: #D1D5DB;
 }
 
 .nextButton:disabled {
@@ -142,13 +138,11 @@
   background: #0388ff;
   color: #FFFFFF;
   border: 2px solid #0388ff;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
 }
 
 .nextButtonActive:hover:not(:disabled) {
   background: #0270cc;
   border-color: #0270cc;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
 }
 
 .content {
