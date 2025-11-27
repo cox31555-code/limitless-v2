@@ -94,7 +94,7 @@ const QuoteCard = ({ quote }) => {
         <div className={styles.rightColumn}>
           <div className={styles.priceSection}>
             <div className={styles.priceRow}>
-              <span className={styles.priceLabel}>Monthly</span>
+              <span className={styles.priceLabel}>Monthly {quote.times}</span>
               <div className={styles.priceAmount}>
                 <span className={styles.price}>£{quote.pricePerMonth}</span>
               </div>
