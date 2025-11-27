@@ -152,14 +152,14 @@
 /* Forgot Password Link */
 .forgotLink {
   display: inline-block;
-  font-size: 1.38rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: #0388ff;
   text-decoration: none;
   transition: all 0.25s ease;
-  margin-top: 0.8rem;
-  margin-bottom: 1.2rem;
-  padding: 0.4rem 0;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
 }
 
 .forgotLink:hover {
@@ -219,19 +219,18 @@
 
 /* Footer */
 .footer {
-  margin-top: 3rem;
-  padding-top: 2.8rem;
-  border-top: 1px solid rgba(0, 8, 34, 0.1);
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(0, 8, 34, 0.08);
   text-align: center;
 }
 
 .footerText {
-  font-size: 1.42rem;
+  font-size: 1.45rem;
   color: #8a95a3;
   margin: 0;
   font-weight: 400;
   line-height: 1.6;
-  letter-spacing: 0.1px;
 }
 
 .signupLink {
@@ -239,7 +238,7 @@
   text-decoration: none;
   font-weight: 600;
   transition: all 0.25s ease;
-  margin-left: 0.3rem;
+  margin-left: 0.4rem;
 }
 
 .signupLink:hover {
