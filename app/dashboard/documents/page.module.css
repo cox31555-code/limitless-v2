@@ -325,9 +325,10 @@
 
 @media screen and (max-width: 900px) {
   .breadcrumb {
-    margin-left: 30px;
     gap: 0.8rem;
-    padding: 15px 3% 15px 0.4%;
+    padding: 0 5% 14px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .breadcrumbItem {
