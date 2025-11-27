@@ -621,14 +621,14 @@
 
   .prevButton,
   .nextButton {
-    width: 4rem;
-    height: 4rem;
+    width: 3.8rem;
+    height: 3.8rem;
   }
 
   .prevButton svg,
   .nextButton svg {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .content {
