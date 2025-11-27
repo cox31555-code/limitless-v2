@@ -208,14 +208,6 @@
   font-weight: 600;
 }
 
-.policyCardFooter {
-  background: #FAFBFC;
-  padding: 1.4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  border-top: 1px solid #F0F1F3;
-}
 
 .policyCardInfo .policyArrow {
   flex-shrink: 0;
@@ -291,6 +283,7 @@
   }
 
   .policyCardInfo {
+    flex-direction: row;
     gap: 1.6rem;
     padding: 1.6rem;
   }
@@ -303,9 +296,6 @@
     font-size: 1.3rem;
   }
 
-  .policyCardFooter {
-    padding: 1.6rem 2rem;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -352,6 +342,8 @@
   }
 
   .policyCardInfo {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1.4rem;
     padding: 1.4rem;
   }
