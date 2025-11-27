@@ -1,0 +1,164 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 3.6rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.3px;
+}
+
+.documentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.documentItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 2rem;
+}
+
+.documentItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.documentItem:first-child {
+  padding-top: 0;
+}
+
+.documentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.documentTitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  line-height: 140%;
+}
+
+.documentDate {
+  font-size: 1.15rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 140%;
+}
+
+.documentActions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.4rem;
+  background: transparent;
+  color: #0052a3;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.actionButton:hover {
+  background: #f9fafb;
+  border-color: #0052a3;
+}
+
+.actionButton:active {
+  transform: scale(0.98);
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 2.8rem;
+    gap: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .documentItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    padding: 1.8rem 0;
+  }
+
+  .documentActions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .actionButton {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+    justify-content: center;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 2.2rem;
+    gap: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .documentTitle {
+    font-size: 1.25rem;
+  }
+
+  .documentDate {
+    font-size: 1.05rem;
+  }
+
+  .documentItem {
+    padding: 1.6rem 0;
+  }
+
+  .documentActions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .actionButton {
+    width: 100%;
+    min-width: auto;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+}

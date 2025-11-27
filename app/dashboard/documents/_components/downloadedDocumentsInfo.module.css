@@ -1,0 +1,65 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 2.4rem 3.6rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  background: #fafbfc;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.2px;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 160%;
+}
+
+.link {
+  color: #0052a3;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: #003d7a;
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 2rem 2.8rem;
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 1.6rem 2.2rem;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+}
