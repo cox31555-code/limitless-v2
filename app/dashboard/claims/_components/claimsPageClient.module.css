@@ -372,9 +372,10 @@
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
   .breadcrumb {
-    margin-left: 40px;
     gap: 1rem;
-    padding: 20px 3% 20px 0.4%;
+    padding: 0 5% 14px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .breadcrumbItem {
@@ -426,9 +427,10 @@
 
 @media screen and (max-width: 900px) {
   .breadcrumb {
-    margin-left: 30px;
     gap: 0.8rem;
-    padding: 15px 3% 15px 0.4%;
+    padding: 0 5% 14px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .breadcrumbItem {
@@ -539,9 +541,10 @@
 
 @media screen and (max-width: 600px) {
   .breadcrumb {
-    margin-left: 20px;
     gap: 0.6rem;
-    padding: 12px 3% 12px 0.4%;
+    padding: 0 5% 14px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .breadcrumbItem {
