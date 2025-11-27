@@ -67,7 +67,7 @@ const DashboardClient = () => {
       id: 4,
       label: "Quotes",
       icon: "quotes",
-      action: () => router.push("/annual/get-quote"),
+      action: () => router.push("/dashboard/quotes"),
     },
   ];
 
