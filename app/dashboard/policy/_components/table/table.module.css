@@ -328,4 +328,17 @@
   .licensePlateText {
     font-size: 1.8rem;
   }
+
+  .policyCardInfo {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .infoLabel {
+    font-size: 1.2rem;
+  }
+
+  .infoValue {
+    font-size: 1.3rem;
+  }
 }
