@@ -278,24 +278,21 @@
 
 .policyStatus {
   display: inline-block;
-  padding: 0.6rem 1.3rem;
-  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
   font-size: 1.3rem;
   font-weight: 600;
   text-transform: capitalize;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .policyStatus.active {
-  background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+  background: #D1FAE5;
   color: #065F46;
-  border: 1px solid #6EE7B7;
 }
 
 .policyStatus.cancelled {
-  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+  background: #FEE2E2;
   color: #991B1B;
-  border: 1px solid #FCA5A5;
 }
 
 .policyCardBody {
