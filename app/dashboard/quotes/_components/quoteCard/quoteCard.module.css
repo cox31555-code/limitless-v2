@@ -14,21 +14,6 @@
   transform: translateY(-4px);
 }
 
-.cashbackBadge {
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  background: #FFD500;
-  color: #000000;
-  padding: 7px 14px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(255, 213, 0, 0.3);
-}
-
 .cardHeader {
   background: #ffffff;
   padding: 18px 20px 14px;
@@ -36,7 +21,6 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  padding-right: 140px;
 }
 
 .brandedBadge {
@@ -389,17 +373,11 @@
 
   .cardHeader {
     padding: 16px;
-    padding-right: 120px;
     flex-wrap: wrap;
   }
 
   .vehicleSection {
     padding: 0 16px 16px;
-  }
-
-  .cashbackBadge {
-    top: 14px;
-    right: 16px;
   }
 
   .rightColumn {
@@ -420,7 +398,6 @@
 
   .cardHeader {
     padding: 14px;
-    padding-right: 14px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -430,13 +407,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-  }
-
-  .cashbackBadge {
-    top: 12px;
-    right: 14px;
-    padding: 5px 10px;
-    font-size: 10px;
   }
 
   .expiryBadge {

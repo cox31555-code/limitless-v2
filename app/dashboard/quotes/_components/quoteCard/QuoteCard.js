@@ -8,8 +8,6 @@ const QuoteCard = ({ quote }) => {
 
   return (
     <div className={styles.card}>
-      <div className={styles.cashbackBadge}>{quote.cashback}</div>
-      
       <div className={styles.cardHeader}>
         <div className={styles.brandedBadge}>
           <img
