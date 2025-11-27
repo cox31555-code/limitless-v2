@@ -22,9 +22,19 @@
   width: 100%;
 }
 
+/* Smooth entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .claimCard {
-  display: flex;
-  flex-direction: column;
   background: #ffffff;
   border: 2px solid #E5E7EB;
   border-radius: 16px;
@@ -32,6 +42,9 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.5s ease-out 0.1s both;
+  display: flex;
+  flex-direction: column;
 }
 
 .claimCard:hover {
@@ -44,159 +57,136 @@
   background: #ffffff;
   padding: 1.8rem 2rem 1.4rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1.2rem;
+}
+
+.claimBadgeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .statusBadge {
   display: inline-flex;
   align-items: center;
-  padding: 0.6rem 1.2rem;
+  background: #0fae6e;
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
   border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+  font-size: 0.95rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(15, 174, 110, 0.15);
 }
 
 .statusBadge.pending {
-  background: #ecfdf3;
-  color: #047857;
-  border: 1px solid #d1fae5;
+  background: #0fae6e;
 }
 
 .statusBadge.completed {
-  background: #eff6ff;
-  color: #1e40af;
-  border: 1px solid #dbeafe;
+  background: #0052a3;
 }
 
 .statusBadge.cancelled {
-  background: #fef2f2;
-  color: #b91c1c;
-  border: 1px solid #fecaca;
+  background: #dc2626;
+}
+
+.claimRefWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.claimRefLabel {
+  font-size: 1.3rem;
+  color: #6B7280;
+  font-weight: 500;
 }
 
 .claimRef {
-  font-size: 1.25rem;
-  color: #6b7280;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-size: 1.3rem;
+  color: #1F2937;
+  font-weight: 600;
 }
 
-.claimDetails {
+.claimCardBody {
   padding: 0 2rem 1.6rem;
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  flex: 1;
 }
 
 .claimTitle {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #111827;
-  margin: 0;
-  line-height: 130%;
-  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem 0;
+  line-height: 140%;
+  letter-spacing: -0.2px;
 }
 
 .claimMeta {
   font-size: 1.25rem;
-  color: #6b7280;
-  margin: 0;
+  color: #666;
+  margin: 0 0 1.5rem 0;
   font-weight: 400;
-  letter-spacing: -0.01em;
 }
 
-.claimInfoRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.4rem;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
-  border-top: 1px solid #f0f2f5;
-  padding-top: 2rem;
-}
-
-.infoItem {
+.claimCardInfo {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.infoItem .infoLabel {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.5rem;
-}
-
-.infoItem .infoValue {
-  font-size: 1.2rem;
-  color: #374151;
-  font-weight: 600;
-}
-
-.claimInfo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.2rem;
-  padding: 2.4rem 2.8rem;
-  background: #fafbfc;
-  border-top: 1px solid #f0f2f5;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.8rem;
+  padding: 1.8rem 2rem;
+  background: #FAFBFC;
+  border-top: 1px solid #F0F1F3;
+  margin-top: auto;
 }
 
 .infoColumn {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.6rem;
+  flex: 1;
 }
 
 .infoLabel {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin: 0 0 0.7rem 0;
+  font-size: 1.3rem;
+  color: #6B7280;
+  font-weight: 500;
 }
 
 .infoValue {
-  font-size: 1.5rem;
-  color: #111827;
+  font-size: 1.4rem;
+  color: #1F2937;
   font-weight: 600;
-  margin: 0;
-  letter-spacing: -0.01em;
 }
 
-.viewButton {
-  width: 100%;
-  padding: 1.5rem 2.8rem;
-  background: #fafbfc;
-  color: #0052a3;
-  border: none;
-  border-top: 1px solid #f0f2f5;
-  border-radius: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  line-height: 130%;
-  text-align: center;
+.claimArrow {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #9CA3AF;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  margin-left: auto;
 }
 
-.viewButton:hover {
-  background: #f0f4f8;
-  color: #003d7a;
+.claimArrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.viewButton {
+  display: none;
 }
 
 /* Responsive Design */
@@ -204,10 +194,6 @@
   .cardsGrid {
     grid-template-columns: 1fr 1fr;
     gap: 1.6rem;
-  }
-
-  .claimCard {
-    padding: 0;
   }
 }
 
@@ -225,34 +211,24 @@
     gap: 1.6rem;
   }
 
-  .claimCard {
-    padding: 0;
-  }
-
   .claimCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 1.6rem;
   }
 
-  .claimDetails {
-    padding: 0 1.6rem 1.4rem;
-    gap: 1.2rem;
-  }
-
-  .claimInfo {
-    padding: 1.6rem 2rem;
-    gap: 2.4rem;
-  }
-
-  .claimInfoRow {
-    padding-top: 1.6rem;
-  }
-
   .statusBadge {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+    padding: 0.45rem 0.9rem;
   }
 
-  .claimRef {
-    font-size: 1.1rem;
+  .claimRefWrapper {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .claimCardBody {
+    padding: 0 1.6rem 1.4rem;
   }
 
   .claimTitle {
@@ -260,28 +236,22 @@
   }
 
   .claimMeta {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin: 0 0 1.2rem 0;
+  }
+
+  .claimCardInfo {
+    flex-direction: row;
+    gap: 1.6rem;
+    padding: 1.6rem;
   }
 
   .infoLabel {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
   }
 
   .infoValue {
     font-size: 1.3rem;
-  }
-
-  .infoItem .infoLabel {
-    font-size: 0.75rem;
-  }
-
-  .infoItem .infoValue {
-    font-size: 1.05rem;
-  }
-
-  .viewButton {
-    font-size: 1rem;
-    padding: 1.2rem 2rem;
   }
 }
 
@@ -296,38 +266,18 @@
 
   .cardsGrid {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
   }
 
-  .claimCardHeader {
-    padding: 1.4rem 1.8rem;
+  .claimBadgeWrapper {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.8rem;
   }
 
-  .claimDetails {
-    padding: 1.8rem;
-    gap: 1.4rem;
-  }
-
-  .claimInfo {
-    padding: 1.5rem 1.8rem;
-    gap: 2rem;
-  }
-
-  .claimInfoRow {
-    padding-top: 1.4rem;
-    gap: 1.5rem;
-  }
-
   .statusBadge {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.9rem;
-  }
-
-  .claimRef {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.85rem;
+    letter-spacing: 0.7px;
   }
 
   .claimTitle {
@@ -335,27 +285,22 @@
   }
 
   .claimMeta {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .claimCardInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    padding: 1.4rem;
   }
 
   .infoLabel {
-    font-size: 0.7rem;
+    font-size: 1.2rem;
   }
 
   .infoValue {
-    font-size: 1.25rem;
-  }
-
-  .infoItem .infoLabel {
-    font-size: 0.7rem;
-  }
-
-  .infoItem .infoValue {
-    font-size: 1rem;
-  }
-
-  .viewButton {
-    font-size: 0.95rem;
-    padding: 1.1rem 1.8rem;
+    font-size: 1.3rem;
   }
 }
