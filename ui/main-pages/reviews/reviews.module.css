@@ -79,10 +79,6 @@
   stroke-width: 2.5;
 }
 
-.prevButton:hover:not(:disabled) {
-  color: #0388ff;
-  border-color: #D1D5DB;
-}
 
 .prevButton:disabled {
   opacity: 0.4;
@@ -96,9 +92,6 @@
   border-color: #0388ff;
 }
 
-.prevButtonActive:hover:not(:disabled) {
-  border-color: #0270cc;
-}
 
 .nextButton {
   display: flex;
@@ -123,10 +116,6 @@
   stroke-width: 2.5;
 }
 
-.nextButton:hover:not(:disabled) {
-  color: #0388ff;
-  border-color: #D1D5DB;
-}
 
 .nextButton:disabled {
   opacity: 0.4;
@@ -140,10 +129,6 @@
   border: 2px solid #0388ff;
 }
 
-.nextButtonActive:hover:not(:disabled) {
-  background: #0270cc;
-  border-color: #0270cc;
-}
 
 .content {
   display: flex;
