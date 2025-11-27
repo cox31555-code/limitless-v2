@@ -187,7 +187,7 @@
 
 .policyCard {
   background: #ffffff;
-  border: 1px solid #E5E7EB;
+  border: 2px solid #E5E7EB;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -380,7 +380,7 @@
 
 .usefulLinkCard {
   background: #ffffff;
-  border: 1px solid #E5E7EB;
+  border: 2px solid #E5E7EB;
   border-radius: 14px;
   padding: 2.2rem;
   display: flex;
@@ -445,7 +445,7 @@
 
 .emergencyCard {
   background: linear-gradient(135deg, #F0F7FF 0%, #E3F0FF 100%);
-  border: 1px solid #B8DAFF;
+  border: 2px solid #B8DAFF;
   border-radius: 20px;
   padding: 3.5rem;
   display: flex;
