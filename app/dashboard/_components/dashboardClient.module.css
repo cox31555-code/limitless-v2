@@ -790,6 +790,10 @@
     gap: 0.8rem;
   }
 
+  .policyLogo {
+    height: 26px;
+  }
+
   .licensePlate {
     padding: 0.6rem 1rem;
   }
