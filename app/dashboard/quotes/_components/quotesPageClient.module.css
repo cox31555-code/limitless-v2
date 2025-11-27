@@ -1,0 +1,314 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  max-width: 100%;
+  margin: 0.0875rem 0 1.75rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  margin-bottom: 6.5rem;
+  padding: 7.8rem calc(50vw - 50%) 7.8rem;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroBackground {
+  position: absolute;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 399px;
+  opacity: 0.3;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  gap: 3.9rem;
+}
+
+.greetingArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.04rem;
+}
+
+.greetingTitle {
+  font-size: 3.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 110%;
+  letter-spacing: -0.65px;
+}
+
+.greetingSubtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.3rem;
+  padding: 0 5% 14px;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.breadcrumbItem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.55rem;
+  color: #ccc;
+  margin: 0 0.4rem;
+  flex-shrink: 0;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 55px 5% 1.6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Content Header */
+.contentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.contentHeaderText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contentTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+}
+
+.contentSubtitle {
+  font-size: 1.35rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+/* Quotes Grid */
+.quotesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .breadcrumb {
+    gap: 1rem;
+    padding: 20px 5% 20px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
+  }
+
+  .heroSection {
+    padding: 7rem calc(50vw - 50%) 7rem;
+  }
+
+  .greetingTitle {
+    font-size: 3.5rem;
+  }
+
+  .contentTitle {
+    font-size: 2.6rem;
+  }
+
+  .contentSubtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .breadcrumb {
+    gap: 0.8rem;
+    padding: 15px 5% 15px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.2rem;
+  }
+
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem calc(50vw - 50%);
+    gap: 2rem;
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .greetingArea {
+    align-items: center;
+    width: 100%;
+  }
+
+  .greetingTitle {
+    font-size: 2.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .contentWrapper {
+    padding: 2.5rem 5%;
+  }
+
+  .contentHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  .contentTitle {
+    font-size: 2.3rem;
+  }
+
+  .contentSubtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .breadcrumb {
+    gap: 0.6rem;
+    padding: 12px 5% 12px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.1rem;
+    margin: 0 0.3rem;
+  }
+
+  .heroSection {
+    padding: 2.5rem calc(50vw - 50%);
+    gap: 1.5rem;
+  }
+
+  .greetingTitle {
+    font-size: 2.3rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.15rem;
+  }
+
+  .contentWrapper {
+    padding: 2rem 4%;
+  }
+
+  .contentHeader {
+    gap: 1.4rem;
+  }
+
+  .contentTitle {
+    font-size: 2rem;
+  }
+
+  .contentSubtitle {
+    font-size: 1.15rem;
+  }
+}
