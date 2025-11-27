@@ -17,7 +17,7 @@ const DashboardClient = () => {
     {
       id: 1,
       name: "Limitless Cover",
-      badge: "ESSENTIAL",
+      badge: "ANNUAL",
       isNew: true,
       policyNumber: "LC-847291",
       registrationNumber: "LN60 AYT",
@@ -131,7 +131,11 @@ const DashboardClient = () => {
               <div key={policy.id} className={styles.policyCard} onClick={() => router.push("/dashboard/policy")}>
                 <div className={styles.policyCardHeader}>
                   <div className={styles.policyBadgeWrapper}>
-                    <span className={styles.policyBadge}>{policy.name}</span>
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F5f655402e5e54b5782ffee63c1df405c?format=webp&width=800"
+                      alt="Limitless Cover"
+                      className={styles.policyLogo}
+                    />
                     <span className={styles.policyBadgeType}>{policy.badge}</span>
                     {policy.isNew && <span className={styles.newBadge}>NEW</span>}
                   </div>
