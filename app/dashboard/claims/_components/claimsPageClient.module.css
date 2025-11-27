@@ -373,9 +373,7 @@
 @media screen and (max-width: 1200px) {
   .breadcrumb {
     gap: 1rem;
-    padding: 0 5% 14px;
-    max-width: 1000px;
-    margin: 0 auto;
+    padding: 20px 5% 20px;
   }
 
   .breadcrumbItem {
@@ -428,9 +426,7 @@
 @media screen and (max-width: 900px) {
   .breadcrumb {
     gap: 0.8rem;
-    padding: 0 5% 14px;
-    max-width: 1000px;
-    margin: 0 auto;
+    padding: 15px 5% 15px;
   }
 
   .breadcrumbItem {
@@ -479,7 +475,7 @@
   }
 
   .contentWrapper {
-    padding: 2.5rem 3%;
+    padding: 2.5rem 5%;
   }
 
   .contentHeader {
@@ -542,9 +538,7 @@
 @media screen and (max-width: 600px) {
   .breadcrumb {
     gap: 0.6rem;
-    padding: 0 5% 14px;
-    max-width: 1000px;
-    margin: 0 auto;
+    padding: 12px 5% 12px;
   }
 
   .breadcrumbItem {
