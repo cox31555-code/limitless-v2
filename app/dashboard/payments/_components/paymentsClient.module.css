@@ -457,8 +457,10 @@
   }
 
   .heroSection {
-    padding: 4.5rem calc(50vw - 50%) 4.5rem;
-    margin-bottom: 4rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem calc(50vw - 50%);
+    gap: 2rem;
   }
 
   .heroBackground {
