@@ -1411,15 +1411,7 @@ const AnnualInsuranceContent = () => {
 };
 
 const AnnualInsurancePage = () => {
-  return (
-    <Suspense fallback={
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
-        Loading...
-      </div>
-    }>
-      <AnnualInsuranceContent />
-    </Suspense>
-  );
+  return <AnnualInsuranceContent />;
 };
 
 export default AnnualInsurancePage;
