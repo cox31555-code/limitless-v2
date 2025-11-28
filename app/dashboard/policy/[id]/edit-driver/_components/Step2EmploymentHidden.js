@@ -75,40 +75,6 @@ const Step2EmploymentHidden = ({ form }) => {
                   placeholder="Type your occupation..."
                 />
               </div>
-
-              <button
-                type="button"
-                className={styles.expandableLink}
-                onClick={() => setExpandedJobTitle(!expandedJobTitle)}
-              >
-                <span className={styles.expandableIcon}>
-                  {expandedJobTitle ? "▼" : "▼"}
-                </span>
-                What if my job title isn't listed?
-              </button>
-
-              {expandedJobTitle && (
-                <div className={styles.expandableContent}>
-                  If you can't find your exact job title in the dropdown list, select the closest match or a general category. Our system will use this information to assess your insurance risk appropriately.
-                </div>
-              )}
-
-              <button
-                type="button"
-                className={styles.expandableLink}
-                onClick={() => setExpandedWhyJobTitle(!expandedWhyJobTitle)}
-              >
-                <span className={styles.expandableIcon}>
-                  {expandedWhyJobTitle ? "▼" : "▼"}
-                </span>
-                Why are we asking?
-              </button>
-
-              {expandedWhyJobTitle && (
-                <div className={styles.expandableContent}>
-                  Your occupation helps us determine the appropriate insurance premium and coverage for your specific job role and associated risks.
-                </div>
-              )}
             </div>
 
             <div className={styles.section}>
@@ -130,40 +96,6 @@ const Step2EmploymentHidden = ({ form }) => {
                   placeholder="Type your industry..."
                 />
               </div>
-
-              <button
-                type="button"
-                className={styles.expandableLink}
-                onClick={() => setExpandedIndustry(!expandedIndustry)}
-              >
-                <span className={styles.expandableIcon}>
-                  {expandedIndustry ? "▼" : "▼"}
-                </span>
-                What if my industry isn't listed?
-              </button>
-
-              {expandedIndustry && (
-                <div className={styles.expandableContent}>
-                  If you can't find your specific industry, choose the closest category. This helps us accurately assess your insurance needs based on your professional sector.
-                </div>
-              )}
-
-              <button
-                type="button"
-                className={styles.expandableLink}
-                onClick={() => setExpandedWhyIndustry(!expandedWhyIndustry)}
-              >
-                <span className={styles.expandableIcon}>
-                  {expandedWhyIndustry ? "▼" : "▼"}
-                </span>
-                Why are we asking?
-              </button>
-
-              {expandedWhyIndustry && (
-                <div className={styles.expandableContent}>
-                  Your industry helps us understand your work environment and the associated risks. This information is important for calculating an appropriate insurance premium.
-                </div>
-              )}
             </div>
           </>
         )}

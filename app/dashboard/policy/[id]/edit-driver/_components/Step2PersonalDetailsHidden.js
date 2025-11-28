@@ -28,10 +28,6 @@ const Step2PersonalDetailsHidden = ({ form }) => {
               disabled={false}
             />
           </div>
-
-          <button type="button" className={styles.helpLink}>
-            Why are we asking?
-          </button>
         </div>
       </div>
     </div>

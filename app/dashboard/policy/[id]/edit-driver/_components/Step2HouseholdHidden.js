@@ -5,7 +5,6 @@ import styles from "@/app/annual/get-quote/_components/step2Household.module.css
 
 const Step2HouseholdHidden = ({ form }) => {
   const { watch, setValue } = form;
-  const [expandedWhyAsking, setExpandedWhyAsking] = useState(false);
 
   const ownsHome = watch("userDetails.ownsHome");
   const childrenUnder16 = watch("userDetails.childrenUnder16");
@@ -32,23 +31,6 @@ const Step2HouseholdHidden = ({ form }) => {
               disabled={false}
             />
           </div>
-
-          <button 
-            type="button" 
-            className={styles.expandableLink}
-            onClick={() => setExpandedWhyAsking(!expandedWhyAsking)}
-          >
-            <span className={styles.expandableIcon}>
-              {expandedWhyAsking ? '▼' : '▶'}
-            </span>
-            Why are we asking?
-          </button>
-
-          {expandedWhyAsking && (
-            <p className={styles.expandableContent}>
-              This helps us understand your risk profile and provide more accurate quotes based on your financial stability and commitment to the property.
-            </p>
-          )}
         </div>
 
         {/* Children Under 16 Section */}
