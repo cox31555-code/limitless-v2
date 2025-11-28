@@ -687,11 +687,11 @@
   }
 
   .breakdownLabel {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .breakdownAmount {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 
   .cardHeader {
@@ -715,7 +715,7 @@
   }
 
   .sectionTitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .cardContent {
