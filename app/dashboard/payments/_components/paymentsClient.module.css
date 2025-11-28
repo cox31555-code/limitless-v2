@@ -153,11 +153,12 @@
   display: flex;
   align-items: flex-start;
   gap: 1.6rem;
-  padding: 2rem 2.4rem;
+  padding: 2.2rem 2.4rem;
   background: #eff6ff;
-  border: 1px solid #bfdbfe;
+  border: 1.5px solid #bfdbfe;
   border-radius: 12px;
   color: #1e40af;
+  box-shadow: 0 2px 6px rgba(0, 8, 34, 0.03);
 }
 
 .noticeIcon {
@@ -319,20 +320,21 @@
 .scheduleList {
   display: flex;
   flex-direction: column;
-  border: 1px solid #e5e7eb;
+  border: 1.5px solid #d1d5db;
   border-radius: 12px;
   overflow: hidden;
   max-height: 400px;
   overflow-y: auto;
+  box-shadow: 0 1px 4px rgba(0, 8, 34, 0.02);
 }
 
 .scheduleItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4rem 1.8rem;
-  border-bottom: 1px solid #f3f4f6;
-  transition: background 0.2s ease;
+  padding: 1.6rem 2rem;
+  border-bottom: 1px solid #e5e9f0;
+  transition: all 0.2s ease;
 }
 
 .scheduleItem:last-child {
@@ -340,7 +342,8 @@
 }
 
 .scheduleItem:hover {
-  background: #f9fafb;
+  background: #f8fafe;
+  border-color: #d0ddf0;
 }
 
 .scheduleDate {
