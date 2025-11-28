@@ -66,11 +66,7 @@ const Table = ({ title, data, claimType, showTitle = true }) => {
               {/* Claim Info */}
               <div className={styles.claimCardInfo}>
                 <div className={styles.infoColumn}>
-                  <p className={styles.infoLabel}>Status</p>
-                  <p className={styles.infoValue}>{row.status}</p>
-                </div>
-                <div className={styles.infoColumn}>
-                  <p className={styles.infoLabel}>Claim Date</p>
+                  <p className={styles.infoLabel}>Estimated Resolution Date</p>
                   <p className={styles.infoValue}>{formatDate(row.date)}</p>
                 </div>
                 <div className={styles.claimArrow}>
