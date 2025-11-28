@@ -500,7 +500,7 @@
   }
 
   .contentWrapper {
-    gap: 2.4rem;
+    padding: 2.5rem 5%;
   }
 
   .section {
@@ -586,7 +586,7 @@
   }
 
   .contentWrapper {
-    gap: 2rem;
+    padding: 2rem 4%;
   }
 
   .section {
