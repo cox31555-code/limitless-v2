@@ -335,6 +335,23 @@
     gap: 1.8rem;
   }
 
+  .vehicleInfoCard {
+    padding: 1.6rem;
+    gap: 1rem;
+  }
+
+  .vehicleTitle {
+    font-size: 1.6rem;
+  }
+
+  .vehicleRegistration {
+    font-size: 1.1rem;
+  }
+
+  .metaItem {
+    font-size: 1rem;
+  }
+
   .actionButtons {
     flex-direction: column-reverse;
   }
