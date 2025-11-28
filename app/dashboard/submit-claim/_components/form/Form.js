@@ -142,6 +142,7 @@ const Form = ({ claimReason }) => {
       sessionStorage.setItem("claimData", JSON.stringify(claimData));
 
       // Redirect to success page with mock orderReference
+      showLoading();
       router.push(
         `/dashboard/submit-claim?step=submitted&orderReference=${mockOrderRef}`
       );
