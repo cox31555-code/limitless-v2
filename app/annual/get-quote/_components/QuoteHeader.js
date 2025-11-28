@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./quoteHeader.module.css";
 
-const QuoteHeader = ({ currentStep = 1, totalSteps = 4, subtitle }) => {
+const QuoteHeader = ({ currentStep = 1, totalSteps = 4, subtitle, title = "Annual Car Insurance Quote" }) => {
   const stepNames = ["Car Details", "Your Details", "Your Policy", "Check Your Answers"];
   const displayName = subtitle || stepNames[currentStep - 1];
 
@@ -16,7 +16,7 @@ const QuoteHeader = ({ currentStep = 1, totalSteps = 4, subtitle }) => {
       </div>
       <div className={styles.heroContent}>
         <div className={styles.mainInfo}>
-          <h1 className={styles.title}>Annual Car Insurance Quote</h1>
+          <h1 className={styles.title}>{title}</h1>
           <div className={styles.stepInfo}>
             <span className={styles.stepBadge}>Step {currentStep} of {totalSteps}</span>
             <span className={styles.separator}>•</span>
