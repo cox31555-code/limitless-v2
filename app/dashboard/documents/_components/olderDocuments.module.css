@@ -24,6 +24,22 @@
   gap: 0;
 }
 
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.2rem 2rem;
+  text-align: center;
+}
+
+.emptyStateMessage {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0;
+  line-height: 140%;
+}
+
 .documentItem {
   display: flex;
   align-items: center;
