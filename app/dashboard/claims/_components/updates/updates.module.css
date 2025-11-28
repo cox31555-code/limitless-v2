@@ -123,11 +123,13 @@
 }
 @media screen and (max-width: 900px) {
   .container {
-    padding-top: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
   }
   .title {
-    margin-left: 2rem;
-    font-size: 1.8rem;
+    margin: 0;
+    font-size: 1.6rem;
+    padding-bottom: 1rem;
   }
   .tableHeaderRow,
   .tableHeaderRow::after {
