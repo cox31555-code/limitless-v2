@@ -13,6 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 const PolicyDetailsReview = ({ policy }) => {
+  const router = useRouter();
   const [expandedSections, setExpandedSections] = useState({
     policyDetails: true,
     carDetails: false,
