@@ -3,9 +3,11 @@ import React from "react";
 import Image from "next/image";
 import styles from "./claimFeature.module.css";
 import { useRouter } from "next/navigation";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const ClaimFeature = ({ img, title, description, features, btnText, claimType }) => {
   const router = useRouter();
+  const { showLoading } = useLoading();
 
   const handleClaimClick = () => {
     // Clear any existing claim data when starting a new claim
@@ -13,6 +15,7 @@ const ClaimFeature = ({ img, title, description, features, btnText, claimType })
       sessionStorage.removeItem("claimData");
     }
 
+    showLoading();
     if (claimType === "car-insurance") {
       router.push("/dashboard/submit-claim?type=car-insurance&step=reason");
     } else if (claimType === "optional-cover") {
