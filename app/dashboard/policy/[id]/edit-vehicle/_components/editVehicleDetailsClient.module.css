@@ -305,17 +305,30 @@
     width: 100%;
   }
 
-  .modificationsSection {
+  .modificationsSection,
+  .securitySection,
+  .trackingSection,
+  .importedSection,
+  .driverSideSection,
+  .seatsSection {
     padding: 2.4rem;
     gap: 1.8rem;
     margin-top: 1.5rem;
   }
 
-  .modificationsTitle {
+  .modificationsTitle,
+  .securityTitle,
+  .trackingTitle,
+  .importedTitle,
+  .driverSideTitle,
+  .seatsTitle {
     font-size: 1.3rem;
   }
 
-  .modificationsDescription {
+  .modificationsDescription,
+  .securityDescription,
+  .driverSideDescription,
+  .seatsDescription {
     font-size: 1rem;
   }
 }
