@@ -444,6 +444,18 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0, 8, 34, 0.02);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .scheduleItem {
