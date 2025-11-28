@@ -784,24 +784,28 @@ const AnnualInsuranceContent = () => {
     // Handle Step 1 sub-step navigation
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "registration") {
       setVehicleSubStep("carValue");
+      pushHistoryState(STEPS.VEHICLE, "carValue", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue") {
       setVehicleSubStep("carUsage");
+      pushHistoryState(STEPS.VEHICLE, "carUsage", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage") {
       setVehicleSubStep("carStorage");
+      pushHistoryState(STEPS.VEHICLE, "carStorage", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage") {
       setVehicleSubStep("otherCars");
+      pushHistoryState(STEPS.VEHICLE, "otherCars", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -809,36 +813,42 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
       setCurrentStep(STEPS.PERSONAL);
       setPersonalSubStep("aboutYou");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "aboutYou", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "aboutYou") {
       setPersonalSubStep("household");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "household", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "household") {
       setPersonalSubStep("employment");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "employment", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "employment") {
       setPersonalSubStep("licence");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "licence", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "licence") {
       setPersonalSubStep("restrictions");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "restrictions", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "restrictions") {
       setPersonalSubStep("claims");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "claims", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -846,30 +856,35 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
       setCurrentStep(STEPS.COVER);
       setCoverSubStep("additionalDrivers");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
       setCoverSubStep("carOwner");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "carOwner");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions") {
       setCoverSubStep("addDriver");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "addDriver");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.COVER && coverSubStep === "addDriver") {
       setCoverSubStep("additionalDrivers");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.COVER && coverSubStep === "details") {
       setCurrentStep(STEPS.CHECK_ANSWERS);
+      pushHistoryState(STEPS.CHECK_ANSWERS, vehicleSubStep, personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -885,6 +900,7 @@ const AnnualInsuranceContent = () => {
     if (isValid) {
       setCurrentStep(currentStep + 1);
       setVehicleSubStep("registration"); // Reset vehicle sub-step when moving to next main step
+      pushHistoryState(currentStep + 1, "registration", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       toast.error("Please fill in all required fields");
@@ -896,6 +912,7 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.PERSONAL && personalSubStep === "addClaim") {
       setPersonalSubStep("claims");
       setEditingClaimIndex(null);
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "claims", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -904,6 +921,7 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.PERSONAL && personalSubStep === "addConviction") {
       setPersonalSubStep("claims");
       setEditingConvictionIndex(null);
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "claims", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -911,6 +929,7 @@ const AnnualInsuranceContent = () => {
     // Handle going back from cover details
     if (currentStep === STEPS.COVER && coverSubStep === "details") {
       setCoverSubStep("additionalDrivers");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -919,6 +938,7 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.COVER && coverSubStep === "addDriverConviction") {
       setEditingDriverConvictionIndex(null);
       setCoverSubStep("addDriverClaimsAndConvictions");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "addDriverClaimsAndConvictions");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -927,6 +947,7 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.COVER && coverSubStep === "addDriverClaim") {
       setEditingDriverClaimIndex(null);
       setCoverSubStep("addDriverClaimsAndConvictions");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "addDriverClaimsAndConvictions");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -937,6 +958,7 @@ const AnnualInsuranceContent = () => {
       setDriverClaims([]);
       setDriverConvictions([]);
       setCoverSubStep("addDriver");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "addDriver");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -946,6 +968,7 @@ const AnnualInsuranceContent = () => {
       setEditingDriverIndex(null);
       setDriverBeingAdded(null);
       setCoverSubStep("additionalDrivers");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -954,6 +977,7 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
       setCurrentStep(STEPS.PERSONAL);
       setPersonalSubStep("claims");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "claims", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -961,6 +985,7 @@ const AnnualInsuranceContent = () => {
     // Handle going back from cover
     if (currentStep === STEPS.COVER && coverSubStep === "cover") {
       setCoverSubStep("carOwner");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "carOwner");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -968,6 +993,7 @@ const AnnualInsuranceContent = () => {
     // Handle going back from carOwner
     if (currentStep === STEPS.COVER && coverSubStep === "carOwner") {
       setCoverSubStep("additionalDrivers");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -976,6 +1002,7 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.COVER && (coverSubStep === "carOwnerAddRegisteredKeeper" || coverSubStep === "carOwnerAddLegalOwner")) {
       setCoverSubStep("carOwner");
       setCarOwnerAddingType(null);
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "carOwner");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -983,30 +1010,35 @@ const AnnualInsuranceContent = () => {
     // Handle Step 2 sub-step navigation
     if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
       setPersonalSubStep("restrictions");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "restrictions", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "restrictions") {
       setPersonalSubStep("licence");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "licence", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "licence") {
       setPersonalSubStep("employment");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "employment", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "employment") {
       setPersonalSubStep("household");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "household", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "household") {
       setPersonalSubStep("aboutYou");
+      pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "aboutYou", coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -1014,6 +1046,7 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.PERSONAL && personalSubStep === "aboutYou") {
       setCurrentStep(STEPS.VEHICLE);
       setVehicleSubStep("otherCars");
+      pushHistoryState(STEPS.VEHICLE, "otherCars", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -1021,24 +1054,28 @@ const AnnualInsuranceContent = () => {
     // Handle Step 1 sub-step navigation
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars") {
       setVehicleSubStep("carStorage");
+      pushHistoryState(STEPS.VEHICLE, "carStorage", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage") {
       setVehicleSubStep("carUsage");
+      pushHistoryState(STEPS.VEHICLE, "carUsage", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage") {
       setVehicleSubStep("carValue");
+      pushHistoryState(STEPS.VEHICLE, "carValue", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue") {
       setVehicleSubStep("registration");
+      pushHistoryState(STEPS.VEHICLE, "registration", personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -1046,12 +1083,14 @@ const AnnualInsuranceContent = () => {
     if (currentStep === STEPS.CHECK_ANSWERS) {
       setCurrentStep(STEPS.COVER);
       setCoverSubStep("contactInformation");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "contactInformation");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     if (currentStep > STEPS.VEHICLE) {
       setCurrentStep(currentStep - 1);
+      pushHistoryState(currentStep - 1, vehicleSubStep, personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
