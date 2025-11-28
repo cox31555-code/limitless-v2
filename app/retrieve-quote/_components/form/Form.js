@@ -8,11 +8,14 @@ import { toast } from "react-toastify";
 
 const retrieveQuoteSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
-  quoteReference: z.string().min(1, "Quote reference is required"),
+  quoteReference: z.string().min(4, "Please enter a valid quote reference").refine((val) => val.startsWith("LC-") && val.length > 3, {
+    message: "Quote reference must start with LC- and contain additional characters",
+  }),
 });
 
 const Form = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [quoteRef, setQuoteRef] = useState("LC-");
   const emailInputRef = useRef(null);
   const referenceInputRef = useRef(null);
 
@@ -21,13 +24,47 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
   } = useForm({
     resolver: zodResolver(retrieveQuoteSchema),
     defaultValues: {
       email: "",
-      quoteReference: "",
+      quoteReference: "LC-",
     },
   });
+
+  const handleQuoteRefChange = (e) => {
+    let value = e.target.value.toUpperCase();
+
+    // Always ensure it starts with "LC-"
+    if (!value.startsWith("LC-")) {
+      value = "LC-";
+    }
+
+    // Prevent deletion of "LC-" prefix
+    if (value.length < 3) {
+      value = "LC-";
+    }
+
+    setQuoteRef(value);
+    setValue("quoteReference", value, { shouldValidate: true });
+  };
+
+  const handleQuoteRefKeyDown = (e) => {
+    const cursorPosition = e.target.selectionStart;
+
+    // Prevent deleting the "LC-" prefix
+    if ((e.key === "Backspace" || e.key === "Delete") && cursorPosition <= 3) {
+      e.preventDefault();
+    }
+  };
+
+  const handleQuoteRefClick = (e) => {
+    // Ensure cursor doesn't go before "LC-"
+    if (e.target.selectionStart < 3) {
+      e.target.setSelectionRange(3, 3);
+    }
+  };
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -47,6 +84,7 @@ const Form = () => {
       if (response.ok) {
         toast.success("Quote retrieved successfully! Redirecting...");
         reset();
+        setQuoteRef("LC-");
         setTimeout(() => {
           window.location.href = "/payment-summary";
         }, 1500);
@@ -96,22 +134,27 @@ const Form = () => {
             <div className={styles.fieldWrapper}>
               <div
                 className={`${styles.inputField} ${errors.quoteReference ? styles.fieldError : ""}`}
-                onClick={() => referenceInputRef.current?.focus()}
+                onClick={() => {
+                  referenceInputRef.current?.focus();
+                  // Move cursor to end after "LC-"
+                  setTimeout(() => {
+                    if (referenceInputRef.current) {
+                      const len = referenceInputRef.current.value.length;
+                      referenceInputRef.current.setSelectionRange(len, len);
+                    }
+                  }, 0);
+                }}
               >
                 <input
                   type="text"
-                  placeholder="Enter quote reference (e.g., LC-2024-001234)"
+                  placeholder="LC-2024-001234"
                   className={styles.input}
-                  {...(() => {
-                    const { ref, ...rest } = register("quoteReference");
-                    return {
-                      ...rest,
-                      ref: (e) => {
-                        ref(e);
-                        referenceInputRef.current = e;
-                      },
-                    };
-                  })()}
+                  value={quoteRef}
+                  onChange={handleQuoteRefChange}
+                  onKeyDown={handleQuoteRefKeyDown}
+                  onClick={handleQuoteRefClick}
+                  ref={referenceInputRef}
+                  name="quoteReference"
                 />
               </div>
               {errors.quoteReference && (
