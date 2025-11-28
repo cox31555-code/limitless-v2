@@ -12,7 +12,7 @@ const Step2Household = ({ form }) => {
   const childrenUnder16 = watch("userDetails.childrenUnder16");
   const livedInUKSinceBirth = watch("userDetails.livedInUKSinceBirth");
   const [expandedWhyAsking, setExpandedWhyAsking] = useState(false);
-  const [expandedManualEntry, setExpandedManualEntry] = useState(true);
+  const [expandedManualEntry, setExpandedManualEntry] = useState(false);
   const [isLoadingAddress, setIsLoadingAddress] = useState(false);
   const [foundAddress, setFoundAddress] = useState(null);
 
