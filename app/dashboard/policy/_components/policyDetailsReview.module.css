@@ -317,6 +317,27 @@
   margin: 0;
 }
 
+.vehicleSubsection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e0e6f0;
+}
+
+.vehicleSubsection:first-of-type {
+  margin-top: 2.5rem;
+}
+
+.subsectionTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
 /* Action Buttons */
 .actionButtons {
   display: flex;
