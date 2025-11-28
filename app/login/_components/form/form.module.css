@@ -361,6 +361,25 @@
     height: 5.3rem;
     font-size: 1.45rem;
   }
+
+  .emailDisplay {
+    padding: 1.3rem 1.8rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .emailLabel {
+    font-size: 1.15rem;
+  }
+
+  .emailValue {
+    font-size: 1.4rem;
+  }
+
+  .backButton {
+    height: 5.3rem;
+    font-size: 1.45rem;
+    margin-top: 0.8rem;
+  }
 }
 
 /* Responsive - Mobile */
@@ -398,11 +417,40 @@
     border-radius: 8px;
   }
 
+  .backButton {
+    height: 5.2rem;
+    font-size: 1.4rem;
+    padding: 1.4rem 2rem;
+    margin-top: 0.8rem;
+  }
+
   .successMessage,
   .errorMessage {
     padding: 1rem 1.2rem;
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
+  }
+
+  .emailDisplay {
+    padding: 1.2rem 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .emailLabel {
+    font-size: 1.1rem;
+  }
+
+  .emailValue {
+    font-size: 1.35rem;
+  }
+
+  .togglePasswordButton {
+    margin-left: 1rem;
+  }
+
+  .togglePasswordButton svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
