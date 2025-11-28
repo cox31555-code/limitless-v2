@@ -16,33 +16,50 @@ import QuoteHeader from "./_components/QuoteHeader";
 import GetQuotePageHeader from "./_components/GetQuotePageHeader";
 import styles from "./newGetQuotePage.module.css";
 
-const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { loading: () => <StepFallback /> });
-const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { loading: () => <StepFallback /> });
-const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPersonalDetailsForm"), { loading: () => <StepFallback /> });
-const Step4CheckYourAnswers = dynamic(() => import("./_components/Step4CheckYourAnswers"), { loading: () => <StepFallback /> });
-const Step1CarValue = dynamic(() => import("./_components/Step1CarValue"), { loading: () => <StepFallback /> });
-const Step1CarUsage = dynamic(() => import("./_components/Step1CarUsage"), { loading: () => <StepFallback /> });
-const Step1CarStorage = dynamic(() => import("./_components/Step1CarStorage"), { loading: () => <StepFallback /> });
-const Step1OtherCars = dynamic(() => import("./_components/Step1OtherCars"), { loading: () => <StepFallback /> });
-const Step2PersonalDetails = dynamic(() => import("./_components/Step2PersonalDetails"), { loading: () => <StepFallback /> });
-const Step2Household = dynamic(() => import("./_components/Step2Household"), { loading: () => <StepFallback /> });
-const Step2Employment = dynamic(() => import("./_components/Step2Employment"), { loading: () => <StepFallback /> });
-const Step2Licence = dynamic(() => import("./_components/Step2Licence"), { loading: () => <StepFallback /> });
-const Step2LicenceRestrictions = dynamic(() => import("./_components/Step2LicenceRestrictions"), { loading: () => <StepFallback /> });
-const Step2ClaimsAndConvictions = dynamic(() => import("./_components/Step2ClaimsAndConvictions"), { loading: () => <StepFallback /> });
-const Step2AddClaim = dynamic(() => import("./_components/Step2AddClaim"), { loading: () => <StepFallback /> });
-const Step2AddConviction = dynamic(() => import("./_components/Step2AddConviction"), { loading: () => <StepFallback /> });
-const Step3AdditionalDrivers = dynamic(() => import("./_components/Step3AdditionalDrivers"), { loading: () => <StepFallback /> });
-const Step3AddDriver = dynamic(() => import("./_components/Step3AddDriver"), { loading: () => <StepFallback /> });
-const Step3DriverClaimsAndConvictions = dynamic(() => import("./_components/Step3DriverClaimsAndConvictions"), { loading: () => <StepFallback /> });
-const Step3AddDriverClaim = dynamic(() => import("./_components/Step3AddDriverClaim"), { loading: () => <StepFallback /> });
-const Step3AddDriverConviction = dynamic(() => import("./_components/Step3AddDriverConviction"), { loading: () => <StepFallback /> });
-const Step3CarOwner = dynamic(() => import("./_components/Step3CarOwner"), { loading: () => <StepFallback /> });
-const Step3CarOwnerAddPerson = dynamic(() => import("./_components/Step3CarOwnerAddPerson"), { loading: () => <StepFallback /> });
-const Step3CoverDetails = dynamic(() => import("./_components/Step3CoverDetails"), { loading: () => <StepFallback /> });
-const Step3NoClaimsDiscount = dynamic(() => import("./_components/Step3NoClaimsDiscount"), { loading: () => <StepFallback /> });
-const Step3AdditionalProducts = dynamic(() => import("./_components/Step3AdditionalProducts"), { loading: () => <StepFallback /> });
-const Step3ContactInformation = dynamic(() => import("./_components/Step3ContactInformation"), { loading: () => <StepFallback /> });
+// Lazy load component mapping for performance
+const componentMap = {
+  vehicle: {
+    registration: () => import("./_components/Step1VehicleRegistration"),
+    carValue: () => import("./_components/Step1CarValue"),
+    carUsage: () => import("./_components/Step1CarUsage"),
+    carStorage: () => import("./_components/Step1CarStorage"),
+    otherCars: () => import("./_components/Step1OtherCars"),
+  },
+  personal: {
+    aboutYou: () => import("./_components/Step2PersonalDetails"),
+    household: () => import("./_components/Step2Household"),
+    employment: () => import("./_components/Step2Employment"),
+    licence: () => import("./_components/Step2Licence"),
+    restrictions: () => import("./_components/Step2LicenceRestrictions"),
+    claims: () => import("./_components/Step2ClaimsAndConvictions"),
+    addClaim: () => import("./_components/Step2AddClaim"),
+    addConviction: () => import("./_components/Step2AddConviction"),
+  },
+  cover: {
+    additionalDrivers: () => import("./_components/Step3AdditionalDrivers"),
+    addDriver: () => import("./_components/Step3AddDriver"),
+    addDriverClaimsAndConvictions: () => import("./_components/Step3DriverClaimsAndConvictions"),
+    addDriverClaim: () => import("./_components/Step3AddDriverClaim"),
+    addDriverConviction: () => import("./_components/Step3AddDriverConviction"),
+    carOwner: () => import("./_components/Step3CarOwner"),
+    carOwnerAddRegisteredKeeper: () => import("./_components/Step3CarOwnerAddPerson"),
+    carOwnerAddLegalOwner: () => import("./_components/Step3CarOwnerAddPerson"),
+    details: () => import("./_components/Step3CoverDetails"),
+    ncd: () => import("./_components/Step3NoClaimsDiscount"),
+    additionalProducts: () => import("./_components/Step3AdditionalProducts"),
+    contactInformation: () => import("./_components/Step3ContactInformation"),
+  },
+  checkAnswers: () => import("./_components/Step4CheckYourAnswers"),
+};
+
+// Only preload Step 1 Registration on initial load
+const Step1VehicleRegistration = dynamic(() => import("./_components/Step1VehicleRegistration"), { ssr: true });
+
+// Generic dynamic loader for on-demand components
+const DynamicComponentLoader = dynamic(
+  () => Promise.resolve(({ component: Component }) => <Component />),
+  { loading: () => <StepFallback /> }
+);
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
