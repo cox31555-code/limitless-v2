@@ -253,13 +253,9 @@ const FormDateInput = forwardRef(
     };
 
     const openDatePicker = () => {
-      // Don't open picker if disabled
-      if (disabled) return;
+      // Don't open picker if disabled or on mobile (use native)
+      if (disabled || isMobile) return;
       setShowDatePicker(true);
-      // Prevent body scroll when picker is open on mobile
-      if (isMobile) {
-        document.body.style.overflow = "hidden";
-      }
     };
 
     const closeDatePicker = () => {
@@ -268,11 +264,9 @@ const FormDateInput = forwardRef(
     };
 
     const openTimePicker = () => {
+      // Don't open custom picker on mobile (use native)
+      if (isMobile) return;
       setShowTimePicker(true);
-      // Prevent body scroll when picker is open on mobile
-      if (isMobile) {
-        document.body.style.overflow = "hidden";
-      }
     };
 
     const closeTimePicker = () => {
@@ -286,30 +280,72 @@ const FormDateInput = forwardRef(
 
     // Date picker component
     if (type === "date") {
+      const handleNativeDateChange = (e) => {
+        // Convert YYYY-MM-DD to our format
+        const syntheticEvent = {
+          target: {
+            name: name,
+            value: e.target.value,
+          },
+        };
+        if (onChange) {
+          onChange(syntheticEvent);
+        }
+      };
+
+      const formatDateForNative = (date) => {
+        if (!date) return undefined;
+        const d = new Date(date);
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      };
+
       return (
         <>
           <div className={styles.formInputGroup}>
             {dateLabel && <label className={styles.formInputLabel}>{dateLabel}</label>}
-            
+
             <div
               className={`${styles.formInputWrapper}`}
               ref={inputContainerRef}
             >
-              <input
-                ref={ref}
-                name={name}
-                value={formatDateDisplay(value) || ""}
-                onChange={() => {}} // Dummy onChange to satisfy React
-                placeholder="DD/MM/YYYY"
-                className={`${styles.formInput} ${error ? styles.formInputError : ""} ${disabled ? styles.formInputDisabled : ''}`}
-                type="text"
-                readOnly
-                onClick={openDatePicker}
-                onBlur={onBlur}
-                disabled={disabled}
-                style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
-                {...props}
-              />
+              {isMobile ? (
+                <input
+                  ref={ref}
+                  name={name}
+                  type="date"
+                  value={value || ""}
+                  onChange={handleNativeDateChange}
+                  onBlur={onBlur}
+                  disabled={disabled}
+                  min={minDate ? formatDateForNative(minDate) : undefined}
+                  max={maxDate ? formatDateForNative(maxDate) : undefined}
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
+                  style={{
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                    colorScheme: 'dark'
+                  }}
+                  {...props}
+                />
+              ) : (
+                <input
+                  ref={ref}
+                  name={name}
+                  value={formatDateDisplay(value) || ""}
+                  onChange={() => {}} // Dummy onChange to satisfy React
+                  placeholder="DD/MM/YYYY"
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""} ${disabled ? styles.formInputDisabled : ''}`}
+                  type="text"
+                  readOnly
+                  onClick={openDatePicker}
+                  onBlur={onBlur}
+                  disabled={disabled}
+                  style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
+                  {...props}
+                />
+              )}
             </div>
 
             {error && (
@@ -319,7 +355,7 @@ const FormDateInput = forwardRef(
             )}
           </div>
 
-          {showDatePicker && isMobile && (
+          {!isMobile && showDatePicker && (
             <div
               style={{
                 position: 'fixed',
@@ -332,14 +368,12 @@ const FormDateInput = forwardRef(
               onClick={closeDatePicker}
             />
           )}
-          {showDatePicker && (
+          {!isMobile && showDatePicker && (
             <div ref={datePickerRef} style={{
-              position: isMobile ? 'fixed' : (pickerPosition.isAbsolute ? 'absolute' : 'fixed'),
-              top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
-              bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
-              left: isMobile ? '50%' : pickerPosition.left,
-              right: isMobile ? 'auto' : 'auto',
-              transform: isMobile ? 'translate(-50%, -50%)' : 'none',
+              position: pickerPosition.isAbsolute ? 'absolute' : 'fixed',
+              top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
+              bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
+              left: pickerPosition.left,
               zIndex: 99999,
               pointerEvents: 'auto'
             }}>
