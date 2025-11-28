@@ -87,11 +87,7 @@ const SubmitClaimContent = () => {
     if (type === "car-insurance") {
       // Show form if on form step
       if (step === "form") {
-        return (
-          <div className={styles.fullWidthContainer}>
-            <Form claimReason={reason} />
-          </div>
-        );
+        return <Form claimReason={reason} />;
       }
 
       // Show claim reason selection if on reason step
