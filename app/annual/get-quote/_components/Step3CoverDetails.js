@@ -6,7 +6,8 @@ import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 const Step3CoverDetails = ({
   onBack = () => {},
   onNext = () => {},
-  coverData = null
+  coverData = null,
+  showCoverOptions = true
 }) => {
   const [formData, setFormData] = useState(coverData || {
     coverLevel: "",
@@ -125,58 +126,60 @@ const Step3CoverDetails = ({
 
       <div className={styles.contentWrapper}>
         {/* Cover Level Question */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
-          </div>
-
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedMinimumCover(!expandedMinimumCover)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedMinimumCover ? styles.expandedIcon : ''}`}>▼</span>
-            What does minimum level of cover mean?
-          </button>
-
-          {expandedMinimumCover && (
-            <div className={styles.expandableContent}>
-              Cover levels vary between insurance providers, which means some providers may show you more cover than you need if it's their cheapest price or they can't offer a lower level. Always check you're happy with the level of cover on the provider's website before you buy.
+        {showCoverOptions && (
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
             </div>
-          )}
 
-          <div className={styles.radioGroup}>
-            {coverLevels.map((level) => (
-              <label key={level.id} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="coverLevel"
-                  value={level.id}
-                  checked={formData.coverLevel === level.id}
-                  onChange={(e) => setFormData({ ...formData, coverLevel: e.target.value })}
-                  className={styles.radioInput}
-                  style={{
-                    marginTop: '0.3rem',
-                    flexShrink: 0,
-                    width: '24px',
-                    height: '24px',
-                    minWidth: '24px',
-                    minHeight: '24px'
-                  }}
-                />
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', flex: 1 }}>
-                  <span className={styles.radioLabel}>{level.title}</span>
-                  <span style={{ fontSize: '1.3rem', color: '#6b7c8f', fontWeight: '400', lineHeight: '1.65', marginTop: '-0.2rem' }}>
-                    {level.description}
-                  </span>
-                </div>
-              </label>
-            ))}
+            <button
+              type="button"
+              className={styles.expandableLink}
+              onClick={() => setExpandedMinimumCover(!expandedMinimumCover)}
+            >
+              <span className={`${styles.expandableIcon} ${expandedMinimumCover ? styles.expandedIcon : ''}`}>▼</span>
+              What does minimum level of cover mean?
+            </button>
+
+            {expandedMinimumCover && (
+              <div className={styles.expandableContent}>
+                Cover levels vary between insurance providers, which means some providers may show you more cover than you need if it's their cheapest price or they can't offer a lower level. Always check you're happy with the level of cover on the provider's website before you buy.
+              </div>
+            )}
+
+            <div className={styles.radioGroup}>
+              {coverLevels.map((level) => (
+                <label key={level.id} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+                  <input
+                    type="radio"
+                    name="coverLevel"
+                    value={level.id}
+                    checked={formData.coverLevel === level.id}
+                    onChange={(e) => setFormData({ ...formData, coverLevel: e.target.value })}
+                    className={styles.radioInput}
+                    style={{
+                      marginTop: '0.3rem',
+                      flexShrink: 0,
+                      width: '24px',
+                      height: '24px',
+                      minWidth: '24px',
+                      minHeight: '24px'
+                    }}
+                  />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', flex: 1 }}>
+                    <span className={styles.radioLabel}>{level.title}</span>
+                    <span style={{ fontSize: '1.3rem', color: '#6b7c8f', fontWeight: '400', lineHeight: '1.65', marginTop: '-0.2rem' }}>
+                      {level.description}
+                    </span>
+                  </div>
+                </label>
+              ))}
+            </div>
+            {errors.coverLevel && <span className={styles.error}>{errors.coverLevel}</span>}
           </div>
-          {errors.coverLevel && <span className={styles.error}>{errors.coverLevel}</span>}
-        </div>
+        )}
 
-        {formData.coverLevel === "comprehensive" && (
+        {showCoverOptions && formData.coverLevel === "comprehensive" && (
           <div className={styles.section}>
             <div className={styles.questionHeader}>
               <h3 className={styles.mainQuestion}>What's the maximum voluntary excess you'd like on this policy?</h3>
@@ -212,36 +215,38 @@ const Step3CoverDetails = ({
         )}
 
         {/* Payment Frequency Question */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>How do you want to pay for your car insurance?</h3>
-            <p className={styles.subText}>
-              One annual payment is typically the cheaper option, since paying monthly means you could be entering into a credit agreement and charged interest. Selecting monthly instalments may also reduce the amount of quotes shown.
-            </p>
+        {showCoverOptions && (
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>How do you want to pay for your car insurance?</h3>
+              <p className={styles.subText}>
+                One annual payment is typically the cheaper option, since paying monthly means you could be entering into a credit agreement and charged interest. Selecting monthly instalments may also reduce the amount of quotes shown.
+              </p>
+            </div>
+            <div className={styles.radioGroup}>
+              {["One annual payment", "Monthly instalments"].map((option) => (
+                <label key={option} className={styles.radioOption} style={{ cursor: 'pointer' }}>
+                  <input
+                    type="radio"
+                    name="paymentFrequency"
+                    value={option}
+                    checked={formData.paymentFrequency === option}
+                    onChange={(e) => setFormData({ ...formData, paymentFrequency: e.target.value })}
+                    className={styles.radioInput}
+                    style={{
+                      width: '24px',
+                      height: '24px',
+                      minWidth: '24px',
+                      minHeight: '24px'
+                    }}
+                  />
+                  <span className={styles.radioLabel}>{option}</span>
+                </label>
+              ))}
+            </div>
+            {errors.paymentFrequency && <span className={styles.error}>{errors.paymentFrequency}</span>}
           </div>
-          <div className={styles.radioGroup}>
-            {["One annual payment", "Monthly instalments"].map((option) => (
-              <label key={option} className={styles.radioOption} style={{ cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="paymentFrequency"
-                  value={option}
-                  checked={formData.paymentFrequency === option}
-                  onChange={(e) => setFormData({ ...formData, paymentFrequency: e.target.value })}
-                  className={styles.radioInput}
-                  style={{
-                    width: '24px',
-                    height: '24px',
-                    minWidth: '24px',
-                    minHeight: '24px'
-                  }}
-                />
-                <span className={styles.radioLabel}>{option}</span>
-              </label>
-            ))}
-          </div>
-          {errors.paymentFrequency && <span className={styles.error}>{errors.paymentFrequency}</span>}
-        </div>
+        )}
 
         {/* Start Date Question */}
         <div className={styles.section}>
