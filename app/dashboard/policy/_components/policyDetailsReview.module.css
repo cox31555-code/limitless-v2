@@ -887,6 +887,16 @@
     font-size: 1.1rem;
   }
 
+  .vehicleSubsection {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.1rem;
+  }
+
   .actionButtonsContainer {
     gap: 0.6rem;
     padding: 1.2rem 0 0 0;
