@@ -9,7 +9,7 @@ const STEPS = {
   CHECK_ANSWERS: 4,
 };
 
-const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, coverSubStep, onSubStepClick }) => {
+const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, coverSubStep, onSubStepClick, insuranceType }) => {
   // Auto-expand steps 2 and 3 (PERSONAL and COVER)
   const [expandedStep, setExpandedStep] = useState(currentStep);
   const [lineHeight, setLineHeight] = useState(0);
@@ -19,6 +19,9 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
   useEffect(() => {
     setExpandedStep(currentStep);
   }, [currentStep]);
+
+  // Determine if we should hide "Additional products" step
+  const isTemporaryOrImpound = insuranceType === "Temp" || insuranceType === "Impound";
 
   // Map substeps to their corresponding keys
   const getActiveSubStepIndex = (stepNumber) => {
@@ -31,8 +34,14 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
       return subStepMap[personalSubStep] ?? -1;
     }
     if (stepNumber === STEPS.COVER) {
-      const subStepMap = { "additionalDrivers": 0, "carOwner": 1, "cover": 2, "ncd": 3, "additionalProducts": 4, "contactInformation": 5 };
-      return subStepMap[coverSubStep] ?? -1;
+      // For temporary/impound, skip "additionalProducts" in the mapping
+      if (isTemporaryOrImpound) {
+        const subStepMap = { "additionalDrivers": 0, "carOwner": 1, "cover": 2, "ncd": 3, "contactInformation": 4 };
+        return subStepMap[coverSubStep] ?? -1;
+      } else {
+        const subStepMap = { "additionalDrivers": 0, "carOwner": 1, "cover": 2, "ncd": 3, "additionalProducts": 4, "contactInformation": 5 };
+        return subStepMap[coverSubStep] ?? -1;
+      }
     }
     return -1;
   };
@@ -51,7 +60,10 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
     {
       number: STEPS.COVER,
       title: "Your policy",
-      subSteps: ["Additional drivers", "Car owner", "Cover details", "No claims discount", "Additional products", "Contact information"],
+      // For temporary/impound, exclude "Additional products"
+      subSteps: isTemporaryOrImpound
+        ? ["Additional drivers", "Car owner", "Cover details", "No claims discount", "Contact information"]
+        : ["Additional drivers", "Car owner", "Cover details", "No claims discount", "Additional products", "Contact information"],
     },
     {
       number: STEPS.CHECK_ANSWERS,
