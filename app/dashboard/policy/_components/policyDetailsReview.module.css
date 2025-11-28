@@ -359,8 +359,6 @@
 
 .primaryBtn:hover {
   background: #0275dd;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
 
 .primaryBtn:focus {
@@ -373,8 +371,7 @@
 }
 
 .primaryBtn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.2);
+  background: #0052a3;
 }
 
 .secondaryBtn {
@@ -394,8 +391,6 @@
   background: rgba(3, 136, 255, 0.08);
   border-color: #0275dd;
   color: #0275dd;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.15);
 }
 
 .secondaryBtn:focus {
@@ -408,8 +403,7 @@
 }
 
 .secondaryBtn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.1);
+  background: rgba(3, 136, 255, 0.12);
 }
 
 /* Excess Section */
