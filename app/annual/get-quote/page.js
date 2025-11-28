@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, Suspense, useCallback } from "react";
 import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -280,6 +280,37 @@ const AnnualInsuranceContent = () => {
     // Listen for browser back/forward button clicks
     const handlePopState = (event) => {
       if (event.state) {
+        setCurrentStep(event.state.currentStep || STEPS.VEHICLE);
+        setVehicleSubStep(event.state.vehicleSubStep || "registration");
+        setPersonalSubStep(event.state.personalSubStep || "aboutYou");
+        setCoverSubStep(event.state.coverSubStep || "details");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [isMounted]);
+
+  // Helper function to push navigation state to browser history
+  const pushHistoryState = useCallback((step, vSubStep, pSubStep, cSubStep) => {
+    const state = {
+      type: "annualQuoteStep",
+      currentStep: step,
+      vehicleSubStep: vSubStep,
+      personalSubStep: pSubStep,
+      coverSubStep: cSubStep,
+      timestamp: Date.now(),
+    };
+    window.history.pushState(state, "", window.location.href);
+  }, []);
+
+  // Handle browser back/forward navigation
+  useEffect(() => {
+    if (!isMounted) return;
+
+    const handlePopState = (event) => {
+      if (event.state && event.state.type === "annualQuoteStep") {
         setCurrentStep(event.state.currentStep || STEPS.VEHICLE);
         setVehicleSubStep(event.state.vehicleSubStep || "registration");
         setPersonalSubStep(event.state.personalSubStep || "aboutYou");
