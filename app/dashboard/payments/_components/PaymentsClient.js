@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./paymentsClient.module.css";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 
@@ -10,6 +10,17 @@ export default function PaymentsClient({ plusJakartaSans }) {
   const [autoRenewal, setAutoRenewal] = useState(true);
   const [optOutExpanded, setOptOutExpanded] = useState(false);
   const [showRenewalModal, setShowRenewalModal] = useState(false);
+
+  useEffect(() => {
+    if (showRenewalModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showRenewalModal]);
 
   const handleAutoRenewalChange = (e) => {
     if (e.target.checked) {
