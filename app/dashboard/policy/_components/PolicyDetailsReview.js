@@ -436,42 +436,6 @@ const PolicyDetailsReview = ({ policy }) => {
                 </div>
               </div>
             </div>
-
-            <div className={styles.excessSection}>
-              <h4 className={`${styles.excessTitle} ${plusJakartaSans.className}`}>
-                Policy Excess Information
-              </h4>
-              <div className={styles.excessContent}>
-                <p className={styles.excessItem}>
-                  <strong>Accidental damage:</strong> £850 (this includes £500 voluntary excess)
-                </p>
-                <p className={styles.excessItem}>
-                  <strong>Fire or theft:</strong> £850 (this includes £500 voluntary excess)
-                </p>
-              </div>
-              <p className={styles.excessNote}>
-                Your total excess applies every time you claim and to every car you're claiming on.
-              </p>
-
-              <div className={styles.excessGrid}>
-                <div className={styles.excessItemBlock}>
-                  <h5 className={`${styles.excessSubtitle} ${plusJakartaSans.className}`}>
-                    Glass-only excess costs you less
-                  </h5>
-                  <p className={styles.excessValue}>Glass repair excess: just £20</p>
-                  <p className={styles.excessValue}>Glass replacement excess: just £95</p>
-                </div>
-                <div className={styles.excessItemBlock}>
-                  <h5 className={`${styles.excessSubtitle} ${plusJakartaSans.className}`}>
-                    Non-recommended repairer excess costs you more
-                  </h5>
-                  <p className={styles.excessValue}>Non-recommended repairer excess: £400</p>
-                  <p className={styles.excessValueNote}>
-                    This is in addition to the excesses shown above if you choose a garage not on our list of recommended repairers. This also applies to glass replacement but not glass-only repairs.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         )}
       </section>
