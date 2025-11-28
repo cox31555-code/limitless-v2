@@ -67,6 +67,48 @@ export const mockPolicies = {
       additionalDrivingQualifications: "Advanced Driving Course",
       dvlaReportableConditions: "None"
     },
+    drivers: [
+      {
+        firstName: "Dev",
+        surname: "User",
+        dateOfBirth: "1990-05-20",
+        email: "dev@limitlesscover.co.uk",
+        phone: "+44 7700 900000",
+        postCode: "SW1A 1AA",
+        address: "123 Main Street, London, United Kingdom",
+        employmentStatus: "Employed",
+        industry: "Technology",
+        occupation: "Software Engineer",
+        relationshipStatus: "Married",
+        homeowner: true,
+        childrenUnder16: false,
+        livedInUKSinceBirth: true,
+        licenceType: "Full UK",
+        yearsLicenceHeld: "15",
+        additionalDrivingQualifications: "Advanced Driving Course",
+        dvlaReportableConditions: "None"
+      },
+      {
+        firstName: "Driver",
+        surname: "2",
+        dateOfBirth: "1990-05-20",
+        email: "dev@limitlesscover.co.uk",
+        phone: "+44 7700 900000",
+        postCode: "SW1A 1AA",
+        address: "123 Main Street, London, United Kingdom",
+        employmentStatus: "Employed",
+        industry: "Technology",
+        occupation: "Software Engineer",
+        relationshipStatus: "Married",
+        homeowner: true,
+        childrenUnder16: false,
+        livedInUKSinceBirth: true,
+        licenceType: "Full UK",
+        yearsLicenceHeld: "15",
+        additionalDrivingQualifications: "Advanced Driving Course",
+        dvlaReportableConditions: "None"
+      }
+    ],
     carUsage: {
       keepingCarDuringDay: "On Road Parking",
       keepingCarDuringNight: "On Road Parking",
