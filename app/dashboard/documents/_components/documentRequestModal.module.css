@@ -44,6 +44,39 @@
   }
 }
 
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.spinner {
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #0052a3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.6rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-size: 1.5rem;
+  color: #6b7280;
+  margin: 0;
+}
+
 .title {
   font-size: 2.4rem;
   font-weight: 700;
