@@ -803,4 +803,25 @@
   .noticeText {
     font-size: 1.3rem;
   }
+
+  .balanceAmount {
+    font-size: 1.4rem;
+  }
+
+  .balanceAmount strong {
+    font-size: 1.9rem;
+  }
+
+  .balanceNote {
+    font-size: 1.1rem;
+  }
+
+  .balanceDescription {
+    font-size: 1.2rem;
+  }
+
+  .payOffButton {
+    font-size: 1.2rem;
+    padding: 1.1rem 2rem;
+  }
 }
