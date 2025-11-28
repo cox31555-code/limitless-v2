@@ -272,7 +272,13 @@ const PolicyDetailsReview = ({ policy }) => {
               >
                 Edit Vehicle
               </button>
-              <button className={styles.secondaryBtn} aria-label="Replace this vehicle with another">Replace Vehicle</button>
+              <button
+                className={styles.secondaryBtn}
+                aria-label="Replace this vehicle with another"
+                onClick={() => router.push(`/dashboard/policy/${policy._id}/replace-vehicle`)}
+              >
+                Replace Vehicle
+              </button>
             </div>
 
             {/* Your car section */}
