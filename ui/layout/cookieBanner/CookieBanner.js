@@ -33,14 +33,8 @@ const CookieBanner = () => {
       <div className={styles.content}>
         <div className={styles.leftSection}>
           <div className={styles.iconWrapper}>
-            <svg viewBox="0 0 24 24" fill="none" className={styles.cookieIcon}>
-              <circle cx="12" cy="12" r="10" fill="#3B82F6" opacity="0.2"/>
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#3B82F6"/>
-              <circle cx="8.5" cy="10.5" r="1.5" fill="#3B82F6"/>
-              <circle cx="15.5" cy="10.5" r="1.5" fill="#3B82F6"/>
-              <circle cx="12" cy="15" r="1.5" fill="#3B82F6"/>
-              <circle cx="9" cy="13" r="1" fill="#3B82F6"/>
-              <circle cx="15" cy="13" r="1" fill="#3B82F6"/>
+            <svg viewBox="0 0 24 24" fill="none" className={styles.cookieIcon} xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.598 11.064a1.006 1.006 0 0 0-.854-.172A2.938 2.938 0 0 1 20 11c-1.654 0-3-1.346-3.003-2.938.005-.034.016-.134.017-.168a.998.998 0 0 0-1.254-1.006A3.002 3.002 0 0 1 15 7c-1.654 0-3-1.346-3-3 0-.217.031-.444.099-.716a1 1 0 0 0-1.067-1.236A9.956 9.956 0 0 0 2 12c0 5.514 4.486 10 10 10s10-4.486 10-10c0-.049-.003-.097-.007-.16a1.004 1.004 0 0 0-.395-.776zM8.5 6a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-2 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm2.5-6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="#0388ff"/>
             </svg>
           </div>
           <p className={styles.text}>
