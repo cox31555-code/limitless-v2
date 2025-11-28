@@ -252,12 +252,12 @@
   }
 
   .inputPrefix {
-    padding: 1.6rem 1.6rem;
+    padding: 1.6rem 1.3rem 1.6rem 1.6rem;
     font-size: 1.45rem;
   }
 
   .inputWithPrefix {
-    padding: 1.6rem 2rem 1.6rem 2.4rem;
+    padding: 1.6rem 2rem 1.6rem 1rem;
   }
 
   .input {
@@ -303,12 +303,12 @@
   }
 
   .inputPrefix {
-    padding: 1.4rem 1.5rem;
+    padding: 1.4rem 1.2rem 1.4rem 1.5rem;
     font-size: 1.5rem;
   }
 
   .inputWithPrefix {
-    padding: 1.4rem 1.8rem 1.4rem 2.2rem;
+    padding: 1.4rem 1.8rem 1.4rem 0.9rem;
   }
 
   .input {
@@ -335,12 +335,12 @@
   }
 
   .inputPrefix {
-    padding: 1.3rem 1.4rem;
+    padding: 1.3rem 1.1rem 1.3rem 1.4rem;
     font-size: 1.4rem;
   }
 
   .inputWithPrefix {
-    padding: 1.3rem 1.6rem 1.3rem 2rem;
+    padding: 1.3rem 1.6rem 1.3rem 0.8rem;
   }
 
   .input {
