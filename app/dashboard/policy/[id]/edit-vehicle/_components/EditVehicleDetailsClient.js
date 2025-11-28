@@ -156,8 +156,8 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       {/* Content */}
       <div className={editStyles.contentWrapper}>
         <form onSubmit={form.handleSubmit(handleSave)} className={editStyles.formContainer}>
-          <div className={styles.rows}>
-            {/* Vehicle Type and Make Row */}
+          <div className={editStyles.mainSection}>
+            {/* Basic Vehicle Details */}
             <div className={styles.cleanFormGrid2Col}>
               <Dropdown
                 label="Vehicle Type"
@@ -175,7 +175,6 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
               />
             </div>
 
-            {/* Model and Year Row */}
             <div className={styles.cleanFormGrid2Col}>
               <Dropdown
                 label="Model"
@@ -193,7 +192,6 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
               />
             </div>
 
-            {/* Doors and Fuel Type Row */}
             <div className={styles.cleanFormGrid2Col}>
               <Dropdown
                 label="Doors"
@@ -211,7 +209,6 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
               />
             </div>
 
-            {/* Transmission and Colour Row */}
             <div className={styles.cleanFormGrid2Col}>
               <Dropdown
                 label="Transmission"
@@ -228,53 +225,50 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                 placeholder="Select colour"
               />
             </div>
-          </div>
 
-          {/* Vehicle Modifications Section */}
-          <div className={editStyles.modificationsSection}>
-            <div className={editStyles.modificationsHeader}>
-              <h3 className={editStyles.modificationsTitle}>Has the car been modified in any way?</h3>
-              <p className={editStyles.modificationsDescription}>Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.</p>
-            </div>
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label=""
-                selected={vehicleModified}
-                options={yesNoOptions}
-                setSelected={(value) => handleDropdownChange("vehicleModified", value)}
-                placeholder="Select option"
-              />
-            </div>
-            {vehicleModified === "Yes" && vehicleModifications.length > 0 && (
-              <div className={styles.modificationsListContainer}>
-                <div className={styles.modificationsLabelWrapper}>
-                  <p className={styles.modificationsLabel}>Selected Modifications:</p>
-                  <button
-                    type="button"
-                    className={styles.editModificationsBtn}
-                    onClick={() => setShowModificationsModal(true)}
-                  >
-                    Edit
-                  </button>
-                </div>
-                <div className={styles.modificationsTagsList}>
-                  {vehicleModifications.map((modification) => (
-                    <span key={modification} className={styles.modificationTag}>
-                      {modification}
-                    </span>
-                  ))}
-                </div>
+            {/* Divider */}
+            <div className={editStyles.sectionDivider}></div>
+
+            {/* Vehicle Modifications */}
+            <div className={editStyles.fieldGroup}>
+              <h4 className={editStyles.fieldGroupTitle}>Has the car been modified in any way?</h4>
+              <p className={editStyles.fieldGroupDescription}>Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.</p>
+              <div className={styles.cleanFormGrid2Col}>
+                <Dropdown
+                  label=""
+                  selected={vehicleModified}
+                  options={yesNoOptions}
+                  setSelected={(value) => handleDropdownChange("vehicleModified", value)}
+                  placeholder="Select option"
+                />
               </div>
-            )}
-          </div>
-
-          {/* Alarm and Security Section */}
-          <div className={editStyles.securitySection}>
-            <div className={editStyles.securityHeader}>
-              <h3 className={editStyles.securityTitle}>What type of alarm and/or immobiliser does the car have?</h3>
-              <p className={editStyles.securityDescription}>Check your car's manual if you're unsure.</p>
+              {vehicleModified === "Yes" && vehicleModifications.length > 0 && (
+                <div className={styles.modificationsListContainer}>
+                  <div className={styles.modificationsLabelWrapper}>
+                    <p className={styles.modificationsLabel}>Selected Modifications:</p>
+                    <button
+                      type="button"
+                      className={styles.editModificationsBtn}
+                      onClick={() => setShowModificationsModal(true)}
+                    >
+                      Edit
+                    </button>
+                  </div>
+                  <div className={styles.modificationsTagsList}>
+                    {vehicleModifications.map((modification) => (
+                      <span key={modification} className={styles.modificationTag}>
+                        {modification}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-            <div className={styles.rows}>
+
+            {/* Alarm/Immobiliser */}
+            <div className={editStyles.fieldGroup}>
+              <h4 className={editStyles.fieldGroupTitle}>What type of alarm and/or immobiliser does the car have?</h4>
+              <p className={editStyles.fieldGroupDescription}>Check your car's manual if you're unsure.</p>
               <div className={styles.cleanFormGrid2Col}>
                 <Dropdown
                   label=""
@@ -285,14 +279,10 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                 />
               </div>
             </div>
-          </div>
 
-          {/* Tracking Device Section */}
-          <div className={editStyles.trackingSection}>
-            <div className={editStyles.trackingHeader}>
-              <h3 className={editStyles.trackingTitle}>Is the car fitted with a tracking device?</h3>
-            </div>
-            <div className={styles.rows}>
+            {/* Tracking Device */}
+            <div className={editStyles.fieldGroup}>
+              <h4 className={editStyles.fieldGroupTitle}>Is the car fitted with a tracking device?</h4>
               <div className={styles.cleanFormGrid2Col}>
                 <Dropdown
                   label=""
@@ -303,14 +293,10 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                 />
               </div>
             </div>
-          </div>
 
-          {/* Imported Vehicle Section */}
-          <div className={editStyles.importedSection}>
-            <div className={editStyles.importedHeader}>
-              <h3 className={editStyles.importedTitle}>Is the car an import?</h3>
-            </div>
-            <div className={styles.rows}>
+            {/* Imported Vehicle */}
+            <div className={editStyles.fieldGroup}>
+              <h4 className={editStyles.fieldGroupTitle}>Is the car an import?</h4>
               <div className={styles.cleanFormGrid2Col}>
                 <Dropdown
                   label=""
@@ -321,15 +307,11 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                 />
               </div>
             </div>
-          </div>
 
-          {/* Driver Side Section */}
-          <div className={editStyles.driverSideSection}>
-            <div className={editStyles.driverSideHeader}>
-              <h3 className={editStyles.driverSideTitle}>Is the car left or right-hand drive?</h3>
-              <p className={editStyles.driverSideDescription}>The UK standard is right-hand drive. This means that when you are sat in the vehicle facing the windscreen, the steering wheel is on the right side.</p>
-            </div>
-            <div className={styles.rows}>
+            {/* Driver Side */}
+            <div className={editStyles.fieldGroup}>
+              <h4 className={editStyles.fieldGroupTitle}>Is the car left or right-hand drive?</h4>
+              <p className={editStyles.fieldGroupDescription}>The UK standard is right-hand drive. This means that when you are sat in the vehicle facing the windscreen, the steering wheel is on the right side.</p>
               <div className={styles.cleanFormGrid2Col}>
                 <Dropdown
                   label=""
@@ -340,15 +322,11 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                 />
               </div>
             </div>
-          </div>
 
-          {/* Seats Section */}
-          <div className={editStyles.seatsSection}>
-            <div className={editStyles.seatsHeader}>
-              <h3 className={editStyles.seatsTitle}>How many seats are there in the car?</h3>
-              <p className={editStyles.seatsDescription}>Count the number of seatbelts if you're unsure.</p>
-            </div>
-            <div className={styles.rows}>
+            {/* Seats */}
+            <div className={editStyles.fieldGroup}>
+              <h4 className={editStyles.fieldGroupTitle}>How many seats are there in the car?</h4>
+              <p className={editStyles.fieldGroupDescription}>Count the number of seatbelts if you're unsure.</p>
               <div className={styles.cleanFormGrid2Col}>
                 <Dropdown
                   label=""
