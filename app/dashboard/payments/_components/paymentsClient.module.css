@@ -1,0 +1,347 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/* Notice Banner */
+.noticeBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.6rem 2rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  color: #1e40af;
+}
+
+.noticeIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  color: #3b82f6;
+  margin-top: 0.2rem;
+}
+
+.noticeText {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #1e3a8a;
+}
+
+.noticeText strong {
+  font-weight: 700;
+  color: #1e40af;
+}
+
+/* Section */
+.section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 3.2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.sectionIcon {
+  width: 3.2rem;
+  height: 3.2rem;
+  color: #0052a3;
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #003d82;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Payment Day */
+.paymentDay {
+  font-size: 1.6rem;
+  color: #4b5563;
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+.paymentDay strong {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Card Info */
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cardNumber,
+.expiryDate {
+  font-size: 1.6rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cardNumber strong,
+.expiryDate strong {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Consent */
+.consentLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  accent-color: #0052a3;
+}
+
+.consentText {
+  font-size: 1.4rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Change Button */
+.changeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.4rem;
+  background: #0b7f4a;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.changeButton:hover {
+  background: #0a6e40;
+}
+
+.changeButton:active {
+  background: #095d36;
+}
+
+/* Payment Schedule */
+.scheduleInfo {
+  font-size: 1.6rem;
+  color: #4b5563;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.5;
+}
+
+.scheduleInfo strong {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.installmentInfo {
+  font-size: 1.4rem;
+  color: #6b7280;
+  margin: 0 0 2.4rem 0;
+}
+
+.scheduleList {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.scheduleItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.8rem;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.2s ease;
+}
+
+.scheduleItem:last-child {
+  border-bottom: none;
+}
+
+.scheduleItem:hover {
+  background: #f9fafb;
+}
+
+.scheduleDate {
+  font-size: 1.5rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.scheduleAmountWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.depositBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: #0052a3;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.scheduleAmount {
+  font-size: 1.5rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.depositLabel {
+  font-size: 1.3rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 2.4rem;
+  }
+
+  .sectionHeader {
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .sectionIcon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .paymentDay,
+  .cardNumber,
+  .expiryDate,
+  .scheduleInfo {
+    font-size: 1.5rem;
+  }
+
+  .changeButton {
+    padding: 1.1rem 2.2rem;
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 2rem;
+  }
+
+  .noticeBanner {
+    padding: 1.4rem 1.6rem;
+    gap: 1rem;
+  }
+
+  .noticeIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .noticeText {
+    font-size: 1.4rem;
+  }
+
+  .section {
+    padding: 2rem;
+  }
+
+  .sectionHeader {
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .sectionIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .paymentDay,
+  .cardNumber,
+  .expiryDate,
+  .scheduleInfo {
+    font-size: 1.4rem;
+  }
+
+  .consentText {
+    font-size: 1.3rem;
+  }
+
+  .changeButton {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    font-size: 1.4rem;
+  }
+
+  .scheduleItem {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .scheduleDate,
+  .scheduleAmount {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .section {
+    padding: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .noticeText {
+    font-size: 1.3rem;
+  }
+}
