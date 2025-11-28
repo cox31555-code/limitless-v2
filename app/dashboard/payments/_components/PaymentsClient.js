@@ -79,8 +79,10 @@ export default function PaymentsClient({ plusJakartaSans }) {
             </svg>
             <h2 className={styles.sectionTitle}>Payment day</h2>
           </div>
-          <p className={styles.paymentDay}>Every <strong>5th</strong> of the month</p>
-          <button className={styles.changeButton}>Change day</button>
+          <div className={styles.sectionContent}>
+            <p className={styles.paymentDay}>Every <strong>5th</strong> of the month</p>
+            <button className={styles.changeButton}>Change day</button>
+          </div>
         </div>
 
         {/* Card Details Section */}
