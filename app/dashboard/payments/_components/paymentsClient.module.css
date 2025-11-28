@@ -641,6 +641,23 @@
     padding: 1.2rem 2.4rem;
     font-size: 1.3rem;
   }
+
+  .balanceAmount strong {
+    font-size: 2.2rem;
+  }
+
+  .balanceNote {
+    font-size: 1.2rem;
+  }
+
+  .balanceDescription {
+    font-size: 1.3rem;
+  }
+
+  .payOffButton {
+    padding: 1.2rem 2.4rem;
+    font-size: 1.3rem;
+  }
 }
 
 /* Small Mobile */
@@ -729,6 +746,28 @@
   }
 
   .changeButton {
+    width: 100%;
+    padding: 1.2rem 2.2rem;
+    font-size: 1.3rem;
+  }
+
+  .balanceAmount {
+    font-size: 1.5rem;
+  }
+
+  .balanceAmount strong {
+    font-size: 2rem;
+  }
+
+  .balanceNote {
+    font-size: 1.2rem;
+  }
+
+  .balanceDescription {
+    font-size: 1.3rem;
+  }
+
+  .payOffButton {
     width: 100%;
     padding: 1.2rem 2.2rem;
     font-size: 1.3rem;
