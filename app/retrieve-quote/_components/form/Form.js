@@ -34,36 +34,19 @@ const Form = () => {
   });
 
   const handleQuoteRefChange = (e) => {
-    let value = e.target.value.toUpperCase();
+    const inputValue = e.target.value.toUpperCase();
+    const fullValue = "LC-" + inputValue;
 
-    // Always ensure it starts with "LC-"
-    if (!value.startsWith("LC-")) {
-      value = "LC-";
-    }
-
-    // Prevent deletion of "LC-" prefix
-    if (value.length < 3) {
-      value = "LC-";
-    }
-
-    setQuoteRef(value);
-    setValue("quoteReference", value, { shouldValidate: true });
+    setQuoteRef(fullValue);
+    setValue("quoteReference", fullValue, { shouldValidate: true });
   };
 
   const handleQuoteRefKeyDown = (e) => {
-    const cursorPosition = e.target.selectionStart;
-
-    // Prevent deleting the "LC-" prefix
-    if ((e.key === "Backspace" || e.key === "Delete") && cursorPosition <= 3) {
-      e.preventDefault();
-    }
+    // No special handling needed since prefix is separate
   };
 
   const handleQuoteRefClick = (e) => {
-    // Ensure cursor doesn't go before "LC-"
-    if (e.target.selectionStart < 3) {
-      e.target.setSelectionRange(3, 3);
-    }
+    // No special handling needed since prefix is separate
   };
 
   const onSubmit = async (data) => {
@@ -133,7 +116,7 @@ const Form = () => {
 
             <div className={styles.fieldWrapper}>
               <div
-                className={`${styles.inputField} ${errors.quoteReference ? styles.fieldError : ""}`}
+                className={`${styles.inputField} ${styles.inputFieldWithPrefix} ${errors.quoteReference ? styles.fieldError : ""}`}
                 onClick={() => {
                   referenceInputRef.current?.focus();
                   // Move cursor to end after "LC-"
@@ -145,11 +128,12 @@ const Form = () => {
                   }, 0);
                 }}
               >
+                <span className={styles.inputPrefix}>LC-</span>
                 <input
                   type="text"
-                  placeholder="LC-2024-001234"
-                  className={styles.input}
-                  value={quoteRef}
+                  placeholder="2024-001234"
+                  className={`${styles.input} ${styles.inputWithPrefix}`}
+                  value={quoteRef.slice(3)}
                   onChange={handleQuoteRefChange}
                   onKeyDown={handleQuoteRefKeyDown}
                   onClick={handleQuoteRefClick}

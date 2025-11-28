@@ -58,15 +58,60 @@
   height: 6rem;
 }
 
+.inputFieldWithPrefix {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Input Prefix Styling */
+.inputPrefix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.8rem 1.6rem;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: 100%;
+  border-right: 1.5px solid rgba(0, 8, 34, 0.12);
+  flex-shrink: 0;
+  user-select: none;
+  line-height: 1.4;
+}
+
+.inputWithPrefix {
+  padding: 1.8rem 2.2rem;
+  border-radius: 0;
+}
+
 .inputField:focus-within {
   border-color: #0052a3;
   background: #ffffff;
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
 }
 
+.inputFieldWithPrefix:focus-within {
+  background: transparent;
+}
+
+.inputFieldWithPrefix:focus-within .inputPrefix {
+  background: #dfe1e6;
+  border-right-color: #0052a3;
+}
+
 .inputField.fieldError {
   border-color: #ef4444;
   background: #fef2f2;
+}
+
+.inputFieldWithPrefix.fieldError {
+  background: transparent;
+}
+
+.inputFieldWithPrefix.fieldError .inputPrefix {
+  background: #fee2e2;
+  border-right-color: #ef4444;
 }
 
 .inputField.fieldError:focus-within {
@@ -200,6 +245,15 @@
     padding: 1.6rem 2rem;
   }
 
+  .inputPrefix {
+    padding: 1.6rem 1.4rem;
+    font-size: 1.45rem;
+  }
+
+  .inputWithPrefix {
+    padding: 1.6rem 2rem;
+  }
+
   .input {
     font-size: 1.45rem;
   }
@@ -242,6 +296,15 @@
     border-radius: 8px;
   }
 
+  .inputPrefix {
+    padding: 1.4rem 1.3rem;
+    font-size: 1.5rem;
+  }
+
+  .inputWithPrefix {
+    padding: 1.4rem 1.8rem;
+  }
+
   .input {
     font-size: 1.5rem;
   }
@@ -262,6 +325,15 @@
 
   .inputField {
     height: 5.2rem;
+    padding: 1.3rem 1.6rem;
+  }
+
+  .inputPrefix {
+    padding: 1.3rem 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .inputWithPrefix {
     padding: 1.3rem 1.6rem;
   }
 
