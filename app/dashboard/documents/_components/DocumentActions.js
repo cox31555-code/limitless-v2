@@ -189,105 +189,114 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
       <div
         style={{
           display: "flex",
-          gap: "1.6rem",
           alignItems: "center",
+          fontWeight: "400",
+          gap: "1.6rem",
         }}
       >
-        <button
-          onClick={handleView}
+        <div
           style={{
-            display: "inline-flex",
+            display: "flex",
             alignItems: "center",
-            gap: "0.6rem",
-            color: "#0052a3",
-            fontSize: "1.25rem",
-            fontWeight: "600",
-            lineHeight: "130%",
-            background: "transparent",
-            border: "none",
-            cursor: "pointer",
-            padding: "0.8rem 1.2rem",
-            transition: "color 0.2s ease",
-            whiteSpace: "nowrap",
-            textDecoration: "underline",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "#003d7a";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "#0052a3";
+            fontWeight: "400",
           }}
         >
-          <span>View Online</span>
-        </button>
-
-        <button
-        onClick={handleDownload}
-        disabled={isDownloading}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "0.6rem",
-          color: "#0052a3",
-          fontSize: "1.25rem",
-          fontWeight: "600",
-          lineHeight: "130%",
-          background: "transparent",
-          border: "none",
-          cursor: isDownloading ? "not-allowed" : "pointer",
-          padding: "0.8rem 1.2rem",
-          transition: "color 0.2s ease",
-          opacity: isDownloading ? 0.7 : 1,
-          whiteSpace: "nowrap",
-          textDecoration: "underline",
-        }}
-        onMouseEnter={(e) => {
-          if (!isDownloading) {
-            e.currentTarget.style.color = "#003d7a";
-          }
-        }}
-        onMouseLeave={(e) => {
-          if (!isDownloading) {
-            e.currentTarget.style.color = "#0052a3";
-          }
-        }}
-      >
-        {isDownloading && (
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
+          <button
+            onClick={handleView}
             style={{
-              animation: "spin 1s linear infinite",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.6rem",
+              color: "#0052a3",
+              fontSize: "1.25rem",
+              fontWeight: "600",
+              lineHeight: "130%",
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+              padding: "0.8rem 1.2rem",
+              transition: "color 0.2s ease",
+              whiteSpace: "nowrap",
+              textDecoration: "underline",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "#003d7a";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "#0052a3";
             }}
           >
-            <style>{`
-              @keyframes spin {
-                from { transform: rotate(0deg); }
-                to { transform: rotate(360deg); }
+            <span>View Online</span>
+          </button>
+
+          <button
+            onClick={handleDownload}
+            disabled={isDownloading}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.6rem",
+              color: "#0052a3",
+              fontSize: "1.25rem",
+              fontWeight: "600",
+              lineHeight: "130%",
+              background: "transparent",
+              border: "none",
+              cursor: isDownloading ? "not-allowed" : "pointer",
+              padding: "0.8rem 1.2rem",
+              transition: "color 0.2s ease",
+              opacity: isDownloading ? 0.7 : 1,
+              whiteSpace: "nowrap",
+              textDecoration: "underline",
+            }}
+            onMouseEnter={(e) => {
+              if (!isDownloading) {
+                e.currentTarget.style.color = "#003d7a";
               }
-            `}</style>
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeDasharray="60"
-              strokeDashoffset="20"
-              opacity="0.25"
-            />
-            <path
-              d="M12 2a10 10 0 0 1 10 10"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-          </svg>
-        )}
-        <span>{isDownloading ? "Downloading..." : "Download PDF"}</span>
-      </button>
+            }}
+            onMouseLeave={(e) => {
+              if (!isDownloading) {
+                e.currentTarget.style.color = "#0052a3";
+              }
+            }}
+          >
+            {isDownloading && (
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                style={{
+                  animation: "spin 1s linear infinite",
+                }}
+              >
+                <style>{`
+                  @keyframes spin {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                  }
+                `}</style>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeDasharray="60"
+                  strokeDashoffset="20"
+                  opacity="0.25"
+                />
+                <path
+                  d="M12 2a10 10 0 0 1 10 10"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
+            <span>{isDownloading ? "Downloading..." : "Download PDF"}</span>
+          </button>
+        </div>
       </div>
 
       <PdfViewerModal
