@@ -1,0 +1,388 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: -1.5625rem 0 1.75rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.heroSection {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  margin-bottom: 6.5rem;
+  padding: 7.8rem calc(50vw - 50%) 7.8rem;
+  gap: 0;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroBackground {
+  position: absolute;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 399px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  gap: 3.9rem;
+  margin: 0 auto;
+}
+
+.greetingArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.04rem;
+}
+
+.greetingTitle {
+  font-size: 3.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 110%;
+  letter-spacing: -0.65px;
+}
+
+.greetingSubtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.3rem;
+  padding: 0 5% 14px;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.breadcrumbItem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.55rem;
+  color: #ccc;
+  margin: 0 0.4rem;
+  flex-shrink: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 55px 5% 1.6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mainSection:hover {
+  border-color: rgba(3, 136, 255, 0.18);
+  background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+}
+
+.sectionDivider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(3, 136, 255, 0) 0%, rgba(3, 136, 255, 0.2) 50%, rgba(3, 136, 255, 0) 100%);
+  margin: 0.5rem 0;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.fieldGroupTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.fieldGroupDescription {
+  font-size: 1.1rem;
+  color: #5a6b7d;
+  margin: 0;
+  font-weight: 400;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e6f0;
+  justify-content: flex-end;
+}
+
+.cancelBtn,
+.saveBtn {
+  padding: 1.2rem 2.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.cancelBtn {
+  background: #f0f1f3;
+  color: #333;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.saveBtn {
+  background: #0052a3;
+  color: #ffffff;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+}
+
+.cancelBtn:disabled,
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 1200px) {
+  .heroSection {
+    padding: 7rem calc(50vw - 50%) 7rem;
+  }
+
+  .greetingTitle {
+    font-size: 3.5rem;
+  }
+
+  .breadcrumb {
+    gap: 1rem;
+    padding: 20px 5% 20px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
+  }
+
+  .contentWrapper {
+    padding: 3rem 5%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem calc(50vw - 50%);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  .greetingArea {
+    align-items: center;
+    width: 100%;
+  }
+
+  .greetingTitle {
+    font-size: 2.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .breadcrumb {
+    gap: 0.8rem;
+    padding: 15px 5% 15px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.2rem;
+  }
+
+  .contentWrapper {
+    padding: 2.5rem 5%;
+  }
+
+  .mainSection {
+    padding: 2.4rem;
+    gap: 1.8rem;
+  }
+
+  .actionButtons {
+    flex-direction: column-reverse;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+  }
+
+  .fieldGroupTitle {
+    font-size: 1.2rem;
+  }
+
+  .fieldGroupDescription {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heroSection {
+    padding: 2.5rem calc(50vw - 50%);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .greetingTitle {
+    font-size: 2.3rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.15rem;
+  }
+
+  .breadcrumb {
+    gap: 0.6rem;
+    padding: 12px 5% 12px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.1rem;
+    margin: 0 0.3rem;
+  }
+
+  .contentWrapper {
+    padding: 2rem 5%;
+  }
+
+  .mainSection {
+    padding: 1.6rem;
+    gap: 1.4rem;
+  }
+
+  .actionButtons {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+  }
+
+  .fieldGroupTitle {
+    font-size: 1.15rem;
+  }
+
+  .fieldGroupDescription {
+    font-size: 1rem;
+  }
+}
