@@ -58,12 +58,12 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1405px;
+  max-width: 1000px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
   flex: 1;
   gap: 3.9rem;
-  margin-left: 51px;
 }
 
 .greetingArea {
