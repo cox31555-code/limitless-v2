@@ -38,10 +38,6 @@ const Step2LicenceHidden = ({ form }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Your details - Your licence</h2>
-      </div>
-
       <div className={styles.contentWrapper}>
         {/* Licence Type Section */}
         <div className={styles.section}>

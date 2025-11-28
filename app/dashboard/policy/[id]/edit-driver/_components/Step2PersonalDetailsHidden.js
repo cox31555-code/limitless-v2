@@ -11,10 +11,6 @@ const Step2PersonalDetailsHidden = ({ form }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Your details - About you</h2>
-      </div>
-
       <div className={styles.contentWrapper}>
         {/* Relationship Status Section */}
         <div className={styles.section}>

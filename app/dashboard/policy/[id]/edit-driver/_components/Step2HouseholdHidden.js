@@ -15,10 +15,6 @@ const Step2HouseholdHidden = ({ form }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Your details - Your household</h2>
-      </div>
-
       <div className={styles.contentWrapper}>
         {/* Home Ownership Section */}
         <div className={styles.section}>
