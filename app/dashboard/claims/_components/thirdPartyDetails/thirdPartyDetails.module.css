@@ -1,40 +1,60 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 18px;
+  border-radius: 12px;
   background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.06);
+  border: 1px solid #e0e6f0;
 }
 
 .title {
-  color: #000822;
-  font-size: 1.8rem;
+  color: #0052a3;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 124%;
-  letter-spacing: 0.72px;
+  letter-spacing: -0.3px;
   padding: 2.4rem;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.18);
+  border-bottom: 1px solid #e0e6f0;
 }
+
 .body {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 2.4rem;
   padding: 2.4rem;
 }
+
 .row {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
 }
+
 @media screen and (max-width: 900px) {
   .title {
-    padding: 2.2rem;
+    padding: 2rem;
+    font-size: 1.8rem;
   }
   .body {
-    gap: 2.6rem;
-    padding: 2.2rem;
+    gap: 2.4rem;
+    padding: 2rem;
   }
   .row {
-    gap: 2.6rem;
+    gap: 2.4rem;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    padding: 1.8rem;
+    font-size: 1.6rem;
+  }
+  .body {
+    gap: 2rem;
+    padding: 1.8rem;
+  }
+  .row {
+    gap: 2rem;
   }
 }
