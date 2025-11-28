@@ -179,7 +179,7 @@ const DashboardClient = () => {
 
                 <div className={styles.policyCardFooter}>
                   <div className={styles.policyEndDate}>
-                    <span className={styles.endDateLabel}>Ended on:</span>
+                    <span className={styles.endDateLabel}>Ends on:</span>
                     <span className={styles.endDateValue}>{policy.endDate} ({policy.endTime})</span>
                   </div>
                   <div className={styles.policyArrow}>
