@@ -1066,4 +1066,39 @@
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  .benefitText {
+    font-size: 1.2rem;
+  }
+
+  .checkIcon {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .optOutTitle {
+    font-size: 1.25rem;
+  }
+
+  .optOutToggle {
+    font-size: 1.2rem;
+  }
+
+  .chevronIcon {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .optOutContent {
+    padding: 1.3rem;
+  }
+
+  .autoRenewalCheckbox {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .autoRenewalText {
+    font-size: 1.15rem;
+  }
 }
