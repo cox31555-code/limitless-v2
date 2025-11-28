@@ -7,10 +7,6 @@ import { occupationOptions, industryOptions, studentTypeOptions } from "@/app/te
 
 const Step2EmploymentHidden = ({ form }) => {
   const { watch, setValue } = form;
-  const [expandedJobTitle, setExpandedJobTitle] = useState(false);
-  const [expandedWhyJobTitle, setExpandedWhyJobTitle] = useState(false);
-  const [expandedIndustry, setExpandedIndustry] = useState(false);
-  const [expandedWhyIndustry, setExpandedWhyIndustry] = useState(false);
 
   const employmentStatus = watch("userDetails.employmentStatus");
   const occupation = watch("userDetails.occupation");

@@ -4,8 +4,6 @@ import styles from "@/app/annual/get-quote/_components/step2ClaimsAndConvictions
 
 const Step2ClaimsAndConvictionsHidden = ({ form, claims = [], convictions = [], setClaims = () => {}, setConvictions = () => {} }) => {
   const { register, formState: { errors }, watch } = form;
-  const [expandedClaimsWhatIf, setExpandedClaimsWhatIf] = useState(false);
-  const [expandedConvictionsHow, setExpandedConvictionsHow] = useState(false);
 
   const motorAccidentsClaims = watch("carUsage.motorAccidentsClaims");
   const drivingConvictions = watch("carUsage.drivingConvictions");

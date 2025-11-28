@@ -5,11 +5,6 @@ import styles from "@/app/annual/get-quote/_components/step2LicenceRestrictions.
 
 const Step2LicenceRestrictionsHidden = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
-  const [expandedMedical, setExpandedMedical] = useState(false);
-  const [expandedSpecialTerms, setExpandedSpecialTerms] = useState(false);
-  const [expandedWhySpecialTerms, setExpandedWhySpecialTerms] = useState(false);
-  const [expandedCriminal, setExpandedCriminal] = useState(false);
-  const [expandedWhatSpent, setExpandedWhatSpent] = useState(false);
 
   const medicalConditions = watch("carUsage.medicalConditions");
   const dvlaConditionType = watch("carUsage.dvlaConditionType");

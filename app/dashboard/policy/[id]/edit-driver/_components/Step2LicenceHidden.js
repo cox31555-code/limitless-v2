@@ -6,7 +6,6 @@ import { licenseHeldOptions, monthOptions, yearOptions } from "@/app/temporary/g
 
 const Step2LicenceHidden = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
-  const [expandedWhereToFind, setExpandedWhereToFind] = useState(false);
 
   const licenseType = watch("carUsage.licenseType");
   const licenseIssueCountry = watch("carUsage.licenseIssueCountry");
