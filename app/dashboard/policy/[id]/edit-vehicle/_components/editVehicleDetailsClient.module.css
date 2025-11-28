@@ -320,6 +320,19 @@
     font-size: 3.5rem;
   }
 
+  .breadcrumb {
+    gap: 1rem;
+    padding: 20px 5% 20px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
+  }
+
   .contentWrapper {
     padding: 3rem 5%;
   }
