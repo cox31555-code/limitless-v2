@@ -825,11 +825,11 @@
   }
 
   .breakdownLabel {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .breakdownAmount {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .cardHeader {
@@ -847,7 +847,7 @@
   }
 
   .sectionTitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .cardContent {
@@ -856,11 +856,11 @@
   }
 
   .detailLabel {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .detailValue {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .excessSection {
@@ -868,7 +868,7 @@
   }
 
   .carTitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .vehicleSubsection {
