@@ -1,0 +1,202 @@
+.cookieBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2d3748;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.8rem 4%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex-shrink: 0;
+}
+
+.policyButton {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.policyButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.acceptButton {
+  background: #ffffff;
+  border: none;
+  color: #2d3748;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.8rem 2.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.acceptButton:hover {
+  background: #f7fafc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 2.4rem;
+  font-weight: 300;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  line-height: 1;
+  padding: 0;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tablet */
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 1.6rem 4%;
+    gap: 1.8rem;
+  }
+
+  .text {
+    font-size: 1.3rem;
+  }
+
+  .actions {
+    gap: 1.4rem;
+  }
+
+  .policyButton,
+  .acceptButton {
+    font-size: 1.25rem;
+    padding: 0.7rem 1.8rem;
+  }
+
+  .closeButton {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+    padding: 2rem 4%;
+  }
+
+  .text {
+    font-size: 1.25rem;
+    text-align: left;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1.2rem;
+  }
+
+  .policyButton,
+  .acceptButton {
+    font-size: 1.2rem;
+    padding: 0.9rem 1.6rem;
+    flex: 1;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 1.6rem;
+    right: 4%;
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 1.8rem 4%;
+    gap: 1.4rem;
+  }
+
+  .text {
+    font-size: 1.2rem;
+    padding-right: 3rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .policyButton,
+  .acceptButton {
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 1rem 1.4rem;
+  }
+
+  .closeButton {
+    top: 1.4rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 1.8rem;
+  }
+}
