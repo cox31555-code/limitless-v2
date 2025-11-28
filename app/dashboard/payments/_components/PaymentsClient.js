@@ -6,6 +6,7 @@ import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 
 export default function PaymentsClient({ plusJakartaSans }) {
   const [consentChecked, setConsentChecked] = useState(false);
+  const [scheduleExpanded, setScheduleExpanded] = useState(false);
 
   const paymentSchedule = [
     { date: "21 Nov 2025", amount: "£47.29", type: "deposit" },
@@ -159,22 +160,41 @@ export default function PaymentsClient({ plusJakartaSans }) {
             </p>
             <p className={styles.installmentInfo}>(11 instalments left X 47.40)</p>
 
-            <div className={styles.scheduleList}>
-              {paymentSchedule.map((payment, index) => (
-                <div key={index} className={styles.scheduleItem}>
-                  <div className={styles.scheduleDate}>{payment.date}</div>
-                  <div className={styles.scheduleAmountWrapper}>
-                    {payment.type === "deposit" && (
-                      <span className={styles.depositBadge}>D</span>
-                    )}
-                    <span className={styles.scheduleAmount}>{payment.amount}</span>
-                    {payment.type === "deposit" && (
-                      <span className={styles.depositLabel}>(deposit)</span>
-                    )}
+            <button
+              className={styles.viewInstalmentsButton}
+              onClick={() => setScheduleExpanded(!scheduleExpanded)}
+            >
+              <svg className={styles.viewInstalmentsIcon} viewBox="0 0 24 24" fill="none">
+                {scheduleExpanded ? (
+                  <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                ) : (
+                  <>
+                    <line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </>
+                )}
+              </svg>
+              <span>{scheduleExpanded ? 'Hide instalments plan' : 'View instalments plan'}</span>
+            </button>
+
+            {scheduleExpanded && (
+              <div className={styles.scheduleList}>
+                {paymentSchedule.map((payment, index) => (
+                  <div key={index} className={styles.scheduleItem}>
+                    <div className={styles.scheduleDate}>{payment.date}</div>
+                    <div className={styles.scheduleAmountWrapper}>
+                      {payment.type === "deposit" && (
+                        <span className={styles.depositBadge}>D</span>
+                      )}
+                      <span className={styles.scheduleAmount}>{payment.amount}</span>
+                      {payment.type === "deposit" && (
+                        <span className={styles.depositLabel}>(deposit)</span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
