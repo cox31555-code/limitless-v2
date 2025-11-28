@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import styles from "./driverSummaryCard.module.css";
+import AddressLookupModal from "./AddressLookupModal";
 
 const DriverSummaryCard = ({ driver, form, onAddressChange }) => {
   const { watch, setValue } = form;
-  const [showAddressForm, setShowAddressForm] = useState(false);
+  const [showAddressModal, setShowAddressModal] = useState(false);
 
   const firstName = watch("userDetails.firstName");
   const surname = watch("userDetails.surname");
@@ -80,12 +81,18 @@ const DriverSummaryCard = ({ driver, form, onAddressChange }) => {
           <button
             type="button"
             className={styles.changeAddressBtn}
-            onClick={() => setShowAddressForm(!showAddressForm)}
+            onClick={() => setShowAddressModal(true)}
           >
             Change address
           </button>
         </div>
       </div>
+
+      <AddressLookupModal
+        form={form}
+        isOpen={showAddressModal}
+        onClose={() => setShowAddressModal(false)}
+      />
     </div>
   );
 };
