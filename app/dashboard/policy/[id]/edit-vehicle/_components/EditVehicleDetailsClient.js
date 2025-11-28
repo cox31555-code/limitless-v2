@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useReducer, useEffect, useCallback, useRef } from "react";
+import React, { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -22,58 +22,17 @@ const carColors = [
   "Orange", "Beige", "Purple", "Gold", "Yellow",
 ];
 
-const initialVehicleState = {
-  makes: ["Audi", "BMW", "Ford", "Honda", "Toyota", "Volkswagen"],
-  options: {
-    models: [],
-    years: [],
-    doors: [],
-    fuels: [],
-    transmissions: [],
-  },
-  values: {
-    type: "",
-    make: "",
-    model: "",
-    year: "",
-    doors: "",
-    fuel: "",
-    transmission: "",
-    colour: "",
-  },
-};
-
-const vehicleReducer = (state, action) => {
-  switch (action.type) {
-    case "SET_MAKES":
-      return { ...state, makes: action.payload };
-    case "SET_VEHICLE_DATA":
-      return {
-        ...state,
-        options: action.payload.options || state.options,
-        values: { ...state.values, ...(action.payload.values || {}) },
-      };
-    case "CLEAR_OPTIONS":
-      return {
-        ...state,
-        options: {
-          models: [],
-          years: [],
-          doors: [],
-          fuels: [],
-          transmissions: [],
-        },
-      };
-    default:
-      return state;
-  }
-};
+const vehicleTypes = ["Car", "Motorcycle", "Truck", "Bus"];
+const vehicleMakes = ["Audi", "BMW", "Ford", "Honda", "Toyota", "Volkswagen"];
+const vehicleModels = ["Model A", "Model B", "Model C"];
+const vehicleYears = ["2024", "2023", "2022", "2021", "2020"];
+const vehicleDoors = ["2", "4", "5"];
+const vehicleFuels = ["Petrol", "Diesel", "Hybrid", "Electric"];
+const vehicleTransmissions = ["Manual", "Automatic"];
 
 const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [state, dispatch] = useReducer(vehicleReducer, initialVehicleState);
-  const [forceUpdate, setForceUpdate] = useState(0);
 
   const form = useForm({
     resolver: zodResolver(annualInsuranceSchema),
@@ -92,42 +51,18 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   });
 
   const { watch, setValue, formState: { errors } } = form;
-  const selectedType = watch("vehicleDetails.type");
-  const selectedMake = watch("vehicleDetails.make");
-  const selectedModel = watch("vehicleDetails.model");
-  const selectedYear = watch("vehicleDetails.year");
-  const selectedDoors = watch("vehicleDetails.doors");
-  const selectedFuel = watch("vehicleDetails.fuel");
 
-  // Fetch vehicle options when make is selected
-  useEffect(() => {
-    if (selectedMake) {
-      const defaultOptions = {
-        models: ["Model A", "Model B", "Model C"],
-        years: ["2024", "2023", "2022", "2021", "2020"],
-        doors: ["2", "4", "5"],
-        fuels: ["Petrol", "Diesel", "Hybrid", "Electric"],
-        transmissions: ["Manual", "Automatic"],
-      };
-      dispatch({
-        type: "SET_VEHICLE_DATA",
-        payload: { values: {}, options: defaultOptions },
-      });
-    }
-  }, [selectedMake]);
-
-  const handleDropdownChange = (field, value) => {
+  const handleDropdownChange = useCallback((field, value) => {
     setValue(`vehicleDetails.${field}`, value, {
       shouldValidate: true,
       shouldDirty: true,
       shouldTouch: true,
     });
-  };
+  }, [setValue]);
 
   const handleSave = async (data) => {
     try {
       setIsSubmitting(true);
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       toast.success("Vehicle details updated successfully");
       router.push(`/dashboard/policy/${policyId}`);
@@ -164,134 +99,116 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
             {/* Vehicle Type and Make Row */}
             <div className={styles.cleanFormGrid2Col}>
               <Dropdown
-                label="My Vehicle is a...."
-                selected={selectedType || ""}
-                options={["Car", "Motorcycle", "Truck", "Bus"]}
+                label="Vehicle Type"
+                selected={watch("vehicleDetails.type") || ""}
+                options={vehicleTypes}
                 setSelected={(value) => handleDropdownChange("type", value)}
-                placeholder="Choose Vehicle"
+                placeholder="Select vehicle type"
               />
-              {selectedType && (
-                <Dropdown
-                  label="Make"
-                  selected={state.values.make || selectedMake || ""}
-                  options={state.makes}
-                  setSelected={(value) => handleDropdownChange("make", value)}
-                  placeholder="Select Make"
-                />
-              )}
+              <Dropdown
+                label="Make"
+                selected={watch("vehicleDetails.make") || ""}
+                options={vehicleMakes}
+                setSelected={(value) => handleDropdownChange("make", value)}
+                placeholder="Select make"
+              />
             </div>
 
             {/* Model and Year Row */}
-            {selectedMake && (
-              <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Model</label>
-                  <SelectPicker
-                    key={`model-${forceUpdate}`}
-                    data={state.options.models.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select Model"
-                    disabled={!selectedMake || state.options.models.length === 0}
-                    value={state.values.model || selectedModel || null}
-                    onChange={(value) => handleDropdownChange("model", value || "")}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.model ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.model && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.model.message}</span>
-                  )}
-                </div>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Year</label>
-                  <SelectPicker
-                    key={`year-${forceUpdate}`}
-                    data={state.options.years.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select Year"
-                    disabled={!selectedMake || state.options.years.length === 0}
-                    value={state.values.year || selectedYear || null}
-                    onChange={(value) => handleDropdownChange("year", value || "")}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.year ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.year && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.year.message}</span>
-                  )}
-                </div>
+            <div className={styles.cleanFormGrid2Col}>
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Model</label>
+                <SelectPicker
+                  data={vehicleModels.map((option) => ({ label: option, value: option }))}
+                  placeholder="Select model"
+                  value={watch("vehicleDetails.model") || null}
+                  onChange={(value) => handleDropdownChange("model", value || "")}
+                  className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.model ? styles.error : ""}`}
+                  style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                />
+                {errors.vehicleDetails?.model && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.model.message}</span>
+                )}
               </div>
-            )}
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Year</label>
+                <SelectPicker
+                  data={vehicleYears.map((option) => ({ label: option, value: option }))}
+                  placeholder="Select year"
+                  value={watch("vehicleDetails.year") || null}
+                  onChange={(value) => handleDropdownChange("year", value || "")}
+                  className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.year ? styles.error : ""}`}
+                  style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                />
+                {errors.vehicleDetails?.year && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.year.message}</span>
+                )}
+              </div>
+            </div>
 
             {/* Doors and Fuel Type Row */}
-            {selectedYear && (
-              <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Doors</label>
-                  <SelectPicker
-                    key={`doors-${forceUpdate}`}
-                    data={state.options.doors.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select Doors"
-                    disabled={!selectedYear || state.options.doors.length === 0}
-                    value={state.values.doors || selectedDoors || null}
-                    onChange={(value) => handleDropdownChange("doors", value || "")}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.doors ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.doors && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.doors.message}</span>
-                  )}
-                </div>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Fuel Type</label>
-                  <SelectPicker
-                    key={`fuel-${forceUpdate}`}
-                    data={state.options.fuels.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select Fuel Type"
-                    disabled={!selectedYear || state.options.fuels.length === 0}
-                    value={state.values.fuel || selectedFuel || null}
-                    onChange={(value) => handleDropdownChange("fuel", value || "")}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.fuel ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.fuel && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.fuel.message}</span>
-                  )}
-                </div>
+            <div className={styles.cleanFormGrid2Col}>
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Doors</label>
+                <SelectPicker
+                  data={vehicleDoors.map((option) => ({ label: option, value: option }))}
+                  placeholder="Select doors"
+                  value={watch("vehicleDetails.doors") || null}
+                  onChange={(value) => handleDropdownChange("doors", value || "")}
+                  className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.doors ? styles.error : ""}`}
+                  style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                />
+                {errors.vehicleDetails?.doors && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.doors.message}</span>
+                )}
               </div>
-            )}
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Fuel Type</label>
+                <SelectPicker
+                  data={vehicleFuels.map((option) => ({ label: option, value: option }))}
+                  placeholder="Select fuel type"
+                  value={watch("vehicleDetails.fuel") || null}
+                  onChange={(value) => handleDropdownChange("fuel", value || "")}
+                  className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.fuel ? styles.error : ""}`}
+                  style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                />
+                {errors.vehicleDetails?.fuel && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.fuel.message}</span>
+                )}
+              </div>
+            </div>
 
             {/* Transmission and Colour Row */}
-            {selectedFuel && (
-              <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Transmission</label>
-                  <SelectPicker
-                    key={`transmission-${forceUpdate}`}
-                    data={state.options.transmissions.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select Transmission"
-                    disabled={!selectedFuel || state.options.transmissions.length === 0}
-                    value={state.values.transmission || watch("vehicleDetails.transmission") || null}
-                    onChange={(value) => handleDropdownChange("transmission", value || "")}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.transmission ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.transmission && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.transmission.message}</span>
-                  )}
-                </div>
-                <div className={styles.rsuiteFormGroup}>
-                  <label className={styles.label}>Vehicle Color</label>
-                  <SelectPicker
-                    data={carColors.map((option) => ({ label: option, value: option }))}
-                    placeholder="Select Color"
-                    value={watch("vehicleDetails.colour") || null}
-                    onChange={(value) => handleDropdownChange("colour", value || "")}
-                    className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.colour ? styles.error : ""}`}
-                    style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                  />
-                  {errors.vehicleDetails?.colour && (
-                    <span className={styles.errorMessage}>{errors.vehicleDetails.colour.message}</span>
-                  )}
-                </div>
+            <div className={styles.cleanFormGrid2Col}>
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Transmission</label>
+                <SelectPicker
+                  data={vehicleTransmissions.map((option) => ({ label: option, value: option }))}
+                  placeholder="Select transmission"
+                  value={watch("vehicleDetails.transmission") || null}
+                  onChange={(value) => handleDropdownChange("transmission", value || "")}
+                  className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.transmission ? styles.error : ""}`}
+                  style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                />
+                {errors.vehicleDetails?.transmission && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.transmission.message}</span>
+                )}
               </div>
-            )}
+              <div className={styles.rsuiteFormGroup}>
+                <label className={styles.label}>Colour</label>
+                <SelectPicker
+                  data={carColors.map((option) => ({ label: option, value: option }))}
+                  placeholder="Select colour"
+                  value={watch("vehicleDetails.colour") || null}
+                  onChange={(value) => handleDropdownChange("colour", value || "")}
+                  className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.colour ? styles.error : ""}`}
+                  style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                />
+                {errors.vehicleDetails?.colour && (
+                  <span className={styles.errorMessage}>{errors.vehicleDetails.colour.message}</span>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Action Buttons */}
@@ -302,7 +219,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
               className={editStyles.cancelBtn}
               disabled={isSubmitting}
             >
-              Back to registration lookup
+              Back
             </button>
             <button
               type="submit"
