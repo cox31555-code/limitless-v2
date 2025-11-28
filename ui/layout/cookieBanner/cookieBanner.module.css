@@ -1,25 +1,23 @@
 .cookieBanner {
   position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 4rem);
-  max-width: 1000px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid rgba(3, 136, 255, 0.15);
-  box-shadow: 0 10px 40px rgba(0, 8, 34, 0.12), 0 4px 12px rgba(0, 82, 163, 0.08);
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
   z-index: 9999;
   animation: slideUp 0.4s ease-out;
 }
 
 @keyframes slideUp {
   from {
-    transform: translateX(-50%) translateY(120%);
+    transform: translateY(100%);
     opacity: 0;
   }
   to {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -29,44 +27,61 @@
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  padding: 2.4rem 3rem;
+  padding: 3rem 4%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 120px;
 }
 
 .leftSection {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
   flex: 1;
 }
 
 .iconWrapper {
   flex-shrink: 0;
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 5.2rem;
+  height: 5.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.02) 100%);
+  background: #f0f0ff;
   border-radius: 12px;
 }
 
 .cookieIcon {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3.6rem;
+  height: 3.6rem;
 }
 
-.text {
+.textContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.title {
   color: #1f2937;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.description {
+  color: #4b5563;
+  font-size: 1.35rem;
   font-weight: 400;
   line-height: 1.6;
   margin: 0;
-  flex: 1;
 }
 
 .link {
-  color: #0388ff;
-  text-decoration: none;
+  color: #6366f1;
+  text-decoration: underline;
   background: none;
   border: none;
   padding: 0;
@@ -83,49 +98,91 @@
   flex-shrink: 0;
 }
 
-.settingsButton {
-  background: #ffffff;
-  border: 1.5px solid #d1d9e3;
-  color: #4b5563;
-  font-size: 1.35rem;
-  font-weight: 500;
-  padding: 1.1rem 2.2rem;
-  border-radius: 10px;
+.acceptButton,
+.rejectButton,
+.customiseButton {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1.2rem 2.6rem;
+  border-radius: 8px;
   cursor: pointer;
   transition: none;
   white-space: nowrap;
   font-family: inherit;
+  border: none;
 }
 
 .acceptButton {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  border: none;
+  background: #6366f1;
   color: #ffffff;
-  font-size: 1.35rem;
-  font-weight: 600;
-  padding: 1.1rem 2.4rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: none;
-  white-space: nowrap;
-  font-family: inherit;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
+}
+
+.rejectButton {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.customiseButton {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
 }
 
 /* Tablet */
 @media screen and (max-width: 1200px) {
-  .cookieBanner {
-    width: calc(100% - 3rem);
-    bottom: 1.5rem;
-  }
-
   .content {
-    padding: 2.2rem 2.6rem;
+    padding: 2.6rem 4%;
     gap: 2.4rem;
+    min-height: 110px;
   }
 
   .leftSection {
     gap: 1.6rem;
+  }
+
+  .iconWrapper {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .cookieIcon {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .actions {
+    gap: 1rem;
+  }
+
+  .acceptButton,
+  .rejectButton,
+  .customiseButton {
+    font-size: 1.3rem;
+    padding: 1.1rem 2.2rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
+    padding: 2.4rem 4%;
+    min-height: auto;
+  }
+
+  .leftSection {
+    gap: 1.4rem;
+    width: 100%;
   }
 
   .iconWrapper {
@@ -138,39 +195,37 @@
     height: 3rem;
   }
 
-  .text {
-    font-size: 1.3rem;
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
   }
 
   .actions {
+    width: 100%;
+    flex-direction: column;
     gap: 1rem;
   }
 
-  .settingsButton,
-  .acceptButton {
+  .acceptButton,
+  .rejectButton,
+  .customiseButton {
+    width: 100%;
     font-size: 1.3rem;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
   }
 }
 
-/* Mobile */
-@media screen and (max-width: 900px) {
-  .cookieBanner {
-    width: calc(100% - 2rem);
-    bottom: 1rem;
-    border-radius: 14px;
-  }
-
+@media screen and (max-width: 600px) {
   .content {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 2rem 4%;
     gap: 2rem;
-    padding: 2.4rem 2.4rem;
   }
 
   .leftSection {
-    gap: 1.4rem;
-    width: 100%;
+    gap: 1.2rem;
   }
 
   .iconWrapper {
@@ -183,85 +238,44 @@
     height: 2.8rem;
   }
 
-  .text {
-    font-size: 1.25rem;
+  .title {
+    font-size: 1.3rem;
   }
 
-  .actions {
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .settingsButton,
-  .acceptButton {
-    flex: 1;
-    font-size: 1.25rem;
-    padding: 1.1rem 1.6rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .cookieBanner {
-    width: calc(100% - 1.6rem);
-    bottom: 0.8rem;
-    border-radius: 12px;
-  }
-
-  .content {
-    padding: 2rem 2rem;
-    gap: 1.8rem;
-  }
-
-  .leftSection {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.2rem;
-  }
-
-  .iconWrapper {
-    width: 3.6rem;
-    height: 3.6rem;
-  }
-
-  .cookieIcon {
-    width: 2.6rem;
-    height: 2.6rem;
-  }
-
-  .text {
+  .description {
     font-size: 1.2rem;
   }
 
   .actions {
-    flex-direction: column;
     gap: 1rem;
   }
 
-  .settingsButton,
-  .acceptButton {
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 1.2rem 1.4rem;
+  .acceptButton,
+  .rejectButton,
+  .customiseButton {
+    font-size: 1.25rem;
+    padding: 1.2rem 1.6rem;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .cookieBanner {
-    width: calc(100% - 1.2rem);
-    bottom: 0.6rem;
-  }
-
   .content {
-    padding: 1.8rem 1.8rem;
+    padding: 1.8rem 4%;
+    gap: 1.8rem;
   }
 
-  .text {
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .description {
     font-size: 1.15rem;
   }
 
-  .settingsButton,
-  .acceptButton {
-    font-size: 1.15rem;
-    padding: 1.1rem 1.2rem;
+  .acceptButton,
+  .rejectButton,
+  .customiseButton {
+    font-size: 1.2rem;
+    padding: 1.1rem 1.4rem;
   }
 }
