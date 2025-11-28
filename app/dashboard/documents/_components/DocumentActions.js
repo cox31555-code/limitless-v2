@@ -189,7 +189,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
       <div
         style={{
           display: "flex",
-          gap: "2rem",
+          gap: "1.6rem",
           alignItems: "center",
         }}
       >
