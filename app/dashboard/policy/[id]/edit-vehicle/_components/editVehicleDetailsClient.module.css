@@ -377,6 +377,10 @@
     padding: 15px 5% 15px;
   }
 
+  .page {
+    gap: 2rem;
+  }
+
   .breadcrumbItem {
     font-size: 1.1rem;
   }
