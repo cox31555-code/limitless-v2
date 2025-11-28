@@ -153,23 +153,14 @@ const page = async ({ params }) => {
           <PolicyDetails claimData={claim} />
           <ThirdPartyDetails claimData={claim.thirdPartyDetails} />
           <Updates
-            columns={["Description", "Date", "Time"]}
             data={[
               {
                 description: "Claim submitted",
                 date: claim.createdAt,
-                time: new Date(claim.createdAt).toLocaleTimeString("en-GB", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                }),
               },
               {
-                description: `Status: ${claim.status}`,
+                description: `Status updated to ${claim.status}`,
                 date: claim.updatedAt,
-                time: new Date(claim.updatedAt).toLocaleTimeString("en-GB", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                }),
               },
             ]}
           />
