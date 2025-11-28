@@ -502,85 +502,87 @@ const PolicyDetailsReview = ({ policy }) => {
         </button>
         {expandedSections.driverDetails && (
           <div id="driver-details-content" className={styles.cardContent} role="region" aria-labelledby="driver-details-heading">
-            <div className={styles.driverCard}>
-              <h4 className={`${styles.driverName} ${plusJakartaSans.className}`}>
-                {userDetails?.firstName} {userDetails?.surname}
-              </h4>
-              <div className={styles.detailsGrid}>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Date of birth</span>
-                  <span className={styles.detailValue}>{formatDate(userDetails?.dateOfBirth)}</span>
+            {(policy?.drivers || [{ firstName: userDetails?.firstName, surname: userDetails?.surname, ...userDetails }]).map((driver, index) => (
+              <div key={index} className={styles.driverCard}>
+                <h4 className={`${styles.driverName} ${plusJakartaSans.className}`}>
+                  {driver?.firstName} {driver?.surname}
+                </h4>
+                <div className={styles.detailsGrid}>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Date of birth</span>
+                    <span className={styles.detailValue}>{formatDate(driver?.dateOfBirth)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Claims in the last 5 years</span>
+                    <span className={styles.detailValue}>None</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Criminal convictions</span>
+                    <span className={styles.detailValue}>None</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Motoring convictions</span>
+                    <span className={styles.detailValue}>None</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>No claim discount (NCD)</span>
+                    <span className={styles.detailValue}>Not protected</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Years of no claim discount (NCD)</span>
+                    <span className={styles.detailValue}>20</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Address</span>
+                    <span className={styles.detailValue}>{driver?.address}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Email</span>
+                    <span className={styles.detailValue}>{driver?.email}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Relationship status</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.relationshipStatus)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Homeowner</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.homeowner)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Children under 16 living with you</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.childrenUnder16)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Lived in the UK since birth</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.livedInUKSinceBirth)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Employment status</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.employmentStatus)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Licence type</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.licenceType)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Years licence held for</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.yearsLicenceHeld)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>Additional driving qualifications</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.additionalDrivingQualifications)}</span>
+                  </div>
+                  <div className={styles.detailItem}>
+                    <span className={styles.detailLabel}>DVLA reportable conditions</span>
+                    <span className={styles.detailValue}>{formatValue(driver?.dvlaReportableConditions)}</span>
+                  </div>
                 </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Claims in the last 5 years</span>
-                  <span className={styles.detailValue}>None</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Criminal convictions</span>
-                  <span className={styles.detailValue}>None</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Motoring convictions</span>
-                  <span className={styles.detailValue}>None</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>No claim discount (NCD)</span>
-                  <span className={styles.detailValue}>Not protected</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Years of no claim discount (NCD)</span>
-                  <span className={styles.detailValue}>20</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Address</span>
-                  <span className={styles.detailValue}>{userDetails?.address}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Email</span>
-                  <span className={styles.detailValue}>{userDetails?.email}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Relationship status</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.relationshipStatus)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Homeowner</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.homeowner)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Children under 16 living with you</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.childrenUnder16)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Lived in the UK since birth</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.livedInUKSinceBirth)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Employment status</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.employmentStatus)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Licence type</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.licenceType)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Years licence held for</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.yearsLicenceHeld)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Additional driving qualifications</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.additionalDrivingQualifications)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>DVLA reportable conditions</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.dvlaReportableConditions)}</span>
+                <div className={styles.driverActionButtons}>
+                  <button className={styles.primaryBtn} aria-label="View full driver profile">View Profile</button>
+                  <button className={styles.secondaryBtn} aria-label="Edit driver information">Edit Details</button>
                 </div>
               </div>
-              <div className={styles.driverActionButtons}>
-                <button className={styles.primaryBtn} aria-label="View full driver profile">View Profile</button>
-                <button className={styles.secondaryBtn} aria-label="Edit driver information">Edit Details</button>
-              </div>
-            </div>
+            ))}
           </div>
         )}
       </section>
