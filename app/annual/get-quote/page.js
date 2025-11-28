@@ -1402,6 +1402,7 @@ const AnnualInsuranceContent = () => {
               personalSubStep={personalSubStep}
               coverSubStep={coverSubStep}
               onSubStepClick={handleSubStepClick}
+              insuranceType="Annual"
             />
           </div>
         </div>
