@@ -19,7 +19,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const Step2PersonalDetailsHidden = dynamic(() => import("./Step2PersonalDetailsHidden"), { ssr: false });
 const Step2HouseholdHidden = dynamic(() => import("./Step2HouseholdHidden"), { ssr: false });
 const Step2Employment = dynamic(() => import("@/app/annual/get-quote/_components/Step2Employment"), { ssr: false });
-const Step2Licence = dynamic(() => import("@/app/annual/get-quote/_components/Step2Licence"), { ssr: false });
+const Step2LicenceHidden = dynamic(() => import("./Step2LicenceHidden"), { ssr: false });
 const Step2LicenceRestrictions = dynamic(() => import("@/app/annual/get-quote/_components/Step2LicenceRestrictions"), { ssr: false });
 const Step2ClaimsAndConvictions = dynamic(() => import("@/app/annual/get-quote/_components/Step2ClaimsAndConvictions"), { ssr: false });
 
@@ -113,7 +113,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
           <Step2PersonalDetailsHidden form={form} />
           <Step2HouseholdHidden form={form} />
           <Step2Employment form={form} />
-          <Step2Licence form={form} />
+          <Step2LicenceHidden form={form} />
           <Step2LicenceRestrictions form={form} />
           <Step2ClaimsAndConvictions
             form={form}
