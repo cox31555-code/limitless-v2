@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import styles from "@/app/annual/get-quote/_components/annualVehicle.module.css";
 import editStyles from "./editVehicleDetailsClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -28,10 +29,12 @@ const vehicleYears = ["2024", "2023", "2022", "2021", "2020"];
 const vehicleDoors = ["2", "4", "5"];
 const vehicleFuels = ["Petrol", "Diesel", "Hybrid", "Electric"];
 const vehicleTransmissions = ["Manual", "Automatic"];
+const yesNoOptions = ["No", "Yes"];
 
 const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showModificationsModal, setShowModificationsModal] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(annualInsuranceSchema),
@@ -45,11 +48,15 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
         fuel: vehicleDetails?.fuel || "",
         transmission: vehicleDetails?.transmission || "",
         colour: vehicleDetails?.colour || "",
+        vehicleModified: vehicleDetails?.vehicleModified || "",
+        vehicleModifications: vehicleDetails?.vehicleModifications || [],
       },
     },
   });
 
   const { watch, setValue, formState: { errors } } = form;
+  const vehicleModified = watch("vehicleDetails.vehicleModified");
+  const vehicleModifications = watch("vehicleDetails.vehicleModifications") || [];
 
   const handleDropdownChange = useCallback((field, value) => {
     setValue(`vehicleDetails.${field}`, value, {
@@ -58,6 +65,39 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       shouldTouch: true,
     });
   }, [setValue]);
+
+  // Open modifications modal when "Yes" is selected
+  useEffect(() => {
+    if (vehicleModified === "Yes") {
+      setShowModificationsModal(true);
+    }
+  }, [vehicleModified]);
+
+  const handleModificationsConfirm = (selectedModifications) => {
+    setValue("vehicleDetails.vehicleModifications", selectedModifications, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+    // If no modifications are selected, reset vehicle modified to "No"
+    if (selectedModifications.length === 0) {
+      setValue("vehicleDetails.vehicleModified", "No", {
+        shouldValidate: true,
+        shouldDirty: true,
+      });
+    }
+    setShowModificationsModal(false);
+  };
+
+  const handleModificationsCancel = () => {
+    // Only reset to "No" if no modifications have been selected yet
+    if (vehicleModifications.length === 0) {
+      setValue("vehicleDetails.vehicleModified", "No", {
+        shouldValidate: true,
+        shouldDirty: true,
+      });
+    }
+    setShowModificationsModal(false);
+  };
 
   const handleSave = async (data) => {
     try {
@@ -75,6 +115,14 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
 
   return (
     <div className={editStyles.container}>
+      {/* Modifications Modal */}
+      <VehicleModificationsModal
+        isOpen={showModificationsModal}
+        onClose={handleModificationsCancel}
+        onConfirm={handleModificationsConfirm}
+        selectedModifications={vehicleModifications}
+      />
+
       {/* Hero Section */}
       <section className={editStyles.heroSection}>
         <div className={editStyles.heroBackground}>
@@ -166,6 +214,44 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                 placeholder="Select colour"
               />
             </div>
+          </div>
+
+          {/* Vehicle Modifications Section */}
+          <div className={editStyles.modificationsSection}>
+            <div className={editStyles.modificationsHeader}>
+              <h3 className={editStyles.modificationsTitle}>Has the car been modified in any way?</h3>
+              <p className={editStyles.modificationsDescription}>Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.</p>
+            </div>
+            <div className={styles.cleanFormGrid2Col}>
+              <Dropdown
+                label=""
+                selected={vehicleModified}
+                options={yesNoOptions}
+                setSelected={(value) => handleDropdownChange("vehicleModified", value)}
+                placeholder="Select option"
+              />
+            </div>
+            {vehicleModified === "Yes" && vehicleModifications.length > 0 && (
+              <div className={styles.modificationsListContainer}>
+                <div className={styles.modificationsLabelWrapper}>
+                  <p className={styles.modificationsLabel}>Selected Modifications:</p>
+                  <button
+                    type="button"
+                    className={styles.editModificationsBtn}
+                    onClick={() => setShowModificationsModal(true)}
+                  >
+                    Edit
+                  </button>
+                </div>
+                <div className={styles.modificationsTagsList}>
+                  {vehicleModifications.map((modification) => (
+                    <span key={modification} className={styles.modificationTag}>
+                      {modification}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Action Buttons */}
