@@ -1,38 +1,48 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./receiveDocumentsSection.module.css";
+import DocumentRequestModal from "./DocumentRequestModal";
 
 export default function ReceiveDocumentsSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleRequestDocuments = () => {
-    // TODO: Implement request documents functionality
-    alert("Request documents by post functionality coming soon!");
+    setIsModalOpen(true);
   };
 
   return (
-    <div className={styles.section}>
-      <div className={styles.header}>
-        <Image
-          src="/svg/mail-send.svg"
-          alt="mail send"
-          width={32}
-          height={32}
-        />
-        <h3 className={styles.title}>Receive my policy documents by post</h3>
+    <>
+      <div className={styles.section}>
+        <div className={styles.header}>
+          <Image
+            src="/svg/mail-send.svg"
+            alt="mail send"
+            width={32}
+            height={32}
+          />
+          <h3 className={styles.title}>Receive my policy documents by post</h3>
+        </div>
+
+        <p className={styles.description}>
+          We've gone paperless; we care about the environment and it's better for
+          everyone! But if you wish, you can request below to have your documents
+          posted to you to the address listed on your policy.
+        </p>
+
+        <button
+          onClick={handleRequestDocuments}
+          className={styles.requestButton}
+        >
+          Request documents by post
+        </button>
       </div>
 
-      <p className={styles.description}>
-        We've gone paperless; we care about the environment and it's better for
-        everyone! But if you wish, you can request below to have your documents
-        posted to you to the address listed on your policy.
-      </p>
-
-      <button
-        onClick={handleRequestDocuments}
-        className={styles.requestButton}
-      >
-        Request documents by post
-      </button>
-    </div>
+      <DocumentRequestModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 }
