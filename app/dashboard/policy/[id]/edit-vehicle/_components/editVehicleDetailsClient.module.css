@@ -281,4 +281,18 @@
   .saveBtn {
     width: 100%;
   }
+
+  .modificationsSection {
+    padding: 2.4rem;
+    gap: 1.8rem;
+    margin-top: 1.5rem;
+  }
+
+  .modificationsTitle {
+    font-size: 1.3rem;
+  }
+
+  .modificationsDescription {
+    font-size: 1rem;
+  }
 }
