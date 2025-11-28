@@ -84,9 +84,10 @@
 }
 
 .inputWithPrefix {
-  padding: 1.8rem 2.2rem 1.8rem 1.1rem;
+  padding: 1.8rem 2.2rem;
   border-radius: 0;
   background: transparent;
+  margin-left: 1.3rem;
 }
 
 .inputField:focus-within {
@@ -257,7 +258,8 @@
   }
 
   .inputWithPrefix {
-    padding: 1.6rem 2rem 1.6rem 1rem;
+    padding: 1.6rem 2rem;
+    margin-left: 1.2rem;
   }
 
   .input {
@@ -308,7 +310,8 @@
   }
 
   .inputWithPrefix {
-    padding: 1.4rem 1.8rem 1.4rem 0.9rem;
+    padding: 1.4rem 1.8rem;
+    margin-left: 1.1rem;
   }
 
   .input {
@@ -340,7 +343,8 @@
   }
 
   .inputWithPrefix {
-    padding: 1.3rem 1.6rem 1.3rem 0.8rem;
+    padding: 1.3rem 1.6rem;
+    margin-left: 1rem;
   }
 
   .input {
