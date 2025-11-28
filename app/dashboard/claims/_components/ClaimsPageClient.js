@@ -1,16 +1,24 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import Table from "./table/Table";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
+import { useLoading } from "@/contexts/LoadingContext";
 import styles from "./claimsPageClient.module.css";
-import Link from "next/link";
 
 const ClaimsPageClient = ({
   pendingClaims,
   completedClaims,
   plusJakartaSans,
 }) => {
+  const router = useRouter();
+  const { showLoading } = useLoading();
   const [activeTab, setActiveTab] = useState("pending");
+
+  const handleCreateClaim = () => {
+    showLoading();
+    router.push("/dashboard/submit-claim");
+  };
 
   const totalPending = pendingClaims?.length || 0;
   const totalCompleted = completedClaims?.length || 0;
@@ -55,13 +63,16 @@ const ClaimsPageClient = ({
             <h2 className={styles.contentTitle}>Your Claims</h2>
             <p className={styles.contentSubtitle}>Manage and track all your insurance claims</p>
           </div>
-          <Link href="/dashboard/submit-claim" className={styles.createButton}>
+          <button
+            onClick={handleCreateClaim}
+            className={styles.createButton}
+          >
             <svg className={styles.plusIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg>
             <span>Create a new claim</span>
-          </Link>
+          </button>
         </div>
 
         {/* Tabs Navigation */}
