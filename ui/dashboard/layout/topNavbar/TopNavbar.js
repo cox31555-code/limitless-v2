@@ -1,14 +1,16 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./topNavbar.module.css";
-import Link from "next/link";
+import LoadingLink from "@/ui/loadingSpinner/LoadingLink";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const TopNavbar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const { logout } = useAuth();
+  const { showLoading } = useLoading();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const getActivePage = () => {
@@ -33,19 +35,20 @@ const TopNavbar = () => {
         <div className={styles.navContent}>
           <div className={styles.navItems}>
             {navItems.map((item) => (
-              <Link
+              <LoadingLink
                 key={item.id}
                 href={item.href}
                 className={`${styles.navItem} ${activePage === item.id ? styles.active : ""}`}
               >
                 {item.label}
-              </Link>
+              </LoadingLink>
             ))}
           </div>
 
           <button
             className={styles.logoutButton}
             onClick={async () => {
+              showLoading();
               await logout();
               router.push("/login");
             }}
@@ -73,18 +76,19 @@ const TopNavbar = () => {
         <div className={styles.mobileMenu}>
           <div className={styles.mobileMenuItems}>
             {navItems.map((item) => (
-              <Link
+              <LoadingLink
                 key={item.id}
                 href={item.href}
                 className={`${styles.mobileMenuItem} ${activePage === item.id ? styles.active : ""}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
-              </Link>
+              </LoadingLink>
             ))}
             <button
               className={styles.mobileLogout}
               onClick={async () => {
+                showLoading();
                 await logout();
                 router.push("/login");
                 setMobileMenuOpen(false);
