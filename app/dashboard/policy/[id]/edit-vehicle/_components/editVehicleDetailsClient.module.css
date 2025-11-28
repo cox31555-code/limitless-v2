@@ -390,8 +390,37 @@
   }
 
   .mainSection {
-    padding: 2rem;
-    gap: 1.6rem;
+    padding: 1.6rem;
+    gap: 1.4rem;
+  }
+
+  .vehicleInfoCard {
+    padding: 1.4rem;
+    gap: 0.8rem;
+  }
+
+  .vehicleInfoTitle {
+    font-size: 1rem;
+  }
+
+  .vehicleTitle {
+    font-size: 1.4rem;
+  }
+
+  .vehicleRegistration {
+    font-size: 1rem;
+  }
+
+  .vehicleMetaInfo {
+    gap: 0.8rem;
+  }
+
+  .metaItem {
+    font-size: 0.95rem;
+  }
+
+  .vehicleTypeInfo {
+    font-size: 1rem;
   }
 
   .actionButtons {
