@@ -18,10 +18,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const Step2PersonalDetailsHidden = dynamic(() => import("./Step2PersonalDetailsHidden"), { ssr: false });
 const Step2HouseholdHidden = dynamic(() => import("./Step2HouseholdHidden"), { ssr: false });
-const Step2Employment = dynamic(() => import("@/app/annual/get-quote/_components/Step2Employment"), { ssr: false });
+const Step2EmploymentHidden = dynamic(() => import("./Step2EmploymentHidden"), { ssr: false });
 const Step2LicenceHidden = dynamic(() => import("./Step2LicenceHidden"), { ssr: false });
-const Step2LicenceRestrictions = dynamic(() => import("@/app/annual/get-quote/_components/Step2LicenceRestrictions"), { ssr: false });
-const Step2ClaimsAndConvictions = dynamic(() => import("@/app/annual/get-quote/_components/Step2ClaimsAndConvictions"), { ssr: false });
+const Step2LicenceRestrictionsHidden = dynamic(() => import("./Step2LicenceRestrictionsHidden"), { ssr: false });
+const Step2ClaimsAndConvictionsHidden = dynamic(() => import("./Step2ClaimsAndConvictionsHidden"), { ssr: false });
 
 const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
   const router = useRouter();
@@ -112,10 +112,10 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
           <DriverSummaryCard driver={driver} form={form} />
           <Step2PersonalDetailsHidden form={form} />
           <Step2HouseholdHidden form={form} />
-          <Step2Employment form={form} />
+          <Step2EmploymentHidden form={form} />
           <Step2LicenceHidden form={form} />
-          <Step2LicenceRestrictions form={form} />
-          <Step2ClaimsAndConvictions
+          <Step2LicenceRestrictionsHidden form={form} />
+          <Step2ClaimsAndConvictionsHidden
             form={form}
             claims={claims}
             setClaims={setClaims}
