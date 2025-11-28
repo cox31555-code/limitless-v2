@@ -164,8 +164,8 @@
 }
 
 .vehicleName {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 2.86rem;
+  font-weight: 700;
   color: #111827;
   margin: 0 0 0.6rem 0;
   line-height: 140%;
@@ -203,9 +203,9 @@
 }
 
 .infoValue {
-  font-size: 1.7rem;
+  font-size: 2.2rem;
   color: #1F2937;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 
