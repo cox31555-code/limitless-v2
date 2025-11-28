@@ -690,6 +690,15 @@
     padding: 1.2rem 2.4rem;
     font-size: 1.3rem;
   }
+
+  .viewInstalmentsButton {
+    font-size: 1.3rem;
+  }
+
+  .viewInstalmentsIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
 }
 
 /* Small Mobile */
@@ -803,6 +812,15 @@
     width: 100%;
     padding: 1.2rem 2.2rem;
     font-size: 1.3rem;
+  }
+
+  .viewInstalmentsButton {
+    font-size: 1.3rem;
+  }
+
+  .viewInstalmentsIcon {
+    width: 1.6rem;
+    height: 1.6rem;
   }
 
   .scheduleItem {
