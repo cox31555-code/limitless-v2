@@ -10,6 +10,7 @@ import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import styles from "./editDriverDetailsClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import DriverSummaryCard from "./DriverSummaryCard";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ const Step2ClaimsAndConvictionsHidden = dynamic(() => import("./Step2ClaimsAndCo
 
 const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
   const router = useRouter();
+  const { showLoading } = useLoading();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [claims, setClaims] = useState([]);
   const [convictions, setConvictions] = useState([]);
@@ -68,6 +70,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       toast.success("Driver details updated successfully");
+      showLoading();
       router.push(`/dashboard/policy/${policyId}`);
     } catch (error) {
       toast.error("Failed to update driver details");

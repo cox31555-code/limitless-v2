@@ -15,6 +15,7 @@ import FormDropdown from "@/ui/inputs/FormDropdown";
 import FormDateInput from "@/ui/inputs/FormDateInput";
 import { useAuth } from "@/contexts/AuthContext";
 import { API_BASE_URL } from "@/utils/config";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const Form = ({ claimReason }) => {
   const router = useRouter();
   const { user } = useAuth();
+  const { showLoading } = useLoading();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Get saved form data from sessionStorage
