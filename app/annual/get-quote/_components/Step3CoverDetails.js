@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./step3CarOwner.module.css";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import FormDateInput from "@/ui/inputs/FormDateInput";
 
 const Step3CoverDetails = ({
   onBack = () => {},
@@ -13,7 +14,8 @@ const Step3CoverDetails = ({
     coverLevel: "",
     minimumCoverLevel: "",
     paymentFrequency: "",
-    startDate: ""
+    startDate: "",
+    startTime: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -108,6 +110,7 @@ const Step3CoverDetails = ({
       if (!formData.paymentFrequency) newErrors.paymentFrequency = "Please select payment frequency";
     }
     if (!formData.startDate) newErrors.startDate = "Please select a start date";
+    if (!showCoverOptions && !formData.startTime) newErrors.startTime = "Please select a start time";
     return newErrors;
   };
 
