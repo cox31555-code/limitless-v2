@@ -175,7 +175,7 @@ const Header = () => {
           <div className={styles.stickyContent}>
             <div className={styles.stickyLogoContainer}>
               <Image
-                onClick={() => router.push("/")}
+                onClick={() => navigate("/")}
                 className={styles.stickyLogo}
                 src="/svg/logo.svg"
                 alt="logo"
@@ -201,7 +201,7 @@ const Header = () => {
                     {openStickyDropdown === "carVan" && (
                       <div className={styles.stickyDropdown} suppressHydrationWarning>
                         {carVanItems.map((item, index) => (
-                          <span key={`sticky-carVan-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
+                          <span key={`sticky-carVan-${index}`} className={styles.stickyDropdownItem} onClick={() => navigate(item.href)}>
                             <span className={styles.dropdownIcon}>
                               <IconComponent type={item.icon} />
                             </span>
@@ -227,7 +227,7 @@ const Header = () => {
                     {openStickyDropdown === "motorbike" && (
                       <div className={styles.stickyDropdown} suppressHydrationWarning>
                         {motorbakeItems.map((item, index) => (
-                          <span key={`sticky-motorbike-${index}`} className={styles.stickyDropdownItem} onClick={() => router.push(item.href)}>
+                          <span key={`sticky-motorbike-${index}`} className={styles.stickyDropdownItem} onClick={() => navigate(item.href)}>
                             <span className={styles.dropdownIcon}>
                               <IconComponent type={item.icon} />
                             </span>
@@ -238,14 +238,14 @@ const Header = () => {
                     )}
                   </div>
 
-                  <span className={styles.stickyMenuButton} onClick={() => router.push("/impound")}>Impound</span>
-                  <span className={styles.stickyMenuButton} onClick={() => router.push("/coming-soon")}>Courier</span>
-                  <span className={styles.stickyMenuButton} onClick={() => router.push("/contact")}>Contact</span>
+                  <span className={styles.stickyMenuButton} onClick={() => navigate("/impound")}>Impound</span>
+                  <span className={styles.stickyMenuButton} onClick={() => navigate("/coming-soon")}>Courier</span>
+                  <span className={styles.stickyMenuButton} onClick={() => navigate("/contact")}>Contact</span>
                 </nav>
                 <div className={styles.stickyButtons}>
                   <button
                     className={styles.stickyLoginBtn}
-                    onClick={() => router.push("/login")}
+                    onClick={() => navigate("/login")}
                   >
                     Login
                   </button>
@@ -280,7 +280,7 @@ const Header = () => {
           <Image
             onClick={() => {
               setIsOpen(false);
-              router.push("/");
+              navigate("/");
             }}
             className={styles.logo}
             src="/svg/logo.svg"
@@ -311,7 +311,7 @@ const Header = () => {
                       className={styles.dropdownItem}
                       onClick={() => {
                         setOpenDropdown(null);
-                        router.push(item.href);
+                        navigate(item.href);
                       }}
                     >
                       <span className={styles.dropdownIcon}>
@@ -344,7 +344,7 @@ const Header = () => {
                       className={styles.dropdownItem}
                       onClick={() => {
                         setOpenDropdown(null);
-                        router.push(item.href);
+                        navigate(item.href);
                       }}
                     >
                       <span className={styles.dropdownIcon}>
@@ -362,7 +362,7 @@ const Header = () => {
                 className={`${styles.menuLink} ${
                   pathname === "/impound" ? styles.activeMenuLink : ""
                 }`}
-                onClick={() => router.push("/impound")}
+                onClick={() => navigate("/impound")}
               >
                 Impound
               </span>
@@ -373,7 +373,7 @@ const Header = () => {
                 className={`${styles.menuLink} ${
                   pathname === "/coming-soon" ? styles.activeMenuLink : ""
                 }`}
-                onClick={() => router.push("/coming-soon")}
+                onClick={() => navigate("/coming-soon")}
               >
                 Courier
               </span>
@@ -384,7 +384,7 @@ const Header = () => {
                 className={`${styles.menuLink} ${
                   pathname === "/contact" ? styles.activeMenuLink : ""
                 }`}
-                onClick={() => router.push("/contact")}
+                onClick={() => navigate("/contact")}
               >
                 Contact
               </span>
@@ -398,7 +398,7 @@ const Header = () => {
           >
             <button
               className={styles.loginBtn}
-              onClick={() => router.push("/login")}
+              onClick={() => navigate("/login")}
             >
               Login
             </button>
@@ -426,7 +426,7 @@ const Header = () => {
           <Image
             onClick={() => {
               setIsOpen(false);
-              router.push("/");
+              navigate("/");
             }}
             className={styles.logoMobile}
             src="/svg/logo.svg"
@@ -524,7 +524,7 @@ const Header = () => {
                         className={styles.mobileDropdownItem}
                         onClick={() => {
                           setIsOpen(false);
-                          router.push(item.href);
+                          navigate(item.href);
                         }}
                       >
                         {item.label}
@@ -560,7 +560,7 @@ const Header = () => {
                         className={styles.mobileDropdownItem}
                         onClick={() => {
                           setIsOpen(false);
-                          router.push(item.href);
+                          navigate(item.href);
                         }}
                       >
                         {item.label}
@@ -576,7 +576,7 @@ const Header = () => {
                 }`}
                 onClick={() => {
                   setIsOpen(false);
-                  router.push("/impound");
+                  navigate("/impound");
                 }}
               >
                 Impound
@@ -588,7 +588,7 @@ const Header = () => {
                 }`}
                 onClick={() => {
                   setIsOpen(false);
-                  router.push("/coming-soon");
+                  navigate("/coming-soon");
                 }}
               >
                 Courier
@@ -600,7 +600,7 @@ const Header = () => {
                 }`}
                 onClick={() => {
                   setIsOpen(false);
-                  router.push("/contact");
+                  navigate("/contact");
                 }}
               >
                 Contact
@@ -612,7 +612,7 @@ const Header = () => {
                 }`}
                 onClick={() => {
                   setIsOpen(false);
-                  router.push("/FAQ");
+                  navigate("/FAQ");
                 }}
               >
                 FAQ
@@ -624,7 +624,7 @@ const Header = () => {
                 }`}
                 onClick={() => {
                   setIsOpen(false);
-                  router.push("/login");
+                  navigate("/login");
                 }}
               >
                 Login
@@ -636,7 +636,7 @@ const Header = () => {
                 }`}
                 onClick={() => {
                   setIsOpen(false);
-                  router.push("/retrieve-quote");
+                  navigate("/retrieve-quote");
                 }}
               >
                 Retrieve Your Quote
