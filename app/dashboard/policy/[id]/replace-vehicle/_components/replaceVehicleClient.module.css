@@ -138,50 +138,15 @@
   gap: 1.6rem;
 }
 
-.mainSection {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 3.2rem;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mainSection:hover {
-  border-color: rgba(3, 136, 255, 0.18);
-  background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
-}
-
-.sectionDivider {
-  height: 1px;
-  background: linear-gradient(90deg, rgba(3, 136, 255, 0) 0%, rgba(3, 136, 255, 0.2) 50%, rgba(3, 136, 255, 0) 100%);
-  margin: 0.5rem 0;
-}
-
-.fieldGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.fieldGroupTitle {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #000822;
-  margin: 0;
-  letter-spacing: -0.3px;
-  line-height: 1.4;
-}
-
-.fieldGroupDescription {
+.progressiveInstruction {
   font-size: 1.1rem;
   color: #5a6b7d;
-  margin: 0;
-  font-weight: 400;
-  opacity: 0.85;
-  line-height: 1.6;
+  font-weight: 500;
+  padding: 1.2rem;
+  background: #f0f6ff;
+  border-left: 3px solid #0388ff;
+  border-radius: 4px;
+  margin-bottom: 1rem;
 }
 
 .actionButtons {
@@ -191,6 +156,10 @@
   padding-top: 2rem;
   border-top: 1px solid #e0e6f0;
   justify-content: flex-end;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .cancelBtn,
@@ -307,11 +276,6 @@
     padding: 2.5rem 5%;
   }
 
-  .mainSection {
-    padding: 2.4rem;
-    gap: 1.8rem;
-  }
-
   .actionButtons {
     flex-direction: column-reverse;
   }
@@ -319,14 +283,6 @@
   .cancelBtn,
   .saveBtn {
     width: 100%;
-  }
-
-  .fieldGroupTitle {
-    font-size: 1.2rem;
-  }
-
-  .fieldGroupDescription {
-    font-size: 1rem;
   }
 }
 
@@ -363,11 +319,6 @@
     padding: 2rem 5%;
   }
 
-  .mainSection {
-    padding: 1.6rem;
-    gap: 1.4rem;
-  }
-
   .actionButtons {
     flex-direction: column-reverse;
     gap: 1rem;
@@ -376,13 +327,5 @@
   .cancelBtn,
   .saveBtn {
     width: 100%;
-  }
-
-  .fieldGroupTitle {
-    font-size: 1.15rem;
-  }
-
-  .fieldGroupDescription {
-    font-size: 1rem;
   }
 }
