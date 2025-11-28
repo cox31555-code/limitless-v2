@@ -1,133 +1,564 @@
-.container {
+.page {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 14.5rem;
-}
-.title {
-  color: #000;
-  font-size: 4.4rem;
-  font-weight: 700;
-  line-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-top: 3.5rem;
-}
-.titleSpan {
-  color: #049cff;
+  gap: 0;
+  padding: 0;
+  max-width: 100%;
+  margin: 0.0875rem 0 1.75rem;
+  width: 100%;
   position: relative;
+  z-index: 2;
 }
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  margin-bottom: 6.5rem;
+  padding: 7.8rem calc(50vw - 50%) 7.8rem;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroBackground {
+  position: absolute;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 399px;
+  opacity: 0.3;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  gap: 3.9rem;
+}
+
+.greetingArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.04rem;
+}
+
+.greetingTitle {
+  font-size: 3.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 110%;
+  letter-spacing: -0.65px;
+}
+
+.greetingSubtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.3rem;
+  padding: 0 5% 14px;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.breadcrumbItem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.55rem;
+  color: #ccc;
+  margin: 0 0.4rem;
+  flex-shrink: 0;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 55px 5% 1.6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Success Container */
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.successIcon {
+  margin-bottom: 3rem;
+  animation: bounceIn 0.6s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.submittedImage {
+  width: 136px;
+  height: 151px;
+}
+
+/* Title */
+.title {
+  color: #000822;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 110%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.titleSpan {
+  color: #0388ff;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
 .curvedBorder {
   position: absolute;
-  bottom: -10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   height: auto;
 }
-.header {
+
+/* Info Card */
+.infoCard {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 2.4rem;
+  animation: fadeIn 0.5s ease 0.2s backwards;
+}
+
+.infoHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1.6rem;
-  height: 64px;
-  border-radius: 12px;
-  background: #0388ff;
-  margin: 3.1rem 0 2.1rem;
-  width: 456px;
+  padding: 2rem 2.4rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  box-shadow: 0 4px 14px rgba(0, 82, 163, 0.25);
 }
+
 .headerItem {
   display: flex;
   align-items: center;
   gap: 1.6rem;
 }
+
+.headerItemIcon {
+  width: 36px;
+  height: 36px;
+  filter: brightness(0) invert(1);
+}
+
 .headerItemTitle,
 .headerItemValue {
-  color: #fff;
+  color: #ffffff;
   font-size: 1.6rem;
   font-weight: 600;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
+  line-height: 130%;
+  letter-spacing: 0.3px;
+  margin: 0;
 }
 
+/* Description */
 .description {
-  color: #494f64;
+  color: #5a6b7d;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
-  margin-bottom: 3.5rem;
+  line-height: 150%;
+  letter-spacing: 0.2px;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  animation: fadeIn 0.5s ease 0.3s backwards;
 }
 
-.claimsPortal {
+/* Action Buttons */
+.actionButtons {
   display: flex;
-  height: 6.2rem;
-  padding: 0 2.4rem;
-  /* flex-direction: column; */
+  gap: 1.6rem;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease 0.4s backwards;
+}
+
+.claimsPortalBtn {
+  flex: 1;
+  display: flex;
+  height: 5.6rem;
   align-items: center;
-  gap: 1.8rem;
+  justify-content: center;
+  gap: 1.2rem;
   border-radius: 12px;
-  background: #fdfdfd;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  color: #0388ff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 130%;
   border: none;
   cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
 }
-@media screen and (max-width: 900px) {
-  .container {
-    margin-top: 6.8rem;
+
+.claimsPortalBtn:hover {
+  background: linear-gradient(135deg, #003d7a 0%, #002d5a 100%);
+  box-shadow: 0 4px 14px rgba(0, 82, 163, 0.35);
+  transform: translateY(-2px);
+}
+
+.dashboardBtn {
+  flex: 1;
+  display: flex;
+  height: 5.6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #0052a3;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 130%;
+  border: 2px solid #e0e6f0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.dashboardBtn:hover {
+  background: #f8fbff;
+  border-color: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.15);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .breadcrumb {
+    gap: 1rem;
+    padding: 20px 5% 20px;
   }
-  .submittedImage{
+
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
+  }
+
+  .heroSection {
+    padding: 7rem calc(50vw - 50%) 7rem;
+  }
+
+  .greetingTitle {
+    font-size: 3.5rem;
+  }
+
+  .title {
+    font-size: 3.6rem;
+  }
+
+  .submittedImage {
+    width: 120px;
+    height: 133px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .breadcrumb {
+    gap: 0.8rem;
+    padding: 15px 5% 15px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.2rem;
+  }
+
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem calc(50vw - 50%);
+    gap: 2rem;
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    margin-left: 0;
+  }
+
+  .greetingArea {
+    align-items: center;
+    width: 100%;
+  }
+
+  .greetingTitle {
+    font-size: 2.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .contentWrapper {
+    padding: 2.5rem 5%;
+    gap: 2rem;
+  }
+
+  .successContainer {
+    padding: 3rem 1.6rem;
+  }
+
+  .successIcon {
+    margin-bottom: 2.4rem;
+  }
+
+  .submittedImage {
+    width: 100px;
+    height: 111px;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .infoCard {
+    margin-bottom: 2rem;
+  }
+
+  .infoHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    padding: 1.8rem 2rem;
+  }
+
+  .headerItem {
+    gap: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+  }
+
+  .headerItemIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .headerItemTitle,
+  .headerItemValue {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .claimsPortalBtn,
+  .dashboardBtn {
+    width: 100%;
+    height: 5.2rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .breadcrumb {
+    gap: 0.6rem;
+    padding: 12px 5% 12px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.1rem;
+    margin: 0 0.3rem;
+  }
+
+  .heroSection {
+    padding: 2.5rem calc(50vw - 50%);
+    gap: 1.5rem;
+  }
+
+  .greetingTitle {
+    font-size: 2.3rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.15rem;
+  }
+
+  .contentWrapper {
+    padding: 2rem 4%;
+    gap: 1.5rem;
+  }
+
+  .successContainer {
+    padding: 2.4rem 1.2rem;
+  }
+
+  .successIcon {
+    margin-bottom: 2rem;
+  }
+
+  .submittedImage {
     width: 81px;
     height: 91px;
   }
+
   .title {
     font-size: 2.4rem;
-    gap: 0.3rem;
-    margin-top: 3.2rem;
-  }
-  .header {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 1.6rem;
-    height: 106px;
-    width: 36.4rem;
-    border-radius: 1.2rem;
-    margin: 4.1rem 0 2.2rem;
-  }
-  .headerItem {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-    padding-bottom: 1.4rem;
-  }
-  .headerItemValue {
-    padding-top: 1.6rem;
-  }
-  .headerItemIcon {
-    width: 2.3rem;
-    height: 2.3rem;
-  }
-  .description {
-    font-size: 1.4rem;
-    line-height: 100%;
-    letter-spacing: 0.56px;
-    margin-bottom: 3.2rem;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
   }
 
-  .claimsPortal {
-    height: 4.8rem;
+  .infoCard {
+    margin-bottom: 1.6rem;
+  }
+
+  .infoHeader {
+    padding: 1.6rem 1.6rem;
+    gap: 1.2rem;
+  }
+
+  .headerItem {
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .headerItemIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .headerItemTitle,
+  .headerItemValue {
     font-size: 1.4rem;
-    line-height: 100%;
+  }
+
+  .description {
+    font-size: 1.3rem;
+    line-height: 140%;
+    margin-bottom: 2rem;
+  }
+
+  .actionButtons {
+    gap: 1rem;
+  }
+
+  .claimsPortalBtn,
+  .dashboardBtn {
+    height: 4.8rem;
+    font-size: 1.3rem;
   }
 }
