@@ -7,6 +7,8 @@ import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 export default function PaymentsClient({ plusJakartaSans }) {
   const [consentChecked, setConsentChecked] = useState(false);
   const [scheduleExpanded, setScheduleExpanded] = useState(false);
+  const [autoRenewal, setAutoRenewal] = useState(true);
+  const [optOutExpanded, setOptOutExpanded] = useState(false);
 
   const paymentSchedule = [
     { date: "21 Nov 2025", amount: "£47.29", type: "deposit" },
@@ -199,6 +201,78 @@ export default function PaymentsClient({ plusJakartaSans }) {
                 ))}
               </div>
             )}
+          </div>
+        </div>
+
+        {/* Auto-Renewal Section */}
+        <div className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <svg className={styles.sectionIcon} viewBox="0 0 24 24" fill="none">
+              <path d="M21 12a9 9 0 11-9-9c2.52 0 4.93 1 6.74 2.74L21 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M21 3v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <h2 className={styles.sectionTitle}>Auto-renewal makes things a little easier...</h2>
+          </div>
+          <div className={styles.sectionContent}>
+            <ul className={styles.benefitsList}>
+              <li className={styles.benefitItem}>
+                <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div className={styles.benefitText}>
+                  <strong>Continuous cover for peace of mind:</strong> Save time, stay covered
+                </div>
+              </li>
+              <li className={styles.benefitItem}>
+                <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div className={styles.benefitText}>
+                  <strong>Control:</strong> We'll let you know if you're happy with the price and cover 4 weeks before your renewal's due
+                </div>
+              </li>
+              <li className={styles.benefitItem}>
+                <svg className={styles.checkIcon} viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <div className={styles.benefitText}>
+                  <strong>Flexibility:</strong> You can opt out of auto-renewal for free at any time
+                </div>
+              </li>
+            </ul>
+
+            <div className={styles.optOutSection}>
+              <h3 className={styles.optOutTitle}>Prefer not to auto-renew?</h3>
+              <button
+                className={styles.optOutToggle}
+                onClick={() => setOptOutExpanded(!optOutExpanded)}
+              >
+                <span>Opt out here</span>
+                <svg
+                  className={`${styles.chevronIcon} ${optOutExpanded ? styles.chevronOpen : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <polyline points="6 9 12 15 18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {optOutExpanded && (
+                <div className={styles.optOutContent}>
+                  <label className={styles.autoRenewalLabel}>
+                    <input
+                      type="checkbox"
+                      checked={autoRenewal}
+                      onChange={(e) => setAutoRenewal(e.target.checked)}
+                      className={styles.autoRenewalCheckbox}
+                    />
+                    <span className={styles.autoRenewalText}>
+                      By automatically renewing your insurance, you can save time next year and ensure that there's no interruption to your cover. Untick this button to opt out of automatic renewal.
+                    </span>
+                  </label>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
