@@ -245,9 +245,12 @@ const DashboardClient = () => {
             <p className={styles.emergencyText}>
               From car breakdowns to home insurance claims, Limitless Cover has you covered.
             </p>
-            <button 
+            <button
               className={styles.emergencyButton}
-              onClick={() => router.push("/dashboard/submit-claim")}
+              onClick={() => {
+                showLoading();
+                router.push("/dashboard/submit-claim");
+              }}
             >
               Report an incident
             </button>
