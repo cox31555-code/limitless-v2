@@ -372,28 +372,51 @@ const FormDateInput = forwardRef(
         closeTimePicker();
       };
 
+      const handleNativeTimeChange = (e) => {
+        if (onChange) {
+          onChange(e);
+        }
+      };
+
       return (
         <>
           <div className={styles.formInputGroup}>
             {timeLabel && <label className={styles.formInputLabel}>{timeLabel}</label>}
-            
+
             <div
               className={styles.formInputWrapper}
               ref={inputContainerRef}
             >
-              <input
-                ref={ref}
-                name={name}
-                value={value || ""}
-                onChange={() => {}}
-                placeholder="--:--"
-                className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
-                type="text"
-                readOnly
-                onClick={openTimePicker}
-                onBlur={onBlur}
-                style={{ cursor: 'pointer' }}
-              />
+              {isMobile ? (
+                <input
+                  ref={ref}
+                  name={name}
+                  type="time"
+                  value={value || ""}
+                  onChange={handleNativeTimeChange}
+                  onBlur={onBlur}
+                  step="900"
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
+                  style={{
+                    cursor: 'pointer',
+                    colorScheme: 'dark'
+                  }}
+                />
+              ) : (
+                <input
+                  ref={ref}
+                  name={name}
+                  value={value || ""}
+                  onChange={() => {}}
+                  placeholder="--:--"
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
+                  type="text"
+                  readOnly
+                  onClick={openTimePicker}
+                  onBlur={onBlur}
+                  style={{ cursor: 'pointer' }}
+                />
+              )}
             </div>
 
             {error && (
@@ -403,7 +426,7 @@ const FormDateInput = forwardRef(
             )}
           </div>
 
-          {showTimePicker && isMobile && (
+          {!isMobile && showTimePicker && (
             <div
               style={{
                 position: 'fixed',
@@ -416,14 +439,12 @@ const FormDateInput = forwardRef(
               onClick={closeTimePicker}
             />
           )}
-          {showTimePicker && (
+          {!isMobile && showTimePicker && (
             <div ref={timePickerRef} style={{
-              position: isMobile ? 'fixed' : (pickerPosition.isAbsolute ? 'absolute' : 'fixed'),
-              top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
-              bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
-              left: isMobile ? '50%' : pickerPosition.left,
-              right: isMobile ? 'auto' : 'auto',
-              transform: isMobile ? 'translate(-50%, -50%)' : 'none',
+              position: pickerPosition.isAbsolute ? 'absolute' : 'fixed',
+              top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
+              bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
+              left: pickerPosition.left,
               zIndex: 99999,
               pointerEvents: 'auto'
             }}>
