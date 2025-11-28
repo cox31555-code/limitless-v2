@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "@/app/annual/get-quote/_components/step2ClaimsAndConvictions.module.css";
 
 const Step2ClaimsAndConvictionsHidden = ({ form, claims = [], convictions = [], setClaims = () => {}, setConvictions = () => {} }) => {

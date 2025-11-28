@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import styles from "@/app/annual/get-quote/_components/step2LicenceRestrictions.module.css";
 
