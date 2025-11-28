@@ -261,26 +261,52 @@ const Step3CoverDetails = ({
               If you already have a policy, check its expiry date on the renewal notice from your provider to avoid gaps in your cover.
             </p>
           </div>
-          <div className={styles.fieldWrapper}>
-            <Dropdown
-              label=""
-              selected={getSelectedDateLabel()}
-              options={dateOptions}
-              setSelected={(value) => {
-                // Find the index of selected date and convert back to YYYY-MM-DD format
-                const selectedIndex = dateOptions.indexOf(value);
-                if (selectedIndex >= 0) {
-                  const today = new Date();
-                  const selectedDate = new Date(today);
-                  selectedDate.setDate(selectedDate.getDate() + selectedIndex);
-                  const dateString = selectedDate.toISOString().split('T')[0];
-                  setFormData({ ...formData, startDate: dateString });
-                }
-              }}
-              placeholder="Please select…"
-            />
-            {errors.startDate && <span className={styles.error}>{errors.startDate}</span>}
-          </div>
+          {showCoverOptions ? (
+            <div className={styles.fieldWrapper}>
+              <Dropdown
+                label=""
+                selected={getSelectedDateLabel()}
+                options={dateOptions}
+                setSelected={(value) => {
+                  // Find the index of selected date and convert back to YYYY-MM-DD format
+                  const selectedIndex = dateOptions.indexOf(value);
+                  if (selectedIndex >= 0) {
+                    const today = new Date();
+                    const selectedDate = new Date(today);
+                    selectedDate.setDate(selectedDate.getDate() + selectedIndex);
+                    const dateString = selectedDate.toISOString().split('T')[0];
+                    setFormData({ ...formData, startDate: dateString });
+                  }
+                }}
+                placeholder="Please select…"
+              />
+              {errors.startDate && <span className={styles.error}>{errors.startDate}</span>}
+            </div>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.6rem' }}>
+              <FormDateInput
+                type="date"
+                dateLabel="Date"
+                value={formData.startDate || ""}
+                onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+                error={errors.startDate}
+                minDate={new Date()}
+                maxDate={(() => {
+                  const maxDate = new Date();
+                  maxDate.setDate(maxDate.getDate() + 30);
+                  return maxDate;
+                })()}
+              />
+              <FormDateInput
+                type="time"
+                timeLabel="Time"
+                value={formData.startTime || ""}
+                onChange={(e) => setFormData({ ...formData, startTime: e.target.value })}
+                error={errors.startTime}
+                relatedDateValue={formData.startDate}
+              />
+            </div>
+          )}
 
           <button
             type="button"
