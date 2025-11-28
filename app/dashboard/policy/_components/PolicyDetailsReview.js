@@ -267,6 +267,109 @@ const PolicyDetailsReview = ({ policy }) => {
               <button className={styles.secondaryBtn} aria-label="Replace this vehicle with another">Replace Vehicle</button>
             </div>
 
+            {/* Your car section */}
+            <div className={styles.vehicleSubsection}>
+              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Your car</h4>
+              <div className={styles.detailsGrid}>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Car make and model</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.make && vehicleDetails?.model ? `${vehicleDetails.make} ${vehicleDetails.model}` : null)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Alarm/Immobiliser</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.alarm)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Tracking device</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.trackingDevice)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Import</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.import)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Driver side</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.driverSide || "Right Hand")}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Seats</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.seats)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Modifications</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.modifications || false)}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Car value section */}
+            <div className={styles.vehicleSubsection}>
+              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Car value</h4>
+              <div className={styles.detailsGrid}>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Current vehicle market value</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.marketValue ? `£${vehicleDetails.marketValue}` : "£4560")}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Car usage section */}
+            <div className={styles.vehicleSubsection}>
+              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Car usage</h4>
+              <div className={styles.detailsGrid}>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>When you bought the car</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.purchaseDate || "02/2025")}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Car usage</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.usage)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Annual personal mileage</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.annualMileage)}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Car storage section */}
+            <div className={styles.vehicleSubsection}>
+              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Car storage</h4>
+              <div className={styles.detailsGrid}>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Daytime storage</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.daytimeStorage)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Nighttime storage</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.nighttimeStorage)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Car kept at home overnight</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.keptAtHomeOvernight)}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Other cars section */}
+            <div className={styles.vehicleSubsection}>
+              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Other cars</h4>
+              <div className={styles.detailsGrid}>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Number of cars at your household</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.householdCars)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Use of any other vehicles</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.useOtherVehicles)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>What other vehicles</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.otherVehicles)}</span>
+                </div>
+              </div>
+            </div>
+
             <div className={styles.excessSection}>
               <h4 className={`${styles.excessTitle} ${plusJakartaSans.className}`}>
                 Policy Excess Information
