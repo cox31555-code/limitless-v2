@@ -89,6 +89,8 @@ const ClaimReason = () => {
       <div className={styles.breadcrumb}>
         <span className={styles.breadcrumbItem}>Dashboard</span>
         <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={styles.breadcrumbItem}>Manage Claims</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
         <span className={styles.breadcrumbItem}>Submit a Claim</span>
         <span className={styles.breadcrumbSeparator}>›</span>
         <span className={`${styles.breadcrumbItem} ${styles.active}`}>What happened?</span>
