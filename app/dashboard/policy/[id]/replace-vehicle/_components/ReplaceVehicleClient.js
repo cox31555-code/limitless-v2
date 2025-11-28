@@ -1,17 +1,16 @@
 "use client";
 
-import React, { useState, useCallback, useEffect, useReducer, useRef } from "react";
+import React, { useState, useCallback, useRef, useEffect, useReducer } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
-import { SelectPicker, Button, Input } from "rsuite";
 import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
-import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
-import styles from "@/app/annual/get-quote/_components/annualVehicle.module.css";
+import Step1CarDetailsEdit from "@/app/annual/get-quote/_components/Step1CarDetailsEdit";
+import styles from "@/app/annual/get-quote/_components/step1VehicleRegistration.module.css";
 import replaceStyles from "./replaceVehicleClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
@@ -20,37 +19,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["700"],
 });
 
-const vehicleWorthOptions = [
-  "£0 - £5,000",
-  "£5,000 - £10,000",
-  "£10,000 - £20,000",
-  "£20,000 - £30,000",
-  "£30,000 - £50,000",
-  "Over £50,000",
-];
-
-const carColors = [
-  "White", "Black", "Gray", "Silver", "Blue", "Red", "Green", "Brown",
-  "Orange", "Beige", "Purple", "Gold", "Yellow",
-];
-
-const trackingDeviceOptions = ["No", "Yes - Factory Fitted", "Yes - Aftermarket"];
-const alarmImmobiliserOptions = [
-  "No",
-  "Thatcham approved immobiliser",
-  "Thatcham approved alarm",
-  "Thatcham approved alarm and immobiliser",
-  "Factory fitted immobiliser",
-  "Factory fitted alarm and immobiliser",
-  "Other",
-];
-const yesNoOptions = ["No", "Yes"];
-const ownerOptions = ["Policyholder", "Spouse/Partner", "Parent", "Company", "Other"];
-const keeperOptions = ["Policyholder", "Spouse/Partner", "Parent", "Company", "Other"];
-
-const initialVehicleState = {
-  makes: ["Audi", "BMW", "Ford", "Honda", "Toyota", "Volkswagen"],
-  error: null,
+const initialState = {
+  makes: [],
   options: {
     models: [],
     years: [],
@@ -58,29 +28,14 @@ const initialVehicleState = {
     fuels: [],
     transmissions: [],
   },
-  values: {
-    make: "",
-    model: "",
-    year: "",
-    doors: "",
-    fuel: "",
-    transmission: "",
-  },
 };
 
 const vehicleReducer = (state, action) => {
   switch (action.type) {
     case "SET_MAKES":
       return { ...state, makes: action.payload };
-    case "SET_VEHICLE_DATA":
-      return {
-        ...state,
-        options: action.payload.options || state.options,
-        values: { ...state.values, ...(action.payload.values || {}) },
-        error: null,
-      };
-    case "SET_ERROR":
-      return { ...state, error: action.payload };
+    case "SET_OPTIONS":
+      return { ...state, options: action.payload };
     case "CLEAR_OPTIONS":
       return {
         ...state,
@@ -97,17 +52,31 @@ const vehicleReducer = (state, action) => {
   }
 };
 
+const carColors = [
+  "White", "Black", "Gray", "Silver", "Blue", "Red", "Green", "Brown",
+  "Orange", "Beige", "Purple", "Gold", "Yellow",
+];
+
 const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showVehicleDetails, setShowVehicleDetails] = useState(false);
-  const [isLoadingVehicleData, setIsLoadingVehicleData] = useState(false);
-  const [state, dispatch] = useReducer(vehicleReducer, initialVehicleState);
-  const [forceUpdate, setForceUpdate] = useState(0);
-  const [foundVehicleData, setFoundVehicleData] = useState(null);
-  const [showFoundData, setShowFoundData] = useState(false);
+  const [isLoadingVehicle, setIsLoadingVehicle] = useState(false);
+  const [foundVehicle, setFoundVehicle] = useState(null);
+  const [showManualEntry, setShowManualEntry] = useState(false);
   const [showModificationsModal, setShowModificationsModal] = useState(false);
-  const isAutoSelectingRef = useRef(false);
+  const [isEditingCarDetails, setIsEditingCarDetails] = useState(false);
+  const [state, dispatch] = useReducer(vehicleReducer, initialState);
+  const hasAutoTriggeredRef = useRef(false);
+
+  const [loadingStates, setLoadingStates] = useState({
+    make: false,
+    model: false,
+    year: false,
+    doors: false,
+    fuel: false,
+    transmission: false,
+    colour: false,
+  });
 
   const form = useForm({
     resolver: zodResolver(annualInsuranceSchema),
@@ -122,62 +91,88 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         fuel: "",
         transmission: "",
         colour: "",
-        vehicleModified: "",
+        vehicleModified: "No",
         vehicleModifications: [],
-        alarmImmobiliser: "",
-        trackingDevice: "",
-        importedVehicle: "",
+        alarmImmobiliser: "Factory Fitted Thatcham Approved Alarm/Immobiliser",
+        trackingDevice: "No",
+        importedVehicle: "No",
         driverSide: "Right Hand",
         seats: "5",
       },
     },
   });
 
-  const { watch, setValue, register, formState: { errors }, setError, clearErrors } = form;
+  const { register, formState: { errors }, watch, setValue, setError, clearErrors } = form;
 
+  const registrationNumber = watch("vehicleDetails.registrationNumber");
   const selectedType = watch("vehicleDetails.type");
   const selectedMake = watch("vehicleDetails.make");
   const selectedModel = watch("vehicleDetails.model");
   const selectedYear = watch("vehicleDetails.year");
   const selectedDoors = watch("vehicleDetails.doors");
   const selectedFuel = watch("vehicleDetails.fuel");
+  const selectedTransmission = watch("vehicleDetails.transmission");
+  const selectedColour = watch("vehicleDetails.colour");
   const vehicleModified = watch("vehicleDetails.vehicleModified");
   const vehicleModifications = watch("vehicleDetails.vehicleModifications") || [];
-  const legalOwner = watch("vehicleDetails.legalOwner");
-  const owner = watch("vehicleDetails.owner");
 
-  const toggleVehicleDetails = () => {
-    setShowVehicleDetails(!showVehicleDetails);
-  };
+  const isManualEntryComplete = selectedType && selectedMake && selectedModel && selectedYear && selectedDoors && selectedFuel && selectedTransmission && selectedColour;
+
+  useEffect(() => {
+    const defaultMakes = ["Audi", "BMW", "Ford", "Honda", "Mercedes-Benz", "Toyota", "Volkswagen", "Volvo"];
+    dispatch({ type: "SET_MAKES", payload: defaultMakes });
+  }, []);
+
+  useEffect(() => {
+    if (showManualEntry) {
+      const defaultOptions = {
+        models: ["Model A", "Model B", "Model C", "Model D", "Model E", "Model F"],
+        years: ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015"],
+        doors: ["2", "3", "4", "5"],
+        fuels: ["Petrol", "Diesel", "Hybrid", "Electric", "Petrol Hybrid", "Diesel Hybrid"],
+        transmissions: ["Manual", "Automatic", "Semi-Automatic"],
+      };
+      dispatch({ type: "SET_OPTIONS", payload: defaultOptions });
+    }
+  }, [showManualEntry]);
 
   const handleDropdownChange = (field, value) => {
     setValue(`vehicleDetails.${field}`, value, {
       shouldValidate: true,
       shouldDirty: true,
-      shouldTouch: true,
     });
 
-    dispatch({
-      type: "SET_VEHICLE_DATA",
-      payload: {
-        values: { [field]: value },
-        options: state.options,
-      },
-    });
+    const fieldSequence = {
+      type: 'make',
+      make: 'model',
+      model: 'year',
+      year: 'doors',
+      doors: 'fuel',
+      fuel: 'transmission',
+      transmission: 'colour',
+    };
+
+    const nextField = fieldSequence[field];
+    if (nextField) {
+      setLoadingStates(prev => ({ ...prev, [nextField]: true }));
+      setTimeout(() => {
+        setLoadingStates(prev => ({ ...prev, [nextField]: false }));
+      }, 4000);
+    }
   };
 
   const handleFindVehicle = useCallback(async () => {
-    const registrationNumber = watch("vehicleDetails.registrationNumber");
+    const regNumber = registrationNumber?.trim();
 
-    if (!registrationNumber?.trim()) {
+    if (!regNumber) {
       setError("vehicleDetails.registrationNumber", {
         message: "Please enter a registration number",
       });
       return;
     }
 
-    const cleanRegNumber = registrationNumber.trim().toUpperCase();
-    setIsLoadingVehicleData(true);
+    const cleanRegNumber = regNumber.toUpperCase();
+    setIsLoadingVehicle(true);
 
     setTimeout(() => {
       const mockVehicleData = {
@@ -187,12 +182,11 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         yearOfManufacture: "2023",
         fuelType: "Petrol",
         transmission: "Automatic",
-        colour: "Black",
+        colour: "Silver",
       };
 
-      setFoundVehicleData(mockVehicleData);
-      setShowFoundData(true);
-
+      setFoundVehicle(mockVehicleData);
+      setValue("vehicleDetails.apiData", mockVehicleData);
       setValue("vehicleDetails.registrationNumber", cleanRegNumber);
       setValue("vehicleDetails.type", "Car");
       setValue("vehicleDetails.make", mockVehicleData.make);
@@ -201,6 +195,8 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
       setValue("vehicleDetails.fuel", mockVehicleData.fuelType);
       setValue("vehicleDetails.transmission", mockVehicleData.transmission);
       setValue("vehicleDetails.colour", mockVehicleData.colour);
+      setValue("vehicleDetails.estimatedValue", "4560");
+      setValue("vehicleDetails.carValue", "4560");
       setValue("vehicleDetails.alarmImmobiliser", "Factory Fitted Thatcham Approved Alarm/Immobiliser");
       setValue("vehicleDetails.trackingDevice", "No");
       setValue("vehicleDetails.importedVehicle", "No");
@@ -208,63 +204,48 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
       setValue("vehicleDetails.seats", "5");
 
       clearErrors("vehicleDetails.registrationNumber");
-      setIsLoadingVehicleData(false);
-    }, 3000);
-  }, [watch, setError, setValue, clearErrors]);
+      setIsLoadingVehicle(false);
+      setShowManualEntry(false);
+    }, 2000);
+  }, [registrationNumber, setValue, setError, clearErrors]);
 
   const handleChangeVehicle = () => {
-    setFoundVehicleData(null);
-    setShowFoundData(false);
+    setFoundVehicle(null);
     setValue("vehicleDetails.registrationNumber", "");
+    setValue("vehicleDetails.apiData", null);
+    setValue("vehicleDetails.type", "");
+    setValue("vehicleDetails.make", "");
+    setValue("vehicleDetails.model", "");
+    setValue("vehicleDetails.year", "");
+    setValue("vehicleDetails.fuel", "");
+    setValue("vehicleDetails.transmission", "");
+    setValue("vehicleDetails.colour", "");
+    setValue("vehicleDetails.doors", "");
     clearErrors("vehicleDetails.registrationNumber");
+    setShowManualEntry(false);
   };
 
-  // Fetch vehicle data when make is selected
-  useEffect(() => {
-    if (selectedMake) {
-      const defaultOptions = {
-        models: ["Model A", "Model B", "Model C"],
-        years: ["2024", "2023", "2022", "2021", "2020"],
-        doors: ["2", "4", "5"],
-        fuels: ["Petrol", "Diesel", "Hybrid", "Electric"],
-        transmissions: ["Manual", "Automatic"],
-      };
-      dispatch({
-        type: "SET_VEHICLE_DATA",
-        payload: { values: {}, options: defaultOptions },
-      });
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleFindVehicle();
     }
-  }, [selectedMake]);
+  };
 
-  // Open modifications modal when "Yes" is selected
-  useEffect(() => {
-    if (vehicleModified === "Yes") {
-      setShowModificationsModal(true);
-    }
-  }, [vehicleModified]);
-
-  const handleModificationsConfirm = (selectedModifications) => {
-    setValue("vehicleDetails.vehicleModifications", selectedModifications, {
+  const handleModificationsConfirm = (selected) => {
+    setValue("vehicleDetails.vehicleModifications", selected, {
       shouldValidate: true,
       shouldDirty: true,
     });
-    if (selectedModifications.length === 0) {
-      setValue("vehicleDetails.vehicleModified", "No", {
-        shouldValidate: true,
-        shouldDirty: true,
-      });
-    }
     setShowModificationsModal(false);
   };
 
-  const handleModificationsCancel = () => {
-    if (vehicleModifications.length === 0) {
-      setValue("vehicleDetails.vehicleModified", "No", {
-        shouldValidate: true,
-        shouldDirty: true,
-      });
-    }
-    setShowModificationsModal(false);
+  const handleRemoveModification = (modification) => {
+    const updatedModifications = vehicleModifications.filter((mod) => mod !== modification);
+    setValue("vehicleDetails.vehicleModifications", updatedModifications, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
   };
 
   const handleSave = async (data) => {
@@ -281,17 +262,295 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
     }
   };
 
+  const VehicleDetailsSection = () => (
+    <div className={styles.vehicleQuestionsWrapper}>
+      <div className={styles.detailsSection}>
+        <div className={styles.detailsSectionHeader}>
+          <h3 className={styles.detailsSectionTitle}>Car details</h3>
+          <button
+            type="button"
+            className={styles.changeLink}
+            onClick={() => setIsEditingCarDetails(true)}
+          >
+            Change
+          </button>
+        </div>
+
+        <div className={styles.detailsGrid}>
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Alarm/Immobiliser</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.alarmImmobiliser") || "Factory Fitted Thatcham Approved Alarm/Immobiliser"}
+            </span>
+          </div>
+
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Tracking device</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.trackingDevice") || "No"}
+            </span>
+          </div>
+
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Import</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.importedVehicle") || "No"}
+            </span>
+          </div>
+
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Driver side</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.driverSide") || "Right Hand"}
+            </span>
+          </div>
+
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Seats</span>
+            <span className={styles.detailValue}>
+              {watch("vehicleDetails.seats") || "5"}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.modificationSection}>
+        <h3 className={styles.modificationQuestion}>Has the car been modified in any way?</h3>
+        <p className={styles.modificationHelper}>
+          Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.
+        </p>
+
+        <div className={styles.radioGroup}>
+          <label className={styles.radioOption}>
+            <input
+              type="radio"
+              {...register("vehicleDetails.vehicleModified")}
+              value="Yes"
+              className={styles.radioInput}
+            />
+            <span className={styles.radioLabel}>Yes</span>
+          </label>
+
+          <label className={styles.radioOption}>
+            <input
+              type="radio"
+              {...register("vehicleDetails.vehicleModified")}
+              value="No"
+              className={styles.radioInput}
+            />
+            <span className={styles.radioLabel}>No</span>
+          </label>
+        </div>
+
+        <button
+          type="button"
+          className={styles.helpLink}
+          onClick={() => setShowModificationsModal(true)}
+        >
+          How can I find out if my car's been modified?
+        </button>
+      </div>
+
+      {vehicleModified === "Yes" && (
+        <div className={styles.modificationsSection}>
+          <h3 className={styles.modificationsHeading}>Your car modifications</h3>
+
+          {vehicleModifications.length > 0 && (
+            <div className={styles.modificationsTagsList}>
+              {vehicleModifications.map((mod) => (
+                <div key={mod} className={styles.modificationCard}>
+                  <span className={styles.modificationName}>{mod}</span>
+                  <div className={styles.modificationActions}>
+                    <button
+                      type="button"
+                      className={styles.removeTextBtn}
+                      onClick={() => handleRemoveModification(mod)}
+                      aria-label={`Remove ${mod}`}
+                    >
+                      Remove
+                    </button>
+                    <button
+                      type="button"
+                      className={styles.changeModificationBtn}
+                      onClick={() => setShowModificationsModal(true)}
+                    >
+                      Change modification
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <button
+            type="button"
+            className={styles.addModificationBtn}
+            onClick={() => setShowModificationsModal(true)}
+          >
+            Add another modification
+          </button>
+        </div>
+      )}
+    </div>
+  );
+
+  if (isEditingCarDetails) {
+    return (
+      <div className={replaceStyles.container}>
+        <section className={replaceStyles.heroSection}>
+          <div className={replaceStyles.heroBackground}>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.238px" height="176.262px" viewBox="0 0 106.238 140.262" className={replaceStyles.heroBackgroundImage}>
+              <style>{`.st0{fill:#FFFFFF;}.st1{fill:#05AFFF;}.st2{fill:#0A0913;}`}</style>
+              <path className="st1" d="M86.515,75.233L44.398,94.136v25.204l-4.194-4.194l-13.187-13.187l-7.276-7.276l24.658-11.08l17.44-7.823l35.953-16.152c9.13-4.116,11.334-16.094,4.253-23.175L70.012,4.419C60.57,-5.023,44.398,1.669,44.398,15.012v20.171L0.115,55.081v19.098l17.44-7.823l39.484-17.713l4.916-2.204V27.302l-0.117,0.058v-6.457l24.677,24.677l-10.944,4.916l0.02,0.039l-46.682,21.01l-0.039-0.078L8.464,80.636c-0.351,0.156-0.683,0.312-0.995,0.488c-4.253,2.302-6.808,6.399-7.354,10.768c-0.527,4.175,0.741,8.583,4.077,11.919l32.051,32.032c9.442,9.442,25.594,2.751,25.594-10.612v-19.82l24.677-11.08l19.722-8.837V66.357L86.515,75.233z"/>
+            </svg>
+          </div>
+          <div className={replaceStyles.heroContent}>
+            <div className={replaceStyles.greetingArea}>
+              <h1 className={`${replaceStyles.greetingTitle} ${plusJakartaSans.className}`}>Replace Your Vehicle</h1>
+              <p className={replaceStyles.greetingSubtitle}>Select a new vehicle for your policy</p>
+            </div>
+          </div>
+        </section>
+
+        <div className={replaceStyles.breadcrumb}>
+          <span className={replaceStyles.breadcrumbItem}>Dashboard</span>
+          <span className={replaceStyles.breadcrumbSeparator}>›</span>
+          <span className={replaceStyles.breadcrumbItem}>Manage Policy</span>
+          <span className={replaceStyles.breadcrumbSeparator}>›</span>
+          <span className={replaceStyles.breadcrumbItem}>Policy summary</span>
+          <span className={replaceStyles.breadcrumbSeparator}>›</span>
+          <span className={`${replaceStyles.breadcrumbItem} ${replaceStyles.active}`}>Replace vehicle</span>
+        </div>
+
+        <div className={replaceStyles.contentWrapper}>
+          <Step1CarDetailsEdit
+            form={form}
+            onUpdate={() => setIsEditingCarDetails(false)}
+            onCancel={() => setIsEditingCarDetails(false)}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (foundVehicle || (showManualEntry && isManualEntryComplete)) {
+    return (
+      <div className={replaceStyles.container}>
+        <section className={replaceStyles.heroSection}>
+          <div className={replaceStyles.heroBackground}>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.238px" height="176.262px" viewBox="0 0 106.238 140.262" className={replaceStyles.heroBackgroundImage}>
+              <style>{`.st0{fill:#FFFFFF;}.st1{fill:#05AFFF;}.st2{fill:#0A0913;}`}</style>
+              <path className="st1" d="M86.515,75.233L44.398,94.136v25.204l-4.194-4.194l-13.187-13.187l-7.276-7.276l24.658-11.08l17.44-7.823l35.953-16.152c9.13-4.116,11.334-16.094,4.253-23.175L70.012,4.419C60.57,-5.023,44.398,1.669,44.398,15.012v20.171L0.115,55.081v19.098l17.44-7.823l39.484-17.713l4.916-2.204V27.302l-0.117,0.058v-6.457l24.677,24.677l-10.944,4.916l0.02,0.039l-46.682,21.01l-0.039-0.078L8.464,80.636c-0.351,0.156-0.683,0.312-0.995,0.488c-4.253,2.302-6.808,6.399-7.354,10.768c-0.527,4.175,0.741,8.583,4.077,11.919l32.051,32.032c9.442,9.442,25.594,2.751,25.594-10.612v-19.82l24.677-11.08l19.722-8.837V66.357L86.515,75.233z"/>
+            </svg>
+          </div>
+          <div className={replaceStyles.heroContent}>
+            <div className={replaceStyles.greetingArea}>
+              <h1 className={`${replaceStyles.greetingTitle} ${plusJakartaSans.className}`}>Replace Your Vehicle</h1>
+              <p className={replaceStyles.greetingSubtitle}>Select a new vehicle for your policy</p>
+            </div>
+          </div>
+        </section>
+
+        <div className={replaceStyles.breadcrumb}>
+          <span className={replaceStyles.breadcrumbItem}>Dashboard</span>
+          <span className={replaceStyles.breadcrumbSeparator}>›</span>
+          <span className={replaceStyles.breadcrumbItem}>Manage Policy</span>
+          <span className={replaceStyles.breadcrumbSeparator}>›</span>
+          <span className={replaceStyles.breadcrumbItem}>Policy summary</span>
+          <span className={replaceStyles.breadcrumbSeparator}>›</span>
+          <span className={`${replaceStyles.breadcrumbItem} ${replaceStyles.active}`}>Replace vehicle</span>
+        </div>
+
+        <div className={replaceStyles.contentWrapper}>
+          <form onSubmit={form.handleSubmit(handleSave)} className={replaceStyles.formContainer}>
+            <div className={styles.container}>
+              <div className={styles.stepTitle}>
+                <h2 className={styles.stepTitleText}>Car details - Your car</h2>
+              </div>
+              <div className={styles.header}>
+                <h1 className={styles.mainQuestion}>What's your car's registration?</h1>
+                <p className={styles.subText}>We can only show you quotes for cars registered in the UK.</p>
+              </div>
+
+              {foundVehicle && (
+                <div className={styles.foundVehicleCard}>
+                  <div className={styles.foundVehicleIcon}>
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                      <circle cx="24" cy="24" r="24" fill="#e8f5ff"/>
+                      <path d="M18 24L22 28L30 20" stroke="#0388ff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div className={styles.foundVehicleInfo}>
+                    <h3 className={styles.foundVehicleTitle}>Vehicle Found</h3>
+                    <p className={styles.foundVehicleDetails}>
+                      {foundVehicle.make} {foundVehicle.model} ({foundVehicle.yearOfManufacture})
+                    </p>
+                    <p className={styles.foundVehicleReg}>{foundVehicle.registrationNumber}</p>
+                  </div>
+                  <button
+                    type="button"
+                    className={styles.changeVehicleBtn}
+                    onClick={handleChangeVehicle}
+                  >
+                    Change
+                  </button>
+                </div>
+              )}
+
+              <VehicleDetailsSection />
+
+              <div className={styles.infoBox}>
+                <div className={styles.infoIcon}>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#0388ff"/>
+                    <path d="M10 4C7.79 4 6 5.79 6 8H8C8 6.9 8.9 6 10 6C11.1 6 12 6.9 12 8C12 10 9 9.75 9 13H11C11 10.75 14 10.5 14 8C14 5.79 12.21 4 10 4Z" fill="#0388ff"/>
+                    <circle cx="10" cy="16" r="1" fill="#0388ff"/>
+                  </svg>
+                </div>
+                <div className={styles.infoContent}>
+                  <h4 className={styles.infoTitle}>Honesty's the best policy</h4>
+                  <p className={styles.infoText}>
+                    It's important you answer all questions honestly. Take care that the information you disclose throughout
+                    the quote is accurate and complete to the best of your knowledge. If you don't do this, your insurance
+                    provider could increase your premium, cancel your policy, treat it as if it never existed, refuse a
+                    claim or not pay the claim in full.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className={replaceStyles.actionButtons}>
+              <button
+                type="button"
+                onClick={() => router.back()}
+                className={replaceStyles.cancelBtn}
+                disabled={isSubmitting}
+              >
+                Back
+              </button>
+              <button
+                type="submit"
+                className={replaceStyles.saveBtn}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Replacing..." : "Replace Vehicle"}
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <VehicleModificationsModal
+          isOpen={showModificationsModal}
+          onClose={() => setShowModificationsModal(false)}
+          onConfirm={handleModificationsConfirm}
+          selectedModifications={vehicleModifications}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className={replaceStyles.container}>
-      {/* Modifications Modal */}
-      <VehicleModificationsModal
-        isOpen={showModificationsModal}
-        onClose={handleModificationsCancel}
-        onConfirm={handleModificationsConfirm}
-        selectedModifications={vehicleModifications}
-      />
-
-      {/* Hero Section */}
       <section className={replaceStyles.heroSection}>
         <div className={replaceStyles.heroBackground}>
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.238px" height="176.262px" viewBox="0 0 106.238 140.262" className={replaceStyles.heroBackgroundImage}>
@@ -307,7 +566,6 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         </div>
       </section>
 
-      {/* Breadcrumb Navigation */}
       <div className={replaceStyles.breadcrumb}>
         <span className={replaceStyles.breadcrumbItem}>Dashboard</span>
         <span className={replaceStyles.breadcrumbSeparator}>›</span>
@@ -318,381 +576,188 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         <span className={`${replaceStyles.breadcrumbItem} ${replaceStyles.active}`}>Replace vehicle</span>
       </div>
 
-      {/* Content */}
       <div className={replaceStyles.contentWrapper}>
-        <form onSubmit={form.handleSubmit(handleSave)} className={replaceStyles.formContainer}>
-          <ComponentWrapper title="Your New Vehicle Information">
-            <div className={styles.content}>
-              {/* Instruction Box */}
-              <div className={styles.instructionBox}>
-                <div className={styles.instructionIcon}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="#5a6b7d" strokeWidth="2"/>
-                    <path d="M12 16V12M12 8H12.01" stroke="#5a6b7d" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <div className={styles.instructionContent}>
-                  <p className={styles.instructionText}>We can only show you quotes for cars registered in the UK.</p>
-                </div>
-              </div>
+        <div className={styles.container}>
+          <div className={styles.stepTitle}>
+            <h2 className={styles.stepTitleText}>Car details - Your car</h2>
+          </div>
+          <div className={styles.header}>
+            <h1 className={styles.mainQuestion}>What's your car's registration?</h1>
+            <p className={styles.subText}>We can only show you quotes for cars registered in the UK.</p>
+          </div>
 
-              {/* Vehicle Registration Section */}
-              <div className={styles.section}>
-                <div className={styles.sectionHeader}>
-                  <h3 className={styles.sectionTitle}>What's your car's registration?</h3>
-                </div>
-                <div className={styles.registrationSection}>
-                  {!showFoundData ? (
-                    <div className={styles.registrationInputWrapper}>
-                      <div className={styles.inputContainer}>
-                        <RegistrationInput
-                          label="Registration Number"
-                          value={watch("vehicleDetails.registrationNumber")}
-                          onChange={(e) => {
-                            const formattedValue = e.target.value.toUpperCase();
-                            setValue("vehicleDetails.registrationNumber", formattedValue, {
-                              shouldValidate: false,
-                              shouldDirty: true,
-                              shouldTouch: true,
-                            });
-                          }}
-                          onButtonClick={handleFindVehicle}
-                          disabled={showFoundData || isLoadingVehicleData}
-                          isLoading={isLoadingVehicleData}
-                          error={errors.vehicleDetails?.registrationNumber?.message}
-                          placeholder="Enter car registration..."
-                          buttonText="Find my car"
-                        />
-                      </div>
-                      <div className={styles.dividerWithText}>
-                        <span className={styles.dividerText}>OR</span>
-                      </div>
-                      <Button
-                        type="button"
-                        className={styles.manualEntryBtn}
-                        onClick={toggleVehicleDetails}
-                        appearance="default"
-                      >
-                        <span className={styles.manualEntryIcon}>✎</span>
-                        <span className={styles.manualEntryText}>Enter make and model</span>
-                      </Button>
-                    </div>
-                  ) : (
-                    <>
-                      <div className={styles.vehicleDataDisplay}>
-                        <p className={styles.vehicleDataRow}>
-                          {foundVehicleData.make} {foundVehicleData.model} ({foundVehicleData.yearOfManufacture})
-                        </p>
-                        <p className={styles.vehicleDataRow}>
-                          {foundVehicleData.registrationNumber}
-                        </p>
-                      </div>
-                      <Button
-                        type="button"
-                        className={styles.changeVehicleBtn}
-                        onClick={handleChangeVehicle}
-                        appearance="default"
-                      >
-                        Change Vehicle
-                      </Button>
-                    </>
-                  )}
+          {!showManualEntry && (
+            <>
+              <div className={styles.inputSection}>
+                <div className={styles.regInputWrapper}>
+                  <RegistrationInput
+                    label="Registration Number"
+                    value={registrationNumber}
+                    onChange={(e) => {
+                      const formatted = e.target.value.toUpperCase();
+                      setValue("vehicleDetails.registrationNumber", formatted, {
+                        shouldValidate: false,
+                        shouldDirty: true,
+                      });
+                      if (errors.vehicleDetails?.registrationNumber) {
+                        clearErrors("vehicleDetails.registrationNumber");
+                      }
+                    }}
+                    onKeyPress={handleKeyPress}
+                    onButtonClick={handleFindVehicle}
+                    disabled={isLoadingVehicle}
+                    isLoading={isLoadingVehicle}
+                    error={errors.vehicleDetails?.registrationNumber?.message}
+                  />
                 </div>
               </div>
 
-              {/* Manual Vehicle Entry Section Header */}
-              {showVehicleDetails && !foundVehicleData && (
-                <div className={styles.section}>
-                  <div className={styles.sectionHeader}>
-                    <h3 className={styles.sectionTitle}>Enter Vehicle Details</h3>
-                    <p className={styles.sectionDescription}>Back to registration lookup</p>
-                  </div>
-                </div>
-              )}
-
-              {/* Manual Vehicle Entry */}
-              <div
-                className={`${styles.vehicleDetailsContainer} ${
-                  showVehicleDetails && !foundVehicleData ? styles.vehicleDetailsVisible : styles.vehicleDetailsHidden
-                }`}
-              >
-                <div className={styles.rows}>
-                  {/* Instruction */}
-                  {showVehicleDetails && !foundVehicleData && (
-                    <div className={replaceStyles.progressiveInstruction}>
-                      Please complete each field in order to unlock the next selection.
-                    </div>
-                  )}
-
-                  {/* Vehicle Type and Make Row */}
-                  {!foundVehicleData && (
-                    <div className={styles.cleanFormGrid2Col}>
-                      <Dropdown
-                        label="Vehicle Type"
-                        selected={watch("vehicleDetails.type") || ""}
-                        options={["Car", "Motorcycle", "Truck", "Bus"]}
-                        setSelected={(value) => handleDropdownChange("type", value)}
-                        placeholder="Select vehicle type"
-                      />
-                      {selectedType && (
-                        <Dropdown
-                          label="Make"
-                          selected={state.values.make || selectedMake || ""}
-                          options={state.makes}
-                          setSelected={(value) => handleDropdownChange("make", value)}
-                          placeholder="Select make"
-                        />
-                      )}
-                    </div>
-                  )}
-
-                  {/* Model and Year Row */}
-                  {selectedMake && !foundVehicleData && (
-                    <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                      <div className={styles.rsuiteFormGroup}>
-                        <label className={styles.label}>Model</label>
-                        <SelectPicker
-                          key={`model-${forceUpdate}`}
-                          data={state.options.models.map((option) => ({ label: option, value: option }))}
-                          placeholder="Select model"
-                          disabled={!selectedMake || state.options.models.length === 0}
-                          value={state.values.model || selectedModel || null}
-                          onChange={(value) => handleDropdownChange("model", value || "")}
-                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.model ? styles.error : ""}`}
-                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                        />
-                      </div>
-                      <div className={styles.rsuiteFormGroup}>
-                        <label className={styles.label}>Year</label>
-                        <SelectPicker
-                          key={`year-${forceUpdate}`}
-                          data={state.options.years.map((option) => ({ label: option, value: option }))}
-                          placeholder="Select year"
-                          disabled={!selectedMake || state.options.years.length === 0}
-                          value={state.values.year || selectedYear || null}
-                          onChange={(value) => handleDropdownChange("year", value || "")}
-                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.year ? styles.error : ""}`}
-                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Doors and Fuel Type Row */}
-                  {selectedYear && !foundVehicleData && (
-                    <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                      <div className={styles.rsuiteFormGroup}>
-                        <label className={styles.label}>Doors</label>
-                        <SelectPicker
-                          key={`doors-${forceUpdate}`}
-                          data={state.options.doors.map((option) => ({ label: option, value: option }))}
-                          placeholder="Select doors"
-                          disabled={!selectedYear || state.options.doors.length === 0}
-                          value={state.values.doors || selectedDoors || null}
-                          onChange={(value) => handleDropdownChange("doors", value || "")}
-                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.doors ? styles.error : ""}`}
-                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                        />
-                      </div>
-                      <div className={styles.rsuiteFormGroup}>
-                        <label className={styles.label}>Fuel Type</label>
-                        <SelectPicker
-                          key={`fuel-${forceUpdate}`}
-                          data={state.options.fuels.map((option) => ({ label: option, value: option }))}
-                          placeholder="Select fuel type"
-                          disabled={!selectedYear || state.options.fuels.length === 0}
-                          value={state.values.fuel || selectedFuel || null}
-                          onChange={(value) => handleDropdownChange("fuel", value || "")}
-                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.fuel ? styles.error : ""}`}
-                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Transmission and Colour Row */}
-                  {selectedFuel && !foundVehicleData && (
-                    <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
-                      <div className={styles.rsuiteFormGroup}>
-                        <label className={styles.label}>Transmission</label>
-                        <SelectPicker
-                          key={`transmission-${forceUpdate}`}
-                          data={state.options.transmissions.map((option) => ({ label: option, value: option }))}
-                          placeholder="Select transmission"
-                          disabled={!selectedFuel || state.options.transmissions.length === 0}
-                          value={state.values.transmission || watch("vehicleDetails.transmission") || null}
-                          onChange={(value) => handleDropdownChange("transmission", value || "")}
-                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.transmission ? styles.error : ""}`}
-                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                        />
-                      </div>
-                      <div className={styles.rsuiteFormGroup}>
-                        <label className={styles.label}>Colour</label>
-                        <SelectPicker
-                          data={carColors.map((option) => ({ label: option, value: option }))}
-                          placeholder="Select colour"
-                          value={watch("vehicleDetails.colour") || null}
-                          onChange={(value) => handleDropdownChange("colour", value || "")}
-                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.colour ? styles.error : ""}`}
-                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
+              <div className={styles.alternativeOption}>
+                <p className={styles.dividerText}>Or</p>
+                <button
+                  type="button"
+                  className={styles.manualEntryBtn}
+                  onClick={() => setShowManualEntry(true)}
+                >
+                  Enter make and model
+                </button>
               </div>
+            </>
+          )}
 
-              {/* Safety & Security Features Section */}
-              <div className={styles.section}>
-                <div className={styles.sectionHeader}>
-                  <h3 className={styles.sectionTitle}>Safety & Security Features</h3>
-                  <p className={styles.sectionDescription}>Tell us about your vehicle's safety and security features</p>
+          {showManualEntry && (
+            <div className={styles.manualEntrySection}>
+              <div className={styles.manualEntryHeader}>
+                <h3 className={styles.manualEntryTitle}>Enter Vehicle Details</h3>
+                <button
+                  type="button"
+                  className={styles.backToRegBtn}
+                  onClick={() => setShowManualEntry(false)}
+                >
+                  Back to registration lookup
+                </button>
+              </div>
+              <p className={styles.manualEntryHelper}>
+                Please complete each field in order to unlock the next selection.
+              </p>
+
+              <div className={styles.manualEntryForm}>
+                <div className={styles.formRow}>
+                  <Dropdown
+                    label="Vehicle Type"
+                    selected={selectedType || ""}
+                    options={["Car", "Motorcycle", "Van"]}
+                    setSelected={(value) => handleDropdownChange("type", value)}
+                    placeholder="Select vehicle type"
+                    disabled={false}
+                  />
+                  <Dropdown
+                    label="Make"
+                    selected={selectedMake || ""}
+                    options={state.makes}
+                    setSelected={(value) => handleDropdownChange("make", value)}
+                    placeholder="Select make"
+                    disabled={!selectedType || loadingStates.make}
+                    isLoading={loadingStates.make}
+                    showSearch={true}
+                  />
                 </div>
-                <div className={styles.additionalDetailsSection}>
-                  <div className={styles.cleanFormGrid2Col}>
-                    <div className={styles.rsuiteFormGroup}>
-                      <label className={styles.label}>Alarm / Immobiliser</label>
-                      <SelectPicker
-                        data={alarmImmobiliserOptions.map((option) => ({ label: option, value: option }))}
-                        placeholder="Please select"
-                        value={watch("vehicleDetails.alarmImmobiliser") || null}
-                        onChange={(value) => setValue("vehicleDetails.alarmImmobiliser", value || "")}
-                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.alarmImmobiliser ? styles.error : ""}`}
-                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                      />
-                      {errors.vehicleDetails?.alarmImmobiliser && (
-                        <span className={styles.errorMessage}>{errors.vehicleDetails.alarmImmobiliser.message}</span>
-                      )}
-                    </div>
-                    <div className={styles.rsuiteFormGroup}>
-                      <label className={styles.label}>Tracking device</label>
-                      <SelectPicker
-                        data={trackingDeviceOptions.map((option) => ({ label: option, value: option }))}
-                        placeholder="Please select"
-                        value={watch("vehicleDetails.trackingDevice") || null}
-                        onChange={(value) => setValue("vehicleDetails.trackingDevice", value || "")}
-                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.trackingDevice ? styles.error : ""}`}
-                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                      />
-                      {errors.vehicleDetails?.trackingDevice && (
-                        <span className={styles.errorMessage}>{errors.vehicleDetails.trackingDevice.message}</span>
-                      )}
-                    </div>
-                  </div>
 
-                  <div className={styles.cleanFormGrid2Col}>
-                    <div className={styles.rsuiteFormGroup}>
-                      <label className={styles.label}>Imported vehicle</label>
-                      <SelectPicker
-                        data={yesNoOptions.map((option) => ({ label: option, value: option }))}
-                        placeholder="Please select"
-                        value={watch("vehicleDetails.importedVehicle") || null}
-                        onChange={(value) => setValue("vehicleDetails.importedVehicle", value || "")}
-                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.importedVehicle ? styles.error : ""}`}
-                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                      />
-                      {errors.vehicleDetails?.importedVehicle && (
-                        <span className={styles.errorMessage}>{errors.vehicleDetails.importedVehicle.message}</span>
-                      )}
-                    </div>
-                    <div className={styles.rsuiteFormGroup}>
-                      <label className={styles.label}>Car hand drive</label>
-                      <SelectPicker
-                        data={["Left Hand", "Right Hand"].map((option) => ({ label: option, value: option }))}
-                        placeholder="Please select"
-                        value={watch("vehicleDetails.driverSide") || null}
-                        onChange={(value) => setValue("vehicleDetails.driverSide", value || "")}
-                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.driverSide ? styles.error : ""}`}
-                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                      />
-                      {errors.vehicleDetails?.driverSide && (
-                        <span className={styles.errorMessage}>{errors.vehicleDetails.driverSide.message}</span>
-                      )}
-                    </div>
-                  </div>
+                <div className={styles.formRow}>
+                  <Dropdown
+                    label="Model"
+                    selected={selectedModel || ""}
+                    options={state.options.models}
+                    setSelected={(value) => handleDropdownChange("model", value)}
+                    placeholder="Select model"
+                    disabled={!selectedMake || loadingStates.model}
+                    isLoading={loadingStates.model}
+                    showSearch={true}
+                  />
+                  <Dropdown
+                    label="Year"
+                    selected={selectedYear || ""}
+                    options={state.options.years}
+                    setSelected={(value) => handleDropdownChange("year", value)}
+                    placeholder="Select year"
+                    disabled={!selectedModel || loadingStates.year}
+                    isLoading={loadingStates.year}
+                    showSearch={true}
+                  />
+                </div>
 
-                  <div className={styles.cleanFormGrid2Col}>
-                    <div className={styles.rsuiteFormGroup}>
-                      <label className={styles.label}>Number of seats</label>
-                      <SelectPicker
-                        data={["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((option) => ({ label: option, value: option }))}
-                        placeholder="Please select"
-                        value={watch("vehicleDetails.seats") || null}
-                        onChange={(value) => setValue("vehicleDetails.seats", value || "")}
-                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.seats ? styles.error : ""}`}
-                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                      />
-                      {errors.vehicleDetails?.seats && (
-                        <span className={styles.errorMessage}>{errors.vehicleDetails.seats.message}</span>
-                      )}
-                    </div>
-                  </div>
+                <div className={styles.formRow}>
+                  <Dropdown
+                    label="Doors"
+                    selected={selectedDoors || ""}
+                    options={state.options.doors}
+                    setSelected={(value) => handleDropdownChange("doors", value)}
+                    placeholder="Select doors"
+                    disabled={!selectedYear || loadingStates.doors}
+                    isLoading={loadingStates.doors}
+                  />
+                  <Dropdown
+                    label="Fuel Type"
+                    selected={selectedFuel || ""}
+                    options={state.options.fuels}
+                    setSelected={(value) => handleDropdownChange("fuel", value)}
+                    placeholder="Select fuel type"
+                    disabled={!selectedDoors || loadingStates.fuel}
+                    isLoading={loadingStates.fuel}
+                  />
+                </div>
 
-                  <div className={styles.cleanFormGrid2Col}>
-                    <div className={styles.rsuiteFormGroup}>
-                      <label className={styles.label}>Has your vehicle been modified?</label>
-                      <SelectPicker
-                        data={yesNoOptions.map((option) => ({ label: option, value: option }))}
-                        placeholder="Please select"
-                        value={watch("vehicleDetails.vehicleModified") || null}
-                        onChange={(value) => setValue("vehicleDetails.vehicleModified", value || "")}
-                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.vehicleModified ? styles.error : ""}`}
-                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
-                      />
-                      {errors.vehicleDetails?.vehicleModified && (
-                        <span className={styles.errorMessage}>{errors.vehicleDetails.vehicleModified.message}</span>
-                      )}
-                    </div>
-                  </div>
-
-                  {vehicleModified === "Yes" && (
-                    <div className={styles.rsuiteFormGroup}>
-                      <p className={replaceStyles.modificationInfo}>
-                        Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car. <a href="#" onClick={(e) => { e.preventDefault(); setShowModificationsModal(true); }}>How can I find out if my car's been modified?</a>
-                      </p>
-                      <Button
-                        type="button"
-                        className={styles.editModificationsBtn}
-                        onClick={() => setShowModificationsModal(true)}
-                        appearance="default"
-                      >
-                        Select modifications
-                      </Button>
-                      {vehicleModifications.length > 0 && (
-                        <div className={styles.modificationsTagsList}>
-                          {vehicleModifications.map((modification) => (
-                            <span key={modification} className={styles.modificationTag}>
-                              {modification}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
+                <div className={styles.formRow}>
+                  <Dropdown
+                    label="Transmission"
+                    selected={watch("vehicleDetails.transmission") || ""}
+                    options={state.options.transmissions}
+                    setSelected={(value) => handleDropdownChange("transmission", value)}
+                    placeholder="Select transmission"
+                    disabled={!selectedFuel || loadingStates.transmission}
+                    isLoading={loadingStates.transmission}
+                  />
+                  <Dropdown
+                    label="Colour"
+                    selected={watch("vehicleDetails.colour") || ""}
+                    options={carColors}
+                    setSelected={(value) => handleDropdownChange("colour", value)}
+                    placeholder="Select colour"
+                    disabled={!watch("vehicleDetails.transmission") || loadingStates.colour}
+                    isLoading={loadingStates.colour}
+                    showSearch={true}
+                  />
                 </div>
               </div>
             </div>
-          </ComponentWrapper>
+          )}
 
-          {/* Action Buttons */}
-          <div className={replaceStyles.actionButtons}>
-            <button
-              type="button"
-              onClick={() => router.back()}
-              className={replaceStyles.cancelBtn}
-              disabled={isSubmitting}
-            >
-              Back
-            </button>
-            <button
-              type="submit"
-              className={replaceStyles.saveBtn}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Replacing..." : "Replace Vehicle"}
-            </button>
+          <div className={styles.infoBox}>
+            <div className={styles.infoIcon}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18Z" fill="#0388ff"/>
+                <path d="M10 4C7.79 4 6 5.79 6 8H8C8 6.9 8.9 6 10 6C11.1 6 12 6.9 12 8C12 10 9 9.75 9 13H11C11 10.75 14 10.5 14 8C14 5.79 12.21 4 10 4Z" fill="#0388ff"/>
+                <circle cx="10" cy="16" r="1" fill="#0388ff"/>
+              </svg>
+            </div>
+            <div className={styles.infoContent}>
+              <h4 className={styles.infoTitle}>Honesty's the best policy</h4>
+              <p className={styles.infoText}>
+                It's important you answer all questions honestly. Take care that the information you disclose throughout 
+                the quote is accurate and complete to the best of your knowledge. If you don't do this, your insurance 
+                provider could increase your premium, cancel your policy, treat it as if it never existed, refuse a 
+                claim or not pay the claim in full.
+              </p>
+            </div>
           </div>
-        </form>
+        </div>
+
+        <VehicleModificationsModal
+          isOpen={showModificationsModal}
+          onClose={() => setShowModificationsModal(false)}
+          onConfirm={handleModificationsConfirm}
+          selectedModifications={vehicleModifications}
+        />
       </div>
     </div>
   );
