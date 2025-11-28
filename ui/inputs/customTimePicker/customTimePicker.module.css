@@ -1,44 +1,43 @@
 .timePicker {
-  background: #0f1419;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  background: #1a1f2e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
   padding: 0;
   width: 100%;
-  max-width: 30rem;
+  max-width: 24rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
   z-index: 99999;
   box-sizing: border-box;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .timePicker.slideUp {
-  animation: slideUp 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideUp 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header {
-  padding: 1.6rem 1.6rem 1.2rem;
+  padding: 1.2rem 1.4rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .title {
   margin: 0;
   color: #ffffff;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
 }
 
 .timeColumns {
   display: flex;
   align-items: flex-start;
   gap: 0;
-  padding: 1.2rem 0.8rem;
-  min-height: 28rem;
-  max-height: 40vh;
+  padding: 0.8rem 0.6rem;
+  min-height: 22rem;
+  max-height: 32vh;
 }
 
 .column {
@@ -51,28 +50,28 @@
 .columnHeader {
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
-  padding: 0.8rem 0;
+  padding: 0.6rem 0;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
 }
 
 .scrollContainer {
   overflow-y: auto;
   scroll-behavior: smooth;
-  padding: 0.4rem;
+  padding: 0.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  max-height: 30rem;
+  max-height: 24rem;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
 
 .scrollContainer::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .scrollContainer::-webkit-scrollbar-track {
@@ -80,38 +79,38 @@
 }
 
 .scrollContainer::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
 }
 
 .scrollContainer::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .timeOption {
-  padding: 1rem 0.8rem;
+  padding: 0.8rem 0.6rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   background: transparent;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.12s ease;
   text-align: center;
   width: 100%;
   box-sizing: border-box;
 }
 
 .timeOption:hover {
-  background: rgba(3, 136, 255, 0.1);
+  background: rgba(3, 136, 255, 0.08);
   color: #ffffff;
 }
 
 .timeOptionSelected {
   background: #0388ff;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .timeOptionSelected:hover {
@@ -120,52 +119,52 @@
 
 .separator {
   color: rgba(255, 255, 255, 0.3);
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.4rem;
-  margin-top: 3.2rem;
+  padding: 0 0.3rem;
+  margin-top: 2.8rem;
   flex-shrink: 0;
 }
 
 .footer {
   display: flex;
-  gap: 1.2rem;
-  padding: 1.2rem 1.6rem 1.6rem;
+  gap: 1rem;
+  padding: 1rem 1.4rem 1.2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nowButton {
   flex: 1;
-  padding: 1rem 1.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
   background: transparent;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s ease;
 }
 
 .nowButton:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .okButton {
   flex: 1;
-  padding: 1rem 1.6rem;
+  padding: 0.8rem 1.2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   background: #0388ff;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s ease;
 }
 
 .okButton:hover {
@@ -179,7 +178,7 @@
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
   to {
     opacity: 1;
@@ -190,7 +189,7 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -200,78 +199,78 @@
 
 @media screen and (max-width: 900px) {
   .timePicker {
-    max-width: min(90vw, 32rem);
+    max-width: min(90vw, 26rem);
     width: 90vw;
   }
 
   .timeColumns {
-    min-height: 26rem;
+    min-height: 20rem;
   }
 
   .scrollContainer {
-    max-height: 28rem;
+    max-height: 22rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .timePicker {
-    max-width: min(92vw, 30rem);
+    max-width: min(92vw, 24rem);
     width: 92vw;
   }
 
   .header {
-    padding: 1.4rem;
+    padding: 1rem 1.2rem 0.8rem;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .timeColumns {
-    padding: 1rem 0.6rem;
-    min-height: 24rem;
+    padding: 0.8rem 0.5rem;
+    min-height: 18rem;
   }
 
   .columnHeader {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .timeOption {
-    padding: 1.2rem 0.6rem;
-    font-size: 1.6rem;
+    padding: 1rem 0.5rem;
+    font-size: 1.4rem;
   }
 
   .scrollContainer {
-    max-height: 26rem;
+    max-height: 20rem;
   }
 
   .footer {
-    padding: 1.4rem;
+    padding: 1rem 1.2rem;
   }
 
   .nowButton,
   .okButton {
-    padding: 1.2rem 1.8rem;
-    font-size: 1.4rem;
+    padding: 1rem 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
 @media screen and (max-width: 400px) {
   .timePicker {
-    max-width: min(95vw, 28rem);
+    max-width: min(95vw, 22rem);
     width: 95vw;
   }
 
   .timeColumns {
-    min-height: 22rem;
+    min-height: 16rem;
   }
 
   .timeOption {
-    padding: 1rem 0.4rem;
-    font-size: 1.4rem;
+    padding: 0.8rem 0.4rem;
+    font-size: 1.2rem;
   }
 
   .scrollContainer {
-    max-height: 24rem;
+    max-height: 18rem;
   }
 }

@@ -356,19 +356,6 @@ const FormDateInput = forwardRef(
           </div>
 
           {!isMobile && showDatePicker && (
-            <div
-              style={{
-                position: 'fixed',
-                inset: 0,
-                background: 'rgba(0, 0, 0, 0.55)',
-                zIndex: 99998,
-                backdropFilter: 'blur(4px)',
-                pointerEvents: 'auto'
-              }}
-              onClick={closeDatePicker}
-            />
-          )}
-          {!isMobile && showDatePicker && (
             <div ref={datePickerRef} style={{
               position: pickerPosition.isAbsolute ? 'absolute' : 'fixed',
               top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
@@ -460,19 +447,6 @@ const FormDateInput = forwardRef(
             )}
           </div>
 
-          {!isMobile && showTimePicker && (
-            <div
-              style={{
-                position: 'fixed',
-                inset: 0,
-                background: 'rgba(0, 0, 0, 0.55)',
-                zIndex: 99998,
-                backdropFilter: 'blur(4px)',
-                pointerEvents: 'auto'
-              }}
-              onClick={closeTimePicker}
-            />
-          )}
           {!isMobile && showTimePicker && (
             <div ref={timePickerRef} style={{
               position: pickerPosition.isAbsolute ? 'absolute' : 'fixed',
