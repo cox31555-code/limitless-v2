@@ -1,17 +1,163 @@
 .container {
-  max-width: 800px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 0;
+  padding: 0;
+  max-width: 100%;
+  margin: 0.0875rem 0 1.75rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.3rem;
+  padding: 0 5% 14px;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.breadcrumbItem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.55rem;
+  color: #ccc;
+  margin: 0 0.4rem;
+  flex-shrink: 0;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  margin-bottom: 6.5rem;
+  padding: 7.8rem calc(50vw - 50%) 7.8rem;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroBackground {
+  position: absolute;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 399px;
+  opacity: 0.3;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  gap: 3.9rem;
+}
+
+.greetingArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.82rem;
+  flex: 1;
+}
+
+.greetingTitle {
+  font-size: 5.46rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.greetingSubtitle {
+  font-size: 1.82rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 550px;
+}
+
+.badgeArea {
+  flex-shrink: 0;
+}
+
+.allianzBadge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 1.3rem 2.6rem;
+  font-size: 1.56rem;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-block;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
 }
 
 /* Notice Banner */
 .noticeBanner {
   display: flex;
   align-items: flex-start;
-  gap: 1.2rem;
-  padding: 1.6rem 2rem;
+  gap: 1.6rem;
+  padding: 2rem 2.4rem;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
   border-radius: 12px;
@@ -27,7 +173,7 @@
 }
 
 .noticeText {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 1.6;
   margin: 0;
   color: #1e3a8a;
@@ -235,13 +381,59 @@
 }
 
 /* Tablet */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
+  .breadcrumb {
+    gap: 1rem;
+    padding: 0 4% 12px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
+  }
+
+  .heroSection {
+    padding: 6rem calc(50vw - 50%) 6rem;
+    margin-bottom: 5rem;
+  }
+
+  .heroBackground {
+    width: 320px;
+    height: 320px;
+    right: 10%;
+  }
+
+  .heroContent {
+    gap: 3rem;
+  }
+
+  .greetingTitle {
+    font-size: 4.5rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.6rem;
+  }
+
+  .allianzBadge {
+    font-size: 1.4rem;
+    padding: 1.1rem 2.2rem;
+  }
+
+  .contentWrapper {
+    padding: 0 4%;
+    gap: 2.8rem;
+  }
+
   .section {
-    padding: 2.4rem;
+    padding: 2.8rem;
   }
 
   .sectionHeader {
-    gap: 1.2rem;
+    gap: 1.4rem;
     margin-bottom: 2rem;
   }
 
@@ -251,7 +443,90 @@
   }
 
   .sectionTitle {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) {
+  .breadcrumb {
+    gap: 0.8rem;
+    padding: 0 4% 10px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.2rem;
+  }
+
+  .heroSection {
+    padding: 4.5rem calc(50vw - 50%) 4.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .heroBackground {
+    width: 260px;
+    height: 260px;
+    right: 5%;
+    opacity: 0.2;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
+  }
+
+  .greetingTitle {
+    font-size: 3.6rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.5rem;
+  }
+
+  .allianzBadge {
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+  }
+
+  .contentWrapper {
+    gap: 2.4rem;
+  }
+
+  .section {
+    padding: 2.4rem;
+  }
+
+  .sectionHeader {
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .sectionIcon {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .sectionTitle {
     font-size: 2rem;
+  }
+
+  .noticeBanner {
+    padding: 1.6rem 1.8rem;
+    gap: 1.2rem;
+  }
+
+  .noticeIcon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .noticeText {
+    font-size: 1.5rem;
   }
 
   .paymentDay,
@@ -267,24 +542,47 @@
   }
 }
 
-/* Mobile */
+/* Small Mobile */
 @media screen and (max-width: 600px) {
-  .container {
+  .breadcrumb {
+    gap: 0.6rem;
+    padding: 0 4% 8px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.1rem;
+  }
+
+  .heroSection {
+    padding: 3.5rem calc(50vw - 50%) 3.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .heroBackground {
+    width: 200px;
+    height: 200px;
+    right: -5%;
+  }
+
+  .greetingTitle {
+    font-size: 2.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.35rem;
+  }
+
+  .allianzBadge {
+    font-size: 1.2rem;
+    padding: 0.9rem 1.8rem;
+  }
+
+  .contentWrapper {
     gap: 2rem;
-  }
-
-  .noticeBanner {
-    padding: 1.4rem 1.6rem;
-    gap: 1rem;
-  }
-
-  .noticeIcon {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .noticeText {
-    font-size: 1.4rem;
   }
 
   .section {
@@ -303,6 +601,20 @@
 
   .sectionTitle {
     font-size: 1.8rem;
+  }
+
+  .noticeBanner {
+    padding: 1.4rem 1.6rem;
+    gap: 1rem;
+  }
+
+  .noticeIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .noticeText {
+    font-size: 1.4rem;
   }
 
   .paymentDay,
@@ -335,6 +647,14 @@
 @media screen and (max-width: 400px) {
   .section {
     padding: 1.6rem;
+  }
+
+  .greetingTitle {
+    font-size: 2.4rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.25rem;
   }
 
   .sectionTitle {
