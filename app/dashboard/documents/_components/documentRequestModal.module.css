@@ -24,11 +24,11 @@
 
 .modal {
   background: #ffffff;
-  border-radius: 16px;
-  max-width: 500px;
+  border-radius: 12px;
+  max-width: 450px;
   width: 100%;
-  padding: 3rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 2.4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   animation: slideUp 0.3s ease-out;
   text-align: center;
 }
@@ -113,8 +113,8 @@
   }
 
   .modal {
-    padding: 2.6rem;
-    border-radius: 14px;
+    padding: 2.2rem;
+    border-radius: 12px;
   }
 
   .successIcon {
@@ -151,7 +151,7 @@
   }
 
   .modal {
-    padding: 2.4rem;
+    padding: 2rem;
     border-radius: 12px;
   }
 
