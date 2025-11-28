@@ -6,6 +6,7 @@ import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ClientLayout from "./clientLayout";
 import { InsuranceModalProvider } from "@/contexts/InsuranceModalContext";
+import { LoadingProvider } from "@/contexts/LoadingContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,8 +23,10 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <AuthProvider>
           <InsuranceModalProvider>
-            <ClientLayout>{children}</ClientLayout>
-            <Footer />
+            <LoadingProvider>
+              <ClientLayout>{children}</ClientLayout>
+              <Footer />
+            </LoadingProvider>
           </InsuranceModalProvider>
         </AuthProvider>
       </body>
