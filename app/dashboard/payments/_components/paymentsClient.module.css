@@ -342,8 +342,6 @@
   border: 1.5px solid #d1d5db;
   border-radius: 12px;
   overflow: hidden;
-  max-height: 400px;
-  overflow-y: auto;
   box-shadow: 0 1px 4px rgba(0, 8, 34, 0.02);
 }
 
