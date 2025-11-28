@@ -2,14 +2,16 @@
 import React, { useState, useEffect } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
-import Link from "next/link";
+import LoadingLink from "@/ui/loadingSpinner/LoadingLink";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const Header = ({ page }) => {
   const { user } = useAuth();
   const pathname = usePathname();
   const router = useRouter();
+  const { showLoading } = useLoading();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -64,12 +66,14 @@ const Header = ({ page }) => {
   const activePage = getActivePage();
 
   const handleLogout = async () => {
+    showLoading();
     await user?.logout?.();
     router.push("/login");
     setIsMenuOpen(false);
   };
 
   const handleNavigate = (path) => {
+    showLoading();
     router.push(path);
     setIsMenuOpen(false);
   };
@@ -93,13 +97,13 @@ const Header = ({ page }) => {
         <div className={styles.desktopNav}>
           <nav className={styles.navItems}>
             {navItems.map((item) => (
-              <Link
+              <LoadingLink
                 key={item.id}
                 href={item.href}
                 className={`${styles.navItem} ${activePage === item.id ? styles.active : ""}`}
               >
                 {item.label}
-              </Link>
+              </LoadingLink>
             ))}
             <div
               style={{
