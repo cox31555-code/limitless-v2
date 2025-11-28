@@ -836,6 +836,22 @@
     width: 1.6rem;
     height: 1.6rem;
   }
+
+  .benefitText {
+    font-size: 1.3rem;
+  }
+
+  .optOutTitle {
+    font-size: 1.4rem;
+  }
+
+  .optOutToggle {
+    font-size: 1.3rem;
+  }
+
+  .autoRenewalText {
+    font-size: 1.2rem;
+  }
 }
 
 /* Small Mobile */
@@ -958,6 +974,36 @@
   .viewInstalmentsIcon {
     width: 1.6rem;
     height: 1.6rem;
+  }
+
+  .benefitText {
+    font-size: 1.3rem;
+  }
+
+  .checkIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .optOutTitle {
+    font-size: 1.3rem;
+  }
+
+  .optOutToggle {
+    font-size: 1.3rem;
+  }
+
+  .optOutContent {
+    padding: 1.4rem;
+  }
+
+  .autoRenewalCheckbox {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .autoRenewalText {
+    font-size: 1.2rem;
   }
 
   .scheduleItem {
