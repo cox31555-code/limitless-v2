@@ -426,26 +426,26 @@
   }
 
   .contentWrapper {
-    padding: 2.5rem 5%;
-    gap: 2.8rem;
+    padding: 4rem 3%;
+    gap: 3.6rem;
   }
 
   .section {
     padding: 2.8rem;
+    gap: 2.2rem;
   }
 
   .sectionHeader {
-    gap: 1.4rem;
-    margin-bottom: 2rem;
+    gap: 1.2rem;
   }
 
   .sectionIcon {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .sectionTitle {
-    font-size: 2.2rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -508,26 +508,26 @@
   }
 
   .contentWrapper {
-    padding: 2.5rem 5%;
-    gap: 2.4rem;
+    padding: 3.5rem 3%;
+    gap: 3.2rem;
   }
 
   .section {
-    padding: 2.4rem;
+    padding: 2.8rem;
+    gap: 2.2rem;
   }
 
   .sectionHeader {
     gap: 1.2rem;
-    margin-bottom: 1.8rem;
   }
 
   .sectionIcon {
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .noticeBanner {
@@ -595,26 +595,26 @@
   }
 
   .contentWrapper {
-    padding: 2rem 4%;
-    gap: 2rem;
+    padding: 2.8rem 4%;
+    gap: 2.6rem;
   }
 
   .section {
-    padding: 2rem;
+    padding: 2.2rem;
+    gap: 1.8rem;
   }
 
   .sectionHeader {
-    gap: 1rem;
-    margin-bottom: 1.6rem;
+    gap: 1.2rem;
   }
 
   .sectionIcon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.2rem;
+    height: 2.2rem;
   }
 
   .sectionTitle {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .noticeBanner {
