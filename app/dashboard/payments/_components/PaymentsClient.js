@@ -5,7 +5,6 @@ import styles from "./paymentsClient.module.css";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 
 export default function PaymentsClient({ plusJakartaSans }) {
-  const [consentChecked, setConsentChecked] = useState(false);
   const [scheduleExpanded, setScheduleExpanded] = useState(false);
   const [autoRenewal, setAutoRenewal] = useState(true);
   const [optOutExpanded, setOptOutExpanded] = useState(false);
@@ -116,35 +115,6 @@ export default function PaymentsClient({ plusJakartaSans }) {
           <div className={styles.sectionContent}>
             <p className={styles.paymentDay}>Every <strong>5th</strong> of the month</p>
             <button className={styles.changeButton}>Change day</button>
-          </div>
-        </div>
-
-        {/* Card Details Section */}
-        <div className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <svg className={styles.sectionIcon} viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="2"/>
-              <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" strokeWidth="2"/>
-            </svg>
-            <h2 className={styles.sectionTitle}>Card details</h2>
-          </div>
-          <div className={styles.sectionContent}>
-            <div className={styles.cardInfo}>
-              <p className={styles.cardNumber}>Visa ending in <strong>0320</strong></p>
-              <p className={styles.expiryDate}>Expiry date: <strong>Apr '29</strong></p>
-            </div>
-            <label className={styles.consentLabel}>
-              <input
-                type="checkbox"
-                checked={consentChecked}
-                onChange={(e) => setConsentChecked(e.target.checked)}
-                className={styles.checkbox}
-              />
-              <span className={styles.consentText}>
-                I consent to my card details being stored securely for any future policy changes I make.
-              </span>
-            </label>
-            <button className={styles.changeButton}>Change card</button>
           </div>
         </div>
 
