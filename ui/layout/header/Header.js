@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import SideNavbar from "@/ui/dashboard/layout/sideNavbar/SideNavbar";
 import InsuranceTypeModal from "@/ui/layout/insuranceTypeModal/InsuranceTypeModal";
 import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const IconComponent = ({ type }) => {
   switch (type) {
@@ -47,6 +48,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const { isInsuranceModalOpen, setIsInsuranceModalOpen } = useInsuranceModal();
+  const { showLoading } = useLoading();
 
   const [mounted, setMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -56,6 +58,11 @@ const Header = () => {
   const isDashboard = pathname.startsWith("/dashboard");
   const isGetQuotePage = pathname.includes("/get-quote");
   const isFAQPage = pathname === "/FAQ";
+
+  const navigate = (href) => {
+    showLoading();
+    router.push(href);
+  };
 
   const handleHelpClick = () => {
     setShowHelpModal(true);
