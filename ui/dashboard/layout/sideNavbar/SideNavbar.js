@@ -1,14 +1,16 @@
 "use client";
 import React from "react";
 import styles from "./sideNavbar.module.css";
-import Link from "next/link";
+import LoadingLink from "@/ui/loadingSpinner/LoadingLink";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
   const pathname = usePathname();
   const router = useRouter();
   const { logout } = useAuth();
+  const { showLoading } = useLoading();
   const page = pathname.split("/")[2];
 
   const DashboardIcon = () => (
@@ -99,6 +101,7 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
                 animationDelay: isOpen ? `${(index + 1) * 0.06}s` : "0s",
               }}
               onClick={async () => {
+                showLoading();
                 await logout();
                 router.push("/login");
               }}
@@ -112,7 +115,7 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
               </div>
             </button>
           ) : (
-            <Link
+            <LoadingLink
               className={`${styles.navItem} ${
                 item.href && page === item.href.split("/")[2]
                   ? styles.activeNavItem
@@ -131,7 +134,7 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
               <div className={styles.navItemContent}>
                 <span className={styles.navItemLabel}>{item.label}</span>
               </div>
-            </Link>
+            </LoadingLink>
           )
         )}
       </div>
