@@ -270,14 +270,20 @@ const PolicyDetailsReview = ({ policy }) => {
               <button
                 className={styles.primaryBtn}
                 aria-label="Edit vehicle details"
-                onClick={() => router.push(`/dashboard/policy/${policy._id}/edit-vehicle`)}
+                onClick={() => {
+                  showLoading();
+                  router.push(`/dashboard/policy/${policy._id}/edit-vehicle`);
+                }}
               >
                 Edit Vehicle
               </button>
               <button
                 className={styles.secondaryBtn}
                 aria-label="Replace this vehicle with another"
-                onClick={() => router.push(`/dashboard/policy/${policy._id}/replace-vehicle`)}
+                onClick={() => {
+                  showLoading();
+                  router.push(`/dashboard/policy/${policy._id}/replace-vehicle`);
+                }}
               >
                 Replace Vehicle
               </button>
@@ -606,7 +612,10 @@ const PolicyDetailsReview = ({ policy }) => {
                   <button
                     className={styles.secondaryBtn}
                     aria-label="Edit driver information"
-                    onClick={() => router.push(`/dashboard/policy/${policy._id}/edit-driver/${index}`)}
+                    onClick={() => {
+                      showLoading();
+                      router.push(`/dashboard/policy/${policy._id}/edit-driver/${index}`);
+                    }}
                   >
                     Edit Details
                   </button>
