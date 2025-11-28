@@ -1,64 +1,37 @@
 .calendar {
-  background: rgba(26, 31, 58, 1);
+  background: #0f1419;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 1.6rem;
+  padding: 0;
   width: 100%;
   max-width: 32rem;
-  overflow: visible;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0;
   position: relative;
   z-index: 99999;
   box-sizing: border-box;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@media screen and (min-width: 901px) {
-  .calendar {
-    animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .calendar {
-    max-width: min(90vw, 42rem);
-    width: 90vw;
-    padding: 1.6rem;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .calendar {
-    max-width: min(92vw, 40rem);
-    width: 92vw;
-    padding: 1.4rem;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .calendar {
-    max-width: min(95vw, 38rem);
-    width: 95vw;
-    padding: 1.2rem;
-    margin: 0 auto;
-  }
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .calendar.slideUp {
-  animation: slideUp 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: slideUp 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.4rem;
-  margin-bottom: 1.6rem;
+  padding: 1.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.monthYearDisplay {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .navButton {
@@ -71,85 +44,41 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #0388ff;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgba(255, 255, 255, 0.6);
   padding: 0;
-  flex-shrink: 0;
 }
 
 .navButton:hover {
-  background: rgba(3, 136, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
 }
 
-.navButtonPrev {
-  display: none;
-}
-
-.navButtonNext {
-  display: none;
-}
-
-.monthYearSelector {
-  display: flex;
-  gap: 0.8rem;
-  flex: 1;
-}
-
-.select {
-  flex: 1;
-  padding: 0.8rem 1.6rem 0.8rem 0.8rem;
-  border: 1px solid rgba(3, 136, 255, 0.2);
-  border-radius: 8px;
-  background: rgba(3, 136, 255, 0.05);
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
-}
-
-.select:hover {
-  border-color: rgba(3, 136, 255, 0.3);
-  background: rgba(3, 136, 255, 0.08);
-}
-
-.select:focus {
-  border-color: #0388ff;
-}
-
-.select option {
-  background: #1a1f3a;
-  color: #fff;
-  padding: 0.8rem;
-}
-
-.select option:checked {
-  background: #0388ff;
-  color: #fff;
+.navButton:active {
+  transform: scale(0.95);
 }
 
 .daysHeader {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.4rem;
-  margin-bottom: 1rem;
+  gap: 0;
+  padding: 1.2rem 1.6rem 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .dayName {
   text-align: center;
-  color: #7a8a9d;
+  color: rgba(255, 255, 255, 0.4);
   font-size: 1.2rem;
   font-weight: 600;
-  padding: 0.8rem 0;
-  letter-spacing: 0.1px;
+  padding: 0.4rem 0;
 }
 
 .daysGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 0.6rem;
-  width: 100%;
+  gap: 0.4rem;
+  padding: 1.2rem 1.6rem;
 }
 
 .day {
@@ -157,59 +86,80 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(3, 136, 255, 0.1);
+  border: none;
   border-radius: 8px;
-  background: rgba(3, 136, 255, 0.05);
-  color: #e0e8f0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0;
-  min-height: 3.8rem;
-  width: 100%;
-  max-width: 100%;
+  min-height: 3.6rem;
 }
 
-.day:hover:not(.disabled) {
-  border-color: rgba(3, 136, 255, 0.3);
-  background: rgba(3, 136, 255, 0.12);
-}
-
-.day.today {
-  border-color: #0388ff;
+.day:hover:not(.disabled):not(.selected) {
   background: rgba(3, 136, 255, 0.15);
-  color: #fff;
+  color: #ffffff;
+}
+
+.day.today:not(.selected) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .day.selected {
   background: #0388ff;
-  border-color: #0388ff;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
 }
 
 .day.selected:hover {
   background: #0270cc;
-  border-color: #0270cc;
 }
 
 .day.disabled {
-  opacity: 0.4;
+  opacity: 0.3;
   cursor: not-allowed;
-  background: rgba(0, 0, 0, 0.2);
-  border-color: rgba(3, 136, 255, 0.05);
-  color: #666;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .day.disabled:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: transparent;
+}
+
+.footer {
+  padding: 1.2rem 1.6rem 1.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.todayButton {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(3, 136, 255, 0.4);
+  border-radius: 8px;
+  background: rgba(3, 136, 255, 0.1);
+  color: #0388ff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.todayButton:hover {
+  background: rgba(3, 136, 255, 0.2);
+  border-color: rgba(3, 136, 255, 0.6);
+}
+
+.todayButton:active {
+  transform: scale(0.98);
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -220,148 +170,97 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes slideUpMobile {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleUp {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
   }
 }
 
 @media screen and (max-width: 900px) {
   .calendar {
-    border-radius: 16px;
-    max-width: calc(100% - 3.2rem);
-    width: 100%;
-    max-height: 90vh;
-    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .calendar.slideUp {
-    animation: scaleUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: min(90vw, 36rem);
+    width: 90vw;
   }
 }
 
 @media screen and (max-width: 600px) {
   .calendar {
-    padding: 1.6rem;
-    max-width: min(92vw, 42rem);
+    max-width: min(92vw, 34rem);
     width: 92vw;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
   }
 
   .header {
-    gap: 0.8rem;
-    margin-bottom: 1.4rem;
+    padding: 1.4rem;
   }
 
-  .monthYearSelector {
-    gap: 1rem;
+  .monthYearDisplay {
+    font-size: 1.6rem;
   }
 
   .navButton {
-    width: 3.8rem;
-    height: 3.8rem;
-    font-size: 1.8rem;
-    flex-shrink: 0;
-  }
-
-  .navButton:active {
-    background: rgba(3, 136, 255, 0.2);
-  }
-
-  .select {
-    font-size: 1.4rem;
-    padding: 1rem 1.2rem;
-    min-height: 4.6rem;
-  }
-
-  .select option {
-    padding: 1rem;
-    font-size: 1.4rem;
+    width: 3.6rem;
+    height: 3.6rem;
   }
 
   .daysHeader {
-    margin-bottom: 1.2rem;
-  }
-
-  .daysGrid {
-    gap: 0.8rem;
-    width: 100%;
-  }
-
-  .day {
-    font-size: 1.5rem;
-    min-height: 5.2rem;
-    font-weight: 600;
-    border-radius: 10px;
+    padding: 1rem 1.4rem 0.6rem;
   }
 
   .dayName {
     font-size: 1.3rem;
-    padding: 1rem 0;
-    font-weight: 600;
+  }
+
+  .daysGrid {
+    padding: 1rem 1.4rem;
+    gap: 0.6rem;
+  }
+
+  .day {
+    font-size: 1.5rem;
+    min-height: 4rem;
+  }
+
+  .footer {
+    padding: 1.4rem;
+  }
+
+  .todayButton {
+    padding: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 400px) {
   .calendar {
-    padding: 1.4rem;
+    max-width: min(95vw, 32rem);
+    width: 95vw;
+  }
+
+  .header {
+    padding: 1.2rem;
+  }
+
+  .monthYearDisplay {
+    font-size: 1.4rem;
   }
 
   .navButton {
-    width: 3.4rem;
-    height: 3.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
   }
 
-  .select {
-    font-size: 1.2rem;
-    padding: 0.8rem 1rem;
-    min-height: 4rem;
+  .daysGrid {
+    padding: 0.8rem 1.2rem;
   }
 
   .day {
-    font-size: 1.2rem;
-    min-height: 4rem;
+    font-size: 1.3rem;
+    min-height: 3.6rem;
   }
 
-  .dayName {
-    font-size: 1.1rem;
-    padding: 0.6rem 0;
-  }
-}
-
-@keyframes slideUpMobile {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .footer {
+    padding: 1.2rem;
   }
 }

@@ -37,16 +37,6 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
     );
   };
 
-  const handleYearChange = (e) => {
-    const year = parseInt(e.target.value);
-    setDisplayMonth(new Date(year, displayMonth.getMonth()));
-  };
-
-  const handleMonthChange = (e) => {
-    const month = parseInt(e.target.value);
-    setDisplayMonth(new Date(displayMonth.getFullYear(), month));
-  };
-
   const handleDateClick = (day) => {
     const selectedDateObj = new Date(
       displayMonth.getFullYear(),
@@ -59,6 +49,13 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
 
     setCurrentMonth(selectedDateObj);
     onDateSelect(selectedDateObj);
+  };
+
+  const handleTodayClick = () => {
+    const today = new Date();
+    setDisplayMonth(new Date(today));
+    setCurrentMonth(today);
+    onDateSelect(today);
   };
 
   const isDateDisabled = (day) => {
@@ -78,42 +75,6 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
       if (isBeforeToday) return true;
     }
 
-    return false;
-  };
-
-  const isMonthDisabled = (monthIndex) => {
-    const today = new Date();
-    const currentYear = today.getFullYear();
-    const currentMonth = today.getMonth();
-    const selectedYear = displayMonth.getFullYear();
-
-    // For date of birth (with maxDate), allow months until the maxDate
-    if (maxDate) {
-      const maxYear = maxDate.getFullYear();
-      const maxMonth = maxDate.getMonth();
-
-      if (selectedYear > maxYear) return true;
-      if (selectedYear === maxYear && monthIndex > maxMonth) return true;
-      return false;
-    }
-
-    // Default behavior for future dates
-    if (selectedYear < currentYear) return true;
-    if (selectedYear === currentYear && monthIndex < currentMonth) return true;
-    return false;
-  };
-
-  const isYearDisabled = (year) => {
-    const today = new Date();
-
-    // For date of birth (with maxDate), allow years up to maxDate year
-    if (maxDate) {
-      if (year > maxDate.getFullYear()) return true;
-      return false;
-    }
-
-    // Default behavior for future dates
-    if (year < today.getFullYear()) return true;
     return false;
   };
 
@@ -148,114 +109,46 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
   }
 
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
   ];
 
-  const years = [];
-  const currentYear = new Date().getFullYear();
-
-  // For date of birth, show years from maxDate year to current year
-  if (maxDate) {
-    const maxYear = maxDate.getFullYear();
-    const startYear = Math.min(maxYear - 50, 1950); // Show 50 years before maxDate, but not before 1950
-    for (let i = startYear; i <= currentYear; i++) {
-      years.push(i);
-    }
-  } else {
-    // Default: current year minus 5 to current year plus 10 (for future dates)
-    for (let i = currentYear - 5; i <= currentYear + 10; i++) {
-      years.push(i);
-    }
-  }
+  const weekDays = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
   return (
     <div className={`${styles.calendar} ${showAbove ? styles.slideUp : ""}`}>
       <div className={styles.header}>
         <button
           onClick={handlePrevMonth}
-          className={`${styles.navButton} ${styles.navButtonPrev}`}
+          className={styles.navButton}
           type="button"
+          aria-label="Previous month"
         >
-          <Image
-            src="/svg/arrow-down.svg"
-            alt="prev"
-            width={18}
-            height={18}
-            style={{ transform: "rotate(90deg)" }}
-          />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
         </button>
 
-        <div className={styles.monthYearSelector}>
-          <select
-            value={displayMonth.getMonth()}
-            onChange={handleMonthChange}
-            className={styles.select}
-          >
-            {monthNames.map((month, index) => {
-              const isDisabled = isMonthDisabled(index);
-              return !isDisabled ? (
-                <option
-                  key={month}
-                  value={index}
-                >
-                  {month}
-                </option>
-              ) : null;
-            })}
-          </select>
-          <select
-            value={displayMonth.getFullYear()}
-            onChange={handleYearChange}
-            className={styles.select}
-          >
-            {years.map((year) => {
-              const isDisabled = isYearDisabled(year);
-              return !isDisabled ? (
-                <option
-                  key={year}
-                  value={year}
-                >
-                  {year}
-                </option>
-              ) : null;
-            })}
-          </select>
+        <div className={styles.monthYearDisplay}>
+          {monthNames[displayMonth.getMonth()]} {displayMonth.getFullYear()}
         </div>
 
         <button
           onClick={handleNextMonth}
-          className={`${styles.navButton} ${styles.navButtonNext}`}
+          className={styles.navButton}
           type="button"
+          aria-label="Next month"
         >
-          <Image
-            src="/svg/arrow-down.svg"
-            alt="next"
-            width={18}
-            height={18}
-            style={{ transform: "rotate(-90deg)" }}
-          />
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </button>
       </div>
 
       <div className={styles.daysHeader}>
-        <div className={styles.dayName}>Sun</div>
-        <div className={styles.dayName}>Mon</div>
-        <div className={styles.dayName}>Tue</div>
-        <div className={styles.dayName}>Wed</div>
-        <div className={styles.dayName}>Thu</div>
-        <div className={styles.dayName}>Fri</div>
-        <div className={styles.dayName}>Sat</div>
+        {weekDays.map((day) => (
+          <div key={day} className={styles.dayName}>{day}</div>
+        ))}
       </div>
 
       <div className={styles.daysGrid}>
@@ -271,9 +164,19 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
             }`}
             disabled={!day || isDateDisabled(day)}
           >
-            {day}
+            {day || ""}
           </button>
         ))}
+      </div>
+
+      <div className={styles.footer}>
+        <button
+          type="button"
+          className={styles.todayButton}
+          onClick={handleTodayClick}
+        >
+          Today
+        </button>
       </div>
     </div>
   );
