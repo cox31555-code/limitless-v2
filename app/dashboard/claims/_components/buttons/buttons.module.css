@@ -2,53 +2,89 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 2rem;
 }
 
 .backButton {
-  display: flex;
-  width: 238px;
-  height: 48px;
-  flex-direction: column;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  color: #0388ff;
-  font-size: 16px;
-  font-weight: 500;
+  justify-content: center;
+  padding: 1.2rem 2.4rem;
+  color: #0052a3;
+  font-size: 1.1rem;
+  font-weight: 600;
   line-height: 124%;
   cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(0deg, #fff 0%, #fff 100%), #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  border: 2px solid #0052a3;
+  border-radius: 10px;
+  background: transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
 }
+
+.backButton:hover {
+  background: rgba(0, 82, 163, 0.08);
+  border-color: #0275dd;
+  color: #0275dd;
+}
+
 .cancelButton {
-  display: flex;
-  width: 238px;
-  height: 48px;
-  flex-direction: column;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.4rem;
   color: #fff;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
   line-height: 124%;
   cursor: pointer;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(0deg, #fe8198 0%, #fe8198 100%), #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  border-radius: 10px;
+  background: #dc3545;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
+
+.cancelButton:hover {
+  background: #c82333;
+}
+
+.cancelButton:focus,
+.backButton:focus {
+  outline: none;
+}
+
+.cancelButton:focus-visible {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
+
+.backButton:focus-visible {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+}
+
 @media screen and (max-width: 900px) {
   .buttons {
+    flex-direction: column-reverse;
     gap: 1.5rem;
     width: 100%;
-    max-width: 500rem;
-    margin: 0 auto;
   }
+  
   .backButton,
   .cancelButton {
     width: 100%;
-    height: 4.8rem;
-    font-size: 1.4rem;
+    padding: 1.3rem 2rem;
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .backButton,
+  .cancelButton {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.1rem;
   }
 }
