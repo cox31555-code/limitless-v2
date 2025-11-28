@@ -93,7 +93,7 @@
 }
 
 .link {
-  color: #6366f1;
+  color: #0388ff;
   text-decoration: none;
   font-weight: 500;
 }
@@ -160,15 +160,15 @@
 }
 
 .toggleActive {
-  background: #6366f1;
+  background: #0052a3;
 }
 
 .toggleActive:hover {
-  background: #5558e3;
+  background: #003d7a;
 }
 
 .toggleDisabled {
-  background: #6366f1;
+  background: #0052a3;
   cursor: not-allowed;
   opacity: 0.6;
 }
@@ -225,7 +225,7 @@
 }
 
 .saveButton {
-  background: #6366f1;
+  background: #0052a3;
   color: #ffffff;
 }
 
