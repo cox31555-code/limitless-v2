@@ -25,8 +25,29 @@ const PolicyDetails = ({ claimData }) => {
     });
   };
 
+  const formatClaimReason = (reason) => {
+    if (!reason) return "Not provided";
+    return reason
+      .split("-")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   return (
     <>
+      {/* Claim Type Section */}
+      <div className={styles.container}>
+        <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+          Claim Type
+        </h3>
+        <div className={styles.body}>
+          <ReadOnlyField
+            label="Claim reason*"
+            value={formatClaimReason(claimData?.claimreason)}
+          />
+        </div>
+      </div>
+
       {/* Policy Information Section */}
       <div className={styles.container}>
         <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
