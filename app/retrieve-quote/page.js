@@ -3,7 +3,6 @@ import styles from "./page.module.css";
 import Form from "./_components/form/Form";
 import Image from "next/image";
 import Link from "next/link";
-import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
 
 export const metadata = {
   title: "Retrieve Quote | Limitless Cover",
@@ -57,8 +56,6 @@ const RetrieveQuotePage = () => {
           </Suspense>
         </div>
       </div>
-
-      <DashboardFooter />
     </div>
   );
 };
