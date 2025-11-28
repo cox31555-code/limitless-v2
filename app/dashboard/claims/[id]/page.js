@@ -150,8 +150,6 @@ const page = async ({ params }) => {
 
         {/* Main Content */}
         <div className={styles.container}>
-          <PolicyDetails claimData={claim} />
-          <ThirdPartyDetails claimData={claim.thirdPartyDetails} />
           <Updates
             data={[
               {
@@ -168,6 +166,8 @@ const page = async ({ params }) => {
               },
             ]}
           />
+          <PolicyDetails claimData={claim} />
+          <ThirdPartyDetails claimData={claim.thirdPartyDetails} />
           <Buttons />
         </div>
       </div>
