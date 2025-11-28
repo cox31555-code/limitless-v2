@@ -151,20 +151,12 @@
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: none;
   padding: 0;
-}
-
-.toggle:not(.toggleDisabled):hover {
-  background: #d1d5db;
 }
 
 .toggleActive {
   background: #0052a3;
-}
-
-.toggleActive:hover {
-  background: #003d7a;
 }
 
 .toggleDisabled {
@@ -181,7 +173,7 @@
   height: 2rem;
   background: #ffffff;
   border-radius: 50%;
-  transition: transform 0.3s ease;
+  transition: none;
 }
 
 .toggleActive .toggleSlider {
