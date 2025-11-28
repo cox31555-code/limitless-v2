@@ -114,6 +114,31 @@ export default function PaymentsClient({ plusJakartaSans }) {
           </div>
         </div>
 
+        {/* Account Balance Section */}
+        <div className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <svg className={styles.sectionIcon} viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+              <circle cx="9" cy="11" r="1.5" fill="currentColor"/>
+              <circle cx="15" cy="11" r="1.5" fill="currentColor"/>
+              <path d="M12 17.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/>
+              <path d="M8 8h2v2H8zm6 0h2v2h-2z" fill="currentColor"/>
+            </svg>
+            <h2 className={styles.sectionTitle}>Account balance</h2>
+          </div>
+          <div className={styles.sectionContent}>
+            <div className={styles.balanceInfo}>
+              <p className={styles.balanceAmount}>
+                <strong>£521.4</strong> <span className={styles.balanceNote}>(incl. Interest and Insurance Premium Tax)</span>
+              </p>
+              <p className={styles.balanceDescription}>
+                By paying off your car insurance, you're saving <strong>£43.04</strong> in interest charges. There are no fees on doing this.
+              </p>
+            </div>
+            <button className={styles.payOffButton}>Pay off my balance</button>
+          </div>
+        </div>
+
         {/* Payment Schedule Section */}
         <div className={styles.section}>
           <div className={styles.sectionHeader}>
