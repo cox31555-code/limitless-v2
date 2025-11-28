@@ -560,7 +560,7 @@
   }
 
   .noticeText {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .paymentDay,
@@ -647,7 +647,7 @@
   }
 
   .noticeText {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .paymentDay,
@@ -668,12 +668,12 @@
   }
 
   .scheduleItem {
-    padding: 1.2rem 1.4rem;
+    padding: 1.4rem 1.6rem;
   }
 
   .scheduleDate,
   .scheduleAmount {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
