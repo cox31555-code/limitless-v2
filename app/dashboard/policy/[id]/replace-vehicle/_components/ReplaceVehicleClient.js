@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
-import { SelectPicker } from "rsuite";
+import { SelectPicker, Button, Input } from "rsuite";
 import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
@@ -45,6 +45,8 @@ const alarmImmobiliserOptions = [
   "Other",
 ];
 const yesNoOptions = ["No", "Yes"];
+const ownerOptions = ["Policyholder", "Spouse/Partner", "Parent", "Company", "Other"];
+const keeperOptions = ["Policyholder", "Spouse/Partner", "Parent", "Company", "Other"];
 
 const initialVehicleState = {
   makes: ["Audi", "BMW", "Ford", "Honda", "Toyota", "Volkswagen"],
@@ -125,11 +127,13 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         alarmImmobiliser: "",
         trackingDevice: "",
         importedVehicle: "",
+        driverSide: "Right Hand",
+        seats: "5",
       },
     },
   });
 
-  const { watch, setValue, formState: { errors }, setError, clearErrors } = form;
+  const { watch, setValue, register, formState: { errors }, setError, clearErrors } = form;
 
   const selectedType = watch("vehicleDetails.type");
   const selectedMake = watch("vehicleDetails.make");
@@ -139,6 +143,8 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
   const selectedFuel = watch("vehicleDetails.fuel");
   const vehicleModified = watch("vehicleDetails.vehicleModified");
   const vehicleModifications = watch("vehicleDetails.vehicleModifications") || [];
+  const legalOwner = watch("vehicleDetails.legalOwner");
+  const owner = watch("vehicleDetails.owner");
 
   const toggleVehicleDetails = () => {
     setShowVehicleDetails(!showVehicleDetails);
@@ -195,6 +201,11 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
       setValue("vehicleDetails.fuel", mockVehicleData.fuelType);
       setValue("vehicleDetails.transmission", mockVehicleData.transmission);
       setValue("vehicleDetails.colour", mockVehicleData.colour);
+      setValue("vehicleDetails.alarmImmobiliser", "Factory Fitted Thatcham Approved Alarm/Immobiliser");
+      setValue("vehicleDetails.trackingDevice", "No");
+      setValue("vehicleDetails.importedVehicle", "No");
+      setValue("vehicleDetails.driverSide", "Right Hand");
+      setValue("vehicleDetails.seats", "5");
 
       clearErrors("vehicleDetails.registrationNumber");
       setIsLoadingVehicleData(false);
@@ -356,14 +367,15 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                       <div className={styles.dividerWithText}>
                         <span className={styles.dividerText}>OR</span>
                       </div>
-                      <button
+                      <Button
                         type="button"
                         className={styles.manualEntryBtn}
                         onClick={toggleVehicleDetails}
+                        appearance="default"
                       >
                         <span className={styles.manualEntryIcon}>✎</span>
                         <span className={styles.manualEntryText}>Enter make and model</span>
-                      </button>
+                      </Button>
                     </div>
                   ) : (
                     <>
@@ -375,19 +387,20 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                           {foundVehicleData.registrationNumber}
                         </p>
                       </div>
-                      <button
+                      <Button
                         type="button"
                         className={styles.changeVehicleBtn}
                         onClick={handleChangeVehicle}
+                        appearance="default"
                       >
                         Change Vehicle
-                      </button>
+                      </Button>
                     </>
                   )}
                 </div>
               </div>
 
-              {/* Manual Vehicle Entry Section */}
+              {/* Manual Vehicle Entry Section Header */}
               {showVehicleDetails && !foundVehicleData && (
                 <div className={styles.section}>
                   <div className={styles.sectionHeader}>
@@ -524,6 +537,136 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                           style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
                         />
                       </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Safety & Security Features Section */}
+              <div className={styles.section}>
+                <div className={styles.sectionHeader}>
+                  <h3 className={styles.sectionTitle}>Safety & Security Features</h3>
+                  <p className={styles.sectionDescription}>Tell us about your vehicle's safety and security features</p>
+                </div>
+                <div className={styles.additionalDetailsSection}>
+                  <div className={styles.cleanFormGrid2Col}>
+                    <div className={styles.rsuiteFormGroup}>
+                      <label className={styles.label}>Alarm / Immobiliser</label>
+                      <SelectPicker
+                        data={alarmImmobiliserOptions.map((option) => ({ label: option, value: option }))}
+                        placeholder="Please select"
+                        value={watch("vehicleDetails.alarmImmobiliser") || null}
+                        onChange={(value) => setValue("vehicleDetails.alarmImmobiliser", value || "")}
+                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.alarmImmobiliser ? styles.error : ""}`}
+                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                      />
+                      {errors.vehicleDetails?.alarmImmobiliser && (
+                        <span className={styles.errorMessage}>{errors.vehicleDetails.alarmImmobiliser.message}</span>
+                      )}
+                    </div>
+                    <div className={styles.rsuiteFormGroup}>
+                      <label className={styles.label}>Tracking device</label>
+                      <SelectPicker
+                        data={trackingDeviceOptions.map((option) => ({ label: option, value: option }))}
+                        placeholder="Please select"
+                        value={watch("vehicleDetails.trackingDevice") || null}
+                        onChange={(value) => setValue("vehicleDetails.trackingDevice", value || "")}
+                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.trackingDevice ? styles.error : ""}`}
+                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                      />
+                      {errors.vehicleDetails?.trackingDevice && (
+                        <span className={styles.errorMessage}>{errors.vehicleDetails.trackingDevice.message}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className={styles.cleanFormGrid2Col}>
+                    <div className={styles.rsuiteFormGroup}>
+                      <label className={styles.label}>Imported vehicle</label>
+                      <SelectPicker
+                        data={yesNoOptions.map((option) => ({ label: option, value: option }))}
+                        placeholder="Please select"
+                        value={watch("vehicleDetails.importedVehicle") || null}
+                        onChange={(value) => setValue("vehicleDetails.importedVehicle", value || "")}
+                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.importedVehicle ? styles.error : ""}`}
+                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                      />
+                      {errors.vehicleDetails?.importedVehicle && (
+                        <span className={styles.errorMessage}>{errors.vehicleDetails.importedVehicle.message}</span>
+                      )}
+                    </div>
+                    <div className={styles.rsuiteFormGroup}>
+                      <label className={styles.label}>Car hand drive</label>
+                      <SelectPicker
+                        data={["Left Hand", "Right Hand"].map((option) => ({ label: option, value: option }))}
+                        placeholder="Please select"
+                        value={watch("vehicleDetails.driverSide") || null}
+                        onChange={(value) => setValue("vehicleDetails.driverSide", value || "")}
+                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.driverSide ? styles.error : ""}`}
+                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                      />
+                      {errors.vehicleDetails?.driverSide && (
+                        <span className={styles.errorMessage}>{errors.vehicleDetails.driverSide.message}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className={styles.cleanFormGrid2Col}>
+                    <div className={styles.rsuiteFormGroup}>
+                      <label className={styles.label}>Number of seats</label>
+                      <SelectPicker
+                        data={["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((option) => ({ label: option, value: option }))}
+                        placeholder="Please select"
+                        value={watch("vehicleDetails.seats") || null}
+                        onChange={(value) => setValue("vehicleDetails.seats", value || "")}
+                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.seats ? styles.error : ""}`}
+                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                      />
+                      {errors.vehicleDetails?.seats && (
+                        <span className={styles.errorMessage}>{errors.vehicleDetails.seats.message}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className={styles.cleanFormGrid2Col}>
+                    <div className={styles.rsuiteFormGroup}>
+                      <label className={styles.label}>Has your vehicle been modified?</label>
+                      <SelectPicker
+                        data={yesNoOptions.map((option) => ({ label: option, value: option }))}
+                        placeholder="Please select"
+                        value={watch("vehicleDetails.vehicleModified") || null}
+                        onChange={(value) => setValue("vehicleDetails.vehicleModified", value || "")}
+                        className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.vehicleModified ? styles.error : ""}`}
+                        style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                      />
+                      {errors.vehicleDetails?.vehicleModified && (
+                        <span className={styles.errorMessage}>{errors.vehicleDetails.vehicleModified.message}</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {vehicleModified === "Yes" && (
+                    <div className={styles.rsuiteFormGroup}>
+                      <p className={replaceStyles.modificationInfo}>
+                        Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car. <a href="#" onClick={(e) => { e.preventDefault(); setShowModificationsModal(true); }}>How can I find out if my car's been modified?</a>
+                      </p>
+                      <Button
+                        type="button"
+                        className={styles.editModificationsBtn}
+                        onClick={() => setShowModificationsModal(true)}
+                        appearance="default"
+                      >
+                        Select modifications
+                      </Button>
+                      {vehicleModifications.length > 0 && (
+                        <div className={styles.modificationsTagsList}>
+                          {vehicleModifications.map((modification) => (
+                            <span key={modification} className={styles.modificationTag}>
+                              {modification}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
