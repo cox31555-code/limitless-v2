@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f0ff;
+  background: rgba(0, 82, 163, 0.08);
   border-radius: 12px;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .link {
-  color: #6366f1;
+  color: #0388ff;
   text-decoration: underline;
   background: none;
   border: none;
@@ -93,9 +93,11 @@
 
 .actions {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
   flex-shrink: 0;
+  min-width: 200px;
 }
 
 .acceptButton,
@@ -110,10 +112,11 @@
   white-space: nowrap;
   font-family: inherit;
   border: none;
+  width: 100%;
 }
 
 .acceptButton {
-  background: #6366f1;
+  background: #0052a3;
   color: #ffffff;
 }
 
@@ -160,6 +163,7 @@
 
   .actions {
     gap: 1rem;
+    min-width: 180px;
   }
 
   .acceptButton,
@@ -205,8 +209,8 @@
 
   .actions {
     width: 100%;
-    flex-direction: column;
     gap: 1rem;
+    min-width: auto;
   }
 
   .acceptButton,
