@@ -16,50 +16,34 @@ import QuoteHeader from "./_components/QuoteHeader";
 import GetQuotePageHeader from "./_components/GetQuotePageHeader";
 import styles from "./newGetQuotePage.module.css";
 
-// Lazy load component mapping for performance
-const componentMap = {
-  vehicle: {
-    registration: () => import("./_components/Step1VehicleRegistration"),
-    carValue: () => import("./_components/Step1CarValue"),
-    carUsage: () => import("./_components/Step1CarUsage"),
-    carStorage: () => import("./_components/Step1CarStorage"),
-    otherCars: () => import("./_components/Step1OtherCars"),
-  },
-  personal: {
-    aboutYou: () => import("./_components/Step2PersonalDetails"),
-    household: () => import("./_components/Step2Household"),
-    employment: () => import("./_components/Step2Employment"),
-    licence: () => import("./_components/Step2Licence"),
-    restrictions: () => import("./_components/Step2LicenceRestrictions"),
-    claims: () => import("./_components/Step2ClaimsAndConvictions"),
-    addClaim: () => import("./_components/Step2AddClaim"),
-    addConviction: () => import("./_components/Step2AddConviction"),
-  },
-  cover: {
-    additionalDrivers: () => import("./_components/Step3AdditionalDrivers"),
-    addDriver: () => import("./_components/Step3AddDriver"),
-    addDriverClaimsAndConvictions: () => import("./_components/Step3DriverClaimsAndConvictions"),
-    addDriverClaim: () => import("./_components/Step3AddDriverClaim"),
-    addDriverConviction: () => import("./_components/Step3AddDriverConviction"),
-    carOwner: () => import("./_components/Step3CarOwner"),
-    carOwnerAddRegisteredKeeper: () => import("./_components/Step3CarOwnerAddPerson"),
-    carOwnerAddLegalOwner: () => import("./_components/Step3CarOwnerAddPerson"),
-    details: () => import("./_components/Step3CoverDetails"),
-    ncd: () => import("./_components/Step3NoClaimsDiscount"),
-    additionalProducts: () => import("./_components/Step3AdditionalProducts"),
-    contactInformation: () => import("./_components/Step3ContactInformation"),
-  },
-  checkAnswers: () => import("./_components/Step4CheckYourAnswers"),
-};
-
-// Only preload Step 1 Registration on initial load
-const Step1VehicleRegistration = dynamic(() => import("./_components/Step1VehicleRegistration"), { ssr: true });
-
-// Generic dynamic loader for on-demand components
-const DynamicComponentLoader = dynamic(
-  () => Promise.resolve(({ component: Component }) => <Component />),
-  { loading: () => <StepFallback /> }
-);
+// Optimize: Only dynamically import components with ssr: false to avoid blocking initial load
+const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { ssr: false });
+const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { ssr: false });
+const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPersonalDetailsForm"), { ssr: false });
+const Step4CheckYourAnswers = dynamic(() => import("./_components/Step4CheckYourAnswers"), { ssr: false });
+const Step1CarValue = dynamic(() => import("./_components/Step1CarValue"), { ssr: false });
+const Step1CarUsage = dynamic(() => import("./_components/Step1CarUsage"), { ssr: false });
+const Step1CarStorage = dynamic(() => import("./_components/Step1CarStorage"), { ssr: false });
+const Step1OtherCars = dynamic(() => import("./_components/Step1OtherCars"), { ssr: false });
+const Step2PersonalDetails = dynamic(() => import("./_components/Step2PersonalDetails"), { ssr: false });
+const Step2Household = dynamic(() => import("./_components/Step2Household"), { ssr: false });
+const Step2Employment = dynamic(() => import("./_components/Step2Employment"), { ssr: false });
+const Step2Licence = dynamic(() => import("./_components/Step2Licence"), { ssr: false });
+const Step2LicenceRestrictions = dynamic(() => import("./_components/Step2LicenceRestrictions"), { ssr: false });
+const Step2ClaimsAndConvictions = dynamic(() => import("./_components/Step2ClaimsAndConvictions"), { ssr: false });
+const Step2AddClaim = dynamic(() => import("./_components/Step2AddClaim"), { ssr: false });
+const Step2AddConviction = dynamic(() => import("./_components/Step2AddConviction"), { ssr: false });
+const Step3AdditionalDrivers = dynamic(() => import("./_components/Step3AdditionalDrivers"), { ssr: false });
+const Step3AddDriver = dynamic(() => import("./_components/Step3AddDriver"), { ssr: false });
+const Step3DriverClaimsAndConvictions = dynamic(() => import("./_components/Step3DriverClaimsAndConvictions"), { ssr: false });
+const Step3AddDriverClaim = dynamic(() => import("./_components/Step3AddDriverClaim"), { ssr: false });
+const Step3AddDriverConviction = dynamic(() => import("./_components/Step3AddDriverConviction"), { ssr: false });
+const Step3CarOwner = dynamic(() => import("./_components/Step3CarOwner"), { ssr: false });
+const Step3CarOwnerAddPerson = dynamic(() => import("./_components/Step3CarOwnerAddPerson"), { ssr: false });
+const Step3CoverDetails = dynamic(() => import("./_components/Step3CoverDetails"), { ssr: false });
+const Step3NoClaimsDiscount = dynamic(() => import("./_components/Step3NoClaimsDiscount"), { ssr: false });
+const Step3AdditionalProducts = dynamic(() => import("./_components/Step3AdditionalProducts"), { ssr: false });
+const Step3ContactInformation = dynamic(() => import("./_components/Step3ContactInformation"), { ssr: false });
 
 const StepFallback = () => (
   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
@@ -229,35 +213,37 @@ const AnnualInsuranceContent = () => {
   useEffect(() => {
     setIsMounted(true);
 
-    // Restore form state from sessionStorage on mount
-    const savedState = sessionStorage.getItem("annualQuoteFormState");
-    if (savedState) {
-      try {
-        const formState = JSON.parse(savedState);
-        // Restore form data
-        const formData = formState.formData;
-        Object.keys(formData).forEach(key => {
-          setValue(key, formData[key]);
-        });
-        // Restore step state
-        setCurrentStep(formState.currentStep || STEPS.VEHICLE);
-        setVehicleSubStep(formState.vehicleSubStep || "registration");
-        setPersonalSubStep(formState.personalSubStep || "aboutYou");
-        setCoverSubStep(formState.coverSubStep || "details");
-        // Restore component state
-        setAdditionalDrivers(formState.additionalDrivers || []);
-        setClaims(formState.claims || []);
-        setConvictions(formState.convictions || []);
-        setCarOwnerData(formState.carOwnerData || null);
-        setNcdData(formState.ncdData || null);
-        setProductsData(formState.productsData || null);
-        setContactInformationData(formState.contactInformationData || null);
-        setFoundVehicleData(formState.foundVehicleData || null);
-      } catch (e) {
-        console.error("Failed to restore form state on mount:", e);
+    // Defer sessionStorage restoration to next microtask to avoid blocking initial render
+    Promise.resolve().then(() => {
+      const savedState = sessionStorage.getItem("annualQuoteFormState");
+      if (savedState) {
+        try {
+          const formState = JSON.parse(savedState);
+          // Restore form data
+          const formData = formState.formData;
+          Object.keys(formData).forEach(key => {
+            setValue(key, formData[key]);
+          });
+          // Restore step state
+          setCurrentStep(formState.currentStep || STEPS.VEHICLE);
+          setVehicleSubStep(formState.vehicleSubStep || "registration");
+          setPersonalSubStep(formState.personalSubStep || "aboutYou");
+          setCoverSubStep(formState.coverSubStep || "details");
+          // Restore component state
+          setAdditionalDrivers(formState.additionalDrivers || []);
+          setClaims(formState.claims || []);
+          setConvictions(formState.convictions || []);
+          setCarOwnerData(formState.carOwnerData || null);
+          setNcdData(formState.ncdData || null);
+          setProductsData(formState.productsData || null);
+          setContactInformationData(formState.contactInformationData || null);
+          setFoundVehicleData(formState.foundVehicleData || null);
+        } catch (e) {
+          console.error("Failed to restore form state on mount:", e);
+        }
       }
-    }
-  }, []);
+    });
+  }, [setValue]);
 
   // Save form state to sessionStorage whenever steps or form data change
   useEffect(() => {
