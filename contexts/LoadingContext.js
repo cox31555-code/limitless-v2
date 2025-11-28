@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const LoadingContext = createContext();
@@ -15,13 +15,48 @@ export const useLoading = () => {
 export const LoadingProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const pathname = usePathname();
+  const loadingTimerRef = useRef(null);
+  const startTimeRef = useRef(null);
 
   useEffect(() => {
-    setIsLoading(false);
-  }, [pathname]);
+    if (loadingTimerRef.current) {
+      clearTimeout(loadingTimerRef.current);
+      loadingTimerRef.current = null;
+    }
 
-  const showLoading = () => setIsLoading(true);
-  const hideLoading = () => setIsLoading(false);
+    if (isLoading && startTimeRef.current) {
+      const elapsed = Date.now() - startTimeRef.current;
+      const remaining = Math.max(0, 3000 - elapsed);
+
+      loadingTimerRef.current = setTimeout(() => {
+        setIsLoading(false);
+        startTimeRef.current = null;
+      }, remaining);
+    }
+  }, [pathname, isLoading]);
+
+  const showLoading = () => {
+    startTimeRef.current = Date.now();
+    setIsLoading(true);
+  };
+
+  const hideLoading = () => {
+    if (startTimeRef.current) {
+      const elapsed = Date.now() - startTimeRef.current;
+      const remaining = Math.max(0, 3000 - elapsed);
+
+      if (loadingTimerRef.current) {
+        clearTimeout(loadingTimerRef.current);
+      }
+
+      loadingTimerRef.current = setTimeout(() => {
+        setIsLoading(false);
+        startTimeRef.current = null;
+      }, remaining);
+    } else {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <LoadingContext.Provider value={{ isLoading, showLoading, hideLoading }}>
