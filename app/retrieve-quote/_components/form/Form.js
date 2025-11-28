@@ -36,17 +36,8 @@ const Form = () => {
   const handleQuoteRefChange = (e) => {
     const inputValue = e.target.value.toUpperCase();
     const fullValue = "LC-" + inputValue;
-
     setQuoteRef(fullValue);
     setValue("quoteReference", fullValue, { shouldValidate: true });
-  };
-
-  const handleQuoteRefKeyDown = (e) => {
-    // No special handling needed since prefix is separate
-  };
-
-  const handleQuoteRefClick = (e) => {
-    // No special handling needed since prefix is separate
   };
 
   const onSubmit = async (data) => {
@@ -135,8 +126,6 @@ const Form = () => {
                   className={`${styles.input} ${styles.inputWithPrefix}`}
                   value={quoteRef.slice(3)}
                   onChange={handleQuoteRefChange}
-                  onKeyDown={handleQuoteRefKeyDown}
-                  onClick={handleQuoteRefClick}
                   ref={referenceInputRef}
                   name="quoteReference"
                 />
