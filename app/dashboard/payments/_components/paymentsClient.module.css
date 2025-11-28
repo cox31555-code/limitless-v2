@@ -470,8 +470,8 @@
 
   .heroContent {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 2.4rem;
+    width: 100%;
+    gap: 2rem;
   }
 
   .greetingTitle {
