@@ -294,19 +294,23 @@ const Step3CoverDetails = ({
             </div>
           )}
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedPaymentEffect(!expandedPaymentEffect)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedPaymentEffect ? styles.expandedIcon : ''}`}>▼</span>
-            How will this affect my quote?
-          </button>
+          {showCoverOptions && (
+            <>
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedPaymentEffect(!expandedPaymentEffect)}
+              >
+                <span className={`${styles.expandableIcon} ${expandedPaymentEffect ? styles.expandedIcon : ''}`}>▼</span>
+                How will this affect my quote?
+              </button>
 
-          {expandedPaymentEffect && (
-            <div className={styles.expandableContent}>
-              The start date you select may affect your insurance quote, as premiums can vary depending on when your cover begins. Different seasons and time periods may have different risk profiles, which could impact your final price.
-            </div>
+              {expandedPaymentEffect && (
+                <div className={styles.expandableContent}>
+                  The start date you select may affect your insurance quote, as premiums can vary depending on when your cover begins. Different seasons and time periods may have different risk profiles, which could impact your final price.
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
