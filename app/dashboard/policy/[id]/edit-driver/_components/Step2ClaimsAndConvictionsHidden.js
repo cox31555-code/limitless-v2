@@ -54,20 +54,6 @@ const Step2ClaimsAndConvictionsHidden = ({ form, claims = [], convictions = [], 
             </label>
           </div>
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedClaimsWhatIf(!expandedClaimsWhatIf)}
-          >
-            What if I wasn't involved?
-          </button>
-
-          {expandedClaimsWhatIf && (
-            <div className={styles.expandableContent}>
-              You should still declare any accidents or claims, even if you weren't directly involved or if you believe you weren't at fault. This includes any incidents reported to your insurer or other parties. It helps us assess your insurance accurately.
-            </div>
-          )}
-
           {motorAccidentsClaims === "Yes" && (
             <div className={styles.claimsSection}>
               <div className={styles.claimsHeader}>
@@ -133,20 +119,6 @@ const Step2ClaimsAndConvictionsHidden = ({ form, claims = [], convictions = [], 
               <span className={styles.radioLabel}>No</span>
             </label>
           </div>
-
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedConvictionsHow(!expandedConvictionsHow)}
-          >
-            How can I find out?
-          </button>
-
-          {expandedConvictionsHow && (
-            <div className={styles.expandableContent}>
-              You can check the DVLA website or request a driving record from your local police force. Convictions and driving-related endorsements are recorded on your driving licence and will show any points or bans. You can also check via the DVLA's online service.
-            </div>
-          )}
 
           {drivingConvictions === "Yes" && (
             <div className={styles.convictionsSection}>

@@ -91,23 +91,6 @@ const Step2LicenceHidden = ({ form }) => {
             </p>
           </div>
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedWhereToFind(!expandedWhereToFind)}
-          >
-            <span className={styles.expandableIcon}>
-              {expandedWhereToFind ? '▼' : '▼'}
-            </span>
-            Where can I find the date?
-          </button>
-
-          {expandedWhereToFind && (
-            <div className={styles.expandableContent}>
-              You can find the issue date on the front of your driving licence card. Look for the date in the format DD/MM/YYYY next to "Issued".
-            </div>
-          )}
-
           <div className={styles.dropdownWrapper}>
             <Dropdown
               selected={licenseHeld || ""}
