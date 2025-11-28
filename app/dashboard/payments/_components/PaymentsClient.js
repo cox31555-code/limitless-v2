@@ -9,6 +9,26 @@ export default function PaymentsClient({ plusJakartaSans }) {
   const [scheduleExpanded, setScheduleExpanded] = useState(false);
   const [autoRenewal, setAutoRenewal] = useState(true);
   const [optOutExpanded, setOptOutExpanded] = useState(false);
+  const [showRenewalModal, setShowRenewalModal] = useState(false);
+
+  const handleAutoRenewalChange = (e) => {
+    if (e.target.checked) {
+      // If checking, allow it immediately
+      setAutoRenewal(true);
+    } else {
+      // If unchecking, show modal first
+      setShowRenewalModal(true);
+    }
+  };
+
+  const handleConfirmOptOut = () => {
+    setAutoRenewal(false);
+    setShowRenewalModal(false);
+  };
+
+  const handleCancelOptOut = () => {
+    setShowRenewalModal(false);
+  };
 
   const paymentSchedule = [
     { date: "21 Nov 2025", amount: "£47.29", type: "deposit" },
@@ -263,7 +283,7 @@ export default function PaymentsClient({ plusJakartaSans }) {
                     <input
                       type="checkbox"
                       checked={autoRenewal}
-                      onChange={(e) => setAutoRenewal(e.target.checked)}
+                      onChange={handleAutoRenewalChange}
                       className={styles.autoRenewalCheckbox}
                     />
                     <span className={styles.autoRenewalText}>
@@ -278,6 +298,51 @@ export default function PaymentsClient({ plusJakartaSans }) {
       </div>
 
       <NeedHelpSection />
+
+      {/* Auto-Renewal Confirmation Modal */}
+      {showRenewalModal && (
+        <div className={styles.modalOverlay} onClick={handleCancelOptOut}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={handleCancelOptOut}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+
+            <div className={styles.modalHeader}>
+              <div className={styles.modalIconCircle}>
+                <svg className={styles.modalIcon} viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M12 8v4m0 4h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <h2 className={styles.modalTitle}>Automatic renewal</h2>
+            </div>
+
+            <div className={styles.modalBody}>
+              <p className={styles.modalText}>
+                To make things easy, we can <strong>set up your policy to renew automatically</strong> next year but you can always opt out if you change your mind.
+              </p>
+              <p className={styles.modalText}>
+                We want to give you the <strong>reassurance of our continuous cover</strong> as car insurance is a legal requirement and, as you're in control, you'll have <strong>plenty of time to review</strong> your renewal quote either way.
+              </p>
+              <p className={styles.modalText}>
+                Whatever you decide, we'll make it happen.
+              </p>
+            </div>
+
+            <div className={styles.modalActions}>
+              <button className={styles.modalButtonPrimary} onClick={handleCancelOptOut}>
+                Ok, auto-renew
+              </button>
+              <button className={styles.modalButtonSecondary} onClick={handleConfirmOptOut}>
+                I don't want to auto-renew
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
