@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import styles from "./loadingOverlay.module.css";
