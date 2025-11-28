@@ -163,7 +163,10 @@ const DashboardClient = () => {
           </div>
           <div className={styles.policiesGrid}>
             {activePolicies.map((policy) => (
-              <div key={policy.id} className={styles.policyCard} onClick={() => router.push("/dashboard/policy")}>
+              <div key={policy.id} className={styles.policyCard} onClick={() => {
+                showLoading();
+                router.push("/dashboard/policy");
+              }}>
                 <div className={styles.policyCardHeader}>
                   <div className={styles.policyBadgeWrapper}>
                     <div className={styles.brandedBadge}>
