@@ -1160,7 +1160,7 @@ const ImpoundInsuranceContent = () => {
                   <Step1CarValue form={form} />
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" && (
-                  <Step1CarUsage form={form} />
+                  <Step1CarUsage form={form} showMileage={false} />
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage" && (
                   <Step1CarStorage form={form} />
