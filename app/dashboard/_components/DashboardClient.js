@@ -177,7 +177,6 @@ const DashboardClient = () => {
                       />
                       <span className={styles.policyBadgeType}>{policy.badge}</span>
                     </div>
-                    {policy.isNew && <span className={styles.newBadge}>NEW</span>}
                   </div>
                   <div className={styles.policyStatusWrapper}>
                     <span className={styles.policyStatusLabel}>Status:</span>
