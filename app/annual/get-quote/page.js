@@ -264,6 +264,34 @@ const AnnualInsuranceContent = () => {
     sessionStorage.setItem("annualQuoteFormState", JSON.stringify(formState));
   }, [isMounted, currentStep, vehicleSubStep, personalSubStep, coverSubStep, form, additionalDrivers, claims, convictions, carOwnerData, ncdData, productsData, contactInformationData, foundVehicleData]);
 
+  // Handle browser back/forward navigation
+  useEffect(() => {
+    if (!isMounted) return;
+
+    // Push initial state to history
+    const historyState = {
+      currentStep,
+      vehicleSubStep,
+      personalSubStep,
+      coverSubStep,
+    };
+    window.history.replaceState(historyState, "", window.location.href);
+
+    // Listen for browser back/forward button clicks
+    const handlePopState = (event) => {
+      if (event.state) {
+        setCurrentStep(event.state.currentStep || STEPS.VEHICLE);
+        setVehicleSubStep(event.state.vehicleSubStep || "registration");
+        setPersonalSubStep(event.state.personalSubStep || "aboutYou");
+        setCoverSubStep(event.state.coverSubStep || "details");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [isMounted]);
+
   useEffect(() => {
     if (!isMounted) return;
 
