@@ -4,12 +4,13 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 8rem;
-  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .backdrop {
@@ -18,14 +19,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 8, 34, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(248, 250, 252, 0.95);
 }
 
 .spinnerContainer {
   position: relative;
-  z-index: 10000;
+  z-index: 100000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,24 +36,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2.4rem 3.2rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 251, 255, 0.92) 100%);
-  border-radius: 24px;
-  border: 1px solid rgba(3, 136, 255, 0.15);
-  box-shadow: 0 20px 60px rgba(0, 8, 34, 0.25), 0 8px 24px rgba(3, 136, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .loadingText {
-  color: #000822;
-  font-size: 1.6rem;
+  color: #0270CC;
+  font-size: 1.8rem;
   font-weight: 600;
   line-height: 130%;
-  letter-spacing: 0.2px;
-  margin: 2rem 0 0 0;
+  letter-spacing: 0.3px;
+  margin: 2.4rem 0 0 0;
   text-align: center;
-  opacity: 1;
 }
 
 .dots::after {
@@ -77,32 +68,9 @@
   }
 }
 
-@media screen and (max-width: 900px) {
-  .spinnerBox {
-    padding: 2rem 2.4rem;
-    border-radius: 20px;
-    box-shadow: 0 16px 48px rgba(0, 8, 34, 0.2), 0 6px 18px rgba(3, 136, 255, 0.1);
-  }
-
-  .loadingText {
-    font-size: 1.4rem;
-    margin: 1.4rem 0 0 0;
-  }
-}
-
 @media screen and (max-width: 600px) {
-  .overlay {
-    padding-top: 4rem;
-  }
-
-  .spinnerBox {
-    padding: 1.8rem 2rem;
-    border-radius: 18px;
-    box-shadow: 0 12px 36px rgba(0, 8, 34, 0.5), 0 4px 12px rgba(3, 136, 255, 0.08);
-  }
-
   .loadingText {
-    font-size: 1.3rem;
-    margin: 1.2rem 0 0 0;
+    font-size: 1.6rem;
+    margin: 2rem 0 0 0;
   }
 }

@@ -2,12 +2,17 @@
 
 import Header from "@/ui/layout/header/Header";
 import { ToastContainer } from "react-toastify";
+import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
+import { useLoading } from "@/contexts/LoadingContext";
 
 export default function ClientLayout({ children }) {
+  const { isLoading } = useLoading();
+
   return (
     <>
       <Header />
       {children}
+      {isLoading && <LoadingOverlay isVisible={isLoading} text="Loading" />}
       <ToastContainer
         position="bottom-center"
         autoClose={3500}
