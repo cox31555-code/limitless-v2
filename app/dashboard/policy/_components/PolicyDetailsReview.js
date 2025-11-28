@@ -215,6 +215,43 @@ const PolicyDetailsReview = ({ policy }) => {
                 <span className={styles.detailValue}>Not included</span>
               </div>
             </div>
+
+            <div className={styles.excessSection}>
+              <h4 className={`${styles.excessTitle} ${plusJakartaSans.className}`}>
+                Policy Excess Information
+              </h4>
+              <div className={styles.excessContent}>
+                <p className={styles.excessItem}>
+                  <strong>Accidental damage:</strong> £850 (£500 voluntary excess)
+                </p>
+                <p className={styles.excessItem}>
+                  <strong>Fire or theft:</strong> £850 (£500 voluntary excess)
+                </p>
+              </div>
+              <p className={styles.excessNote}>
+                Your total excess applies every time you claim and to every car you're claiming on.
+              </p>
+
+              <div className={styles.excessGrid}>
+                <div className={styles.excessItemBlock}>
+                  <h5 className={`${styles.excessSubtitle} ${plusJakartaSans.className}`}>
+                    Glass-only excess
+                  </h5>
+                  <p className={styles.excessValue}>Repair: £20</p>
+                  <p className={styles.excessValue}>Replacement: £95</p>
+                </div>
+                <div className={styles.excessItemBlock}>
+                  <h5 className={`${styles.excessSubtitle} ${plusJakartaSans.className}`}>
+                    Non-recommended repairer
+                  </h5>
+                  <p className={styles.excessValue}>£400</p>
+                  <p className={styles.excessValueNote}>
+                    In addition to main excess. Applies to glass replacement but not repair.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <p className={styles.disclaimer}>* includes any changes that you've made incl. Interest and Insurance Premium Tax</p>
           </div>
         )}
