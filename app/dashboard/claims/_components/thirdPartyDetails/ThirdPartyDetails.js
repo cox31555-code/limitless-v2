@@ -14,8 +14,8 @@ const ReadOnlyField = ({ label, value }) => (
 const ThirdPartyDetails = ({ claimData }) => {
   return (
     <>
-      {/* Third Party Details Section */}
-      <ExpandableSection title="Third Party Details">
+      {/* Third Party Details & Vehicle Section */}
+      <ExpandableSection title="Third Party Details & Vehicle">
         <div className={styles.body}>
           <div className={styles.row}>
             <ReadOnlyField
@@ -38,12 +38,7 @@ const ThirdPartyDetails = ({ claimData }) => {
               value={claimData?.address || "Not provided"}
             />
           </div>
-        </div>
-      </ExpandableSection>
 
-      {/* Third Party Vehicle Section */}
-      <ExpandableSection title="Third Party Vehicle">
-        <div className={styles.body}>
           <ReadOnlyField
             label="Third party vehicle registration number*"
             value={claimData?.registrationNumber}

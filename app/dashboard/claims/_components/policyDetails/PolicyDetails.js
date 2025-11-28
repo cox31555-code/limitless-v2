@@ -32,18 +32,39 @@ const PolicyDetails = ({ claimData }) => {
 
   return (
     <>
-      {/* Claim Type Section */}
-      <ExpandableSection title="Claim Type" defaultOpen={true}>
+      {/* Claim Type & Incident Details Section */}
+      <ExpandableSection title="Claim Type & Incident Details" defaultOpen={true}>
         <div className={styles.body}>
           <ReadOnlyField
             label="Claim reason*"
             value={formatClaimReason(claimData?.claimreason)}
           />
+
+          <ReadOnlyField
+            label="Incident description*"
+            value={claimData?.claimDetails?.incidentDescription}
+          />
+
+          <div className={styles.row}>
+            <ReadOnlyField
+              label="Date of incident (Or estimate the date)*"
+              value={formatDate(claimData?.claimDetails?.incidentDate)}
+            />
+            <ReadOnlyField
+              label="Do you take responsibility for the incident?*"
+              value={claimData?.claimDetails?.responsible ? "Yes" : "No"}
+            />
+          </div>
+
+          <ReadOnlyField
+            label="If not, please give details"
+            value={claimData?.claimDetails?.detailsIfNotResponsible}
+          />
         </div>
       </ExpandableSection>
 
-      {/* Policy Information Section */}
-      <ExpandableSection title="Policy Information">
+      {/* Policy & Vehicle Information Section */}
+      <ExpandableSection title="Policy & Vehicle Information">
         <div className={styles.body}>
           <ReadOnlyField
             label="Enter your policy no.*"
@@ -71,38 +92,7 @@ const PolicyDetails = ({ claimData }) => {
               value={claimData?.claimDetails?.emailAddress}
             />
           </div>
-        </div>
-      </ExpandableSection>
 
-      {/* Incident Details Section */}
-      <ExpandableSection title="Incident Details">
-        <div className={styles.body}>
-          <ReadOnlyField
-            label="Incident description*"
-            value={claimData?.claimDetails?.incidentDescription}
-          />
-
-          <div className={styles.row}>
-            <ReadOnlyField
-              label="Date of incident (Or estimate the date)*"
-              value={formatDate(claimData?.claimDetails?.incidentDate)}
-            />
-            <ReadOnlyField
-              label="Do you take responsibility for the incident?*"
-              value={claimData?.claimDetails?.responsible ? "Yes" : "No"}
-            />
-          </div>
-
-          <ReadOnlyField
-            label="If not, please give details"
-            value={claimData?.claimDetails?.detailsIfNotResponsible}
-          />
-        </div>
-      </ExpandableSection>
-
-      {/* Vehicle Information Section */}
-      <ExpandableSection title="Vehicle Information">
-        <div className={styles.body}>
           <div className={styles.row}>
             <ReadOnlyField
               label="Where is the vehicle currently?*"
