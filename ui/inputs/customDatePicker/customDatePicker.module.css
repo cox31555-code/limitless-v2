@@ -131,10 +131,13 @@
 .footer {
   padding: 1rem 1.4rem 1.2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 0.8rem;
 }
 
-.todayButton {
-  width: 100%;
+.todayButton,
+.tomorrowButton {
+  flex: 1;
   padding: 0.8rem;
   border: 1px solid rgba(3, 136, 255, 0.3);
   border-radius: 6px;
@@ -146,12 +149,14 @@
   transition: all 0.15s ease;
 }
 
-.todayButton:hover {
+.todayButton:hover,
+.tomorrowButton:hover {
   background: rgba(3, 136, 255, 0.15);
   border-color: rgba(3, 136, 255, 0.5);
 }
 
-.todayButton:active {
+.todayButton:active,
+.tomorrowButton:active {
   transform: scale(0.98);
 }
 

@@ -53,9 +53,19 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
 
   const handleTodayClick = () => {
     const today = new Date();
+    today.setHours(0, 0, 0, 0);
     setDisplayMonth(new Date(today));
     setCurrentMonth(today);
     onDateSelect(today);
+  };
+
+  const handleTomorrowClick = () => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+    setDisplayMonth(new Date(tomorrow));
+    setCurrentMonth(tomorrow);
+    onDateSelect(tomorrow);
   };
 
   const isDateDisabled = (day) => {
@@ -176,6 +186,13 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
           onClick={handleTodayClick}
         >
           Today
+        </button>
+        <button
+          type="button"
+          className={styles.tomorrowButton}
+          onClick={handleTomorrowClick}
+        >
+          Tomorrow
         </button>
       </div>
     </div>
