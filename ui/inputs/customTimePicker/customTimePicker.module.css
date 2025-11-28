@@ -1,84 +1,185 @@
 .timePicker {
-  background: #1a1f3a;
+  background: #0f1419;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 1.6rem;
+  padding: 0;
   width: 100%;
-  max-width: 32rem;
+  max-width: 30rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   z-index: 99999;
   box-sizing: border-box;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  perspective: 1000px;
-  animation: slideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@media screen and (max-width: 900px) {
-  .timePicker {
-    max-width: min(90vw, 36rem);
-    width: 90vw;
-    padding: 1.6rem;
-    margin: 0 auto;
-  }
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .timePicker.slideUp {
-  animation: slideUp 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideUp 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.timeGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.6rem;
-  width: 100%;
-  max-height: 50vh;
-  overflow-y: auto;
-  padding-right: 0.4rem;
+.header {
+  padding: 1.6rem 1.6rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.timeSlot {
-  padding: 0.8rem 0.6rem;
-  border: 1.5px solid rgba(3, 136, 255, 0.12);
-  border-radius: 10px;
-  background: rgba(3, 136, 255, 0.04);
-  color: #e0e8f0;
+.title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.timeColumns {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 1.2rem 0.8rem;
+  min-height: 28rem;
+  max-height: 40vh;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.columnHeader {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 1.1rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.8rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.scrollContainer {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 0.4rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 4rem;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-height: 30rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.timeOption {
+  padding: 1rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
   width: 100%;
   box-sizing: border-box;
 }
 
-.timeSlot:hover:not(.timeSlotSelected) {
-  border-color: rgba(3, 136, 255, 0.25);
-  background: rgba(3, 136, 255, 0.08);
+.timeOption:hover {
+  background: rgba(3, 136, 255, 0.1);
+  color: #ffffff;
 }
 
-.timeSlotSelected {
+.timeOptionSelected {
   background: #0388ff;
-  border-color: #0388ff;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
 }
 
-.timeSlotSelected:hover {
+.timeOptionSelected:hover {
   background: #0270cc;
-  border-color: #0270cc;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 2.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4rem;
+  margin-top: 3.2rem;
+  flex-shrink: 0;
+}
+
+.footer {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem 1.6rem 1.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nowButton {
+  flex: 1;
+  padding: 1rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nowButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.okButton {
+  flex: 1;
+  padding: 1rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #0388ff;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.okButton:hover {
+  background: #0270cc;
+}
+
+.okButton:active {
+  transform: scale(0.98);
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
@@ -89,110 +190,88 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes slideUpMobile {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleUp {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
   }
 }
 
 @media screen and (max-width: 900px) {
   .timePicker {
-    max-width: 30rem;
-    width: calc(100vw - 4rem);
-    padding: 1.4rem;
-    gap: 1.2rem;
+    max-width: min(90vw, 32rem);
+    width: 90vw;
   }
 
-  .timeGrid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.6rem;
-    max-height: 45vh;
+  .timeColumns {
+    min-height: 26rem;
   }
 
-  .timeSlot {
-    padding: 0.8rem 0.5rem;
-    font-size: 1rem;
-    min-height: 3.8rem;
-    font-weight: 600;
-  }
-
-  .timeSlot:active {
-    background: #0270cc;
-    border-color: #0270cc;
-    transform: scale(0.95);
+  .scrollContainer {
+    max-height: 28rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .timePicker {
-    max-width: 28rem;
-    width: calc(100vw - 3.2rem);
+    max-width: min(92vw, 30rem);
+    width: 92vw;
+  }
+
+  .header {
     padding: 1.4rem;
-    gap: 1.2rem;
   }
 
-  .timeGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem;
-    max-height: 42vh;
+  .title {
+    font-size: 1.5rem;
   }
 
-  .timeSlot {
-    padding: 1rem 0.8rem;
+  .timeColumns {
+    padding: 1rem 0.6rem;
+    min-height: 24rem;
+  }
+
+  .columnHeader {
     font-size: 1.2rem;
-    min-height: 4.8rem;
-    font-weight: 600;
   }
 
-  .timeSlot:active:not(.timeSlotSelected) {
-    background: rgba(3, 136, 255, 0.2);
-    border-color: rgba(3, 136, 255, 0.4);
-    transform: scale(0.95);
+  .timeOption {
+    padding: 1.2rem 0.6rem;
+    font-size: 1.6rem;
+  }
+
+  .scrollContainer {
+    max-height: 26rem;
+  }
+
+  .footer {
+    padding: 1.4rem;
+  }
+
+  .nowButton,
+  .okButton {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (max-width: 400px) {
   .timePicker {
-    max-width: 26rem;
-    width: calc(100vw - 2.4rem);
-    padding: 1.2rem;
-    gap: 1rem;
+    max-width: min(95vw, 28rem);
+    width: 95vw;
   }
 
-  .timeGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-    max-height: 40vh;
+  .timeColumns {
+    min-height: 22rem;
   }
 
-  .timeSlot {
-    padding: 0.9rem 0.6rem;
-    font-size: 1.1rem;
-    min-height: 4.4rem;
-    font-weight: 600;
+  .timeOption {
+    padding: 1rem 0.4rem;
+    font-size: 1.4rem;
+  }
+
+  .scrollContainer {
+    max-height: 24rem;
   }
 }
