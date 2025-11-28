@@ -226,7 +226,16 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
               e.currentTarget.style.color = "#0052a3";
             }}
           >
-            <span>View Online</span>
+            <div
+              style={{
+                display: "block",
+                fontWeight: "600",
+                whiteSpace: "nowrap",
+                fontSize: "11.5px",
+              }}
+            >
+              View Online
+            </div>
           </button>
 
           <button
