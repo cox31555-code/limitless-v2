@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import LoadingSpinner from '@/ui/loadingSpinner/LoadingSpinner';
 import styles from './documentRequestModal.module.css';
 
 const DocumentRequestModal = ({ isOpen, onClose }) => {
@@ -24,8 +25,7 @@ const DocumentRequestModal = ({ isOpen, onClose }) => {
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         {isLoading ? (
           <div className={styles.loadingContainer}>
-            <div className={styles.spinner}></div>
-            <p className={styles.loadingText}>Processing your request...</p>
+            <LoadingSpinner />
           </div>
         ) : (
           <>
