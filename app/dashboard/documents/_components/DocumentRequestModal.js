@@ -22,7 +22,7 @@ const DocumentRequestModal = ({ isOpen, onClose }) => {
         </p>
 
         <p className={styles.note}>
-          Please allow up to 15 working days for delivery. If you don't receive your documents within this timeframe, please contact our customer support team.
+          If your documents don't arrive within 15 working days, please contact customer support.
         </p>
 
         <button onClick={onClose} className={styles.closeButton}>
