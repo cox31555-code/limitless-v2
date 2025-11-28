@@ -583,23 +583,24 @@
 .makeClaimBtn {
   flex: 1;
   padding: 1rem 2rem;
-  background: #1db584;
-  color: #ffffff;
-  border: none;
+  background: transparent;
+  color: #1db584;
+  border: 2px solid #1db584;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .makeClaimBtn:hover {
-  background: #149966;
+  background: rgba(29, 181, 132, 0.08);
+  border-color: #149966;
+  color: #149966;
 }
 
 .makeClaimBtn:focus {
-  outline: 2px solid #1db584;
-  outline-offset: 2px;
+  outline: none;
 }
 
 .makeClaimBtn:focus-visible {
