@@ -1,11 +1,8 @@
-import React from "react";
-import styles from "./thirdPartyDetails.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
+'use client';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+import React from "react";
+import ExpandableSection from "../ExpandableSection";
+import styles from "./thirdPartyDetails.module.css";
 
 const ReadOnlyField = ({ label, value }) => (
   <div className={styles.readOnlyField}>
@@ -18,10 +15,7 @@ const ThirdPartyDetails = ({ claimData }) => {
   return (
     <>
       {/* Third Party Details Section */}
-      <div className={styles.container}>
-        <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-          Third Party Details
-        </h3>
+      <ExpandableSection title="Third Party Details">
         <div className={styles.body}>
           <div className={styles.row}>
             <ReadOnlyField
@@ -45,13 +39,10 @@ const ThirdPartyDetails = ({ claimData }) => {
             />
           </div>
         </div>
-      </div>
+      </ExpandableSection>
 
       {/* Third Party Vehicle Section */}
-      <div className={styles.container}>
-        <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-          Third Party Vehicle
-        </h3>
+      <ExpandableSection title="Third Party Vehicle">
         <div className={styles.body}>
           <ReadOnlyField
             label="Third party vehicle registration number*"
@@ -74,7 +65,7 @@ const ThirdPartyDetails = ({ claimData }) => {
             value={claimData?.damage || "Not provided"}
           />
         </div>
-      </div>
+      </ExpandableSection>
     </>
   );
 };
