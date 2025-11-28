@@ -147,6 +147,15 @@
     font-size: 1.4rem;
     padding: 1.3rem 2.6rem;
   }
+
+  .spinner {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .loadingText {
+    font-size: 1.4rem;
+  }
 }
 
 /* Mobile */
@@ -179,6 +188,15 @@
   .closeButton {
     font-size: 1.35rem;
     padding: 1.2rem 2.4rem;
+  }
+
+  .spinner {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .loadingText {
+    font-size: 1.3rem;
   }
 }
 
