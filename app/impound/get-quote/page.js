@@ -1296,6 +1296,7 @@ const ImpoundInsuranceContent = () => {
                     onBack={handleBackFromCoverDetails}
                     onNext={handleCoverDetailsSubmit}
                     coverData={form.getValues("coverDetails") || {}}
+                    showCoverOptions={false}
                   />
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "ncd" && (
