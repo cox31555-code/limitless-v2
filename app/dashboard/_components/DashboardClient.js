@@ -62,7 +62,7 @@ const DashboardClient = () => {
       icon: "payments",
       action: () => {
         showLoading();
-        router.push("/dashboard/policy");
+        router.push("/dashboard/payments");
       },
     },
     {
