@@ -341,6 +341,10 @@
     font-size: 1.8rem;
   }
 
+  .vehicleName {
+    font-size: 1.6rem;
+  }
+
   .carMeta {
     font-size: 1.15rem;
     margin: 0 0 1rem 0;
@@ -358,6 +362,6 @@
   }
 
   .infoValue {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
