@@ -527,6 +527,117 @@
   font-weight: 600;
 }
 
+/* Auto-Renewal Section */
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.checkIcon {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.benefitText {
+  font-size: 1.4rem;
+  color: #334155;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.benefitText strong {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.optOutSection {
+  border-top: 1px solid #e5e9f0;
+  padding-top: 1.8rem;
+  margin-top: 0.4rem;
+}
+
+.optOutTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0052a3;
+  margin: 0 0 1rem 0;
+  line-height: 1.4;
+}
+
+.optOutToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #0052a3;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: underline;
+}
+
+.optOutToggle:hover {
+  color: #003d7a;
+}
+
+.chevronIcon {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.chevronIcon.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.optOutContent {
+  margin-top: 1.4rem;
+  padding: 1.6rem;
+  background: #f8fafe;
+  border-radius: 8px;
+  border: 1px solid #e0e6f0;
+  animation: slideDown 0.3s ease-out;
+}
+
+.autoRenewalLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  cursor: pointer;
+}
+
+.autoRenewalCheckbox {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  accent-color: #0052a3;
+}
+
+.autoRenewalText {
+  font-size: 1.3rem;
+  color: #475569;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
 /* Tablet */
 @media screen and (max-width: 1200px) {
   .breadcrumb {
