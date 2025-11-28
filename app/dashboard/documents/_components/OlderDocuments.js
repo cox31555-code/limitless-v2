@@ -46,6 +46,43 @@ export default function OlderDocuments() {
       <div className={styles.emptyState}>
         <p className={styles.emptyStateMessage}>No older documents available</p>
       </div>
+
+      <div className={styles.documentsList}>
+        {documents.map((doc) => (
+          <div key={doc.id} className={styles.documentItem}>
+            <div className={styles.documentInfo}>
+              <h4 className={styles.documentTitle}>{doc.title}</h4>
+              <p className={styles.documentDate}>{doc.date}</p>
+            </div>
+
+            <div className={styles.documentActions}>
+              <button
+                onClick={() => handleView(doc.id)}
+                className={styles.actionButton}
+              >
+                <Image src="/svg/eye.svg" alt="view" width={16} height={16} />
+                View
+              </button>
+
+              <button
+                onClick={() => handleDownload(doc.id)}
+                className={styles.actionButton}
+              >
+                <Image src="/svg/download.svg" alt="download" width={16} height={16} />
+                Download
+              </button>
+
+              <button
+                onClick={() => handleSendByPost(doc.id)}
+                className={styles.actionButton}
+              >
+                <Image src="/svg/mail-send.svg" alt="send by post" width={16} height={16} />
+                Send by post
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
