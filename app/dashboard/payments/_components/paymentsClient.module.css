@@ -100,45 +100,39 @@
 .greetingArea {
   display: flex;
   flex-direction: column;
-  gap: 1.82rem;
-  flex: 1;
+  gap: 1.04rem;
 }
 
 .greetingTitle {
-  font-size: 5.46rem;
+  font-size: 3.9rem;
   font-weight: 700;
-  line-height: 1.1;
   color: #ffffff;
   margin: 0;
-  letter-spacing: -0.02em;
+  line-height: 110%;
+  letter-spacing: -0.65px;
 }
 
 .greetingSubtitle {
-  font-size: 1.82rem;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
-  max-width: 550px;
+  font-weight: 400;
 }
 
 .badgeArea {
-  flex-shrink: 0;
+  display: none;
 }
 
 .allianzBadge {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
-  padding: 1.3rem 2.6rem;
-  font-size: 1.56rem;
-  font-weight: 600;
-  color: #ffffff;
   display: inline-block;
-  white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Content Wrapper */
@@ -411,16 +405,16 @@
   }
 
   .greetingTitle {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
 
   .greetingSubtitle {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
 
   .allianzBadge {
-    font-size: 1.4rem;
-    padding: 1.1rem 2.2rem;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.6rem;
   }
 
   .contentWrapper {
@@ -481,16 +475,16 @@
   }
 
   .greetingTitle {
-    font-size: 3.6rem;
+    font-size: 2.8rem;
   }
 
   .greetingSubtitle {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .allianzBadge {
-    font-size: 1.3rem;
-    padding: 1rem 2rem;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 
   .contentWrapper {
@@ -569,16 +563,16 @@
   }
 
   .greetingTitle {
-    font-size: 2.8rem;
+    font-size: 2.3rem;
   }
 
   .greetingSubtitle {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
   }
 
   .allianzBadge {
-    font-size: 1.2rem;
-    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 
   .contentWrapper {
