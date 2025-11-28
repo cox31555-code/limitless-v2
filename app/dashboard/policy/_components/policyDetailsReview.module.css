@@ -487,10 +487,11 @@
 
 /* Driver Items */
 .driverItem {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #003366;
   margin: 0;
+  padding: 0.5rem 0;
 }
 
 .driverRole {
