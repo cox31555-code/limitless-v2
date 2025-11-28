@@ -24,7 +24,7 @@ const PolicyDetailsReview = ({ policy }) => {
   });
 
   const formatValue = (value) => {
-    if (value === null || value === undefined || value === "") return "—";
+    if (value === null || value === undefined || value === "") return "���";
     if (typeof value === "boolean") return value ? "Yes" : "No";
     if (Array.isArray(value)) return value.length > 0 ? value.join(", ") : "—";
     return value;
@@ -589,7 +589,13 @@ const PolicyDetailsReview = ({ policy }) => {
                 </div>
                 <div className={styles.driverActionButtons}>
                   <button className={styles.primaryBtn} aria-label="View full driver profile">View Profile</button>
-                  <button className={styles.secondaryBtn} aria-label="Edit driver information">Edit Details</button>
+                  <button
+                    className={styles.secondaryBtn}
+                    aria-label="Edit driver information"
+                    onClick={() => router.push(`/dashboard/policy/${policy._id}/edit-driver/${index}`)}
+                  >
+                    Edit Details
+                  </button>
                 </div>
               </div>
             ))}
