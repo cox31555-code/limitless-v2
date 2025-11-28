@@ -111,10 +111,17 @@ const Form = ({ claimReason }) => {
     try {
       setIsSubmitting(true);
 
-      // Get claim data from sessionStorage
-      const claimData = JSON.parse(sessionStorage.getItem("claimData") || "{}");
+      // BYPASSING API - Generate mock order reference
+      await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API delay
 
-      // Save form data to sessionStorage for step validation (clean data only)
+      // Generate mock order reference
+      const mockOrderRef = `CLM${Date.now().toString().slice(-8)}`;
+
+      console.log("Mock claim submission:", data);
+      console.log("Generated order reference:", mockOrderRef);
+
+      // Save form data to sessionStorage
+      const claimData = JSON.parse(sessionStorage.getItem("claimData") || "{}");
       const cleanData = {};
       Object.keys(data).forEach((key) => {
         const val = data[key];
@@ -132,70 +139,14 @@ const Form = ({ claimReason }) => {
       claimData.formData = cleanData;
       sessionStorage.setItem("claimData", JSON.stringify(claimData));
 
-      // Transform flat form data to nested structure for API
-      const apiData = transformFormDataToApiFormat(data);
+      // Redirect to success page with mock orderReference
+      router.push(
+        `/dashboard/submit-claim?step=submitted&orderReference=${mockOrderRef}`
+      );
 
-      // userId will be set by backend from authenticated user
-      // No need to send it from frontend
+      // Clean up sessionStorage
+      sessionStorage.removeItem("claimData");
 
-      const response = await fetch(`${API_BASE_URL}/api/claims`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", // This sends HTTP-only cookies with the request
-        body: JSON.stringify(apiData),
-      });
-
-      // Check if response is JSON before parsing
-      const contentType = response.headers.get("content-type");
-      let result;
-      
-      if (contentType && contentType.includes("application/json")) {
-        result = await response.json();
-      } else {
-        // Server returned HTML (likely an error page)
-        const text = await response.text();
-        console.error("Server returned non-JSON response:", text.substring(0, 200));
-        throw new Error(`Server error (${response.status}). Please try again or contact support.`);
-      }
-
-      if (response.ok) {
-        console.log("API Response:", result); // Debug: Full API response
-
-        // Extract orderReference from API response
-        const orderRef =
-          result.data?.orderReference ||
-          result.orderReference ||
-          result.data?.data?.orderReference;
-
-        console.log("Extracted orderReference:", orderRef); // Debug: Extracted value
-
-        if (orderRef) {
-          // Redirect to success page with orderReference in URL
-          router.push(
-            `/dashboard/submit-claim?step=submitted&orderReference=${orderRef}`
-          );
-        } else {
-          console.error("No orderReference found in API response");
-          // Redirect anyway but without orderReference
-          router.push("/dashboard/submit-claim?step=submitted");
-        }
-
-        // Clean up sessionStorage
-        sessionStorage.removeItem("claimData");
-      } else {
-        // Handle validation errors
-        if (result.errors) {
-          Object.keys(result.errors).forEach((field) => {
-            setError(field, { message: result.errors[field] });
-          });
-        } else {
-          setError("root", {
-            message: result.message || "Failed to submit claim",
-          });
-        }
-      }
     } catch (error) {
       console.error("Error submitting claim:", error);
       setError("root", { message: "Network error. Please try again." });
