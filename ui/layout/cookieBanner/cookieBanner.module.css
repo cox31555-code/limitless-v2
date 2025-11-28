@@ -1,22 +1,25 @@
 .cookieBanner {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4rem);
+  max-width: 1000px;
   background: #ffffff;
-  border-top: 1px solid #e5e7eb;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  border: 1px solid rgba(3, 136, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 8, 34, 0.12), 0 4px 12px rgba(0, 82, 163, 0.08);
   z-index: 9999;
   animation: slideUp 0.4s ease-out;
 }
 
 @keyframes slideUp {
   from {
-    transform: translateY(100%);
+    transform: translateX(-50%) translateY(120%);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
 }
@@ -26,30 +29,30 @@
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  padding: 1.8rem 4%;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 2.4rem 3rem;
 }
 
 .leftSection {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 2rem;
   flex: 1;
 }
 
 .iconWrapper {
   flex-shrink: 0;
-  width: 4rem;
-  height: 4rem;
+  width: 4.8rem;
+  height: 4.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border-radius: 12px;
 }
 
 .cookieIcon {
-  width: 100%;
-  height: 100%;
+  width: 3.2rem;
+  height: 3.2rem;
 }
 
 .text {
@@ -62,19 +65,19 @@
 }
 
 .link {
-  color: #3B82F6;
+  color: #0388ff;
   text-decoration: none;
   background: none;
   border: none;
   padding: 0;
   font-size: inherit;
-  font-weight: inherit;
+  font-weight: 500;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: #2563eb;
+  color: #0270cc;
   text-decoration: underline;
 }
 
@@ -87,54 +90,69 @@
 
 .settingsButton {
   background: #ffffff;
-  border: 1px solid #d1d5db;
-  color: #374151;
+  border: 1.5px solid #d1d9e3;
+  color: #4b5563;
   font-size: 1.35rem;
   font-weight: 500;
-  padding: 1rem 2rem;
-  border-radius: 8px;
+  padding: 1.1rem 2.2rem;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  font-family: inherit;
 }
 
 .settingsButton:hover {
-  background: #f9fafb;
-  border-color: #9ca3af;
+  background: #f8f9fb;
+  border-color: #0388ff;
+  color: #0388ff;
 }
 
 .acceptButton {
-  background: #1e293b;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border: none;
   color: #ffffff;
   font-size: 1.35rem;
-  font-weight: 500;
-  padding: 1rem 2.4rem;
-  border-radius: 8px;
+  font-weight: 600;
+  padding: 1.1rem 2.4rem;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  font-family: inherit;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.2);
 }
 
 .acceptButton:hover {
-  background: #0f172a;
-  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.3);
+  background: linear-gradient(135deg, #0270cc 0%, #025ca8 100%);
+  box-shadow: 0 6px 16px rgba(3, 136, 255, 0.3);
+  transform: translateY(-1px);
 }
 
 /* Tablet */
 @media screen and (max-width: 1200px) {
+  .cookieBanner {
+    width: calc(100% - 3rem);
+    bottom: 1.5rem;
+  }
+
   .content {
-    padding: 1.6rem 4%;
+    padding: 2.2rem 2.6rem;
     gap: 2.4rem;
   }
 
   .leftSection {
-    gap: 1.4rem;
+    gap: 1.6rem;
   }
 
   .iconWrapper {
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .cookieIcon {
+    width: 3rem;
+    height: 3rem;
   }
 
   .text {
@@ -148,27 +166,38 @@
   .settingsButton,
   .acceptButton {
     font-size: 1.3rem;
-    padding: 0.9rem 1.8rem;
+    padding: 1rem 2rem;
   }
 }
 
 /* Mobile */
 @media screen and (max-width: 900px) {
+  .cookieBanner {
+    width: calc(100% - 2rem);
+    bottom: 1rem;
+    border-radius: 14px;
+  }
+
   .content {
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    padding: 2rem 4%;
+    padding: 2.4rem 2.4rem;
   }
 
   .leftSection {
-    gap: 1.2rem;
+    gap: 1.4rem;
     width: 100%;
   }
 
   .iconWrapper {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .cookieIcon {
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   .text {
@@ -184,25 +213,36 @@
   .acceptButton {
     flex: 1;
     font-size: 1.25rem;
-    padding: 1rem 1.6rem;
+    padding: 1.1rem 1.6rem;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .cookieBanner {
+    width: calc(100% - 1.6rem);
+    bottom: 0.8rem;
+    border-radius: 12px;
+  }
+
   .content {
-    padding: 1.8rem 4%;
-    gap: 1.6rem;
+    padding: 2rem 2rem;
+    gap: 1.8rem;
   }
 
   .leftSection {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .iconWrapper {
-    width: 3rem;
-    height: 3rem;
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .cookieIcon {
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .text {
@@ -218,6 +258,27 @@
   .acceptButton {
     width: 100%;
     font-size: 1.2rem;
-    padding: 1.1rem 1.4rem;
+    padding: 1.2rem 1.4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cookieBanner {
+    width: calc(100% - 1.2rem);
+    bottom: 0.6rem;
+  }
+
+  .content {
+    padding: 1.8rem 1.8rem;
+  }
+
+  .text {
+    font-size: 1.15rem;
+  }
+
+  .settingsButton,
+  .acceptButton {
+    font-size: 1.15rem;
+    padding: 1.1rem 1.2rem;
   }
 }
