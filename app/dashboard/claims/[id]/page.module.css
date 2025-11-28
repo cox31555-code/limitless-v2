@@ -317,10 +317,6 @@
   .contentSubtitle {
     font-size: 1.2rem;
   }
-
-  .container {
-    gap: 2.8rem;
-  }
 }
 
 @media screen and (max-width: 600px) {
