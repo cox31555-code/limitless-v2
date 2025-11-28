@@ -155,11 +155,15 @@ const page = async ({ params }) => {
           <Updates
             data={[
               {
-                description: "Claim submitted",
+                description: "Claim submitted successfully",
                 date: claim.createdAt,
               },
               {
-                description: `Status updated to ${claim.status}`,
+                description: "Documents received and under review",
+                date: new Date(new Date(claim.createdAt).getTime() + 2 * 60 * 60 * 1000).toISOString(),
+              },
+              {
+                description: `Claim status: ${claim.status}`,
                 date: claim.updatedAt,
               },
             ]}
