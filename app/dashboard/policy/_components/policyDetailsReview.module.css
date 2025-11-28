@@ -878,7 +878,7 @@
   }
 
   .subsectionTitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .actionButtonsContainer {
@@ -889,6 +889,6 @@
   .makeClaimBtn,
   .cancelPolicyBtn {
     padding: 0.85rem 1.2rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
