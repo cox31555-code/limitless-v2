@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState, useRef, useEffect, forwardRef } from "react";
 import CustomDatePicker from "./customDatePicker/CustomDatePicker";
 import CustomTimePicker from "./customTimePicker/CustomTimePicker";
-import styles from "./selections/dataAndTime/dataAndTime.module.css";
+import styles from "./textInput/textInput.module.css";
 
 const FormDateInput = forwardRef(
   (
@@ -191,13 +191,10 @@ const FormDateInput = forwardRef(
         // Handle both YYYY-MM-DD and DD/MM/YYYY formats
         if (dateString.includes("/")) {
           const [day, month, year] = dateString.split("/");
-          console.log(day, month, year);
           return new Date(year, month - 1, day);
-
         } else {
           // For YYYY-MM-DD format, create date without timezone issues
           const [year, month, day] = dateString.split("-");
-          console.log(year, month, day);
           return new Date(year, month - 1, day);
         }
       } catch (error) {
@@ -226,7 +223,6 @@ const FormDateInput = forwardRef(
       return `${year}-${month}-${day}`;
     };
 
-
     const handleDateSelect = (date) => {
       if (!date) return;
 
@@ -254,13 +250,6 @@ const FormDateInput = forwardRef(
         onChange(syntheticEvent);
       }
       setShowDatePicker(false);
-    };
-
-    const handleTimeContainerClick = () => {
-      if (timeInputRef.current) {
-        timeInputRef.current.focus();
-        timeInputRef.current.click();
-      }
     };
 
     const openDatePicker = () => {
@@ -299,67 +288,59 @@ const FormDateInput = forwardRef(
     if (type === "date") {
       return (
         <>
-          <div className={styles.container}>
-            <div className={styles.inputGroup}>
-              <label className={styles.label}>{dateLabel}</label>
-
-              <div
-                className={`${styles.inputContainer} ${disabled ? styles.disabled : ''}`}
+          <div className={styles.formInputGroup}>
+            {dateLabel && <label className={styles.formInputLabel}>{dateLabel}</label>}
+            
+            <div
+              className={`${styles.formInputWrapper}`}
+              ref={inputContainerRef}
+            >
+              <input
+                ref={ref}
+                name={name}
+                value={formatDateDisplay(value) || ""}
+                onChange={() => {}} // Dummy onChange to satisfy React
+                placeholder="DD/MM/YYYY"
+                className={`${styles.formInput} ${error ? styles.formInputError : ""} ${disabled ? styles.formInputDisabled : ''}`}
+                type="text"
+                readOnly
                 onClick={openDatePicker}
-                ref={inputContainerRef}
-                style={reducedPadding ? { paddingLeft: '0.6rem' } : {}}
-              >
-                <input
-                  ref={ref}
-                  name={name}
-                  value={formatDateDisplay(value) || ""}
-                  onChange={() => {}} // Dummy onChange to satisfy React
-                  placeholder="DD/MM/YYYY"
-                  className={styles.input}
-                  type="text"
-                  readOnly
-                  onBlur={onBlur}
-                  {...props}
-                />
-                <Image
-                  src="/svg/arrow-down.svg"
-                  alt="arrow-down"
-                  width={24}
-                  height={24}
-                  className={styles.arrowDown}
-                />
-              </div>
-
-              {error && (
-                <span
-                  className={styles.error}
-                  style={{
-                    color: "#ef4444",
-                    fontSize: "1.2rem",
-                    marginTop: "0.5rem",
-                  }}
-                >
-                  {error.message}
-                </span>
-              )}
+                onBlur={onBlur}
+                disabled={disabled}
+                style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
+                {...props}
+              />
             </div>
+
+            {error && (
+              <span className={styles.formInputErrorMsg}>
+                {error.message || error}
+              </span>
+            )}
           </div>
 
           {showDatePicker && isMobile && (
             <div
-              className={styles.modalOverlay}
+              style={{
+                position: 'fixed',
+                inset: 0,
+                background: 'rgba(0, 0, 0, 0.55)',
+                zIndex: 99998,
+                backdropFilter: 'blur(4px)',
+                pointerEvents: 'auto'
+              }}
               onClick={closeDatePicker}
             />
           )}
           {showDatePicker && (
-            <div className={styles.pickerContainer} ref={datePickerRef} style={{
+            <div ref={datePickerRef} style={{
               position: isMobile ? 'fixed' : (pickerPosition.isAbsolute ? 'absolute' : 'fixed'),
               top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
               bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
               left: isMobile ? '50%' : pickerPosition.left,
               right: isMobile ? 'auto' : 'auto',
               transform: isMobile ? 'translate(-50%, -50%)' : 'none',
-              zIndex: 999999,
+              zIndex: 99999,
               pointerEvents: 'auto'
             }}>
               <CustomDatePicker
@@ -391,78 +372,59 @@ const FormDateInput = forwardRef(
         closeTimePicker();
       };
 
-
       return (
         <>
-          <div className={styles.container}>
-            <div className={styles.inputGroup}>
-              <label className={styles.label}>{timeLabel}</label>
-
-              <div
-                className={styles.inputContainer}
+          <div className={styles.formInputGroup}>
+            {timeLabel && <label className={styles.formInputLabel}>{timeLabel}</label>}
+            
+            <div
+              className={styles.formInputWrapper}
+              ref={inputContainerRef}
+            >
+              <input
+                ref={ref}
+                name={name}
+                value={value || ""}
+                onChange={() => {}}
+                placeholder="--:--"
+                className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
+                type="text"
+                readOnly
                 onClick={openTimePicker}
-                ref={inputContainerRef}
-                style={reducedPadding ? { paddingLeft: '0.7rem' } : {}}
-              >
-                <div className={styles.iconContainer}>
-                  <Image
-                    src="/svg/time.svg"
-                    alt="time"
-                    width={24}
-                    height={24}
-                    className={styles.icon}
-                  />
-                </div>
-                <input
-                  ref={ref}
-                  name={name}
-                  value={value || ""}
-                  onChange={() => {}}
-                  placeholder="--:--"
-                  className={styles.input}
-                  type="text"
-                  readOnly
-                  onBlur={onBlur}
-                />
-                <Image
-                  src="/svg/arrow-down.svg"
-                  alt="arrow-down"
-                  width={24}
-                  height={24}
-                  className={styles.arrowDown}
-                />
-              </div>
-
-              {error && (
-                <span
-                  className={styles.error}
-                  style={{
-                    color: "#ef4444",
-                    fontSize: "1.2rem",
-                    marginTop: "0.5rem",
-                  }}
-                >
-                  {error.message}
-                </span>
-              )}
+                onBlur={onBlur}
+                style={{ cursor: 'pointer' }}
+              />
             </div>
+
+            {error && (
+              <span className={styles.formInputErrorMsg}>
+                {error.message || error}
+              </span>
+            )}
           </div>
 
           {showTimePicker && isMobile && (
             <div
-              className={styles.modalOverlay}
+              style={{
+                position: 'fixed',
+                inset: 0,
+                background: 'rgba(0, 0, 0, 0.55)',
+                zIndex: 99998,
+                backdropFilter: 'blur(4px)',
+                pointerEvents: 'auto'
+              }}
               onClick={closeTimePicker}
             />
           )}
           {showTimePicker && (
-            <div className={styles.pickerContainer} ref={timePickerRef} style={{
+            <div ref={timePickerRef} style={{
               position: isMobile ? 'fixed' : (pickerPosition.isAbsolute ? 'absolute' : 'fixed'),
               top: isMobile ? '50%' : (pickerPosition.top !== 'auto' ? pickerPosition.top : undefined),
               bottom: isMobile ? 'auto' : (pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined),
               left: isMobile ? '50%' : pickerPosition.left,
               right: isMobile ? 'auto' : 'auto',
               transform: isMobile ? 'translate(-50%, -50%)' : 'none',
-              zIndex: 999999,
+              zIndex: 99999,
               pointerEvents: 'auto'
             }}>
               <CustomTimePicker
