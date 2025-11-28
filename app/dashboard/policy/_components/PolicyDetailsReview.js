@@ -296,6 +296,14 @@ const PolicyDetailsReview = ({ policy }) => {
                   <span className={styles.detailValue}>{formatValue(vehicleDetails?.seats)}</span>
                 </div>
                 <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Registered keeper</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.registeredKeeper)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Legal owner</span>
+                  <span className={styles.detailValue}>{formatValue(vehicleDetails?.legalOwner)}</span>
+                </div>
+                <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Modifications</span>
                   <span className={styles.detailValue}>{formatValue(vehicleDetails?.modifications || false)}</span>
                 </div>
