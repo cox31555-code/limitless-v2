@@ -38,21 +38,29 @@ const page = async ({ params }) => {
       status: "Pending",
       createdAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
       updatedAt: new Date().toISOString(),
+      policyNumber: "LC-ANNUAL-001",
       claimDetails: {
         placeHolderFirstName: "Dev",
         placeHolderLastName: "User",
         claimentsName: "Dev User",
         emailAddress: "dev@limitlesscover.co.uk",
-        incidentDescription: "Minor collision at junction",
+        incidentDescription: "Minor collision at junction while turning right. The other vehicle failed to stop at the red light and collided with the passenger side of my vehicle.",
         incidentDate: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
         responsible: false,
-        detailsIfNotResponsible: "Other driver ran red light",
-        vehicleLocation: "Home address"
+        detailsIfNotResponsible: "Other driver ran red light and failed to yield right of way. I had the green light and was proceeding through the intersection when the collision occurred.",
+        vehicleLocation: "Home address - 123 Main Street, Aberdeen",
+        drivable: "No"
       },
       claimreason: "Accident",
       thirdPartyDetails: {
-        name: "Third Party Driver",
-        registrationNumber: "CD22TEST"
+        name: "John Smith",
+        phone: "07700 900123",
+        postcode: "AB10 1AB",
+        address: "45 High Street, Aberdeen",
+        registrationNumber: "CD22TEST",
+        make: "Ford",
+        model: "Focus",
+        damage: "Front bumper damage and broken headlight"
       }
     };
   } else {
