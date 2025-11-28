@@ -105,12 +105,7 @@
   gap: 1.6rem;
 }
 
-.modificationsSection,
-.securitySection,
-.trackingSection,
-.importedSection,
-.driverSideSection,
-.seatsSection {
+.mainSection {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -118,38 +113,28 @@
   border-radius: 12px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
-  margin-top: 2rem;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modificationsSection:hover,
-.securitySection:hover,
-.trackingSection:hover,
-.importedSection:hover,
-.driverSideSection:hover,
-.seatsSection:hover {
+.mainSection:hover {
   border-color: rgba(3, 136, 255, 0.18);
   background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
 }
 
-.modificationsHeader,
-.securityHeader,
-.trackingHeader,
-.importedHeader,
-.driverSideHeader,
-.seatsHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+.sectionDivider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(3, 136, 255, 0) 0%, rgba(3, 136, 255, 0.2) 50%, rgba(3, 136, 255, 0) 100%);
+  margin: 0.5rem 0;
 }
 
-.modificationsTitle,
-.securityTitle,
-.trackingTitle,
-.importedTitle,
-.driverSideTitle,
-.seatsTitle {
-  font-size: 1.4rem;
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.fieldGroupTitle {
+  font-size: 1.3rem;
   font-weight: 600;
   color: #000822;
   margin: 0;
@@ -157,10 +142,7 @@
   line-height: 1.4;
 }
 
-.modificationsDescription,
-.securityDescription,
-.driverSideDescription,
-.seatsDescription {
+.fieldGroupDescription {
   font-size: 1.1rem;
   color: #5a6b7d;
   margin: 0;
@@ -266,6 +248,11 @@
     padding: 2.5rem 5%;
   }
 
+  .mainSection {
+    padding: 2.4rem;
+    gap: 1.8rem;
+  }
+
   .actionButtons {
     flex-direction: column-reverse;
   }
@@ -273,6 +260,14 @@
   .cancelBtn,
   .saveBtn {
     width: 100%;
+  }
+
+  .fieldGroupTitle {
+    font-size: 1.2rem;
+  }
+
+  .fieldGroupDescription {
+    font-size: 1rem;
   }
 }
 
@@ -295,6 +290,11 @@
     padding: 2rem 5%;
   }
 
+  .mainSection {
+    padding: 2rem;
+    gap: 1.6rem;
+  }
+
   .actionButtons {
     flex-direction: column-reverse;
     gap: 1rem;
@@ -305,30 +305,11 @@
     width: 100%;
   }
 
-  .modificationsSection,
-  .securitySection,
-  .trackingSection,
-  .importedSection,
-  .driverSideSection,
-  .seatsSection {
-    padding: 2.4rem;
-    gap: 1.8rem;
-    margin-top: 1.5rem;
+  .fieldGroupTitle {
+    font-size: 1.15rem;
   }
 
-  .modificationsTitle,
-  .securityTitle,
-  .trackingTitle,
-  .importedTitle,
-  .driverSideTitle,
-  .seatsTitle {
-    font-size: 1.3rem;
-  }
-
-  .modificationsDescription,
-  .securityDescription,
-  .driverSideDescription,
-  .seatsDescription {
+  .fieldGroupDescription {
     font-size: 1rem;
   }
 }
