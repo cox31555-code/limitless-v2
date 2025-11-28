@@ -96,11 +96,7 @@ const SubmitClaimContent = () => {
 
       // Show claim reason selection if on reason step
       if (step === "reason") {
-        return (
-          <div className={styles.fullWidthContainer}>
-            <ClaimReason />
-          </div>
-        );
+        return <ClaimReason />;
       }
     }
 
