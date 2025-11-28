@@ -1,13 +1,16 @@
 "use client";
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useReducer, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import { SelectPicker } from "rsuite";
+import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
+import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import styles from "@/app/annual/get-quote/_components/annualVehicle.module.css";
 import replaceStyles from "./replaceVehicleClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -17,40 +20,98 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["700"],
 });
 
+const vehicleWorthOptions = [
+  "£0 - £5,000",
+  "£5,000 - £10,000",
+  "£10,000 - £20,000",
+  "£20,000 - £30,000",
+  "£30,000 - £50,000",
+  "Over £50,000",
+];
+
 const carColors = [
   "White", "Black", "Gray", "Silver", "Blue", "Red", "Green", "Brown",
   "Orange", "Beige", "Purple", "Gold", "Yellow",
 ];
 
-const vehicleTypes = ["Car", "Motorcycle", "Truck", "Bus"];
-const vehicleMakes = ["Audi", "BMW", "Ford", "Honda", "Toyota", "Volkswagen"];
-const vehicleModels = ["Model A", "Model B", "Model C"];
-const vehicleYears = ["2024", "2023", "2022", "2021", "2020"];
-const vehicleDoors = ["2", "4", "5"];
-const vehicleFuels = ["Petrol", "Diesel", "Hybrid", "Electric"];
-const vehicleTransmissions = ["Manual", "Automatic"];
-const yesNoOptions = ["No", "Yes"];
-const alarmImmobiliserOptions = [
-  "Factory Fitted Thatcham Approved Alarm/Immobiliser",
-  "Factory Fitted Thatcham Approved Alarm",
-  "Factory Fitted Non-Thatcham Alarm/Immobiliser",
-  "Factory Fitted Non-Thatcham Alarm",
-  "Factory Fitted",
-  "None",
-];
 const trackingDeviceOptions = ["No", "Yes - Factory Fitted", "Yes - Aftermarket"];
-const driverSideOptions = ["Left Hand", "Right Hand"];
-const seatsOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const alarmImmobiliserOptions = [
+  "No",
+  "Thatcham approved immobiliser",
+  "Thatcham approved alarm",
+  "Thatcham approved alarm and immobiliser",
+  "Factory fitted immobiliser",
+  "Factory fitted alarm and immobiliser",
+  "Other",
+];
+const yesNoOptions = ["No", "Yes"];
+
+const initialVehicleState = {
+  makes: ["Audi", "BMW", "Ford", "Honda", "Toyota", "Volkswagen"],
+  error: null,
+  options: {
+    models: [],
+    years: [],
+    doors: [],
+    fuels: [],
+    transmissions: [],
+  },
+  values: {
+    make: "",
+    model: "",
+    year: "",
+    doors: "",
+    fuel: "",
+    transmission: "",
+  },
+};
+
+const vehicleReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_MAKES":
+      return { ...state, makes: action.payload };
+    case "SET_VEHICLE_DATA":
+      return {
+        ...state,
+        options: action.payload.options || state.options,
+        values: { ...state.values, ...(action.payload.values || {}) },
+        error: null,
+      };
+    case "SET_ERROR":
+      return { ...state, error: action.payload };
+    case "CLEAR_OPTIONS":
+      return {
+        ...state,
+        options: {
+          models: [],
+          years: [],
+          doors: [],
+          fuels: [],
+          transmissions: [],
+        },
+      };
+    default:
+      return state;
+  }
+};
 
 const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showVehicleDetails, setShowVehicleDetails] = useState(false);
+  const [isLoadingVehicleData, setIsLoadingVehicleData] = useState(false);
+  const [state, dispatch] = useReducer(vehicleReducer, initialVehicleState);
+  const [forceUpdate, setForceUpdate] = useState(0);
+  const [foundVehicleData, setFoundVehicleData] = useState(null);
+  const [showFoundData, setShowFoundData] = useState(false);
   const [showModificationsModal, setShowModificationsModal] = useState(false);
+  const isAutoSelectingRef = useRef(false);
 
   const form = useForm({
     resolver: zodResolver(annualInsuranceSchema),
     defaultValues: {
       vehicleDetails: {
+        registrationNumber: "",
         type: "",
         make: "",
         model: "",
@@ -64,23 +125,105 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         alarmImmobiliser: "",
         trackingDevice: "",
         importedVehicle: "",
-        driverSide: "",
-        seats: "",
       },
     },
   });
 
-  const { watch, setValue, formState: { errors } } = form;
+  const { watch, setValue, formState: { errors }, setError, clearErrors } = form;
+
+  const selectedType = watch("vehicleDetails.type");
+  const selectedMake = watch("vehicleDetails.make");
+  const selectedModel = watch("vehicleDetails.model");
+  const selectedYear = watch("vehicleDetails.year");
+  const selectedDoors = watch("vehicleDetails.doors");
+  const selectedFuel = watch("vehicleDetails.fuel");
   const vehicleModified = watch("vehicleDetails.vehicleModified");
   const vehicleModifications = watch("vehicleDetails.vehicleModifications") || [];
 
-  const handleDropdownChange = useCallback((field, value) => {
+  const toggleVehicleDetails = () => {
+    setShowVehicleDetails(!showVehicleDetails);
+  };
+
+  const handleDropdownChange = (field, value) => {
     setValue(`vehicleDetails.${field}`, value, {
       shouldValidate: true,
       shouldDirty: true,
       shouldTouch: true,
     });
-  }, [setValue]);
+
+    dispatch({
+      type: "SET_VEHICLE_DATA",
+      payload: {
+        values: { [field]: value },
+        options: state.options,
+      },
+    });
+  };
+
+  const handleFindVehicle = useCallback(async () => {
+    const registrationNumber = watch("vehicleDetails.registrationNumber");
+
+    if (!registrationNumber?.trim()) {
+      setError("vehicleDetails.registrationNumber", {
+        message: "Please enter a registration number",
+      });
+      return;
+    }
+
+    const cleanRegNumber = registrationNumber.trim().toUpperCase();
+    setIsLoadingVehicleData(true);
+
+    setTimeout(() => {
+      const mockVehicleData = {
+        registrationNumber: cleanRegNumber,
+        make: "Toyota",
+        model: "Corolla",
+        yearOfManufacture: "2023",
+        fuelType: "Petrol",
+        transmission: "Automatic",
+        colour: "Black",
+      };
+
+      setFoundVehicleData(mockVehicleData);
+      setShowFoundData(true);
+
+      setValue("vehicleDetails.registrationNumber", cleanRegNumber);
+      setValue("vehicleDetails.type", "Car");
+      setValue("vehicleDetails.make", mockVehicleData.make);
+      setValue("vehicleDetails.model", mockVehicleData.model);
+      setValue("vehicleDetails.year", mockVehicleData.yearOfManufacture);
+      setValue("vehicleDetails.fuel", mockVehicleData.fuelType);
+      setValue("vehicleDetails.transmission", mockVehicleData.transmission);
+      setValue("vehicleDetails.colour", mockVehicleData.colour);
+
+      clearErrors("vehicleDetails.registrationNumber");
+      setIsLoadingVehicleData(false);
+    }, 3000);
+  }, [watch, setError, setValue, clearErrors]);
+
+  const handleChangeVehicle = () => {
+    setFoundVehicleData(null);
+    setShowFoundData(false);
+    setValue("vehicleDetails.registrationNumber", "");
+    clearErrors("vehicleDetails.registrationNumber");
+  };
+
+  // Fetch vehicle data when make is selected
+  useEffect(() => {
+    if (selectedMake) {
+      const defaultOptions = {
+        models: ["Model A", "Model B", "Model C"],
+        years: ["2024", "2023", "2022", "2021", "2020"],
+        doors: ["2", "4", "5"],
+        fuels: ["Petrol", "Diesel", "Hybrid", "Electric"],
+        transmissions: ["Manual", "Automatic"],
+      };
+      dispatch({
+        type: "SET_VEHICLE_DATA",
+        payload: { values: {}, options: defaultOptions },
+      });
+    }
+  }, [selectedMake]);
 
   // Open modifications modal when "Yes" is selected
   useEffect(() => {
@@ -167,188 +310,226 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
       {/* Content */}
       <div className={replaceStyles.contentWrapper}>
         <form onSubmit={form.handleSubmit(handleSave)} className={replaceStyles.formContainer}>
-          <div className={replaceStyles.mainSection}>
-            {/* Basic Vehicle Details */}
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label="Vehicle Type"
-                selected={watch("vehicleDetails.type") || ""}
-                options={vehicleTypes}
-                setSelected={(value) => handleDropdownChange("type", value)}
-                placeholder="Select vehicle type"
-              />
-              <Dropdown
-                label="Make"
-                selected={watch("vehicleDetails.make") || ""}
-                options={vehicleMakes}
-                setSelected={(value) => handleDropdownChange("make", value)}
-                placeholder="Select make"
-              />
-            </div>
-
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label="Model"
-                selected={watch("vehicleDetails.model") || ""}
-                options={vehicleModels}
-                setSelected={(value) => handleDropdownChange("model", value)}
-                placeholder="Select model"
-              />
-              <Dropdown
-                label="Year"
-                selected={watch("vehicleDetails.year") || ""}
-                options={vehicleYears}
-                setSelected={(value) => handleDropdownChange("year", value)}
-                placeholder="Select year"
-              />
-            </div>
-
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label="Doors"
-                selected={watch("vehicleDetails.doors") || ""}
-                options={vehicleDoors}
-                setSelected={(value) => handleDropdownChange("doors", value)}
-                placeholder="Select doors"
-              />
-              <Dropdown
-                label="Fuel Type"
-                selected={watch("vehicleDetails.fuel") || ""}
-                options={vehicleFuels}
-                setSelected={(value) => handleDropdownChange("fuel", value)}
-                placeholder="Select fuel type"
-              />
-            </div>
-
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label="Transmission"
-                selected={watch("vehicleDetails.transmission") || ""}
-                options={vehicleTransmissions}
-                setSelected={(value) => handleDropdownChange("transmission", value)}
-                placeholder="Select transmission"
-              />
-              <Dropdown
-                label="Colour"
-                selected={watch("vehicleDetails.colour") || ""}
-                options={carColors}
-                setSelected={(value) => handleDropdownChange("colour", value)}
-                placeholder="Select colour"
-              />
-            </div>
-
-            {/* Divider */}
-            <div className={replaceStyles.sectionDivider}></div>
-
-            {/* Vehicle Modifications */}
-            <div className={replaceStyles.fieldGroup}>
-              <h4 className={replaceStyles.fieldGroupTitle}>Has the car been modified in any way?</h4>
-              <p className={replaceStyles.fieldGroupDescription}>Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.</p>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={vehicleModified}
-                  options={yesNoOptions}
-                  setSelected={(value) => handleDropdownChange("vehicleModified", value)}
-                  placeholder="Select option"
-                />
+          <ComponentWrapper title="Your New Vehicle Information">
+            <div className={styles.content}>
+              {/* Instruction Box */}
+              <div className={styles.instructionBox}>
+                <div className={styles.instructionIcon}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="#5a6b7d" strokeWidth="2"/>
+                    <path d="M12 16V12M12 8H12.01" stroke="#5a6b7d" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <div className={styles.instructionContent}>
+                  <p className={styles.instructionText}>We can only show you quotes for cars registered in the UK.</p>
+                </div>
               </div>
-              {vehicleModified === "Yes" && vehicleModifications.length > 0 && (
-                <div className={styles.modificationsListContainer}>
-                  <div className={styles.modificationsLabelWrapper}>
-                    <p className={styles.modificationsLabel}>Selected Modifications:</p>
-                    <button
-                      type="button"
-                      className={styles.editModificationsBtn}
-                      onClick={() => setShowModificationsModal(true)}
-                    >
-                      Edit
-                    </button>
-                  </div>
-                  <div className={styles.modificationsTagsList}>
-                    {vehicleModifications.map((modification) => (
-                      <span key={modification} className={styles.modificationTag}>
-                        {modification}
-                      </span>
-                    ))}
+
+              {/* Vehicle Registration Section */}
+              <div className={styles.section}>
+                <div className={styles.sectionHeader}>
+                  <h3 className={styles.sectionTitle}>What's your car's registration?</h3>
+                </div>
+                <div className={styles.registrationSection}>
+                  {!showFoundData ? (
+                    <div className={styles.registrationInputWrapper}>
+                      <div className={styles.inputContainer}>
+                        <RegistrationInput
+                          label="Registration Number"
+                          value={watch("vehicleDetails.registrationNumber")}
+                          onChange={(e) => {
+                            const formattedValue = e.target.value.toUpperCase();
+                            setValue("vehicleDetails.registrationNumber", formattedValue, {
+                              shouldValidate: false,
+                              shouldDirty: true,
+                              shouldTouch: true,
+                            });
+                          }}
+                          onButtonClick={handleFindVehicle}
+                          disabled={showFoundData || isLoadingVehicleData}
+                          isLoading={isLoadingVehicleData}
+                          error={errors.vehicleDetails?.registrationNumber?.message}
+                          placeholder="Enter car registration..."
+                          buttonText="Find my car"
+                        />
+                      </div>
+                      <div className={styles.dividerWithText}>
+                        <span className={styles.dividerText}>OR</span>
+                      </div>
+                      <button
+                        type="button"
+                        className={styles.manualEntryBtn}
+                        onClick={toggleVehicleDetails}
+                      >
+                        <span className={styles.manualEntryIcon}>✎</span>
+                        <span className={styles.manualEntryText}>Enter make and model</span>
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      <div className={styles.vehicleDataDisplay}>
+                        <p className={styles.vehicleDataRow}>
+                          {foundVehicleData.make} {foundVehicleData.model} ({foundVehicleData.yearOfManufacture})
+                        </p>
+                        <p className={styles.vehicleDataRow}>
+                          {foundVehicleData.registrationNumber}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        className={styles.changeVehicleBtn}
+                        onClick={handleChangeVehicle}
+                      >
+                        Change Vehicle
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* Manual Vehicle Entry Section */}
+              {showVehicleDetails && !foundVehicleData && (
+                <div className={styles.section}>
+                  <div className={styles.sectionHeader}>
+                    <h3 className={styles.sectionTitle}>Enter Vehicle Details</h3>
+                    <p className={styles.sectionDescription}>Back to registration lookup</p>
                   </div>
                 </div>
               )}
-            </div>
 
-            {/* Alarm/Immobiliser */}
-            <div className={replaceStyles.fieldGroup}>
-              <h4 className={replaceStyles.fieldGroupTitle}>What type of alarm and/or immobiliser does the car have?</h4>
-              <p className={replaceStyles.fieldGroupDescription}>Check your car's manual if you're unsure.</p>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.alarmImmobiliser") || ""}
-                  options={alarmImmobiliserOptions}
-                  setSelected={(value) => handleDropdownChange("alarmImmobiliser", value)}
-                  placeholder="Select alarm type"
-                />
+              {/* Manual Vehicle Entry */}
+              <div
+                className={`${styles.vehicleDetailsContainer} ${
+                  showVehicleDetails && !foundVehicleData ? styles.vehicleDetailsVisible : styles.vehicleDetailsHidden
+                }`}
+              >
+                <div className={styles.rows}>
+                  {/* Instruction */}
+                  {showVehicleDetails && !foundVehicleData && (
+                    <div className={replaceStyles.progressiveInstruction}>
+                      Please complete each field in order to unlock the next selection.
+                    </div>
+                  )}
+
+                  {/* Vehicle Type and Make Row */}
+                  {!foundVehicleData && (
+                    <div className={styles.cleanFormGrid2Col}>
+                      <Dropdown
+                        label="Vehicle Type"
+                        selected={watch("vehicleDetails.type") || ""}
+                        options={["Car", "Motorcycle", "Truck", "Bus"]}
+                        setSelected={(value) => handleDropdownChange("type", value)}
+                        placeholder="Select vehicle type"
+                      />
+                      {selectedType && (
+                        <Dropdown
+                          label="Make"
+                          selected={state.values.make || selectedMake || ""}
+                          options={state.makes}
+                          setSelected={(value) => handleDropdownChange("make", value)}
+                          placeholder="Select make"
+                        />
+                      )}
+                    </div>
+                  )}
+
+                  {/* Model and Year Row */}
+                  {selectedMake && !foundVehicleData && (
+                    <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
+                      <div className={styles.rsuiteFormGroup}>
+                        <label className={styles.label}>Model</label>
+                        <SelectPicker
+                          key={`model-${forceUpdate}`}
+                          data={state.options.models.map((option) => ({ label: option, value: option }))}
+                          placeholder="Select model"
+                          disabled={!selectedMake || state.options.models.length === 0}
+                          value={state.values.model || selectedModel || null}
+                          onChange={(value) => handleDropdownChange("model", value || "")}
+                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.model ? styles.error : ""}`}
+                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                        />
+                      </div>
+                      <div className={styles.rsuiteFormGroup}>
+                        <label className={styles.label}>Year</label>
+                        <SelectPicker
+                          key={`year-${forceUpdate}`}
+                          data={state.options.years.map((option) => ({ label: option, value: option }))}
+                          placeholder="Select year"
+                          disabled={!selectedMake || state.options.years.length === 0}
+                          value={state.values.year || selectedYear || null}
+                          onChange={(value) => handleDropdownChange("year", value || "")}
+                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.year ? styles.error : ""}`}
+                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Doors and Fuel Type Row */}
+                  {selectedYear && !foundVehicleData && (
+                    <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
+                      <div className={styles.rsuiteFormGroup}>
+                        <label className={styles.label}>Doors</label>
+                        <SelectPicker
+                          key={`doors-${forceUpdate}`}
+                          data={state.options.doors.map((option) => ({ label: option, value: option }))}
+                          placeholder="Select doors"
+                          disabled={!selectedYear || state.options.doors.length === 0}
+                          value={state.values.doors || selectedDoors || null}
+                          onChange={(value) => handleDropdownChange("doors", value || "")}
+                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.doors ? styles.error : ""}`}
+                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                        />
+                      </div>
+                      <div className={styles.rsuiteFormGroup}>
+                        <label className={styles.label}>Fuel Type</label>
+                        <SelectPicker
+                          key={`fuel-${forceUpdate}`}
+                          data={state.options.fuels.map((option) => ({ label: option, value: option }))}
+                          placeholder="Select fuel type"
+                          disabled={!selectedYear || state.options.fuels.length === 0}
+                          value={state.values.fuel || selectedFuel || null}
+                          onChange={(value) => handleDropdownChange("fuel", value || "")}
+                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.fuel ? styles.error : ""}`}
+                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Transmission and Colour Row */}
+                  {selectedFuel && !foundVehicleData && (
+                    <div className={`${styles.cleanFormGrid2Col} ${styles.progressiveRow}`}>
+                      <div className={styles.rsuiteFormGroup}>
+                        <label className={styles.label}>Transmission</label>
+                        <SelectPicker
+                          key={`transmission-${forceUpdate}`}
+                          data={state.options.transmissions.map((option) => ({ label: option, value: option }))}
+                          placeholder="Select transmission"
+                          disabled={!selectedFuel || state.options.transmissions.length === 0}
+                          value={state.values.transmission || watch("vehicleDetails.transmission") || null}
+                          onChange={(value) => handleDropdownChange("transmission", value || "")}
+                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.transmission ? styles.error : ""}`}
+                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                        />
+                      </div>
+                      <div className={styles.rsuiteFormGroup}>
+                        <label className={styles.label}>Colour</label>
+                        <SelectPicker
+                          data={carColors.map((option) => ({ label: option, value: option }))}
+                          placeholder="Select colour"
+                          value={watch("vehicleDetails.colour") || null}
+                          onChange={(value) => handleDropdownChange("colour", value || "")}
+                          className={`${styles.rsuiteSelect} ${errors.vehicleDetails?.colour ? styles.error : ""}`}
+                          style={{ width: "100%", minHeight: "5rem", padding: "1.2rem 1.6rem", fontSize: "1.6rem" }}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-
-            {/* Tracking Device */}
-            <div className={replaceStyles.fieldGroup}>
-              <h4 className={replaceStyles.fieldGroupTitle}>Is the car fitted with a tracking device?</h4>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.trackingDevice") || ""}
-                  options={trackingDeviceOptions}
-                  setSelected={(value) => handleDropdownChange("trackingDevice", value)}
-                  placeholder="Select option"
-                />
-              </div>
-            </div>
-
-            {/* Imported Vehicle */}
-            <div className={replaceStyles.fieldGroup}>
-              <h4 className={replaceStyles.fieldGroupTitle}>Is the car an import?</h4>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.importedVehicle") || ""}
-                  options={yesNoOptions}
-                  setSelected={(value) => handleDropdownChange("importedVehicle", value)}
-                  placeholder="Select option"
-                />
-              </div>
-            </div>
-
-            {/* Driver Side */}
-            <div className={replaceStyles.fieldGroup}>
-              <h4 className={replaceStyles.fieldGroupTitle}>Is the car left or right-hand drive?</h4>
-              <p className={replaceStyles.fieldGroupDescription}>The UK standard is right-hand drive. This means that when you are sat in the vehicle facing the windscreen, the steering wheel is on the right side.</p>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.driverSide") || ""}
-                  options={driverSideOptions}
-                  setSelected={(value) => handleDropdownChange("driverSide", value)}
-                  placeholder="Select option"
-                />
-              </div>
-            </div>
-
-            {/* Seats */}
-            <div className={replaceStyles.fieldGroup}>
-              <h4 className={replaceStyles.fieldGroupTitle}>How many seats are there in the car?</h4>
-              <p className={replaceStyles.fieldGroupDescription}>Count the number of seatbelts if you're unsure.</p>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.seats") || ""}
-                  options={seatsOptions}
-                  setSelected={(value) => handleDropdownChange("seats", value)}
-                  placeholder="Select number of seats"
-                />
-              </div>
-            </div>
-          </div>
+          </ComponentWrapper>
 
           {/* Action Buttons */}
           <div className={replaceStyles.actionButtons}>
