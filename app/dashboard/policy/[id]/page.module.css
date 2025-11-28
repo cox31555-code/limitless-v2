@@ -133,9 +133,8 @@
 
 @media screen and (max-width: 1200px) {
   .breadcrumb {
-    margin-left: 40px;
     gap: 1rem;
-    padding: 20px 3% 20px 0.4%;
+    padding: 20px 5% 20px;
   }
 
   .breadcrumbItem {
@@ -155,15 +154,14 @@
   }
 
   .contentWrapper {
-    padding: 3rem 3%;
+    padding: 3rem 5%;
   }
 }
 
 @media screen and (max-width: 900px) {
   .breadcrumb {
-    margin-left: 30px;
     gap: 0.8rem;
-    padding: 15px 3% 15px 0.4%;
+    padding: 15px 5% 15px;
   }
 
   .breadcrumbItem {
@@ -194,7 +192,7 @@
     flex-direction: column;
     width: 100%;
     gap: 2rem;
-    margin-left: 0;
+    margin: 0 auto;
   }
 
   .greetingArea {
@@ -211,15 +209,14 @@
   }
 
   .contentWrapper {
-    padding: 2.5rem 3%;
+    padding: 2.5rem 5%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .breadcrumb {
-    margin-left: 20px;
     gap: 0.6rem;
-    padding: 12px 3% 12px 0.4%;
+    padding: 12px 5% 12px;
   }
 
   .breadcrumbItem {
@@ -251,6 +248,6 @@
   }
 
   .contentWrapper {
-    padding: 2rem 4%;
+    padding: 2rem 5%;
   }
 }
