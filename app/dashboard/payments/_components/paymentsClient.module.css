@@ -215,6 +215,12 @@
   letter-spacing: -0.3px;
 }
 
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
 /* Payment Day */
 .paymentDay {
   font-size: 1.5rem;
