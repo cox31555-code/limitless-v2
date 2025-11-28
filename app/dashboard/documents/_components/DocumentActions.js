@@ -303,7 +303,16 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
                 />
               </svg>
             )}
-            <span>{isDownloading ? "Downloading..." : "Download PDF"}</span>
+            <div
+              style={{
+                display: "block",
+                fontWeight: "600",
+                whiteSpace: "nowrap",
+                fontSize: "11.5px",
+              }}
+            >
+              {isDownloading ? "Downloading..." : "Download PDF"}
+            </div>
           </button>
         </div>
       </div>
