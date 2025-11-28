@@ -87,9 +87,8 @@
   line-height: 1.6;
   margin: 0 0 2.4rem 0;
   padding: 1.6rem;
-  background: #f9fafb;
+  background: transparent;
   border-radius: 8px;
-  border-left: 3px solid #0388ff;
 }
 
 .closeButton {
@@ -135,7 +134,7 @@
   .note {
     font-size: 1.25rem;
     margin-bottom: 2.2rem;
-    padding: 1.4rem;
+    padding: 1.4rem 0;
   }
 
   .closeButton {
@@ -173,7 +172,7 @@
   .note {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    padding: 1.2rem;
+    padding: 1.2rem 0;
   }
 
   .closeButton {
@@ -197,6 +196,7 @@
 
   .note {
     font-size: 1.15rem;
+    padding: 1.1rem 0;
   }
 
   .closeButton {
