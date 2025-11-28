@@ -43,9 +43,19 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
       displayMonth.getMonth(),
       day
     );
+    selectedDateObj.setHours(0, 0, 0, 0);
 
-    if (minDate && selectedDateObj < minDate) return;
-    if (maxDate && selectedDateObj > maxDate) return;
+    if (minDate) {
+      const normalizedMinDate = new Date(minDate);
+      normalizedMinDate.setHours(0, 0, 0, 0);
+      if (selectedDateObj < normalizedMinDate) return;
+    }
+
+    if (maxDate) {
+      const normalizedMaxDate = new Date(maxDate);
+      normalizedMaxDate.setHours(0, 0, 0, 0);
+      if (selectedDateObj > normalizedMaxDate) return;
+    }
 
     setCurrentMonth(selectedDateObj);
     onDateSelect(selectedDateObj);
@@ -74,15 +84,25 @@ const CustomDatePicker = ({ selectedDate, onDateSelect, minDate, maxDate, showAb
       displayMonth.getMonth(),
       day
     );
-    if (minDate && dateObj < minDate) return true;
-    if (maxDate && dateObj > maxDate) return true;
+    dateObj.setHours(0, 0, 0, 0);
+
+    if (minDate) {
+      const normalizedMinDate = new Date(minDate);
+      normalizedMinDate.setHours(0, 0, 0, 0);
+      if (dateObj < normalizedMinDate) return true;
+    }
+
+    if (maxDate) {
+      const normalizedMaxDate = new Date(maxDate);
+      normalizedMaxDate.setHours(0, 0, 0, 0);
+      if (dateObj > normalizedMaxDate) return true;
+    }
 
     // Only disable past dates if maxDate is not set (i.e., not for DOB)
     if (!maxDate) {
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      const isBeforeToday = dateObj < today;
-      if (isBeforeToday) return true;
+      if (dateObj < today) return true;
     }
 
     return false;
