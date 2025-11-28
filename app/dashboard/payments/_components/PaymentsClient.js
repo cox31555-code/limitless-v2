@@ -156,9 +156,13 @@ export default function PaymentsClient({ plusJakartaSans }) {
           </div>
           <div className={styles.sectionContent}>
             <p className={styles.scheduleInfo}>
-              You have paid <strong>47.29</strong> out of <strong>568.69</strong>
+              You have paid <strong>£47.29</strong> out of <strong>£568.69</strong>
             </p>
-            <p className={styles.installmentInfo}>(11 instalments left X 47.40)</p>
+            <p className={styles.installmentInfo}>(11 instalments left X £47.40)</p>
+
+            <div className={styles.progressBar}>
+              <div className={styles.progressFill} style={{ width: '8.3%' }}></div>
+            </div>
 
             <button
               className={styles.viewInstalmentsButton}
