@@ -9,14 +9,15 @@ import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import styles from "./editDriverDetailsClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import DriverSummaryCard from "./DriverSummaryCard";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700"],
 });
 
-const Step2PersonalDetails = dynamic(() => import("@/app/annual/get-quote/_components/Step2PersonalDetails"), { ssr: false });
-const Step2Household = dynamic(() => import("@/app/annual/get-quote/_components/Step2Household"), { ssr: false });
+const Step2PersonalDetailsHidden = dynamic(() => import("./Step2PersonalDetailsHidden"), { ssr: false });
+const Step2HouseholdHidden = dynamic(() => import("./Step2HouseholdHidden"), { ssr: false });
 const Step2Employment = dynamic(() => import("@/app/annual/get-quote/_components/Step2Employment"), { ssr: false });
 const Step2Licence = dynamic(() => import("@/app/annual/get-quote/_components/Step2Licence"), { ssr: false });
 const Step2LicenceRestrictions = dynamic(() => import("@/app/annual/get-quote/_components/Step2LicenceRestrictions"), { ssr: false });
@@ -108,12 +109,13 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       {/* Content */}
       <div className={styles.contentWrapper}>
         <form onSubmit={form.handleSubmit(handleSave)} className={styles.formContainer}>
-          <Step2PersonalDetails form={form} />
-          <Step2Household form={form} />
+          <DriverSummaryCard driver={driver} form={form} />
+          <Step2PersonalDetailsHidden form={form} />
+          <Step2HouseholdHidden form={form} />
           <Step2Employment form={form} />
           <Step2Licence form={form} />
           <Step2LicenceRestrictions form={form} />
-          <Step2ClaimsAndConvictions 
+          <Step2ClaimsAndConvictions
             form={form}
             claims={claims}
             setClaims={setClaims}
