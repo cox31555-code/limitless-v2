@@ -22,6 +22,7 @@
   margin-top: 0;
   margin-bottom: 6.5rem;
   padding: 7.8rem calc(50vw - 50%) 7.8rem;
+  gap: 0;
 }
 
 .heroSection::before {
