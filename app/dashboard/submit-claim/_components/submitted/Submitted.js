@@ -59,6 +59,10 @@ const Submitted = () => {
         <span className={styles.breadcrumbSeparator}>›</span>
         <span className={styles.breadcrumbItem}>Submit a Claim</span>
         <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={styles.breadcrumbItem}>What happened?</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={styles.breadcrumbItem}>Claim Details</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
         <span className={`${styles.breadcrumbItem} ${styles.active}`}>Submitted</span>
       </div>
 
