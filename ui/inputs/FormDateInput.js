@@ -380,7 +380,10 @@ const FormDateInput = forwardRef(
 
     // Time picker component
     if (type === "time") {
+      const isTimeDisabled = disabled || !relatedDateValue;
+
       const handleTimeSelect = (timeString) => {
+        if (isTimeDisabled) return;
         const syntheticEvent = {
           target: {
             name: name,
@@ -394,6 +397,7 @@ const FormDateInput = forwardRef(
       };
 
       const handleNativeTimeChange = (e) => {
+        if (isTimeDisabled) return;
         if (onChange) {
           onChange(e);
         }
@@ -417,9 +421,10 @@ const FormDateInput = forwardRef(
                   onChange={handleNativeTimeChange}
                   onBlur={onBlur}
                   step="900"
-                  className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
+                  disabled={isTimeDisabled}
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""} ${isTimeDisabled ? styles.formInputDisabled : ''}`}
                   style={{
-                    cursor: 'pointer',
+                    cursor: isTimeDisabled ? 'not-allowed' : 'pointer',
                     colorScheme: 'dark'
                   }}
                 />
@@ -430,12 +435,13 @@ const FormDateInput = forwardRef(
                   value={value || ""}
                   onChange={() => {}}
                   placeholder="--:--"
-                  className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""} ${isTimeDisabled ? styles.formInputDisabled : ''}`}
                   type="text"
                   readOnly
-                  onClick={openTimePicker}
+                  onClick={isTimeDisabled ? undefined : openTimePicker}
                   onBlur={onBlur}
-                  style={{ cursor: 'pointer' }}
+                  disabled={isTimeDisabled}
+                  style={{ cursor: isTimeDisabled ? 'not-allowed' : 'pointer' }}
                 />
               )}
             </div>
@@ -447,7 +453,7 @@ const FormDateInput = forwardRef(
             )}
           </div>
 
-          {!isMobile && showTimePicker && (
+          {!isMobile && showTimePicker && !isTimeDisabled && (
             <div ref={timePickerRef} style={{
               position: pickerPosition.isAbsolute ? 'absolute' : 'fixed',
               top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
