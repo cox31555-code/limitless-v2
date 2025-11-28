@@ -162,6 +162,17 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
         </div>
       </section>
 
+      {/* Breadcrumb Navigation */}
+      <div className={editStyles.breadcrumb}>
+        <span className={editStyles.breadcrumbItem}>Dashboard</span>
+        <span className={editStyles.breadcrumbSeparator}>›</span>
+        <span className={editStyles.breadcrumbItem}>Manage Policy</span>
+        <span className={editStyles.breadcrumbSeparator}>›</span>
+        <span className={editStyles.breadcrumbItem}>Policy summary</span>
+        <span className={editStyles.breadcrumbSeparator}>›</span>
+        <span className={`${editStyles.breadcrumbItem} ${editStyles.active}`}>Edit vehicle details</span>
+      </div>
+
       {/* Content */}
       <div className={editStyles.contentWrapper}>
         <form onSubmit={form.handleSubmit(handleSave)} className={editStyles.formContainer}>
