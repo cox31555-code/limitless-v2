@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 3rem;
+  gap: 2rem;
   padding: 2.4rem;
   border-radius: 14px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
@@ -10,6 +10,7 @@
   box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
   margin-bottom: 2.4rem;
 }
+
 .title {
   color: #0052a3;
   font-size: 1.8rem;
@@ -20,161 +21,197 @@
   padding-bottom: 1.2rem;
   border-bottom: 2px solid #e0e6f0;
 }
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
 
-.tableHeaderRow {
+/* Timeline Styles */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   position: relative;
+  padding-top: 1rem;
 }
 
-.tableHeaderRow::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 8rem;
-  width: calc(100% - 8rem);
-  height: 1px;
-  background: #e0e6f0;
-}
-
-.tableHeaderCell {
-  color: #7a8fa3;
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.3px;
-  text-align: left;
-  padding-bottom: 1.6rem;
-  text-transform: uppercase;
-}
-.tableHeaderCell:first-child,
-.tableCell:first-child {
-  padding-left: 3.4rem;
-  width: 8rem;
+.timelineItem {
+  display: flex;
+  gap: 2rem;
   position: relative;
+  padding-bottom: 2.4rem;
 }
 
-/* Vertical line through the center of head images */
-.tableCell:first-child::before {
-  content: "";
-  position: absolute;
-  left: 4.3rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: rgba(0, 8, 34, 0.18);
-  z-index: 1;
+.timelineItem.latest {
+  padding-bottom: 0;
 }
 
-/* Hide the line for the last row */
-.tableRow:last-child .tableCell:first-child::before {
-  bottom: 50%;
+.timelineMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
 }
 
-/* Style the admin images to be positioned above the line */
-.admin {
+.dot {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
   position: relative;
   z-index: 2;
-  background: white;
-  border-radius: 50%;
-  padding: 2px;
-}
-.tableRow {
-  position: relative;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-.tableRow::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 8rem;
-  /* transform: translateX(-50%); */
-  width: calc(100% - 8rem);
-  height: 1px;
-  background: rgba(0, 8, 34, 0.18);
-}
-.tableRow:last-child::after {
-  display: none;
+.statusSubmitted {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
 }
 
-.tableRow:hover {
-  background-color: #f8fafc;
+.statusPending {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 }
 
-.tableCell {
-  padding: 2.2rem 0 2.5rem;
-  vertical-align: center;
-  text-align: start;
+.statusCompleted {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
-.claimant,
-.dateMobile {
+
+.statusApproved {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.statusDefault {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+}
+
+.line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, #e0e6f0 0%, rgba(224, 230, 240, 0.3) 100%);
+  margin-top: 0.4rem;
+}
+
+.timelineContent {
+  flex: 1;
+  padding-top: 0;
+}
+
+.updateHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.updateTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #003366;
-  font-size: 1.3rem;
-  font-weight: 500;
+  margin: 0;
   line-height: 140%;
-  letter-spacing: 0.2px;
+  letter-spacing: -0.2px;
 }
-.dateMobile {
-  display: none;
+
+.updateMeta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
+
+.dateTime {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  color: #7a8fa3;
+  font-weight: 500;
+}
+
+.icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* Hover Effects */
+.timelineItem:hover .dot {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.35);
+}
+
+.timelineItem:hover .updateTitle {
+  color: #0052a3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 2.2rem;
+    margin-bottom: 2.2rem;
+    gap: 1.8rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .timelineItem {
+    gap: 1.8rem;
+    padding-bottom: 2.2rem;
+  }
+
+  .updateTitle {
+    font-size: 1.45rem;
+  }
+
+  .dateTime {
+    font-size: 1.2rem;
+  }
+
+  .updateMeta {
+    gap: 1.8rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
     padding: 2rem;
     margin-bottom: 2rem;
+    gap: 1.6rem;
   }
+
   .title {
-    margin: 0;
     font-size: 1.6rem;
     padding-bottom: 1rem;
   }
-  .tableHeaderRow,
-  .tableHeaderRow::after {
-    display: none;
+
+  .timeline {
+    padding-top: 0.8rem;
   }
 
-  .tableHeaderCell {
+  .timelineItem {
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .dot {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .updateTitle {
     font-size: 1.4rem;
-    padding-bottom: 1.7rem;
-  }
-  .tableHeaderCell:first-child,
-  .tableCell:first-child {
-    padding-left: 2rem;
-    width: 6rem;
-    position: relative;
   }
 
-  /* Vertical line through the center of head images */
-  .tableCell:first-child::before {
-    left: 3rem;
+  .dateTime {
+    font-size: 1.15rem;
   }
 
-  /* Start the line from the middle of the first row in mobile */
-  .tableRow:first-child .tableCell:first-child::before {
-    top: 50%;
-  }
-  .admin {
-    padding: 2px;
-  }
-  .tableRow:last-child::after {
-    display: none;
-  }
-  .tableRow::after {
-    left: 6rem;
-    width: calc(100% - 6rem);
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
-  .tableCell {
-    padding: 1.7rem 0 1.7rem;
-  }
-  .tableCell:nth-child(2) {
-    display: none;
-  }
-  .dateMobile {
-    display: block;
+  .updateMeta {
+    gap: 1.5rem;
   }
 }
 
@@ -182,19 +219,44 @@
   .container {
     padding: 1.8rem;
     margin-bottom: 1.8rem;
-    gap: 2.4rem;
+    gap: 1.4rem;
   }
 
   .title {
     font-size: 1.5rem;
   }
 
-  .tableCell {
-    padding: 1.5rem 0 1.5rem;
+  .timeline {
+    padding-top: 0.6rem;
   }
 
-  .claimant,
-  .dateMobile {
-    font-size: 1.25rem;
+  .timelineItem {
+    gap: 1.2rem;
+    padding-bottom: 1.8rem;
+  }
+
+  .dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-width: 2px;
+  }
+
+  .updateTitle {
+    font-size: 1.3rem;
+  }
+
+  .updateMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .dateTime {
+    font-size: 1.1rem;
+  }
+
+  .icon {
+    width: 1.4rem;
+    height: 1.4rem;
   }
 }
