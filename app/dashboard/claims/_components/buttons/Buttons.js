@@ -16,7 +16,7 @@ const Buttons = () => {
   return (
     <div className={styles.buttons}>
       <Link href="/dashboard/claims" className={styles.backButton}>
-        ← Back to Claims
+        Back to Claims
       </Link>
       <button className={styles.cancelButton} onClick={handleCancel}>
         Cancel Claim
