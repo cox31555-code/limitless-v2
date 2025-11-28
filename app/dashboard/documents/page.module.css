@@ -152,8 +152,8 @@
 }
 
 .policyLabel {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: #0052a3;
   margin: 0;
   line-height: 1.4;
@@ -225,7 +225,7 @@
 
 .dropdownWrapper {
   width: 100%;
-  max-width: 360px;
+  max-width: 520px;
   flex-shrink: 0;
 }
 
