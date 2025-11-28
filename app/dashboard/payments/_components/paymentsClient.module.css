@@ -308,21 +308,26 @@
 
 /* Payment Schedule */
 .scheduleInfo {
-  font-size: 1.6rem;
-  color: #4b5563;
-  margin: 0 0 0.6rem 0;
-  line-height: 1.5;
+  font-size: 1.5rem;
+  color: #475569;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .scheduleInfo strong {
   font-weight: 700;
-  color: #1f2937;
+  color: #0f172a;
 }
 
 .installmentInfo {
-  font-size: 1.4rem;
-  color: #6b7280;
-  margin: 0 0 2.4rem 0;
+  font-size: 1.3rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #e5e9f0;
+  margin-bottom: 1.6rem;
 }
 
 .scheduleList {
@@ -355,9 +360,9 @@
 }
 
 .scheduleDate {
-  font-size: 1.5rem;
-  color: #374151;
-  font-weight: 500;
+  font-size: 1.4rem;
+  color: #334155;
+  font-weight: 600;
 }
 
 .scheduleAmountWrapper {
@@ -380,15 +385,15 @@
 }
 
 .scheduleAmount {
-  font-size: 1.5rem;
-  color: #1f2937;
-  font-weight: 600;
+  font-size: 1.4rem;
+  color: #0f172a;
+  font-weight: 700;
 }
 
 .depositLabel {
-  font-size: 1.3rem;
-  color: #6b7280;
-  font-weight: 500;
+  font-size: 1.2rem;
+  color: #64748b;
+  font-weight: 600;
 }
 
 /* Tablet */
