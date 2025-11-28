@@ -30,6 +30,17 @@ const vehicleDoors = ["2", "4", "5"];
 const vehicleFuels = ["Petrol", "Diesel", "Hybrid", "Electric"];
 const vehicleTransmissions = ["Manual", "Automatic"];
 const yesNoOptions = ["No", "Yes"];
+const alarmImmobiliserOptions = [
+  "Factory Fitted Thatcham Approved Alarm/Immobiliser",
+  "Factory Fitted Thatcham Approved Alarm",
+  "Factory Fitted Non-Thatcham Alarm/Immobiliser",
+  "Factory Fitted Non-Thatcham Alarm",
+  "Factory Fitted",
+  "None",
+];
+const trackingDeviceOptions = ["No", "Yes - Factory Fitted", "Yes - Aftermarket"];
+const driverSideOptions = ["Left Hand", "Right Hand"];
+const seatsOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const router = useRouter();
@@ -50,6 +61,11 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
         colour: vehicleDetails?.colour || "",
         vehicleModified: vehicleDetails?.vehicleModified || "",
         vehicleModifications: vehicleDetails?.vehicleModifications || [],
+        alarmImmobiliser: vehicleDetails?.alarmImmobiliser || "",
+        trackingDevice: vehicleDetails?.trackingDevice || "",
+        importedVehicle: vehicleDetails?.importedVehicle || "",
+        driverSide: vehicleDetails?.driverSide || "",
+        seats: vehicleDetails?.seats || "",
       },
     },
   });
@@ -78,7 +94,6 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       shouldValidate: true,
       shouldDirty: true,
     });
-    // If no modifications are selected, reset vehicle modified to "No"
     if (selectedModifications.length === 0) {
       setValue("vehicleDetails.vehicleModified", "No", {
         shouldValidate: true,
@@ -89,7 +104,6 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   };
 
   const handleModificationsCancel = () => {
-    // Only reset to "No" if no modifications have been selected yet
     if (vehicleModifications.length === 0) {
       setValue("vehicleDetails.vehicleModified", "No", {
         shouldValidate: true,
@@ -252,6 +266,99 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Alarm and Security Section */}
+          <div className={editStyles.securitySection}>
+            <div className={editStyles.securityHeader}>
+              <h3 className={editStyles.securityTitle}>What type of alarm and/or immobiliser does the car have?</h3>
+              <p className={editStyles.securityDescription}>Check your car's manual if you're unsure.</p>
+            </div>
+            <div className={styles.rows}>
+              <div className={styles.cleanFormGrid2Col}>
+                <Dropdown
+                  label=""
+                  selected={watch("vehicleDetails.alarmImmobiliser") || ""}
+                  options={alarmImmobiliserOptions}
+                  setSelected={(value) => handleDropdownChange("alarmImmobiliser", value)}
+                  placeholder="Select alarm type"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Tracking Device Section */}
+          <div className={editStyles.trackingSection}>
+            <div className={editStyles.trackingHeader}>
+              <h3 className={editStyles.trackingTitle}>Is the car fitted with a tracking device?</h3>
+            </div>
+            <div className={styles.rows}>
+              <div className={styles.cleanFormGrid2Col}>
+                <Dropdown
+                  label=""
+                  selected={watch("vehicleDetails.trackingDevice") || ""}
+                  options={trackingDeviceOptions}
+                  setSelected={(value) => handleDropdownChange("trackingDevice", value)}
+                  placeholder="Select option"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Imported Vehicle Section */}
+          <div className={editStyles.importedSection}>
+            <div className={editStyles.importedHeader}>
+              <h3 className={editStyles.importedTitle}>Is the car an import?</h3>
+            </div>
+            <div className={styles.rows}>
+              <div className={styles.cleanFormGrid2Col}>
+                <Dropdown
+                  label=""
+                  selected={watch("vehicleDetails.importedVehicle") || ""}
+                  options={yesNoOptions}
+                  setSelected={(value) => handleDropdownChange("importedVehicle", value)}
+                  placeholder="Select option"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Driver Side Section */}
+          <div className={editStyles.driverSideSection}>
+            <div className={editStyles.driverSideHeader}>
+              <h3 className={editStyles.driverSideTitle}>Is the car left or right-hand drive?</h3>
+              <p className={editStyles.driverSideDescription}>The UK standard is right-hand drive. This means that when you are sat in the vehicle facing the windscreen, the steering wheel is on the right side.</p>
+            </div>
+            <div className={styles.rows}>
+              <div className={styles.cleanFormGrid2Col}>
+                <Dropdown
+                  label=""
+                  selected={watch("vehicleDetails.driverSide") || ""}
+                  options={driverSideOptions}
+                  setSelected={(value) => handleDropdownChange("driverSide", value)}
+                  placeholder="Select option"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Seats Section */}
+          <div className={editStyles.seatsSection}>
+            <div className={editStyles.seatsHeader}>
+              <h3 className={editStyles.seatsTitle}>How many seats are there in the car?</h3>
+              <p className={editStyles.seatsDescription}>Count the number of seatbelts if you're unsure.</p>
+            </div>
+            <div className={styles.rows}>
+              <div className={styles.cleanFormGrid2Col}>
+                <Dropdown
+                  label=""
+                  selected={watch("vehicleDetails.seats") || ""}
+                  options={seatsOptions}
+                  setSelected={(value) => handleDropdownChange("seats", value)}
+                  placeholder="Select number of seats"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Action Buttons */}
