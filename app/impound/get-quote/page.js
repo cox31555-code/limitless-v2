@@ -653,7 +653,7 @@ const ImpoundInsuranceContent = () => {
   const handleNcdDataSubmit = (data) => {
     setNcdData(data);
     form.setValue("ncdData", data, { shouldValidate: true });
-    setCoverSubStep("additionalProducts");
+    setCoverSubStep("contactInformation");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -662,17 +662,6 @@ const ImpoundInsuranceContent = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleAdditionalProductsSubmit = (data) => {
-    setProductsData(data);
-    form.setValue("productsData", data, { shouldValidate: true });
-    setCoverSubStep("contactInformation");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleBackFromAdditionalProducts = () => {
-    setCoverSubStep("ncd");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   const handleContactInformationSubmit = (data) => {
     setContactInformationData(data);
@@ -682,7 +671,7 @@ const ImpoundInsuranceContent = () => {
   };
 
   const handleBackFromContactInformation = () => {
-    setCoverSubStep("additionalProducts");
+    setCoverSubStep("ncd");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -696,7 +685,7 @@ const ImpoundInsuranceContent = () => {
     const subStepMaps = {
       [STEPS.VEHICLE]: ["registration", "carValue", "carUsage", "carStorage", "otherCars"],
       [STEPS.PERSONAL]: ["aboutYou", "household", "employment", "licence", "restrictions", "claims"],
-      [STEPS.COVER]: ["additionalDrivers", "carOwner", "cover", "ncd", "additionalProducts", "contactInformation"],
+      [STEPS.COVER]: ["additionalDrivers", "carOwner", "cover", "ncd", "contactInformation"],
     };
 
     const subStepKey = subStepMaps[stepNumber]?.[subStepIndex];
@@ -1306,13 +1295,6 @@ const ImpoundInsuranceContent = () => {
                     ncdData={ncdData || {}}
                   />
                 )}
-                {currentStep === STEPS.COVER && coverSubStep === "additionalProducts" && (
-                  <Step3AdditionalProducts
-                    onBack={handleBackFromAdditionalProducts}
-                    onNext={handleAdditionalProductsSubmit}
-                    productsData={productsData || {}}
-                  />
-                )}
                 {currentStep === STEPS.COVER && coverSubStep === "contactInformation" && (
                   <Step3ContactInformation
                     onBack={handleBackFromContactInformation}
@@ -1348,7 +1330,6 @@ const ImpoundInsuranceContent = () => {
                 !(currentStep === STEPS.COVER && coverSubStep === "carOwnerAddLegalOwner") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "cover") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "ncd") &&
-                !(currentStep === STEPS.COVER && coverSubStep === "additionalProducts") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "contactInformation") &&
                 !(currentStep === STEPS.CHECK_ANSWERS) &&
                 !isEditingCarDetails && (
@@ -1376,6 +1357,7 @@ const ImpoundInsuranceContent = () => {
               personalSubStep={personalSubStep}
               coverSubStep={coverSubStep}
               onSubStepClick={handleSubStepClick}
+              insuranceType="Impound"
             />
           </div>
         </div>
