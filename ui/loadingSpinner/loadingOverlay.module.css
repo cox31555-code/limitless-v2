@@ -40,7 +40,7 @@
 
 .loadingText {
   color: #0270CC;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 130%;
   letter-spacing: 0.2px;
@@ -70,7 +70,7 @@
 
 @media screen and (max-width: 600px) {
   .loadingText {
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin: 1.2rem 0 0 0;
   }
 }
