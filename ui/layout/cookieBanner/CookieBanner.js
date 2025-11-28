@@ -15,13 +15,18 @@ const CookieBanner = () => {
     }
   }, []);
 
-  const handleAccept = () => {
+  const handleAcceptAll = () => {
     localStorage.setItem('cookieConsent', 'accepted');
     setIsVisible(false);
   };
 
-  const handleSettings = () => {
-    localStorage.setItem('cookieConsent', 'settings');
+  const handleRejectAll = () => {
+    localStorage.setItem('cookieConsent', 'rejected');
+    setIsVisible(false);
+  };
+
+  const handleCustomise = () => {
+    localStorage.setItem('cookieConsent', 'customise');
     router.push('/cookies-policy');
     setIsVisible(false);
   };
@@ -34,30 +39,40 @@ const CookieBanner = () => {
         <div className={styles.leftSection}>
           <div className={styles.iconWrapper}>
             <svg viewBox="0 0 24 24" fill="none" className={styles.cookieIcon} xmlns="http://www.w3.org/2000/svg">
-              <path d="M21.598 11.064a1.006 1.006 0 0 0-.854-.172A2.938 2.938 0 0 1 20 11c-1.654 0-3-1.346-3.003-2.938.005-.034.016-.134.017-.168a.998.998 0 0 0-1.254-1.006A3.002 3.002 0 0 1 15 7c-1.654 0-3-1.346-3-3 0-.217.031-.444.099-.716a1 1 0 0 0-1.067-1.236A9.956 9.956 0 0 0 2 12c0 5.514 4.486 10 10 10s10-4.486 10-10c0-.049-.003-.097-.007-.16a1.004 1.004 0 0 0-.395-.776zM8.5 6a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-2 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm2.5-6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="#0388ff"/>
+              <path d="M21.598 11.064a1.006 1.006 0 0 0-.854-.172A2.938 2.938 0 0 1 20 11c-1.654 0-3-1.346-3.003-2.938.005-.034.016-.134.017-.168a.998.998 0 0 0-1.254-1.006A3.002 3.002 0 0 1 15 7c-1.654 0-3-1.346-3-3 0-.217.031-.444.099-.716a1 1 0 0 0-1.067-1.236A9.956 9.956 0 0 0 2 12c0 5.514 4.486 10 10 10s10-4.486 10-10c0-.049-.003-.097-.007-.16a1.004 1.004 0 0 0-.395-.776zM8.5 6a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-2 8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm2.5-6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill="#6366f1"/>
             </svg>
           </div>
-          <p className={styles.text}>
-            We use cookies to ensure that we give you the best experience on our website.{' '}
-            <button onClick={handleSettings} className={styles.link}>
-              Read cookies policies.
-            </button>
-          </p>
+          <div className={styles.textContent}>
+            <h3 className={styles.title}>Choose your cookie preferences</h3>
+            <p className={styles.description}>
+              Cookies help us deliver the best experience on our website. By using our website, you agree to the use of cookies. Find out how we use cookies in our{' '}
+              <button onClick={handleCustomise} className={styles.link}>
+                cookie policy
+              </button>.
+            </p>
+          </div>
         </div>
         <div className={styles.actions}>
           <button
-            onClick={handleSettings}
-            className={styles.settingsButton}
-            aria-label="Cookie Settings"
-          >
-            Cookie Setting
-          </button>
-          <button
-            onClick={handleAccept}
+            onClick={handleAcceptAll}
             className={styles.acceptButton}
             aria-label="Accept All Cookies"
           >
-            Accept All Cookies
+            Accept all
+          </button>
+          <button
+            onClick={handleRejectAll}
+            className={styles.rejectButton}
+            aria-label="Reject All Cookies"
+          >
+            Reject all
+          </button>
+          <button
+            onClick={handleCustomise}
+            className={styles.customiseButton}
+            aria-label="Customise Cookie Settings"
+          >
+            Customise
           </button>
         </div>
       </div>
