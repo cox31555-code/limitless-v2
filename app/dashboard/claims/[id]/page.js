@@ -164,6 +164,10 @@ const page = async ({ params }) => {
                 description: `Claim status: ${claim.status}`,
                 date: claim.updatedAt,
               },
+              {
+                description: "Claim review completed",
+                date: new Date(new Date(claim.updatedAt).getTime() + 4 * 60 * 60 * 1000).toISOString(),
+              },
             ]}
           />
           <PolicyDetails claimData={claim} />
