@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { extractVehicleMake } from "@/utils/vehicleIcons";
 import { getBrandIcon } from "@/ui/dashboard/vehicleBrandIcons";
+import { useLoading } from "@/contexts/LoadingContext";
 import styles from "./dashboardClient.module.css";
 
 const DashboardClient = () => {
   const router = useRouter();
+  const { showLoading } = useLoading();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -49,25 +51,37 @@ const DashboardClient = () => {
       id: 1,
       label: "Documents",
       icon: "documents",
-      action: () => router.push("/dashboard/documents"),
+      action: () => {
+        showLoading();
+        router.push("/dashboard/documents");
+      },
     },
     {
       id: 2,
       label: "Payments",
       icon: "payments",
-      action: () => router.push("/dashboard/policy"),
+      action: () => {
+        showLoading();
+        router.push("/dashboard/policy");
+      },
     },
     {
       id: 3,
       label: "Claims",
       icon: "claims",
-      action: () => router.push("/dashboard/claims"),
+      action: () => {
+        showLoading();
+        router.push("/dashboard/claims");
+      },
     },
     {
       id: 4,
       label: "Quotes",
       icon: "quotes",
-      action: () => router.push("/dashboard/quotes"),
+      action: () => {
+        showLoading();
+        router.push("/dashboard/quotes");
+      },
     },
   ];
 
