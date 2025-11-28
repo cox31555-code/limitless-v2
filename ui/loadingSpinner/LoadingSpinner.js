@@ -4,6 +4,7 @@ import styles from "./loadingSpinner.module.css";
 const LoadingSpinner = () => {
   return (
     <div className={styles.spinner}>
+      <div className={styles.circleSpinner}></div>
       <svg
         version="1.1"
         id="Layer_1"

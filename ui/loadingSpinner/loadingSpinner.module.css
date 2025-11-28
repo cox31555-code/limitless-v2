@@ -2,12 +2,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.circleSpinner {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border: 4px solid rgba(5, 175, 255, 0.1);
+  border-top-color: #05AFFF;
+  border-radius: 50%;
+  animation: spinCircle 1.2s linear infinite;
 }
 
 .spinnerSvg {
   width: 80px;
   height: 105px;
   animation: spin 1.5s linear infinite;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes spin {
@@ -19,7 +34,27 @@
   }
 }
 
+@keyframes spinCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (max-width: 600px) {
+  .spinner {
+    width: 140px;
+    height: 140px;
+  }
+
+  .circleSpinner {
+    width: 140px;
+    height: 140px;
+    border-width: 3px;
+  }
+
   .spinnerSvg {
     width: 70px;
     height: 92px;
