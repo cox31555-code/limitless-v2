@@ -127,6 +127,15 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
     }
   };
 
+  const vehicleType = watch("vehicleDetails.type");
+  const make = watch("vehicleDetails.make");
+  const model = watch("vehicleDetails.model");
+  const year = watch("vehicleDetails.year");
+  const doors = watch("vehicleDetails.doors");
+  const fuel = watch("vehicleDetails.fuel");
+  const transmission = watch("vehicleDetails.transmission");
+  const registration = vehicleDetails?.registrationNumber || "";
+
   return (
     <div className={editStyles.container}>
       {/* Modifications Modal */}
@@ -147,8 +156,8 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
         </div>
         <div className={editStyles.heroContent}>
           <div className={editStyles.greetingArea}>
-            <h1 className={`${editStyles.greetingTitle} ${plusJakartaSans.className}`}>Enter Vehicle Details</h1>
-            <p className={editStyles.greetingSubtitle}>Back to registration lookup</p>
+            <h1 className={`${editStyles.greetingTitle} ${plusJakartaSans.className}`}>Edit Vehicle Details</h1>
+            <p className={editStyles.greetingSubtitle}>Update your vehicle information</p>
           </div>
         </div>
       </section>
@@ -157,73 +166,32 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       <div className={editStyles.contentWrapper}>
         <form onSubmit={form.handleSubmit(handleSave)} className={editStyles.formContainer}>
           <div className={editStyles.mainSection}>
-            {/* Basic Vehicle Details */}
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label="Vehicle Type"
-                selected={watch("vehicleDetails.type") || ""}
-                options={vehicleTypes}
-                setSelected={(value) => handleDropdownChange("type", value)}
-                placeholder="Select vehicle type"
-              />
-              <Dropdown
-                label="Make"
-                selected={watch("vehicleDetails.make") || ""}
-                options={vehicleMakes}
-                setSelected={(value) => handleDropdownChange("make", value)}
-                placeholder="Select make"
-              />
-            </div>
-
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label="Model"
-                selected={watch("vehicleDetails.model") || ""}
-                options={vehicleModels}
-                setSelected={(value) => handleDropdownChange("model", value)}
-                placeholder="Select model"
-              />
-              <Dropdown
-                label="Year"
-                selected={watch("vehicleDetails.year") || ""}
-                options={vehicleYears}
-                setSelected={(value) => handleDropdownChange("year", value)}
-                placeholder="Select year"
-              />
-            </div>
-
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label="Doors"
-                selected={watch("vehicleDetails.doors") || ""}
-                options={vehicleDoors}
-                setSelected={(value) => handleDropdownChange("doors", value)}
-                placeholder="Select doors"
-              />
-              <Dropdown
-                label="Fuel Type"
-                selected={watch("vehicleDetails.fuel") || ""}
-                options={vehicleFuels}
-                setSelected={(value) => handleDropdownChange("fuel", value)}
-                placeholder="Select fuel type"
-              />
-            </div>
-
-            <div className={styles.cleanFormGrid2Col}>
-              <Dropdown
-                label="Transmission"
-                selected={watch("vehicleDetails.transmission") || ""}
-                options={vehicleTransmissions}
-                setSelected={(value) => handleDropdownChange("transmission", value)}
-                placeholder="Select transmission"
-              />
-              <Dropdown
-                label="Colour"
-                selected={watch("vehicleDetails.colour") || ""}
-                options={carColors}
-                setSelected={(value) => handleDropdownChange("colour", value)}
-                placeholder="Select colour"
-              />
+            {/* Vehicle Information Card - Static Data */}
+            <div className={editStyles.vehicleInfoCard}>
+              <h3 className={editStyles.vehicleInfoTitle}>Your Vehicle</h3>
+              <div className={editStyles.vehicleInfoContent}>
+                <div className={editStyles.vehicleMainInfo}>
+                  <div className={editStyles.vehicleTitle}>
+                    {make && model ? `${make} ${model}` : "Vehicle Information"}
+                  </div>
+                  {registration && (
+                    <div className={editStyles.vehicleRegistration}>
+                      ({registration})
+                    </div>
+                  )}
+                </div>
+                <div className={editStyles.vehicleMetaInfo}>
+                  {year && <span className={editStyles.metaItem}>{year}</span>}
+                  {transmission && <span className={editStyles.metaItem}>{transmission}</span>}
+                  {fuel && <span className={editStyles.metaItem}>{fuel}</span>}
+                  {doors && <span className={editStyles.metaItem}>{doors} Doors</span>}
+                </div>
+              </div>
+              {vehicleType && (
+                <div className={editStyles.vehicleTypeInfo}>
+                  Type: <span className={editStyles.vehicleTypeValue}>{vehicleType}</span>
+                </div>
+              )}
             </div>
 
             {/* Divider */}
