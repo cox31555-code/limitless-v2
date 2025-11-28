@@ -1021,6 +1021,24 @@
   .autoRenewalText {
     font-size: 1.2rem;
   }
+
+  .modalContent {
+    padding: 2.5rem;
+  }
+
+  .modalTitle {
+    font-size: 2.2rem;
+  }
+
+  .modalText {
+    font-size: 1.4rem;
+  }
+
+  .modalButtonPrimary,
+  .modalButtonSecondary {
+    font-size: 1.4rem;
+    padding: 1.3rem 1.8rem;
+  }
 }
 
 /* Small Mobile */
@@ -1178,6 +1196,45 @@
 
   .autoRenewalText {
     font-size: 1.2rem;
+  }
+
+  .modalOverlay {
+    padding: 1.5rem;
+  }
+
+  .modalContent {
+    padding: 2rem;
+  }
+
+  .modalClose {
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .modalIconCircle {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .modalIcon {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .modalTitle {
+    font-size: 2rem;
+  }
+
+  .modalText {
+    font-size: 1.35rem;
+  }
+
+  .modalButtonPrimary,
+  .modalButtonSecondary {
+    font-size: 1.35rem;
+    padding: 1.3rem 1.6rem;
   }
 
   .scheduleItem {
