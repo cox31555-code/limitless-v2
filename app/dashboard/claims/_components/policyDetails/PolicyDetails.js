@@ -1,11 +1,8 @@
-import React from "react";
-import styles from "./policyDetails.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
+'use client';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+import React from "react";
+import ExpandableSection from "../ExpandableSection";
+import styles from "./policyDetails.module.css";
 
 const ReadOnlyField = ({ label, value }) => (
   <div className={styles.readOnlyField}>
@@ -36,23 +33,17 @@ const PolicyDetails = ({ claimData }) => {
   return (
     <>
       {/* Claim Type Section */}
-      <div className={styles.container}>
-        <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-          Claim Type
-        </h3>
+      <ExpandableSection title="Claim Type" defaultOpen={true}>
         <div className={styles.body}>
           <ReadOnlyField
             label="Claim reason*"
             value={formatClaimReason(claimData?.claimreason)}
           />
         </div>
-      </div>
+      </ExpandableSection>
 
       {/* Policy Information Section */}
-      <div className={styles.container}>
-        <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-          Policy Information
-        </h3>
+      <ExpandableSection title="Policy Information">
         <div className={styles.body}>
           <ReadOnlyField
             label="Enter your policy no.*"
@@ -81,13 +72,10 @@ const PolicyDetails = ({ claimData }) => {
             />
           </div>
         </div>
-      </div>
+      </ExpandableSection>
 
       {/* Incident Details Section */}
-      <div className={styles.container}>
-        <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-          Incident Details
-        </h3>
+      <ExpandableSection title="Incident Details">
         <div className={styles.body}>
           <ReadOnlyField
             label="Incident description*"
@@ -110,13 +98,10 @@ const PolicyDetails = ({ claimData }) => {
             value={claimData?.claimDetails?.detailsIfNotResponsible}
           />
         </div>
-      </div>
+      </ExpandableSection>
 
       {/* Vehicle Information Section */}
-      <div className={styles.container}>
-        <h3 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-          Vehicle Information
-        </h3>
+      <ExpandableSection title="Vehicle Information">
         <div className={styles.body}>
           <div className={styles.row}>
             <ReadOnlyField
@@ -129,7 +114,7 @@ const PolicyDetails = ({ claimData }) => {
             />
           </div>
         </div>
-      </div>
+      </ExpandableSection>
     </>
   );
 };
