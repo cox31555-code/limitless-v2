@@ -474,12 +474,22 @@
     gap: 2rem;
   }
 
+  .greetingArea {
+    align-items: center;
+    width: 100%;
+  }
+
   .greetingTitle {
     font-size: 2.8rem;
   }
 
   .greetingSubtitle {
     font-size: 1.25rem;
+  }
+
+  .badgeArea {
+    width: 100%;
+    justify-content: center;
   }
 
   .allianzBadge {
