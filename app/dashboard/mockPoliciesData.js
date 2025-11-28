@@ -57,7 +57,15 @@ export const mockPolicies = {
       address: "123 Main Street, London, United Kingdom",
       employmentStatus: "Employed",
       industry: "Technology",
-      occupation: "Software Engineer"
+      occupation: "Software Engineer",
+      relationshipStatus: "Married",
+      homeowner: true,
+      childrenUnder16: false,
+      livedInUKSinceBirth: true,
+      licenceType: "Full UK",
+      yearsLicenceHeld: "15",
+      additionalDrivingQualifications: "Advanced Driving Course",
+      dvlaReportableConditions: "None"
     },
     carUsage: {
       keepingCarDuringDay: "On Road Parking",

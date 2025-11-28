@@ -539,6 +539,42 @@ const PolicyDetailsReview = ({ policy }) => {
                   <span className={styles.detailLabel}>Email</span>
                   <span className={styles.detailValue}>{userDetails?.email}</span>
                 </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Relationship status</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.relationshipStatus)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Homeowner</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.homeowner)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Children under 16 living with you</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.childrenUnder16)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Lived in the UK since birth</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.livedInUKSinceBirth)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Employment status</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.employmentStatus)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Licence type</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.licenceType)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Years licence held for</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.yearsLicenceHeld)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>Additional driving qualifications</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.additionalDrivingQualifications)}</span>
+                </div>
+                <div className={styles.detailItem}>
+                  <span className={styles.detailLabel}>DVLA reportable conditions</span>
+                  <span className={styles.detailValue}>{formatValue(userDetails?.dvlaReportableConditions)}</span>
+                </div>
               </div>
               <div className={styles.driverActionButtons}>
                 <button className={styles.primaryBtn} aria-label="View full driver profile">View Profile</button>
