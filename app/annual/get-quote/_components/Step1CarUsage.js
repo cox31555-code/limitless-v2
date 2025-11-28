@@ -3,7 +3,7 @@ import React from "react";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step1CarUsage.module.css";
 
-const Step1CarUsage = ({ form }) => {
+const Step1CarUsage = ({ form, showMileage = true }) => {
   const { register, formState: { errors }, watch } = form;
 
   const purchaseDate = watch("vehicleDetails.purchaseDate");
@@ -145,37 +145,39 @@ const Step1CarUsage = ({ form }) => {
         </div>
 
         {/* Annual Mileage Section */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>What's the annual personal mileage for this car?</h3>
-            <p className={styles.subText}>
-              Try to be as accurate as possible. Underestimating your mileage could affect your cover or lead to increased charges.
-            </p>
+        {showMileage && (
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>What's the annual personal mileage for this car?</h3>
+              <p className={styles.subText}>
+                Try to be as accurate as possible. Underestimating your mileage could affect your cover or lead to increased charges.
+              </p>
+            </div>
+
+            <button type="button" className={styles.helpLink}>
+              How can I calculate this?
+            </button>
+
+            <div className={styles.mileageInputWrapper}>
+              <CustomTextInput
+                type="text"
+                placeholder="1500"
+                value={annualMileage || ""}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^0-9]/g, '');
+                  if (form.setValue) {
+                    form.setValue("vehicleDetails.annualMileage", value);
+                  }
+                }}
+                suffix="miles"
+              />
+            </div>
+
+            <button type="button" className={styles.helpLink}>
+              What's personal mileage?
+            </button>
           </div>
-
-          <button type="button" className={styles.helpLink}>
-            How can I calculate this?
-          </button>
-
-          <div className={styles.mileageInputWrapper}>
-            <CustomTextInput
-              type="text"
-              placeholder="1500"
-              value={annualMileage || ""}
-              onChange={(e) => {
-                const value = e.target.value.replace(/[^0-9]/g, '');
-                if (form.setValue) {
-                  form.setValue("vehicleDetails.annualMileage", value);
-                }
-              }}
-              suffix="miles"
-            />
-          </div>
-
-          <button type="button" className={styles.helpLink}>
-            What's personal mileage?
-          </button>
-        </div>
+        )}
       </div>
     </div>
   );
