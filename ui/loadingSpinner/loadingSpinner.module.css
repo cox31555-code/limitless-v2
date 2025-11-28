@@ -11,8 +11,8 @@
   position: absolute;
   width: 96px;
   height: 96px;
-  border: 3px solid rgba(5, 175, 255, 0.1);
-  border-top-color: #05AFFF;
+  border: 3px solid rgba(2, 112, 204, 0.1);
+  border-top-color: #0270CC;
   border-radius: 50%;
   animation: spinCircle 1.2s linear infinite;
 }
@@ -53,6 +53,8 @@
     width: 84px;
     height: 84px;
     border-width: 2px;
+    border: 2px solid rgba(2, 112, 204, 0.1);
+    border-top-color: #0270CC;
   }
 
   .spinnerSvg {

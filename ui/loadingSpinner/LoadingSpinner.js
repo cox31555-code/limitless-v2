@@ -20,7 +20,7 @@ const LoadingSpinner = () => {
         className={styles.spinnerSvg}
       >
         <style type="text/css">
-          {`.st0{fill:#FFFFFF;}.st1{fill:#05AFFF;}.st2{fill:#0A0913;}`}
+          {`.st0{fill:#FFFFFF;}.st1{fill:#0270CC;}.st2{fill:#0A0913;}`}
         </style>
         <path
           className="st1"
