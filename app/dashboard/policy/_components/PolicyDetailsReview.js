@@ -24,7 +24,7 @@ const PolicyDetailsReview = ({ policy }) => {
   });
 
   const formatValue = (value) => {
-    if (value === null || value === undefined || value === "") return "���";
+    if (value === null || value === undefined || value === "") return "—";
     if (typeof value === "boolean") return value ? "Yes" : "No";
     if (Array.isArray(value)) return value.length > 0 ? value.join(", ") : "—";
     return value;
@@ -265,7 +265,13 @@ const PolicyDetailsReview = ({ policy }) => {
             </div>
 
             <div className={styles.actionButtons}>
-              <button className={styles.primaryBtn} aria-label="Edit vehicle details">Edit Vehicle</button>
+              <button
+                className={styles.primaryBtn}
+                aria-label="Edit vehicle details"
+                onClick={() => router.push(`/dashboard/policy/${policy._id}/edit-vehicle`)}
+              >
+                Edit Vehicle
+              </button>
               <button className={styles.secondaryBtn} aria-label="Replace this vehicle with another">Replace Vehicle</button>
             </div>
 
