@@ -2,9 +2,11 @@
 import React from "react";
 import styles from "./table.module.css";
 import { useRouter } from "next/navigation";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const Table = ({ title, columns, data, tableType, showViewButton = true, theme = "default", showTitle = true }) => {
   const router = useRouter();
+  const { showLoading } = useLoading();
 
   const getStatusColor = (remaining) => {
     if (remaining === "Expired" || remaining === "Unpaid") return "expired";
@@ -53,7 +55,10 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
             <div
               key={index}
               className={styles.policyCard}
-              onClick={() => router.push(`/dashboard/policy/${getMockPolicyId(index)}`)}
+              onClick={() => {
+                showLoading();
+                router.push(`/dashboard/policy/${getMockPolicyId(index)}`);
+              }}
             >
               {/* Card Header - Logo Badge & Status */}
               <div className={styles.policyCardHeader}>

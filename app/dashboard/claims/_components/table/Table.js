@@ -2,9 +2,11 @@
 import React from "react";
 import styles from "./table.module.css";
 import { useRouter } from "next/navigation";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const Table = ({ title, data, claimType, showTitle = true }) => {
   const router = useRouter();
+  const { showLoading } = useLoading();
 
   const getStatusColor = (status) => {
     if (status === "Pending") return "pending";
@@ -42,7 +44,10 @@ const Table = ({ title, data, claimType, showTitle = true }) => {
             <div
               key={index}
               className={styles.claimCard}
-              onClick={() => router.push(`/dashboard/claims/${row.id}`)}
+              onClick={() => {
+                showLoading();
+                router.push(`/dashboard/claims/${row.id}`);
+              }}
             >
               {/* Card Header - Status Badge & Claim Reference */}
               <div className={styles.claimCardHeader}>

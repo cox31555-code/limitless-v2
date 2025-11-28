@@ -4,6 +4,7 @@ import styles from "./submitted.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -13,6 +14,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const Submitted = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { showLoading } = useLoading();
   const [orderReference, setOrderReference] = useState("");
 
   // Get order reference from URL params (set during form submission)
@@ -120,7 +122,10 @@ const Submitted = () => {
           <div className={styles.actionButtons}>
             <button
               className={styles.claimsPortalBtn}
-              onClick={() => router.push("/dashboard/claims")}
+              onClick={() => {
+                showLoading();
+                router.push("/dashboard/claims");
+              }}
             >
               <span>Go to Claims Portal</span>
               <Image
@@ -132,7 +137,10 @@ const Submitted = () => {
             </button>
             <button
               className={styles.dashboardBtn}
-              onClick={() => router.push("/dashboard")}
+              onClick={() => {
+                showLoading();
+                router.push("/dashboard");
+              }}
             >
               Back to Dashboard
             </button>

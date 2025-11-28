@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./policyDetailsReview.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -14,6 +15,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const PolicyDetailsReview = ({ policy }) => {
   const router = useRouter();
+  const { showLoading } = useLoading();
   const [expandedSections, setExpandedSections] = useState({
     policyDetails: true,
     carDetails: false,

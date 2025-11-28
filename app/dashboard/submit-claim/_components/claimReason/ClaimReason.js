@@ -4,6 +4,7 @@ import styles from "./claimReason.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useLoading } from "@/contexts/LoadingContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -12,6 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const ClaimReason = () => {
   const router = useRouter();
+  const { showLoading } = useLoading();
   const reasons = [
     {
       title: "Damage to my vehicle",
@@ -113,6 +115,7 @@ const ClaimReason = () => {
               className={styles.reason}
               key={index}
               onClick={() => {
+                showLoading();
                 const reasonSlug = reason.title
                   .toLowerCase()
                   .replace(/\s+/g, "-")
