@@ -477,6 +477,9 @@ const PolicyDetailsReview = ({ policy }) => {
             <p className={styles.driverItem}>
               {userDetails?.firstName} {userDetails?.surname} <span className={styles.driverRole}>(main driver)</span>
             </p>
+            <p className={styles.driverItem}>
+              {userDetails?.firstName} {userDetails?.surname} 1 <span className={styles.driverRole}>(second driver)</span>
+            </p>
           </div>
         )}
       </section>
