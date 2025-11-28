@@ -1109,6 +1109,7 @@ const ImpoundInsuranceContent = () => {
       <GetQuotePageHeader />
       <CourierLoadingOverlay isVisible={showLoading} />
       <QuoteHeader
+        title="Impound Insurance Quote"
         currentStep={currentStep}
         totalSteps={4}
         subtitle={

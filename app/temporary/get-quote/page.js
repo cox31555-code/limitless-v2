@@ -1109,6 +1109,7 @@ const TemporaryInsuranceContent = () => {
       <GetQuotePageHeader />
       <CourierLoadingOverlay isVisible={showLoading} />
       <QuoteHeader
+        title="Temporary Insurance Quote"
         currentStep={currentStep}
         totalSteps={4}
         subtitle={
