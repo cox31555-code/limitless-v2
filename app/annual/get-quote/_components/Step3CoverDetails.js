@@ -100,11 +100,13 @@ const Step3CoverDetails = ({
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.coverLevel) newErrors.coverLevel = "Please select a cover level";
-    if (formData.coverLevel === "comprehensive" && !formData.minimumCoverLevel) {
-      newErrors.minimumCoverLevel = "Please select a minimum level of cover";
+    if (showCoverOptions) {
+      if (!formData.coverLevel) newErrors.coverLevel = "Please select a cover level";
+      if (formData.coverLevel === "comprehensive" && !formData.minimumCoverLevel) {
+        newErrors.minimumCoverLevel = "Please select a minimum level of cover";
+      }
+      if (!formData.paymentFrequency) newErrors.paymentFrequency = "Please select payment frequency";
     }
-    if (!formData.paymentFrequency) newErrors.paymentFrequency = "Please select payment frequency";
     if (!formData.startDate) newErrors.startDate = "Please select a start date";
     return newErrors;
   };
