@@ -94,22 +94,24 @@ export default function PaymentsClient({ plusJakartaSans }) {
             </svg>
             <h2 className={styles.sectionTitle}>Card details</h2>
           </div>
-          <div className={styles.cardInfo}>
-            <p className={styles.cardNumber}>Visa ending in <strong>0320</strong></p>
-            <p className={styles.expiryDate}>Expiry date: <strong>Apr '29</strong></p>
+          <div className={styles.sectionContent}>
+            <div className={styles.cardInfo}>
+              <p className={styles.cardNumber}>Visa ending in <strong>0320</strong></p>
+              <p className={styles.expiryDate}>Expiry date: <strong>Apr '29</strong></p>
+            </div>
+            <label className={styles.consentLabel}>
+              <input
+                type="checkbox"
+                checked={consentChecked}
+                onChange={(e) => setConsentChecked(e.target.checked)}
+                className={styles.checkbox}
+              />
+              <span className={styles.consentText}>
+                I consent to my card details being stored securely for any future policy changes I make.
+              </span>
+            </label>
+            <button className={styles.changeButton}>Change card</button>
           </div>
-          <label className={styles.consentLabel}>
-            <input
-              type="checkbox"
-              checked={consentChecked}
-              onChange={(e) => setConsentChecked(e.target.checked)}
-              className={styles.checkbox}
-            />
-            <span className={styles.consentText}>
-              I consent to my card details being stored securely for any future policy changes I make.
-            </span>
-          </label>
-          <button className={styles.changeButton}>Change card</button>
         </div>
 
         {/* Payment Schedule Section */}
@@ -125,26 +127,28 @@ export default function PaymentsClient({ plusJakartaSans }) {
             </svg>
             <h2 className={styles.sectionTitle}>Payment schedule</h2>
           </div>
-          <p className={styles.scheduleInfo}>
-            You have paid <strong>47.29</strong> out of <strong>568.69</strong>
-          </p>
-          <p className={styles.installmentInfo}>(11 instalments left X 47.40)</p>
-          
-          <div className={styles.scheduleList}>
-            {paymentSchedule.map((payment, index) => (
-              <div key={index} className={styles.scheduleItem}>
-                <div className={styles.scheduleDate}>{payment.date}</div>
-                <div className={styles.scheduleAmountWrapper}>
-                  {payment.type === "deposit" && (
-                    <span className={styles.depositBadge}>D</span>
-                  )}
-                  <span className={styles.scheduleAmount}>{payment.amount}</span>
-                  {payment.type === "deposit" && (
-                    <span className={styles.depositLabel}>(deposit)</span>
-                  )}
+          <div className={styles.sectionContent}>
+            <p className={styles.scheduleInfo}>
+              You have paid <strong>47.29</strong> out of <strong>568.69</strong>
+            </p>
+            <p className={styles.installmentInfo}>(11 instalments left X 47.40)</p>
+
+            <div className={styles.scheduleList}>
+              {paymentSchedule.map((payment, index) => (
+                <div key={index} className={styles.scheduleItem}>
+                  <div className={styles.scheduleDate}>{payment.date}</div>
+                  <div className={styles.scheduleAmountWrapper}>
+                    {payment.type === "deposit" && (
+                      <span className={styles.depositBadge}>D</span>
+                    )}
+                    <span className={styles.scheduleAmount}>{payment.amount}</span>
+                    {payment.type === "deposit" && (
+                      <span className={styles.depositLabel}>(deposit)</span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
