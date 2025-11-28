@@ -759,7 +759,7 @@
   .makeClaimBtn,
   .cancelPolicyBtn {
     padding: 0.9rem 1.5rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
 
