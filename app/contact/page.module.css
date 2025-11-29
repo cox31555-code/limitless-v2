@@ -9,6 +9,7 @@
   height: 88px;
   margin-top: -88px;
 }
+
 .squareLight {
   display: none;
 }
@@ -17,5 +18,24 @@
   margin-top: -88px !important;
 }
 
+/* White Background Section */
+.whiteSection {
+  width: 100%;
+  background: #ffffff;
+  min-height: 20rem;
+  padding: 8rem 4%;
+}
+
 @media screen and (max-width: 900px) {
+  .whiteSection {
+    min-height: 15rem;
+    padding: 6rem 4%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .whiteSection {
+    min-height: 12rem;
+    padding: 5rem 4%;
+  }
 }
