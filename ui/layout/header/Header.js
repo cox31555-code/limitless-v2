@@ -140,6 +140,7 @@ const Header = () => {
   const shouldHideHeaderAlways = mounted && (
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
+    pathname === "/contact" ||
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/allianz-dashboard") ||
     pathname.includes("/get-quote")
