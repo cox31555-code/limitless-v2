@@ -11,8 +11,8 @@ const ContactPage = () => {
     <div>
       <ContactPageHeader />
       <ContactHeroSection />
-      <ContactInformation />
       <EmailUsSection />
+      <ContactInformation />
       <QuickLinksSection />
       <FAQPreview />
     </div>
