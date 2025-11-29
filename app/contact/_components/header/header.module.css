@@ -287,16 +287,16 @@
 .hoursCard {
   margin-top: 0.8rem;
   padding: 2rem;
-  background: #ffffff;
+  background: rgba(31, 41, 55, 0.6);
   border-radius: 10px;
-  border: 1px solid rgba(3, 136, 255, 0.12);
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hoursTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #000822;
+  color: #ffffff;
   margin: 0 0 1.2rem 0;
   line-height: 1.2;
 }
@@ -310,14 +310,14 @@
 .hoursList p {
   font-size: 1.4rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
   line-height: 1.5;
 }
 
 .hoursList strong {
   font-weight: 600;
-  color: #000822;
+  color: #ffffff;
 }
 
 /* Mobile Form (Hidden on Desktop) */
