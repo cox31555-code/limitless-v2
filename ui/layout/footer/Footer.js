@@ -85,7 +85,6 @@ const Footer = () => {
       className={styles.container}
       style={{
         background: shouldApplySpecialStyles ? "#F2F5FE" : "",
-        marginTop: isContactPage ? "-125px" : "0",
       }}
       suppressHydrationWarning
     >
