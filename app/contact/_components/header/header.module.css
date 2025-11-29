@@ -1,462 +1,390 @@
-.squares {
-  position: absolute;
-  top: calc(12rem + 1.1%);
-  right: calc(-39rem - 1.1%);
-  z-index: 0;
-}
-.contact {
-  position: absolute;
-  top: 21.6rem;
-  left: 55%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-/* .container {
-  overflow: hidden;
-} */
 .content {
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28rem 4.4% 6.5rem 2.6%;
-  width: 100%;
-  margin: -90px 0 0 calc(50% - 653.5px);
-}
-.headers {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
-  margin-bottom: 6rem;
+  gap: 0;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0;
 }
-.subTitle {
-  color: #049cff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+
+/* Online Service Section */
+.onlineServiceSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 45rem;
+  background: linear-gradient(135deg, #004c97 0%, #0055aa 100%);
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 0;
 }
-.title {
-  color: #fff;
-  font-size: 6.7rem;
+
+.serviceLeft {
+  padding: 5rem 5rem 5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: center;
+}
+
+.serviceTitle {
+  font-size: 3.2rem;
   font-weight: 700;
-  line-height: 94%;
-  position: relative;
-  width: max-content;
-  white-space: nowrap;
+  color: #ffffff;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
 }
-.curvedBorder {
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
+
+.serviceText {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.serviceText:first-of-type {
+  font-weight: 600;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.link:hover {
+  opacity: 0.85;
+}
+
+.serviceRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.serviceImage {
   width: 100%;
   height: auto;
-}
-.left {
-  flex: 0 0 40%;
-  display: flex;
-  flex-direction: column;
+  max-width: 45rem;
+  object-fit: contain;
+  border-radius: 12px;
 }
 
-.right {
-  flex: 0 0 60%;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 6rem;
-}
-
-.contactOptions {
+/* Chat Section */
+.chatSection {
+  background: #f5f8fa;
+  padding: 5rem 6rem;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  margin-top: 3.1rem;
+  gap: 1.6rem;
 }
-.contactOption {
+
+.chatIcon {
+  width: 6rem;
+  height: 6rem;
+  background: #0055aa;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 4.3rem;
+  justify-content: center;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
 }
+
+.chatTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.chatSubtitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0.8rem 0 0.4rem 0;
+}
+
+.chatInstructions {
+  list-style: disc;
+  padding-left: 2.4rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chatInstructions li {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  line-height: 1.6;
+}
+
+.chatInstructions strong {
+  font-weight: 700;
+  color: #000822;
+}
+
+.chatNote {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  margin: 1.2rem 0;
+  line-height: 1.6;
+}
+
+.chatNote .link {
+  color: #0055aa;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.chatNote .link:hover {
+  opacity: 0.85;
+}
+
+.chatHours {
+  margin-top: 2rem;
+  padding: 2.4rem;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 85, 170, 0.1);
+}
+
+.hoursTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.2rem 0;
+}
+
+.hoursList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hoursList p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.hoursList strong {
+  font-weight: 600;
+  color: #000822;
+}
+
+/* Contact Options */
+.contactOptions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 6rem 6rem;
+  background: #ffffff;
+}
+
+.contactOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.6rem;
+  padding: 2.4rem;
+  background: #f8fafb;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 85, 170, 0.08);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contactOption:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 85, 170, 0.12);
+  border-color: rgba(0, 85, 170, 0.2);
+}
+
+.icon {
+  width: 5.9rem;
+  height: 5.9rem;
+  object-fit: contain;
+}
+
 .info {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
+
 .infoTitle {
-  color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 100%;
+  color: #000822;
+  margin: 0;
 }
 
 .infoDescription {
-  color: rgba(255, 255, 255, 0.64);
   font-size: 1.4rem;
   font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.5;
 }
-.formMobile {
-  display: none;
-}
-@media screen and (max-width: 1200px) {
-  .squares {
-    top: calc(12rem + 0.99%);
-    right: calc(-35.1rem - 0.99%);
-    z-index: 0;
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .onlineServiceSection {
+    grid-template-columns: 1fr;
+    min-height: auto;
   }
 
-  .contact {
-    top: 12rem;
-    left: 49.5%;
-    z-index: 1;
+  .serviceLeft {
+    padding: 4.5rem 5%;
   }
 
-  .content {
-    z-index: 0;
-    padding: 18rem 3.96% 6.435% 2.34%;
+  .serviceRight {
+    padding: 3rem 5%;
+    min-height: 35rem;
   }
 
-  .left {
-    flex: 0 0 35%;
-  }
-
-  .right {
-    flex: 0 0 65%;
-  }
-
-  .headers {
-    gap: 1.26rem;
-    margin-bottom: 5.4rem;
-  }
-
-  .subTitle {
-    font-size: 1.26rem;
-    font-weight: 450; /* 500 × 0.9 */
-    line-height: 111.6%;
-    letter-spacing: 0.504px;
-  }
-
-  .title {
-    font-size: 6.66rem;
-    font-weight: 630; /* 700 × 0.9 */
-    line-height: 84.6%;
-  }
-
-  .curvedBorder {
-    bottom: -9px;
+  .chatSection {
+    padding: 4.5rem 5%;
   }
 
   .contactOptions {
-    gap: 2.16rem;
-  }
-
-  .contactOption {
-    gap: 3.87rem;
-  }
-
-  .info {
-    gap: 0.72rem;
-  }
-
-  .infoTitle {
-    font-size: 1.62rem;
-    font-weight: 630; /* 700 × 0.9 */
-    line-height: 90%;
-  }
-
-  .infoDescription {
-    font-size: 1.26rem;
-    font-weight: 360; /* 400 × 0.9 */
-    line-height: 111.6%;
-    letter-spacing: 0.504px;
+    grid-template-columns: 1fr;
+    padding: 5rem 5%;
+    gap: 2.4rem;
   }
 }
-@media screen and (max-width: 900px) {
-  .contact {
-    display: none;
-  }
-  .squares {
-    width: 485.816px;
-    height: 246px;
-    top: -5rem;
-    right: -20rem;
-    left: auto;
+
+/* Mobile */
+@media (max-width: 900px) {
+  .serviceLeft {
+    padding: 4rem 5%;
   }
 
-  .content {
-    padding: 2rem 3.5% 1.9rem;
-    display: flex;
-    justify-content: center;
-    gap: 4.6rem;
-    margin: 0;
-  }
-
-  .headers {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    margin-bottom: 2rem;
-    visibility: visible;
-    width: 100%;
-  }
-
-  .subTitle {
-    font-size: 1.4rem;
-    display: block;
-  }
-
-  .title {
+  .serviceTitle {
     font-size: 2.8rem;
-    line-height: 110%;
-    display: block;
+  }
+
+  .serviceText {
+    font-size: 1.4rem;
+  }
+
+  .serviceRight {
+    padding: 2.5rem 5%;
+    min-height: 30rem;
+  }
+
+  .chatSection {
+    padding: 4rem 5%;
+  }
+
+  .chatTitle {
+    font-size: 2.4rem;
+  }
+
+  .chatSubtitle {
+    font-size: 1.5rem;
+  }
+
+  .chatInstructions li {
+    font-size: 1.4rem;
+  }
+
+  .chatNote {
+    font-size: 1.4rem;
   }
 
   .contactOptions {
-    gap: 1.8rem;
+    padding: 4rem 5%;
+    gap: 2rem;
   }
 
   .contactOption {
-    gap: 1.7rem;
-  }
-
-  .info {
-    gap: 0.8rem;
-  }
-
-  .infoTitle {
-    font-size: 1.6rem;
-  }
-
-  .infoDescription {
-    font-size: 1.4rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  .formMobile {
-    display: flex;
-    margin-bottom: 3.3rem;
-  }
-  .content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .left {
-    width: 100%;
-  }
-  .right {
-    display: none;
+    padding: 2rem;
   }
 }
 
-@media screen and (max-width: 640px) {
-  .content {
-    padding: 4rem 16px 80px 16px;
-  }
-
-  .headers {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-bottom: 4rem;
-    visibility: visible;
-    width: 100%;
-  }
-
-  .subTitle {
-    font-size: 1.4rem;
-    letter-spacing: 0.56px;
-    font-weight: 600;
-    display: block;
-    color: #049cff;
-  }
-
-  .title {
-    font-size: 4rem;
-    line-height: 120%;
-    display: block;
-    font-weight: 700;
-  }
-
-  .curvedBorder {
-    bottom: -8px;
-  }
-
-  .formMobile {
-    margin-bottom: 4.5rem;
-  }
-
-  .contactOptions {
-    gap: 3rem;
-    margin-top: 4rem;
-  }
-
-  .contactOption {
+@media (max-width: 600px) {
+  .serviceLeft {
+    padding: 3.5rem 5%;
     gap: 1.4rem;
   }
 
-  .icon {
-    width: 48px !important;
-    height: 48px !important;
-    flex-shrink: 0;
+  .serviceTitle {
+    font-size: 2.4rem;
   }
 
-  .info {
-    gap: 0.4rem;
-  }
-
-  .infoTitle {
-    font-size: 1.4rem;
-    line-height: 115%;
-    font-weight: 700;
-  }
-
-  .infoDescription {
-    font-size: 1.2rem;
-    line-height: 140%;
-    letter-spacing: 0.2px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .content {
-    padding: 3.5rem 16px 80px 16px;
-    margin: 0;
-  }
-
-  .headers {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    margin-bottom: 4rem;
-    visibility: visible;
-    width: 100%;
-  }
-
-  .subTitle {
+  .serviceText {
     font-size: 1.3rem;
-    letter-spacing: 0.52px;
-    font-weight: 600;
-    display: block;
-    color: #049cff;
   }
 
-  .title {
-    font-size: 3.6rem;
-    line-height: 120%;
-    display: block;
-    font-weight: 700;
+  .serviceRight {
+    padding: 2rem 5%;
+    min-height: 25rem;
   }
 
-  .curvedBorder {
-    bottom: -8px;
-  }
-
-  .formMobile {
-    margin-bottom: 4rem;
-  }
-
-  .contactOptions {
-    gap: 2.8rem;
-    margin-top: 3.5rem;
-  }
-
-  .contactOption {
+  .chatSection {
+    padding: 3.5rem 5%;
     gap: 1.4rem;
   }
 
-  .icon {
-    width: 48px !important;
-    height: 48px !important;
-    flex-shrink: 0;
+  .chatIcon {
+    width: 5rem;
+    height: 5rem;
   }
 
-  .info {
-    gap: 0.4rem;
+  .chatTitle {
+    font-size: 2.2rem;
   }
 
-  .infoTitle {
+  .chatSubtitle {
     font-size: 1.4rem;
-    line-height: 115%;
-    font-weight: 700;
   }
 
-  .infoDescription {
-    font-size: 1.2rem;
-    line-height: 140%;
-    letter-spacing: 0.2px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .content {
-    padding: 3rem 14px 70px 14px;
-    margin: 0;
+  .chatInstructions {
+    padding-left: 2rem;
   }
 
-  .headers {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 3.5rem;
-    visibility: visible;
-    width: 100%;
+  .chatInstructions li {
+    font-size: 1.3rem;
   }
 
-  .subTitle {
-    font-size: 1.2rem;
-    letter-spacing: 0.48px;
-    font-weight: 600;
-    display: block;
-    color: #049cff;
+  .chatNote {
+    font-size: 1.3rem;
   }
 
-  .title {
-    font-size: 3.2rem;
-    line-height: 120%;
-    display: block;
-    font-weight: 700;
+  .chatHours {
+    padding: 2rem;
   }
 
-  .curvedBorder {
-    bottom: -6px;
+  .hoursTitle {
+    font-size: 1.5rem;
   }
 
-  .formMobile {
-    margin-bottom: 3.5rem;
+  .hoursList p {
+    font-size: 1.4rem;
   }
 
   .contactOptions {
-    gap: 2.5rem;
-    margin-top: 3.2rem;
-  }
-
-  .contactOption {
-    gap: 1.2rem;
-  }
-
-  .icon {
-    width: 44px !important;
-    height: 44px !important;
-    flex-shrink: 0;
-  }
-
-  .info {
-    gap: 0.3rem;
+    padding: 3.5rem 5%;
   }
 
   .infoTitle {
-    font-size: 1.3rem;
-    line-height: 115%;
-    font-weight: 700;
+    font-size: 1.5rem;
   }
 
   .infoDescription {
-    font-size: 1.1rem;
-    line-height: 135%;
-    letter-spacing: 0.2px;
+    font-size: 1.3rem;
   }
 }
