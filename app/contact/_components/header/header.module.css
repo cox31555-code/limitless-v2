@@ -174,7 +174,7 @@
 }
 
 .serviceLink {
-  color: #0388ff;
+  color: #3b82f6;
   text-decoration: underline;
   font-weight: 600;
   text-underline-offset: 0.2rem;
@@ -182,8 +182,8 @@
 }
 
 .serviceLink:hover {
-  color: #0270cc;
-  text-decoration-color: #0270cc;
+  color: #60a5fa;
+  text-decoration-color: #60a5fa;
 }
 
 /* Chat Card */
