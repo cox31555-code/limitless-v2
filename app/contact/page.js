@@ -1,5 +1,6 @@
 import React from "react";
-import ContactHero from "./_components/ContactHero";
+import ContactPageHeader from "./_components/ContactPageHeader";
+import ContactHeroSection from "./_components/ContactHeroSection";
 import ContactMethods from "./_components/ContactMethods";
 import EmailUsSection from "./_components/EmailUsSection";
 import QuickLinksSection from "./_components/QuickLinksSection";
@@ -7,7 +8,8 @@ import QuickLinksSection from "./_components/QuickLinksSection";
 const ContactPage = () => {
   return (
     <div>
-      <ContactHero />
+      <ContactPageHeader />
+      <ContactHeroSection />
       <ContactMethods />
       <EmailUsSection />
       <QuickLinksSection />
