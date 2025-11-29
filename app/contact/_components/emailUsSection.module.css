@@ -48,6 +48,7 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(0, 82, 163, 0.08);
   transition: all 0.3s ease;
+  gap: 0;
 }
 
 .card:hover {
