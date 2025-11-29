@@ -27,14 +27,12 @@
 
 @media screen and (max-width: 900px) {
   .whiteSection {
-    min-height: 15rem;
-    padding: 6rem 4%;
+    padding: 6rem 0;
   }
 }
 
 @media screen and (max-width: 600px) {
   .whiteSection {
-    min-height: 12rem;
-    padding: 5rem 4%;
+    padding: 5rem 0;
   }
 }
