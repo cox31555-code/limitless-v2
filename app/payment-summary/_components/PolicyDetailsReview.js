@@ -54,8 +54,8 @@ const PolicyDetailsReview = ({ insuranceData }) => {
 
   return (
     <div className={styles.container}>
-      {/* Cover Details Section */}
-      <section className={styles.expandableCard} aria-labelledby="cover-details-heading">
+      {/* Vehicle Information Section */}
+      <section className={styles.expandableCard} aria-labelledby="vehicle-info-heading">
         <button
           className={styles.cardHeader}
           onClick={() => toggleSection("coverDetails")}
