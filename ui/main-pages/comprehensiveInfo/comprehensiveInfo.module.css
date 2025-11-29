@@ -7,7 +7,7 @@
 }
 
 .wrapper {
-  max-width: 124.8rem;
+  max-width: 130rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 535px 1fr;
