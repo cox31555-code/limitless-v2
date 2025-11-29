@@ -252,7 +252,7 @@
 .chatList li {
   font-size: 1.4rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
   padding-left: 2.4rem;
   position: relative;
@@ -262,14 +262,14 @@
   content: "•";
   position: absolute;
   left: 0.8rem;
-  color: #0388ff;
+  color: #3b82f6;
   font-weight: 700;
   font-size: 1.6rem;
 }
 
 .chatList strong {
   font-weight: 700;
-  color: #000822;
+  color: #ffffff;
 }
 
 .chatNote {
