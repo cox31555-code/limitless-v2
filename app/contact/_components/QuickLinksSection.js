@@ -49,9 +49,15 @@ const QuickLinksSection = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-          Looking for something else?
-        </h2>
+        <div className={styles.header}>
+          <h2 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+            Looking for something else?
+          </h2>
+          <p className={`${styles.sectionDescription} ${manrope.className}`}>
+            Explore our helpful resources to find exactly what you need.
+          </p>
+        </div>
+
         <div className={styles.grid}>
           {links.map((link, index) => (
             <div key={index} className={styles.card}>

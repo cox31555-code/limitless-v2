@@ -17,6 +17,15 @@ const EmailUsSection = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        <div className={styles.header}>
+          <h2 className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+            Get in Touch
+          </h2>
+          <p className={`${styles.sectionDescription} ${manrope.className}`}>
+            Whether you need support or want to share feedback, we're here to help.
+          </p>
+        </div>
+
         <div className={styles.grid}>
           <div className={styles.card}>
             <div className={styles.iconWrapper}>
@@ -27,9 +36,9 @@ const EmailUsSection = () => {
                 height={32}
               />
             </div>
-            <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+            <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
               Email us
-            </h2>
+            </h3>
             <p className={`${styles.text} ${manrope.className}`}>
               If you have any insurance-related queries or need to tell us about a technical difficulty, please email us at{" "}
               <a href="mailto:support@limitlesscover.co.uk" className={styles.link}>
@@ -56,9 +65,9 @@ const EmailUsSection = () => {
                 height={32}
               />
             </div>
-            <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+            <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
               Make a complaint
-            </h2>
+            </h3>
             <p className={`${styles.text} ${manrope.className}`}>
               Tell us if you're not happy with our service. We take all feedback seriously and will work to resolve your concerns.
             </p>

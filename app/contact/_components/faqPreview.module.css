@@ -9,13 +9,26 @@
   margin: 0 auto;
 }
 
+.header {
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
 .title {
   font-size: 3.2rem;
   font-weight: 700;
   color: #000822;
-  margin: 0 0 3.2rem 0;
-  text-align: center;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.2;
   letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .faqList {
@@ -134,6 +147,14 @@
 
   .title {
     font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .header {
     margin-bottom: 2.4rem;
   }
 
@@ -151,6 +172,10 @@
 @media screen and (max-width: 600px) {
   .title {
     font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
   }
 
   .faqQuestion {

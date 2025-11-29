@@ -39,9 +39,15 @@ const FAQPreview = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Frequently asked questions
-        </h2>
+        <div className={styles.header}>
+          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
+            Frequently asked questions
+          </h2>
+          <p className={`${styles.description} ${manrope.className}`}>
+            Find quick answers to common questions about our services and policies.
+          </p>
+        </div>
+
         <div className={styles.faqList}>
           {faqs.map((faq, index) => (
             <div key={index} className={styles.faqItem}>
@@ -74,6 +80,7 @@ const FAQPreview = () => {
             </div>
           ))}
         </div>
+
         <div className={styles.viewAllWrapper}>
           <Link href="/FAQ" className={`${styles.viewAllButton} ${manrope.className}`}>
             View all FAQs
