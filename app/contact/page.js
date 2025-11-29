@@ -4,6 +4,7 @@ import ContactHeroSection from "./_components/ContactHeroSection";
 import ContactMethods from "./_components/ContactMethods";
 import EmailUsSection from "./_components/EmailUsSection";
 import QuickLinksSection from "./_components/QuickLinksSection";
+import FAQPreview from "./_components/FAQPreview";
 
 const ContactPage = () => {
   return (
@@ -13,6 +14,7 @@ const ContactPage = () => {
       <ContactMethods />
       <EmailUsSection />
       <QuickLinksSection />
+      <FAQPreview />
     </div>
   );
 };
