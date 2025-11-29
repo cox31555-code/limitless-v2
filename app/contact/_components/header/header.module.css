@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 140rem;
   margin: 0 auto;
-  padding: 16rem 4% 10rem;
+  padding: 22.1rem 4% 10rem;
   position: relative;
   align-items: start;
 }
@@ -143,6 +143,7 @@
   flex-direction: column;
   gap: 1.6rem;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 6.5rem;
 }
 
 .serviceCard:hover {
