@@ -1,28 +1,36 @@
 .section {
   width: 100%;
-  padding: 6rem 4%;
-  background: #000822;
+  padding: 0 4% 6rem;
+  background: transparent;
 }
 
 .container {
-  max-width: 120rem;
+  max-width: 1220px;
   margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
 }
 
 .card {
   display: flex;
-  align-items: flex-start;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1.6rem;
   padding: 3.2rem;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 82, 163, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 82, 163, 0.12);
+  border-color: rgba(0, 82, 163, 0.2);
+  transform: translateY(-2px);
 }
 
 .iconWrapper {
@@ -31,7 +39,7 @@
   justify-content: center;
   width: 5.6rem;
   height: 5.6rem;
-  background: #0388ff;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border-radius: 12px;
   flex-shrink: 0;
 }
@@ -44,30 +52,31 @@
 }
 
 .label {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
+  color: #5a6b7d;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
 }
 
 .value {
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #000822;
   margin: 0;
   line-height: 1.5;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .value:hover {
-  color: #0388ff;
+  color: #0052a3;
 }
 
 @media screen and (max-width: 900px) {
   .section {
-    padding: 4rem 4%;
+    padding: 0 4% 4rem;
   }
 
   .grid {
@@ -76,12 +85,14 @@
   }
 
   .card {
-    padding: 2.4rem;
+    padding: 2.8rem;
+    flex-direction: row;
+    gap: 2rem;
   }
 
   .iconWrapper {
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 5.2rem;
+    height: 5.2rem;
   }
 
   .value {
@@ -91,13 +102,13 @@
 
 @media screen and (max-width: 600px) {
   .card {
-    padding: 2rem;
+    padding: 2.4rem;
     gap: 1.6rem;
   }
 
   .iconWrapper {
-    width: 4.4rem;
-    height: 4.4rem;
+    width: 4.8rem;
+    height: 4.8rem;
   }
 
   .value {
