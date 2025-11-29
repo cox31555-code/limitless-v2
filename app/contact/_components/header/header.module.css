@@ -214,14 +214,14 @@
 .chatIconWrapper {
   width: 4.4rem;
   height: 4.4rem;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .chatTitle {
