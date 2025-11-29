@@ -1,17 +1,18 @@
 import React from "react";
-import Header from "./_components/header/Header";
-import ChatToUs from "./_components/ChatToUs";
-import styles from "./page.module.css";
+import ContactHero from "./_components/ContactHero";
+import ContactMethods from "./_components/ContactMethods";
+import EmailUsSection from "./_components/EmailUsSection";
+import QuickLinksSection from "./_components/QuickLinksSection";
 
-const page = () => {
+const ContactPage = () => {
   return (
-    <div className={styles.page}>
-      <Header />
-      <div className={styles.whiteSection}>
-        <ChatToUs />
-      </div>
+    <div>
+      <ContactHero />
+      <ContactMethods />
+      <EmailUsSection />
+      <QuickLinksSection />
     </div>
   );
 };
 
-export default page;
+export default ContactPage;

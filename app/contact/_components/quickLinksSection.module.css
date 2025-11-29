@@ -1,0 +1,136 @@
+.section {
+  width: 100%;
+  padding: 6rem 4%;
+  background: #000822;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4rem 0;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.4rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.6rem;
+  height: 5.6rem;
+  background: #0388ff;
+  border-radius: 12px;
+  margin-bottom: 1.6rem;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.2;
+}
+
+.cardText {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #0388ff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cardLink:hover {
+  color: #049cff;
+  gap: 1.2rem;
+}
+
+.cardLink svg {
+  transition: transform 0.2s ease;
+}
+
+.cardLink:hover svg {
+  transform: translateX(4px);
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 4rem 4%;
+  }
+
+  .sectionTitle {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2.4rem;
+  }
+
+  .iconWrapper {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardText {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sectionTitle {
+    font-size: 2.4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.7rem;
+  }
+}
