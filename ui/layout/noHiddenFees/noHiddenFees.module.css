@@ -76,6 +76,10 @@
   flex-wrap: nowrap;
 }
 
+.title span {
+  color: #ffffff;
+}
+
 .titleSpan {
   color: #049cff;
   font-size: 3.6rem;
