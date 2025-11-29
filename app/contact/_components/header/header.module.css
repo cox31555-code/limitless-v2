@@ -41,7 +41,7 @@
 .subTitle {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #0388ff;
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0;
