@@ -469,8 +469,8 @@
 }
 
 .emergencyCard {
-  background: linear-gradient(135deg, #F0F7FF 0%, #E3F0FF 100%);
-  border: 1.5px solid #CBD5E1;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
   border-radius: 16px;
   padding: 3.5rem;
   display: flex;
@@ -480,12 +480,6 @@
   gap: 1.8rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   animation: fadeInUp 0.5s ease-out 0.4s both;
-  transition: all 0.25s ease;
-}
-
-.emergencyCard:hover {
-  border-color: #0052a3;
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.08);
 }
 
 .emergencyIcon {
