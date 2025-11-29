@@ -1,0 +1,267 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Expandable Card */
+.expandableCard {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.expandableCard:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.6rem;
+  background: #f8fafc;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.cardHeader:hover {
+  background: #f1f5f9;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex: 1;
+  text-align: left;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  background: linear-gradient(135deg, #f0f8ff 0%, #f5fbff 100%);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #0388ff;
+  stroke-width: 1.5;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.expandIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #94a3b8;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.expandIcon.expanded {
+  transform: rotate(180deg);
+}
+
+/* Card Content */
+.cardContent {
+  padding: 2rem 1.6rem;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Details Grid */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.6rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.detailLabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #64748b;
+  text-transform: capitalize;
+}
+
+.detailValue {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+/* Car Info Block */
+.carInfoBlock {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.carTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.4rem 0;
+}
+
+.carRegistration {
+  font-size: 1.3rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.carMeta {
+  font-size: 1.3rem;
+  color: #94a3b8;
+  margin: 0.4rem 0 0 0;
+}
+
+/* Vehicle Subsection */
+.vehicleSubsection {
+  margin-bottom: 2rem;
+}
+
+.vehicleSubsection:last-child {
+  margin-bottom: 0;
+}
+
+.subsectionTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Driver Card */
+.driverCard {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.driverCard:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.driverName {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+}
+
+/* Driver Item */
+.driverItem {
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.driverRole {
+  font-size: 1.2rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cardHeader {
+    padding: 1.4rem;
+  }
+
+  .headerContent {
+    gap: 1rem;
+  }
+
+  .iconWrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardContent {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardHeader {
+    padding: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .cardContent {
+    padding: 1.2rem;
+  }
+
+  .carTitle {
+    font-size: 1.6rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .driverName {
+    font-size: 1.5rem;
+  }
+}
