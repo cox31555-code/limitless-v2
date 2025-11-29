@@ -43,13 +43,15 @@
 
 .heroContent {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   max-width: 1220px;
   position: relative;
   z-index: 2;
   gap: 4rem;
+  text-align: center;
 }
 
 .mainInfo {
