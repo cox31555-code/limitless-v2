@@ -2,9 +2,9 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 4.8rem;
   width: 100%;
-  max-width: 140rem;
+  max-width: 130rem;
   margin: 0 auto;
   padding: 22.1rem 4% 10rem;
   position: relative;
@@ -18,7 +18,7 @@
   left: 28.9375rem;
   width: auto;
   height: 68.75rem;
-  opacity: 0.08;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 0;
 }
@@ -27,7 +27,7 @@
 .left {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 4.8rem;
   position: relative;
   z-index: 1;
 }
@@ -35,26 +35,26 @@
 .headers {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.6rem;
 }
 
 .subTitle {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: 0.1em;
+  color: rgba(59, 130, 246, 0.9);
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   margin: 0;
   line-height: 1.2;
 }
 
 .title {
-  font-size: 4.8rem;
+  font-size: 5.2rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  line-height: 1.2;
-  letter-spacing: -0.8px;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
   position: relative;
   display: inline-block;
   width: fit-content;
@@ -67,60 +67,74 @@
   width: 100%;
   max-width: 39.3rem;
   height: auto;
+  opacity: 0.8;
 }
 
 /* Contact Options */
 .contactOptions {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2rem;
 }
 
 .contactOption {
   display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  padding: 2.4rem;
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  gap: 2.4rem;
+  align-items: center;
+  padding: 3.2rem;
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .contactOption:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.2);
-  border-color: rgba(3, 136, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(17, 24, 39, 0.7);
 }
 
 .icon {
-  width: 5.9rem;
-  height: 5.9rem;
+  width: 6.4rem;
+  height: 6.4rem;
+  padding: 1.6rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+  border-radius: 12px;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contactOption:hover .icon {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(37, 99, 235, 0.2) 100%);
+  transform: scale(1.05);
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
   flex: 1;
 }
 
 .infoTitle {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .infoDescription {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #ffffff;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* Right Section - Self-Service Content */
@@ -134,98 +148,102 @@
 
 /* Service Card */
 .serviceCard {
-  padding: 3.2rem;
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.1);
+  padding: 4rem;
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin-top: 6.5rem;
+  backdrop-filter: blur(10px);
 }
 
 .serviceCard:hover {
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.2);
-  border-color: rgba(3, 136, 255, 0.3);
+  box-shadow: 0 16px 48px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
 }
 
 .serviceTitle {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 0.4rem 0;
+  margin: 0 0 0.8rem 0;
   line-height: 1.2;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.5px;
 }
 
 .serviceText {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
   line-height: 1.7;
 }
 
 .serviceText:first-of-type {
   font-weight: 500;
-  color: #ffffff;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .serviceLink {
-  color: #3b82f6;
-  text-decoration: underline;
+  color: #60a5fa;
+  text-decoration: none;
   font-weight: 600;
-  text-underline-offset: 0.2rem;
+  border-bottom: 2px solid rgba(96, 165, 250, 0.3);
   transition: all 0.2s ease;
+  padding-bottom: 1px;
 }
 
 .serviceLink:hover {
-  color: #60a5fa;
-  text-decoration-color: #60a5fa;
+  color: #93c5fd;
+  border-bottom-color: rgba(147, 197, 253, 0.6);
 }
 
 /* Chat Card */
 .chatCard {
-  padding: 3.2rem;
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  border: 1.5px solid rgba(3, 136, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.1);
+  padding: 4rem;
+  background: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
 }
 
 .chatCard:hover {
-  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.2);
-  border-color: rgba(3, 136, 255, 0.3);
+  box-shadow: 0 16px 48px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
 }
 
 .chatHeader {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.6rem;
   margin-bottom: 0.4rem;
 }
 
 .chatIconWrapper {
-  width: 4.4rem;
-  height: 4.4rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-  border-radius: 50%;
+  width: 5.6rem;
+  height: 5.6rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
 }
 
 .chatTitle {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
@@ -233,10 +251,10 @@
 }
 
 .chatSubtitle {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  color: #ffffff;
-  margin: 0.4rem 0 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0.8rem 0 0 0;
   line-height: 1.3;
 }
 
@@ -250,54 +268,56 @@
 }
 
 .chatList li {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
-  padding-left: 2.4rem;
+  padding-left: 2.8rem;
   position: relative;
 }
 
 .chatList li::before {
-  content: "•";
+  content: "";
   position: absolute;
   left: 0.8rem;
-  color: #3b82f6;
-  font-weight: 700;
-  font-size: 1.6rem;
+  top: 0.9rem;
+  width: 6px;
+  height: 6px;
+  background: #60a5fa;
+  border-radius: 50%;
 }
 
 .chatList strong {
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
 }
 
 .chatNote {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
   margin: 0.8rem 0 0 0;
   line-height: 1.7;
-  padding: 1.6rem;
-  background: rgba(59, 130, 246, 0.1);
-  border-left: 3px solid #3b82f6;
-  border-radius: 6px;
+  padding: 2rem;
+  background: rgba(59, 130, 246, 0.08);
+  border-left: 4px solid #3b82f6;
+  border-radius: 8px;
 }
 
 .hoursCard {
-  margin-top: 0.8rem;
-  padding: 2rem;
-  background: rgba(31, 41, 55, 0.6);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1.2rem;
+  padding: 2.4rem;
+  background: rgba(31, 41, 55, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hoursTitle {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 1.2rem 0;
+  margin: 0 0 1.4rem 0;
   line-height: 1.2;
 }
 
@@ -310,7 +330,7 @@
 .hoursList p {
   font-size: 1.4rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
   line-height: 1.5;
 }
@@ -329,24 +349,29 @@
 @media (max-width: 1200px) {
   .content {
     padding: 14rem 4% 9rem;
-    gap: 5rem;
+    gap: 4rem;
+    max-width: 110rem;
   }
 
   .title {
-    font-size: 4.2rem;
+    font-size: 4.6rem;
+  }
+
+  .contactOption {
+    padding: 2.8rem;
   }
 
   .serviceCard,
   .chatCard {
-    padding: 2.8rem;
+    padding: 3.2rem;
   }
 
   .serviceTitle {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
   }
 
   .chatTitle {
-    font-size: 1.9rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -363,23 +388,29 @@
   }
 
   .left {
-    gap: 3.5rem;
+    gap: 4rem;
   }
 
   .title {
-    font-size: 3.8rem;
+    font-size: 4.2rem;
   }
 
   .subTitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .contactOptions {
-    gap: 2rem;
+    gap: 1.8rem;
   }
 
   .contactOption {
-    padding: 2rem;
+    padding: 2.4rem;
+    gap: 2rem;
+  }
+
+  .icon {
+    width: 5.6rem;
+    height: 5.6rem;
   }
 
   .formMobile {
@@ -392,31 +423,35 @@
 
   .serviceCard,
   .chatCard {
-    padding: 2.4rem;
+    padding: 3rem;
+  }
+
+  .serviceCard {
+    margin-top: 0;
   }
 
   .serviceTitle {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .serviceText {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
   }
 
   .chatTitle {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
   }
 
   .chatSubtitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .chatList li {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
   }
 
   .chatNote {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
   }
 }
 
@@ -428,82 +463,83 @@
   }
 
   .title {
-    font-size: 3.4rem;
+    font-size: 3.6rem;
   }
 
   .left {
-    gap: 3rem;
+    gap: 3.5rem;
   }
 
   .contactOptions {
-    gap: 1.8rem;
-  }
-
-  .contactOption {
-    padding: 1.8rem;
     gap: 1.6rem;
   }
 
+  .contactOption {
+    padding: 2rem;
+    gap: 1.8rem;
+  }
+
   .icon {
-    width: 5rem;
-    height: 5rem;
+    width: 5.2rem;
+    height: 5.2rem;
+    padding: 1.4rem;
   }
 
   .infoTitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .infoDescription {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .serviceCard,
   .chatCard {
-    padding: 2rem;
-    gap: 1.4rem;
+    padding: 2.4rem;
+    gap: 1.6rem;
   }
 
   .serviceTitle {
-    font-size: 1.9rem;
+    font-size: 2.2rem;
   }
 
   .serviceText {
-    font-size: 1.3rem;
-  }
-
-  .chatIconWrapper {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  .chatTitle {
-    font-size: 1.7rem;
-  }
-
-  .chatSubtitle {
-    font-size: 1.35rem;
-  }
-
-  .chatList li {
-    font-size: 1.3rem;
-    padding-left: 2rem;
-  }
-
-  .chatNote {
-    font-size: 1.3rem;
-    padding: 1.4rem;
-  }
-
-  .hoursCard {
-    padding: 1.8rem;
-  }
-
-  .hoursTitle {
     font-size: 1.4rem;
   }
 
+  .chatIconWrapper {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .chatTitle {
+    font-size: 2rem;
+  }
+
+  .chatSubtitle {
+    font-size: 1.4rem;
+  }
+
+  .chatList li {
+    font-size: 1.4rem;
+    padding-left: 2.4rem;
+  }
+
+  .chatNote {
+    font-size: 1.4rem;
+    padding: 1.8rem;
+  }
+
+  .hoursCard {
+    padding: 2rem;
+  }
+
+  .hoursTitle {
+    font-size: 1.5rem;
+  }
+
   .hoursList p {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 }
 
@@ -515,23 +551,32 @@
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 
   .subTitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .contactOption {
+    padding: 1.8rem;
+  }
+
+  .icon {
+    width: 4.8rem;
+    height: 4.8rem;
   }
 
   .serviceCard,
   .chatCard {
-    padding: 1.8rem;
+    padding: 2rem;
   }
 
   .serviceTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .chatTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
