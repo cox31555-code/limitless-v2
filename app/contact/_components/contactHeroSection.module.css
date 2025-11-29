@@ -99,7 +99,7 @@
 
 @media (max-width: 1024px) {
   .heroSection {
-    padding: 3.2rem 6%;
+    padding: 7rem calc(50vw - 50%) 7rem;
   }
 
   .title {
