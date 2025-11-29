@@ -5,7 +5,7 @@ import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -23,18 +23,18 @@ const EmailUsSection = () => {
               <Image
                 src="/svg/message.svg"
                 alt="Email"
-                width={40}
-                height={40}
+                width={32}
+                height={32}
               />
             </div>
             <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
               Email us
             </h2>
             <p className={`${styles.text} ${manrope.className}`}>
-              If you have any Allianz Online Car Insurance -related queries, or need to tell us about a technical difficulty, please email us at{" "}
-              <a href="mailto:digitalsalesuk@allianz.com" className={styles.link}>
-                digitalsalesuk@allianz.com
-              </a>. We can only respond to your query if your policy number begins with PL0.
+              If you have any insurance-related queries or need to tell us about a technical difficulty, please email us at{" "}
+              <a href="mailto:support@limitlesscover.co.uk" className={styles.link}>
+                support@limitlesscover.co.uk
+              </a>
             </p>
             <p className={`${styles.text} ${manrope.className}`}>
               Email replies can take up to 24 hours during busy periods. In extreme cases, it can take a little longer.
@@ -42,11 +42,8 @@ const EmailUsSection = () => {
             <p className={`${styles.text} ${manrope.className}`}>
               Please don't email again if you're waiting for a reply, as this can delay us getting back to you.
             </p>
-            <p className={`${styles.text} ${manrope.className}`}>
-              As an online insurer, we always give you our best price the first time. We're not able to respond to queries about price matching or reducing your renewal price.
-            </p>
-            <a href="mailto:support@limitlesscover.co.uk" className={styles.button}>
-              Email us
+            <a href="mailto:support@limitlesscover.co.uk" className={`${styles.button} ${manrope.className}`}>
+              Send an email
             </a>
           </div>
 
@@ -55,17 +52,17 @@ const EmailUsSection = () => {
               <Image
                 src="/svg/complaints.svg"
                 alt="Complaint"
-                width={40}
-                height={40}
+                width={32}
+                height={32}
               />
             </div>
             <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
               Make a complaint
             </h2>
             <p className={`${styles.text} ${manrope.className}`}>
-              Tell us if you're not happy with our service.
+              Tell us if you're not happy with our service. We take all feedback seriously and will work to resolve your concerns.
             </p>
-            <a href="/complaints" className={styles.button}>
+            <a href="/complaints" className={`${styles.button} ${manrope.className}`}>
               Make a complaint
             </a>
           </div>
