@@ -1,15 +1,16 @@
 /* Page Wrapper */
 .pageWrapper {
   min-height: 100vh;
-  background: #ffffff;
+  background: #fafbfc;
 }
 
 /* Hero Section */
 .heroSection {
   position: relative;
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  padding: 4rem 2rem 3rem;
+  padding: 0;
   overflow: hidden;
+  width: 100%;
 }
 
 .heroBackground {
@@ -21,45 +22,46 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 4rem;
+  padding-right: 8%;
   opacity: 0.15;
   pointer-events: none;
 }
 
 .heroBackgroundImage {
   width: auto;
-  height: 80%;
-  max-height: 200px;
+  height: 70%;
+  max-height: 160px;
 }
 
 .heroContent {
   position: relative;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 4.5rem 4rem 4rem;
   z-index: 1;
 }
 
 .heroTitle {
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 1rem 0;
-  letter-spacing: -0.5px;
+  margin: 0 0 1.2rem 0;
+  letter-spacing: -0.8px;
 }
 
 .heroSubtitle {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Breadcrumb */
 .breadcrumb {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem 2rem 0;
+  padding: 2.5rem 4rem 0;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -95,9 +97,9 @@
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem 2rem 3rem;
+  padding: 2.5rem 4rem 4rem;
 }
 
 /* Header */
@@ -105,7 +107,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   gap: 2rem;
 }
 
@@ -423,12 +425,12 @@
 }
 
 @media (max-width: 768px) {
-  .heroSection {
-    padding: 3rem 1.5rem 2.5rem;
+  .heroContent {
+    padding: 3.5rem 2rem 3rem;
   }
 
   .heroTitle {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
   }
 
   .heroSubtitle {
@@ -441,7 +443,7 @@
   }
 
   .breadcrumb {
-    padding: 1.5rem 1.5rem 0;
+    padding: 2rem 2rem 0;
     font-size: 1.3rem;
   }
 
@@ -450,7 +452,7 @@
   }
 
   .container {
-    padding: 1.5rem 1.5rem 2.5rem;
+    padding: 2rem 2rem 3rem;
   }
 
   .header {
@@ -484,12 +486,13 @@
 }
 
 @media (max-width: 600px) {
-  .heroSection {
-    padding: 2.5rem 1rem 2rem;
+  .heroContent {
+    padding: 3rem 1.6rem 2.5rem;
   }
 
   .heroTitle {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+    letter-spacing: -0.5px;
   }
 
   .heroSubtitle {
@@ -501,7 +504,7 @@
   }
 
   .breadcrumb {
-    padding: 1.2rem 1rem 0;
+    padding: 1.8rem 1.6rem 0;
     font-size: 1.25rem;
   }
 
@@ -510,7 +513,7 @@
   }
 
   .container {
-    padding: 1.2rem 1rem 2rem;
+    padding: 1.8rem 1.6rem 2.5rem;
   }
 
   .title {
