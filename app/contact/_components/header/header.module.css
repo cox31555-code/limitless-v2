@@ -275,12 +275,12 @@
 .chatNote {
   font-size: 1.4rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0.8rem 0 0 0;
   line-height: 1.7;
   padding: 1.6rem;
-  background: rgba(3, 136, 255, 0.05);
-  border-left: 3px solid #0388ff;
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 3px solid #3b82f6;
   border-radius: 6px;
 }
 
