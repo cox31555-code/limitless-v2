@@ -327,7 +327,7 @@
 /* Tablet - 1200px */
 @media (max-width: 1200px) {
   .content {
-    padding: 7rem 4% 9rem;
+    padding: 14rem 4% 9rem;
     gap: 5rem;
   }
 
