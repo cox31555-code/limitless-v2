@@ -22,8 +22,7 @@
 .whiteSection {
   width: 100%;
   background: #ffffff;
-  min-height: 20rem;
-  padding: 8rem 4%;
+  padding: 8rem 0;
 }
 
 @media screen and (max-width: 900px) {
