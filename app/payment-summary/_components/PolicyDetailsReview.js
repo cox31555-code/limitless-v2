@@ -11,8 +11,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const PolicyDetailsReview = ({ insuranceData }) => {
   const [expandedSections, setExpandedSections] = useState({
-    coverDetails: true,
-    vehicleInfo: false,
+    coverDetails: false,
+    vehicleInfo: true,
     drivers: false,
     driverDetails: false,
   });
