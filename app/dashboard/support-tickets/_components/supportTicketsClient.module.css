@@ -1,52 +1,78 @@
 /* Page Wrapper */
 .pageWrapper {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
+  position: relative;
   background: #fafbfc;
+  min-height: 100vh;
 }
 
-/* Hero Section */
+/* Hero Section - Full Width */
 .heroSection {
-  position: relative;
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  width: 100%;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 5.5rem calc(50vw - 50%) 5.5rem;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .heroBackground {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 8%;
-  opacity: 0.15;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 240px;
+  opacity: 0.2;
   pointer-events: none;
 }
 
 .heroBackgroundImage {
-  width: auto;
-  height: 70%;
-  max-height: 160px;
+  width: 100%;
+  height: 100%;
 }
 
 .heroContent {
-  position: relative;
-  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 4.5rem 4rem 4rem;
-  z-index: 1;
+  position: relative;
+  z-index: 2;
+  padding: 0 5%;
 }
 
 .heroTitle {
   font-size: 3.6rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 1.2rem 0;
+  margin: 0;
   letter-spacing: -0.8px;
+  line-height: 1.2;
 }
 
 .heroSubtitle {
@@ -54,31 +80,34 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.92);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* Breadcrumb */
 .breadcrumb {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 2.5rem 4rem 0;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 1rem;
-  font-size: 1.4rem;
+  padding: 2.5rem 5% 1.5rem;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .breadcrumbItem {
+  font-size: 1.4rem;
+  font-weight: 500;
   color: #64748b;
-  text-decoration: none;
-  transition: color 0.2s ease;
+  white-space: nowrap;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  font-size: 1.4rem;
   font-family: inherit;
-  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .breadcrumbItem:hover:not(.active) {
@@ -95,14 +124,15 @@
   color: #cbd5e1;
   font-size: 1.4rem;
   user-select: none;
-  font-weight: 400;
 }
 
+/* Container */
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2.5rem 4rem 4rem;
+  padding: 3rem 5% 4rem;
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -135,6 +165,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .createButton:hover {
@@ -173,6 +204,7 @@
   color: #0f172a;
   background: #ffffff;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .searchInput:focus {
@@ -413,28 +445,27 @@
   border-color: #003d7a;
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-  .tableContainer {
-    overflow-x: auto;
-  }
-
-  .table {
-    min-width: 900px;
-  }
-
+/* Responsive - Desktop Large */
+@media (max-width: 1400px) {
   .heroBackground {
-    width: 40%;
+    right: 5%;
+    width: 200px;
+    height: 200px;
   }
 }
 
-@media (max-width: 768px) {
+/* Responsive - Tablet */
+@media (max-width: 900px) {
+  .heroSection {
+    padding: 4.5rem calc(50vw - 50%) 4.5rem;
+  }
+
   .heroContent {
-    padding: 3.5rem 2rem 3rem;
+    padding: 0 4%;
   }
 
   .heroTitle {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
 
   .heroSubtitle {
@@ -442,21 +473,17 @@
   }
 
   .heroBackground {
-    width: 35%;
-    padding-right: 2rem;
+    width: 180px;
+    height: 180px;
+    opacity: 0.15;
   }
 
   .breadcrumb {
-    padding: 2rem 2rem 0;
-    font-size: 1.3rem;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.3rem;
+    padding: 2rem 4% 1.2rem;
   }
 
   .container {
-    padding: 2rem 2rem 3rem;
+    padding: 2.5rem 4% 3.5rem;
   }
 
   .header {
@@ -474,28 +501,27 @@
     max-width: 100%;
   }
 
-  .title {
-    font-size: 1.8rem;
+  .tableContainer {
+    overflow-x: auto;
   }
 
-  .tableCell {
-    padding: 1.2rem 1.4rem;
-    font-size: 1.3rem;
-  }
-
-  .tableHeader {
-    padding: 1.2rem 1.4rem;
-    font-size: 1.2rem;
+  .table {
+    min-width: 900px;
   }
 }
 
+/* Responsive - Mobile */
 @media (max-width: 600px) {
+  .heroSection {
+    padding: 3.5rem calc(50vw - 50%) 3.5rem;
+  }
+
   .heroContent {
-    padding: 3rem 1.6rem 2.5rem;
+    padding: 0 3.5%;
   }
 
   .heroTitle {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     letter-spacing: -0.5px;
   }
 
@@ -508,20 +534,20 @@
   }
 
   .breadcrumb {
-    padding: 1.8rem 1.6rem 0;
-    font-size: 1.25rem;
+    padding: 1.8rem 3.5% 1rem;
+    font-size: 1.3rem;
   }
 
   .breadcrumbItem {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
 
   .container {
-    padding: 1.8rem 1.6rem 2.5rem;
+    padding: 2rem 3.5% 3rem;
   }
 
   .title {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 
   .createButton {
@@ -535,13 +561,13 @@
   }
 
   .tableCell {
-    padding: 1rem 1.2rem;
-    font-size: 1.25rem;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.3rem;
   }
 
   .tableHeader {
-    padding: 1rem 1.2rem;
-    font-size: 1.15rem;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.2rem;
   }
 
   .statusBadge,
@@ -556,5 +582,24 @@
     height: 3.2rem;
     min-width: 3.2rem;
     font-size: 1.3rem;
+  }
+}
+
+/* Responsive - Very Small Mobile */
+@media (max-width: 400px) {
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.3rem;
+  }
+
+  .container {
+    padding: 1.8rem 3% 2.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
   }
 }
