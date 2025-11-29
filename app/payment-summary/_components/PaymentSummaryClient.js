@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import GetQuotePageHeader from "@/app/annual/get-quote/_components/GetQuotePageHeader";
+import PolicyDetailsReview from "./PolicyDetailsReview";
 import QuoteHeader from "./quoteHeader/QuoteHeader";
 import PaymentOptions from "./paymentOptions/PaymentOptions";
 import Actions from "./actions/Actions";
@@ -67,6 +68,7 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
       <div className={"centeredContent"}>
         <div className={styles.container}>
           <div className={styles.first}>
+            <PolicyDetailsReview insuranceData={insuranceData} />
           </div>
           <div className={styles.second}>
             <QuoteHeader
