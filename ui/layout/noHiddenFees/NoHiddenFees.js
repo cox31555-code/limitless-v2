@@ -13,7 +13,7 @@ const NoHiddenFees = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.title}>
-          No Hidden Fees
+          <span>No Hidden Fees</span>
           <span className={styles.titleSpan}>Limitless Cover</span>
         </div>
         <div className={styles.buttons}>
