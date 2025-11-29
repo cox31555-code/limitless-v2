@@ -470,16 +470,22 @@
 
 .emergencyCard {
   background: linear-gradient(135deg, #F0F7FF 0%, #E3F0FF 100%);
-  border: 2px solid #B8DAFF;
-  border-radius: 20px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 16px;
   padding: 3.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1.8rem;
-  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   animation: fadeInUp 0.5s ease-out 0.4s both;
+  transition: all 0.25s ease;
+}
+
+.emergencyCard:hover {
+  border-color: #0052a3;
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.08);
 }
 
 .emergencyIcon {
@@ -526,20 +532,19 @@
   font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s ease;
   font-family: inherit;
-  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.15);
 }
 
 .emergencyButton:hover {
   background: #003d7a;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 82, 163, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 82, 163, 0.2);
 }
 
 .emergencyButton:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.2);
+  background: #002a52;
+  box-shadow: 0 1px 4px rgba(0, 82, 163, 0.15);
 }
 
 /* Footer Info */
