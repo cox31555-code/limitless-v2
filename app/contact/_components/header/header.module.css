@@ -154,7 +154,7 @@
 .serviceTitle {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #000822;
+  color: #ffffff;
   margin: 0 0 0.4rem 0;
   line-height: 1.2;
   letter-spacing: -0.3px;
@@ -163,14 +163,14 @@
 .serviceText {
   font-size: 1.4rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
   line-height: 1.7;
 }
 
 .serviceText:first-of-type {
   font-weight: 500;
-  color: #000822;
+  color: #ffffff;
 }
 
 .serviceLink {
