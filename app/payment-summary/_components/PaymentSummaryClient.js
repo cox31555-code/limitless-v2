@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 import GetQuotePageHeader from "@/app/annual/get-quote/_components/GetQuotePageHeader";
-import PersonalDetails from "./personalDetails/PersonalDetails";
-import CoverDetails from "./coverDetails/CoverDetails";
-import VehicleDetails from "./vehicleDetails/VehicleDetails";
 import QuoteHeader from "./quoteHeader/QuoteHeader";
 import PaymentOptions from "./paymentOptions/PaymentOptions";
 import Actions from "./actions/Actions";
@@ -70,18 +67,6 @@ export default function PaymentSummaryClient({ insuranceData, id }) {
       <div className={"centeredContent"}>
         <div className={styles.container}>
           <div className={styles.first}>
-            <VehicleDetails
-              data={insuranceData.vehicleDetails}
-              carUsage={insuranceData.carUsage}
-              insuranceType={insuranceData.type}
-            />
-            <CoverDetails data={insuranceData.coverDetails} insuranceType={insuranceData.type} />
-            <PersonalDetails
-              data={insuranceData.userDetails}
-              carUsage={insuranceData.carUsage}
-              insuranceType={insuranceData.type}
-              optionalExtras={insuranceData.optionalExtras}
-            />
           </div>
           <div className={styles.second}>
             <QuoteHeader
