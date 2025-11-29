@@ -58,73 +58,6 @@ const PolicyDetailsReview = ({ insuranceData }) => {
       <section className={styles.expandableCard} aria-labelledby="vehicle-info-heading">
         <button
           className={styles.cardHeader}
-          onClick={() => toggleSection("coverDetails")}
-          onKeyDown={(e) => handleKeyDown(e, "coverDetails")}
-          aria-expanded={expandedSections.coverDetails}
-          aria-controls="cover-details-content"
-        >
-          <div className={styles.headerContent}>
-            <div className={styles.iconWrapper}>
-              <svg
-                className={styles.icon}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-                <line x1="10" y1="9" x2="8" y2="9" />
-              </svg>
-            </div>
-            <h3 id="cover-details-heading" className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
-              Your Cover Details
-            </h3>
-          </div>
-          <svg
-            className={`${styles.expandIcon} ${expandedSections.coverDetails ? styles.expanded : ""}`}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            aria-hidden="true"
-          >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        {expandedSections.coverDetails && (
-          <div id="cover-details-content" className={styles.cardContent} role="region" aria-labelledby="cover-details-heading">
-            <div className={styles.detailsGrid}>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>Cover start date</span>
-                <span className={styles.detailValue}>{formatDate(coverDetails?.startDate)}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>Cover type</span>
-                <span className={styles.detailValue}>{insuranceData?.type === "Temp" ? "Temporary" : insuranceData?.type === "Impound" ? "Impound" : "Annual"}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>Cover level</span>
-                <span className={styles.detailValue}>{formatValue(coverDetails?.level || "Comprehensive")}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>Breakdown cover</span>
-                <span className={styles.detailValue}>{formatValue(coverDetails?.breakdownCover || "Not included")}</span>
-              </div>
-            </div>
-          </div>
-        )}
-      </section>
-
-      {/* Vehicle Information Section */}
-      <section className={styles.expandableCard} aria-labelledby="vehicle-info-heading">
-        <button
-          className={styles.cardHeader}
           onClick={() => toggleSection("vehicleInfo")}
           onKeyDown={(e) => handleKeyDown(e, "vehicleInfo")}
           aria-expanded={expandedSections.vehicleInfo}
@@ -216,6 +149,73 @@ const PolicyDetailsReview = ({ insuranceData }) => {
                   <span className={styles.detailLabel}>Nighttime storage</span>
                   <span className={styles.detailValue}>{formatValue(carUsage?.keepingCarDuringNight)}</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
+
+      {/* Cover Details Section */}
+      <section className={styles.expandableCard} aria-labelledby="cover-details-heading">
+        <button
+          className={styles.cardHeader}
+          onClick={() => toggleSection("coverDetails")}
+          onKeyDown={(e) => handleKeyDown(e, "coverDetails")}
+          aria-expanded={expandedSections.coverDetails}
+          aria-controls="cover-details-content"
+        >
+          <div className={styles.headerContent}>
+            <div className={styles.iconWrapper}>
+              <svg
+                className={styles.icon}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <line x1="10" y1="9" x2="8" y2="9" />
+              </svg>
+            </div>
+            <h3 id="cover-details-heading" className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+              Your Cover Details
+            </h3>
+          </div>
+          <svg
+            className={`${styles.expandIcon} ${expandedSections.coverDetails ? styles.expanded : ""}`}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            aria-hidden="true"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        {expandedSections.coverDetails && (
+          <div id="cover-details-content" className={styles.cardContent} role="region" aria-labelledby="cover-details-heading">
+            <div className={styles.detailsGrid}>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Cover start date</span>
+                <span className={styles.detailValue}>{formatDate(coverDetails?.startDate)}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Cover type</span>
+                <span className={styles.detailValue}>{insuranceData?.type === "Temp" ? "Temporary" : insuranceData?.type === "Impound" ? "Impound" : "Annual"}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Cover level</span>
+                <span className={styles.detailValue}>{formatValue(coverDetails?.level || "Comprehensive")}</span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Breakdown cover</span>
+                <span className={styles.detailValue}>{formatValue(coverDetails?.breakdownCover || "Not included")}</span>
               </div>
             </div>
           </div>
