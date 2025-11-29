@@ -1,0 +1,106 @@
+.section {
+  width: 100%;
+  padding: 6rem 4%;
+  background: #000822;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.4rem;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 3.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.6rem;
+  height: 5.6rem;
+  background: #0388ff;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.value {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.value:hover {
+  color: #0388ff;
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 4rem 4%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2.4rem;
+  }
+
+  .iconWrapper {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .value {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 2rem;
+    gap: 1.6rem;
+  }
+
+  .iconWrapper {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .value {
+    font-size: 1.5rem;
+  }
+}
