@@ -77,27 +77,6 @@
   line-height: 1.5;
 }
 
-.trustInfo {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-}
-
-.trustItem {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.35rem;
-  font-weight: 500;
-}
-
-.trustItem svg {
-  flex-shrink: 0;
-  opacity: 0.9;
-  width: 18px;
-  height: 18px;
-}
 
 @media (max-width: 1024px) {
   .heroSection {
