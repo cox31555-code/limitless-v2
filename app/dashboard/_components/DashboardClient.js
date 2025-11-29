@@ -85,7 +85,7 @@ const DashboardClient = () => {
     },
     {
       id: 5,
-      label: "Support Tickets",
+      label: "Help Center",
       icon: "support",
       action: () => {
         showLoading();
