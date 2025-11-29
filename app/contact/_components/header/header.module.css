@@ -1,103 +1,230 @@
+/* Main Container */
 .content {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  width: 100%;
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0;
-}
-
-/* Online Service Section */
-.onlineServiceSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 45rem;
-  background: linear-gradient(135deg, #004c97 0%, #0055aa 100%);
-  border-radius: 0;
-  overflow: hidden;
-  margin-bottom: 0;
+  gap: 6rem;
+  width: 100%;
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 8rem 4% 10rem;
+  position: relative;
+  align-items: start;
 }
 
-.serviceLeft {
-  padding: 5rem 5rem 5rem 6rem;
+/* Contact SVG Image */
+.contact {
+  position: absolute;
+  top: -12rem;
+  left: -8rem;
+  width: auto;
+  height: 77.6rem;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Left Section */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.headers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.subTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0388ff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.title {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.curvedBorder {
+  position: absolute;
+  bottom: -1.2rem;
+  left: 0;
+  width: 100%;
+  max-width: 39.3rem;
+  height: auto;
+}
+
+/* Contact Options */
+.contactOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.contactOption {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2.4rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.contactOption:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.12);
+  border-color: rgba(3, 136, 255, 0.2);
+}
+
+.icon {
+  width: 5.9rem;
+  height: 5.9rem;
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.infoTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.infoDescription {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Right Section - Self-Service Content */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Service Card */
+.serviceCard {
+  padding: 3.2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.08);
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  justify-content: center;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.serviceCard:hover {
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.14);
+  border-color: rgba(3, 136, 255, 0.2);
 }
 
 .serviceTitle {
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 0.8rem 0;
+  color: #000822;
+  margin: 0 0 0.4rem 0;
   line-height: 1.2;
   letter-spacing: -0.3px;
 }
 
 .serviceText {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
-  color: #ffffff;
+  color: #1a1a2e;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .serviceText:first-of-type {
-  font-weight: 600;
+  font-weight: 500;
+  color: #000822;
 }
 
-.link {
-  color: #ffffff;
+.serviceLink {
+  color: #0388ff;
   text-decoration: underline;
   font-weight: 600;
-  transition: opacity 0.2s ease;
+  text-underline-offset: 0.2rem;
+  transition: all 0.2s ease;
 }
 
-.link:hover {
-  opacity: 0.85;
+.serviceLink:hover {
+  color: #0270cc;
+  text-decoration-color: #0270cc;
 }
 
-.serviceRight {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-}
-
-.serviceImage {
-  width: 100%;
-  height: auto;
-  max-width: 45rem;
-  object-fit: contain;
-  border-radius: 12px;
-}
-
-/* Chat Section */
-.chatSection {
-  background: #f5f8fa;
-  padding: 5rem 6rem;
+/* Chat Card */
+.chatCard {
+  padding: 3.2rem;
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.08);
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.chatIcon {
-  width: 6rem;
-  height: 6rem;
-  background: #0055aa;
+.chatCard:hover {
+  box-shadow: 0 8px 24px rgba(3, 136, 255, 0.14);
+  border-color: rgba(3, 136, 255, 0.25);
+}
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.chatIconWrapper {
+  width: 4.4rem;
+  height: 4.4rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  margin-bottom: 0.8rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.25);
 }
 
 .chatTitle {
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #000822;
   margin: 0;
@@ -105,64 +232,72 @@
 }
 
 .chatSubtitle {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #000822;
-  margin: 0.8rem 0 0.4rem 0;
+  margin: 0.4rem 0 0 0;
+  line-height: 1.3;
 }
 
-.chatInstructions {
-  list-style: disc;
-  padding-left: 2.4rem;
+.chatList {
+  list-style: none;
+  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
-.chatInstructions li {
-  font-size: 1.5rem;
+.chatList li {
+  font-size: 1.4rem;
   font-weight: 400;
   color: #1a1a2e;
-  line-height: 1.6;
+  line-height: 1.7;
+  padding-left: 2.4rem;
+  position: relative;
 }
 
-.chatInstructions strong {
+.chatList li::before {
+  content: "•";
+  position: absolute;
+  left: 0.8rem;
+  color: #0388ff;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.chatList strong {
   font-weight: 700;
   color: #000822;
 }
 
 .chatNote {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
   color: #1a1a2e;
-  margin: 1.2rem 0;
-  line-height: 1.6;
+  margin: 0.8rem 0 0 0;
+  line-height: 1.7;
+  padding: 1.6rem;
+  background: rgba(3, 136, 255, 0.05);
+  border-left: 3px solid #0388ff;
+  border-radius: 6px;
 }
 
-.chatNote .link {
-  color: #0055aa;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-.chatNote .link:hover {
-  opacity: 0.85;
-}
-
-.chatHours {
-  margin-top: 2rem;
-  padding: 2.4rem;
+.hoursCard {
+  margin-top: 0.8rem;
+  padding: 2rem;
   background: #ffffff;
   border-radius: 10px;
-  border: 1px solid rgba(0, 85, 170, 0.1);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
 }
 
 .hoursTitle {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #000822;
   margin: 0 0 1.2rem 0;
+  line-height: 1.2;
 }
 
 .hoursList {
@@ -172,7 +307,7 @@
 }
 
 .hoursList p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
   color: #1a1a2e;
   margin: 0;
@@ -184,200 +319,133 @@
   color: #000822;
 }
 
-/* Contact Options */
-.contactOptions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  padding: 6rem 6rem;
-  background: #ffffff;
+/* Mobile Form (Hidden on Desktop) */
+.formMobile {
+  display: none;
 }
 
-.contactOption {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.6rem;
-  padding: 2.4rem;
-  background: #f8fafb;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 85, 170, 0.08);
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contactOption:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 85, 170, 0.12);
-  border-color: rgba(0, 85, 170, 0.2);
-}
-
-.icon {
-  width: 5.9rem;
-  height: 5.9rem;
-  object-fit: contain;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.infoTitle {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #000822;
-  margin: 0;
-}
-
-.infoDescription {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: #5a6b7d;
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* Tablet */
+/* Tablet - 1200px */
 @media (max-width: 1200px) {
-  .onlineServiceSection {
-    grid-template-columns: 1fr;
-    min-height: auto;
+  .content {
+    padding: 7rem 4% 9rem;
+    gap: 5rem;
   }
 
-  .serviceLeft {
-    padding: 4.5rem 5%;
+  .title {
+    font-size: 4.2rem;
   }
 
-  .serviceRight {
-    padding: 3rem 5%;
-    min-height: 35rem;
-  }
-
-  .chatSection {
-    padding: 4.5rem 5%;
-  }
-
-  .contactOptions {
-    grid-template-columns: 1fr;
-    padding: 5rem 5%;
-    gap: 2.4rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .serviceLeft {
-    padding: 4rem 5%;
+  .serviceCard,
+  .chatCard {
+    padding: 2.8rem;
   }
 
   .serviceTitle {
-    font-size: 2.8rem;
-  }
-
-  .serviceText {
-    font-size: 1.4rem;
-  }
-
-  .serviceRight {
-    padding: 2.5rem 5%;
-    min-height: 30rem;
-  }
-
-  .chatSection {
-    padding: 4rem 5%;
+    font-size: 2.2rem;
   }
 
   .chatTitle {
-    font-size: 2.4rem;
+    font-size: 1.9rem;
+  }
+}
+
+/* Mobile - 900px */
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding: 6rem 4% 8rem;
   }
 
-  .chatSubtitle {
-    font-size: 1.5rem;
+  .contact {
+    display: none;
   }
 
-  .chatInstructions li {
-    font-size: 1.4rem;
+  .left {
+    gap: 3.5rem;
   }
 
-  .chatNote {
-    font-size: 1.4rem;
+  .title {
+    font-size: 3.8rem;
+  }
+
+  .subTitle {
+    font-size: 1.2rem;
   }
 
   .contactOptions {
-    padding: 4rem 5%;
     gap: 2rem;
   }
 
   .contactOption {
     padding: 2rem;
   }
-}
 
-@media (max-width: 600px) {
-  .serviceLeft {
-    padding: 3.5rem 5%;
-    gap: 1.4rem;
+  .formMobile {
+    display: block;
+  }
+
+  .right {
+    order: -1;
+  }
+
+  .serviceCard,
+  .chatCard {
+    padding: 2.4rem;
   }
 
   .serviceTitle {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .serviceText {
-    font-size: 1.3rem;
-  }
-
-  .serviceRight {
-    padding: 2rem 5%;
-    min-height: 25rem;
-  }
-
-  .chatSection {
-    padding: 3.5rem 5%;
-    gap: 1.4rem;
-  }
-
-  .chatIcon {
-    width: 5rem;
-    height: 5rem;
+    font-size: 1.35rem;
   }
 
   .chatTitle {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   .chatSubtitle {
     font-size: 1.4rem;
   }
 
-  .chatInstructions {
-    padding-left: 2rem;
-  }
-
-  .chatInstructions li {
-    font-size: 1.3rem;
+  .chatList li {
+    font-size: 1.35rem;
   }
 
   .chatNote {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+  }
+}
+
+/* Mobile - 600px */
+@media (max-width: 600px) {
+  .content {
+    padding: 5rem 4% 7rem;
+    gap: 3.5rem;
   }
 
-  .chatHours {
-    padding: 2rem;
+  .title {
+    font-size: 3.4rem;
   }
 
-  .hoursTitle {
-    font-size: 1.5rem;
-  }
-
-  .hoursList p {
-    font-size: 1.4rem;
+  .left {
+    gap: 3rem;
   }
 
   .contactOptions {
-    padding: 3.5rem 5%;
+    gap: 1.8rem;
+  }
+
+  .contactOption {
+    padding: 1.8rem;
+    gap: 1.6rem;
+  }
+
+  .icon {
+    width: 5rem;
+    height: 5rem;
   }
 
   .infoTitle {
@@ -386,5 +454,83 @@
 
   .infoDescription {
     font-size: 1.3rem;
+  }
+
+  .serviceCard,
+  .chatCard {
+    padding: 2rem;
+    gap: 1.4rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.9rem;
+  }
+
+  .serviceText {
+    font-size: 1.3rem;
+  }
+
+  .chatIconWrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .chatTitle {
+    font-size: 1.7rem;
+  }
+
+  .chatSubtitle {
+    font-size: 1.35rem;
+  }
+
+  .chatList li {
+    font-size: 1.3rem;
+    padding-left: 2rem;
+  }
+
+  .chatNote {
+    font-size: 1.3rem;
+    padding: 1.4rem;
+  }
+
+  .hoursCard {
+    padding: 1.8rem;
+  }
+
+  .hoursTitle {
+    font-size: 1.4rem;
+  }
+
+  .hoursList p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile - 450px */
+@media (max-width: 450px) {
+  .content {
+    padding: 4rem 4% 6rem;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subTitle {
+    font-size: 1.1rem;
+  }
+
+  .serviceCard,
+  .chatCard {
+    padding: 1.8rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.8rem;
+  }
+
+  .chatTitle {
+    font-size: 1.6rem;
   }
 }
