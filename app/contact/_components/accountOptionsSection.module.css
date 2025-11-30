@@ -88,12 +88,16 @@
   color: #16a34a;
 }
 
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 82, 163, 0.2) 50%, transparent 100%);
+  margin: 2.4rem 0;
+}
+
 .authContent {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  flex: 1;
-  justify-content: center;
 }
 
 .registerButton {
