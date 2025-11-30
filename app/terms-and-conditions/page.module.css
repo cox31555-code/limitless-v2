@@ -1,92 +1,175 @@
-.page {
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.6rem;
+  padding: 2rem 4%;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 120rem;
+  margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
+.breadcrumbItem {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbItem:hover {
+  color: #0052a3;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.8rem;
+  color: #ccc;
+  margin: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Policy Navigation */
 .policyNav {
-  background: linear-gradient(180deg, #000822 0%, #0a1835 100%);
-  padding: 2.4rem 0;
-  border-top: 1px solid rgba(100, 180, 255, 0.15);
-  border-bottom: 1px solid rgba(100, 180, 255, 0.15);
+  width: 100%;
+  background: #f8fafb;
+  border-bottom: 1px solid #e0e6f0;
+  padding: 0 4%;
 }
 
 .policyNavContent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.8rem;
-  max-width: 1300px;
+  max-width: 120rem;
   margin: 0 auto;
-  padding: 0 2.4rem;
-  flex-wrap: wrap;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .policyLink {
-  color: #ffffff;
-  font-size: 1.4rem;
+  padding: 2rem 3rem;
+  font-size: 1.6rem;
   font-weight: 500;
+  color: #5a6b7d;
   text-decoration: none;
-  cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
   white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
 .policyLink:hover {
-  color: #049cff;
-  background: rgba(4, 156, 255, 0.08);
+  color: #0052a3;
+  background: rgba(0, 82, 163, 0.04);
 }
 
 .activePolicyLink {
-  color: #049cff;
-  background: rgba(4, 156, 255, 0.12);
+  color: #0052a3;
+  font-weight: 600;
+  border-bottom-color: #0052a3;
+  background: rgba(0, 82, 163, 0.06);
+}
+
+/* Content Section */
+.contentSection {
+  width: 100%;
+  padding: 5rem 4%;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .content {
-  margin-bottom: 2.4rem;
+  margin-bottom: 3rem;
 }
 
-@media (max-width: 900px) {
-  .policyNav {
-    padding: 1.8rem 0;
+.content:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+  .breadcrumb {
+    gap: 1.2rem;
   }
 
-  .policyNavContent {
-    gap: 1.6rem;
-    padding: 0 1.6rem;
+  .breadcrumbItem {
+    font-size: 1.5rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.6rem;
   }
 
   .policyLink {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
+    padding: 1.8rem 2.4rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .breadcrumb {
+    gap: 1rem;
+    padding: 1.8rem 4%;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.4rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.5rem;
+  }
+
+  .policyLink {
+    padding: 1.6rem 2rem;
+    font-size: 1.4rem;
+  }
+
+  .contentSection {
+    padding: 4rem 4%;
+  }
+
+  .content {
+    margin-bottom: 2.5rem;
   }
 }
 
 @media (max-width: 600px) {
-  .policyNav {
-    padding: 1.6rem 0;
+  .breadcrumb {
+    gap: 0.8rem;
+    padding: 1.6rem 4%;
   }
 
-  .policyNavContent {
-    gap: 1.2rem;
-    padding: 0 1.2rem;
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
   }
 
   .policyLink {
-    font-size: 1.1rem;
-    padding: 0.4rem 0.8rem;
-    flex-shrink: 0;
+    padding: 1.4rem 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .contentSection {
+    padding: 3rem 4%;
   }
 
   .content {
-    margin-bottom: 1.6rem;
+    margin-bottom: 2rem;
   }
 }
