@@ -450,15 +450,20 @@
 
   .helpGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   .helpCard {
-    padding: 2.8rem;
+    padding: 2.4rem 2.8rem;
   }
 
-  .helpCardContent {
-    margin-bottom: 2rem;
+  .helpCardTitle {
+    font-size: 2rem;
+  }
+
+  .helpIconWrapper {
+    width: 5.5rem;
+    height: 5.5rem;
   }
 }
 
