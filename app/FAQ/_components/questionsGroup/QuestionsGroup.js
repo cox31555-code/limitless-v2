@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./questionsGroup.module.css";
-import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
