@@ -39,14 +39,6 @@
   flex-shrink: 0;
 }
 
-.brandingLogo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
-}
-
 .trustSection {
   display: flex;
   gap: 2rem;
