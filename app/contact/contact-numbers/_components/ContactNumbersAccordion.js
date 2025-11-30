@@ -254,35 +254,96 @@ const ContactNumbersAccordion = () => {
     setExpandedId(expandedId === id ? null : id);
   };
 
+  const openLiveChat = () => {
+    if (typeof window !== "undefined" && window.Tawk_API) {
+      window.Tawk_API.maximize();
+    }
+  };
+
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.accordionWrapper}>
-          {accordionData.map((item) => (
-            <div key={item.id} className={styles.accordionItem}>
-              <button
-                className={`${styles.accordionButton} ${expandedId === item.id ? styles.expanded : ""}`}
-                onClick={() => toggleAccordion(item.id)}
-              >
-                <span className={`${styles.accordionTitle} ${plusJakartaSans.className}`}>
-                  {item.title}
-                </span>
-                <span className={styles.accordionIcon}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </span>
-              </button>
-              {expandedId === item.id && (
-                <div className={`${styles.accordionContentWrapper} ${manrope.className}`}>
-                  {item.content}
-                </div>
-              )}
-            </div>
-          ))}
+    <>
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div className={styles.accordionWrapper}>
+            {accordionData.map((item) => (
+              <div key={item.id} className={styles.accordionItem}>
+                <button
+                  className={`${styles.accordionButton} ${expandedId === item.id ? styles.expanded : ""}`}
+                  onClick={() => toggleAccordion(item.id)}
+                >
+                  <span className={`${styles.accordionTitle} ${plusJakartaSans.className}`}>
+                    {item.title}
+                  </span>
+                  <span className={styles.accordionIcon}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </span>
+                </button>
+                {expandedId === item.id && (
+                  <div className={`${styles.accordionContentWrapper} ${manrope.className}`}>
+                    {item.content}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className={styles.helpSection}>
+        <div className={styles.helpContainer}>
+          <div className={styles.helpHeader}>
+            <h2 className={`${styles.helpTitle} ${plusJakartaSans.className}`}>
+              Can't find the answer you're looking for?
+            </h2>
+          </div>
+
+          <div className={styles.helpGrid}>
+            <div className={styles.helpCard}>
+              <div className={styles.popularBadge}>
+                <span className={manrope.className}>Popular option</span>
+              </div>
+              <div className={styles.helpCardContent}>
+                <h3 className={`${styles.helpCardTitle} ${plusJakartaSans.className}`}>
+                  Web chat with us
+                </h3>
+                <div className={styles.helpIconWrapper}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+              </div>
+              <button 
+                className={`${styles.helpButton} ${manrope.className}`}
+                onClick={openLiveChat}
+              >
+                Start chat
+              </button>
+            </div>
+
+            <div className={styles.helpCard}>
+              <div className={styles.helpCardContent}>
+                <h3 className={`${styles.helpCardTitle} ${plusJakartaSans.className}`}>
+                  Try WhatsApp
+                </h3>
+                <div className={styles.helpIconWrapper}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    <circle cx="9" cy="10" r="1" fill="currentColor"/>
+                    <circle cx="12" cy="10" r="1" fill="currentColor"/>
+                    <circle cx="15" cy="10" r="1" fill="currentColor"/>
+                  </svg>
+                </div>
+              </div>
+              <button className={`${styles.helpButton} ${manrope.className}`}>
+                Message us
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
