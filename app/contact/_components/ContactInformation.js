@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./contactInformation.module.css";
 import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 
@@ -114,9 +115,9 @@ const ContactInformation = () => {
             <p className={`${styles.cardText} ${manrope.className}`}>
               Prefer to call? Here's our contact numbers and opening hours.
             </p>
-            <button className={`${styles.button} ${manrope.className}`}>
+            <Link href="/contact/contact-numbers" className={`${styles.button} ${manrope.className}`}>
               Contact numbers
-            </button>
+            </Link>
           </div>
         </div>
       </div>
