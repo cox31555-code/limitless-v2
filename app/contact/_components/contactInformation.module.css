@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  padding: 6rem 4%;
+  padding: 4rem 4% 6rem;
   background: #ffffff;
 }
 
@@ -43,7 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 3.2rem;
+  padding: 2.8rem;
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid rgba(0, 82, 163, 0.08);
@@ -61,12 +61,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.8rem;
-  height: 4.8rem;
-  background: #7c3aed;
+  width: 5.2rem;
+  height: 5.2rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   border-radius: 12px;
   flex-shrink: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
   color: #ffffff;
 }
 
@@ -75,19 +75,19 @@
 }
 
 .cardTitle {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #000822;
-  margin: 0 0 1.2rem 0;
+  margin: 0 0 1rem 0;
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
 
 .cardText {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
   color: #5a6b7d;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.6rem 0;
   line-height: 1.6;
   flex: 1;
 }
@@ -97,10 +97,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1.6rem;
+  padding: 1.4rem;
   background: #f8fafb;
   border-radius: 12px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
 }
 
 .qrCode svg {
@@ -114,12 +114,12 @@
   justify-content: center;
   width: 100%;
   padding: 1.4rem 2.4rem;
-  background: #00bcd4;
-  color: #000822;
+  background: #ffffff;
+  color: #0052a3;
   font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
-  border: none;
+  border: 2px solid #0052a3;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -127,9 +127,9 @@
 }
 
 .button:hover {
-  background: #00a8be;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+  background: #0052a3;
+  color: #ffffff;
+  border-color: #0052a3;
 }
 
 .button:active {
@@ -159,21 +159,21 @@
   }
 
   .card {
-    padding: 2.8rem;
+    padding: 2.4rem;
   }
 
   .iconWrapper {
-    width: 4.4rem;
-    height: 4.4rem;
-    margin-bottom: 1.6rem;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-bottom: 1.4rem;
   }
 
   .cardTitle {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 
   .cardText {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
   }
 
   .qrCode {
