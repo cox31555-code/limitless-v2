@@ -292,8 +292,8 @@
 
 .helpSection {
   width: 100%;
-  padding: 3rem 4% 5rem;
-  background: #f8fafb;
+  padding: 5rem 4% 6rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8fafb 100%);
 }
 
 .helpContainer {
@@ -304,7 +304,7 @@
 
 .helpHeader {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .helpTitle {
@@ -319,76 +319,83 @@
 .helpGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 2.4rem;
 }
 
 .helpCard {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 3rem 2.8rem;
-  background: linear-gradient(135deg, #fff9e6 0%, #fef5d4 100%);
+  padding: 3.2rem;
+  background: #ffffff;
   border-radius: 16px;
-  border: 1px solid rgba(0, 82, 163, 0.08);
+  border: 1px solid rgba(0, 82, 163, 0.1);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
-  min-height: 200px;
+  overflow: hidden;
+}
+
+.helpCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0052a3 0%, #003d7a 100%);
 }
 
 .helpCard:first-child {
-  background: linear-gradient(135deg, #fff9e6 0%, #fef5d4 100%);
-}
-
-.helpCard:last-child {
-  background: linear-gradient(135deg, #f0f4f8 0%, #e8ecf1 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
 }
 
 .helpCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 82, 163, 0.15);
+  border-color: rgba(0, 82, 163, 0.2);
 }
 
 .popularBadge {
   position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #9333ea;
+  top: 1.6rem;
+  right: 1.6rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
   color: #ffffff;
-  padding: 0.6rem 1.6rem;
-  border-radius: 20px;
-  font-size: 1.3rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
 .helpCardContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.4rem;
+  align-items: flex-start;
+  gap: 1.6rem;
   flex: 1;
-  margin-bottom: 2rem;
+  margin-bottom: 2.4rem;
 }
 
 .helpCardTitle {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: #000822;
   margin: 0;
   line-height: 1.2;
-  text-align: center;
 }
 
 .helpIconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 6rem;
-  height: 6rem;
-  background: rgba(0, 82, 163, 0.08);
-  border-radius: 50%;
-  color: #0052a3;
+  width: 5.6rem;
+  height: 5.6rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border-radius: 12px;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
 }
 
 .helpButton {
@@ -397,21 +404,21 @@
   justify-content: center;
   width: 100%;
   padding: 1.6rem 2.4rem;
-  background: #ffffff;
-  color: #0052a3;
+  background: #0052a3;
+  color: #ffffff;
   font-size: 1.7rem;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid #0052a3;
+  border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .helpButton:hover {
-  background: #0052a3;
-  color: #ffffff;
-  border-color: #0052a3;
+  background: #003d7a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
 
 @media screen and (max-width: 900px) {
