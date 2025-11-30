@@ -12,8 +12,12 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 2.4rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 82, 163, 0.1);
 }
 
 .card {
@@ -21,16 +25,18 @@
   flex-direction: column;
   padding: 3.2rem;
   background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 82, 163, 0.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-radius: 0;
+  border: none;
+  border-right: 1px solid rgba(0, 82, 163, 0.1);
   transition: all 0.3s ease;
 }
 
+.card:last-child {
+  border-right: none;
+}
+
 .card:hover {
-  box-shadow: 0 8px 24px rgba(0, 82, 163, 0.12);
-  border-color: rgba(0, 82, 163, 0.2);
-  transform: translateY(-2px);
+  background: #f8fafb;
 }
 
 .iconWrapper {
