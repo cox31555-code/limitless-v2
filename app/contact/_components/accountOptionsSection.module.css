@@ -1,0 +1,340 @@
+.section {
+  width: 100%;
+  padding: 6rem 4%;
+  background: #f8fafb;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 82, 163, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0, 82, 163, 0.12);
+  border-color: rgba(0, 82, 163, 0.2);
+  transform: translateY(-2px);
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.6rem;
+  height: 5.6rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.cardDescription {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #5a6b7d;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000822;
+  line-height: 1.5;
+}
+
+.featureList li svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: #16a34a;
+}
+
+.authContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.registerButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.4rem 2.8rem;
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+
+.registerButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.35);
+}
+
+.registerButton svg {
+  transition: transform 0.2s ease;
+}
+
+.registerButton:hover svg {
+  transform: translateX(4px);
+}
+
+.loginButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.4rem 2.8rem;
+  background: #ffffff;
+  color: #ea580c;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid #ea580c;
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+  background: #ea580c;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.2);
+}
+
+.loginButton svg {
+  transition: transform 0.2s ease;
+}
+
+.loginButton:hover svg {
+  transform: translateX(4px);
+}
+
+.helpLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ea580c;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.helpLink:hover {
+  color: #dc2626;
+  text-decoration: underline;
+}
+
+.policyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.3rem 2.4rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.2);
+  text-align: center;
+}
+
+.policyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 82, 163, 0.3);
+}
+
+.policyButton svg {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.policyButton:hover svg {
+  transform: translateX(4px);
+}
+
+.helpCard {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.helpCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.helpCard .iconWrapper {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.helpCard .cardTitle {
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.helpCard .cardDescription {
+  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  z-index: 1;
+}
+
+.helpButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.3rem 2.8rem;
+  background: #ea580c;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.helpButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.4);
+  background: #dc2626;
+}
+
+.helpButton svg {
+  transition: transform 0.2s ease;
+}
+
+.helpButton:hover svg {
+  transform: translateX(4px);
+}
+
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 2.8rem;
+  }
+
+  .cardTitle {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 4rem 4%;
+  }
+
+  .card {
+    padding: 2.4rem;
+  }
+
+  .iconWrapper {
+    width: 5.2rem;
+    height: 5.2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .cardTitle {
+    font-size: 1.9rem;
+  }
+
+  .cardDescription {
+    font-size: 1.35rem;
+  }
+
+  .featureList li {
+    font-size: 1.35rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardDescription {
+    font-size: 1.3rem;
+  }
+
+  .featureList li {
+    font-size: 1.3rem;
+  }
+
+  .registerButton,
+  .loginButton,
+  .helpButton {
+    width: 100%;
+  }
+
+  .policyButton {
+    font-size: 1.35rem;
+    width: 100%;
+  }
+}
