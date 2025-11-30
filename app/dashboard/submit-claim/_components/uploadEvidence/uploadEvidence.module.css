@@ -172,32 +172,25 @@
 }
 
 .removeBtn {
-  position: absolute;
-  top: 0.8rem;
-  right: 0.8rem;
-  width: 32px;
-  height: 32px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: rgba(220, 53, 69, 0.95);
-  color: #ffffff;
-  border: none;
-  border-radius: 50%;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #e0e6f0;
+  background: #ffffff;
+  color: #333;
   cursor: pointer;
   transition: all 0.2s ease;
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.fileCard:hover .removeBtn {
-  opacity: 1;
-  transform: scale(1);
+  margin-top: 0.8rem;
+  width: 100%;
+  justify-content: center;
 }
 
 .removeBtn:hover {
-  background: #dc3545;
-  transform: scale(1.1);
+  background: #f8f9fc;
 }
 
 .fileInfo {
@@ -369,7 +362,4 @@
     font-size: 1.05rem;
   }
 
-  .removeBtn {
-    opacity: 1;
-  }
 }
