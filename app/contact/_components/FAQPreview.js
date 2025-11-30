@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./faqPreview.module.css";
 import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import Link from "next/link";
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -15,88 +15,66 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 const FAQPreview = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const faqs = [
-    {
-      question: "How quickly will I receive a response?",
-      answer: "We aim to respond to all emails within 24 hours during business days. For urgent matters, please call our phone line.",
-    },
-    {
-      question: "What information should I include in my email?",
-      answer: "Please include your policy number (if applicable), a clear description of your query, and any relevant details that will help us assist you faster.",
-    },
-    {
-      question: "Can I manage my policy online?",
-      answer: "Yes! Log in to your Limitless account to manage, update, or check your policy anytime. Most changes can be made instantly through your dashboard.",
-    },
-    {
-      question: "How do I make a claim?",
-      answer: "For claims, please call our dedicated claims line. This ensures you receive immediate assistance from our specialized claims team.",
-    },
-  ];
-
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.content}>
         <div className={styles.header}>
           <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Frequently asked questions
+            Still looking for <span className={styles.highlight}>answers?</span>
           </h2>
-          <p className={`${styles.description} ${manrope.className}`}>
-            Find quick answers to common questions about our services and policies.
+          <p className={`${styles.subtitle} ${manrope.className}`}>
+            We're here to help with everything you need to know about our insurance products and services.
           </p>
         </div>
 
-        <div className={styles.faqList}>
-          {faqs.map((faq, index) => (
-            <div key={index} className={styles.faqItem}>
-              <button
-                className={`${styles.faqQuestion} ${openIndex === index ? styles.active : ""}`}
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              >
-                <span className={manrope.className}>{faq.question}</span>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  className={openIndex === index ? styles.rotated : ""}
-                >
-                  <path
-                    d="M5 7.5L10 12.5L15 7.5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-              {openIndex === index && (
-                <div className={`${styles.faqAnswer} ${manrope.className}`}>
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+        <div className={styles.cardsGrid}>
+          <div className={styles.card}>
+            <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
+              Frequently Asked Questions
+            </h3>
+            <p className={`${styles.cardDescription} ${manrope.className}`}>
+              Check our comprehensive FAQ section to find answers to common questions about our insurance products and coverage.
+            </p>
+            <Link href="/FAQ" className={styles.cardLink}>
+              Explore FAQ
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 10h6M11 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
 
-        <div className={styles.viewAllWrapper}>
-          <Link href="/FAQ" className={`${styles.viewAllButton} ${manrope.className}`}>
-            View all FAQs
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path
-                d="M6.75 13.5L11.25 9L6.75 4.5"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
+          <div className={styles.card}>
+            <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
+              How-to Guides
+            </h3>
+            <p className={`${styles.cardDescription} ${manrope.className}`}>
+              Step-by-step guides to help you manage your policy, make updates, and get the most from your account.
+            </p>
+            <Link href="/FAQ" className={styles.cardLink}>
+              Read Guides
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 10h6M11 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
+
+          <div className={styles.card}>
+            <h3 className={`${styles.cardTitle} ${plusJakartaSans.className}`}>
+              Contact Support
+            </h3>
+            <p className={`${styles.cardDescription} ${manrope.className}`}>
+              Can't find what you're looking for? Get in touch with our friendly support team and we'll help you out.
+            </p>
+            <Link href="/contact" className={styles.cardLink}>
+              Contact Us
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 10h6M11 7l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
