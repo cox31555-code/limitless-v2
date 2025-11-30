@@ -52,13 +52,13 @@
 .iconWrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 6.4rem;
-  height: 6.4rem;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  border-radius: 14px;
-  margin-bottom: 2.4rem;
+  justify-content: flex-start;
+  margin-bottom: 1.6rem;
   flex-shrink: 0;
+}
+
+.iconWrapper svg {
+  display: block;
 }
 
 .title {
@@ -95,26 +95,23 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.3rem 2.8rem;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  color: #ffffff;
+  padding: 1.4rem 2.8rem;
+  background: #ffffff;
+  color: #0052a3;
   font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 10px;
+  border: 2px solid #0052a3;
   margin-top: auto;
   width: fit-content;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.2);
+  transition: all 0.2s ease;
 }
 
 .button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 82, 163, 0.3);
-}
-
-.button:active {
-  transform: translateY(0);
+  background: #0052a3;
+  color: #ffffff;
+  border-color: #0052a3;
 }
 
 .complaintCard {
@@ -224,7 +221,15 @@
     padding: 3.2rem;
   }
 
-  .iconWrapper,
+  .iconWrapper {
+    margin-bottom: 1.6rem;
+  }
+
+  .iconWrapper svg {
+    width: 40px;
+    height: 40px;
+  }
+
   .complaintIcon {
     width: 5.6rem;
     height: 5.6rem;
@@ -255,7 +260,15 @@
     padding: 2.8rem;
   }
 
-  .iconWrapper,
+  .iconWrapper {
+    margin-bottom: 1.2rem;
+  }
+
+  .iconWrapper svg {
+    width: 36px;
+    height: 36px;
+  }
+
   .complaintIcon {
     width: 5.2rem;
     height: 5.2rem;
@@ -267,7 +280,11 @@
     font-size: 2.1rem;
   }
 
-  .button,
+  .button {
+    width: 100%;
+    padding: 1.4rem 2.4rem;
+  }
+
   .complaintButton {
     width: 100%;
     padding: 1.4rem 2.4rem;
