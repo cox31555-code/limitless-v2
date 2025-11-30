@@ -52,6 +52,18 @@
   flex-shrink: 0;
 }
 
+.accountIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.6rem;
+  flex-shrink: 0;
+}
+
+.accountIcon svg {
+  display: block;
+}
+
 .cardTitle {
   font-size: 2.2rem;
   font-weight: 700;
