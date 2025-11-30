@@ -231,14 +231,15 @@
 
 .descriptionInput {
   width: 100%;
-  padding: 0.8rem 1rem;
-  font-size: 0.9rem;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.05rem;
   border: 1px solid #e0e6f0;
   border-radius: 8px;
   background: #f8f9fc;
   color: #333;
   transition: all 0.2s ease;
   font-family: inherit;
+  min-height: 60px;
 }
 
 .descriptionInput:focus {
@@ -249,7 +250,7 @@
 
 .descriptionInput::placeholder {
   color: #999;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 /* Responsive Design */
@@ -364,8 +365,9 @@
   }
 
   .descriptionInput {
-    font-size: 0.85rem;
-    padding: 0.7rem 0.9rem;
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    min-height: 56px;
   }
 
   .removeBtn {
