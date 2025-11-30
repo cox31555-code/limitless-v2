@@ -1,10 +1,11 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
-import GetQuoteHeaderWithNav from "@/ui/getQuote/GetQuoteHeaderWithNav";
+import ContactPageHeader from "@/app/contact/_components/ContactPageHeader";
+import ComplaintsHero from "./_components/ComplaintsHero";
 import { content } from "./data";
 import LastUpdated from "@/ui/company-pages/lastUpdated/LastUpdated";
 import ListItem from "@/ui/company-pages/listItem/listItem";
-import Link from "next/link";
 
 export const metadata = {
   title: "Complaints | Limitless Cover",
@@ -19,8 +20,15 @@ const page = () => {
   ];
 
   return (
-    <div className={styles.page}>
-      <GetQuoteHeaderWithNav title="Complaints" />
+    <div>
+      <ContactPageHeader />
+      <ComplaintsHero />
+      <div className={styles.breadcrumb}>
+        <Link href="/" className={styles.breadcrumbItem}>Home</Link>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Complaints</span>
+      </div>
+
       <nav className={styles.policyNav}>
         <div className={styles.policyNavContent}>
           {menuItems.map((item, index) => (
@@ -28,10 +36,7 @@ const page = () => {
               key={index}
               href={item.href}
               className={`${styles.policyLink} ${
-                typeof window !== "undefined" &&
-                window.location.pathname === item.href
-                  ? styles.activePolicyLink
-                  : ""
+                item.href === "/complaints" ? styles.activePolicyLink : ""
               }`}
             >
               {item.label}
@@ -39,8 +44,9 @@ const page = () => {
           ))}
         </div>
       </nav>
-      <div className={"centeredContent"}>
-        <div className={"companyPageContainer"}>
+
+      <div className={styles.contentSection}>
+        <div className={styles.container}>
           {content.map((item, index) => (
             <div key={index} className={styles.content}>
               {item.type === "lastUpdate" && <LastUpdated data={item.value} />}
