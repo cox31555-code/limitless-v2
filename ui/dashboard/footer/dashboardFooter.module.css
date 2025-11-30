@@ -14,6 +14,30 @@
   padding: 0 5%;
 }
 
+/* Branding Section */
+.brandingSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  padding: 4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brandingSvg {
+  height: 50px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.brandingLogo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
 /* Top Section - Trust & Partnership Information */
 .topSection {
   display: flex;
