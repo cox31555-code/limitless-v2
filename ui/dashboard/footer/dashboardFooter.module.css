@@ -264,11 +264,16 @@
     padding: 0 4%;
   }
 
-  .brandingSection {
+  .topSection {
     flex-direction: column;
     align-items: flex-start;
-    padding: 2.5rem 0;
-    gap: 1.5rem;
+    padding: 3rem 0;
+    gap: 2.5rem;
+  }
+
+  .brandingArea {
+    width: 100%;
+    gap: 1.2rem;
   }
 
   .brandingSvg {
@@ -277,13 +282,6 @@
 
   .brandingLogo {
     height: 45px;
-  }
-
-  .topSection {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 3rem 0;
-    gap: 2.5rem;
   }
 
   .trustSection {
