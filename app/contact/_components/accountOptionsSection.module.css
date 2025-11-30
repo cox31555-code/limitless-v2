@@ -325,6 +325,15 @@
     margin-bottom: 1.6rem;
   }
 
+  .accountIcon {
+    margin-bottom: 1.2rem;
+  }
+
+  .accountIcon svg {
+    width: 40px;
+    height: 40px;
+  }
+
   .cardTitle {
     font-size: 1.9rem;
   }
