@@ -1,7 +1,7 @@
 .section {
   width: 100%;
-  padding: 4rem 4% 6rem;
-  background: #f8fafb;
+  padding: 6rem 4%;
+  background: #ffffff;
 }
 
 .container {
@@ -52,8 +52,9 @@
 }
 
 .card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
+  border-color: rgba(0, 82, 163, 0.12);
 }
 
 .iconWrapper {
@@ -74,35 +75,37 @@
 }
 
 .cardTitle {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: #000822;
   margin: 0 0 1.2rem 0;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .cardText {
   font-size: 1.4rem;
   font-weight: 400;
   color: #5a6b7d;
-  margin: 0 0 1.6rem 0;
+  margin: 0 0 2rem 0;
   line-height: 1.6;
+  flex: 1;
 }
 
-.info {
+.qrCode {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: auto;
-  padding-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.6rem;
+  background: #f8fafb;
+  border-radius: 12px;
+  margin-bottom: 2rem;
 }
 
-.infoValue {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #000822;
-  line-height: 1.5;
-  word-break: break-word;
+.qrCode svg {
+  display: block;
+  border-radius: 4px;
 }
 
 .button {
@@ -120,11 +123,13 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
+  margin-top: auto;
 }
 
 .button:hover {
   background: #00a8be;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
 }
 
 .button:active {
@@ -133,7 +138,7 @@
 
 @media screen and (max-width: 900px) {
   .section {
-    padding: 3rem 4% 4rem;
+    padding: 4rem 4%;
   }
 
   .header {
@@ -164,15 +169,20 @@
   }
 
   .cardTitle {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 
   .cardText {
     font-size: 1.35rem;
   }
 
-  .infoValue {
-    font-size: 1.35rem;
+  .qrCode {
+    padding: 1.4rem;
+  }
+
+  .qrCode svg {
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -196,15 +206,20 @@
   }
 
   .cardTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .cardText {
     font-size: 1.3rem;
   }
 
-  .infoValue {
-    font-size: 1.3rem;
+  .qrCode {
+    padding: 1.2rem;
+  }
+
+  .qrCode svg {
+    width: 60px;
+    height: 60px;
   }
 
   .button {
