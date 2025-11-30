@@ -19,21 +19,58 @@ const accordionData = [
     title: "Sales, Renewals, Making Changes and Payments",
     content: (
       <div className={styles.accordionContent}>
-        <p className={styles.label}>Sales, Renewals & Payment Contact</p>
-        <p className={styles.text}>You can contact us on <strong>0333 043 2085</strong> or web chat and one of our team will be happy to help.</p>
-        <div className={styles.hours}>
-          <p><strong>Mon - Fri:</strong> 8am to 8pm</p>
-          <p><strong>Sat:</strong> 9am to 5pm</p>
-          <p><strong>Sun:</strong> 10am to 2pm</p>
-          <p><strong>Bank Holidays:</strong> 10am to 4pm</p>
+        <div className={styles.contactBlock}>
+          <p className={styles.label}>Contact Us</p>
+          <p className={styles.phone}><strong>0333 043 2085</strong></p>
+          <p className={styles.text}>You can also reach us via web chat and one of our team will be happy to assist you.</p>
         </div>
-        <p className={styles.link}><u>Our Christmas & New Year Opening Hours</u></p>
-        <div className={styles.hours}>
-          <p><strong>Christmas Eve:</strong> 8am to 4pm</p>
-          <p><strong>Christmas Day:</strong> Closed</p>
-          <p><strong>Boxing Day:</strong> Closed</p>
-          <p><strong>New Years Eve:</strong> 8am to 4pm</p>
-          <p><strong>New Years Day:</strong> Closed</p>
+        
+        <div className={styles.hoursBlock}>
+          <p className={styles.hoursTitle}>Standard Opening Hours</p>
+          <div className={styles.hours}>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>Monday - Friday</span>
+              <span className={styles.time}>8am - 8pm</span>
+            </div>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>Saturday</span>
+              <span className={styles.time}>9am - 5pm</span>
+            </div>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>Sunday</span>
+              <span className={styles.time}>10am - 2pm</span>
+            </div>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>Bank Holidays</span>
+              <span className={styles.time}>10am - 4pm</span>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.hoursBlock}>
+          <p className={styles.hoursTitle}>Christmas & New Year Opening Hours</p>
+          <div className={styles.hours}>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>Christmas Eve</span>
+              <span className={styles.time}>8am - 4pm</span>
+            </div>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>Christmas Day</span>
+              <span className={styles.timeClosed}>Closed</span>
+            </div>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>Boxing Day</span>
+              <span className={styles.timeClosed}>Closed</span>
+            </div>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>New Year's Eve</span>
+              <span className={styles.time}>8am - 4pm</span>
+            </div>
+            <div className={styles.hourRow}>
+              <span className={styles.day}>New Year's Day</span>
+              <span className={styles.timeClosed}>Closed</span>
+            </div>
+          </div>
         </div>
       </div>
     ),
@@ -43,9 +80,24 @@ const accordionData = [
     title: "New Claim",
     content: (
       <div className={styles.accordionContent}>
-        <p className={styles.text}>You can register your claim online via <strong>Your Account</strong>, or if you'd rather speak to us, just give us a call on <strong>0333 043 2011</strong>. We're available <strong>24/7, 365 days a year</strong>.</p>
-        <p className={styles.text}>If you need to make a windscreen claim, you can book your windscreen in for <strong>repair online</strong> or give us a call on <strong>0333 043 2012</strong>.</p>
-        <p className={styles.text}>If your keys have been lost, damaged or stolen, call us on <strong>0333 241 3380, 24 hours a day, 7 days a week</strong>.</p>
+        <div className={styles.claimOption}>
+          <p className={styles.claimTitle}>General Claims</p>
+          <p className={styles.phone}><strong>0333 043 2011</strong></p>
+          <p className={styles.text}>Available <strong>24/7, 365 days a year</strong></p>
+          <p className={styles.text}>You can also register your claim online via <strong>Your Account</strong> for faster processing.</p>
+        </div>
+
+        <div className={styles.claimOption}>
+          <p className={styles.claimTitle}>Windscreen Claims</p>
+          <p className={styles.phone}><strong>0333 043 2012</strong></p>
+          <p className={styles.text}>Book your windscreen repair or replacement online, or call us to arrange an appointment at a time that suits you.</p>
+        </div>
+
+        <div className={styles.claimOption}>
+          <p className={styles.claimTitle}>Lost or Stolen Keys</p>
+          <p className={styles.phone}><strong>0333 241 3380</strong></p>
+          <p className={styles.text}>If your keys have been lost, damaged or stolen, we're here to help <strong>24 hours a day, 7 days a week</strong>.</p>
+        </div>
       </div>
     ),
   },
@@ -54,16 +106,23 @@ const accordionData = [
     title: "Existing Claims",
     content: (
       <div className={styles.accordionContent}>
-        <p className={styles.text}>If your car's being repaired by one of our approved repairers:</p>
-        <ul className={styles.list}>
-          <li>We'll give you regular updates on how the repairs are progressing and when they're expected to finish.</li>
-          <li>If you have any questions about your repairs, you can message us on web chat or call us on <strong>0333 043 2022 Monday to Friday between 9am and 5pm</strong>.</li>
-        </ul>
-        <p className={styles.text}>If you're expecting a settlement because your car can't be repaired:</p>
-        <ul className={styles.list}>
-          <li>We'll call you to discuss your settlement. In the meantime we'll keep you up to date by email and text.</li>
-          <li>If we've already agreed an amount with you and you're waiting for your payment to arrive, please bear with us as it can take a few days for this to get to you.</li>
-        </ul>
+        <div className={styles.claimStatusBlock}>
+          <p className={styles.statusTitle}>If your car is being repaired by our approved repairers:</p>
+          <ul className={styles.list}>
+            <li>We'll provide regular updates on repair progress and estimated completion time</li>
+            <li>For any questions about your repairs, message us via web chat or call <strong>0333 043 2022</strong></li>
+            <li>Available Monday to Friday, 9am - 5pm</li>
+          </ul>
+        </div>
+
+        <div className={styles.claimStatusBlock}>
+          <p className={styles.statusTitle}>If you're expecting a settlement:</p>
+          <ul className={styles.list}>
+            <li>We'll call you to discuss your settlement and keep you updated via email and text</li>
+            <li>If we've already agreed an amount, please allow a few business days for payment processing</li>
+            <li>Payments are typically received within 3-5 working days</li>
+          </ul>
+        </div>
       </div>
     ),
   },
@@ -72,47 +131,50 @@ const accordionData = [
     title: "WhatsApp",
     content: (
       <div className={styles.accordionContent}>
-        <p className={styles.text}>You can message us on WhatsApp and one of our team will be happy to help. Scan the QR code with your phone's camera to get in touch.</p>
-        <div className={styles.qrCode}>
-          <svg width="120" height="120" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="80" height="80" fill="white"/>
-            <rect x="8" y="8" width="8" height="8" fill="black"/>
-            <rect x="24" y="8" width="8" height="8" fill="black"/>
-            <rect x="40" y="8" width="8" height="8" fill="black"/>
-            <rect x="56" y="8" width="8" height="8" fill="black"/>
-            <rect x="64" y="8" width="8" height="8" fill="black"/>
-            <rect x="8" y="16" width="8" height="8" fill="black"/>
-            <rect x="40" y="16" width="8" height="8" fill="black"/>
-            <rect x="64" y="16" width="8" height="8" fill="black"/>
-            <rect x="8" y="24" width="8" height="8" fill="black"/>
-            <rect x="24" y="24" width="8" height="8" fill="black"/>
-            <rect x="40" y="24" width="8" height="8" fill="black"/>
-            <rect x="56" y="24" width="8" height="8" fill="black"/>
-            <rect x="64" y="24" width="8" height="8" fill="black"/>
-            <rect x="8" y="32" width="8" height="8" fill="black"/>
-            <rect x="24" y="32" width="8" height="8" fill="black"/>
-            <rect x="40" y="32" width="8" height="8" fill="black"/>
-            <rect x="56" y="32" width="8" height="8" fill="black"/>
-            <rect x="64" y="32" width="8" height="8" fill="black"/>
-            <rect x="8" y="40" width="8" height="8" fill="black"/>
-            <rect x="64" y="40" width="8" height="8" fill="black"/>
-            <rect x="8" y="48" width="8" height="8" fill="black"/>
-            <rect x="16" y="48" width="8" height="8" fill="black"/>
-            <rect x="24" y="48" width="8" height="8" fill="black"/>
-            <rect x="32" y="48" width="8" height="8" fill="black"/>
-            <rect x="40" y="48" width="8" height="8" fill="black"/>
-            <rect x="48" y="48" width="8" height="8" fill="black"/>
-            <rect x="56" y="48" width="8" height="8" fill="black"/>
-            <rect x="64" y="48" width="8" height="8" fill="black"/>
-            <rect x="24" y="56" width="8" height="8" fill="black"/>
-            <rect x="40" y="56" width="8" height="8" fill="black"/>
-            <rect x="48" y="56" width="8" height="8" fill="black"/>
-            <rect x="8" y="64" width="8" height="8" fill="black"/>
-            <rect x="24" y="64" width="8" height="8" fill="black"/>
-            <rect x="40" y="64" width="8" height="8" fill="black"/>
-            <rect x="56" y="64" width="8" height="8" fill="black"/>
-            <rect x="64" y="64" width="8" height="8" fill="black"/>
-          </svg>
+        <div className={styles.whatsappBlock}>
+          <p className={styles.text}>Message us on WhatsApp for quick assistance. Scan the QR code below with your phone's camera to start chatting with our team.</p>
+          <div className={styles.qrCode}>
+            <svg width="140" height="140" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="80" height="80" fill="white"/>
+              <rect x="8" y="8" width="8" height="8" fill="black"/>
+              <rect x="24" y="8" width="8" height="8" fill="black"/>
+              <rect x="40" y="8" width="8" height="8" fill="black"/>
+              <rect x="56" y="8" width="8" height="8" fill="black"/>
+              <rect x="64" y="8" width="8" height="8" fill="black"/>
+              <rect x="8" y="16" width="8" height="8" fill="black"/>
+              <rect x="40" y="16" width="8" height="8" fill="black"/>
+              <rect x="64" y="16" width="8" height="8" fill="black"/>
+              <rect x="8" y="24" width="8" height="8" fill="black"/>
+              <rect x="24" y="24" width="8" height="8" fill="black"/>
+              <rect x="40" y="24" width="8" height="8" fill="black"/>
+              <rect x="56" y="24" width="8" height="8" fill="black"/>
+              <rect x="64" y="24" width="8" height="8" fill="black"/>
+              <rect x="8" y="32" width="8" height="8" fill="black"/>
+              <rect x="24" y="32" width="8" height="8" fill="black"/>
+              <rect x="40" y="32" width="8" height="8" fill="black"/>
+              <rect x="56" y="32" width="8" height="8" fill="black"/>
+              <rect x="64" y="32" width="8" height="8" fill="black"/>
+              <rect x="8" y="40" width="8" height="8" fill="black"/>
+              <rect x="64" y="40" width="8" height="8" fill="black"/>
+              <rect x="8" y="48" width="8" height="8" fill="black"/>
+              <rect x="16" y="48" width="8" height="8" fill="black"/>
+              <rect x="24" y="48" width="8" height="8" fill="black"/>
+              <rect x="32" y="48" width="8" height="8" fill="black"/>
+              <rect x="40" y="48" width="8" height="8" fill="black"/>
+              <rect x="48" y="48" width="8" height="8" fill="black"/>
+              <rect x="56" y="48" width="8" height="8" fill="black"/>
+              <rect x="64" y="48" width="8" height="8" fill="black"/>
+              <rect x="24" y="56" width="8" height="8" fill="black"/>
+              <rect x="40" y="56" width="8" height="8" fill="black"/>
+              <rect x="48" y="56" width="8" height="8" fill="black"/>
+              <rect x="8" y="64" width="8" height="8" fill="black"/>
+              <rect x="24" y="64" width="8" height="8" fill="black"/>
+              <rect x="40" y="64" width="8" height="8" fill="black"/>
+              <rect x="56" y="64" width="8" height="8" fill="black"/>
+              <rect x="64" y="64" width="8" height="8" fill="black"/>
+            </svg>
+            <p className={styles.qrLabel}>Scan to chat on WhatsApp</p>
+          </div>
         </div>
       </div>
     ),
@@ -122,8 +184,22 @@ const accordionData = [
     title: "Complaints",
     content: (
       <div className={styles.accordionContent}>
-        <p className={styles.text}>If you have a complaint, please contact us and we'll do our best to resolve it quickly.</p>
-        <p className={styles.text}>Call us on <strong>0333 043 2020</strong> or email us at <strong>complaints@limitlesscover.co.uk</strong></p>
+        <div className={styles.contactBlock}>
+          <p className={styles.text}>If you have a complaint, we're committed to resolving it quickly and fairly. Please contact us using the details below:</p>
+          
+          <div className={styles.complaintsContact}>
+            <div className={styles.contactMethod}>
+              <p className={styles.methodLabel}>Phone</p>
+              <p className={styles.phone}><strong>0333 043 2020</strong></p>
+            </div>
+            <div className={styles.contactMethod}>
+              <p className={styles.methodLabel}>Email</p>
+              <p className={styles.email}><strong>complaints@limitlesscover.co.uk</strong></p>
+            </div>
+          </div>
+          
+          <p className={styles.infoText}>We aim to respond to all complaints within 5 working days and will keep you informed throughout the process.</p>
+        </div>
       </div>
     ),
   },
@@ -132,8 +208,16 @@ const accordionData = [
     title: "Media Enquiries",
     content: (
       <div className={styles.accordionContent}>
-        <p className={styles.text}>For media enquiries and press information, please contact our media team.</p>
-        <p className={styles.text}>Email: <strong>media@limitlesscover.co.uk</strong></p>
+        <div className={styles.contactBlock}>
+          <p className={styles.text}>For media enquiries, press releases, or partnership opportunities, please contact our dedicated media team.</p>
+          
+          <div className={styles.mediaContact}>
+            <p className={styles.methodLabel}>Email our Media Team</p>
+            <p className={styles.email}><strong>media@limitlesscover.co.uk</strong></p>
+          </div>
+          
+          <p className={styles.infoText}>We typically respond to media enquiries within 24 hours during business days.</p>
+        </div>
       </div>
     ),
   },
@@ -142,8 +226,22 @@ const accordionData = [
     title: "Accessibility",
     content: (
       <div className={styles.accordionContent}>
-        <p className={styles.text}>We're committed to ensuring our services are accessible to everyone. If you need any assistance or have accessibility requirements, please let us know.</p>
-        <p className={styles.text}>Contact us on <strong>0333 043 2085</strong> or email <strong>accessibility@limitlesscover.co.uk</strong></p>
+        <div className={styles.contactBlock}>
+          <p className={styles.text}>We're committed to making our services accessible to everyone. If you need assistance or have specific accessibility requirements, we're here to help.</p>
+          
+          <div className={styles.accessibilityContact}>
+            <div className={styles.contactMethod}>
+              <p className={styles.methodLabel}>Phone</p>
+              <p className={styles.phone}><strong>0333 043 2085</strong></p>
+            </div>
+            <div className={styles.contactMethod}>
+              <p className={styles.methodLabel}>Email</p>
+              <p className={styles.email}><strong>accessibility@limitlesscover.co.uk</strong></p>
+            </div>
+          </div>
+          
+          <p className={styles.infoText}>Please let us know how we can better serve you, and we'll work to accommodate your needs.</p>
+        </div>
       </div>
     ),
   },
