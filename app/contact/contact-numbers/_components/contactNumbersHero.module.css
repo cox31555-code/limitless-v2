@@ -9,8 +9,9 @@
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-top: 0;
-  margin-bottom: 3rem;
-  padding: 5rem calc(50vw - 50%) 4rem;
+  margin-bottom: 0.5rem;
+  padding: 7.8rem calc(50vw - 50%) 7.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .heroSection::before {
@@ -22,7 +23,6 @@
   bottom: 0;
   background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   pointer-events: none;
-  z-index: 0;
 }
 
 .heroBackground {
@@ -30,10 +30,10 @@
   right: 13%;
   top: 50%;
   transform: translateY(-50%);
-  width: 300px;
-  height: 300px;
+  width: 526px;
+  height: 385px;
   opacity: 0.3;
-  z-index: 1;
+  pointer-events: none;
 }
 
 .heroBackgroundImage {
@@ -43,15 +43,15 @@
 
 .heroContent {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 120rem;
   position: relative;
   z-index: 2;
-  flex: 1;
-  gap: 3.9rem;
+  gap: 4rem;
+  text-align: center;
 }
 
 .mainInfo {
@@ -61,77 +61,81 @@
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 5.2rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  line-height: 110%;
-  letter-spacing: -0.65px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
   margin: 0;
-  font-weight: 400;
+  line-height: 1.5;
 }
 
-@media screen and (max-width: 1200px) {
+
+@media (max-width: 1024px) {
   .heroSection {
-    padding: 4rem calc(50vw - 50%) 3.5rem;
+    padding: 7rem calc(50vw - 50%) 7rem;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 3.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 768px) {
   .heroSection {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem calc(50vw - 50%);
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .heroBackground {
-    display: none;
+    padding: 3.5rem calc(50vw - 50%);
+    margin-bottom: 6.5rem;
   }
 
   .heroContent {
     flex-direction: column;
-    width: 100%;
+    align-items: center;
     gap: 2rem;
-    margin-left: 0;
   }
 
   .mainInfo {
-    align-items: center;
-    width: 100%;
+    gap: 0.8rem;
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .subtitle {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .heroSection {
-    padding: 2rem calc(50vw - 50%);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    padding: 2.5rem calc(50vw - 50%);
+    margin-bottom: 6.5rem;
   }
 
-  .title {
-    font-size: 2rem;
+  .mainInfo {
+    gap: 0.8rem;
+  }
+
+.title {
+    font-size: 2.3rem;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .heroBackground {
+    display: none;
   }
 }
