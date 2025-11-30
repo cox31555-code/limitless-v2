@@ -72,6 +72,7 @@ const Footer = () => {
   const isLoginPage = isMounted && pathname === "/login";
   const isRetrieveQuotePage = isMounted && pathname === "/retrieve-quote";
   const isContactPage = isMounted && pathname === "/contact";
+  const isContactNumbersPage = isMounted && pathname === "/contact/contact-numbers";
 
   // Only apply special styles if mounted and pathname is available, but NOT for login or retrieve-quote pages
   const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname) && !isLoginPage && !isRetrieveQuotePage;
@@ -94,7 +95,7 @@ const Footer = () => {
           {isMounted ? (
             <>
               {(isGetQuotePage || isPaymentSummaryPage) && !isDashboardPage && <GetQuoteFooterBanner key="quote-banner" />}
-              {!isPaymentPage && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && !isDashboardPage && !isContactPage && <NoHiddenFees key="hidden-fees" />}
+              {!isPaymentPage && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && !isDashboardPage && !isContactPage && !isContactNumbersPage && <NoHiddenFees key="hidden-fees" />}
             </>
           ) : (
             <NoHiddenFees key="hidden-fees" />
