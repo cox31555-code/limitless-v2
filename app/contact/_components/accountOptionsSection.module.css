@@ -335,6 +335,10 @@
     font-size: 1.3rem;
   }
 
+  .divider {
+    margin: 1.8rem 0;
+  }
+
   .registerButton,
   .loginButton,
   .helpButton {
