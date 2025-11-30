@@ -348,6 +348,11 @@
 }
 
 @media screen and (max-width: 600px) {
+  .accountIcon svg {
+    width: 36px;
+    height: 36px;
+  }
+
   .cardTitle {
     font-size: 1.8rem;
   }
