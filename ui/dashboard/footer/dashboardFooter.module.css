@@ -202,6 +202,19 @@
     padding: 0 3%;
   }
 
+  .brandingSection {
+    padding: 3rem 0;
+    gap: 2rem;
+  }
+
+  .brandingSvg {
+    height: 40px;
+  }
+
+  .brandingLogo {
+    height: 50px;
+  }
+
   .topSection {
     padding: 4rem 0;
     gap: 3rem;
