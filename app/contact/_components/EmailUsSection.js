@@ -48,9 +48,9 @@ const EmailUsSection = () => {
             <p className={`${styles.text} ${manrope.className}`}>
               Please don't email again if you're waiting for a reply, as this can delay us getting back to you.
             </p>
-            <a href="mailto:support@limitlesscover.co.uk" className={`${styles.button} ${manrope.className}`}>
+            <Link href="/contact/email" className={`${styles.button} ${manrope.className}`}>
               Send an email
-            </a>
+            </Link>
           </div>
 
           <div className={`${styles.card} ${styles.complaintCard}`}>
