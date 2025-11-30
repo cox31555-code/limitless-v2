@@ -181,10 +181,6 @@
   .brandingSvg {
     height: 45px;
   }
-
-  .brandingLogo {
-    height: 55px;
-  }
 }
 
 @media screen and (max-width: 900px) {
