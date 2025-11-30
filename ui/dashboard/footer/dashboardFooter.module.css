@@ -200,9 +200,13 @@
     padding: 0 3%;
   }
 
-  .brandingSection {
-    padding: 3rem 0;
-    gap: 2rem;
+  .topSection {
+    padding: 4rem 0;
+    gap: 2.5rem;
+  }
+
+  .brandingArea {
+    gap: 1.5rem;
   }
 
   .brandingSvg {
@@ -211,11 +215,6 @@
 
   .brandingLogo {
     height: 50px;
-  }
-
-  .topSection {
-    padding: 4rem 0;
-    gap: 3rem;
   }
 
   .trustSection {
