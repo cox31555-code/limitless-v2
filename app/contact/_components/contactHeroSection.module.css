@@ -61,16 +61,16 @@
 }
 
 .title {
-  font-size: 3.9rem;
+  font-size: 5.2rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
   margin: 0;
@@ -84,11 +84,11 @@
   }
 
   .title {
-    font-size: 2.4rem;
+    font-size: 3.8rem;
   }
 
   .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -113,7 +113,7 @@
   }
 
   .subtitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -127,12 +127,12 @@
     gap: 0.8rem;
   }
 
-  .title {
+.title {
     font-size: 2.3rem;
   }
 
   .subtitle {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .heroBackground {
