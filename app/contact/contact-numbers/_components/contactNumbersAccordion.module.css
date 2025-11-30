@@ -1,0 +1,207 @@
+.section {
+  width: 100%;
+  padding: 0 4%;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 3rem 0;
+}
+
+.accordionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.accordionItem {
+  border-bottom: 1px solid #e0e6f0;
+}
+
+.accordionButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.accordionButton:hover {
+  color: #0052a3;
+}
+
+.accordionButton.expanded {
+  color: #0052a3;
+}
+
+.accordionTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: inherit;
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+.accordionIcon {
+  flex-shrink: 0;
+  color: #0052a3;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordionButton.expanded .accordionIcon {
+  transform: rotate(180deg);
+}
+
+.accordionContentWrapper {
+  padding: 0 0 2rem 0;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+  margin: 0;
+}
+
+.text {
+  font-size: 1.4rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.hours {
+  background: #f8fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hours p {
+  font-size: 1.4rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.list {
+  margin: 0;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list li {
+  font-size: 1.4rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.link {
+  color: #0052a3;
+  text-decoration: underline;
+  font-size: 1.4rem;
+  margin: 0.5rem 0 0 0;
+  cursor: pointer;
+}
+
+.qrCode {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #f8fafb;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 2rem 0;
+  }
+
+  .accordionButton {
+    padding: 1.5rem 0;
+  }
+
+  .accordionTitle {
+    font-size: 1.4rem;
+  }
+
+  .text {
+    font-size: 1.3rem;
+  }
+
+  .hours p {
+    font-size: 1.3rem;
+  }
+
+  .list li {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 0 4%;
+  }
+
+  .container {
+    padding: 1.5rem 0;
+  }
+
+  .accordionButton {
+    padding: 1.2rem 0;
+  }
+
+  .accordionTitle {
+    font-size: 1.2rem;
+  }
+
+  .text {
+    font-size: 1.2rem;
+  }
+
+  .hours {
+    padding: 1rem;
+  }
+
+  .hours p {
+    font-size: 1.2rem;
+  }
+
+  .list li {
+    font-size: 1.2rem;
+  }
+}
