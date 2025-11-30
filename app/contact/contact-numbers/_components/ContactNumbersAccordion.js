@@ -169,7 +169,7 @@ const ContactNumbersAccordion = () => {
                 <span className={`${styles.accordionTitle} ${plusJakartaSans.className}`}>
                   {item.title}
                 </span>
-                <span className={styles.accordion Icon}>
+                <span className={styles.accordionIcon}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
