@@ -1,1 +1,82 @@
-/* Clean page wrapper - no specific styles needed */
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.3rem;
+  padding: 0 5% 14px;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.breadcrumbItem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbItem:hover {
+  color: #0052a3;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.55rem;
+  color: #ccc;
+  margin: 0 0.4rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .breadcrumb {
+    gap: 1rem;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .breadcrumb {
+    gap: 0.8rem;
+    padding: 0 4% 14px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .breadcrumb {
+    gap: 0.6rem;
+    padding: 0 3% 12px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.1rem;
+  }
+}
