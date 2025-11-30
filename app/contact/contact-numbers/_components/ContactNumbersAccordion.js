@@ -302,19 +302,19 @@ const ContactNumbersAccordion = () => {
           <div className={styles.helpGrid}>
             <div className={styles.helpCard}>
               <div className={styles.popularBadge}>
-                <span className={manrope.className}>Popular option</span>
+                <span className={manrope.className}>Popular</span>
               </div>
               <div className={styles.helpCardContent}>
-                <h3 className={`${styles.helpCardTitle} ${plusJakartaSans.className}`}>
-                  Web chat with us
-                </h3>
                 <div className={styles.helpIconWrapper}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                   </svg>
                 </div>
+                <h3 className={`${styles.helpCardTitle} ${plusJakartaSans.className}`}>
+                  Web chat with us
+                </h3>
               </div>
-              <button 
+              <button
                 className={`${styles.helpButton} ${manrope.className}`}
                 onClick={openLiveChat}
               >
@@ -324,9 +324,6 @@ const ContactNumbersAccordion = () => {
 
             <div className={styles.helpCard}>
               <div className={styles.helpCardContent}>
-                <h3 className={`${styles.helpCardTitle} ${plusJakartaSans.className}`}>
-                  Try WhatsApp
-                </h3>
                 <div className={styles.helpIconWrapper}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -335,6 +332,9 @@ const ContactNumbersAccordion = () => {
                     <circle cx="15" cy="10" r="1" fill="currentColor"/>
                   </svg>
                 </div>
+                <h3 className={`${styles.helpCardTitle} ${plusJakartaSans.className}`}>
+                  Try WhatsApp
+                </h3>
               </div>
               <button className={`${styles.helpButton} ${manrope.className}`}>
                 Message us
