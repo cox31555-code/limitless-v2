@@ -167,7 +167,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ea580c;
+  color: #0052a3;
   font-size: 1.4rem;
   font-weight: 600;
   text-decoration: none;
@@ -175,7 +175,7 @@
 }
 
 .helpLink:hover {
-  color: #dc2626;
+  color: #003d7a;
   text-decoration: underline;
 }
 
