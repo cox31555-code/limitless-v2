@@ -248,6 +248,11 @@
     gap: 2.5rem;
   }
 
+  .partnershipSection {
+    width: 100%;
+    gap: 1.5rem;
+  }
+
   .brandingSvg {
     height: 35px;
   }
