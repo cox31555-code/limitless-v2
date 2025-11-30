@@ -459,7 +459,11 @@
   }
 
   .helpSection {
-    padding: 3rem 4% 4rem;
+    padding: 4rem 4% 5rem;
+  }
+
+  .helpHeader {
+    margin-bottom: 2.5rem;
   }
 
   .helpTitle {
@@ -468,6 +472,15 @@
 
   .helpGrid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .helpCard {
+    padding: 2.8rem;
+  }
+
+  .helpCardContent {
+    margin-bottom: 2rem;
   }
 }
 
@@ -544,25 +557,42 @@
   }
 
   .helpSection {
-    padding: 2.5rem 4% 3.5rem;
+    padding: 3rem 4% 4rem;
+  }
+
+  .helpHeader {
+    margin-bottom: 2rem;
   }
 
   .helpTitle {
     font-size: 2.4rem;
-    margin-bottom: 2rem;
+  }
+
+  .helpGrid {
+    gap: 1.6rem;
   }
 
   .helpCard {
     padding: 2.4rem 2rem;
   }
 
+  .helpCardContent {
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+
   .helpCardTitle {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .helpIconWrapper {
     width: 5rem;
     height: 5rem;
+  }
+
+  .popularBadge {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
   }
 
   .helpButton {
