@@ -267,6 +267,21 @@
     padding: 0 4%;
   }
 
+  .brandingSection {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 0;
+    gap: 1.5rem;
+  }
+
+  .brandingSvg {
+    height: 35px;
+  }
+
+  .brandingLogo {
+    height: 45px;
+  }
+
   .topSection {
     flex-direction: column;
     align-items: flex-start;
