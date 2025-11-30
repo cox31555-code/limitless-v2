@@ -79,7 +79,7 @@
 }
 
 .accordionContentWrapper {
-  padding: 0 3rem 3rem 3rem;
+  padding: 3.2rem 3rem 3rem;
   animation: slideDown 0.3s ease;
 }
 
