@@ -1,0 +1,374 @@
+.formSection {
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.2;
+}
+
+.sectionDescription {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+/* Drop Zone */
+.dropZone {
+  border: 2px dashed #0052a3;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f0f4fb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dropZone:hover {
+  background: #e6eef8;
+}
+
+.dropZone:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+}
+
+.dropZone.dragging {
+  border-color: #0052a3;
+  background: #e6f0ff;
+  border-style: solid;
+}
+
+.uploadIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #0052a3;
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.1);
+}
+
+.dropZoneText {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 0.6rem 0;
+  font-weight: 500;
+}
+
+.browseLink {
+  color: #0052a3;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dropZoneHint {
+  font-size: 0.95rem;
+  color: #888;
+  margin: 0;
+}
+
+.fileInput {
+  display: none;
+}
+
+/* Files Container */
+.filesContainer {
+  margin-top: 2rem;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.filesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: #f8f9fc;
+  border-bottom: 1px solid #e0e6f0;
+}
+
+.filesTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.removeAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #e0e6f0;
+  background: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.removeAllBtn:hover {
+  background: #f8f9fc;
+}
+
+/* Files Grid */
+.filesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.fileCard {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.fileCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.08);
+  border-color: #0052a3;
+}
+
+.filePreview {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: #f8f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fileIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0052a3;
+  opacity: 0.4;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(220, 53, 69, 0.95);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.fileCard:hover .removeBtn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.removeBtn:hover {
+  background: #dc3545;
+  transform: scale(1.1);
+}
+
+.fileInfo {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fileName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileSize {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+.descriptionInput {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #e0e6f0;
+  border-radius: 8px;
+  background: #f8f9fc;
+  color: #333;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.descriptionInput:focus {
+  outline: none;
+  border-color: #0052a3;
+  background: #ffffff;
+}
+
+.descriptionInput::placeholder {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .filesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .formSection {
+    padding: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .dropZone {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .uploadIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .filesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .filePreview {
+    height: 180px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .formSection {
+    padding: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.95rem;
+  }
+
+  .dropZone {
+    padding: 2rem 1rem;
+  }
+
+  .dropZoneText {
+    font-size: 1rem;
+  }
+
+  .dropZoneHint {
+    font-size: 0.85rem;
+  }
+
+  .uploadIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .uploadIcon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .filesContainer {
+    margin-top: 1.5rem;
+  }
+
+  .filesHeader {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .filesTitle {
+    font-size: 1rem;
+  }
+
+  .removeAllBtn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .filesGrid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .filePreview {
+    height: 160px;
+  }
+
+  .fileInfo {
+    padding: 1rem;
+  }
+
+  .fileName {
+    font-size: 0.9rem;
+  }
+
+  .descriptionInput {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .removeBtn {
+    opacity: 1;
+  }
+}
