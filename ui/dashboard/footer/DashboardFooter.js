@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import styles from "./dashboardFooter.module.css";
-import Image from "next/image";
 
 const DashboardFooter = () => {
   return (
