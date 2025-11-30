@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import styles from "./contactPageHeader.module.css";
 
 const ContactPageHeader = () => {
@@ -37,13 +36,6 @@ const ContactPageHeader = () => {
           </button>
         </div>
       </header>
-
-      {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <Link href="/" className={styles.breadcrumbItem}>Home</Link>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Contact</span>
-      </div>
     </>
   );
 };
