@@ -300,45 +300,36 @@ const ContactNumbersAccordion = () => {
           </div>
 
           <div className={styles.helpGrid}>
-            <div className={styles.helpCard}>
+            <div className={styles.helpCard} onClick={openLiveChat} style={{ cursor: 'pointer' }}>
               <div className={styles.popularBadge}>
                 <span className={manrope.className}>Popular</span>
               </div>
               <div className={styles.helpCardContent}>
-                <div className={styles.helpIconWrapper}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                  </svg>
-                </div>
                 <h3 className={`${styles.helpCardTitle} ${plusJakartaSans.className}`}>
                   Web chat with us
                 </h3>
               </div>
-              <button
-                className={`${styles.helpButton} ${manrope.className}`}
-                onClick={openLiveChat}
-              >
-                Start chat
-              </button>
+              <div className={styles.helpIconWrapper}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
             </div>
 
-            <div className={styles.helpCard}>
+            <div className={styles.helpCard} style={{ cursor: 'pointer' }}>
               <div className={styles.helpCardContent}>
-                <div className={styles.helpIconWrapper}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                    <circle cx="9" cy="10" r="1" fill="currentColor"/>
-                    <circle cx="12" cy="10" r="1" fill="currentColor"/>
-                    <circle cx="15" cy="10" r="1" fill="currentColor"/>
-                  </svg>
-                </div>
                 <h3 className={`${styles.helpCardTitle} ${plusJakartaSans.className}`}>
                   Try WhatsApp
                 </h3>
               </div>
-              <button className={`${styles.helpButton} ${manrope.className}`}>
-                Message us
-              </button>
+              <div className={styles.helpIconWrapper}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  <circle cx="9" cy="10" r="1" fill="currentColor"/>
+                  <circle cx="12" cy="10" r="1" fill="currentColor"/>
+                  <circle cx="15" cy="10" r="1" fill="currentColor"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
