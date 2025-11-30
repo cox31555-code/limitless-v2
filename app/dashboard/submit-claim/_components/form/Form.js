@@ -16,6 +16,7 @@ import FormDateInput from "@/ui/inputs/FormDateInput";
 import { useAuth } from "@/contexts/AuthContext";
 import { API_BASE_URL } from "@/utils/config";
 import { useLoading } from "@/contexts/LoadingContext";
+import UploadEvidence from "../uploadEvidence/UploadEvidence";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -426,6 +427,9 @@ const Form = ({ claimReason }) => {
                 />
               </div>
             </div>
+
+            {/* Upload Evidence Section */}
+            <UploadEvidence register={register} errors={errors} />
 
             {/* Submit Button */}
             <div className={styles.submitButtonWrapper}>
