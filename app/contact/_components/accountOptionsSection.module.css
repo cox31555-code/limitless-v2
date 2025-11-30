@@ -28,15 +28,10 @@
   border-radius: 0;
   border: none;
   border-right: 1px solid rgba(0, 82, 163, 0.1);
-  transition: all 0.3s ease;
 }
 
 .card:last-child {
   border-right: none;
-}
-
-.card:hover {
-  background: #f8fafb;
 }
 
 .iconWrapper {
