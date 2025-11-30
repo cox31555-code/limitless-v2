@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import styles from "./policyDetailsReview.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { useLoading } from "@/contexts/LoadingContext";
+import NoClaimsUpload from "./NoClaimsUpload";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -716,6 +717,9 @@ const PolicyDetailsReview = ({ policy }) => {
           </div>
         </div>
       </section>
+
+      {/* No Claims Discount Upload Section */}
+      <NoClaimsUpload />
 
       {/* Action Buttons */}
       <nav className={styles.actionButtonsContainer} aria-label="Policy actions">
