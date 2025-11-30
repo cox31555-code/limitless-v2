@@ -149,7 +149,7 @@
 }
 
 .hours {
-  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  background: #f8fafb;
   padding: 2.4rem;
   border-radius: 12px;
   display: flex;
@@ -184,19 +184,13 @@
 }
 
 .claimOption {
-  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  background: #f8fafb;
   padding: 2.8rem;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
   border: 1px solid #e0e6f0;
-  transition: all 0.2s ease;
-}
-
-.claimOption:hover {
-  border-color: rgba(0, 82, 163, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.06);
 }
 
 .claimTitle {
@@ -207,7 +201,7 @@
 }
 
 .claimStatusBlock {
-  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  background: #f8fafb;
   padding: 2.8rem;
   border-radius: 12px;
   display: flex;
@@ -251,7 +245,7 @@
   align-items: center;
   gap: 1.4rem;
   padding: 2.8rem;
-  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  background: #f8fafb;
   border-radius: 12px;
   border: 1px solid #e0e6f0;
 }
@@ -266,7 +260,7 @@
 .complaintsContact,
 .accessibilityContact,
 .mediaContact {
-  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  background: #f8fafb;
   padding: 2.8rem;
   border-radius: 12px;
   display: flex;
@@ -301,7 +295,7 @@
 .helpSection {
   width: 100%;
   padding: 6rem 4%;
-  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  background: #f8fafb;
   border-top: 1px solid #e0e6f0;
 }
 
