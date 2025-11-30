@@ -576,41 +576,13 @@
   justify-content: flex-end;
 }
 
-.makeClaimBtn {
-  padding: 1.1rem 2.2rem;
-  background: transparent;
-  color: #1db584;
-  border: 2px solid #1db584;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.makeClaimBtn:hover {
-  background: rgba(29, 181, 132, 0.08);
-  border-color: #149966;
-  color: #149966;
-}
-
-.makeClaimBtn:focus {
-  outline: none;
-}
-
-.makeClaimBtn:focus-visible {
-  outline: 2px solid #1db584;
-  outline-offset: 2px;
-}
-
 .cancelPolicyBtn {
-  padding: 1.1rem 2.2rem;
-  background: transparent;
-  color: #0052a3;
-  border: 2px solid #0052a3;
+  padding: 1.2rem 2.4rem;
+  background: #f0f1f3;
+  color: #333;
+  border: none;
   border-radius: 8px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -618,14 +590,25 @@
 }
 
 .cancelPolicyBtn:hover {
-  background: #f0f7ff;
-  border-color: #0275dd;
-  color: #0275dd;
+  background: #e5e7eb;
 }
 
-.cancelPolicyBtn:focus {
-  outline: 2px solid #0388ff;
-  outline-offset: 2px;
+.makeClaimBtn {
+  padding: 1.2rem 2.4rem;
+  background: #0052a3;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.makeClaimBtn:hover {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
 }
 
 /* Responsive Design */
