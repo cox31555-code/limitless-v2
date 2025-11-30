@@ -15,6 +15,20 @@ const poppins = Poppins({
 
 export const metadata = {
   viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "manifest",
+        url: "/site.webmanifest",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
