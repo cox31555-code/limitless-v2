@@ -1,12 +1,174 @@
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.6rem;
+  padding: 2rem 4%;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.breadcrumbItem {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbItem:hover {
+  color: #0052a3;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.8rem;
+  color: #ccc;
+  margin: 0 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Content Section */
+.contentSection {
+  width: 100%;
+  padding: 5rem 4%;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.introTitle {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.4rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.introText {
+  font-size: 1.8rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 6.4rem;
-  margin: 4rem 12.1%;
+  gap: 5rem;
 }
-@media screen and (max-width: 900px) {
+
+@media (max-width: 1200px) {
+  .breadcrumb {
+    gap: 1.2rem;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.5rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.6rem;
+  }
+
+  .introTitle {
+    font-size: 3.2rem;
+  }
+
+  .introText {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .breadcrumb {
+    gap: 1rem;
+    padding: 1.8rem 4%;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.4rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.5rem;
+  }
+
+  .contentSection {
+    padding: 4rem 4%;
+  }
+
+  .intro {
+    margin-bottom: 4rem;
+  }
+
+  .introTitle {
+    font-size: 2.8rem;
+  }
+
+  .introText {
+    font-size: 1.6rem;
+  }
+
   .wrapper {
-    margin: 4rem 4.4% 7.9rem;
-    gap: 4.8rem;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .breadcrumb {
+    gap: 0.8rem;
+    padding: 1.6rem 4%;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
+  }
+
+  .contentSection {
+    padding: 3rem 4%;
+  }
+
+  .intro {
+    margin-bottom: 3rem;
+  }
+
+  .introTitle {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .introText {
+    font-size: 1.5rem;
+  }
+
+  .wrapper {
+    gap: 3rem;
   }
 }
