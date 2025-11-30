@@ -11,23 +11,21 @@
   align-items: center;
   justify-content: center;
   padding: 1.2rem 2.4rem;
-  color: #0052a3;
+  color: #333;
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 124%;
   cursor: pointer;
-  border: 2px solid #0052a3;
+  border: none;
   border-radius: 10px;
-  background: transparent;
+  background: #f0f1f3;
   transition: all 0.2s ease;
   white-space: nowrap;
   text-decoration: none;
 }
 
 .backButton:hover {
-  background: rgba(0, 82, 163, 0.08);
-  border-color: #0275dd;
-  color: #0275dd;
+  background: #e5e7eb;
 }
 
 .cancelButton {
@@ -62,7 +60,7 @@
 }
 
 .backButton:focus-visible {
-  outline: 2px solid #0052a3;
+  outline: 2px solid #333;
   outline-offset: 2px;
 }
 
