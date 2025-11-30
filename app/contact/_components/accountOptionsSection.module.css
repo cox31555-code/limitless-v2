@@ -120,27 +120,21 @@
   justify-content: center;
   gap: 0.8rem;
   padding: 1.4rem 2.8rem;
-  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  background: #0052a3;
   color: #ffffff;
   font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+  transition: background 0.2s ease;
 }
 
 .registerButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.35);
+  background: #003d7a;
 }
 
 .registerButton svg {
-  transition: transform 0.2s ease;
-}
-
-.registerButton:hover svg {
-  transform: translateX(4px);
+  flex-shrink: 0;
 }
 
 .loginButton {
