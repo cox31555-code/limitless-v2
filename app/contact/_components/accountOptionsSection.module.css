@@ -144,28 +144,23 @@
   gap: 0.8rem;
   padding: 1.4rem 2.8rem;
   background: #ffffff;
-  color: #ea580c;
+  color: #0052a3;
   font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 10px;
-  border: 2px solid #ea580c;
-  transition: all 0.3s ease;
+  border: 2px solid #0052a3;
+  transition: all 0.2s ease;
 }
 
 .loginButton:hover {
-  background: #ea580c;
+  background: #0052a3;
   color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.2);
+  border-color: #0052a3;
 }
 
 .loginButton svg {
-  transition: transform 0.2s ease;
-}
-
-.loginButton:hover svg {
-  transform: translateX(4px);
+  flex-shrink: 0;
 }
 
 .helpLink {
