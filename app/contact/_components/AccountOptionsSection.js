@@ -57,9 +57,9 @@ const AccountOptionsSection = () => {
                 Upload your proof of No Claims Bonus
               </li>
             </ul>
+          </div>
 
-            <div className={styles.divider}></div>
-
+          <div className={styles.card}>
             <div className={styles.authContent}>
               <Link href="/login" className={`${styles.registerButton} ${manrope.className}`}>
                 Register
