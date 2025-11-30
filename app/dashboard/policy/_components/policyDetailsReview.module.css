@@ -729,12 +729,13 @@
   }
 
   .actionButtonsContainer {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 0.75rem;
   }
 
   .makeClaimBtn,
   .cancelPolicyBtn {
+    width: 100%;
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
   }
@@ -859,12 +860,14 @@
   }
 
   .actionButtonsContainer {
+    flex-direction: column-reverse;
     gap: 0.6rem;
     padding: 1.2rem 0 0 0;
   }
 
   .makeClaimBtn,
   .cancelPolicyBtn {
+    width: 100%;
     padding: 0.85rem 1.2rem;
     font-size: 1rem;
   }
