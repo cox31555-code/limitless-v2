@@ -278,7 +278,6 @@
 /* Submit Button */
 .submitButton {
   display: flex;
-  flex: 1;
   padding: 1.2rem 2.4rem;
   justify-content: center;
   align-items: center;
