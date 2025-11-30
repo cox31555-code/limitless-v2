@@ -141,6 +141,7 @@ const Header = () => {
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
     pathname === "/contact" ||
+    pathname === "/contact/contact-numbers" ||
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/allianz-dashboard") ||
     pathname.includes("/get-quote")
