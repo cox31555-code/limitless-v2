@@ -288,6 +288,10 @@
   .cardTitle {
     font-size: 2rem;
   }
+
+  .divider {
+    margin: 2rem 0;
+  }
 }
 
 @media screen and (max-width: 900px) {
