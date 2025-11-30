@@ -265,8 +265,7 @@ const UploadEvidence = ({ register, errors }) => {
                     {file.name}
                   </h5>
                   <p className={styles.fileSize}>{formatFileSize(file.size)}</p>
-                  <input
-                    type="text"
+                  <textarea
                     placeholder="What is this file for? (e.g., Damage to front bumper)"
                     value={file.description}
                     onChange={(e) =>
@@ -274,6 +273,7 @@ const UploadEvidence = ({ register, errors }) => {
                     }
                     className={styles.descriptionInput}
                     aria-label={`Description for ${file.name}`}
+                    rows={3}
                   />
                 </div>
               </div>
