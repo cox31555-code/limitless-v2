@@ -552,34 +552,31 @@
   }
 
   .helpGrid {
-    gap: 1.6rem;
+    gap: 1.4rem;
   }
 
   .helpCard {
-    padding: 2.4rem 2rem;
-  }
-
-  .helpCardContent {
-    gap: 1.2rem;
-    margin-bottom: 1.8rem;
+    padding: 2rem 2.4rem;
   }
 
   .helpCardTitle {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   .helpIconWrapper {
-    width: 5rem;
-    height: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .helpIconWrapper svg {
+    width: 22px;
+    height: 22px;
   }
 
   .popularBadge {
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .helpButton {
-    padding: 1.4rem 2rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+    top: -8px;
+    left: 1.5rem;
   }
 }
