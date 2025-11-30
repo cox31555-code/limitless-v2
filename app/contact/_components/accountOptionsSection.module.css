@@ -185,29 +185,22 @@
   justify-content: center;
   gap: 0.8rem;
   padding: 1.3rem 2.4rem;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  background: #0052a3;
   color: #ffffff;
   font-size: 1.4rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.2);
+  transition: background 0.2s ease;
   text-align: center;
 }
 
 .policyButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 82, 163, 0.3);
+  background: #003d7a;
 }
 
 .policyButton svg {
-  transition: transform 0.2s ease;
   flex-shrink: 0;
-}
-
-.policyButton:hover svg {
-  transform: translateX(4px);
 }
 
 .helpCard {
