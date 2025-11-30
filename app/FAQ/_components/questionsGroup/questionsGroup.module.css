@@ -226,9 +226,14 @@
     padding-bottom: 1.4rem;
   }
 
-  .header img {
-    width: 36px;
-    height: 36px;
+  .headerIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .headerIcon svg {
+    width: 22px;
+    height: 22px;
   }
 
   .title {
