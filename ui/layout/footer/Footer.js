@@ -22,6 +22,7 @@ const validPages = [
   "/coming-soon",
   "/complaints",
   "/contact",
+  "/contact/contact-numbers",
   "/cookies-policy",
   "/courier",
   "/courier-insurance",
