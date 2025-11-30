@@ -23,19 +23,18 @@
 
 /* Drop Zone */
 .dropZone {
-  border: 2px dashed #c8d5e6;
+  border: 2px dashed #0052a3;
   border-radius: 12px;
   padding: 3rem 2rem;
   text-align: center;
-  background: #f8f9fc;
+  background: #f0f4fb;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
 }
 
 .dropZone:hover {
-  border-color: #0052a3;
-  background: #f0f4fb;
+  background: #e6eef8;
 }
 
 .dropZone:focus {
@@ -133,15 +132,11 @@
 }
 
 .addFilesBtn:hover {
-  background: #f0f4fb;
-  border-color: #0052a3;
-  color: #0052a3;
+  background: #f8f9fc;
 }
 
 .removeAllBtn:hover {
-  background: #fff5f5;
-  border-color: #dc3545;
-  color: #dc3545;
+  background: #f8f9fc;
 }
 
 /* Files Table */
@@ -247,15 +242,11 @@
 }
 
 .actionBtn:hover {
-  background: #f0f4fb;
-  border-color: #0052a3;
-  color: #0052a3;
+  background: #f8f9fc;
 }
 
 .actionBtn:last-child:hover {
-  background: #fff5f5;
-  border-color: #dc3545;
-  color: #dc3545;
+  background: #f8f9fc;
 }
 
 /* Responsive Design */
