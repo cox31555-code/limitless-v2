@@ -224,17 +224,20 @@
     padding: 3.2rem;
   }
 
-  .iconWrapper {
+  .iconWrapper,
+  .complaintIcon {
     width: 5.6rem;
     height: 5.6rem;
     margin-bottom: 2rem;
   }
 
-  .title {
+  .title,
+  .complaintTitle {
     font-size: 2.3rem;
   }
 
-  .text {
+  .text,
+  .complaintText {
     font-size: 1.4rem;
   }
 }
