@@ -211,7 +211,7 @@
 
 .helpCard {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  border-color: transparent;
+  border-right: none;
   position: relative;
   overflow: hidden;
 }
