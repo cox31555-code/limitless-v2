@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  padding: 4rem 4%;
+  padding: 5rem 4%;
   background: #ffffff;
 }
 
@@ -14,21 +14,21 @@
 .accordionWrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 2rem;
 }
 
 .accordionItem {
   background: #ffffff;
   border-radius: 16px;
-  border: 1px solid rgba(0, 82, 163, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e0e6f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
   overflow: hidden;
 }
 
 .accordionItem:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 82, 163, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.08);
+  border-color: rgba(0, 82, 163, 0.15);
 }
 
 .accordionButton {
@@ -36,7 +36,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 2.4rem 2.8rem;
+  padding: 2.6rem 3rem;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -50,7 +50,7 @@
 
 .accordionButton.expanded {
   background: rgba(0, 82, 163, 0.03);
-  border-bottom: 1px solid rgba(0, 82, 163, 0.08);
+  border-bottom: 1px solid #e0e6f0;
 }
 
 .accordionTitle {
@@ -79,7 +79,7 @@
 }
 
 .accordionContentWrapper {
-  padding: 0 2.8rem 2.8rem 2.8rem;
+  padding: 0 3rem 3rem 3rem;
   animation: slideDown 0.3s ease;
 }
 
@@ -97,13 +97,13 @@
 .accordionContent {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.4rem;
 }
 
 .contactBlock {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .label {
@@ -114,16 +114,16 @@
 }
 
 .text {
-  font-size: 1.7rem;
+  font-size: 1.65rem;
   color: #5a6b7d;
   margin: 0;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .phone {
   font-size: 2.4rem;
   color: #0052a3;
-  margin: 0.5rem 0;
+  margin: 0.6rem 0;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -131,14 +131,14 @@
 .email {
   font-size: 1.7rem;
   color: #0052a3;
-  margin: 0.5rem 0;
+  margin: 0.6rem 0;
   font-weight: 600;
 }
 
 .hoursBlock {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 .hoursTitle {
@@ -150,11 +150,11 @@
 
 .hours {
   background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
-  padding: 2rem;
+  padding: 2.4rem;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.4rem;
   border: 1px solid #e0e6f0;
 }
 
@@ -162,7 +162,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0;
 }
 
 .day {
@@ -184,13 +184,19 @@
 }
 
 .claimOption {
-  background: #f8fafb;
-  padding: 2.4rem;
+  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  padding: 2.8rem;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  border-left: 4px solid #0052a3;
+  gap: 1.4rem;
+  border: 1px solid #e0e6f0;
+  transition: all 0.2s ease;
+}
+
+.claimOption:hover {
+  border-color: rgba(0, 82, 163, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.06);
 }
 
 .claimTitle {
@@ -201,12 +207,13 @@
 }
 
 .claimStatusBlock {
-  background: #f8fafb;
-  padding: 2.4rem;
+  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  padding: 2.8rem;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.6rem;
+  border: 1px solid #e0e6f0;
 }
 
 .statusTitle {
@@ -218,23 +225,23 @@
 
 .list {
   margin: 0;
-  padding-left: 2.2rem;
+  padding-left: 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.3rem;
 }
 
 .list li {
   font-size: 1.6rem;
   color: #5a6b7d;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .whatsappBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.4rem;
   text-align: center;
 }
 
@@ -242,11 +249,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
-  padding: 2.4rem;
+  gap: 1.4rem;
+  padding: 2.8rem;
   background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
   border-radius: 12px;
-  border: 2px solid #e0e6f0;
+  border: 1px solid #e0e6f0;
 }
 
 .qrLabel {
@@ -259,18 +266,19 @@
 .complaintsContact,
 .accessibilityContact,
 .mediaContact {
-  background: #f8fafb;
-  padding: 2.4rem;
+  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  padding: 2.8rem;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 2rem;
+  border: 1px solid #e0e6f0;
 }
 
 .contactMethod {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.8rem;
 }
 
 .methodLabel {
@@ -283,107 +291,86 @@
 }
 
 .infoText {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   color: #5a6b7d;
-  margin: 1rem 0 0 0;
-  line-height: 1.6;
+  margin: 1.2rem 0 0 0;
+  line-height: 1.7;
   font-style: italic;
 }
 
 .helpSection {
   width: 100%;
-  padding: 5rem 4% 6rem;
-  background: #f8fafb;
+  padding: 6rem 4%;
+  background: linear-gradient(135deg, #f8fafb 0%, #f0f4f8 100%);
+  border-top: 1px solid #e0e6f0;
 }
 
 .helpContainer {
   max-width: 1000px;
   margin: 0 auto;
   width: 100%;
-}
-
-.helpHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-bottom: 3.5rem;
 }
 
 .helpTitle {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: #000822;
-  margin: 0;
-  line-height: 1.2;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.25;
   letter-spacing: -0.02em;
+}
+
+.helpSubtitle {
+  font-size: 1.7rem;
+  color: #5a6b7d;
+  margin: 0 0 4rem 0;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 .helpGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  width: 100%;
 }
 
 .helpCard {
-  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 2.8rem 3.2rem;
-  background: #fef9ed;
-  border-radius: 12px;
-  border: 2px solid #f0e5d1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 3.2rem 2.4rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0e6f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
-  gap: 2rem;
-}
-
-.helpCard:first-child {
-  background: #fef9ed;
-  border-color: #f0e5d1;
-}
-
-.helpCard:last-child {
-  background: #f0f7ff;
-  border-color: #d4e5f7;
+  cursor: pointer;
+  text-align: center;
+  gap: 1.6rem;
 }
 
 .helpCard:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 82, 163, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 82, 163, 0.12);
   border-color: #0052a3;
 }
 
-.popularBadge {
-  position: absolute;
-  top: -10px;
-  left: 2rem;
-  background: #9333ea;
+.helpCard:hover .helpIconCircle {
+  background: #0052a3;
   color: #ffffff;
-  padding: 0.5rem 1.2rem;
-  border-radius: 20px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  box-shadow: 0 2px 8px rgba(147, 51, 234, 0.3);
+  transform: scale(1.05);
 }
 
-.helpCardContent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.8rem;
-  flex: 1;
+.helpCard:hover .helpCardArrow {
+  transform: translateX(3px);
 }
 
-.helpCardTitle {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #000822;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.helpIconWrapper {
+.helpIconCircle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -393,19 +380,58 @@
   border-radius: 50%;
   color: #0052a3;
   flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
-.helpButton {
-  display: none;
+.helpCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.helpCardTitle {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.helpCardDescription {
+  font-size: 1.5rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.helpCardArrow {
+  color: #0052a3;
+  transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 1100px) {
+  .helpGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+  }
+
+  .helpCard {
+    padding: 2.8rem 2rem;
+  }
 }
 
 @media screen and (max-width: 900px) {
   .section {
-    padding: 3rem 4%;
+    padding: 4rem 4%;
+  }
+
+  .accordionWrapper {
+    gap: 1.6rem;
   }
 
   .accordionButton {
-    padding: 2rem 2.2rem;
+    padding: 2.2rem 2.4rem;
   }
 
   .accordionTitle {
@@ -414,7 +440,11 @@
   }
 
   .accordionContentWrapper {
-    padding: 0 2.2rem 2.2rem 2.2rem;
+    padding: 0 2.4rem 2.4rem 2.4rem;
+  }
+
+  .accordionContent {
+    gap: 2rem;
   }
 
   .phone {
@@ -429,64 +459,78 @@
   .claimStatusBlock,
   .complaintsContact,
   .accessibilityContact {
-    padding: 2rem;
+    padding: 2.4rem;
   }
 
   .hours {
-    padding: 1.8rem;
+    padding: 2rem;
   }
 
   .helpSection {
-    padding: 4rem 4% 5rem;
-  }
-
-  .helpHeader {
-    margin-bottom: 2.5rem;
+    padding: 5rem 4%;
   }
 
   .helpTitle {
-    font-size: 3rem;
+    font-size: 2.8rem;
+  }
+
+  .helpSubtitle {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
   }
 
   .helpGrid {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 1.4rem;
   }
 
   .helpCard {
-    padding: 2.4rem 2.8rem;
+    flex-direction: row;
+    padding: 2.4rem;
+    text-align: left;
+    justify-content: space-between;
   }
 
-  .helpCardTitle {
-    font-size: 2rem;
-  }
-
-  .helpIconWrapper {
+  .helpIconCircle {
     width: 5.5rem;
     height: 5.5rem;
+    order: -1;
+  }
+
+  .helpCardContent {
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .helpCardArrow {
+    margin-left: auto;
   }
 }
 
 @media screen and (max-width: 600px) {
   .section {
-    padding: 2rem 4%;
+    padding: 3rem 4%;
   }
 
   .accordionWrapper {
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
   .accordionButton {
-    padding: 1.8rem 2rem;
+    padding: 2rem 2rem;
   }
 
   .accordionTitle {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     padding-right: 1rem;
   }
 
   .accordionContentWrapper {
     padding: 0 2rem 2rem 2rem;
+  }
+
+  .accordionContent {
+    gap: 1.8rem;
   }
 
   .phone {
@@ -501,17 +545,17 @@
   .claimStatusBlock,
   .complaintsContact,
   .accessibilityContact {
-    padding: 1.6rem;
+    padding: 2rem;
   }
 
   .hours {
-    padding: 1.6rem;
+    padding: 1.8rem;
   }
 
   .hourRow {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.3rem;
+    gap: 0.4rem;
   }
 
   .day,
@@ -531,7 +575,7 @@
   }
 
   .qrCode {
-    padding: 1.8rem;
+    padding: 2rem;
   }
 
   .qrCode svg {
@@ -540,43 +584,37 @@
   }
 
   .helpSection {
-    padding: 3rem 4% 4rem;
-  }
-
-  .helpHeader {
-    margin-bottom: 2rem;
+    padding: 4rem 4%;
   }
 
   .helpTitle {
     font-size: 2.4rem;
   }
 
-  .helpGrid {
-    gap: 1.4rem;
+  .helpSubtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .helpCard {
-    padding: 2rem 2.4rem;
+    padding: 2rem;
   }
 
   .helpCardTitle {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
-  .helpIconWrapper {
-    width: 4.5rem;
-    height: 4.5rem;
+  .helpCardDescription {
+    font-size: 1.4rem;
   }
 
-  .helpIconWrapper svg {
-    width: 22px;
-    height: 22px;
+  .helpIconCircle {
+    width: 5rem;
+    height: 5rem;
   }
 
-  .popularBadge {
-    font-size: 1rem;
-    padding: 0.4rem 1rem;
-    top: -8px;
-    left: 1.5rem;
+  .helpIconCircle svg {
+    width: 20px;
+    height: 20px;
   }
 }
