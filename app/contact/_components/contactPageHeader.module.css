@@ -202,10 +202,16 @@
     height: 40px;
   }
 
+  .headerActions {
+    gap: 0.8rem;
+  }
+
+  .backBtn span,
   .helpBtn span {
     display: none;
   }
 
+  .backBtn,
   .helpBtn {
     padding: 0.8rem;
     width: 38px;
