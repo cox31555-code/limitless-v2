@@ -135,42 +135,6 @@ const EmailContactForm = () => {
           <p className={`${styles.introText} ${manrope.className}`}>
             Have a question, concern, or feedback? Fill out the form below and our support team will get back to you within 24 hours. For urgent matters, please call us directly at <strong>0333 043 2085</strong>.
           </p>
-          <div className={styles.infoCards}>
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </div>
-              <div className={styles.infoContent}>
-                <h3 className={`${styles.infoCardTitle} ${plusJakartaSans.className}`}>Response Time</h3>
-                <p className={`${styles.infoCardText} ${manrope.className}`}>Within 24 hours on business days</p>
-              </div>
-            </div>
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-              </div>
-              <div className={styles.infoContent}>
-                <h3 className={`${styles.infoCardTitle} ${plusJakartaSans.className}`}>Direct Email</h3>
-                <p className={`${styles.infoCardText} ${manrope.className}`}>support@limitlesscover.co.uk</p>
-              </div>
-            </div>
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-              </div>
-              <div className={styles.infoContent}>
-                <h3 className={`${styles.infoCardTitle} ${plusJakartaSans.className}`}>Live Chat</h3>
-                <p className={`${styles.infoCardText} ${manrope.className}`}>Available for instant support</p>
-              </div>
-            </div>
-          </div>
         </div>
 
         {submitSuccess && (
