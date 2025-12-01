@@ -39,7 +39,14 @@ const ContactInformation = () => {
             <p className={`${styles.cardText} ${manrope.className}`}>
               The fastest way to contact us is by live chat. Our team will be happy to help.
             </p>
-            <button className={`${styles.button} ${manrope.className}`}>
+            <button
+              className={`${styles.button} ${manrope.className}`}
+              onClick={() => {
+                if (typeof window !== "undefined" && window.$crisp) {
+                  window.$crisp.push(["do", "chat:open"]);
+                }
+              }}
+            >
               Chat to us
             </button>
           </div>
