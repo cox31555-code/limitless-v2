@@ -38,6 +38,39 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.8rem;
+  background: #0052a3;
+  border: 1px solid #0052a3;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.backBtn:hover {
+  background: #003d7a;
+  border-color: #003d7a;
+  transform: translateX(-2px);
+}
+
+.backBtn svg {
+  flex-shrink: 0;
+  color: currentColor;
+}
+
 .helpBtn {
   display: flex;
   align-items: center;
