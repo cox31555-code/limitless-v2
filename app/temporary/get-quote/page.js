@@ -604,7 +604,8 @@ const TemporaryInsuranceContent = () => {
   };
 
   const handleBackFromCarOwner = () => {
-    setCoverSubStep("additionalDrivers");
+    setCurrentStep(STEPS.PERSONAL);
+    setPersonalSubStep("claims");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
