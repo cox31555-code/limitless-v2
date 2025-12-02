@@ -57,7 +57,6 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
           const statusType = getStatusColor(row.remaining);
           const policyType = getPolicyType(index);
 
-          const policyType = getPolicyType(index);
           return (
             <div
               key={index}
