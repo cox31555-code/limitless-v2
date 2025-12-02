@@ -19,7 +19,7 @@
   left: 50%;
   width: 600px;
   height: 600px;
-  background-image: url('https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F278e1d5455694dc98339cd10d66dbd23?format=webp&width=1600');
+  background-image: url('https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F278e1d5455694dc98339cd10d66dbd23');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,6 +27,8 @@
   opacity: 0.08;
   pointer-events: none;
   z-index: 0;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .content {
