@@ -240,8 +240,8 @@
   }
 
   .inputContainer {
-    height: 5.6rem;
-    min-height: 5.6rem;
+    height: 5.8rem;
+    min-height: 5.8rem;
     padding: 1.4rem 1.6rem 1.4rem 0.5rem;
   }
 
@@ -281,8 +281,8 @@
   }
 
   .inputContainer {
-    height: 5.6rem;
-    min-height: 5.6rem;
+    height: 6rem;
+    min-height: 6rem;
     padding: 1.4rem 1.6rem 1.4rem 0.5rem;
     width: 100%;
     box-sizing: border-box;
@@ -334,8 +334,8 @@
   }
 
   .inputContainer {
-    height: 5.6rem;
-    min-height: 5.6rem;
+    height: 5.8rem;
+    min-height: 5.8rem;
     padding: 1.2rem 1.4rem 1.2rem 0.5rem;
     border-radius: 12px;
     box-sizing: border-box;
@@ -389,8 +389,8 @@
   }
 
   .inputContainer {
-    height: 5.6rem;
-    min-height: 5.6rem;
+    height: 5.8rem;
+    min-height: 5.8rem;
     padding: 1rem 1.2rem 1rem 0.5rem;
   }
 
