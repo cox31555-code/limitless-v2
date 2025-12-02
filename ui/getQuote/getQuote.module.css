@@ -892,13 +892,13 @@
   }
 
   .quickQuoteTitle {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
     font-weight: 700;
     line-height: 1.3;
   }
 
   .quickQuoteSubtitle {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 500;
   }
 
@@ -908,8 +908,8 @@
   }
 
   .primaryButton {
-    height: 5.8rem;
-    font-size: 1.8rem;
+    height: 6rem;
+    font-size: 1.9rem;
     border-radius: 0.8rem;
     font-weight: 600;
   }
@@ -1052,9 +1052,34 @@
     padding: 2.2rem 5% 0;
   }
 
+  .quickQuoteTitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .quickQuoteSubtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
   .contentWrapper {
     padding: 2.4rem 5%;
     box-sizing: border-box;
+  }
+
+  .primaryButton {
+    height: 5.8rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+  }
+
+  .stepTitle {
+    font-size: 2rem;
+  }
+
+  .stepDescription {
+    font-size: 1.3rem;
   }
 
   .quickQuoteTitle {
