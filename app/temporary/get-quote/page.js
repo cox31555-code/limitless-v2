@@ -1226,6 +1226,7 @@ const TemporaryInsuranceContent = () => {
                     onNext={handleCoverDetailsSubmit}
                     coverData={form.getValues("coverDetails") || {}}
                     showCoverOptions={false}
+                    insuranceType="Temp"
                   />
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "ncd" && (
