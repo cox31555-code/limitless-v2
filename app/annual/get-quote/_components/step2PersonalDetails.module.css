@@ -213,11 +213,11 @@
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
   }
 
   .subText {
@@ -226,6 +226,18 @@
 
   .fieldLabel,
   .inputLabel {
+    font-size: 1.6rem;
+  }
+
+  .expandableLink {
+    font-size: 1.6rem;
+  }
+
+  .expandableContent {
+    font-size: 1.6rem;
+  }
+
+  .helpLink {
     font-size: 1.6rem;
   }
 

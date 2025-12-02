@@ -848,21 +848,25 @@
   }
 
   .mainQuestion {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 
   .subText {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .regInput {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding: 1.4rem 1.6rem;
     height: 6rem;
   }
 
+  .regInput::placeholder {
+    font-size: 1.6rem;
+  }
+
   .findBtn {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding: 1.4rem 2rem;
     height: 6rem;
   }
@@ -872,7 +876,99 @@
   }
 
   .detailsSectionTitle {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .detailLabel {
+    font-size: 1.6rem;
+  }
+
+  .detailValue {
+    font-size: 1.6rem;
+  }
+
+  .changeLink {
+    font-size: 1.6rem;
+  }
+
+  .modificationQuestion {
+    font-size: 1.8rem;
+  }
+
+  .modificationHelper {
+    font-size: 1.6rem;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+  }
+
+  .helpLink {
+    font-size: 1.6rem;
+  }
+
+  .modificationsHeading {
+    font-size: 1.8rem;
+  }
+
+  .modificationName {
+    font-size: 1.6rem;
+  }
+
+  .removeTextBtn {
+    font-size: 1.6rem;
+  }
+
+  .changeModificationBtn {
+    font-size: 1.6rem;
+  }
+
+  .addModificationBtn {
+    font-size: 1.6rem;
+  }
+
+  .infoText {
+    font-size: 1.6rem;
+  }
+
+  .infoTitle {
+    font-size: 1.6rem;
+  }
+
+  .foundVehicleDetails {
+    font-size: 1.6rem;
+  }
+
+  .foundVehicleReg {
+    font-size: 1.6rem;
+  }
+
+  .foundVehicleTitle {
+    font-size: 1.6rem;
+  }
+
+  .changeVehicleBtn {
+    font-size: 1.6rem;
+  }
+
+  .manualEntryTitle {
+    font-size: 1.8rem;
+  }
+
+  .backToRegBtn {
+    font-size: 1.6rem;
+  }
+
+  .manualEntryHelper {
+    font-size: 1.6rem;
+  }
+
+  .dividerText {
+    font-size: 1.6rem;
+  }
+
+  .manualEntryBtn {
+    font-size: 1.6rem !important;
   }
 
   .detailsGrid {
