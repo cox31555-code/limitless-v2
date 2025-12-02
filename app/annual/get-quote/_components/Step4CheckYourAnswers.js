@@ -422,10 +422,12 @@ const Step4CheckYourAnswers = ({
               <span className={styles.label}>No claims discount</span>
               <span className={styles.value}>{getDisplayValue(ncdData?.noClaimsDiscount || "No NCD")}</span>
             </div>
-            <div className={styles.dataRow}>
-              <span className={styles.label}>Protected no claims discount</span>
-              <span className={styles.value}>{getDisplayValue(ncdData?.protectedNcd || "No")}</span>
-            </div>
+            {insuranceType === "Annual" && (
+              <div className={styles.dataRow}>
+                <span className={styles.label}>Protected no claims discount</span>
+                <span className={styles.value}>{getDisplayValue(ncdData?.protectedNcd || "No")}</span>
+              </div>
+            )}
           </div>
 
           {insuranceType === "Annual" && (
