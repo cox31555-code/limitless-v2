@@ -77,6 +77,37 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
     }
   };
 
+  const handleNativeChange = (e) => {
+    setSelected(e.target.value);
+  };
+
+  // Render native select on mobile
+  if (isMobile) {
+    return (
+      <div className={styles.container}>
+        {label && <label className={styles.label}>{label}</label>}
+        <select
+          className={`${styles.nativeSelect} ${error ? styles.dropdownError : ""} ${disabled ? styles.dropdownDisabled : ""}`}
+          value={selected || ""}
+          onChange={handleNativeChange}
+          disabled={disabled || externalIsLoading}
+          style={{ colorScheme: 'dark' }}
+        >
+          <option value="" disabled>
+            {externalIsLoading ? "Loading..." : (placeholder || "Select...")}
+          </option>
+          {options.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        {error && <span className={styles.errorMessage}>{error.message || error}</span>}
+      </div>
+    );
+  }
+
+  // Desktop custom dropdown
   return (
     <div className={styles.container} ref={dropdownRef}>
       {label && <label className={styles.label}>{label}</label>}
