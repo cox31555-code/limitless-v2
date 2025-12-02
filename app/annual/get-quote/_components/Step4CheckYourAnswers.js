@@ -426,30 +426,32 @@ const Step4CheckYourAnswers = ({
             </div>
           </div>
 
-          <div className={styles.subsection}>
-            <div className={styles.subsectionHeader}>
-              <h3 className={styles.subsectionTitle}>Additional products</h3>
-              <button className={styles.changeLink}>
-                <span className={styles.changeLinkText}>Change</span>
-              </button>
+          {insuranceType === "Annual" && (
+            <div className={styles.subsection}>
+              <div className={styles.subsectionHeader}>
+                <h3 className={styles.subsectionTitle}>Additional products</h3>
+                <button className={styles.changeLink}>
+                  <span className={styles.changeLinkText}>Change</span>
+                </button>
+              </div>
+              <div className={styles.dataRow}>
+                <span className={styles.label}>Personal accident cover</span>
+                <span className={styles.value}>{getDisplayValue(productsData?.personalAccidentCover)}</span>
+              </div>
+              <div className={styles.dataRow}>
+                <span className={styles.label}>Courtesy car</span>
+                <span className={styles.value}>{getDisplayValue(productsData?.courtesyCar)}</span>
+              </div>
+              <div className={styles.dataRow}>
+                <span className={styles.label}>Breakdown cover</span>
+                <span className={styles.value}>{getDisplayValue(productsData?.breakdownCover)}</span>
+              </div>
+              <div className={styles.dataRow}>
+                <span className={styles.label}>Motor legal protection</span>
+                <span className={styles.value}>{getDisplayValue(productsData?.motorLegalProtection)}</span>
+              </div>
             </div>
-            <div className={styles.dataRow}>
-              <span className={styles.label}>Personal accident cover</span>
-              <span className={styles.value}>{getDisplayValue(productsData?.personalAccidentCover)}</span>
-            </div>
-            <div className={styles.dataRow}>
-              <span className={styles.label}>Courtesy car</span>
-              <span className={styles.value}>{getDisplayValue(productsData?.courtesyCar)}</span>
-            </div>
-            <div className={styles.dataRow}>
-              <span className={styles.label}>Breakdown cover</span>
-              <span className={styles.value}>{getDisplayValue(productsData?.breakdownCover)}</span>
-            </div>
-            <div className={styles.dataRow}>
-              <span className={styles.label}>Motor legal protection</span>
-              <span className={styles.value}>{getDisplayValue(productsData?.motorLegalProtection)}</span>
-            </div>
-          </div>
+          )}
 
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
