@@ -1172,55 +1172,6 @@ const TemporaryInsuranceContent = () => {
                   />
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "details" && <AnnualCoverDetailsForm form={form} />}
-                {currentStep === STEPS.COVER && coverSubStep === "additionalDrivers" && (
-                  <Step3AdditionalDrivers
-                    additionaDrivers={additionalDrivers}
-                    onAddDriver={() => handleNavigateToAddDriver()}
-                    onRemoveDriver={handleRemoveDriver}
-                    onEditDriver={handleNavigateToAddDriver}
-                    hasAdditionalDrivers={hasAdditionalDrivers}
-                    onHasAdditionalDriversChange={setHasAdditionalDrivers}
-                  />
-                )}
-                {currentStep === STEPS.COVER && coverSubStep === "addDriver" && (
-                  <Step3AddDriver
-                    onBack={handleBackFromAddDriver}
-                    onAddDriver={handleAddDriver}
-                    editingDriver={editingDriverIndex !== null ? additionalDrivers[editingDriverIndex] : null}
-                  />
-                )}
-                {currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions" && (
-                  <Step3DriverClaimsAndConvictions
-                    driverData={driverBeingAdded}
-                    onBack={handleBackFromDriverClaimsAndConvictions}
-                    onAddDriver={() => {
-                      const completeData = {
-                        ...driverBeingAdded,
-                        claims: driverClaims,
-                        convictions: driverConvictions
-                      };
-                      handleCompleteDriverClaimsAndConvictions(completeData);
-                    }}
-                    onAddClaim={handleAddDriverClaimClick}
-                    onAddConviction={handleAddDriverConvictionClick}
-                    claims={driverClaims}
-                    convictions={driverConvictions}
-                  />
-                )}
-                {currentStep === STEPS.COVER && coverSubStep === "addDriverClaim" && (
-                  <Step3AddDriverClaim
-                    onBack={handleBackFromAddDriverClaim}
-                    onAddClaim={handleAddDriverClaimSubmit}
-                    editingClaim={editingDriverClaimIndex !== null ? driverClaims[editingDriverClaimIndex] : null}
-                  />
-                )}
-                {currentStep === STEPS.COVER && coverSubStep === "addDriverConviction" && (
-                  <Step3AddDriverConviction
-                    onBack={handleBackFromAddDriverConviction}
-                    onAddConviction={handleAddDriverConvictionSubmit}
-                    editingConviction={editingDriverConvictionIndex !== null ? driverConvictions[editingDriverConvictionIndex] : null}
-                  />
-                )}
                 {currentStep === STEPS.COVER && coverSubStep === "carOwner" && (
                   <Step3CarOwner
                     onBack={handleBackFromCarOwner}
