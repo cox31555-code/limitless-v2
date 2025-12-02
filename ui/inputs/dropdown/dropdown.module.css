@@ -345,7 +345,7 @@
 
 @media (max-width: 600px) {
   .label {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .dropdown {
@@ -354,11 +354,11 @@
   }
 
   .selected {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .errorMessage {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -369,11 +369,11 @@
   }
 
   .selected {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .searchInput {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     padding: 0.6rem 0.8rem 0.6rem 3rem;
     border-bottom: 1px solid #e8ecf1;
   }
