@@ -24,6 +24,8 @@ const FormDateInput = forwardRef(
       reducedPadding = false,
       relatedDateValue = null,
       disabled = false,
+      minTime = null,
+      maxTime = null,
       ...props
     },
     ref
