@@ -125,6 +125,9 @@ const TemporaryInsuranceContent = () => {
         level: "",
         minimumCoverLevel: "",
         startDate: "",
+        startTime: "",
+        endDate: "",
+        endTime: "",
       },
       ncdData: {
         noClaimsDiscount: "",
