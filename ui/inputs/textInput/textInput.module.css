@@ -221,13 +221,13 @@
   }
 
   .label {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 500;
     margin-bottom: 0;
   }
 
   .inputContainer {
-    height: 5.6rem;
+    height: 5.8rem;
     padding: 1.2rem 1.6rem 1.2rem 0.2rem;
     border-radius: 10px;
   }
@@ -274,13 +274,13 @@
   }
 
   .label {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-weight: 500;
     margin-bottom: 0;
   }
 
   .inputContainer {
-    height: 5.6rem;
+    height: 6rem;
     padding: 1.2rem 1.6rem 1.2rem 0.2rem;
     border-radius: 10px;
     width: 100%;
@@ -322,8 +322,13 @@
     padding-bottom: 0;
   }
 
+  .label {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+
   .inputContainer {
-    height: 5.6rem;
+    height: 5.8rem;
     padding: 1rem 1.4rem 1rem 0.2rem;
     border-radius: 10px;
     box-sizing: border-box;
@@ -334,7 +339,7 @@
   }
 
   .input {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     padding-left: 0.5rem;
     font-weight: 400;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -362,8 +367,13 @@
     padding-bottom: 0;
   }
 
+  .label {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
   .inputContainer {
-    height: 5.6rem;
+    height: 5.8rem;
     padding: 1rem 1.2rem 1rem 0.2rem;
   }
 
@@ -380,6 +390,7 @@
 
   .input::placeholder {
     font-weight: 400;
+    font-size: 1.6rem;
   }
 
   .input.reg {
