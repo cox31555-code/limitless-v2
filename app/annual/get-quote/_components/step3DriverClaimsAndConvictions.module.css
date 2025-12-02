@@ -189,13 +189,13 @@
 }
 
 .backBtn {
-  padding: 1rem 3rem;
-  font-size: 1.4rem;
+  padding: 1.3rem 2.6rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  color: #004284;
+  color: #0052a3;
   background: #ffffff;
-  border: 2px solid #004284;
-  border-radius: 8px;
+  border: 2px solid #0052a3;
+  border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 120px;
@@ -213,13 +213,13 @@
 }
 
 .nextBtn {
-  padding: 1rem 3rem;
-  font-size: 1.4rem;
+  padding: 1.3rem 2.6rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
-  background: #0052a3;
-  border: 2px solid #0052a3;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border: none;
+  border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 120px;
@@ -538,13 +538,13 @@
   }
 
   .backBtn {
-    padding: 0.9rem 2rem;
-    font-size: 1.3rem;
+    padding: 1.3rem 2.6rem;
+    font-size: 1.6rem;
   }
 
   .nextBtn {
-    padding: 0.9rem 2rem;
-    font-size: 1.3rem;
+    padding: 1.3rem 2.6rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -600,13 +600,15 @@
 
   .backBtn {
     width: 100%;
-    padding: 1rem 2rem;
-    font-size: 1.3rem;
+    height: 5.6rem;
+    padding: 1.4rem 2.6rem;
+    font-size: 1.6rem;
   }
 
   .nextBtn {
     width: 100%;
-    padding: 1rem 2rem;
-    font-size: 1.3rem;
+    height: 5.6rem;
+    padding: 1.4rem 2.6rem;
+    font-size: 1.6rem;
   }
 }
