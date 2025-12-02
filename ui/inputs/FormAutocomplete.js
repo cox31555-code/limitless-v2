@@ -96,6 +96,42 @@ const FormAutocomplete = forwardRef(
       setFilteredOptions(options);
     };
 
+    const handleNativeChange = (e) => {
+      if (disabled) return;
+      setInputValue(e.target.value);
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
+    // Render native select on mobile
+    if (isMobile) {
+      return (
+        <div className={styles.container}>
+          {label && <p className={styles.label}>{label}</p>}
+          <select
+            ref={ref}
+            className={`${styles.nativeSelect} ${error ? styles.error : ""}`}
+            value={inputValue || ""}
+            onChange={handleNativeChange}
+            disabled={disabled}
+            style={{ colorScheme: 'dark', ...inputStyle }}
+            {...props}
+          >
+            <option value="" disabled>
+              {placeholder}
+            </option>
+            {options.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          {error && <span className={styles.errorMessage}>{error.message}</span>}
+        </div>
+      );
+    }
+
     return (
       <div className={styles.container} ref={containerRef}>
         {label && <p className={styles.label}>{label}</p>}
