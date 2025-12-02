@@ -317,15 +317,6 @@
   .content {
     padding: 3.5rem 4% 2rem;
   }
-}
-
-@media (max-width: 640px) {
-  .container {
-    margin-top: 5.7rem;
-  }
-}
-
-@media (max-width: 650px) {
 
   .mainContent {
     gap: 3rem;
