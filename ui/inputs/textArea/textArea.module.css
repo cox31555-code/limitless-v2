@@ -61,6 +61,12 @@
 }
 
 @media screen and (max-width: 600px) {
+  .inputGroup {
+    gap: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .label {
     font-size: 1.6rem;
     font-weight: 500;
@@ -70,7 +76,13 @@
     font-size: 1.6rem;
     font-weight: 400;
     padding: 1.2rem 1.6rem;
-    min-height: 5.6rem;
+    min-height: 8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input::placeholder {
+    font-size: 1.6rem;
   }
 }
 
