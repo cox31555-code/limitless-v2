@@ -131,31 +131,50 @@
 @media (max-width: 600px) {
   .container {
     padding: 0;
-    gap: 2.8rem;
+    gap: 3.2rem;
     margin: 0;
   }
 
+  .stepTitle {
+    padding-bottom: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
   .subText {
     font-size: 1.6rem;
+    line-height: 1.5;
   }
 
   .estimatedLabel {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
   }
 
   .helpLink {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
   }
 
   .inputWrapper {
     max-width: 100%;
+  }
+
+  .inputSection {
+    gap: 2rem;
+  }
+
+  .questionHeader {
+    gap: 1.4rem;
   }
 }

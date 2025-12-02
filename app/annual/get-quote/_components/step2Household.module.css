@@ -360,24 +360,29 @@
 @media (max-width: 600px) {
   .container {
     padding: 0;
-    gap: 2.8rem;
+    gap: 3.2rem;
     margin: 0;
   }
 
   .stepTitle {
-    padding-bottom: 1.4rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
   .subText {
     font-size: 1.6rem;
+    line-height: 1.5;
   }
 
   .fieldLabel {
@@ -386,14 +391,39 @@
 
   .radioLabel {
     font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .radioInput {
+    width: 22px;
+    height: 22px;
+  }
+
+  .radioInput:checked::after {
+    width: 8px;
+    height: 8px;
+  }
+
+  .radioOption {
+    padding: 0.4rem 0;
+  }
+
+  .radioGroup {
+    gap: 1.4rem;
+    margin-top: 1.6rem;
   }
 
   .expandableLink {
     font-size: 1.6rem;
+    margin-top: 1.6rem;
+  }
+
+  .expandableContent {
+    font-size: 1.6rem;
   }
 
   .section {
-    padding-bottom: 2rem;
+    padding-bottom: 2.4rem;
     gap: 2rem;
   }
 
@@ -403,12 +433,15 @@
   }
 
   .findAddressBtn {
-    font-size: 1.4rem;
-    padding: 0.9rem 2rem;
+    font-size: 1.6rem;
+    padding: 1.2rem 2.4rem;
+    height: 5.6rem;
+    border-radius: 8px;
   }
 
   .addressGroup {
-    gap: 1.6rem;
+    gap: 2rem;
+    margin-top: 1.6rem;
   }
 
   .fieldWrapper {
@@ -417,18 +450,30 @@
 
   .foundAddressCard {
     max-width: 100%;
-    padding: 1.6rem;
+    padding: 2rem;
+    margin-top: 1.6rem;
   }
 
   .foundAddressTitle {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .foundAddressDetails {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
   }
 
   .changeAddressLink {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+  }
+
+  .questionHeader {
+    gap: 1.4rem;
+  }
+
+  .orDivider,
+  .orDivider span {
+    font-size: 1.6rem;
   }
 }

@@ -155,24 +155,28 @@
 @media (max-width: 600px) {
   .container {
     padding: 0;
-    gap: 2.8rem;
+    gap: 3.2rem;
     margin: 0;
   }
 
   .stepTitle {
-    padding-bottom: 1.4rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
   .section {
-    padding-bottom: 2rem;
+    padding-bottom: 2.4rem;
     gap: 2rem;
   }
 
@@ -183,24 +187,32 @@
 
   .dropdownWrapper {
     max-width: 100%;
+    margin-top: 1.6rem;
   }
 
   .fieldWrapper {
     max-width: 100%;
+    margin-top: 1.6rem;
   }
 
   .subText {
     font-size: 1.6rem;
+    line-height: 1.5;
   }
 
   .expandableLink {
-    font-size: 1.15rem;
-    margin-top: 1rem;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
   }
 
   .expandableContent {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    padding-left: 1.2rem;
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+    padding-left: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .questionHeader {
+    gap: 1.4rem;
   }
 }
