@@ -62,12 +62,12 @@
 
 @media screen and (max-width: 600px) {
   .label {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
 
   .input {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
     padding: 1.2rem 1.6rem;
     min-height: 5.6rem;
@@ -76,12 +76,12 @@
 
 @media screen and (max-width: 400px) {
   .label {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
 
   .input {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 400;
     padding: 1rem 1.4rem;
     min-height: 5.6rem;
@@ -90,12 +90,12 @@
 
 @media screen and (max-width: 360px) {
   .label {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
 
   .input {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 400;
     padding: 1rem 1.2rem;
     min-height: 5.6rem;
