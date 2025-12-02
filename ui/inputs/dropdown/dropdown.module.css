@@ -310,8 +310,9 @@
   }
 
   .dropdown {
-    min-height: 4.8rem;
-    padding: 1rem 1.4rem;
+    min-height: 5.8rem;
+    height: 5.8rem;
+    padding: 1.2rem 1.6rem;
   }
 
   .selected {
@@ -356,7 +357,8 @@
   }
 
   .dropdown {
-    min-height: 5.6rem;
+    min-height: 6rem;
+    height: 6rem;
     padding: 1.2rem 1.6rem;
     width: 100%;
     box-sizing: border-box;
@@ -411,8 +413,9 @@
   }
 
   .dropdown {
-    min-height: 4.4rem;
-    padding: 0.8rem 1rem;
+    min-height: 5.8rem;
+    height: 5.8rem;
+    padding: 1rem 1.4rem;
   }
 
   .selected {
