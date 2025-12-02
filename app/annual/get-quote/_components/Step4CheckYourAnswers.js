@@ -405,10 +405,12 @@ const Step4CheckYourAnswers = ({
               <span className={styles.label}>Voluntary excess</span>
               <span className={styles.value}>£{getDisplayValue(formData?.carUsage?.voluntaryExcess)}</span>
             </div>
-            <div className={styles.dataRow}>
-              <span className={styles.label}>Payment preference</span>
-              <span className={styles.value}>{getDisplayValue(formData?.coverDetails?.paymentPreference || "One annual payment")}</span>
-            </div>
+            {insuranceType === "Annual" && (
+              <div className={styles.dataRow}>
+                <span className={styles.label}>Payment preference</span>
+                <span className={styles.value}>{getDisplayValue(formData?.coverDetails?.paymentPreference || "One annual payment")}</span>
+              </div>
+            )}
             <div className={styles.dataRow}>
               <span className={styles.label}>Policy start date</span>
               <span className={styles.value}>{formatDate(formData?.coverDetails?.startDate)}</span>
