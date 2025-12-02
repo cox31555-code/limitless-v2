@@ -842,9 +842,9 @@ const ImpoundInsuranceContent = () => {
       return;
     }
 
-    if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
-      setCoverSubStep("carOwner");
-      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "carOwner");
+    if (currentStep === STEPS.COVER && coverSubStep === "carOwner") {
+      setCoverSubStep("cover");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "cover");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
