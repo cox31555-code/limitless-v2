@@ -165,10 +165,27 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
             style={{ width: `${progressPercentage}%` }}
           />
         </div>
-        <span className={styles.progressText}>{progressPercentage}% complete</span>
+        <div className={styles.progressTextContainer}>
+          <span className={styles.progressText}>{progressPercentage}% complete</span>
+          <button
+            className={styles.mobileToggleBtn}
+            onClick={() => setIsMobileCollapsed(!isMobileCollapsed)}
+            aria-label={isMobileCollapsed ? "Expand" : "Collapse"}
+          >
+            {isMobileCollapsed ? (
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M2 8H14M8 2V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M2 8H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
-      <div ref={stepsListRef} className={styles.stepsList} style={{ '--line-height': `${Math.max(0, lineHeight)}px` }}>
+      {!isMobileCollapsed && <div ref={stepsListRef} className={styles.stepsList} style={{ '--line-height': `${Math.max(0, lineHeight)}px` }}>
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
@@ -251,7 +268,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
             </div>
           );
         })}
-      </div>
+      </div>}
     </div>
   );
 };
