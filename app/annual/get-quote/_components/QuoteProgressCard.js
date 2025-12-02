@@ -13,6 +13,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
   // Auto-expand steps 2 and 3 (PERSONAL and COVER)
   const [expandedStep, setExpandedStep] = useState(currentStep);
   const [lineHeight, setLineHeight] = useState(0);
+  const [isMobileCollapsed, setIsMobileCollapsed] = useState(true);
   const stepsListRef = useRef(null);
 
   // Auto-expand the current step when it changes
