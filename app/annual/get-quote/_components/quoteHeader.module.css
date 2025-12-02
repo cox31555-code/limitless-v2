@@ -172,6 +172,13 @@
   }
 }
 
+@media (max-width: 640px) {
+  .heroSection {
+    padding-top: 0.4rem;
+    margin: -0.1rem 0 0.4rem;
+  }
+}
+
 @media (max-width: 600px) {
   .heroSection {
     padding: 2.4rem 6%;
