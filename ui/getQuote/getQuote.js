@@ -53,7 +53,7 @@ const GetQuote = ({ onExpand, insuranceType = "temporary" }) => {
       <div className={styles.navigationWrapper}>
         <div className={styles.quickQuoteHeader}>
           <h2 className={styles.quickQuoteTitle}>Get Your Quote</h2>
-          <p className={styles.quickQuoteSubtitle}>Get your personalized insurance quote in minutes</p>
+          <p className={styles.quickQuoteSubtitle}>Compare quotes and save in 2 minutes</p>
         </div>
 
         {/* Animated Progress Bar */}
@@ -71,7 +71,7 @@ const GetQuote = ({ onExpand, insuranceType = "temporary" }) => {
           <div className={styles.stepHeader}>
             <h3 className={styles.stepTitle}>What's your vehicle registration?</h3>
             <p className={styles.stepDescription}>
-              We'll use this to find your vehicle details automatically
+              Enter your reg and we'll auto-fill your vehicle details
             </p>
           </div>
 
@@ -93,7 +93,7 @@ const GetQuote = ({ onExpand, insuranceType = "temporary" }) => {
               onClick={handleDontKnowReg}
               className={styles.secondaryButton}
             >
-              Skip - I'll enter manually
+              Don't have it? Enter manually
             </button>
           </div>
 
