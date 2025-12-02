@@ -242,12 +242,15 @@
   }
 
   .dateInputsWrapper {
-    flex-direction: column;
     gap: 1.6rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 
   .dateInputGroup {
-    min-width: unset;
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 120px;
   }
 
   .helpLink {

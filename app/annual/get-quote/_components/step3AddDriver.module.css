@@ -616,7 +616,15 @@
   }
 
   .dateInputsWrapper {
-    gap: 0.6rem;
+    gap: 1.6rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .dateInputGroup {
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 120px;
   }
 
   .dropdownWrapper {
@@ -645,6 +653,7 @@
     font-size: 1.6rem;
     height: 5.6rem;
     padding: 1.4rem 2.6rem;
+    justify-content: center;
   }
 }
 
@@ -655,7 +664,7 @@
   }
 
   .stepTitleText {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .contentWrapper {
@@ -668,31 +677,35 @@
   }
 
   .questionTitle {
-    font-size: 1.6rem;
+    font-size: 2rem;
+  }
+
+  .mainQuestion {
+    font-size: 2rem;
   }
 
   .sectionDescription {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .radioLabel {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .inputLabel {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 
   .noteText {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .infoText {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .expandableContent {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     padding-left: 1.2rem;
     margin: 1rem 0 0 0;
   }
@@ -700,13 +713,23 @@
   .buttonGroup {
     margin-top: 2rem;
     padding-top: 1.4rem;
-    gap: 0.6rem;
+    gap: 0.8rem;
   }
 
   .backBtn,
   .nextBtn {
-    font-size: 1.3rem;
-    min-height: 3.8rem;
-    padding: 0.7rem 1.4rem;
+    font-size: 1.6rem;
+    height: 5.6rem;
+    padding: 1.4rem 2.6rem;
+  }
+
+  .dateInputsWrapper {
+    gap: 1.2rem;
+  }
+
+  .dateInputGroup {
+    flex: 1 1 auto;
+    min-width: 70px;
+    max-width: 100px;
   }
 }
