@@ -377,13 +377,15 @@
   }
 
   .dateInputsWrapper {
-    flex-direction: column;
     gap: 1.6rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 
   .dateInputGroup {
     flex: 1 1 auto;
-    max-width: 100%;
+    min-width: 80px;
+    max-width: 120px;
   }
 
   .removePersonBtn {
@@ -424,7 +426,31 @@
 
   .backBtn,
   .nextBtn {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    height: 5.6rem;
+    padding: 1.4rem 2.6rem;
+  }
+
+  .dateInputsWrapper {
+    gap: 1.2rem;
+  }
+
+  .dateInputGroup {
+    flex: 1 1 auto;
+    min-width: 70px;
+    max-width: 100px;
+  }
+
+  .mainQuestion {
+    font-size: 2rem;
+  }
+
+  .subText {
+    font-size: 1.6rem;
+  }
+
+  .inputLabel {
+    font-size: 1.6rem;
     padding: 0.6rem 1.4rem;
   }
 
