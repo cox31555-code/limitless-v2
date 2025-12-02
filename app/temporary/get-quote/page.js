@@ -837,8 +837,8 @@ const TemporaryInsuranceContent = () => {
 
     if (currentStep === STEPS.PERSONAL && personalSubStep === "claims") {
       setCurrentStep(STEPS.COVER);
-      setCoverSubStep("additionalDrivers");
-      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
+      setCoverSubStep("carOwner");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "carOwner");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
@@ -850,12 +850,6 @@ const TemporaryInsuranceContent = () => {
       return;
     }
 
-    if (currentStep === STEPS.COVER && coverSubStep === "details") {
-      setCurrentStep(STEPS.CHECK_ANSWERS);
-      pushHistoryState(STEPS.CHECK_ANSWERS, vehicleSubStep, personalSubStep, coverSubStep);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
 
     if (currentStep === STEPS.CHECK_ANSWERS) {
       return;
@@ -892,9 +886,9 @@ const TemporaryInsuranceContent = () => {
       return;
     }
 
-    if (currentStep === STEPS.COVER && coverSubStep === "details") {
-      setCoverSubStep("additionalDrivers");
-      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
+    if (currentStep === STEPS.COVER && coverSubStep === "contactInformation") {
+      setCurrentStep(STEPS.CHECK_ANSWERS);
+      pushHistoryState(STEPS.CHECK_ANSWERS, vehicleSubStep, personalSubStep, coverSubStep);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
