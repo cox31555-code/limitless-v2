@@ -138,7 +138,10 @@ const FormAutocomplete = forwardRef(
             ))}
           </select>
         )}
-        <div className={`${styles.inputWrapper} ${error ? styles.error : ""}`}>
+        <div
+          className={`${styles.inputWrapper} ${error ? styles.error : ""}`}
+          onClick={handleInputClick}
+        >
           <input
             ref={(e) => {
               inputRef.current = e;
@@ -156,6 +159,7 @@ const FormAutocomplete = forwardRef(
             onFocus={handleInputFocus}
             disabled={disabled}
             style={inputStyle}
+            readOnly={isMobile}
             {...props}
           />
           <div className={styles.arrowContainer}>
