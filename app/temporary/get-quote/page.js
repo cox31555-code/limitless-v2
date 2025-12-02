@@ -1192,6 +1192,7 @@ const TemporaryInsuranceContent = () => {
                     additionalDrivers={additionalDrivers}
                     carOwnerData={carOwnerData}
                     onAddPerson={handleAddCarOwnerPerson}
+                    insuranceType="Temp"
                   />
                 )}
                 {currentStep === STEPS.COVER && (coverSubStep === "carOwnerAddRegisteredKeeper" || coverSubStep === "carOwnerAddLegalOwner") && (
