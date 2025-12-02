@@ -98,9 +98,15 @@
   }
 }
 
+@media (max-width: 640px) {
+  .header {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .header {
-    padding: 1.4rem 6%;
+    display: none;
   }
 
   .logoContainer {
