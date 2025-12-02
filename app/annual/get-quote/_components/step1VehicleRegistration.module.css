@@ -1273,12 +1273,12 @@
 
 /* RSuite Dropdown Menu Styling */
 .rsuiteSelect :global(.rs-dropdown-menu) {
-  font-size: 1.4rem !important;
+  font-size: 1.6rem !important;
 }
 
 .rsuiteSelect :global(.rs-dropdown-menu-item) {
   padding: 1rem 1.2rem !important;
-  font-size: 1.4rem !important;
+  font-size: 1.6rem !important;
   line-height: 1.6 !important;
   min-height: 3.5rem !important;
   display: flex !important;
@@ -1290,12 +1290,12 @@
 }
 
 .rsuiteSelect :global(.rs-picker-menu) {
-  font-size: 1.4rem !important;
+  font-size: 1.6rem !important;
 }
 
 .rsuiteSelect :global(.rs-picker-menu-item) {
   padding: 1rem 1.2rem !important;
-  font-size: 1.4rem !important;
+  font-size: 1.6rem !important;
   line-height: 1.6 !important;
   min-height: 3.5rem !important;
   display: flex !important;
