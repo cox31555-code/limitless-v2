@@ -16,8 +16,18 @@ const FormAutocomplete = forwardRef(
     });
     const [isOpen, setIsOpen] = useState(false);
     const [filteredOptions, setFilteredOptions] = useState(options);
+    const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef(null);
     const inputRef = useRef(null);
+
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 900);
+      };
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
       if (value !== undefined && value !== null) {
