@@ -110,7 +110,7 @@ export const data = [
       {
         title: "Do you offer monthly payments on annual insurance?",
         answer:
-          "No. Annual policies with Limitless Cover are paid in one single premium. This helps us keep prices competitive for everyone.",
+          "Yes, we do provide monthly payment options for annual insurance policies. Please note that monthly payments include interest charges. Monthly payments are available for annual policies only and eligibility is based on many factors including your profile, vehicle, and driving history.",
       },
       {
         title: "Can I use my annual policy for business use?",
