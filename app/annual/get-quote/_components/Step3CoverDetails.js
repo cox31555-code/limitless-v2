@@ -15,7 +15,9 @@ const Step3CoverDetails = ({
     minimumCoverLevel: "",
     paymentFrequency: "",
     startDate: "",
-    startTime: ""
+    startTime: "",
+    endDate: "",
+    endTime: ""
   });
 
   const [errors, setErrors] = useState({});
