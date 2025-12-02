@@ -357,6 +357,42 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
             Start policy immediately
           </button>
         </div>
+
+        {/* End Date/Time Section */}
+        <div className={styles.formSection}>
+          <div className={styles.sparkSectionHeader}>
+            <h2 className={styles.sparkSectionTitle}>
+              When Would You Like The Cover To End?
+            </h2>
+            <p className={styles.sparkSectionSubtitle}>
+              Choose your coverage end date and time
+            </p>
+          </div>
+
+          <div className={styles.sparkDateTimeGrid}>
+            {/* End Date */}
+            <FormDateInput
+              type="date"
+              dateLabel="End Date"
+              name="coverDetails.endDate"
+              value={endDate || ""}
+              onChange={handleEndDateInputChange}
+              allowPastDates={false}
+              forceShowAbove={true}
+            />
+
+            {/* End Time */}
+            <FormDateInput
+              type="time"
+              timeLabel="End Time"
+              name="coverDetails.endTime"
+              value={endTime || ""}
+              onChange={handleEndTimeInputChange}
+              forceShowAbove={true}
+              relatedDateValue={endDate}
+            />
+          </div>
+        </div>
       </div>
     </ComponentWrapper>
   );
