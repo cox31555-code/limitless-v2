@@ -286,8 +286,8 @@
 
   .titleSection {
     margin: 0;
-    padding: 2rem 1.6rem 0;
-    gap: 1.8rem;
+    padding: 2.2rem 1.6rem 0;
+    gap: 2rem;
     width: 100%;
   }
 
@@ -297,26 +297,29 @@
   }
 
   .title {
-    font-size: 2.9rem;
+    font-size: 3rem;
     width: 100%;
     white-space: normal;
     text-wrap: wrap;
     margin: 0;
     flex-wrap: wrap;
+    line-height: 1.2;
   }
 
   .progressSection {
     margin: 0;
-    padding: 0 1.6rem 1.6rem;
+    padding: 0 1.6rem 1.8rem;
+    gap: 1.4rem;
   }
 
   .stepLabel {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 600;
+    line-height: 1.4;
   }
 
   .progressBar {
-    height: 6px;
+    height: 7px;
     width: 100%;
   }
 
@@ -384,7 +387,7 @@
 
   .headerContent {
     width: 100%;
-    padding: 2rem 1.6rem;
+    padding: 2.4rem 1.6rem;
     margin: 0;
   }
 
@@ -398,6 +401,50 @@
     width: 4.6rem;
     height: 4.6rem;
     display: none;
+  }
+
+  .titleSection {
+    margin: 0;
+    padding: 2.4rem 1.6rem 0;
+    gap: 2.4rem;
+    width: 100%;
+  }
+
+  .titleContent {
+    width: 100%;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 3.2rem;
+    width: 100%;
+    white-space: normal;
+    text-wrap: wrap;
+    margin: 0;
+    flex-wrap: wrap;
+    line-height: 1.2;
+  }
+
+  .progressSection {
+    margin: 0;
+    padding: 0 1.6rem 2.4rem;
+    gap: 1.6rem;
+  }
+
+  .stepLabel {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .progressBar {
+    height: 8px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .progressFill {
+    height: 100%;
   }
 }
 
