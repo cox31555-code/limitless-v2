@@ -348,14 +348,29 @@
 
 @media screen and (max-width: 600px) {
   .headerElement {
-    padding: 1.6rem;
+    padding: 0;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
   }
 
   .navigationBar {
-    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #000822;
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .headerContent {
+    width: 100%;
+    padding: 2rem 1.6rem;
   }
 
   .logo {
