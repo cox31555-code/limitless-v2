@@ -347,11 +347,17 @@
 }
 
 @media screen and (max-width: 600px) {
+  .headerContainer {
+    margin: 0;
+    padding: 0;
+  }
+
   .headerElement {
     padding: 0;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin: 0;
   }
 
   .navigationBar {
@@ -366,11 +372,13 @@
     gap: 1.2rem;
     align-items: center;
     justify-content: space-between;
+    margin: 0;
   }
 
   .headerContent {
     width: 100%;
     padding: 2rem 1.6rem;
+    margin: 0;
   }
 
   .logo {
