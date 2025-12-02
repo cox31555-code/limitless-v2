@@ -869,16 +869,16 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    width: calc(100% - 1.6rem);
+    width: 100%;
     max-width: 100%;
-    margin: 0.8rem auto 26px auto;
+    margin: 0;
     border-radius: 2rem;
     box-shadow: none;
     box-sizing: border-box;
   }
 
   .navigationWrapper {
-    padding: 2.4rem 2.2rem 0;
+    padding: 2.4rem 1.6rem 0;
   }
 
   .quickQuoteTitle {
@@ -893,7 +893,7 @@
   }
 
   .contentWrapper {
-    padding: 2.8rem 2.4rem 1.4rem;
+    padding: 2.8rem 1.6rem 1.4rem;
     box-sizing: border-box;
   }
 

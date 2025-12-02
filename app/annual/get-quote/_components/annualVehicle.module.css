@@ -630,7 +630,8 @@
 @media (max-width: 600px) {
   .content {
     gap: 3.6rem;
-    padding: 0;
+    padding: 0 1.6rem;
+    box-sizing: border-box;
   }
 
   .instructionBox {
