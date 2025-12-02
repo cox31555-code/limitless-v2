@@ -1138,11 +1138,11 @@
   }
 
   .label {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   .errorMessage {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   .manualEntryBtn {
