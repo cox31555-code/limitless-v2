@@ -1253,6 +1253,7 @@ const ImpoundInsuranceContent = () => {
                     additionalDrivers={additionalDrivers}
                     carOwnerData={carOwnerData}
                     onAddPerson={handleAddCarOwnerPerson}
+                    insuranceType="Impound"
                   />
                 )}
                 {currentStep === STEPS.COVER && (coverSubStep === "carOwnerAddRegisteredKeeper" || coverSubStep === "carOwnerAddLegalOwner") && (
