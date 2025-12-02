@@ -82,17 +82,40 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose, showAbove = fal
     const currentHour = today.getHours();
     const currentMinute = today.getMinutes();
 
+    // Parse minTime and maxTime if provided
+    let minHour = 0, minMinute = 0;
+    if (minTime) {
+      const [hour, minute] = minTime.split(":");
+      minHour = parseInt(hour, 10);
+      minMinute = parseInt(minute, 10);
+    }
+
+    let maxHour = 23, maxMinute = 59;
+    if (maxTime) {
+      const [hour, minute] = maxTime.split(":");
+      maxHour = parseInt(hour, 10);
+      maxMinute = parseInt(minute, 10);
+    }
+
+    const selectedHourInt = parseInt(selectedHour, 10);
+
     for (let i = 0; i < 60; i += 15) {
       const minuteStr = String(i).padStart(2, "0");
-      
+
       // If today and selected hour is current hour, filter past minutes
-      if (isToday && parseInt(selectedHour) === currentHour) {
+      if (isToday && selectedHourInt === currentHour) {
         if (i <= currentMinute) continue;
       }
-      
+
+      // Apply minTime constraint: if selected hour equals minHour, only show minutes >= minMinute
+      if (selectedHourInt === minHour && i < minMinute) continue;
+
+      // Apply maxTime constraint: if selected hour equals maxHour, only show minutes <= maxMinute
+      if (selectedHourInt === maxHour && i > maxMinute) continue;
+
       minutes.push(minuteStr);
     }
-    
+
     return minutes.length > 0 ? minutes : ["00"];
   };
 
