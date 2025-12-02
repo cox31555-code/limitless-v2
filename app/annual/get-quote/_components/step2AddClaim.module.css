@@ -393,6 +393,14 @@
     font-size: 1.6rem;
   }
 
+  .sectionDescription {
+    font-size: 1.6rem;
+  }
+
+  .radioDescription {
+    font-size: 1.6rem;
+  }
+
   .radioGroup {
     gap: 1rem;
   }
