@@ -60,7 +60,7 @@ const TemporaryInsuranceContent = () => {
   const [currentStep, setCurrentStep] = useState(STEPS.VEHICLE);
   const [vehicleSubStep, setVehicleSubStep] = useState("registration");
   const [personalSubStep, setPersonalSubStep] = useState("aboutYou");
-  const [coverSubStep, setCoverSubStep] = useState("details");
+  const [coverSubStep, setCoverSubStep] = useState("carOwner");
   const [driverBeingAdded, setDriverBeingAdded] = useState(null);
   const [driverClaims, setDriverClaims] = useState([]);
   const [driverConvictions, setDriverConvictions] = useState([]);
