@@ -106,6 +106,8 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .cleanFormGrid3Col {
@@ -113,6 +115,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Field Label Styling */
@@ -167,10 +171,15 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .inputContainer {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Divider with OR text */
@@ -361,6 +370,8 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   align-items: start;
 }
 
@@ -380,6 +391,8 @@
 .row > div {
   flex: 1;
   min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .progressiveRow {
@@ -911,6 +924,8 @@
   flex-direction: column;
   gap: 0.6rem;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .label {
