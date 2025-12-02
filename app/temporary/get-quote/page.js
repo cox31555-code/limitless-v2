@@ -405,6 +405,9 @@ const TemporaryInsuranceContent = () => {
   const coverFields = [
     "coverDetails.level",
     "coverDetails.startDate",
+    "coverDetails.startTime",
+    "coverDetails.endDate",
+    "coverDetails.endTime",
   ];
 
   const step2PersonalFields = [
