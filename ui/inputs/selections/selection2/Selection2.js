@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./selection.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -17,6 +17,7 @@ const Selection2 = ({
   img,
 }) => {
   const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -31,22 +32,37 @@ const Selection2 = ({
     setSelectedItem(e.target.value);
   };
 
-  if (isMobile) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.imgContainer}>
-            <Image src={img} alt={title} width={80} height={106} className={styles.img} />
-          </div>
-          <div className={styles.headerContent}>
-            <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-              {title}
-            </h3>
-            <p className={styles.description}>{description}</p>
-          </div>
+  const handleItemClick = (item) => {
+    if (isMobile) {
+      // On mobile, trigger the hidden native select
+      const nativeSelect = containerRef.current?.querySelector('select');
+      if (nativeSelect) {
+        nativeSelect.focus();
+        nativeSelect.click();
+      }
+    } else {
+      setSelectedItem(item);
+    }
+  };
+
+  return (
+    <div className={styles.container} ref={containerRef}>
+      <div className={styles.header}>
+        <div className={styles.imgContainer}>
+          <Image src={img} alt={title} width={80} height={106} className={styles.img} />
         </div>
+        <div className={styles.headerContent}>
+          <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+            {title}
+          </h3>
+          <p className={styles.description}>{description}</p>
+        </div>
+      </div>
+      
+      {/* Hidden native select for mobile */}
+      {isMobile && (
         <select
-          className={styles.nativeSelect}
+          className={styles.hiddenNativeSelect}
           value={selectedItem || ""}
           onChange={handleNativeChange}
           style={{ colorScheme: 'dark' }}
@@ -60,23 +76,8 @@ const Selection2 = ({
             </option>
           ))}
         </select>
-      </div>
-    );
-  }
-
-  return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <div className={styles.imgContainer}>
-          <Image src={img} alt={title} width={80} height={106} className={styles.img} />
-        </div>
-        <div className={styles.headerContent}>
-          <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-            {title}
-          </h3>
-          <p className={styles.description}>{description}</p>
-        </div>
-      </div>
+      )}
+      
       <div className={styles.selectionContainer}>
         {items.map((item, index) => (
           <div
@@ -84,7 +85,7 @@ const Selection2 = ({
               selectedItem === item ? styles.selectedItem : ""
             }`}
             key={index}
-            onClick={() => setSelectedItem(item)}
+            onClick={() => handleItemClick(item)}
           >
             <span
               className={`${styles.selectionSpan} ${
