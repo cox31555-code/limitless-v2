@@ -70,9 +70,18 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
 
   const handleToggle = () => {
     if (!disabled) {
-      toggleDropdown();
-      if (!isOpen) {
-        setSearchTerm("");
+      if (isMobile) {
+        // On mobile, trigger the hidden native select
+        const nativeSelect = dropdownRef.current?.querySelector('select');
+        if (nativeSelect) {
+          nativeSelect.focus();
+          nativeSelect.click();
+        }
+      } else {
+        toggleDropdown();
+        if (!isOpen) {
+          setSearchTerm("");
+        }
       }
     }
   };
@@ -81,13 +90,14 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
     setSelected(e.target.value);
   };
 
-  // Render native select on mobile
-  if (isMobile) {
-    return (
-      <div className={styles.container}>
-        {label && <label className={styles.label}>{label}</label>}
+  return (
+    <div className={styles.container} ref={dropdownRef}>
+      {label && <label className={styles.label}>{label}</label>}
+
+      {/* Hidden native select for mobile */}
+      {isMobile && (
         <select
-          className={`${styles.nativeSelect} ${error ? styles.dropdownError : ""} ${disabled ? styles.dropdownDisabled : ""}`}
+          className={styles.hiddenNativeSelect}
           value={selected || ""}
           onChange={handleNativeChange}
           disabled={disabled || externalIsLoading}
@@ -102,15 +112,7 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
             </option>
           ))}
         </select>
-        {error && <span className={styles.errorMessage}>{error.message || error}</span>}
-      </div>
-    );
-  }
-
-  // Desktop custom dropdown
-  return (
-    <div className={styles.container} ref={dropdownRef}>
-      {label && <label className={styles.label}>{label}</label>}
+      )}
       <div
         className={`${styles.dropdown} ${isOpen ? styles.dropdownOpen : ""} ${
           error ? styles.dropdownError : ""
