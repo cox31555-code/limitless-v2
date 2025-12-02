@@ -207,13 +207,13 @@
 
 /* Content Wrapper */
 .contentWrapper {
-  padding: 2.4rem 3.8rem 3rem 3.8rem;
+  padding: 3rem 4rem 3.6rem 4rem;
   display: flex;
   flex-direction: column;
   position: relative;
   min-height: auto;
   max-height: 1500px;
-  background-color: #ffffff;
+  background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
   overflow: visible;
 }
 
