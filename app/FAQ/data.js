@@ -50,6 +50,86 @@ export const data = [
     ],
   },
   {
+    title: "Annual Insurance",
+    questions: [
+      {
+        title: "What is annual car insurance?",
+        answer:
+          "Annual car insurance is a 12-month policy that covers you for everyday driving in the UK. It is ideal when you use the same vehicle regularly and want continuous protection without renewing every few weeks.",
+      },
+      {
+        title: "Who can get annual insurance with Limitless Cover?",
+        answer:
+          "We consider a wide range of UK drivers from age 17 and up, including drivers with convictions. You can insure cars and vans, subject to standard underwriting checks such as licence status, claims history and vehicle value.",
+      },
+      {
+        title: "What does annual insurance include?",
+        answer:
+          "You can choose from fully comprehensive or third-party fire and theft. Comprehensive typically covers damage to your vehicle, third parties, fire, theft and vandalism. Optional extras can include legal expenses, breakdown, windscreen cover and courtesy car, subject to availability.",
+      },
+      {
+        title: "When does my cover start and how do I get my documents?",
+        answer:
+          "You can start today or choose a future date during the quote. Your certificate, schedule and policy wording are emailed to you instantly and stored in your online portal.",
+      },
+      {
+        title: "Do I earn a No Claims Bonus with annual insurance?",
+        answer:
+          "Yes. If you complete the full 12-month policy without a claim being made or outstanding, we will issue proof of your No Claims Bonus at the end of the policy year. You can then use this to get a discount on future policies with us or another insurer. If a claim is made, your No Claims Bonus may be reduced in line with policy terms.",
+      },
+      {
+        title: "Can I protect my no claims discount?",
+        answer:
+          "Yes, where eligible you can add no claims discount protection for an extra cost. You will need to provide proof of your existing no claims discount after purchase if requested.",
+      },
+      {
+        title: "Can I add drivers or change my vehicle mid-term?",
+        answer:
+          "Yes, most annual policies allow mid-term changes such as adding a named driver or switching your vehicle. Changes may affect your premium and there may be an admin fee. Make requests through your customer portal or contact us.",
+      },
+      {
+        title: "Am I covered to drive other cars?",
+        answer:
+          "Driving other cars is not automatically included. Where available it is usually third party only and subject to age and licence restrictions. Always check your certificate and policy schedule for the exact wording before relying on this benefit.",
+      },
+      {
+        title: "Can I drive abroad with annual insurance?",
+        answer:
+          "Most annual policies include the legal minimum cover for driving in the European Economic Area for a limited number of days. Comprehensive cover abroad may be available for an extra cost. Always check your policy documents for the countries covered and any time limits.",
+      },
+      {
+        title: "How do I cancel my annual policy?",
+        answer:
+          "You have a 14-day cooling off period from the later of the start date or the date you receive your documents. After the cooling off period, you can cancel at any time and we will calculate any refund based on the time on cover, minus any applicable fees and charges. Some add ons are non-refundable once used.",
+      },
+      {
+        title: "How do claims work on an annual policy?",
+        answer:
+          "If you need to claim, report it to us as soon as possible. We will take the details and guide you through the next steps. Using approved repairers and providing any requested documents quickly will help us move things along.",
+      },
+      {
+        title: "Do you offer monthly payments on annual insurance?",
+        answer:
+          "No. Annual policies with Limitless Cover are paid in one single premium. This helps us keep prices competitive for everyone.",
+      },
+      {
+        title: "Can I use my annual policy for business use?",
+        answer:
+          "Yes. Select the use that fits your needs at quote stage. Social, domestic and pleasure, commuting, and some business uses are available. If you deliver goods for payment, you will need hire and reward cover under our courier insurance.",
+      },
+      {
+        title: "Can I make changes after I buy?",
+        answer:
+          "You can request changes such as address or vehicle updates through your portal. Changes may affect your premium, and an admin fee may apply.",
+      },
+      {
+        title: "Can I drive in Europe?",
+        answer:
+          "Yes, we provide cover across Europe and the United Kingdom for our annual insurance exclusively. Here is the full list: Andorra, Austria, Belgium, Bosnia and Herzegovina, Bulgaria, Croatia, Cyprus, the Czech Republic, Denmark, Estonia, Finland, France (including Monaco), Germany, Gibraltar, Greece, Hungary, Iceland, Italy (including San Marino and the Vatican City), Latvia, Lithuania, Luxembourg, Malta, the Netherlands, Norway, Poland, Portugal, Republic of Ireland, Romania, Serbia, Slovakia, Slovenia, Spain, Sweden, Switzerland (including Liechtenstein).",
+      },
+    ],
+  },
+  {
     title: "Temporary Insurance",
     questions: [
       {
