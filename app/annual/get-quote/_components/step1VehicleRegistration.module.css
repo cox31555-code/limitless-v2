@@ -1207,14 +1207,14 @@
   .regCustomInput {
     min-height: 4.4rem;
     padding: 0.9rem 1.2rem;
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   .findButton {
     width: 100%;
     min-height: 4.4rem;
     padding: 0.9rem 1.6rem;
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 }
 
