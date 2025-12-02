@@ -145,7 +145,7 @@ const Header = () => {
     pathname === "/contact/contact-numbers" ||
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/allianz-dashboard") ||
-    pathname.includes("/get-quote")
+    (pathname.includes("/get-quote") && !isMobile) // Hide on desktop, show on mobile
   );
 
   // Routes that should hide header immediately (payment routes need to hide on both server and client)
