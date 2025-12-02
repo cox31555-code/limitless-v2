@@ -6,6 +6,7 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
   const { isOpen, toggleDropdown, closeDropdown } = useDropdownManager();
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearchLoading, setIsSearchLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const dropdownRef = useRef(null);
   const searchInputRef = useRef(null);
 
