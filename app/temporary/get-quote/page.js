@@ -930,26 +930,10 @@ const TemporaryInsuranceContent = () => {
       return;
     }
 
-    if (currentStep === STEPS.COVER && coverSubStep === "addDriver") {
-      setEditingDriverIndex(null);
-      setDriverBeingAdded(null);
-      setCoverSubStep("additionalDrivers");
-      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    if (currentStep === STEPS.COVER && coverSubStep === "additionalDrivers") {
+    if (currentStep === STEPS.COVER && coverSubStep === "carOwner") {
       setCurrentStep(STEPS.PERSONAL);
       setPersonalSubStep("claims");
       pushHistoryState(STEPS.PERSONAL, vehicleSubStep, "claims", coverSubStep);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-
-    if (currentStep === STEPS.COVER && coverSubStep === "cover") {
-      setCoverSubStep("carOwner");
-      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "carOwner");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
