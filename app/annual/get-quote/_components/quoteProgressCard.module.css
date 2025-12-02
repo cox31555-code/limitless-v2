@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .progressHeader {
@@ -14,14 +18,19 @@
   gap: 1.4rem;
   padding-bottom: 2.4rem;
   border-bottom: 1px solid #e0e6f0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .progressBar {
   width: 100%;
+  max-width: 100%;
   height: 6px;
   background: #e8ecf1;
   border-radius: 3px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .progressFill {
@@ -36,6 +45,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .progressText {
@@ -74,6 +86,10 @@
   gap: 0;
   position: relative;
   padding-left: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .stepsList::before {
@@ -435,95 +451,152 @@
 
 @media (max-width: 600px) {
   .progressCard {
-    padding: 1.6rem 0;
+    padding: 1.6rem;
     gap: 1.6rem;
     background: transparent;
     border-top: 1px solid #e0e6f0;
     border-bottom: 1px solid #e0e6f0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .progressHeader {
     border-bottom: 1px solid #e0e6f0;
     padding-bottom: 1.2rem;
     gap: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .progressBar {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .progressTextContainer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .progressText {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .stepsList {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .stepsList::before {
-    left: 11px;
-    top: 24px;
-    bottom: 24px;
+    left: 13px;
+    top: 26px;
+    bottom: 26px;
     width: 3px;
   }
 
   .stepsList::after {
-    left: 11px;
+    left: 13px;
     width: 3px;
     height: var(--line-height, 0px);
-    top: 24px;
+    top: 26px;
   }
 
   .connector {
-    left: 11px;
+    left: 13px;
     width: 3px;
-    top: 40px;
+    top: 42px;
   }
 
   .stepButtonContent {
-    gap: 1.2rem;
+    gap: 1.4rem;
   }
 
   .stepIcon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-width: 2px;
   }
 
   .stepButton.active .stepIcon {
-    border-width: 4px;
+    border-width: 3px;
   }
 
   .stepNumber {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .stepTitle {
-    font-size: 1.4rem;
-  }
-
-  .stepButton.active .stepTitle {
     font-size: 1.5rem;
   }
 
+  .stepButton.active .stepTitle {
+    font-size: 1.6rem;
+  }
+
+  .stepItem {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .stepItem:not(:last-child) {
-    padding-bottom: 0.6rem;
-    margin-bottom: 0.6rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .stepButton {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .subStepsList {
-    margin-left: 3rem;
-    padding-left: 1.4rem;
+    margin-left: 3.4rem;
+    padding-left: 1.6rem;
     border-left-width: 2px;
+    width: calc(100% - 3.4rem);
+    max-width: calc(100% - 3.4rem);
+    box-sizing: border-box;
   }
 
   .subStepItem {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .subStepButton {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .activeSubStep::before {
-    width: 7.5px;
-    height: 7.5px;
+    width: 8px;
+    height: 8px;
   }
 
   .activeSubStep::after {
-    left: -1.6rem;
+    left: -1.8rem;
     width: 2px;
+  }
+
+  .mobileToggleBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: rgba(0, 82, 163, 0.08);
+  }
+
+  .mobileToggleBtn:hover {
+    background: rgba(0, 82, 163, 0.12);
   }
 }
