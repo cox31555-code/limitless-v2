@@ -685,7 +685,7 @@ const ImpoundInsuranceContent = () => {
     const subStepMaps = {
       [STEPS.VEHICLE]: ["registration", "carValue", "carUsage", "carStorage", "otherCars"],
       [STEPS.PERSONAL]: ["aboutYou", "household", "employment", "licence", "restrictions", "claims"],
-      [STEPS.COVER]: ["additionalDrivers", "carOwner", "cover", "ncd", "contactInformation"],
+      [STEPS.COVER]: ["carOwner", "cover", "ncd", "contactInformation"],
     };
 
     const subStepKey = subStepMaps[stepNumber]?.[subStepIndex];
