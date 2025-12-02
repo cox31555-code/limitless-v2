@@ -377,8 +377,8 @@
 
   .backBtn,
   .nextBtn {
-    font-size: 1.4rem;
-    min-height: 4rem;
+    font-size: 1.6rem;
+    min-height: 4.2rem;
     padding: 0.8rem 1.6rem;
   }
 }
