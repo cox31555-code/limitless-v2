@@ -1255,6 +1255,7 @@ const TemporaryInsuranceContent = () => {
                     onBack={handleBackFromCheckAnswers}
                     onSubmit={onSubmit}
                     isLoading={showLoading}
+                    insuranceType="Temp"
                   />
                 )}
               </div>
