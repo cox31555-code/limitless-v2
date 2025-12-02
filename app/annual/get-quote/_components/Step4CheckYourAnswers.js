@@ -411,10 +411,27 @@ const Step4CheckYourAnswers = ({
                 <span className={styles.value}>{getDisplayValue(formData?.coverDetails?.paymentPreference || "One annual payment")}</span>
               </div>
             )}
-            <div className={styles.dataRow}>
-              <span className={styles.label}>Policy start date</span>
-              <span className={styles.value}>{formatDate(formData?.coverDetails?.startDate)}</span>
-            </div>
+            {insuranceType === "Annual" ? (
+              <div className={styles.dataRow}>
+                <span className={styles.label}>Policy start date</span>
+                <span className={styles.value}>{formatDate(formData?.coverDetails?.startDate)}</span>
+              </div>
+            ) : (
+              <>
+                <div className={styles.dataRow}>
+                  <span className={styles.label}>Policy start date</span>
+                  <span className={styles.value}>
+                    {formatDate(formData?.coverDetails?.startDate)} at {formData?.coverDetails?.startTime || "N/A"}
+                  </span>
+                </div>
+                <div className={styles.dataRow}>
+                  <span className={styles.label}>Policy end date</span>
+                  <span className={styles.value}>
+                    {formatDate(formData?.coverDetails?.endDate)} at {formData?.coverDetails?.endTime || "N/A"}
+                  </span>
+                </div>
+              </>
+            )}
           </div>
 
           <div className={styles.subsection}>
