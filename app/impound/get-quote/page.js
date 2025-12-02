@@ -1316,6 +1316,7 @@ const ImpoundInsuranceContent = () => {
                     onBack={handleBackFromCheckAnswers}
                     onSubmit={onSubmit}
                     isLoading={showLoading}
+                    insuranceType="Impound"
                   />
                 )}
               </div>
