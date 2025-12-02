@@ -119,11 +119,11 @@
     flex-direction: column;
   }
   .title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
   .description {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
   }
   .selectionContainer {
@@ -134,7 +134,7 @@
     padding: 1.4rem 1.6rem;
     gap: 1.2rem;
     min-height: 5.6rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     border: 1.5px solid rgba(3, 136, 255, 0.12);
   }
   .selectedItem {
@@ -162,11 +162,11 @@
     flex-direction: column;
   }
   .title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
   .description {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
   }
   .selectionContainer {
@@ -177,7 +177,7 @@
     padding: 1.4rem 1.6rem;
     gap: 1.2rem;
     min-height: 6rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     border: none;
   }
   .selectedItem {

@@ -152,7 +152,7 @@
     height: 4.4rem;
     gap: 0.6rem;
     border-radius: 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     padding: 1rem 0.6rem;
   }
 }
@@ -163,7 +163,7 @@
   }
   .selectionItem,
   .selectedItem {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     height: 4.2rem;
   }
 }
