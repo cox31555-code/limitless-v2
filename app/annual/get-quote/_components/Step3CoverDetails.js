@@ -392,6 +392,30 @@ const Step3CoverDetails = ({
                   error={errors.endTime}
                   relatedDateValue={formData.endDate}
                   disabled={!formData.endDate}
+                  minTime={(() => {
+                    if (!formData.endDate || !formData.startDate || !formData.startTime) return null;
+
+                    const startDate = new Date(formData.startDate);
+                    const endDate = new Date(formData.endDate);
+
+                    // If same day, minimum is startTime + 12 hours
+                    if (startDate.toDateString() === endDate.toDateString()) {
+                      const [startHour, startMinute] = formData.startTime.split(":");
+                      let minHour = parseInt(startHour, 10) + 12;
+                      let minMinute = parseInt(startMinute, 10);
+
+                      // Handle hour overflow
+                      if (minHour >= 24) {
+                        minHour = 23;
+                        minMinute = 59;
+                      }
+
+                      return `${String(minHour).padStart(2, "0")}:${String(minMinute).padStart(2, "0")}`;
+                    }
+
+                    // If different day, minimum is same time as start
+                    return formData.startTime;
+                  })()}
                 />
               </div>
             )}
