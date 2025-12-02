@@ -348,6 +348,36 @@ const Step3CoverDetails = ({
             </>
           )}
         </div>
+
+        {/* End Date Question - Only for temporary insurance (when !showCoverOptions) */}
+        {!showCoverOptions && (
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>When would you like your cover to end?</h3>
+              <p className={styles.subText}>
+                Select the date and time when your temporary coverage should expire.
+              </p>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.6rem' }}>
+              <FormDateInput
+                type="date"
+                dateLabel="End Date"
+                value={formData.endDate || ""}
+                onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+                error={errors.endDate}
+                minDate={formData.startDate ? new Date(formData.startDate) : new Date()}
+              />
+              <FormDateInput
+                type="time"
+                timeLabel="End Time"
+                value={formData.endTime || ""}
+                onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
+                error={errors.endTime}
+                relatedDateValue={formData.endDate}
+              />
+            </div>
+          </div>
+        )}
       </div>
 
       <div className={styles.buttonGroup}>
