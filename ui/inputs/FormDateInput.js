@@ -470,6 +470,8 @@ const FormDateInput = forwardRef(
                 onTimeSelect={handleTimeSelect}
                 onClose={closeTimePicker}
                 showAbove={pickerPosition.showAbove}
+                minTime={minTime}
+                maxTime={maxTime}
               />
             </div>
           )}
