@@ -410,7 +410,7 @@ const Step3CoverDetails = ({
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.4rem' }}>
                       <div style={{ paddingRight: '2rem', borderRight: '2px solid rgba(3, 136, 255, 0.1)' }}>
                         <div style={{ fontSize: '1.1rem', color: '#6b7280', fontWeight: '500', marginBottom: '0.8rem', letterSpacing: '0.5px' }}>Start date</div>
-                        <div style={{ fontSize: '1.5rem', color: '#0388ff', fontWeight: '700' }}>
+                        <div style={{ fontSize: '1.5rem', color: '#0052a3', fontWeight: '700' }}>
                           {new Date(formData.startDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
                         </div>
                         <div style={{ fontSize: '1.3rem', color: '#374151', fontWeight: '600', marginTop: '0.6rem' }}>
@@ -419,7 +419,7 @@ const Step3CoverDetails = ({
                       </div>
                       <div>
                         <div style={{ fontSize: '1.1rem', color: '#6b7280', fontWeight: '500', marginBottom: '0.8rem', letterSpacing: '0.5px' }}>End date</div>
-                        <div style={{ fontSize: '1.5rem', color: '#0388ff', fontWeight: '700' }}>
+                        <div style={{ fontSize: '1.5rem', color: '#0052a3', fontWeight: '700' }}>
                           {new Date(formData.endDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
                         </div>
                         <div style={{ fontSize: '1.3rem', color: '#374151', fontWeight: '600', marginTop: '0.6rem' }}>
@@ -428,7 +428,7 @@ const Step3CoverDetails = ({
                       </div>
                     </div>
                     <div style={{ paddingTop: '1.6rem', borderTop: '1.5px solid rgba(3, 136, 255, 0.1)', textAlign: 'center', background: 'rgba(3, 136, 255, 0.06)', borderRadius: '0.8rem', padding: '1.2rem' }}>
-                      <span style={{ fontSize: '1.3rem', color: '#0388ff', fontWeight: '700', letterSpacing: '0.5px' }}>• 30 days coverage •</span>
+                      <span style={{ fontSize: '1.3rem', color: '#0052a3', fontWeight: '700', letterSpacing: '0.5px' }}>30 days coverage</span>
                     </div>
                   </div>
                 ) : (
