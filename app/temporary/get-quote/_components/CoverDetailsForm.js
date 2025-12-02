@@ -95,6 +95,22 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
     handleTimeChange(e);
   };
 
+  const handleEndDateChange = (e) => {
+    form.setValue("coverDetails.endDate", e.target.value);
+  };
+
+  const handleEndTimeChange = (e) => {
+    form.setValue("coverDetails.endTime", e.target.value);
+  };
+
+  const handleEndDateInputChange = (e) => {
+    handleEndDateChange(e);
+  };
+
+  const handleEndTimeInputChange = (e) => {
+    handleEndTimeChange(e);
+  };
+
   return (
     <ComponentWrapper title="Cover Details">
       <div className={styles.formContent}>
