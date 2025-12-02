@@ -80,6 +80,14 @@
     padding: 1rem 5%;
   }
 
+  .logoContainer {
+    display: none;
+  }
+
+  .helpBtn {
+    display: none;
+  }
+
   .logo {
     width: 44px;
     height: 44px;
@@ -87,11 +95,6 @@
 
   .headerTitle {
     font-size: 1.35rem;
-  }
-
-  .helpBtn {
-    padding: 0.8rem 1.4rem;
-    font-size: 1.2rem;
   }
 }
 
