@@ -363,6 +363,11 @@
 
   .input::placeholder {
     font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .error {
+    font-size: 1.6rem;
   }
 
   .arrowDown {

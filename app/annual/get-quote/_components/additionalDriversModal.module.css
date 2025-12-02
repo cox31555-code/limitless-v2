@@ -943,10 +943,63 @@
     font-size: 1.6rem;
   }
 
+  .fieldLabel,
+  .inputLabel {
+    font-size: 1.6rem;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+  }
+
+  .fieldHelper {
+    font-size: 1.6rem;
+  }
+
   .fieldRow2Col,
   .fieldRow3Col {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .openModalButton {
+    font-size: 1.6rem !important;
+  }
+
+  .cancelButton {
+    font-size: 1.6rem !important;
+  }
+
+  .doneButton {
+    font-size: 1.6rem !important;
+  }
+
+  .addButton {
+    font-size: 1.6rem !important;
+  }
+
+  .addDriverButton {
+    font-size: 1.6rem !important;
+  }
+
+  .maxMessage {
+    font-size: 1.6rem !important;
+  }
+
+  .emptyState p:first-child {
+    font-size: 1.8rem !important;
+  }
+
+  .emptyStateHelper {
+    font-size: 1.6rem !important;
+  }
+
+  .validationErrorBox {
+    font-size: 1.6rem !important;
+  }
+
+  .findAddressButton button {
+    font-size: 1.6rem !important;
   }
 
   .postcodeRow {
