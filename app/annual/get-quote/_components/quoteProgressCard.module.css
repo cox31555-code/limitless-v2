@@ -31,11 +31,41 @@
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.progressTextContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
 .progressText {
   font-size: 1.6rem;
   font-weight: 600;
   color: #1a1a2e;
   letter-spacing: -0.01em;
+}
+
+.mobileToggleBtn {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  color: #0052a3;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mobileToggleBtn:hover {
+  color: #003d7a;
+}
+
+@media (max-width: 900px) {
+  .mobileToggleBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .stepsList {
