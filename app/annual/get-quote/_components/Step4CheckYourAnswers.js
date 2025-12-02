@@ -15,7 +15,8 @@ const Step4CheckYourAnswers = ({
   convictions = [],
   onBack = () => {},
   onSubmit = () => {},
-  isLoading = false
+  isLoading = false,
+  insuranceType = "Annual"
 }) => {
   const formData = form.getValues();
   
