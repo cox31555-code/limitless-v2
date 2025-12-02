@@ -364,7 +364,8 @@
   .nextBtn {
     width: 100%;
     font-size: 1.6rem;
-    padding: 1.3rem 2.6rem;
+    height: 5.6rem;
+    padding: 1.4rem 2.6rem;
   }
 
   .radioLabel {
