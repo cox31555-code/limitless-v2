@@ -109,6 +109,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .navContainer {
+    border-color: rgba(255, 255, 255, 1);
+  }
+}
+
 @media (max-width: 600px) {
   .navContainer {
     padding: 2rem 0 0;
