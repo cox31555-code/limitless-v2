@@ -1243,10 +1243,6 @@ const TemporaryInsuranceContent = () => {
               </div>
 
               {!(currentStep === STEPS.PERSONAL && (personalSubStep === "addClaim" || personalSubStep === "addConviction")) &&
-                !(currentStep === STEPS.COVER && coverSubStep === "addDriver") &&
-                !(currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions") &&
-                !(currentStep === STEPS.COVER && coverSubStep === "addDriverClaim") &&
-                !(currentStep === STEPS.COVER && coverSubStep === "addDriverConviction") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "carOwner") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "carOwnerAddRegisteredKeeper") &&
                 !(currentStep === STEPS.COVER && coverSubStep === "carOwnerAddLegalOwner") &&
