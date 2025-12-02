@@ -726,22 +726,28 @@
     padding-bottom: 0;
   }
 
+  .stepTitleText {
+    font-size: 1.8rem;
+  }
+
   .mainQuestion {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .subText {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .regInput {
     padding: 1.6rem 1.8rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    height: 5.8rem;
   }
 
   .findBtn {
     padding: 1.6rem 2rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    height: 5.8rem;
   }
 
   .foundVehicleCard {
@@ -837,8 +843,36 @@
     margin: 0;
   }
 
-  .detailsSectionTitle {
+  .stepTitleText {
+    font-size: 1.8rem;
+  }
+
+  .mainQuestion {
+    font-size: 3rem;
+  }
+
+  .subText {
+    font-size: 1.7rem;
+  }
+
+  .regInput {
+    font-size: 1.8rem;
+    padding: 1.4rem 1.6rem;
+    height: 6rem;
+  }
+
+  .findBtn {
+    font-size: 1.8rem;
+    padding: 1.4rem 2rem;
+    height: 6rem;
+  }
+
+  .label {
     font-size: 1.6rem;
+  }
+
+  .detailsSectionTitle {
+    font-size: 2rem;
   }
 
   .detailsGrid {
