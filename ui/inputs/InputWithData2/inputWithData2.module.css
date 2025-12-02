@@ -64,12 +64,12 @@
 
 @media screen and (max-width: 600px) {
   .label {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 
   .value {
     padding: 0.9rem 1.2rem;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     min-height: 3.8rem;
   }
 }
