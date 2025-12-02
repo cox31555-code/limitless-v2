@@ -1093,21 +1093,21 @@
   .regInputGroup :global(.rs-input) {
     min-height: 4.8rem !important;
     padding: 1rem 1.4rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
 
   .regInputGroup :global(.rs-btn) {
     width: 100% !important;
     min-height: 4.8rem !important;
     padding: 1rem 2rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
 
   .rsuiteSelect :global(.rs-picker) {
     height: 4.8rem !important;
     min-height: 4.8rem !important;
     padding: 1rem 1.4rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
 }
 
@@ -1116,7 +1116,7 @@
     height: 4.4rem !important;
     min-height: 4.4rem !important;
     padding: 0.9rem 1.2rem !important;
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
   }
 
   .regInputGroup {
@@ -1127,34 +1127,34 @@
   .regInputGroup :global(.rs-input) {
     min-height: 4.4rem !important;
     padding: 0.9rem 1.2rem !important;
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
   }
 
   .regInputGroup :global(.rs-btn) {
     min-height: 4.4rem !important;
     padding: 0.9rem 1.6rem !important;
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
     width: 100% !important;
   }
 
   .label {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .errorMessage {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 
   .manualEntryBtn {
     padding: 1.3rem 1.8rem !important;
     gap: 0.6rem !important;
-    font-size: 1.1rem !important;
+    font-size: 1.6rem !important;
     border-radius: 8px !important;
   }
 
   .changeVehicleBtn {
     padding: 1.2rem 2rem;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -1162,22 +1162,22 @@
   .rsuiteSelect :global(.rs-picker) {
     min-height: 3.2rem;
     padding: 0.5rem 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .regInputGroup :global(.rs-input) {
     min-height: 3.2rem !important;
     padding: 0.5rem 0.8rem !important;
-    font-size: 1.2rem !important;
+    font-size: 1.6rem !important;
   }
 
   .regInputGroup :global(.rs-btn) {
     min-height: 3.2rem !important;
     padding: 0.5rem 1rem !important;
-    font-size: 1.1rem !important;
+    font-size: 1.6rem !important;
   }
 
   .label {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 }
