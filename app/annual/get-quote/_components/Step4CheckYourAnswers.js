@@ -399,7 +399,14 @@ const Step4CheckYourAnswers = ({
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Cover type</span>
-              <span className={styles.value}>{getDisplayValue(formData?.coverDetails?.level)}</span>
+              <span className={styles.value}>
+                {insuranceType === "Temp"
+                  ? "Temporary - Comprehensive"
+                  : insuranceType === "Impound"
+                    ? "Impound - Comprehensive"
+                    : getDisplayValue(formData?.coverDetails?.level)
+                }
+              </span>
             </div>
             <div className={styles.dataRow}>
               <span className={styles.label}>Voluntary excess</span>
