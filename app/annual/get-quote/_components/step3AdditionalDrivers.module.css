@@ -467,6 +467,13 @@
   }
 }
 
+@media (max-width: 640px) {
+  .contentWrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 0;
@@ -488,6 +495,7 @@
 
   .contentWrapper {
     padding-right: 0;
+    padding-left: 0;
     gap: 3.2rem;
   }
 
