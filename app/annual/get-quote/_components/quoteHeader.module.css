@@ -175,7 +175,7 @@
 @media (max-width: 640px) {
   .heroSection {
     margin-bottom: 0.4rem;
-    padding: 3rem 0;
+    padding: 3rem 0 3rem 2.2rem;
     border-bottom: 0;
   }
 }
