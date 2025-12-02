@@ -600,3 +600,40 @@
     background: rgba(0, 82, 163, 0.12);
   }
 }
+
+@media (max-width: 400px) {
+  .progressCard {
+    padding: 1.4rem;
+    gap: 1.4rem;
+  }
+
+  .progressText {
+    font-size: 1.5rem;
+  }
+
+  .stepIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .stepTitle {
+    font-size: 1.4rem;
+  }
+
+  .stepButton.active .stepTitle {
+    font-size: 1.5rem;
+  }
+
+  .subStepItem {
+    font-size: 1.3rem;
+  }
+
+  .subStepButton {
+    font-size: 1.3rem;
+  }
+
+  .mobileToggleBtn {
+    width: 30px;
+    height: 30px;
+  }
+}
