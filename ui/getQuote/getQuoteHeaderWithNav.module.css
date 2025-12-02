@@ -324,9 +324,9 @@
   .navigationBar {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     background: #000822;
-    padding-bottom: 1rem;
+    padding: 1rem 1.2rem;
     border-bottom: 1px solid rgba(3, 136, 255, 0.1);
     display: flex;
     gap: 1.2rem;
