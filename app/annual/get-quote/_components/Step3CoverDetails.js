@@ -399,36 +399,36 @@ const Step3CoverDetails = ({
               <>
                 {insuranceType === "Impound" ? (
                   <div style={{
-                    background: '#ffffff',
-                    border: '1px solid #e5e7eb',
-                    borderRadius: '0.8rem',
-                    padding: '1.6rem',
+                    background: 'linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%)',
+                    border: '1.5px solid rgba(3, 136, 255, 0.15)',
+                    borderRadius: '1rem',
+                    padding: '2rem',
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: '1.6rem'
+                    gap: '1.8rem'
                   }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                      <div style={{ paddingRight: '2rem', borderRight: '1px solid #e5e7eb' }}>
-                        <div style={{ fontSize: '1.2rem', color: '#6b7280', fontWeight: '500', marginBottom: '0.6rem' }}>Start date</div>
-                        <div style={{ fontSize: '1.4rem', color: '#1f2937', fontWeight: '600' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.4rem' }}>
+                      <div style={{ paddingRight: '2rem', borderRight: '2px solid rgba(3, 136, 255, 0.1)' }}>
+                        <div style={{ fontSize: '1.1rem', color: '#6b7280', fontWeight: '500', marginBottom: '0.8rem', letterSpacing: '0.5px' }}>Start date</div>
+                        <div style={{ fontSize: '1.5rem', color: '#0388ff', fontWeight: '700' }}>
                           {new Date(formData.startDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
                         </div>
-                        <div style={{ fontSize: '1.3rem', color: '#6b7280', marginTop: '0.4rem' }}>
+                        <div style={{ fontSize: '1.3rem', color: '#374151', fontWeight: '600', marginTop: '0.6rem' }}>
                           {formData.startTime}
                         </div>
                       </div>
                       <div>
-                        <div style={{ fontSize: '1.2rem', color: '#6b7280', fontWeight: '500', marginBottom: '0.6rem' }}>End date</div>
-                        <div style={{ fontSize: '1.4rem', color: '#1f2937', fontWeight: '600' }}>
+                        <div style={{ fontSize: '1.1rem', color: '#6b7280', fontWeight: '500', marginBottom: '0.8rem', letterSpacing: '0.5px' }}>End date</div>
+                        <div style={{ fontSize: '1.5rem', color: '#0388ff', fontWeight: '700' }}>
                           {new Date(formData.endDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
                         </div>
-                        <div style={{ fontSize: '1.3rem', color: '#6b7280', marginTop: '0.4rem' }}>
+                        <div style={{ fontSize: '1.3rem', color: '#374151', fontWeight: '600', marginTop: '0.6rem' }}>
                           {formData.endTime}
                         </div>
                       </div>
                     </div>
-                    <div style={{ paddingTop: '1.6rem', borderTop: '1px solid #e5e7eb', textAlign: 'center' }}>
-                      <span style={{ fontSize: '1.2rem', color: '#0388ff', fontWeight: '600' }}>30 days coverage</span>
+                    <div style={{ paddingTop: '1.6rem', borderTop: '1.5px solid rgba(3, 136, 255, 0.1)', textAlign: 'center', background: 'rgba(3, 136, 255, 0.06)', borderRadius: '0.8rem', padding: '1.2rem' }}>
+                      <span style={{ fontSize: '1.3rem', color: '#0388ff', fontWeight: '700', letterSpacing: '0.5px' }}>• 30 days coverage •</span>
                     </div>
                   </div>
                 ) : (
