@@ -437,6 +437,19 @@
     line-height: 1.4;
   }
 
+  .helpModalTitle {
+    font-size: 1.8rem;
+  }
+
+  .helpModalMessage {
+    font-size: 1.6rem;
+  }
+
+  .helpContactLink,
+  .helpModalCloseAction {
+    font-size: 1.6rem;
+  }
+
   .progressBar {
     height: 8px;
     width: 100%;
