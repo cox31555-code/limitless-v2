@@ -715,19 +715,22 @@
   }
 
   .navigationWrapper {
-    padding: 2.6rem 3.2rem 0;
+    padding: 2.8rem 3.2rem 0;
   }
 
   .quickQuoteTitle {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.3;
   }
 
   .quickQuoteSubtitle {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
+    font-weight: 500;
   }
 
   .contentWrapper {
-    padding: 3rem 3.2rem 1.5rem;
+    padding: 3.2rem 3.2rem 1.8rem;
   }
 
   .primaryButton {
@@ -844,11 +847,14 @@
   }
 
   .quickQuoteTitle {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.3;
   }
 
   .quickQuoteSubtitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
   }
 
   .regInputField {
