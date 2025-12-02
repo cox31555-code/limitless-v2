@@ -12,6 +12,8 @@ const CoverDetailsForm = ({ form, isImpound = false }) => {
   const duration = form.watch("coverDetails.period");
   const startDate = form.watch("coverDetails.startDate");
   const startTime = form.watch("coverDetails.startTime");
+  const endDate = form.watch("coverDetails.endDate");
+  const endTime = form.watch("coverDetails.endTime");
 
   // Auto-select 30 Days for impound insurance on mount
   // For Temporary, no auto-selection - user must choose
