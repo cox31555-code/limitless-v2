@@ -105,21 +105,23 @@ const Step3CarOwner = ({
 
       <div className={styles.contentWrapper}>
         {/* Main Driver Question */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>Who's the main driver of this vehicle?</h3>
+        {insuranceType === "Annual" && (
+          <div className={styles.section}>
+            <div className={styles.questionHeader}>
+              <h3 className={styles.mainQuestion}>Who's the main driver of this vehicle?</h3>
+            </div>
+            <div className={styles.fieldWrapper}>
+              <Dropdown
+                label=""
+                selected={formData.mainDriver}
+                options={driverOptions}
+                setSelected={(value) => setFormData({ ...formData, mainDriver: value })}
+                placeholder="Please select…"
+              />
+              {errors.mainDriver && <span className={styles.error}>{errors.mainDriver}</span>}
+            </div>
           </div>
-          <div className={styles.fieldWrapper}>
-            <Dropdown
-              label=""
-              selected={formData.mainDriver}
-              options={driverOptions}
-              setSelected={(value) => setFormData({ ...formData, mainDriver: value })}
-              placeholder="Please select…"
-            />
-            {errors.mainDriver && <span className={styles.error}>{errors.mainDriver}</span>}
-          </div>
-        </div>
+        )}
 
         {/* Registered Keeper and Legal Owner Question */}
         <div className={styles.section}>
