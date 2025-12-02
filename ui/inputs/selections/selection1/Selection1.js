@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./selection.module.css";
 
 const Selection1 = ({ items, selectedItem, setSelectedItem, type, style , noDotMobile}) => {
   const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -17,34 +18,45 @@ const Selection1 = ({ items, selectedItem, setSelectedItem, type, style , noDotM
     setSelectedItem(e.target.value);
   };
 
-  if (isMobile) {
-    return (
-      <select
-        className={`${styles.nativeSelect} ${
-          style === "dark" ? styles.nativeSelectDark : ""
-        }`}
-        value={selectedItem || ""}
-        onChange={handleNativeChange}
-        style={{ colorScheme: 'dark' }}
-      >
-        <option value="" disabled>
-          Select an option...
-        </option>
-        {items.map((item, index) => (
-          <option key={index} value={item}>
-            {item}
-          </option>
-        ))}
-      </select>
-    );
-  }
+  const handleItemClick = (item) => {
+    if (isMobile) {
+      // On mobile, trigger the hidden native select
+      const nativeSelect = containerRef.current?.querySelector('select');
+      if (nativeSelect) {
+        nativeSelect.focus();
+        nativeSelect.click();
+      }
+    } else {
+      setSelectedItem(item);
+    }
+  };
 
   return (
     <div
+      ref={containerRef}
       className={`${styles.selectionContainer} ${
         style === "dark" ? styles.dark : ""
       }`}
     >
+      {/* Hidden native select for mobile */}
+      {isMobile && (
+        <select
+          className={styles.hiddenNativeSelect}
+          value={selectedItem || ""}
+          onChange={handleNativeChange}
+          style={{ colorScheme: 'dark' }}
+        >
+          <option value="" disabled>
+            Select an option...
+          </option>
+          {items.map((item, index) => (
+            <option key={index} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+      )}
+      
       {items.map((item, index) => (
         <div
           style={{
@@ -73,7 +85,7 @@ const Selection1 = ({ items, selectedItem, setSelectedItem, type, style , noDotM
               : ""
           } ${style === "dark" ? styles.darkItem : ""}`}
           key={index}
-          onClick={() => setSelectedItem(item)}
+          onClick={() => handleItemClick(item)}
         >
           {type === "checkbox" ? (
             <span
