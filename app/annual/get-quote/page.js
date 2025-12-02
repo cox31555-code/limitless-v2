@@ -13,7 +13,6 @@ import QuoteProgressCard from "./_components/QuoteProgressCard";
 import QuoteNavButtons from "./_components/QuoteNavButtons";
 import Step1VehicleRegistration from "./_components/Step1VehicleRegistration";
 import QuoteHeader from "./_components/QuoteHeader";
-import GetQuotePageHeader from "./_components/GetQuotePageHeader";
 import styles from "./newGetQuotePage.module.css";
 
 // Optimize: Only dynamically import components with ssr: false to avoid blocking initial load
@@ -1134,7 +1133,6 @@ const AnnualInsuranceContent = () => {
 
   return (
     <div suppressHydrationWarning>
-      <GetQuotePageHeader />
       <CourierLoadingOverlay isVisible={showLoading} />
       <QuoteHeader
         currentStep={currentStep}
