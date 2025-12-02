@@ -351,31 +351,50 @@ const Step3CoverDetails = ({
 
         {/* End Date Question - Only for temporary insurance (when !showCoverOptions) */}
         {!showCoverOptions && (
-          <div className={styles.section}>
+          <div className={styles.section} style={{ opacity: formData.startDate && formData.startTime ? 1 : 0.5, pointerEvents: formData.startDate && formData.startTime ? 'auto' : 'none', transition: 'opacity 0.3s ease' }}>
             <div className={styles.questionHeader}>
               <h3 className={styles.mainQuestion}>When would you like your cover to end?</h3>
               <p className={styles.subText}>
-                Select the date and time when your temporary coverage should expire.
+                Select the date and time when your temporary coverage should expire. Minimum 12 hours from start, maximum 30 days.
               </p>
+              {(!formData.startDate || !formData.startTime) && (
+                <p style={{ color: '#ef4444', fontSize: '1.3rem', marginTop: '1rem', fontWeight: '500' }}>
+                  Please select a start date and time first.
+                </p>
+              )}
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.6rem' }}>
-              <FormDateInput
-                type="date"
-                dateLabel="End Date"
-                value={formData.endDate || ""}
-                onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                error={errors.endDate}
-                minDate={formData.startDate ? new Date(formData.startDate) : new Date()}
-              />
-              <FormDateInput
-                type="time"
-                timeLabel="End Time"
-                value={formData.endTime || ""}
-                onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
-                error={errors.endTime}
-                relatedDateValue={formData.endDate}
-              />
-            </div>
+            {formData.startDate && formData.startTime && (
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.6rem' }}>
+                <FormDateInput
+                  type="date"
+                  dateLabel="End Date"
+                  value={formData.endDate || ""}
+                  onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+                  error={errors.endDate}
+                  minDate={(() => {
+                    const startDate = new Date(formData.startDate);
+                    const minDate = new Date(startDate);
+                    minDate.setHours(minDate.getHours() + 12);
+                    return minDate;
+                  })()}
+                  maxDate={(() => {
+                    const startDate = new Date(formData.startDate);
+                    const maxDate = new Date(startDate);
+                    maxDate.setDate(maxDate.getDate() + 30);
+                    return maxDate;
+                  })()}
+                />
+                <FormDateInput
+                  type="time"
+                  timeLabel="End Time"
+                  value={formData.endTime || ""}
+                  onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
+                  error={errors.endTime}
+                  relatedDateValue={formData.endDate}
+                  disabled={!formData.endDate}
+                />
+              </div>
+            )}
           </div>
         )}
       </div>
