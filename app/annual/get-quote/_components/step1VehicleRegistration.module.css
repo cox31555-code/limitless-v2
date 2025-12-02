@@ -1397,7 +1397,7 @@
     height: 4.8rem !important;
     min-height: 4.8rem !important;
     padding: 1rem 1.4rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
 
   .regInputGroup {
@@ -1408,14 +1408,14 @@
   .regInputGroup :global(.rs-input) {
     min-height: 4.8rem !important;
     padding: 1rem 1.4rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
 
   .regInputGroup :global(.rs-btn) {
     width: 100% !important;
     min-height: 4.8rem !important;
     padding: 1rem 2rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
   }
 }
 
@@ -1424,7 +1424,7 @@
     height: 4.4rem !important;
     min-height: 4.4rem !important;
     padding: 0.9rem 1.2rem !important;
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
   }
 
   .regInputGroup {
@@ -1435,21 +1435,21 @@
   .regInputGroup :global(.rs-input) {
     min-height: 4.4rem !important;
     padding: 0.9rem 1.2rem !important;
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
   }
 
   .regInputGroup :global(.rs-btn) {
     min-height: 4.4rem !important;
     padding: 0.9rem 1.6rem !important;
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
     width: 100% !important;
   }
 
   .label {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .errorMessage {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 }
