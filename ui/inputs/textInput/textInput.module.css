@@ -688,16 +688,27 @@
 
 @media (max-width: 600px) {
   .formInput {
-    min-height: 4.4rem;
-    padding: 0.9rem 1.2rem;
-    font-size: 1.4rem;
+    min-height: 5.6rem;
+    padding: 1.2rem 1.6rem;
+    font-size: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formInput::placeholder {
+    font-size: 1.6rem;
   }
 
   .formInputLabel {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .formInputErrorMsg {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
+  }
+
+  .formInputWrapper {
+    gap: 1.2rem;
+    flex-direction: column;
   }
 }
