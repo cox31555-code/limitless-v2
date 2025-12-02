@@ -223,7 +223,8 @@
 
   .day {
     font-size: 1.6rem;
-    min-height: 3.6rem;
+    min-height: 4rem;
+    padding: 0.4rem;
   }
 
   .footer {
@@ -233,8 +234,9 @@
 
   .todayButton,
   .tomorrowButton {
-    padding: 1rem;
+    padding: 1.2rem;
     font-size: 1.6rem;
+    min-height: 4.8rem;
   }
 }
 

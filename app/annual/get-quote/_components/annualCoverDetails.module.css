@@ -362,8 +362,8 @@
 
 @media (max-width: 600px) {
   .coverContainer {
-    gap: 1.8rem;
-    padding: 0 1.6rem;
+    gap: 2.4rem;
+    padding: 0;
   }
 
   .section {
@@ -421,8 +421,10 @@
   }
 
   .dateSection {
-    padding: 2rem;
+    padding: 0;
     gap: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .levelIconWrapper {

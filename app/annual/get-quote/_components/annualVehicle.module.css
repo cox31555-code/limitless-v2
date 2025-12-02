@@ -630,7 +630,7 @@
 @media (max-width: 600px) {
   .content {
     gap: 3.6rem;
-    padding: 0 5%;
+    padding: 0;
     box-sizing: border-box;
   }
 
@@ -676,7 +676,7 @@
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    padding: 2.8rem;
+    padding: 2.8rem 2.4rem;
     gap: 2.4rem;
     width: 100%;
     box-sizing: border-box;
