@@ -112,7 +112,11 @@ const Step3CoverDetails = ({
       if (!formData.paymentFrequency) newErrors.paymentFrequency = "Please select payment frequency";
     }
     if (!formData.startDate) newErrors.startDate = "Please select a start date";
-    if (!showCoverOptions && !formData.startTime) newErrors.startTime = "Please select a start time";
+    if (!showCoverOptions) {
+      if (!formData.startTime) newErrors.startTime = "Please select a start time";
+      if (!formData.endDate) newErrors.endDate = "Please select an end date";
+      if (!formData.endTime) newErrors.endTime = "Please select an end time";
+    }
     return newErrors;
   };
 
