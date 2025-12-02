@@ -42,18 +42,35 @@ const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose, showAbove = fal
     const today = new Date();
     const isToday = selectedDateObj && selectedDateObj.toDateString() === today.toDateString();
 
+    // Parse minTime if provided
+    let minHour = 0;
+    if (minTime) {
+      const [hour] = minTime.split(":");
+      minHour = parseInt(hour, 10);
+    }
+
+    // Parse maxTime if provided
+    let maxHour = 23;
+    if (maxTime) {
+      const [hour] = maxTime.split(":");
+      maxHour = parseInt(hour, 10);
+    }
+
     for (let i = 0; i < 24; i++) {
       const hourStr = String(i).padStart(2, "0");
-      
+
       // If selected date is today, only show current and future hours
       if (isToday) {
         const currentHour = today.getHours();
         if (i < currentHour) continue;
       }
-      
+
+      // Apply minTime and maxTime constraints
+      if (i < minHour || i > maxHour) continue;
+
       hours.push(hourStr);
     }
-    
+
     return hours.length > 0 ? hours : ["00"];
   };
 
