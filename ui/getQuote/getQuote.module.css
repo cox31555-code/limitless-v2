@@ -220,10 +220,11 @@
 .accordionContent {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 2rem;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 @keyframes expandAccordion {
