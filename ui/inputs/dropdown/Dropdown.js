@@ -10,6 +10,16 @@ const Dropdown = ({ label, selected, options, setSelected, placeholder, error, d
   const dropdownRef = useRef(null);
   const searchInputRef = useRef(null);
 
+  // Detect mobile on mount and on resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Filter options based on search term
   const filteredOptions = options.filter((option) =>
     option.toLowerCase().includes(searchTerm.toLowerCase())
