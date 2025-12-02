@@ -12,6 +12,7 @@
   max-height: calc(100vh - 88px);
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.04);
   transition: width 0.3s ease;
+  box-sizing: border-box;
 }
 
 .sidebarCollapsed {
@@ -26,7 +27,9 @@
   gap: 3.2rem;
   min-height: 100vh;
   transition: opacity 0.2s ease;
-  width: 340px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .sidebarCollapsed .sidebarContent {
@@ -341,6 +344,7 @@
   .sidebar {
     position: relative;
     width: 100%;
+    max-width: 100%;
     min-height: auto;
     border-left: none;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
@@ -349,17 +353,25 @@
     top: auto;
     max-height: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   .sidebarContent {
     min-height: auto;
     padding: 1.6rem;
     gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .progressSection {
     border-bottom: none;
     padding-bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .stepsContainer {
@@ -367,6 +379,24 @@
     overflow-x: auto;
     gap: 0;
     flex: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .stepsContainer::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .stepsContainer::-webkit-scrollbar-track {
+    background: #f5f7fa;
+  }
+
+  .stepsContainer::-webkit-scrollbar-thumb {
+    background: #cbd4dd;
+    border-radius: 2px;
   }
 
   .stepsContainer::before {
@@ -381,10 +411,12 @@
     flex-direction: row;
     align-items: center;
     min-width: max-content;
+    flex-shrink: 0;
   }
 
   .step {
     padding: 0.8rem 0;
+    white-space: nowrap;
   }
 
   .connector {
@@ -395,6 +427,7 @@
     top: auto;
     margin: 0 0.4rem;
     border-radius: 2px;
+    flex-shrink: 0;
   }
 
   .subSteps {
@@ -403,38 +436,73 @@
 }
 
 @media (max-width: 600px) {
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .sidebarContent {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.6rem;
+    box-sizing: border-box;
+  }
+
+  .progressSection {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .progressText {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .stepsContainer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
   }
 
   .stepIcon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
   }
 
   .stepNumber {
-    width: 28px;
-    height: 28px;
-    font-size: 1.1rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
     border-width: 2px;
   }
 
   .activeCircle {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-width: 4px;
   }
 
   .stepTitle {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    white-space: nowrap;
   }
 
   .stepActive .stepTitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .connector {
-    width: 28px;
+    width: 24px;
     height: 2px;
+    flex-shrink: 0;
+  }
+
+  .step {
+    padding: 0.8rem 0.4rem;
   }
 }
