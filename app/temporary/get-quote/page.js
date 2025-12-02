@@ -954,9 +954,9 @@ const TemporaryInsuranceContent = () => {
       return;
     }
 
-    if (currentStep === STEPS.COVER && coverSubStep === "carOwner") {
-      setCoverSubStep("additionalDrivers");
-      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "additionalDrivers");
+    if (currentStep === STEPS.COVER && coverSubStep === "cover") {
+      setCoverSubStep("carOwner");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "carOwner");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
