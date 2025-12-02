@@ -328,38 +328,40 @@ const Step4CheckYourAnswers = ({
         <div className={styles.mainSection}>
           <h2 className={styles.sectionTitle}>Your policy</h2>
 
-          <div className={styles.subsection}>
-            <div className={styles.subsectionHeader}>
-              <h3 className={styles.subsectionTitle}>Additional drivers</h3>
-              <button className={styles.changeLink}>
-                <span className={styles.changeLinkText}>Change</span>
-              </button>
-            </div>
-            {additionalDrivers.length > 0 ? (
-              additionalDrivers.map((driver, index) => (
-                <div key={index}>
-                  <div className={styles.dataRow}>
-                    <span className={styles.label}>Name</span>
-                    <span className={styles.value}>
-                      {getDisplayValue(driver.title)} {getDisplayValue(driver.firstName)} {getDisplayValue(driver.surname)}
-                    </span>
-                  </div>
-                  <div className={styles.dataRow}>
-                    <span className={styles.label}>Date of birth</span>
-                    <span className={styles.value}>{formatDate(driver.dateOfBirth)}</span>
-                  </div>
-                  <div className={styles.dataRow}>
-                    <span className={styles.label}>Relationship status</span>
-                    <span className={styles.value}>{getDisplayValue(driver.maritalStatus)}</span>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className={styles.dataRow}>
-                <span className={styles.value}>None</span>
+          {insuranceType === "Annual" && (
+            <div className={styles.subsection}>
+              <div className={styles.subsectionHeader}>
+                <h3 className={styles.subsectionTitle}>Additional drivers</h3>
+                <button className={styles.changeLink}>
+                  <span className={styles.changeLinkText}>Change</span>
+                </button>
               </div>
-            )}
-          </div>
+              {additionalDrivers.length > 0 ? (
+                additionalDrivers.map((driver, index) => (
+                  <div key={index}>
+                    <div className={styles.dataRow}>
+                      <span className={styles.label}>Name</span>
+                      <span className={styles.value}>
+                        {getDisplayValue(driver.title)} {getDisplayValue(driver.firstName)} {getDisplayValue(driver.surname)}
+                      </span>
+                    </div>
+                    <div className={styles.dataRow}>
+                      <span className={styles.label}>Date of birth</span>
+                      <span className={styles.value}>{formatDate(driver.dateOfBirth)}</span>
+                    </div>
+                    <div className={styles.dataRow}>
+                      <span className={styles.label}>Relationship status</span>
+                      <span className={styles.value}>{getDisplayValue(driver.maritalStatus)}</span>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className={styles.dataRow}>
+                  <span className={styles.value}>None</span>
+                </div>
+              )}
+            </div>
+          )}
 
           <div className={styles.subsection}>
             <div className={styles.subsectionHeader}>
