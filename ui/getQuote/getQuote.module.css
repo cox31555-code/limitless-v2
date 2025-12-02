@@ -843,6 +843,15 @@
     margin-bottom: 26px;
   }
 
+  .navigationWrapper {
+    padding: 2.6rem 1.6rem 0;
+  }
+
+  .contentWrapper {
+    padding: 2.8rem 1.6rem 1.4rem;
+    box-sizing: border-box;
+  }
+
   .accordionContent {
     gap: 0.3rem;
   }
