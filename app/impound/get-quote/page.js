@@ -1196,16 +1196,6 @@ const ImpoundInsuranceContent = () => {
                   />
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "details" && <AnnualCoverDetailsForm form={form} />}
-                {currentStep === STEPS.COVER && coverSubStep === "additionalDrivers" && (
-                  <Step3AdditionalDrivers
-                    additionaDrivers={additionalDrivers}
-                    onAddDriver={() => handleNavigateToAddDriver()}
-                    onRemoveDriver={handleRemoveDriver}
-                    onEditDriver={handleNavigateToAddDriver}
-                    hasAdditionalDrivers={hasAdditionalDrivers}
-                    onHasAdditionalDriversChange={setHasAdditionalDrivers}
-                  />
-                )}
                 {currentStep === STEPS.COVER && coverSubStep === "addDriver" && (
                   <Step3AddDriver
                     onBack={handleBackFromAddDriver}
