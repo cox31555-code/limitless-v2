@@ -369,27 +369,27 @@
   }
 
   .stepTitleText {
-    font-size: 1.35rem;
-  }
-
-  .mainQuestion {
     font-size: 1.8rem;
   }
 
+  .mainQuestion {
+    font-size: 2.8rem;
+  }
+
   .subText {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .fieldLabel {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .radioLabel {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .expandableLink {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .section {
