@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./customTimePicker.module.css";
 
-const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose, showAbove = false, selectedDate = null }) => {
+const CustomTimePicker = ({ selectedTime, onTimeSelect, onClose, showAbove = false, selectedDate = null, minTime = null, maxTime = null }) => {
   const [selectedHour, setSelectedHour] = useState("10");
   const [selectedMinute, setSelectedMinute] = useState("00");
   const hourScrollRef = useRef(null);
