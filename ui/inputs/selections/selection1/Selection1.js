@@ -1,6 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./selection.module.css";
+
 const Selection1 = ({ items, selectedItem, setSelectedItem, type, style , noDotMobile}) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleNativeChange = (e) => {
+    setSelectedItem(e.target.value);
+  };
+
+  if (isMobile) {
+    return (
+      <select
+        className={`${styles.nativeSelect} ${
+          style === "dark" ? styles.nativeSelectDark : ""
+        }`}
+        value={selectedItem || ""}
+        onChange={handleNativeChange}
+        style={{ colorScheme: 'dark' }}
+      >
+        <option value="" disabled>
+          Select an option...
+        </option>
+        {items.map((item, index) => (
+          <option key={index} value={item}>
+            {item}
+          </option>
+        ))}
+      </select>
+    );
+  }
+
   return (
     <div
       className={`${styles.selectionContainer} ${
