@@ -82,7 +82,7 @@
   .contentWrapper {
     grid-template-columns: 1fr;
     gap: 3.2rem;
-    padding: 0 2% 2.4rem;
+    padding: 0 5% 2.4rem;
   }
 
   .mainContent {
@@ -101,15 +101,9 @@
   }
 }
 
-@media (max-width: 640px) {
-  .contentWrapper {
-    padding: 0 5%;
-  }
-}
-
 @media (max-width: 600px) {
   .contentWrapper {
-    padding: 0 2% 2rem;
+    padding: 0 5% 2rem;
     gap: 2.4rem;
   }
 
