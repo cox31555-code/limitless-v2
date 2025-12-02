@@ -399,7 +399,7 @@ const Step3CoverDetails = ({
               <>
                 {insuranceType === "Impound" ? (
                   <div style={{
-                    background: 'linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%)',
+                    background: '#f8fbff',
                     border: '1.5px solid rgba(3, 136, 255, 0.15)',
                     borderRadius: '1rem',
                     padding: '2rem',
