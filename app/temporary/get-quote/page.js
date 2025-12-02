@@ -887,8 +887,15 @@ const TemporaryInsuranceContent = () => {
     }
 
     if (currentStep === STEPS.COVER && coverSubStep === "contactInformation") {
-      setCurrentStep(STEPS.CHECK_ANSWERS);
-      pushHistoryState(STEPS.CHECK_ANSWERS, vehicleSubStep, personalSubStep, coverSubStep);
+      setCoverSubStep("ncd");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "ncd");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (currentStep === STEPS.COVER && coverSubStep === "ncd") {
+      setCoverSubStep("cover");
+      pushHistoryState(STEPS.COVER, vehicleSubStep, personalSubStep, "cover");
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
