@@ -33,11 +33,16 @@ const Step3CoverDetails = ({
       const endDate = new Date(startDate);
       endDate.setDate(endDate.getDate() + 30);
 
-      setFormData((prev) => ({
-        ...prev,
-        endDate: endDate.toISOString().split('T')[0],
-        endTime: formData.startTime
-      }));
+      const calculatedEndDate = endDate.toISOString().split('T')[0];
+
+      // Only update if endDate is different from calculated value
+      if (formData.endDate !== calculatedEndDate || formData.endTime !== formData.startTime) {
+        setFormData((prev) => ({
+          ...prev,
+          endDate: calculatedEndDate,
+          endTime: formData.startTime
+        }));
+      }
     }
   }, [formData.startDate, formData.startTime, insuranceType]);
 
