@@ -106,18 +106,22 @@ const Step4CheckYourAnswers = ({
                 <span className={styles.changeLinkText}>Change</span>
               </button>
             </div>
-            <div className={styles.dataRow}>
-              <span className={styles.label}>When you bought the car</span>
-              <span className={styles.value}>{formatDate(formData?.vehicleDetails?.purchaseDate)}</span>
-            </div>
+            {insuranceType === "Annual" && (
+              <div className={styles.dataRow}>
+                <span className={styles.label}>When you bought the car</span>
+                <span className={styles.value}>{formatDate(formData?.vehicleDetails?.purchaseDate)}</span>
+              </div>
+            )}
             <div className={styles.dataRow}>
               <span className={styles.label}>Car usage</span>
               <span className={styles.value}>{getDisplayValue(formData?.carUsage?.usageType)}</span>
             </div>
-            <div className={styles.dataRow}>
-              <span className={styles.label}>Annual personal mileage</span>
-              <span className={styles.value}>{getDisplayValue(formData?.carUsage?.annualMileage)}</span>
-            </div>
+            {insuranceType === "Annual" && (
+              <div className={styles.dataRow}>
+                <span className={styles.label}>Annual personal mileage</span>
+                <span className={styles.value}>{getDisplayValue(formData?.carUsage?.annualMileage)}</span>
+              </div>
+            )}
           </div>
 
           <div className={styles.subsection}>
