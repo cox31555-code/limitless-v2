@@ -27,10 +27,15 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
     return mockIds[index % mockIds.length];
   };
 
+  const getPolicyType = (index) => {
+    const types = ["ANNUAL", "TEMPORARY", "IMPOUND"];
+    return types[index % types.length];
+  };
+
   const carData = [
     { make: "MERCEDES-BENZ S 580 L AMG", year: "2023", color: "Black", reg: "PG23JDO", premium: "£434.46", expires: "5 Nov 2025" },
-    { make: "BMW 3 SERIES M340i", year: "2022", color: "Dark Blue", reg: "VR22BW", premium: "£289.99", expires: "12 Dec 2024" },
-    { make: "AUDI A6 TFSI QUATTRO", year: "2021", color: "Silver", reg: "KT21UXS", premium: "£356.50", expires: "8 Jan 2026" },
+    { make: "FORD FIESTA 1.25 PETROL", year: "2021", color: "White", reg: "BN21TYP", premium: "£15.99", expires: "12 Dec 2024" },
+    { make: "VAUXHALL CORSA E", year: "2020", color: "Red", reg: "JL70KWM", premium: "£120.00", expires: "15 Jan 2025" },
   ];
 
   const PolicyIcon = () => (
@@ -50,11 +55,13 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
         {data.map((row, index) => {
           const car = carData[index % carData.length];
           const statusType = getStatusColor(row.remaining);
+          const policyType = getPolicyType(index);
 
+          const policyType = getPolicyType(index);
           return (
             <div
               key={index}
-              className={styles.policyCard}
+              className={`${styles.policyCard} ${styles[`policy${policyType}`]}`}
               onClick={() => {
                 showLoading();
                 router.push(`/dashboard/policy/${getMockPolicyId(index)}`);
@@ -69,7 +76,7 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
                       alt="Limitless Cover"
                       className={styles.policyLogo}
                     />
-                    <span className={styles.policyBadgeType}>ANNUAL</span>
+                    <span className={styles.policyBadgeType}>{getPolicyType(index)}</span>
                   </div>
                 </div>
                 <div className={styles.policyStatusWrapper}>
