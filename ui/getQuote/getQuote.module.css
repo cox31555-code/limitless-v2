@@ -853,7 +853,11 @@
   }
 
   .accordionContent {
-    gap: 0.3rem;
+    gap: 2rem;
+  }
+
+  .accordionContent.expanded {
+    padding-top: 1.6rem;
   }
 
   .quickQuoteTitle {
@@ -929,10 +933,24 @@
   .regInputField {
     margin-top: 1.6rem;
     margin-bottom: 1.2rem;
+    width: 100%;
   }
 
   .regInputField :global(input) {
-    height: 5.6rem;
+    height: 6rem;
+    min-height: 6rem;
+    font-size: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .regInputField :global(input::placeholder) {
+    font-size: 1.6rem;
+  }
+
+  .regInputField :global(.inputContainer) {
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .sectionLabel {
