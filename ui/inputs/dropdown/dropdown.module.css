@@ -357,12 +357,32 @@
     font-size: 1.6rem;
   }
 
+  .placeholder {
+    font-size: 1.6rem;
+  }
+
   .errorMessage {
+    font-size: 1.6rem;
+  }
+
+  .searchInput {
+    font-size: 1.6rem;
+  }
+
+  .searchInput::placeholder {
+    font-size: 1.6rem;
+  }
+
+  .optionText {
     font-size: 1.6rem;
   }
 }
 
 @media (max-width: 400px) {
+  .label {
+    font-size: 1.6rem;
+  }
+
   .dropdown {
     min-height: 4.4rem;
     padding: 0.8rem 1rem;
@@ -372,13 +392,29 @@
     font-size: 1.6rem;
   }
 
+  .placeholder {
+    font-size: 1.6rem;
+  }
+
   .searchInput {
     font-size: 1.6rem;
     padding: 0.6rem 0.8rem 0.6rem 3rem;
     border-bottom: 1px solid #e8ecf1;
   }
 
+  .searchInput::placeholder {
+    font-size: 1.6rem;
+  }
+
   .searchIcon {
     left: 1.8rem;
+  }
+
+  .optionText {
+    font-size: 1.6rem;
+  }
+
+  .errorMessage {
+    font-size: 1.6rem;
   }
 }

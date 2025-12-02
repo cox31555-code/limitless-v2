@@ -909,13 +909,21 @@
 
   .primaryButton {
     height: 6rem;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     border-radius: 0.8rem;
     font-weight: 600;
   }
 
   .secondaryButton {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+  }
+
+  .stepTitle {
+    font-size: 2.2rem;
+  }
+
+  .stepDescription {
+    font-size: 1.6rem;
   }
 
   .regInputField {
@@ -994,11 +1002,11 @@
   }
 
   .stepTitle {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
 
   .stepDescription {
-    font-size: 0.95rem;
+    font-size: 1.6rem;
   }
 
   .quickOptions {
@@ -1008,7 +1016,7 @@
 
   .quickOption {
     padding: 1.2rem 1rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .durationTypeGrid {
@@ -1018,7 +1026,16 @@
 
   .durationTypeButton {
     padding: 1.2rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .numberButton {
+    font-size: 1.6rem;
+  }
+
+  .moreOptionsDropdown > div > select,
+  .moreOptionsDropdown > div > div {
+    font-size: 1.6rem;
   }
 
   .durationValueGroup {

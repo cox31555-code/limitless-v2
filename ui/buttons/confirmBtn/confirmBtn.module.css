@@ -98,30 +98,30 @@
 
 @media screen and (max-width: 600px) {
   .confirmBtn {
-    height: 5.2rem;
-    font-size: 1.25rem;
+    height: 5.6rem;
+    font-size: 1.6rem;
     padding: 1rem 1.6rem;
     border-radius: 8px;
     gap: 0.6rem;
   }
 
   .arrowRight {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 }
 
 @media screen and (max-width: 400px) {
   .confirmBtn {
-    height: 5rem;
-    font-size: 1.2rem;
+    height: 5.4rem;
+    font-size: 1.6rem;
     padding: 0.95rem 1.4rem;
     border-radius: 8px;
     gap: 0.6rem;
   }
 
   .arrowRight {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
 }

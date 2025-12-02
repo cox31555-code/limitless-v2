@@ -581,11 +581,11 @@
 
 @media (max-width: 600px) {
   .sectionTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .sectionSubtitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .minimumCoverLabel {
@@ -598,19 +598,31 @@
     font-size: 1.6rem;
   }
 
+  .minimumCoverDropdown::placeholder {
+    font-size: 1.6rem;
+  }
+
   .expandableSummary {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .expandableContent {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .levelCardLabel {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .levelCardValue {
+    font-size: 1.6rem;
+  }
+
+  .levelTitle {
+    font-size: 1.8rem;
+  }
+
+  .levelDescription {
     font-size: 1.6rem;
   }
 }
