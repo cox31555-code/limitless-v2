@@ -181,8 +181,8 @@
 
 @media (max-width: 600px) {
   .heroSection {
-    padding: 2.4rem 6%;
-    margin-bottom: 2.8rem;
+    padding: 0.4rem 6% 2.4rem;
+    margin-bottom: 0.4rem;
   }
 
   .mainInfo {
