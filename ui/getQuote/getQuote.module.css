@@ -1039,11 +1039,12 @@
   }
 
   .navigationWrapper {
-    padding: 2.2rem 2.2rem 0;
+    padding: 2.2rem 1.2rem 0;
   }
 
   .contentWrapper {
-    padding: 2.4rem 2.2rem;
+    padding: 2.4rem 1.2rem;
+    box-sizing: border-box;
   }
 
   .quickQuoteTitle {
