@@ -514,24 +514,28 @@
 @media (max-width: 600px) {
   .container {
     padding: 0;
-    gap: 2.8rem;
+    gap: 3.2rem;
     margin: 0;
   }
 
   .stepTitle {
-    padding-bottom: 1.4rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
   .section {
-    padding-bottom: 2rem;
+    padding-bottom: 2.4rem;
     gap: 2rem;
   }
 
@@ -542,110 +546,168 @@
 
   .subText {
     font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .radioInput {
+    width: 22px;
+    height: 22px;
+  }
+
+  .radioInput:checked::after {
+    width: 8px;
+    height: 8px;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .radioOption {
+    padding: 0.4rem 0;
+  }
+
+  .radioGroup {
+    gap: 1.4rem;
+    margin-top: 1.6rem;
   }
 
   .expandableLink {
-    font-size: 1.5rem;
-    margin-top: 1rem;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
   }
 
   .expandableContent {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    padding-left: 1.2rem;
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+    padding-left: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .questionHeader {
+    gap: 1.4rem;
   }
 
   .claimsSection {
-    margin-top: 1rem;
-    padding-top: 1.2rem;
+    margin-top: 1.6rem;
+    padding-top: 2rem;
+    gap: 2rem;
   }
 
   .claimsHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .claimsTitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .addClaimBtn {
     width: 100%;
-    font-size: 1.3rem;
-    padding: 0.7rem 1.6rem;
+    font-size: 1.6rem;
+    padding: 1.2rem 2rem;
+    height: 5.6rem;
+    border-radius: 8px;
+  }
+
+  .claimsList {
+    gap: 1.4rem;
+    margin-top: 1.6rem;
   }
 
   .convictionsSection {
-    margin-top: 1rem;
-    padding-top: 1.2rem;
+    margin-top: 1.6rem;
+    padding-top: 2rem;
+    gap: 2rem;
   }
 
   .convictionsHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 
   .convictionsTitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .addConvictionBtn {
     width: 100%;
-    font-size: 1.3rem;
-    padding: 0.7rem 1.6rem;
+    font-size: 1.6rem;
+    padding: 1.2rem 2rem;
+    height: 5.6rem;
+    border-radius: 8px;
+  }
+
+  .convictionsList {
+    gap: 1.4rem;
+    margin-top: 1.6rem;
   }
 
   .claimCard {
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.2rem;
+    gap: 1.4rem;
+    padding: 2rem;
+  }
+
+  .claimInfo {
+    gap: 0.8rem;
   }
 
   .claimDetail {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
   }
 
   .claimActions {
     width: 100%;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
   }
 
   .removeBtn {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .changeBtn {
-    padding: 0.9rem 1.6rem;
-    font-size: 1.3rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.6rem;
+    height: 5.6rem;
   }
 
   .convictionCard {
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.2rem;
+    gap: 1.4rem;
+    padding: 2rem;
+  }
+
+  .convictionInfo {
+    gap: 0.8rem;
   }
 
   .convictionDetail {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
   }
 
   .convictionActions {
     width: 100%;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
   }
 
   .removeConvictionBtn {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .changeConvictionBtn {
-    padding: 0.9rem 1.6rem;
-    font-size: 1.3rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.6rem;
+    height: 5.6rem;
   }
 }

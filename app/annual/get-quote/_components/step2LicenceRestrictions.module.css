@@ -217,24 +217,28 @@
 @media (max-width: 600px) {
   .container {
     padding: 0;
-    gap: 2.8rem;
+    gap: 3.2rem;
     margin: 0;
   }
 
   .stepTitle {
-    padding-bottom: 1.4rem;
+    padding-bottom: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
   .section {
-    padding-bottom: 2rem;
+    padding-bottom: 2.4rem;
     gap: 2rem;
   }
 
@@ -245,16 +249,54 @@
 
   .subText {
     font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .subQuestion {
+    font-size: 1.6rem;
+  }
+
+  .radioInput {
+    width: 22px;
+    height: 22px;
+  }
+
+  .radioInput:checked::after {
+    width: 8px;
+    height: 8px;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .radioOption {
+    padding: 0.4rem 0;
+  }
+
+  .radioGroup {
+    gap: 1.4rem;
+    margin-top: 1.6rem;
   }
 
   .expandableLink {
-    font-size: 1.5rem;
-    margin-top: 1rem;
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
   }
 
   .expandableContent {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    padding-left: 1.2rem;
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+    padding-left: 1.4rem;
+    line-height: 1.5;
+  }
+
+  .questionHeader {
+    gap: 1.4rem;
+  }
+
+  .dropdownWrapper {
+    margin-top: 1.6rem;
   }
 }
