@@ -102,13 +102,29 @@
 }
 
 @media (max-width: 600px) {
+  .pageContainer {
+    min-height: 100vh;
+  }
+
   .contentWrapper {
-    padding: 0 5% 2rem;
-    gap: 2.4rem;
+    padding: 0 5% 3.2rem;
+    gap: 3.2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .mainContent {
+    padding-right: 0;
+    max-width: 100%;
+    width: 100%;
   }
 
   .sidebarArea {
     margin: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 2.4rem;
+    border-bottom-width: 1.5px;
+  }
+
+  .stepContent {
+    width: 100%;
   }
 }

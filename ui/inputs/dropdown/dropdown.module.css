@@ -344,17 +344,27 @@
 }
 
 @media (max-width: 600px) {
+  .container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .label {
     font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
   }
 
   .dropdown {
-    min-height: 4.4rem;
-    padding: 0.9rem 1.2rem;
+    min-height: 5.6rem;
+    padding: 1.2rem 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .selected {
     font-size: 1.6rem;
+    line-height: 1.5;
   }
 
   .placeholder {
@@ -363,10 +373,12 @@
 
   .errorMessage {
     font-size: 1.6rem;
+    margin-top: 0.8rem;
   }
 
   .searchInput {
     font-size: 1.6rem;
+    padding: 1rem 1.2rem 1rem 3.6rem;
   }
 
   .searchInput::placeholder {
@@ -375,6 +387,21 @@
 
   .optionText {
     font-size: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .option {
+    padding: 1.2rem 1.6rem;
+  }
+
+  .arrowIcon {
+    width: 14px;
+    height: 10px;
+  }
+
+  .noResults {
+    font-size: 1.6rem;
+    padding: 2rem 1.6rem;
   }
 }
 
