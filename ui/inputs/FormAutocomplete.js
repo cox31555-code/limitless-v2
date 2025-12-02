@@ -104,19 +104,29 @@ const FormAutocomplete = forwardRef(
       }
     };
 
-    // Render native select on mobile
-    if (isMobile) {
-      return (
-        <div className={styles.container}>
-          {label && <p className={styles.label}>{label}</p>}
+    const handleInputClick = () => {
+      if (isMobile) {
+        // On mobile, trigger the hidden native select
+        const nativeSelect = containerRef.current?.querySelector('select');
+        if (nativeSelect) {
+          nativeSelect.focus();
+          nativeSelect.click();
+        }
+      }
+    };
+
+    return (
+      <div className={styles.container} ref={containerRef}>
+        {label && <p className={styles.label}>{label}</p>}
+
+        {/* Hidden native select for mobile */}
+        {isMobile && (
           <select
-            ref={ref}
-            className={`${styles.nativeSelect} ${error ? styles.error : ""}`}
+            className={styles.hiddenNativeSelect}
             value={inputValue || ""}
             onChange={handleNativeChange}
             disabled={disabled}
-            style={{ colorScheme: 'dark', ...inputStyle }}
-            {...props}
+            style={{ colorScheme: 'dark' }}
           >
             <option value="" disabled>
               {placeholder}
@@ -127,14 +137,7 @@ const FormAutocomplete = forwardRef(
               </option>
             ))}
           </select>
-          {error && <span className={styles.errorMessage}>{error.message}</span>}
-        </div>
-      );
-    }
-
-    return (
-      <div className={styles.container} ref={containerRef}>
-        {label && <p className={styles.label}>{label}</p>}
+        )}
         <div className={`${styles.inputWrapper} ${error ? styles.error : ""}`}>
           <input
             ref={(e) => {
