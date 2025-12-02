@@ -388,7 +388,7 @@
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
   }
 
   .subText {
@@ -396,6 +396,26 @@
   }
 
   .dateLabel {
+    font-size: 1.6rem;
+  }
+
+  .inputLabel {
+    font-size: 1.6rem;
+  }
+
+  .checkboxLabel {
+    font-size: 1.6rem;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+  }
+
+  .radioDescription {
+    font-size: 1.6rem;
+  }
+
+  .helpLink {
     font-size: 1.6rem;
   }
 

@@ -159,7 +159,7 @@
   }
 
   .subsectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .dataRow {
@@ -172,4 +172,38 @@
     max-width: 100%;
   }
 
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .changeLink {
+    font-size: 1.6rem;
+  }
+
+  .label {
+    font-size: 1.6rem;
+  }
+
+  .value {
+    font-size: 1.6rem;
+  }
+
+  .warningBox p {
+    font-size: 1.6rem;
+  }
 }

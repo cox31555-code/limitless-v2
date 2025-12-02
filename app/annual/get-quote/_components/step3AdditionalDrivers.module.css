@@ -479,11 +479,11 @@
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
   }
 
   .contentWrapper {
@@ -492,6 +492,10 @@
   }
 
   .subText {
+    font-size: 1.6rem;
+  }
+
+  .radioLabel {
     font-size: 1.6rem;
   }
 
@@ -512,8 +516,9 @@
 
   .addDriverBtn {
     width: 100%;
-    font-size: 1.5rem;
-    padding: 0.8rem 1.6rem;
+    font-size: 1.6rem;
+    padding: 1rem 1.6rem;
+    height: 5.6rem;
   }
 
   .cardHeader {
@@ -524,6 +529,14 @@
   }
 
   .cardTitle {
+    font-size: 1.6rem;
+  }
+
+  .driverName {
+    font-size: 1.6rem;
+  }
+
+  .driverDetail {
     font-size: 1.6rem;
   }
 
@@ -546,7 +559,7 @@
   }
 
   .changeButton {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .row {
@@ -555,21 +568,29 @@
   }
 
   .row .label {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .row .value {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-align: left;
   }
 
   .removeButton {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .maxDriversMessage {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding: 1rem 1.2rem;
+  }
+
+  .listItem {
+    font-size: 1.6rem;
+  }
+
+  .none {
+    font-size: 1.6rem;
   }
 }
 

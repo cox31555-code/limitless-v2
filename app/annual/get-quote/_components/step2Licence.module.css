@@ -370,11 +370,11 @@
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
   }
 
   .section {
@@ -396,14 +396,38 @@
   }
 
   .expandableLink {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-top: 1rem;
   }
 
   .expandableContent {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-top: 1rem;
     padding-left: 1.2rem;
+  }
+
+  .dateFieldLabel {
+    font-size: 1.6rem;
+  }
+
+  .licenseFieldLabel {
+    font-size: 1.6rem;
+  }
+
+  .subQuestion {
+    font-size: 1.6rem;
+  }
+
+  .checkboxLabel {
+    font-size: 1.6rem;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+  }
+
+  .infoBox {
+    font-size: 1.6rem;
   }
 
   .dateFieldGroup {
