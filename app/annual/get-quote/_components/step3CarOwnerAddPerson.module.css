@@ -323,7 +323,7 @@
   }
 
   .stepTitleText {
-    font-size: 1.35rem;
+    font-size: 1.8rem;
   }
 
   .personHeader {
@@ -343,7 +343,7 @@
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: 2.8rem;
   }
 
   .section {
@@ -352,7 +352,7 @@
   }
 
   .subText {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .buttonGroup {
@@ -363,12 +363,12 @@
   .backBtn,
   .nextBtn {
     width: 100%;
-    font-size: 1.3rem;
-    padding: 0.7rem 1.6rem;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.6rem;
   }
 
   .radioLabel {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .fieldsRow {
@@ -386,7 +386,7 @@
   }
 
   .removePersonBtn {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 
