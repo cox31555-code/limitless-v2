@@ -365,14 +365,25 @@ const Step3CoverDetails = ({
           )}
         </div>
 
-        {/* End Date Question - Only for temporary insurance (when !showCoverOptions) */}
+        {/* End Date Question - Only for temporary/impound insurance (when !showCoverOptions) */}
         {!showCoverOptions && (
           <div className={styles.section} style={{ opacity: formData.startDate && formData.startTime ? 1 : 0.5, pointerEvents: formData.startDate && formData.startTime ? 'auto' : 'none', transition: 'opacity 0.3s ease' }}>
             <div className={styles.questionHeader}>
-              <h3 className={styles.mainQuestion}>When would you like your cover to end?</h3>
-              <p className={styles.subText}>
-                Select the date and time when your temporary coverage should expire. Minimum 12 hours from start, maximum 30 days.
-              </p>
+              {insuranceType === "Impound" ? (
+                <>
+                  <h3 className={styles.mainQuestion}>Cover Duration</h3>
+                  <p className={styles.subText}>
+                    Your impound coverage is automatically set for 30 days from the start date.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h3 className={styles.mainQuestion}>When would you like your cover to end?</h3>
+                  <p className={styles.subText}>
+                    Select the date and time when your temporary coverage should expire. Minimum 12 hours from start, maximum 30 days.
+                  </p>
+                </>
+              )}
               {(!formData.startDate || !formData.startTime) && (
                 <p style={{ color: '#ef4444', fontSize: '1.3rem', marginTop: '1rem', fontWeight: '500' }}>
                   Please select a start date and time first.
@@ -380,60 +391,91 @@ const Step3CoverDetails = ({
               )}
             </div>
             {formData.startDate && formData.startTime && (
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.6rem' }}>
-                <FormDateInput
-                  type="date"
-                  dateLabel="End Date"
-                  value={formData.endDate || ""}
-                  onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                  error={errors.endDate}
-                  minDate={(() => {
-                    const startDate = new Date(formData.startDate);
-                    const minDate = new Date(startDate);
-                    minDate.setHours(minDate.getHours() + 12);
-                    return minDate;
-                  })()}
-                  maxDate={(() => {
-                    const startDate = new Date(formData.startDate);
-                    const maxDate = new Date(startDate);
-                    maxDate.setDate(maxDate.getDate() + 30);
-                    return maxDate;
-                  })()}
-                />
-                <FormDateInput
-                  type="time"
-                  timeLabel="End Time"
-                  value={formData.endTime || ""}
-                  onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
-                  error={errors.endTime}
-                  relatedDateValue={formData.endDate}
-                  disabled={!formData.endDate}
-                  minTime={(() => {
-                    if (!formData.endDate || !formData.startDate || !formData.startTime) return null;
+              <>
+                {insuranceType === "Impound" ? (
+                  <div style={{
+                    background: 'linear-gradient(135deg, #f0f6ff 0%, #e8f1ff 100%)',
+                    border: '1.5px solid rgba(3, 136, 255, 0.2)',
+                    borderRadius: '1.2rem',
+                    padding: '2rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1.2rem'
+                  }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '1.4rem', fontWeight: '600', color: '#0c0c0c' }}>Start</span>
+                      <span style={{ fontSize: '1.4rem', color: '#666' }}>
+                        {new Date(formData.startDate).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })} at {formData.startTime}
+                      </span>
+                    </div>
+                    <div style={{ height: '1px', background: 'rgba(3, 136, 255, 0.15)' }}></div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '1.4rem', fontWeight: '600', color: '#0c0c0c' }}>End</span>
+                      <span style={{ fontSize: '1.4rem', color: '#666' }}>
+                        {new Date(formData.endDate).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })} at {formData.endTime}
+                      </span>
+                    </div>
+                    <div style={{ marginTop: '1rem', padding: '1.2rem', background: 'rgba(3, 136, 255, 0.08)', borderRadius: '0.8rem', textAlign: 'center' }}>
+                      <span style={{ fontSize: '1.2rem', color: '#0388ff', fontWeight: '600' }}>30 days coverage</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.6rem' }}>
+                    <FormDateInput
+                      type="date"
+                      dateLabel="End Date"
+                      value={formData.endDate || ""}
+                      onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+                      error={errors.endDate}
+                      minDate={(() => {
+                        const startDate = new Date(formData.startDate);
+                        const minDate = new Date(startDate);
+                        minDate.setHours(minDate.getHours() + 12);
+                        return minDate;
+                      })()}
+                      maxDate={(() => {
+                        const startDate = new Date(formData.startDate);
+                        const maxDate = new Date(startDate);
+                        maxDate.setDate(maxDate.getDate() + 30);
+                        return maxDate;
+                      })()}
+                    />
+                    <FormDateInput
+                      type="time"
+                      timeLabel="End Time"
+                      value={formData.endTime || ""}
+                      onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
+                      error={errors.endTime}
+                      relatedDateValue={formData.endDate}
+                      disabled={!formData.endDate}
+                      minTime={(() => {
+                        if (!formData.endDate || !formData.startDate || !formData.startTime) return null;
 
-                    const startDate = new Date(formData.startDate);
-                    const endDate = new Date(formData.endDate);
+                        const startDate = new Date(formData.startDate);
+                        const endDate = new Date(formData.endDate);
 
-                    // If same day, minimum is startTime + 12 hours
-                    if (startDate.toDateString() === endDate.toDateString()) {
-                      const [startHour, startMinute] = formData.startTime.split(":");
-                      let minHour = parseInt(startHour, 10) + 12;
-                      let minMinute = parseInt(startMinute, 10);
+                        // If same day, minimum is startTime + 12 hours
+                        if (startDate.toDateString() === endDate.toDateString()) {
+                          const [startHour, startMinute] = formData.startTime.split(":");
+                          let minHour = parseInt(startHour, 10) + 12;
+                          let minMinute = parseInt(startMinute, 10);
 
-                      // Handle hour overflow
-                      if (minHour >= 24) {
-                        minHour = 23;
-                        minMinute = 59;
-                      }
+                          // Handle hour overflow
+                          if (minHour >= 24) {
+                            minHour = 23;
+                            minMinute = 59;
+                          }
 
-                      return `${String(minHour).padStart(2, "0")}:${String(minMinute).padStart(2, "0")}`;
-                    }
+                          return `${String(minHour).padStart(2, "0")}:${String(minMinute).padStart(2, "0")}`;
+                        }
 
-                    // If different day, minimum is same time as start
-                    return formData.startTime;
-                  })()}
-                />
-              </div>
+                        // If different day, minimum is same time as start
+                        return formData.startTime;
+                      })()}
+                    />
+                  </div>
+                )}
+              </>
             )}
           </div>
         )}
