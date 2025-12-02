@@ -888,7 +888,7 @@
   }
 
   .navigationWrapper {
-    padding: 2.4rem 1.6rem 0;
+    padding: 2.4rem 5% 0;
   }
 
   .quickQuoteTitle {
@@ -903,7 +903,7 @@
   }
 
   .contentWrapper {
-    padding: 2.8rem 1.6rem 1.4rem;
+    padding: 2.8rem 5% 1.4rem;
     box-sizing: border-box;
   }
 
@@ -1049,11 +1049,11 @@
   }
 
   .navigationWrapper {
-    padding: 2.2rem 1.2rem 0;
+    padding: 2.2rem 5% 0;
   }
 
   .contentWrapper {
-    padding: 2.4rem 1.2rem;
+    padding: 2.4rem 5%;
     box-sizing: border-box;
   }
 
