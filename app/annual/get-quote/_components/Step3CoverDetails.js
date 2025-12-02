@@ -26,6 +26,21 @@ const Step3CoverDetails = ({
   const [expandedStartDate, setExpandedStartDate] = useState(false);
   const [expandedPaymentEffect, setExpandedPaymentEffect] = useState(false);
 
+  // Auto-set end date to 30 days from start date for impound
+  useEffect(() => {
+    if (insuranceType === "Impound" && formData.startDate && formData.startTime) {
+      const startDate = new Date(formData.startDate);
+      const endDate = new Date(startDate);
+      endDate.setDate(endDate.getDate() + 30);
+
+      setFormData((prev) => ({
+        ...prev,
+        endDate: endDate.toISOString().split('T')[0],
+        endTime: formData.startTime
+      }));
+    }
+  }, [formData.startDate, formData.startTime, insuranceType]);
+
   // Generate date options for next 30 days
   const generateDateOptions = () => {
     const options = [];
