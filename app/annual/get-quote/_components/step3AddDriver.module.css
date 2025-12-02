@@ -591,6 +591,18 @@
     font-size: 1.6rem;
   }
 
+  .subText {
+    font-size: 1.6rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.6rem;
+  }
+
+  .infoText {
+    font-size: 1.6rem;
+  }
+
   .fieldGroup {
     max-width: 100%;
   }
@@ -629,8 +641,8 @@
 
   .backBtn,
   .nextBtn {
-    font-size: 1.4rem;
-    min-height: 4rem;
+    font-size: 1.6rem;
+    min-height: 4.2rem;
     padding: 0.8rem 1.6rem;
   }
 }

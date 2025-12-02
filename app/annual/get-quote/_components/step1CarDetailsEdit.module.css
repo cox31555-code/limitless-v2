@@ -270,7 +270,7 @@
   }
 
   .stepTitleText {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .contentWrapper {
@@ -283,11 +283,11 @@
   }
 
   .questionTitle {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
   .sectionDescription {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .radioGroup {
@@ -311,8 +311,8 @@
 
   .backBtn,
   .updateBtn {
-    font-size: 1.4rem;
-    min-height: 4rem;
+    font-size: 1.6rem;
+    min-height: 4.2rem;
     padding: 0.8rem 1.6rem;
   }
 }
