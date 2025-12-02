@@ -377,6 +377,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .container {
+    margin-top: 5.7rem;
+  }
+}
+
 @media (max-width: 450px) {
   .content {
     padding: 3rem 4% 1.8rem;
