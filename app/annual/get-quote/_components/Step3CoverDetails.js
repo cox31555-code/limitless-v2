@@ -8,7 +8,8 @@ const Step3CoverDetails = ({
   onBack = () => {},
   onNext = () => {},
   coverData = null,
-  showCoverOptions = true
+  showCoverOptions = true,
+  insuranceType = "Annual"
 }) => {
   const [formData, setFormData] = useState(coverData || {
     coverLevel: "",
