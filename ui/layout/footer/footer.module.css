@@ -381,6 +381,40 @@
   .container {
     margin-top: 5.7rem;
   }
+
+  .content {
+    padding: 3rem 3% 1.6rem;
+  }
+
+  .logo {
+    height: 48px;
+  }
+
+  .menu {
+    gap: 1.1rem;
+  }
+
+  .menuTitle {
+    font-size: 1.28rem;
+  }
+
+  .menuItem {
+    font-size: 1.22rem;
+  }
+
+  .legalSection {
+    padding: 1.4rem 3% 1.8rem;
+  }
+
+  .legalText {
+    font-size: 1.1rem;
+    line-height: 1.65;
+  }
+
+  .copyright {
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
+  }
 }
 
 @media (max-width: 450px) {
