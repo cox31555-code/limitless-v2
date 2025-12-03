@@ -438,18 +438,7 @@ const Header = () => {
             height={50}
           />
           <div className={styles.mobileHeaderActions}>
-            {!isDashboard && !isGetQuotePage && pathname !== "/login" && !isContactPage && (
-              <button
-                className={styles.mobileQuoteBtn}
-                onClick={() => {
-                  setIsOpen(false);
-                  setIsInsuranceModalOpen(true);
-                }}
-              >
-                Get a Quote
-              </button>
-            )}
-            {isContactPage && (
+            {mounted && isContactPage ? (
               <button
                 className={styles.mobileBackBtn}
                 onClick={() => navigate("/")}
@@ -461,6 +450,18 @@ const Header = () => {
                 </svg>
                 <span>Back to Limitless</span>
               </button>
+            ) : (
+              !isDashboard && !isGetQuotePage && pathname !== "/login" && (
+                <button
+                  className={styles.mobileQuoteBtn}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsInsuranceModalOpen(true);
+                  }}
+                >
+                  Get a Quote
+                </button>
+              )
             )}
             {!isGetQuotePage && pathname !== "/login" && (
               <button
