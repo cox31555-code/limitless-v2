@@ -154,6 +154,12 @@
   z-index: 2;
 }
 
+@media (max-width: 640px) {
+  .contentWrapper {
+    padding-top: 1px;
+  }
+}
+
 /* Section Styling */
 .policiesSection,
 .usefulLinksSection,
