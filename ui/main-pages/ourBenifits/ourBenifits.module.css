@@ -168,6 +168,11 @@
     font-size: 1.38rem;
   }
 
+  .benifit {
+    justify-content: center;
+    align-items: center;
+  }
+
   .imgContainer {
     width: 6.8rem;
     height: 6.8rem;
@@ -175,10 +180,13 @@
 
   .benifitTitle {
     font-size: 1.9rem;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .benifitDescription {
     font-size: 1.32rem;
+    text-align: center;
   }
 }
 
