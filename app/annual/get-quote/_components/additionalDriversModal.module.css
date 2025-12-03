@@ -392,6 +392,12 @@
   overflow: visible;
 }
 
+@media (max-width: 640px) {
+  .field {
+    gap: 0.1rem;
+  }
+}
+
 .fieldRow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
