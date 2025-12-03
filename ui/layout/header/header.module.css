@@ -1083,11 +1083,11 @@
   align-items: center;
   justify-content: center;
   height: auto;
-  padding: 0.8rem 0.8125rem;
+  padding: 12.8px 13px;
   border-radius: 6px;
   background: #0388ff;
   color: #ffffff;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 600;
   border: none;
   cursor: pointer;
