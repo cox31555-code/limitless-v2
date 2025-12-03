@@ -136,7 +136,7 @@ const Header = () => {
     "/complaints",
   ].includes(pathname);
 
-  const isContactPage = pathname === "/contact" || pathname === "/contact/email" || pathname === "/contact/contact-numbers";
+  const isContactPage = mounted && (pathname === "/contact" || pathname === "/contact/email" || pathname === "/contact/contact-numbers");
 
   // Routes that should always hide the header (checked after mount to avoid hydration issues)
   const shouldHideHeaderAlways = mounted && (
