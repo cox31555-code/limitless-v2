@@ -2,17 +2,20 @@
   display: flex;
   background: rgba(0, 8, 34, 1);
   border-bottom: 2px solid #0052a3;
-  padding: 1.8rem 10% 0;
+  padding: 1.2rem 4%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
   overflow: visible;
   min-height: auto;
   margin-bottom: 0;
   box-sizing: border-box;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .headerContainer.menuOpen {
