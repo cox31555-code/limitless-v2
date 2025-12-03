@@ -251,6 +251,13 @@
   height: 56px;
 }
 
+@media (max-width: 640px) {
+  .logoMobile {
+    width: 47px;
+    height: 47px;
+  }
+}
+
 /* Tablet */
 @media (max-width: 1200px) {
   .container {
@@ -376,6 +383,12 @@
     flex-shrink: 0;
   }
 
+  @media (max-width: 640px) {
+    .top {
+      height: 71px;
+    }
+  }
+
   .mobileHeaderActions {
     display: flex;
     align-items: center;
@@ -436,6 +449,13 @@
     transition: all 0.2s ease;
     flex-shrink: 0;
     padding: 0;
+  }
+
+  @media (max-width: 640px) {
+    .mobileHelpBtn {
+      width: 43px;
+      height: 43px;
+    }
   }
 
   .mobileHelpBtn:active {
