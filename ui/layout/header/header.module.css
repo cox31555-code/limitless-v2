@@ -251,10 +251,17 @@
   height: 56px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .logoMobile {
     width: 48px;
     height: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .logoMobile {
+    width: 50px;
+    height: 50px;
   }
 }
 
