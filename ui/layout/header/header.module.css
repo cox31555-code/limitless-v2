@@ -502,19 +502,13 @@
 
   .mobileBackdrop {
     position: fixed;
-    top: 80px;
+    top: 72px;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(0, 8, 34, 0.6);
     z-index: 99;
     animation: fadeIn 0.15s ease-out;
-  }
-
-  @media (max-width: 640px) {
-    .mobileBackdrop {
-      top: 72px;
-    }
   }
 
   @keyframes fadeIn {
