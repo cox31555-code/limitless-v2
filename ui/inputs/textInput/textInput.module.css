@@ -323,15 +323,15 @@
 
 @media screen and (max-width: 640px) {
   .inputContainer {
-    height: 4.5rem;
+    height: 4.8rem;
   }
 
   .customInput {
-    min-height: 4.5rem;
+    min-height: 4.8rem;
   }
 
   .formInput {
-    min-height: 4.5rem;
+    min-height: 4.8rem;
   }
 }
 
