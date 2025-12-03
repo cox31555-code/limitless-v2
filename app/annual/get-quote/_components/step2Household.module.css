@@ -368,6 +368,10 @@
     gap: 1.6rem;
   }
 
+  .stepTitle {
+    padding-bottom: 1.625rem;
+  }
+
   .mainQuestion {
     font-size: 1.6rem;
   }
