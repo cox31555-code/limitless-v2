@@ -16,4 +16,8 @@
   .dashboard-main {
     margin-top: 60px !important;
   }
+
+  .dashboardContainer {
+    padding-top: 1px !important;
+  }
 }
