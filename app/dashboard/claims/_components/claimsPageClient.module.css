@@ -10,6 +10,12 @@
   z-index: 2;
 }
 
+@media (max-width: 640px) {
+  .container {
+    margin: 0 0 1.75rem 0;
+  }
+}
+
 /* Breadcrumb Navigation */
 .breadcrumb {
   display: flex;
