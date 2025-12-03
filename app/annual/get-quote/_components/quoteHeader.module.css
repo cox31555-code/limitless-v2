@@ -174,7 +174,7 @@
 
 @media (max-width: 640px) {
   .heroSection {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.1rem;
     padding: 3rem 0 3rem 2.2rem;
     border-bottom: 0;
   }
@@ -183,7 +183,7 @@
 @media (max-width: 600px) {
   .heroSection {
     padding: 3rem 0 3rem 2.2rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.1rem;
     border-bottom: 0;
   }
 

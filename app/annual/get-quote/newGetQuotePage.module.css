@@ -162,3 +162,9 @@
     padding: 3.2rem 0;
   }
 }
+
+@media (max-width: 640px) {
+  .sidebarArea {
+    background-color: rgba(241, 249, 255, 1);
+  }
+}
