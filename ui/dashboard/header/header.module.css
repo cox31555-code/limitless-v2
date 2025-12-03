@@ -215,7 +215,6 @@
   background: rgba(0, 8, 34, 0.6);
   z-index: 1999;
   animation: fadeIn 0.15s ease-out;
-  display: block !important;
   pointer-events: auto;
 }
 
