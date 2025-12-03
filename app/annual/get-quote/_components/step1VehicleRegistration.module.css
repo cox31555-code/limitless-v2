@@ -1335,21 +1335,6 @@
   }
 }
 
-@media (max-width: 640px) {
-  .regCustomInput {
-    min-height: 5.6rem;
-    padding: 1rem 1.4rem;
-    font-size: 1.6rem;
-  }
-
-  .findButton {
-    width: 100%;
-    min-height: 4.8rem;
-    padding: 1rem 2rem;
-    font-size: 1.6rem;
-  }
-}
-
 @media (max-width: 600px) {
   .regInputGroupContainer {
     flex-direction: column;
@@ -1357,7 +1342,7 @@
   }
 
   .regCustomInput {
-    min-height: 4.4rem;
+    min-height: 5.6rem;
     padding: 0.9rem 1.2rem;
     font-size: 1.6rem !important;
   }
