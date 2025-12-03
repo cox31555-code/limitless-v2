@@ -712,6 +712,10 @@
     padding: 1.6rem 2rem;
   }
 
+  .policiesGrid {
+    grid-template-columns: 1fr;
+  }
+
   .usefulLinksGrid {
     gap: 1.6rem;
   }
