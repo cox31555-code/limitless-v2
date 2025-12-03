@@ -855,6 +855,24 @@
   }
 }
 
+@media (max-width: 640px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 2.6rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.6rem;
+  }
+
+  .manualEntryTitle {
+    font-weight: 600;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 0;
