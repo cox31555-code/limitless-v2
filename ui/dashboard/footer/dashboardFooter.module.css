@@ -233,6 +233,10 @@
 }
 
 @media screen and (max-width: 640px) {
+  .topSection {
+    align-items: flex-start;
+  }
+
   .trustSection {
     justify-content: flex-start;
     align-items: center;
