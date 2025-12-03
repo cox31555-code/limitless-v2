@@ -232,6 +232,13 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .trustSection {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .footer {
     margin-top: 4rem;
