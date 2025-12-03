@@ -726,6 +726,10 @@
 }
 
 @media (max-width: 640px) {
+  .container {
+    gap: 1.2rem;
+  }
+
   .stepTitle {
     padding-bottom: 2.6rem;
   }
