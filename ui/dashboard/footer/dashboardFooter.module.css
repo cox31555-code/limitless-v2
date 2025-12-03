@@ -31,6 +31,16 @@
   flex-shrink: 0;
 }
 
+@media screen and (max-width: 640px) {
+  .brandingSvg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 139px;
+  }
+}
+
 .trustSection {
   display: flex;
   gap: 2rem;
