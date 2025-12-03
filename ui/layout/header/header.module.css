@@ -397,6 +397,12 @@
     flex-shrink: 0;
   }
 
+  @media (max-width: 640px) {
+    .mobileHeaderActions {
+      gap: 0.8rem;
+    }
+  }
+
   .menuBtn {
     display: flex;
     width: 48px;
