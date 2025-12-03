@@ -270,6 +270,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    margin: 0 0 1.75rem 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .breadcrumb {
     gap: 0.6rem;
