@@ -93,6 +93,12 @@ body {
   padding: 0 4.4%;
 }
 
+@media (max-width: 640px) {
+  .dashboardContainer {
+    padding-top: 1px;
+  }
+}
+
 .dashboard-content {
   margin: 0 auto;
   margin-top: 145px;
