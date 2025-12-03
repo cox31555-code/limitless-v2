@@ -6,12 +6,14 @@ import LoadingLink from "@/ui/loadingSpinner/LoadingLink";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
 import { useLoading } from "@/contexts/LoadingContext";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 
 const Header = ({ page }) => {
   const { user } = useAuth();
   const pathname = usePathname();
   const router = useRouter();
   const { showLoading } = useLoading();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
