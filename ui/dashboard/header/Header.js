@@ -137,6 +137,14 @@ const Header = ({ page }) => {
         <div className={styles.mobileMenuWrapper}>
           <button
             type="button"
+            className={styles.mobileQuoteBtn}
+            onClick={() => setIsInsuranceModalOpen(true)}
+            title="Get a Quote"
+          >
+            Get a Quote
+          </button>
+          <button
+            type="button"
             className={styles.menuBtn}
             onClick={() => {
               setIsMenuOpen(!isMenuOpen);
