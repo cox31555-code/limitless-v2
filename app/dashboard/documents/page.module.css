@@ -426,6 +426,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .page {
+    margin: 0 0 2.3rem 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .breadcrumb {
     gap: 0.6rem;
