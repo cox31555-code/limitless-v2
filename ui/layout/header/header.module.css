@@ -1102,7 +1102,7 @@
 
 @media (max-width: 640px) {
   .mobileQuoteBtn {
-    padding: 0.75rem 1.4rem;
+    padding: 0.78125rem 0;
     font-size: 1.2rem;
     border-radius: 6px;
   }
