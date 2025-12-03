@@ -329,38 +329,11 @@
 
 @media screen and (max-width: 900px) {
   .headerContainer {
-    display: none;
+    padding: 1.2rem 4%;
   }
 
   .desktopNav {
     display: none;
-  }
-
-  .mobileContainer {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    background: #000822;
-    align-items: stretch;
-    justify-content: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 101;
-  }
-
-  .mobileTop {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 4%;
-    gap: 1rem;
-    background: #000822;
-    height: 72px;
-    flex-shrink: 0;
   }
 
   .mobileMenuWrapper {
@@ -371,8 +344,25 @@
   }
 
   .mobileQuoteBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
     padding: 0.75rem 1rem;
+    border-radius: 6px;
+    background: #0388ff;
+    color: #ffffff;
     font-size: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .mobileQuoteBtn:active {
+    background: #0277e3;
   }
 
   .menuBtn {
