@@ -386,13 +386,12 @@
     padding: 1.2rem 4%;
     gap: 1rem;
     background: #000822;
-    height: 80px;
+    height: 72px;
     flex-shrink: 0;
   }
 
   @media (max-width: 640px) {
     .top {
-      height: 72px;
       padding: 1rem 4%;
     }
   }
