@@ -201,9 +201,31 @@
   stroke: currentColor;
 }
 
+.menuBackdrop {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 8, 34, 0.6);
+  z-index: 1999;
+  animation: fadeIn 0.15s ease-out;
+  display: block !important;
+  pointer-events: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .menuDropdown {
   position: fixed;
-  top: 70px;
+  top: 72px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -214,7 +236,7 @@
   overflow-x: hidden;
   display: flex !important;
   flex-direction: column;
-  max-height: calc(100vh - 70px);
+  max-height: calc(100vh - 72px);
   pointer-events: auto;
   padding: 1.2rem 0;
 }
