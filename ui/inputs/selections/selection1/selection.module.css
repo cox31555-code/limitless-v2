@@ -29,6 +29,12 @@
   width: 100%;
 }
 
+@media (max-width: 640px) {
+  .inputGroup {
+    gap: 0.1rem;
+  }
+}
+
 .label {
   color: #000822;
   font-size: 1.3rem;

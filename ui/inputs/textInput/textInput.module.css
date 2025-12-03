@@ -14,6 +14,12 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 640px) {
+  .inputGroup {
+    gap: 0.1rem;
+  }
+}
+
 .label {
   color: #000822;
   font-size: 1.5rem;
@@ -421,6 +427,12 @@
   width: 100%;
 }
 
+@media (max-width: 640px) {
+  .customInputGroup {
+    gap: 0.1rem;
+  }
+}
+
 .customInputLabel {
   font-size: 1.3rem;
   font-weight: 600;
@@ -609,6 +621,12 @@
   flex-direction: column;
   gap: 0.6rem;
   width: 100%;
+}
+
+@media (max-width: 640px) {
+  .formInputGroup {
+    gap: 0.1rem;
+  }
 }
 
 .formInputLabel {

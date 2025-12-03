@@ -16,6 +16,12 @@
   position: relative;
 }
 
+@media (max-width: 640px) {
+  .container {
+    gap: 0.1rem;
+  }
+}
+
 .inputWrapper {
   position: relative;
   display: flex;
