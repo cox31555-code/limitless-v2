@@ -617,7 +617,7 @@
 
 @media (max-width: 400px) {
   .progressCard {
-    padding: 1.4rem;
+    padding: 0 1.0625rem;
     gap: 1.4rem;
   }
 
