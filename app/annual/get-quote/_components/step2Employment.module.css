@@ -54,6 +54,12 @@
   max-width: 450px;
 }
 
+@media (max-width: 640px) {
+  .dropdownWrapper {
+    gap: 0.1rem;
+  }
+}
+
 .subText {
   font-size: 1.4rem;
   color: #6b7c8f;

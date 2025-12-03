@@ -103,6 +103,12 @@
   max-width: 100px;
 }
 
+@media (max-width: 640px) {
+  .dateInputGroup {
+    gap: 0.1rem;
+  }
+}
+
 .inputLabel {
   font-size: 1.3rem;
   font-weight: 500;
