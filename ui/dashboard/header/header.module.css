@@ -45,6 +45,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .logo:hover {
@@ -52,6 +53,7 @@
 }
 
 .headerLeft {
+  flex: 1;
   flex-shrink: 0;
 }
 
