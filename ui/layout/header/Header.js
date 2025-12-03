@@ -500,12 +500,14 @@ const Header = () => {
             )}
           </div>
         </div>
-        {isDashboard ? (
-          <SideNavbar
-            isOpen={isDashboardSidebarOpen}
-            onToggle={() => setIsDashboardSidebarOpen(!isDashboardSidebarOpen)}
-            isMobile={true}
-          />
+        {isDashboard || isPaymentSummaryPage ? (
+          isDashboard ? (
+            <SideNavbar
+              isOpen={isDashboardSidebarOpen}
+              onToggle={() => setIsDashboardSidebarOpen(!isDashboardSidebarOpen)}
+              isMobile={true}
+            />
+          ) : null
         ) : (
           <>
             {isOpen && (
