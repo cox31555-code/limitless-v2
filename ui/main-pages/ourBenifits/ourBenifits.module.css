@@ -169,7 +169,7 @@
   }
 
   .benifit {
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -180,13 +180,10 @@
 
   .benifitTitle {
     font-size: 1.9rem;
-    text-align: center;
-    margin: 0 auto;
   }
 
   .benifitDescription {
     font-size: 1.32rem;
-    text-align: center;
   }
 }
 
