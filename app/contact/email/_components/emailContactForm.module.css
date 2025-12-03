@@ -361,6 +361,10 @@
     gap: 2rem;
   }
 
+  .label {
+    font-size: 1.6rem;
+  }
+
   .input,
   .select,
   .textarea {
