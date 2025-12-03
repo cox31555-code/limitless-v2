@@ -505,6 +505,12 @@
     animation: fadeIn 0.15s ease-out;
   }
 
+  @media (max-width: 640px) {
+    .mobileBackdrop {
+      top: 68px;
+    }
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
