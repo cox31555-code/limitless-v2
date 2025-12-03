@@ -11,9 +11,20 @@
   }
 }
 
-/* Main element responsive margin adjustment */
+/* Main element margin adjustment - matches header height of 72px */
+.dashboard-main {
+  margin-top: 72px;
+}
+
+/* Ensure consistent margin on all breakpoints */
+@media (max-width: 900px) {
+  .dashboard-main {
+    margin-top: 72px;
+  }
+}
+
 @media (max-width: 640px) {
   .dashboard-main {
-    margin-top: 72px !important;
+    margin-top: 72px;
   }
 }
