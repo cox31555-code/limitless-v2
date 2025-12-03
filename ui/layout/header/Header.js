@@ -189,7 +189,7 @@ const Header = () => {
                 height={50}
               />
             </div>
-            {!isGetQuotePage && (
+            {mounted && !isGetQuotePage && (
               <>
                 <nav className={styles.stickyMenu} suppressHydrationWarning>
                   <div
