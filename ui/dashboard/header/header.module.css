@@ -276,9 +276,49 @@
   }
 }
 
+.mobileMenuWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.mobileQuoteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  background: #0388ff;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mobileQuoteBtn:active {
+  background: #0277e3;
+}
+
 @media screen and (max-width: 900px) {
   .desktopNav {
     display: none;
+  }
+
+  .mobileMenuWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .mobileQuoteBtn {
+    padding: 0.75rem 1rem;
+    font-size: 12px;
   }
 
   .menuBtn {
@@ -303,6 +343,28 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mobileQuoteBtn {
+    padding: 0.7rem 1rem;
+    font-size: 12px;
+  }
+
+  .menuBtn {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .menuBtn img {
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .logo {
     width: 40px;
@@ -311,6 +373,11 @@
 
   .pageTitle {
     font-size: 1.1rem;
+  }
+
+  .mobileQuoteBtn {
+    padding: 0.65rem 0.9rem;
+    font-size: 11px;
   }
 
   .menuBtn {
