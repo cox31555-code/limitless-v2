@@ -178,8 +178,8 @@
 @media screen and (max-width: 640px) {
   .selectionItem,
   .selectedItem {
-    height: 4.5rem;
-    min-height: 4.5rem;
+    height: 4.8rem;
+    min-height: 4.8rem;
   }
 }
 
@@ -190,8 +190,8 @@
   .selectionItem,
   .selectedItem {
     font-size: 1.6rem;
-    height: 4.5rem;
-    min-height: 4.5rem;
+    height: 4.8rem;
+    min-height: 4.8rem;
     padding: 1.2rem 0.8rem;
   }
 
