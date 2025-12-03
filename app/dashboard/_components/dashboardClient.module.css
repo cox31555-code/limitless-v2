@@ -824,8 +824,8 @@
   }
 
   .contentWrapper {
-    padding: 2rem 4%;
     gap: 2.5rem;
+    padding: 2rem 4%;
     padding-top: 1px;
   }
 
