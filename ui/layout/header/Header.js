@@ -57,6 +57,7 @@ const Header = () => {
 
   const isDashboard = pathname.startsWith("/dashboard");
   const isGetQuotePage = pathname.includes("/get-quote");
+  const isPaymentSummaryPage = pathname === "/payment-summary";
   const isFAQPage = pathname === "/FAQ";
 
   const navigate = (href) => {
