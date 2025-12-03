@@ -34,7 +34,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.className} ${outfit.className}`}>
+      <body className={poppins.className}>
         <AuthProvider>
           <InsuranceModalProvider>
             <LoadingProvider>
