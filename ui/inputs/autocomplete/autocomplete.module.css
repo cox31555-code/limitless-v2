@@ -282,13 +282,19 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .inputWrapper {
+    height: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .container {
     gap: 0.8rem;
   }
 
   .inputWrapper {
-    height: 5.6rem;
+    height: 4.5rem;
   }
 
   .input {

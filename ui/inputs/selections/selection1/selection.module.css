@@ -169,6 +169,14 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .selectionItem,
+  .selectedItem {
+    height: 4.5rem;
+    min-height: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .selectionContainer {
     grid-template-columns: repeat(2, 1fr);
@@ -176,7 +184,8 @@
   .selectionItem,
   .selectedItem {
     font-size: 1.6rem;
-    height: 5.2rem;
+    height: 4.5rem;
+    min-height: 4.5rem;
     padding: 1.2rem 0.8rem;
   }
 

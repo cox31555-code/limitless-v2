@@ -315,6 +315,20 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .inputContainer {
+    height: 4.5rem;
+  }
+
+  .customInput {
+    min-height: 4.5rem;
+  }
+
+  .formInput {
+    min-height: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .inputGroup {
     gap: 0.8rem;
@@ -328,7 +342,7 @@
   }
 
   .inputContainer {
-    height: 5.8rem;
+    height: 4.5rem;
     padding: 1rem 1.4rem 1rem 0.2rem;
     border-radius: 10px;
     box-sizing: border-box;

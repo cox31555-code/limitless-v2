@@ -154,6 +154,13 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .selectionItem,
+  .selectedItem {
+    min-height: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     gap: 1.6rem;
@@ -188,7 +195,7 @@
   .selectedItem {
     padding: 1.4rem 1.6rem;
     gap: 1.2rem;
-    min-height: 6rem;
+    min-height: 4.5rem;
     font-size: 1.6rem;
     border: none;
   }

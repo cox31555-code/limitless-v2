@@ -129,6 +129,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .option {
+    min-height: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     gap: 1.2rem;
@@ -138,7 +144,7 @@
     padding: 1.4rem 1.6rem;
     flex-direction: row;
     gap: 1.2rem;
-    min-height: 6rem;
+    min-height: 4.5rem;
     border: none;
     align-items: flex-start;
   }

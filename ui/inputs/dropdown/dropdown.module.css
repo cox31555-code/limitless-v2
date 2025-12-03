@@ -418,14 +418,21 @@
   }
 }
 
+@media (max-width: 640px) {
+  .dropdown {
+    min-height: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
 @media (max-width: 400px) {
   .label {
     font-size: 1.6rem;
   }
 
   .dropdown {
-    min-height: 5.8rem;
-    height: 5.8rem;
+    min-height: 4.5rem;
+    height: 4.5rem;
     padding: 1rem 1.4rem;
   }
 
