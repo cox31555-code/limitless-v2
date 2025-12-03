@@ -259,9 +259,15 @@
   }
 }
 
+@media (max-width: 640px) {
+  .dropdown {
+    min-height: 4.5rem;
+  }
+}
+
 @media (max-width: 400px) {
   .dropdown {
-    min-height: 4.4rem;
+    min-height: 4.5rem;
   }
 
   .input {
