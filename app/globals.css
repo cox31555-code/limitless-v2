@@ -36,11 +36,6 @@ body {
     padding-top: 80px;
   }
 }
-
-/* Remove padding-top for dashboard pages on mobile */
-body.dashboard-page {
-  padding-top: 0 !important;
-}
 @keyframes driftHorizontal {
   0% {
     background-position: 0 0;
