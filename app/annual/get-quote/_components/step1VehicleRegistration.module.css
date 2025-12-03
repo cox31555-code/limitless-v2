@@ -737,11 +737,6 @@
   .manualEntryTitle {
     font-weight: 600;
   }
-
-  .backToRegBtn {
-    font-size: 1.4rem;
-    padding-bottom: 0.7rem;
-  }
 }
 
 @media (max-width: 768px) {
