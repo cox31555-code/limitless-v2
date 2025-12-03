@@ -880,6 +880,14 @@
     margin-bottom: 1.6rem;
     margin-top: 1.09rem;
   }
+
+  .dividerText {
+    font-size: 1.5rem;
+  }
+
+  .manualEntryBtn {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 600px) {
