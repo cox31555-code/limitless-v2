@@ -506,7 +506,7 @@ const Header = () => {
             onToggle={() => setIsDashboardSidebarOpen(!isDashboardSidebarOpen)}
             isMobile={true}
           />
-        ) : !isPaymentSummaryPage && (
+        ) : !isPaymentSummaryPage ? (
           <>
             {isOpen && (
               <div
@@ -664,7 +664,7 @@ const Header = () => {
             </nav>
             </div>
           </>
-        )}
+        ) : null}
       </header>
 
       {/* HELP MODAL POPUP */}
