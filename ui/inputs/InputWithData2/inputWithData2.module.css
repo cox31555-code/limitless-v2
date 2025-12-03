@@ -6,6 +6,12 @@
   align-self: stretch;
 }
 
+@media (max-width: 640px) {
+  .item {
+    gap: 0.1rem;
+  }
+}
+
 .wrapper {
   display: flex;
   align-items: center;
