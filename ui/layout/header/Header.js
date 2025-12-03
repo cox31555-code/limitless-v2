@@ -466,7 +466,7 @@ const Header = () => {
                 </button>
               )
             )}
-            {!isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && isDashboard && (
+            {!isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && (
               <button
                 onClick={() => {
                   if (isDashboard) {
