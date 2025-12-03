@@ -8,7 +8,7 @@
 }
 
 .stepTitle {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 2px solid #e8ecf1;
   margin-bottom: 2rem;
 }
@@ -45,7 +45,7 @@
   }
 
   .stepTitle {
-    padding-bottom: 1.625rem;
+    padding-bottom: 26px;
   }
 
   .stepTitleText {
@@ -457,7 +457,7 @@
   font-weight: 400;
   padding-left: 1.6rem;
   border-left: 3px solid #0052a3;
-  padding-bottom: 1.625rem;
+  padding-bottom: 26px;
   animation: slideDown 0.2s ease;
 }
 
@@ -682,7 +682,7 @@
 
 @media (max-width: 400px) {
   .stepTitle {
-    padding-bottom: 1.625rem;
+    padding-bottom: 26px;
     margin-bottom: 1.2rem;
   }
 
@@ -696,7 +696,7 @@
 
   .section {
     gap: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
 
   .questionTitle {

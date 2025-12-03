@@ -8,7 +8,7 @@
 }
 
 .stepTitle {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 2px solid #e8ecf1;
   margin-bottom: 2rem;
 }
@@ -512,7 +512,7 @@
   }
 
   .stepTitle {
-    padding-bottom: 1.625rem;
+    padding-bottom: 26px;
   }
 
   .mainQuestion {
@@ -578,7 +578,7 @@
   }
 
   .section {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     gap: 2rem;
   }
 
