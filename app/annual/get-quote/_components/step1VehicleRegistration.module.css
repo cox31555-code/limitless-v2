@@ -726,6 +726,10 @@
 }
 
 @media (max-width: 640px) {
+  .stepTitle {
+    padding-bottom: 2.6rem;
+  }
+
   .stepTitleText {
     font-size: 1.6rem;
   }
