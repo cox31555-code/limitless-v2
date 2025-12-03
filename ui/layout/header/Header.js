@@ -295,7 +295,7 @@ const Header = () => {
             height={66}
           />
         </div>
-        {!isDashboard && !isGetQuotePage && (
+        {!isDashboard && !isGetQuotePage && !isPaymentSummaryPage && (
           <menu className={styles.menu} suppressHydrationWarning={true}>
             <li
               className={styles.menuItem}
