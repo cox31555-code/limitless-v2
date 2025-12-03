@@ -434,6 +434,20 @@
   border-radius: 25px;
 }
 
+@media (max-width: 640px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 1.625rem;
+  }
+
+  .mainQuestion {
+    font-size: 1.6rem;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0;
