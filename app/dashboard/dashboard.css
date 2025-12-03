@@ -10,3 +10,10 @@
     padding-top: 0 !important;
   }
 }
+
+/* Main element responsive margin adjustment */
+@media (max-width: 640px) {
+  .dashboard-main {
+    margin-top: 60px !important;
+  }
+}
