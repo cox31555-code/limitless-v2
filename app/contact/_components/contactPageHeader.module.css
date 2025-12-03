@@ -105,6 +105,12 @@
   opacity: 0.9;
 }
 
+@media (max-width: 900px) {
+  .header {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .header {
     padding: 1rem 5%;
