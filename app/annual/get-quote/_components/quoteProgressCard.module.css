@@ -461,6 +461,10 @@
     box-sizing: border-box;
     overflow-x: hidden;
   }
+
+  .progressHeader {
+    padding: 1.0625rem 1.125rem 0.3125rem;
+  }
 }
 
 @media (max-width: 600px) {
