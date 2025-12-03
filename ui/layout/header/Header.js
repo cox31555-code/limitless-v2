@@ -264,7 +264,7 @@ const Header = () => {
                 </div>
               </>
             )}
-            {(isGetQuotePage || pathname === "/login") && (
+            {mounted && (isGetQuotePage || pathname === "/login") && (
               <button
                 className={styles.stickyHelpBtn}
                 title="Get help"
