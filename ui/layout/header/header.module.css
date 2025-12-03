@@ -263,6 +263,15 @@
     width: 50px;
     height: 50px;
   }
+
+  .mobileBackBtn {
+    padding: 12px 12px;
+    font-size: 11px;
+  }
+
+  .mobileBackBtn span {
+    display: none;
+  }
 }
 
 /* Tablet */
