@@ -484,7 +484,7 @@ const Header = () => {
                 )}
               </button>
             )}
-            {(isGetQuotePage || pathname === "/login") && (
+            {(isGetQuotePage || isPaymentSummaryPage || pathname === "/login") && (
               <button
                 className={styles.mobileHelpBtn}
                 title="Get help"
