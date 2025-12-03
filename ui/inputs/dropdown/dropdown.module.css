@@ -429,6 +429,10 @@
     min-height: 4.5rem;
     height: 4.5rem;
   }
+
+  .selected {
+    font-family: "Outfit, sans-serif";
+  }
 }
 
 @media (max-width: 400px) {
