@@ -281,7 +281,7 @@ const Header = () => {
           </div>
         </div>
       )}
-      <header suppressHydrationWarning className={`${styles.container} ${isFAQPage && mounted ? styles.hidden : ''}`}>
+      <header suppressHydrationWarning className={`${styles.container} ${mounted && isFAQPage ? styles.hidden : ''}`}>
         <div className={styles.logoContainer}>
           <Image
             onClick={() => {
