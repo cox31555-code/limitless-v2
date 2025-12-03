@@ -1087,6 +1087,36 @@
   background: #0277e3;
 }
 
+/* Mobile Back Button on Contact Page */
+.mobileBackBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  height: auto;
+  padding: 12.8px 13px;
+  border-radius: 6px;
+  background: #0388ff;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mobileBackBtn:active {
+  background: #0277e3;
+}
+
+.mobileBackBtn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
 
 /* Mobile Dropdown Items */
 .mobileDropdown {
