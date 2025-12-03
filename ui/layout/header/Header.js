@@ -152,7 +152,8 @@ const Header = () => {
   const shouldHideHeaderMobileDependent = mounted && (
     (pathname === "/login" && !isMobile) ||
     (pathname === "/retrieve-quote" && !isMobile) ||
-    (isPolicyPage && !isMobile)
+    (isPolicyPage && !isMobile) ||
+    ((pathname === "/contact" || pathname === "/contact/email" || pathname === "/contact/contact-numbers") && !isMobile)
   );
 
   // Hide for specific routes (after mount to avoid hydration issues)
