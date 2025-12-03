@@ -436,6 +436,19 @@
     filter: brightness(0) invert(1) drop-shadow(0 0 2px rgba(3, 136, 255, 0.3));
   }
 
+  @media (max-width: 640px) {
+    .menuBtn {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+    }
+
+    .menuBtn img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
   .mobileHelpBtn {
     display: flex;
     align-items: center;
