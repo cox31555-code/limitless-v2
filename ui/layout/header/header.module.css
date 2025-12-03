@@ -1129,6 +1129,13 @@
   color: #0388ff;
 }
 
+@media (max-width: 640px) {
+  .mobileDropdownItem {
+    padding: 1.2rem 4% 1.2rem 10%;
+    font-size: 1.35rem;
+    min-height: 48px;
+  }
+}
 
 /* Mobile Menu Divider */
 .mobileMenuDivider {
