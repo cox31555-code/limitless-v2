@@ -442,12 +442,13 @@
 
 @media screen and (max-width: 600px) {
   .headerContainer {
-    padding: 0.8rem 4%;
+    padding: 1rem 4%;
+    height: 72px;
   }
 
   .logo {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 
   .pageTitle {
@@ -455,17 +456,19 @@
   }
 
   .mobileQuoteBtn {
-    padding: 0.65rem 0.9rem;
-    font-size: 11px;
+    padding: 12.8px 13px;
+    font-size: 12px;
   }
 
   .menuBtn {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
   }
 
   .menuBtn img {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
   }
 }
