@@ -81,7 +81,7 @@ const Header = ({ page }) => {
   };
 
   return (
-    <div className={isMenuOpen ? `${styles.headerContainer} ${styles.menuOpen}` : styles.headerContainer}>
+    <div className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <div className={styles.logoWrapper}>
           <Image
@@ -90,6 +90,10 @@ const Header = ({ page }) => {
             width={50}
             height={50}
             className={styles.logo}
+            onClick={() => {
+              showLoading();
+              router.push("/dashboard");
+            }}
           />
         </div>
 
