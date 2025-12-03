@@ -454,8 +454,13 @@
 
   @media (max-width: 640px) {
     .mobileHelpBtn {
-      width: 43px;
-      height: 43px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .mobileHelpBtn svg {
+      width: 20px;
+      height: 20px;
     }
   }
 
