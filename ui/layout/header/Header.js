@@ -397,7 +397,7 @@ const Header = () => {
             </li>
           </menu>
         )}
-        {!isDashboard && !isGetQuotePage && (
+        {!isDashboard && !isGetQuotePage && !isPaymentSummaryPage && (
           <div
             style={{ gap: isDashboard ? "1.2rem" : "" }}
             className={styles.buttons}
@@ -416,7 +416,7 @@ const Header = () => {
             </button>
           </div>
         )}
-        {isGetQuotePage && (
+        {(isGetQuotePage || isPaymentSummaryPage) && (
           <button
             className={styles.loginBtn}
             onClick={handleHelpClick}
