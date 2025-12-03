@@ -213,10 +213,20 @@
   }
 }
 
+@media (max-width: 640px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .mainQuestion {
+    font-size: 1.6rem;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 0;
-    gap: 2.8rem;
+    gap: 1.6rem;
     margin: 0;
   }
 
