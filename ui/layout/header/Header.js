@@ -176,7 +176,7 @@ const Header = () => {
         }}
       />
       <div className="centeredContent" suppressHydrationWarning={true}>
-      {isScrolled && !isDashboard && (
+      {isScrolled && !isDashboard && !isPaymentSummaryPage && (
         <div className={styles.stickyHeader}>
           <div className={styles.stickyContent}>
             <div className={styles.stickyLogoContainer}>
