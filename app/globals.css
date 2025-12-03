@@ -7,7 +7,6 @@ html {
   scrollbar-gutter: stable;
   background: #000822;
   overflow-y: scroll;
-  --font-outfit: "Outfit", sans-serif;
 }
 
 body {
