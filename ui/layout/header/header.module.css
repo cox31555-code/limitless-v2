@@ -1100,13 +1100,6 @@
   background: #0277e3;
 }
 
-@media (max-width: 640px) {
-  .mobileQuoteBtn {
-    padding: 0.8rem 0.8125rem;
-    font-size: 1.2rem;
-    border-radius: 6px;
-  }
-}
 
 /* Mobile Dropdown Items */
 .mobileDropdown {
