@@ -321,6 +321,13 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .inputContainer {
+    height: 4.5rem;
+    min-height: 4.5rem;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .container {
     gap: 0.8rem;
@@ -334,8 +341,8 @@
   }
 
   .inputContainer {
-    height: 5.8rem;
-    min-height: 5.8rem;
+    height: 4.5rem;
+    min-height: 4.5rem;
     padding: 1.2rem 1.4rem 1.2rem 0.5rem;
     border-radius: 12px;
     box-sizing: border-box;
