@@ -140,9 +140,6 @@ const Header = () => {
   const shouldHideHeaderAlways = mounted && (
     pathname === "/forget-password" ||
     pathname === "/change-password" ||
-    pathname === "/contact" ||
-    pathname === "/contact/email" ||
-    pathname === "/contact/contact-numbers" ||
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/allianz-dashboard") ||
     (pathname.includes("/get-quote") && !isMobile) // Hide on desktop, show on mobile
