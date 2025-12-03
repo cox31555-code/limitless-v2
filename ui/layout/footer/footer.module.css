@@ -383,37 +383,62 @@
   }
 
   .content {
-    padding: 3rem 3% 1.6rem;
+    padding: 2.5rem 3.5% 1.4rem;
+  }
+
+  .mainContent {
+    gap: 2.5rem;
   }
 
   .logo {
-    height: 48px;
+    height: 45px;
+  }
+
+  .logoColumn {
+    margin-bottom: 1rem;
+  }
+
+  .menus {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .menu {
-    gap: 1.1rem;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
   }
 
   .menuTitle {
-    font-size: 1.28rem;
+    font-size: 1.26rem;
   }
 
   .menuItem {
-    font-size: 1.22rem;
+    font-size: 1.2rem;
+  }
+
+  .socialsSection {
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .socialsItems {
+    justify-content: center;
+    gap: 0.9rem;
   }
 
   .legalSection {
-    padding: 1.4rem 3% 1.8rem;
+    padding: 1.2rem 3.5% 1.6rem;
   }
 
   .legalText {
-    font-size: 1.1rem;
-    line-height: 1.65;
+    font-size: 1.08rem;
+    line-height: 1.6;
   }
 
   .copyright {
-    font-size: 1.15rem;
-    margin-top: 1.2rem;
+    font-size: 1.12rem;
+    margin-top: 1rem;
   }
 }
 
