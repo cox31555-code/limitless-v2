@@ -506,6 +506,20 @@
   box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
 }
 
+@media (max-width: 640px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 1.625rem;
+  }
+
+  .mainQuestion {
+    font-size: 1.6rem;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0;
