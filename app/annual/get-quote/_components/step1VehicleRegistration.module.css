@@ -871,6 +871,14 @@
   .manualEntryTitle {
     font-weight: 600;
   }
+
+  .header {
+    margin-bottom: 1.6rem;
+  }
+
+  .alternativeOption {
+    margin-bottom: 1.6rem;
+  }
 }
 
 @media (max-width: 600px) {
