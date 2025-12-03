@@ -101,6 +101,7 @@
   .partnershipSection {
     justify-content: center;
     align-items: center;
+    gap: 7px;
     margin-right: 9px;
   }
 }
