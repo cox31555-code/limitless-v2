@@ -10,6 +10,12 @@
   backdrop-filter: blur(10px);
 }
 
+@media (max-width: 900px) {
+  .header {
+    top: 72px;
+  }
+}
+
 .headerContent {
   max-width: 1220px;
   margin: 0 auto;
