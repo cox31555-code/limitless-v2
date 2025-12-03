@@ -150,7 +150,7 @@ const Header = () => {
 
   // Routes that should hide header immediately (payment routes need to hide on both server and client)
   // But show on /payment-summary for mobile
-  const shouldHidePaymentHeader = pathname.startsWith("/payment") && pathname !== "/payment-summary";
+  const shouldHidePaymentHeader = mounted && pathname.startsWith("/payment") && pathname !== "/payment-summary";
 
   // Routes that depend on mobile detection (only check after mount)
   const shouldHideHeaderMobileDependent = mounted && (
