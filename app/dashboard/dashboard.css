@@ -1,0 +1,12 @@
+/* Override global body padding-top for dashboard pages on mobile */
+@media (max-width: 900px) {
+  body {
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 0 !important;
+  }
+}
