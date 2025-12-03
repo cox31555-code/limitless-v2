@@ -466,7 +466,7 @@ const Header = () => {
                 </button>
               )
             )}
-            {!isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && (
+            {mounted && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && (
               <button
                 onClick={() => {
                   if (isDashboard) {
@@ -484,7 +484,7 @@ const Header = () => {
                 )}
               </button>
             )}
-            {(isGetQuotePage || isPaymentSummaryPage || pathname === "/login") && (
+            {mounted && (isGetQuotePage || isPaymentSummaryPage || pathname === "/login") && (
               <button
                 className={styles.mobileHelpBtn}
                 title="Get help"
