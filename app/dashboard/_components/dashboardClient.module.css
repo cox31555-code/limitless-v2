@@ -4,16 +4,10 @@
   gap: 0;
   padding: 0;
   max-width: 100%;
-  margin: 0.0875rem 0 1.75rem;
+  margin: 0 0 1.75rem;
   width: 100%;
   position: relative;
   z-index: 2;
-}
-
-@media (max-width: 640px) {
-  .container {
-    margin: 0 0 1.75rem 0;
-  }
 }
 
 /* Breadcrumb Navigation */
@@ -618,9 +612,8 @@
 
 @media screen and (max-width: 900px) {
   .breadcrumb {
-    margin-left: 30px;
     gap: 0.8rem;
-    padding: 15px 3% 15px 0.4%;
+    padding: 0 5% 14px;
   }
 
   .breadcrumbItem {
@@ -787,9 +780,8 @@
 
 @media screen and (max-width: 600px) {
   .breadcrumb {
-    margin-left: 20px;
     gap: 0.6rem;
-    padding: 12px 3% 12px 0.4%;
+    padding: 0 5% 12px;
   }
 
   .breadcrumbItem {

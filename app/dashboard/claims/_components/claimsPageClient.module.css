@@ -4,16 +4,10 @@
   gap: 0;
   padding: 0;
   max-width: 100%;
-  margin: 0.0875rem 0 1.75rem;
+  margin: 0 0 1.75rem;
   width: 100%;
   position: relative;
   z-index: 2;
-}
-
-@media (max-width: 640px) {
-  .container {
-    margin: 0 0 1.75rem 0;
-  }
 }
 
 /* Breadcrumb Navigation */
@@ -379,7 +373,7 @@
 @media screen and (max-width: 1200px) {
   .breadcrumb {
     gap: 1rem;
-    padding: 20px 5% 20px;
+    padding: 0 5% 14px;
   }
 
   .breadcrumbItem {
@@ -432,7 +426,7 @@
 @media screen and (max-width: 900px) {
   .breadcrumb {
     gap: 0.8rem;
-    padding: 15px 5% 15px;
+    padding: 0 5% 14px;
   }
 
   .breadcrumbItem {
