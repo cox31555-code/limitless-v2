@@ -454,7 +454,7 @@ const Header = () => {
                 <span>Back to Limitless</span>
               </button>
             ) : (
-              !isDashboard && !isGetQuotePage && pathname !== "/login" && (
+              !isDashboard && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && (
                 <button
                   className={styles.mobileQuoteBtn}
                   onClick={() => {
@@ -466,7 +466,7 @@ const Header = () => {
                 </button>
               )
             )}
-            {!isGetQuotePage && pathname !== "/login" && (
+            {!isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && (
               <button
                 onClick={() => {
                   if (isDashboard) {
