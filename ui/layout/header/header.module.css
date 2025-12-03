@@ -575,6 +575,12 @@
     overflow-y: auto;
   }
 
+  @media (max-width: 640px) {
+    .mobileNav {
+      padding-top: 1.2rem;
+    }
+  }
+
   .mobileDropdownContainer {
     width: 100%;
   }
