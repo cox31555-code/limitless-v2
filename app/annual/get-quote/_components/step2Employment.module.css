@@ -76,6 +76,12 @@
   margin-top: 1.2rem;
 }
 
+@media (max-width: 640px) {
+  .fieldWrapper {
+    gap: 0.1rem;
+  }
+}
+
 .expandableLink {
   font-size: 1.3rem;
   font-weight: 600;
