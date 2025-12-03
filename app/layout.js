@@ -1,7 +1,7 @@
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import "rsuite/dist/rsuite-no-reset.min.css";
-import { Poppins, Outfit } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ClientLayout from "./clientLayout";
@@ -11,11 +11,6 @@ import { LoadingProvider } from "@/contexts/LoadingContext";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata = {
