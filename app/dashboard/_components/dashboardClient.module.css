@@ -826,6 +826,7 @@
   .contentWrapper {
     padding: 2rem 4%;
     gap: 2.5rem;
+    padding-top: 1px;
   }
 
   .sectionTitle {
