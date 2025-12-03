@@ -299,7 +299,7 @@
 }
 
 .mobileMenuWrapper {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
