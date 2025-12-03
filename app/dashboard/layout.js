@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export default function DashboardLayout({ children }) {
   return (
-    <div>
+    <div className="dashboard-page">
       <Header />
       <main className="dashboard-main" style={{ marginTop: "75px" }}>
         <div className="dashboardContainer">{children}</div>
