@@ -1,4 +1,5 @@
 import "../globals.css";
+import "./dashboard.css";
 import { Poppins } from "next/font/google";
 import Header from "@/ui/dashboard/header/Header";
 import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
@@ -11,7 +12,7 @@ const poppins = Poppins({
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="dashboard-page">
+    <div>
       <Header />
       <main className="dashboard-main" style={{ marginTop: "75px" }}>
         <div className="dashboardContainer">{children}</div>
