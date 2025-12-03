@@ -1041,6 +1041,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    margin: 0 0 1.75rem 0;
+  }
+}
+
 /* Small Mobile */
 @media screen and (max-width: 600px) {
   .breadcrumb {
