@@ -12,7 +12,7 @@
 
 @media (max-width: 640px) {
   .container {
-    margin-top: -0.1px;
+    margin: 0 0 1.75rem 0;
   }
 }
 
