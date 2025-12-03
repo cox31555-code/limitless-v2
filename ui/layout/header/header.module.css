@@ -1107,7 +1107,7 @@
   height: auto;
   padding: 12.8px 13px;
   border-radius: 6px;
-  background: #0388ff;
+  background: #0076d6;
   color: #ffffff;
   font-size: 12px;
   font-weight: 600;
@@ -1119,7 +1119,7 @@
 }
 
 .mobileBackBtn:active {
-  background: #0277e3;
+  background: #0059a3;
 }
 
 .mobileBackBtn svg {
