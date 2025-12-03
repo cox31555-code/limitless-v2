@@ -826,6 +826,10 @@
     font-size: 2rem;
   }
 
+  .policiesGrid {
+    grid-template-columns: 1fr;
+  }
+
   .policyBadgeWrapper {
     flex-direction: column;
     align-items: flex-start;
