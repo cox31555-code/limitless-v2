@@ -226,7 +226,7 @@
 
   .inputWrapper {
     border-radius: 10px;
-    height: 5.6rem;
+    height: 3.125rem;
   }
 
   .input {
@@ -290,7 +290,7 @@
 
 @media screen and (max-width: 640px) {
   .inputWrapper {
-    height: 4.8rem;
+    height: 3.125rem;
   }
 }
 

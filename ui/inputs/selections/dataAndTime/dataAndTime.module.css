@@ -335,8 +335,8 @@
 
 @media screen and (max-width: 640px) {
   .inputContainer {
-    height: 4.8rem;
-    min-height: 4.8rem;
+    height: 3.125rem;
+    min-height: 3.125rem;
   }
 }
 
