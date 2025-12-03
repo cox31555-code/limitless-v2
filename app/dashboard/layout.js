@@ -14,7 +14,7 @@ export default function DashboardLayout({ children }) {
   return (
     <div>
       <Header />
-      <main className="dashboard-main" style={{ marginTop: "75px" }}>
+      <main className="dashboard-main" style={{ marginTop: "75px" }} suppressHydrationWarning>
         <div className="dashboardContainer">{children}</div>
       </main>
       <DashboardFooter />
