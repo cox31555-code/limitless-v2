@@ -410,6 +410,7 @@
 @media screen and (max-width: 640px) {
   .headerContainer {
     padding: 1rem 4%;
+    height: 72px;
   }
 
   .logo {
@@ -417,19 +418,25 @@
     height: 50px;
   }
 
+  .mobileHeaderActions {
+    gap: 0.8rem;
+  }
+
   .mobileQuoteBtn {
-    padding: 0.7rem 1rem;
+    padding: 12.8px 13px;
     font-size: 12px;
   }
 
   .menuBtn {
-    width: 3.8rem;
-    height: 3.8rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
   }
 
   .menuBtn img {
-    width: 1.4rem !important;
-    height: 1.4rem !important;
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
   }
 }
 
