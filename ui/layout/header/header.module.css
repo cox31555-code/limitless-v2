@@ -1169,6 +1169,13 @@
   font-weight: 400;
 }
 
+@media (max-width: 640px) {
+  .mobileMenuLink {
+    padding: 1.4rem 4%;
+    font-size: 1.45rem;
+  }
+}
+
 .dropdownArrow {
   display: flex;
   align-items: center;
