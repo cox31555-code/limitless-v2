@@ -1041,6 +1041,11 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    gap: 3.125rem;
+  }
+}
 
 /* Small Mobile */
 @media screen and (max-width: 600px) {

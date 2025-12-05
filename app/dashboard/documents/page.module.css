@@ -422,6 +422,11 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .contentWrapper {
+    gap: 3.125rem;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .breadcrumb {
