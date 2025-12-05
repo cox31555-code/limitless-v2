@@ -851,6 +851,10 @@
     font-size: 1.37rem;
   }
 
+  .vehicleName {
+    font-size: 1.8rem;
+  }
+
   .policiesGrid {
     grid-template-columns: 1fr;
   }
