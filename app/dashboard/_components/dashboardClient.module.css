@@ -788,6 +788,10 @@
     font-size: 1.37rem;
   }
 
+  .vehicleName {
+    font-size: 1.8rem;
+  }
+
   .contentWrapper {
     gap: 3.125rem;
   }
