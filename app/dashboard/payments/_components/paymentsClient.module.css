@@ -1278,7 +1278,12 @@
   }
 
   .sectionTitle {
-    font-size: 1.6rem;
+    font-size: 1.64rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.07rem;
+    line-height: 1.34;
   }
 
   .noticeText {
