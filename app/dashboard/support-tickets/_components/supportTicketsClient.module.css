@@ -536,6 +536,12 @@
   }
 }
 
+@media (max-width: 640px) {
+  .pageWrapper {
+    gap: 3.125rem;
+  }
+}
+
 /* Responsive - Mobile */
 @media (max-width: 600px) {
   .breadcrumb {
