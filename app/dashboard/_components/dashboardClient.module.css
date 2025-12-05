@@ -782,6 +782,10 @@
   .contentWrapper {
     gap: 3.125rem;
   }
+
+  .usefulLinksSection {
+    margin-top: 1.9375rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
