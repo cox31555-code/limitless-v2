@@ -187,6 +187,17 @@
   line-height: 140%;
 }
 
+@media screen and (max-width: 640px) {
+  .sectionTitle {
+    font-size: 1.44rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.94rem;
+    line-height: 1.18;
+  }
+}
+
 /* Policy Card */
 .policiesGrid {
   display: grid;
