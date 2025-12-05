@@ -219,8 +219,7 @@
 
 .policyCard:hover {
   border-color: #0052a3;
-  box-shadow: 0 12px 32px rgba(0, 82, 163, 0.15), 0 2px 8px rgba(0, 82, 163, 0.08);
-  transform: translateY(-4px);
+  transform: none;
 }
 
 .policyCardHeader {
@@ -426,8 +425,7 @@
 
 .usefulLinkCard:hover {
   border-color: #0052a3;
-  box-shadow: 0 8px 20px rgba(0, 82, 163, 0.12), 0 2px 6px rgba(0, 82, 163, 0.06);
-  transform: translateY(-3px);
+  transform: none;
 }
 
 .usefulLinkCard:hover .linkIcon {
@@ -533,7 +531,6 @@
 
 .emergencyButton:hover {
   background: #003d7a;
-  box-shadow: 0 4px 10px rgba(0, 82, 163, 0.2);
 }
 
 .emergencyButton:active {
