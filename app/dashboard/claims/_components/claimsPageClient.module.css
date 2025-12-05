@@ -204,8 +204,7 @@
   background: #0052a3;
   color: #ffffff;
   border-color: #0052a3;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 82, 163, 0.2);
+  transform: none;
 }
 
 .createButton:hover .plusIcon {
