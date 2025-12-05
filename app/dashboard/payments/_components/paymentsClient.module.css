@@ -1044,6 +1044,15 @@
     font-size: 1.4rem;
   }
 
+  .sectionTitle {
+    font-size: 1.44rem;
+  }
+
+  .sectionDescription {
+    font-size: 0.94rem;
+    line-height: 1.18;
+  }
+
   .container {
     gap: 3.125rem;
   }
