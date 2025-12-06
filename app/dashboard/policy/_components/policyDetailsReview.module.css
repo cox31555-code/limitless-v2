@@ -139,6 +139,12 @@
   letter-spacing: -0.35px;
 }
 
+@media (max-width: 640px) {
+  .breakdownTitle {
+    font-size: 1rem;
+  }
+}
+
 .breakdownContent {
   display: flex;
   flex-direction: column;
