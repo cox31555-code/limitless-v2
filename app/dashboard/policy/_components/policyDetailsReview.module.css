@@ -36,11 +36,23 @@
   margin: 0;
 }
 
+@media (max-width: 640px) {
+  .priceLabel {
+    font-size: 1.3rem;
+  }
+}
+
 .priceAmount {
   font-size: 3.25rem;
   font-weight: 800;
   color: #ffffff;
   line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .priceAmount {
+    font-size: 2.4rem;
+  }
 }
 
 .pricePeriod {
@@ -54,6 +66,12 @@
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.75);
   margin-top: 0.4rem;
+}
+
+@media (max-width: 640px) {
+  .priceMeta {
+    font-size: 1.3rem;
+  }
 }
 
 /* Next Instalment Info */
