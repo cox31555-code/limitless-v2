@@ -464,8 +464,20 @@
     padding: 1.8rem;
   }
 
-  .fieldGroup {
+  .mainSection {
     padding: 1.8rem;
+  }
+
+  .fieldGroup {
+    padding: 2rem 0;
+  }
+
+  .fieldGroup:first-child {
+    padding-top: 0;
+  }
+
+  .fieldGroup:last-child {
+    padding-bottom: 0;
   }
 
   .vehicleInfoTitle {
