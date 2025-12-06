@@ -42,6 +42,7 @@ export default function PolicyDocumentsSection({ selectedInsurance }) {
                 alt="document"
                 width={32}
                 height={32}
+                className={styles.documentIcon}
               />
               <div className={styles.documentDetails}>
                 <span className={styles.documentName}>{doc.name}</span>
