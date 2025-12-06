@@ -396,8 +396,24 @@
     padding: 2rem;
   }
 
+  .vehicleInfoTitle {
+    font-size: 1.2rem;
+  }
+
   .vehicleTitle {
     font-size: 1.9rem;
+  }
+
+  .vehicleRegistration {
+    font-size: 1.2rem;
+  }
+
+  .metaItem {
+    font-size: 1.2rem;
+  }
+
+  .vehicleTypeInfo {
+    font-size: 1.2rem;
   }
 
   .fieldGroup {
@@ -405,11 +421,11 @@
   }
 
   .fieldGroupTitle {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .fieldGroupDescription {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .actionButtons {
