@@ -562,6 +562,7 @@
   .breadcrumb {
     gap: 0.6rem;
     padding: 0 5% 12px;
+    margin: 7px 0 24px;
   }
 
   .breadcrumbItem {
