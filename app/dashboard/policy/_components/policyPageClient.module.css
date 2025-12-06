@@ -515,6 +515,7 @@
   .tabsContainer {
     gap: 11px;
     flex-direction: column;
+    border-right: none;
   }
 
   .tab {
@@ -646,7 +647,7 @@
     padding: 0;
     flex-direction: column;
     border-bottom: none;
-    border-right: 2px solid #e0e6f0;
+    border-right: none;
   }
 
   .tab {
