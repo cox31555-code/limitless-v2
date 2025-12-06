@@ -92,6 +92,14 @@
   font-weight: 500;
 }
 
+@media (max-width: 640px) {
+  .dropZoneText {
+    font-size: 1.4rem;
+    margin-top: -0.1rem;
+    line-height: 1.63;
+  }
+}
+
 .browseLink {
   color: #0052a3;
   font-weight: 600;
