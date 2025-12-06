@@ -227,13 +227,6 @@
 
 /* Main Section - Questions */
 .mainSection {
-  display: flex;
-  flex-direction: column;
-  gap: 2.6rem;
-}
-
-/* Field Group */
-.fieldGroup {
   background: #ffffff;
   border: 1px solid #e0e6f0;
   border-radius: 15.6px;
@@ -241,13 +234,25 @@
   padding: 2.6rem;
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
-  transition: all 0.2s ease;
+  gap: 0;
 }
 
-.fieldGroup:hover {
-  box-shadow: 0 4px 16px rgba(0, 61, 122, 0.1);
-  border-color: #d4e4f7;
+/* Field Group */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 2.6rem 0;
+  border-bottom: 1px solid #e0e6f0;
+}
+
+.fieldGroup:first-child {
+  padding-top: 0;
+}
+
+.fieldGroup:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .fieldGroupTitle {
