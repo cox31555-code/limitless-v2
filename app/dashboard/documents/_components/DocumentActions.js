@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "react-toastify";
+import styles from "./documentActions.module.css";
 import PdfViewerModal from "./PdfViewerModal";
 
 export default function DocumentActions({ insuranceId, pdfType, documentName }) {
