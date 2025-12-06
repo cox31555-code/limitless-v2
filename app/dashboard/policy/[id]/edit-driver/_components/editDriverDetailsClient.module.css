@@ -103,12 +103,12 @@
 .breadcrumbItem {
   font-size: 1.4rem;
   font-weight: 500;
-  color: #666;
+  color: #64748b;
   white-space: nowrap;
 }
 
 .breadcrumbItem.active {
-  color: #0052a3;
+  color: #1e293b;
   font-weight: 600;
 }
 
