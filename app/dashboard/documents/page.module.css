@@ -498,8 +498,8 @@
   }
 
   .sectionHeaderWrapper {
-    gap: 0.8rem;
-    align-items: center;
+    gap: 1.5rem;
+    align-items: flex-start;
     margin-bottom: 1.8rem;
   }
 
