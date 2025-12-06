@@ -546,3 +546,115 @@
     font-size: 1.05rem;
   }
 }
+
+/* Modifications Display */
+.modificationsDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+  padding: 1.8rem;
+  background: #f8fafc;
+  border: 1px solid #e0e6f0;
+  border-radius: 10px;
+}
+
+.modificationsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modificationsLabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #7a8fa3;
+  margin: 0;
+}
+
+.editModificationsBtn {
+  background: transparent;
+  border: 1.5px solid #d4e4f7;
+  color: #0052a3;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.editModificationsBtn:hover {
+  border-color: #0052a3;
+  background: #f0f6ff;
+}
+
+.modificationsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.modificationTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.4rem;
+  background: #ffffff;
+  color: #0052a3;
+  border: 1px solid #d4e4f7;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.modificationTag::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0052a3;
+}
+
+@media screen and (max-width: 640px) {
+  .modificationsDisplay {
+    padding: 1.6rem;
+  }
+
+  .modificationsLabel {
+    font-size: 1.1rem;
+  }
+
+  .editModificationsBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .modificationTag {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modificationsDisplay {
+    padding: 1.4rem;
+  }
+
+  .modificationsLabel {
+    font-size: 1.05rem;
+  }
+
+  .editModificationsBtn {
+    font-size: 1.1rem;
+  }
+
+  .modificationTag {
+    font-size: 1.05rem;
+  }
+}
