@@ -563,6 +563,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .heroSection {
+    margin-bottom: 1.2rem;
+  }
+
   .breadcrumb {
     gap: 0.6rem;
     padding: 0 5% 12px;
