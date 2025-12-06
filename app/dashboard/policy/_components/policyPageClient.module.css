@@ -632,7 +632,7 @@
   }
 
   .tabsContainer {
-    gap: 0.6rem;
+    gap: 11px;
     margin-bottom: 2rem;
     padding: 0;
     flex-wrap: wrap;
@@ -640,9 +640,9 @@
   }
 
   .tab {
-    font-size: 1.1rem;
+    font-size: 1.7rem;
     padding: 0.8rem 0;
-    gap: 0.4rem;
+    gap: 10px;
     margin-bottom: -2px;
     flex: 1;
     min-width: 0;
@@ -650,7 +650,7 @@
   }
 
   .tabLabel {
-    font-size: 1.1rem;
+    font-size: 1.7rem;
   }
 
   .tabNumber {
@@ -660,7 +660,7 @@
   .tabBadge {
     min-width: 28px;
     height: 28px;
-    font-size: 0.75rem;
+    font-size: 1.15rem;
     margin-left: 0.3rem;
   }
 }
