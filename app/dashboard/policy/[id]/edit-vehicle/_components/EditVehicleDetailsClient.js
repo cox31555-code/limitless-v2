@@ -208,7 +208,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
             <div className={styles.fieldGroup}>
               <h4 className={styles.fieldGroupTitle}>Has the car been modified in any way?</h4>
               <p className={styles.fieldGroupDescription}>Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.</p>
-              <Dropdown
+              <DashboardDropdown
                 label=""
                 selected={vehicleModified}
                 options={yesNoOptions}
