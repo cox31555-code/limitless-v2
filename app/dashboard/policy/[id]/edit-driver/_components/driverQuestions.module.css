@@ -325,4 +325,31 @@
   .radioLabel {
     font-size: 1.6rem;
   }
+
+  .subQuestionTitle {
+    font-size: 1.5rem;
+  }
+
+  .addButton {
+    font-size: 1.3rem;
+    padding: 1rem 1.6rem;
+  }
+
+  .itemDetail {
+    font-size: 1.3rem;
+  }
+
+  .removeButton {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .itemCard {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .removeButton {
+    width: 100%;
+  }
 }
