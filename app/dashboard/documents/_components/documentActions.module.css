@@ -1,0 +1,68 @@
+.actionsWrapper {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  gap: 1.6rem;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #0052a3;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 130%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem 1.2rem;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  text-decoration: underline;
+}
+
+.button:hover:not(:disabled) {
+  color: #003d7a;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.buttonText {
+  display: block;
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 11.5px;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .buttonGroup {
+    justify-content: center;
+    align-items: center;
+    margin: 2px 0 0 15px;
+  }
+}
