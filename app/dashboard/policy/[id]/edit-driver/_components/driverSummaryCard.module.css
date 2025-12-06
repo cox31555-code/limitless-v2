@@ -138,11 +138,11 @@
 
 @media screen and (max-width: 900px) {
   .driverCard {
-    padding: 1.6rem;
+    padding: 2.2rem;
   }
 
   .header {
-    gap: 1.2rem;
+    gap: 1.6rem;
   }
 
   .driverName {
