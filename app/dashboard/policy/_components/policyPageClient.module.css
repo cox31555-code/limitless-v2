@@ -641,11 +641,7 @@
   }
 
   .tabNumber {
-    display: inline;
-    font-size: 0.8rem;
-    font-weight: 700;
-    min-width: 18px;
-    color: currentColor;
+    display: none;
   }
 
   .tabBadge {
