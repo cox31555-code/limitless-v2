@@ -378,7 +378,14 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
           <div className={styles.conditionalSection}>
             <div className={styles.listHeader}>
               <h4 className={styles.subQuestionTitle}>Your convictions</h4>
-              <button type="button" className={styles.addButton}>
+              <button
+                type="button"
+                className={styles.addButton}
+                onClick={() => {
+                  // TODO: Open conviction modal
+                  alert("Add conviction functionality - to be implemented with conviction modal");
+                }}
+              >
                 + Add conviction
               </button>
             </div>
