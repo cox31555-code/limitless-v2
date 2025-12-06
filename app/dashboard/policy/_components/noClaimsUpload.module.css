@@ -334,6 +334,33 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .uploadSection {
+    padding: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.05rem;
+  }
+
+  .dropZone {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .dropZoneText {
+    font-size: 1.1rem;
+  }
+
+  .uploadIcon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .uploadSection {
     padding: 1.5rem;
