@@ -242,7 +242,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
             <div className={styles.fieldGroup}>
               <h4 className={styles.fieldGroupTitle}>What type of alarm and/or immobiliser does the car have?</h4>
               <p className={styles.fieldGroupDescription}>Check your car's manual if you're unsure.</p>
-              <Dropdown
+              <DashboardDropdown
                 label=""
                 selected={watch("vehicleDetails.alarmImmobiliser") || ""}
                 options={alarmImmobiliserOptions}
@@ -254,7 +254,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
             {/* Tracking Device */}
             <div className={styles.fieldGroup}>
               <h4 className={styles.fieldGroupTitle}>Is the car fitted with a tracking device?</h4>
-              <Dropdown
+              <DashboardDropdown
                 label=""
                 selected={watch("vehicleDetails.trackingDevice") || ""}
                 options={trackingDeviceOptions}
@@ -266,7 +266,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
             {/* Imported Vehicle */}
             <div className={styles.fieldGroup}>
               <h4 className={styles.fieldGroupTitle}>Is the car an import?</h4>
-              <Dropdown
+              <DashboardDropdown
                 label=""
                 selected={watch("vehicleDetails.importedVehicle") || ""}
                 options={yesNoOptions}
@@ -279,7 +279,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
             <div className={styles.fieldGroup}>
               <h4 className={styles.fieldGroupTitle}>Is the car left or right-hand drive?</h4>
               <p className={styles.fieldGroupDescription}>The UK standard is right-hand drive. This means that when you are sat in the vehicle facing the windscreen, the steering wheel is on the right side.</p>
-              <Dropdown
+              <DashboardDropdown
                 label=""
                 selected={watch("vehicleDetails.driverSide") || ""}
                 options={driverSideOptions}
@@ -292,7 +292,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
             <div className={styles.fieldGroup}>
               <h4 className={styles.fieldGroupTitle}>How many seats are there in the car?</h4>
               <p className={styles.fieldGroupDescription}>Count the number of seatbelts if you're unsure.</p>
-              <Dropdown
+              <DashboardDropdown
                 label=""
                 selected={watch("vehicleDetails.seats") || ""}
                 options={seatsOptions}
