@@ -103,6 +103,7 @@
     align-items: center;
     margin-right: 9px;
     padding-left: 59px;
+    gap: 0;
   }
 }
 
