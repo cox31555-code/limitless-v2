@@ -263,20 +263,28 @@
 
 @media screen and (max-width: 900px) {
   .uploadSection {
-    padding: 2rem;
+    padding: 2.4rem;
   }
 
   .sectionTitle {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.15rem;
   }
 
   .dropZone {
-    padding: 2.5rem 1.5rem;
+    padding: 2.8rem 1.8rem;
+  }
+
+  .dropZoneText {
+    font-size: 1.2rem;
   }
 
   .uploadIcon {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
   }
 
   .filesHeader {
