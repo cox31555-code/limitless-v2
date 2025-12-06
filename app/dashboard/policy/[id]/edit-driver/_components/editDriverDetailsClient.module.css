@@ -159,13 +159,13 @@
 }
 
 .cancelBtn {
-  background: #ffffff;
+  background: #f1f5f9;
   color: #475569;
   border: 1px solid #e2e8f0;
 }
 
 .cancelBtn:hover:not(:disabled) {
-  background: #f8fafc;
+  background: #e2e8f0;
   color: #334155;
 }
 
