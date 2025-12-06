@@ -629,6 +629,134 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .container {
+    gap: 2.4rem;
+  }
+
+  .priceSection {
+    gap: 2.4rem;
+  }
+
+  .priceCard {
+    padding: 1.125rem 1rem;
+  }
+
+  .priceAmount {
+    font-size: 2.6rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1.5rem;
+  }
+
+  .breakdownLabel {
+    font-size: 1.2rem;
+  }
+
+  .breakdownAmount {
+    font-size: 1.3rem;
+  }
+
+  .cardHeader {
+    padding: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardContent {
+    padding: 1.8rem;
+    gap: 2.4rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+  }
+
+  .detailLabel {
+    font-size: 1.1rem;
+  }
+
+  .detailValue {
+    font-size: 1.4rem;
+  }
+
+  .carTitle {
+    font-size: 1.6rem;
+  }
+
+  .carRegistration {
+    font-size: 1.2rem;
+  }
+
+  .carMeta {
+    font-size: 1.2rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .instalmentText {
+    font-size: 1.1rem;
+  }
+
+  .instalmentInfo {
+    gap: 2.4rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .paymentBreakdownCard {
+    padding: 1.6rem;
+  }
+
+  .breakdownContent {
+    gap: 2.4rem;
+  }
+
+  .excessSection {
+    padding: 1.2rem 0;
+  }
+
+  .excessContent {
+    gap: 2.4rem;
+  }
+
+  .excessGrid {
+    gap: 2.4rem;
+    padding-top: 1.2rem;
+  }
+
+  .driverCard {
+    padding: 1.2rem;
+    gap: 2.4rem;
+  }
+
+  .driverName {
+    font-size: 1.3rem;
+  }
+
+  .documentsList {
+    gap: 2.4rem;
+  }
+
+  .actionButtonsContainer {
+    flex-direction: column-reverse;
+    gap: 0.8rem;
+    padding: 1.2rem 0 0 0;
+  }
+
+  .makeClaimBtn,
+  .cancelPolicyBtn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     gap: 1.5rem;
@@ -771,7 +899,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media (max-width: 480px) {
   .container {
     gap: 1.2rem;
   }
@@ -781,27 +909,71 @@
   }
 
   .priceCard {
-    padding: 1.125rem 1rem;
+    padding: 1.8rem 1.6rem;
   }
 
   .priceAmount {
     font-size: 2.2rem;
   }
 
+  .instalmentInfo {
+    padding: 1rem 1.3rem;
+    gap: 0.9rem;
+  }
+
+  .instalmentIconWrapper {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+  }
+
+  .instalmentIcon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .instalmentText {
+    font-size: 1rem;
+  }
+
+  .paymentBreakdownCard {
+    padding: 1.3rem;
+  }
+
   .breakdownTitle {
     font-size: 1.3rem;
   }
 
-  .breakdownLabel {
-    font-size: 1rem;
+  .breakdownItem {
+    padding: 0.8rem 0;
   }
 
-  .breakdownAmount {
+  .breakdownItem.totalRow {
+    padding: 0.8rem 0;
+  }
+
+  .breakdownLabel {
     font-size: 1.1rem;
   }
 
+  .breakdownAmount {
+    font-size: 1.2rem;
+  }
+
   .cardHeader {
-    padding: 1.6rem;
+    padding: 1.4rem;
+  }
+
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
   }
 
   .sectionTitle {
@@ -809,7 +981,8 @@
   }
 
   .cardContent {
-    padding: 1.6rem;
+    padding: 1.4rem;
+    gap: 1.4rem;
   }
 
   .detailsGrid {
@@ -818,7 +991,7 @@
   }
 
   .detailLabel {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .detailValue {
@@ -826,32 +999,16 @@
   }
 
   .carTitle {
-    font-size: 1.3rem;
-  }
-
-  .carRegistration {
-    font-size: 1.05rem;
-  }
-
-  .carMeta {
-    font-size: 1.05rem;
+    font-size: 1.4rem;
   }
 
   .subsectionTitle {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
-  .instalmentText {
-    font-size: 0.95rem;
-  }
-
-  .instalmentInfo {
-    gap: 1rem;
-    padding: 0.8rem 1rem;
-  }
-
-  .paymentBreakdownCard {
-    padding: 1.3rem;
+  .actionButtons {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   .primaryBtn,
@@ -880,228 +1037,5 @@
     width: 100%;
     padding: 0.9rem 1.5rem;
     font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .container {
-    gap: 1rem;
-  }
-
-  .priceSection {
-    gap: 1rem;
-  }
-
-  .priceCard {
-    padding: 1.3rem 0.8rem;
-  }
-
-  .priceLabel {
-    font-size: 0.9rem;
-  }
-
-  .priceAmount {
-    font-size: 1.8rem;
-  }
-
-  .pricePeriod {
-    font-size: 0.95rem;
-  }
-
-  .priceMeta {
-    font-size: 0.9rem;
-  }
-
-  .instalmentInfo {
-    padding: 0.7rem 0.9rem;
-    gap: 0.8rem;
-  }
-
-  .instalmentIconWrapper {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-  }
-
-  .instalmentIcon {
-    width: 18px;
-    height: 18px;
-  }
-
-  .instalmentText {
-    font-size: 0.9rem;
-  }
-
-  .paymentBreakdownCard {
-    padding: 1.2rem;
-  }
-
-  .breakdownTitle {
-    font-size: 1.2rem;
-  }
-
-  .breakdownItem {
-    padding: 0.7rem 0;
-  }
-
-  .breakdownItem.totalRow {
-    padding: 0.7rem 0;
-  }
-
-  .breakdownLabel {
-    font-size: 0.95rem;
-  }
-
-  .breakdownAmount {
-    font-size: 1rem;
-  }
-
-  .cardHeader {
-    padding: 1.2rem;
-  }
-
-  .iconWrapper {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-    border-radius: 8px;
-  }
-
-  .icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  .sectionTitle {
-    font-size: 1.25rem;
-  }
-
-  .cardContent {
-    padding: 1.2rem;
-    gap: 1.2rem;
-  }
-
-  .detailsGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .detailLabel {
-    font-size: 0.85rem;
-  }
-
-  .detailValue {
-    font-size: 1.1rem;
-  }
-
-  .carTitle {
-    font-size: 1.2rem;
-  }
-
-  .carRegistration {
-    font-size: 0.95rem;
-  }
-
-  .carMeta {
-    font-size: 0.95rem;
-  }
-
-  .subsectionTitle {
-    font-size: 1.1rem;
-  }
-
-  .actionButtons {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .primaryBtn,
-  .secondaryBtn {
-    width: 100%;
-  }
-
-  .excessSection {
-    padding: 0.8rem 0;
-  }
-
-  .excessTitle {
-    font-size: 1rem;
-  }
-
-  .excessItem {
-    font-size: 0.85rem;
-  }
-
-  .excessNote {
-    font-size: 0.75rem;
-  }
-
-  .excessSubtitle {
-    font-size: 0.9rem;
-  }
-
-  .excessValue {
-    font-size: 0.8rem;
-  }
-
-  .excessValueNote {
-    font-size: 0.7rem;
-  }
-
-  .driverItem {
-    font-size: 1.1rem;
-  }
-
-  .driverRole {
-    font-size: 0.95rem;
-  }
-
-  .driverCard {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .driverName {
-    font-size: 1.15rem;
-  }
-
-  .driverActionButtons {
-    gap: 0.6rem;
-  }
-
-  .documentLink {
-    font-size: 0.85rem;
-  }
-
-  .fileSize {
-    font-size: 0.75rem;
-  }
-
-  .documentIcon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .disclaimer {
-    font-size: 0.9rem;
-  }
-
-  .vehicleSubsection {
-    padding-top: 1.2rem;
-    margin-top: 1.2rem;
-    gap: 0.8rem;
-  }
-
-  .actionButtonsContainer {
-    flex-direction: column-reverse;
-    gap: 0.6rem;
-    padding: 1rem 0 0 0;
-  }
-
-  .makeClaimBtn,
-  .cancelPolicyBtn {
-    width: 100%;
-    padding: 0.8rem 1.2rem;
-    font-size: 0.95rem;
   }
 }
