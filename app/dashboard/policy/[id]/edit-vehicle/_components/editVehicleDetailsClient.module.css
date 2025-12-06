@@ -582,9 +582,21 @@
     font-size: 1.3rem;
   }
 
-  .fieldGroup {
+  .mainSection {
     padding: 1.6rem;
+  }
+
+  .fieldGroup {
+    padding: 1.8rem 0;
     gap: 1.2rem;
+  }
+
+  .fieldGroup:first-child {
+    padding-top: 0;
+  }
+
+  .fieldGroup:last-child {
+    padding-bottom: 0;
   }
 
   .fieldGroupTitle {
