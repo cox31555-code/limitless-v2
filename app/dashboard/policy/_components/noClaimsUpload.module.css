@@ -16,19 +16,19 @@
 
 @media (max-width: 640px) {
   .sectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 600px) {
   .sectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 480px) {
   .sectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
