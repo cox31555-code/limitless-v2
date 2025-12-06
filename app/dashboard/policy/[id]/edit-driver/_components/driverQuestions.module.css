@@ -195,6 +195,123 @@
   border-color: #dc2626;
 }
 
+/* License Number Styles */
+.licenseImageContainer {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.licenseImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.licenseNumberFields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.licenseField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.licenseFieldLabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.licenseInput {
+  padding: 1.3rem 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #1e293b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.licenseInput:focus {
+  outline: none;
+  border-color: #64748b;
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
+}
+
+.licenseInput::placeholder {
+  color: #94a3b8;
+}
+
+.checkboxWrapper {
+  margin-top: 1.2rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #1976d2;
+}
+
+.infoBox {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.6rem;
+  background: #f0f7ff;
+  border: 1px solid #c8ddf5;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: #1565c0;
+  line-height: 1.6;
+}
+
+.expandableLink {
+  background: transparent;
+  border: none;
+  color: #1976d2;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.8rem 0;
+  margin-top: 0.8rem;
+  text-align: left;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  font-family: inherit;
+}
+
+.expandableLink:hover {
+  color: #1565c0;
+}
+
+.expandableContent {
+  margin-top: 0.8rem;
+  padding: 1.2rem;
+  background: #f8fafc;
+  border-left: 3px solid #1976d2;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 900px) {
   .questionsCard {
