@@ -511,6 +511,19 @@
   .container {
     margin: 0 0 1.75rem 0;
   }
+
+  .tabsContainer {
+    gap: 11px;
+  }
+
+  .tab {
+    font-size: 1.7rem;
+    gap: 10px;
+  }
+
+  .tabBadge {
+    font-size: 1.15rem;
+  }
 }
 
 @media screen and (max-width: 640px) {
