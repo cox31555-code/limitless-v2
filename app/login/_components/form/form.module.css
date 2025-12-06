@@ -341,6 +341,13 @@
   text-decoration: underline;
 }
 
+/* Responsive - Small Tablet */
+@media screen and (max-width: 640px) {
+  .input {
+    font-size: 1.6rem;
+  }
+}
+
 /* Responsive - Tablet */
 @media screen and (max-width: 900px) {
   .card {
