@@ -1084,11 +1084,11 @@
   }
 
   .detailLabel {
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
 
   .detailValue {
-    font-size: 1.2rem;
+    font-size: 1.2625rem;
   }
 
   .carTitle {
