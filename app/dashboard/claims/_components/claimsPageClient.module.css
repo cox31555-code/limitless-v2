@@ -586,6 +586,13 @@
   .tabNumber {
     display: none;
   }
+
+  .tabBadge {
+    min-width: 28px;
+    height: 28px;
+    font-size: 1.15rem;
+    margin-left: 0.3rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
