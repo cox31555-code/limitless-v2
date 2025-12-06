@@ -274,6 +274,7 @@
     text-align: center;
     padding: 3.5rem calc(50vw - 50%);
     gap: 2rem;
+    margin-bottom: 2rem;
   }
 
   .heroContent {
