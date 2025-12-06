@@ -213,33 +213,102 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
         />
       </div>
 
-      {/* Additional Qualifications */}
-      <div className={styles.questionGroup}>
-        <h3 className={styles.questionTitle}>Have you passed any additional driving qualifications?</h3>
-        <p className={styles.questionDescription}>
-          Some insurance providers may offer a discount if you have an additional driving qualification.
-        </p>
-        <div className={styles.radioGroup}>
-          <label className={styles.radioOption}>
-            <input
-              type="radio"
-              {...register("carUsage.hasAdditionalQualifications")}
-              value="Yes"
-              className={styles.radioInput}
-            />
-            <span className={styles.radioLabel}>Yes</span>
-          </label>
-          <label className={styles.radioOption}>
-            <input
-              type="radio"
-              {...register("carUsage.hasAdditionalQualifications")}
-              value="No"
-              className={styles.radioInput}
-            />
-            <span className={styles.radioLabel}>No</span>
-          </label>
+      {/* License Number */}
+      {shouldShowLicenseNumberSection && (
+        <div className={styles.questionGroup}>
+          <h3 className={styles.questionTitle}>Do you want to share your driving licence number?</h3>
+          <p className={styles.questionDescription}>
+            We're unable to accept Isle of Man or Channel Islands driving licence numbers.
+          </p>
+
+          {!declineShareLicenseNumber && (
+            <div className={styles.licenseImageContainer}>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F058fdd9048ee40f580ca41b569bee55c%2F78e152c1b10b432aa104583a5336f5b1?format=webp&width=800"
+                alt="UK Driving Licence"
+                className={styles.licenseImage}
+              />
+            </div>
+          )}
+
+          {!declineShareLicenseNumber && isGreatBritain && (
+            <div className={styles.licenseNumberFields}>
+              <div className={styles.licenseField}>
+                <label className={styles.licenseFieldLabel}>First 11 characters</label>
+                <input
+                  type="text"
+                  className={styles.licenseInput}
+                  maxLength={11}
+                  value={licenseNumberFirst || ""}
+                  onChange={(e) => setValue("carUsage.licenseNumberFirst", e.target.value)}
+                  placeholder=""
+                />
+              </div>
+
+              <div className={styles.licenseField}>
+                <label className={styles.licenseFieldLabel}>Last 5 characters</label>
+                <input
+                  type="text"
+                  className={styles.licenseInput}
+                  maxLength={5}
+                  value={licenseNumberLast || ""}
+                  onChange={(e) => setValue("carUsage.licenseNumberLast", e.target.value)}
+                  placeholder=""
+                />
+              </div>
+            </div>
+          )}
+
+          {!declineShareLicenseNumber && isNorthernIreland && (
+            <div className={styles.licenseNumberFields}>
+              <div className={styles.licenseField}>
+                <label className={styles.licenseFieldLabel}>Enter your 8 digit number</label>
+                <input
+                  type="text"
+                  className={styles.licenseInput}
+                  maxLength={8}
+                  value={licenseNumberNI || ""}
+                  onChange={(e) => setValue("carUsage.licenseNumberNI", e.target.value)}
+                  placeholder=""
+                />
+              </div>
+            </div>
+          )}
+
+          <div className={styles.checkboxWrapper}>
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                {...register("carUsage.declineShareLicenseNumber")}
+                className={styles.checkbox}
+              />
+              I don't want to/can't provide this
+            </label>
+          </div>
+
+          {!declineShareLicenseNumber && (
+            <>
+              <div className={styles.infoBox}>
+                Did you know... you may get a better deal by sharing this with insurers.
+              </div>
+
+              <button
+                type="button"
+                className={styles.expandableLink}
+                onClick={() => setExpandedWhatDo(!expandedWhatDo)}
+              >
+                What do we do with this information?
+              </button>
+
+              {expandedWhatDo && (
+                <div className={styles.expandableContent}>
+                  We use your driving licence information to verify your identity and driving history with the DVLA. This helps us provide you with accurate insurance quotes and ensure you're getting the best possible deal.
+                </div>
+              )}
+            </>
+          )}
         </div>
-      </div>
+      )}
 
       {/* Medical Conditions */}
       <div className={styles.questionGroup}>
