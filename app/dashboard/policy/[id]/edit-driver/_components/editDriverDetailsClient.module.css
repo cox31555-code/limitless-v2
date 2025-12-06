@@ -134,15 +134,15 @@
 .formContainer {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.6rem;
 }
 
 .actionButtons {
   display: flex;
   gap: 1.6rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   padding-top: 2rem;
-  border-top: 1px solid #e0e6f0;
+  border-top: 1px solid #e8ecf0;
   justify-content: flex-end;
 }
 
@@ -159,22 +159,25 @@
 }
 
 .cancelBtn {
-  background: #f0f1f3;
-  color: #333;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
 }
 
 .cancelBtn:hover:not(:disabled) {
-  background: #e5e7eb;
+  background: #e2e8f0;
+  color: #334155;
 }
 
 .saveBtn {
-  background: #0052a3;
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
   color: #ffffff;
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
 }
 
 .saveBtn:hover:not(:disabled) {
-  background: #003d7a;
-  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
 }
 
 .cancelBtn:disabled,
