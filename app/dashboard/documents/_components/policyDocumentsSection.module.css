@@ -55,6 +55,13 @@
   flex: 1;
 }
 
+.documentIcon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
 .documentDetails {
   display: flex;
   flex-direction: column;
