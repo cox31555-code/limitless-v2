@@ -51,25 +51,31 @@
   transform: translateY(-4px);
 }
 
-/* Policy Type Specific Styling - Minimal & Clean */
+/* Policy Type Specific Styling - Clean & Distinct */
 
-/* ANNUAL - Keep original */
+/* ANNUAL - Keep original blue */
 .policyANNUAL .brandedBadge {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
 }
 
-/* TEMPORARY - Subtle teal accent with white text */
-.policyTEMPORARY .policyBadgeType {
-  background: rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-  border: 1.5px solid rgba(6, 182, 212, 0.4);
+/* TEMPORARY - Clean teal background */
+.policyTEMPORARY .brandedBadge {
+  background: #0891b2;
 }
 
-/* IMPOUND - Subtle amber accent with white text */
-.policyIMPOUND .policyBadgeType {
-  background: rgba(255, 255, 255, 0.3);
+.policyTEMPORARY .policyBadgeType {
+  background: rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  border: 1.5px solid rgba(251, 146, 60, 0.4);
+}
+
+/* IMPOUND - Clean slate background */
+.policyIMPOUND .brandedBadge {
+  background: #475569;
+}
+
+.policyIMPOUND .policyBadgeType {
+  background: rgba(251, 146, 60, 1);
+  color: #ffffff;
 }
 
 
