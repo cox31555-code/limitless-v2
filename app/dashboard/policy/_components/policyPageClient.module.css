@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1.3rem;
-  padding: 0 5% 14px;
+  padding: 0 5% 12px;
   border-bottom: 1px solid #e0e6f0;
   max-width: 1000px;
   margin: 0 auto;
@@ -510,6 +510,10 @@
 @media screen and (max-width: 640px) {
   .container {
     margin: 0 0 1.75rem 0;
+  }
+
+  .breadcrumb {
+    margin: 7px 0 24px;
   }
 
   .tabsContainer {
