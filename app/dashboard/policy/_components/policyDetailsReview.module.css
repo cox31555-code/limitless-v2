@@ -493,6 +493,13 @@
   white-space: nowrap;
 }
 
+@media (max-width: 640px) {
+  .primaryBtn {
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
+  }
+}
+
 .primaryBtn:hover {
   background: #0275dd;
 }
@@ -521,6 +528,13 @@
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .secondaryBtn {
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
+  }
 }
 
 .secondaryBtn:hover {
