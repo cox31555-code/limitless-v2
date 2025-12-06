@@ -274,19 +274,19 @@
 
 @media (max-width: 640px) {
   .sectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 600px) {
   .sectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 480px) {
   .sectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -401,19 +401,19 @@
 
 @media (max-width: 640px) {
   .subsectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 600px) {
   .subsectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 480px) {
   .subsectionTitle {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 }
 
