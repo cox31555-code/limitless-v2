@@ -23,6 +23,7 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
   const licenseHeld = watch("carUsage.licenseHeld");
   const hasAdditionalQualifications = watch("carUsage.hasAdditionalQualifications");
   const medicalConditions = watch("carUsage.medicalConditions");
+  const dvlaConditionType = watch("carUsage.dvlaConditionType");
   const insuranceCancelled = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
   const criminalConvictions = watch("carUsage.criminalConvictions");
   const motorAccidentsClaims = watch("carUsage.motorAccidentsClaims");
@@ -42,6 +43,14 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
   const licenseIssueCountryOptions = [
     "England, Scotland or Wales (Great Britain)",
     "Northern Ireland",
+  ];
+  const dvlaConditionOptions = [
+    "DVLA aware - No restrictions",
+    "DVLA aware - 1 year restricted Licence",
+    "DVLA aware - 2 year restricted Licence",
+    "DVLA aware - 3 year restricted Licence",
+    "DVLA aware - 5 year restricted Licence",
+    "DVLA unaware",
   ];
 
   const isEmployedOrSelfEmployed = ["Employed", "Self Employed"].includes(employmentStatus);
@@ -249,6 +258,18 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
             <span className={styles.radioLabel}>No</span>
           </label>
         </div>
+
+        {medicalConditions === "Yes" && (
+          <div className={styles.conditionalSection}>
+            <h4 className={styles.subQuestionTitle}>Does the DVLA or DVA know about the medical condition or disability?</h4>
+            <DashboardDropdown
+              selected={dvlaConditionType || ""}
+              options={dvlaConditionOptions}
+              setSelected={(value) => setValue("carUsage.dvlaConditionType", value)}
+              placeholder="Please select..."
+            />
+          </div>
+        )}
       </div>
 
       {/* Insurance Cancelled */}
@@ -352,6 +373,49 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
             <span className={styles.radioLabel}>No</span>
           </label>
         </div>
+
+        {drivingConvictions === "Yes" && (
+          <div className={styles.conditionalSection}>
+            <div className={styles.listHeader}>
+              <h4 className={styles.subQuestionTitle}>Your convictions</h4>
+              <button type="button" className={styles.addButton}>
+                + Add conviction
+              </button>
+            </div>
+
+            {convictions && convictions.length > 0 && (
+              <div className={styles.itemsList}>
+                {convictions.map((conviction, index) => (
+                  <div key={index} className={styles.itemCard}>
+                    <div className={styles.itemInfo}>
+                      <p className={styles.itemDetail}>
+                        <span className={styles.itemLabel}>Date:</span> {conviction.day}/{conviction.month}/{conviction.year}
+                      </p>
+                      <p className={styles.itemDetail}>
+                        <span className={styles.itemLabel}>Type:</span> {conviction.convictionType}
+                      </p>
+                      {conviction.location && (
+                        <p className={styles.itemDetail}>
+                          <span className={styles.itemLabel}>Location:</span> {conviction.location}
+                        </p>
+                      )}
+                    </div>
+                    <button
+                      type="button"
+                      className={styles.removeButton}
+                      onClick={() => {
+                        const updatedConvictions = convictions.filter((_, i) => i !== index);
+                        setConvictions(updatedConvictions);
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
