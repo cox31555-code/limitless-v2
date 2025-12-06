@@ -217,6 +217,23 @@
   .page {
     margin: 0 0 1.75rem 0;
   }
+
+  .breadcrumbItem {
+    font-size: 1.4rem;
+  }
+
+  .greetingTitle {
+    font-size: 2.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .contentWrapper {
+    padding: 0 5%;
+    gap: 3.125rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -226,7 +243,7 @@
   }
 
   .breadcrumbItem {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
   .breadcrumbSeparator {
@@ -254,6 +271,6 @@
   }
 
   .contentWrapper {
-    padding: 2rem 5%;
+    padding: 0 4%;
   }
 }
