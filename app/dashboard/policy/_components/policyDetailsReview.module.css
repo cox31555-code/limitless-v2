@@ -714,6 +714,10 @@
     gap: 1.5rem;
   }
 
+  .priceSection {
+    gap: 1.5rem;
+  }
+
   .priceCard {
     padding: 2.4rem 2rem;
   }
