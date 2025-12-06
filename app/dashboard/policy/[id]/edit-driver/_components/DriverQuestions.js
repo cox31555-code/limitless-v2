@@ -348,6 +348,56 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
             <span className={styles.radioLabel}>No</span>
           </label>
         </div>
+
+        {motorAccidentsClaims === "Yes" && (
+          <div className={styles.conditionalSection}>
+            <div className={styles.listHeader}>
+              <h4 className={styles.subQuestionTitle}>Your claims</h4>
+              <button
+                type="button"
+                className={styles.addButton}
+                onClick={() => {
+                  // TODO: Open claim modal
+                  alert("Add claim functionality - to be implemented with claim modal");
+                }}
+              >
+                + Add claim
+              </button>
+            </div>
+
+            {claims && claims.length > 0 && (
+              <div className={styles.itemsList}>
+                {claims.map((claim, index) => (
+                  <div key={index} className={styles.itemCard}>
+                    <div className={styles.itemInfo}>
+                      <p className={styles.itemDetail}>
+                        <span className={styles.itemLabel}>Type:</span> {claim.incidentType}
+                      </p>
+                      <p className={styles.itemDetail}>
+                        <span className={styles.itemLabel}>Date:</span> {claim.day}/{claim.month}/{claim.year}
+                      </p>
+                      {claim.damageType && (
+                        <p className={styles.itemDetail}>
+                          <span className={styles.itemLabel}>Damage:</span> {claim.damageType}
+                        </p>
+                      )}
+                    </div>
+                    <button
+                      type="button"
+                      className={styles.removeButton}
+                      onClick={() => {
+                        const updatedClaims = claims.filter((_, i) => i !== index);
+                        setClaims(updatedClaims);
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* Driving Convictions */}
