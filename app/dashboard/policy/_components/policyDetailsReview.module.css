@@ -391,6 +391,12 @@
   gap: 0.4rem;
 }
 
+@media (max-width: 640px) {
+  .carInfoBlock {
+    gap: 0.7rem;
+  }
+}
+
 .carTitle {
   font-size: 1.8rem;
   font-weight: 700;
@@ -399,16 +405,34 @@
   letter-spacing: -0.35px;
 }
 
+@media (max-width: 640px) {
+  .carTitle {
+    font-size: 1.5rem;
+  }
+}
+
 .carRegistration {
   font-size: 1.3rem;
   color: #7a8fa3;
   margin: 0;
 }
 
+@media (max-width: 640px) {
+  .carRegistration {
+    font-size: 1.3rem;
+  }
+}
+
 .carMeta {
   font-size: 1.3rem;
   color: #999;
   margin: 0;
+}
+
+@media (max-width: 640px) {
+  .carMeta {
+    font-size: 1.3rem;
+  }
 }
 
 .vehicleSubsection {
