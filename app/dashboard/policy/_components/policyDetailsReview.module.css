@@ -5,6 +5,19 @@
   width: 100%;
 }
 
+.priceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .priceSection {
+    gap: 1.5rem;
+  }
+}
+
 /* Price Card */
 .priceCard {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
