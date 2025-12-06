@@ -619,33 +619,39 @@
   }
 
   .tabsContainer {
-    gap: 1.2rem;
+    gap: 0.6rem;
     margin-bottom: 2rem;
-    padding: 0 -4%;
-    overflow-x: auto;
+    padding: 0;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #e0e6f0;
   }
 
   .tab {
-    font-size: 1.5rem;
-    padding: 1rem 0;
-    gap: 0.8rem;
+    font-size: 1.1rem;
+    padding: 0.8rem 0;
+    gap: 0.4rem;
     margin-bottom: -2px;
+    flex: 1;
+    min-width: 0;
+    justify-content: flex-start;
   }
 
   .tabLabel {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
-  .tabBadge {
-    min-width: 36px;
-    height: 36px;
-    font-size: 1rem;
-    margin-left: 0.6rem;
-  }
-
-  .tabBadge {
-    min-width: 22px;
-    height: 22px;
+  .tabNumber {
+    display: inline;
     font-size: 0.8rem;
+    font-weight: 700;
+    min-width: 18px;
+    color: currentColor;
+  }
+
+  .tabBadge {
+    min-width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
   }
 }
