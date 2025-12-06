@@ -454,20 +454,43 @@
     padding: 0 5%;
   }
 
+  .infoBanner {
+    gap: 1.2rem;
+    padding: 1.2rem 1.6rem;
+  }
+
+  .infoBannerText {
+    font-size: 0.95rem;
+  }
+
   .vehicleInfoCard {
     padding: 2rem;
   }
 
+  .vehicleHeader {
+    gap: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .vehicleIcon {
+    width: 30px;
+    height: 30px;
+  }
+
   .vehicleInfoTitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .vehicleTitle {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
   }
 
   .vehicleRegistration {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .metaItem {
@@ -517,8 +540,31 @@
     margin: 0 0 1.75rem 0;
   }
 
+  .infoBanner {
+    gap: 1rem;
+    padding: 1.1rem 1.4rem;
+  }
+
+  .infoBannerText {
+    font-size: 0.9rem;
+  }
+
   .vehicleInfoCard {
     padding: 1.8rem;
+  }
+
+  .vehicleHeader {
+    gap: 1rem;
+  }
+
+  .iconWrapper {
+    width: 52px;
+    height: 52px;
+  }
+
+  .vehicleIcon {
+    width: 28px;
+    height: 28px;
   }
 
   .mainSection {
@@ -610,17 +656,40 @@
     padding: 2rem 5%;
   }
 
+  .infoBanner {
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .infoBannerText {
+    font-size: 1.3rem;
+  }
+
   .vehicleInfoCard {
     padding: 1.6rem;
     gap: 1.2rem;
   }
 
+  .vehicleHeader {
+    gap: 1rem;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .vehicleIcon {
+    width: 26px;
+    height: 26px;
+  }
+
   .vehicleInfoTitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .vehicleTitle {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .vehicleRegistration {
