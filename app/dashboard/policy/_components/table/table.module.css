@@ -378,8 +378,12 @@
     font-size: 1.8rem;
   }
 
+  .vehicleName {
+    font-size: 1.9rem;
+  }
+
   .carMeta {
-    font-size: 1.15rem;
+    font-size: 1.45rem;
     margin: 0 0 1rem 0;
   }
 
