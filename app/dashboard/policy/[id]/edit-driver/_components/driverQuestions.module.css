@@ -297,8 +297,29 @@
   cursor: pointer;
   accent-color: #1976d2;
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 2px solid #cbd5e1;
   border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+  background: #1976d2;
+  border-color: #1976d2;
+}
+
+.checkbox:checked::before {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .infoBox {
