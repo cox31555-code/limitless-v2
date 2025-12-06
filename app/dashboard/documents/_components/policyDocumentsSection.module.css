@@ -141,6 +141,11 @@
 }
 
 @media screen and (max-width: 640px) {
+  .documentIcon {
+    width: 28px;
+    height: 28px;
+  }
+
   .documentName {
     font-size: 1.25rem;
   }
