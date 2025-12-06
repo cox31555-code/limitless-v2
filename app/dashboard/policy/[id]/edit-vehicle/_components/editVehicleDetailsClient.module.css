@@ -747,7 +747,7 @@
   margin-top: 0.5rem;
   padding: 1.8rem;
   background: #f8fafc;
-  border: 1px solid #e0e6f0;
+  border: 1px solid #e8ecf0;
   border-radius: 10px;
 }
 
@@ -761,14 +761,14 @@
 .modificationsLabel {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #7a8fa3;
+  color: #64748b;
   margin: 0;
 }
 
 .editModificationsBtn {
   background: transparent;
-  border: 1.5px solid #d4e4f7;
-  color: #0052a3;
+  border: 1px solid #cbd5e1;
+  color: #475569;
   padding: 0.5rem 1.2rem;
   border-radius: 6px;
   font-size: 1.1rem;
@@ -779,8 +779,9 @@
 }
 
 .editModificationsBtn:hover {
-  border-color: #0052a3;
-  background: #f0f6ff;
+  border-color: #94a3b8;
+  background: #f1f5f9;
+  color: #334155;
 }
 
 .modificationsList {
@@ -795,8 +796,8 @@
   gap: 0.6rem;
   padding: 0.7rem 1.4rem;
   background: #ffffff;
-  color: #0052a3;
-  border: 1px solid #d4e4f7;
+  color: #475569;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   font-size: 1.2rem;
   font-weight: 500;
@@ -810,7 +811,7 @@
   justify-content: center;
   font-weight: 600;
   font-size: 1rem;
-  color: #0052a3;
+  color: #1976d2;
 }
 
 @media screen and (max-width: 640px) {
