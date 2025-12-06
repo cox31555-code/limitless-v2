@@ -695,119 +695,138 @@
 
 @media (max-width: 768px) {
   .container {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .priceCard {
-    padding: 1.6rem;
+    padding: 2.4rem 2rem;
   }
 
   .priceAmount {
-    font-size: 2rem;
+    font-size: 2.6rem;
   }
 
   .instalmentInfo {
-    padding: 1rem 1.4rem;
-    gap: 0.8rem;
-  }
-
-  .instalmentIconWrapper {
-    width: 26px;
-    height: 26px;
-    min-width: 26px;
-  }
-
-  .instalmentIcon {
-    width: 22px;
-    height: 22px;
-  }
-
-  .instalmentText {
-    font-size: 0.9rem;
-  }
-
-  .paymentBreakdownCard {
-    padding: 1.2rem;
-  }
-
-  .breakdownTitle {
-    font-size: 1.1rem;
-  }
-
-  .breakdownLabel {
-    font-size: 1rem;
-  }
-
-  .breakdownAmount {
-    font-size: 1.05rem;
-  }
-
-  .cardHeader {
-    padding: 1.2rem;
-  }
-
-  .headerContent {
+    padding: 1.2rem 1.6rem;
     gap: 1rem;
   }
 
-  .iconWrapper {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    border-radius: 10px;
+  .instalmentIconWrapper {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
   }
 
-  .icon {
-    width: 20px;
-    height: 20px;
+  .instalmentIcon {
+    width: 24px;
+    height: 24px;
   }
 
-  .sectionTitle {
+  .instalmentText {
+    font-size: 1.1rem;
+  }
+
+  .paymentBreakdownCard {
+    padding: 1.6rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1.5rem;
+  }
+
+  .breakdownLabel {
     font-size: 1.2rem;
   }
 
-  .cardContent {
-    padding: 1.2rem;
+  .breakdownAmount {
+    font-size: 1.3rem;
+  }
+
+  .cardHeader {
+    padding: 1.8rem;
+  }
+
+  .headerContent {
     gap: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardContent {
+    padding: 1.8rem;
+    gap: 1.8rem;
   }
 
   .detailsGrid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .detailLabel {
+    font-size: 1.1rem;
+  }
+
+  .detailValue {
+    font-size: 1.4rem;
+  }
+
+  .carTitle {
+    font-size: 1.6rem;
   }
 
   .actionButtons {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .primaryBtn,
   .secondaryBtn {
-    width: 100%;
+    width: auto;
+    flex: 1;
   }
 
   .excessSection {
-    padding: 1rem;
+    padding: 1.2rem 0;
   }
 
   .excessGrid {
-    gap: 1rem;
-    padding-top: 1rem;
+    gap: 1.2rem;
+    padding-top: 1.2rem;
   }
 
   .driverCard {
-    padding: 1rem;
-    gap: 1rem;
+    padding: 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .driverName {
+    font-size: 1.3rem;
   }
 
   .actionButtonsContainer {
-    flex-direction: column-reverse;
-    gap: 0.75rem;
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .makeClaimBtn,
   .cancelPolicyBtn {
-    width: 100%;
-    padding: 0.9rem 1.5rem;
+    width: auto;
+    flex: 1;
+    padding: 1.1rem 2rem;
     font-size: 1rem;
   }
 }
