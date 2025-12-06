@@ -57,6 +57,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .description {
+    font-size: 1.15rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .section {
     padding: 2.2rem;
@@ -68,6 +74,6 @@
   }
 
   .description {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
   }
 }
