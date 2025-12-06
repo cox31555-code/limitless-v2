@@ -10,7 +10,7 @@
 .label {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #5a6b7d;
+  color: #64748b;
   margin: 0 0 0.8rem 0;
   line-height: 1.4;
 }
@@ -24,7 +24,7 @@
   min-height: 4.8rem;
   padding: 1.3rem 1.6rem;
   background: #ffffff;
-  border: 1px solid #d4e4f7;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -33,19 +33,19 @@
 }
 
 .dropdown:hover:not(.dropdownDisabled):not(.dropdownError) {
-  border-color: #0052a3;
-  background: #fafbfd;
+  border-color: #94a3b8;
+  background: #f8fafc;
 }
 
 .dropdownDisabled:hover {
-  border-color: #d4e4f7;
+  border-color: #e2e8f0;
   box-shadow: none;
 }
 
 .dropdown:focus,
 .dropdownOpen {
-  border-color: #0052a3;
-  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
+  border-color: #64748b;
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
 }
 
 .dropdownError {
@@ -58,26 +58,26 @@
 }
 
 .dropdownDisabled {
-  background: #f8f9fb;
+  background: #f8fafc;
   cursor: not-allowed;
   opacity: 0.6;
   pointer-events: none;
-  border-color: #d4e4f7;
+  border-color: #e2e8f0;
 }
 
 .dropdownDisabled .selected {
-  color: #a8b2bd;
+  color: #cbd5e1;
 }
 
 .dropdownDisabled .arrowIcon {
-  color: #a8b2bd;
+  color: #cbd5e1;
 }
 
 .selected {
   flex: 1;
   font-size: 1.4rem;
   font-weight: 500;
-  color: #0052a3;
+  color: #1e293b;
   line-height: 1.5;
   text-align: left;
   overflow: hidden;
@@ -86,25 +86,25 @@
 }
 
 .placeholder {
-  color: #7a8fa3;
+  color: #94a3b8;
   font-weight: 400;
 }
 
 .arrowIcon {
   flex-shrink: 0;
-  color: #7a8fa3;
+  color: #94a3b8;
   transition: transform 0.2s ease, color 0.2s ease;
   width: 20px;
   height: 20px;
 }
 
 .dropdown:hover .arrowIcon {
-  color: #0052a3;
+  color: #64748b;
 }
 
 .arrowIconOpen {
   transform: rotate(180deg);
-  color: #0052a3;
+  color: #64748b;
 }
 
 .dropdownMenu {
@@ -113,9 +113,9 @@
   left: 0;
   right: 0;
   background: #ffffff;
-  border: 1px solid #e0e6f0;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 61, 122, 0.12);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   z-index: 1000;
   max-height: 28rem;
   display: flex;
@@ -150,12 +150,12 @@
 }
 
 .optionsList::-webkit-scrollbar-thumb {
-  background: #e0e6f0;
+  background: #e2e8f0;
   border-radius: 3px;
 }
 
 .optionsList::-webkit-scrollbar-thumb:hover {
-  background: #d4e4f7;
+  background: #cbd5e1;
 }
 
 .option {
@@ -171,34 +171,34 @@
 }
 
 .option:hover {
-  background: #f8fafb;
+  background: #f8fafc;
 }
 
 .optionSelected {
-  background: #f0f6ff;
-  color: #0052a3;
+  background: #f1f5f9;
+  color: #1e293b;
 }
 
 .optionSelected:hover {
-  background: #e8f2fb;
+  background: #e2e8f0;
 }
 
 .optionText {
   flex: 1;
   font-size: 1.3rem;
   font-weight: 400;
-  color: #2c3e50;
+  color: #475569;
   line-height: 1.6;
 }
 
 .optionSelected .optionText {
-  color: #0052a3;
+  color: #1e293b;
   font-weight: 500;
 }
 
 .checkIcon {
   flex-shrink: 0;
-  color: #0052a3;
+  color: #1976d2;
   width: 16px;
   height: 16px;
 }
