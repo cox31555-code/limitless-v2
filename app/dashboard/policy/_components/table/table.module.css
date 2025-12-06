@@ -359,7 +359,7 @@
 
   .policyCardInfo {
     align-items: center;
-    gap: 1.4rem;
+    gap: 2.2rem;
     padding: 1.4rem;
   }
 
@@ -368,11 +368,11 @@
   }
 
   .infoLabel {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .infoValue {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .policyCardInfo .policyArrow {
