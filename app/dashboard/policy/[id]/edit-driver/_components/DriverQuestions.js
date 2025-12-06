@@ -8,6 +8,7 @@ import { occupationOptions, industryOptions, studentTypeOptions, licenseHeldOpti
 
 const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions }) => {
   const { register, watch, setValue } = form;
+  const [expandedWhatDo, setExpandedWhatDo] = React.useState(false);
 
   // Watch all fields
   const maritalStatus = watch("userDetails.maritalStatus");
@@ -21,7 +22,10 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
   const licenseType = watch("carUsage.licenseType");
   const licenseIssueCountry = watch("carUsage.licenseIssueCountry");
   const licenseHeld = watch("carUsage.licenseHeld");
-  const hasAdditionalQualifications = watch("carUsage.hasAdditionalQualifications");
+  const licenseNumberFirst = watch("carUsage.licenseNumberFirst");
+  const licenseNumberLast = watch("carUsage.licenseNumberLast");
+  const licenseNumberNI = watch("carUsage.licenseNumberNI");
+  const declineShareLicenseNumber = watch("carUsage.declineShareLicenseNumber");
   const medicalConditions = watch("carUsage.medicalConditions");
   const dvlaConditionType = watch("carUsage.dvlaConditionType");
 
