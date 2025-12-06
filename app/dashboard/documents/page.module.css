@@ -423,6 +423,10 @@
 }
 
 @media screen and (max-width: 640px) {
+  .breadcrumb {
+    margin: 7px 0 24px;
+  }
+
   .breadcrumbItem {
     font-size: 1.4rem;
   }
