@@ -232,6 +232,13 @@
   flex: 1;
 }
 
+@media (max-width: 640px) {
+  .headerContent {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
 .iconWrapper {
   display: flex;
   align-items: center;
@@ -244,6 +251,13 @@
   flex-shrink: 0;
   transition: all 0.25s ease;
   border: 1px solid rgba(0, 82, 163, 0.08);
+}
+
+@media (max-width: 640px) {
+  .iconWrapper {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .cardHeader:hover .iconWrapper {
@@ -262,6 +276,13 @@
   height: 24px;
   color: #0052a3;
   transition: color 0.25s ease;
+}
+
+@media (max-width: 640px) {
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .sectionTitle {
