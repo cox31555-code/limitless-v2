@@ -14,7 +14,7 @@
 
 @media (max-width: 640px) {
   .priceSection {
-    gap: 1.5rem;
+    gap: 1.5rem !important;
   }
 }
 
