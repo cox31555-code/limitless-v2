@@ -104,6 +104,7 @@ const PolicyDetailsReview = ({ policy }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.priceSection}>
       {/* Price Card */}
       <section className={styles.priceCard} aria-labelledby="policy-price-heading">
         <div className={styles.priceContent}>
@@ -136,6 +137,7 @@ const PolicyDetailsReview = ({ policy }) => {
           Next payment: <strong>£47.40</strong> due on <strong>5 January 2026</strong>
         </p>
       </aside>
+      </div>
 
       {/* Policy Details Section */}
       <section className={styles.expandableCard} aria-labelledby="policy-details-heading">
