@@ -219,6 +219,12 @@
   background-color: #e8f2fb;
 }
 
+@media (max-width: 640px) {
+  .cardHeader {
+    font-size: 13.3px;
+  }
+}
+
 .headerContent {
   display: flex;
   gap: 1.6rem;
@@ -264,6 +270,12 @@
   color: #0052a3;
   margin: 0;
   letter-spacing: -0.35px;
+}
+
+@media (max-width: 640px) {
+  .sectionTitle {
+    font-size: 1rem;
+  }
 }
 
 .expandIcon {
