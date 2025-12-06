@@ -195,6 +195,7 @@
   padding: 1.8rem 2rem;
   background: #FAFBFC;
   border-top: 1px solid #F0F1F3;
+  flex-wrap: wrap;
 }
 
 .infoColumn {
@@ -202,6 +203,7 @@
   flex-direction: column;
   gap: 0.6rem;
   flex: 1;
+  min-width: fit-content;
 }
 
 .infoLabel {
@@ -226,6 +228,7 @@
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  align-self: center;
 }
 
 .policyArrow svg {
@@ -355,10 +358,13 @@
   }
 
   .policyCardInfo {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.4rem;
     padding: 1.4rem;
+  }
+
+  .infoColumn {
+    flex: none;
   }
 
   .infoLabel {
@@ -367,5 +373,9 @@
 
   .infoValue {
     font-size: 1.3rem;
+  }
+
+  .policyCardInfo .policyArrow {
+    margin-left: auto;
   }
 }
