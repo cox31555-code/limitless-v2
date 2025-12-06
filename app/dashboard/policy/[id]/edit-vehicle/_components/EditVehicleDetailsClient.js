@@ -175,11 +175,31 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       {/* Content */}
       <div className={styles.contentWrapper}>
         <form onSubmit={form.handleSubmit(handleSave)} className={styles.formContainer}>
+          {/* Info Banner */}
+          <div className={styles.infoBanner}>
+            <svg className={styles.infoIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+            <p className={styles.infoBannerText}>
+              Heads up - to keep things simple any further changes will need to take place <strong>after</strong> this change has taken effect.
+            </p>
+          </div>
+
           {/* Vehicle Information Card - Static Data */}
           <div className={styles.vehicleInfoCard}>
-            <h3 className={styles.vehicleInfoTitle}>Your Vehicle</h3>
-            <div className={styles.vehicleInfoContent}>
-              <div className={styles.vehicleMainInfo}>
+            <div className={styles.vehicleHeader}>
+              <div className={styles.iconWrapper}>
+                <svg className={styles.vehicleIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M5 17h14v2H5zm0-6.9h14v2H5z"/>
+                  <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11C5.84 5 5.29 5.42 5.08 6.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-1.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z"/>
+                  <circle cx="7.5" cy="14.5" r="1.5"/>
+                  <circle cx="16.5" cy="14.5" r="1.5"/>
+                </svg>
+              </div>
+              <div className={styles.vehicleNameArea}>
+                <h3 className={styles.vehicleInfoTitle}>Your Vehicle</h3>
                 <div className={styles.vehicleTitle}>
                   {make && model ? `${make} ${model}` : "Vehicle Information"}
                 </div>
@@ -189,18 +209,20 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                   </div>
                 )}
               </div>
+            </div>
+            <div className={styles.vehicleInfoContent}>
               <div className={styles.vehicleMetaInfo}>
                 {year && <span className={styles.metaItem}>{year}</span>}
                 {transmission && <span className={styles.metaItem}>{transmission}</span>}
                 {fuel && <span className={styles.metaItem}>{fuel}</span>}
                 {doors && <span className={styles.metaItem}>{doors} Doors</span>}
               </div>
+              {vehicleType && (
+                <div className={styles.vehicleTypeInfo}>
+                  Type: <span className={styles.vehicleTypeValue}>{vehicleType}</span>
+                </div>
+              )}
             </div>
-            {vehicleType && (
-              <div className={styles.vehicleTypeInfo}>
-                Type: <span className={styles.vehicleTypeValue}>{vehicleType}</span>
-              </div>
-            )}
           </div>
 
           <div className={styles.mainSection}>
