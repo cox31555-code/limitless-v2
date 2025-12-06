@@ -310,6 +310,20 @@
 
 }
 
+@media screen and (max-width: 640px) {
+  .policyCardInfo {
+    gap: 2.2rem;
+  }
+
+  .infoLabel {
+    font-size: 1.4rem;
+  }
+
+  .infoValue {
+    font-size: 1.4rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .section {
     gap: 1.5rem;
