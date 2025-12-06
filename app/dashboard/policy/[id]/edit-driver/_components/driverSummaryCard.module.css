@@ -150,6 +150,33 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .driverCard {
+    padding: 1.8rem;
+  }
+
+  .header {
+    gap: 1.4rem;
+  }
+
+  .dateOfBirth {
+    font-size: 1.4rem;
+  }
+
+  .addressTitle {
+    font-size: 1.4rem;
+  }
+
+  .addressValue {
+    font-size: 1.3rem;
+  }
+
+  .changeAddressBtn {
+    font-size: 1.3rem;
+    padding: 0.8rem 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .infoBanner {
     gap: 1.2rem;
