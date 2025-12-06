@@ -2,7 +2,7 @@
 
 import React from "react";
 import DashboardDropdown from "../../edit-vehicle/_components/DashboardDropdown";
-import EmploymentAutocomplete from "@/app/annual/get-quote/_components/EmploymentAutocomplete";
+import DashboardAutocomplete from "./DashboardAutocomplete";
 import styles from "./driverQuestions.module.css";
 import { occupationOptions, industryOptions, studentTypeOptions, licenseHeldOptions } from "@/app/temporary/get-quote/data";
 
@@ -128,7 +128,7 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
           <div className={styles.questionGroup}>
             <h3 className={styles.questionTitle}>What do you do for a living?</h3>
             <p className={styles.questionDescription}>Start typing and choose from the list.</p>
-            <EmploymentAutocomplete
+            <DashboardAutocomplete
               selected={occupation || ""}
               options={occupationOptions}
               setSelected={(value) => setValue("userDetails.occupation", value)}
@@ -139,7 +139,7 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
           <div className={styles.questionGroup}>
             <h3 className={styles.questionTitle}>What type of industry do you work in?</h3>
             <p className={styles.questionDescription}>Start typing and choose from the list.</p>
-            <EmploymentAutocomplete
+            <DashboardAutocomplete
               selected={industry || ""}
               options={industryOptions}
               setSelected={(value) => setValue("userDetails.industry", value)}
