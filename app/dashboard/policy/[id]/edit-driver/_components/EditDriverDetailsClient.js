@@ -113,12 +113,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       <div className={styles.contentWrapper}>
         <form onSubmit={form.handleSubmit(handleSave)} className={styles.formContainer}>
           <DriverSummaryCard driver={driver} form={form} />
-          <Step2PersonalDetailsHidden form={form} />
-          <Step2HouseholdHidden form={form} />
-          <Step2EmploymentHidden form={form} />
-          <Step2LicenceHidden form={form} />
-          <Step2LicenceRestrictionsHidden form={form} />
-          <Step2ClaimsAndConvictionsHidden
+          <DriverQuestions
             form={form}
             claims={claims}
             setClaims={setClaims}
