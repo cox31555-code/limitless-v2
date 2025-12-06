@@ -423,6 +423,10 @@
 }
 
 @media screen and (max-width: 640px) {
+  .breadcrumbItem {
+    font-size: 1.4rem;
+  }
+
   .contentWrapper {
     gap: 3.125rem;
   }
