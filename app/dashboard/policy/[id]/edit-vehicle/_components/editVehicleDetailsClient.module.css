@@ -144,17 +144,17 @@
 .infoBanner {
   display: flex;
   gap: 1.2rem;
-  padding: 1.2rem 1.6rem;
-  background: #e8f2fb;
-  border-radius: 8px;
-  border: 1px solid #d4e4f7;
+  padding: 1.3rem 1.8rem;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2fb 100%);
+  border-radius: 10px;
+  border: 1px solid #c8ddf5;
   align-items: flex-start;
 }
 
 .infoIcon {
   width: 20px;
   height: 20px;
-  color: #0052a3;
+  color: #1976d2;
   flex-shrink: 0;
   margin-top: 0.2rem;
 }
@@ -162,20 +162,21 @@
 .infoBannerText {
   margin: 0;
   font-size: 0.95rem;
-  color: #0052a3;
-  line-height: 1.5;
+  color: #1565c0;
+  line-height: 1.6;
 }
 
 .infoBannerText strong {
   font-weight: 600;
+  color: #0d47a1;
 }
 
 /* Vehicle Info Card - Static Display */
 .vehicleInfoCard {
   background: #ffffff;
-  border: 1px solid #e0e6f0;
-  border-radius: 15.6px;
-  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
   padding: 2.6rem;
   display: flex;
   flex-direction: column;
@@ -195,14 +196,15 @@
   width: 60px;
   height: 60px;
   flex-shrink: 0;
-  background: #f0f4fb;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
   border-radius: 50%;
+  border: 1px solid #e3e8ef;
 }
 
 .vehicleIcon {
   width: 32px;
   height: 32px;
-  color: #0052a3;
+  color: #1976d2;
 }
 
 .vehicleNameArea {
@@ -215,10 +217,10 @@
 .vehicleInfoTitle {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0052a3;
+  color: #5a6c7d;
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.65px;
+  letter-spacing: 0.8px;
   line-height: 1.2;
 }
 
@@ -227,13 +229,13 @@
   flex-direction: column;
   gap: 1rem;
   padding-top: 1.6rem;
-  border-top: 1px solid #f0f1f3;
+  border-top: 1px solid #e8ecf0;
 }
 
 .vehicleTitle {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #0052a3;
+  color: #1e293b;
   line-height: 1.2;
   letter-spacing: -0.2px;
   margin: 0;
@@ -241,7 +243,7 @@
 
 .vehicleRegistration {
   font-size: 1.3rem;
-  color: #7a8fa3;
+  color: #64748b;
   font-weight: 500;
   margin: 0;
 }
@@ -255,7 +257,7 @@
 
 .metaItem {
   font-size: 1.3rem;
-  color: #7a8fa3;
+  color: #64748b;
   font-weight: 500;
 }
 
@@ -270,24 +272,24 @@
 
 .vehicleTypeInfo {
   font-size: 1.3rem;
-  color: #7a8fa3;
+  color: #64748b;
   font-weight: 500;
   padding-top: 1rem;
   margin-top: 1rem;
-  border-top: 1px solid #e0e6f0;
+  border-top: 1px solid #e8ecf0;
 }
 
 .vehicleTypeValue {
-  color: #0052a3;
+  color: #1e293b;
   font-weight: 600;
 }
 
 /* Main Section - Questions */
 .mainSection {
   background: #ffffff;
-  border: 1px solid #e0e6f0;
-  border-radius: 15.6px;
-  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
   padding: 2.6rem;
   display: flex;
   flex-direction: column;
@@ -300,7 +302,7 @@
   flex-direction: column;
   gap: 1.3rem;
   padding: 2.6rem 0;
-  border-bottom: 1px solid #e0e6f0;
+  border-bottom: 1px solid #e8ecf0;
 }
 
 .fieldGroup:first-child {
@@ -315,7 +317,7 @@
 .fieldGroupTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #0052a3;
+  color: #1e293b;
   margin: 0;
   letter-spacing: -0.3px;
   line-height: 1.4;
@@ -323,7 +325,7 @@
 
 .fieldGroupDescription {
   font-size: 1.2rem;
-  color: #7a8fa3;
+  color: #64748b;
   margin: 0;
   font-weight: 400;
   line-height: 1.6;
@@ -335,7 +337,7 @@
   gap: 1.6rem;
   margin-top: 1.5rem;
   padding-top: 2rem;
-  border-top: 1px solid #e0e6f0;
+  border-top: 1px solid #e8ecf0;
   justify-content: flex-end;
 }
 
@@ -352,22 +354,25 @@
 }
 
 .cancelBtn {
-  background: #f0f1f3;
-  color: #333;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
 }
 
 .cancelBtn:hover:not(:disabled) {
-  background: #e5e7eb;
+  background: #e2e8f0;
+  color: #334155;
 }
 
 .saveBtn {
-  background: #0052a3;
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
   color: #ffffff;
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
 }
 
 .saveBtn:hover:not(:disabled) {
-  background: #003d7a;
-  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
 }
 
 .cancelBtn:disabled,
