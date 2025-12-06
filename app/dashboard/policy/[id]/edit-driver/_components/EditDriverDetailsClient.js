@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import styles from "./editDriverDetailsClient.module.css";
