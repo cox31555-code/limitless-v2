@@ -187,39 +187,11 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          fontWeight: "400",
-          gap: "1.6rem",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            fontWeight: "400",
-          }}
-        >
+      <div className={styles.actionsWrapper}>
+        <div className={styles.buttonGroup}>
           <button
             onClick={handleView}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.6rem",
-              color: "#0052a3",
-              fontSize: "1.25rem",
-              fontWeight: "600",
-              lineHeight: "130%",
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              padding: "0.8rem 1.2rem",
-              transition: "color 0.2s ease",
-              whiteSpace: "nowrap",
-              textDecoration: "underline",
-            }}
+            className={styles.button}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = "#003d7a";
             }}
@@ -227,14 +199,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
               e.currentTarget.style.color = "#0052a3";
             }}
           >
-            <div
-              style={{
-                display: "block",
-                fontWeight: "600",
-                whiteSpace: "nowrap",
-                fontSize: "11.5px",
-              }}
-            >
+            <div className={styles.buttonText}>
               View Online
             </div>
           </button>
@@ -242,23 +207,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
           <button
             onClick={handleDownload}
             disabled={isDownloading}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.6rem",
-              color: "#0052a3",
-              fontSize: "1.25rem",
-              fontWeight: "600",
-              lineHeight: "130%",
-              background: "transparent",
-              border: "none",
-              cursor: isDownloading ? "not-allowed" : "pointer",
-              padding: "0.8rem 1.2rem",
-              transition: "color 0.2s ease",
-              opacity: isDownloading ? 0.7 : 1,
-              whiteSpace: "nowrap",
-              textDecoration: "underline",
-            }}
+            className={styles.button}
             onMouseEnter={(e) => {
               if (!isDownloading) {
                 e.currentTarget.style.color = "#003d7a";
@@ -276,16 +225,8 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
-                style={{
-                  animation: "spin 1s linear infinite",
-                }}
+                className={styles.spinner}
               >
-                <style>{`
-                  @keyframes spin {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                  }
-                `}</style>
                 <circle
                   cx="12"
                   cy="12"
@@ -304,14 +245,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
                 />
               </svg>
             )}
-            <div
-              style={{
-                display: "block",
-                fontWeight: "600",
-                whiteSpace: "nowrap",
-                fontSize: "11.5px",
-              }}
-            >
+            <div className={styles.buttonText}>
               {isDownloading ? "Downloading..." : "Download PDF"}
             </div>
           </button>
