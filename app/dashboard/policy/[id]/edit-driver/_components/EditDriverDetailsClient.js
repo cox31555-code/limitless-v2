@@ -10,19 +10,13 @@ import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import styles from "./editDriverDetailsClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import DriverSummaryCard from "./DriverSummaryCard";
+import DriverQuestions from "./DriverQuestions";
 import { useLoading } from "@/contexts/LoadingContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700"],
 });
-
-const Step2PersonalDetailsHidden = dynamic(() => import("./Step2PersonalDetailsHidden"), { ssr: false });
-const Step2HouseholdHidden = dynamic(() => import("./Step2HouseholdHidden"), { ssr: false });
-const Step2EmploymentHidden = dynamic(() => import("./Step2EmploymentHidden"), { ssr: false });
-const Step2LicenceHidden = dynamic(() => import("./Step2LicenceHidden"), { ssr: false });
-const Step2LicenceRestrictionsHidden = dynamic(() => import("./Step2LicenceRestrictionsHidden"), { ssr: false });
-const Step2ClaimsAndConvictionsHidden = dynamic(() => import("./Step2ClaimsAndConvictionsHidden"), { ssr: false });
 
 const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
   const router = useRouter();
