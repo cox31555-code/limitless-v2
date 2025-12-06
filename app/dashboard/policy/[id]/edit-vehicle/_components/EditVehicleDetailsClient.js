@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
-import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import DashboardDropdown from "./DashboardDropdown";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import styles from "./editVehicleDetailsClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
