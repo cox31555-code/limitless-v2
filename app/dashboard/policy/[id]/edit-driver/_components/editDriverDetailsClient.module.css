@@ -265,11 +265,14 @@
 
   .actionButtons {
     flex-direction: column-reverse;
+    gap: 1rem;
   }
 
   .cancelBtn,
   .saveBtn {
     width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
   }
 }
 
