@@ -99,6 +99,12 @@
 
 @media screen and (max-width: 640px) {
   .partnershipSection {
+    gap: 0 !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .partnershipSection {
     justify-content: center;
     align-items: center;
     margin-right: 9px;
