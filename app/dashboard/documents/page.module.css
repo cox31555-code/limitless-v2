@@ -436,6 +436,7 @@
     align-items: flex-start;
     gap: 1.5rem;
     flex-direction: column;
+    margin-bottom: 1.125rem;
   }
 
   .documentsTitle {
