@@ -812,6 +812,68 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 1.2rem;
+  }
+
+  .priceCard {
+    padding: 1.8rem 1.6rem;
+  }
+
+  .priceAmount {
+    font-size: 2.2rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1.3rem;
+  }
+
+  .breakdownLabel {
+    font-size: 1.1rem;
+  }
+
+  .breakdownAmount {
+    font-size: 1.2rem;
+  }
+
+  .cardHeader {
+    padding: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .cardContent {
+    padding: 1.6rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .detailLabel {
+    font-size: 1rem;
+  }
+
+  .detailValue {
+    font-size: 1.2rem;
+  }
+
+  .carTitle {
+    font-size: 1.4rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .instalmentText {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     gap: 0.8rem;
