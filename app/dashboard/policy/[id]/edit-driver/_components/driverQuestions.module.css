@@ -87,8 +87,8 @@
 }
 
 .radioOption:has(.radioInput:checked) {
-  background: #f1f5f9;
-  border-color: #64748b;
+  background: #ffffff;
+  border-color: #1976d2;
 }
 
 .radioOption:has(.radioInput:checked) .radioLabel {
