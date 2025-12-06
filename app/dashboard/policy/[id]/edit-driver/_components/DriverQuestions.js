@@ -24,10 +24,6 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
   const hasAdditionalQualifications = watch("carUsage.hasAdditionalQualifications");
   const medicalConditions = watch("carUsage.medicalConditions");
   const dvlaConditionType = watch("carUsage.dvlaConditionType");
-  const insuranceCancelled = watch("carUsage.insuranceCancelledOrClaimRefusedOrPolicyVoided");
-  const criminalConvictions = watch("carUsage.criminalConvictions");
-  const motorAccidentsClaims = watch("carUsage.motorAccidentsClaims");
-  const drivingConvictions = watch("carUsage.drivingConvictions");
 
   const maritalStatusOptions = ["Single", "Married", "Civil partnership", "Divorced", "Widowed"];
   const yesNoOptions = ["Yes", "No"];
