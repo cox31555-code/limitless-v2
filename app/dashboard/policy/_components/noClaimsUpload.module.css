@@ -39,6 +39,12 @@
   line-height: 1.5;
 }
 
+@media (max-width: 640px) {
+  .sectionDescription {
+    font-size: 1.2rem;
+  }
+}
+
 /* Drop Zone */
 .dropZone {
   border: 2px dashed #0052a3;
