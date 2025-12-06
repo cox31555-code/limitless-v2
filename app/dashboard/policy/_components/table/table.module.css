@@ -52,10 +52,43 @@
 }
 
 /* Policy Type Specific Styling */
-.policyANNUAL .brandedBadge,
-.policyTEMPORARY .brandedBadge,
-.policyIMPOUND .brandedBadge {
+
+/* ANNUAL - Keep original blue */
+.policyANNUAL .brandedBadge {
   background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+}
+
+/* TEMPORARY - Premium teal/cyan gradient */
+.policyTEMPORARY .brandedBadge {
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+  box-shadow: 0 2px 8px rgba(8, 145, 178, 0.2);
+}
+
+.policyTEMPORARY .brandedBadge .policyBadgeType {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.policyTEMPORARY:hover {
+  border-color: #0891b2;
+  box-shadow: 0 12px 32px rgba(8, 145, 178, 0.15), 0 2px 8px rgba(8, 145, 178, 0.08);
+}
+
+/* IMPOUND - Premium slate/gray gradient with orange accent */
+.policyIMPOUND .brandedBadge {
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  box-shadow: 0 2px 8px rgba(51, 65, 85, 0.2);
+}
+
+.policyIMPOUND .brandedBadge .policyBadgeType {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
+}
+
+.policyIMPOUND:hover {
+  border-color: #334155;
+  box-shadow: 0 12px 32px rgba(51, 65, 85, 0.15), 0 2px 8px rgba(51, 65, 85, 0.08);
 }
 
 
