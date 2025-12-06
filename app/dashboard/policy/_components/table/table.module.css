@@ -311,6 +311,18 @@
 }
 
 @media screen and (max-width: 640px) {
+  .licensePlateText {
+    font-size: 1.8rem;
+  }
+
+  .vehicleName {
+    font-size: 1.9rem;
+  }
+
+  .carMeta {
+    font-size: 1.45rem;
+  }
+
   .policyCardInfo {
     gap: 2.2rem;
   }
