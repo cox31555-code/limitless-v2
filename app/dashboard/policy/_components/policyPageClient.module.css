@@ -514,11 +514,20 @@
 
   .tabsContainer {
     gap: 11px;
+    flex-direction: column;
   }
 
   .tab {
     font-size: 1.7rem;
     gap: 10px;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    padding: 0.8rem 1rem;
+  }
+
+  .tabActive {
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #0052a3;
   }
 
   .tabBadge {
