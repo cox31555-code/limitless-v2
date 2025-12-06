@@ -179,23 +179,23 @@
   }
 
   .driverName {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .dateOfBirth {
-    font-size: 0.9rem;
-  }
-
-  .addressTitle {
     font-size: 1.1rem;
   }
 
+  .addressTitle {
+    font-size: 1.3rem;
+  }
+
   .addressValue {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
   }
 
   .changeAddressBtn {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
   }
 }
