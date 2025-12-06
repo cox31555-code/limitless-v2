@@ -8,8 +8,7 @@ import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
-import styles from "@/app/annual/get-quote/_components/annualVehicle.module.css";
-import editStyles from "./editVehicleDetailsClient.module.css";
+import styles from "./editVehicleDetailsClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -137,7 +136,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const registration = vehicleDetails?.registrationNumber || "";
 
   return (
-    <div className={editStyles.container}>
+    <div className={styles.container}>
       {/* Modifications Modal */}
       <VehicleModificationsModal
         isOpen={showModificationsModal}
@@ -147,83 +146,78 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       />
 
       {/* Hero Section */}
-      <section className={editStyles.heroSection}>
-        <div className={editStyles.heroBackground}>
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.238px" height="176.262px" viewBox="0 0 106.238 140.262" className={editStyles.heroBackgroundImage}>
+      <section className={styles.heroSection}>
+        <div className={styles.heroBackground}>
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.238px" height="176.262px" viewBox="0 0 106.238 140.262" className={styles.heroBackgroundImage}>
             <style>{`.st0{fill:#FFFFFF;}.st1{fill:#05AFFF;}.st2{fill:#0A0913;}`}</style>
             <path className="st1" d="M86.515,75.233L44.398,94.136v25.204l-4.194-4.194l-13.187-13.187l-7.276-7.276l24.658-11.08l17.44-7.823l35.953-16.152c9.13-4.116,11.334-16.094,4.253-23.175L70.012,4.419C60.57,-5.023,44.398,1.669,44.398,15.012v20.171L0.115,55.081v19.098l17.44-7.823l39.484-17.713l4.916-2.204V27.302l-0.117,0.058v-6.457l24.677,24.677l-10.944,4.916l0.02,0.039l-46.682,21.01l-0.039-0.078L8.464,80.636c-0.351,0.156-0.683,0.312-0.995,0.488c-4.253,2.302-6.808,6.399-7.354,10.768c-0.527,4.175,0.741,8.583,4.077,11.919l32.051,32.032c9.442,9.442,25.594,2.751,25.594-10.612v-19.82l24.677-11.08l19.722-8.837V66.357L86.515,75.233z"/>
           </svg>
         </div>
-        <div className={editStyles.heroContent}>
-          <div className={editStyles.greetingArea}>
-            <h1 className={`${editStyles.greetingTitle} ${plusJakartaSans.className}`}>Edit Vehicle Details</h1>
-            <p className={editStyles.greetingSubtitle}>Update your vehicle information</p>
+        <div className={styles.heroContent}>
+          <div className={styles.greetingArea}>
+            <h1 className={`${styles.greetingTitle} ${plusJakartaSans.className}`}>Edit Vehicle Details</h1>
+            <p className={styles.greetingSubtitle}>Update your vehicle information</p>
           </div>
         </div>
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={editStyles.breadcrumb}>
-        <span className={editStyles.breadcrumbItem}>Dashboard</span>
-        <span className={editStyles.breadcrumbSeparator}>›</span>
-        <span className={editStyles.breadcrumbItem}>Manage Policy</span>
-        <span className={editStyles.breadcrumbSeparator}>›</span>
-        <span className={editStyles.breadcrumbItem}>Policy summary</span>
-        <span className={editStyles.breadcrumbSeparator}>›</span>
-        <span className={`${editStyles.breadcrumbItem} ${editStyles.active}`}>Edit vehicle details</span>
+      <div className={styles.breadcrumb}>
+        <span className={styles.breadcrumbItem}>Dashboard</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={styles.breadcrumbItem}>Manage Policy</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={styles.breadcrumbItem}>Policy summary</span>
+        <span className={styles.breadcrumbSeparator}>›</span>
+        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Edit vehicle details</span>
       </div>
 
       {/* Content */}
-      <div className={editStyles.contentWrapper}>
-        <form onSubmit={form.handleSubmit(handleSave)} className={editStyles.formContainer}>
-          <div className={editStyles.mainSection}>
-            {/* Vehicle Information Card - Static Data */}
-            <div className={editStyles.vehicleInfoCard}>
-              <h3 className={editStyles.vehicleInfoTitle}>Your Vehicle</h3>
-              <div className={editStyles.vehicleInfoContent}>
-                <div className={editStyles.vehicleMainInfo}>
-                  <div className={editStyles.vehicleTitle}>
-                    {make && model ? `${make} ${model}` : "Vehicle Information"}
+      <div className={styles.contentWrapper}>
+        <form onSubmit={form.handleSubmit(handleSave)} className={styles.formContainer}>
+          {/* Vehicle Information Card - Static Data */}
+          <div className={styles.vehicleInfoCard}>
+            <h3 className={styles.vehicleInfoTitle}>Your Vehicle</h3>
+            <div className={styles.vehicleInfoContent}>
+              <div className={styles.vehicleMainInfo}>
+                <div className={styles.vehicleTitle}>
+                  {make && model ? `${make} ${model}` : "Vehicle Information"}
+                </div>
+                {registration && (
+                  <div className={styles.vehicleRegistration}>
+                    ({registration})
                   </div>
-                  {registration && (
-                    <div className={editStyles.vehicleRegistration}>
-                      ({registration})
-                    </div>
-                  )}
-                </div>
-                <div className={editStyles.vehicleMetaInfo}>
-                  {year && <span className={editStyles.metaItem}>{year}</span>}
-                  {transmission && <span className={editStyles.metaItem}>{transmission}</span>}
-                  {fuel && <span className={editStyles.metaItem}>{fuel}</span>}
-                  {doors && <span className={editStyles.metaItem}>{doors} Doors</span>}
-                </div>
+                )}
               </div>
-              {vehicleType && (
-                <div className={editStyles.vehicleTypeInfo}>
-                  Type: <span className={editStyles.vehicleTypeValue}>{vehicleType}</span>
-                </div>
-              )}
+              <div className={styles.vehicleMetaInfo}>
+                {year && <span className={styles.metaItem}>{year}</span>}
+                {transmission && <span className={styles.metaItem}>{transmission}</span>}
+                {fuel && <span className={styles.metaItem}>{fuel}</span>}
+                {doors && <span className={styles.metaItem}>{doors} Doors</span>}
+              </div>
             </div>
-
-            {/* Divider */}
-            <div className={editStyles.sectionDivider}></div>
-
-            {/* Vehicle Modifications */}
-            <div className={editStyles.fieldGroup}>
-              <h4 className={editStyles.fieldGroupTitle}>Has the car been modified in any way?</h4>
-              <p className={editStyles.fieldGroupDescription}>Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.</p>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={vehicleModified}
-                  options={yesNoOptions}
-                  setSelected={(value) => handleDropdownChange("vehicleModified", value)}
-                  placeholder="Select option"
-                />
+            {vehicleType && (
+              <div className={styles.vehicleTypeInfo}>
+                Type: <span className={styles.vehicleTypeValue}>{vehicleType}</span>
               </div>
+            )}
+          </div>
+
+          <div className={styles.mainSection}>
+            {/* Vehicle Modifications */}
+            <div className={styles.fieldGroup}>
+              <h4 className={styles.fieldGroupTitle}>Has the car been modified in any way?</h4>
+              <p className={styles.fieldGroupDescription}>Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.</p>
+              <Dropdown
+                label=""
+                selected={vehicleModified}
+                options={yesNoOptions}
+                setSelected={(value) => handleDropdownChange("vehicleModified", value)}
+                placeholder="Select option"
+              />
               {vehicleModified === "Yes" && vehicleModifications.length > 0 && (
-                <div className={styles.modificationsListContainer}>
-                  <div className={styles.modificationsLabelWrapper}>
+                <div className={styles.modificationsDisplay}>
+                  <div className={styles.modificationsHeader}>
                     <p className={styles.modificationsLabel}>Selected Modifications:</p>
                     <button
                       type="button"
@@ -233,7 +227,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
                       Edit
                     </button>
                   </div>
-                  <div className={styles.modificationsTagsList}>
+                  <div className={styles.modificationsList}>
                     {vehicleModifications.map((modification) => (
                       <span key={modification} className={styles.modificationTag}>
                         {modification}
@@ -245,92 +239,82 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
             </div>
 
             {/* Alarm/Immobiliser */}
-            <div className={editStyles.fieldGroup}>
-              <h4 className={editStyles.fieldGroupTitle}>What type of alarm and/or immobiliser does the car have?</h4>
-              <p className={editStyles.fieldGroupDescription}>Check your car's manual if you're unsure.</p>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.alarmImmobiliser") || ""}
-                  options={alarmImmobiliserOptions}
-                  setSelected={(value) => handleDropdownChange("alarmImmobiliser", value)}
-                  placeholder="Select alarm type"
-                />
-              </div>
+            <div className={styles.fieldGroup}>
+              <h4 className={styles.fieldGroupTitle}>What type of alarm and/or immobiliser does the car have?</h4>
+              <p className={styles.fieldGroupDescription}>Check your car's manual if you're unsure.</p>
+              <Dropdown
+                label=""
+                selected={watch("vehicleDetails.alarmImmobiliser") || ""}
+                options={alarmImmobiliserOptions}
+                setSelected={(value) => handleDropdownChange("alarmImmobiliser", value)}
+                placeholder="Select alarm type"
+              />
             </div>
 
             {/* Tracking Device */}
-            <div className={editStyles.fieldGroup}>
-              <h4 className={editStyles.fieldGroupTitle}>Is the car fitted with a tracking device?</h4>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.trackingDevice") || ""}
-                  options={trackingDeviceOptions}
-                  setSelected={(value) => handleDropdownChange("trackingDevice", value)}
-                  placeholder="Select option"
-                />
-              </div>
+            <div className={styles.fieldGroup}>
+              <h4 className={styles.fieldGroupTitle}>Is the car fitted with a tracking device?</h4>
+              <Dropdown
+                label=""
+                selected={watch("vehicleDetails.trackingDevice") || ""}
+                options={trackingDeviceOptions}
+                setSelected={(value) => handleDropdownChange("trackingDevice", value)}
+                placeholder="Select option"
+              />
             </div>
 
             {/* Imported Vehicle */}
-            <div className={editStyles.fieldGroup}>
-              <h4 className={editStyles.fieldGroupTitle}>Is the car an import?</h4>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.importedVehicle") || ""}
-                  options={yesNoOptions}
-                  setSelected={(value) => handleDropdownChange("importedVehicle", value)}
-                  placeholder="Select option"
-                />
-              </div>
+            <div className={styles.fieldGroup}>
+              <h4 className={styles.fieldGroupTitle}>Is the car an import?</h4>
+              <Dropdown
+                label=""
+                selected={watch("vehicleDetails.importedVehicle") || ""}
+                options={yesNoOptions}
+                setSelected={(value) => handleDropdownChange("importedVehicle", value)}
+                placeholder="Select option"
+              />
             </div>
 
             {/* Driver Side */}
-            <div className={editStyles.fieldGroup}>
-              <h4 className={editStyles.fieldGroupTitle}>Is the car left or right-hand drive?</h4>
-              <p className={editStyles.fieldGroupDescription}>The UK standard is right-hand drive. This means that when you are sat in the vehicle facing the windscreen, the steering wheel is on the right side.</p>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.driverSide") || ""}
-                  options={driverSideOptions}
-                  setSelected={(value) => handleDropdownChange("driverSide", value)}
-                  placeholder="Select option"
-                />
-              </div>
+            <div className={styles.fieldGroup}>
+              <h4 className={styles.fieldGroupTitle}>Is the car left or right-hand drive?</h4>
+              <p className={styles.fieldGroupDescription}>The UK standard is right-hand drive. This means that when you are sat in the vehicle facing the windscreen, the steering wheel is on the right side.</p>
+              <Dropdown
+                label=""
+                selected={watch("vehicleDetails.driverSide") || ""}
+                options={driverSideOptions}
+                setSelected={(value) => handleDropdownChange("driverSide", value)}
+                placeholder="Select option"
+              />
             </div>
 
             {/* Seats */}
-            <div className={editStyles.fieldGroup}>
-              <h4 className={editStyles.fieldGroupTitle}>How many seats are there in the car?</h4>
-              <p className={editStyles.fieldGroupDescription}>Count the number of seatbelts if you're unsure.</p>
-              <div className={styles.cleanFormGrid2Col}>
-                <Dropdown
-                  label=""
-                  selected={watch("vehicleDetails.seats") || ""}
-                  options={seatsOptions}
-                  setSelected={(value) => handleDropdownChange("seats", value)}
-                  placeholder="Select number of seats"
-                />
-              </div>
+            <div className={styles.fieldGroup}>
+              <h4 className={styles.fieldGroupTitle}>How many seats are there in the car?</h4>
+              <p className={styles.fieldGroupDescription}>Count the number of seatbelts if you're unsure.</p>
+              <Dropdown
+                label=""
+                selected={watch("vehicleDetails.seats") || ""}
+                options={seatsOptions}
+                setSelected={(value) => handleDropdownChange("seats", value)}
+                placeholder="Select number of seats"
+              />
             </div>
           </div>
 
           {/* Action Buttons */}
-          <div className={editStyles.actionButtons}>
+          <div className={styles.actionButtons}>
             <button
               type="button"
               onClick={() => router.back()}
-              className={editStyles.cancelBtn}
+              className={styles.cancelBtn}
               disabled={isSubmitting}
             >
               Back
             </button>
             <button
               type="submit"
-              className={editStyles.saveBtn}
+              className={styles.saveBtn}
               disabled={isSubmitting}
             >
               {isSubmitting ? "Saving..." : "Save Changes"}
