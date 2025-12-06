@@ -431,6 +431,17 @@
     font-size: 1.4rem;
   }
 
+  .sectionHeaderWrapper {
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+
+  .documentsTitle {
+    text-align: left;
+  }
+
   .contentWrapper {
     gap: 3.125rem;
   }
