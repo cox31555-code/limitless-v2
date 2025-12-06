@@ -1058,15 +1058,15 @@
   }
 
   .iconWrapper {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
     border-radius: 10px;
   }
 
   .icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
   .sectionTitle {
