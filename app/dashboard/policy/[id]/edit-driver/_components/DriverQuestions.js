@@ -53,8 +53,17 @@ const DriverQuestions = ({ form, claims, convictions, setClaims, setConvictions 
     "DVLA unaware",
   ];
 
+  const nonUKLicenseTypes = [
+    "Full International Licence",
+    "Full EU Licence",
+    "Full European non-EU Licence",
+  ];
+
   const isEmployedOrSelfEmployed = ["Employed", "Self Employed"].includes(employmentStatus);
   const isStudent = employmentStatus === "Student";
+  const isNorthernIreland = licenseIssueCountry === "Northern Ireland";
+  const isGreatBritain = licenseIssueCountry === "England, Scotland or Wales (Great Britain)";
+  const shouldShowLicenseNumberSection = licenseType && !nonUKLicenseTypes.includes(licenseType);
 
   return (
     <div className={styles.questionsCard}>
