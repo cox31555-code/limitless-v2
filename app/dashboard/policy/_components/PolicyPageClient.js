@@ -122,9 +122,7 @@ const PolicyPageClient = ({
         {activeTab === "expired" && expiredPolicies && expiredPolicies.length > 0 && (
           <section className={styles.policiesSection}>
             <div className={styles.sectionHeaderWrapper}>
-              <div className={styles.sectionHeader}>
-                <h2 className={styles.sectionTitle}>Expired Policies</h2>
-              </div>
+              <div className={styles.sectionHeader} />
             </div>
             <Table
               title="Expired Policies"
