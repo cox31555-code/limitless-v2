@@ -407,6 +407,36 @@
   .removeButton {
     width: 100%;
   }
+
+  .licenseNumberFields {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .licenseFieldLabel {
+    font-size: 1.3rem;
+  }
+
+  .licenseInput {
+    font-size: 1.6rem;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .checkboxLabel {
+    font-size: 1.4rem;
+  }
+
+  .infoBox {
+    font-size: 1.3rem;
+  }
+
+  .expandableLink {
+    font-size: 1.3rem;
+  }
+
+  .expandableContent {
+    font-size: 1.3rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
