@@ -75,6 +75,31 @@
   cursor: pointer;
   accent-color: #1976d2;
   flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  background: #ffffff;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radioInput:checked {
+  border-color: #1976d2;
+  background: #ffffff;
+}
+
+.radioInput:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1976d2;
 }
 
 .radioLabel {
