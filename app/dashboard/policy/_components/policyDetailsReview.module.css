@@ -5,6 +5,12 @@
   width: 100%;
 }
 
+@media (max-width: 640px) {
+  .container {
+    gap: 2.4rem !important;
+  }
+}
+
 .priceSection {
   display: flex;
   flex-direction: column;
