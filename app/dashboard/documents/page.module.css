@@ -432,7 +432,7 @@
   }
 
   .sectionHeaderWrapper {
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 1.5rem;
     flex-direction: column;
@@ -440,6 +440,7 @@
 
   .documentsTitle {
     text-align: left;
+    margin-right: auto;
   }
 
   .contentWrapper {
