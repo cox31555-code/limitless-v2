@@ -31,7 +31,7 @@
 .questionTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #004284;
   margin: 0;
   letter-spacing: -0.3px;
   line-height: 1.4;
@@ -132,7 +132,7 @@
 .subQuestionTitle {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #475569;
+  color: #004284;
   margin: 0;
   line-height: 1.4;
 }
@@ -252,7 +252,7 @@
 .licenseFieldLabel {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #64748b;
+  color: #004284;
 }
 
 .licenseInput {
@@ -288,7 +288,7 @@
   cursor: pointer;
   font-size: 1.3rem;
   font-weight: 500;
-  color: #475569;
+  color: #004284;
 }
 
 .checkbox {
