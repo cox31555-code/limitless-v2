@@ -319,6 +319,12 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .heroSection {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .breadcrumb {
     gap: 0.6rem;
@@ -337,6 +343,7 @@
   .heroSection {
     padding: 2.5rem calc(50vw - 50%);
     gap: 1.5rem;
+    margin-bottom: 0;
   }
 
   .heroBackground {
