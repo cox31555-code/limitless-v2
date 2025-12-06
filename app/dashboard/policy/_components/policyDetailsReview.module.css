@@ -399,6 +399,24 @@
   letter-spacing: -0.2px;
 }
 
+@media (max-width: 640px) {
+  .subsectionTitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .subsectionTitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .subsectionTitle {
+    font-size: 1rem;
+  }
+}
+
 /* Action Buttons */
 .actionButtons {
   display: flex;
