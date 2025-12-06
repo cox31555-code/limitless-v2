@@ -538,6 +538,38 @@
   .container {
     margin: 0 0 1.75rem 0;
   }
+
+  .tabsContainer {
+    gap: 11px;
+    flex-direction: column;
+    border-bottom: none;
+    border-right: none;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  .tab {
+    font-size: 1.7rem;
+    gap: 10px;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0;
+    justify-content: flex-start;
+  }
+
+  .tabActive {
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #0052a3;
+  }
+
+  .tabLabel {
+    font-size: 1.7rem;
+  }
+
+  .tabNumber {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 640px) {
