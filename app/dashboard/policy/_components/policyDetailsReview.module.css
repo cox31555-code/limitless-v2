@@ -1136,12 +1136,13 @@
     flex-direction: column-reverse;
     gap: 0.8rem;
     padding: 1.2rem 0 0 0;
+    margin-top: 2rem;
   }
 
   .makeClaimBtn,
   .cancelPolicyBtn {
     width: 100%;
-    padding: 0.9rem 1.5rem;
-    font-size: 1rem;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
   }
 }
