@@ -73,6 +73,12 @@
   flex: 1;
 }
 
+@media screen and (max-width: 640px) {
+  .nameArea {
+    gap: 0.8rem;
+  }
+}
+
 .driverName {
   margin: 0;
   font-size: 2rem;
@@ -159,8 +165,16 @@
     gap: 1.4rem;
   }
 
+  .driverName {
+    font-size: 1.7rem;
+  }
+
   .dateOfBirth {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .addressSection {
+    gap: 1.7rem;
   }
 
   .addressTitle {
@@ -168,12 +182,13 @@
   }
 
   .addressValue {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .changeAddressBtn {
-    font-size: 1.3rem;
-    padding: 0.8rem 0;
+    font-size: 1.5rem;
+    padding: 1rem 1.3rem;
+    margin-top: -0.1rem;
   }
 }
 
