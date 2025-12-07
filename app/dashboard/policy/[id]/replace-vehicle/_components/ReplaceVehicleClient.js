@@ -588,28 +588,26 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
 
           {!showManualEntry && (
             <>
-              <div className={styles.inputSection}>
-                <div className={styles.regInputWrapper}>
-                  <RegistrationInput
-                    label="Registration Number"
-                    value={registrationNumber}
-                    onChange={(e) => {
-                      const formatted = e.target.value.toUpperCase();
-                      setValue("vehicleDetails.registrationNumber", formatted, {
-                        shouldValidate: false,
-                        shouldDirty: true,
-                      });
-                      if (errors.vehicleDetails?.registrationNumber) {
-                        clearErrors("vehicleDetails.registrationNumber");
-                      }
-                    }}
-                    onKeyPress={handleKeyPress}
-                    onButtonClick={handleFindVehicle}
-                    disabled={isLoadingVehicle}
-                    isLoading={isLoadingVehicle}
-                    error={errors.vehicleDetails?.registrationNumber?.message}
-                  />
-                </div>
+              <div className={styles.registrationSection}>
+                <RegistrationInput
+                  label="Registration Number"
+                  value={registrationNumber}
+                  onChange={(e) => {
+                    const formatted = e.target.value.toUpperCase();
+                    setValue("vehicleDetails.registrationNumber", formatted, {
+                      shouldValidate: false,
+                      shouldDirty: true,
+                    });
+                    if (errors.vehicleDetails?.registrationNumber) {
+                      clearErrors("vehicleDetails.registrationNumber");
+                    }
+                  }}
+                  onKeyPress={handleKeyPress}
+                  onButtonClick={handleFindVehicle}
+                  disabled={isLoadingVehicle}
+                  isLoading={isLoadingVehicle}
+                  error={errors.vehicleDetails?.registrationNumber?.message}
+                />
               </div>
 
               <div className={styles.alternativeOption}>
