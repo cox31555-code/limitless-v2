@@ -9,7 +9,7 @@ import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
 import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
-import Step1CarDetailsEdit from "@/app/annual/get-quote/_components/Step1CarDetailsEdit";
+import ReplaceVehicleCarDetails from "./ReplaceVehicleCarDetails";
 import styles from "./replaceVehicleClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
@@ -422,7 +422,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         </div>
 
         <div className={styles.contentWrapper}>
-          <Step1CarDetailsEdit
+          <ReplaceVehicleCarDetails
             form={form}
             onUpdate={() => setIsEditingCarDetails(false)}
             onCancel={() => setIsEditingCarDetails(false)}
