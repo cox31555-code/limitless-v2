@@ -539,7 +539,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                 className={styles.saveBtn}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Replacing..." : "Replace Vehicle"}
+                <p>{isSubmitting ? "Changing..." : "Change Vehicle"}</p>
               </button>
             </div>
           </form>
