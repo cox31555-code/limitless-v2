@@ -134,6 +134,12 @@
   z-index: 2;
 }
 
+@media screen and (max-width: 640px) {
+  .contentWrapper {
+    padding: 20px 0 1.6rem;
+  }
+}
+
 .formContainer {
   display: flex;
   flex-direction: column;
