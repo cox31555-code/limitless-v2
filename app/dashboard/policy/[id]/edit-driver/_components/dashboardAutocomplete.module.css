@@ -68,6 +68,12 @@
   font-family: inherit;
 }
 
+@media screen and (max-width: 640px) {
+  .input {
+    font-family: 'Jaldi', sans-serif;
+  }
+}
+
 .input::placeholder {
   color: #94a3b8;
   font-weight: 400;
