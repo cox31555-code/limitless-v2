@@ -167,7 +167,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
               <>
                 <div className={styles.fieldWrapper}>
                   <label className={styles.fieldLabel}>House number or name (optional)</label>
-                  <CustomTextInput
+                  <DashboardInput
                     type="text"
                     placeholder=""
                     value={houseNumber || ""}
@@ -180,7 +180,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
 
                 <div className={styles.fieldWrapper}>
                   <label className={styles.fieldLabel}>Postcode</label>
-                  <CustomTextInput
+                  <DashboardInput
                     type="text"
                     placeholder=""
                     value={postcode || ""}
