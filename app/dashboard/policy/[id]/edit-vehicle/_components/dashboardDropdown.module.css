@@ -83,12 +83,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-@media screen and (max-width: 640px) {
-  .selected {
-    font-family: 'Jaldi', sans-serif;
-  }
+  font-family: 'Jaldi', sans-serif;
 }
 
 .placeholder {
