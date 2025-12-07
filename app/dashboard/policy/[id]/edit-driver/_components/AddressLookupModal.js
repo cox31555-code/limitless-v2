@@ -78,7 +78,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
                   <label className={styles.fieldLabel}>Address line 1</label>
                   <DashboardInput
                     type="text"
-                    placeholder=""
+                    placeholder="e.g. 123 Main Street"
                     value={watch("userDetails.addressLine1") || ""}
                     onChange={(e) => setValue("userDetails.addressLine1", e.target.value)}
                   />
@@ -88,7 +88,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
                   <label className={styles.fieldLabel}>Address line 2 (optional)</label>
                   <DashboardInput
                     type="text"
-                    placeholder=""
+                    placeholder="e.g. Apartment 4B"
                     value={watch("userDetails.addressLine2") || ""}
                     onChange={(e) => setValue("userDetails.addressLine2", e.target.value)}
                   />
@@ -98,7 +98,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
                   <label className={styles.fieldLabel}>Address line 3 (optional)</label>
                   <DashboardInput
                     type="text"
-                    placeholder=""
+                    placeholder="e.g. Building name"
                     value={watch("userDetails.addressLine3") || ""}
                     onChange={(e) => setValue("userDetails.addressLine3", e.target.value)}
                   />
@@ -108,7 +108,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
                   <label className={styles.fieldLabel}>Town/City</label>
                   <DashboardInput
                     type="text"
-                    placeholder=""
+                    placeholder="e.g. London"
                     value={watch("userDetails.city") || ""}
                     onChange={(e) => setValue("userDetails.city", e.target.value)}
                   />
@@ -118,7 +118,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
                   <label className={styles.fieldLabel}>Postcode</label>
                   <DashboardInput
                     type="text"
-                    placeholder=""
+                    placeholder="e.g. SW1A 1AA"
                     value={watch("userDetails.manualPostcode") || ""}
                     onChange={(e) => setValue("userDetails.manualPostcode", e.target.value)}
                   />
