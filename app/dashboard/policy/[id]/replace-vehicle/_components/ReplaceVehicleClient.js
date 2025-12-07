@@ -343,43 +343,43 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
             </span>
           </div>
         </div>
-      </div>
 
-      <div className={styles.modificationSection}>
-        <h3 className={styles.modificationQuestion}>Has the car been modified in any way?</h3>
-        <p className={styles.modificationHelper}>
-          Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.
-        </p>
+        <div className={styles.modificationSectionInCard}>
+          <h3 className={styles.modificationQuestion}>Has the car been modified in any way?</h3>
+          <p className={styles.modificationHelper}>
+            Modifications are changes to the car's original specification. These can be mechanical, or cosmetic changes inside or outside the car.
+          </p>
 
-        <div className={styles.radioGroup}>
-          <label className={styles.radioOption}>
-            <input
-              type="radio"
-              {...register("vehicleDetails.vehicleModified")}
-              value="Yes"
-              className={styles.radioInput}
-            />
-            <span className={styles.radioLabel}>Yes</span>
-          </label>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                {...register("vehicleDetails.vehicleModified")}
+                value="Yes"
+                className={styles.radioInput}
+              />
+              <span className={styles.radioLabel}>Yes</span>
+            </label>
 
-          <label className={styles.radioOption}>
-            <input
-              type="radio"
-              {...register("vehicleDetails.vehicleModified")}
-              value="No"
-              className={styles.radioInput}
-            />
-            <span className={styles.radioLabel}>No</span>
-          </label>
+            <label className={styles.radioOption}>
+              <input
+                type="radio"
+                {...register("vehicleDetails.vehicleModified")}
+                value="No"
+                className={styles.radioInput}
+              />
+              <span className={styles.radioLabel}>No</span>
+            </label>
+          </div>
+
+          <button
+            type="button"
+            className={styles.helpLink}
+            onClick={() => setShowModificationsModal(true)}
+          >
+            How can I find out if my car's been modified?
+          </button>
         </div>
-
-        <button
-          type="button"
-          className={styles.helpLink}
-          onClick={() => setShowModificationsModal(true)}
-        >
-          How can I find out if my car's been modified?
-        </button>
       </div>
 
       {vehicleModified === "Yes" && (
