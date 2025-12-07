@@ -379,49 +379,49 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
           >
             How can I find out if my car's been modified?
           </button>
-        </div>
-      </div>
 
-      {vehicleModified === "Yes" && (
-        <div className={styles.modificationsSection}>
-          <h3 className={styles.modificationsHeading}>Your car modifications</h3>
+          {vehicleModified === "Yes" && (
+            <div className={styles.modificationDetailsInCard}>
+              <h4 className={styles.modificationDetailsHeading}>Your car modifications</h4>
 
-          {vehicleModifications.length > 0 && (
-            <div className={styles.modificationsTagsList}>
-              {vehicleModifications.map((mod) => (
-                <div key={mod} className={styles.modificationCard}>
-                  <span className={styles.modificationName}>{mod}</span>
-                  <div className={styles.modificationActions}>
-                    <button
-                      type="button"
-                      className={styles.removeTextBtn}
-                      onClick={() => handleRemoveModification(mod)}
-                      aria-label={`Remove ${mod}`}
-                    >
-                      Remove
-                    </button>
-                    <button
-                      type="button"
-                      className={styles.changeModificationBtn}
-                      onClick={() => setShowModificationsModal(true)}
-                    >
-                      Change modification
-                    </button>
-                  </div>
+              {vehicleModifications.length > 0 && (
+                <div className={styles.modificationsTagsList}>
+                  {vehicleModifications.map((mod) => (
+                    <div key={mod} className={styles.modificationCard}>
+                      <span className={styles.modificationName}>{mod}</span>
+                      <div className={styles.modificationActions}>
+                        <button
+                          type="button"
+                          className={styles.removeTextBtn}
+                          onClick={() => handleRemoveModification(mod)}
+                          aria-label={`Remove ${mod}`}
+                        >
+                          Remove
+                        </button>
+                        <button
+                          type="button"
+                          className={styles.changeModificationBtn}
+                          onClick={() => setShowModificationsModal(true)}
+                        >
+                          Change modification
+                        </button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              )}
+
+              <button
+                type="button"
+                className={styles.addModificationBtn}
+                onClick={() => setShowModificationsModal(true)}
+              >
+                Add another modification
+              </button>
             </div>
           )}
-
-          <button
-            type="button"
-            className={styles.addModificationBtn}
-            onClick={() => setShowModificationsModal(true)}
-          >
-            Add another modification
-          </button>
         </div>
-      )}
+      </div>
     </div>
   );
 
