@@ -516,26 +516,20 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
 
             {foundVehicle && (
               <div className={styles.foundVehicleCard}>
-                <div className={styles.foundVehicleIcon}>
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <circle cx="24" cy="24" r="24" fill="#e8f5ff"/>
-                    <path d="M18 24L22 28L30 20" stroke="#0388ff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
                 <div className={styles.foundVehicleInfo}>
                   <h3 className={styles.foundVehicleTitle}>Vehicle Found</h3>
                   <p className={styles.foundVehicleDetails}>
                     {foundVehicle.make} {foundVehicle.model} ({foundVehicle.yearOfManufacture})
                   </p>
                   <p className={styles.foundVehicleReg}>{foundVehicle.registrationNumber}</p>
+                  <button
+                    type="button"
+                    className={styles.changeVehicleBtn}
+                    onClick={handleChangeVehicle}
+                  >
+                    Change
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  className={styles.changeVehicleBtn}
-                  onClick={handleChangeVehicle}
-                >
-                  Change
-                </button>
               </div>
             )}
 
