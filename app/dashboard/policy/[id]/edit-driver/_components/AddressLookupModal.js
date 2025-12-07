@@ -76,7 +76,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
               <>
                 <div className={styles.fieldWrapper}>
                   <label className={styles.fieldLabel}>Address line 1</label>
-                  <CustomTextInput
+                  <DashboardInput
                     type="text"
                     placeholder=""
                     value={watch("userDetails.addressLine1") || ""}
@@ -86,7 +86,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
 
                 <div className={styles.fieldWrapper}>
                   <label className={styles.fieldLabel}>Address line 2 (optional)</label>
-                  <CustomTextInput
+                  <DashboardInput
                     type="text"
                     placeholder=""
                     value={watch("userDetails.addressLine2") || ""}
@@ -96,7 +96,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
 
                 <div className={styles.fieldWrapper}>
                   <label className={styles.fieldLabel}>Address line 3 (optional)</label>
-                  <CustomTextInput
+                  <DashboardInput
                     type="text"
                     placeholder=""
                     value={watch("userDetails.addressLine3") || ""}
@@ -106,7 +106,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
 
                 <div className={styles.fieldWrapper}>
                   <label className={styles.fieldLabel}>Town/City</label>
-                  <CustomTextInput
+                  <DashboardInput
                     type="text"
                     placeholder=""
                     value={watch("userDetails.city") || ""}
@@ -116,7 +116,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
 
                 <div className={styles.fieldWrapper}>
                   <label className={styles.fieldLabel}>Postcode</label>
-                  <CustomTextInput
+                  <DashboardInput
                     type="text"
                     placeholder=""
                     value={watch("userDetails.manualPostcode") || ""}
