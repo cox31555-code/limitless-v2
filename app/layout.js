@@ -1,14 +1,9 @@
-"use client";
-
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import "rsuite/dist/rsuite-no-reset.min.css";
 import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
-import { AuthProvider } from "@/contexts/AuthContext";
-import ClientLayout from "./clientLayout";
-import { InsuranceModalProvider } from "@/contexts/InsuranceModalContext";
-import { LoadingProvider } from "@/contexts/LoadingContext";
+import Providers from "./providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,14 +33,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
-        <AuthProvider>
-          <InsuranceModalProvider>
-            <LoadingProvider>
-              <ClientLayout>{children}</ClientLayout>
-              <Footer />
-            </LoadingProvider>
-          </InsuranceModalProvider>
-        </AuthProvider>
+        <Providers>
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
