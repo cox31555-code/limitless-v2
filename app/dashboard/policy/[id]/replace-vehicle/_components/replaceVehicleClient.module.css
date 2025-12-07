@@ -668,6 +668,19 @@
     grid-template-columns: 1fr;
     gap: 1.6rem;
   }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .stepTitleText {
+    font-size: 2rem;
+  }
+
+  .mainQuestion {
+    font-size: 1.6rem;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -693,6 +706,79 @@
   }
 
   .manualEntryTitle {
+    font-size: 1.5rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.8rem;
+  }
+
+  .mainQuestion {
+    font-size: 1.5rem;
+  }
+
+  .subText {
+    font-size: 1.3rem;
+  }
+
+  .foundVehicleCard {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.6rem;
+  }
+
+  .foundVehicleDetails {
+    font-size: 1.5rem;
+  }
+
+  .changeVehicleBtn {
+    width: 100%;
+  }
+
+  .detailsSection {
+    padding: 1.6rem;
+  }
+
+  .detailsSectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modificationQuestion {
+    font-size: 1.5rem;
+  }
+
+  .radioGroup {
+    gap: 1.6rem;
+  }
+
+  .modificationsSection {
+    padding: 1.6rem;
+  }
+
+  .modificationsHeading {
+    font-size: 1.5rem;
+  }
+
+  .modificationCard {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem;
+  }
+
+  .modificationActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .infoBox {
+    padding: 1.6rem;
+  }
+
+  .infoTitle {
     font-size: 1.5rem;
   }
 
