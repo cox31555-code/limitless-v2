@@ -219,7 +219,7 @@
 .manualEntrySection {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 2.6rem;
 }
 
 .manualEntryHeader {
@@ -254,7 +254,7 @@
 }
 
 .manualEntryHelper {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #64748b;
   margin: 0;
   font-style: italic;
