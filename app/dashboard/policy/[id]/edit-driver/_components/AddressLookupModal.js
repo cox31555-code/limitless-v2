@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
+import DashboardInput from "./DashboardInput";
 import styles from "./addressLookupModal.module.css";
 
 const AddressLookupModal = ({ form, isOpen, onClose }) => {
