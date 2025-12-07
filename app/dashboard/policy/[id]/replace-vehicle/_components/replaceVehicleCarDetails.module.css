@@ -1,0 +1,435 @@
+/* Main Container */
+.vehicleCard {
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  padding: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+/* Questions Card - Single Card Container */
+.questionsCard {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Question Group */
+.questionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 2.6rem 0;
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.questionGroup:first-child {
+  padding-top: 0;
+}
+
+.questionGroup:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.questionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.questionDescription {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Radio Group */
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.4rem 1.6rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radioOption:hover {
+  border-color: #94a3b8;
+  background: #ffffff;
+}
+
+.radioInput {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  background: #ffffff;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radioInput:checked {
+  border-color: #1976d2;
+  background: #ffffff;
+}
+
+.radioInput:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1976d2;
+}
+
+.radioLabel {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.radioOption:has(.radioInput:checked) {
+  background: #ffffff;
+  border-color: #1976d2;
+}
+
+.radioOption:has(.radioInput:checked) .radioLabel {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Expandable Link */
+.expandableLink {
+  background: transparent;
+  border: none;
+  color: #1976d2;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.8rem 0;
+  text-align: left;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  font-family: inherit;
+}
+
+.expandableLink:hover {
+  color: #1565c0;
+}
+
+.expandableContent {
+  margin-top: 0.8rem;
+  padding: 1.2rem;
+  background: #f8fafc;
+  border-left: 3px solid #1976d2;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Number Input */
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.numberInput {
+  width: 100%;
+  max-width: 200px;
+  padding: 1.3rem 1.6rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  font-family: 'Jaldi', sans-serif;
+  min-height: 4.8rem;
+}
+
+.numberInput:focus {
+  outline: none;
+  border-color: #94a3b8;
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
+}
+
+.numberInput::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.numberInput:hover:not(:disabled) {
+  border-color: #cbd5e1;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e8ecf0;
+  justify-content: flex-end;
+}
+
+.cancelBtn,
+.saveBtn {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.cancelBtn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.saveBtn {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+.cancelBtn:disabled,
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 900px) {
+  .vehicleCard {
+    padding: 2rem;
+  }
+
+  .questionGroup {
+    padding: 2rem 0;
+  }
+
+  .questionGroup:first-child {
+    padding-top: 0;
+  }
+
+  .questionGroup:last-child {
+    padding-bottom: 0;
+  }
+
+  .questionTitle {
+    font-size: 1.5rem;
+  }
+
+  .questionDescription {
+    font-size: 1.2rem;
+  }
+
+  .radioLabel {
+    font-size: 1.4rem;
+  }
+
+  .numberInput {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .vehicleCard {
+    padding: 2rem 1.6rem;
+    gap: 2rem;
+  }
+
+  .cardHeader {
+    padding-bottom: 1.6rem;
+  }
+
+  .cardTitle {
+    font-size: 1.6rem;
+  }
+
+  .questionGroup {
+    padding: 2rem 0;
+  }
+
+  .questionGroup:first-child {
+    padding-top: 0;
+  }
+
+  .questionGroup:last-child {
+    padding-bottom: 0;
+  }
+
+  .questionTitle {
+    font-size: 1.6rem;
+  }
+
+  .questionDescription {
+    font-size: 1.3rem;
+  }
+
+  .radioOption {
+    padding: 1.3rem 1.4rem;
+  }
+
+  .radioInput {
+    width: 22px;
+    height: 22px;
+  }
+
+  .radioInput:checked::before {
+    width: 11px;
+    height: 11px;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+  }
+
+  .expandableLink {
+    font-size: 1.3rem;
+  }
+
+  .expandableContent {
+    font-size: 1.3rem;
+  }
+
+  .numberInput {
+    font-size: 1.6rem;
+    padding: 1.4rem 1.6rem;
+    min-height: 5rem;
+    max-width: 100%;
+  }
+
+  .actionButtons {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .vehicleCard {
+    padding: 1.6rem;
+  }
+
+  .questionGroup {
+    padding: 1.8rem 0;
+    gap: 1.2rem;
+  }
+
+  .questionGroup:first-child {
+    padding-top: 0;
+  }
+
+  .questionGroup:last-child {
+    padding-bottom: 0;
+  }
+
+  .questionTitle {
+    font-size: 1.6rem;
+  }
+
+  .questionDescription {
+    font-size: 1.3rem;
+  }
+
+  .radioOption {
+    padding: 1.2rem 1.3rem;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+  }
+
+  .expandableLink {
+    font-size: 1.3rem;
+  }
+
+  .expandableContent {
+    font-size: 1.3rem;
+  }
+
+  .numberInput {
+    font-size: 1.6rem;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+}
