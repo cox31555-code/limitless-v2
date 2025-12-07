@@ -439,6 +439,22 @@
   margin-top: 1.2rem;
 }
 
+.modificationDetailsInCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 0.8rem;
+}
+
+.modificationDetailsHeading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
 .modificationQuestion {
   font-size: 1.6rem;
   font-weight: 600;
