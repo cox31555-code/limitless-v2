@@ -261,6 +261,40 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
     }
   };
 
+  const ManualVehicleSummaryCard = () => (
+    <div className={styles.foundVehicleCard}>
+      <div className={styles.foundVehicleIcon}>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="24" fill="#e8f5ff"/>
+          <path d="M18 24L22 28L30 20" stroke="#0388ff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <div className={styles.foundVehicleInfo}>
+        <h3 className={styles.foundVehicleTitle}>Selected Vehicle</h3>
+        <p className={styles.foundVehicleDetails}>
+          {selectedMake} {selectedModel} ({selectedYear})
+        </p>
+        <div style={{ fontSize: "1.3rem", color: "#64748b", marginTop: "0.8rem" }}>
+          <div>Type: {selectedType}</div>
+          <div>Doors: {selectedDoors}</div>
+          <div>Fuel: {selectedFuel}</div>
+          <div>Transmission: {selectedTransmission}</div>
+          <div>Colour: {selectedColour}</div>
+        </div>
+      </div>
+      <button
+        type="button"
+        className={styles.changeVehicleBtn}
+        onClick={() => {
+          setShowManualEntry(true);
+          setFoundVehicle(null);
+        }}
+      >
+        Change
+      </button>
+    </div>
+  );
+
   const VehicleDetailsSection = () => (
     <div className={styles.vehicleQuestionsWrapper}>
       <div className={styles.detailsSection}>
