@@ -135,7 +135,7 @@
 }
 
 .cardTitle {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #004284;
   margin: 0;
@@ -152,7 +152,7 @@
 }
 
 .sectionDescription {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #64748b;
   margin: 0 0 1.6rem 0;
   font-weight: 400;
@@ -174,7 +174,7 @@
 }
 
 .dividerText {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #6b7c8f;
   font-weight: 400;
   margin: 0;
@@ -185,12 +185,12 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  padding: 1rem 1.6rem;
+  padding: 1.1rem 1.8rem;
   background: #ffffff;
   color: #0052a3;
   border: 1px solid #0052a3;
   border-radius: 25px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -217,7 +217,7 @@
 }
 
 .manualEntryTitle {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #004284;
   margin: 0;
@@ -239,7 +239,7 @@
 }
 
 .manualEntryHelper {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #64748b;
   margin: 0;
   font-style: italic;
