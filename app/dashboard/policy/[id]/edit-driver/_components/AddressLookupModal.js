@@ -169,7 +169,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
                   <label className={styles.fieldLabel}>House number or name (optional)</label>
                   <DashboardInput
                     type="text"
-                    placeholder=""
+                    placeholder="e.g. 123 or Flat 4B"
                     value={houseNumber || ""}
                     onChange={(e) => {
                       setValue("userDetails.houseNumber", e.target.value);
@@ -182,7 +182,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
                   <label className={styles.fieldLabel}>Postcode</label>
                   <DashboardInput
                     type="text"
-                    placeholder=""
+                    placeholder="e.g. SW1A 1AA"
                     value={postcode || ""}
                     onChange={(e) => {
                       setValue("userDetails.postcode", e.target.value);
