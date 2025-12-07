@@ -642,7 +642,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
 
               <div className={styles.manualEntryForm}>
                 <div className={styles.formRow}>
-                  <Dropdown
+                  <DashboardDropdown
                     label="Vehicle Type"
                     selected={selectedType || ""}
                     options={["Car", "Motorcycle", "Van"]}
@@ -650,7 +650,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                     placeholder="Select vehicle type"
                     disabled={false}
                   />
-                  <Dropdown
+                  <DashboardDropdown
                     label="Make"
                     selected={selectedMake || ""}
                     options={state.makes}
@@ -663,7 +663,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                 </div>
 
                 <div className={styles.formRow}>
-                  <Dropdown
+                  <DashboardDropdown
                     label="Model"
                     selected={selectedModel || ""}
                     options={state.options.models}
@@ -673,7 +673,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                     isLoading={loadingStates.model}
                     showSearch={true}
                   />
-                  <Dropdown
+                  <DashboardDropdown
                     label="Year"
                     selected={selectedYear || ""}
                     options={state.options.years}
