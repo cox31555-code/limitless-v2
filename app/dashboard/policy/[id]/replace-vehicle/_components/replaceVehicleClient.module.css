@@ -635,6 +635,13 @@
   transition: all 0.2s ease;
 }
 
+.addModificationBtn p {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+}
+
 .addModificationBtn:hover {
   background: #f0f7ff;
 }
