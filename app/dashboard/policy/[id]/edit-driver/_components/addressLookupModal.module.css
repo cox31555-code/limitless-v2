@@ -274,7 +274,8 @@
   .modalOverlay {
     align-items: flex-end;
     padding: 0;
-    padding-top: 72px;
+    top: 72px;
+    bottom: 0;
   }
 
   .modal {
