@@ -686,7 +686,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                 </div>
 
                 <div className={styles.formRow}>
-                  <Dropdown
+                  <DashboardDropdown
                     label="Doors"
                     selected={selectedDoors || ""}
                     options={state.options.doors}
@@ -695,7 +695,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                     disabled={!selectedYear || loadingStates.doors}
                     isLoading={loadingStates.doors}
                   />
-                  <Dropdown
+                  <DashboardDropdown
                     label="Fuel Type"
                     selected={selectedFuel || ""}
                     options={state.options.fuels}
@@ -707,7 +707,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                 </div>
 
                 <div className={styles.formRow}>
-                  <Dropdown
+                  <DashboardDropdown
                     label="Transmission"
                     selected={watch("vehicleDetails.transmission") || ""}
                     options={state.options.transmissions}
@@ -716,7 +716,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                     disabled={!selectedFuel || loadingStates.transmission}
                     isLoading={loadingStates.transmission}
                   />
-                  <Dropdown
+                  <DashboardDropdown
                     label="Colour"
                     selected={watch("vehicleDetails.colour") || ""}
                     options={carColors}
