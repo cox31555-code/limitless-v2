@@ -251,10 +251,10 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
     try {
       setIsSubmitting(true);
       await new Promise(resolve => setTimeout(resolve, 1500));
-      toast.success("Vehicle replacement submitted successfully");
+      toast.success("Vehicle changed successfully");
       router.push(`/dashboard/policy/${policyId}`);
     } catch (error) {
-      toast.error("Failed to replace vehicle");
+      toast.error("Failed to change vehicle");
       console.error(error);
     } finally {
       setIsSubmitting(false);
