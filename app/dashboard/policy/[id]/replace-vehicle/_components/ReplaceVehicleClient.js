@@ -6,12 +6,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
-import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import DashboardDropdown from "./DashboardDropdown";
 import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import Step1CarDetailsEdit from "@/app/annual/get-quote/_components/Step1CarDetailsEdit";
-import styles from "@/app/annual/get-quote/_components/step1VehicleRegistration.module.css";
-import replaceStyles from "./replaceVehicleClient.module.css";
+import styles from "./replaceVehicleClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
