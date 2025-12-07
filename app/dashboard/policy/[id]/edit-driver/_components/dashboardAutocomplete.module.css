@@ -65,13 +65,7 @@
   border: none;
   background: transparent;
   outline: none;
-  font-family: inherit;
-}
-
-@media screen and (max-width: 640px) {
-  .input {
-    font-family: 'Jaldi', sans-serif;
-  }
+  font-family: 'Jaldi', sans-serif;
 }
 
 .input::placeholder {
