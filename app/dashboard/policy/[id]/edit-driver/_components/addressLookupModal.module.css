@@ -1,6 +1,6 @@
 .modalOverlay {
   position: fixed;
-  top: 0;
+  top: 72px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -11,6 +11,7 @@
   z-index: 1001;
   padding: 2rem;
   overflow: hidden;
+  height: calc(100vh - 72px);
 }
 
 .modal {
@@ -19,7 +20,7 @@
   box-shadow: 0 20px 60px rgba(0, 52, 122, 0.2);
   width: 100%;
   max-width: 540px;
-  max-height: 90vh;
+  max-height: calc(100vh - 144px);
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
