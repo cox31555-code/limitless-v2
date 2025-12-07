@@ -575,14 +575,15 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         <span className={`${replaceStyles.breadcrumbItem} ${replaceStyles.active}`}>Replace vehicle</span>
       </div>
 
-      <div className={replaceStyles.contentWrapper}>
-        <div className={styles.container}>
-          <div className={styles.stepTitle}>
-            <h2 className={styles.stepTitleText}>Car details - Your car</h2>
+      <div className={styles.contentWrapper}>
+        <div className={styles.vehicleCard}>
+          <div className={styles.cardHeader}>
+            <h2 className={styles.cardTitle}>Car details - Your car</h2>
           </div>
-          <div className={styles.header}>
-            <h1 className={styles.mainQuestion}>What's your car's registration?</h1>
-            <p className={styles.subText}>We can only show you quotes for cars registered in the UK.</p>
+
+          <div>
+            <h3 className={styles.sectionTitle}>What's your car's registration?</h3>
+            <p className={styles.sectionDescription}>We can only show you quotes for cars registered in the UK.</p>
           </div>
 
           {!showManualEntry && (
