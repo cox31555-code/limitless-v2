@@ -738,6 +738,26 @@
     font-size: 1.5rem;
   }
 
+  .foundVehicleCard {
+    padding: 1.6rem;
+  }
+
+  .foundVehicleTitle {
+    font-size: 1.3rem;
+  }
+
+  .foundVehicleDetails {
+    font-size: 1.2rem;
+  }
+
+  .foundVehicleReg {
+    font-size: 1.2rem;
+  }
+
+  .changeVehicleBtn {
+    font-size: 1.2rem;
+  }
+
   .actionButtons {
     flex-direction: column-reverse;
     gap: 1rem;
