@@ -526,6 +526,10 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
               </div>
             )}
 
+            {!foundVehicle && showManualEntry && isManualEntryComplete && (
+              <ManualVehicleSummaryCard />
+            )}
+
             <VehicleDetailsSection />
 
             <div className={styles.actionButtons}>
