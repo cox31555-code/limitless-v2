@@ -415,8 +415,9 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                 type="button"
                 className={styles.addModificationBtn}
                 onClick={() => setShowModificationsModal(true)}
+                style={{ maxWidth: "228px" }}
               >
-                Add another modification
+                <p>Add modification</p>
               </button>
             </div>
           )}
