@@ -177,10 +177,10 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
         <form onSubmit={form.handleSubmit(handleSave)} className={styles.formContainer}>
           {/* Info Banner */}
           <div className={styles.infoBanner}>
-            <svg className={styles.infoIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="16" x2="12" y2="12" />
-              <line x1="12" y1="8" x2="12.01" y2="8" />
+            <svg className={styles.infoIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M12 17V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="currentColor"/>
             </svg>
             <p className={styles.infoBannerText}>
               Heads up - to keep things simple any further changes will need to take place <strong>after</strong> this change has taken effect.
