@@ -453,6 +453,35 @@
   height: 1.8rem;
   cursor: pointer;
   accent-color: #0052a3;
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radioInput:checked {
+  border-color: #0052a3;
+  background-color: #ffffff;
+}
+
+.radioInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: #0052a3;
+  border-radius: 50%;
+}
+
+.radioInput:hover:not(:disabled) {
+  border-color: #94a3b8;
 }
 
 .radioLabel {
