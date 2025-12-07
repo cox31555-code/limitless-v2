@@ -6,7 +6,7 @@ import styles from "./dashboardDropdown.module.css";
 const DashboardDropdown = ({
   label,
   selected,
-  options,
+  options = [],
   setSelected,
   placeholder,
   error,
