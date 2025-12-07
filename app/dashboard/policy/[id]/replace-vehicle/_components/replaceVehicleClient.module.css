@@ -87,7 +87,6 @@
   height: 100%;
 }
 
-/* Breadcrumb Navigation */
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -211,7 +210,6 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  white-space: nowrap;
 }
 
 .manualEntryBtn:hover {
@@ -272,18 +270,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-}
-
-.stepTitle {
-  margin-bottom: 2rem;
-}
-
-.stepTitleText {
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: #004284;
-  margin: 0;
-  letter-spacing: -0.3px;
 }
 
 .header {
@@ -719,14 +705,6 @@
     grid-template-columns: 1fr;
     gap: 1.4rem;
   }
-
-  .stepTitleText {
-    font-size: 2rem;
-  }
-
-  .mainQuestion {
-    font-size: 1.6rem;
-  }
 }
 
 @media screen and (max-width: 640px) {
@@ -752,79 +730,6 @@
   }
 
   .manualEntryTitle {
-    font-size: 1.5rem;
-  }
-
-  .stepTitleText {
-    font-size: 1.8rem;
-  }
-
-  .mainQuestion {
-    font-size: 1.5rem;
-  }
-
-  .subText {
-    font-size: 1.3rem;
-  }
-
-  .foundVehicleCard {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.6rem;
-  }
-
-  .foundVehicleDetails {
-    font-size: 1.5rem;
-  }
-
-  .changeVehicleBtn {
-    width: 100%;
-  }
-
-  .detailsSection {
-    padding: 1.6rem;
-  }
-
-  .detailsSectionTitle {
-    font-size: 1.5rem;
-  }
-
-  .detailsGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .modificationQuestion {
-    font-size: 1.5rem;
-  }
-
-  .radioGroup {
-    gap: 1.6rem;
-  }
-
-  .modificationsSection {
-    padding: 1.6rem;
-  }
-
-  .modificationsHeading {
-    font-size: 1.5rem;
-  }
-
-  .modificationCard {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.2rem;
-  }
-
-  .modificationActions {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .infoBox {
-    padding: 1.6rem;
-  }
-
-  .infoTitle {
     font-size: 1.5rem;
   }
 
