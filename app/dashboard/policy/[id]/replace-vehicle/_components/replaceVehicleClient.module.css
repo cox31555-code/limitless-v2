@@ -71,6 +71,22 @@
   font-weight: 400;
 }
 
+.heroBackground {
+  position: absolute;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 399px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+}
+
 /* Breadcrumb Navigation */
 .breadcrumb {
   display: flex;
