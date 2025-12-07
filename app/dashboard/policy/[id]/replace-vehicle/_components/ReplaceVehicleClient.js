@@ -11,7 +11,6 @@ import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationIn
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import Step1CarDetailsEdit from "@/app/annual/get-quote/_components/Step1CarDetailsEdit";
 import styles from "./replaceVehicleClient.module.css";
-const replaceStyles = styles;
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
