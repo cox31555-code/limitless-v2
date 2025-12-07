@@ -236,6 +236,12 @@
   border: none;
 }
 
+@media screen and (max-width: 640px) {
+  .licenseImage {
+    max-width: 216px;
+  }
+}
+
 .licenseNumberFields {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
