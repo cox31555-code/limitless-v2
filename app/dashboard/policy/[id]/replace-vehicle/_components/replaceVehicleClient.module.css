@@ -257,6 +257,363 @@
   gap: 2rem;
 }
 
+.stepTitle {
+  margin-bottom: 2rem;
+}
+
+.stepTitleText {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.header {
+  margin-bottom: 2.6rem;
+}
+
+.mainQuestion {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: -0.3px;
+}
+
+.subText {
+  font-size: 1.4rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.foundVehicleCard {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  margin-bottom: 2.6rem;
+}
+
+.foundVehicleIcon {
+  flex-shrink: 0;
+}
+
+.foundVehicleInfo {
+  flex: 1;
+}
+
+.foundVehicleTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0369a1;
+  margin: 0 0 0.4rem 0;
+}
+
+.foundVehicleDetails {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0 0 0.4rem 0;
+}
+
+.foundVehicleReg {
+  font-size: 1.4rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.changeVehicleBtn {
+  padding: 0.8rem 1.6rem;
+  background: #ffffff;
+  color: #0052a3;
+  border: 1px solid #0052a3;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.changeVehicleBtn:hover {
+  background: #f0f7ff;
+}
+
+.vehicleQuestionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  margin-top: 2rem;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.detailsSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detailsSectionTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.changeLink {
+  font-size: 1.4rem;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+}
+
+.changeLink:hover {
+  color: #003d7a;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.detailLabel {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.detailValue {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.modificationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.modificationQuestion {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.modificationHelper {
+  font-size: 1.3rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.8rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.radioInput {
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  accent-color: #0052a3;
+}
+
+.radioLabel {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.helpLink {
+  font-size: 1.3rem;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+  text-align: left;
+  margin-top: 0.4rem;
+}
+
+.helpLink:hover {
+  color: #003d7a;
+}
+
+.modificationsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.modificationsHeading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.modificationsTagsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.modificationCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  gap: 1.2rem;
+}
+
+.modificationName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e293b;
+  flex: 1;
+}
+
+.modificationActions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.removeTextBtn {
+  font-size: 1.3rem;
+  color: #ef4444;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+}
+
+.removeTextBtn:hover {
+  color: #dc2626;
+}
+
+.changeModificationBtn {
+  font-size: 1.3rem;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+}
+
+.changeModificationBtn:hover {
+  color: #003d7a;
+}
+
+.addModificationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem 1.8rem;
+  background: #ffffff;
+  color: #0052a3;
+  border: 1px solid #0052a3;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addModificationBtn:hover {
+  background: #f0f7ff;
+}
+
+.infoBox {
+  display: flex;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.infoIcon {
+  flex-shrink: 0;
+}
+
+.infoContent {
+  flex: 1;
+}
+
+.infoTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0369a1;
+  margin: 0 0 0.8rem 0;
+}
+
+.infoText {
+  font-size: 1.3rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
 .actionButtons {
   display: flex;
   gap: 1.6rem;
