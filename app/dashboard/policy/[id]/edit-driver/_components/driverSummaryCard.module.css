@@ -25,9 +25,9 @@
 
 .infoBannerText {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   color: #0052a3;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .infoBannerText strong {
