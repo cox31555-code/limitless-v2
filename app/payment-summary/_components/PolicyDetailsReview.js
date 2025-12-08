@@ -322,53 +322,16 @@ const PolicyDetailsReview = ({ insuranceData }) => {
         </button>
         {expandedSections.driverDetails && (
           <div id="driver-details-content" className={styles.cardContent} role="region" aria-labelledby="driver-details-heading">
-            <div className={styles.driverCard}>
-              <h4 className={`${styles.driverName} ${plusJakartaSans.className}`}>
-                {userDetails?.firstName} {userDetails?.surname}
-              </h4>
-              <div className={styles.detailsGrid}>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Date of birth</span>
-                  <span className={styles.detailValue}>{formatDate(userDetails?.dateOfBirth)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Email</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.email)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Phone</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.phone)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Address</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.address)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Postcode</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.postCode)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Employment status</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.employmentStatus)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>Occupation</span>
-                  <span className={styles.detailValue}>{formatValue(userDetails?.occupation)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>License type</span>
-                  <span className={styles.detailValue}>{formatValue(carUsage?.licenseType)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>License held since</span>
-                  <span className={styles.detailValue}>{formatValue(carUsage?.licenseHeld)}</span>
-                </div>
-                <div className={styles.detailItem}>
-                  <span className={styles.detailLabel}>No claims bonus</span>
-                  <span className={styles.detailValue}>{formatValue(carUsage?.NCB)}</span>
-                </div>
-              </div>
-            </div>
+            <p className={styles.driverSummary}>
+              Main driver: {userDetails?.firstName} {userDetails?.surname}
+            </p>
+            {carUsage?.additionalDrivers && carUsage.additionalDrivers.length > 0 && (
+              carUsage.additionalDrivers.map((driver, index) => (
+                <p key={index} className={styles.driverSummary}>
+                  Additional driver: {driver?.firstName} {driver?.surname}
+                </p>
+              ))
+            )}
           </div>
         )}
       </section>

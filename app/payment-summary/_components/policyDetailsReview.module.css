@@ -7,16 +7,10 @@
 
 /* Expandable Card */
 .expandableCard {
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border: 1px solid #0052a3;
+  border-radius: 8px;
   background: #ffffff;
   overflow: hidden;
-  transition: all 0.2s ease;
-}
-
-.expandableCard:hover {
-  border-color: #cbd5e1;
-  transform: translateY(-1px);
 }
 
 /* Card Header */
@@ -25,33 +19,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 2.2rem 2.4rem;
-  background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
+  padding: 2rem 2.4rem;
+  background: #ffffff;
   border: none;
   cursor: pointer;
   font-family: inherit;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.cardHeader::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, #0052a3, #0388ff);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.cardHeader:hover::before {
-  opacity: 1;
-}
-
-.cardHeader:hover {
-  background: linear-gradient(to bottom, #fafbfc 0%, #f8fafc 100%);
 }
 
 .cardHeader:focus {
@@ -77,16 +49,9 @@
   justify-content: center;
   width: 4.8rem;
   height: 4.8rem;
-  background: linear-gradient(135deg, #e8f2fb 0%, #dae8f7 100%);
+  background: #f0f4f8;
   border-radius: 8px;
   flex-shrink: 0;
-  transition: all 0.25s ease;
-  border: 1px solid rgba(0, 82, 163, 0.08);
-}
-
-.cardHeader:hover .iconWrapper {
-  background: linear-gradient(135deg, #d0e5f7 0%, #bdd9f1 100%);
-  transform: scale(1.05);
 }
 
 .icon {
@@ -94,7 +59,6 @@
   height: 2.4rem;
   color: #0052a3;
   stroke-width: 2;
-  transition: color 0.2s ease;
 }
 
 .sectionTitle {
@@ -109,31 +73,26 @@
   width: 2.2rem;
   height: 2.2rem;
   color: #64748b;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease;
   flex-shrink: 0;
 }
 
 .expandIcon.expanded {
   transform: rotate(180deg);
-  color: #0052a3;
-}
-
-.cardHeader:hover .expandIcon {
-  color: #0052a3;
 }
 
 /* Card Content */
 .cardContent {
-  padding: 0 2.4rem 2.6rem 2.4rem;
-  background: #fafbfc;
-  border-top: 1px solid #f1f5f9;
+  padding: 2rem 2.4rem 2.4rem 2.4rem;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
 }
 
 /* Details Grid */
 .detailsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.2rem 3.2rem;
+  gap: 2rem 3rem;
 }
 
 .detailItem {
@@ -147,8 +106,6 @@
   font-weight: 500;
   color: #64748b;
   letter-spacing: 0.01rem;
-  text-transform: uppercase;
-  font-size: 1.1rem;
 }
 
 .detailValue {
@@ -163,15 +120,15 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 2.6rem;
-  padding-bottom: 2.6rem;
-  border-bottom: 2px solid #e8f2fb;
+  margin-bottom: 2.4rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .carTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: #0052a3;
+  color: #0f172a;
   margin: 0;
   letter-spacing: -0.03rem;
 }
@@ -191,9 +148,9 @@
 
 /* Vehicle Subsections */
 .vehicleSubsection {
-  margin-top: 2.6rem;
-  padding-top: 2.6rem;
-  border-top: 1px solid #e8f2fb;
+  margin-top: 2.4rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid #e2e8f0;
 }
 
 .vehicleSubsection:first-of-type {
@@ -208,18 +165,6 @@
   color: #1e293b;
   margin: 0 0 1.6rem 0;
   letter-spacing: -0.01rem;
-  position: relative;
-  padding-bottom: 0.8rem;
-}
-
-.subsectionTitle::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(to right, #0052a3, #0388ff);
 }
 
 /* Driver Items */
@@ -229,17 +174,7 @@
   color: #0f172a;
   margin: 0 0 1.2rem 0;
   padding: 1rem 0;
-  border-bottom: 1px solid #f1f5f9;
-  display: flex;
-  align-items: baseline;
-  gap: 0.8rem;
-}
-
-.driverItem::before {
-  content: '•';
-  color: #0052a3;
-  font-weight: bold;
-  font-size: 1.6rem;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .driverItem:last-child {
@@ -253,22 +188,29 @@
   color: #64748b;
 }
 
+/* Driver Summary */
+.driverSummary {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+}
+
+.driverSummary:last-child {
+  margin-bottom: 0;
+}
+
 /* Driver Card */
 .driverCard {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2.4rem;
-  background: #ffffff;
-  border: 1px solid #e8f2fb;
-  border-left: 3px solid #0388ff;
-  border-radius: 8px;
 }
 
 .driverName {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #0052a3;
+  color: #0f172a;
   margin: 0;
   letter-spacing: -0.01rem;
 }
@@ -285,7 +227,7 @@
   }
 
   .cardContent {
-    padding: 0 2rem 2.2rem 2rem;
+    padding: 1.8rem 2rem 2rem 2rem;
   }
 
   .sectionTitle {
@@ -305,10 +247,6 @@
     width: 2.2rem;
     height: 2.2rem;
   }
-
-  .subsectionTitle::after {
-    width: 32px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -321,7 +259,7 @@
   }
 
   .cardContent {
-    padding: 0 1.8rem 2rem 1.8rem;
+    padding: 1.6rem 1.8rem 1.8rem 1.8rem;
   }
 
   .headerContent {
@@ -343,7 +281,7 @@
   }
 
   .detailLabel {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .detailValue {
@@ -359,24 +297,16 @@
   }
 
   .vehicleSubsection {
-    margin-top: 2.2rem;
-    padding-top: 2.2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
   }
 
   .carInfoBlock {
-    margin-bottom: 2.2rem;
-    padding-bottom: 2.2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 
   .subsectionTitle {
     font-size: 1.4rem;
-  }
-
-  .subsectionTitle::after {
-    width: 28px;
-  }
-
-  .driverCard {
-    padding: 2rem;
   }
 }
