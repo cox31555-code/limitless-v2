@@ -7,7 +7,7 @@
 
 /* Expandable Card */
 .expandableCard {
-  border: none;
+  border: 1px solid #f1f5f9;
   border-radius: 8px;
   background: #ffffff;
   overflow: hidden;
