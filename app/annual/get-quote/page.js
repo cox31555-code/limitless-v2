@@ -1149,16 +1149,24 @@ const AnnualInsuranceContent = () => {
                   />
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" && (
-                  <Step1CarValue form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carValue form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" && (
-                  <Step1CarUsage form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carUsage form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage" && (
-                  <Step1CarStorage form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carStorage form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars" && (
-                  <Step1OtherCars form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.otherCars form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "aboutYou" && (
                   <Step2PersonalDetails form={form} />
