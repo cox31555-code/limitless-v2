@@ -1222,41 +1222,51 @@ const AnnualInsuranceContent = () => {
                     />
                   </Suspense>
                 )}
-                {currentStep === STEPS.COVER && coverSubStep === "details" && <AnnualCoverDetailsForm form={form} />}
+                {currentStep === STEPS.COVER && coverSubStep === "details" && (
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.details form={form} />
+                  </Suspense>
+                )}
                 {currentStep === STEPS.COVER && coverSubStep === "additionalDrivers" && (
-                  <Step3AdditionalDrivers
-                    additionaDrivers={additionalDrivers}
-                    onAddDriver={() => handleNavigateToAddDriver()}
-                    onRemoveDriver={handleRemoveDriver}
-                    onEditDriver={handleNavigateToAddDriver}
-                    hasAdditionalDrivers={hasAdditionalDrivers}
-                    onHasAdditionalDriversChange={setHasAdditionalDrivers}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.additionalDrivers
+                      additionaDrivers={additionalDrivers}
+                      onAddDriver={() => handleNavigateToAddDriver()}
+                      onRemoveDriver={handleRemoveDriver}
+                      onEditDriver={handleNavigateToAddDriver}
+                      hasAdditionalDrivers={hasAdditionalDrivers}
+                      onHasAdditionalDriversChange={setHasAdditionalDrivers}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "addDriver" && (
-                  <Step3AddDriver
-                    onBack={handleBackFromAddDriver}
-                    onAddDriver={handleAddDriver}
-                    editingDriver={editingDriverIndex !== null ? additionalDrivers[editingDriverIndex] : null}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.addDriver
+                      onBack={handleBackFromAddDriver}
+                      onAddDriver={handleAddDriver}
+                      editingDriver={editingDriverIndex !== null ? additionalDrivers[editingDriverIndex] : null}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "addDriverClaimsAndConvictions" && (
-                  <Step3DriverClaimsAndConvictions
-                    driverData={driverBeingAdded}
-                    onBack={handleBackFromDriverClaimsAndConvictions}
-                    onAddDriver={() => {
-                      const completeData = {
-                        ...driverBeingAdded,
-                        claims: driverClaims,
-                        convictions: driverConvictions
-                      };
-                      handleCompleteDriverClaimsAndConvictions(completeData);
-                    }}
-                    onAddClaim={handleAddDriverClaimClick}
-                    onAddConviction={handleAddDriverConvictionClick}
-                    claims={driverClaims}
-                    convictions={driverConvictions}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.addDriverClaimsAndConvictions
+                      driverData={driverBeingAdded}
+                      onBack={handleBackFromDriverClaimsAndConvictions}
+                      onAddDriver={() => {
+                        const completeData = {
+                          ...driverBeingAdded,
+                          claims: driverClaims,
+                          convictions: driverConvictions
+                        };
+                        handleCompleteDriverClaimsAndConvictions(completeData);
+                      }}
+                      onAddClaim={handleAddDriverClaimClick}
+                      onAddConviction={handleAddDriverConvictionClick}
+                      claims={driverClaims}
+                      convictions={driverConvictions}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "addDriverClaim" && (
                   <Step3AddDriverClaim
