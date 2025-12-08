@@ -7,7 +7,7 @@
 
 /* Expandable Card */
 .expandableCard {
-  border: 1px solid rgba(3, 136, 255, 0.12);
+  border: 2px solid rgba(3, 136, 255, 0.12);
   border-radius: 12px;
   background: #ffffff;
   overflow: hidden;
