@@ -13,6 +13,13 @@ const nextConfig = {
   // Optimize preloading to reduce warnings
   experimental: {
     optimizeCss: true,
+    optimizePackageImports: ['react-icons'],
+  },
+  // Auto-remove console.logs in production
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'],
+    } : false,
   },
   // Allow external images from builder.io
   images: {
@@ -25,6 +32,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'api.builder.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.sectigo.com',
         pathname: '/**',
       },
     ],

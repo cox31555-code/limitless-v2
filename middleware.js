@@ -20,10 +20,32 @@ export function middleware(request) {
     }
   }
 
-  return NextResponse.next();
+  // Add cache headers for static assets
+  const response = NextResponse.next();
+
+  // Cache static assets (fonts, images, CSS, JS)
+  if (
+    pathname.startsWith('/fonts/') ||
+    pathname.startsWith('/_next/static/') ||
+    pathname.match(/\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|otf|eot)$/)
+  ) {
+    // Cache for 1 year (immutable assets)
+    response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+  } else if (pathname.startsWith('/_next/image')) {
+    // Cache optimized images for 1 week
+    response.headers.set('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
+  } else if (pathname.startsWith('/svg/')) {
+    // Cache SVGs for 1 week
+    response.headers.set('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
+  }
+
+  return response;
 }
 
 export const config = {
-  // Match all paths that start with /dashboard
-  matcher: ["/dashboard/:path*"],
+  // Match dashboard routes and static assets
+  matcher: [
+    "/dashboard/:path*",
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+  ],
 };
