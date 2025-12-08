@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, Suspense, useCallback } from "react";
-import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
@@ -14,42 +13,8 @@ import QuoteNavButtons from "./_components/QuoteNavButtons";
 import Step1VehicleRegistration from "./_components/Step1VehicleRegistration";
 import QuoteHeader from "./_components/QuoteHeader";
 import GetQuotePageHeader from "./_components/GetQuotePageHeader";
+import { lazySteps, StepFallback } from "./lazy-steps";
 import styles from "./newGetQuotePage.module.css";
-
-// Optimize: Only dynamically import components with ssr: false to avoid blocking initial load
-const AnnualVehicleDetailsForm = dynamic(() => import("./_components/AnnualVehicleDetailsForm"), { ssr: false });
-const AnnualCoverDetailsForm = dynamic(() => import("./_components/AnnualCoverDetailsForm"), { ssr: false });
-const AnnualPersonalDetailsForm = dynamic(() => import("./_components/AnnualPersonalDetailsForm"), { ssr: false });
-const Step4CheckYourAnswers = dynamic(() => import("./_components/Step4CheckYourAnswers"), { ssr: false });
-const Step1CarValue = dynamic(() => import("./_components/Step1CarValue"), { ssr: false });
-const Step1CarUsage = dynamic(() => import("./_components/Step1CarUsage"), { ssr: false });
-const Step1CarStorage = dynamic(() => import("./_components/Step1CarStorage"), { ssr: false });
-const Step1OtherCars = dynamic(() => import("./_components/Step1OtherCars"), { ssr: false });
-const Step2PersonalDetails = dynamic(() => import("./_components/Step2PersonalDetails"), { ssr: false });
-const Step2Household = dynamic(() => import("./_components/Step2Household"), { ssr: false });
-const Step2Employment = dynamic(() => import("./_components/Step2Employment"), { ssr: false });
-const Step2Licence = dynamic(() => import("./_components/Step2Licence"), { ssr: false });
-const Step2LicenceRestrictions = dynamic(() => import("./_components/Step2LicenceRestrictions"), { ssr: false });
-const Step2ClaimsAndConvictions = dynamic(() => import("./_components/Step2ClaimsAndConvictions"), { ssr: false });
-const Step2AddClaim = dynamic(() => import("./_components/Step2AddClaim"), { ssr: false });
-const Step2AddConviction = dynamic(() => import("./_components/Step2AddConviction"), { ssr: false });
-const Step3AdditionalDrivers = dynamic(() => import("./_components/Step3AdditionalDrivers"), { ssr: false });
-const Step3AddDriver = dynamic(() => import("./_components/Step3AddDriver"), { ssr: false });
-const Step3DriverClaimsAndConvictions = dynamic(() => import("./_components/Step3DriverClaimsAndConvictions"), { ssr: false });
-const Step3AddDriverClaim = dynamic(() => import("./_components/Step3AddDriverClaim"), { ssr: false });
-const Step3AddDriverConviction = dynamic(() => import("./_components/Step3AddDriverConviction"), { ssr: false });
-const Step3CarOwner = dynamic(() => import("./_components/Step3CarOwner"), { ssr: false });
-const Step3CarOwnerAddPerson = dynamic(() => import("./_components/Step3CarOwnerAddPerson"), { ssr: false });
-const Step3CoverDetails = dynamic(() => import("./_components/Step3CoverDetails"), { ssr: false });
-const Step3NoClaimsDiscount = dynamic(() => import("./_components/Step3NoClaimsDiscount"), { ssr: false });
-const Step3AdditionalProducts = dynamic(() => import("./_components/Step3AdditionalProducts"), { ssr: false });
-const Step3ContactInformation = dynamic(() => import("./_components/Step3ContactInformation"), { ssr: false });
-
-const StepFallback = () => (
-  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
-    Loading...
-  </div>
-);
 
 const STEPS = {
   VEHICLE: 1,
