@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
 import PaymentSummaryClient from "./_components/PaymentSummaryClient";
@@ -105,10 +104,15 @@ const page = async ({ searchParams }) => {
     };
   } else {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/insurance/${id}`);
+      const response = await fetch(`${API_BASE_URL}/api/insurance/${id}`, {
+        cache: 'no-store'
+      });
 
-      if (response.status === 200 && response.data.data) {
-        insuranceData = response.data.data.data || response.data.data;
+      if (response.ok) {
+        const data = await response.json();
+        if (data.data) {
+          insuranceData = data.data.data || data.data;
+        }
       }
     } catch (err) {
       console.error("Error fetching insurance:", err);
