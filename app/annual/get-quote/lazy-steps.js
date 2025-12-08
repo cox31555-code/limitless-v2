@@ -21,6 +21,7 @@ export const lazySteps = {
   addConviction: lazy(() => import("./_components/Step2AddConviction")),
   
   // Cover steps
+  details: lazy(() => import("./_components/AnnualCoverDetailsForm")),
   additionalDrivers: lazy(() => import("./_components/Step3AdditionalDrivers")),
   addDriver: lazy(() => import("./_components/Step3AddDriver")),
   addDriverClaimsAndConvictions: lazy(() => import("./_components/Step3DriverClaimsAndConvictions")),
