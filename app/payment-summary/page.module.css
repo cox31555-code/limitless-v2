@@ -1,7 +1,141 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: -1.5625rem 0 1.75rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  margin-bottom: 6.5rem;
+  padding: 7.8rem calc(50vw - 50%) 7.8rem;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroBackground {
+  position: absolute;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 399px;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  gap: 3.9rem;
+  margin: 0 auto;
+}
+
+.greetingArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.04rem;
+}
+
+.greetingTitle {
+  font-size: 3.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 110%;
+  letter-spacing: -0.65px;
+}
+
+.greetingSubtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.3rem;
+  padding: 0 5% 14px;
+  border-bottom: 1px solid #e0e6f0;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.breadcrumbItem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.breadcrumbItem.active {
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.breadcrumbSeparator {
+  font-size: 1.55rem;
+  color: #ccc;
+  margin: 0 0.4rem;
+  flex-shrink: 0;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 55px 5% 1.6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
 .container {
   display: flex;
   gap: 4rem;
-  padding: 5rem 4.4%;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -20,12 +154,15 @@
 .second {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 2rem;
   height: auto;
   z-index: 10;
   flex-basis: 41.7%;
   flex-grow: 0;
   flex-shrink: 0;
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
 }
 
 .actions {
@@ -74,12 +211,11 @@
   opacity: 0.95;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 1400px) {
   .container {
     flex-direction: column;
     gap: 3rem;
-    padding: 3.5rem 4.4%;
-    width: 100%;
   }
 
   .first {
@@ -94,21 +230,35 @@
     flex-grow: 0;
     gap: 2rem;
     order: 1;
+    position: static;
   }
 }
 
 @media screen and (max-width: 900px) {
+  .heroSection {
+    padding: 6rem calc(50vw - 50%) 6rem;
+    margin-bottom: 4rem;
+  }
+
+  .heroBackground {
+    width: 300px;
+    height: 300px;
+  }
+
+  .greetingTitle {
+    font-size: 3rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.3rem;
+  }
+
+  .contentWrapper {
+    padding: 40px 5% 1.6rem;
+  }
+
   .container {
-    padding: 2.5rem 4.4%;
     gap: 2.5rem;
-  }
-
-  .first {
-    order: 2;
-  }
-
-  .second {
-    order: 1;
   }
 
   .first,
@@ -126,6 +276,40 @@
 }
 
 @media screen and (max-width: 640px) {
+  .heroSection {
+    padding: 4.5rem 5% 4.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .greetingTitle {
+    font-size: 2.4rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumb {
+    padding: 0 5% 12px;
+    gap: 1rem;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.3rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.4rem;
+  }
+
+  .contentWrapper {
+    padding: 30px 5% 1.6rem;
+  }
+
   .container {
     padding-bottom: 60px;
   }
@@ -133,16 +317,7 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    padding: 2.4rem 4.4%;
-    gap: 6rem;
-  }
-
-  .first {
-    order: 2;
-  }
-
-  .second {
-    order: 1;
+    gap: 4rem;
   }
 
   .first,
