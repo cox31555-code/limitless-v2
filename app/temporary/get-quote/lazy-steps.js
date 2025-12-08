@@ -21,6 +21,7 @@ export const lazySteps = {
   addConviction: lazy(() => import("@/app/annual/get-quote/_components/Step2AddConviction")),
   
   // Cover steps
+  details: lazy(() => import("@/app/annual/get-quote/_components/AnnualCoverDetailsForm")),
   carOwner: lazy(() => import("@/app/annual/get-quote/_components/Step3CarOwner")),
   carOwnerAddPerson: lazy(() => import("@/app/annual/get-quote/_components/Step3CarOwnerAddPerson")),
   cover: lazy(() => import("@/app/annual/get-quote/_components/Step3CoverDetails")),
