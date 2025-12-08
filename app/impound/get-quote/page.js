@@ -1112,56 +1112,84 @@ const ImpoundInsuranceContent = () => {
                   />
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carValue" && (
-                  <Step1CarValue form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carValue form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carUsage" && (
-                  <Step1CarUsage form={form} showMileage={false} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carUsage form={form} showMileage={false} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "carStorage" && (
-                  <Step1CarStorage form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carStorage form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.VEHICLE && vehicleSubStep === "otherCars" && (
-                  <Step1OtherCars form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.otherCars form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "aboutYou" && (
-                  <Step2PersonalDetails form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.aboutYou form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "household" && (
-                  <Step2Household form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.household form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "employment" && (
-                  <Step2Employment form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.employment form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "licence" && (
-                  <Step2Licence form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.licence form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "restrictions" && (
-                  <Step2LicenceRestrictions form={form} />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.restrictions form={form} />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "claims" && (
-                  <Step2ClaimsAndConvictions
-                    form={form}
-                    claims={claims}
-                    convictions={convictions}
-                    onAddClaim={handleNavigateToAddClaim}
-                    onAddConviction={handleNavigateToAddConviction}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.claims
+                      form={form}
+                      claims={claims}
+                      convictions={convictions}
+                      onAddClaim={handleNavigateToAddClaim}
+                      onAddConviction={handleNavigateToAddConviction}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "addClaim" && (
-                  <Step2AddClaim
-                    onBack={handlePreviousStep}
-                    onAddClaim={handleAddClaim}
-                    editingClaim={editingClaimIndex !== null ? claims[editingClaimIndex] : null}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.addClaim
+                      onBack={handlePreviousStep}
+                      onAddClaim={handleAddClaim}
+                      editingClaim={editingClaimIndex !== null ? claims[editingClaimIndex] : null}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.PERSONAL && personalSubStep === "addConviction" && (
-                  <Step2AddConviction
-                    onBack={handlePreviousStep}
-                    onAddConviction={handleAddConviction}
-                    editingConviction={editingConvictionIndex !== null ? convictions[editingConvictionIndex] : null}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.addConviction
+                      onBack={handlePreviousStep}
+                      onAddConviction={handleAddConviction}
+                      editingConviction={editingConvictionIndex !== null ? convictions[editingConvictionIndex] : null}
+                    />
+                  </Suspense>
                 )}
-                {currentStep === STEPS.COVER && coverSubStep === "details" && <AnnualCoverDetailsForm form={form} />}
+                {currentStep === STEPS.COVER && coverSubStep === "details" && (
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.details form={form} />
+                  </Suspense>
+                )}
                 {currentStep === STEPS.COVER && coverSubStep === "addDriver" && (
                   <Step3AddDriver
                     onBack={handleBackFromAddDriver}
