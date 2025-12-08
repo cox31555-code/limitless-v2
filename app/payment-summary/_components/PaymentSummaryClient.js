@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import GetQuotePageHeader from "@/app/annual/get-quote/_components/GetQuotePageHeader";
 import PolicyDetailsReview from "./PolicyDetailsReview";
 import QuoteHeader from "./quoteHeader/QuoteHeader";
 import PaymentOptions from "./paymentOptions/PaymentOptions";
 import Actions from "./actions/Actions";
-import PaymentIframe from "./PaymentIframe";
 import styles from "../page.module.css";
 import heroStyles from "./paymentSummaryHero.module.css";
+
+const PaymentIframe = dynamic(() => import("./PaymentIframe"), { ssr: false });
 
 export default function PaymentSummaryClient({ insuranceData, id }) {
   const [showIframe, setShowIframe] = useState(false);

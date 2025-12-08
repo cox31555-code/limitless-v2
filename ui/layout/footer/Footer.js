@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import styles from "./footer.module.css";
 import { menus } from "./data";
 import Link from "next/link";
-import { BiLogoInstagramAlt } from "react-icons/bi";
-import { BiLogoFacebook } from "react-icons/bi";
-import { BiLogoTwitter } from "react-icons/bi";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import NoHiddenFees from "../noHiddenFees/NoHiddenFees";
 import GetQuoteFooterBanner from "../getQuoteFooterBanner/GetQuoteFooterBanner";
+
+const SocialIcons = dynamic(() => import("./SocialIcons"), { ssr: false });
 
 // List of all valid pages in the app directory
 const validPages = [
@@ -142,32 +142,7 @@ const Footer = () => {
               ))}
             </div>
             <div className={styles.socialsSection}>
-              <div className={styles.socialsItems}>
-                <div
-                  className={`${styles.socialsItem} ${
-                    shouldApplySpecialStyles ? styles["socials-item-black"] : ""
-                  }`}
-                >
-                  <BiLogoTwitter
-                    className={`${styles.socialsIcon} ${
-                      shouldApplySpecialStyles ? styles["socials-icon-black"] : ""
-                    }`}
-                    size={18}
-                  />
-                </div>
-                <div
-                  className={`${styles.socialsItem} ${
-                    shouldApplySpecialStyles ? styles["socials-item-black"] : ""
-                  }`}
-                >
-                  <BiLogoFacebook
-                    className={`${styles.socialsIcon} ${
-                      shouldApplySpecialStyles ? styles["socials-icon-black"] : ""
-                    }`}
-                    size={18}
-                  />
-                </div>
-              </div>
+              <SocialIcons shouldApplySpecialStyles={shouldApplySpecialStyles} />
             </div>
           </div>
         </div>
