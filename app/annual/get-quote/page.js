@@ -1269,53 +1269,61 @@ const AnnualInsuranceContent = () => {
                   </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "addDriverClaim" && (
-                  <Step3AddDriverClaim
-                    onBack={handleBackFromAddDriverClaim}
-                    onAddClaim={handleAddDriverClaimSubmit}
-                    editingClaim={editingDriverClaimIndex !== null ? driverClaims[editingDriverClaimIndex] : null}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.addDriverClaim
+                      onBack={handleBackFromAddDriverClaim}
+                      onAddClaim={handleAddDriverClaimSubmit}
+                      editingClaim={editingDriverClaimIndex !== null ? driverClaims[editingDriverClaimIndex] : null}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "addDriverConviction" && (
-                  <Step3AddDriverConviction
-                    onBack={handleBackFromAddDriverConviction}
-                    onAddConviction={handleAddDriverConvictionSubmit}
-                    editingConviction={editingDriverConvictionIndex !== null ? driverConvictions[editingDriverConvictionIndex] : null}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.addDriverConviction
+                      onBack={handleBackFromAddDriverConviction}
+                      onAddConviction={handleAddDriverConvictionSubmit}
+                      editingConviction={editingDriverConvictionIndex !== null ? driverConvictions[editingDriverConvictionIndex] : null}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "carOwner" && (
-                  <Step3CarOwner
-                    onBack={handleBackFromCarOwner}
-                    onNext={handleCarOwnerSubmit}
-                    userData={form.getValues("userDetails")}
-                    additionalDrivers={additionalDrivers}
-                    carOwnerData={carOwnerData}
-                    onAddPerson={handleAddCarOwnerPerson}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carOwner
+                      onBack={handleBackFromCarOwner}
+                      onNext={handleCarOwnerSubmit}
+                      userData={form.getValues("userDetails")}
+                      additionalDrivers={additionalDrivers}
+                      carOwnerData={carOwnerData}
+                      onAddPerson={handleAddCarOwnerPerson}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && (coverSubStep === "carOwnerAddRegisteredKeeper" || coverSubStep === "carOwnerAddLegalOwner") && (
-                  <Step3CarOwnerAddPerson
-                    onBack={handleBackFromAddCarOwnerPerson}
-                    onSave={handleSaveCarOwnerPerson}
-                    onRemove={() => {
-                      if (carOwnerAddingType === "registeredKeeper") {
-                        setCarOwnerData({
-                          ...carOwnerData,
-                          registeredKeeperOtherPerson: null
-                        });
-                      } else {
-                        setCarOwnerData({
-                          ...carOwnerData,
-                          legalOwnerOtherPerson: null
-                        });
-                      }
-                      setCoverSubStep("carOwner");
-                      setCarOwnerAddingType(null);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    personType={carOwnerAddingType}
-                    personData={carOwnerAddingType === "registeredKeeper" ? carOwnerData?.registeredKeeperOtherPerson : carOwnerData?.legalOwnerOtherPerson}
-                    isEditing={carOwnerAddingType === "registeredKeeper" ? !!carOwnerData?.registeredKeeperOtherPerson : !!carOwnerData?.legalOwnerOtherPerson}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carOwnerAddPerson
+                      onBack={handleBackFromAddCarOwnerPerson}
+                      onSave={handleSaveCarOwnerPerson}
+                      onRemove={() => {
+                        if (carOwnerAddingType === "registeredKeeper") {
+                          setCarOwnerData({
+                            ...carOwnerData,
+                            registeredKeeperOtherPerson: null
+                          });
+                        } else {
+                          setCarOwnerData({
+                            ...carOwnerData,
+                            legalOwnerOtherPerson: null
+                          });
+                        }
+                        setCoverSubStep("carOwner");
+                        setCarOwnerAddingType(null);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      personType={carOwnerAddingType}
+                      personData={carOwnerAddingType === "registeredKeeper" ? carOwnerData?.registeredKeeperOtherPerson : carOwnerData?.legalOwnerOtherPerson}
+                      isEditing={carOwnerAddingType === "registeredKeeper" ? !!carOwnerData?.registeredKeeperOtherPerson : !!carOwnerData?.legalOwnerOtherPerson}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "cover" && (
                   <Step3CoverDetails
