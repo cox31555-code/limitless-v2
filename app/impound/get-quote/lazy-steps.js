@@ -5,12 +5,13 @@ import { lazy } from "react";
 // Lazy load components - they only load when first accessed
 export const lazySteps = {
   // Vehicle steps
+  registration: lazy(() => import("@/app/annual/get-quote/_components/Step1VehicleRegistration")),
   carValue: lazy(() => import("@/app/annual/get-quote/_components/Step1CarValue")),
   carUsage: lazy(() => import("@/app/annual/get-quote/_components/Step1CarUsage")),
   carStorage: lazy(() => import("@/app/annual/get-quote/_components/Step1CarStorage")),
   otherCars: lazy(() => import("@/app/annual/get-quote/_components/Step1OtherCars")),
-  
-  // Personal steps  
+
+  // Personal steps
   aboutYou: lazy(() => import("@/app/annual/get-quote/_components/Step2PersonalDetails")),
   household: lazy(() => import("@/app/annual/get-quote/_components/Step2Household")),
   employment: lazy(() => import("@/app/annual/get-quote/_components/Step2Employment")),
@@ -19,14 +20,19 @@ export const lazySteps = {
   claims: lazy(() => import("@/app/annual/get-quote/_components/Step2ClaimsAndConvictions")),
   addClaim: lazy(() => import("@/app/annual/get-quote/_components/Step2AddClaim")),
   addConviction: lazy(() => import("@/app/annual/get-quote/_components/Step2AddConviction")),
-  
+
   // Cover steps
+  additionalDrivers: lazy(() => import("@/app/annual/get-quote/_components/Step3AdditionalDrivers")),
+  addDriver: lazy(() => import("@/app/annual/get-quote/_components/Step3AddDriver")),
+  addDriverClaimsAndConvictions: lazy(() => import("@/app/annual/get-quote/_components/Step3DriverClaimsAndConvictions")),
+  addDriverClaim: lazy(() => import("@/app/annual/get-quote/_components/Step3AddDriverClaim")),
+  addDriverConviction: lazy(() => import("@/app/annual/get-quote/_components/Step3AddDriverConviction")),
   carOwner: lazy(() => import("@/app/annual/get-quote/_components/Step3CarOwner")),
   carOwnerAddPerson: lazy(() => import("@/app/annual/get-quote/_components/Step3CarOwnerAddPerson")),
   cover: lazy(() => import("@/app/annual/get-quote/_components/Step3CoverDetails")),
   ncd: lazy(() => import("@/app/annual/get-quote/_components/Step3NoClaimsDiscount")),
   contactInformation: lazy(() => import("@/app/annual/get-quote/_components/Step3ContactInformation")),
-  
+
   // Check answers
   checkAnswers: lazy(() => import("@/app/annual/get-quote/_components/Step4CheckYourAnswers")),
 };
