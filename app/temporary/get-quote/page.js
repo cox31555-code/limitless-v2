@@ -1177,82 +1177,98 @@ const TemporaryInsuranceContent = () => {
                     />
                   </Suspense>
                 )}
-                {currentStep === STEPS.COVER && coverSubStep === "details" && <AnnualCoverDetailsForm form={form} />}
+                {currentStep === STEPS.COVER && coverSubStep === "details" && (
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.details form={form} />
+                  </Suspense>
+                )}
                 {currentStep === STEPS.COVER && coverSubStep === "carOwner" && (
-                  <Step3CarOwner
-                    onBack={handleBackFromCarOwner}
-                    onNext={handleCarOwnerSubmit}
-                    userData={form.getValues("userDetails")}
-                    additionalDrivers={additionalDrivers}
-                    carOwnerData={carOwnerData}
-                    onAddPerson={handleAddCarOwnerPerson}
-                    insuranceType="Temp"
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carOwner
+                      onBack={handleBackFromCarOwner}
+                      onNext={handleCarOwnerSubmit}
+                      userData={form.getValues("userDetails")}
+                      additionalDrivers={additionalDrivers}
+                      carOwnerData={carOwnerData}
+                      onAddPerson={handleAddCarOwnerPerson}
+                      insuranceType="Temp"
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && (coverSubStep === "carOwnerAddRegisteredKeeper" || coverSubStep === "carOwnerAddLegalOwner") && (
-                  <Step3CarOwnerAddPerson
-                    onBack={handleBackFromAddCarOwnerPerson}
-                    onSave={handleSaveCarOwnerPerson}
-                    onRemove={() => {
-                      if (carOwnerAddingType === "registeredKeeper") {
-                        setCarOwnerData({
-                          ...carOwnerData,
-                          registeredKeeperOtherPerson: null
-                        });
-                      } else {
-                        setCarOwnerData({
-                          ...carOwnerData,
-                          legalOwnerOtherPerson: null
-                        });
-                      }
-                      setCoverSubStep("carOwner");
-                      setCarOwnerAddingType(null);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    personType={carOwnerAddingType}
-                    personData={carOwnerAddingType === "registeredKeeper" ? carOwnerData?.registeredKeeperOtherPerson : carOwnerData?.legalOwnerOtherPerson}
-                    isEditing={carOwnerAddingType === "registeredKeeper" ? !!carOwnerData?.registeredKeeperOtherPerson : !!carOwnerData?.legalOwnerOtherPerson}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.carOwnerAddPerson
+                      onBack={handleBackFromAddCarOwnerPerson}
+                      onSave={handleSaveCarOwnerPerson}
+                      onRemove={() => {
+                        if (carOwnerAddingType === "registeredKeeper") {
+                          setCarOwnerData({
+                            ...carOwnerData,
+                            registeredKeeperOtherPerson: null
+                          });
+                        } else {
+                          setCarOwnerData({
+                            ...carOwnerData,
+                            legalOwnerOtherPerson: null
+                          });
+                        }
+                        setCoverSubStep("carOwner");
+                        setCarOwnerAddingType(null);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      personType={carOwnerAddingType}
+                      personData={carOwnerAddingType === "registeredKeeper" ? carOwnerData?.registeredKeeperOtherPerson : carOwnerData?.legalOwnerOtherPerson}
+                      isEditing={carOwnerAddingType === "registeredKeeper" ? !!carOwnerData?.registeredKeeperOtherPerson : !!carOwnerData?.legalOwnerOtherPerson}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "cover" && (
-                  <Step3CoverDetails
-                    onBack={handleBackFromCoverDetails}
-                    onNext={handleCoverDetailsSubmit}
-                    coverData={form.getValues("coverDetails") || {}}
-                    showCoverOptions={false}
-                    insuranceType="Temp"
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.cover
+                      onBack={handleBackFromCoverDetails}
+                      onNext={handleCoverDetailsSubmit}
+                      coverData={form.getValues("coverDetails") || {}}
+                      showCoverOptions={false}
+                      insuranceType="Temp"
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "ncd" && (
-                  <Step3NoClaimsDiscount
-                    onBack={handleBackFromNcd}
-                    onNext={handleNcdDataSubmit}
-                    ncdData={ncdData || {}}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.ncd
+                      onBack={handleBackFromNcd}
+                      onNext={handleNcdDataSubmit}
+                      ncdData={ncdData || {}}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "contactInformation" && (
-                  <Step3ContactInformation
-                    onBack={handleBackFromContactInformation}
-                    onNext={handleContactInformationSubmit}
-                    contactInformationData={contactInformationData || {}}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.contactInformation
+                      onBack={handleBackFromContactInformation}
+                      onNext={handleContactInformationSubmit}
+                      contactInformationData={contactInformationData || {}}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.CHECK_ANSWERS && (
-                  <Step4CheckYourAnswers
-                    form={form}
-                    foundVehicleData={foundVehicleData}
-                    additionalDrivers={additionalDrivers}
-                    carOwnerData={carOwnerData}
-                    ncdData={ncdData}
-                    productsData={productsData}
-                    contactInformationData={contactInformationData}
-                    claims={claims}
-                    convictions={convictions}
-                    onBack={handleBackFromCheckAnswers}
-                    onSubmit={onSubmit}
-                    isLoading={showLoading}
-                    insuranceType="Temp"
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.checkAnswers
+                      form={form}
+                      foundVehicleData={foundVehicleData}
+                      additionalDrivers={additionalDrivers}
+                      carOwnerData={carOwnerData}
+                      ncdData={ncdData}
+                      productsData={productsData}
+                      contactInformationData={contactInformationData}
+                      claims={claims}
+                      convictions={convictions}
+                      onBack={handleBackFromCheckAnswers}
+                      onSubmit={onSubmit}
+                      isLoading={showLoading}
+                      insuranceType="Temp"
+                    />
+                  </Suspense>
                 )}
               </div>
 
