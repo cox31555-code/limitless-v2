@@ -5,67 +5,166 @@
   width: 100%;
 }
 
+/* Price Card */
+.priceCard {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border: none;
+  border-radius: 1.6rem;
+  box-shadow: 0 0.26rem 1.04rem rgba(0, 61, 122, 0.06);
+  padding: 3.25rem;
+}
+
+.priceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.priceLabel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.065rem;
+  margin: 0;
+}
+
+.priceAmount {
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.pricePeriod {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  margin-left: 0.5rem;
+}
+
+.priceMeta {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0.4rem;
+}
+
+/* Next Instalment Info */
+.instalmentInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 1.6rem 2rem;
+  background: #e8f2fb;
+  border-radius: 1.3rem;
+  border: 1px solid #d4e4f7;
+}
+
+.instalmentIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  flex-shrink: 0;
+}
+
+.instalmentIcon {
+  width: 2.8rem;
+  height: 2.8rem;
+  color: #5a8fc4;
+}
+
+.instalmentText {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
 /* Expandable Card */
 .expandableCard {
-  border: 1px solid rgba(3, 136, 255, 0.12);
-  border-radius: 12px;
   background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 1.56rem;
+  box-shadow: 0 0.26rem 1.04rem rgba(0, 61, 122, 0.06);
   overflow: hidden;
 }
 
-/* Card Header */
 .cardHeader {
+  width: 100%;
+  padding: 2.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 1.8rem 2rem;
-  background: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.cardHeader:hover {
+  background-color: #f8fafb;
+}
+
+.cardHeader:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: -3px;
+  background-color: #f0f7ff;
 }
 
 .headerContent {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  gap: 1.6rem;
+  align-items: flex-start;
   flex: 1;
-  text-align: left;
 }
 
 .iconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
-  background: rgba(3, 136, 255, 0.08);
-  border-radius: 8px;
+  width: 5.2rem;
+  height: 5.2rem;
+  min-width: 5.2rem;
+  background: linear-gradient(135deg, #e8f2fb 0%, #dae8f7 100%);
+  border-radius: 1.2rem;
   flex-shrink: 0;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(0, 82, 163, 0.08);
+}
+
+.cardHeader:hover .iconWrapper {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 82, 163, 0.2);
+}
+
+.cardHeader:hover .icon {
+  color: #ffffff;
 }
 
 .icon {
-  width: 2rem;
-  height: 2rem;
-  color: #0388ff;
-  stroke-width: 2;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #0052a3;
+  transition: color 0.25s ease;
 }
 
 .sectionTitle {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #000822;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0052a3;
   margin: 0;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.035rem;
 }
 
 .expandIcon {
   width: 2rem;
   height: 2rem;
-  color: #64748b;
-  transition: transform 0.2s ease;
+  color: #0388ff;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
 }
 
@@ -73,221 +172,358 @@
   transform: rotate(180deg);
 }
 
+.cardHeader:hover .expandIcon {
+  color: #0275dd;
+}
+
 /* Card Content */
 .cardContent {
-  padding: 2rem;
-  background: #ffffff;
+  padding: 2.6rem;
+  border-top: 1px solid #e0e6f0;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /* Details Grid */
 .detailsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
+  gap: 2.6rem;
 }
 
 .detailItem {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
 }
 
 .detailLabel {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  color: #64748b;
-  text-transform: capitalize;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.065rem;
 }
 
 .detailValue {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #000822;
-  line-height: 1.4;
+  color: #0052a3;
+  line-height: 1.5;
 }
 
-/* Car Info Block */
+.disclaimer {
+  font-size: 1.1rem;
+  color: #7a8fa3;
+  margin: 1.5rem 0 0 0;
+  line-height: 1.6;
+}
+
+/* Car Details */
 .carInfoBlock {
-  margin-bottom: 2rem;
-  padding: 1.6rem;
-  background: #f8fbff;
-  border-radius: 8px;
-  border: 1px solid rgba(3, 136, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .carTitle {
   font-size: 1.8rem;
-  font-weight: 600;
-  color: #000822;
-  margin: 0 0 0.6rem 0;
-  letter-spacing: -0.3px;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  letter-spacing: -0.035rem;
 }
 
 .carRegistration {
-  display: inline-block;
   font-size: 1.3rem;
-  font-weight: 600;
-  color: #0388ff;
-  margin: 0 0 0.6rem 0;
+  color: #7a8fa3;
+  margin: 0;
 }
 
 .carMeta {
   font-size: 1.3rem;
-  color: #64748b;
-  font-weight: 500;
+  color: #999;
   margin: 0;
 }
 
-/* Vehicle Subsection */
 .vehicleSubsection {
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e0e6f0;
 }
 
-.vehicleSubsection:last-child {
-  margin-bottom: 0;
+.vehicleSubsection:first-of-type {
+  margin-top: 2.5rem;
 }
 
 .subsectionTitle {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  letter-spacing: -0.02rem;
+}
+
+.excesses {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e0e6f0;
+}
+
+/* Driver Items */
+.driverItem {
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #000822;
-  margin: 0 0 1.2rem 0;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  letter-spacing: -0.2px;
+  color: #003366;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.driverRole {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #7a8fa3;
 }
 
 /* Driver Card */
 .driverCard {
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  background: #fff;
+  border: 1px solid #d4e4f7;
+  border-radius: 0.8rem;
+}
+
+.driverCard:not(:first-child) {
+  margin-top: 1.6rem;
 }
 
 .driverName {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #000822;
-  margin: 0 0 1.6rem 0;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  letter-spacing: -0.3px;
-}
-
-/* Driver Item */
-.driverItem {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #000822;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003366;
   margin: 0;
-  padding: 1rem 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: #f8fbff;
-  border-radius: 6px;
-  margin-bottom: 0.8rem;
+  letter-spacing: -0.03rem;
 }
 
-.driverItem:last-child {
-  margin-bottom: 0;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.driverRole {
-  font-size: 1.2rem;
-  color: #64748b;
-  font-weight: 400;
+@media (max-width: 768px) {
+  .priceCard {
+    padding: 2.4rem 2rem;
+  }
+
+  .priceAmount {
+    font-size: 2.6rem;
+  }
+
+  .instalmentInfo {
+    padding: 1.2rem;
+    gap: 1.7rem;
+  }
+
+  .instalmentIconWrapper {
+    width: 3.1rem;
+    height: 3.1rem;
+    min-width: 3.1rem;
+  }
+
+  .instalmentIcon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .instalmentText {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+
+  .cardHeader {
+    padding: 1.8rem;
+  }
+
+  .iconWrapper {
+    width: 5.6rem;
+    height: 5.6rem;
+    min-width: 5.6rem;
+  }
+
+  .icon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardContent {
+    padding: 1.8rem;
+    gap: 1.8rem;
+  }
+
+  .detailsGrid {
+    gap: 1.8rem;
+  }
+
+  .detailLabel {
+    font-size: 1.225rem;
+  }
+
+  .detailValue {
+    font-size: 1.525rem;
+  }
+
+  .carTitle {
+    font-size: 1.6rem;
+  }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .container {
-    gap: 1.6rem;
+    gap: 2.4rem;
+  }
+
+  .priceCard {
+    padding: 1.8rem 1.6rem;
+  }
+
+  .priceLabel {
+    font-size: 1.3rem;
+  }
+
+  .priceAmount {
+    font-size: 2.4rem;
+  }
+
+  .priceMeta {
+    font-size: 1.3rem;
+  }
+
+  .instalmentInfo {
+    padding: 1.2rem;
+    gap: 1.2rem;
   }
 
   .cardHeader {
     padding: 1.6rem;
   }
 
-  .headerContent {
-    gap: 1rem;
-  }
-
   .iconWrapper {
-    width: 3.6rem;
-    height: 3.6rem;
+    width: 5.2rem;
+    height: 5.2rem;
   }
 
   .icon {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .cardContent {
     padding: 1.6rem;
+    gap: 2.4rem;
+  }
+
+  .detailsGrid {
+    gap: 2.4rem;
+  }
+
+  .detailLabel {
+    font-size: 1.2rem;
+  }
+
+  .detailValue {
+    font-size: 1.5rem;
+  }
+
+  .carTitle {
+    font-size: 1.5rem;
+  }
+
+  .carRegistration,
+  .carMeta {
+    font-size: 1.3rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .vehicleSubsection {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .priceCard {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .priceAmount {
+    font-size: 2.2rem;
+  }
+
+  .cardHeader {
+    padding: 1.4rem;
+  }
+
+  .iconWrapper {
+    width: 4.8rem;
+    height: 4.8rem;
+    min-width: 4.8rem;
+    border-radius: 1rem;
+  }
+
+  .icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .cardContent {
+    padding: 1.4rem;
+    gap: 1.4rem;
   }
 
   .detailsGrid {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
-  }
-
-  .carInfoBlock {
-    padding: 1.4rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    gap: 1.4rem;
-  }
-
-  .cardHeader {
-    padding: 1.4rem;
-  }
-
-  .iconWrapper {
-    width: 3.4rem;
-    height: 3.4rem;
-  }
-
-  .icon {
-    width: 1.7rem;
-    height: 1.7rem;
-  }
-
-  .sectionTitle {
-    font-size: 1.4rem;
-  }
-
-  .cardContent {
-    padding: 1.4rem;
-  }
-
-  .detailsGrid {
     gap: 1.2rem;
   }
 
-  .carTitle {
-    font-size: 1.7rem;
+  .detailLabel {
+    font-size: 1.125rem;
   }
 
-  .carInfoBlock {
-    padding: 1.2rem;
+  .detailValue {
+    font-size: 1.325rem;
+  }
+
+  .carTitle {
+    font-size: 1.4rem;
   }
 
   .subsectionTitle {
     font-size: 1.3rem;
   }
 
-  .driverName {
-    font-size: 1.5rem;
-  }
-
-  .driverItem {
-    padding: 0.9rem 1rem;
-    font-size: 1.3rem;
+  .vehicleSubsection {
+    gap: 1rem;
   }
 }
