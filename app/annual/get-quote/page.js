@@ -1326,48 +1326,58 @@ const AnnualInsuranceContent = () => {
                   </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "cover" && (
-                  <Step3CoverDetails
-                    onBack={handleBackFromCoverDetails}
-                    onNext={handleCoverDetailsSubmit}
-                    coverData={form.getValues("coverDetails") || {}}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.cover
+                      onBack={handleBackFromCoverDetails}
+                      onNext={handleCoverDetailsSubmit}
+                      coverData={form.getValues("coverDetails") || {}}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "ncd" && (
-                  <Step3NoClaimsDiscount
-                    onBack={handleBackFromNcd}
-                    onNext={handleNcdDataSubmit}
-                    ncdData={ncdData || {}}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.ncd
+                      onBack={handleBackFromNcd}
+                      onNext={handleNcdDataSubmit}
+                      ncdData={ncdData || {}}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "additionalProducts" && (
-                  <Step3AdditionalProducts
-                    onBack={handleBackFromAdditionalProducts}
-                    onNext={handleAdditionalProductsSubmit}
-                    productsData={productsData || {}}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.additionalProducts
+                      onBack={handleBackFromAdditionalProducts}
+                      onNext={handleAdditionalProductsSubmit}
+                      productsData={productsData || {}}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.COVER && coverSubStep === "contactInformation" && (
-                  <Step3ContactInformation
-                    onBack={handleBackFromContactInformation}
-                    onNext={handleContactInformationSubmit}
-                    contactInformationData={contactInformationData || {}}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.contactInformation
+                      onBack={handleBackFromContactInformation}
+                      onNext={handleContactInformationSubmit}
+                      contactInformationData={contactInformationData || {}}
+                    />
+                  </Suspense>
                 )}
                 {currentStep === STEPS.CHECK_ANSWERS && (
-                  <Step4CheckYourAnswers
-                    form={form}
-                    foundVehicleData={foundVehicleData}
-                    additionalDrivers={additionalDrivers}
-                    carOwnerData={carOwnerData}
-                    ncdData={ncdData}
-                    productsData={productsData}
-                    contactInformationData={contactInformationData}
-                    claims={claims}
-                    convictions={convictions}
-                    onBack={handleBackFromCheckAnswers}
-                    onSubmit={onSubmit}
-                    isLoading={showLoading}
-                  />
+                  <Suspense fallback={<StepFallback />}>
+                    <lazySteps.checkAnswers
+                      form={form}
+                      foundVehicleData={foundVehicleData}
+                      additionalDrivers={additionalDrivers}
+                      carOwnerData={carOwnerData}
+                      ncdData={ncdData}
+                      productsData={productsData}
+                      contactInformationData={contactInformationData}
+                      claims={claims}
+                      convictions={convictions}
+                      onBack={handleBackFromCheckAnswers}
+                      onSubmit={onSubmit}
+                      isLoading={showLoading}
+                    />
+                  </Suspense>
                 )}
               </div>
 
