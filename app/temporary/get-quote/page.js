@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, Suspense, useCallback } from "react";
-import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
@@ -14,37 +13,8 @@ import QuoteNavButtons from "@/app/annual/get-quote/_components/QuoteNavButtons"
 import Step1VehicleRegistration from "@/app/annual/get-quote/_components/Step1VehicleRegistration";
 import QuoteHeader from "@/app/annual/get-quote/_components/QuoteHeader";
 import GetQuotePageHeader from "@/app/annual/get-quote/_components/GetQuotePageHeader";
+import { lazySteps, StepFallback } from "./lazy-steps";
 import styles from "@/app/annual/get-quote/newGetQuotePage.module.css";
-
-// Optimize: Only dynamically import components with ssr: false to avoid blocking initial load
-const AnnualVehicleDetailsForm = dynamic(() => import("@/app/annual/get-quote/_components/AnnualVehicleDetailsForm"), { ssr: false });
-const AnnualCoverDetailsForm = dynamic(() => import("@/app/annual/get-quote/_components/AnnualCoverDetailsForm"), { ssr: false });
-const AnnualPersonalDetailsForm = dynamic(() => import("@/app/annual/get-quote/_components/AnnualPersonalDetailsForm"), { ssr: false });
-const Step4CheckYourAnswers = dynamic(() => import("@/app/annual/get-quote/_components/Step4CheckYourAnswers"), { ssr: false });
-const Step1CarValue = dynamic(() => import("@/app/annual/get-quote/_components/Step1CarValue"), { ssr: false });
-const Step1CarUsage = dynamic(() => import("@/app/annual/get-quote/_components/Step1CarUsage"), { ssr: false });
-const Step1CarStorage = dynamic(() => import("@/app/annual/get-quote/_components/Step1CarStorage"), { ssr: false });
-const Step1OtherCars = dynamic(() => import("@/app/annual/get-quote/_components/Step1OtherCars"), { ssr: false });
-const Step2PersonalDetails = dynamic(() => import("@/app/annual/get-quote/_components/Step2PersonalDetails"), { ssr: false });
-const Step2Household = dynamic(() => import("@/app/annual/get-quote/_components/Step2Household"), { ssr: false });
-const Step2Employment = dynamic(() => import("@/app/annual/get-quote/_components/Step2Employment"), { ssr: false });
-const Step2Licence = dynamic(() => import("@/app/annual/get-quote/_components/Step2Licence"), { ssr: false });
-const Step2LicenceRestrictions = dynamic(() => import("@/app/annual/get-quote/_components/Step2LicenceRestrictions"), { ssr: false });
-const Step2ClaimsAndConvictions = dynamic(() => import("@/app/annual/get-quote/_components/Step2ClaimsAndConvictions"), { ssr: false });
-const Step2AddClaim = dynamic(() => import("@/app/annual/get-quote/_components/Step2AddClaim"), { ssr: false });
-const Step2AddConviction = dynamic(() => import("@/app/annual/get-quote/_components/Step2AddConviction"), { ssr: false });
-const Step3CarOwner = dynamic(() => import("@/app/annual/get-quote/_components/Step3CarOwner"), { ssr: false });
-const Step3CarOwnerAddPerson = dynamic(() => import("@/app/annual/get-quote/_components/Step3CarOwnerAddPerson"), { ssr: false });
-const Step3CoverDetails = dynamic(() => import("@/app/annual/get-quote/_components/Step3CoverDetails"), { ssr: false });
-const Step3NoClaimsDiscount = dynamic(() => import("@/app/annual/get-quote/_components/Step3NoClaimsDiscount"), { ssr: false });
-const Step3AdditionalProducts = dynamic(() => import("@/app/annual/get-quote/_components/Step3AdditionalProducts"), { ssr: false });
-const Step3ContactInformation = dynamic(() => import("@/app/annual/get-quote/_components/Step3ContactInformation"), { ssr: false });
-
-const StepFallback = () => (
-  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "400px", color: "#666", fontSize: "1.3rem" }}>
-    Loading...
-  </div>
-);
 
 const STEPS = {
   VEHICLE: 1,
