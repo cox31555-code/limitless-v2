@@ -46,6 +46,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModificationsModal, setShowModificationsModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(annualInsuranceSchema),
