@@ -827,6 +827,32 @@
 }
 
 @media screen and (max-width: 640px) {
+  .heroSection {
+    padding: 3rem calc(50vw - 50%);
+    margin-bottom: 2rem;
+  }
+
+  .greetingTitle {
+    font-size: 1.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1rem;
+  }
+
+  .breadcrumb {
+    padding: 10px 5% 10px;
+    gap: 0.6rem;
+  }
+
+  .breadcrumbItem {
+    font-size: 0.9rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1rem;
+  }
+
   .contentWrapper {
     padding: 20px 0 1.6rem;
   }
