@@ -92,7 +92,7 @@
 }
 
 .dropZoneText {
-  font-size: 0.46875rem;
+  font-size: 0.65625rem;
   color: #333;
   margin: 0 0 0.6rem 0;
   font-weight: 500;
@@ -127,7 +127,7 @@
 }
 
 .hintTextPart {
-  font-size: 0.4375rem;
+  font-size: 0.6375rem;
 }
 
 @media (max-width: 640px) {
