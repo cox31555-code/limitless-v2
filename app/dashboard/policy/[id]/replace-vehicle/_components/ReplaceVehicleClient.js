@@ -374,14 +374,6 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
             </label>
           </div>
 
-          <button
-            type="button"
-            className={styles.helpLink}
-            onClick={() => setShowModificationsModal(true)}
-          >
-            How can I find out if my car's been modified?
-          </button>
-
           {vehicleModified === "Yes" && (
             <div className={styles.modificationDetailsInCard}>
               <h4 className={styles.modificationDetailsHeading}>Your car modifications</h4>
