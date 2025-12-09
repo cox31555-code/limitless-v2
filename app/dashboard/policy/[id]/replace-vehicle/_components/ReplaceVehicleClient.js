@@ -273,14 +273,11 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
 
     return (
       <div className={styles.foundVehicleCard}>
-        <div className={styles.foundVehicleInfo}>
-          <h3 className={styles.foundVehicleTitle}>Selected Vehicle</h3>
-          <p className={styles.foundVehicleDetails}>
-            {make} {model} ({year})
-          </p>
+        <div className={styles.detailsSectionHeader}>
+          <h3 className={styles.detailsSectionTitle}>Selected Vehicle</h3>
           <button
             type="button"
-            className={styles.changeVehicleBtn}
+            className={styles.changeLink}
             onClick={() => {
               setShowManualEntry(true);
               setFoundVehicle(null);
@@ -288,6 +285,11 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
           >
             Change
           </button>
+        </div>
+        <div className={styles.foundVehicleInfo}>
+          <p className={styles.foundVehicleDetails}>
+            {make} {model} ({year})
+          </p>
         </div>
       </div>
     );
