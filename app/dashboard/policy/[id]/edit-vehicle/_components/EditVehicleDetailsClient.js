@@ -115,6 +115,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   };
 
   const handleSave = async (data) => {
+    console.log("handleSave called", data);
     try {
       setIsSubmitting(true);
       // Show loading for 3 seconds
