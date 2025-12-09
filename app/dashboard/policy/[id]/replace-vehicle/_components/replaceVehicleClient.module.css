@@ -738,7 +738,83 @@
   cursor: not-allowed;
 }
 
+@media screen and (max-width: 1200px) {
+  .heroSection {
+    padding: 7rem calc(50vw - 50%) 7rem;
+  }
+
+  .greetingTitle {
+    font-size: 3.5rem;
+  }
+
+  .breadcrumb {
+    gap: 1rem;
+    padding: 20px 5% 20px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.2rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.3rem;
+  }
+
+  .contentWrapper {
+    padding: 3rem 5%;
+  }
+}
+
 @media screen and (max-width: 900px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem calc(50vw - 50%);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  .greetingArea {
+    align-items: center;
+    width: 100%;
+  }
+
+  .greetingTitle {
+    font-size: 2.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .breadcrumb {
+    gap: 0.8rem;
+    padding: 15px 5% 15px;
+  }
+
+  .breadcrumbItem {
+    font-size: 1.1rem;
+  }
+
+  .breadcrumbSeparator {
+    font-size: 1.2rem;
+  }
+
+  .contentWrapper {
+    padding: 0 5%;
+  }
+
   .formRow {
     grid-template-columns: 1fr;
     gap: 1.6rem;
