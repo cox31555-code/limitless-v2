@@ -502,19 +502,21 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
 
             {foundVehicle && (
               <div className={styles.foundVehicleCard}>
-                <div className={styles.foundVehicleInfo}>
-                  <h3 className={styles.foundVehicleTitle}>Vehicle Found</h3>
-                  <p className={styles.foundVehicleDetails}>
-                    {foundVehicle.make} {foundVehicle.model} ({foundVehicle.yearOfManufacture})
-                  </p>
-                  <p className={styles.foundVehicleReg}>{foundVehicle.registrationNumber}</p>
+                <div className={styles.detailsSectionHeader}>
+                  <h3 className={styles.detailsSectionTitle}>Vehicle Found</h3>
                   <button
                     type="button"
-                    className={styles.changeVehicleBtn}
+                    className={styles.changeLink}
                     onClick={handleChangeVehicle}
                   >
                     Change
                   </button>
+                </div>
+                <div className={styles.foundVehicleInfo}>
+                  <p className={styles.foundVehicleDetails}>
+                    {foundVehicle.make} {foundVehicle.model} ({foundVehicle.yearOfManufacture})
+                  </p>
+                  <p className={styles.foundVehicleReg}>{foundVehicle.registrationNumber}</p>
                 </div>
               </div>
             )}
