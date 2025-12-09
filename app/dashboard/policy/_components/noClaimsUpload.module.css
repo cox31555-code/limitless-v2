@@ -415,7 +415,7 @@
   }
 
   .dropZoneText {
-    font-size: 1.4rem;
+    font-size: 0.75rem;
     margin-top: -0.1rem;
     line-height: 1.63;
   }
@@ -423,6 +423,10 @@
   .dropZoneHint {
     font-size: 1.35rem;
     line-height: 1.71;
+  }
+
+  .hintTextPart {
+    font-size: 0.71875rem;
   }
 
   .uploadIcon {
