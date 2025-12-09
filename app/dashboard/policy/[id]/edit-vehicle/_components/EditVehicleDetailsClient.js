@@ -117,9 +117,10 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const handleSave = async (data) => {
     try {
       setIsSubmitting(true);
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      toast.success("Vehicle details updated successfully");
-      router.push(`/dashboard/policy/${policyId}`);
+      // Show loading for 3 seconds
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      // Show error modal
+      setShowErrorModal(true);
     } catch (error) {
       toast.error("Failed to update vehicle details");
       console.error(error);
