@@ -441,21 +441,6 @@
     padding: 2rem 1rem;
   }
 
-  .dropZoneText {
-    font-size: 0.65625rem;
-    margin-top: -0.1rem;
-    line-height: 1.63;
-  }
-
-  .dropZoneHint {
-    font-size: 0.84375rem;
-    line-height: 1.71;
-  }
-
-  .hintTextPart {
-    font-size: 0.6375rem;
-  }
-
   .uploadIcon {
     width: 48px;
     height: 48px;
