@@ -113,6 +113,10 @@
 }
 
 @media (max-width: 640px) {
+  .dropZoneText {
+    font-size: 0.725rem;
+  }
+
   .dropZoneHint {
     font-size: 0.84375rem;
     line-height: 1.71;
