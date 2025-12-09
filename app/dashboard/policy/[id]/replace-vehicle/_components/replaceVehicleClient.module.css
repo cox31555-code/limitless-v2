@@ -898,10 +898,6 @@
     font-size: 1.3rem;
   }
 
-  .alternativeOption {
-    margin-top: 1px;
-  }
-
   .actionButtons {
     flex-direction: column-reverse;
     gap: 1rem;
