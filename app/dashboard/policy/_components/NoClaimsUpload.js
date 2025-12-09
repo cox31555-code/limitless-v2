@@ -128,7 +128,12 @@ const NoClaimsUpload = () => {
           Drop files here or <span className={styles.browseLink}>browse files</span>
         </p>
         <p className={styles.dropZoneHint}>
-          Maximum file size: 50MB • Maximum files: {MAX_FILES}
+          <div className={styles.hintTextPart}>
+            Maximum file size: 50MB • Maximum files:{" "}
+          </div>
+          <div className={styles.hintTextPart}>
+            {MAX_FILES}
+          </div>
         </p>
         <input
           ref={fileInputRef}
