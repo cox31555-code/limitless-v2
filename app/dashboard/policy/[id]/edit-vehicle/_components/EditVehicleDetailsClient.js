@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
+import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./editVehicleDetailsClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
