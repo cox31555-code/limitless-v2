@@ -902,10 +902,6 @@
     margin-top: 1px;
   }
 
-  .formContainer {
-    gap: 1px;
-  }
-
   .actionButtons {
     flex-direction: column-reverse;
     gap: 1rem;
