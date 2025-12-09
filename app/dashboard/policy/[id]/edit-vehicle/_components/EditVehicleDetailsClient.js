@@ -49,7 +49,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const [showErrorModal, setShowErrorModal] = useState(false);
 
   const form = useForm({
-    resolver: zodResolver(annualInsuranceSchema),
+    mode: "onSubmit",
     defaultValues: {
       vehicleDetails: {
         type: vehicleDetails?.type || "",
@@ -60,7 +60,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
         fuel: vehicleDetails?.fuel || "",
         transmission: vehicleDetails?.transmission || "",
         colour: vehicleDetails?.colour || "",
-        vehicleModified: vehicleDetails?.vehicleModified || "",
+        vehicleModified: vehicleDetails?.vehicleModified || "No",
         vehicleModifications: vehicleDetails?.vehicleModifications || [],
         alarmImmobiliser: vehicleDetails?.alarmImmobiliser || "",
         trackingDevice: vehicleDetails?.trackingDevice || "",
