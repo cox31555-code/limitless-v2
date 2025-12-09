@@ -681,7 +681,7 @@
 .formContainer {
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
+  gap: 1px;
 }
 
 .actionButtons {
