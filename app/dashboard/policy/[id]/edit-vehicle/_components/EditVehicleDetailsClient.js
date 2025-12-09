@@ -75,6 +75,13 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const vehicleModified = watch("vehicleDetails.vehicleModified");
   const vehicleModifications = watch("vehicleDetails.vehicleModifications") || [];
 
+  // Debug form errors
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      console.log("Form validation errors:", errors);
+    }
+  }, [errors]);
+
   const handleDropdownChange = useCallback((field, value) => {
     setValue(`vehicleDetails.${field}`, value, {
       shouldValidate: true,
