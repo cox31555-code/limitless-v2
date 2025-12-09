@@ -140,6 +140,48 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
 
   return (
     <div className={styles.container}>
+      {/* Loading Overlay */}
+      <LoadingOverlay isVisible={isSubmitting} text="Saving changes" />
+
+      {/* Error Modal */}
+      {showErrorModal && (
+        <div className={styles.modalOverlay} onClick={() => setShowErrorModal(false)}>
+          <div className={styles.errorModal} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.errorIconWrapper}>
+              <svg className={styles.errorIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M12 8v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <circle cx="12" cy="16" r="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 className={styles.errorTitle}>Unable to Make These Changes</h3>
+            <p className={styles.errorMessage}>
+              We're unable to process your vehicle update at this time. This may be due to system maintenance or policy restrictions.
+            </p>
+            <p className={styles.errorContact}>
+              Please contact our support team who will be happy to assist you with these changes.
+            </p>
+            <div className={styles.errorActions}>
+              <button
+                className={styles.contactBtn}
+                onClick={() => {
+                  setShowErrorModal(false);
+                  router.push('/contact');
+                }}
+              >
+                Contact Support
+              </button>
+              <button
+                className={styles.closeBtn}
+                onClick={() => setShowErrorModal(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Modifications Modal */}
       <VehicleModificationsModal
         isOpen={showModificationsModal}
