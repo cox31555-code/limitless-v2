@@ -98,13 +98,6 @@
   font-weight: 500;
 }
 
-@media (max-width: 640px) {
-  .dropZoneText {
-    font-size: 0.65625rem;
-    margin-top: -0.1rem;
-    line-height: 1.63;
-  }
-}
 
 .browseLink {
   color: #0052a3;
@@ -130,11 +123,6 @@
   font-size: 0.6375rem;
 }
 
-@media (max-width: 640px) {
-  .hintTextPart {
-    font-size: 0.6375rem;
-  }
-}
 
 .fileInput {
   display: none;
