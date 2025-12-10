@@ -785,7 +785,14 @@ const PolicyDetailsReview = ({ policy }) => {
       {/* Action Buttons */}
       <nav className={styles.actionButtonsContainer} aria-label="Policy actions">
         <button className={styles.makeClaimBtn} aria-label="Start a new insurance claim">Make a Claim</button>
-        <button className={styles.cancelPolicyBtn} aria-label="Cancel this insurance policy">Cancel Policy</button>
+        <button
+          className={styles.cancelPolicyBtn}
+          aria-label="Cancel this insurance policy"
+          onClick={handleCancelPolicy}
+          disabled={isCancellingPolicy}
+        >
+          {isCancellingPolicy ? "Cancelling..." : "Cancel Policy"}
+        </button>
       </nav>
     </div>
   );
