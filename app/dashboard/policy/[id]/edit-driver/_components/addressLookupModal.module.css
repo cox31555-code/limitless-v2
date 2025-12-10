@@ -423,3 +423,127 @@
     min-height: 4.6rem;
   }
 }
+
+/* Error Modal */
+.errorModal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.3s ease;
+  text-align: center;
+  z-index: 2000;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  background: #fef2f2;
+  border-radius: 50%;
+}
+
+.errorIcon {
+  width: 40px;
+  height: 40px;
+  color: #dc2626;
+}
+
+.errorTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.3;
+}
+
+.errorMessage {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.errorContact {
+  font-size: 1.5rem;
+  color: #475569;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.errorActions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+@media screen and (max-width: 640px) {
+  .errorModal {
+    padding: 2.5rem 2rem;
+  }
+
+  .errorIconWrapper {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+  }
+
+  .errorIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .errorTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .errorMessage {
+    font-size: 1.4rem;
+  }
+
+  .errorContact {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .errorActions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .closeBtn {
+    width: 100%;
+    padding: 1.3rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .closeBtn:hover {
+    background: #e2e8f0;
+    color: #334155;
+  }
+}
