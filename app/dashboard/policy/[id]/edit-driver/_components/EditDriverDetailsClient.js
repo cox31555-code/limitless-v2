@@ -68,6 +68,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       await new Promise(resolve => setTimeout(resolve, 3000));
       // Show modal
       setShowModal(true);
+      setIsSubmitting(false);
     } catch (error) {
       toast.error("Failed to update driver details");
       console.error(error);
