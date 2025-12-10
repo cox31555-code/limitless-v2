@@ -65,14 +65,12 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
     try {
       setIsSubmitting(true);
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      toast.success("Driver details updated successfully");
-      showLoading();
-      router.push(`/dashboard/policy/${policyId}`);
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      // Show modal
+      setShowModal(true);
     } catch (error) {
       toast.error("Failed to update driver details");
       console.error(error);
-    } finally {
       setIsSubmitting(false);
     }
   };
