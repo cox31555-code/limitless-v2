@@ -149,7 +149,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   return (
     <div className={styles.container}>
       {/* Loading Overlay */}
-      <LoadingOverlay isVisible={isSubmitting} text="Saving changes" />
+      <LoadingOverlay isVisible={isSubmitting} text="Processing request" />
 
       {/* Error Modal */}
       {showErrorModal && (
