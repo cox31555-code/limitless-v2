@@ -60,6 +60,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
       await new Promise(resolve => setTimeout(resolve, 3000));
       // Show modal
       setShowModal(true);
+      setIsSubmitting(false);
     } catch (error) {
       console.error(error);
       setIsSubmitting(false);
