@@ -78,6 +78,9 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
 
   return (
     <div className={styles.container}>
+      {/* Loading Overlay */}
+      <LoadingOverlay isVisible={isSubmitting} text="Processing request" />
+
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroBackground}>
