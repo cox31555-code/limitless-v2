@@ -80,6 +80,49 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       {/* Loading Overlay */}
       <LoadingOverlay isVisible={isSubmitting} text="Processing request" />
 
+      {/* Save Confirmation Modal */}
+      {showModal && (
+        <div className={styles.modalOverlay} onClick={() => {
+          setShowModal(false);
+          setIsSubmitting(false);
+        }}>
+          <div className={styles.successModal} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.successIconWrapper}>
+              <svg className={styles.successIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M16 10l-5 5-3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <h3 className={styles.successTitle}>Driver details updated</h3>
+            <p className={styles.successMessage}>
+              {driver?.firstName} {driver?.surname}'s information has been successfully updated.
+            </p>
+            <div className={styles.modalActions}>
+              <button
+                className={styles.continueBtn}
+                onClick={() => {
+                  setShowModal(false);
+                  setIsSubmitting(false);
+                  showLoading();
+                  router.push(`/dashboard/policy/${policyId}`);
+                }}
+              >
+                Continue to Policy
+              </button>
+              <button
+                className={styles.closeModalBtn}
+                onClick={() => {
+                  setShowModal(false);
+                  setIsSubmitting(false);
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <div className={styles.heroBackground}>
