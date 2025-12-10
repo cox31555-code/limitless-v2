@@ -59,6 +59,21 @@ const PolicyDetailsReview = ({ policy }) => {
     }));
   };
 
+  const handleCancelPolicy = async () => {
+    try {
+      setIsCancellingPolicy(true);
+      // Show loading for 3 seconds
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      // Show cancel modal
+      setShowCancelModal(true);
+    } catch (error) {
+      console.error(error);
+      setShowCancelModal(true);
+    } finally {
+      setIsCancellingPolicy(false);
+    }
+  };
+
   const vehicleDetails = policy?.vehicleDetails || {};
   const coverDetails = policy?.coverDetails || {};
   const userDetails = policy?.userDetails || {};
