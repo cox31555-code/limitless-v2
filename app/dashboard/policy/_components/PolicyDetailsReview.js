@@ -26,6 +26,8 @@ const PolicyDetailsReview = ({ policy }) => {
     driverDetails: false,
     documents: false,
   });
+  const [isCancellingPolicy, setIsCancellingPolicy] = useState(false);
+  const [showCancelModal, setShowCancelModal] = useState(false);
 
   const formatValue = (value) => {
     if (value === null || value === undefined || value === "") return "—";
