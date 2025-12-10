@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import DashboardInput from "./DashboardInput";
+import LoadingOverlay from "../../../../../../ui/loadingSpinner/LoadingOverlay";
 import styles from "./addressLookupModal.module.css";
 
 const AddressLookupModal = ({ form, isOpen, onClose }) => {
@@ -9,6 +10,8 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
   const [expandedManualEntry, setExpandedManualEntry] = useState(false);
   const [isLoadingAddress, setIsLoadingAddress] = useState(false);
   const [foundAddress, setFoundAddress] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const houseNumber = watch("userDetails.houseNumber");
   const postcode = watch("userDetails.postcode");
@@ -50,8 +53,17 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
     setValue("userDetails.manualPostcode", "");
   };
 
-  const handleSaveAddress = () => {
-    onClose();
+  const handleSaveAddress = async () => {
+    try {
+      setIsSubmitting(true);
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      // Show modal
+      setShowModal(true);
+    } catch (error) {
+      console.error(error);
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
