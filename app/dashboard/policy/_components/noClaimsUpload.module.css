@@ -270,9 +270,11 @@
 /* Responsive Design */
 /* Upload Button */
 .uploadBtn {
-  display: block;
-  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 1.5rem;
+  margin-left: auto;
   padding: 1.2rem 2.8rem;
   font-size: 1.25rem;
   font-weight: 600;
@@ -283,9 +285,6 @@
   cursor: pointer;
   transition: all 0.2s ease;
   min-height: 48px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .uploadBtn:hover {
