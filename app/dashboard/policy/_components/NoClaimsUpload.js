@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
+import { useError } from "@/contexts/ErrorContext";
 import styles from "./noClaimsUpload.module.css";
 
 const NoClaimsUpload = () => {
+  const { addError } = useError();
   const [files, setFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
