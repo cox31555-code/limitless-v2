@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useCallback, useRef, useEffect, useReducer } from "react";
+import React, { useState, useCallback, useRef, useEffect, useReducer, Suspense } from "react";
+import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -8,10 +9,14 @@ import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
 import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
-import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import ReplaceVehicleCarDetails from "./ReplaceVehicleCarDetails";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./replaceVehicleClient.module.css";
+
+const VehicleModificationsModal = dynamic(
+  () => import("@/app/annual/get-quote/_components/VehicleModificationsModal"),
+  { ssr: false }
+);
 
 const initialState = {
   makes: [],
