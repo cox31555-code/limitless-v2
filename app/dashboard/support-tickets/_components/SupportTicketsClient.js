@@ -140,8 +140,13 @@ const SupportTicketsClient = () => {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* Hero Section */}
-      <section className={styles.heroSection}>
+      <DashboardHero
+        title="Help Center"
+        subtitle="View and manage your support tickets"
+      />
+
+      {/* Removed: Hero Section */}
+      <section style={{ display: 'none' }}>
         <div className={styles.heroBackground}>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.238px" height="176.262px" viewBox="0 0 106.238 140.262" className={styles.heroBackgroundImage}>
             <style>{`.st0{fill:#FFFFFF;}.st1{fill:#05AFFF;}.st2{fill:#0A0913;}`}</style>
