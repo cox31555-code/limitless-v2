@@ -14,7 +14,6 @@ const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
 const ClaimsPageClient = ({
   pendingClaims,
   completedClaims,
-  plusJakartaSans,
 }) => {
   const router = useRouter();
   const { showLoading } = useLoading();
