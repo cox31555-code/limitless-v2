@@ -3,6 +3,7 @@ import { useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
+import DashboardHero from "@/ui/dashboard/DashboardHero";
 import ClaimFeature from "./_components/claimFeature/ClaimFeature";
 import { firstClaim, secondClaim, guidelinesData } from "./data";
 
