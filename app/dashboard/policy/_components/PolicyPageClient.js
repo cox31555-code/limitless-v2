@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Table from "./table/Table";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./policyPageClient.module.css";
 import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 
@@ -40,11 +41,10 @@ const PolicyPageClient = ({
       />
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Manage Policy</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Policy" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
