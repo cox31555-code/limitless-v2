@@ -106,8 +106,6 @@ export default function DocumentsClient({ insurances }) {
           <OlderDocuments />
         </section>
       </Suspense>
-
-      <NeedHelpSection />
     </div>
   );
 }
