@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -11,6 +12,11 @@ import DriverSummaryCard from "./DriverSummaryCard";
 import DriverQuestions from "./DriverQuestions";
 import { useLoading } from "@/contexts/LoadingContext";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
   const router = useRouter();
