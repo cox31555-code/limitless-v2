@@ -150,10 +150,6 @@ const SubmitClaimContent = () => {
             />
           </div>
         </div>
-
-        <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
-          <NeedHelpSection />
-        </Suspense>
       </>
     );
   };
