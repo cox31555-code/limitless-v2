@@ -530,7 +530,7 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         </div>
 
         <div className={styles.contentWrapper}>
-          <form onSubmit={form.handleSubmit(handleSave)} className={styles.formContainer}>
+          <form className={styles.formContainer}>
             <div className={styles.header}>
               <h1 className={styles.mainQuestion}>What's your car's registration?</h1>
               <p className={styles.subText}>We can only show you quotes for cars registered in the UK.</p>
@@ -573,7 +573,8 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                 Back
               </button>
               <button
-                type="submit"
+                type="button"
+                onClick={handleSave}
                 className={styles.saveBtn}
                 disabled={isChangingVehicle}
               >
