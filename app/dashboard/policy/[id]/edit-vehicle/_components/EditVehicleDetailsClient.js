@@ -10,12 +10,6 @@ import DashboardDropdown from "./DashboardDropdown";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./editVehicleDetailsClient.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const carColors = [
   "White", "Black", "Gray", "Silver", "Blue", "Red", "Green", "Brown",
