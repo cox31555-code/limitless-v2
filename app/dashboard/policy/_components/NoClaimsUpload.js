@@ -12,6 +12,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 const NoClaimsUpload = () => {
   const [files, setFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadComplete, setUploadComplete] = useState(false);
   const fileInputRef = useRef(null);
 
   const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
@@ -83,6 +85,23 @@ const NoClaimsUpload = () => {
   const handleUploadFile = (file) => {
     // TODO: Implement actual file upload to server
     console.log("Uploading file:", file.name);
+  };
+
+  const handleUpload = async () => {
+    setIsUploading(true);
+    try {
+      // Simulate upload delay
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setUploadComplete(true);
+      // Reset after showing success message
+      setTimeout(() => {
+        setFiles([]);
+        setUploadComplete(false);
+      }, 1500);
+    } catch (error) {
+      console.error("Upload error:", error);
+      setIsUploading(false);
+    }
   };
 
   return (
