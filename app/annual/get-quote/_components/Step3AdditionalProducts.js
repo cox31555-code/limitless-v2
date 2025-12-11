@@ -291,15 +291,6 @@ const Step3AdditionalProducts = ({
           {errors.motorLegalProtection && <span className={styles.error}>{errors.motorLegalProtection}</span>}
         </div>
       </div>
-
-      <div className={styles.buttonGroup}>
-        <button type="button" className={styles.backBtn} onClick={onBack}>
-          Back
-        </button>
-        <button type="button" className={styles.nextBtn} onClick={handleSubmit}>
-          Next
-        </button>
-      </div>
     </div>
   );
 };
