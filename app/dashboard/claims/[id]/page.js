@@ -8,7 +8,6 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { API_BASE_URL } from "@/utils/config";
 import { serverFetch } from "@/utils/serverFetch";
-import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import Link from "next/link";
 
