@@ -87,6 +87,11 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
 
   // Calculate detailed progress including substeps
   const calculateOverallProgress = () => {
+    // Start at 0% on first substep of first step
+    if (currentStep === STEPS.VEHICLE && vehicleSubStep === 'registration') {
+      return 0;
+    }
+
     let totalSubSteps = 0;
     let completedSubSteps = 0;
 
