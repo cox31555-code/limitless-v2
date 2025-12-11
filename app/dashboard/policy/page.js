@@ -183,7 +183,6 @@ const Page = async () => {
         activePolicies={activePolicies}
         expiredPolicies={expiredPolicies}
         pageStyles={styles}
-        plusJakartaSans={plusJakartaSans}
       />
     </div>
   );
