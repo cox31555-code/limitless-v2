@@ -32,11 +32,6 @@ const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
   ssr: false,
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
-
 const SubmitClaimContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
