@@ -101,7 +101,7 @@ const NoClaimsUpload = () => {
 
   return (
     <section className={styles.uploadSection} aria-labelledby="no-claims-upload-heading">
-      <h3 id="no-claims-upload-heading" className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+      <h3 id="no-claims-upload-heading" className={styles.sectionTitle}>
         Upload Proof of No Claims Discount
       </h3>
       <p className={styles.sectionDescription}>
