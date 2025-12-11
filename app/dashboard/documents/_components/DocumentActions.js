@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { toast } from "react-toastify";
+import { useState, useCallback } from "react";
+import { useError } from "@/contexts/ErrorContext";
 import styles from "./documentActions.module.css";
 import PdfViewerModal from "./PdfViewerModal";
 
@@ -9,6 +9,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
   const [isDownloading, setIsDownloading] = useState(false);
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
   const [pdfUrl, setPdfUrl] = useState(null);
+  const { addError } = useError();
 
   const handleView = async () => {
     try {
