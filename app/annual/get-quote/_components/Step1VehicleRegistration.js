@@ -1,11 +1,16 @@
 "use client";
-import React, { useState, useCallback, useRef, useEffect, useReducer } from "react";
+import React, { useState, useCallback, useRef, useEffect, useReducer, Suspense } from "react";
+import dynamic from "next/dynamic";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import RegistrationInput from "./RegistrationInput";
-import VehicleModificationsModal from "./VehicleModificationsModal";
 import Step1CarDetailsEdit from "./Step1CarDetailsEdit";
 import styles from "./step1VehicleRegistration.module.css";
+
+const VehicleModificationsModal = dynamic(
+  () => import("./VehicleModificationsModal"),
+  { ssr: false }
+);
 
 const initialState = {
   makes: [],
