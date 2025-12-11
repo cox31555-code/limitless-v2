@@ -103,7 +103,6 @@ const Page = async () => {
       <ClaimsPageClient
         pendingClaims={pendingClaims}
         completedClaims={completedClaims}
-        plusJakartaSans={plusJakartaSans}
       />
     </div>
   );
