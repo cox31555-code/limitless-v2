@@ -376,6 +376,12 @@
     justify-content: flex-start;
     margin-top: 0.5rem;
   }
+
+  .uploadBtn {
+    padding: 1.1rem 2.4rem;
+    font-size: 1.2rem;
+    min-height: 48px;
+  }
 }
 
 @media screen and (max-width: 640px) {
