@@ -151,7 +151,7 @@
 }
 
 .filesTitle {
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #333;
   margin: 0;
@@ -170,7 +170,7 @@
   padding: 1rem 1.5rem;
   background: #f8f9fc;
   border-bottom: 1px solid #e0e6f0;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #666;
   text-transform: uppercase;
@@ -199,7 +199,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #333;
   font-weight: 500;
   overflow: hidden;
@@ -226,7 +226,7 @@
   padding: 0.4rem 0.8rem;
   background: #1a1a1a;
   color: #ffffff;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   border-radius: 6px;
   text-transform: uppercase;
@@ -234,7 +234,7 @@
 }
 
 .fileSize {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   color: #666;
 }
 
