@@ -1,11 +1,6 @@
 import React from "react";
 import styles from "./table.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import Image from "next/image";
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Table = ({ title, columns, data }) => {
   return (
