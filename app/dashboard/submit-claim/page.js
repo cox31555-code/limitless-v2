@@ -1,15 +1,37 @@
 "use client";
 import { useEffect, Suspense } from "react";
+import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
 import ClaimFeature from "./_components/claimFeature/ClaimFeature";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import Submitted from "./_components/submitted/Submitted";
-import ClaimReason from "./_components/claimReason/ClaimReason";
-import Guidelines from "./_components/guidelines/Guidelines";
-import Form from "./_components/form/Form";
-import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import { firstClaim, secondClaim, guidelinesData } from "./data";
+
+// Lazy load heavy sections
+const Submitted = dynamic(() => import("./_components/submitted/Submitted"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const ClaimReason = dynamic(() => import("./_components/claimReason/ClaimReason"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const Guidelines = dynamic(() => import("./_components/guidelines/Guidelines"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const Form = dynamic(() => import("./_components/form/Form"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
