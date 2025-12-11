@@ -108,13 +108,11 @@
 
 .primaryBtn:hover {
   background: linear-gradient(135deg, #0270cc 0%, #025ab3 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.35);
+  opacity: 0.92;
 }
 
 .primaryBtn:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.3);
+  opacity: 0.88;
 }
 
 .secondaryBtn {
