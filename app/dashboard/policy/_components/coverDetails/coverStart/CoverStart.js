@@ -1,12 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./coverStart.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const CoverStart = ({ startDate, startTime, endDate, endTime }) => {
   // Format date
