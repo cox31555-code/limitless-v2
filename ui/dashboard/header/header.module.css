@@ -333,7 +333,7 @@
 
 @media screen and (max-width: 900px) {
   .headerContainer {
-    padding: 1.2rem 4%;
+    padding: 1.2rem 10%;
     display: flex;
     height: 72px;
   }
