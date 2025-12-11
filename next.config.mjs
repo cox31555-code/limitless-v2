@@ -8,7 +8,7 @@ const nextConfig = {
   // Compile all pages upfront
   onDemandEntries: {
     maxInactiveAge: 1000 * 60 * 60 * 24, // 24 hours
-    pagesBufferLength: Infinity, // Keep all compiled pages in memory
+    pagesBufferLength: 50, // Keep compiled pages in memory
   },
   // Optimize preloading to reduce warnings
   experimental: {
