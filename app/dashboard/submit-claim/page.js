@@ -2,6 +2,7 @@
 import { useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./page.module.css";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
 import ClaimFeature from "./_components/claimFeature/ClaimFeature";
@@ -122,13 +123,11 @@ const SubmitClaimContent = () => {
         />
 
         {/* Breadcrumb Navigation */}
-        <div className={styles.breadcrumb}>
-          <span className={styles.breadcrumbItem}>Dashboard</span>
-          <span className={styles.breadcrumbSeparator}>›</span>
-          <span className={styles.breadcrumbItem}>Manage Claims</span>
-          <span className={styles.breadcrumbSeparator}>›</span>
-          <span className={`${styles.breadcrumbItem} ${styles.active}`}>Submit a Claim</span>
-        </div>
+        <Breadcrumb items={[
+          { label: "Dashboard" },
+          { label: "Manage Claims" },
+          { label: "Submit a Claim" }
+        ]} />
 
         {/* Content Section */}
         <div className={styles.contentWrapper}>
