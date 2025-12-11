@@ -568,16 +568,16 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
                 type="button"
                 onClick={() => router.back()}
                 className={styles.cancelBtn}
-                disabled={isSubmitting}
+                disabled={isChangingVehicle}
               >
                 Back
               </button>
               <button
                 type="submit"
                 className={styles.saveBtn}
-                disabled={isSubmitting}
+                disabled={isChangingVehicle}
               >
-                {isSubmitting ? "Changing..." : "Change Vehicle"}
+                {isChangingVehicle ? "Changing..." : "Change Vehicle"}
               </button>
             </div>
           </form>
