@@ -1,14 +1,8 @@
 "use client";
-import React, { useState, Suspense } from "react";
-import dynamic from "next/dynamic";
+import React, { useState } from "react";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./quotesPageClient.module.css";
 import QuoteCard from "./quoteCard/QuoteCard";
-
-const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
-  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
-  ssr: false,
-});
 
 const QuotesPageClient = () => {
   const [activeTab, setActiveTab] = useState("active");
