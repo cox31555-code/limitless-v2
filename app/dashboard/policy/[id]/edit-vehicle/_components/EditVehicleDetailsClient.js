@@ -1,15 +1,20 @@
 "use client";
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, Suspense } from "react";
+import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
-import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./editVehicleDetailsClient.module.css";
+
+const VehicleModificationsModal = dynamic(
+  () => import("@/app/annual/get-quote/_components/VehicleModificationsModal"),
+  { ssr: false }
+);
 
 const carColors = [
   "White", "Black", "Gray", "Silver", "Blue", "Red", "Green", "Brown",
