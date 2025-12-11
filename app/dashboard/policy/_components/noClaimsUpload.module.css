@@ -442,10 +442,11 @@
     font-size: 1.3rem;
   }
 
-  .addFilesBtn,
-  .removeAllBtn {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+  .uploadBtn {
+    width: 100%;
+    padding: 1.3rem 2rem;
+    font-size: 1.2rem;
+    min-height: 50px;
   }
 
   .fileRow {
