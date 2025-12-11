@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./submitted.module.css";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -50,19 +51,14 @@ const Submitted = () => {
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Manage Claims</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Submit a Claim</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>What happened?</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Claim Details</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Submitted</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Claims" },
+        { label: "Submit a Claim" },
+        { label: "What happened?" },
+        { label: "Claim Details" },
+        { label: "Submitted" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
