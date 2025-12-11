@@ -12,12 +12,6 @@ import VehicleModificationsModal from "@/app/annual/get-quote/_components/Vehicl
 import ReplaceVehicleCarDetails from "./ReplaceVehicleCarDetails";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./replaceVehicleClient.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const initialState = {
   makes: [],
