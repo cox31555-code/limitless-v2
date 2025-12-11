@@ -6,6 +6,7 @@ import { extractVehicleMake } from "@/utils/vehicleIcons";
 import { getBrandIcon } from "@/ui/dashboard/vehicleBrandIcons";
 import { useLoading } from "@/contexts/LoadingContext";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import { DocumentsIcon, PaymentsIcon, ClaimsIcon, QuotesIcon, SupportIcon } from "@/ui/icons";
 import styles from "./dashboardClient.module.css";
 
@@ -119,11 +120,10 @@ const DashboardClient = () => {
       />
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Home</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Home" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
