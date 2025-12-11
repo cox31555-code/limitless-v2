@@ -9,6 +9,7 @@ import { useError } from "@/contexts/ErrorContext";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./editDriverDetailsClient.module.css";
+import layoutStyles from "@/ui/dashboard/dashboardLayout.module.css";
 import DriverSummaryCard from "./DriverSummaryCard";
 import DriverQuestions from "./DriverQuestions";
 import { useLoading } from "@/contexts/LoadingContext";
