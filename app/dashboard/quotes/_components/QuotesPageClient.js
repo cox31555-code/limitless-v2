@@ -3,16 +3,10 @@ import React, { useState, Suspense } from "react";
 import dynamic from "next/dynamic";
 import styles from "./quotesPageClient.module.css";
 import QuoteCard from "./quoteCard/QuoteCard";
-import { Plus_Jakarta_Sans } from "next/font/google";
 
 const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
   loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
   ssr: false,
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
 });
 
 const QuotesPageClient = () => {
