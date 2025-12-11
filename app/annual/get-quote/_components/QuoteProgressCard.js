@@ -219,7 +219,7 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
         </div>
       </div>
 
-      {!isMobileCollapsed && <div ref={stepsListRef} className={styles.stepsList} style={{ '--line-height': `${Math.max(0, lineHeight)}px` }}>
+      {((isLargeScreen && isDesktopExpanded) || (!isLargeScreen && !isMobileCollapsed)) && <div ref={stepsListRef} className={styles.stepsList} style={{ '--line-height': `${Math.max(0, lineHeight)}px` }}>
         {steps.map((step) => {
           const isActive = currentStep === step.number;
           const isCompleted = currentStep > step.number;
