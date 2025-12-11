@@ -1,3 +1,8 @@
+/* Plus Jakarta Sans font - applied globally to all dashboard content */
+:where([class*="plus_jakarta_sans"]) {
+  font-family: var(--font-plus-jakarta-sans);
+}
+
 /* Override global body padding-top for dashboard pages on mobile */
 @media (max-width: 900px) {
   body {
