@@ -27,13 +27,11 @@ const Guidelines = ({ data }) => {
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Submit a Claim</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Optional Cover</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Submit a Claim" },
+        { label: "Optional Cover" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
