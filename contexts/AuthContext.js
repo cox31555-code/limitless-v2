@@ -403,7 +403,7 @@ export const AuthProvider = ({ children }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Only run once on mount
 
-  const value = {
+  const value = useMemo(() => ({
     ...state,
     login,
     logout,
@@ -414,7 +414,7 @@ export const AuthProvider = ({ children }) => {
     clearError,
     clearSuccessStates,
     checkAuthStatus,
-  };
+  }), [state, login, logout, forgotPassword, resetPassword, setPassword, getUserInfo, clearError, clearSuccessStates, checkAuthStatus]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
