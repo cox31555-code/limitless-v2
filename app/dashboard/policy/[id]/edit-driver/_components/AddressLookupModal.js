@@ -55,7 +55,7 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
     setValue("userDetails.manualPostcode", "");
   };
 
-  const handleSaveAddress = async () => {
+  const handleSaveAddress = useCallback(async () => {
     try {
       setIsSubmitting(true);
       // Simulate API call
@@ -64,10 +64,13 @@ const AddressLookupModal = ({ form, isOpen, onClose }) => {
       setShowModal(true);
       setIsSubmitting(false);
     } catch (error) {
-      console.error(error);
+      addError({
+        message: "Failed to save address. Please try again.",
+        action: handleSaveAddress,
+      });
       setIsSubmitting(false);
     }
-  };
+  }, [addError]);
 
   if (!isOpen) return null;
 
