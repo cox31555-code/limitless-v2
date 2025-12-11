@@ -5,10 +5,10 @@ const nextConfig = {
     NEXT_PUBLIC_API_URL: "https://api.limitlesscover.co.uk",
     // NEXT_PUBLIC_API_URL: "http://localhost:8000",
   },
-  // Allow HMR from Builder.io preview domains
+  // Compile all pages upfront
   onDemandEntries: {
-    maxInactiveAge: 60000,
-    pagesBufferLength: 5,
+    maxInactiveAge: 1000 * 60 * 60 * 24, // 24 hours
+    pagesBufferLength: Infinity, // Keep all compiled pages in memory
   },
   // Optimize preloading to reduce warnings
   experimental: {
