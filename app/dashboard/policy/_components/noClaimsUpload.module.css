@@ -280,8 +280,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.2rem 2.8rem;
-  font-size: 1.25rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
   font-weight: 600;
   background: #0052a3;
   color: #ffffff;
@@ -289,7 +289,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  min-height: 48px;
+  min-height: 40px;
 }
 
 .uploadBtn:hover {
