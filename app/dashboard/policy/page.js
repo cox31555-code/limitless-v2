@@ -1,7 +1,6 @@
 import React from "react";
 import Table from "./_components/table/Table";
 import styles from "./page.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
@@ -11,11 +10,6 @@ import { serverFetch } from "@/utils/serverFetch";
 export const metadata = {
   title: "Your Policy | Limitless Cover",
 };
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 // Helper function to calculate remaining days
 const calculateRemainingDays = (coverDetails) => {
