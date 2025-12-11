@@ -3,12 +3,6 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import PaymentsClient from "./_components/PaymentsClient";
 import styles from "./page.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 export const metadata = {
   title: "Payments | Limitless Cover",
@@ -25,7 +19,7 @@ const page = async () => {
 
   return (
     <div className={styles.page}>
-      <PaymentsClient plusJakartaSans={plusJakartaSans} />
+      <PaymentsClient />
     </div>
   );
 };
