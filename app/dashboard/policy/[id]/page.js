@@ -65,7 +65,7 @@ const page = async ({ params }) => {
         </div>
         <div className={styles.heroContent}>
           <div className={styles.greetingArea}>
-            <h1 className={`${styles.greetingTitle} ${plusJakartaSans?.className || ""}`}>Policy summary</h1>
+            <h1 className={styles.greetingTitle}>Policy summary</h1>
             <p className={styles.greetingSubtitle}>Policy no: {insurance.policyNumber}</p>
           </div>
         </div>
