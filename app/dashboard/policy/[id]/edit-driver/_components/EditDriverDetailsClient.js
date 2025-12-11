@@ -22,6 +22,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
   const router = useRouter();
   const { showLoading } = useLoading();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [savingComplete, setSavingComplete] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [claims, setClaims] = useState([]);
   const [convictions, setConvictions] = useState([]);
