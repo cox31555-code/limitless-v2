@@ -1,127 +1,15 @@
+/* ConfirmBtn - minimal overrides, base styles inherited from Button */
+
 .confirmBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  width: 100%;
-  height: 5.8rem;
-  padding: 1.3rem 2rem;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
-  border: none;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 500;
-  line-height: 120%;
-  letter-spacing: 0.3px;
-  cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  text-transform: none;
-  white-space: nowrap;
+  /* Base button styles are inherited from Button component */
+  /* This module is kept for backward compatibility and any ConfirmBtn-specific overrides */
 }
-
-.confirmBtn:hover {
-  background: linear-gradient(135deg, #0270cc 0%, #025ab3 100%);
-}
-
-.confirmBtn:active {
-  background: linear-gradient(135deg, #025ab3 0%, #0242a0 100%);
-}
-
-
-.confirmBtn.secondary {
-  background: transparent;
-  border: 1.5px solid #0388ff;
-  color: #0388ff;
-}
-
-.confirmBtn.secondary:hover {
-  background: rgba(3, 136, 255, 0.08);
-  border-color: #0270cc;
-  color: #0270cc;
-}
-
-.confirmBtn.secondary:active {
-  background: rgba(3, 136, 255, 0.12);
-  border-color: #025ab3;
-  color: #025ab3;
-}
-
 
 .arrowRight {
   display: inline-flex;
-  width: 1.8rem;
-  height: 1.8rem;
   transition: none;
   filter: brightness(0) invert(1);
 }
 
-@media screen and (max-width: 1200px) {
-  .confirmBtn {
-    height: 5.4rem;
-    font-size: 1.2rem;
-    padding: 1.2rem 1.8rem;
-    gap: 0.7rem;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .confirmBtn {
-    height: 5.2rem;
-    font-size: 1.15rem;
-    padding: 1rem 1.6rem;
-    border-radius: 10px;
-    gap: 0.6rem;
-  }
-
-  .arrowRight {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .confirmBtn {
-    height: 5.4rem;
-    font-size: 1.3rem;
-    padding: 1.1rem 1.8rem;
-    gap: 0.7rem;
-  }
-
-  .arrowRight {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .confirmBtn {
-    height: 5.6rem;
-    font-size: 1.6rem;
-    padding: 1rem 1.6rem;
-    border-radius: 8px;
-    gap: 0.6rem;
-  }
-
-  .arrowRight {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .confirmBtn {
-    height: 5.4rem;
-    font-size: 1.6rem;
-    padding: 0.95rem 1.4rem;
-    border-radius: 8px;
-    gap: 0.6rem;
-  }
-
-  .arrowRight {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-}
+/* Secondary variant override - if needed */
+/* Base secondary styling is handled by Button component */
