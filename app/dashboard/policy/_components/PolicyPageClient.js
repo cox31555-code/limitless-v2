@@ -14,7 +14,6 @@ const PolicyPageClient = ({
   activePolicies,
   expiredPolicies,
   pageStyles,
-  plusJakartaSans,
 }) => {
   const { setIsInsuranceModalOpen } = useInsuranceModal();
   const [activeTab, setActiveTab] = useState("active");
