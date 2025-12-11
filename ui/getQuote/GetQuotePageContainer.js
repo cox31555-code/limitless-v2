@@ -462,7 +462,15 @@ export default function GetQuotePageContainer({
           </div>
 
           {/* Progress Sidebar */}
-          <QuoteProgressCard currentStep={currentStep} totalSteps={4} />
+          <QuoteProgressCard
+            currentStep={currentStep}
+            totalSteps={4}
+            vehicleSubStep={vehicleSubStep}
+            personalSubStep={personalSubStep}
+            coverSubStep={coverSubStep}
+            insuranceType={insuranceType}
+            onSubStepClick={handleSubStepClick}
+          />
         </div>
       </div>
 
