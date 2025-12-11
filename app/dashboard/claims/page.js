@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./page.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
@@ -10,11 +9,6 @@ import ClaimsPageClient from "./_components/ClaimsPageClient";
 export const metadata = {
   title: "Your Claims | Limitless Cover",
 };
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Page = async () => {
   const cookieStore = await cookies();
