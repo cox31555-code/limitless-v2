@@ -366,9 +366,16 @@ export default function GetQuotePageContainer({
                 {currentStep === STEP_ENUM.COVER && coverSubStep === 'details' && (
                   <Suspense fallback={<StepFallback />}>
                     <lazySteps.details
-                      form={form}
                       onBack={handleBackFromCoverDetails}
                       onNext={handleCoverDetailsSubmit}
+                      coverData={{
+                        coverLevel: form.watch('coverDetails.level'),
+                        minimumCoverLevel: form.watch('coverDetails.minimumCoverLevel'),
+                        paymentFrequency: form.watch('coverDetails.paymentFrequency'),
+                        startDate: form.watch('coverDetails.startDate'),
+                      }}
+                      showCoverOptions={true}
+                      insuranceType="Annual"
                     />
                   </Suspense>
                 )}
