@@ -86,7 +86,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
     }
   }, [addError]);
 
-  const handleDownload = async () => {
+  const handleDownload = useCallback(async () => {
     setIsDownloading(true);
 
     try {
@@ -108,8 +108,6 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
         document.body.removeChild(link);
       }, 100);
 
-      toast.success("PDF download started!");
-
       // Real implementation (commented out for now)
       /*
       const downloadUrl = `/api/download-pdf/${insuranceId}/${pdfType}`;
@@ -123,18 +121,24 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
 
       if (!response.ok) {
         if (response.status === 401) {
-          toast.error("Session expired. Please log in again.");
+          addError({
+            message: "Session expired. Please log in again.",
+          });
           setTimeout(() => {
             window.location.href = "/login";
           }, 2000);
           return;
         }
         if (response.status === 403) {
-          toast.error("You don't have permission to access this document.");
+          addError({
+            message: "You don't have permission to access this document.",
+          });
           return;
         }
         if (response.status === 404) {
-          toast.error("Document not found.");
+          addError({
+            message: "Document not found.",
+          });
           return;
         }
         throw new Error(`Failed to download PDF: ${response.status} ${response.statusText}`);
@@ -142,14 +146,18 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
 
       const contentType = response.headers.get("content-type");
       if (!contentType || !contentType.includes("application/pdf")) {
-        toast.error("Server did not return a valid PDF file.");
+        addError({
+          message: "Server did not return a valid PDF file.",
+        });
         return;
       }
 
       const blob = await response.blob();
 
       if (blob.size === 0) {
-        toast.error("Downloaded file is empty.");
+        addError({
+          message: "Downloaded file is empty.",
+        });
         return;
       }
 
@@ -178,16 +186,16 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
       }, 100);
-
-      toast.success("PDF downloaded successfully!");
       */
     } catch (error) {
-      console.error("Download error:", error);
-      toast.error("Failed to download PDF");
+      addError({
+        message: "Failed to download PDF. Please try again.",
+        action: handleDownload,
+      });
     } finally {
       setIsDownloading(false);
     }
-  };
+  }, [addError, documentName]);
 
   const handleCloseModal = () => {
     setIsPdfModalOpen(false);
