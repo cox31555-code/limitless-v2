@@ -276,15 +276,6 @@ const Step3DriverClaimsAndConvictions = ({ driverData, onBack, onAddDriver, onAd
           )}
         </div>
       </div>
-
-      <div className={styles.buttonGroup}>
-        <button type="button" className={styles.backBtn} onClick={onBack}>
-          Back
-        </button>
-        <button type="button" className={styles.nextBtn} onClick={handleSubmit}>
-          Add Driver
-        </button>
-      </div>
     </div>
   );
 };
