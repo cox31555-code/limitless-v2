@@ -725,13 +725,6 @@
   background: #003d7a;
 }
 
-.saveBtn p {
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #ffffff;
-}
-
 .cancelBtn:disabled,
 .saveBtn:disabled {
   opacity: 0.6;
