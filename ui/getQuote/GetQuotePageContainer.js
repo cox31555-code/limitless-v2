@@ -479,6 +479,10 @@ export default function GetQuotePageContainer({
                 onNext={handleNextStep}
                 isLoading={showLoading || isSubmitting}
                 currentStep={currentStep}
+                vehicleSubStep={vehicleSubStep}
+                personalSubStep={personalSubStep}
+                coverSubStep={coverSubStep}
+                totalSteps={4}
               />
             </form>
           </div>
