@@ -484,16 +484,6 @@ const Step3AddDriverConviction = ({ onBack, onAddConviction, editingConviction =
             </div>
           )}
         </div>
-
-        {/* Buttons */}
-        <div className={styles.buttonGroup}>
-          <button type="button" className={styles.backBtn} onClick={onBack}>
-            Back
-          </button>
-          <button type="button" className={styles.nextBtn} onClick={handleSubmit}>
-            {editingConviction ? "Update conviction" : "Add conviction"}
-          </button>
-        </div>
       </div>
     </div>
   );
