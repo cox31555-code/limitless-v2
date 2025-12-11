@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
 import styles from "./supportTicketsClient.module.css";
 
@@ -146,16 +147,10 @@ const SupportTicketsClient = () => {
       />
 
       {/* Breadcrumb */}
-      <div className={styles.breadcrumb}>
-        <button 
-          className={styles.breadcrumbItem}
-          onClick={() => router.push("/dashboard")}
-        >
-          Dashboard
-        </button>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Help Center</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard", onClick: () => router.push("/dashboard") },
+        { label: "Help Center" }
+      ]} />
 
       <div className={styles.container}>
         {/* Header */}
