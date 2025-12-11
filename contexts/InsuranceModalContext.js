@@ -1,16 +1,19 @@
 "use client";
 
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useMemo } from "react";
 
 const InsuranceModalContext = createContext();
 
 export const InsuranceModalProvider = ({ children }) => {
   const [isInsuranceModalOpen, setIsInsuranceModalOpen] = useState(false);
 
+  const value = useMemo(() => ({
+    isInsuranceModalOpen,
+    setIsInsuranceModalOpen
+  }), [isInsuranceModalOpen]);
+
   return (
-    <InsuranceModalContext.Provider
-      value={{ isInsuranceModalOpen, setIsInsuranceModalOpen }}
-    >
+    <InsuranceModalContext.Provider value={value}>
       {children}
     </InsuranceModalContext.Provider>
   );
