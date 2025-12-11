@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./form.module.css";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
@@ -185,17 +186,13 @@ const Form = ({ claimReason }) => {
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Manage Claims</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Submit a Claim</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>What happened?</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Claim Details</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Claims" },
+        { label: "Submit a Claim" },
+        { label: "What happened?" },
+        { label: "Claim Details" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
