@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, useEffect, useRef } from "react";
+import { createContext, useContext, useState, useEffect, useRef, useMemo } from "react";
 import { usePathname } from "next/navigation";
 
 const LoadingContext = createContext();
@@ -58,8 +58,10 @@ export const LoadingProvider = ({ children }) => {
     }
   };
 
+  const value = useMemo(() => ({ isLoading, showLoading, hideLoading }), [isLoading]);
+
   return (
-    <LoadingContext.Provider value={{ isLoading, showLoading, hideLoading }}>
+    <LoadingContext.Provider value={value}>
       {children}
     </LoadingContext.Provider>
   );
