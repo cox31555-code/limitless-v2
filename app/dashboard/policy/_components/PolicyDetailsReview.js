@@ -55,7 +55,7 @@ const PolicyDetailsReview = ({ policy }) => {
     }));
   };
 
-  const handleCancelPolicy = async () => {
+  const handleCancelPolicy = useCallback(async () => {
     try {
       setIsCancellingPolicy(true);
       // Show loading for 3 seconds
@@ -63,12 +63,15 @@ const PolicyDetailsReview = ({ policy }) => {
       // Show cancel modal
       setShowCancelModal(true);
     } catch (error) {
-      console.error(error);
+      addError({
+        message: "Failed to cancel policy. Please try again.",
+        action: handleCancelPolicy,
+      });
       setShowCancelModal(true);
     } finally {
       setIsCancellingPolicy(false);
     }
-  };
+  }, [addError]);
 
   const vehicleDetails = policy?.vehicleDetails || {};
   const coverDetails = policy?.coverDetails || {};
