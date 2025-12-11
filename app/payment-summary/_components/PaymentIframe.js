@@ -1,14 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
+import { useError } from "@/contexts/ErrorContext";
 import styles from "./paymentIframe.module.css";
 
 export default function PaymentIframe({ insuranceId, show, onClose }) {
   const [isPaid, setIsPaid] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const router = useRouter();
+  const { addError } = useError();
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
   const handleClose = () => {
