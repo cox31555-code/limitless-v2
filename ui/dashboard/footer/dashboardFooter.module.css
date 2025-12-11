@@ -275,14 +275,14 @@
   }
 
   .footerContainer {
-    padding: 0 4%;
+    padding: 0 5%;
   }
 
   .topSection {
     flex-direction: column;
     align-items: flex-start;
-    padding: 3rem 0;
-    gap: 2.5rem;
+    padding: 2.5rem 0;
+    gap: 2rem;
   }
 
   .partnershipSection {
@@ -328,7 +328,7 @@
   }
 
   .linksSection {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
     flex-wrap: wrap;
     gap: 1rem;
   }
@@ -342,7 +342,7 @@
   }
 
   .disclaimerSection {
-    padding: 2.8rem 0;
+    padding: 2rem 0;
   }
 
   .disclaimerText {
@@ -351,7 +351,7 @@
   }
 
   .bottomSection {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
   }
 
   .copyrightText {
