@@ -250,18 +250,21 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
     });
   };
 
-  const handleSave = async (data) => {
+  const handleSave = useCallback(async (data) => {
     try {
       setIsChangingVehicle(true);
       await new Promise(resolve => setTimeout(resolve, 3000));
       setShowUnableModal(true);
     } catch (error) {
-      console.error(error);
+      addError({
+        message: "Failed to change vehicle. Please try again.",
+        action: () => handleSave(data),
+      });
       setShowUnableModal(true);
     } finally {
       setIsChangingVehicle(false);
     }
-  };
+  }, [addError]);
 
   const ManualVehicleSummaryCard = () => {
     const vehicleType = form.watch("vehicleType");
