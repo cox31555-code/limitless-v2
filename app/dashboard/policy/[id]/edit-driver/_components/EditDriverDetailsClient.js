@@ -81,33 +81,29 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       {/* Loading Overlay */}
       <LoadingOverlay isVisible={isSubmitting} text="Processing request" />
 
-      {/* Error Modal */}
-      {showModal && (
-        <div className={styles.modalOverlay} onClick={() => {
-          setShowModal(false);
-          setIsSubmitting(false);
-        }}>
-          <div className={styles.errorModal} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.errorIconWrapper}>
-              <svg className={styles.errorIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Unable to Update Modal */}
+      {showUnableModal && (
+        <div className={styles.modalOverlay} onClick={() => setShowUnableModal(false)}>
+          <div className={styles.unableModal} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.unableIconWrapper}>
+              <svg className={styles.unableIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
                 <path d="M12 8v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                 <circle cx="12" cy="16" r="1" fill="currentColor"/>
               </svg>
             </div>
-            <h3 className={styles.errorTitle}>Unable to Update Driver Details</h3>
-            <p className={styles.errorMessage}>
+            <h3 className={styles.unableTitle}>Unable to Update Driver Details</h3>
+            <p className={styles.unableMessage}>
               We're unable to process the driver update at this time. This may be due to system maintenance or policy restrictions.
             </p>
-            <p className={styles.errorContact}>
+            <p className={styles.unableContact}>
               Please contact our support team who will be happy to assist you with updating driver details.
             </p>
-            <div className={styles.errorActions}>
+            <div className={styles.unableActions}>
               <button
                 className={styles.contactBtn}
                 onClick={() => {
-                  setShowModal(false);
-                  setIsSubmitting(false);
+                  setShowUnableModal(false);
                   showLoading();
                   router.push('/contact');
                 }}
@@ -116,10 +112,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
               </button>
               <button
                 className={styles.closeBtn}
-                onClick={() => {
-                  setShowModal(false);
-                  setIsSubmitting(false);
-                }}
+                onClick={() => setShowUnableModal(false)}
               >
                 Close
               </button>
