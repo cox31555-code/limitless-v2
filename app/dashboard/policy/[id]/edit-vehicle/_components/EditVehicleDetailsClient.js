@@ -201,7 +201,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       ]} />
 
       {/* Content */}
-      <div className={styles.contentWrapper}>
+      <div className={layoutStyles.contentWrapper}>
         <form onSubmit={form.handleSubmit(handleSave)} className={styles.formContainer}>
           {/* Info Banner */}
           <div className={styles.infoBanner}>
