@@ -97,6 +97,8 @@ export const step2ClaimsAndConvictionsFields = [
 
 export const coverFieldsAnnual = [
   'coverDetails.level',
+  'coverDetails.minimumCoverLevel',
+  'coverDetails.paymentFrequency',
   'coverDetails.startDate',
 ];
 
