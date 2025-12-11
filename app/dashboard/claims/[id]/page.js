@@ -167,8 +167,6 @@ const page = async ({ params }) => {
           <Buttons />
         </div>
       </div>
-
-      <NeedHelpSection />
     </div>
   );
 };
