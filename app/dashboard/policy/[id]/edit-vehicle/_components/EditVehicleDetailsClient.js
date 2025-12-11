@@ -121,8 +121,7 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
     setShowModificationsModal(false);
   };
 
-  const handleSave = async (data) => {
-    console.log("handleSave called", data);
+  const handleSave = useCallback(async (data) => {
     try {
       setIsSubmitting(true);
       // Show loading for 3 seconds
@@ -130,12 +129,14 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       // Show error modal
       setShowErrorModal(true);
     } catch (error) {
-      toast.error("Failed to update vehicle details");
-      console.error(error);
+      addError({
+        message: "Failed to update vehicle details. Please try again.",
+        action: () => handleSave(data),
+      });
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [addError]);
 
   const vehicleType = watch("vehicleDetails.type");
   const make = watch("vehicleDetails.make");
