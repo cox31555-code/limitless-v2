@@ -13,6 +13,7 @@ import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import UnableToUpdateModal from "@/ui/modals/UnableToUpdateModal";
 import styles from "./editVehicleDetailsClient.module.css";
+import layoutStyles from "@/ui/dashboard/dashboardLayout.module.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
