@@ -616,20 +616,6 @@
     font-size: 1.15rem;
   }
 
-  .breadcrumb {
-    gap: 0.6rem;
-    padding: 0 5% 12px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.1rem;
-    margin: 0 0.3rem;
-  }
-
   .contentWrapper {
     padding: 20px 0 1.6rem;
   }
