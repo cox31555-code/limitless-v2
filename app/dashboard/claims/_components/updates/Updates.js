@@ -1,11 +1,5 @@
 import React from "react";
 import styles from "./updates.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Updates = ({ columns, data }) => {
   const formatDate = (dateString) => {
