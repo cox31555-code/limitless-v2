@@ -52,46 +52,46 @@ export default function PaymentIframe({ insuranceId, show, onClose }) {
   }, [show]);
 
 
+  const checkPaymentStatus = useCallback(async () => {
+    try {
+      const response = await fetch(
+        `${apiUrl}/api/insurance/check-payment-status/${insuranceId}`,
+        {
+          method: "GET",
+          credentials: "include",
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+
+        if (data.data.paid === true) {
+          setIsPaid(true);
+          // Wait a moment then close iframe and redirect to payment confirmation page
+          setTimeout(() => {
+            handleClose();
+            router.push(`/payment?id=${insuranceId}`);
+          }, 2000);
+        }
+      } else {
+        throw new Error("Failed to check payment status");
+      }
+    } catch (error) {
+      addError({
+        message: "Could not verify payment status. Please check back later.",
+      });
+    }
+  }, [insuranceId, apiUrl, addError, handleClose, router]);
+
   useEffect(() => {
     if (!show || !insuranceId) return;
 
     // Check payment status every 3 seconds
-    const intervalId = setInterval(async () => {
-      try {
-        const response = await fetch(
-          `${apiUrl}/api/insurance/check-payment-status/${insuranceId}`,
-          {
-            method: "GET",
-            credentials: "include",
-          }
-        );
-
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Payment status:", data.data.paid);
-
-          if (data.data.paid === true) {
-            setIsPaid(true);
-            clearInterval(intervalId);
-            
-            // Show success message
-            toast.success("Payment successful! Redirecting...");
-            
-            // Wait a moment then close iframe and redirect to payment confirmation page
-            setTimeout(() => {
-              handleClose();
-              router.push(`/payment?id=${insuranceId}`);
-            }, 2000);
-          }
-        }
-      } catch (error) {
-        console.error("Error checking payment status:", error);
-      }
-    }, 3000); // Check every 3 seconds
+    const intervalId = setInterval(checkPaymentStatus, 3000);
 
     // Cleanup interval on unmount or when show changes
     return () => clearInterval(intervalId);
-  }, [show, insuranceId, apiUrl, onClose, router]);
+  }, [show, insuranceId, checkPaymentStatus]);
 
   if (!show) return null;
 
