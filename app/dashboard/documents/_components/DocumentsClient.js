@@ -3,7 +3,6 @@
 import { useState, Suspense } from "react";
 import dynamic from "next/dynamic";
 import styles from "../page.module.css";
-import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import Dropdown from "./dropdown/Dropdown";
 import PolicyDocumentsSection from "./PolicyDocumentsSection";
 
