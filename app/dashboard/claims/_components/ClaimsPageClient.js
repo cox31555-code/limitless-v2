@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import Table from "./table/Table";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import { useLoading } from "@/contexts/LoadingContext";
 import styles from "./claimsPageClient.module.css";
 
@@ -37,11 +38,10 @@ const ClaimsPageClient = ({
       />
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Manage Claims</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Claims" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
