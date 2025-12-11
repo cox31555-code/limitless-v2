@@ -234,15 +234,6 @@ const Step3CarOwnerAddPerson = ({
           {errors.sameAddress && <span className={styles.error}>{errors.sameAddress}</span>}
         </div>
       </div>
-
-      <div className={styles.buttonGroup}>
-        <button type="button" className={styles.backBtn} onClick={onBack}>
-          Back
-        </button>
-        <button type="button" className={styles.nextBtn} onClick={handleSave}>
-          Save
-        </button>
-      </div>
     </div>
   );
 };
