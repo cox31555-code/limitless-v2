@@ -1,15 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
 import styles from "../page.module.css";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
-import Booklets from "./booklets/Booklets";
 import Dropdown from "./dropdown/Dropdown";
 import PolicyDocumentsSection from "./PolicyDocumentsSection";
-import NcdInfoSection from "./NcdInfoSection";
-import ReceiveDocumentsSection from "./ReceiveDocumentsSection";
-import DownloadedDocumentsInfo from "./DownloadedDocumentsInfo";
-import OlderDocuments from "./OlderDocuments";
+
+// Lazy load heavy sections
+const Booklets = dynamic(() => import("./booklets/Booklets"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const NcdInfoSection = dynamic(() => import("./NcdInfoSection"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const ReceiveDocumentsSection = dynamic(() => import("./ReceiveDocumentsSection"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const DownloadedDocumentsInfo = dynamic(() => import("./DownloadedDocumentsInfo"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const OlderDocuments = dynamic(() => import("./OlderDocuments"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
 
 export default function DocumentsClient({ insurances }) {
   const [selectedInsuranceId, setSelectedInsuranceId] = useState(
@@ -56,25 +78,35 @@ export default function DocumentsClient({ insurances }) {
         )}
       </section>
 
-      <section>
-        <Booklets />
-      </section>
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <Booklets />
+        </section>
+      </Suspense>
 
-      <section>
-        <NcdInfoSection />
-      </section>
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <NcdInfoSection />
+        </section>
+      </Suspense>
 
-      <section>
-        <ReceiveDocumentsSection />
-      </section>
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <ReceiveDocumentsSection />
+        </section>
+      </Suspense>
 
-      <section>
-        <DownloadedDocumentsInfo />
-      </section>
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <DownloadedDocumentsInfo />
+        </section>
+      </Suspense>
 
-      <section>
-        <OlderDocuments />
-      </section>
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <OlderDocuments />
+        </section>
+      </Suspense>
 
       <NeedHelpSection />
     </div>
