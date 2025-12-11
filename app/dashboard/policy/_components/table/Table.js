@@ -58,15 +58,22 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
           const policyType = getPolicyType(index);
 
           return (
-            <button
+            <div
               key={index}
               className={`${styles.policyCard} ${styles[`policy${policyType}`]}`}
               onClick={() => {
                 showLoading();
                 router.push(`/dashboard/policy/${getMockPolicyId(index)}`);
               }}
-              type="button"
-              style={{ all: 'unset', cursor: 'pointer', display: 'contents' }}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  showLoading();
+                  router.push(`/dashboard/policy/${getMockPolicyId(index)}`);
+                }
+              }}
             >
               {/* Card Header - Logo Badge & Status */}
               <div className={styles.policyCardHeader}>
@@ -113,7 +120,7 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
                   </svg>
                 </div>
               </div>
-            </button>
+            </div>
           );
         })}
       </div>
