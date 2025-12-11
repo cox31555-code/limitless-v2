@@ -1,8 +1,14 @@
 "use client";
 import React, { useState } from "react";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./quotesPageClient.module.css";
 import QuoteCard from "./quoteCard/QuoteCard";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 const QuotesPageClient = () => {
   const [activeTab, setActiveTab] = useState("active");
