@@ -197,7 +197,7 @@ const DashboardClient = () => {
                 onClick={link.action}
               >
                 <div className={styles.linkIcon}>
-                  <LinkIcon type={link.icon} />
+                  {React.createElement(iconMap[link.icon] || DocumentsIcon, { width: 32, height: 32, color: "currentColor" })}
                 </div>
                 <span className={styles.linkLabel}>{link.label}</span>
               </button>
