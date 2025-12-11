@@ -302,6 +302,55 @@
   outline-offset: 2px;
 }
 
+.uploadBtn:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+.uploadBtn.uploading {
+  background: #0052a3;
+}
+
+.uploadBtn.complete {
+  background: #22c55e;
+}
+
+.uploadBtn.complete:hover {
+  background: #16a34a;
+}
+
+.spinnerIcon {
+  display: inline-block;
+  margin-right: 0.6rem;
+  animation: spin 1s linear infinite;
+}
+
+.checkIcon {
+  display: inline-block;
+  margin-right: 0.6rem;
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .uploadSection {
     padding: 2.5rem;
