@@ -1144,7 +1144,7 @@
   }
 
   .instalmentText {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     line-height: 1.7;
   }
 
@@ -1165,11 +1165,11 @@
   }
 
   .breakdownLabel {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .breakdownAmount {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .cardHeader {
