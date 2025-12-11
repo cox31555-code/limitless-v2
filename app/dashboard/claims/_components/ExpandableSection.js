@@ -2,12 +2,6 @@
 
 import React, { useState } from "react";
 import styles from "./expandableSection.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const ExpandableSection = ({ title, defaultOpen = false, children }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
