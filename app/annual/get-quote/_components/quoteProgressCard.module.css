@@ -104,6 +104,18 @@
   max-width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .stepsList::before {
