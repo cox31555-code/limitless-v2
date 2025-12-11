@@ -11,7 +11,7 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
   const [pdfUrl, setPdfUrl] = useState(null);
   const { addError } = useError();
 
-  const handleView = async () => {
+  const handleView = useCallback(async () => {
     try {
       // Use mock PDF from Google Drive for testing
       const mockPdfUrl = "https://drive.google.com/file/d/1jHtgmKi03bMQ3sJia8L8ml6-BAZFJvnD/preview";
@@ -32,18 +32,24 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
 
       if (!response.ok) {
         if (response.status === 401) {
-          toast.error("Session expired. Please log in again.");
+          addError({
+            message: "Session expired. Please log in again.",
+          });
           setTimeout(() => {
             window.location.href = "/login";
           }, 2000);
           return;
         }
         if (response.status === 403) {
-          toast.error("You don't have permission to access this document.");
+          addError({
+            message: "You don't have permission to access this document.",
+          });
           return;
         }
         if (response.status === 404) {
-          toast.error("Document not found.");
+          addError({
+            message: "Document not found.",
+          });
           return;
         }
         throw new Error(`Failed to fetch PDF: ${response.status} ${response.statusText}`);
@@ -51,14 +57,18 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
 
       const contentType = response.headers.get("content-type");
       if (!contentType || !contentType.includes("application/pdf")) {
-        toast.error("Server did not return a valid PDF file.");
+        addError({
+          message: "Server did not return a valid PDF file.",
+        });
         return;
       }
 
       const blob = await response.blob();
 
       if (blob.size === 0) {
-        toast.error("Downloaded file is empty.");
+        addError({
+          message: "Downloaded file is empty.",
+        });
         return;
       }
 
@@ -69,10 +79,12 @@ export default function DocumentActions({ insuranceId, pdfType, documentName }) 
       setIsPdfModalOpen(true);
       */
     } catch (error) {
-      console.error("View error:", error);
-      toast.error("Failed to open PDF");
+      addError({
+        message: "Failed to open PDF. Please try again.",
+        action: handleView,
+      });
     }
-  };
+  }, [addError]);
 
   const handleDownload = async () => {
     setIsDownloading(true);
