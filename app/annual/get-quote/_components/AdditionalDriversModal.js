@@ -34,6 +34,7 @@ const AdditionalDriversModal = ({
   onUpdateDriver
 }) => {
   const { watch, setValue } = form;
+  const { addError } = useError();
   const [driverAddresses, setDriverAddresses] = useState({});
   const [driverLoadingStates, setDriverLoadingStates] = useState({});
   const [dynamicDriverNcbOptions, setDynamicDriverNcbOptions] = useState({});
