@@ -80,15 +80,9 @@ const NoClaimsUpload = () => {
     setFiles((prev) => prev.filter((f) => f.id !== fileId));
   };
 
-  const handleDownloadFile = (file) => {
-    const url = URL.createObjectURL(file.file);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = file.name;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+  const handleUploadFile = (file) => {
+    // TODO: Implement actual file upload to server
+    console.log("Uploading file:", file.name);
   };
 
   return (
