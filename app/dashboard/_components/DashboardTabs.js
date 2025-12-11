@@ -58,7 +58,6 @@ export const DashboardTabs = ({
             <ClaimsPageClient
               pendingClaims={memoizedPendingClaims}
               completedClaims={memoizedCompletedClaims}
-              plusJakartaSans={plusJakartaSans}
             />
           )}
         </Suspense>
