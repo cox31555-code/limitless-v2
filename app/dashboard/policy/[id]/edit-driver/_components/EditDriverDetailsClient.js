@@ -171,7 +171,8 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
               Cancel
             </button>
             <button
-              type="submit"
+              type="button"
+              onClick={handleSave}
               className={styles.saveBtn}
               disabled={isSubmitting}
             >
