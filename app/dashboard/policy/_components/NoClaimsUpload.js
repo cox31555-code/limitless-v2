@@ -83,7 +83,7 @@ const NoClaimsUpload = () => {
     console.log("Uploading file:", file.name);
   };
 
-  const handleUpload = async () => {
+  const handleUpload = useCallback(async () => {
     setIsUploading(true);
     try {
       // Simulate upload delay
@@ -91,10 +91,13 @@ const NoClaimsUpload = () => {
       setUploadComplete(true);
       setIsUploading(false);
     } catch (error) {
-      console.error("Upload error:", error);
+      addError({
+        message: "Failed to upload files. Please try again.",
+        action: handleUpload,
+      });
       setIsUploading(false);
     }
-  };
+  }, [addError]);
 
   return (
     <section className={styles.uploadSection} aria-labelledby="no-claims-upload-heading">
