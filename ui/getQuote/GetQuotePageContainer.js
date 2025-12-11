@@ -106,6 +106,21 @@ export default function GetQuotePageContainer({
   }
 
   /**
+   * Handle cover details submission from Step3CoverDetails
+   * Converts Step3CoverDetails output format to form state
+   */
+  const handleCoverDetailsSubmit = useCallback((coverData) => {
+    // Map Step3CoverDetails output to form state
+    form.setValue('coverDetails.level', coverData.coverLevel, { shouldValidate: true });
+    form.setValue('coverDetails.minimumCoverLevel', coverData.minimumCoverLevel || '', { shouldValidate: true });
+    form.setValue('coverDetails.paymentFrequency', coverData.paymentFrequency, { shouldValidate: true });
+    form.setValue('coverDetails.startDate', coverData.startDate, { shouldValidate: true });
+
+    // Navigate to next step
+    orchest.handleNavigateToCarOwner();
+  }, [form, orchest]);
+
+  /**
    * Handle substep navigation from sidebar
    * Maps substep index to substep key and navigates
    */
