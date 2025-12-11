@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, Suspense } from "react";
 import dynamic from "next/dynamic";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./quotesPageClient.module.css";
 import QuoteCard from "./quoteCard/QuoteCard";
 
@@ -183,11 +184,10 @@ const QuotesPageClient = () => {
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Quotes</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Quotes" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
