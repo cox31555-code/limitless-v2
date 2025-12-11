@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
+import { useError } from "@/contexts/ErrorContext";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import styles from "./editDriverDetailsClient.module.css";
 import DriverSummaryCard from "./DriverSummaryCard";
@@ -15,6 +15,7 @@ import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
   const router = useRouter();
   const { showLoading } = useLoading();
+  const { addError } = useError();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showUnableModal, setShowUnableModal] = useState(false);
   const [claims, setClaims] = useState([]);
