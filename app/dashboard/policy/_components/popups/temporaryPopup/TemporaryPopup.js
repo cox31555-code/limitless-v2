@@ -5,11 +5,6 @@ import CoverDetails from "@/ui/insurance-quotes/coverDetails/CoverDetails";
 import PersonalDetails from "@/ui/insurance-quotes/personalDetails/PersonalDetails";
 import VehicleDetails from "@/ui/insurance-quotes/vehicleDetails/VehicleDetails";
 import Stepper from "@/ui/insurance-quotes/stepper/Stepper";
-import { Plus_Jakarta_Sans } from "next/font/google";
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 const page = () => {
   return (
     <div className={styles.container}>
