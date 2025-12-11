@@ -9,7 +9,7 @@ const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
   ssr: false,
 });
 
-export default function PaymentsClient({ plusJakartaSans }) {
+export default function PaymentsClient() {
   const [scheduleExpanded, setScheduleExpanded] = useState(false);
   const [autoRenewal, setAutoRenewal] = useState(true);
   const [optOutExpanded, setOptOutExpanded] = useState(false);
