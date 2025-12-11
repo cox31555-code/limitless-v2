@@ -65,8 +65,6 @@ const Guidelines = ({ data }) => {
           ))}
         </div>
       </div>
-
-      <NeedHelpSection />
     </div>
   );
 };
