@@ -450,15 +450,12 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
           </div>
         </section>
 
-        <div className={styles.breadcrumb}>
-          <span className={styles.breadcrumbItem}>Dashboard</span>
-          <span className={styles.breadcrumbSeparator}>›</span>
-          <span className={styles.breadcrumbItem}>Manage Policy</span>
-          <span className={styles.breadcrumbSeparator}>›</span>
-          <span className={styles.breadcrumbItem}>Policy summary</span>
-          <span className={styles.breadcrumbSeparator}>›</span>
-          <span className={`${styles.breadcrumbItem} ${styles.active}`}>Replace vehicle</span>
-        </div>
+        <Breadcrumb items={[
+          { label: "Dashboard" },
+          { label: "Manage Policy" },
+          { label: "Policy summary" },
+          { label: "Replace vehicle" }
+        ]} />
 
         <div className={styles.contentWrapper}>
           <ReplaceVehicleCarDetails
@@ -529,15 +526,12 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
           </div>
         </section>
 
-        <div className={styles.breadcrumb}>
-          <span className={styles.breadcrumbItem}>Dashboard</span>
-          <span className={styles.breadcrumbSeparator}>›</span>
-          <span className={styles.breadcrumbItem}>Manage Policy</span>
-          <span className={styles.breadcrumbSeparator}>›</span>
-          <span className={styles.breadcrumbItem}>Policy summary</span>
-          <span className={styles.breadcrumbSeparator}>›</span>
-          <span className={`${styles.breadcrumbItem} ${styles.active}`}>Replace vehicle</span>
-        </div>
+        <Breadcrumb items={[
+          { label: "Dashboard" },
+          { label: "Manage Policy" },
+          { label: "Policy summary" },
+          { label: "Replace vehicle" }
+        ]} />
 
         <div className={styles.contentWrapper}>
           <form className={styles.formContainer}>
@@ -621,15 +615,12 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
         </div>
       </section>
 
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Manage Policy</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Policy summary</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Replace vehicle</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Policy" },
+        { label: "Policy summary" },
+        { label: "Replace vehicle" }
+      ]} />
 
       <div className={styles.contentWrapper}>
         <div className={styles.vehicleCard}>
