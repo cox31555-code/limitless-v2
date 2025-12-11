@@ -273,8 +273,8 @@
   display: block;
   margin-left: auto;
   margin-top: 1.5rem;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
+  padding: 1.2rem 2.8rem;
+  font-size: 1.25rem;
   font-weight: 600;
   background: #0052a3;
   color: #ffffff;
@@ -282,14 +282,24 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .uploadBtn:hover {
   background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
 }
 
 .uploadBtn:active {
   transform: scale(0.98);
+}
+
+.uploadBtn:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: 2px;
 }
 
 @media screen and (max-width: 1200px) {
