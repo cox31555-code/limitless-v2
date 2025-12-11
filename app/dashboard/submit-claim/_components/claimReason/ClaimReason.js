@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./claimReason.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -82,15 +83,12 @@ const ClaimReason = () => {
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Manage Claims</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Submit a Claim</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>What happened?</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Claims" },
+        { label: "Submit a Claim" },
+        { label: "What happened?" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
