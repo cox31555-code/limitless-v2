@@ -9,6 +9,7 @@ import { cookies } from "next/headers";
 import { API_BASE_URL } from "@/utils/config";
 import { serverFetch } from "@/utils/serverFetch";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import Link from "next/link";
 
 const page = async ({ params }) => {
@@ -122,13 +123,11 @@ const page = async ({ params }) => {
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <Link href="/dashboard" className={styles.breadcrumbItem}>Dashboard</Link>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <Link href="/dashboard/claims" className={styles.breadcrumbItem}>Manage Claims</Link>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Claim {claim.orderReference}</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard", href: "/dashboard" },
+        { label: "Manage Claims", href: "/dashboard/claims" },
+        { label: `Claim ${claim.orderReference}` }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
