@@ -1,12 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { extractVehicleMake } from "@/utils/vehicleIcons";
 import { getBrandIcon } from "@/ui/dashboard/vehicleBrandIcons";
 import { useLoading } from "@/contexts/LoadingContext";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
 import { DocumentsIcon, PaymentsIcon, ClaimsIcon, QuotesIcon, SupportIcon } from "@/ui/icons";
 import styles from "./dashboardClient.module.css";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 const DashboardClient = () => {
   const router = useRouter();
