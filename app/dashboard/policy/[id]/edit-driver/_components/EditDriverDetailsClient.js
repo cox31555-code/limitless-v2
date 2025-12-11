@@ -183,10 +183,26 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
             </button>
             <button
               type="submit"
-              className={styles.saveBtn}
+              className={`${styles.saveBtn} ${isSubmitting ? styles.saving : ""} ${savingComplete ? styles.complete : ""}`}
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Saving..." : "Save Changes"}
+              {savingComplete ? (
+                <>
+                  <svg className={styles.checkIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  Saved
+                </>
+              ) : isSubmitting ? (
+                <>
+                  <svg className={styles.spinnerIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                  </svg>
+                  Saving...
+                </>
+              ) : (
+                "Save Changes"
+              )}
             </button>
           </div>
         </form>
