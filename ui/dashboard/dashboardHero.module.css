@@ -125,7 +125,7 @@
 @media (max-width: 768px) {
   .heroSection {
     padding: 3rem calc(50vw - 50%) 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
   }
 
   .heroContent {
