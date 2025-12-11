@@ -11,6 +11,7 @@ import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
 import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
 import ReplaceVehicleCarDetails from "./ReplaceVehicleCarDetails";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./replaceVehicleClient.module.css";
 
