@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { useError } from "@/contexts/ErrorContext";
 import DashboardInput from "./DashboardInput";
 import LoadingOverlay from "../../../../../../ui/loadingSpinner/LoadingOverlay";
 import styles from "./addressLookupModal.module.css";
 
 const AddressLookupModal = ({ form, isOpen, onClose }) => {
+  const { addError } = useError();
   const { watch, setValue } = form;
   const [expandedManualEntry, setExpandedManualEntry] = useState(false);
   const [isLoadingAddress, setIsLoadingAddress] = useState(false);
