@@ -2,7 +2,6 @@ import React from "react";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./guidelines.module.css";
 import Image from "next/image";
-import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 
 const Guidelines = ({ data }) => {
   return (
