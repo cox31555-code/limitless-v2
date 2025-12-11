@@ -61,7 +61,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
     },
   });
 
-  const handleSave = async (data) => {
+  const handleSave = async () => {
     try {
       setIsSubmitting(true);
       // Simulate API call
