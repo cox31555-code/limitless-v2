@@ -709,19 +709,6 @@
     font-size: 3.5rem;
   }
 
-  .breadcrumb {
-    gap: 1rem;
-    padding: 20px 5% 20px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.2rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.3rem;
-  }
-
   .contentWrapper {
     padding: 3rem 5%;
   }
@@ -760,19 +747,6 @@
     font-size: 1.25rem;
   }
 
-  .breadcrumb {
-    gap: 0.8rem;
-    padding: 15px 5% 15px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.1rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.2rem;
-  }
-
   .contentWrapper {
     padding: 0 5%;
   }
@@ -799,19 +773,6 @@
   }
 
   .greetingSubtitle {
-    font-size: 1rem;
-  }
-
-  .breadcrumb {
-    padding: 10px 5% 10px;
-    gap: 0.6rem;
-  }
-
-  .breadcrumbItem {
-    font-size: 0.9rem;
-  }
-
-  .breadcrumbSeparator {
     font-size: 1rem;
   }
 

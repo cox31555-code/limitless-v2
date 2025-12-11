@@ -196,19 +196,6 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .breadcrumb {
-    gap: 1rem;
-    padding: 20px 5% 20px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.2rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.3rem;
-  }
-
   .heroSection {
     padding: 7rem calc(50vw - 50%) 7rem;
   }
@@ -227,19 +214,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .breadcrumb {
-    gap: 0.8rem;
-    padding: 15px 5% 15px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.1rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.2rem;
-  }
-
   .heroSection {
     flex-direction: column;
     text-align: center;
@@ -320,20 +294,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .breadcrumb {
-    gap: 0.6rem;
-    padding: 0 5% 12px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.1rem;
-    margin: 0 0.3rem;
-  }
-
   .heroSection {
     padding: 2.5rem calc(50vw - 50%);
     gap: 1.5rem;
