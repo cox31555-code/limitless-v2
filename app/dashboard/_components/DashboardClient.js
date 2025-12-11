@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { extractVehicleMake } from "@/utils/vehicleIcons";
 import { getBrandIcon } from "@/ui/dashboard/vehicleBrandIcons";
 import { useLoading } from "@/contexts/LoadingContext";
+import DashboardHero from "@/ui/dashboard/DashboardHero";
 import styles from "./dashboardClient.module.css";
 
 const DashboardClient = () => {
