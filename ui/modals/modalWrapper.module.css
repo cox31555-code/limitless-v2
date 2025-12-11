@@ -1,0 +1,167 @@
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+  backdrop-filter: blur(1px);
+}
+
+/* Modal Content Container */
+.modalContent {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease-out;
+  max-width: 95%;
+}
+
+/* Size variants */
+.modalContentSmall {
+  width: 100%;
+  max-width: 400px;
+}
+
+.modalContentMedium {
+  width: 100%;
+  max-width: 600px;
+}
+
+.modalContentLarge {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Close Button */
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.modalClose:hover {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.modalClose:active {
+  background: #e0e0e0;
+}
+
+.modalClose svg {
+  width: 20px;
+  height: 20px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Scrollbar Styling */
+.modalContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modalContent {
+    max-height: 85vh;
+    border-radius: 16px;
+    margin: 20px;
+  }
+
+  .modalContentSmall,
+  .modalContentMedium,
+  .modalContentLarge {
+    max-width: 100%;
+  }
+
+  .modalClose {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContent {
+    max-height: 90vh;
+    border-radius: 12px;
+    margin: 0;
+    animation: slideUpMobile 0.3s ease-out;
+  }
+
+  .modalClose {
+    width: 44px;
+    height: 44px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@keyframes slideUpMobile {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
