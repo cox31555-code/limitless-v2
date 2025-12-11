@@ -58,6 +58,7 @@ const carColors = [
 
 const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
   const router = useRouter();
+  const { addError } = useError();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoadingVehicle, setIsLoadingVehicle] = useState(false);
   const [foundVehicle, setFoundVehicle] = useState(null);
