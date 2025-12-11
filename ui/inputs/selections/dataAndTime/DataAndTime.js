@@ -1,8 +1,18 @@
 import Image from "next/image";
-import React, { useState, useEffect, useMemo } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState, useEffect, useMemo, Suspense } from "react";
+import dynamic from "next/dynamic";
 import styles from "./dataAndTime.module.css";
+
+const DatePicker = dynamic(() => import("react-datepicker"), {
+  loading: () => <div style={{ padding: "10px", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+// Import CSS dynamically
+const DatePickerCSS = dynamic(() =>
+  import("react-datepicker/dist/react-datepicker.css").then(() => null),
+  { ssr: false }
+);
 const DataAndTime = ({
   data,
   setData,
