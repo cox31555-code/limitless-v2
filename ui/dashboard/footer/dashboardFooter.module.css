@@ -184,8 +184,12 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
+  .footer {
+    padding: 26px 8% 0 8%;
+  }
+
   .footerContainer {
-    padding: 0 8%;
+    padding: 0;
   }
 
   .topSection {
@@ -203,8 +207,12 @@
 }
 
 @media screen and (max-width: 900px) {
+  .footer {
+    padding: 26px 6% 0 6%;
+  }
+
   .footerContainer {
-    padding: 0 6%;
+    padding: 0;
   }
 
   .topSection {
@@ -272,10 +280,11 @@
 @media screen and (max-width: 600px) {
   .footer {
     margin-top: 4rem;
+    padding: 26px 5% 0 5%;
   }
 
   .footerContainer {
-    padding: 0 5%;
+    padding: 0;
   }
 
   .topSection {
