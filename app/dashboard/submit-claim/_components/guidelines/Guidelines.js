@@ -2,12 +2,6 @@ import React from "react";
 import styles from "./guidelines.module.css";
 import Image from "next/image";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Guidelines = ({ data }) => {
   return (
