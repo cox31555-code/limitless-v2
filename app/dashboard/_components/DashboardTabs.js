@@ -73,7 +73,6 @@ export const DashboardTabs = ({
             <PolicyPageClient
               activePolicies={memoizedActivePolicies}
               expiredPolicies={memoizedExpiredPolicies}
-              plusJakartaSans={plusJakartaSans}
             />
           )}
         </Suspense>
