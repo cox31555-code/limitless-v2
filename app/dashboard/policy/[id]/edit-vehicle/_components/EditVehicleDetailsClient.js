@@ -43,6 +43,7 @@ const seatsOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
   const router = useRouter();
+  const { addError } = useError();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModificationsModal, setShowModificationsModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
