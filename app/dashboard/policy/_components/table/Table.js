@@ -58,13 +58,15 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
           const policyType = getPolicyType(index);
 
           return (
-            <div
+            <button
               key={index}
               className={`${styles.policyCard} ${styles[`policy${policyType}`]}`}
               onClick={() => {
                 showLoading();
                 router.push(`/dashboard/policy/${getMockPolicyId(index)}`);
               }}
+              type="button"
+              style={{ all: 'unset', cursor: 'pointer', display: 'contents' }}
             >
               {/* Card Header - Logo Badge & Status */}
               <div className={styles.policyCardHeader}>
@@ -111,7 +113,7 @@ const Table = ({ title, columns, data, tableType, showViewButton = true, theme =
                   </svg>
                 </div>
               </div>
-            </div>
+            </button>
           );
         })}
       </div>
