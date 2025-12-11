@@ -2,14 +2,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./submitted.module.css";
 import Image from "next/image";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useLoading } from "@/contexts/LoadingContext";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Submitted = () => {
   const router = useRouter();
