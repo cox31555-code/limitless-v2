@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./paymentsClient.module.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -75,11 +76,10 @@ export default function PaymentsClient() {
       />
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Payments</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Payments" }
+      ]} />
 
       {/* Content Wrapper */}
       <div className={styles.contentWrapper}>
