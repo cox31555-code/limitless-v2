@@ -1,7 +1,9 @@
 "use client";
+
 import React from "react";
 import dynamic from "next/dynamic";
 import styles from "./page.module.css";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 const DashboardClient = dynamic(() => import("./_components/DashboardClient"), {
   ssr: false,
