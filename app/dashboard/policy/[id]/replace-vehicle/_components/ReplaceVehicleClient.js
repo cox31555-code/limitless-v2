@@ -10,6 +10,7 @@ import DashboardDropdown from "./DashboardDropdown";
 import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
 import VehicleModificationsModal from "@/app/annual/get-quote/_components/VehicleModificationsModal";
 import ReplaceVehicleCarDetails from "./ReplaceVehicleCarDetails";
+import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./replaceVehicleClient.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
