@@ -119,7 +119,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       ]} />
 
       {/* Content */}
-      <div className={styles.contentWrapper}>
+      <div className={layoutStyles.contentWrapper}>
         <form className={styles.formContainer}>
           <DriverSummaryCard driver={driver} form={form} />
           <DriverQuestions
