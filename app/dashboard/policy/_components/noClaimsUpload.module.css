@@ -455,13 +455,6 @@
     font-size: 1.3rem;
   }
 
-  .uploadBtn {
-    width: 100%;
-    padding: 1.3rem 2rem;
-    font-size: 1.2rem;
-    min-height: 50px;
-  }
-
   .fileRow {
     padding: 1.2rem;
   }
@@ -483,5 +476,13 @@
   .actionBtn svg {
     width: 16px;
     height: 16px;
+  }
+
+  .uploadBtn {
+    width: 100%;
+    padding: 1.3rem 2rem;
+    font-size: 1.2rem;
+    min-height: 50px;
+    margin-top: 1.5rem;
   }
 }
