@@ -3,6 +3,7 @@ import "./dashboard.css";
 import { Poppins } from "next/font/google";
 import Header from "@/ui/dashboard/header/Header";
 import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
+import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import Script from "next/script";
 
 const poppins = Poppins({
@@ -17,6 +18,7 @@ export default function DashboardLayout({ children }) {
       <main className="dashboard-main" suppressHydrationWarning>
         <div className="dashboardContainer">{children}</div>
       </main>
+      <NeedHelpSection />
       <DashboardFooter />
       <Script
         id="crisp-script"
