@@ -251,19 +251,6 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .breadcrumb {
-    gap: 1rem;
-    padding: 0 5% 14px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.2rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.3rem;
-  }
-
   .heroSection {
     padding: 7rem calc(50vw - 50%) 7rem;
   }
@@ -291,19 +278,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .breadcrumb {
-    gap: 0.8rem;
-    padding: 0 5% 14px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.1rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.2rem;
-  }
-
   .heroSection {
     flex-direction: column;
     text-align: center;
