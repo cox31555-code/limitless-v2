@@ -392,21 +392,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .breadcrumb {
-    gap: 0.6rem;
-    padding: 0 5% 12px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.4rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.1rem;
-    margin: 0 0.3rem;
-  }
-
-
   .heroSection {
     padding: 2.5rem calc(50vw - 50%);
     gap: 1.5rem;
