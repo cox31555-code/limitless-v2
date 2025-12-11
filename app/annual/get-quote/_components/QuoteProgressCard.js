@@ -183,7 +183,13 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
 
   return (
     <div className={styles.progressCard}>
-      <div className={styles.progressHeader}>
+      <div
+        className={styles.progressHeader}
+        onClick={toggleExpansion}
+        onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), toggleExpansion())}
+        role="button"
+        tabIndex={0}
+      >
         <div className={styles.progressBar}>
           <div
             className={styles.progressFill}
@@ -194,10 +200,13 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
           <span className={styles.progressText}>{progressPercentage}% complete</span>
           <button
             className={styles.mobileToggleBtn}
-            onClick={() => setIsMobileCollapsed(!isMobileCollapsed)}
-            aria-label={isMobileCollapsed ? "Expand" : "Collapse"}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleExpansion();
+            }}
+            aria-label={isLargeScreen ? (isDesktopExpanded ? "Collapse" : "Expand") : (isMobileCollapsed ? "Expand" : "Collapse")}
           >
-            {isMobileCollapsed ? (
+            {(isLargeScreen ? !isDesktopExpanded : isMobileCollapsed) ? (
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M2 8H14M8 2V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
