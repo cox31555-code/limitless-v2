@@ -29,11 +29,6 @@ const Form = dynamic(() => import("./_components/form/Form"), {
   ssr: false,
 });
 
-const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
-  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
-  ssr: false,
-});
-
 const SubmitClaimContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
