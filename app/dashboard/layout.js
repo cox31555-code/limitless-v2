@@ -17,7 +17,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export default function DashboardLayout({ children }) {
   return (
-    <div>
+    <div className={plusJakartaSans.className}>
       <Header />
       <main className="dashboard-main" suppressHydrationWarning>
         <div className="dashboardContainer">{children}</div>
