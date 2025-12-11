@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
+import { useError } from "@/contexts/ErrorContext";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
 import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationInput";
