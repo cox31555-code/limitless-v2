@@ -2,8 +2,9 @@
 
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { useError } from "@/contexts/ErrorContext";
 import styles from "./policyDetailsReview.module.css";
 import { useLoading } from "@/contexts/LoadingContext";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
@@ -12,6 +13,7 @@ import NoClaimsUpload from "./NoClaimsUpload";
 const PolicyDetailsReview = ({ policy }) => {
   const router = useRouter();
   const { showLoading } = useLoading();
+  const { addError } = useError();
   const [expandedSections, setExpandedSections] = useState({
     policyDetails: true,
     carDetails: false,
