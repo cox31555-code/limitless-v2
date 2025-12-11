@@ -839,11 +839,11 @@
   }
 
   .breakdownLabel {
-    font-size: 1.2rem;
+    font-size: 1.55rem;
   }
 
   .breakdownAmount {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
 
   .cardHeader {
@@ -865,11 +865,11 @@
   }
 
   .detailLabel {
-    font-size: 1.225rem;
+    font-size: 1.4rem;
   }
 
   .detailValue {
-    font-size: 1.525rem;
+    font-size: 1.8rem;
   }
 
   .carTitle {
@@ -889,7 +889,7 @@
   }
 
   .instalmentText {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     line-height: 1.7;
   }
 
@@ -935,7 +935,7 @@
   }
 
   .driverName {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .documentsList {
