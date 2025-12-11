@@ -109,6 +109,9 @@ export const annualCoverDetailsSchema = z.object({
     required_error: "Please select a cover level",
   }),
   minimumCoverLevel: z.string().optional(),
+  paymentFrequency: z.enum(["One annual payment", "Monthly instalments"], {
+    required_error: "Please select a payment frequency",
+  }),
   startDate: z.string().min(1, "Start date is required"),
 }).refine(
   (data) => {
