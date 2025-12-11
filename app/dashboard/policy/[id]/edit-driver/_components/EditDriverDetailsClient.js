@@ -7,16 +7,10 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import styles from "./editDriverDetailsClient.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import DriverSummaryCard from "./DriverSummaryCard";
 import DriverQuestions from "./DriverQuestions";
 import { useLoading } from "@/contexts/LoadingContext";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
   const router = useRouter();
