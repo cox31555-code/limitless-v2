@@ -56,7 +56,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
     },
   });
 
-  const handleSave = async () => {
+  const handleSave = useCallback(async () => {
     try {
       setIsSubmitting(true);
       // Simulate API call
@@ -65,11 +65,13 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       setShowUnableModal(true);
       setIsSubmitting(false);
     } catch (error) {
-      toast.error("Failed to update driver details");
-      console.error(error);
+      addError({
+        message: "Failed to update driver details. Please try again.",
+        action: handleSave,
+      });
       setIsSubmitting(false);
     }
-  };
+  }, [addError]);
 
   return (
     <div className={styles.container}>
