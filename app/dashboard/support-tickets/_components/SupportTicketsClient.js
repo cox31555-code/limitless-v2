@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import DashboardHero from "@/ui/dashboard/DashboardHero";
 import styles from "./supportTicketsClient.module.css";
 
 const SupportTicketsClient = () => {
