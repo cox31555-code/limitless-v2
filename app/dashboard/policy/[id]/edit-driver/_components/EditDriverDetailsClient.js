@@ -150,7 +150,7 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
 
       {/* Content */}
       <div className={styles.contentWrapper}>
-        <form onSubmit={form.handleSubmit(handleSave)} className={styles.formContainer}>
+        <form className={styles.formContainer}>
           <DriverSummaryCard driver={driver} form={form} />
           <DriverQuestions
             form={form}
