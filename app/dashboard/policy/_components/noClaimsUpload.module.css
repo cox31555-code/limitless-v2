@@ -270,6 +270,8 @@
 /* Responsive Design */
 /* Upload Button */
 .uploadBtn {
+  display: block;
+  margin-left: auto;
   margin-top: 1.5rem;
   padding: 0.75rem 2rem;
   font-size: 1rem;
