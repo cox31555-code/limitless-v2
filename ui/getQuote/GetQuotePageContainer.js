@@ -105,6 +105,41 @@ export default function GetQuotePageContainer({
     return null;
   }
 
+  /**
+   * Handle substep navigation from sidebar
+   * Maps substep index to substep key and navigates
+   */
+  const handleSubStepClick = (stepNumber, substepIndex) => {
+    let substepKey;
+
+    if (stepNumber === STEP_ENUM.VEHICLE) {
+      const vehicleSubSteps = ['registration', 'carValue', 'carUsage', 'carStorage', 'otherCars'];
+      substepKey = vehicleSubSteps[substepIndex];
+      if (substepKey) {
+        orchest.setVehicleSubStep(substepKey);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else if (stepNumber === STEP_ENUM.PERSONAL) {
+      const personalSubSteps = ['aboutYou', 'household', 'employment', 'licence', 'restrictions', 'claims'];
+      substepKey = personalSubSteps[substepIndex];
+      if (substepKey) {
+        orchest.setPersonalSubStep(substepKey);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else if (stepNumber === STEP_ENUM.COVER) {
+      const isTemporaryOrImpound = insuranceType === 'Temp' || insuranceType === 'Impound';
+      const coverSubSteps = isTemporaryOrImpound
+        ? ['carOwner', 'cover', 'ncd', 'contactInformation']
+        : ['additionalDrivers', 'carOwner', 'cover', 'ncd', 'additionalProducts', 'contactInformation'];
+
+      substepKey = coverSubSteps[substepIndex];
+      if (substepKey) {
+        orchest.setCoverSubStep(substepKey);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
+
   const getSubtitle = () => {
     if (currentStep === STEP_ENUM.VEHICLE) {
       switch (vehicleSubStep) {
