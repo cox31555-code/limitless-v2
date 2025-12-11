@@ -252,15 +252,14 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
 
   const handleSave = async (data) => {
     try {
-      setIsSubmitting(true);
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      toast.success("Vehicle changed successfully");
-      router.push(`/dashboard/policy/${policyId}`);
+      setIsChangingVehicle(true);
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      setShowUnableModal(true);
     } catch (error) {
-      toast.error("Failed to change vehicle");
       console.error(error);
+      setShowUnableModal(true);
     } finally {
-      setIsSubmitting(false);
+      setIsChangingVehicle(false);
     }
   };
 
