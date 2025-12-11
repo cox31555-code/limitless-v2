@@ -64,7 +64,7 @@
 
 @media (max-width: 640px) {
   .priceLabel {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
   }
 }
 
@@ -96,7 +96,7 @@
 
 @media (max-width: 640px) {
   .priceMeta {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -159,7 +159,7 @@
 
 @media (max-width: 640px) {
   .instalmentText {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     line-height: 1.7;
   }
 }
@@ -1049,11 +1049,11 @@
   }
 
   .detailLabel {
-    font-size: 1.225rem;
+    font-size: 1.35rem;
   }
 
   .detailValue {
-    font-size: 1.525rem;
+    font-size: 1.75rem;
   }
 
   .carTitle {
@@ -1086,7 +1086,7 @@
   }
 
   .driverName {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .actionButtonsContainer {
@@ -1199,11 +1199,11 @@
   }
 
   .detailLabel {
-    font-size: 1.125rem;
+    font-size: 1.3rem;
   }
 
   .detailValue {
-    font-size: 1.325rem;
+    font-size: 1.6rem;
   }
 
   .carTitle {
