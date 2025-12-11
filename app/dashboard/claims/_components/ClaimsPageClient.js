@@ -1,17 +1,11 @@
 "use client";
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
 import Table from "./table/Table";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import { useLoading } from "@/contexts/LoadingContext";
 import styles from "./claimsPageClient.module.css";
-
-const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
-  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
-  ssr: false,
-});
 
 const ClaimsPageClient = ({
   pendingClaims,
