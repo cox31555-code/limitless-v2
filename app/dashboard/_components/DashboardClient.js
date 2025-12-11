@@ -5,6 +5,7 @@ import { extractVehicleMake } from "@/utils/vehicleIcons";
 import { getBrandIcon } from "@/ui/dashboard/vehicleBrandIcons";
 import { useLoading } from "@/contexts/LoadingContext";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
+import { DocumentsIcon, PaymentsIcon, ClaimsIcon, QuotesIcon, SupportIcon } from "@/ui/icons";
 import styles from "./dashboardClient.module.css";
 
 const DashboardClient = () => {
