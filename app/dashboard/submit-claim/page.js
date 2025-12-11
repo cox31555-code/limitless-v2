@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
 import ClaimFeature from "./_components/claimFeature/ClaimFeature";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { firstClaim, secondClaim, guidelinesData } from "./data";
 
 // Lazy load heavy sections
