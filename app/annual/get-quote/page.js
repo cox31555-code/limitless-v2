@@ -44,6 +44,7 @@ export default function AnnualGetQuotePage() {
     coverDetails: {
       level: '',
       minimumCoverLevel: '',
+      paymentFrequency: '',
       startDate: '',
     },
     ncdData: {
