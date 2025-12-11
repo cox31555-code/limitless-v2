@@ -9,85 +9,10 @@
   z-index: 2;
 }
 
-/* Hero Section */
-.heroSection {
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: none;
-  overflow: hidden;
-  position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-top: 0;
-  margin-bottom: 6.5rem;
-  padding: 7.8rem calc(50vw - 50%) 7.8rem;
-  gap: 0;
-}
+/* Edit Vehicle Details Client - Uses shared dashboard layout styles */
+/* Hero, breadcrumb, and content wrapper styling is centralized in dashboardLayout.module.css */
 
-.heroSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.heroBackground {
-  position: absolute;
-  right: 13%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 400px;
-  height: 399px;
-  opacity: 0.3;
-  z-index: 1;
-}
-
-.heroBackgroundImage {
-  width: 100%;
-  height: 100%;
-}
-
-.heroContent {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1000px;
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  gap: 3.9rem;
-  margin: 0 auto;
-}
-
-.greetingArea {
-  display: flex;
-  flex-direction: column;
-  gap: 1.04rem;
-}
-
-.greetingTitle {
-  font-size: 3.9rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-  line-height: 110%;
-  letter-spacing: -0.65px;
-}
-
-.greetingSubtitle {
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
-  font-weight: 400;
-}
+/* Page-specific overrides or additional styles can be added here */
 
 /* Content Wrapper */
 .contentWrapper {
