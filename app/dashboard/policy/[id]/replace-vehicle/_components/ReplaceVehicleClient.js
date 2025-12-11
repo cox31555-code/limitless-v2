@@ -13,6 +13,7 @@ import RegistrationInput from "@/app/annual/get-quote/_components/RegistrationIn
 import ReplaceVehicleCarDetails from "./ReplaceVehicleCarDetails";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
+import UnableToUpdateModal from "@/ui/modals/UnableToUpdateModal";
 import styles from "./replaceVehicleClient.module.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
