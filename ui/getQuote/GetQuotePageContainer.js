@@ -367,7 +367,7 @@ export default function GetQuotePageContainer({
                   <Suspense fallback={<StepFallback />}>
                     <lazySteps.details
                       onBack={handleBackFromCoverDetails}
-                      onNext={handleCoverDetailsSubmit}
+                      onNext={handleStep3CoverDetailsSubmit}
                       coverData={{
                         coverLevel: form.watch('coverDetails.level'),
                         minimumCoverLevel: form.watch('coverDetails.minimumCoverLevel'),
