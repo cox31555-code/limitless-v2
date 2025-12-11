@@ -1,6 +1,6 @@
 import "../globals.css";
 import "./dashboard.css";
-import { Poppins } from "next/font/google";
+import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import Header from "@/ui/dashboard/header/Header";
 import DashboardFooter from "@/ui/dashboard/footer/DashboardFooter";
 import Script from "next/script";
@@ -8,6 +8,11 @@ import Script from "next/script";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
 });
 
 export default function DashboardLayout({ children }) {
