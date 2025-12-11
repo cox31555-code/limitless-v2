@@ -5,6 +5,7 @@ import { API_BASE_URL } from "@/utils/config";
 import { serverFetch } from "@/utils/serverFetch";
 import DocumentsClient from "./_components/DocumentsClient";
 import DashboardHero from "@/ui/dashboard/DashboardHero";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -84,11 +85,10 @@ const page = async () => {
       />
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Documents</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Documents" }
+      ]} />
 
       <DocumentsClient insurances={insurances} />
     </div>
