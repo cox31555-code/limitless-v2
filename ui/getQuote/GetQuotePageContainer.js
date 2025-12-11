@@ -5,7 +5,7 @@
 
 'use client';
 
-import React, { Suspense, useCallback } from 'react';
+import React, { Suspense } from 'react';
 import LoadingOverlay from '@/ui/loadingSpinner/LoadingOverlay';
 import CourierLoadingOverlay from '@/app/courier/_components/CourierLoadingOverlay';
 import QuoteProgressCard from '@/app/annual/get-quote/_components/QuoteProgressCard';
@@ -109,7 +109,7 @@ export default function GetQuotePageContainer({
    * Handle cover details submission from Step3CoverDetails
    * Converts Step3CoverDetails output format to form state
    */
-  const handleStep3CoverDetailsSubmit = useCallback((coverData) => {
+  const handleStep3CoverDetailsSubmit = (coverData) => {
     // Map Step3CoverDetails output to form state
     form.setValue('coverDetails.level', coverData.coverLevel, { shouldValidate: true });
     form.setValue('coverDetails.minimumCoverLevel', coverData.minimumCoverLevel || '', { shouldValidate: true });
@@ -118,7 +118,7 @@ export default function GetQuotePageContainer({
 
     // Navigate to next step
     orchest.handleNavigateToCarOwner();
-  }, [form, orchest]);
+  };
 
   /**
    * Handle substep navigation from sidebar
