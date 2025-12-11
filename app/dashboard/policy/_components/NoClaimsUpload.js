@@ -2,12 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import styles from "./noClaimsUpload.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const NoClaimsUpload = () => {
   const [files, setFiles] = useState([]);
