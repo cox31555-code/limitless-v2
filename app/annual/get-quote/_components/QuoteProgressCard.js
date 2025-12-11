@@ -23,6 +23,15 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
     setExpandedStep(currentStep);
   }, [currentStep]);
 
+  // Handle window resize to track screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 900);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Determine if we should hide "Additional products" step
   const isTemporaryOrImpound = insuranceType === "Temp" || insuranceType === "Impound";
 
