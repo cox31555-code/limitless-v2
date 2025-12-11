@@ -474,43 +474,11 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
       <div className={styles.container}>
         <LoadingOverlay isVisible={isChangingVehicle} text="Processing request" />
 
-        {showUnableModal && (
-          <div className={styles.modalOverlay} onClick={() => setShowUnableModal(false)}>
-            <div className={styles.unableModal} onClick={(e) => e.stopPropagation()}>
-              <div className={styles.unableIconWrapper}>
-                <svg className={styles.unableIcon} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
-                  <path d="M12 8v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  <circle cx="12" cy="16" r="1" fill="currentColor"/>
-                </svg>
-              </div>
-              <h3 className={styles.unableTitle}>Unable to Change Vehicle</h3>
-              <p className={styles.unableMessage}>
-                We're unable to process your vehicle change at this time. This may be due to system maintenance or policy restrictions.
-              </p>
-              <p className={styles.unableContact}>
-                Please contact our support team who will be happy to assist you with changing your vehicle.
-              </p>
-              <div className={styles.unableActions}>
-                <button
-                  className={styles.contactBtn}
-                  onClick={() => {
-                    setShowUnableModal(false);
-                    router.push('/contact');
-                  }}
-                >
-                  Contact Support
-                </button>
-                <button
-                  className={styles.closeBtn}
-                  onClick={() => setShowUnableModal(false)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        <UnableToUpdateModal
+          isOpen={showUnableModal}
+          onClose={() => setShowUnableModal(false)}
+          type="replace"
+        />
 
         <section className={styles.heroSection}>
           <div className={styles.heroBackground}>
