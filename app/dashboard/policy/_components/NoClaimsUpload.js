@@ -93,11 +93,7 @@ const NoClaimsUpload = () => {
       // Simulate upload delay
       await new Promise(resolve => setTimeout(resolve, 2000));
       setUploadComplete(true);
-      // Reset after showing success message
-      setTimeout(() => {
-        setFiles([]);
-        setUploadComplete(false);
-      }, 1500);
+      setIsUploading(false);
     } catch (error) {
       console.error("Upload error:", error);
       setIsUploading(false);
