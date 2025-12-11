@@ -5,15 +5,9 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./policyDetailsReview.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { useLoading } from "@/contexts/LoadingContext";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import NoClaimsUpload from "./NoClaimsUpload";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const PolicyDetailsReview = ({ policy }) => {
   const router = useRouter();
