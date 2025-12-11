@@ -473,9 +473,9 @@
   }
 
   .uploadBtn {
-    padding: 1.3rem 2rem;
-    font-size: 1.2rem;
-    min-height: 50px;
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    min-height: 42px;
   }
 }
 
