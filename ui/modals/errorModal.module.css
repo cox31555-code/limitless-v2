@@ -1,0 +1,259 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.errorModal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 3.2rem 2.8rem;
+  max-width: 48rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.iconWrapper {
+  margin-bottom: 2rem;
+}
+
+.icon {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+}
+
+.icon svg {
+  width: 2.8rem;
+  height: 2.8rem;
+  stroke: currentColor;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.2rem 0;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+
+.message {
+  font-size: 1.4rem;
+  color: #4b5563;
+  margin: 0 0 1.2rem 0;
+  line-height: 145%;
+  font-weight: 400;
+}
+
+.contactText {
+  font-size: 1.4rem;
+  color: #4b5563;
+  margin: 0 0 2.4rem 0;
+  line-height: 145%;
+  font-weight: 400;
+}
+
+.actions {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryBtn {
+  flex: 1;
+  min-width: 16rem;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 120%;
+}
+
+.primaryBtn:hover {
+  background: linear-gradient(135deg, #0270cc 0%, #025ab3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.35);
+}
+
+.primaryBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.3);
+}
+
+.secondaryBtn {
+  flex: 1;
+  min-width: 16rem;
+  padding: 1.2rem 2rem;
+  background: #f3f4f6;
+  color: #4b5563;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 120%;
+}
+
+.secondaryBtn:hover {
+  background: #e5e7eb;
+}
+
+.secondaryBtn:active {
+  background: #d1d5db;
+}
+
+/* Variant: unable-to-update (default) */
+.errorModal.unable-to-update {
+  /* Uses default styles */
+}
+
+.errorModal.unable-to-update .icon {
+  background: #f0f4f8;
+  color: #3b82f6;
+}
+
+/* Variant: restricted */
+.errorModal.restricted .icon {
+  background: #fef3c7;
+  color: #f59e0b;
+}
+
+/* Variant: maintenance */
+.errorModal.maintenance .icon {
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .errorModal {
+    padding: 2.8rem 2.4rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .message,
+  .contactText {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .errorModal {
+    padding: 2.4rem 2rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    min-width: 100%;
+    flex: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modalOverlay {
+    padding: 1.6rem;
+  }
+
+  .errorModal {
+    padding: 2.4rem 1.8rem;
+  }
+
+  .icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .icon svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .message,
+  .contactText {
+    font-size: 1.2rem;
+  }
+
+  .contactText {
+    margin-bottom: 1.8rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 1rem 1.6rem;
+    font-size: 1.2rem;
+  }
+
+  .actions {
+    gap: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .errorModal {
+    padding: 2rem 1.4rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .message,
+  .contactText {
+    font-size: 1.1rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 0.9rem 1.4rem;
+  }
+}
