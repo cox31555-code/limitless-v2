@@ -1,9 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
 import Table from "./table/Table";
-import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import styles from "./policyPageClient.module.css";
 import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
+
+const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
 
 const PolicyPageClient = ({
   activePolicies,
