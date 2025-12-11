@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback, useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -10,6 +11,11 @@ import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./editVehicleDetailsClient.module.css";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 const VehicleModificationsModal = dynamic(
   () => import("@/app/annual/get-quote/_components/VehicleModificationsModal"),
