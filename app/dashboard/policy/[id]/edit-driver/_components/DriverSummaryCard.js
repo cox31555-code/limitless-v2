@@ -1,8 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
 import styles from "./driverSummaryCard.module.css";
-import AddressLookupModal from "./AddressLookupModal";
+
+const AddressLookupModal = dynamic(
+  () => import("./AddressLookupModal"),
+  { ssr: false }
+);
 
 const DriverSummaryCard = ({ driver, form, onAddressChange }) => {
   const { watch, setValue } = form;
