@@ -157,35 +157,6 @@
   margin: 0;
 }
 
-.filesActions {
-  display: flex;
-  gap: 0.8rem;
-}
-
-.addFilesBtn,
-.removeAllBtn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  border-radius: 8px;
-  border: 1px solid #e0e6f0;
-  background: #ffffff;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.addFilesBtn:hover {
-  background: #f8f9fc;
-}
-
-.removeAllBtn:hover {
-  background: #f8f9fc;
-}
-
 /* Files Table */
 .filesTable {
   display: flex;
