@@ -4,6 +4,7 @@ import Header from "@/ui/layout/header/Header";
 import { ToastContainer } from "react-toastify";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import { PageLoadingHandler } from "@/ui/loadingSpinner/PageLoadingHandler";
+import ErrorBanner from "@/ui/errorHandling/ErrorBanner";
 import { useLoading } from "@/contexts/LoadingContext";
 
 export default function ClientLayout({ children }) {
@@ -12,6 +13,7 @@ export default function ClientLayout({ children }) {
   return (
     <>
       <PageLoadingHandler />
+      <ErrorBanner />
       <Header />
       {children}
       {isLoading && <LoadingOverlay isVisible={isLoading} text="Loading" />}
