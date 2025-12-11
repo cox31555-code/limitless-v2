@@ -1,12 +1,17 @@
 "use client";
-import React, { useState, useEffect, useReducer, useCallback, useRef } from "react";
+import React, { useState, useEffect, useReducer, useCallback, useRef, Suspense } from "react";
+import dynamic from "next/dynamic";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import RegistrationInput from "./RegistrationInput";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import FormDateInput from "@/ui/inputs/FormDateInput";
 import Title from "@/ui/insurance-quotes/title/Title";
-import VehicleModificationsModal from "./VehicleModificationsModal";
 import styles from "./annualVehicle.module.css";
+
+const VehicleModificationsModal = dynamic(
+  () => import("./VehicleModificationsModal"),
+  { ssr: false }
+);
 import { buildVehicleQuery, clearDependentFields, shouldAutoSelect } from "../../../temporary/get-quote/helperFucntion";
 
 // Simplified state for vehicle data
