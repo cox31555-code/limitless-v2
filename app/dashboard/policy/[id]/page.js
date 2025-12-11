@@ -1,5 +1,6 @@
 import React from "react";
 import PolicyDetailsReview from "../_components/PolicyDetailsReview";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./page.module.css";
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
@@ -72,13 +73,11 @@ const page = async ({ params }) => {
       </div>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Manage Policy</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Policy summary</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Policy" },
+        { label: "Policy summary" }
+      ]} />
 
       <div className={styles.contentWrapper}>
         <PolicyDetailsReview policy={insurance} />
