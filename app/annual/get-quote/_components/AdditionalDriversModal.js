@@ -314,7 +314,9 @@ const AdditionalDriversModal = ({
       const data = await response.json();
       setDriverAddresses(prev => ({ ...prev, [index]: data?.addresses || [] }));
     } catch (error) {
-      console.error("Error fetching addresses:", error);
+      addError({
+        message: "Failed to fetch addresses. Please try again.",
+      });
     } finally {
       setDriverLoadingStates(prev => ({ ...prev, [index]: false }));
     }
