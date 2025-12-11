@@ -3,6 +3,7 @@ import React, { useState, Suspense } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import Table from "./table/Table";
+import DashboardHero from "@/ui/dashboard/DashboardHero";
 import { useLoading } from "@/contexts/LoadingContext";
 import styles from "./claimsPageClient.module.css";
 
