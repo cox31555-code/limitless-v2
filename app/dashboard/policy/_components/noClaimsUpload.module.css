@@ -466,8 +466,13 @@
     box-shadow: 0 1px 11px 0 rgba(0, 82, 163, 0.1);
   }
 
+  .uploadButtonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
+
   .uploadBtn {
-    width: 100%;
     padding: 1.3rem 2rem;
     font-size: 1.2rem;
     min-height: 50px;
