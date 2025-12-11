@@ -8,14 +8,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.8rem 2.2rem;
+  padding: 1.5rem 2.2rem;
   background: #ffffff;
   border: 1.5px solid #d1d9e3;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   gap: 1.4rem;
-  min-height: 72px;
+  min-height: 57px;
   box-shadow: 0 2px 6px rgba(0, 8, 34, 0.05);
 }
 
@@ -32,7 +32,7 @@
 
 .value_text {
   font-size: 1.45rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #1f2937;
   flex: 1;
   line-height: 1.6;
