@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useError } from "@/contexts/ErrorContext";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./editDriverDetailsClient.module.css";
 import DriverSummaryCard from "./DriverSummaryCard";
 import DriverQuestions from "./DriverQuestions";
@@ -141,15 +142,12 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Manage Policy</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Policy summary</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Edit driver details</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Policy" },
+        { label: "Policy summary" },
+        { label: "Edit driver details" }
+      ]} />
 
       {/* Content */}
       <div className={styles.contentWrapper}>
