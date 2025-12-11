@@ -64,13 +64,10 @@ const EditDriverDetailsClient = ({ policyId, driverId, policy, driver }) => {
   const handleSave = async (data) => {
     try {
       setIsSubmitting(true);
-      setSavingComplete(false);
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 3000));
-      // Show success state
-      setSavingComplete(true);
-      // Show modal
-      setShowModal(true);
+      // Show unable modal
+      setShowUnableModal(true);
       setIsSubmitting(false);
     } catch (error) {
       toast.error("Failed to update driver details");
