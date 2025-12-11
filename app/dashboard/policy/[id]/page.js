@@ -2,6 +2,7 @@ import React from "react";
 import PolicyDetailsReview from "../_components/PolicyDetailsReview";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./page.module.css";
+import layoutStyles from "@/ui/dashboard/dashboardLayout.module.css";
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
