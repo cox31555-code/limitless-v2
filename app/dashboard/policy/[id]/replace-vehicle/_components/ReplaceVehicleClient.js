@@ -65,6 +65,8 @@ const ReplaceVehicleClient = ({ policyId, policy, vehicleDetails }) => {
   const [showManualEntry, setShowManualEntry] = useState(false);
   const [showModificationsModal, setShowModificationsModal] = useState(false);
   const [isEditingCarDetails, setIsEditingCarDetails] = useState(false);
+  const [isChangingVehicle, setIsChangingVehicle] = useState(false);
+  const [showUnableModal, setShowUnableModal] = useState(false);
   const [state, dispatch] = useReducer(vehicleReducer, initialState);
   const hasAutoTriggeredRef = useRef(false);
 
