@@ -5,7 +5,7 @@
 
 'use client';
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useCallback } from 'react';
 import LoadingOverlay from '@/ui/loadingSpinner/LoadingOverlay';
 import CourierLoadingOverlay from '@/app/courier/_components/CourierLoadingOverlay';
 import QuoteProgressCard from '@/app/annual/get-quote/_components/QuoteProgressCard';
