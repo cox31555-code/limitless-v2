@@ -1,8 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import dynamic from "next/dynamic";
 import styles from "./paymentsClient.module.css";
-import NeedHelpSection from "@/ui/layout/NeedHelpSection";
+
+const NeedHelpSection = dynamic(() => import("@/ui/layout/NeedHelpSection"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
 
 export default function PaymentsClient({ plusJakartaSans }) {
   const [scheduleExpanded, setScheduleExpanded] = useState(false);
