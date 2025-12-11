@@ -11,6 +11,7 @@ import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
+import UnableToUpdateModal from "@/ui/modals/UnableToUpdateModal";
 import styles from "./editVehicleDetailsClient.module.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
