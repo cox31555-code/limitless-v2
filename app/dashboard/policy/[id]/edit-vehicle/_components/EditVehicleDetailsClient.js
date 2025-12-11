@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { useError } from "@/contexts/ErrorContext";
 import { annualInsuranceSchema } from "@/utils/schemas/insuranceSchema";
 import DashboardDropdown from "./DashboardDropdown";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import LoadingOverlay from "@/ui/loadingSpinner/LoadingOverlay";
 import styles from "./editVehicleDetailsClient.module.css";
 
@@ -222,15 +223,12 @@ const EditVehicleDetailsClient = ({ policyId, policy, vehicleDetails }) => {
       </section>
 
       {/* Breadcrumb Navigation */}
-      <div className={styles.breadcrumb}>
-        <span className={styles.breadcrumbItem}>Dashboard</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Manage Policy</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={styles.breadcrumbItem}>Policy summary</span>
-        <span className={styles.breadcrumbSeparator}>›</span>
-        <span className={`${styles.breadcrumbItem} ${styles.active}`}>Edit vehicle details</span>
-      </div>
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Policy" },
+        { label: "Policy summary" },
+        { label: "Edit vehicle details" }
+      ]} />
 
       {/* Content */}
       <div className={styles.contentWrapper}>
