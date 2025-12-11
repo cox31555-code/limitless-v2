@@ -87,38 +87,6 @@
   font-weight: 400;
 }
 
-/* Breadcrumb Navigation */
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1.3rem;
-  padding: 0 5% 14px;
-  border-bottom: 1px solid #e0e6f0;
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.breadcrumbItem {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #666;
-  white-space: nowrap;
-}
-
-.breadcrumbItem.active {
-  color: #0052a3;
-  font-weight: 600;
-}
-
-.breadcrumbSeparator {
-  font-size: 1.55rem;
-  color: #ccc;
-  margin: 0 0.4rem;
-  flex-shrink: 0;
-}
-
 /* Content Wrapper */
 .contentWrapper {
   display: flex;
@@ -175,19 +143,6 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
-  .breadcrumb {
-    gap: 1rem;
-    padding: 0 5% 14px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.2rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.3rem;
-  }
-
   .heroSection {
     padding: 7rem calc(50vw - 50%) 7rem;
   }
@@ -206,19 +161,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  .breadcrumb {
-    gap: 0.8rem;
-    padding: 0 5% 14px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.1rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.2rem;
-  }
-
   .heroSection {
     flex-direction: column;
     text-align: center;
@@ -273,10 +215,6 @@
 }
 
 @media screen and (max-width: 640px) {
-  .breadcrumbItem {
-    font-size: 1.4rem;
-  }
-
   .sectionTitle {
     font-size: 2.14rem;
   }
@@ -291,20 +229,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .breadcrumb {
-    gap: 0.6rem;
-    padding: 0 5% 12px;
-  }
-
-  .breadcrumbItem {
-    font-size: 1.4rem;
-  }
-
-  .breadcrumbSeparator {
-    font-size: 1.1rem;
-    margin: 0 0.3rem;
-  }
-
   .heroSection {
     padding: 2.5rem calc(50vw - 50%);
     gap: 1.5rem;
