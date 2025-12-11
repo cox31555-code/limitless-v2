@@ -225,7 +225,7 @@ const PolicyDetailsReview = ({ policy }) => {
                 <line x1="10" y1="9" x2="8" y2="9"/>
               </svg>
             </div>
-            <h3 id="policy-details-heading" className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+            <h3 id="policy-details-heading" className={styles.sectionTitle}>
               Your Cover Details
             </h3>
           </div>
@@ -329,7 +329,7 @@ const PolicyDetailsReview = ({ policy }) => {
                 <path d="M 3.3790 49.7383 L 6.1446 49.7383 C 7.8790 49.7383 9.2383 48.4023 9.2383 46.6680 L 9.2383 42.7305 C 14.4415 43.0586 21.9649 43.2930 27.9883 43.2930 C 34.0352 43.2930 41.5587 43.0586 46.7617 42.7305 L 46.7617 46.6680 C 46.7617 48.4023 48.0976 49.7383 49.8553 49.7383 L 52.6211 49.7383 C 54.3788 49.7383 55.7382 48.4023 55.7382 46.6680 L 55.7382 33.1445 C 55.7382 29.2070 54.9414 26.9805 52.7617 24.1680 L 50.7932 21.6133 C 49.9259 17.3945 48.3788 12.9648 47.5585 11.2305 C 46.3163 8.5820 43.8788 7.0117 40.7618 6.5898 C 39.1915 6.4024 34.0587 6.2617 27.9883 6.2617 C 21.9415 6.2617 16.8087 6.4258 15.2383 6.5898 C 12.1212 6.9648 9.6837 8.5820 8.4415 11.2305 C 7.6212 12.9648 6.0743 17.3945 5.2071 21.6133 L 3.2383 24.1680 C 1.0587 26.9805 .2618 29.2070 .2618 33.1445 L .2618 46.6680 C .2618 48.4023 1.6212 49.7383 3.3790 49.7383 Z M 9.9415 19.6680 C 10.5040 17.0898 11.6290 13.7383 12.4024 12.3789 C 13.0352 11.2773 13.7149 10.8086 14.9805 10.6445 C 16.7618 10.3867 20.7462 10.2461 27.9883 10.2461 C 35.2540 10.2461 39.2383 10.3398 41.0196 10.6445 C 42.2618 10.8320 42.9414 11.2773 43.5976 12.3789 C 44.3948 13.7148 45.4494 17.0898 46.0585 19.6680 C 46.2697 20.5351 45.9179 20.8633 45.0040 20.7929 C 41.1134 20.5586 36.4727 20.3008 27.9883 20.3008 C 19.5274 20.3008 14.8868 20.5586 10.9962 20.7929 C 10.0821 20.8633 9.7540 20.5351 9.9415 19.6680 Z M 10.9024 37.2227 C 8.6759 37.2227 7.0118 35.5351 7.0118 33.3320 C 7.0118 31.1055 8.6759 29.4414 10.9024 29.4414 C 13.1290 29.4414 14.7930 31.1055 14.7930 33.3320 C 14.7930 35.5351 13.1290 37.2227 10.9024 37.2227 Z M 45.0976 37.2227 C 42.8713 37.2227 41.2071 35.5351 41.2071 33.3320 C 41.2071 31.1055 42.8713 29.4414 45.0976 29.4414 C 47.3008 29.4414 48.9884 31.1055 48.9884 33.3320 C 48.9884 35.5351 47.3008 37.2227 45.0976 37.2227 Z M 21.7774 36.1445 C 20.1368 36.1445 18.9883 34.9727 18.9883 33.3320 C 18.9883 31.6680 20.1368 30.5195 21.7774 30.5195 L 34.2227 30.5195 C 35.8634 30.5195 37.0118 31.6680 37.0118 33.3320 C 37.0118 34.9727 35.8634 36.1445 34.2227 36.1445 Z"/>
               </svg>
             </div>
-            <h3 id="car-details-heading" className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+            <h3 id="car-details-heading" className={styles.sectionTitle}>
               Vehicle Information
             </h3>
           </div>
@@ -347,7 +347,7 @@ const PolicyDetailsReview = ({ policy }) => {
         {expandedSections.carDetails && (
           <div id="car-details-content" className={styles.cardContent} role="region" aria-labelledby="car-details-heading">
             <div className={styles.carInfoBlock}>
-              <h4 className={`${styles.carTitle} ${plusJakartaSans.className}`}>
+              <h4 className={styles.carTitle}>
                 {vehicleDetails?.make} {vehicleDetails?.model}
               </h4>
               <p className={styles.carRegistration}>({vehicleDetails?.registrationNumber})</p>
@@ -379,7 +379,7 @@ const PolicyDetailsReview = ({ policy }) => {
 
             {/* Your car section */}
             <div className={styles.vehicleSubsection}>
-              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Your car</h4>
+              <h4 className={styles.subsectionTitle}>Your car</h4>
               <div className={styles.detailsGrid}>
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Car make and model</span>
@@ -422,7 +422,7 @@ const PolicyDetailsReview = ({ policy }) => {
 
             {/* Car value section */}
             <div className={styles.vehicleSubsection}>
-              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Car value</h4>
+              <h4 className={styles.subsectionTitle}>Car value</h4>
               <div className={styles.detailsGrid}>
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Current vehicle market value</span>
@@ -433,7 +433,7 @@ const PolicyDetailsReview = ({ policy }) => {
 
             {/* Car usage section */}
             <div className={styles.vehicleSubsection}>
-              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Car usage</h4>
+              <h4 className={styles.subsectionTitle}>Car usage</h4>
               <div className={styles.detailsGrid}>
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>When you bought the car</span>
@@ -452,7 +452,7 @@ const PolicyDetailsReview = ({ policy }) => {
 
             {/* Car storage section */}
             <div className={styles.vehicleSubsection}>
-              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Car storage</h4>
+              <h4 className={styles.subsectionTitle}>Car storage</h4>
               <div className={styles.detailsGrid}>
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Daytime storage</span>
@@ -471,7 +471,7 @@ const PolicyDetailsReview = ({ policy }) => {
 
             {/* Other cars section */}
             <div className={styles.vehicleSubsection}>
-              <h4 className={`${styles.subsectionTitle} ${plusJakartaSans.className}`}>Other cars</h4>
+              <h4 className={styles.subsectionTitle}>Other cars</h4>
               <div className={styles.detailsGrid}>
                 <div className={styles.detailItem}>
                   <span className={styles.detailLabel}>Number of cars at your household</span>
@@ -518,7 +518,7 @@ const PolicyDetailsReview = ({ policy }) => {
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <h3 id="drivers-heading" className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+            <h3 id="drivers-heading" className={styles.sectionTitle}>
               Named Drivers
             </h3>
           </div>
@@ -570,7 +570,7 @@ const PolicyDetailsReview = ({ policy }) => {
                 <circle cx="12" cy="7" r="4"/>
               </svg>
             </div>
-            <h3 id="driver-details-heading" className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+            <h3 id="driver-details-heading" className={styles.sectionTitle}>
               Driver Information
             </h3>
           </div>
@@ -589,7 +589,7 @@ const PolicyDetailsReview = ({ policy }) => {
           <div id="driver-details-content" className={styles.cardContent} role="region" aria-labelledby="driver-details-heading">
             {(policy?.drivers || [{ firstName: userDetails?.firstName, surname: userDetails?.surname, ...userDetails }]).map((driver, index) => (
               <div key={index} className={styles.driverCard}>
-                <h4 className={`${styles.driverName} ${plusJakartaSans.className}`}>
+                <h4 className={styles.driverName}>
                   {driver?.firstName} {driver?.surname}
                 </h4>
                 <div className={styles.detailsGrid}>
@@ -706,7 +706,7 @@ const PolicyDetailsReview = ({ policy }) => {
                 <polyline points="13 2 13 9 20 9"/>
               </svg>
             </div>
-            <h3 id="documents-heading" className={`${styles.sectionTitle} ${plusJakartaSans.className}`}>
+            <h3 id="documents-heading" className={styles.sectionTitle}>
               Download Documents
             </h3>
           </div>
@@ -747,7 +747,7 @@ const PolicyDetailsReview = ({ policy }) => {
 
       {/* Payment Breakdown Section */}
       <section className={styles.paymentBreakdownCard} aria-labelledby="payment-breakdown-heading">
-        <h3 id="payment-breakdown-heading" className={`${styles.breakdownTitle} ${plusJakartaSans.className}`}>
+        <h3 id="payment-breakdown-heading" className={styles.breakdownTitle}>
           Payment Schedule
         </h3>
         <div className={styles.breakdownContent}>
