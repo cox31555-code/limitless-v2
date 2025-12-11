@@ -8,14 +8,8 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { API_BASE_URL } from "@/utils/config";
 import { serverFetch } from "@/utils/serverFetch";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import NeedHelpSection from "@/ui/layout/NeedHelpSection";
 import Link from "next/link";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const page = async ({ params }) => {
   const { id } = await params;
