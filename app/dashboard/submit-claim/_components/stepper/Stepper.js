@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import styles from "./stepper.module.css";
 import Image from "next/image";
 import { Manrope } from "next/font/google";
@@ -6,6 +9,11 @@ import { Manrope } from "next/font/google";
 const manrope = Manrope({
   subsets: ["latin"],
   weight: ["500"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
 });
 
 const Stepper = ({ steps, currentStep = 0 }) => {

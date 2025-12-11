@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./form.module.css";
 import { useRouter } from "next/navigation";
@@ -13,6 +14,11 @@ import FormTextInput from "@/ui/inputs/FormTextInput";
 import FormTextArea from "@/ui/inputs/FormTextArea";
 import FormDropdown from "@/ui/inputs/FormDropdown";
 import FormDateInput from "@/ui/inputs/FormDateInput";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 import { useAuth } from "@/contexts/AuthContext";
 import { API_BASE_URL } from "@/utils/config";
 import { useLoading } from "@/contexts/LoadingContext";
