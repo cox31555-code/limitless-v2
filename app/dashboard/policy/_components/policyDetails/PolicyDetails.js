@@ -1,9 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import styles from "./policyDetails.module.css";
 import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
 import Image from "next/image";
 import Dropdown from "./Dropdown";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 const PolicyDetails = ({ insurance }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
