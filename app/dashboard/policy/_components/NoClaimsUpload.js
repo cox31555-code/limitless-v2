@@ -208,11 +208,28 @@ const NoClaimsUpload = () => {
       {/* Upload Button */}
       {files.length > 0 && (
         <button
-          onClick={() => files.forEach(handleUploadFile)}
-          className={styles.uploadBtn}
+          onClick={handleUpload}
+          className={`${styles.uploadBtn} ${isUploading ? styles.uploading : ""} ${uploadComplete ? styles.complete : ""}`}
           aria-label="Upload all files"
+          disabled={isUploading}
         >
-          Upload
+          {uploadComplete ? (
+            <>
+              <svg className={styles.checkIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Uploaded
+            </>
+          ) : isUploading ? (
+            <>
+              <svg className={styles.spinnerIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              Uploading...
+            </>
+          ) : (
+            "Upload"
+          )}
         </button>
       )}
     </section>
