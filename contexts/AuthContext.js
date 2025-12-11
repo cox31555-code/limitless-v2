@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useReducer, useEffect } from "react";
+import React, { createContext, useContext, useReducer, useEffect, useMemo } from "react";
 import { API_BASE_URL } from "@/utils/config";
 import { usePathname } from "next/navigation";
 // Initial state
