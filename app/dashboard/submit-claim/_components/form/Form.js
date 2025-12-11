@@ -4,7 +4,6 @@ import styles from "./form.module.css";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import {
   submitClaimFlatSchema,
   transformFormDataToApiFormat,
@@ -17,11 +16,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import { API_BASE_URL } from "@/utils/config";
 import { useLoading } from "@/contexts/LoadingContext";
 import UploadEvidence from "../uploadEvidence/UploadEvidence";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Form = ({ claimReason }) => {
   const router = useRouter();
