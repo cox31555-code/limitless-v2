@@ -330,16 +330,6 @@ const Step3AddDriverClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           </div>
           {errors.ncdAffected && <span className={styles.error}>{errors.ncdAffected}</span>}
         </div>
-
-        {/* Buttons */}
-        <div className={styles.buttonGroup}>
-          <button type="button" className={styles.backBtn} onClick={onBack}>
-            Back
-          </button>
-          <button type="button" className={styles.nextBtn} onClick={handleSubmit}>
-            {editingClaim ? "Update claim" : "Add claim"}
-          </button>
-        </div>
       </div>
     </div>
   );
