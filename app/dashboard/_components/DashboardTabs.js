@@ -21,7 +21,6 @@ export const DashboardTabs = ({
   insurances,
   activePolicies,
   expiredPolicies,
-  plusJakartaSans,
 }) => {
   const [activeTab, setActiveTab] = useState("claims");
 
