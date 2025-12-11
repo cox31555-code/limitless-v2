@@ -172,6 +172,15 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
     setExpandedStep(expandedStep === stepNumber ? null : stepNumber);
   };
 
+  const toggleExpansion = () => {
+    // Toggle based on screen size
+    if (isLargeScreen) {
+      setIsDesktopExpanded(!isDesktopExpanded);
+    } else {
+      setIsMobileCollapsed(!isMobileCollapsed);
+    }
+  };
+
   return (
     <div className={styles.progressCard}>
       <div className={styles.progressHeader}>
