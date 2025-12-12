@@ -3,73 +3,45 @@
 @import '../../../../ui/getQuote/animations.module.css';
 
 .container {
-  width: 100%;
-  background: transparent;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2.8rem;
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
 }
 
 .stepTitle {
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--color-border-primary);
-  margin-bottom: 2rem;
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
 }
 
 .stepTitleText {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  color: var(--color-primary-dark);
-  margin: 0;
-  line-height: 1.4;
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
 }
 
 .contentWrapper {
-  width: 100%;
-  max-width: 680px;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding-right: 100px;
+  composes: stepContentWrapper from '../../../../ui/getQuote/shared.module.css';
 }
 
 .section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-bottom: 3.2rem;
-  border-bottom: 2px solid var(--color-border-primary);
+  composes: stepSection from '../../../../ui/getQuote/shared.module.css';
 }
 
 .mainQuestion {
-  font-size: 2.05rem;
-  font-weight: 600;
-  color: #004284;
-  margin: 0;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  composes: mainQuestion from '../../../../ui/getQuote/shared.module.css';
 }
 
 .subText {
-  font-size: 1.4rem;
-  color: #6b7c8f;
-  margin: 0;
-  line-height: 1.65;
-  font-weight: 400;
+  composes: subText from '../../../../ui/getQuote/shared.module.css';
 }
 
 .questionHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  composes: questionHeader from '../../../../ui/getQuote/shared.module.css';
 }
 
 .fieldGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
+  composes: fieldGroup from '../../../../ui/getQuote/shared.module.css';
   max-width: 180px;
+}
+
+.helpLink {
+  composes: helpLink from '../../../../ui/getQuote/shared.module.css';
+  margin-top: 1.2rem;
 }
 
 .fieldWrapper {
@@ -88,7 +60,7 @@
 .fieldLabel {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #004284;
+  color: var(--color-primary-dark);
   margin: 0;
 }
 
@@ -116,7 +88,7 @@
 .inputLabel {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #004284;
+  color: var(--color-primary-dark);
   margin: 0;
 }
 
@@ -143,7 +115,7 @@
 }
 
 .expandableLink:hover {
-  color: #003d7a;
+  color: var(--color-primary-dark);
 }
 
 .expandableLink:focus {
@@ -161,37 +133,13 @@
 
 .expandableContent {
   font-size: 1.4rem;
-  color: #6b7c8f;
+  color: var(--color-text-secondary);
   margin: 1.2rem 0 0 0;
   line-height: 1.65;
   font-weight: 400;
   padding-left: 1.6rem;
   border-left: 3px solid var(--color-primary-dark);
   padding-bottom: 1.2rem;
-}
-
-.helpLink {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--color-primary-dark);
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
-  text-align: left;
-  transition: color 0.2s ease;
-  margin-top: 1.2rem;
-}
-
-.helpLink:hover {
-  color: #003d7a;
-}
-
-.helpLink:focus {
-  outline: 2px solid var(--color-primary-dark);
-  outline-offset: 2px;
-  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
