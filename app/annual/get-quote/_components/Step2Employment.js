@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import EmploymentAutocomplete from "./EmploymentAutocomplete";
 import styles from "./step2Employment.module.css";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
 import { occupationOptions, industryOptions, studentTypeOptions } from "@/app/temporary/get-quote/data";
 
 const Step2Employment = ({ form }) => {
@@ -60,7 +62,7 @@ const Step2Employment = ({ form }) => {
 
         {isEmployedOrSelfEmployed && (
           <>
-            <div className={styles.section}>
+            <div className={sharedStyles.stepSection}>
               <div className={styles.questionHeader}>
                 <h3 className={styles.mainQuestion}>What do you do for a living?</h3>
                 <p className={styles.subText}>Start typing and choose from the list.</p>
@@ -115,10 +117,10 @@ const Step2Employment = ({ form }) => {
               )}
             </div>
 
-            <div className={styles.section}>
-              <div className={styles.questionHeader}>
-                <h3 className={styles.mainQuestion}>What type of industry do you work in?</h3>
-                <p className={styles.subText}>Start typing and choose from the list.</p>
+            <div className={sharedStyles.stepSection}>
+              <div className={sharedStyles.questionHeader}>
+                <h3 className={sharedStyles.mainQuestion}>What type of industry do you work in?</h3>
+                <p className={sharedStyles.subText}>Start typing and choose from the list.</p>
               </div>
 
               <div className={styles.dropdownWrapper}>
@@ -173,7 +175,7 @@ const Step2Employment = ({ form }) => {
         )}
 
         {isStudent && (
-          <div className={styles.section}>
+          <div className={sharedStyles.stepSection}>
             <h3 className={styles.mainQuestion}>What type of student are you?</h3>
 
             <div className={styles.dropdownWrapper}>
