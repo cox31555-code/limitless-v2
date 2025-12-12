@@ -476,7 +476,8 @@ export default function GetQuotePageContainer({
               {/* Navigation Buttons - Hidden for substeps with their own buttons */}
               {!(
                 (currentStep === STEP_ENUM.PERSONAL && (personalSubStep === 'addClaim' || personalSubStep === 'addConviction')) ||
-                (currentStep === STEP_ENUM.COVER && (coverSubStep === 'addDriver' || coverSubStep === 'addDriverClaim' || coverSubStep === 'addDriverConviction' || coverSubStep === 'addCarOwnerPerson'))
+                (currentStep === STEP_ENUM.COVER && (coverSubStep === 'addDriver' || coverSubStep === 'addDriverClaim' || coverSubStep === 'addDriverConviction' || coverSubStep === 'addCarOwnerPerson')) ||
+                (currentStep === 4)
               ) && (
                 <QuoteNavButtons
                   onBack={handlePreviousStep}
