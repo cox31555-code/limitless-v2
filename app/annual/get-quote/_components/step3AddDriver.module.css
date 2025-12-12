@@ -619,6 +619,16 @@
     width: 100%;
   }
 
+  .actionButtons {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .actionButtons .backBtn,
+  .actionButtons .saveBtn {
+    width: 100%;
+  }
+
   .licenseNumberFields {
     flex-direction: column;
   }
