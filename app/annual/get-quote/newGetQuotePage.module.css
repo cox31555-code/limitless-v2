@@ -15,7 +15,7 @@
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2% 4rem;
+  padding: 0 2.1% 4rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
   gap: 8rem;
