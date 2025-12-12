@@ -189,7 +189,6 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
     if (!formData.resultedInFine) newErrors.resultedInFine = "Please answer this question";
     if (!formData.resultedInBan) newErrors.resultedInBan = "Please answer this question";
 
-    // Conditional validation for penalty points
     if (formData.penaltyPoints === "Yes") {
       if (!formData.penaltyPointsAmount) newErrors.penaltyPointsAmount = "Please enter penalty points";
       if (formData.penaltyPointsAmount && (parseInt(formData.penaltyPointsAmount) < 1 || parseInt(formData.penaltyPointsAmount) > 11)) {
@@ -197,12 +196,10 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
       }
     }
 
-    // Conditional validation for fine
     if (formData.resultedInFine === "Yes") {
       if (!formData.fineAmount) newErrors.fineAmount = "Please enter fine amount";
     }
 
-    // Conditional validation for driving ban
     if (formData.resultedInBan === "Yes") {
       if (!formData.banMonths) newErrors.banMonths = "Please enter ban duration";
     }
@@ -210,29 +207,18 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
     return newErrors;
   };
 
-  const getValidationErrors = () => {
-    return validateForm();
+  const handleSave = () => {
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length === 0) {
+      onAddConviction(formData);
+    } else {
+      setErrors(newErrors);
+    }
   };
 
-  // Expose validation and submission methods for parent container
-  React.useImperativeHandle(
-    React.useRef(null),
-    () => ({
-      validate: getValidationErrors,
-      getData: () => formData,
-      submit: () => {
-        const newErrors = validateForm();
-        if (Object.keys(newErrors).length === 0) {
-          onAddConviction(formData);
-          return true;
-        } else {
-          setErrors(newErrors);
-          return false;
-        }
-      },
-    }),
-    [formData, onAddConviction]
-  );
+  const handleBackClick = () => {
+    onBack();
+  };
 
   return (
     <div className={styles.container}>
@@ -499,6 +485,24 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
             </div>
           )}
         </div>
+      </div>
+
+      {/* Action Buttons */}
+      <div className={styles.actionButtons}>
+        <button
+          type="button"
+          className={styles.backBtn}
+          onClick={handleBackClick}
+        >
+          Back
+        </button>
+        <button
+          type="button"
+          className={styles.saveBtn}
+          onClick={handleSave}
+        >
+          Save Conviction
+        </button>
       </div>
     </div>
   );
