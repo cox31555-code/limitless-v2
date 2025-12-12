@@ -4,6 +4,7 @@ import styles from "./step2AddClaim.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
+import QuoteNavButtons from "./QuoteNavButtons";
 
 const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   const [formData, setFormData] = useState({
@@ -313,30 +314,21 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
         </div>
       </div>
 
-      {/* Action Buttons */}
-      <div className={styles.actionButtons}>
-        <button
-          type="button"
-          className={styles.backBtn}
-          onClick={onBack}
-        >
-          Back
-        </button>
-        <button
-          type="button"
-          className={styles.saveBtn}
-          onClick={() => {
-            const newErrors = validateForm();
-            if (Object.keys(newErrors).length === 0) {
-              onAddClaim(formData);
-            } else {
-              setErrors(newErrors);
-            }
-          }}
-        >
-          Save Claim
-        </button>
-      </div>
+      <QuoteNavButtons
+        onBack={onBack}
+        onNext={() => {
+          const newErrors = validateForm();
+          if (Object.keys(newErrors).length === 0) {
+            onAddClaim(formData);
+          } else {
+            setErrors(newErrors);
+          }
+        }}
+        backLabel="Back"
+        nextLabel="Save Claim"
+        currentStep={2}
+        totalSteps={4}
+      />
     </div>
   );
 };
