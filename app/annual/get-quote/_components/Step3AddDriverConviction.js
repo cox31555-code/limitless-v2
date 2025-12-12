@@ -257,19 +257,10 @@ const Step3AddDriverConviction = ({ onBack, onAddConviction, editingConviction =
             placeholder="Please select..."
             error={errors.convictionType}
           />
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedConvictionType(!expandedConvictionType)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedConvictionType ? styles.expandedIcon : ''}`}>▶</span>
-            How can I find out?
-          </button>
-          {expandedConvictionType && (
-            <div className={styles.expandableContent}>
-              Check their driving licence, court documents, or contact the DVLA for this information. Convictions and driving-related endorsements are recorded on the driving licence.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="How can I find out?"
+            answer="Check their driving licence, court documents, or contact the DVLA for this information. Convictions and driving-related endorsements are recorded on the driving licence."
+          />
           {errors.convictionType && <span className={styles.error}>{errors.convictionType}</span>}
 
           {/* Conditional: Conviction Reason */}
