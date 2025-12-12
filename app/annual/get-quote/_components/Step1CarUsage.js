@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 import styles from "./step1CarUsage.module.css";
 
 const Step1CarUsage = ({ form, showMileage = true }) => {
@@ -85,9 +86,10 @@ const Step1CarUsage = ({ form, showMileage = true }) => {
             <span>I don't have this car yet</span>
           </label>
 
-          <button type="button" className={styles.helpLink}>
-            Where can I find this date?
-          </button>
+          <ExpandableQuestion
+            question="Where can I find this date?"
+            answer="Your car's purchase date can be found on your purchase invoice, receipt, lease agreement, or V5 registration certificate. If you don't have this car yet, leave this blank."
+          />
         </div>
 
         {/* Usage Type Section */}
@@ -154,9 +156,10 @@ const Step1CarUsage = ({ form, showMileage = true }) => {
               </p>
             </div>
 
-            <button type="button" className={styles.helpLink}>
-              How can I calculate this?
-            </button>
+            <ExpandableQuestion
+              question="How can I calculate this?"
+              answer="To calculate your annual mileage, multiply your daily commute by the number of working days, then add any additional personal journeys. For example, a 20-mile commute, 5 days a week, 48 weeks a year = 4,800 miles. Add leisure and family trips to get your total annual mileage."
+            />
 
             <div className={styles.mileageInputWrapper}>
               <CustomTextInput
@@ -173,9 +176,10 @@ const Step1CarUsage = ({ form, showMileage = true }) => {
               />
             </div>
 
-            <button type="button" className={styles.helpLink}>
-              What's personal mileage?
-            </button>
+            <ExpandableQuestion
+              question="What's personal mileage?"
+              answer="Personal mileage is the total distance you drive your car for personal use each year, including commuting, shopping, socializing, and holidays. It doesn't include business mileage if you're using the car for work."
+            />
           </div>
         )}
       </div>
