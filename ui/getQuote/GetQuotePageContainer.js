@@ -383,8 +383,16 @@ export default function GetQuotePageContainer({
                     <lazySteps.additionalDrivers
                       form={form}
                       additionalDrivers={additionalDrivers}
+                      hasAdditionalDrivers={form.watch('carUsage.hasAdditionalDrivers')}
+                      onHasAdditionalDriversChange={(value) => {
+                        form.setValue('carUsage.hasAdditionalDrivers', value, { shouldValidate: true });
+                        if (value === false) {
+                          orchest.setAdditionalDrivers([]);
+                        }
+                      }}
                       onAdd={handleNavigateToAddDriver}
                       onRemove={handleRemoveDriver}
+                      onEdit={handleNavigateToAddDriver}
                       onNext={handleNavigateToCarOwner}
                       onBack={handlePreviousStep}
                     />
