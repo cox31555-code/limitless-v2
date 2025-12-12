@@ -29,109 +29,34 @@
 }
 
 .questionTitle {
-  font-size: 2.05rem;
-  font-weight: 600;
-  color: #004284;
-  margin: 0;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  composes: mainQuestion from '../../../../ui/getQuote/shared.module.css';
 }
 
 .sectionDescription {
-  font-size: 1.4rem;
-  color: #6b7c8f;
-  margin: 0;
-  line-height: 1.65;
-  font-weight: 400;
+  composes: subText from '../../../../ui/getQuote/shared.module.css';
 }
 
 .helpLink {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #0052a3;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
-  text-align: left;
-  transition: color 0.2s ease;
-  margin-top: 0.4rem;
+  composes: helpLink from '../../../../ui/getQuote/shared.module.css';
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 
-.helpLink:hover {
-  color: #003d7a;
-}
-
-.helpLink:focus {
-  outline: 2px solid #0052a3;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
 .radioGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  margin-top: 0.8rem;
+  composes: radioGroup from '../../../../ui/getQuote/shared.module.css';
 }
 
 .radioOption {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.2rem;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
+  composes: radioOption from '../../../../ui/getQuote/shared.module.css';
 }
 
 .radioInput {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  flex-shrink: 0;
-  border: 2px solid #0052a3; /* Dark blue border */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius: 50%;
-  position: relative;
-  transition: all 0.2s ease;
-  margin-top: 0.2rem;
-}
-
-.radioInput:checked {
-  background-color: #0052a3; /* Dark blue background */
-  border-color: #0052a3; /* Dark blue border */
-}
-
-.radioInput:checked::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #ffffff; /* White dot inside */
-}
-
-.radioInput:hover:not(:checked) {
-  border-color: #0052a3; /* Dark blue on hover */
-  background-color: #f0f6ff;
+  composes: radioInput from '../../../../ui/getQuote/shared.module.css';
 }
 
 .radioLabel {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #1a1a2e;
-  margin: 0;
-  line-height: 1.5;
-  cursor: pointer;
+  composes: radioLabel from '../../../../ui/getQuote/shared.module.css';
 }
 
 .inputWrapper {
