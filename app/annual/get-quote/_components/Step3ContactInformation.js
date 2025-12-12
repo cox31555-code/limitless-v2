@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step3CarOwner.module.css";
 import personalDetailsStyles from "./step2PersonalDetails.module.css";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 
 const Step3ContactInformation = ({
   onBack = () => {},
@@ -17,9 +18,6 @@ const Step3ContactInformation = ({
   });
 
   const [errors, setErrors] = useState({});
-  const [expandedDataUsage, setExpandedDataUsage] = useState(false);
-  const [expandedContactMethods, setExpandedContactMethods] = useState(false);
-  const [expandedPrivacy, setExpandedPrivacy] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
