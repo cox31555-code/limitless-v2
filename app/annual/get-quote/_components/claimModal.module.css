@@ -20,14 +20,7 @@
   animation: fadeInOverlay 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes fadeInOverlay {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* @keyframes fadeInOverlay moved to animations.module.css */
 
 .modal {
   position: relative;
@@ -43,16 +36,7 @@
   z-index: 9999999 !important;
 }
 
-@keyframes slideInModal {
-  from {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
+/* @keyframes slideInModal moved to animations.module.css */
 
 .modalContent {
   padding: 0;
