@@ -208,7 +208,7 @@ export default function GetQuotePageContainer({
           return 'Add a conviction';
         case 'carOwner':
           return 'Car owner';
-        case 'cover':
+        case 'details':
           return 'Cover details';
         case 'ncd':
           return 'No claims discount';
