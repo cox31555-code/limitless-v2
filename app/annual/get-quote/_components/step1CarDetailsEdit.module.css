@@ -181,67 +181,6 @@
   color: #a8b2bd;
 }
 
-.buttonGroup {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: space-between;
-  margin-top: 3.2rem;
-  padding-top: 2rem;
-  border-top: 2px solid #e8ecf1;
-}
-
-.backBtn {
-  padding: 1.3rem 2.6rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #0052a3;
-  background: #ffffff;
-  border: 2px solid #0052a3;
-  border-radius: 110px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  min-height: 4.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.backBtn:hover {
-  background: #f0f6ff;
-  border-color: #003d7a;
-  color: #003d7a;
-}
-
-.backBtn:focus {
-  outline: 2px solid #0052a3;
-  outline-offset: 2px;
-}
-
-.updateBtn {
-  padding: 1.3rem 2.6rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  border: none;
-  border-radius: 110px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  min-height: 4.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.updateBtn:hover {
-  background: #003d7a;
-  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
-}
-
-.updateBtn:focus {
-  outline: 2px solid #0052a3;
-  outline-offset: 2px;
-}
 
 @media (max-width: 900px) {
   .contentWrapper {
@@ -252,15 +191,6 @@
     font-size: 1.8rem;
   }
 
-  .buttonGroup {
-    flex-direction: column-reverse;
-    gap: 1rem;
-  }
-
-  .backBtn,
-  .updateBtn {
-    width: 100%;
-  }
 }
 
 @media (max-width: 640px) {
@@ -353,14 +283,6 @@
     padding-top: 2rem;
   }
 
-  .backBtn,
-  .updateBtn {
-    width: 100%;
-    font-size: 1.6rem;
-    height: 5.6rem;
-    padding: 1.4rem 2.6rem;
-    border-radius: 110px;
-  }
 
   .helpLink {
     font-size: 1.6rem;
