@@ -258,19 +258,10 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
             placeholder="Please select..."
             error={errors.convictionType}
           />
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedConvictionType(!expandedConvictionType)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedConvictionType ? styles.expandedIcon : ''}`}>▶</span>
-            How can I find out?
-          </button>
-          {expandedConvictionType && (
-            <div className={styles.expandableContent}>
-              You can check the DVLA website or request a driving record from your local police force. Convictions and driving-related endorsements are recorded on your driving licence.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="How can I find out?"
+            answer="You can check the DVLA website or request a driving record from your local police force. Convictions and driving-related endorsements are recorded on your driving licence."
+          />
           {errors.convictionType && <span className={styles.error}>{errors.convictionType}</span>}
 
           {/* Conditional: Conviction Reason */}
@@ -351,19 +342,10 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
               />
             </div>
           </div>
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedExactDate(!expandedExactDate)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedExactDate ? styles.expandedIcon : ''}`}>▶</span>
-            How can I find out the exact date?
-          </button>
-          {expandedExactDate && (
-            <div className={styles.expandableContent}>
-              Check your driving licence, court documents, or contact the DVLA for the exact date of your conviction.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="How can I find out the exact date?"
+            answer="Check your driving licence, court documents, or contact the DVLA for the exact date of your conviction."
+          />
           {errors.date && <span className={styles.error}>{errors.date}</span>}
         </div>
 
