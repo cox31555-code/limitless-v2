@@ -1,3 +1,7 @@
+/* Import shared get-quote utilities and animations */
+@import '@/ui/getQuote/shared.module.css';
+@import '@/ui/getQuote/animations.module.css';
+
 .container {
   width: 100%;
   background: transparent;
