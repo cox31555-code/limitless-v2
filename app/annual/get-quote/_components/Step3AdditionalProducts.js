@@ -75,20 +75,10 @@ const Step3AdditionalProducts = ({
             </p>
           </div>
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedPersonalAccident(!expandedPersonalAccident)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedPersonalAccident ? styles.expandedIcon : ''}`}>▼</span>
-            What's covered?
-          </button>
-
-          {expandedPersonalAccident && (
-            <div className={styles.expandableContent}>
-              Personal accident cover provides financial assistance to you or your family if you or your passengers suffer serious injury or death as a result of an accident involving the insured vehicle.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="What's covered?"
+            answer="Personal accident cover provides financial assistance to you or your family if you or your passengers suffer serious injury or death as a result of an accident involving the insured vehicle."
+          />
 
           <div className={styles.radioGroup}>
             {["Yes", "I'll decide later"].map((option) => (
