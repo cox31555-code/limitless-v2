@@ -71,8 +71,8 @@
   border: none;
   background: rgba(3, 136, 255, 0.08);
   border-radius: 8px;
-  font-size: 2.4rem;
-  color: #0388ff;
+  font-size: var(--font-size-4xl);
+  color: var(--color-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -116,7 +116,7 @@
 .questionTitle {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.3;
 }
@@ -129,19 +129,19 @@
 }
 
 .link {
-  color: #0388ff;
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover {
-  color: #0270cc;
+  color: var(--color-primary-light);
   text-decoration: underline;
 }
 
 .link:focus {
-  outline: 2px solid #0388ff;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -178,8 +178,8 @@
 }
 
 .radioInput:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .radioInput:checked::after {
@@ -195,7 +195,7 @@
 }
 
 .radioInput:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background-color: #f0f6ff;
 }
 
@@ -209,7 +209,7 @@
 .radioLabel {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   margin: 0;
   line-height: 1.5;
   cursor: pointer;
@@ -239,7 +239,7 @@
 .inputLabel {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.3;
   letter-spacing: -0.01em;
@@ -251,7 +251,7 @@
   border: 2px solid #e8ecf1;
   border-radius: 8px;
   background: #ffffff;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   outline: none;
   transition: border-color 0.2s ease;
   font-weight: 500;
@@ -261,7 +261,7 @@
 }
 
 .textInput:focus {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
 }
 
@@ -275,7 +275,7 @@
   border: 2px solid #e8ecf1;
   border-radius: 8px;
   background: #ffffff;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   outline: none;
   transition: border-color 0.2s ease;
   cursor: pointer;
@@ -284,12 +284,12 @@
 }
 
 .selectInput:focus {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
 }
 
 .selectInput:hover:not(:disabled) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
 }
 
 .error {
@@ -313,9 +313,9 @@
   padding: 1.3rem 2.6rem;
   font-size: 1.6rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -332,7 +332,7 @@
 }
 
 .backBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
@@ -341,7 +341,7 @@
   font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #003d7a 100%);
   border: none;
   border-radius: 110px;
   cursor: pointer;
@@ -358,7 +358,7 @@
 }
 
 .nextBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
