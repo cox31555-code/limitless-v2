@@ -146,20 +146,10 @@ const Step3CarOwner = ({
           </div>
           {errors.isRegisteredKeeperAndOwner && <span className={styles.error}>{errors.isRegisteredKeeperAndOwner}</span>}
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedWhoIsKeeper(!expandedWhoIsKeeper)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedWhoIsKeeper ? styles.expandedIcon : ''}`}>▼</span>
-            How can I find out who this is?
-          </button>
-
-          {expandedWhoIsKeeper && (
-            <div className={styles.expandableContent}>
-              The registered keeper's details are shown on the V5 registration certificate. This document is held by the registered keeper of the vehicle. If you're unsure, check your V5 certificate or contact your local DVLA office.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="How can I find out who this is?"
+            answer="The registered keeper's details are shown on the V5 registration certificate. This document is held by the registered keeper of the vehicle. If you're unsure, check your V5 certificate or contact your local DVLA office."
+          />
         </div>
 
         {/* Registered Keeper Question - Only shown when No is selected */}
