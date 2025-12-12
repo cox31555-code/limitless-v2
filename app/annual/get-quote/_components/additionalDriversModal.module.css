@@ -48,16 +48,16 @@
 }
 
 .modalTitle {
-  font-size: 1.8rem;
+  font-size: var(--font-size-2xl);
   font-weight: 600;
-  color: #000822;
+  color: var(--color-text-primary);
   margin: 0;
   letter-spacing: 0px;
   line-height: 130%;
 }
 
 .modalSubtitle {
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   color: #5a6b7d;
   margin: 0.4rem 0 0 0;
   font-weight: 400;
@@ -73,8 +73,8 @@
   border: none;
   background: rgba(3, 136, 255, 0.08);
   border-radius: 8px;
-  font-size: 1.8rem;
-  color: #0388ff;
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -151,9 +151,9 @@
 }
 
 .driverNumber {
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   font-weight: 600;
-  color: #000822;
+  color: var(--color-text-primary);
 }
 
 .driverHeaderActions {
@@ -173,7 +173,7 @@
 }
 
 .driverNumber {
-  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0270cc 100%);
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: 700;
@@ -187,7 +187,7 @@
   background: transparent;
   border: 1.5px solid rgba(239, 68, 68, 0.3);
   border-radius: 8px;
-  color: #ef4444;
+  color: var(--color-error);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -196,7 +196,7 @@
 }
 
 .removeButton:hover {
-  border-color: #ef4444;
+  border-color: var(--color-error);
   background: rgba(239, 68, 68, 0.08);
   color: #dc2626;
 }
@@ -296,7 +296,7 @@
 
 .expandIcon {
   font-size: 2rem;
-  color: #0388ff;
+  color: var(--color-primary);
   font-weight: 300;
   line-height: 1;
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -305,7 +305,7 @@
 }
 
 .driverHeader .expandIcon {
-  font-size: 1.8rem;
+  font-size: var(--font-size-2xl);
 }
 
 .tileHeader.expanded .expandIcon {
@@ -362,9 +362,9 @@
 }
 
 .sectionLabel {
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   font-weight: 600;
-  color: #000822;
+  color: var(--color-text-primary);
   margin: 0;
   letter-spacing: 0px;
   text-transform: capitalize;
@@ -393,17 +393,17 @@
 }
 
 .fieldLabel {
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   font-weight: 600;
-  color: #000822;
+  color: var(--color-text-primary);
   margin: 0;
   letter-spacing: 0.1px;
 }
 
 .inputLabel {
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   font-weight: 500;
-  color: #000822;
+  color: var(--color-text-primary);
   margin: 0 0 0.8rem 0;
   letter-spacing: 0.2px;
   display: block;
@@ -434,7 +434,7 @@
   gap: 1rem;
   cursor: pointer;
   font-size: 1.1rem;
-  color: #000822;
+  color: var(--color-text-primary);
   font-weight: 400;
   user-select: none;
 }
@@ -443,7 +443,7 @@
   width: 1.8rem;
   height: 1.8rem;
   cursor: pointer;
-  accent-color: #0388ff;
+  accent-color: var(--color-primary);
   flex-shrink: 0;
 }
 
@@ -508,9 +508,9 @@
   border-radius: 10px;
   font-size: 1.2rem;
   font-weight: 600;
-  background: #0388ff;
+  background: var(--color-primary);
   color: white;
-  border: 1.5px solid #0388ff;
+  border: 1.5px solid var(--color-primary);
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 1.2rem 1.6rem;
@@ -556,7 +556,7 @@
   padding: 0.8rem 1.6rem;
   background: rgba(3, 136, 255, 0.08);
   border: 1.5px solid rgba(3, 136, 255, 0.2);
-  color: #000822;
+  color: var(--color-text-primary);
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 10px;
@@ -567,16 +567,16 @@
 }
 
 .driverNameButton:hover {
-  border-color: #0388ff;
+  border-color: var(--color-primary);
 }
 
 /* Open Modal Button */
 .openModalButton {
   padding: 1rem 2rem;
   background: transparent;
-  border: 1.5px solid #0388ff;
-  color: #0388ff;
-  font-size: 1.3rem;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
@@ -600,7 +600,7 @@
 .emptyState p:first-child {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #000822;
+  color: var(--color-text-primary);
   margin: 0 0 0.8rem 0;
 }
 
@@ -657,7 +657,7 @@
   background: transparent;
   border: 1.5px solid rgba(3, 136, 255, 0.2);
   color: #5a6b7d;
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
@@ -669,15 +669,15 @@
 .cancelButton:hover {
   background: rgba(3, 136, 255, 0.04);
   border-color: rgba(3, 136, 255, 0.3);
-  color: #000822;
+  color: var(--color-text-primary);
 }
 
 .addButton {
   padding: 1.2rem 2rem;
   background: transparent;
-  border: 1.5px solid #0388ff;
-  color: #0388ff;
-  font-size: 1.3rem;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
   font-weight: 600;
   border-radius: 10px;
   cursor: pointer;
@@ -696,8 +696,8 @@
 .addDriverButton {
   padding: 1rem 2rem;
   background: transparent;
-  border: 1.5px solid #0388ff;
-  color: #0388ff;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 10px;
@@ -715,7 +715,7 @@
 
 .maxMessage {
   font-size: 1.2rem;
-  color: #0388ff;
+  color: var(--color-primary);
   margin: 0;
   font-weight: 500;
   flex: 1;
@@ -723,11 +723,11 @@
 
 .doneButton {
   padding: 1.2rem 2.8rem;
-  background: #0388ff;
+  background: var(--color-primary);
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   font-weight: 600;
-  border: 1.5px solid #0388ff;
+  border: 1.5px solid var(--color-primary);
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -981,7 +981,7 @@
   }
 
   .emptyState p:first-child {
-    font-size: 1.8rem !important;
+    font-size: var(--font-size-2xl) !important;
   }
 
   .emptyStateHelper {
@@ -1131,7 +1131,7 @@
 
   .fieldLabel,
   .inputLabel {
-    font-size: 1.3rem;
+    font-size: var(--font-size-md);
   }
 
   .fieldRow2Col,
