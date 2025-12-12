@@ -13,14 +13,14 @@
 
 .stepTitle {
   padding-bottom: 1rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
   margin-bottom: 2rem;
 }
 
 .stepTitleText {
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
-  color: #004a94;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.4;
 }
@@ -39,7 +39,7 @@
   flex-direction: column;
   gap: 1.5rem;
   padding-bottom: 3.2rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
 }
 
 .mainQuestion {
@@ -97,8 +97,8 @@
 }
 
 .radioInput:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .radioInput:checked::after {
@@ -114,14 +114,14 @@
 }
 
 .radioInput:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background-color: #f0f6ff;
 }
 
 .radioLabel {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   cursor: pointer;
   margin: 0;
   line-height: 1.5;
@@ -138,7 +138,7 @@
 .expandableLink {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: none;
   border: none;
   cursor: pointer;
@@ -157,7 +157,7 @@
 }
 
 .expandableLink:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -176,7 +176,7 @@
   line-height: 1.65;
   font-weight: 400;
   padding-left: 1.6rem;
-  border-left: 3px solid #0052a3;
+  border-left: 3px solid var(--color-primary-dark);
   padding-bottom: 1.2rem;
 }
 
@@ -261,7 +261,7 @@
   align-items: center;
   gap: 1.2rem;
   font-size: 1.5rem;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   font-weight: 400;
   cursor: pointer;
   margin: 0;
@@ -284,8 +284,8 @@
 }
 
 .checkbox:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .checkbox:checked::after {
@@ -302,7 +302,7 @@
 }
 
 .checkbox:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background-color: #f0f6ff;
 }
 
@@ -372,7 +372,7 @@
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 }
 
@@ -384,11 +384,11 @@
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .section {
@@ -406,42 +406,42 @@
   }
 
   .subText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .expandableLink {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     margin-top: 1rem;
   }
 
   .expandableContent {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     margin-top: 1rem;
     padding-left: 1.2rem;
   }
 
   .dateFieldLabel {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .licenseFieldLabel {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .subQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .checkboxLabel {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .radioLabel {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .infoBox {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .dateFieldGroup {
@@ -469,7 +469,7 @@
 
   .infoBox {
     padding: 1rem 1.2rem;
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     margin: 0.8rem 0 1rem 0;
   }
 

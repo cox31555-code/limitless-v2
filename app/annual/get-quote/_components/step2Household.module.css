@@ -13,14 +13,14 @@
 
 .stepTitle {
   padding-bottom: 1rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
   margin-bottom: 2rem;
 }
 
 .stepTitleText {
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
-  color: #004a94;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.4;
 }
@@ -39,7 +39,7 @@
   flex-direction: column;
   gap: 1.5rem;
   padding-bottom: 3.2rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
 }
 
 .mainQuestion {
@@ -105,7 +105,7 @@
 }
 
 .findAddressBtn {
-  background-color: #0052a3;
+  background-color: var(--color-primary-dark);
   color: white;
   border: none;
   border-radius: 50px;
@@ -128,7 +128,7 @@
 }
 
 .findAddressBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
@@ -183,7 +183,7 @@
 .foundAddressDetails {
   font-size: 1.4rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   margin: 0;
   line-height: 1.5;
 }
@@ -191,7 +191,7 @@
 .changeAddressLink {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: none;
   border: none;
   cursor: pointer;
@@ -208,7 +208,7 @@
 }
 
 .changeAddressLink:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -264,8 +264,8 @@
 }
 
 .radioInput:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .radioInput:checked::after {
@@ -281,14 +281,14 @@
 }
 
 .radioInput:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background-color: #f0f6ff;
 }
 
 .radioLabel {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   cursor: pointer;
   margin: 0;
   line-height: 1.5;
@@ -297,7 +297,7 @@
 .expandableLink {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: none;
   border: none;
   cursor: pointer;
@@ -325,7 +325,7 @@
 }
 
 .expandableLink:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -344,7 +344,7 @@
   line-height: 1.65;
   font-weight: 400;
   padding-left: 1.6rem;
-  border-left: 3px solid #0052a3;
+  border-left: 3px solid var(--color-primary-dark);
   padding-bottom: 1.2rem;
 }
 
@@ -377,7 +377,7 @@
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 }
 
@@ -393,27 +393,27 @@
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     font-weight: 600;
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     font-weight: 600;
     line-height: 1.25;
   }
 
   .subText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     line-height: 1.5;
   }
 
   .fieldLabel {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .radioLabel {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     line-height: 1.5;
   }
 
@@ -437,12 +437,12 @@
   }
 
   .expandableLink {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     margin-top: 1.6rem;
   }
 
   .expandableContent {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .section {
@@ -456,7 +456,7 @@
   }
 
   .findAddressBtn {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     padding: 1.2rem 2.4rem;
     height: 5.6rem;
     border-radius: 8px;
@@ -478,16 +478,16 @@
   }
 
   .foundAddressTitle {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .foundAddressDetails {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     line-height: 1.6;
   }
 
   .changeAddressLink {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     margin-top: 1.6rem;
   }
 
@@ -497,6 +497,6 @@
 
   .orDivider,
   .orDivider span {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 }
