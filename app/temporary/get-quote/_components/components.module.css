@@ -1,4 +1,8 @@
 /* Vehicle Details Styles */
+/* Import shared get-quote utilities and animations */
+@import '@/ui/getQuote/shared.module.css';
+@import '@/ui/getQuote/animations.module.css';
+
 .content {
   display: flex;
   flex-direction: column;
