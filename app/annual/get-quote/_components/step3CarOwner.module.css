@@ -18,7 +18,7 @@
 }
 
 .stepTitleText {
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
   color: var(--color-primary-dark);
   margin: 0;
@@ -63,8 +63,8 @@
 }
 
 .subText {
-  font-size: 1.4rem;
-  color: #6b7c8f;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
   margin: 0.4rem 0 0 0;
   line-height: 1.65;
   font-weight: 400;
@@ -86,7 +86,7 @@
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .fieldWrapper {
@@ -95,13 +95,13 @@
 }
 
 .fieldLabel {
-  font-size: 1.4rem;
+  font-size: var(--font-size-lg);
   font-weight: 500;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
 }
 
 .error {
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   color: var(--color-error);
   margin-top: 0.4rem;
 }
@@ -162,7 +162,7 @@
 .radioLabel {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   cursor: pointer;
   margin: 0;
   line-height: 1.5;
@@ -172,7 +172,7 @@
   background: none;
   border: none;
   padding: 0;
-  font-size: 1.4rem;
+  font-size: var(--font-size-lg);
   color: var(--color-primary-dark);
   cursor: pointer;
   text-decoration: none;
@@ -205,8 +205,8 @@
   background: #f0f6ff;
   border-left: 3px solid var(--color-primary-dark);
   border-radius: 4px;
-  font-size: 1.4rem;
-  color: #1a1a2e;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
   line-height: 1.65;
 }
 
@@ -222,7 +222,7 @@
 }
 
 .otherPersonTitle {
-  font-size: 1.4rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-primary-dark);
   margin: 0;
@@ -231,7 +231,7 @@
 
 .addPersonBtn {
   padding: 0.8rem 2rem;
-  font-size: 1.4rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-primary-dark);
   background: #ffffff;
@@ -266,15 +266,15 @@
 }
 
 .personName {
-  font-size: 1.4rem;
-  color: #1a1a2e;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
   margin: 0;
   font-weight: 500;
 }
 
 .changePersonBtn {
   padding: 1rem 2rem;
-  font-size: 1.4rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: #ffffff;
   background: var(--color-primary-dark);
@@ -307,7 +307,7 @@
 
 .removePersonBtn {
   padding: 0;
-  font-size: 1.4rem;
+  font-size: var(--font-size-lg);
   font-weight: 500;
   color: var(--color-primary-dark);
   background: transparent;
@@ -344,7 +344,7 @@
 
 .backBtn {
   padding: 1.3rem 2.6rem;
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
   color: var(--color-primary-dark);
   background: #ffffff;
@@ -368,7 +368,7 @@
 
 .nextBtn {
   padding: 1.3rem 2.6rem;
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
   color: #ffffff;
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-darker) 100%);
@@ -408,7 +408,7 @@
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 }
 
@@ -420,7 +420,7 @@
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .contentWrapper {
@@ -429,7 +429,7 @@
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .section {
@@ -438,7 +438,7 @@
   }
 
   .subText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .buttonGroup {
@@ -448,28 +448,28 @@
 
   .backBtn {
     width: 100%;
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     height: 5.6rem;
     padding: 1.4rem 2.6rem;
   }
 
   .nextBtn {
     width: 100%;
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     height: 5.6rem;
     padding: 1.4rem 2.6rem;
   }
 
   .radioLabel {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .expandableLink {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .expandableContent {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     padding: 1.2rem 1.4rem;
   }
 
@@ -478,11 +478,11 @@
   }
 
   .otherPersonTitle {
-    font-size: 1.3rem;
+    font-size: var(--font-size-md);
   }
 
   .addPersonBtn {
-    font-size: 1.3rem;
+    font-size: var(--font-size-md);
     padding: 0.7rem 1.6rem;
     width: 100%;
   }
@@ -500,12 +500,12 @@
   }
 
   .changePersonBtn {
-    font-size: 1.3rem;
+    font-size: var(--font-size-md);
     padding: 0.9rem 1.6rem;
   }
 
   .removePersonBtn {
-    font-size: 1.3rem;
+    font-size: var(--font-size-md);
   }
 }
 
@@ -516,7 +516,7 @@
   }
 
   .stepTitleText {
-    font-size: 1.4rem;
+    font-size: var(--font-size-lg);
   }
 
   .mainQuestion {
@@ -534,13 +534,13 @@
 
   .backBtn,
   .nextBtn {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     height: 5.6rem;
     padding: 1.4rem 2.6rem;
   }
 
   .radioLabel {
-    font-size: 1.3rem;
+    font-size: var(--font-size-md);
   }
 
   .expandableLink {
@@ -574,7 +574,7 @@
   }
 
   .personName {
-    font-size: 1.3rem;
+    font-size: var(--font-size-md);
   }
 
   .personActions {
