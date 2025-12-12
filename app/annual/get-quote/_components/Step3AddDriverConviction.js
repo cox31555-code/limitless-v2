@@ -4,6 +4,7 @@ import styles from "./step3AddDriverConviction.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
+import QuoteNavButtons from "./QuoteNavButtons";
 
 const Step3AddDriverConviction = ({ onBack, onAddConviction, editingConviction = null }) => {
   const [formData, setFormData] = useState({
@@ -467,30 +468,21 @@ const Step3AddDriverConviction = ({ onBack, onAddConviction, editingConviction =
         </div>
       </div>
 
-      {/* Action Buttons */}
-      <div className={styles.actionButtons}>
-        <button
-          type="button"
-          className={styles.backBtn}
-          onClick={onBack}
-        >
-          Back
-        </button>
-        <button
-          type="button"
-          className={styles.saveBtn}
-          onClick={() => {
-            const newErrors = validateForm();
-            if (Object.keys(newErrors).length === 0) {
-              onAddConviction(formData);
-            } else {
-              setErrors(newErrors);
-            }
-          }}
-        >
-          Save Conviction
-        </button>
-      </div>
+      <QuoteNavButtons
+        onBack={onBack}
+        onNext={() => {
+          const newErrors = validateForm();
+          if (Object.keys(newErrors).length === 0) {
+            onAddConviction(formData);
+          } else {
+            setErrors(newErrors);
+          }
+        }}
+        backLabel="Back"
+        nextLabel="Save Conviction"
+        currentStep={3}
+        totalSteps={4}
+      />
     </div>
   );
 };
