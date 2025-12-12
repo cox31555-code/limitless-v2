@@ -210,14 +210,29 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
-    const newErrors = validateForm();
-    if (Object.keys(newErrors).length === 0) {
-      onAddConviction(formData);
-    } else {
-      setErrors(newErrors);
-    }
+  const getValidationErrors = () => {
+    return validateForm();
   };
+
+  // Expose validation and submission methods for parent container
+  React.useImperativeHandle(
+    React.useRef(null),
+    () => ({
+      validate: getValidationErrors,
+      getData: () => formData,
+      submit: () => {
+        const newErrors = validateForm();
+        if (Object.keys(newErrors).length === 0) {
+          onAddConviction(formData);
+          return true;
+        } else {
+          setErrors(newErrors);
+          return false;
+        }
+      },
+    }),
+    [formData, onAddConviction]
+  );
 
   return (
     <div className={styles.container}>
