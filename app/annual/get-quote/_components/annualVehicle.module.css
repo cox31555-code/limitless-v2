@@ -67,7 +67,7 @@
 .instructionBox {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: var(--spacing-lg);
   padding: 1.4rem 1.6rem;
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -190,7 +190,7 @@
 .dividerWithText {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: var(--spacing-lg);
   width: 100%;
   margin: 0.8rem 0;
 }
@@ -218,7 +218,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 1.2rem 2rem;
+  padding: var(--spacing-lg) 2rem;
   background: transparent;
   border: 1.5px solid #d5dce3;
   border-radius: 8px;
@@ -257,7 +257,7 @@
 
 /* Change Vehicle Button */
 .changeVehicleBtn {
-  padding: 1.6rem 3.2rem;
+  padding: var(--spacing-xl) 3.2rem;
   background: var(--color-primary);
   color: #ffffff;
   border: none;
@@ -310,7 +310,7 @@
   background: #fff;
   border: 1px solid rgba(3, 136, 255, 0.12);
   border-radius: 10px;
-  padding: 1.6rem;
+  padding: var(--spacing-xl);
   margin: 1.2rem 0 0 0;
   animation: fadeIn 0.3s ease;
 }
@@ -386,7 +386,7 @@
 .dateWithCheckbox {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: var(--spacing-lg);
   flex: 1;
 }
 
@@ -529,7 +529,7 @@
   flex-direction: column;
   gap: 1rem;
   margin: 0.8rem 0 1.2rem;
-  padding: 1.6rem;
+  padding: var(--spacing-xl);
   background: linear-gradient(135deg, rgba(3, 136, 255, 0.05) 0%, rgba(3, 136, 255, 0.02) 100%);
   border: 1px solid rgba(3, 136, 255, 0.1);
   border-radius: 10px;
@@ -617,7 +617,7 @@
 
   .instructionBox {
     padding: 1.4rem 1.6rem;
-    gap: 1.2rem;
+    gap: var(--spacing-lg);
     margin-bottom: 0.8rem;
     opacity: 0.65;
   }
@@ -757,7 +757,7 @@
   }
 
   .instructionBox {
-    padding: 1.2rem 1.4rem;
+    padding: var(--spacing-lg) 1.4rem;
     gap: 1rem;
     margin-bottom: 0.6rem;
     opacity: 0.65;
@@ -908,7 +908,7 @@
   width: 100% !important;
   height: 5rem !important;
   min-height: 5rem !important;
-  padding: 1.2rem 1.6rem !important;
+  padding: var(--spacing-lg) 1.6rem !important;
   font-size: var(--font-size-xl) !important;
   line-height: 1.4 !important;
   border: 1px solid #e0e6f0 !important;
@@ -980,7 +980,7 @@
 .regInputGroup :global(.rs-input) {
   flex: 1;
   min-height: 5rem !important;
-  padding: 1.2rem 1.6rem !important;
+  padding: var(--spacing-lg) 1.6rem !important;
   font-size: var(--font-size-xl) !important;
   border: 1px solid #e0e6f0 !important;
   border-radius: 6px !important;
@@ -996,7 +996,7 @@
 
 .regInputGroup :global(.rs-btn) {
   min-height: 5rem !important;
-  padding: 1.2rem 2.4rem !important;
+  padding: var(--spacing-lg) 2.4rem !important;
   font-size: var(--font-size-xl) !important;
   border-radius: 6px !important;
   white-space: nowrap !important;
@@ -1164,7 +1164,7 @@
   }
 
   .changeVehicleBtn {
-    padding: 1.2rem 2rem;
+    padding: var(--spacing-lg) 2rem;
     font-size: var(--font-size-xl);
   }
 }
