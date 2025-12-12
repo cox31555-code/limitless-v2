@@ -16,7 +16,7 @@
 
 .stepTitle {
   padding-bottom: 1rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
   margin-bottom: 2rem;
 }
 
@@ -79,7 +79,7 @@
   font-weight: 500;
   color: #1a1a2e;
   background: #ffffff;
-  border: 2px solid #e8ecf1;
+  border: 2px solid var(--color-border-primary);
   border-radius: 8px;
   outline: none;
   transition: all 0.2s ease;
@@ -97,7 +97,7 @@
 }
 
 .regInput:focus {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background: #ffffff;
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
 }
@@ -130,7 +130,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #003d7a 100%);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -194,9 +194,9 @@
   padding: 1rem 1.8rem;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -235,7 +235,7 @@
   justify-content: space-between;
   margin-bottom: 2.4rem;
   padding-bottom: 1.6rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
 }
 
 .detailsSectionTitle {
@@ -248,7 +248,7 @@
 .changeLink {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: none;
   border: none;
   cursor: pointer;
@@ -295,7 +295,7 @@
   width: 100%;
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid #e8ecf1;
+  border-top: 1px solid var(--color-border-primary);
 }
 
 .modificationQuestion {
@@ -332,7 +332,7 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  accent-color: #0052a3;
+  accent-color: var(--color-primary-dark);
   flex-shrink: 0;
   border: 2px solid #cbd4dd;
   appearance: none;
@@ -344,8 +344,8 @@
 }
 
 .radioInput:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .radioInput:checked::after {
@@ -361,7 +361,7 @@
 }
 
 .radioInput:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background-color: #f0f6ff;
 }
 
@@ -375,7 +375,7 @@
 .helpLink {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: none;
   border: none;
   cursor: pointer;
@@ -393,7 +393,7 @@
   width: 100%;
   margin-top: 2.4rem;
   padding-top: 2.4rem;
-  border-top: 1px solid #e8ecf1;
+  border-top: 1px solid var(--color-border-primary);
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -411,9 +411,9 @@
   padding: 1.2rem 2.4rem;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 28px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -476,7 +476,7 @@
   padding: 0;
   font-size: 1.4rem;
   font-weight: 500;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -494,7 +494,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: #ffffff;
-  background: #0052a3;
+  background: var(--color-primary-dark);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -512,8 +512,8 @@
   gap: 2rem;
   padding: 2.8rem 3.2rem;
   background: #f8f9fb;
-  border: 2px solid #e8ecf1;
-  border-left: 4px solid #0052a3;
+  border: 2px solid var(--color-border-primary);
+  border-left: 4px solid var(--color-primary-dark);
   border-radius: 12px;
   margin-top: 0;
 }
@@ -538,7 +538,7 @@
 .infoTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   margin: 0 0 0.2rem 0;
   line-height: 1.4;
 }
@@ -557,8 +557,8 @@
   gap: 1.6rem;
   padding: 1.6rem;
   background: #f8f9fb;
-  border: 1px solid #e8ecf1;
-  border-left: 3px solid #0052a3;
+  border: 1px solid var(--color-border-primary);
+  border-left: 3px solid var(--color-primary-dark);
   border-radius: 8px;
   animation: slideIn 0.4s ease;
   max-width: 589px;
@@ -591,7 +591,7 @@
 .foundVehicleTitle {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -618,9 +618,9 @@
   padding: 0.8rem 1.6rem;
   font-size: 1.3rem;
   font-weight: 500;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -629,8 +629,8 @@
 
 .changeVehicleBtn:hover {
   background: #f8f9fb;
-  border-color: #0052a3;
-  color: #0052a3;
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
   box-shadow: 0 1px 3px rgba(0, 82, 163, 0.12);
 }
 
@@ -661,13 +661,13 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 1.6rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
 }
 
 .manualEntryTitle {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.3;
 }
@@ -676,9 +676,9 @@
   padding: 0.8rem 1.6rem;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -689,8 +689,8 @@
 
 .backToRegBtn:hover {
   background: #f8f9fb;
-  border-color: #0052a3;
-  color: #0052a3;
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
   box-shadow: 0 1px 3px rgba(0, 82, 163, 0.12);
 }
 
@@ -1266,7 +1266,7 @@
   font-weight: 500;
   color: #1a1a2e;
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 10px;
   outline: none;
   transition: all 0.2s ease;
@@ -1316,8 +1316,8 @@
   font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
-  background: #0052a3;
-  border: 2px solid #0052a3;
+  background: var(--color-primary-dark);
+  border: 2px solid var(--color-primary-dark);
   border-radius: 25px;
   cursor: pointer;
   white-space: nowrap;
@@ -1409,7 +1409,7 @@
 .label {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.4;
 }
@@ -1436,7 +1436,7 @@
 }
 
 .rsuiteSelect :global(.rs-picker:focus) {
-  border-color: #0052a3 !important;
+  border-color: var(--color-primary-dark) !important;
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1) !important;
   outline: none !important;
 }
@@ -1504,7 +1504,7 @@
 }
 
 .regInputGroup :global(.rs-input:focus) {
-  border-color: #0052a3 !important;
+  border-color: var(--color-primary-dark) !important;
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1) !important;
   outline: none !important;
 }
@@ -1517,8 +1517,8 @@
   white-space: nowrap !important;
   font-family: inherit !important;
   font-weight: 600 !important;
-  border: 1px solid #0052a3 !important;
-  background: #0052a3 !important;
+  border: 1px solid var(--color-primary-dark) !important;
+  background: var(--color-primary-dark) !important;
   color: #ffffff !important;
 }
 
@@ -1537,9 +1537,9 @@
   padding: 1rem 1.6rem !important;
   font-size: 1.5rem !important;
   font-weight: 600 !important;
-  color: #0052a3 !important;
+  color: var(--color-primary-dark) !important;
   background: #ffffff !important;
-  border: 2px solid #0052a3 !important;
+  border: 2px solid var(--color-primary-dark) !important;
   border-radius: 25px !important;
   cursor: pointer !important;
   transition: background-color 0.2s ease !important;
@@ -1567,7 +1567,7 @@
 
 .changeVehicleBtn :global(.rs-btn:hover) {
   background: #ffffff !important;
-  border-color: #0052a3 !important;
+  border-color: var(--color-primary-dark) !important;
   box-shadow: 0 1px 3px rgba(0, 82, 163, 0.15) !important;
 }
 
