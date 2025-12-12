@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./step2AddClaim.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 
 const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   const [formData, setFormData] = useState({
@@ -20,8 +21,6 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   });
 
   const [errors, setErrors] = useState({});
-  const [expandedAtFault, setExpandedAtFault] = useState(false);
-  const [expandedNobodyInCar, setExpandedNobodyInCar] = useState(false);
 
   const damageTypeDropdownOptions = [
     "Damaged - Amount Known",
@@ -125,19 +124,10 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
                   placeholder="Please select..."
                   error={errors.whoAtFault}
                 />
-                <button
-                  type="button"
-                  className={styles.expandableLink}
-                  onClick={() => setExpandedAtFault(!expandedAtFault)}
-                >
-                  <span className={`${styles.expandableIcon} ${expandedAtFault ? styles.expandedIcon : ''}`}>▶</span>
-                  How can I tell who was at fault?
-                </button>
-                {expandedAtFault && (
-                  <div className={styles.expandableContent}>
-                    You're considered 'at fault' if you were held liable for this claim. If your claim is unsettled, please declare that you were at fault.
-                  </div>
-                )}
+                <ExpandableQuestion
+                  question="How can I tell who was at fault?"
+                  answer="You're considered 'at fault' if you were held liable for this claim. If your claim is unsettled, please declare that you were at fault."
+                />
                 {errors.whoAtFault && <span className={styles.error}>{errors.whoAtFault}</span>}
               </div>
 
@@ -152,19 +142,10 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
                   placeholder="Please select..."
                   error={errors.whoWasDriving}
                 />
-                <button
-                  type="button"
-                  className={styles.expandableLink}
-                  onClick={() => setExpandedNobodyInCar(!expandedNobodyInCar)}
-                >
-                  <span className={`${styles.expandableIcon} ${expandedNobodyInCar ? styles.expandedIcon : ''}`}>▶</span>
-                  What if nobody was in the car?
-                </button>
-                {expandedNobodyInCar && (
-                  <div className={styles.expandableContent}>
-                    If the car was unoccupied, then it's the person who was responsible for it at this point.
-                  </div>
-                )}
+                <ExpandableQuestion
+                  question="What if nobody was in the car?"
+                  answer="If the car was unoccupied, then it's the person who was responsible for it at this point."
+                />
                 {errors.whoWasDriving && <span className={styles.error}>{errors.whoWasDriving}</span>}
               </div>
 
