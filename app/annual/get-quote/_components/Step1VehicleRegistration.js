@@ -5,6 +5,7 @@ import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import RegistrationInput from "./RegistrationInput";
 import Step1CarDetailsEdit from "./Step1CarDetailsEdit";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 import styles from "./step1VehicleRegistration.module.css";
 
 const VehicleModificationsModal = dynamic(
@@ -333,9 +334,10 @@ const Step1VehicleRegistration = ({ form, onVehicleFound, autoTriggerLookup = fa
           </label>
         </div>
 
-        <button type="button" className={styles.helpLink}>
-          How can I find out if my car's been modified?
-        </button>
+        <ExpandableQuestion
+          question="How can I find out if my car's been modified?"
+          answer="Modifications include physical or mechanical changes from the manufacturer specification — examples: engine remap, performance exhaust, modified suspension, non-standard wheels, bodykits, aftermarket seats or significant audio upgrades. Check the vehicle's service history, receipts for parts/work, previous owner documentation, or the MOT history for notes. If you are still unsure, consult a dealer, a trusted mechanic, or run a vehicle history check."
+        />
       </div>
 
       {vehicleModified === "Yes" && (
