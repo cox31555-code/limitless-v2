@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./step3CarOwner.module.css";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 
 const Step3CarOwner = ({
   onBack = () => {},
@@ -25,7 +26,6 @@ const Step3CarOwner = ({
   });
 
   const [errors, setErrors] = useState({});
-  const [expandedWhoIsKeeper, setExpandedWhoIsKeeper] = useState(false);
 
   // Sync carOwnerData with formData when it changes (e.g., when returning from adding a person)
   React.useEffect(() => {
