@@ -315,16 +315,7 @@
   animation: fadeIn 0.3s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* @keyframes fadeIn moved to animations.module.css */
 
 .vehicleDataRow {
   margin: 0.8rem 0;
@@ -356,16 +347,7 @@
   animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* @keyframes slideDown moved to animations.module.css */
 
 /* Rows are unified with sections above */
 
@@ -379,14 +361,7 @@
   align-items: start;
 }
 
-@keyframes rowFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* @keyframes rowFadeIn moved to animations.module.css */
 
 .row:last-child {
   margin-bottom: 0;
@@ -403,18 +378,7 @@
   animation: progressiveSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes progressiveSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-12px);
-    max-height: 0;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    max-height: 500px;
-  }
-}
+/* @keyframes progressiveSlideIn moved to animations.module.css */
 
 /* Sections are now unified above */
 
