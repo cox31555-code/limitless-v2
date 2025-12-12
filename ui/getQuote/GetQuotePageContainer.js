@@ -472,18 +472,20 @@ export default function GetQuotePageContainer({
                 )}
               </div>
 
-              {/* Navigation Buttons */}
-              <QuoteNavButtons
-                onBack={handlePreviousStep}
-                onSubmit={handleSubmit}
-                onNext={handleNextStep}
-                isLoading={showLoading || isSubmitting}
-                currentStep={currentStep}
-                vehicleSubStep={vehicleSubStep}
-                personalSubStep={personalSubStep}
-                coverSubStep={coverSubStep}
-                totalSteps={4}
-              />
+              {/* Navigation Buttons - Hidden for substeps with their own buttons */}
+              {!(currentStep === STEP_ENUM.PERSONAL && (personalSubStep === 'addClaim' || personalSubStep === 'addConviction')) && (
+                <QuoteNavButtons
+                  onBack={handlePreviousStep}
+                  onSubmit={handleSubmit}
+                  onNext={handleNextStep}
+                  isLoading={showLoading || isSubmitting}
+                  currentStep={currentStep}
+                  vehicleSubStep={vehicleSubStep}
+                  personalSubStep={personalSubStep}
+                  coverSubStep={coverSubStep}
+                  totalSteps={4}
+                />
+              )}
             </form>
           </div>
 
