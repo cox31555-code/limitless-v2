@@ -22,8 +22,8 @@ const QuoteNavButtons = ({
   // - Not on first step, OR
   // - On step 1 but in a vehicle sub-step after registration, OR
   // - On step 2 (PERSONAL) and in any sub-step (always show back for personal), OR
-  // - On step 3 (COVER) and not on initial cover details
-  const showBackButton = !isFirstStep || (currentStep === 1 && vehicleSubStep !== "registration") || (currentStep === 2) || (currentStep === 3 && (coverSubStep === "additionalDrivers" || coverSubStep === "addDriver"));
+  // - On step 3 (COVER) and in any sub-step (always show back for cover)
+  const showBackButton = !isFirstStep || (currentStep === 1 && vehicleSubStep !== "registration") || (currentStep === 2) || (currentStep === 3);
 
   return (
     <div className={styles.navContainer}>
