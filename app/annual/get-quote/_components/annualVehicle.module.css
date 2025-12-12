@@ -12,12 +12,12 @@
   border: none;
   box-shadow: none;
   width: 100%;
-  gap: 3.2rem;
+  gap: var(--spacing-4xl);
 }
 
 @media (max-width: 640px) {
   .content {
-    gap: 3.2rem;
+    gap: var(--spacing-4xl);
   }
 
   .registrationSection,
@@ -32,7 +32,7 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-2xl);
 }
 
 .sectionHeader {
@@ -108,7 +108,7 @@
 .cleanFormGrid2Col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -117,7 +117,7 @@
 .cleanFormGrid3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -138,8 +138,8 @@
 .registrationSection {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 3.2rem;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-4xl);
   border-radius: 12px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
@@ -152,8 +152,8 @@
 .rows {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  padding: 3.2rem;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-4xl);
   border-radius: 12px;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
@@ -173,7 +173,7 @@
 .registrationInputWrapper {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   align-items: center;
   width: 100%;
   max-width: 100%;
@@ -354,7 +354,7 @@
 .row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -439,7 +439,7 @@
 /* Responsive */
 @media (max-width: 900px) {
   .content {
-    gap: 3.2rem;
+    gap: var(--spacing-4xl);
     padding: 0;
   }
 
@@ -475,7 +475,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: var(--spacing-2xl);
   }
 
   .registrationSection,
@@ -483,7 +483,7 @@
   .ownershipSection,
   .rows {
     padding: 2.4rem;
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     margin-bottom: 0;
   }
 
@@ -648,7 +648,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 2.4rem;
+    gap: var(--spacing-2xl);
     width: 100%;
     box-sizing: border-box;
   }
@@ -658,7 +658,7 @@
   .ownershipSection,
   .rows {
     padding: 2.8rem 2.4rem;
-    gap: 2.4rem;
+    gap: var(--spacing-2xl);
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 0;
@@ -782,7 +782,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     width: 100%;
     box-sizing: border-box;
   }
@@ -791,7 +791,7 @@
   .additionalDetailsSection,
   .ownershipSection,
   .rows {
-    padding: 2rem;
+    padding: var(--spacing-2xl);
     gap: 1.8rem;
     width: 100%;
     box-sizing: border-box;
@@ -850,7 +850,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     width: 100%;
     box-sizing: border-box;
   }
