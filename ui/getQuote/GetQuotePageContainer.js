@@ -326,10 +326,15 @@ export default function GetQuotePageContainer({
                     <lazySteps.claims
                       form={form}
                       claims={claims}
-                      editingIndex={editingClaimIndex}
-                      onAdd={handleAddClaim}
-                      onNavigateToAdd={handleNavigateToAddClaim}
-                      onRemove={handleRemoveClaim}
+                      convictions={convictions}
+                      editingClaimIndex={editingClaimIndex}
+                      editingConvictionIndex={editingConvictionIndex}
+                      onAddClaim={handleNavigateToAddClaim}
+                      onNavigateToAddClaim={handleNavigateToAddClaim}
+                      onAddConviction={handleNavigateToAddConviction}
+                      onNavigateToAddConviction={handleNavigateToAddConviction}
+                      onRemoveClaim={handleRemoveClaim}
+                      onRemoveConviction={handleRemoveConviction}
                     />
                   </Suspense>
                 )}
