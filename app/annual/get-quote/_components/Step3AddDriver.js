@@ -5,6 +5,7 @@ import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import EmploymentAutocomplete from "./EmploymentAutocomplete";
 import { licenseHeldOptions, monthOptions, yearOptions, additionalQualificationsOptions, occupationOptions, industryOptions, studentTypeOptions, otherVehiclesOptions } from "@/app/temporary/get-quote/data";
+import QuoteNavButtons from "./QuoteNavButtons";
 
 const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
   const [formData, setFormData] = useState(editingDriver || {
@@ -880,23 +881,14 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
 
       </div>
 
-      {/* Action Buttons */}
-      <div className={styles.actionButtons}>
-        <button
-          type="button"
-          className={styles.backBtn}
-          onClick={onBack}
-        >
-          Back
-        </button>
-        <button
-          type="button"
-          className={styles.saveBtn}
-          onClick={() => onAddDriver(formData)}
-        >
-          Save Driver
-        </button>
-      </div>
+      <QuoteNavButtons
+        onBack={onBack}
+        onNext={() => onAddDriver(formData)}
+        backLabel="Back"
+        nextLabel="Save Driver"
+        currentStep={3}
+        totalSteps={4}
+      />
     </div>
   );
 };
