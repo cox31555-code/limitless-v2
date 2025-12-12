@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 import styles from "./step1CarDetailsEdit.module.css";
+import QuoteNavButtons from "./QuoteNavButtons";
 
 const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
   const { watch, setValue } = form;
@@ -149,23 +150,14 @@ const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
           </div>
         </div>
 
-        {/* Button Group */}
-        <div className={styles.buttonGroup}>
-          <button
-            type="button"
-            className={styles.backBtn}
-            onClick={onCancel}
-          >
-            Back
-          </button>
-          <button
-            type="button"
-            className={styles.updateBtn}
-            onClick={handleUpdate}
-          >
-            Update
-          </button>
-        </div>
+        <QuoteNavButtons
+          onBack={onCancel}
+          onNext={handleUpdate}
+          backLabel="Back"
+          nextLabel="Update"
+          currentStep={1}
+          totalSteps={4}
+        />
       </div>
     </div>
   );
