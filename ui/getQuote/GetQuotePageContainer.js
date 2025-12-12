@@ -351,12 +351,11 @@ export default function GetQuotePageContainer({
                 {currentStep === STEP_ENUM.PERSONAL && personalSubStep === 'addConviction' && (
                   <Suspense fallback={<StepFallback />}>
                     <lazySteps.addConviction
-                      form={form}
                       onBack={() => {
                         setEditingConvictionIndex(null);
                         orchest.setPersonalSubStep('claims');
                       }}
-                      onAdd={handleAddConviction}
+                      onAddConviction={handleAddConviction}
                       editingConviction={editingConvictionIndex !== null ? convictions[editingConvictionIndex] : null}
                     />
                   </Suspense>
