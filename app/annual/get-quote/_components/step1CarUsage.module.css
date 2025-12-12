@@ -99,6 +99,42 @@
   line-height: 1.4;
 }
 
+.checkbox {
+  composes: checkbox from '../../../../ui/getQuote/shared.module.css';
+}
+
+.checkboxLabel {
+  composes: checkboxLabel from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioGroup {
+  composes: radioGroup from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioOption {
+  composes: radioOption from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioInput {
+  composes: radioInput from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioContent {
+  composes: radioContent from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioLabel {
+  composes: radioLabel from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioDescription {
+  composes: radioDescription from '../../../../ui/getQuote/shared.module.css';
+}
+
+.helpLink {
+  composes: helpLink from '../../../../ui/getQuote/shared.module.css';
+}
+
 .mileageInputWrapper {
   display: flex;
   flex-direction: column;
@@ -120,64 +156,8 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0;
-    gap: 3.2rem;
-  }
-
-  .contentWrapper {
-    max-width: 100%;
-    padding-right: 0;
-    gap: 3.2rem;
-  }
-
-  .section {
-    padding-bottom: 2.8rem;
-    gap: 2rem;
-  }
-
-  .mainQuestion {
-    font-size: 2rem;
-  }
-
-  .subText {
-    font-size: 1.3rem;
-  }
-
   .dateLabel {
     font-size: 1.3rem;
-  }
-
-  .radioInput {
-    width: 18px;
-    height: 18px;
-  }
-
-  .radioInput:checked::after {
-    width: 7px;
-    height: 7px;
-  }
-
-  .checkbox {
-    width: 18px;
-    height: 18px;
-  }
-
-  .checkbox:checked::after {
-    width: 4px;
-    height: 8px;
-  }
-
-  .checkboxLabel {
-    font-size: 1.4rem;
-  }
-
-  .radioLabel {
-    font-size: 1.4rem;
-  }
-
-  .radioDescription {
-    font-size: 1.2rem;
   }
 
   .mileageInputWrapper {
@@ -194,50 +174,7 @@
   }
 }
 
-@media (max-width: 640px) {
-  .container {
-    gap: 1.6rem;
-  }
-
-  .stepTitle {
-    padding-bottom: 26px;
-  }
-
-  .mainQuestion {
-    font-size: 1.6rem;
-  }
-}
-
 @media (max-width: 600px) {
-  .container {
-    padding: 0;
-    gap: 1.6rem;
-    margin: 0;
-  }
-
-  .stepTitleText {
-    font-size: 1.6rem;
-  }
-
-  .contentWrapper {
-    max-width: 100%;
-    padding-right: 0;
-    gap: 2.8rem;
-  }
-
-  .section {
-    padding-bottom: 2.4rem;
-    gap: 1.8rem;
-  }
-
-  .mainQuestion {
-    font-size: 1.6rem;
-  }
-
-  .subText {
-    font-size: 1.6rem;
-  }
-
   .dateLabel {
     font-size: 1.6rem;
   }
@@ -246,65 +183,9 @@
     font-size: 1.6rem;
   }
 
-  .checkboxLabel {
-    font-size: 1.6rem;
-  }
-
-  .radioLabel {
-    font-size: 1.6rem;
-  }
-
-  .radioDescription {
-    font-size: 1.6rem;
-  }
-
-  .helpLink {
-    font-size: 1.6rem;
-  }
-
   .dateInputsWrapper {
     gap: 1.2rem;
     flex-direction: column;
-  }
-
-  .radioInput {
-    width: 18px;
-    height: 18px;
-  }
-
-  .radioInput:checked::after {
-    width: 6px;
-    height: 6px;
-  }
-
-  .checkbox {
-    width: 18px;
-    height: 18px;
-  }
-
-  .checkbox:checked::after {
-    width: 4px;
-    height: 7px;
-  }
-
-  .checkboxLabel {
-    font-size: 1.6rem;
-  }
-
-  .radioLabel {
-    font-size: 1.6rem;
-  }
-
-  .radioDescription {
-    font-size: 1.6rem;
-  }
-
-  .helpLink {
-    font-size: 1.6rem;
-  }
-
-  .radioGroup {
-    gap: 1.1rem;
   }
 
   .mileageInputWrapper {
