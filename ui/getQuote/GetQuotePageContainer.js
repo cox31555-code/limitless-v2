@@ -394,9 +394,8 @@ export default function GetQuotePageContainer({
                 {currentStep === STEP_ENUM.COVER && coverSubStep === 'addDriver' && (
                   <Suspense fallback={<StepFallback />}>
                     <lazySteps.addDriver
-                      form={form}
                       onBack={handleBackFromAddDriver}
-                      onNext={handleAddDriver}
+                      onAddDriver={handleAddDriver}
                       editingDriver={editingDriverIndex !== null ? additionalDrivers[editingDriverIndex] : null}
                     />
                   </Suspense>
