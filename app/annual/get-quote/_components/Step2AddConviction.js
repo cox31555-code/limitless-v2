@@ -4,6 +4,7 @@ import styles from "./step2AddConviction.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
+import QuoteNavButtons from "./QuoteNavButtons";
 
 const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null }) => {
   const [formData, setFormData] = useState({
@@ -468,23 +469,14 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
         </div>
       </div>
 
-      {/* Action Buttons */}
-      <div className={styles.actionButtons}>
-        <button
-          type="button"
-          className={styles.backBtn}
-          onClick={handleBackClick}
-        >
-          Back
-        </button>
-        <button
-          type="button"
-          className={styles.saveBtn}
-          onClick={handleSave}
-        >
-          Save Conviction
-        </button>
-      </div>
+      <QuoteNavButtons
+        onBack={handleBackClick}
+        onNext={handleSave}
+        backLabel="Back"
+        nextLabel="Save Conviction"
+        currentStep={2}
+        totalSteps={4}
+      />
     </div>
   );
 };
