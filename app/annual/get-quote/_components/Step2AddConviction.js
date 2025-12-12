@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./step2AddConviction.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 
 const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null }) => {
   const [formData, setFormData] = useState({
@@ -21,8 +22,6 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
   });
 
   const [errors, setErrors] = useState({});
-  const [expandedConvictionType, setExpandedConvictionType] = useState(false);
-  const [expandedExactDate, setExpandedExactDate] = useState(false);
 
   const locationOptions = ["England, Scotland or Wales (Great Britain)", "Northern Ireland"];
   const convictionTypeOptions = [
