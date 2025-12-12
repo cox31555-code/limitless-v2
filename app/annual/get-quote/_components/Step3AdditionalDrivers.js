@@ -3,19 +3,56 @@ import React from "react";
 import styles from "./step3AdditionalDrivers.module.css";
 
 const Step3AdditionalDrivers = ({
-  additionaDrivers = [],
-  onAddDriver = () => {},
-  onRemoveDriver = () => {},
-  onEditDriver = () => {},
-  hasAdditionalDrivers = null,
-  onHasAdditionalDriversChange = () => {}
+  form,
+  additionalDrivers,
+  additionaDrivers,
+  onAdd,
+  onAddDriver,
+  onRemove,
+  onRemoveDriver,
+  onEdit,
+  onEditDriver,
+  onNext,
+  onBack,
+  hasAdditionalDrivers,
+  onHasAdditionalDriversChange
 }) => {
-  const handleRemoveDriver = (index) => {
-    onRemoveDriver(index);
+  // Prop resolution: support both old and new prop names
+  const drivers = additionalDrivers || additionaDrivers || [];
+  const handleAdd = onAdd || onAddDriver || (() => {});
+  const handleRemove = onRemove || onRemoveDriver || (() => {});
+  const handleEdit = onEdit || onEditDriver || (() => {});
+  
+  // Get current value from form if available, otherwise use prop
+  const currentHasDrivers = form?.watch?.('carUsage.hasAdditionalDrivers') ?? hasAdditionalDrivers;
+
+  // Handle Yes/No selection with form integration and auto-navigation
+  const handleHasDriversChange = (value) => {
+    // Update form if available
+    if (form?.setValue) {
+      form.setValue('carUsage.hasAdditionalDrivers', value, { shouldValidate: true });
+    }
+    
+    // Call prop handler if provided
+    if (onHasAdditionalDriversChange) {
+      onHasAdditionalDriversChange(value);
+    }
+    
+    // Auto-navigate to next substep if user selects "No"
+    if (value === false && onNext) {
+      // Small delay to ensure state updates
+      setTimeout(() => {
+        onNext();
+      }, 100);
+    }
   };
 
-  const handleEditDriver = (index) => {
-    onEditDriver(index);
+  const handleRemoveDriverClick = (index) => {
+    handleRemove(index);
+  };
+
+  const handleEditDriverClick = (index) => {
+    handleEdit(index);
   };
 
   return (
@@ -38,8 +75,8 @@ const Step3AdditionalDrivers = ({
                 type="radio"
                 name="hasAdditionalDrivers"
                 value="Yes"
-                checked={hasAdditionalDrivers === true || hasAdditionalDrivers === "Yes"}
-                onChange={() => onHasAdditionalDriversChange(true)}
+                checked={currentHasDrivers === true || currentHasDrivers === "Yes"}
+                onChange={() => handleHasDriversChange(true)}
                 className={styles.radioInput}
               />
               <span className={styles.radioLabel}>Yes</span>
@@ -50,8 +87,8 @@ const Step3AdditionalDrivers = ({
                 type="radio"
                 name="hasAdditionalDrivers"
                 value="No"
-                checked={hasAdditionalDrivers === false || hasAdditionalDrivers === "No"}
-                onChange={() => onHasAdditionalDriversChange(false)}
+                checked={currentHasDrivers === false || currentHasDrivers === "No"}
+                onChange={() => handleHasDriversChange(false)}
                 className={styles.radioInput}
               />
               <span className={styles.radioLabel}>No</span>
@@ -60,23 +97,23 @@ const Step3AdditionalDrivers = ({
         </div>
 
         {/* Your Additional Drivers Section */}
-        {(hasAdditionalDrivers === true || hasAdditionalDrivers === "Yes") && (
+        {(currentHasDrivers === true || currentHasDrivers === "Yes") && (
           <div className={styles.driversSection}>
             <div className={styles.driversHeader}>
               <h3 className={styles.driversTitle}>Your additional drivers</h3>
               <button
                 type="button"
                 className={styles.addDriverBtn}
-                onClick={onAddDriver}
-                disabled={additionaDrivers.length >= 5}
+                onClick={handleAdd}
+                disabled={drivers.length >= 5}
               >
                 Add a driver
               </button>
             </div>
 
-            {additionaDrivers.length > 0 && (
+            {drivers.length > 0 && (
               <div className={styles.driversList}>
-                {additionaDrivers.map((driver, index) => (
+                {drivers.map((driver, index) => (
                   <div key={index} className={styles.driverCard}>
                     {/* Header with Driver Name and Remove Button */}
                     <div className={styles.cardHeader}>
@@ -97,7 +134,7 @@ const Step3AdditionalDrivers = ({
                       <button
                         type="button"
                         className={styles.removeButton}
-                        onClick={() => handleRemoveDriver(index)}
+                        onClick={() => handleRemoveDriverClick(index)}
                       >
                         Remove driver
                       </button>
@@ -110,7 +147,7 @@ const Step3AdditionalDrivers = ({
                         <button
                           type="button"
                           className={styles.changeButton}
-                          onClick={() => handleEditDriver(index)}
+                          onClick={() => handleEditDriverClick(index)}
                         >
                           Change
                         </button>
@@ -151,7 +188,7 @@ const Step3AdditionalDrivers = ({
                           <button
                             type="button"
                             className={styles.changeButton}
-                            onClick={() => handleEditDriver(index)}
+                            onClick={() => handleEditDriverClick(index)}
                           >
                             Change
                           </button>
@@ -185,7 +222,7 @@ const Step3AdditionalDrivers = ({
                           <button
                             type="button"
                             className={styles.changeButton}
-                            onClick={() => handleEditDriver(index)}
+                            onClick={() => handleEditDriverClick(index)}
                           >
                             Change
                           </button>
@@ -224,7 +261,7 @@ const Step3AdditionalDrivers = ({
                         <button
                           type="button"
                           className={styles.changeButton}
-                          onClick={() => handleEditDriver(index)}
+                          onClick={() => handleEditDriverClick(index)}
                         >
                           Change
                         </button>
@@ -261,7 +298,7 @@ const Step3AdditionalDrivers = ({
                           <button
                             type="button"
                             className={styles.changeButton}
-                            onClick={() => handleEditDriver(index)}
+                            onClick={() => handleEditDriverClick(index)}
                           >
                             Change
                           </button>
@@ -288,7 +325,7 @@ const Step3AdditionalDrivers = ({
                           <button
                             type="button"
                             className={styles.changeButton}
-                            onClick={() => handleEditDriver(index)}
+                            onClick={() => handleEditDriverClick(index)}
                           >
                             Change
                           </button>
@@ -311,7 +348,7 @@ const Step3AdditionalDrivers = ({
               </div>
             )}
 
-            {additionaDrivers.length >= 5 && (
+            {drivers.length >= 5 && (
               <div className={styles.maxDriversMessage}>
                 <span className={styles.maxDriversIcon}>✓</span>
                 <span>You have reached the maximum of 5 additional drivers</span>
