@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 import styles from "./step2PersonalDetails.module.css";
 
 const Step2PersonalDetails = ({ form }) => {
@@ -9,7 +10,6 @@ const Step2PersonalDetails = ({ form }) => {
   
   const title = watch("userDetails.title");
   const maritalStatus = watch("userDetails.maritalStatus");
-  const [expandedUnder17, setExpandedUnder17] = useState(false);
 
   const titleOptions = ["Mr", "Mrs", "Miss", "Ms", "Dr", "Prof"];
   const maritalStatusOptions = ["Single", "Married", "Civil partnership", "Divorced", "Widowed"];
@@ -147,22 +147,10 @@ const Step2PersonalDetails = ({ form }) => {
             </div>
           </div>
 
-          <button 
-            type="button" 
-            className={styles.expandableLink}
-            onClick={() => setExpandedUnder17(!expandedUnder17)}
-          >
-            <span className={styles.expandableIcon}>
-              {expandedUnder17 ? '▼' : '▶'}
-            </span>
-            Can I get a quote if I'm under 17?
-          </button>
-
-          {expandedUnder17 && (
-            <p className={styles.expandableContent}>
-              Yes, you may be able to get a quote if you're under 17. However, you won't be able to purchase a policy until you're 17 years old.
-            </p>
-          )}
+          <ExpandableQuestion
+            question="Can I get a quote if I'm under 17?"
+            answer="Yes, you may be able to get a quote if you're under 17. However, you won't be able to purchase a policy until you're 17 years old."
+          />
         </div>
 
         {/* Relationship Status Section */}
@@ -182,9 +170,10 @@ const Step2PersonalDetails = ({ form }) => {
             />
           </div>
 
-          <button type="button" className={styles.helpLink}>
-            Why are we asking?
-          </button>
+          <ExpandableQuestion
+            question="Why are we asking?"
+            answer="Your relationship status helps us calculate your insurance premium more accurately. Marital status can impact risk assessment and pricing with some insurance providers."
+          />
         </div>
       </div>
     </div>
