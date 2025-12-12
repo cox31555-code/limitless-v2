@@ -420,6 +420,42 @@
    STEP COMPONENT PATTERNS
    ============================================================================ */
 
+/* Step container wrapper */
+.stepContainer {
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+/* Step title section */
+.stepTitle {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border-primary);
+  margin-bottom: 2rem;
+}
+
+.stepTitleText {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Main content wrapper for steps */
+.stepContentWrapper {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-right: 100px;
+  box-sizing: border-box;
+}
+
 /* Section with title and border-bottom (used in step components) */
 .stepSection {
   display: flex;
@@ -453,13 +489,6 @@
   font-weight: 400;
 }
 
-/* Field group container (for multiple related fields) */
-.fieldGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
 /* Question header (combines main question + helper text) */
 .questionHeader {
   display: flex;
@@ -467,34 +496,247 @@
   gap: 1.2rem;
 }
 
-/* Responsive adjustments for step sections */
+/* Field group container (for multiple related fields) */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+/* ============================================================================
+   FORM CONTROLS: CHECKBOXES & RADIO BUTTONS
+   ============================================================================ */
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid var(--color-border-primary);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.checkbox:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 9px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+.checkbox:hover:not(:checked) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-lightest);
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.radioInput {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid var(--color-border-primary);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 0.2rem;
+}
+
+.radioInput:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.radioInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.radioInput:hover:not(:checked) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-lightest);
+}
+
+.radioContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.radioLabel {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.radioDescription {
+  font-size: 1.3rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ============================================================================
+   HELP & ACTION LINKS
+   ============================================================================ */
+
+.helpLink {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.helpLink:hover {
+  color: var(--color-primary-dark);
+}
+
+.helpLink:focus {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS FOR STEP COMPONENTS
+   ============================================================================ */
+
 @media (max-width: 768px) {
+  .stepContainer {
+    padding: 0;
+    gap: 3.2rem;
+  }
+
+  .stepContentWrapper {
+    max-width: 100%;
+    padding-right: 50px;
+  }
+
   .stepSection {
     gap: 1.2rem;
     padding-bottom: 2rem;
   }
 
   .mainQuestion {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .subText {
     font-size: 1.3rem;
   }
+
+  .checkbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  .checkbox:checked::after {
+    width: 4px;
+    height: 8px;
+  }
+
+  .checkboxLabel {
+    font-size: 1.4rem;
+  }
+
+  .radioInput {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radioInput:checked::after {
+    width: 7px;
+    height: 7px;
+  }
+
+  .radioLabel {
+    font-size: 1.4rem;
+  }
+
+  .radioDescription {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 640px) {
-  .stepSection {
-    gap: 1rem;
-    padding-bottom: 1.6rem;
+  .stepContainer {
+    gap: 1.6rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 26px;
   }
 
   .mainQuestion {
     font-size: 1.6rem;
   }
 
-  .subText {
-    font-size: 1.2rem;
+  .stepSection {
+    gap: 1rem;
+    padding-bottom: 1.6rem;
   }
 
   .fieldGroup {
@@ -503,6 +745,71 @@
 
   .questionHeader {
     gap: 0.8rem;
+  }
+
+  .radioInput {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radioInput:checked::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  .radioGroup {
+    gap: 1.4rem;
+  }
+
+  .radioOption {
+    padding: 0.4rem 0;
+  }
+
+  .checkboxLabel {
+    font-size: 1.6rem;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .radioDescription {
+    font-size: 1.6rem;
+  }
+
+  .helpLink {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .stepContainer {
+    padding: 0;
+    gap: 1.6rem;
+    margin: 0;
+  }
+
+  .stepTitleText {
+    font-size: var(--font-size-xl);
+  }
+
+  .mainQuestion {
+    font-size: var(--font-size-xl);
+  }
+
+  .subText {
+    font-size: var(--font-size-xl);
+  }
+
+  .stepContentWrapper {
+    padding-right: 0;
+    gap: 2.8rem;
+  }
+
+  .stepSection {
+    padding-bottom: 2.4rem;
+    gap: 1.8rem;
   }
 }
 
