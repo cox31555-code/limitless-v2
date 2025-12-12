@@ -48,7 +48,7 @@
   margin: 0;
   padding-left: 1.6rem;
   border-left: 4px solid;
-  border-image: linear-gradient(180deg, #0388ff 0%, #0270cc 100%) 1;
+  border-image: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-light) 100%) 1;
   letter-spacing: -0.4px;
   line-height: 1.3;
 }
@@ -258,7 +258,7 @@
 /* Change Vehicle Button */
 .changeVehicleBtn {
   padding: 1.6rem 3.2rem;
-  background: #0388ff;
+  background: var(--color-primary);
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -271,7 +271,7 @@
 }
 
 .changeVehicleBtn:hover {
-  background: #0270cc;
+  background: var(--color-primary-light);
 }
 
 .changeVehicleBtn:active {
@@ -279,7 +279,7 @@
 }
 
 .regBtn {
-  color: #0388ff;
+  color: var(--color-primary);
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -298,7 +298,7 @@
 }
 
 .regBtn:hover {
-  color: #0270cc;
+  color: var(--color-primary-light);
   transform: translateX(2px);
 }
 
@@ -321,7 +321,7 @@
   margin: 0.8rem 0;
   font-size: 1.3rem;
   line-height: 160%;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -399,7 +399,7 @@
 .haventBoughtBtn {
   background: transparent;
   border: none;
-  color: #0388ff;
+  color: var(--color-primary);
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.03em;
@@ -412,7 +412,7 @@
 }
 
 .haventBoughtBtn:hover {
-  color: #0270cc;
+  color: var(--color-primary-light);
 }
 
 /* Owner/Keeper Field Wrappers for "Other" input */
@@ -560,7 +560,7 @@
 .editModificationsBtn {
   background: transparent;
   border: 1.5px solid rgba(3, 136, 255, 0.12);
-  color: #0388ff;
+  color: var(--color-primary);
   padding: 0.4rem 1rem;
   border-radius: 6px;
   font-size: 1.1rem;
@@ -573,7 +573,7 @@
 .editModificationsBtn:hover {
   border-color: rgba(3, 136, 255, 0.25);
   background: #f0f6ff;
-  color: #0270cc;
+  color: var(--color-primary-light);
 }
 
 .modificationsTagsList {
@@ -899,7 +899,7 @@
 .label {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   margin: 0;
   line-height: 1.4;
 }
@@ -921,7 +921,7 @@
 }
 
 .rsuiteSelect :global(.rs-picker:focus) {
-  border-color: #0052a3 !important;
+  border-color: var(--color-primary-dark) !important;
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1) !important;
   outline: none !important;
 }
@@ -932,7 +932,7 @@
 }
 
 .rsuiteSelect.error :global(.rs-picker) {
-  border-color: #ef4444 !important;
+  border-color: var(--color-error) !important;
 }
 
 /* RSuite Dropdown Menu Styling */
@@ -989,7 +989,7 @@
 }
 
 .regInputGroup :global(.rs-input:focus) {
-  border-color: #0052a3 !important;
+  border-color: var(--color-primary-dark) !important;
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.1) !important;
   outline: none !important;
 }
@@ -1002,14 +1002,14 @@
   white-space: nowrap !important;
   font-family: inherit !important;
   font-weight: 600 !important;
-  border: 1px solid #0052a3 !important;
-  background: #0052a3 !important;
+  border: 1px solid var(--color-primary-dark) !important;
+  background: var(--color-primary-dark) !important;
   color: #ffffff !important;
 }
 
 .errorMessage {
   font-size: 1.2rem;
-  color: #ef4444;
+  color: var(--color-error);
   margin-top: 0.4rem;
   line-height: 1.4;
 }
@@ -1022,7 +1022,7 @@
   padding: 1rem 1.6rem !important;
   font-size: 1.3rem !important;
   font-weight: 500 !important;
-  color: #0388ff !important;
+  color: var(--color-primary) !important;
   background: transparent !important;
   border: 1px solid #e8ecf1 !important;
   border-radius: 6px !important;
@@ -1033,7 +1033,7 @@
 
 .manualEntryBtn:hover {
   background: #f0f6ff !important;
-  border-color: #0388ff !important;
+  border-color: var(--color-primary) !important;
   box-shadow: 0 1px 3px rgba(3, 136, 255, 0.15) !important;
 }
 
@@ -1052,14 +1052,14 @@
 
 .changeVehicleBtn:hover {
   background: #ffffff;
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   box-shadow: 0 1px 3px rgba(0, 82, 163, 0.15);
 }
 
 .haventBoughtBtn {
   background: transparent !important;
   border: none !important;
-  color: #0388ff !important;
+  color: var(--color-primary) !important;
   font-size: 1.1rem !important;
   font-weight: 500 !important;
   letter-spacing: 0.03em !important;
@@ -1072,13 +1072,13 @@
 }
 
 .haventBoughtBtn:hover {
-  color: #0270cc !important;
+  color: var(--color-primary-light) !important;
 }
 
 .editModificationsBtn {
   background: transparent !important;
   border: 1.5px solid rgba(3, 136, 255, 0.12) !important;
-  color: #0388ff !important;
+  color: var(--color-primary) !important;
   padding: 0.4rem 1rem !important;
   border-radius: 6px !important;
   font-size: 1.1rem !important;
@@ -1092,7 +1092,7 @@
 .editModificationsBtn:hover {
   border-color: rgba(3, 136, 255, 0.25) !important;
   background: #f0f6ff !important;
-  color: #0270cc !important;
+  color: var(--color-primary-light) !important;
 }
 
 @media (max-width: 768px) {
