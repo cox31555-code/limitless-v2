@@ -4,6 +4,8 @@ import styles from "./step2AddClaim.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
 import QuoteNavButtons from "./QuoteNavButtons";
 
 const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
@@ -49,14 +51,12 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
     if (!formData.mainPolicyholder) newErrors.mainPolicyholder = "Please answer this question";
     if (!formData.ncdAffected) newErrors.ncdAffected = "Please answer this question";
     
-    // Validate conditional accident questions
     if (formData.incidentType === "Accident") {
       if (!formData.whoAtFault) newErrors.whoAtFault = "Please select who was at fault";
       if (!formData.whoWasDriving) newErrors.whoWasDriving = "Please select who was driving";
       if (!formData.wereThereInjuries) newErrors.wereThereInjuries = "Please answer this question";
     }
 
-    // Validate conditional theft question
     if (formData.incidentType === "Theft") {
       if (!formData.theftType) newErrors.theftType = "Please select type of theft";
     }
@@ -74,15 +74,12 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Add a claim</h2>
-      </div>
-
-      <div className={styles.contentWrapper}>
-        {/* Incident Type */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>What type of incident was it?</h3>
+    <div>
+      <StepContainer title="Add a claim">
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>What type of incident was it?</h3>
+          </div>
           <div className={styles.radioGroup}>
             {["Accident", "Theft", "Other"].map((type) => (
               <label key={type} className={styles.radioOption}>
@@ -111,12 +108,10 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           </div>
           {errors.incidentType && <span className={styles.error}>{errors.incidentType}</span>}
 
-          {/* Conditional Accident Questions - Directly under incident type */}
           {formData.incidentType === "Accident" && (
             <>
-              {/* Who was at fault */}
-              <div className={styles.conditionalSection}>
-                <h3 className={styles.questionTitle}>Who was at fault?</h3>
+              <div className={sharedStyles.stepSection} style={{ marginTop: '2rem', paddingTop: 0, borderTop: 'none' }}>
+                <h3 className={sharedStyles.mainQuestion}>Who was at fault?</h3>
                 <Dropdown
                   label=""
                   selected={formData.whoAtFault}
@@ -132,9 +127,8 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
                 {errors.whoAtFault && <span className={styles.error}>{errors.whoAtFault}</span>}
               </div>
 
-              {/* Who was driving */}
-              <div className={styles.conditionalSection}>
-                <h3 className={styles.questionTitle}>Who was driving?</h3>
+              <div className={sharedStyles.stepSection} style={{ marginTop: '2rem', paddingTop: 0, borderTop: 'none' }}>
+                <h3 className={sharedStyles.mainQuestion}>Who was driving?</h3>
                 <Dropdown
                   label=""
                   selected={formData.whoWasDriving}
@@ -150,9 +144,8 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
                 {errors.whoWasDriving && <span className={styles.error}>{errors.whoWasDriving}</span>}
               </div>
 
-              {/* Were there injuries */}
-              <div className={styles.conditionalSection}>
-                <h3 className={styles.questionTitle}>Were there any injuries?</h3>
+              <div className={sharedStyles.stepSection} style={{ marginTop: '2rem', paddingTop: 0, borderTop: 'none' }}>
+                <h3 className={sharedStyles.mainQuestion}>Were there any injuries?</h3>
                 <div className={styles.radioGroup}>
                   {injuryOptions.map((option) => (
                     <label key={option} className={styles.radioOption}>
@@ -173,10 +166,9 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
             </>
           )}
 
-          {/* Conditional Theft Question - Directly under incident type */}
           {formData.incidentType === "Theft" && (
-            <div className={styles.conditionalSection}>
-              <h3 className={styles.questionTitle}>What type of theft was it?</h3>
+            <div className={sharedStyles.stepSection} style={{ marginTop: '2rem', paddingTop: 0, borderTop: 'none' }}>
+              <h3 className={sharedStyles.mainQuestion}>What type of theft was it?</h3>
               <Dropdown
                 label=""
                 selected={formData.theftType}
@@ -190,10 +182,11 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           )}
         </div>
 
-        {/* Date of Incident */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>When did the incident happen?</h3>
-          <p className={styles.sectionDescription}>If you're unsure, you can check with the insurance provider you were with at the time. You can request info about your previous insurance providers within the last 7 years by visiting <a href="http://www.mib.org.uk" target="_blank" rel="noopener noreferrer" className={styles.link}>www.mib.org.uk</a>.</p>
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>When did the incident happen?</h3>
+            <p className={sharedStyles.subText}>If you're unsure, you can check with the insurance provider you were with at the time. You can request info about your previous insurance providers within the last 7 years by visiting <a href="http://www.mib.org.uk" target="_blank" rel="noopener noreferrer" className={styles.link}>www.mib.org.uk</a>.</p>
+          </div>
           <div className={styles.dateInputsWrapper}>
             <div className={styles.dateInputGroup}>
               <label className={styles.inputLabel}>Day</label>
@@ -255,9 +248,8 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           {errors.date && <span className={styles.error}>{errors.date}</span>}
         </div>
 
-        {/* Damage Type */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>What type of damage was suffered?</h3>
+        <div className={sharedStyles.stepSection}>
+          <h3 className={sharedStyles.mainQuestion}>What type of damage was suffered?</h3>
           <Dropdown
             label=""
             selected={formData.damageType}
@@ -269,10 +261,9 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           {errors.damageType && <span className={styles.error}>{errors.damageType}</span>}
         </div>
 
-        {/* Main Policyholder */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>Was the claim made against your insurance policy?</h3>
-          <p className={styles.sectionDescription}>We want to know if you were the main policyholder when the claim was made.</p>
+        <div className={sharedStyles.stepSection}>
+          <h3 className={sharedStyles.mainQuestion}>Was the claim made against your insurance policy?</h3>
+          <p className={sharedStyles.subText}>We want to know if you were the main policyholder when the claim was made.</p>
           <div className={styles.radioGroup}>
             {["Yes", "No"].map((option) => (
               <label key={option} className={styles.radioOption}>
@@ -291,10 +282,9 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           {errors.mainPolicyholder && <span className={styles.error}>{errors.mainPolicyholder}</span>}
         </div>
 
-        {/* NCD Affected */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>Was the no claims discount affected?</h3>
-          <p className={styles.sectionDescription}>No Claims Discount (NCD) is sometimes referred to as No Claims Bonus.</p>
+        <div className={sharedStyles.stepSection}>
+          <h3 className={sharedStyles.mainQuestion}>Was the no claims discount affected?</h3>
+          <p className={sharedStyles.subText}>No Claims Discount (NCD) is sometimes referred to as No Claims Bonus.</p>
           <div className={styles.radioGroup}>
             {["Yes", "No"].map((option) => (
               <label key={option} className={styles.radioOption}>
@@ -312,7 +302,7 @@ const Step2AddClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           </div>
           {errors.ncdAffected && <span className={styles.error}>{errors.ncdAffected}</span>}
         </div>
-      </div>
+      </StepContainer>
 
       <QuoteNavButtons
         onBack={onBack}

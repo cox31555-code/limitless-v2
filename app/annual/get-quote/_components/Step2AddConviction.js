@@ -4,6 +4,8 @@ import styles from "./step2AddConviction.module.css";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
 import QuoteNavButtons from "./QuoteNavButtons";
 
 const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null }) => {
@@ -221,15 +223,12 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Add a conviction</h2>
-      </div>
-
-      <div className={styles.contentWrapper}>
-        {/* Location */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>Where did you get this conviction?</h3>
+    <div>
+      <StepContainer title="Add a conviction">
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>Where did you get this conviction?</h3>
+          </div>
           <div className={styles.radioGroup}>
             {locationOptions.map((option) => (
               <label key={option} className={styles.radioOption}>
@@ -248,9 +247,10 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           {errors.location && <span className={styles.error}>{errors.location}</span>}
         </div>
 
-        {/* Conviction Type */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>What was the conviction type?</h3>
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>What was the conviction type?</h3>
+          </div>
           <Dropdown
             label=""
             selected={formData.convictionType}
@@ -265,10 +265,9 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           />
           {errors.convictionType && <span className={styles.error}>{errors.convictionType}</span>}
 
-          {/* Conditional: Conviction Reason */}
           {formData.convictionType && (
-            <div className={styles.conditionalSection}>
-              <h3 className={styles.questionTitle}>What was the conviction for?</h3>
+            <div className={sharedStyles.stepSection} style={{ marginTop: '2rem', paddingTop: 0, borderTop: 'none' }}>
+              <h3 className={sharedStyles.mainQuestion}>What was the conviction for?</h3>
               <Dropdown
                 label=""
                 selected={formData.convictionReason}
@@ -282,9 +281,10 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           )}
         </div>
 
-        {/* Date of Conviction */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>When did you receive the conviction?</h3>
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>When did you receive the conviction?</h3>
+          </div>
           <div className={styles.dateInputsWrapper}>
             <div className={styles.dateInputGroup}>
               <label className={styles.inputLabel}>Day</label>
@@ -350,9 +350,8 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           {errors.date && <span className={styles.error}>{errors.date}</span>}
         </div>
 
-        {/* Penalty Points */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>Were penalty points given for this conviction?</h3>
+        <div className={sharedStyles.stepSection}>
+          <h3 className={sharedStyles.mainQuestion}>Were penalty points given for this conviction?</h3>
           <div className={styles.radioGroup}>
             {["Yes", "No"].map((option) => (
               <label key={option} className={styles.radioOption}>
@@ -370,11 +369,10 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           </div>
           {errors.penaltyPoints && <span className={styles.error}>{errors.penaltyPoints}</span>}
 
-          {/* Conditional: Penalty Points Amount */}
           {formData.penaltyPoints === "Yes" && (
-            <div className={styles.conditionalSection}>
-              <h3 className={styles.questionTitle}>How many points did you receive for this conviction?</h3>
-              <p className={styles.sectionDescription}>It'll be between 1 and 11.</p>
+            <div className={sharedStyles.stepSection} style={{ marginTop: '2rem', paddingTop: 0, borderTop: 'none' }}>
+              <h3 className={sharedStyles.mainQuestion}>How many points did you receive for this conviction?</h3>
+              <p className={sharedStyles.subText}>It'll be between 1 and 11.</p>
               <CustomTextInput
                 type="text"
                 placeholder="Enter number of points"
@@ -393,9 +391,8 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           )}
         </div>
 
-        {/* Fine */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>Did the conviction result in a fine?</h3>
+        <div className={sharedStyles.stepSection}>
+          <h3 className={sharedStyles.mainQuestion}>Did the conviction result in a fine?</h3>
           <div className={styles.radioGroup}>
             {["Yes", "No"].map((option) => (
               <label key={option} className={styles.radioOption}>
@@ -413,10 +410,9 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           </div>
           {errors.resultedInFine && <span className={styles.error}>{errors.resultedInFine}</span>}
 
-          {/* Conditional: Fine Amount */}
           {formData.resultedInFine === "Yes" && (
-            <div className={styles.conditionalSection}>
-              <h3 className={styles.questionTitle}>How much were you fined for this conviction?</h3>
+            <div className={sharedStyles.stepSection} style={{ marginTop: '2rem', paddingTop: 0, borderTop: 'none' }}>
+              <h3 className={sharedStyles.mainQuestion}>How much were you fined for this conviction?</h3>
               <CustomTextInput
                 type="text"
                 placeholder="Enter amount"
@@ -429,9 +425,8 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           )}
         </div>
 
-        {/* Driving Ban */}
-        <div className={styles.section}>
-          <h3 className={styles.questionTitle}>Did the conviction result in a driving ban?</h3>
+        <div className={sharedStyles.stepSection}>
+          <h3 className={sharedStyles.mainQuestion}>Did the conviction result in a driving ban?</h3>
           <div className={styles.radioGroup}>
             {["Yes", "No"].map((option) => (
               <label key={option} className={styles.radioOption}>
@@ -449,11 +444,10 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
           </div>
           {errors.resultedInBan && <span className={styles.error}>{errors.resultedInBan}</span>}
 
-          {/* Conditional: Ban Duration */}
           {formData.resultedInBan === "Yes" && (
-            <div className={styles.conditionalSection}>
-              <h3 className={styles.questionTitle}>How many months were you banned from driving for this conviction?</h3>
-              <p className={styles.sectionDescription}>Enter the length of the ban to the nearest month. So for 5 weeks you would enter 1 month.</p>
+            <div className={sharedStyles.stepSection} style={{ marginTop: '2rem', paddingTop: 0, borderTop: 'none' }}>
+              <h3 className={sharedStyles.mainQuestion}>How many months were you banned from driving for this conviction?</h3>
+              <p className={sharedStyles.subText}>Enter the length of the ban to the nearest month. So for 5 weeks you would enter 1 month.</p>
               <CustomTextInput
                 type="text"
                 placeholder="Enter number of months"
@@ -467,7 +461,7 @@ const Step2AddConviction = ({ onBack, onAddConviction, editingConviction = null 
             </div>
           )}
         </div>
-      </div>
+      </StepContainer>
 
       <QuoteNavButtons
         onBack={handleBackClick}
