@@ -38,7 +38,7 @@
 }
 
 .progressHeader:focus-visible {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
@@ -54,7 +54,7 @@
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(90deg, var(--color-primary-dark) 0%, #003d7a 100%);
   border-radius: 3px;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -84,7 +84,7 @@
   border: none;
   padding: 0.4rem;
   cursor: pointer;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   transition: color 0.2s ease, transform 0.3s ease;
   flex-shrink: 0;
 }
@@ -94,7 +94,7 @@
 }
 
 .mobileToggleBtn:focus-visible {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -142,7 +142,7 @@
   top: 28px;
   bottom: auto;
   width: 4px;
-  background: linear-gradient(180deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(180deg, var(--color-primary-dark) 0%, #003d7a 100%);
   border-radius: 3px;
   z-index: 1;
   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -219,8 +219,8 @@
 }
 
 .stepButton.active .stepButtonContent .stepIcon {
-  background: #0052a3;
-  border-color: #0052a3;
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
   color: #ffffff;
   border-style: none;
   border-width: 1px;
@@ -228,8 +228,8 @@
 
 .stepButton.completed .stepButtonContent .stepIcon {
   background: #ffffff;
-  border-color: #0052a3;
-  color: #0052a3;
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
   border-width: 3px;
   box-shadow: 0 2px 8px rgba(0, 82, 163, 0.15);
 }
@@ -250,17 +250,17 @@
 }
 
 .stepButtonContent:hover .stepTitle {
-  color: #0052a3;
+  color: var(--color-primary-dark);
 }
 
 .stepButton.active .stepButtonContent .stepTitle {
-  color: #0052a3;
+  color: var(--color-primary-dark);
   font-weight: 600;
   font-size: 1.7rem;
 }
 
 .stepButton.active .stepButtonContent:hover .stepTitle {
-  color: #0052a3;
+  color: var(--color-primary-dark);
 }
 
 .stepButton.completed .stepButtonContent .stepTitle {
@@ -271,7 +271,7 @@
 .stepExpandBtn {
   background: transparent;
   border: none;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   cursor: pointer;
   padding: 0.6rem;
   display: flex;
@@ -332,7 +332,7 @@
 }
 
 .subStepButton:hover {
-  color: #0052a3;
+  color: var(--color-primary-dark);
 }
 
 .subStepItem::before {
@@ -351,22 +351,22 @@
 
 /* Active substep styling with blue dot */
 .activeSubStep {
-  color: #0052a3;
+  color: var(--color-primary-dark);
   font-weight: 600;
 }
 
 .activeSubStep .subStepButton {
-  color: #0052a3;
+  color: var(--color-primary-dark);
   font-weight: 600;
   cursor: default;
 }
 
 .activeSubStep .subStepButton:hover {
-  color: #0052a3;
+  color: var(--color-primary-dark);
 }
 
 .activeSubStep::before {
-  background: #0052a3;
+  background: var(--color-primary-dark);
   width: 9px;
   height: 9px;
   box-shadow: 0 0 10px rgba(0, 82, 163, 0.5);
@@ -380,7 +380,7 @@
   transform: translateY(-50%);
   width: 3px;
   height: 100%;
-  background: linear-gradient(180deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(180deg, var(--color-primary-dark) 0%, #003d7a 100%);
   border-radius: 2px;
   box-shadow: 0 0 8px rgba(0, 82, 163, 0.3);
 }
@@ -410,7 +410,7 @@
   top: 0;
   width: 100%;
   height: var(--substep-progress, 100%);
-  background: linear-gradient(180deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(180deg, var(--color-primary-dark) 0%, #003d7a 100%);
   box-shadow: 0 0 12px rgba(0, 82, 163, 0.4);
   border-radius: 3px;
   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
