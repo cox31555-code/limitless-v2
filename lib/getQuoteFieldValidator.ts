@@ -239,7 +239,7 @@ export const STEP_SUBSTEP_MAP = {
  * Some flows start with 'carOwner' instead of 'details'
  */
 export const DEFAULT_COVER_SUBSTEP: Record<InsuranceType, string> = {
-  Annual: 'details',
+  Annual: 'additionalDrivers',
   Temp: 'carOwner',
   Impound: 'carOwner',
 } as const;
