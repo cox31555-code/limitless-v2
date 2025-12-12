@@ -485,6 +485,31 @@ const Step3AddDriverConviction = ({ onBack, onAddConviction, editingConviction =
           )}
         </div>
       </div>
+
+      {/* Action Buttons */}
+      <div className={styles.actionButtons}>
+        <button
+          type="button"
+          className={styles.backBtn}
+          onClick={onBack}
+        >
+          Back
+        </button>
+        <button
+          type="button"
+          className={styles.saveBtn}
+          onClick={() => {
+            const newErrors = validateForm();
+            if (Object.keys(newErrors).length === 0) {
+              onAddConviction(formData);
+            } else {
+              setErrors(newErrors);
+            }
+          }}
+        >
+          Save Conviction
+        </button>
+      </div>
     </div>
   );
 };
