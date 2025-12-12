@@ -386,7 +386,7 @@ export default function GetQuotePageContainer({
                       onAdd={handleNavigateToAddDriver}
                       onRemove={handleRemoveDriver}
                       onNext={handleNavigateToCarOwner}
-                      onBack={handleBackFromCoverDetails}
+                      onBack={handlePreviousStep}
                     />
                   </Suspense>
                 )}
@@ -413,15 +413,6 @@ export default function GetQuotePageContainer({
                   </Suspense>
                 )}
 
-                {currentStep === STEP_ENUM.COVER && coverSubStep === 'cover' && (
-                  <Suspense fallback={<StepFallback />}>
-                    <lazySteps.cover
-                      form={form}
-                      onBack={handleBackFromCoverDetails}
-                      onNext={handleNcdDataSubmit}
-                    />
-                  </Suspense>
-                )}
 
                 {currentStep === STEP_ENUM.COVER && coverSubStep === 'ncd' && (
                   <Suspense fallback={<StepFallback />}>
