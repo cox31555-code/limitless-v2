@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./step3CarOwner.module.css";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 
 const Step3NoClaimsDiscount = ({
   onBack = () => {},
@@ -16,9 +17,6 @@ const Step3NoClaimsDiscount = ({
   });
 
   const [errors, setErrors] = useState({});
-  const [expandedHowFindNCD, setExpandedHowFindNCD] = useState(false);
-  const [expandedNamedDriver, setExpandedNamedDriver] = useState(false);
-  const [expandedProof, setExpandedProof] = useState(false);
 
   const ncdOptions = [
     "No NCD",
@@ -150,20 +148,10 @@ const Step3NoClaimsDiscount = ({
             </p>
           </div>
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedHowFindNCD(!expandedHowFindNCD)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedHowFindNCD ? styles.expandedIcon : ''}`}>▼</span>
-            How do I find out?
-          </button>
-
-          {expandedHowFindNCD && (
-            <div className={styles.expandableContent}>
-              Your no claims discount information should be on your previous insurance policy documents or renewal notice. If you're unsure, contact your previous insurer directly.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="How do I find out?"
+            answer="Your no claims discount information should be on your previous insurance policy documents or renewal notice. If you're unsure, contact your previous insurer directly."
+          />
 
           <div className={styles.fieldWrapper}>
             <Dropdown
@@ -176,20 +164,10 @@ const Step3NoClaimsDiscount = ({
             {errors.noClaimsDiscount && <span className={styles.error}>{errors.noClaimsDiscount}</span>}
           </div>
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedNamedDriver(!expandedNamedDriver)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedNamedDriver ? styles.expandedIcon : ''}`}>▼</span>
-            Can a named driver use their NCD on my policy?
-          </button>
-
-          {expandedNamedDriver && (
-            <div className={styles.expandableContent}>
-              No, only the main driver can use their NCD on the policy. Named drivers cannot transfer their own no claims discount to your policy.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="Can a named driver use their NCD on my policy?"
+            answer="No, only the main driver can use their NCD on the policy. Named drivers cannot transfer their own no claims discount to your policy."
+          />
         </div>
 
         {/* Named Driver Experience Question - Show if No NCD */}
@@ -261,20 +239,10 @@ const Step3NoClaimsDiscount = ({
               </p>
             </div>
 
-            <button
-              type="button"
-              className={styles.expandableLink}
-              onClick={() => setExpandedProof(!expandedProof)}
-            >
-              <span className={`${styles.expandableIcon} ${expandedProof ? styles.expandedIcon : ''}`}>▼</span>
-              What proof do I need?
-            </button>
-
-            {expandedProof && (
-              <div className={styles.expandableContent}>
-                You'll typically need proof of your no claims discount from your previous insurer, such as a reference number, renewal document, or cancellation notice.
-              </div>
-            )}
+            <ExpandableQuestion
+              question="What proof do I need?"
+              answer="You'll typically need proof of your no claims discount from your previous insurer, such as a reference number, renewal document, or cancellation notice."
+            />
 
             <div className={styles.radioGroup}>
               {ncdEarnedHowOptions.map((option) => (
