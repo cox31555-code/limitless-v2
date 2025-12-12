@@ -169,6 +169,6 @@
 
 @media (max-width: 640px) {
   .sidebarArea {
-    background-color: rgba(241, 249, 255, 1);
+    background-color: var(--color-bg-secondary);
   }
 }
