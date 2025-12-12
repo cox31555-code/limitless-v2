@@ -350,19 +350,10 @@ const Step3AddDriverConviction = ({ onBack, onAddConviction, editingConviction =
               />
             </div>
           </div>
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedExactDate(!expandedExactDate)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedExactDate ? styles.expandedIcon : ''}`}>▶</span>
-            How can I find out the exact date?
-          </button>
-          {expandedExactDate && (
-            <div className={styles.expandableContent}>
-              Check their driving licence, court documents, or contact the DVLA for the exact date of the conviction.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="How can I find out the exact date?"
+            answer="Check their driving licence, court documents, or contact the DVLA for the exact date of the conviction."
+          />
           {errors.date && <span className={styles.error}>{errors.date}</span>}
         </div>
 
