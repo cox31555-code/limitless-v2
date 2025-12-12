@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./step4CheckYourAnswers.module.css";
-import buttonStyles from "./step3CarOwner.module.css";
+import QuoteNavButtons from "./QuoteNavButtons";
 
 const Step4CheckYourAnswers = ({
   form,
@@ -508,14 +508,15 @@ const Step4CheckYourAnswers = ({
         </div>
       </div>
 
-      <div className={buttonStyles.buttonGroup}>
-        <button type="button" className={buttonStyles.backBtn} onClick={onBack} disabled={isLoading}>
-          Back
-        </button>
-        <button type="button" className={buttonStyles.nextBtn} onClick={onSubmit} disabled={isLoading}>
-          {isLoading ? "Searching..." : "Get Quotes"}
-        </button>
-      </div>
+      <QuoteNavButtons
+        onBack={onBack}
+        onNext={onSubmit}
+        backLabel="Back"
+        nextLabel="Get Quotes"
+        currentStep={4}
+        totalSteps={4}
+        isLoading={isLoading}
+      />
     </div>
   );
 };
