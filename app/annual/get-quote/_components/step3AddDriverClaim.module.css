@@ -332,6 +332,42 @@
   outline-offset: 2px;
 }
 
+.actionButtons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 3.2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e8ecf1;
+}
+
+.saveBtn {
+  padding: 1.3rem 2.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border: none;
+  border-radius: 110px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saveBtn:hover {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
+}
+
+.saveBtn:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
   .contentWrapper {
     padding-right: 0;
