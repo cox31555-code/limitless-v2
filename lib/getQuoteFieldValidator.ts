@@ -156,13 +156,28 @@ export function getFieldsForStep(
       }
 
     case STEPS.COVER:
-      // Return cover fields based on insurance type
-      if (insuranceType === 'Temp') {
-        return coverFieldsTemporary;
-      } else if (insuranceType === 'Impound') {
-        return coverFieldsImpound;
+      // Validate based on substep for more granular control
+      switch (subStep) {
+        case 'additionalDrivers':
+          return ['carUsage.hasAdditionalDrivers'];
+        case 'carOwner':
+          return ['vehicleDetails.legalOwner', 'vehicleDetails.registeredKeeper'];
+        case 'details':
+        case 'cover':
+          if (insuranceType === 'Temp') return coverFieldsTemporary;
+          if (insuranceType === 'Impound') return coverFieldsImpound;
+          return coverFieldsAnnual;
+        case 'ncd':
+          return ['ncdData.noClaimsDiscount'];
+        case 'additionalProducts':
+          return [];
+        case 'contactInformation':
+          return ['userDetails.email', 'userDetails.phone'];
+        default:
+          if (insuranceType === 'Temp') return coverFieldsTemporary;
+          if (insuranceType === 'Impound') return coverFieldsImpound;
+          return coverFieldsAnnual;
       }
-      return coverFieldsAnnual;
 
     case STEPS.CHECK_ANSWERS:
       return []; // No field validation needed for check answers step
