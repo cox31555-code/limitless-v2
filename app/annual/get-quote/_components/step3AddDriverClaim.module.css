@@ -74,19 +74,19 @@
 }
 
 .link {
-  color: #0388ff;
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover {
-  color: #0270cc;
+  color: var(--color-primary-light);
   text-decoration: underline;
 }
 
 .link:focus {
-  outline: 2px solid #0388ff;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -123,8 +123,8 @@
 }
 
 .radioInput:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .radioInput:checked::after {
@@ -140,7 +140,7 @@
 }
 
 .radioInput:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background-color: #f0f6ff;
 }
 
@@ -154,7 +154,7 @@
 .radioLabel {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #1a1a2e;
+  color: var(--color-text-primary);
   margin: 0;
   line-height: 1.5;
   cursor: pointer;
@@ -199,7 +199,7 @@
 .inputLabel {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.3;
   letter-spacing: -0.01em;
@@ -208,7 +208,7 @@
 .expandableLink {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: none;
   border: none;
   cursor: pointer;
@@ -223,11 +223,11 @@
 }
 
 .expandableLink:hover {
-  color: #003d7a;
+  color: var(--color-primary-darker);
 }
 
 .expandableLink:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -251,7 +251,7 @@
   line-height: 1.65;
   font-weight: 400;
   padding-left: 1.6rem;
-  border-left: 3px solid #0052a3;
+  border-left: 3px solid var(--color-primary-dark);
   padding-bottom: 26px;
   animation: slideDown 0.2s ease;
 }
@@ -287,9 +287,9 @@
   padding: 1.3rem 2.6rem;
   font-size: 1.6rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -301,12 +301,12 @@
 
 .backBtn:hover {
   background: #f0f6ff;
-  border-color: #003d7a;
-  color: #003d7a;
+  border-color: var(--color-primary-darker);
+  color: var(--color-primary-darker);
 }
 
 .backBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
@@ -315,7 +315,7 @@
   font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-darker) 100%);
   border: none;
   border-radius: 110px;
   cursor: pointer;
@@ -327,12 +327,12 @@
 }
 
 .nextBtn:hover {
-  background: #003d7a;
+  background: var(--color-primary-darker);
   box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
 
 .nextBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
@@ -351,7 +351,7 @@
   font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-darker) 100%);
   border: none;
   border-radius: 110px;
   cursor: pointer;
@@ -363,12 +363,12 @@
 }
 
 .saveBtn:hover {
-  background: #003d7a;
+  background: var(--color-primary-darker);
   box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
 
 .saveBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
