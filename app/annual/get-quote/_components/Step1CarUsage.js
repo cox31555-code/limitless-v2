@@ -3,6 +3,8 @@ import React from "react";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 import styles from "./step1CarUsage.module.css";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
 
 const Step1CarUsage = ({ form, showMileage = true }) => {
   const { register, formState: { errors }, watch } = form;
@@ -13,17 +15,12 @@ const Step1CarUsage = ({ form, showMileage = true }) => {
   const annualMileage = watch("vehicleDetails.annualMileage");
 
   return (
-    <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Car details - Car usage</h2>
-      </div>
-
-      <div className={styles.contentWrapper}>
+    <StepContainer title="Car details - Car usage">
         {/* Purchase Date Section */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>When did you buy or start to lease this car?</h3>
-            <p className={styles.subText}>
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>When did you buy or start to lease this car?</h3>
+            <p className={sharedStyles.subText}>
               We may fill in your car's purchase/lease date using details from an independent provider. If the date is already filled in and isn't correct, feel free to change it.
             </p>
           </div>
@@ -93,9 +90,9 @@ const Step1CarUsage = ({ form, showMileage = true }) => {
         </div>
 
         {/* Usage Type Section */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>What do you use the car for?</h3>
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>What do you use the car for?</h3>
           </div>
 
           <div className={styles.radioGroup}>
@@ -148,10 +145,10 @@ const Step1CarUsage = ({ form, showMileage = true }) => {
 
         {/* Annual Mileage Section */}
         {showMileage && (
-          <div className={styles.section}>
-            <div className={styles.questionHeader}>
-              <h3 className={styles.mainQuestion}>What's the annual personal mileage for this car?</h3>
-              <p className={styles.subText}>
+          <div className={sharedStyles.stepSection}>
+            <div className={sharedStyles.questionHeader}>
+              <h3 className={sharedStyles.mainQuestion}>What's the annual personal mileage for this car?</h3>
+              <p className={sharedStyles.subText}>
                 Try to be as accurate as possible. Underestimating your mileage could affect your cover or lead to increased charges.
               </p>
             </div>
@@ -182,8 +179,7 @@ const Step1CarUsage = ({ form, showMileage = true }) => {
             />
           </div>
         )}
-      </div>
-    </div>
+    </StepContainer>
   );
 };
 

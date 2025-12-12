@@ -2,6 +2,8 @@
 import React from "react";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
 import styles from "./step1OtherCars.module.css";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
 
 const Step1OtherCars = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
@@ -12,17 +14,12 @@ const Step1OtherCars = ({ form }) => {
   const carCountOptions = ["1", "2", "3", "4", "5"];
 
   return (
-    <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Car details - Other cars</h2>
-      </div>
-
-      <div className={styles.contentWrapper}>
+    <StepContainer title="Car details - Other cars">
         {/* Household Cars Count Section */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>How many cars are kept at your household (including this one)?</h3>
-            <p className={styles.subText}>
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>How many cars are kept at your household (including this one)?</h3>
+            <p className={sharedStyles.subText}>
               Exclude motorbikes, vans, and commercial vehicles.
             </p>
           </div>
@@ -42,8 +39,8 @@ const Step1OtherCars = ({ form }) => {
         </div>
 
         {/* Other Vehicles Section */}
-        <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Do you use any other vehicles?</h3>
+        <div className={sharedStyles.stepSection}>
+          <h3 className={sharedStyles.mainQuestion}>Do you use any other vehicles?</h3>
 
           <div className={styles.radioGroup}>
             <label className={styles.radioOption}>
@@ -69,9 +66,9 @@ const Step1OtherCars = ({ form }) => {
 
           {otherVehicles === "Yes" && (
             <div className={styles.conditionalSection}>
-              <div className={styles.questionHeader}>
-                <h3 className={styles.mainQuestion}>What other vehicles do you have use of?</h3>
-                <p className={styles.subText}>
+              <div className={sharedStyles.questionHeader}>
+                <h3 className={sharedStyles.mainQuestion}>What other vehicles do you have use of?</h3>
+                <p className={sharedStyles.subText}>
                   Select the most applicable option.
                 </p>
               </div>
@@ -120,8 +117,7 @@ const Step1OtherCars = ({ form }) => {
             </div>
           )}
         </div>
-      </div>
-    </div>
+    </StepContainer>
   );
 };
 
