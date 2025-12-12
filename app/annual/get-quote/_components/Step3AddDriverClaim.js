@@ -331,6 +331,31 @@ const Step3AddDriverClaim = ({ onBack, onAddClaim, editingClaim = null }) => {
           {errors.ncdAffected && <span className={styles.error}>{errors.ncdAffected}</span>}
         </div>
       </div>
+
+      {/* Action Buttons */}
+      <div className={styles.actionButtons}>
+        <button
+          type="button"
+          className={styles.backBtn}
+          onClick={onBack}
+        >
+          Back
+        </button>
+        <button
+          type="button"
+          className={styles.saveBtn}
+          onClick={() => {
+            const newErrors = validateForm();
+            if (Object.keys(newErrors).length === 0) {
+              onAddClaim(formData);
+            } else {
+              setErrors(newErrors);
+            }
+          }}
+        >
+          Save Claim
+        </button>
+      </div>
     </div>
   );
 };
