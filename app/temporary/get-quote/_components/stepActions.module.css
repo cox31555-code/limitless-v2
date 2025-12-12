@@ -29,15 +29,15 @@
 .backBtn {
   padding: 1.3rem 2.6rem;
   font-size: 1.6rem;
-  background: #fff;
-  color: #0052a3;
-  border: 2px solid #0052a3;
+  background: var(--color-bg-primary);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .backBtn:hover:not(:disabled) {
-  background: #f0f6ff;
-  border-color: #003d7a;
-  color: #003d7a;
+  background: var(--color-primary-lightest);
+  border-color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
 }
 
 .backBtn:active:not(:disabled) {
@@ -51,12 +51,12 @@
 .nextBtn {
   padding: 1.3rem 2.6rem;
   font-size: 1.6rem;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
-  color: #fff;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-text-inverse);
 }
 
 .nextBtn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #003d7a 0%, #002d5a 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #002d5a 100%);
 }
 
 .nextBtn:active:not(:disabled) {
