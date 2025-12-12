@@ -1,19 +1,32 @@
 "use client";
 import { useEffect, Suspense } from "react";
+import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
-import Stepper from "./_components/stepper/Stepper";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./page.module.css";
+import DashboardHero from "@/ui/dashboard/DashboardHero";
 import ClaimFeature from "./_components/claimFeature/ClaimFeature";
-import { Plus_Jakarta_Sans } from "next/font/google";
-import Submitted from "./_components/submitted/Submitted";
-import ClaimReason from "./_components/claimReason/ClaimReason";
-import Guidelines from "./_components/guidelines/Guidelines";
-import Form from "./_components/form/Form";
-import { steps, firstClaim, secondClaim, guidelinesData } from "./data";
+import { firstClaim, secondClaim, guidelinesData } from "./data";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
+// Lazy load heavy sections
+const Submitted = dynamic(() => import("./_components/submitted/Submitted"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const ClaimReason = dynamic(() => import("./_components/claimReason/ClaimReason"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const Guidelines = dynamic(() => import("./_components/guidelines/Guidelines"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const Form = dynamic(() => import("./_components/form/Form"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
 });
 
 const SubmitClaimContent = () => {
@@ -78,7 +91,7 @@ const SubmitClaimContent = () => {
       return <Submitted />;
     }
 
-    // If optional cover claims selected - show guidelines only
+    // If optional cover claims selected - show guidelines with full structure
     if (type === "optional-cover") {
       return <Guidelines data={guidelinesData} />;
     }
@@ -87,40 +100,44 @@ const SubmitClaimContent = () => {
     if (type === "car-insurance") {
       // Show form if on form step
       if (step === "form") {
-        return (
-          <div className={styles.fullWidthContainer}>
-            <Stepper steps={steps} currentStep={2} />
-            <Form claimReason={reason} />
-          </div>
-        );
+        return <Form claimReason={reason} />;
       }
 
       // Show claim reason selection if on reason step
       if (step === "reason") {
-        return (
-          <div className={styles.fullWidthContainer}>
-            <Stepper steps={steps} currentStep={1} />
-            <ClaimReason />
-          </div>
-        );
+        return <ClaimReason />;
       }
     }
 
-    // Default view - show claim selection
+    // Default view - show claim selection with new design
     return (
-      <div>
-        <Stepper steps={steps} currentStep={0} />
-        <div className={styles.claims}>
-          <h2 className={`${styles.claimsTitle} ${plusJakartaSans.className}`}>
-            Choose your Claim
-          </h2>
-          <div className={styles.claimsContainer}>
+      <>
+        <DashboardHero
+          title="Submit a claim"
+          subtitle="Let us know what happened and we'll guide you through the claims process"
+        />
+
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb items={[
+          { label: "Dashboard" },
+          { label: "Manage Claims" },
+          { label: "Submit a Claim" }
+        ]} />
+
+        {/* Content Section */}
+        <div className={styles.contentWrapper}>
+          <div className={styles.pageHeader}>
+            <h2 className={styles.pageTitle}>Choose your claim type</h2>
+            <p className={styles.pageSubtitle}>Select the type of claim you need to submit</p>
+          </div>
+
+          <div className={styles.claimsGrid}>
             <ClaimFeature
               img={firstClaim.img}
               title={firstClaim.title}
               description={firstClaim.description}
               features={firstClaim.features}
-              btnText="Make a car insurance claims"
+              btnText="Make a car insurance claim"
               claimType="car-insurance"
             />
             <ClaimFeature
@@ -128,19 +145,17 @@ const SubmitClaimContent = () => {
               title={secondClaim.title}
               description={secondClaim.description}
               features={secondClaim.features}
-              btnText="Optional Cover claims"
+              btnText="Optional cover claim"
               claimType="optional-cover"
             />
           </div>
         </div>
-      </div>
+      </>
     );
   };
 
   return (
-    <div>
-      <div className={styles.page}>{renderContent()}</div>
-    </div>
+    <div className={styles.page}>{renderContent()}</div>
   );
 };
 
@@ -148,15 +163,7 @@ const Page = () => {
   return (
     <Suspense
       fallback={
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: "400px",
-            color: "#666",
-          }}
-        >
+        <div className={styles.loadingContainer}>
           Loading...
         </div>
       }

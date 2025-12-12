@@ -68,7 +68,7 @@ export const content = [
     value: {
       title: "Information You Provide",
       description1:
-        "Our website may contain links to third-party websites or resources. These links are provided for your convenience only. We have no control over the contents of those websites or resources and accept no responsibility for them or for any loss or damage that may arise from your use of them. You should review the terms and conditions and privacy policies of any third-party websites you visit.",
+        "When you request a quote or purchase a policy through Limitless Cover, you provide personal and vehicle information. We collect this information to arrange your insurance and fulfil regulatory requirements. All information you provide must be accurate and complete. Any false, misleading, or incomplete information may result in your policy being cancelled or claims being rejected.",
     },
   },
   {
@@ -249,9 +249,10 @@ export const content = [
     type: "list",
     value: {
       title: "Cancellations & Refunds",
-      description1: "The policy has not yet started, and ",
+      description1:
+        "You have the right to cancel your policy within 14 days of purchase (the 'cooling-off' period), provided:",
       description2:
-        "Please refer to your policy wording for specific cancellation rights and fees.",
+        "If you cancel within the cooling-off period, we will refund any premium paid, less any statutory fees. If you cancel after the cooling-off period has ended, cancellation charges may apply. Please refer to your policy wording for specific cancellation rights and fees.",
       list: [
         "The policy has not yet started, and",
         "The insurer's cancellation terms permit it.",
@@ -286,7 +287,7 @@ export const content = [
     value: {
       title: "Changes to These Terms",
       description1:
-        "We take data protection seriously. Our Privacy Policy explains how we collect, use, and store your personal data. By using our services, you consent to this data processing in accordance with the UK General Data Protection Regulation (GDPR) and related laws.",
+        "We reserve the right to modify these Terms & Conditions at any time. Changes will be effective immediately upon posting to our website. Your continued use of our services after any changes constitutes your acceptance of the new terms. We recommend reviewing these terms periodically to stay informed of any updates.",
     },
   },
   {
@@ -294,7 +295,7 @@ export const content = [
     value: {
       title: "Governing Law",
       description1:
-        "We take data protection seriously. Our Privacy Policy explains how we collect, use, and store your personal data. By using our services, you consent to this data processing in accordance with the UK General Data Protection Regulation (GDPR) and related laws.",
+        "These Terms & Conditions are governed by and construed in accordance with the laws of England and Wales. You irrevocably submit to the exclusive jurisdiction of the courts of England and Wales.",
     },
   }
 ];

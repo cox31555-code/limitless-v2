@@ -1,91 +1,405 @@
 /* Vehicle Details Styles */
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
 .content {
   display: flex;
   flex-direction: column;
-  padding: 3.4rem;
-  border-radius: 16px;
-  background: #fff;
-  /* gap: 2.4rem; */
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  gap: var(--spacing-2xl);
 }
 
 .first {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
-  padding-bottom: 2.8rem;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.24);
-  margin-bottom: 2.8rem;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-4xl);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(3, 136, 255, 0.06);
+  margin-bottom: 0;
+  padding-bottom: 2.4rem;
+  border-bottom: none;
 }
 
 .regBtn {
-  color: #0388ff;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: var(--color-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.3px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
-  background: none;
-  margin-right: auto;
+  background: transparent;
+  padding: 0.4rem 0;
+  border-radius: 0;
+  align-self: flex-start;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .regBtn:hover {
-  color: #0277d9;
+  color: var(--color-primary-light);
+  background: transparent;
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
 }
 
 .vehicleDataDisplay {
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  padding: 1.6rem;
-  margin: 1.6rem 0;
+  background: #fff;
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  padding: var(--spacing-xl);
+  margin: 1.2rem 0 0 0;
+  animation: fadeIn 0.3s ease;
 }
+
+/* @keyframes fadeIn moved to animations.module.css */
 
 .vehicleDataRow {
   margin: 0.8rem 0;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  color: #495057;
+  font-size: var(--font-size-md);
+  line-height: 160%;
+  color: var(--color-text-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .vehicleDataRow strong {
-  color: #212529;
-  font-weight: 600;
-  margin-right: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  min-width: fit-content;
 }
 
+
 .vehicleDetailsContainer {
-  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
 .vehicleDetailsHidden {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
+  margin: 0;
 }
 
 .vehicleDetailsVisible {
-  max-height: 6500px;
+  max-height: 7000px;
   opacity: 1;
   overflow: visible;
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* @keyframes slideDown moved to animations.module.css */
 
 .rows {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  margin-top: 3.2rem;
+  gap: var(--spacing-xl);
+  margin-top: 0;
+  padding: var(--spacing-4xl);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(3, 136, 255, 0.06);
 }
 
 .row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  width: 100%;
+  align-items: start;
+  animation: rowFadeIn 0.3s ease;
+}
+
+/* @keyframes rowFadeIn moved to animations.module.css */
+
+/* Professional Form Layouts */
+.cleanFormContent {
   display: flex;
-  gap: 1.8rem;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+.cleanFormGrid2Col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+.cleanFormGrid3Col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+.cleanFormGrid1Col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.cleanFormGrid1ColWithTopGap {
+  margin-top: 1.6rem;
+}
+
+.cleanFormGrid1ColWithTopPadding {
+  padding-top: 1.2rem;
+}
+
+.cleanLabel {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 0.8rem 0;
+  line-height: 1.4;
+}
+
+.cleanSubLabel {
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin: -0.4rem 0 0.8rem 0;
+  line-height: 1.5;
+}
+
+.cleanFormFieldLabel {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 0.8rem 0;
+  line-height: 1.4;
+}
+
+.cleanError {
+  font-size: var(--font-size-base);
+  color: #d32f2f;
+  margin-top: 0.6rem;
+  display: block;
+  line-height: 1.4;
+}
+
+.cleanPostcodeRow {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.cleanPostcodeRow > div {
+  flex: 1;
+}
+
+.findAddressButton {
+  min-height: 5rem;
+  padding: var(--spacing-lg) 2rem;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--color-primary-dark);
+  border: 1px solid var(--color-primary-dark);
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.findAddressButton:hover:not(:disabled) {
+  background: var(--color-primary-darker);
+  border-color: var(--color-primary-darker);
+  box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
+}
+
+.findAddressButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #a8b2bd;
+  border-color: #a8b2bd;
+}
+
+.cleanSelectionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cleanSelections3 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cleanAdditionalInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.cleanDeclarationsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+
+.cleanDeclarationItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.cleanDeclarationQuestion {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .cleanPostcodeRow {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .findAddressButton {
+    width: 100%;
+    min-height: 4.8rem;
+  }
+
+  .cleanLabel,
+  .cleanFormFieldLabel,
+  .cleanDeclarationQuestion {
+    font-size: var(--font-size-md);
+  }
+
+  .cleanSubLabel {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cleanFormContent {
+    gap: var(--spacing-xl);
+  }
+
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col,
+  .cleanFormGrid1Col {
+    gap: var(--spacing-lg);
+  }
+
+  .findAddressButton {
+    min-height: 4.4rem;
+    padding: 0.9rem 1.6rem;
+    font-size: var(--font-size-md);
+  }
+
+  .cleanLabel,
+  .cleanFormFieldLabel,
+  .cleanDeclarationQuestion {
+    font-size: 1.25rem;
+  }
+
+  .cleanSubLabel {
+    font-size: var(--font-size-sm);
+  }
+}
+
+.row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .row > div {
   flex: 1;
+  min-width: 0;
+}
+
+.progressiveRow {
+  animation: progressiveSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes progressiveSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+  }
+}
+
+/* Section Header for Vehicle Details */
+.vehicleDetailsSection {
+  padding: var(--spacing-2xl) 3.2rem;
+  background: linear-gradient(135deg, #f0f7ff 0%, var(--color-primary-lightest) 100%);
+  border-bottom: 2px solid rgba(3, 136, 255, 0.15);
+  margin-bottom: 1.6rem;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.vehicleDetailsSectionIcon {
+  width: 32px;
+  height: 32px;
+  background: rgba(3, 136, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+}
+
+.vehicleDetailsSectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.vehicleDetailsSectionSubtitle {
+  font-size: var(--font-size-lg);
+  color: rgba(0, 8, 34, 0.6);
+  font-weight: 400;
+  margin: 0;
 }
 
 /* Cover Details Styles */
@@ -98,20 +412,21 @@
 .selectionContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: var(--spacing-xl);
 }
 
 .label {
   color: #000822;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
 }
 
 .selectionOptions {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 1.8rem;
 }
 .selectionOptions > div {
@@ -121,55 +436,19 @@
 
 .durationWrapper {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  flex: 1;
-}
-
-.dropdownOption {
-  min-width: 5rem;
-  max-width: 10rem;
-  height: 100%;
-}
-
-.dropdownOption > div {
-  height: 100% !important;
-}
-
-.customDropdown {
+  flex-direction: column;
+  gap: var(--spacing-lg);
   width: 100%;
-  height: 100%;
-  padding: 10px 30px 10px 12px;
-  border: none;
-  background: #ecf0fe;
-  color: #000822;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
-  border-radius: 12px;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 9l6 6 6-6' stroke='%23000822' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  background-size: 20px;
-}
-
-.customDropdown:focus {
-  outline: 2px solid #0388ff;
-  outline-offset: -2px;
 }
 
 .customDropdown option {
   background: #fff;
   color: #000822;
   padding: 12px 16px;
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-size: var(--font-size-md);
+  font-weight: 500;
 }
+
 
 .dateTimeContainer {
   display: flex;
@@ -178,12 +457,880 @@
 
 /* cover details container */
 .coverDetailsContainer {
-  gap: 5.4rem;
+  gap: var(--spacing-2xl);
 }
 
-/* personal details container */
-.personalDetailsContainer {
-  gap: 2.4rem;
+/* Spark Space Cover Details - Complete Styling */
+.sparkCoverDetails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+.sparkSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.sparkSectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.sparkSectionTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sparkSectionSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sparkSpaceY6 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Duration Type Grid - 3 column layout */
+.sparkDurationTypeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.sparkTypeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: var(--spacing-lg) 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.sparkTypeButtonActive {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #fff;
+}
+
+.sparkTypeButtonInactive {
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  color: #000822;
+}
+
+.sparkTypeButtonInactive:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: var(--color-primary-lightest);
+}
+
+.sparkDot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sparkDotActive {
+  border-color: #fff;
+}
+
+.sparkDotInactive {
+  border-color: var(--color-text-secondary);
+}
+
+.sparkDotInner {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Duration Value Selection */
+.sparkDurationContainer {
+  background: rgba(3, 136, 255, 0.03);
+  border-radius: 12px;
+  padding: var(--spacing-xl);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.sparkDurationLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 1.2rem 0;
+  line-height: 1;
+}
+
+.sparkDurationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.sparkDurationButton {
+  padding: 0.8rem 2.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  line-height: 1;
+  min-height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sparkDurationButtonActive {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #fff;
+}
+
+.sparkDurationButtonInactive {
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  color: #000822;
+}
+
+.sparkDurationButtonInactive:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: var(--color-primary-lightest);
+}
+
+/* Dropdown Button Container */
+.sparkDropdownContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.sparkNativeSelect {
+  display: none;
+  width: 100%;
+  padding: 1rem 0.4rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  background: #fff;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: #000822;
+  cursor: pointer;
+  appearance: none;
+  text-align: center;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 3.6rem;
+  line-height: 1.6rem;
+}
+
+.sparkNativeSelect:hover {
+  border-color: rgba(3, 136, 255, 0.25);
+  background: var(--color-primary-lightest);
+}
+
+.sparkNativeSelect:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.sparkNativeSelectActive {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.sparkNativeSelectActive:hover {
+  border-color: var(--color-primary-light);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, #0158b8 100%);
+}
+
+@media screen and (max-width: 900px) {
+  .sparkNativeSelect {
+    display: block;
+  }
+
+  .sparkDropdownContainer {
+    display: none;
+  }
+}
+
+.sparkDropdownIcon {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--color-primary);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sparkDropdownIconOpen {
+  transform: rotate(180deg);
+}
+
+.sparkDropdownContent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.8rem;
+  background: #fff;
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  z-index: 50;
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+.sparkDropdownItem {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #000822;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sparkDropdownItem:hover {
+  background: rgba(3, 136, 255, 0.08);
+  color: var(--color-primary);
+}
+
+.sparkDropdownItem:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.sparkDropdownItem:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+/* Date/Time Input Section */
+.sparkDateTimeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+  width: 100%;
+}
+
+.sparkInputLabel {
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: #000822;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.sparkInputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sparkInputIcon {
+  position: absolute;
+  left: 1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.sparkInputGroup:focus-within .sparkInputIcon {
+  color: var(--color-primary);
+}
+
+.sparkInput {
+  width: 100%;
+  padding: 1rem 1.2rem 1rem 3.2rem;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  background: #fff;
+  font-size: var(--font-size-md);
+  color: #000822;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sparkInput::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.sparkInput:hover {
+  border-color: rgba(3, 136, 255, 0.2);
+}
+
+.sparkInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: #fff;
+}
+
+/* Action Buttons */
+.sparkActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.sparkButtonBack,
+.sparkButtonNext {
+  padding: var(--spacing-lg) 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 5.2rem;
+}
+
+.sparkButtonBack {
+  background: #fff;
+  color: var(--color-primary);
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.06);
+}
+
+.sparkButtonBack:hover {
+  background: var(--color-primary-lightest);
+  border-color: var(--color-primary);
+}
+
+.sparkButtonNext {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #fff;
+}
+
+.sparkButtonNext:hover {
+}
+
+.sparkButtonNext:active {
+}
+
+.startPolicyButton {
+  padding: 1rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: 1.5px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+  background: transparent;
+  color: #000822;
+  min-height: auto;
+}
+
+.startPolicyButton:hover {
+  background: var(--color-primary-lightest);
+  border-color: var(--color-primary);
+}
+
+.startPolicyButton.active {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.startPolicyButton.active:hover {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, #0156a8 100%);
+}
+
+.startPolicyButtonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Duration Wrapper - kept for backward compatibility */
+.durationWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--spacing-lg);
+}
+
+/* Grid with Dropdown - Flex row container */
+.gridWithDropdown {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+/* Selection Container - Remove container styles, just display items */
+.gridWithDropdown :global([class*="selectionContainer"]) {
+  display: flex !important;
+  gap: 0.8rem !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  align-items: center;
+  flex-wrap: wrap;
+  width: auto;
+}
+
+/* Selection Items - Style as horizontal buttons */
+.gridWithDropdown :global([class*="selectionItem"]) {
+  width: 4.4rem !important;
+  height: 4.4rem !important;
+  min-width: 4.4rem;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 10px !important;
+  border: 1.5px solid rgba(3, 136, 255, 0.12) !important;
+  background: #fff !important;
+  font-size: var(--font-size-md) !important;
+  font-weight: 600 !important;
+  color: #000822 !important;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04) !important;
+  flex-shrink: 0;
+  gap: 0 !important;
+}
+
+/* Hide selection spans (circles) */
+.gridWithDropdown :global([class*="selectionSpan"]) {
+  display: none !important;
+}
+
+.gridWithDropdown :global([class*="selectionItem"]):hover {
+  border-color: rgba(3, 136, 255, 0.25) !important;
+  background: var(--color-primary-lightest) !important;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08) !important;
+}
+
+.gridWithDropdown :global([class*="selectedItem"]) {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%) !important;
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3) !important;
+}
+
+.gridWithDropdown :global([class*="selectedItem"]):hover {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, #0258b8 100%) !important;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(3, 136, 255, 0.25) !important;
+}
+
+/* Hide dropdown label/container default styling */
+.gridWithDropdown :global(.dropdown-module__container) {
+  gap: 0 !important;
+  flex: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 4.4rem !important;
+  height: 4.4rem !important;
+  flex-shrink: 0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__label) {
+  display: none !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selected) {
+  display: none !important;
+}
+
+/* Hide any text nodes */
+.gridWithDropdown :global(.dropdown-module__selectWrapper)::before {
+  content: '' !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selectWrapper)::after {
+  content: '' !important;
+}
+
+/* Dropdown Icon Button - Match number buttons exactly */
+.gridWithDropdown :global(.dropdown-module__selectWrapper) {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: rgba(3, 136, 255, 0.04) 0px 2px 6px 0px !important;
+  font-weight: 400 !important;
+  position: relative !important;
+  transition-duration: 0.28s !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  width: 100% !important;
+  border: 1px solid rgba(3, 136, 255, 0.15) !important;
+  flex-shrink: 0;
+  cursor: pointer !important;
+  margin: 0 !important;
+  gap: 0 !important;
+  height: 4.4rem !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selectWrapper):hover {
+  border-color: rgba(3, 136, 255, 0.25) !important;
+  background: var(--color-primary-lightest) !important;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.08) !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selectWrapper):focus-within {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.12) !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__label) {
+  display: none !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select) {
+  appearance: none !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  border-radius: 14px !important;
+  color: #000822 !important;
+  display: block !important;
+  letter-spacing: 0.3px !important;
+  transition-duration: 0.2s !important;
+  width: 44px !important;
+  height: 44px !important;
+  padding: 11px 28px 16px 20px !important;
+  font: 500 15px/19.5px Arial !important;
+  margin: 0 !important;
+  border: none !important;
+  cursor: pointer !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  font-size: 1px !important;
+  line-height: 1px !important;
+  color: transparent !important;
+  z-index: 10;
+  outline: none !important;
+  text-indent: 0 !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select)::after {
+  content: '' !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select)::before {
+  content: '' !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select)::placeholder {
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select)::-ms-expand {
+  display: none !important;
+}
+
+/* Hide dropdown text completely */
+.gridWithDropdown :global(.dropdown-module__selectWrapper) {
+  color: transparent !important;
+  font-size: 0 !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selectWrapper)::before {
+  content: '' !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__selectWrapper)::after {
+  content: '' !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select):hover {
+  border: none !important;
+  background: transparent !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__select):focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__arrowContainer) {
+  position: static !important;
+  width: 2.4rem !important;
+  height: 2.4rem !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: var(--color-primary) !important;
+  font-size: var(--font-size-2xl) !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+}
+
+.gridWithDropdown :global(.dropdown-module__arrowDown) {
+  color: var(--color-primary) !important;
+  font-size: var(--font-size-2xl) !important;
+  font-weight: 600 !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+  position: relative !important;
+}
+
+/* Personal Details Form */
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 2.4rem;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.sectionTitle {
+  position: relative;
+  color: #000822;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+  margin: 0 0 2.2rem 0;
+  text-transform: capitalize;
+  padding-left: 1.6rem;
+  background: linear-gradient(135deg, transparent 0%, transparent 4px, rgba(3, 136, 255, 0.15) 4px, rgba(3, 136, 255, 0.15) 100%);
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border-radius: 2px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 3.2rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, rgba(3, 136, 255, 0) 100%);
+  border-radius: 1px;
+}
+
+/* Date with Checkbox */
+.dateWithCheckbox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  flex: 1;
+}
+
+.dateWithCheckbox.disabled > div:first-child {
+  opacity: 0.65 !important;
+  pointer-events: none !important;
+  filter: grayscale(15%) !important;
+}
+
+.haventBoughtBtn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  margin-top: -6px;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 0.4rem;
+}
+
+.haventBoughtBtn:hover {
+  color: var(--color-primary-light);
+  text-decoration-color: var(--color-primary-light);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  width: 100%;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+.postcodeRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-lg);
+  width: 100%;
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+
+.findAddressButton {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.findAddressButton button {
+  width: 100%;
+  height: 5.2rem;
+  border-radius: 10px;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+.parkingGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.parkingCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.parkingCard h4,
+.parkingCard label {
+  color: #000822;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin: 0 0 1rem 0;
+}
+
+.usageTypeWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-bottom: 0;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.usageLabel {
+  color: #000822;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin: 0 0 1rem 0;
+}
+
+.selections3 {
+  width: 100%;
+}
+
+.declarationItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background: var(--color-primary-lightest);
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.declarationItem.expanded,
+.declarationItem:focus-within {
+  border: 0 !important;
+}
+
+.declarationQuestion {
+  color: #000822;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  margin: 0;
 }
 
 /* selections container */
@@ -198,22 +1345,26 @@
 .selections {
   display: flex;
   width: 100%;
-  gap: 1.8rem;
-  /* margin: 1.4rem 0; */
+  gap: var(--spacing-2xl);
 }
 .selections2 > div {
   flex: 1;
+  min-width: 0;
 }
 .selections2 {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: var(--spacing-xl);
 }
 /* Car Usage Styles */
 .carUsageContainer {
   display: flex;
   flex-direction: column;
-  padding: 3.4rem 3.4rem 4.1rem;
+  padding: 3.6rem;
+  background: linear-gradient(135deg, #fafbff 0%, #f8f9ff 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  width: 100%;
 }
 
 .firstSection,
@@ -222,8 +1373,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 3.8rem;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.24);
+  padding-bottom: 3.6rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
 }
 /* .firstSection > div {
   flex: 1;
@@ -240,58 +1391,58 @@
 }
 
 .secondSection {
-  gap: 3.6rem;
+  gap: var(--spacing-2xl);
 }
 
 .thirdSection {
-  gap: 5.4rem;
+  gap: var(--spacing-2xl);
 }
 
 .yesNoSection {
   display: flex;
   flex-direction: column;
-  gap: 5.4rem;
-  padding-top: 3.8rem;
-  border-top: 1px solid rgba(0, 8, 34, 0.24);
-  margin-top: 3.8rem;
+  gap: var(--spacing-2xl);
+  padding-top: 2.4rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.1);
+  margin-top: 2.4rem;
 }
 
 .yesNo {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.8rem;
 }
 
 .yesNoTitle {
   color: #000822;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0.2px;
 }
 
 /* Terms and Conditions Styles */
 .terms {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding-bottom: 2.3rem;
-  border-bottom: 1px solid #0008223d;
+  gap: var(--spacing-xl);
+  padding-bottom: 2.8rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
 
 .termItem {
   color: #000822;
-  font-size: 1.3rem;
+  font-size: var(--font-size-md);
   font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  line-height: 150%;
+  letter-spacing: 0.2px;
 }
 
 .selection {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding-top: 2.3rem;
+  gap: 1.4rem;
+  padding-top: 2.4rem;
 }
 
 .customCheckbox {
@@ -299,7 +1450,13 @@
   align-items: flex-start;
   cursor: pointer;
   user-select: none;
-  gap: 1.4rem;
+  gap: var(--spacing-lg);
+  padding: 0.8rem 0;
+  transition: all 0.2s ease;
+}
+
+.customCheckbox:hover {
+  opacity: 0.9;
 }
 
 .customCheckbox input {
@@ -307,28 +1464,30 @@
 }
 
 .checkboxStyle {
-  width: 16px;
-  height: 16px;
-  border: 1px solid #000822;
-  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid rgba(3, 136, 255, 0.25);
+  border-radius: 4px;
   position: relative;
   flex-shrink: 0;
   box-sizing: border-box;
-  transition: all 0.2s ease;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fff;
 }
 
 .customCheckbox input:checked + .checkboxStyle {
-  background-color: #27a2ff;
-  border-color: #27a2ff;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 6px rgba(3, 136, 255, 0.2);
 }
 
 .customCheckbox input:checked + .checkboxStyle::after {
   content: "";
   position: absolute;
-  top: 1.5px;
+  top: 2px;
   left: 5px;
-  width: 3.5px;
-  height: 8px;
+  width: 4px;
+  height: 9px;
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
@@ -336,77 +1495,326 @@
 
 .selectionText {
   color: #000822;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.2px;
 }
 
 .required {
-  color: #ef4444;
-  font-weight: bold;
+  color: var(--color-error);
+  font-weight: 700;
+  margin-left: 0.3rem;
 }
 
 /* Error Styles */
 .error {
-  color: #ef4444;
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-top: 0.5rem;
+  color: var(--color-error);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  margin-top: 0.6rem;
   display: block;
+  letter-spacing: 0.2px;
 }
 
 /* Actions */
 .actions {
   width: 100%;
   display: flex;
-  gap: 1.5rem;
+  gap: var(--spacing-xl);
+  margin-top: 1.6rem;
 }
 
 .back,
 .next {
   flex: 1;
   display: flex;
-  height: 6.2rem;
+  height: 5.8rem;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
-  border-radius: 12px;
-  background: #0388ff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  gap: var(--spacing-lg);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.25);
   color: #fff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(3, 136, 255, 0.3);
+}
+
+.next:active {
+  transform: translateY(0);
 }
 
 .back {
   background: #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  color: #0388ff;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.1);
+  color: var(--color-primary);
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+}
+
+.back:hover {
+  background: var(--color-primary-lightest);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.back:active {
+  transform: translateY(0);
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 900px) {
+  .sparkDurationTypeGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .sparkDurationGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .sparkDurationButton {
+    padding: 1.1rem 2.4rem;
+    font-size: 1.5rem;
+    min-height: 5.6rem;
+  }
+
+  .sparkDropdownContainer {
+    min-height: 5.6rem;
+  }
+
+  .sparkNativeSelect {
+    height: 5.6rem;
+    font-size: 1.5rem;
+    padding: 1.3rem 0.8rem;
+    line-height: 2.8rem;
+  }
+
+  .sparkDateTimeGrid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .sparkActions {
+    gap: var(--spacing-lg);
+  }
+
+  .sparkButtonBack,
+  .sparkButtonNext {
+    padding: 1rem 1.2rem;
+    font-size: var(--font-size-base);
+    min-height: 4.8rem;
+  }
+
+  .startPolicyButton {
+    padding: 0.9rem 1.4rem;
+    font-size: var(--font-size-base);
+    margin-top: 1.6rem;
+  }
+
   /* Vehicle Details Mobile */
   .content {
-    padding: 2rem;
+    padding: 0;
+    gap: var(--spacing-xl);
   }
 
   .first {
-    padding-bottom: 2.6rem;
-    margin-bottom: 2.6rem;
+    padding: var(--spacing-2xl) 2rem;
+    margin-bottom: 0;
     flex-direction: column;
-    gap: 1.8rem;
-    align-items: center;
-    justify-content: center;
+    gap: var(--spacing-xl);
+    border-radius: 16px;
+  }
+
+  .rows {
+    padding: var(--spacing-2xl) 2rem;
+    gap: 0;
+    border-radius: 16px;
   }
 
   .row {
-    flex-direction: column;
-    gap: 2.6rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .row:last-child {
+    padding-bottom: 0;
+  }
+
+  .formRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .parkingGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .postcodeRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .findAddressButton button {
+    height: auto;
+  }
+
+  .sectionTitle {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+  }
+
+  .parkingCard h4,
+  .parkingCard label {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+  }
+
+  .usageLabel {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+  }
+
+  .declarationQuestion {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+  }
+
+  .cleanLabel {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+  }
+
+  .cleanDeclarationQuestion {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 600px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .formRow {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .sparkDurationGrid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+    }
+
+    .sparkDurationButton {
+      padding: 0.95rem 2.4rem;
+      font-size: var(--font-size-lg);
+      min-height: 5.2rem;
+    }
+
+    .sparkDropdownContainer {
+      min-height: 5.2rem;
+    }
+
+    .sparkNativeSelect {
+      height: 5.2rem;
+      font-size: var(--font-size-lg);
+      padding: 1.1rem 0.6rem;
+      line-height: 2.6rem;
+    }
+
+    .parkingGrid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .postcodeRow {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .formContent {
+      gap: var(--spacing-2xl);
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 1.6rem;
+    }
+
+    .formSection {
+    gap: var(--spacing-lg);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.8rem;
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
+    border: 1px solid rgba(3, 136, 255, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+    margin-bottom: 3.4rem;
+  }
+
+    .declarationItem {
+      padding: var(--spacing-lg);
+    }
+
+    .parkingCard h4,
+    .parkingCard label {
+      font-size: var(--font-size-md);
+      font-weight: 500;
+    }
+
+    .usageLabel {
+      font-size: var(--font-size-md);
+      font-weight: 500;
+    }
+
+    .declarationQuestion {
+      font-size: var(--font-size-md);
+      font-weight: 500;
+    }
+
+    .cleanLabel {
+      font-size: var(--font-size-lg);
+      font-weight: 500;
+    }
+
+    .cleanDeclarationQuestion {
+      font-size: var(--font-size-lg);
+      font-weight: 500;
+    }
+  }
+
+  .progressiveRow {
+    animation: progressiveSlideInMobile 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes progressiveSlideInMobile {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .regBtn {
+    padding: 0.4rem 0;
+    font-size: var(--font-size-sm);
   }
 
   /* Cover Details Mobile */
@@ -420,13 +1828,53 @@
 
   .selectionOptions {
     flex-direction: column;
-    gap: 1.6rem;
+    gap: var(--spacing-xl);
     align-items: flex-start;
+  }
+
+  .gridWithDropdown {
+    gap: 0.6rem;
+  }
+
+  .gridWithDropdown :global([class*="selectionItem"]) {
+    width: 5rem !important;
+    height: 5rem !important;
+    min-width: 5rem !important;
+    font-size: var(--font-size-md) !important;
+    padding: 1.8rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__container) {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__selectWrapper) {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__select) {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__arrowContainer) {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__arrowDown) {
+    font-size: var(--font-size-2xl) !important;
+  }
+
+  .gridWithDropdown :global([class*="selectionContainer"]) {
+    gap: 0.6rem !important;
   }
 
   .dateTimeContainer {
     flex-direction: column;
-    gap: 1.6rem;
+    gap: var(--spacing-xl);
   }
 
   /* Personal Details Mobile */
@@ -438,7 +1886,7 @@
 
   /* Car Usage Mobile */
   .carUsageContainer {
-    padding: 2rem 2.6rem;
+    padding: var(--spacing-2xl) 2.6rem;
   }
 
   .firstSection,
@@ -471,17 +1919,17 @@
   }
 
   .yesNoTitle {
-    font-size: 1.4rem;
+    font-size: var(--font-size-lg);
   }
 
   /* Terms Mobile */
   .terms {
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     padding-bottom: 2.6rem;
   }
 
   .termItem {
-    font-size: 1.4rem;
+    font-size: var(--font-size-lg);
   }
 
   .selection {
@@ -494,13 +1942,717 @@
   }
 
   .actions {
-    gap: 1.2rem;
+    gap: var(--spacing-lg);
+    margin-top: 1.2rem;
   }
 
   .back,
   .next {
     height: 4.8rem;
+    gap: 0.8rem;
+    font-size: var(--font-size-md);
+    border-radius: 12px;
+  }
+}
+
+/* Clean Personal Details Form Styling - Minimal & Professional */
+.cleanFormContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  width: 100%;
+  padding: 0;
+}
+
+.cleanSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cleanSectionTitle {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: #000822;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+  margin: 0 0 1.6rem 0;
+  padding: 0;
+  background: transparent;
+  border-left: 4px solid;
+  border-image: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-light) 100%) 1;
+  border-radius: 0;
+  text-transform: capitalize;
+  padding-left: 1.2rem;
+  display: block;
+}
+
+.cleanLabel {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.4;
+}
+
+.cleanSubLabel {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  color: #7a8a9d;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: -1rem 0 0.8rem 0;
+  line-height: 1.4;
+}
+
+.cleanFormFieldLabel {
+  color: #000822;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  margin: 0 0 1rem 0;
+}
+
+.cleanAdditionalInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.cleanFormGrid1Col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+.cleanFormGrid1ColWithTopGap {
+  margin-top: 2.4rem;
+}
+
+.cleanFormGrid1ColWithTopPadding {
+  padding-top: 2.4rem;
+}
+
+.cleanFormGrid2Col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+.cleanFormGrid3Col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-2xl);
+  width: 100%;
+}
+
+.cleanPostcodeRow {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.cleanPostcodeRow > div:first-child {
+  flex: 2;
+}
+
+.cleanPostcodeRow > div:last-child {
+  flex: 1;
+}
+
+.cleanFindAddressButton {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.findAddressButton {
+  padding: var(--spacing-lg) 1.6rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.findAddressButton:hover {
+  background: var(--color-primary-light);
+}
+
+.findAddressButton:active {
+  background: #025ab3;
+}
+
+.cleanFindAddressButton button {
+  width: 100%;
+  height: 5.2rem;
+  border-radius: 10px;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  background: var(--color-primary);
+  color: white;
+  border: 1.5px solid var(--color-primary);
+  cursor: pointer;
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: var(--spacing-lg) 1.6rem;
+}
+
+.cleanFindAddressButton button:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+
+.cleanSelectionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cleanSelections3 {
+  width: 100%;
+}
+
+.cleanDeclarationsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.cleanDeclarationItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: 1.8rem;
+  background: linear-gradient(135deg, var(--color-primary-lightest) 0%, #ffffff 100%);
+  border-radius: 12px;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cleanDeclarationItem:hover {
+  border-color: rgba(3, 136, 255, 0.18);
+  background: linear-gradient(135deg, #f5f9ff 0%, #ffffff 100%);
+}
+
+.cleanDeclarationItem.expanded,
+.cleanDeclarationItem:focus-within {
+  border: 0 !important;
+}
+
+.cleanDeclarationQuestion {
+  color: #000822;
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.cleanError {
+  color: var(--color-error);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  margin-top: 0.5rem;
+  display: block;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+}
+
+.cleanAdditionalDriversContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.cleanDriverCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, var(--color-primary-lightest) 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.cleanDriverHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-xl);
+  border-bottom: 2px solid rgba(3, 136, 255, 0.15);
+  padding-bottom: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.cleanDriverNumberBadge {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #ffffff;
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  letter-spacing: 0.2px;
+}
+
+.cleanRemoveDriverButton {
+  padding: 0.7rem 1.4rem;
+  background: transparent;
+  border: 1.5px solid rgba(239, 68, 68, 0.4);
+  border-radius: 8px;
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cleanRemoveDriverButton:hover {
+  border-color: var(--color-error);
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+  transform: none;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.1);
+}
+
+.cleanDriverSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.cleanDriverSection:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.cleanDriverSectionTitle {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+
+.cleanRadioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.cleanRadioLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  color: #000822;
+  font-weight: 500;
+  user-select: none;
+}
+
+.cleanRadioInput {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.cleanRadioInput:checked {
+  accent-color: var(--color-primary);
+}
+
+.cleanAddDriverButtonContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2.4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
+}
+
+.cleanMaxDriversMessage {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.08) 0%, rgba(3, 136, 255, 0.04) 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 10px;
+  margin-top: 2.4rem;
+}
+
+.cleanMaxDriversMessage p {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: var(--color-primary);
+  letter-spacing: 0.2px;
+}
+
+/* Tablet Responsive */
+@media screen and (max-width: 900px) {
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .cleanFormGrid1Col {
+    gap: var(--spacing-2xl);
+  }
+
+  .cleanPostcodeRow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cleanPostcodeRow > div:first-child {
+    flex: 1;
+  }
+
+  .findAddressButton {
+    height: 5.2rem;
+  }
+
+  .cleanFormContent {
+    gap: var(--spacing-2xl);
+    padding: 0;
+  }
+
+  .cleanSection {
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+  }
+
+  .cleanDriverCard {
+    padding: 1.8rem;
+    gap: 1.4rem;
+  }
+
+  .cleanDriverHeader {
+    gap: var(--spacing-lg);
+    padding-bottom: 1.2rem;
+  }
+
+  .cleanDriverSection {
+    gap: 1.4rem;
+  }
+
+  .cleanRemoveDriverButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .cleanAddDriverButtonContainer {
+    margin-top: 2rem;
+    padding-top: 1.6rem;
+  }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+  .formContent {
+    width: 100%;
+    box-sizing: border-box;
+    gap: var(--spacing-2xl);
+    padding: 0 1.2rem;
+  }
+
+  .formSection {
+    width: 100%;
+    box-sizing: border-box;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
+    border: 1px solid rgba(3, 136, 255, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+  }
+
+  .cleanFormContent {
+    gap: var(--spacing-2xl);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .cleanSection {
+    gap: var(--spacing-lg);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.4rem;
+  }
+
+  .cleanSectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    padding-left: 0.8rem;
+  }
+
+  .cleanFormGrid1Col,
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .cleanFormGrid1Col > *,
+  .cleanFormGrid2Col > *,
+  .cleanFormGrid3Col > * {
+    margin: 0 !important;
+  }
+
+  .cleanPostcodeRow {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .cleanDeclarationItem {
+    padding: 1.4rem;
+    gap: var(--spacing-lg);
+  }
+
+  .cleanDriverCard {
+    padding: 1.4rem;
+    gap: var(--spacing-lg);
+  }
+
+  .cleanDriverHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .cleanDriverNumberBadge {
+    font-size: var(--font-size-sm);
+    padding: 0.5rem 1rem;
+  }
+
+  .cleanRemoveDriverButton {
+    width: 100%;
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .cleanDriverSectionTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .cleanMaxDriversMessage {
+    padding: var(--spacing-lg);
+    font-size: var(--font-size-sm);
+  }
+
+  .cleanAddDriverButtonContainer {
+    margin-top: 1.8rem;
+    padding-top: 1.4rem;
+  }
+
+  .findAddressButton {
+    height: 5.6rem;
+    font-size: var(--font-size-md);
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .formContent {
     gap: 1.8rem;
-    font-size: 1.4rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+
+  .formSection {
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.4rem;
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
+    border: 1px solid rgba(3, 136, 255, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+    margin-bottom: 3.4rem;
+  }
+
+  .cleanSection {
+    gap: var(--spacing-lg);
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--spacing-lg);
+  }
+
+  .cleanSectionTitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: 1rem;
+    padding-left: 0.6rem;
+  }
+
+  .formRow,
+  .cleanFormGrid1Col,
+  .cleanFormGrid2Col,
+  .cleanFormGrid3Col {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formRow > *,
+  .cleanFormGrid1Col > *,
+  .cleanFormGrid2Col > *,
+  .cleanFormGrid3Col > * {
+    margin: 0 !important;
+  }
+
+  .postcodeRow,
+  .cleanPostcodeRow {
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sectionTitle {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    padding-left: 1rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .parkingCard h4,
+  .parkingCard label {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+  }
+
+  .usageLabel {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+  }
+
+  .declarationQuestion {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+  }
+
+  .cleanLabel {
+    font-size: var(--font-size-md);
+    font-weight: 500;
+  }
+
+  .cleanDeclarationQuestion {
+    font-size: var(--font-size-md);
+    font-weight: 500;
+  }
+
+  .declarationItem,
+  .cleanDeclarationItem {
+    padding: var(--spacing-lg);
+    margin-bottom: 3.4rem;
+  }
+
+  .findAddressButton {
+    height: 5.2rem;
+    font-size: var(--font-size-base);
+  }
+
+  .sparkDurationGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .sparkDurationButton {
+    padding: 0.9rem 2.4rem;
+    font-size: var(--font-size-md);
+    min-height: 5rem;
+  }
+
+  .sparkDropdownContainer {
+    min-height: 5rem;
+  }
+
+  .sparkNativeSelect {
+    height: 5rem;
+    font-size: var(--font-size-md);
+    padding: 1rem 0.5rem;
+    line-height: 2.6rem;
+  }
+
+  .gridWithDropdown {
+    gap: 0.5rem;
+  }
+
+  .gridWithDropdown :global([class*="selectionItem"]) {
+    width: 4.4rem !important;
+    height: 4.4rem !important;
+    min-width: 4.4rem !important;
+    font-size: var(--font-size-base) !important;
+    padding: 1.5rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__container) {
+    width: 4.4rem !important;
+    height: 4.4rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__selectWrapper) {
+    width: 4.4rem !important;
+    height: 4.4rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__select) {
+    width: 4.4rem !important;
+    height: 4.4rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__arrowContainer) {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .gridWithDropdown :global(.dropdown-module__arrowDown) {
+    font-size: var(--font-size-xl) !important;
+  }
+
+  .gridWithDropdown :global([class*="selectionContainer"]) {
+    gap: 0.5rem !important;
   }
 }

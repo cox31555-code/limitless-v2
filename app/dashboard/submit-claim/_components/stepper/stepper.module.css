@@ -1,80 +1,190 @@
+/* Progress Stepper v3 */
 .stepper {
   display: flex;
-  align-items: flex-start;
-  gap: 1.6rem;
+  align-items: center;
   justify-content: center;
+  gap: 0;
+  padding: 3.2rem 4.4%;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
 }
+
+/* Background progress line */
+.stepper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  right: 8%;
+  height: 3px;
+  background: #e5e7eb;
+  transform: translateY(-50%);
+  z-index: 0;
+  border-radius: 2px;
+}
+
+/* Active progress line - 25% for step 1 */
+.stepper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  width: 25%;
+  height: 3px;
+  background: linear-gradient(90deg, #0388ff 0%, #0270cc 100%);
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
 .stepperContainer {
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  justify-content: center;
 }
+
 .stepperItem {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 1.2rem;
+  position: relative;
 }
+
+.stepperItem:not(:last-child)::after {
+  display: none;
+}
+
 .stepperItemText {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+  text-align: center;
 }
+
 .stepperLine,
 .stepperLine2 {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 }
+
 .stepperLine svg,
 .stepperLine2 svg {
-  width: 100%;
-  height: 100%;
-  margin-top: -5rem;
+  display: none;
 }
+
 .stepperNumber {
-  color: #049cff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.56px;
-}
-.stepperTitle {
-  color: #000822;
-  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #d1d5db;
+  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 130%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  border: 2.5px solid #e5e7eb;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
 }
+
+/* Active step (Step 1) */
+.stepperContainer:first-child .stepperNumber {
+  background: #0388ff;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+}
+
+/* Muted/Inactive steps (2, 3, 4) */
+.stepperContainer:nth-child(n+2) .stepperNumber {
+  background: #f3f4f6 !important;
+  color: #d1d5db !important;
+  border: 2.5px solid #e5e7eb !important;
+}
+
+.stepperTitle {
+  display: none;
+}
+
+.stepperItemImage {
+  display: none !important;
+}
+
 @media screen and (max-width: 900px) {
   .stepper {
-    gap: 1.6rem;
+    padding: 1.6rem 2% 1.6rem;
   }
-  .stepperItemImage {
-    width: 3.4rem;
-    height: 3.4rem;
+
+  .stepper::before {
+    left: 5%;
+    right: 5%;
   }
-  .stepperItemImage:first-child {
-    width: 4.2rem;
-    height: 4.2rem;
+
+  .stepper::after {
+    left: 5%;
   }
-  .stepperItem {
-    gap: 1.2rem;
-    margin: 0.4rem 0 0 !important;
+
+  .stepperNumber {
+    width: 4.6rem;
+    height: 4.6rem;
+    font-size: 1.6rem;
   }
-  .stepperItem:first-child {
-    margin: 0 !important;
+
+  .stepperContainer:first-child .stepperNumber {
+    font-size: 1.6rem;
   }
-  .stepperItemText {
-    gap: 0.5rem;
-  }
-  .stepperLine svg,
-  .stepperLine2 svg {
-    margin-top: -4rem;
-  }
+
   .stepperTitle {
+    font-size: 1.1rem;
+  }
+
+  .stepperItem:first-child .stepperTitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stepper {
+    padding: 1.2rem 1.5% 1.2rem;
+  }
+
+  .stepper::before {
+    height: 2px;
+  }
+
+  .stepper::after {
+    height: 2px;
+  }
+
+  .stepperNumber {
+    width: 4rem;
+    height: 4rem;
     font-size: 1.4rem;
+  }
+
+  .stepperContainer:first-child .stepperNumber {
+    font-size: 1.4rem;
+  }
+
+  .stepperTitle {
+    font-size: 1rem;
+  }
+
+  .stepperItem:first-child .stepperTitle {
+    font-size: 1.15rem;
   }
 }

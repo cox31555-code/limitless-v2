@@ -1,0 +1,287 @@
+.cookieBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 9999;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 2.4rem 4%;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 100px;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 82, 163, 0.08);
+  border-radius: 10px;
+}
+
+.cookieIcon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.textContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.title {
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.description {
+  color: #6b7280;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.link {
+  color: #0388ff;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: none;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  flex-shrink: 0;
+  min-width: 200px;
+}
+
+.acceptButton,
+.rejectButton,
+.customiseButton {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1.2rem 2.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: none;
+  white-space: nowrap;
+  font-family: inherit;
+  border: none;
+  width: 100%;
+}
+
+.acceptButton {
+  background: #0052a3;
+  color: #ffffff;
+}
+
+.rejectButton {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.customiseButton {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+/* Tablet */
+@media screen and (max-width: 1200px) {
+  .content {
+    padding: 2.2rem 4%;
+    gap: 2.4rem;
+    min-height: auto;
+  }
+
+  .leftSection {
+    gap: 1rem;
+  }
+
+  .iconWrapper {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .cookieIcon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+
+  .actions {
+    gap: 0.9rem;
+    min-width: 170px;
+  }
+
+  .acceptButton,
+  .rejectButton,
+  .customiseButton {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 4%;
+    min-height: auto;
+    max-width: 100%;
+  }
+
+  .leftSection {
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .iconWrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .cookieIcon {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .actions {
+    width: 100%;
+    gap: 0.9rem;
+    min-width: auto;
+  }
+
+  .acceptButton,
+  .rejectButton,
+  .customiseButton {
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 1.1rem 1.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 2rem 4%;
+    gap: 2rem;
+  }
+
+  .leftSection {
+    gap: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .cookieIcon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .actions {
+    gap: 1rem;
+  }
+
+  .acceptButton,
+  .rejectButton,
+  .customiseButton {
+    font-size: 1.25rem;
+    padding: 1.2rem 1.6rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content {
+    padding: 1.8rem 4%;
+    gap: 1.8rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 1.15rem;
+  }
+
+  .acceptButton,
+  .rejectButton,
+  .customiseButton {
+    font-size: 1.2rem;
+    padding: 1.1rem 1.4rem;
+  }
+}

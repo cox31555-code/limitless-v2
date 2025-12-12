@@ -1,5 +1,6 @@
+"use client";
+
 import React from "react";
-import TextInput from "./textInput/TextInput";
 import styles from "./textInput/textInput.module.css";
 
 const FormTextInput = ({
@@ -9,35 +10,27 @@ const FormTextInput = ({
   reg,
   button,
   error,
-  value,
-  ...props
+  disabled = false,
+  inputStyle = {},
+  ...rest
 }) => {
   return (
-    <div className={styles.inputGroup}>
-      <label className={styles.label}>{label}</label>
-      <div className={styles.wrapper}>
-        <div className={`${styles.inputContainer} ${error ? styles.error : ""}`}>
-          {reg && <span className={styles.inputSpan}>GB</span>}
-          <input
-            type={type}
-            placeholder={placeholder}
-            className={`${styles.input} ${error ? styles.error : ""} ${reg ? styles.reg : ""}`}
-            value={value}
-            {...props}
-          />
-        </div>
+    <div className={styles.formInputGroup}>
+      {label && <label className={styles.formInputLabel}>{label}</label>}
+      <div className={styles.formInputWrapper}>
+        <input
+          type={type}
+          placeholder={placeholder}
+          className={`${styles.formInput} ${error ? styles.formInputError : ""} ${disabled ? styles.formInputDisabled : ""}`}
+          disabled={disabled}
+          style={inputStyle}
+          {...rest}
+        />
         {button && button}
       </div>
       {error && (
-        <span
-          className={styles.errorMessage}
-          style={{
-            color: "#dc3545",
-            fontSize: "0.875rem",
-            marginTop: "0.25rem",
-          }}
-        >
-          {error.message}
+        <span className={styles.formInputErrorMsg}>
+          {error.message || error}
         </span>
       )}
     </div>

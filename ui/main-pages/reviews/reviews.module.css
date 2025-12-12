@@ -1,312 +1,704 @@
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 3.4%;
+  flex-direction: column;
+  gap: 8rem;
+  width: 100vw;
+  padding: 4rem 4.4% 12rem;
+  margin: 0 calc(-50vw + 50%);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0) 0%, rgba(248, 250, 252, 0.4) 50%, rgba(248, 250, 252, 0) 100%);
 }
-.starsContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+
+.container::before {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 45rem;
+  height: 45rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
-.rating {
-  color: #000822;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 100%; /* 16px */
-  margin-left: 0.6rem;
-}
-.reviewsCount {
-  color: #717584;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 100%; /* 16px */
-  margin-left: 0.6rem;
-}
-.first {
+
+.top {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
+
 .title {
   color: #000822;
-  font-size: 5.8rem;
-  font-weight: 700;
-  line-height: 100%; /* 58px */
-}
-.title span {
-  color: #049cff;
-}
-.reviews {
-  display: flex;
-  gap: 2.6rem;
-}
-.reviewContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 2.6rem;
-  /* Desktop scrollable container */
-  height: 85rem; /* Approximately 2.5 reviews (31.6rem each + gaps) */
-  overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  padding-right: 1rem; /* Space for custom scrollbar */
-  position: relative;
-  /* Grabbable cursor */
-  cursor: grab;
+  font-size: 5.6rem;
+  font-weight: 800;
+  line-height: 120%;
+  margin: 0;
+  letter-spacing: -1.2px;
+  text-align: center;
 }
 
-.reviewContainer:active {
-  cursor: grabbing;
-}
-
-.review {
-  width: 40.4rem;
-  height: 31.6rem;
-  border-radius: 1.8rem;
-  background: #fff;
-  padding: 2.6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
-}
-.text {
-  color: #000822;
-  font-size: 1.6rem;
-  font-weight: 300;
-  line-height: 118%; /* 18.88px */
-}
-.bottom {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.author {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.name {
-  color: #000822;
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 100%; /* 18px */
-}
-.date {
-  color: rgba(0, 8, 34, 0.54);
-  font-size: 1.6rem;
-  font-weight: 300;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-}
-.stars {
+.navigation {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
+  gap: 2.4rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
-/* Custom scrollbar styling for desktop */
-.reviewContainer::-webkit-scrollbar {
-  width: 0;
+.prevButton {
+  display: flex;
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #E5E7EB;
+  background: #FFFFFF;
+  color: #D1D5DB;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.reviewContainer::-webkit-scrollbar-track {
-  background: rgba(0, 8, 34, 0.05);
-  border-radius: 3px;
+.prevButton svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke-width: 2.5;
 }
 
-.reviewContainer::-webkit-scrollbar-thumb {
-  background: rgba(4, 156, 255, 0.3);
-  border-radius: 3px;
-  transition: background-color 0.3s ease;
+
+.prevButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
-.reviewContainer::-webkit-scrollbar-thumb:hover {
-  background: rgba(4, 156, 255, 0.5);
+.prevButtonActive {
+  background: #FFFFFF;
+  color: #0388ff;
+  border-color: #0388ff;
 }
 
-/* Smooth hover animations for review cards */
-.review {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+.nextButton {
+  display: flex;
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #E5E7EB;
+  background: #FFFFFF;
+  color: #D1D5DB;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.review:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 8, 34, 0.12);
+.nextButton svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke-width: 2.5;
 }
-@media screen and (max-width: 1300) {
+
+
+.nextButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.nextButtonActive {
+  background: #0388ff;
+  color: #FFFFFF;
+  border: 2px solid #0388ff;
+}
+
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.summaryCard {
+  display: flex;
+  width: 28rem;
+  min-width: 28rem;
+  height: 22rem;
+  padding: 2.4rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: #FFFFFF;
+  border: 1px solid #E8EBF0;
+  border-radius: 8px;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+}
+
+.excellent {
+  color: #00B67A;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  letter-spacing: 0.02em;
+}
+
+.largeStars {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0.4rem 0;
+}
+
+.largeStars svg {
+  width: 3.3rem;
+  height: 3.4rem;
+  flex-shrink: 0;
+}
+
+.largeStars > div {
+  width: 3.4rem;
+  height: 3.4rem;
+  flex-shrink: 0;
+}
+
+.reviewsCount {
+  color: #374151;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+}
+
+.trustpilotBadge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.trustpilotBadge svg {
+  width: 2.54rem;
+  height: 2.4rem;
+}
+
+.trustpilotText {
+  color: #374151;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+}
+
+.reviewsContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 3.2rem;
+  flex: 1;
+}
+
+.reviewCard {
+  display: flex;
+  height: 22rem;
+  padding: 2.4rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+  background: #FFFFFF;
+  border: 1px solid #E8EBF0;
+  border-radius: 8px;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.04);
+  animation: pageSwipeIn 0.5s ease-out forwards;
+}
+
+.reviewCard:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.reviewCard:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+
+@keyframes pageSwipeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes smoothSwipeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.rating {
+  display: flex;
+  height: 2.6rem;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.stars {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.stars svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.timestamp {
+  color: #9CA3AF;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+}
+
+.reviewTitle {
+  align-self: stretch;
+  color: #1F2937;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  letter-spacing: -0.01em;
+}
+
+.reviewText {
+  align-self: stretch;
+  color: #4B5563;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  max-height: 4.4rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.divider {
+  width: 6rem;
+  height: 0.15rem;
+  background: linear-gradient(90deg, #D1D5DB 0%, #E5E7EB 100%);
+  border-radius: 1px;
+}
+
+.username {
+  color: #6B7280;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+}
+
+@media screen and (max-width: 1200px) {
   .container {
+    padding: 5rem 4.4% 10rem;
+    gap: 6rem;
+  }
+
+  .top {
     gap: 2rem;
   }
-}
-@media screen and (max-width: 1300) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 4rem;
-  }
-  .first {
-    gap: 2.2rem;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .reviews {
-    width: 100%;
-  }
-  .review,
-  .reviewContainer {
-    flex: 1;
-    width: 100%;
-  }
-}
-/* Desktop and Mobile Review Containers */
-.desktopReviews {
-  display: flex;
-  gap: 2.6rem;
-}
 
-.mobileReviews {
-  display: none;
+  .title {
+    font-size: 4.4rem;
+    letter-spacing: -1px;
+  }
+
+  .content {
+    gap: 1.6rem;
+  }
+
+  .reviewsContainer {
+    gap: 2rem;
+  }
+
+  .summaryCard {
+    width: 24rem;
+    min-width: 24rem;
+  }
 }
 
 @media screen and (max-width: 900px) {
   .container {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 3.8rem;
     width: 100%;
+    margin: 0;
+    padding: 3rem 4% 6rem;
+    gap: 5rem;
   }
-  .starsContainer {
-    gap: 0.6rem;
+
+  .top {
+    gap: 2rem;
   }
-  .rating {
-    font-size: 1.4rem;
-  }
-  .reviewsCount {
-    font-size: 1.4rem;
-  }
-  .first {
-    gap: 2.2rem;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-  }
+
   .title {
-    font-size: 3.4rem;
+    font-size: 3.8rem;
+    letter-spacing: -0.8px;
+  }
+
+  .content {
     flex-direction: column;
+    gap: 0.2rem;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .prevButton,
+  .nextButton {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .prevButton svg,
+  .nextButton svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .summaryCard {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto 0 auto;
     text-align: center;
-    gap: 0.3rem;
-  }
-  .reviews {
-    width: 100%;
-    position: relative;
-  }
-
-  /* Hide desktop reviews on mobile */
-  .desktopReviews {
-    display: none;
-  }
-
-  /* Show mobile slideshow */
-  .mobileReviews {
-    display: block;
-    width: 100%;
-    position: relative;
-  }
-
-  .slideContainer {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .mainReviews {
-    display: flex;
-    flex-direction: column;
-    gap: 2.2rem;
-    width: 100%;
-    animation: slideInFromRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  }
-
-  @keyframes slideInFromRight {
-    0% {
-      opacity: 0;
-      transform: translateX(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .review {
-    width: auto;
-    height: auto;
-    padding: 3rem 2.9rem 3rem 2.6rem;
-    transform: none;
-    box-shadow: none;
-  }
-
-  .review:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  .text {
-    font-size: 1.4rem;
-  }
-
-  .author {
+    padding: 2rem;
     gap: 0.8rem;
   }
 
-  .name {
+  .reviewsContainer {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    touch-action: pan-y;
+    box-shadow: 0 2rem 3.2rem 0 rgba(0, 0, 0, 0.06);
+    border-radius: 1.2rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reviewCard {
+    width: 100%;
+    height: auto;
+    min-height: 22rem;
+    flex: 0 0 100%;
+    animation: smoothSwipeIn 1.2s ease-out forwards;
+    box-shadow: none;
+    border-radius: 1.2rem;
+  }
+
+  .reviewCard:nth-child(2) {
+    animation-delay: 0s;
+  }
+
+  .reviewCard:nth-child(3) {
+    animation-delay: 0s;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 2rem 3.2% 5rem;
+    gap: 4rem;
+  }
+
+  .top {
+    gap: 1.8rem;
+  }
+
+  .title {
+    font-size: 2.9rem;
+    letter-spacing: -0.6px;
+  }
+
+  .content {
+    gap: 0rem;
+  }
+
+  .navigation {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+
+  .prevButton,
+  .nextButton {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .prevButton svg,
+  .nextButton svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .content {
+    gap: 0rem;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .summaryCard {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem 1.6rem;
+    gap: 0.8rem;
+    margin: 0;
+    height: auto;
+    text-align: center;
+  }
+
+  .reviewsContainer {
+    margin: 0;
+  }
+
+  .largeStars {
+    gap: 0.5rem;
+  }
+
+  .largeStars svg {
+    width: 2.4rem;
+    height: 2.48rem;
+  }
+
+  .largeStars > div {
+    width: 2.48rem;
+    height: 2.48rem;
+  }
+
+  .largeStars > div > div {
+    width: 2.48rem;
+    height: 2.48rem;
+  }
+
+  .largeStars > div > svg {
+    width: 2.08rem;
+    height: 2.08rem;
+  }
+
+  .excellent {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+
+  .reviewsCount {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+
+  .trustpilotBadge {
+    gap: 0.4rem;
+  }
+
+  .trustpilotBadge svg {
+    width: 2.2rem;
+    height: 2.1rem;
+  }
+
+  .trustpilotText {
+    font-size: 1.3rem;
+  }
+
+  .reviewsContainer {
+    touch-action: pan-y;
+    cursor: grab;
+    box-shadow: 0 2rem 3.2rem 0 rgba(0, 0, 0, 0.06);
+    border-radius: 1.2rem;
+    padding: 0;
+  }
+
+  .reviewsContainer:active {
+    cursor: grabbing;
+  }
+
+  .reviewCard {
+    padding: 2rem;
+    min-height: 20rem;
+    flex: 0 0 100%;
+    animation: smoothSwipeIn 1.2s ease-out forwards;
+    box-shadow: none;
+    border-radius: 1.2rem;
+  }
+
+  .reviewTitle {
     font-size: 1.6rem;
   }
 
-  .date {
-    font-size: 1.4rem;
+  .reviewText {
+    font-size: 1.3rem;
   }
 
-  .stars {
-    gap: 0.2rem;
+  .username {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 1.5rem 4% 4rem;
+    gap: 3.5rem;
   }
 
-  /* Slide Indicators */
-  .indicators {
+  .top {
+    gap: 1.6rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+  }
+
+  .navigation {
     display: flex;
+    width: 100%;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 3rem;
+    gap: 1.4rem;
   }
 
-  .indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(4, 156, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
+  .prevButton,
+  .nextButton {
+    width: 3.8rem;
+    height: 3.8rem;
   }
 
-  .indicator.active {
-    background: #049cff;
-    transform: scale(1.2);
+  .prevButton svg,
+  .nextButton svg {
+    width: 2rem;
+    height: 2rem;
   }
 
-  .indicator:hover {
-    background: rgba(4, 156, 255, 0.6);
+  .content {
+    gap: 0rem;
+    justify-content: flex-start;
+    align-items: stretch;
   }
 
+  .summaryCard {
+    padding: 1.8rem 1.4rem;
+    gap: 0.7rem;
+    margin: 0;
+    height: auto;
+    text-align: center;
+  }
+
+  .reviewsContainer {
+    margin: 0;
+  }
+
+  .largeStars {
+    gap: 0.4rem;
+  }
+
+  .largeStars svg {
+    width: 2.2rem;
+    height: 2.28rem;
+  }
+
+  .largeStars > div {
+    width: 2.28rem;
+    height: 2.28rem;
+  }
+
+  .largeStars > div > div {
+    width: 2.28rem;
+    height: 2.28rem;
+  }
+
+  .largeStars > div > svg {
+    width: 1.92rem;
+    height: 1.92rem;
+  }
+
+  .excellent {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .reviewsCount {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  .trustpilotBadge {
+    gap: 0.3rem;
+  }
+
+  .trustpilotBadge svg {
+    width: 2rem;
+    height: 1.92rem;
+  }
+
+  .trustpilotText {
+    font-size: 1.2rem;
+  }
+
+  .reviewsContainer {
+    box-shadow: 0 2rem 3.2rem 0 rgba(0, 0, 0, 0.06);
+    border-radius: 1.2rem;
+    padding: 0;
+  }
+
+  .reviewCard {
+    padding: 1.8rem;
+    flex: 0 0 100%;
+    animation: smoothSwipeIn 1.2s ease-out forwards;
+    box-shadow: none;
+    border-radius: 1.2rem;
+  }
 }

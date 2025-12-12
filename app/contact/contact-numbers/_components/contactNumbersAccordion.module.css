@@ -1,0 +1,614 @@
+.section {
+  width: 100%;
+  padding: 5rem 4%;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+}
+
+.accordionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.accordionItem {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0e6f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.accordionItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.08);
+  border-color: rgba(0, 82, 163, 0.15);
+}
+
+.accordionButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2.6rem 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.accordionButton:hover {
+  background: rgba(0, 82, 163, 0.02);
+}
+
+.accordionButton.expanded {
+  background: rgba(0, 82, 163, 0.03);
+  border-bottom: 1px solid #e0e6f0;
+}
+
+.accordionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  padding-right: 2rem;
+}
+
+.accordionIcon {
+  flex-shrink: 0;
+  color: #0052a3;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.accordionButton.expanded .accordionIcon {
+  transform: rotate(180deg);
+}
+
+.accordionContentWrapper {
+  padding: 3.2rem 3rem 3rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.label {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #0052a3;
+  margin: 0;
+}
+
+.text {
+  font-size: 1.65rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.75;
+}
+
+.phone {
+  font-size: 2.4rem;
+  color: #0052a3;
+  margin: 0.6rem 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.email {
+  font-size: 1.7rem;
+  color: #0052a3;
+  margin: 0.6rem 0;
+  font-weight: 600;
+}
+
+.hoursBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.hoursTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+}
+
+.hours {
+  background: #f8fafb;
+  padding: 2.4rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  border: 1px solid #e0e6f0;
+}
+
+.hourRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+}
+
+.day {
+  font-size: 1.6rem;
+  color: #5a6b7d;
+  font-weight: 500;
+}
+
+.time {
+  font-size: 1.6rem;
+  color: #0052a3;
+  font-weight: 600;
+}
+
+.timeClosed {
+  font-size: 1.6rem;
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.claimOption {
+  background: #f8fafb;
+  padding: 2.8rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  border: 1px solid #e0e6f0;
+}
+
+.claimTitle {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+}
+
+.claimStatusBlock {
+  background: #f8fafb;
+  padding: 2.8rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  border: 1px solid #e0e6f0;
+}
+
+.statusTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+}
+
+.list {
+  margin: 0;
+  padding-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.list li {
+  font-size: 1.6rem;
+  color: #5a6b7d;
+  line-height: 1.75;
+}
+
+.whatsappBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  text-align: center;
+}
+
+.qrCode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 2.8rem;
+  background: #f8fafb;
+  border-radius: 12px;
+  border: 1px solid #e0e6f0;
+}
+
+.qrLabel {
+  font-size: 1.5rem;
+  color: #5a6b7d;
+  font-weight: 500;
+  margin: 0;
+}
+
+.complaintsContact,
+.accessibilityContact,
+.mediaContact {
+  background: #f8fafb;
+  padding: 2.8rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid #e0e6f0;
+}
+
+.contactMethod {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.methodLabel {
+  font-size: 1.4rem;
+  color: #5a6b7d;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.infoText {
+  font-size: 1.55rem;
+  color: #5a6b7d;
+  margin: 1.2rem 0 0 0;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.helpSection {
+  width: 100%;
+  padding: 6rem 4%;
+  background: #f8fafb;
+  border-top: 1px solid #e0e6f0;
+}
+
+.helpContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.helpTitle {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.helpSubtitle {
+  font-size: 1.7rem;
+  color: #5a6b7d;
+  margin: 0 0 4rem 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.helpGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.helpCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.2rem 2.4rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0e6f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  gap: 1.6rem;
+}
+
+.helpCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 82, 163, 0.12);
+  border-color: #0052a3;
+}
+
+.helpCard:hover .helpIconCircle {
+  background: #0052a3;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.helpCard:hover .helpCardArrow {
+  transform: translateX(3px);
+}
+
+.helpIconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  background: rgba(0, 82, 163, 0.08);
+  border-radius: 50%;
+  color: #0052a3;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.helpCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.helpCardTitle {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.helpCardDescription {
+  font-size: 1.5rem;
+  color: #5a6b7d;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.helpCardArrow {
+  color: #0052a3;
+  transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 1100px) {
+  .helpGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+  }
+
+  .helpCard {
+    padding: 2.8rem 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 4rem 4%;
+  }
+
+  .accordionWrapper {
+    gap: 1.6rem;
+  }
+
+  .accordionButton {
+    padding: 2.2rem 2.4rem;
+  }
+
+  .accordionTitle {
+    font-size: 1.8rem;
+    padding-right: 1.5rem;
+  }
+
+  .accordionContentWrapper {
+    padding: 2.8rem 2.4rem 2.4rem;
+  }
+
+  .accordionContent {
+    gap: 2rem;
+  }
+
+  .phone {
+    font-size: 2.2rem;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  }
+
+  .claimOption,
+  .claimStatusBlock,
+  .complaintsContact,
+  .accessibilityContact {
+    padding: 2.4rem;
+  }
+
+  .hours {
+    padding: 2rem;
+  }
+
+  .helpSection {
+    padding: 5rem 4%;
+  }
+
+  .helpTitle {
+    font-size: 2.8rem;
+  }
+
+  .helpSubtitle {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .helpGrid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .helpCard {
+    flex-direction: row;
+    padding: 2.4rem;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  .helpIconCircle {
+    width: 5.5rem;
+    height: 5.5rem;
+    order: -1;
+  }
+
+  .helpCardContent {
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  .helpCardArrow {
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 3rem 4%;
+  }
+
+  .accordionWrapper {
+    gap: 1.4rem;
+  }
+
+  .accordionButton {
+    padding: 2rem 2rem;
+  }
+
+  .accordionTitle {
+    font-size: 1.7rem;
+    padding-right: 1rem;
+  }
+
+  .accordionContentWrapper {
+    padding: 2.4rem 2rem 2rem;
+  }
+
+  .accordionContent {
+    gap: 1.8rem;
+  }
+
+  .phone {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+
+  .claimOption,
+  .claimStatusBlock,
+  .complaintsContact,
+  .accessibilityContact {
+    padding: 2rem;
+  }
+
+  .hours {
+    padding: 1.8rem;
+  }
+
+  .hourRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .day,
+  .time,
+  .timeClosed {
+    font-size: 1.5rem;
+  }
+
+  .list li {
+    font-size: 1.5rem;
+  }
+
+  .claimTitle,
+  .statusTitle,
+  .hoursTitle {
+    font-size: 1.7rem;
+  }
+
+  .qrCode {
+    padding: 2rem;
+  }
+
+  .qrCode svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .helpSection {
+    padding: 4rem 4%;
+  }
+
+  .helpTitle {
+    font-size: 2.4rem;
+  }
+
+  .helpSubtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .helpCard {
+    padding: 2rem;
+  }
+
+  .helpCardTitle {
+    font-size: 1.7rem;
+  }
+
+  .helpCardDescription {
+    font-size: 1.4rem;
+  }
+
+  .helpIconCircle {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .helpIconCircle svg {
+    width: 20px;
+    height: 20px;
+  }
+}

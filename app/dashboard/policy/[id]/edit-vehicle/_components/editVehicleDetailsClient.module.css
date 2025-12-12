@@ -1,0 +1,869 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: -1.5625rem 0 1.75rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Edit Vehicle Details Client - Uses shared dashboard layout styles */
+/* Hero, breadcrumb, and content wrapper styling is centralized in dashboardLayout.module.css */
+
+/* Page-specific overrides or additional styles can be added here */
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* Info Banner */
+.infoBanner {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.3rem 1.8rem;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f2fb 100%);
+  border-radius: 10px;
+  border: 1px solid #c8ddf5;
+  align-items: flex-start;
+  font-size: 6px;
+}
+
+.infoIcon {
+  width: 20px;
+  height: 20px;
+  color: #1976d2;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.infoBannerText {
+  margin: 0;
+  font-size: 11.5px;
+  color: #1565c0;
+  line-height: 1.6;
+}
+
+.infoBannerText strong {
+  font-weight: 600;
+  color: #0d47a1;
+}
+
+/* Vehicle Info Card - Static Display */
+.vehicleInfoCard {
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  padding: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.vehicleHeader {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
+  border-radius: 50%;
+  border: 1px solid #e3e8ef;
+}
+
+.vehicleIcon {
+  width: 28px;
+  height: 28px;
+  color: #1976d2;
+}
+
+.vehicleNameArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.vehicleInfoTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #5a6c7d;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+}
+
+.vehicleInfoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid #e8ecf0;
+}
+
+.vehicleTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+  margin: 0;
+}
+
+.vehicleRegistration {
+  font-size: 1.5rem;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+}
+
+.vehicleMetaInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.metaItem {
+  font-size: 1.3rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.metaItem::after {
+  content: ",";
+  margin-right: 0.5rem;
+}
+
+.metaItem:last-child::after {
+  content: "";
+}
+
+.vehicleTypeInfo {
+  font-size: 1.4rem;
+  color: #64748b;
+  font-weight: 500;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #e8ecf0;
+}
+
+.vehicleTypeValue {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Main Section - Questions */
+.mainSection {
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  padding: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Field Group */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 2.6rem 0;
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.fieldGroup:first-child {
+  padding-top: 0;
+}
+
+.fieldGroup:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fieldGroupTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.fieldGroupDescription {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e8ecf0;
+  justify-content: flex-end;
+}
+
+.cancelBtn,
+.saveBtn {
+  padding: 1.3rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.cancelBtn {
+  background: #f0f1f3;
+  color: #333;
+  border: none;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.saveBtn {
+  background: #0052a3;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 82, 163, 0.2);
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+}
+
+.cancelBtn:disabled,
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .heroSection {
+    padding: 7rem calc(50vw - 50%) 7rem;
+  }
+
+  .greetingTitle {
+    font-size: 3.5rem;
+  }
+
+  .contentWrapper {
+    padding: 3rem 5%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem calc(50vw - 50%);
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  .greetingArea {
+    align-items: center;
+    width: 100%;
+  }
+
+  .greetingTitle {
+    font-size: 2.8rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.25rem;
+  }
+
+  .contentWrapper {
+    padding: 0 5%;
+  }
+
+  .infoBanner {
+    gap: 1.2rem;
+    padding: 1.2rem 1.6rem;
+  }
+
+  .infoBannerText {
+    font-size: 11.5px;
+  }
+
+  .vehicleInfoCard {
+    padding: 2rem;
+  }
+
+  .vehicleHeader {
+    gap: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .vehicleIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .vehicleInfoTitle {
+    font-size: 1.1rem;
+  }
+
+  .vehicleTitle {
+    font-size: 1.5rem;
+  }
+
+  .vehicleRegistration {
+    font-size: 1.1rem;
+  }
+
+  .metaItem {
+    font-size: 1.2rem;
+  }
+
+  .vehicleTypeInfo {
+    font-size: 1.2rem;
+  }
+
+  .mainSection {
+    padding: 2rem;
+  }
+
+  .fieldGroup {
+    padding: 2rem 0;
+  }
+
+  .fieldGroup:first-child {
+    padding-top: 0;
+  }
+
+  .fieldGroup:last-child {
+    padding-bottom: 0;
+  }
+
+  .fieldGroupTitle {
+    font-size: 1.5rem;
+  }
+
+  .fieldGroupDescription {
+    font-size: 1.2rem;
+  }
+
+  .actionButtons {
+    flex-direction: column-reverse;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    margin: 0 0 1.75rem 0;
+  }
+
+  .contentWrapper {
+    padding: 20px 0 1.6rem;
+  }
+
+  .infoBanner {
+    gap: 1rem;
+    padding: 1.1rem 1.4rem;
+  }
+
+  .infoBannerText {
+    font-size: 11.5px;
+  }
+
+  .vehicleInfoCard {
+    padding: 1.8rem;
+  }
+
+  .vehicleHeader {
+    gap: 1rem;
+  }
+
+  .iconWrapper {
+    width: 52px;
+    height: 52px;
+  }
+
+  .vehicleIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mainSection {
+    padding: 1.8rem;
+  }
+
+  .fieldGroup {
+    padding: 2rem 0;
+  }
+
+  .fieldGroup:first-child {
+    padding-top: 0;
+  }
+
+  .fieldGroup:last-child {
+    padding-bottom: 0;
+  }
+
+  .vehicleInfoTitle {
+    font-size: 1.3rem;
+  }
+
+  .vehicleTitle {
+    font-size: 1.9rem;
+  }
+
+  .vehicleRegistration {
+    font-size: 1.3rem;
+  }
+
+  .metaItem {
+    font-size: 1.3rem;
+  }
+
+  .vehicleTypeInfo {
+    font-size: 1.3rem;
+  }
+
+  .fieldGroupTitle {
+    font-size: 1.6rem;
+  }
+
+  .fieldGroupDescription {
+    font-size: 1.3rem;
+  }
+
+  .actionButtons {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heroSection {
+    padding: 2.5rem calc(50vw - 50%);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .greetingTitle {
+    font-size: 2.3rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.15rem;
+  }
+
+  .contentWrapper {
+    padding: 20px 0 1.6rem;
+  }
+
+  .infoBanner {
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .infoBannerText {
+    font-size: 11.5px;
+  }
+
+  .vehicleInfoCard {
+    padding: 1.6rem;
+    gap: 1.2rem;
+  }
+
+  .vehicleHeader {
+    gap: 1rem;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  .vehicleIcon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .vehicleInfoTitle {
+    font-size: 1.2rem;
+  }
+
+  .vehicleTitle {
+    font-size: 1.5rem;
+  }
+
+  .vehicleRegistration {
+    font-size: 1.3rem;
+  }
+
+  .vehicleMetaInfo {
+    gap: 0.2rem;
+  }
+
+  .metaItem {
+    font-size: 1.3rem;
+  }
+
+  .vehicleTypeInfo {
+    font-size: 1.3rem;
+  }
+
+  .mainSection {
+    padding: 1.6rem;
+  }
+
+  .fieldGroup {
+    padding: 1.8rem 0;
+    gap: 1.2rem;
+  }
+
+  .fieldGroup:first-child {
+    padding-top: 0;
+  }
+
+  .fieldGroup:last-child {
+    padding-bottom: 0;
+  }
+
+  .fieldGroupTitle {
+    font-size: 1.6rem;
+  }
+
+  .fieldGroupDescription {
+    font-size: 1.3rem;
+  }
+}
+
+/* Modifications Display */
+.modificationsDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+  padding: 1.8rem;
+  background: #f8fafc;
+  border: 1px solid #e8ecf0;
+  border-radius: 10px;
+}
+
+.modificationsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modificationsLabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #64748b;
+  margin: 0;
+}
+
+.editModificationsBtn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.editModificationsBtn:hover {
+  border-color: #94a3b8;
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.modificationsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.modificationTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.4rem;
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.modificationTag::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #1976d2;
+}
+
+@media screen and (max-width: 640px) {
+  .modificationsDisplay {
+    padding: 1.6rem;
+  }
+
+  .modificationsLabel {
+    font-size: 1.3rem;
+  }
+
+  .editModificationsBtn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .modificationTag {
+    font-size: 1.3rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modificationsDisplay {
+    padding: 1.4rem;
+  }
+
+  .modificationsLabel {
+    font-size: 1.3rem;
+  }
+
+  .editModificationsBtn {
+    font-size: 1.3rem;
+  }
+
+  .modificationTag {
+    font-size: 1.3rem;
+  }
+}
+
+/* Error Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.errorModal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.3s ease;
+  text-align: center;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+}
+
+.errorIcon {
+  width: 50px;
+  height: 49px;
+  color: #dc2626;
+}
+
+.errorTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.3;
+}
+
+.errorMessage {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.errorContact {
+  font-size: 1.5rem;
+  color: #475569;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.errorActions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.contactBtn,
+.closeBtn {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.contactBtn {
+  background: #0052a3;
+  color: #ffffff;
+}
+
+.contactBtn:hover {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+}
+
+.closeBtn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.closeBtn:hover {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+@media screen and (max-width: 640px) {
+  .modalOverlay {
+    padding: 1.5rem;
+  }
+
+  .errorModal {
+    padding: 2.5rem 2rem;
+  }
+
+  .errorIconWrapper {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+  }
+
+  .errorIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .errorTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .errorMessage {
+    font-size: 1.4rem;
+  }
+
+  .errorContact {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .errorActions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contactBtn,
+  .closeBtn {
+    width: 100%;
+    padding: 1.3rem 2rem;
+  }
+}

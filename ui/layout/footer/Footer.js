@@ -1,28 +1,33 @@
 "use client";
-import React from "react";
+
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import styles from "./footer.module.css";
 import { menus } from "./data";
 import Link from "next/link";
-import { BiLogoInstagramAlt } from "react-icons/bi";
-import { BiLogoFacebook } from "react-icons/bi";
-import { BiLogoTwitter } from "react-icons/bi";
-import { BiLogoLinkedin } from "react-icons/bi";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import NoHiddenFees from "../noHiddenFees/NoHiddenFees";
+import GetQuoteFooterBanner from "../getQuoteFooterBanner/GetQuoteFooterBanner";
+
+const SocialIcons = dynamic(() => import("./SocialIcons"), { ssr: false });
 
 // List of all valid pages in the app directory
 const validPages = [
   "/",
   "/about-us",
+  "/annual",
+  "/annual/get-quote",
   "/change-password",
   "/coming-soon",
   "/complaints",
   "/contact",
+  "/contact/contact-numbers",
   "/cookies-policy",
   "/courier",
   "/courier-insurance",
   "/dashboard",
+  "/allianz-dashboard",
   "/delivery",
   "/error-404",
   "/faq",
@@ -41,186 +46,118 @@ const validPages = [
 
 // Helper function to determine if special styles should be applied
 const shouldUseSpecialStyles = (pathname) => {
-  // Always use special styles for contact-us
-  if (pathname === "/contact") return true;
-
   // Use special styles for any page that doesn't exist in our valid pages list
   // This covers 404/not-found scenarios
-  return !validPages.includes(pathname) && !pathname.startsWith("/dashboard");
+  return !validPages.includes(pathname) && !pathname.startsWith("/dashboard") && !pathname.startsWith("/allianz-dashboard");
 };
 
 const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+
+  // Determine which banner to show
+  const isGetQuotePage = isMounted && (pathname?.startsWith("/temporary/get-quote") ||
+    pathname?.startsWith("/impound/get-quote") ||
+    pathname?.startsWith("/annual/get-quote"));
+  const isPaymentSummaryPage = isMounted && pathname === "/payment-summary";
+  const isPaymentPage = isMounted && pathname?.startsWith("/payment") && !isPaymentSummaryPage;
+  const isDashboardPage = isMounted && (pathname?.startsWith("/dashboard") || pathname?.startsWith("/allianz-dashboard"));
+
+  const isLoginPage = isMounted && pathname === "/login";
+  const isRetrieveQuotePage = isMounted && pathname === "/retrieve-quote";
+  const isContactPage = isMounted && pathname === "/contact";
+  const isContactNumbersPage = isMounted && pathname === "/contact/contact-numbers";
+
+  // Only apply special styles if mounted and pathname is available, but NOT for login or retrieve-quote pages
+  const shouldApplySpecialStyles = isMounted && pathname && shouldUseSpecialStyles(pathname) && !isLoginPage && !isRetrieveQuotePage;
+
+  // Hide footer for all dashboard pages and login page
+  if (isDashboardPage || isLoginPage) {
+    return null;
+  }
+
   return (
     <footer
       className={styles.container}
       style={{
-        background: shouldUseSpecialStyles(pathname) ? "#F2F5FE" : "",
+        background: shouldApplySpecialStyles ? "#F2F5FE" : "",
       }}
+      suppressHydrationWarning
     >
-      <div className={`centeredContent ${styles.contentContainer}`}>
-        {!pathname.startsWith("/dashboard") &&
-          !["/login", "/forget-password", "/change-password"].includes(
-            pathname
-          ) &&
-          !shouldUseSpecialStyles(pathname) && <NoHiddenFees />}
+      <div className={`centeredContent ${styles.contentContainer}`} suppressHydrationWarning>
+        <div suppressHydrationWarning>
+          {isMounted ? (
+            <>
+              {(isGetQuotePage || isPaymentSummaryPage) && !isDashboardPage && <GetQuoteFooterBanner key="quote-banner" />}
+              {!isPaymentPage && !isGetQuotePage && !isPaymentSummaryPage && pathname !== "/login" && !isDashboardPage && !isContactPage && !isContactNumbersPage && <NoHiddenFees key="hidden-fees" />}
+            </>
+          ) : (
+            <NoHiddenFees key="hidden-fees" />
+          )}
+        </div>
         <div className={styles.content}>
-          <div className={styles.menus}>
-            {menus.map((menu, index) => (
-              <div key={index} className={styles.menu}>
-                <h3
-                  style={{
-                    color: shouldUseSpecialStyles(pathname)
-                      ? "rgba(0, 8, 34, 0.34)"
-                      : "",
-                  }}
-                  className={styles.menuTitle}
-                >
-                  {menu.title}
-                </h3>
-                <menu className={styles.menuItems}>
-                  {menu.items.map((item, index) => (
-                    <li key={index} className={styles.menuItem}>
-                      <Link
-                        href={item.link}
-                        style={{
-                          color: shouldUseSpecialStyles(pathname)
-                            ? "#000822"
-                            : "",
-                        }}
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </menu>
-              </div>
-            ))}
-          </div>
-          <div className={styles.socials}>
-            <div className={styles.socialsContainer}>
-              <h3
-                className={styles.socialsTitle}
-                style={{
-                  color: shouldUseSpecialStyles(pathname)
-                    ? "rgba(0, 8, 34, 0.34)"
-                    : "",
-                }}
-              >
-                Social Media
-              </h3>
-              <div className={styles.socialsItems}>
-                <div
-                  className={`${styles.socialsItem} ${
-                    shouldUseSpecialStyles(pathname)
-                      ? styles["socials-item-black"]
-                      : ""
-                  }`}
-                >
-                  <BiLogoInstagramAlt
-                    className={`${styles.socialsIcon} ${
-                      shouldUseSpecialStyles(pathname)
-                        ? styles["socials-icon-black"]
-                        : ""
-                    }`}
-                    size={20}
-                  />
-                </div>
-                <div
-                  className={`${styles.socialsItem} ${
-                    shouldUseSpecialStyles(pathname)
-                      ? styles["socials-item-black"]
-                      : ""
-                  }`}
-                >
-                  <BiLogoFacebook
-                    className={`${styles.socialsIcon} ${
-                      shouldUseSpecialStyles(pathname)
-                        ? styles["socials-icon-black"]
-                        : ""
-                    }`}
-                    size={20}
-                  />
-                </div>
-                <div
-                  className={`${styles.socialsItem} ${
-                    shouldUseSpecialStyles(pathname)
-                      ? styles["socials-item-black"]
-                      : ""
-                  }`}
-                >
-                  <BiLogoTwitter
-                    className={`${styles.socialsIcon} ${
-                      shouldUseSpecialStyles(pathname)
-                        ? styles["socials-icon-black"]
-                        : ""
-                    }`}
-                    size={20}
-                  />
-                </div>
-                <div
-                  className={`${styles.socialsItem} ${
-                    shouldUseSpecialStyles(pathname)
-                      ? styles["socials-item-black"]
-                      : ""
-                  }`}
-                >
-                  <BiLogoLinkedin
-                    className={`${styles.socialsIcon} ${
-                      shouldUseSpecialStyles(pathname)
-                        ? styles["socials-icon-black"]
-                        : ""
-                    }`}
-                    size={20}
-                  />
-                </div>
-              </div>
+          <div className={styles.mainContent}>
+            <div className={styles.logoColumn}>
+              <Image
+                src="/svg/logo.svg"
+                alt="Limitless Cover"
+                width={120}
+                height={120}
+                className={styles.logo}
+                onClick={() => router.push("/")}
+              />
             </div>
-            <div className={styles.stores}>
-              <h3
-                className={styles.socialsTitle}
-                style={{
-                  color: shouldUseSpecialStyles(pathname)
-                    ? "rgba(0, 8, 34, 0.34)"
-                    : "",
-                }}
-              >
-                Download Our App
-              </h3>
-              <div className={styles.storesContainer}>
-                <Image
-                  onClick={() => router.push("/coming-soon")}
-                  className={styles.store}
-                  src={`${
-                    shouldUseSpecialStyles(pathname)
-                      ? "/svg/light-google-store.svg"
-                      : "/svg/google-store.svg"
-                  }`}
-                  alt="logo"
-                  width={161}
-                  height={54}
-                />
-
-                <Image
-                  onClick={() => router.push("/coming-soon")}
-                  className={styles.store}
-                  src={`${
-                    shouldUseSpecialStyles(pathname)
-                      ? "/svg/light-apple-store.svg"
-                      : "/svg/apple-store.svg"
-                  }`}
-                  alt="logo"
-                  width={161}
-                  height={54}
-                />
-              </div>
+            <div className={styles.menus}>
+              {menus.map((menu, index) => (
+                <div key={index} className={styles.menu}>
+                  <h3
+                    style={{
+                      color: shouldApplySpecialStyles ? "rgba(0, 8, 34, 0.34)" : "",
+                    }}
+                    className={styles.menuTitle}
+                  >
+                    {menu.title}
+                  </h3>
+                  <menu className={styles.menuItems}>
+                    {menu.items.map((item, index) => (
+                      <li key={index} className={styles.menuItem}>
+                        <Link
+                          href={item.link}
+                          style={{
+                            color: shouldApplySpecialStyles ? "#000822" : "",
+                          }}
+                        >
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </menu>
+                </div>
+              ))}
+            </div>
+            <div className={styles.socialsSection}>
+              <SocialIcons shouldApplySpecialStyles={shouldApplySpecialStyles} />
             </div>
           </div>
         </div>
-        <div className={styles.copyright}>
-          © 2025 Limitless Cover Services . All Rights Reserved
+        <div className={styles.legalSection}>
+          <div className={styles.legalContent}>
+            <p className={styles.legalText}>
+              Limitless Cover Services Limited is registered in England and Wales (Company No. 12345678). Authorised and regulated by the Financial Conduct Authority (FCA No. 123456).
+            </p>
+            <p className={styles.legalText}>
+              Registered office: 8 Pancras Square, London, United Kingdom, N1C 4AG
+            </p>
+            <p className={styles.copyright}>
+              © Limitless Cover 2025
+            </p>
+          </div>
         </div>
       </div>
     </footer>

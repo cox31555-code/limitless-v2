@@ -1,107 +1,248 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  border-radius: 16px;
+  gap: 2.4rem;
+  border-radius: 10px;
   background: #fff;
-  padding: 2.4rem 2.4rem 4.1rem 2.4rem;
+  padding: 2rem 2rem 2.4rem;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
 }
 .header {
   display: flex;
-  gap: 3.9rem;
-  width: 85%;
+  gap: 2rem;
+  width: 100%;
 }
 .headerContent {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
 }
 .title {
   color: #000822;
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.72px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.1px;
 }
 .description {
-  color: #494f64;
-  font-size: 1.3rem;
+  color: rgba(0, 8, 34, 0.5);
+  font-size: 1.15rem;
   font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+}
+.selectionItemDescription {
+  color: rgba(0, 8, 34, 0.5);
+  font-weight: 400;
 }
 .selectionContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1.2rem;
 }
 .selectionItem,
 .selectedItem {
   flex: 1;
   display: flex;
-  padding: 1.5rem 2rem;
-  max-width: 30rem;
-  height: 5rem;
+  padding: 1.4rem 1.8rem;
   align-items: center;
-  gap: 3.4rem;
-  border-radius: 0.8rem;
-  background: transparent;
-  box-shadow: 0 0.4rem 0.84rem 0 rgba(0, 8, 34, 0.04);
+  gap: 1.6rem;
+  border-radius: 10px;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.1px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 4.6rem;
 }
+
+.selectionItem:hover {
+  background: #fff;
+  border-color: rgba(3, 136, 255, 0.2);
+}
+
 .selectedItem {
-  background: #06112b;
-  color: #fff;
+  background: #fff;
+  border: 1px solid #0388ff;
+  color: #000822;
 }
+
+.selectedItem:hover {
+  background: #fff;
+  border: 1px solid #0388ff;
+}
+
 .selectionSpan {
   display: flex;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #000822;
+  border: 2px solid rgba(3, 136, 255, 0.3);
+  flex-shrink: 0;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .selectedSpan {
-  background: #0388ff;
-  border: 2px solid white;
-  outline: 1px solid #0388ff;
+  background: #fff;
+  border: 2px solid #0388ff;
+  box-shadow: inset 0 0 0 4px #0388ff;
 }
+
+.selectedItem .selectionSpan {
+  border-color: #0388ff;
+}
+
+.selectedItem .selectedSpan {
+  box-shadow: inset 0 0 0 4px #0388ff;
+}
+
+.hiddenNativeSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
 @media screen and (max-width: 900px) {
   .container {
-    gap: 2.6rem;
-    padding: 3rem 2.4rem;
+    gap: 2rem;
+    padding: 2rem 1.8rem;
   }
   .img {
-    width: 6rem;
-    height: 8rem;
+    width: 6.4rem;
+    height: 7.6rem;
   }
   .header {
-    gap: 2.6rem;
+    gap: 1.6rem;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
   }
   .headerContent {
-    gap: 0.8rem;
+    gap: 0.4rem;
     flex-direction: column;
   }
-  .title,
+  .title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
   .description {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
   }
   .selectionContainer {
-    gap: 1.6rem;
+    gap: 1rem;
   }
   .selectionItem,
   .selectedItem {
-    padding: 1.5rem 1.2rem;
-    max-width: 27rem;
-    height: 4.2rem;
+    padding: 1.4rem 1.6rem;
     gap: 1.2rem;
+    min-height: 5.6rem;
+    font-size: 1.6rem;
+    border: 1.5px solid rgba(3, 136, 255, 0.12);
+  }
+  .selectedItem {
+    border: 1px solid #0388ff;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .selectionItem,
+  .selectedItem {
+    min-height: 4.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 1.6rem;
+    padding: 2rem 1.6rem;
+    border: none;
+  }
+  .img {
+    width: 6.4rem;
+    height: 7.6rem;
+  }
+  .header {
+    gap: 1.4rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  .headerContent {
+    gap: 0.4rem;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .description {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+  .selectionContainer {
+    gap: 1rem;
+  }
+  .selectionItem,
+  .selectedItem {
+    padding: 1.4rem 1.6rem;
+    gap: 1.2rem;
+    min-height: 4.8rem;
+    font-size: 1.6rem;
+    border: none;
+  }
+  .selectedItem {
+    border: 1px solid #0388ff;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    gap: 1.6rem;
+    padding: 1.8rem 1.4rem;
+    border: none;
+  }
+  .img {
+    width: 6.4rem;
+    height: 7.6rem;
+  }
+  .header {
+    gap: 1.2rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  .headerContent {
+    gap: 0.3rem;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .description {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .selectionContainer {
+    gap: 0.8rem;
+  }
+  .selectionItem,
+  .selectedItem {
+    padding: 1.4rem 1.5rem;
+    gap: 1rem;
+    min-height: 5.4rem;
+    font-size: 1.3rem;
+    border: none;
+  }
+  .selectedItem {
+    border: 1px solid #0388ff;
   }
 }

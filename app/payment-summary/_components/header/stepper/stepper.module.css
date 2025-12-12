@@ -1,82 +1,168 @@
 .stepper {
   display: flex;
-  align-items: flex-start;
-  /* gap: 1.6rem; */
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  padding: 3rem 0;
 }
+
+.stepper::before {
+  display: none;
+}
+
 .stepperContainer {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  justify-content: center;
 }
+
+.stepperContainer:last-child .stepperLine,
+.stepperContainer:last-child .stepperLine2 {
+  display: none;
+}
+
 .stepperItem {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.2rem;
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 2;
 }
+
 .stepperItemText {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.4rem;
+  text-align: center;
 }
+
 .stepperLine,
 .stepperLine2 {
-  flex: 1;
+  width: 3rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  display: none;
+}
+
+.stepperLine {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stepperLine svg,
+.stepperLine2 svg {
+  display: none;
+}
+
+.stepperNumber {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  background: rgba(3, 136, 255, 0.15);
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0 0 0 2px rgba(3, 136, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  position: relative;
 }
-.stepperLine svg,
-.stepperLine2 svg {
-  width: 100%;
-  height: 100%;
-  margin-top: -7rem;
-}
-.stepperNumber {
-  color: #049cff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.56px;
-}
+
 .stepperTitle {
-  color: white;
-  font-size: 2.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
   font-style: normal;
-  font-weight: 700;
-  line-height: 100%; /* 28px */
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+
+.stepperItemImage {
+  display: none;
+}
+
+.stepperIconWrapper {
+  width: 5.2rem;
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(3, 136, 255, 0.1);
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stepperIconWrapper.greyed {
+  opacity: 0.5;
+  background: rgba(3, 136, 255, 0.06);
+  border-color: rgba(3, 136, 255, 0.12);
+}
+
+.stepperIcon {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: block;
 }
 @media screen and (max-width: 900px) {
   .stepper {
-    gap: 1.6rem;
-    width: 75%;
-    margin: 0 auto;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
   }
-  .stepperItemImage {
+
+  .stepperItem {
+    gap: 1rem;
+  }
+
+  .stepperNumber {
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 1rem;
+  }
+
+  .stepperTitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stepper {
+    gap: 1.8rem;
+    padding: 2rem 0;
+  }
+
+  .stepperItem {
+    gap: 0.8rem;
+  }
+
+  .stepperNumber {
     width: 3.4rem;
     height: 3.4rem;
+    font-size: 0.95rem;
   }
-  .stepperItemImage:first-child {
-    width: 4.2rem;
-    height: 4.2rem;
-  }
-  .stepperItem {
-    gap: 1.2rem;
-    margin: 0.4rem 0 0 !important;
-  }
-  .stepperItem:first-child {
-    margin: 0 !important;
-  }
-  .stepperItemText {
-    gap: 0.5rem;
-  }
-  .stepperLine svg,
-  .stepperLine2 svg {
-    margin-top: -4rem;
-  }
+
   .stepperTitle {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 }

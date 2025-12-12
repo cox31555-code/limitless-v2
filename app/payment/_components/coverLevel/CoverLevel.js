@@ -1,24 +1,14 @@
 import React from "react";
 import styles from "./coverLevel.module.css";
-import Image from "next/image";
-import { Plus_Jakarta_Sans } from "next/font/google";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const CoverLevel = ({ data, insuranceType }) => {
-  // const formatCurrency = (amount) => {
-  //   return `£${amount?.toFixed(2) || "0.00"}`;
-  // };
-
   const getInsuranceTypeName = () => {
     if (!insuranceType) return "N/A";
     if (insuranceType === "Temp") return "Temporary Insurance";
     if (insuranceType === "Impound") return "Impound Insurance";
     return insuranceType;
   };
+
   const features =
     insuranceType === "Temp"
       ? [
@@ -37,59 +27,38 @@ const CoverLevel = ({ data, insuranceType }) => {
           "Legal liability cover",
           "Impound Release",
         ];
+
   return (
     <div className={styles.container}>
-      <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-        Current level of cover
-      </h3>
-      <div className={styles.coverType}>
-        <p className={styles.coverTypeTitle}>Type of Insurance</p>
-        <p className={`${styles.coverTypeValue} ${plusJakartaSans.className}`}>
-          {getInsuranceTypeName()}
-        </p>
+      <div className={styles.header}>
+        <h3 className={styles.title}>Current Level of Cover</h3>
       </div>
 
-      <div className={styles.summery}>
-        {/* <span className={styles.background}></span>
-        <span className={styles.background2}></span>
-        <span className={styles.background3}></span> */}
-        <div className={styles.content}>
-          <div className={styles.total}>
-            <Image
-              src="/svg/total-price.svg"
-              alt="total"
-              width={22}
-              height={22}
-            />
-            <p className={`${styles.totalTitle} ${plusJakartaSans.className}`}>
-              Total Price
-            </p>
-          </div>
-          <p className={styles.totalPrice}>{`£${data?.priceAmount}`}</p>
-          <p className={styles.totalPriceDescription}>
-            Including all additional fees
-          </p>
-        </div>
-        <Image
-          src="/svg/cover-level-2.svg"
-          alt="vehicle-covered"
-          width={153}
-          height={81}
-          className={styles.vehicleCovered}
-        />
+      <div className={styles.coverTypeSection}>
+        <span className={styles.coverTypeLabel}>Type of Insurance</span>
+        <span className={styles.coverTypeName}>{getInsuranceTypeName()}</span>
       </div>
-      <div className={styles.features}>
-        {features.map((feature, index) => (
-          <div className={styles.featureItem} key={index}>
-            <Image
-              src="/svg/included.svg"
-              alt="included"
-              width={26}
-              height={26}
-            />
-            <p className={styles.featureItemTitle}>{feature}</p>
-          </div>
-        ))}
+
+      <div className={styles.priceSection}>
+        <div className={styles.priceContent}>
+          <span className={styles.priceLabel}>Total Premium</span>
+          <span className={styles.priceValue}>{`£${data?.priceAmount}`}</span>
+          <span className={styles.priceNote}>Including all fees and taxes</span>
+        </div>
+      </div>
+
+      <div className={styles.featuresSection}>
+        <h4 className={styles.featuresTitle}>What's Included</h4>
+        <div className={styles.featuresList}>
+          {features.map((feature, index) => (
+            <div className={styles.featureItem} key={index}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="#0388ff"/>
+              </svg>
+              <span className={styles.featureText}>{feature}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

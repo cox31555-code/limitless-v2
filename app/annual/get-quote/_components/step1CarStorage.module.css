@@ -1,0 +1,62 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
+.container {
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitle {
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitleText {
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.contentWrapper {
+  composes: stepContentWrapper from '../../../../ui/getQuote/shared.module.css';
+  gap: 0;
+}
+
+.section {
+  composes: stepSection from '../../../../ui/getQuote/shared.module.css';
+}
+
+.questionHeader {
+  composes: questionHeader from '../../../../ui/getQuote/shared.module.css';
+}
+
+.section:nth-child(2) {
+  margin-top: 4.2rem;
+}
+
+.mainQuestion {
+  composes: mainQuestion from '../../../../ui/getQuote/shared.module.css';
+}
+
+.subText {
+  composes: subText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioGroup {
+  composes: radioGroup from '../../../../ui/getQuote/shared.module.css';
+  margin-top: 1.2rem;
+}
+
+.radioOption {
+  composes: radioOption from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioInput {
+  composes: radioInput from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioLabel {
+  composes: radioLabel from '../../../../ui/getQuote/shared.module.css';
+}
+
+.helpLink {
+  composes: helpLink from '../../../../ui/getQuote/shared.module.css';
+  margin-top: 1.2rem;
+}

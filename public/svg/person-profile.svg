@@ -1,0 +1,28 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Person face (larger) -->
+  <circle cx="32" cy="16" r="12" fill="#0388ff"/>
+  
+  <!-- Person chest/torso (shoulders and chest only) -->
+  <path d="M14 30C14 27 22 25.5 32 25.5C42 25.5 50 27 50 30L47 50C47 52 41 53 32 53C23 53 17 52 17 50L14 30Z" fill="#0388ff"/>
+  
+  <!-- Large clock (positioned on right side, overlapping) -->
+  <circle cx="46" cy="34" r="12" fill="none" stroke="#0388ff" stroke-width="2.5"/>
+  
+  <!-- Clock face background -->
+  <circle cx="46" cy="34" r="11" fill="#e8f2ff" opacity="0.3"/>
+  
+  <!-- Clock hour markers -->
+  <circle cx="46" cy="22" r="1.2" fill="#0388ff"/>
+  <circle cx="58" cy="34" r="1.2" fill="#0388ff"/>
+  <circle cx="46" cy="46" r="1.2" fill="#0388ff"/>
+  <circle cx="34" cy="34" r="1.2" fill="#0388ff"/>
+  
+  <!-- Clock hour hand (10 o'clock position) -->
+  <line x1="46" y1="34" x2="42" y2="26" stroke="#0388ff" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Clock minute hand (2 o'clock position) -->
+  <line x1="46" y1="34" x2="53" y2="27" stroke="#0388ff" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Clock center dot -->
+  <circle cx="46" cy="34" r="1.8" fill="#0388ff"/>
+</svg>

@@ -35,6 +35,7 @@ const page = () => {
         title="Temporary Insurance"
         description="Temporary insurance is a highly flexible solution designed to meet your short-term coverage needs. Whether you’re borrowing a car, test-driving a vehicle, or need immediate protection for a new purchase, temporary car insurance can provide tailored cover for as little as a single day, extending up to several months. "
         features={features}
+        insuranceType="temporary"
       />
       <div className={"centeredContent"}>
         <ServiceDescription

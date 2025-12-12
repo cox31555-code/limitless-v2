@@ -16,6 +16,39 @@ export const carUsageOptions = [
   },
 ];
 
+export const otherVehiclesOptions = [
+  "Own another car or van",
+  "Have use of another car",
+  "Company car (including personal use)",
+  "Company car (excluding personal use)",
+];
+
+export const additionalQualificationsOptions = [
+  "AA Proficiency",
+  "Institute of Advanced Motorists",
+  "Pass Plus",
+];
+
+export const monthOptions = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export const yearOptions = Array.from({ length: 50 }, (_, i) => {
+  const year = new Date().getFullYear() - i;
+  return year.toString();
+});
+
 export const licenseHeldOptions = [
   "0-1 years",
   "2 years",
@@ -71,12 +104,32 @@ export const keepingCarDuringDayOptions = [
   "Secure public car park",
   "Street away from home",
 ];
+
 export const employmentStatusOptions = [
   "Self-Employed",
   "Employed",
   "Unemployed",
   "Retired",
   "Student",
+  "Houseperson",
+];
+
+export const studentTypeOptions = [
+  "Mature Student - Living At Home",
+  "Mature Student - Living Away",
+  "Medical Student - Living At Home",
+  "Medical Student - Living Away",
+  "Post Graduate Student Living at Home",
+  "Post Graduate Student Living Away from Home",
+  "School Student",
+  "Student - Living at Home",
+  "Student - Living Away",
+  "Student Nurse - Living At Home",
+  "Student Nurse - Living Away",
+  "Student Teacher - Living At Home",
+  "Student Teacher - Living Away",
+  "Undergraduate Student - Living At Home",
+  "Undergraduate Student - Living Away from Home",
 ];
 
 export const voluntaryExcessOptions = [
@@ -87,1602 +140,473 @@ export const voluntaryExcessOptions = [
   "£750",
   "£1000",
 ];
+
+export const industryOptions = [
+  "Accommodation",
+  "Accommodation (specialised)",
+  "Activities auxiliary to financial services and insurance",
+  "Activities auxiliary to financial services and insurance (specialised)",
+  "Activities of extraterritorial organisations and bodies",
+  "Activities of extraterritorial organisations and bodies (specialised)",
+  "Activities of head offices; management consultancy",
+  "Activities of head offices; management consultancy (specialised)",
+  "Activities of households as employers of domestic personnel",
+  "Activities of households as employers of domestic personnel (specialised)",
+  "Activities of membership organisations",
+  "Activities of membership organisations (specialised)",
+  "Advertising and market research",
+  "Advertising and market research (specialised)",
+  "Air transport",
+  "Air transport (specialised)",
+  "Aquaculture",
+  "Aquaculture (specialised)",
+  "Architectural and engineering activities; technical testing and analysis",
+  "Architectural and engineering activities; technical testing and analysis (specialised)",
+  "Civil engineering",
+  "Civil engineering (specialised)",
+  "Computer programming, consultancy and related activities",
+  "Computer programming, consultancy and related activities (specialised)",
+  "Construction of buildings",
+  "Construction of buildings (specialised)",
+  "Creative, arts and entertainment activities",
+  "Creative, arts and entertainment activities (specialised)",
+  "Education",
+  "Education (specialised)",
+  "Electric power generation, transmission and distribution",
+  "Electric power generation, transmission and distribution (specialised)",
+  "Employment activities",
+  "Employment activities (specialised)",
+  "Extraction of crude petroleum",
+  "Extraction of crude petroleum (specialised)",
+  "Extraction of natural gas",
+  "Extraction of natural gas (specialised)",
+  "Financial service activities, except insurance and pension funding",
+  "Financial service activities, except insurance and pension funding (specialised)",
+  "Fishing",
+  "Fishing (specialised)",
+  "Food and beverage service activities",
+  "Food and beverage service activities (specialised)",
+  "Freshwater fishing",
+  "Freshwater fishing (specialised)",
+  "Gambling and betting activities",
+  "Gambling and betting activities (specialised)",
+  "Gathering of wild growing non-wood products",
+  "Gathering of wild growing non-wood products (specialised)",
+  "Growing of beverage crops",
+  "Growing of beverage crops (specialised)",
+  "Growing of cereals and leguminous crops",
+  "Growing of cereals and leguminous crops (specialised)",
+  "Growing of citrus fruits",
+  "Growing of citrus fruits (specialised)",
+  "Growing of fibre crops",
+  "Growing of fibre crops (specialised)",
+  "Growing of grapes",
+  "Growing of grapes (specialised)",
+  "Growing of oleaginous fruits",
+  "Growing of oleaginous fruits (specialised)",
+  "Growing of other non-perennial crops",
+  "Growing of other non-perennial crops (specialised)",
+  "Growing of other perennial crops",
+  "Growing of other perennial crops (specialised)",
+  "Growing of other tree and bush fruits and nuts",
+  "Growing of other tree and bush fruits and nuts (specialised)",
+  "Growing of pome fruits and stone fruits",
+  "Growing of pome fruits and stone fruits (specialised)",
+  "Growing of rice",
+  "Growing of rice (specialised)",
+  "Growing of spices, aromatic, drug and pharmaceutical crops",
+  "Growing of spices, aromatic, drug and pharmaceutical crops (specialised)",
+  "Growing of sugar cane",
+  "Growing of sugar cane (specialised)",
+  "Growing of tobacco",
+  "Growing of tobacco (specialised)",
+  "Growing of tropical and subtropical fruits",
+  "Growing of tropical and subtropical fruits (specialised)",
+  "Growing of vegetables and melons, roots and tubers",
+  "Growing of vegetables and melons, roots and tubers (specialised)",
+  "Hunting, trapping and related service activities",
+  "Hunting, trapping and related service activities (specialised)",
+  "Human health activities",
+  "Human health activities (specialised)",
+  "Information service activities",
+  "Information service activities (specialised)",
+  "Insurance, reinsurance and pension funding, except compulsory social security",
+  "Insurance, reinsurance and pension funding, except compulsory social security (specialised)",
+  "Land transport and transport via pipelines",
+  "Land transport and transport via pipelines (specialised)",
+  "Legal and accounting activities",
+  "Legal and accounting activities (specialised)",
+  "Libraries, archives, museums and other cultural activities",
+  "Libraries, archives, museums and other cultural activities (specialised)",
+  "Logging",
+  "Logging (specialised)",
+  "Manufacture of basic metals",
+  "Manufacture of basic metals (specialised)",
+  "Manufacture of beverages",
+  "Manufacture of beverages (specialised)",
+  "Manufacture of chemicals and chemical products",
+  "Manufacture of chemicals and chemical products (specialised)",
+  "Manufacture of coke and refined petroleum products",
+  "Manufacture of coke and refined petroleum products (specialised)",
+  "Manufacture of computer, electronic and optical products",
+  "Manufacture of computer, electronic and optical products (specialised)",
+  "Manufacture of electrical equipment",
+  "Manufacture of electrical equipment (specialised)",
+  "Manufacture of fabricated metal products",
+  "Manufacture of fabricated metal products (specialised)",
+  "Manufacture of food products",
+  "Manufacture of food products (specialised)",
+  "Manufacture of furniture",
+  "Manufacture of furniture (specialised)",
+  "Manufacture of gas; distribution of gaseous fuels",
+  "Manufacture of gas; distribution of gaseous fuels (specialised)",
+  "Manufacture of leather and related products",
+  "Manufacture of leather and related products (specialised)",
+  "Manufacture of machinery and equipment",
+  "Manufacture of machinery and equipment (specialised)",
+  "Manufacture of motor vehicles, trailers and semi-trailers",
+  "Manufacture of motor vehicles, trailers and semi-trailers (specialised)",
+  "Manufacture of other non-metallic mineral products",
+  "Manufacture of other non-metallic mineral products (specialised)",
+  "Manufacture of other transport equipment",
+  "Manufacture of other transport equipment (specialised)",
+  "Manufacture of paper and paper products",
+  "Manufacture of paper and paper products (specialised)",
+  "Manufacture of pharmaceuticals and medicinal products",
+  "Manufacture of pharmaceuticals and medicinal products (specialised)",
+  "Manufacture of rubber and plastic products",
+  "Manufacture of rubber and plastic products (specialised)",
+  "Manufacture of textiles",
+  "Manufacture of textiles (specialised)",
+  "Manufacture of tobacco products",
+  "Manufacture of tobacco products (specialised)",
+  "Manufacture of wearing apparel",
+  "Manufacture of wearing apparel (specialised)",
+  "Manufacture of wood and products of wood and cork",
+  "Manufacture of wood and products of wood and cork (specialised)",
+  "Marine fishing",
+  "Marine fishing (specialised)",
+  "Materials recovery",
+  "Materials recovery (specialised)",
+  "Mining of coal and lignite",
+  "Mining of coal and lignite (specialised)",
+  "Mining of iron ores",
+  "Mining of iron ores (specialised)",
+  "Mining of non-ferrous metal ores",
+  "Mining of non-ferrous metal ores (specialised)",
+  "Mixed farming",
+  "Mixed farming (specialised)",
+  "Motion picture, video and television programme production, sound recording and music publishing",
+  "Motion picture, video and television programme production, sound recording and music publishing (specialised)",
+  "Office administrative, office support and other business support activities",
+  "Office administrative, office support and other business support activities (specialised)",
+  "Other manufacturing",
+  "Other manufacturing (specialised)",
+  "Other mining and quarrying n.e.c.",
+  "Other mining and quarrying n.e.c. (specialised)",
+  "Other professional, scientific and technical activities",
+  "Other professional, scientific and technical activities (specialised)",
+  "Plant propagation",
+  "Plant propagation (specialised)",
+  "Post-harvest crop activities",
+  "Post-harvest crop activities (specialised)",
+  "Postal and courier activities",
+  "Postal and courier activities (specialised)",
+  "Programming and broadcasting activities",
+  "Programming and broadcasting activities (specialised)",
+  "Public administration and defence; compulsory social security",
+  "Public administration and defence; compulsory social security (specialised)",
+  "Publishing activities",
+  "Publishing activities (specialised)",
+  "Raising of camels and camelids",
+  "Raising of camels and camelids (specialised)",
+  "Raising of dairy cattle",
+  "Raising of dairy cattle (specialised)",
+  "Raising of horses and other equines",
+  "Raising of horses and other equines (specialised)",
+  "Raising of other animals",
+  "Raising of other animals (specialised)",
+  "Raising of other cattle and buffaloes",
+  "Raising of other cattle and buffaloes (specialised)",
+  "Raising of poultry",
+  "Raising of poultry (specialised)",
+  "Raising of sheep and goats",
+  "Raising of sheep and goats (specialised)",
+  "Raising of swine/pigs",
+  "Raising of swine/pigs (specialised)",
+  "Real estate activities",
+  "Real estate activities (specialised)",
+  "Remediation activities and other waste management services",
+  "Remediation activities and other waste management services (specialised)",
+  "Rental and leasing activities",
+  "Rental and leasing activities (specialised)",
+  "Repair and installation of machinery and equipment",
+  "Repair and installation of machinery and equipment (specialised)",
+  "Repair of computers and personal and household goods",
+  "Repair of computers and personal and household goods (specialised)",
+  "Residential care activities",
+  "Residential care activities (specialised)",
+  "Retail trade, except of motor vehicles and motorcycles",
+  "Retail trade, except of motor vehicles and motorcycles (specialised)",
+  "Scientific research and development",
+  "Scientific research and development (specialised)",
+  "Security and investigation activities",
+  "Security and investigation activities (specialised)",
+  "Seed processing for propagation",
+  "Seed processing for propagation (specialised)",
+  "Services to buildings and landscape activities",
+  "Services to buildings and landscape activities (specialised)",
+  "Sewerage",
+  "Sewerage (specialised)",
+  "Silviculture and other forestry activities",
+  "Silviculture and other forestry activities (specialised)",
+  "Social work activities without accommodation",
+  "Social work activities without accommodation (specialised)",
+  "Specialised construction activities",
+  "Specialised construction activities (specialised)",
+  "Sports activities and amusement and recreation activities",
+  "Sports activities and amusement and recreation activities (specialised)",
+  "Steam and air conditioning supply",
+  "Steam and air conditioning supply (specialised)",
+  "Support activities for animal production",
+  "Support activities for animal production (specialised)",
+  "Support activities for crop production",
+  "Support activities for crop production (specialised)",
+  "Support activities for petroleum and natural gas extraction",
+  "Support activities for petroleum and natural gas extraction (specialised)",
+  "Support services to forestry",
+  "Support services to forestry (specialised)",
+  "Telecommunications",
+  "Telecommunications (specialised)",
+  "Travel agency, tour operator and other reservation service activities",
+  "Travel agency, tour operator and other reservation service activities (specialised)",
+  "Undifferentiated goods- and services-producing activities of households for own use",
+  "Undifferentiated goods- and services-producing activities of households for own use (specialised)",
+  "Veterinary activities",
+  "Veterinary activities (specialised)",
+  "Warehousing and support activities for transportation",
+  "Warehousing and support activities for transportation (specialised)",
+  "Waste collection",
+  "Waste collection (specialised)",
+  "Waste treatment and disposal",
+  "Waste treatment and disposal (specialised)",
+  "Water collection, treatment and supply",
+  "Water collection, treatment and supply (specialised)",
+  "Water transport",
+  "Water transport (specialised)",
+  "Wholesale and retail trade and repair of motor vehicles and motorcycles",
+  "Wholesale and retail trade and repair of motor vehicles and motorcycles (specialised)",
+  "Wholesale trade, except of motor vehicles and motorcycles",
+  "Wholesale trade, except of motor vehicles and motorcycles (specialised)",
+];
+
 export const occupationOptions = [
   "Accountant",
-  "Accounts Assistant",
-  "Accounts Clerk",
-  "Accounts Manager",
-  "Accounts Staff",
-  "Acoustic Engineer",
+  "Accounting Assistant",
   "Actor",
-  "Actress",
-  "Actuary",
-  "Acupuncturist",
-  "Adjustor",
-  "Administration Assistant",
-  "Administration Clerk",
-  "Administration Manager",
-  "Administration Staff",
+  "Administrative Assistant",
   "Administrator",
-  "Advertising Agent",
-  "Advertising Assistant",
-  "Advertising Clerk",
-  "Advertising Contractor",
-  "Advertising Executive",
-  "Advertising Manager",
-  "Advertising Staff",
-  "Aerial Erector",
-  "Aerobic Instructor",
-  "Aeronautical Engineer",
-  "Agent",
-  "Air Traffic Controller",
-  "Aircraft Designer",
-  "Aircraft Engineer",
-  "Aircraft Maintenance Engineer",
-  "Aircraft Surface Finisher",
-  "Airman",
-  "Airport Controller",
-  "Airport Manager",
-  "Almoner",
-  "Ambulance Controller",
-  "Ambulance Crew",
-  "Ambulance Driver",
-  "Amusement Arcade Worker",
-  "Anaesthetist",
-  "Analyst",
-  "Analytical Chemist",
-  "Animal Breeder",
-  "Anthropologist",
-  "Antique Dealer",
-  "Applications Engineer",
-  "Applications Programmer",
-  "Arbitrator",
-  "Arborist",
-  "Archaeologist",
+  "Animator",
+  "App Developer",
   "Architect",
-  "Archivist",
-  "Area Manager",
-  "Armourer",
-  "Aromatherapist",
-  "Art Critic",
-  "Art Dealer",
-  "Art Historian",
-  "Art Restorer",
-  "Artexer",
+  "Art Director",
   "Artist",
-  "Arts",
-  "Assembly Worker",
-  "Assessor",
-  "Assistant",
-  "Assistant Caretaker",
-  "Assistant Cook",
-  "Assistant Manager",
-  "Assistant Nurse",
-  "Assistant Teacher",
-  "Astrologer",
-  "Astronomer",
-  "Attendant",
-  "Au Pair",
-  "Auction Worker",
-  "Auctioneer",
-  "Audiologist",
-  "Audit Clerk",
-  "Audit Manager",
+  "Athlete",
   "Auditor",
-  "Auto Electrician",
-  "Auxiliary Nurse",
-  "Bacon Curer",
-  "Baggage Handler",
-  "Bailiff",
-  "Baker",
-  "Bakery Assistant",
-  "Bakery Manager",
-  "Bakery Operator",
-  "Balloonist",
-  "Bank Clerk",
-  "Bank Manager",
-  "Bank Messenger",
-  "Baptist Minister",
-  "Bar Manager",
-  "Bar Steward",
-  "Barber",
-  "Barmaid",
-  "Barman",
+  "Backend Developer",
+  "Barista",
   "Barrister",
-  "Beautician",
-  "Beauty Therapist",
-  "Betting Shop",
-  "Bill Poster",
-  "Bingo Caller",
+  "Bartender",
   "Biochemist",
   "Biologist",
-  "Blacksmith",
-  "Blind Assembler",
-  "Blind Fitter",
-  "Blinds Installer",
-  "Boat Builder",
-  "Body Fitter",
-  "Bodyguard",
-  "Bodyshop",
-  "Book Binder",
-  "Book Seller",
-  "Book-Keeper",
-  "Booking Agent",
-  "Booking Clerk",
-  "Bookmaker",
-  "Botanist",
-  "Branch Manager",
-  "Breeder",
-  "Brewer",
-  "Brewery Manager",
-  "Brewery Worker",
+  "Biomedical Scientist",
+  "Blockchain Developer",
+  "Blogger",
+  "Bookkeeper",
   "Bricklayer",
-  "Broadcaster",
   "Builder",
-  "Builders Labourer",
-  "Building Advisor",
-  "Building Control",
-  "Building Engineer",
-  "Building Estimator",
-  "Building Foreman",
-  "Building Inspector",
-  "Building Manager",
-  "Building Surveyor",
-  "Bursar",
-  "Bus Company",
-  "Bus Conductor",
-  "Bus Driver",
-  "Bus Mechanic",
-  "Bus Valeter",
-  "Business Consultant",
-  "Business Proprietor",
+  "Business Analyst",
   "Butcher",
-  "Butchery Manager",
-  "Butler",
-  "Buyer",
+  "Bus Driver",
   "Cab Driver",
-  "Cabinet Maker",
-  "Cable Contractor",
-  "Cable Jointer",
-  "Cable TV Installer",
-  "Cafe Owner",
-  "Cafe Staff",
-  "Cafe Worker",
-  "Calibration Manager",
-  "Camera Repairer",
-  "Cameraman",
-  "Car Dealer",
-  "Car Delivery Driver",
-  "Car Park Attendant",
-  "Car Salesman",
-  "Car Valet",
-  "Car Wash Attendant",
+  "Camera Operator",
   "Care Assistant",
-  "Care Manager",
-  "Careers Advisor",
-  "Careers Officer",
-  "Caretaker",
-  "Cargo Operator",
   "Carpenter",
-  "Carpet Cleaner",
-  "Carpet Fitter",
-  "Carpet Retailer",
-  "Carphone Fitter",
-  "Cartographer",
-  "Cartoonist",
   "Cashier",
-  "Casual Worker",
-  "Caterer",
-  "Catering Consultant",
-  "Catering Manager",
-  "Catering Staff",
-  "Caulker",
-  "Ceiling Contractor",
-  "Ceiling Fixer",
-  "Cellarman",
-  "Chambermaid",
-  "Chandler",
-  "Chaplain",
-  "Charge Hand",
-  "Charity Worker",
-  "Chartered Accountant",
-  "Chauffeur",
-  "Chef",
+  "Chemical Engineer",
   "Chemist",
-  "Chicken Chaser",
-  "Child Minder",
-  "Childminder",
-  "Chimney Sweep",
-  "China Restorer",
-  "Chiropodist",
-  "Chiropractor",
-  "Choreographer",
-  "Church Officer",
-  "Church Warden",
-  "Cinema Manager",
-  "Circus Proprietor",
-  "Circus Worker",
+  "Chef",
   "Civil Engineer",
   "Civil Servant",
-  "Claims Adjustor",
-  "Claims Assessor",
-  "Claims Manager",
-  "Clairvoyant",
-  "Classroom Aide",
-  "Cleaner",
-  "Clergyman",
-  "Cleric",
-  "Clerk",
-  "Commissioned",
+  "Cloud Engineer",
+  "Coach",
+  "College Lecturer",
+  "Composer",
+  "Company Secretary",
+  "Computer Programmer",
+  "Concierge",
   "Consultant",
-  "Coroner",
-  "Councillor",
-  "Counsellor",
-  "Dealer",
+  "Copywriter",
+  "Court Clerk",
+  "Courier",
+  "Creative, arts and entertainment activities",
+  "Customer Service Advisor",
+  "Customer Support Agent",
+  "Cyber Security Analyst",
+  "Data Analyst",
+  "Data Engineer",
+  "Data Entry Clerk",
+  "Data Scientist",
+  "Database Administrator",
   "Decorator",
   "Delivery Driver",
+  "Dental Nurse",
+  "Dentist",
+  "DevOps Engineer",
   "Doctor",
-  "Driver",
-  "Economist",
   "Editor",
-  "Employee",
-  "Employment",
-  "Engineer",
-  "English Teacher",
-  "Entertainer",
-  "Envoy",
-  "Executive",
-  "Farmer",
-  "Fireman",
-  "Floor Layer",
-  "Floor Manager",
-  "Florist",
-  "Flour Miller",
-  "Flower Arranger",
-  "Flying Instructor",
-  "Foam Convertor",
-  "Food Processor",
-  "Footballer",
-  "Foreman",
-  "Forensic Scientist",
+  "Electrical Engineer",
+  "Electrician",
+  "Environmental Scientist",
+  "Entrepreneur",
+  "Event Planner",
+  "Executive Assistant",
+  "Fashion Designer",
+  "Film Director",
+  "Finance Manager",
+  "Financial Advisor",
+  "Firefighter",
+  "Fisherman",
+  "Fitness Instructor",
+  "Floor Fitter",
   "Forest Ranger",
-  "Forester",
-  "Fork Lift Truck Driver",
-  "Forwarding Agent",
-  "Foster Parent",
-  "Foundry Worker",
-  "Fraud Investigator",
-  "French Polisher",
-  "Fruiterer",
-  "Fuel Merchant",
-  "Fund Raiser",
-  "Funeral Director",
-  "Funeral Furnisher",
-  "Furnace Man",
-  "Furniture Dealer",
-  "Furniture Remover",
-  "Furniture Restorer",
-  "Furrier",
-  "Gallery Owner",
-  "Gambler",
-  "Gamekeeper",
-  "Gaming Board Inspector",
-  "Gaming Club Manager",
-  "Gaming Club Proprietor",
-  "Garage Attendant",
-  "Garage Foreman",
-  "Garage Manager",
-  "Garda",
-  "Garden Designer",
+  "Forklift Operator",
+  "Freelancer",
+  "Front End Developer",
+  "Full Stack Developer",
+  "Game Designer",
+  "Game Developer",
   "Gardener",
-  "Gas Fitter",
-  "Gas Mechanic",
-  "Gas Technician",
-  "Gate Keeper",
-  "Genealogist",
-  "General Practitioner",
   "Geologist",
-  "Geophysicist",
-  "Gilder",
-  "Glass Worker",
-  "Glazier",
-  "Goldsmith",
-  "Golf Caddy",
-  "Golf Club Professional",
-  "Golfer",
-  "Goods Handler",
-  "Governor",
-  "Granite Technician",
   "Graphic Designer",
-  "Graphologist",
-  "Grave Digger",
-  "Gravel Merchant",
-  "Green Keeper",
-  "Greengrocer",
-  "Grocer",
-  "Groom",
-  "Ground Worker",
-  "Groundsman",
-  "Guest House Owner",
-  "Guest House Proprietor",
-  "Gun Smith",
-  "Gynaecologist",
+  "Greenkeeper",
+  "Groundskeeper",
+  "GP",
+  "Gym Manager",
   "HGV Driver",
-  "HGV Mechanic",
-  "Hairdresser",
-  "Handyman",
-  "Hardware Dealer",
-  "Haulage Contractor",
-  "Hawker",
-  "Health Advisor",
-  "Health And Safety",
-  "Health Care Assistant",
-  "Health Consultant",
-  "Health Nurse",
-  "Health Planner",
-  "Health Service",
-  "Health Therapist",
-  "Health Visitor",
-  "Hearing Therapist",
-  "Heating Engineer",
-  "Herbalist",
-  "Highway Inspector",
-  "Hire Car Driver",
-  "Historian",
-  "History Teacher",
-  "Hod Carrier",
-  "Home Economist",
-  "Home Help",
-  "Homecare Manager",
-  "Homeopath",
-  "Homeworker",
-  "Hop Merchant",
-  "Horse Breeder",
-  "Horse Dealer",
-  "Horse Riding Instructor",
-  "Horse Trader",
-  "Horse Trainer",
-  "Horticultural Consultant",
-  "Horticulturalist",
-  "Hosiery Mechanic",
-  "Hosiery Worker",
-  "Hospital Consultant",
-  "Hospital Doctor",
-  "Hospital Manager",
-  "Hospital Orderly",
-  "Hospital Technician",
-  "Hospital Warden",
-  "Hospital Worker",
-  "Hostess",
-  "Hot Foil Printer",
-  "Hotel Consultant",
-  "Hotel Worker",
-  "Hotelier",
-  "Househusband",
+  "Healthcare Assistant",
+  "Horticulturist",
+  "Hospital Porter",
+  "Hotel Manager",
   "Housekeeper",
-  "Housewife",
-  "Housing Assistant",
-  "Housing Officer",
-  "Housing Supervisor",
-  "Hygienist",
-  "Hypnotherapist",
-  "Hypnotist",
-  "IT Consultant",
-  "IT Manager",
-  "IT Trainer",
-  "Ice Cream Vendor",
   "Illustrator",
   "Immigration Officer",
-  "Import Consultant",
-  "Importer",
-  "Independent Means",
-  "Induction Moulder",
-  "Industrial Chemist",
-  "Industrial Consultant",
-  "Injection Moulder",
-  "Inspector",
-  "Instructor",
-  "Instrument Engineer",
-  "Instrument Maker",
-  "Instrument Supervisor",
-  "Instrument Technician",
-  "Insurance Agent",
-  "Insurance Assessor",
-  "Insurance Broker",
-  "Insurance Consultant",
-  "Insurance Inspector",
-  "Insurance Staff",
-  "Interior Decorator",
-  "Interior Designer",
-  "Interpreter",
-  "Interviewer",
-  "Inventor",
-  "Investigator",
-  "Investment Advisor",
-  "Investment Banker",
-  "Investment Manager",
-  "Investment Strategist",
-  "Ironmonger",
-  "Janitor",
-  "Jazz Composer",
-  "Jeweller",
-  "Jewellery",
-  "Jockey",
-  "Joiner",
-  "Joinery Consultant",
+  "Investor",
+  "IT Consultant",
+  "IT Manager",
   "Journalist",
   "Judge",
-  "Keep Fit Instructor",
-  "Kennel Hand",
-  "Kitchen Worker",
-  "Knitter",
-  "Labelling Operator",
-  "Laboratory Analyst",
+  "Kitchen Assistant",
+  "Lab Technician",
+  "Landscape Gardener",
   "Labourer",
-  "Laminator",
-  "Lampshade Maker",
-  "Land Agent",
-  "Land Surveyor",
-  "Landlady",
-  "Landlord",
-  "Landowner",
-  "Landworker",
-  "Lathe Operator",
-  "Laundry Staff",
-  "Laundry Worker",
-  "Lavatory Attendant",
-  "Law Clerk",
-  "Lawn Mower",
   "Lawyer",
-  "Leaflet Distributor",
-  "Leather Worker",
-  "Lecturer",
-  "Ledger Clerk",
-  "Legal Advisor",
   "Legal Assistant",
-  "Legal Executive",
   "Legal Secretary",
-  "Letting Agent",
-  "Liaison Officer",
-  "Librarian",
-  "Library Manager",
-  "Licensed Premises",
-  "Licensee",
-  "Licensing",
   "Lifeguard",
-  "Lift Attendant",
-  "Lift Engineer",
-  "Lighterman",
-  "Lighthouse Keeper",
-  "Lighting Designer",
-  "Lighting Technician",
-  "Lime Kiln Attendant",
-  "Line Manager",
-  "Line Worker",
-  "Lineman",
-  "Linguist",
-  "Literary Agent",
-  "Literary Editor",
-  "Lithographer",
-  "Litigation Manager",
-  "Loans Manager",
-  "Local Government",
-  "Lock Keeper",
-  "Locksmith",
-  "Locum Pharmacist",
-  "Log Merchant",
-  "Lorry Driver",
-  "Loss Adjustor",
-  "Loss Assessor",
-  "Lumberjack",
-  "Machine Fitters",
-  "Machine Minder",
-  "Machine Operator",
-  "Machine Setter",
-  "Machine Tool",
-  "Machine Tool Fitter",
-  "Machinist",
-  "Magician",
-  "Magistrate",
-  "Magistrates Clerk",
-  "Maid",
-  "Maintenance Fitter",
-  "Make Up Artist",
-  "Manicurist",
-  "Manufacturing",
-  "Map Mounter",
-  "Marble Finisher",
-  "Marble Mason",
-  "Marine Broker",
-  "Marine Consultant",
-  "Marine Electrician",
-  "Marine Engineer",
-  "Marine Geologist",
-  "Marine Pilot",
-  "Marine Surveyor",
-  "Market Gardener",
-  "Market Research",
-
-  "Market Researcher",
-
-  "Market Trader",
-
-  "Marketing Agent",
-
-  "Marketing Assistant",
-
-  "Marketing Coordinator",
-
-  "Marketing Director",
-
+  "Logistics Coordinator",
+  "Marine Biologist",
+  "Marketing Executive",
   "Marketing Manager",
-
-  "Marquee Erector",
-
-  "Massage Therapist",
-
-  "Masseur",
-
-  "Masseuse",
-
-  "Master Mariner",
-
-  "Materials Controller",
-
-  "Materials Manager",
-
-  "Mathematician",
-
-  "Maths Teacher",
-
-  "Matron",
-
-  "Mattress Maker",
-
-  "Meat Inspector",
-
-  "Meat Wholesaler",
-
-  "Mechanic",
-
-  "Medal Dealer",
-
-  "Medical Advisor",
-
-  "Medical Assistant",
-
-  "Medical Consultant",
-
-  "Medical Officer",
-
-  "Medical Physicist",
-
-  "Medical Practitioner",
-
-  "Medical Researcher",
-
+  "Mechanical Engineer",
+  "Medical Laboratory Assistant",
   "Medical Secretary",
-
-  "Medical Student",
-
-  "Medical Supplier",
-
-  "Medical Technician",
-
-  "Merchandiser",
-
-  "Merchant",
-
-  "Merchant Banker",
-
-  "Merchant Seaman",
-
-  "Messenger",
-
-  "Metal Dealer",
-
-  "Metal Engineer",
-
-  "Metal Polisher",
-
-  "Metal Worker",
-
-  "Metallurgist",
-
-  "Meteorologist",
-
-  "Meter Reader",
-
   "Microbiologist",
-
   "Midwife",
-
-  "Military Leader",
-
-  "Milklady",
-
-  "Milkman",
-
-  "Mill Operator",
-
-  "Mill Worker",
-
-  "Miller",
-
-  "Milliner",
-
-  "Millwright",
-
-  "Miner",
-
-  "Mineralologist",
-
-  "Minibus Driver",
-
-  "Minicab Driver",
-
-  "Mining Consultant",
-
-  "Mining Engineer",
-
-  "Money Broker",
-
-  "Moneylender",
-
-  "Mooring Contractor",
-
-  "Mortgage Broker",
-
-  "Mortician",
-
-  "Motor Dealer",
-
-  "Motor Engineer",
-
-  "Motor Fitter",
-
-  "Motor Mechanic",
-
-  "Motor Racing",
-
-  "Motor Trader",
-
-  "Museum Assistant",
-
-  "Museum Attendant",
-
-  "Music Teacher",
-
   "Musician",
-
-  "Nanny",
-
-  "Navigator",
-
-  "Negotiator",
-
-  "Neurologist",
-
-  "Newsagent",
-
-  "Night Porter",
-
-  "Night Watchman",
-
-  "Nuclear Scientist",
-
-  "Nun",
-
+  "Network Engineer",
   "Nurse",
-
   "Nursery Assistant",
-
-  "Nursery Nurse",
-
-  "Nursery Worker",
-
-  "Nurseryman",
-
-  "Nursing Assistant",
-
-  "Nursing Auxiliary",
-
-  "Nursing Manager",
-
-  "Nursing Sister",
-
-  "Nutritionist",
-
-  "Off Shore",
-
+  "Occupational Therapist",
   "Office Manager",
-
-  "Office Worker",
-
-  "Oil Broker",
-
-  "Oil Rig Crew",
-
-  "Opera Singer",
-
-  "Operations",
-
-  "Operative",
-
-  "Operator",
-
-  "Optical",
-
-  "Optical Advisor",
-
-  "Optical Assistant",
-
+  "Operations Manager",
   "Optician",
-
-  "Optometrist",
-
-  "Orchestral",
-
-  "Organiser",
-
-  "Organist",
-
-  "Ornamental",
-
-  "Ornithologist",
-
-  "Orthopaedic",
-
-  "Orthoptist",
-
-  "Osteopath",
-
-  "Outdoor Pursuits",
-
-  "Outreach Worker",
-
-  "Packaging",
-
-  "Packer",
-
-  "Paediatrician",
-
-  "Paint Consultant",
-
+  "Other personal service activities",
   "Painter",
-
-  "Palaeobotanist",
-
-  "Palaeontologist",
-
-  "Pallet Maker",
-
-  "Panel Beater",
-
+  "Paralegal",
   "Paramedic",
-
-  "Park Attendant",
-
-  "Park Keeper",
-
-  "Park Ranger",
-
-  "Partition Erector",
-
-  "Parts Man",
-
-  "Parts Manager",
-
-  "Parts Supervisor",
-
-  "Party Planner",
-
-  "Pasteuriser",
-
-  "Pastry Chef",
-
-  "Patent Agent",
-
-  "Patent Attorney",
-
-  "Pathologist",
-
-  "Patrolman",
-
-  "Pattern Cutter",
-
-  "Pattern Maker",
-
-  "Pattern Weaver",
-
-  "Pawnbroker",
-
-  "Payroll Assistant",
-
   "Payroll Clerk",
-
-  "Payroll Manager",
-
-  "Payroll Supervisor",
-
-  "Personnel Officer",
-
-  "Pest Controller",
-
-  "Pet Minder",
-
+  "Personal Trainer",
   "Pharmacist",
-
-  "Philatelist",
-
+  "Pharmacy Technician",
   "Photographer",
-
-  "Physician",
-
-  "Physicist",
-
-  "Physiologist",
-
   "Physiotherapist",
-
-  "Piano Teacher",
-
-  "Piano Tuner",
-
-  "Picture Editor",
-
-  "Picture Framer",
-
-  "Picture Reseacher",
-
-  "Pig Man",
-
-  "Pig Manager",
-
   "Pilot",
-
-  "Pipe Fitter",
-
-  "Pipe Inspector",
-
-  "Pipe Insulator",
-
-  "Pipe Layer",
-
-  "Planning Engineer",
-
-  "Planning Manager",
-
-  "Planning Officer",
-
-  "Planning Technician",
-
-  "Plant Attendant",
-
-  "Plant Driver",
-
-  "Plant Engineer",
-
-  "Plant Fitter",
-
-  "Plant Manager",
-
-  "Plant Operator",
-
   "Plasterer",
-
-  "Plastics Consultant",
-
-  "Plastics Engineer",
-
-  "Plate Layer",
-
-  "Plater",
-
-  "Playgroup Assistant",
-
-  "Playgroup Leader",
-
   "Plumber",
-
-  "Podiatrist",
-
   "Police Officer",
-
-  "Polisher",
-
-  "Pool Attendant",
-
-  "Pools Collector",
-
-  "Porter",
-
-  "Portfolio Manager",
-
-  "Post Sorter",
-
-  "Postman",
-
-  "Postmaster",
-
-  "Postwoman",
-  "Potter",
-  "Practice Manager",
-  "Preacher",
-  "Precision Engineer",
-  "Premises",
-  "Premises Security",
-  "Press Officer",
-  "Press Operator",
-  "Press Setter",
-  "Presser",
-  "Priest",
-  "Print Finisher",
-  "Printer",
-  "Prison Chaplain",
-  "Prison Officer",
-  "Private Investigator",
+  "PR Manager",
+  "Primary School Teacher",
   "Probation Officer",
-  "Probation Worker",
-  "Procurator Fiscal",
-  "Produce Supervisor",
-  "Producer",
-  "Product Installer",
-  "Product Manager",
-  "Production Engineer",
-  "Production Hand",
-  "Production Manager",
-  "Production Planner",
-  "Professional Boxer",
-  "Professional Racing",
-  "Professional Wrestler",
-  "Progress Chaser",
-  "Progress Clerk",
-  "Project Co-ordinator",
-  "Project Engineer",
-  "Project Leader",
+  "Professor",
   "Project Manager",
-  "Project Worker",
-  "Projectionist",
-  "Promoter",
-  "Proof Reader",
-  "Property Buyer",
-  "Property Dealer",
-  "Property Developer",
-  "Property Manager",
-  "Property Valuer",
-  "Proprietor",
-  "Psychiatrist",
-  "Psychoanalyst",
-  "Psychologist",
-  "Psychotherapist",
-  "Public House Manager",
-  "Public Relations Of?cer",
-  "Publican",
-  "Publicity Manager",
-  "Publisher",
-  "Publishing Manager",
-  "Purchase Clerk",
-  "Purchase Ledger Clerk",
-  "Purchasing Assistant",
-  "Purchasing Manager",
-  "Purser",
-  "Quality Controller",
-  "Quality Engineer",
-  "Quality Inspector",
-  "Quality Manager",
-  "Quality Technician",
-  "Quantity Surveyor",
-  "Quarry Worker",
-  "Racehorse Groom",
-  "Racing Organiser",
-  "Radio Controller",
-  "Radio Director",
-  "Radio Engineer",
-  "Radio Operator",
-  "Radio Presenter",
-  "Radio Producer",
   "Radiographer",
-  "Radiologist",
-  "Rally Driver",
   "Receptionist",
-  "Recorder",
-  "Records Supervisor",
-  "Recovery Vehicle Coordinator",
-  "Recreational",
-  "Recruitment Consultant",
-  "Rector",
-  "Reflexologist",
-  "Refractory Engineer",
-  "Refrigeration Engineer",
-  "Refuse Collector",
-  "Registrar",
-  "Regulator",
-  "Relocation Agent",
-  "Remedial Therapist",
-  "Rent Collector",
-  "Rent Offcer",
-  "Repair Man",
-  "Repairer",
-  "Reporter",
-  "Representative",
-  "Reprographic Assistant",
-  "Research Analyst",
-  "Research Consultant",
-  "Research Director",
+  "Repair of computers and personal and household goods",
   "Research Scientist",
-  "Research Technician",
-  "Researcher",
-  "Resin Caster",
+  "Residential care activities",
+  "Retail Assistant",
+  "Retail Manager",
   "Restaurant Manager",
-  "Restaurateur",
-  "Restorer",
   "Retired",
-  "Revenue Clerk",
-  "Revenue Officer",
-  "Riding Instructor",
-  "Rig Worker",
-  "Rigger",
-  "Riveter",
-  "Road Safety Officer",
-  "Road Sweeper",
-  "Road Worker",
-  "Roadworker",
-  "Roof Tiler",
   "Roofer",
-  "Rose Grower",
-  "Royal Marine",
-  "Rug Maker",
-  "Saddler",
-  "Safety Officer",
-  "Sail Maker",
-  "Sales Administrator",
   "Sales Assistant",
-  "Sales Director",
-  "Sales Engineer",
-  "Sales Executive",
-  "Sales Manager",
-  "Sales Representative",
-  "Sales Support",
-  "Salesman",
-  "Saleswoman",
-  "Sand Blaster",
-  "Saw Miller",
   "Scaffolder",
-  "School Crossing",
-  "School Inspector",
-  "Scientific Officer",
-  "Scientist",
-  "Scrap Dealer",
-  "Screen Printer",
-  "Screen Writer",
-  "Script Writer",
-  "Sculptor",
-  "Seaman",
-  "Seamstress",
+  "School Administrator",
+  "Secondary School Teacher",
   "Secretary",
-  "Security Consultant",
-  "Security Controller",
-  "Security Guard",
-  "Security Officer",
-  "Servant",
-  "Service Engineer",
-  "Service Manager",
-  "Share Dealer",
-  "Sheet Metal Worker",
-  "Shelf Filler",
-  "Shelter Warden",
-  "Shepherd",
-  "Sheriff",
-  "Sheriff Clerk",
-  "Sheriff Principal",
-  "Shift Controller",
-  "Ship Broker",
-  "Ship Builder",
-  "Shipping Clerk",
-  "Shipping Officer",
-  "Shipwright",
-  "Shipyard Worker",
-  "Shoe Maker",
-  "Shoe Repairer",
-  "Shooting Instructor",
+  "Security and investigation activities",
+  "Self Employed",
   "Shop Assistant",
-  "Shop Fitter",
-  "Shop Keeper",
-  "Shop Manager",
-  "Shop Proprietor",
-  "Shot Blaster",
-  "Show Jumper",
-  "Showman",
-  "Shunter",
-  "Sign Maker",
-  "Signalman",
-  "Signwriter",
-  "Site Agent",
-  "Site Engineer",
-  "Skipper",
-  "Slater",
-  "Slaughterman",
-
-  "Smallholder",
-
-  "Social Worker",
-
-  "Software Consultant",
-
+  "Site Manager",
+  "Social Media Manager",
+  "Social work activities without accommodation",
   "Software Engineer",
-
-  "Soldier",
-
   "Solicitor",
-
-  "Song Writer",
-
-  "Sound Artist",
-
-  "Sound Engineer",
-
-  "Sound Technician",
-
-  "Special Constable",
-
-  "Special Needs",
-
-  "Speech Therapist",
-
-  "Sports Administrator",
-
-  "Sports Coach",
-
-  "Sports Commentator",
-
-  "Sportsman",
-
-  "Sportsperson",
-
-  "Sportswoman",
-
-  "Spring Maker",
-
-  "Stable Hand",
-
-  "Staff Nurse",
-
-  "Stage Director",
-
-  "Stage Hand",
-
-  "Stage Manager",
-
-  "Stage Mover",
-
-  "Station Manager",
-
-  "Stationer",
-
-  "Statistician",
-
-  "Steel Erector",
-
-  "Steel Worker",
-
-  "Steeplejack",
-
-  "Stenographer",
-
-  "Steward",
-
-  "Stewardess",
-
-  "Stock Controller",
-
-  "Stock Manager",
-
-  "Stockbroker",
-
-  "Stockman",
-
-  "Stocktaker",
-
-  "Stone Cutter",
-
-  "Stone Sawyer",
-
-  "Stonemason",
-
-  "Store Detective",
-
-  "Storeman",
-
-  "Storewoman",
-
-  "Street Entertainer",
-
-  "Street Trader",
-
-  "Stud Hand",
-
+  "Special Needs Teacher",
+  "Sports activities and amusement and recreation activities",
+  "Sports Therapist",
+  "Store Manager",
+  "Structural Engineer",
   "Student",
-
-  "Student Nurse",
-
-  "Student Teacher",
-
-  "Studio Manager",
-
-  "Sub-Postmaster",
-
-  "Sub-Postmistress",
-
-  "Supervisor",
-
-  "Supply Teacher",
-
   "Surgeon",
-
   "Surveyor",
-
-  "Systems Analyst",
-
-  "Systems Engineer",
-
-  "Systems Manager",
-
-  "TV Editor",
-
-  "Tachograph Analyst",
-
-  "Tacker",
-
-  "Tailor",
-
-  "Tank Farm Operative",
-
-  "Tanker Driver",
-
-  "Tanner",
-
-  "Tattooist",
-
+  "System Administrator",
   "Tax Advisor",
-
-  "Tax Analyst",
-
-  "Tax Assistant",
-
-  "Tax Consultant",
-
-  "Tax Inspector",
-
-  "Tax Manager",
-
-  "Tax Officer",
-
-  "Taxi Controller",
-
   "Taxi Driver",
-
-  "Taxidermist",
-
-  "Tea Blender",
-
-  "Tea Taster",
-
-  "Teacher",
-
-  "Teachers Assistant",
-
-  "Technical Advisor",
-
-  "Technical Analyst",
-
-  "Technical Assistant",
-
-  "Technical Author",
-
-  "Technical Clerk",
-
-  "Technical Co-ordinator",
-
-  "Technical Director",
-
-  "Technical Editor",
-
-  "Technical Engineer",
-
-  "Technical Illustrator",
-
-  "Technical Instructor",
-
-  "Technical Liaison",
-
-  "Technical Manager",
-
-  "Technician",
-
-  "Telecommunication",
-
+  "Teaching Assistant",
+  "Technical Support Specialist",
   "Telecommunications",
-
-  "Telegraphist",
-
-  "Telemarketeer",
-
-  "Telephone Engineer",
-
-  "Telephonist",
-
-  "Telesales Person",
-
-  "Television Director",
-
-  "Television Engineer",
-
-  "Television Presenter",
-
-  "Television Producer",
-
-  "Telex Operator",
-
-  "Temperature Time",
-
-  "Tennis Coach",
-
-  "Textile Consultant",
-
-  "Textile Engineer",
-
-  "Textile Technician",
-
-  "Textile Worker",
-
-  "Thatcher",
-
-  "Theatre Manager",
-
-  "Theatre Technician",
-
-  "Theatrical Agent",
-
-  "Therapist",
-
-  "Thermal Engineer",
-
-  "Thermal Insulator",
-
-  "Ticket Agent",
-
-  "Ticket Inspector",
-
   "Tiler",
-
-  "Timber Inspector",
-
-  "Timber Worker",
-
-  "Tobacconist",
-
-  "Toll Collector",
-
-  "Tool Maker",
-
-  "Tour Agent",
-
   "Tour Guide",
-
-  "Town Clerk",
-
-  "Town Planner",
-
-  "Toy Maker",
-
-  "Toy Trader",
-
-  "Track Worker",
-
-  "Tractor Driver",
-
-  "Tractor Mechanic",
-
-  "Trade Mark Agent",
-
-  "Trade Union Official",
-
-  "Trading Standards",
-
-  "Traffic Warden",
-
+  "Train Conductor",
   "Train Driver",
-
-  "Trainee Manager",
-
-  "Training Advisor",
-
-  "Training Assistant",
-
-  "Training Co-ordinator",
-
-  "Training Consultant",
-
-  "Training Instructor",
-
-  "Training Manager",
-
-  "Training Officer",
-
-  "Transcriber",
-
-  "Translator",
-
-  "Transport Clerk",
-
-  "Transport Consultant",
-
-  "Transport Controller",
-
-  "Transport Engineer",
-
   "Transport Manager",
-
-  "Transport Officer",
-
-  "Transport Planner",
-
   "Travel Agent",
-
-  "Travel Clerk",
-
-  "Travel Consultant",
-
-  "Travel Courier",
-
-  "Travel Guide",
-
-  "Travel Guide Writer",
-
-  "Travel Representative",
-
-  "Travelling Showman",
-
   "Treasurer",
-
-  "Tree Feller",
-
   "Tree Surgeon",
-
-  "Trichologist",
-
-  "Trinity House Pilot",
-
-  "Trout Farmer",
-
-  "Tug Skipper",
-
-  "Tunneller",
-
-  "Turf Accountant",
-
-  "Turkey Farmer",
-
-  "Turner",
-
   "Tutor",
-
-  "Typesetter",
-
-  "Typewriter Engineer",
-
-  "Typist",
-
-  "Tyre Builder",
-
-  "Tyre Fitter",
-
-  "Tyre Inspector",
-
-  "Tyre Technician",
-
-  "Undertaker",
-
-  "Underwriter",
-
-  "Upholsterer",
-
-  "Valuer",
-
-  "Valve Technician",
-
-  "Van Driver",
-
-  "Vehicle Assessor",
-
-  "Vehicle Body Worker",
-
-  "Vehicle Engineer",
-
-  "Vehicle Technician",
-
-  "Ventriloquist",
-
-  "Verger",
-
+  "UI Designer",
+  "Unemployed",
+  "UX Designer",
+  "Veterinary Nurse",
   "Veterinary Surgeon",
-
-  "Vicar",
-
-  "Video Artist",
-
-  "Violin Maker",
-
-  "Violinist",
-
-  "Voluntary Worker",
-
-  "Wages Clerk",
-
+  "Video Editor",
   "Waiter",
-
   "Waitress",
-
-  "Warden",
-
-  "Warehouse Manager",
-
-  "Warehouseman",
-
-  "Warehousewoman",
-
-  "Watchmaker",
-
-  "Weaver",
-
-  "Weighbridge Clerk",
-
-  "Weighbridge Operator",
-
+  "Warehouse Operative",
+  "Web Designer",
+  "Web Developer",
   "Welder",
-
-  "Welfare Assistant",
-
-  "Welfare Officer",
-
-  "Welfare Rights Officer",
-
-  "Wheel Clamper",
-
-  "Wholesale Newspaper",
-
-  "Window Cleaner",
-
-  "Window Dresser",
-
-  "Windscreen Fitter",
-
-  "Wine Merchant",
-
-  "Wood Carver",
-
-  "Wood Cutter",
-
-  "Wood Worker",
-
-  "Word Processing Operator",
-
-  "Works Manager",
-
   "Writer",
-
-  "Yacht Master",
-
-  "Yard Manager",
-
-  "Youth Hostel Warden",
-
-  "Youth Worker",
-
-  "Zoo Keeper",
-
-  "Zoo Manager",
-
-  "Zoologist",
 ];

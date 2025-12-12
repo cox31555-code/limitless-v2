@@ -1,0 +1,192 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
+.container {
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitle {
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitleText {
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.contentWrapper {
+  composes: stepContentWrapper from '../../../../ui/getQuote/shared.module.css';
+}
+
+.section {
+  composes: stepSection from '../../../../ui/getQuote/shared.module.css';
+}
+
+.mainQuestion {
+  composes: mainQuestion from '../../../../ui/getQuote/shared.module.css';
+}
+
+.subText {
+  composes: subText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.questionHeader {
+  composes: questionHeader from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioGroup {
+  composes: radioGroup from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioOption {
+  composes: radioOption from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioInput {
+  composes: radioInput from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioLabel {
+  composes: radioLabel from '../../../../ui/getQuote/shared.module.css';
+}
+
+.helpLink {
+  composes: helpLink from '../../../../ui/getQuote/shared.module.css';
+}
+
+.dropdownWrapper {
+  margin-top: 1.2rem;
+}
+
+.conditionalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2.4rem;
+  border-top: 2px solid #e8ecf1;
+  margin-top: 2.4rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+    gap: 3.2rem;
+  }
+
+  .mainQuestion {
+    font-size: 2rem;
+  }
+
+  .subText {
+    font-size: 1.3rem;
+  }
+
+  .radioInput {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radioInput:checked::after {
+    width: 7px;
+    height: 7px;
+  }
+
+  .radioLabel {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 26px;
+  }
+
+  .mainQuestion {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+    gap: 1.6rem;
+    margin: 0;
+  }
+
+  .stepTitle {
+    margin-bottom: 2rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .mainQuestion {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .subText {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .radioInput {
+    width: 22px;
+    height: 22px;
+  }
+
+  .radioInput:checked::after {
+    width: 8px;
+    height: 8px;
+  }
+
+  .radioLabel {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .radioOption {
+    padding: 0.4rem 0;
+  }
+
+  .radioGroup {
+    gap: 1.4rem;
+    margin-top: 1.6rem;
+  }
+
+  .helpLink {
+    font-size: 1.6rem;
+    margin-top: 1.6rem;
+  }
+
+  .section {
+    padding-bottom: 2.4rem;
+    gap: 2rem;
+  }
+
+  .questionHeader {
+    gap: 1.4rem;
+  }
+
+  .contentWrapper {
+    padding-right: 0;
+    gap: 3.2rem;
+  }
+
+  .dropdownWrapper {
+    margin-top: 1.6rem;
+  }
+
+  .conditionalSection {
+    padding-top: 2.4rem;
+    margin-top: 2.4rem;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,193 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.625rem;
+  padding: 3.6rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.3px;
+}
+
+.documentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.documentItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.2rem 2rem;
+  border-bottom: 1px solid #e5e9f0;
+  transition: all 0.2s ease;
+}
+
+.documentItem:last-child {
+  border-bottom: none;
+}
+
+.documentItem:hover {
+  background: #f8fafe;
+  border-color: #d0ddf0;
+}
+
+.documentInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex: 1;
+}
+
+.documentIcon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.documentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.documentName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0052a3;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.dateAdded {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.documentActions {
+  display: flex;
+  gap: 1.6rem;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .section {
+    padding: 2.8rem;
+    gap: 2.2rem;
+  }
+
+  .header {
+    gap: 1.2rem;
+  }
+
+  .header {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .documentItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+    padding: 2rem 1.6rem;
+  }
+
+  .documentInfo {
+    width: 100%;
+    gap: 1.4rem;
+  }
+
+  .documentDetails {
+    gap: 0.5rem;
+  }
+
+  .documentName {
+    font-size: 1.35rem;
+  }
+
+  .dateAdded {
+    font-size: 0.9rem;
+  }
+
+  .documentActions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .documentIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .documentName {
+    font-size: 1.25rem;
+  }
+
+  .dateAdded {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 2.2rem;
+    gap: 1.8rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .documentItem {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .documentInfo {
+    width: 100%;
+    gap: 1.3rem;
+  }
+
+  .documentDetails {
+    gap: 0.4rem;
+  }
+
+  .documentName {
+    font-size: 1.25rem;
+  }
+
+  .dateAdded {
+    font-size: 1.15rem;
+  }
+
+  .documentActions {
+    width: 100%;
+    gap: 1.4rem;
+  }
+}

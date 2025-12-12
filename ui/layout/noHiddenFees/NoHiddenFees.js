@@ -1,72 +1,37 @@
+"use client";
+
 import React from "react";
 import styles from "./noHiddenFees.module.css";
-import Image from "next/image";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
+
 const NoHiddenFees = () => {
   const router = useRouter();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={`${styles.title} ${plusJakartaSans.className}`}>
-          No hidden fees
-          <div className={styles.titleSpan}>
-            Limitless Cover{" "}
-            <Image
-              src="/svg/curved-border.svg"
-              alt="curved border"
-              width={393}
-              height={3}
-              className={styles.curvedBorder}
-            />
-          </div>
+        <div className={styles.title}>
+          <span>No Hidden Fees</span>
+          <span className={styles.titleSpan}>Limitless Cover</span>
         </div>
         <div className={styles.buttons}>
           <button
-            onClick={() => {
-              router.push("/temporary/get-quote");
-            }}
+            onClick={() => setIsInsuranceModalOpen(true)}
             className={styles.getQuoteBtn}
+            aria-label="Get a Quote"
           >
-            Get a quote
-            <Image
-              src="/svg/arrow-right.svg"
-              alt="arrow-right"
-              width={28}
-              height={14}
-            />
+            Get a Quote
           </button>
           <button
-            onClick={() => {
-              router.push("/login");
-            }}
+            onClick={() => router.push("/login")}
             className={styles.membersPortalBtn}
+            aria-label="Customer Login"
           >
-            Members Portal{" "}
-            <Image
-              src="/svg/arrow-right.svg"
-              alt="arrow-right"
-              width={28}
-              height={14}
-            />
+            Customer Login
           </button>
         </div>
-      </div>
-      <div className={styles.imageContainer}>
-        <span className={styles.background1}></span>
-        <span className={styles.background2}></span>
-        <span className={styles.background3}></span>
-        <Image
-          className={styles.image}
-          src="/svg/no-hidden-fee.svg"
-          alt="no-hidden-fees"
-          width={495}
-          height={339}
-        />
       </div>
     </div>
   );

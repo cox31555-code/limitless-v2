@@ -109,15 +109,6 @@ const DataAndTime = ({
         <div className={styles.inputGroup}>
           <label className={styles.label}>{dateLabel}</label>
           <div className={styles.inputContainer} onClick={handleDateIconClick}>
-            <div className={styles.iconContainer}>
-              <Image
-                src="/svg/date.svg"
-                alt="calendar"
-                width={24}
-                height={24}
-                className={styles.icon}
-              />
-            </div>
             <input
               value={data.date || ""}
               type="text"
@@ -159,15 +150,6 @@ const DataAndTime = ({
             className={`${styles.inputContainer} ${!data.date ? styles.disabled : ''}`}
             onClick={handleTimeContainerClick}
           >
-            <div className={styles.iconContainer}>
-              <Image
-                src="/svg/time.svg"
-                alt="time"
-                width={24}
-                height={24}
-                className={styles.icon}
-              />
-            </div>
             <input
               value={data.time || ""}
               type="text"

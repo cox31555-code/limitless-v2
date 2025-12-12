@@ -1,10 +1,8 @@
 import Image from "next/image";
 import React, { useState, useRef, useEffect, forwardRef } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-import styles from "./selections/dataAndTime/dataAndTime.module.css";
+import CustomDatePicker from "./customDatePicker/CustomDatePicker";
+import CustomTimePicker from "./customTimePicker/CustomTimePicker";
+import styles from "./textInput/textInput.module.css";
 
 const FormDateInput = forwardRef(
   (
@@ -18,27 +16,187 @@ const FormDateInput = forwardRef(
       onBlur,
       value,
       allowPastDates = false,
+      isDateOfBirth = false,
+      minDate = null,
+      maxDate = null,
+      forceShowAbove = false,
+      defaultYear = null,
+      reducedPadding = false,
+      relatedDateValue = null,
+      disabled = false,
+      minTime = null,
+      maxTime = null,
       ...props
     },
     ref
   ) => {
     const [showDatePicker, setShowDatePicker] = useState(false);
-    const timeInputRef = useRef(null);
+    const [showTimePicker, setShowTimePicker] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    const [pickerPosition, setPickerPosition] = useState({
+      top: "auto",
+      bottom: "auto",
+      left: "auto",
+      showAbove: false,
+    });
+    const inputContainerRef = useRef(null);
+    const datePickerRef = useRef(null);
+    const timePickerRef = useRef(null);
+
+    // Detect mobile on mount and on resize
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 900);
+      };
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Parse date string to Date object, handling timezone issues
+    const calculatePickerPosition = () => {
+      if (!inputContainerRef.current) return;
+
+      const rect = inputContainerRef.current.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+      const pickerHeight = 400; // Approximate height of pickers
+      const pickerWidth = Math.min(320, window.innerWidth - 32); // Max 320px or viewport minus padding
+
+      // Check if we're inside a modal by looking for overflow:auto parent
+      let isInsideModal = false;
+      let element = inputContainerRef.current;
+      while (element && element !== document.body) {
+        const style = window.getComputedStyle(element);
+        if (style.overflowY === 'auto' || style.overflowY === 'scroll' || style.overflow === 'auto' || style.overflow === 'scroll') {
+          isInsideModal = true;
+          break;
+        }
+        element = element.parentElement;
+      }
+
+      // Calculate optimal left position to keep picker within viewport
+      let leftPos = rect.left;
+      const pickerRightEdge = leftPos + pickerWidth;
+
+      if (pickerRightEdge > window.innerWidth) {
+        // Adjust left to keep picker within viewport
+        leftPos = Math.max(16, window.innerWidth - pickerWidth - 16);
+      }
+
+      // For modals, position relative to input; for normal flow, position relative to viewport
+      if (isInsideModal) {
+        // Inside modal: use absolute positioning relative to input
+        leftPos = 0; // Position from the input's left edge
+        if (forceShowAbove) {
+          setPickerPosition({
+            top: "auto",
+            bottom: `${rect.height + 12}px`,
+            left: `${leftPos}px`,
+            showAbove: true,
+            isAbsolute: true,
+          });
+        } else if (spaceBelow < pickerHeight) {
+          // Show above
+          setPickerPosition({
+            top: "auto",
+            bottom: `${rect.height + 12}px`,
+            left: `${leftPos}px`,
+            showAbove: true,
+            isAbsolute: true,
+          });
+        } else {
+          // Show below
+          setPickerPosition({
+            top: `${rect.height + 12}px`,
+            bottom: "auto",
+            left: `${leftPos}px`,
+            showAbove: false,
+            isAbsolute: true,
+          });
+        }
+      } else {
+        // Normal flow: use fixed positioning
+        if (forceShowAbove) {
+          // Always show above when forceShowAbove is true
+          setPickerPosition({
+            top: "auto",
+            bottom: `${window.innerHeight - rect.top + 12}px`,
+            left: `${leftPos}px`,
+            showAbove: true,
+            isAbsolute: false,
+          });
+        } else if (spaceBelow < pickerHeight && spaceAbove > pickerHeight) {
+          // Show above
+          setPickerPosition({
+            top: "auto",
+            bottom: `${window.innerHeight - rect.top + 12}px`,
+            left: `${leftPos}px`,
+            showAbove: true,
+            isAbsolute: false,
+          });
+        } else {
+          // Show below (default)
+          setPickerPosition({
+            top: `${rect.bottom + 12}px`,
+            bottom: "auto",
+            left: `${leftPos}px`,
+            showAbove: false,
+            isAbsolute: false,
+          });
+        }
+      }
+    };
+
+    useEffect(() => {
+      if (showDatePicker || showTimePicker) {
+        calculatePickerPosition();
+
+        const handleClickOutside = (e) => {
+          // On mobile, only close when clicking the overlay
+          if (isMobile) {
+            const isClickOnOverlay = e.target.className && e.target.className.includes('modalOverlay');
+            if (isClickOnOverlay) {
+              setShowDatePicker(false);
+              setShowTimePicker(false);
+              document.body.style.overflow = "unset";
+            }
+          } else {
+            // On desktop, close on click outside
+            const isClickInsideInput = inputContainerRef.current && inputContainerRef.current.contains(e.target);
+            const isClickInsideDatePicker = datePickerRef.current && datePickerRef.current.contains(e.target);
+            const isClickInsideTimePicker = timePickerRef.current && timePickerRef.current.contains(e.target);
+
+            if (!isClickInsideInput && !isClickInsideDatePicker && !isClickInsideTimePicker) {
+              setShowDatePicker(false);
+              setShowTimePicker(false);
+              document.body.style.overflow = "unset";
+            }
+          }
+        };
+
+        window.addEventListener("scroll", calculatePickerPosition);
+        window.addEventListener("resize", calculatePickerPosition);
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+          window.removeEventListener("scroll", calculatePickerPosition);
+          window.removeEventListener("resize", calculatePickerPosition);
+          document.removeEventListener("click", handleClickOutside);
+        };
+      }
+    }, [showDatePicker, showTimePicker, isMobile]);
+
     const parseDate = (dateString) => {
       if (!dateString) return null;
       try {
         // Handle both YYYY-MM-DD and DD/MM/YYYY formats
         if (dateString.includes("/")) {
           const [day, month, year] = dateString.split("/");
-          console.log(day, month, year);
           return new Date(year, month - 1, day);
-
         } else {
           // For YYYY-MM-DD format, create date without timezone issues
           const [year, month, day] = dateString.split("-");
-          console.log(year, month, day);
           return new Date(year, month - 1, day);
         }
       } catch (error) {
@@ -66,44 +224,6 @@ const FormDateInput = forwardRef(
       const day = date.getDate().toString().padStart(2, "0");
       return `${year}-${month}-${day}`;
     };
-
-    // Initialize flatpickr for time picker
-    useEffect(() => {
-      if (type === "time" && timeInputRef.current) {
-        const fp = flatpickr(timeInputRef.current, {
-          enableTime: true,
-          noCalendar: true,
-          dateFormat: "H:i",
-          time_24hr: true,
-          defaultDate: value || "10:00",
-          onChange: (selectedDates, dateStr) => {
-            // Create synthetic event for React Hook Form
-            const syntheticEvent = {
-              target: {
-                name: name,
-                value: dateStr,
-              },
-            };
-            if (onChange) {
-              onChange(syntheticEvent);
-            }
-          },
-        });
-
-        return () => fp.destroy();
-      }
-    }, [type, name, onChange, value]);
-
-    // Update flatpickr when value changes
-    useEffect(() => {
-      if (
-        type === "time" &&
-        timeInputRef.current &&
-        timeInputRef.current._flatpickr
-      ) {
-        timeInputRef.current._flatpickr.setDate(value || "10:00");
-      }
-    }, [value, type]);
 
     const handleDateSelect = (date) => {
       if (!date) return;
@@ -134,15 +254,27 @@ const FormDateInput = forwardRef(
       setShowDatePicker(false);
     };
 
-    const handleTimeContainerClick = () => {
-      if (timeInputRef.current) {
-        timeInputRef.current.focus();
-        timeInputRef.current.click();
-      }
+    const openDatePicker = () => {
+      // Don't open picker if disabled or on mobile (use native)
+      if (disabled || isMobile) return;
+      setShowDatePicker(true);
     };
 
-    const openDatePicker = () => setShowDatePicker(true);
-    const closeDatePicker = () => setShowDatePicker(false);
+    const closeDatePicker = () => {
+      setShowDatePicker(false);
+      document.body.style.overflow = "unset";
+    };
+
+    const openTimePicker = () => {
+      // Don't open custom picker on mobile (use native)
+      if (isMobile) return;
+      setShowTimePicker(true);
+    };
+
+    const closeTimePicker = () => {
+      setShowTimePicker(false);
+      document.body.style.overflow = "unset";
+    };
 
     // Get today's date for restrictions
     const today = new Date();
@@ -150,141 +282,200 @@ const FormDateInput = forwardRef(
 
     // Date picker component
     if (type === "date") {
-      return (
-        <div className={styles.container}>
-          <div className={styles.inputGroup}>
-            <label className={styles.label}>{dateLabel}</label>
+      const handleNativeDateChange = (e) => {
+        // Convert YYYY-MM-DD to our format
+        const syntheticEvent = {
+          target: {
+            name: name,
+            value: e.target.value,
+          },
+        };
+        if (onChange) {
+          onChange(syntheticEvent);
+        }
+      };
 
-            <div className={styles.inputContainer} onClick={openDatePicker}>
-              <div className={styles.iconContainer}>
-                <Image
-                  src="/svg/date.svg"
-                  alt="calendar"
-                  width={24}
-                  height={24}
-                  className={styles.icon}
+      const formatDateForNative = (date) => {
+        if (!date) return undefined;
+        const d = new Date(date);
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      };
+
+      return (
+        <>
+          <div className={styles.formInputGroup}>
+            {dateLabel && <label className={styles.formInputLabel}>{dateLabel}</label>}
+
+            <div
+              className={`${styles.formInputWrapper}`}
+              ref={inputContainerRef}
+            >
+              {isMobile ? (
+                <input
+                  ref={ref}
+                  name={name}
+                  type="date"
+                  value={value || ""}
+                  onChange={handleNativeDateChange}
+                  onBlur={onBlur}
+                  disabled={disabled}
+                  min={minDate ? formatDateForNative(minDate) : undefined}
+                  max={maxDate ? formatDateForNative(maxDate) : undefined}
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
+                  style={{
+                    cursor: disabled ? 'not-allowed' : 'pointer',
+                    colorScheme: 'dark'
+                  }}
+                  {...props}
                 />
-              </div>
-              <input
-                ref={ref}
-                name={name}
-                value={formatDateDisplay(value) || ""}
-                onChange={() => {}} // Dummy onChange to satisfy React
-                placeholder="DD/MM/YYYY"
-                className={styles.input}
-                type="text"
-                readOnly
-                onBlur={onBlur}
-                {...props}
-              />
-              <Image
-                src="/svg/arrow-down.svg"
-                alt="arrow-down"
-                width={24}
-                height={24}
-                className={styles.arrowDown}
-              />
+              ) : (
+                <input
+                  ref={ref}
+                  name={name}
+                  value={formatDateDisplay(value) || ""}
+                  onChange={() => {}} // Dummy onChange to satisfy React
+                  placeholder="DD/MM/YYYY"
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""} ${disabled ? styles.formInputDisabled : ''}`}
+                  type="text"
+                  readOnly
+                  onClick={openDatePicker}
+                  onBlur={onBlur}
+                  disabled={disabled}
+                  style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
+                  {...props}
+                />
+              )}
             </div>
 
-            {showDatePicker && (
-              <div className={styles.datePickerWrapper}>
-                <DatePicker
-                  selected={parseDate(value)}
-                  onChange={handleDateSelect}
-                  onClickOutside={closeDatePicker}
-                  inline
-                  calendarClassName={styles.customCalendar}
-                  minDate={allowPastDates ? null : today}
-                  maxDate={
-                    allowPastDates && dateLabel === "Date of Birth"
-                      ? new Date(2010, 11, 31) // December 31, 2010
-                      : null
-                  }
-                  filterDate={allowPastDates ? null : (date) => date >= today}
-                  showYearDropdown
-                  showMonthDropdown
-                  dropdownMode="select"
-                  yearDropdownItemNumber={100}
-                  scrollableYearDropdown
-                />
-              </div>
-            )}
-
             {error && (
-              <span
-                className={styles.error}
-                style={{
-                  color: "#ef4444",
-                  fontSize: "1.2rem",
-                  marginTop: "0.5rem",
-                }}
-              >
-                {error.message}
+              <span className={styles.formInputErrorMsg}>
+                {error.message || error}
               </span>
             )}
           </div>
-        </div>
+
+          {!isMobile && showDatePicker && (
+            <div ref={datePickerRef} style={{
+              position: pickerPosition.isAbsolute ? 'absolute' : 'fixed',
+              top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
+              bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
+              left: pickerPosition.left,
+              zIndex: 99999,
+              pointerEvents: 'auto'
+            }}>
+              <CustomDatePicker
+                selectedDate={parseDate(value)}
+                onDateSelect={handleDateSelect}
+                minDate={minDate || (allowPastDates ? null : today)}
+                maxDate={maxDate}
+                showAbove={pickerPosition.showAbove}
+                defaultYear={defaultYear}
+              />
+            </div>
+          )}
+        </>
       );
     }
 
     // Time picker component
     if (type === "time") {
+      const isTimeDisabled = disabled || !relatedDateValue;
+
+      const handleTimeSelect = (timeString) => {
+        if (isTimeDisabled) return;
+        const syntheticEvent = {
+          target: {
+            name: name,
+            value: timeString,
+          },
+        };
+        if (onChange) {
+          onChange(syntheticEvent);
+        }
+        closeTimePicker();
+      };
+
+      const handleNativeTimeChange = (e) => {
+        if (isTimeDisabled) return;
+        if (onChange) {
+          onChange(e);
+        }
+      };
+
       return (
-        <div className={styles.container}>
-          <div className={styles.inputGroup}>
-            <label className={styles.label}>{timeLabel}</label>
+        <>
+          <div className={styles.formInputGroup}>
+            {timeLabel && <label className={styles.formInputLabel}>{timeLabel}</label>}
 
             <div
-              className={styles.inputContainer}
-              onClick={handleTimeContainerClick}
+              className={styles.formInputWrapper}
+              ref={inputContainerRef}
             >
-              <div className={styles.iconContainer}>
-                <Image
-                  src="/svg/time.svg"
-                  alt="time"
-                  width={24}
-                  height={24}
-                  className={styles.icon}
+              {isMobile ? (
+                <input
+                  ref={ref}
+                  name={name}
+                  type="time"
+                  value={value || ""}
+                  onChange={handleNativeTimeChange}
+                  onBlur={onBlur}
+                  step="900"
+                  disabled={isTimeDisabled}
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""} ${isTimeDisabled ? styles.formInputDisabled : ''}`}
+                  style={{
+                    cursor: isTimeDisabled ? 'not-allowed' : 'pointer',
+                    colorScheme: 'dark'
+                  }}
                 />
-              </div>
-              <input
-                ref={timeInputRef}
-                name={name}
-                value={value || ""}
-                onChange={() => {}} // Dummy onChange - flatpickr handles the real changes
-                placeholder="--:--"
-                className={styles.input}
-                type="text"
-                onBlur={onBlur}
-                style={{
-                  // Remove default time input styling and clock icon
-                  WebkitAppearance: "none",
-                  MozAppearance: "textfield",
-                }}
-              />
-              <Image
-                src="/svg/arrow-down.svg"
-                alt="arrow-down"
-                width={24}
-                height={24}
-                className={styles.arrowDown}
-              />
+              ) : (
+                <input
+                  ref={ref}
+                  name={name}
+                  value={value || ""}
+                  onChange={() => {}}
+                  placeholder="--:--"
+                  className={`${styles.formInput} ${error ? styles.formInputError : ""} ${isTimeDisabled ? styles.formInputDisabled : ''}`}
+                  type="text"
+                  readOnly
+                  onClick={isTimeDisabled ? undefined : openTimePicker}
+                  onBlur={onBlur}
+                  disabled={isTimeDisabled}
+                  style={{ cursor: isTimeDisabled ? 'not-allowed' : 'pointer' }}
+                />
+              )}
             </div>
 
             {error && (
-              <span
-                className={styles.error}
-                style={{
-                  color: "#ef4444",
-                  fontSize: "1.2rem",
-                  marginTop: "0.5rem",
-                }}
-              >
-                {error.message}
+              <span className={styles.formInputErrorMsg}>
+                {error.message || error}
               </span>
             )}
           </div>
-        </div>
+
+          {!isMobile && showTimePicker && !isTimeDisabled && (
+            <div ref={timePickerRef} style={{
+              position: pickerPosition.isAbsolute ? 'absolute' : 'fixed',
+              top: pickerPosition.top !== 'auto' ? pickerPosition.top : undefined,
+              bottom: pickerPosition.bottom !== 'auto' ? pickerPosition.bottom : undefined,
+              left: pickerPosition.left,
+              zIndex: 99999,
+              pointerEvents: 'auto'
+            }}>
+              <CustomTimePicker
+                selectedTime={value || "10:00"}
+                selectedDate={relatedDateValue}
+                onTimeSelect={handleTimeSelect}
+                onClose={closeTimePicker}
+                showAbove={pickerPosition.showAbove}
+                minTime={minTime}
+                maxTime={maxTime}
+              />
+            </div>
+          )}
+        </>
       );
     }
 

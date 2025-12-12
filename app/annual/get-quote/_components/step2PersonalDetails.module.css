@@ -1,0 +1,194 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
+.container {
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitle {
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitleText {
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.contentWrapper {
+  composes: stepContentWrapper from '../../../../ui/getQuote/shared.module.css';
+}
+
+.section {
+  composes: stepSection from '../../../../ui/getQuote/shared.module.css';
+}
+
+.mainQuestion {
+  composes: mainQuestion from '../../../../ui/getQuote/shared.module.css';
+}
+
+.subText {
+  composes: subText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.questionHeader {
+  composes: questionHeader from '../../../../ui/getQuote/shared.module.css';
+}
+
+.fieldGroup {
+  composes: fieldGroup from '../../../../ui/getQuote/shared.module.css';
+  max-width: 180px;
+}
+
+.helpLink {
+  composes: helpLink from '../../../../ui/getQuote/shared.module.css';
+  margin-top: 1.2rem;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 450px;
+}
+
+@media (max-width: 640px) {
+  .fieldWrapper {
+    gap: 0.1rem;
+  }
+}
+
+.fieldLabel {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.dateInputsWrapper {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.dateInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 0 1 100px;
+  max-width: 100px;
+}
+
+@media (max-width: 640px) {
+  .dateInputGroup {
+    gap: 0.1rem;
+  }
+}
+
+.inputLabel {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.dropdownWrapper {
+  margin-top: 1.2rem;
+  max-width: 450px;
+}
+
+.expandableLink {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  text-align: left;
+  transition: color 0.2s ease;
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.expandableLink:hover {
+  color: var(--color-primary-dark);
+}
+
+.expandableLink:focus {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.expandableIcon {
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.expandableContent {
+  font-size: 1.4rem;
+  color: var(--color-text-secondary);
+  margin: 1.2rem 0 0 0;
+  line-height: 1.65;
+  font-weight: 400;
+  padding-left: 1.6rem;
+  border-left: 3px solid var(--color-primary-dark);
+  padding-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .dateInputsWrapper {
+    gap: 1.2rem;
+  }
+
+  .contentWrapper {
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fieldLabel,
+  .inputLabel {
+    font-size: var(--font-size-xl);
+  }
+
+  .expandableLink {
+    font-size: var(--font-size-xl);
+  }
+
+  .expandableContent {
+    font-size: var(--font-size-xl);
+  }
+
+  .helpLink {
+    font-size: 1.2rem;
+  }
+
+  .dateInputsWrapper {
+    gap: 1.6rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .dateInputGroup {
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 120px;
+  }
+
+  .section {
+    padding-bottom: 1rem;
+    gap: 2rem;
+  }
+
+  .contentWrapper {
+    padding-right: 0;
+    gap: 3.2rem;
+  }
+}

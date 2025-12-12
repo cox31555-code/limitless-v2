@@ -1,0 +1,306 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Expandable Card */
+.expandableCard {
+  border: 2px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 2.4rem;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.cardHeader:focus {
+  outline: 2px solid #0052a3;
+  outline-offset: -2px;
+}
+
+.cardHeader:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  flex: 1;
+  text-align: left;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  background: #f0f4f8;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #0052a3;
+  stroke-width: 2;
+}
+
+.sectionTitle {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.02rem;
+}
+
+.expandIcon {
+  width: 2.2rem;
+  height: 2.2rem;
+  color: #64748b;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.expandIcon.expanded {
+  transform: rotate(180deg);
+}
+
+/* Card Content */
+.cardContent {
+  padding: 2rem 2.4rem 2.4rem 2.4rem;
+  background: #ffffff;
+}
+
+/* Details Grid */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.detailLabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.01rem;
+}
+
+.detailValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.5;
+}
+
+/* Car Info Block */
+.carInfoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+
+.carTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.03rem;
+}
+
+.carRegistration {
+  font-size: 1.4rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+.carMeta {
+  font-size: 1.3rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Vehicle Subsections */
+.vehicleSubsection {
+  margin-top: 2.4rem;
+  padding-top: 2.4rem;
+}
+
+.vehicleSubsection:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.subsectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 1.6rem 0;
+  letter-spacing: -0.01rem;
+}
+
+/* Driver Items */
+.driverItem {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0 0 1.2rem 0;
+  padding: 1rem 0;
+}
+
+.driverItem:last-child {
+  margin-bottom: 0;
+}
+
+.driverRole {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #64748b;
+}
+
+/* Driver Summary */
+.driverSummary {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+}
+
+.driverSummary:last-child {
+  margin-bottom: 0;
+}
+
+/* Driver Card */
+.driverCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.driverName {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.01rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .cardHeader {
+    padding: 1.8rem 2rem;
+  }
+
+  .cardContent {
+    padding: 1.8rem 2rem 2rem 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .carTitle {
+    font-size: 1.8rem;
+  }
+
+  .iconWrapper {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .icon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .cardHeader {
+    padding: 1.6rem 1.8rem;
+  }
+
+  .cardContent {
+    padding: 1.6rem 1.8rem 1.8rem 1.8rem;
+  }
+
+  .headerContent {
+    gap: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .detailLabel {
+    font-size: 1.1rem;
+  }
+
+  .detailValue {
+    font-size: 1.4rem;
+  }
+
+  .carTitle {
+    font-size: 1.7rem;
+  }
+
+  .detailsGrid {
+    gap: 1.6rem;
+  }
+
+  .vehicleSubsection {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+
+  .carInfoBlock {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.4rem;
+  }
+}

@@ -1,272 +1,331 @@
 .container {
   width: 100%;
-  border-radius: 20px;
   background: #000822;
-  padding: 8.8rem 1.3% 2.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 10rem;
+  padding: 8rem 4.4%;
   position: relative;
   overflow: hidden;
-}
-.squares {
-  position: absolute;
-  top: -40rem;
-  left: -40rem;
+  min-height: 600px;
+  border-radius: 2rem;
+  margin: 0 4.4%;
+  width: calc(100% - 8.8%);
 }
 
-.content {
-  width: 100%;
-  min-height: 518px;
-  border-radius: 28px;
-  background: #07102d;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.first {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 6.1rem;
-  padding: 6.5rem 5.5% 7.7rem;
-  border-radius: 2.8rem;
-  overflow: hidden;
-  position: relative;
-  flex-basis: 50%;
-  min-height: 518px;
-}
-.background1 {
+.background {
   position: absolute;
   top: 0;
   right: 0;
-  width: 33.3%;
-  height: 75%;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-.background2 {
-  position: absolute;
-  top: 0;
-  right: 33.3%;
-  width: 33.3%;
-  height: 61%;
-  opacity: 0.82;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
-}
-.background3 {
-  position: absolute;
-  top: 0;
-  right: 66.6%;
-  width: 33.4%;
-  height: 47%;
-  opacity: 0.6;
-  background: linear-gradient(to top, rgba(3, 136, 255, 0) 0%, #0388ff 184.11%);
+  width: 60%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 3.2rem;
-}
-.description {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 1.3rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
-}
-.text,
-.description {
+.content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
   position: relative;
   z-index: 1;
-  max-width: 90%;
 }
 
-.title,
-.contentTitle {
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
   color: #fff;
-  font-size: 5.4rem;
+  font-size: 5.2rem;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 110%;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
+  gap: 0.6rem;
 }
-.contentTitle {
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.title span,
-.contentTitle span {
+
+.title span {
   color: #0388ff;
+  display: block;
 }
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-  padding: 5.1rem 8% 5.2rem;
-  flex-basis: 50%;
-  min-width: 56rem;
-}
-.selection {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-.label {
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 14px;
+
+.description {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.8rem;
   font-weight: 400;
-  line-height: 124%; /* 17.36px */
-  letter-spacing: 0.56px;
+  line-height: 160%;
+  margin: 0;
+}
+
+.carSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 240px;
+}
+
+.carImage {
+  width: auto;
+  height: 200px;
+  object-fit: contain;
+}
+
+.right {
+  display: flex;
+  align-items: stretch;
 }
 
 .card {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 4rem;
+  background: rgba(3, 136, 255, 0.05);
+  border: 1px solid rgba(3, 136, 255, 0.15);
   border-radius: 16px;
-  background: #fff;
-  padding: 2.1rem 2.2rem 2.2rem;
 }
-.cardHeader {
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.label {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.priceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.priceBox {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  display: inline-flex;
-  padding: 1.7rem 1.5rem 1.7rem;
-  align-items: center;
-  border-radius: 18px;
-  width: 100%;
-  margin-bottom: 0.8rem;
+  padding: 2.4rem;
+  background: rgba(3, 136, 255, 0.08);
+  border: 1px solid rgba(3, 136, 255, 0.12);
+  border-radius: 12px;
 }
-.left {
+
+.priceTag {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.priceWrapper {
+  text-align: right;
+}
+
+.price {
+  color: #00c9ff;
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 100%;
+  display: block;
+}
+
+.button {
+  width: 100%;
+  height: 6rem;
+  padding: 0 2rem;
+  background: #0388ff;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 2.8rem;
-}
-.cardTitle {
-  color: #000822;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 100%; /* 16px */
+  justify-content: space-between;
+  gap: 1.2rem;
+  cursor: pointer;
+  letter-spacing: 0.5px;
 }
 
-.cardPrice {
-  color: #0388ff;
-  font-size: 5.2rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 100%; /* 74px */
-}
-
-.cardDescription {
-  color: rgba(0, 8, 34, 0.7);
-  font-size: 16px;
-  font-style: normal;
+.disclaimer {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 1.3rem;
   font-weight: 400;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-  padding: 1.7rem 0 2.2rem;
-  border-top: 1px solid rgba(0, 8, 34, 0.14);
+  margin: 0;
+  text-align: center;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.08);
 }
-.card button {
-  width: 100%;
-  height: 4.8rem;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (max-width: 1000px) {
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 7rem 4.4%;
+  }
+
   .content {
-    flex-direction: column;
-    overflow: hidden;
+    gap: 4rem;
   }
-  .squares {
-    display: none;
+
+  .title {
+    font-size: 4.2rem;
   }
-  .form,
-  .first {
-    flex-basis: 100%;
+
+  .description {
+    font-size: 1.6rem;
   }
-  .form {
-    min-width: 100%;
-    padding: 2rem 3rem;
+
+  .carImage {
+    height: 180px;
   }
-  .first {
-    min-height: auto;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 3rem;
+
+  .card {
+    padding: 3.2rem;
+    gap: 2.8rem;
   }
-  .text {
-    max-width: 100%;
+
+  .price {
+    font-size: 4.2rem;
+  }
+
+  .button {
+    height: 5.6rem;
+    font-size: 1.5rem;
   }
 }
+
 @media screen and (max-width: 900px) {
   .container {
-    padding: 4.8rem 5.5% 1.8rem;
-    gap: 4.7rem;
+    padding: 5.5rem 4.4%;
   }
+
   .content {
-    min-height: 518px;
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
   }
-  .first {
-    gap: 2.8rem;
-    padding: 3.4rem 6.7% 1.4rem;
+
+  .title {
+    font-size: 3.4rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
+  }
+
+  .left {
+    gap: 3rem;
+  }
+
+  .carSection {
+    min-height: 200px;
+  }
+
+  .carImage {
+    height: 160px;
+  }
+
+  .label {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    padding: 2.8rem;
+    gap: 2.4rem;
+  }
+
+  .priceBox {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .priceWrapper {
+    text-align: left;
+    width: 100%;
+  }
+
+  .price {
+    font-size: 3.6rem;
+  }
+
+  .button {
+    height: 5.2rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 4rem 4.4%;
     min-height: auto;
   }
 
-  .text {
-    gap: 1.4rem;
-  }
-  .text,
-  .description {
-    max-width: 100%;
+  .background {
+    width: 100%;
+    opacity: 0.4;
   }
 
-  .title,
-  .contentTitle {
-    font-size: 3.4rem;
+  .title {
+    font-size: 2.6rem;
   }
-  .form {
-    gap: 1.4rem;
-    padding: 0 5% 4.8rem;
-    flex-basis: 100%;
-    min-width: 100%;
+
+  .description {
+    font-size: 1.2rem;
   }
-  .selection {
-    gap: 1.4rem;
+
+  .left {
+    gap: 2.4rem;
   }
+
+  .carSection {
+    min-height: 160px;
+  }
+
+  .carImage {
+    height: 140px;
+  }
+
   .label {
     font-size: 1.4rem;
   }
 
   .card {
-    padding: 2.2rem 1.2rem 1rem;
-  }
-  .cardHeader {
-    padding: 2.2rem 1.7rem 1.1rem;
-    margin-bottom: 0;
-  }
-  .left {
-    gap: 1.6rem;
-  }
-  .cardTitle {
-    font-size: 1.4rem;
+    padding: 2rem;
+    gap: 2rem;
   }
 
-  .cardPrice {
-    font-size: 3.4rem;
+  .priceTag {
+    font-size: 1.3rem;
   }
 
-  .cardDescription {
-    font-size: 1.4rem;
-    padding: 2rem 0 2rem;
+  .price {
+    font-size: 3.2rem;
+  }
+
+  .button {
+    height: 4.8rem;
+    font-size: 1.3rem;
+    padding: 0 1.6rem;
+  }
+
+  .disclaimer {
+    font-size: 1.2rem;
   }
 }

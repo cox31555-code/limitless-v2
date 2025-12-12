@@ -1,0 +1,280 @@
+.calendar {
+  background: #1a1f2e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0;
+  width: 100%;
+  max-width: 28rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 99999;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.calendar.slideUp {
+  animation: slideUp 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.monthYearDisplay {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.navButton {
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.navButton:active {
+  transform: scale(0.95);
+}
+
+.daysHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  padding: 1rem 1.4rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dayName {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.3rem 0;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.3rem;
+  padding: 1rem 1.4rem;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  padding: 0;
+  min-height: 3.2rem;
+}
+
+.day:hover:not(.disabled):not(.selected) {
+  background: rgba(3, 136, 255, 0.12);
+  color: #ffffff;
+}
+
+.day.today:not(.selected) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.day.selected {
+  background: #0388ff;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.day.selected:hover {
+  background: #0270cc;
+}
+
+.day.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.day.disabled:hover {
+  background: transparent;
+}
+
+.footer {
+  padding: 1rem 1.4rem 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 0.8rem;
+}
+
+.todayButton,
+.tomorrowButton {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid rgba(3, 136, 255, 0.3);
+  border-radius: 6px;
+  background: rgba(3, 136, 255, 0.08);
+  color: #0388ff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.todayButton:hover,
+.tomorrowButton:hover {
+  background: rgba(3, 136, 255, 0.15);
+  border-color: rgba(3, 136, 255, 0.5);
+}
+
+.todayButton:active,
+.tomorrowButton:active {
+  transform: scale(0.98);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .calendar {
+    max-width: min(90vw, 30rem);
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .calendar {
+    max-width: min(92vw, 28rem);
+    width: 92vw;
+  }
+
+  .header {
+    padding: 1rem 1.2rem;
+  }
+
+  .monthYearDisplay {
+    font-size: 1.5rem;
+  }
+
+  .navButton {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .daysHeader {
+    padding: 0.8rem 1.2rem 0.5rem;
+  }
+
+  .dayName {
+    font-size: 1.2rem;
+  }
+
+  .daysGrid {
+    padding: 0.8rem 1.2rem;
+    gap: 0.4rem;
+  }
+
+  .day {
+    font-size: 1.6rem;
+    min-height: 4rem;
+    padding: 0.4rem;
+  }
+
+  .footer {
+    padding: 1rem 1.2rem;
+    gap: 1rem;
+  }
+
+  .todayButton,
+  .tomorrowButton {
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    min-height: 4.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .calendar {
+    max-width: min(95vw, 26rem);
+    width: 95vw;
+  }
+
+  .header {
+    padding: 0.9rem 1rem;
+  }
+
+  .monthYearDisplay {
+    font-size: 1.3rem;
+  }
+
+  .navButton {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .daysGrid {
+    padding: 0.7rem 1rem;
+  }
+
+  .day {
+    font-size: 1.2rem;
+    min-height: 3.2rem;
+  }
+
+  .footer {
+    padding: 0.9rem 1rem;
+    gap: 0.8rem;
+  }
+
+  .todayButton,
+  .tomorrowButton {
+    font-size: 1.2rem;
+  }
+}

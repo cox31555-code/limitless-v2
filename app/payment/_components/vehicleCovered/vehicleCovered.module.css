@@ -1,89 +1,170 @@
 .container {
   width: 100%;
-  border-radius: 16px;
-  background: #fff;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fafbfd 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  overflow: hidden;
 }
+
 .header {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 0.3rem 1.8rem 2.3rem;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.18);
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.08);
 }
+
+.header img {
+  opacity: 0.85;
+}
+
 .headerTitle {
-  color: #0388ff;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
-  margin-top: 1.3rem;
+  color: #5a6b7d;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.52px;
+  margin: 0;
 }
+
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
-  padding: 2.8rem 1.8rem 1.8rem;
+  gap: 1.4rem;
+  padding: 1.6rem;
 }
+
+.imgContainer {
+  flex-shrink: 0;
+  opacity: 0.4;
+  filter: grayscale(95%) brightness(0.9);
+}
+
 .vetype {
-  color: #000822;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
+  color: #6b7c8f;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 130%;
+  letter-spacing: 0.64px;
+  margin: 0;
+  opacity: 0.85;
 }
+
 .vehicleNumber {
-  color: #6b6b6b;
+  color: #6b7c8f;
   font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 124%;
+  font-weight: 500;
+  line-height: 130%;
   letter-spacing: 0.56px;
   display: flex;
   align-items: center;
-  border-radius: 12px;
-  background: #f3f3f3;
-  gap: 2.2rem;
-  padding: 0.6rem;
-}
-.inputSpan {
-  width: 5.2rem;
-  height: 5.2rem;
   border-radius: 10px;
-  background: linear-gradient(0deg, #fff 0%, #fff 100%),
-    linear-gradient(52deg, rgba(255, 255, 255, 0.3) 18.09%, #0388ff 88.9%);
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.04) 0%, rgba(3, 136, 255, 0.02) 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  gap: 1.2rem;
+  padding: 1rem 1.2rem;
+  opacity: 0.85;
+}
+
+.inputSpan {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(3, 136, 255, 0.12) 0%, rgba(3, 136, 255, 0.08) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000822;
-  font-size: 1.4rem;
+  color: #0388ff;
+  font-size: 1.2rem;
   font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+  flex-shrink: 0;
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .container {
     width: 100%;
   }
+
   .header {
-    gap: 2.5rem;
-    padding: 2rem 2.3rem;
+    gap: 1rem;
+    padding: 1.4rem;
   }
+
+  .header img {
+    opacity: 0.85;
+  }
+
   .headerTitle {
-    font-size: 1.4rem;
-    margin-top: 2rem;
+    font-size: 1.2rem;
   }
+
   .content {
-    gap: 1.6rem;
-    padding: 2rem;
+    gap: 1.2rem;
+    padding: 1.4rem;
   }
+
+  .vetype {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #6b7c8f;
+    opacity: 0.85;
+    font-weight: 500;
+  }
+
+  .vehicleNumber {
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .inputSpan {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    border-radius: 16px;
+  }
+
+  .header {
+    padding: 1.2rem;
+    gap: 0.8rem;
+  }
+
+  .header img {
+    opacity: 0.85;
+  }
+
+  .headerTitle {
+    font-size: 1.1rem;
+  }
+
+  .content {
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
   .vetype {
     font-size: 1.4rem;
+    font-style: italic;
+    color: #6b7c8f;
+    opacity: 0.85;
+    font-weight: 500;
   }
+
   .vehicleNumber {
-    gap: 1.5rem;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
   }
+
   .inputSpan {
-    width: 4.2rem;
-    height: 4.2rem;
-    font-size: 1.4rem;
+    width: 3.8rem;
+    height: 3.8rem;
+    font-size: 1rem;
   }
 }

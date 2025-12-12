@@ -1,59 +1,95 @@
 .container {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   width: 100%;
-  height: 6.4rem;
-  border-radius: 12px;
-  background: #ecf0fe;
-  backdrop-filter: blur(22px);
-  padding: 0.8rem;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: none;
 }
+
 .button,
 .active {
   display: flex;
   flex: 1;
-  height: 100%;
+  height: auto;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
-  background: transparent;
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  gap: 0;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  border-radius: 8px;
   color: #000822;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 130%;
+  letter-spacing: 0.2px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.3rem 1.6rem;
 }
+
+.button:hover {
+  background: #fff;
+  border-color: rgba(3, 136, 255, 0.2);
+}
+
 .active {
-  background: #06112b;
-  color: #fff;
+  background: transparent;
+  border-color: #0388ff;
+  color: #0388ff;
+  font-weight: 600;
 }
+
+.active:hover {
+  background: rgba(3, 136, 255, 0.08);
+  border-color: #0277e3;
+  color: #0277e3;
+}
+
 .selectionSpan,
 .selectedSpan {
-  display: flex;
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 50%;
-  background: transparent;
-  border: 1px solid #000822;
+  display: none;
 }
-.selectedSpan {
-  background: #0388ff;
-  border: 1px solid transparent;
-  outline: 1px solid #0388ff;
-}
+
 @media screen and (max-width: 900px) {
   .container {
-    gap: 0.6rem;
-    height: 5.4rem;
-    padding: 0.6rem;
+    height: 5.6rem;
   }
+
   .button,
   .active {
-    gap: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1.5rem 1.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 6rem;
+  }
+
+  .button,
+  .active {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1.6rem 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    height: 5.4rem;
+  }
+
+  .button,
+  .active {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1.4rem 1.8rem;
   }
 }

@@ -1,10 +1,13 @@
 .container {
   margin: 4.8rem 0 2.8rem;
-  padding: 9rem 4.4%;
+  padding: 0.1rem 4.4% 9rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8rem;
+  gap: 9.6rem;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .first {
   display: flex;
@@ -26,90 +29,121 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 4.6rem;
+  gap: 3.6rem;
+  flex: 1;
+  width: 100%;
+  max-width: 65rem;
 }
 .servicesContent {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 2.4rem;
+  gap: 2rem;
+  width: 100%;
 }
 .title {
-  margin-top: 1.8rem;
+  margin-top: 0;
   color: #000822;
-  font-size: 5.8rem;
+  font-size: 5.6rem;
   font-weight: 700;
-  line-height: 100%; /* 74px */
-  /* text-align: center; */
+  line-height: 110%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 .title span {
-  color: #0388ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .description {
-  color: #494f64;
-  font-size: 1.6rem;
+  color: #5a6b7d;
+  font-size: 1.8rem;
   font-weight: 400;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-  margin-bottom: 2.4rem;
-  text-align: center;
+  line-height: 160%;
+  letter-spacing: -0.2px;
+  margin-bottom: 3.2rem;
+  text-align: left;
+  max-width: 55rem;
 }
 
 .secondPart {
   color: #0388ff;
 }
 
-.confirmBtn:hover {
-  background: rgba(3, 137, 255, 0.8);
-}
 .services {
   display: flex;
   flex-direction: column;
-  flex-basis: 44.5%;
+  gap: 2rem;
+  width: 100%;
 }
 .service {
   display: flex;
-  gap: 3.8rem;
-  align-items: center;
-  padding: 2.8rem 0;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.24);
+  gap: 2.4rem;
+  align-items: flex-start;
+  padding: 2.4rem;
+  background: #ffffff;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
 }
 
-.service:first-child {
-  padding-top: 0;
+.checkmarkWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+  position: relative;
 }
+
+.checkmark {
+  width: 100%;
+  height: 100%;
+}
+
 .serviceTitle {
   color: #000822;
-  font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 100%; /* 28px */
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.2px;
+  margin: 0;
 }
 .confirmBtn {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
-  display: flex;
-  height: 4.8rem;
-  width: 19.2rem;
-  padding: 0 2.4rem;
-  align-items: center;
-  border-radius: 1.2rem;
+  justify-content: center;
+  gap: 1.2rem;
+  height: 5.2rem;
+  padding: 0 3.625rem 0 2.9375rem;
+  border-radius: 12px;
   background: #0388ff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
   border: none;
   color: #fff;
   font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.2px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
+  margin-top: 1.6rem;
+}
+
+.confirmBtn:hover {
+  background: #0270cc;
+}
+
+.confirmBtn:active {
+  background: #0156a8;
 }
 @media screen and (max-width: 1400px) {
   .container {
@@ -132,11 +166,19 @@
     height: auto;
   }
 }
-@media screen and (max-width: 900) {
+@media screen and (max-width: 640px) {
   .container {
-    margin: 5rem 2% 8.3rem;
-    padding: 0;
-    gap: 4rem;
+    padding: 4.8rem 5%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    margin: 4.8rem 0 2.8rem;
+    padding: 4.8rem 4.4%;
+    flex-direction: column;
+    gap: 4.8rem;
+    align-items: flex-start;
   }
   .first {
     width: 100%;
@@ -147,39 +189,51 @@
     height: auto;
   }
   .second {
-    gap: 4.2rem;
+    width: 100%;
+    gap: 3.2rem;
     align-items: flex-start;
   }
   .servicesContent {
-    gap: 1.8rem;
+    gap: 1.6rem;
+    width: 100%;
   }
   .title {
-    margin-top: 0rem;
-    font-size: 3rem;
+    font-size: 3.2rem;
+    line-height: 110%;
   }
   .description {
-    font-size: 1.4rem;
-    margin-bottom: 0;
-    text-align: start;
-    padding-right: 25%;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    max-width: 100%;
+    line-height: 150%;
   }
 
   .services {
-    flex-basis: 100%;
+    width: 100%;
+    gap: 1.6rem;
   }
   .service {
-    gap: 1.6rem;
-    padding: 2.6rem 0;
+    gap: 1.8rem;
+    padding: 2rem;
+    border-radius: 12px;
+  }
+
+  .checkmarkWrapper {
+    min-width: 2.8rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   .serviceTitle {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    line-height: 130%;
   }
   .confirmBtn {
-    gap: 1.8rem;
+    width: 100%;
     height: 4.8rem;
-    width: 19.2rem;
     padding: 0 2.4rem;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
   }
 }

@@ -1,103 +1,211 @@
-.container {
-  width: max(39rem, 45%);
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 2px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.card:hover {
+  border-color: #0052a3;
+  box-shadow: 0 12px 32px rgba(0, 82, 163, 0.15), 0 2px 8px rgba(0, 82, 163, 0.08);
+  transform: translateY(-4px);
+}
+
+.cardHeader {
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
+  padding: 2.4rem 2.8rem;
+  border-bottom: 1px solid #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.icon {
+  width: 140px;
   height: auto;
-  flex-shrink: 0;
-  border-radius: 18px;
-  background: #fdfdfd;
-  padding: 0.4rem 1.8rem 2.1rem;
 }
-.img {
-  margin-left: 1.8rem;
+
+.cardBody {
+  padding: 2.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-.claimFeatureText {
+
+.titleSection {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  margin: 4.1rem 0 3.3rem;
 }
-.claimFeatureTitle {
-  color: #000822;
-  font-size: 2.8rem;
+
+.title {
+  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 1.12px;
+  color: #111827;
+  margin: 0;
+  line-height: 130%;
+  letter-spacing: -0.02em;
 }
-.claimFeatureDescription {
-  color: rgba(0, 8, 34, 0.54);
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
-  letter-spacing: 0.56px;
-  min-height: 3.5rem;
+
+.description {
+  font-size: 1.15rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 400;
+  line-height: 150%;
 }
+
 .features {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  padding: 2rem;
-  border-radius: 12px;
-  background: #ecf0fe;
-  min-height: 18.2rem;
+  padding-top: 0.5rem;
 }
+
 .feature {
   display: flex;
-  align-items: center;
-  gap: 1.8rem;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: #374151;
+  line-height: 150%;
 }
 
-.featureText {
-  color: #000822;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+.checkIcon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: #10b981;
+  margin-top: 0.1rem;
 }
-.btn {
-  display: flex;
-  height: 48px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background: linear-gradient(0deg, #0388ff 0%, #0388ff 100%), #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 124%;
-  border: none;
-  cursor: pointer;
+
+.cardFooter {
+  border-top: 1px solid #f0f2f5;
+  padding: 0;
+}
+
+.button {
   width: 100%;
-  margin-top: 1.4rem;
+  padding: 1.5rem 2.8rem;
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 130%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 }
+
+.button:hover {
+  background: linear-gradient(135deg, #003d7a 0%, #002954 100%);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.buttonIcon {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.5;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 900px) {
-  .container {
-    width: 100%;
-    height: auto;
-    padding: 2.5rem 1.6rem;
-  }
-  .img {
-    margin-left: 0.4rem;
-    height: 7.5rem;
-    width: auto;
-  }
-  .claimFeatureText {
-    gap: 1.6rem;
-    margin: 3.4rem 0 2.4rem;
-  }
-  .claimFeatureTitle {
-    font-size: 2.4rem;
-  }
-  .claimFeatureDescription {
-    font-size: 1.4rem;
-  }
-  .features {
-    min-height: auto;
+  .cardHeader {
+    padding: 2rem;
+    min-height: 180px;
   }
 
-  .featureText {
-    font-size: 1.4rem;
+  .icon {
+    width: 120px;
   }
-  .btn {
-    height: 48px;
+
+  .cardBody {
+    padding: 2.4rem;
+    gap: 1.8rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .feature {
+    font-size: 1.05rem;
+  }
+
+  .checkIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .button {
+    padding: 1.3rem 2.4rem;
+    font-size: 1.05rem;
+  }
+
+  .buttonIcon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cardHeader {
+    padding: 1.8rem;
+    min-height: 160px;
+  }
+
+  .icon {
+    width: 100px;
+  }
+
+  .cardBody {
+    padding: 2rem;
+    gap: 1.6rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+
+  .features {
+    gap: 1rem;
+  }
+
+  .feature {
+    font-size: 1rem;
+  }
+
+  .checkIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .button {
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
   }
 }

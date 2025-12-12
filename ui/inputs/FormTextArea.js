@@ -1,26 +1,24 @@
 import React from "react";
-import styles from "./textArea/textArea.module.css";
+import styles from "./textInput/textInput.module.css";
 
 const FormTextArea = ({ label, placeholder, rows = 5, error, ...props }) => {
   return (
-    <div className={styles.inputGroup}>
-      <label className={styles.label}>{label}</label>
+    <div className={styles.formInputGroup}>
+      {label && <label className={styles.formInputLabel}>{label}</label>}
       <textarea
         placeholder={placeholder}
-        className={`${styles.input} ${error ? styles.error : ""}`}
+        className={`${styles.formInput} ${error ? styles.formInputError : ""}`}
         rows={rows}
+        style={{
+          minHeight: `${rows * 2.8}rem`,
+          resize: 'vertical',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+        }}
         {...props}
       />
       {error && (
-        <span
-          className={styles.errorMessage}
-          style={{
-            color: "#dc3545",
-            fontSize: "0.875rem",
-            marginTop: "0.25rem",
-          }}
-        >
-          {error.message}
+        <span className={styles.formInputErrorMsg}>
+          {error.message || error}
         </span>
       )}
     </div>

@@ -1,150 +1,287 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   width: 100%;
-  gap: 3.8rem;
-  background: #fff;
-  border-radius: 18px;
-  padding-top: 2.8rem;
-}
-.title {
-  color: #000822;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
-  margin-left: 3.4rem;
-}
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  /* box-shadow: 0 2px 8px rgba(0, 8, 34, 0.08); */
 }
 
-.tableHeaderRow,
-.tableRow {
-  border-bottom: 1px solid rgba(0, 8, 34, 0.18);
-  /* padding: 0 4.2rem 0 3.4rem; */
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: -0.3px;
+}
+
+.table {
+  display: contents;
+}
+
+.tableHeader {
+  display: none;
+}
+
+.tableHeaderRow {
+  display: none;
 }
 
 .tableHeaderCell {
-  color: rgba(0, 8, 34, 0.44);
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
-  text-align: left;
-  padding-bottom: 2.2rem;
+  display: none;
 }
-.tableHeaderCell:first-child {
-  padding-left: 3.4rem;
+
+.tableBody {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
 }
-.tableCell:first-child {
-  padding-left: 3.4rem;
-}
+
 .tableRow {
-  border-bottom: 1px solid #f1f5f9;
-  transition: background-color 0.2s ease;
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
+  min-height: 300px;
 }
 
 .tableRow:hover {
-  background-color: #f8fafc;
+  border-color: #0052a3;
+  box-shadow: 0 2px 12px rgba(0, 61, 122, 0.1);
 }
 
 .tableCell {
-  padding: 2.2rem 0 2.5rem;
-  vertical-align: center;
-  text-align: start;
+  padding: 1.5rem;
+  vertical-align: top;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
 }
+
+.tableCell:not(:last-child) {
+  border-bottom: 1px solid #e0e6f0;
+}
+
+.tableCell:last-child {
+  margin-top: auto;
+  justify-content: flex-end;
+}
+
+.tableCell::before {
+  content: attr(data-label);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .datacell {
-  color: #000822;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0052a3;
+  line-height: 130%;
 }
+
 .documentType {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
+
+.documentTypeValue {
+  display: inline-flex;
+}
+
 .mobile {
   display: none;
 }
+
+.mobileTitle {
+  display: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.3;
+}
+
+.card {
+  display: none;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 61, 122, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #003d7a;
+  box-shadow: 0 8px 24px rgba(0, 61, 122, 0.12);
+  transform: translateY(-4px);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 2rem;
+}
+
+.label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 130%;
+}
+
+.date {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0.5rem 0 0 0;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .container {
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .tableBody {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 900px) {
   .container {
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .tableBody {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .tableRow {
+    min-height: 280px;
+  }
+
+  .tableCell {
+    padding: 1.2rem;
+  }
+
+  .tableCell::before {
+    font-size: 1rem;
+  }
+
+  .datacell {
+    font-size: 1.4rem;
+  }
+
+  .documentType {
+    gap: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .tableHeader {
     display: none;
   }
-  .mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    border-radius: 18px;
-    background: #fff;
-    padding: 2.2rem 0;
+
+  .tableHeaderRow {
+    display: none;
   }
-  .mobileTitle {
-    color: #010922;
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 100%;
-    margin-bottom: 2.5rem;
-    padding-left: 2.8rem;
+
+  .tableBody {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
   }
-  .card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 22px;
-    padding: 2.4rem 2.8rem 3rem;
-    border-bottom: 1px solid rgba(0, 8, 34, 0.14);
-    width: 100%;
+
+  .tableRow {
+    min-height: 250px;
   }
-  .card:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
+
+  .tableCell {
+    padding: 1.2rem;
   }
-  .card:first-child {
-    padding-top: 0;
+
+  .tableCell::before {
+    font-size: 0.95rem;
   }
-  .cardContent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+
+  .datacell {
+    font-size: 1.3rem;
   }
-  .label {
-    color: rgba(0, 8, 34, 0.44);
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 124%;
-    letter-spacing: 0.56px;
-  }
-  .value {
-    color: #000822;
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 124%; /* 17.36px */
-    letter-spacing: 0.56px;
-  }
-  .date {
-    color: #000822;
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 124%;
-    letter-spacing: 0.56px;
-  }
+
   .documentType {
-    display: flex;
-    align-items: center;
     gap: 0.6rem;
+    flex-wrap: wrap;
   }
-  .documentTypeValue {
-    color: #0388ff;
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 124%; /* 17.36px */
-    letter-spacing: 0.56px;
+
+  .mobile {
+    display: none;
+  }
+
+  .mobileTitle {
+    display: none;
+  }
+
+  .card {
+    display: none;
+  }
+
+  .cardContent {
+    padding: 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .label {
+    font-size: 0.9rem;
+  }
+
+  .value {
+    font-size: 1.1rem;
+  }
+
+  .date {
+    font-size: 0.9rem;
   }
 }

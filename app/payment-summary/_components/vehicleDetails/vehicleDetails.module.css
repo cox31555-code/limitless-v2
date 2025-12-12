@@ -1,21 +1,251 @@
-.content {
+.container {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.6rem;
   width: 100%;
-  margin-top: 2.4rem;
 }
-.cards {
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mainTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #5a7a94;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.vehicleCard {
+  padding: 1.6rem;
+  background: #ffffff;
+  border: 1px solid #d4e4f7;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.cardContent {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+}
+
+.iconWrapper {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  background: #e8f2fb;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
-@media screen and (max-width: 900px) {
-  .content {
-    margin-top: 2.5rem;
+
+.carIcon {
+  width: 36px;
+  height: 36px;
+  color: #0388ff;
+}
+
+.vehicleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.vehicleName {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.registrationBadge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #f0f5fa;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #5a7a94;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.editLink {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #0388ff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  width: fit-content;
+  transition: color 0.2s ease;
+}
+
+.editLink:hover {
+  color: #0270d9;
+}
+
+.specificationSection {
+  padding: 1.6rem;
+  background: #ffffff;
+  border: 1px solid #d4e4f7;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.sectionHeading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #003366;
+  margin: 0 0 1.2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e8f0f7;
+}
+
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.specLabel {
+  font-size: 0.85rem;
+  color: #7a8fa3;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.specValue {
+  font-size: 1.1rem;
+  color: #003366;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .mainTitle {
+    font-size: 2rem;
   }
-  .cards {
-    flex-direction: column;
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cardContent {
+    gap: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .carIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .vehicleName {
+    font-size: 1.5rem;
+  }
+
+  .specGrid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.4rem;
+  }
+
+  .vehicleCard,
+  .specificationSection {
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    gap: 1.2rem;
+  }
+
+  .mainTitle {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .cardContent {
+    gap: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+  }
+
+  .carIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vehicleName {
+    font-size: 1.7rem;
+  }
+
+  .registrationBadge {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .editLink {
+    font-size: 1.3rem;
+  }
+
+  .vehicleCard,
+  .specificationSection {
+    padding: 1.6rem;
+  }
+
+  .specGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .sectionHeading {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+  }
+
+  .specLabel {
+    font-size: 1rem;
+  }
+
+  .specValue {
+    font-size: 1.3rem;
   }
 }

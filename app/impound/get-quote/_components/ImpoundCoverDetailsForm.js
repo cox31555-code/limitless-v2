@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import FormDataAndTime from "@/ui/inputs/FormDataAndTime";
 import Title from "@/ui/insurance-quotes/title/Title";
@@ -29,6 +29,16 @@ const ImpoundCoverDetailsForm = ({ form }) => {
   const selectedImpoundType = watch("coverDetails.impoundType");
   const startDate = watch("coverDetails.startDate");
   const startTime = watch("coverDetails.startTime");
+  const coverType = watch("coverDetails.type");
+  const coverPeriod = watch("coverDetails.period");
+
+  // Auto-select 30 Days on mount
+  useEffect(() => {
+    if (!coverType || coverType !== "Days" || coverPeriod !== 30) {
+      setValue("coverDetails.type", "Days");
+      setValue("coverDetails.period", 30);
+    }
+  }, []);
 
   const handleImpoundTypeSelect = (type) => {
     setValue("coverDetails.impoundType", type, { shouldValidate: true });
@@ -49,8 +59,41 @@ const ImpoundCoverDetailsForm = ({ form }) => {
 
   return (
     <ComponentWrapper title="Cover Details">
-      <div className={styles.content}>
-        <div className={styles.inputWrapper}>
+      <div className={styles.formContent}>
+        <div className={styles.formSection}>
+          <div className={styles.inputGroup}>
+            <Title title="How Long Will You Need It?" />
+            <p style={{ color: "#5a6b7d", fontSize: "1.4rem", margin: "0 0 1.6rem 0" }}>
+              Select your preferred coverage duration
+            </p>
+            <div
+              style={{
+                display: "flex",
+                gap: "1.2rem",
+                marginBottom: "2.4rem",
+                flexWrap: "wrap",
+              }}
+            >
+              <button
+                type="button"
+                style={{
+                  padding: "1.2rem 2.4rem",
+                  borderRadius: "8px",
+                  border: "2px solid #0388ff",
+                  background: "#0388ff",
+                  color: "#fff",
+                  fontSize: "1.3rem",
+                  fontWeight: "600",
+                  cursor: "not-allowed",
+                  opacity: 1,
+                }}
+                disabled
+              >
+                30 Days
+              </button>
+            </div>
+          </div>
+
           <div className={styles.inputGroup}>
             <Title title="When would you like the cover to start?" />
 
@@ -68,6 +111,7 @@ const ImpoundCoverDetailsForm = ({ form }) => {
                       })
                     }
                     error={errors.coverDetails?.startDate}
+                    forceShowAbove={true}
                   />
                 </div>
                 <div style={{ flex: 1, minWidth: "200px" }}>
@@ -82,6 +126,7 @@ const ImpoundCoverDetailsForm = ({ form }) => {
                       })
                     }
                     error={errors.coverDetails?.startTime}
+                    forceShowAbove={true}
                   />
                 </div>
               </div>
@@ -94,16 +139,27 @@ const ImpoundCoverDetailsForm = ({ form }) => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "8px",
-                padding: "12px 16px",
-                background: startPolicyImmediately ? "#0388ff" : "transparent",
-                color: startPolicyImmediately ? "#fff" : "#000822",
-                border: "1px solid #0388ff",
-                borderRadius: "8px",
+                gap: "0.8rem",
+                padding: "1rem 1.4rem",
+                background: "transparent",
+                color: "#5a6b7d",
+                border: "1.5px solid rgba(3, 136, 255, 0.2)",
+                borderRadius: "10px",
                 cursor: "pointer",
-                fontSize: "14px",
+                fontSize: "1.2rem",
                 fontWeight: "500",
-                marginTop: "16px",
+                marginTop: "1.6rem",
+                transition: "all 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.4)";
+                e.currentTarget.style.color = "#000822";
+                e.currentTarget.style.backgroundColor = "rgba(3, 136, 255, 0.04)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(3, 136, 255, 0.2)";
+                e.currentTarget.style.color = "#5a6b7d";
+                e.currentTarget.style.backgroundColor = "transparent";
               }}
             >
               <Image
@@ -112,9 +168,8 @@ const ImpoundCoverDetailsForm = ({ form }) => {
                 width={16}
                 height={16}
                 style={{
-                  filter: startPolicyImmediately
-                    ? "brightness(0) invert(1)"
-                    : "none",
+                  opacity: startPolicyImmediately ? 1 : 0.5,
+                  filter: "brightness(0.6)",
                 }}
               />
               Start policy immediately
@@ -122,20 +177,22 @@ const ImpoundCoverDetailsForm = ({ form }) => {
           </div>
         </div>
 
-        <div className={styles.inputGroup}>
-          <Title title="Which type of impound insurance?" />
-          <div className={styles.selectionContainer}>
-            <p className={styles.label}>Please select</p>
-            <Selection4
-              options={impoundTypeOptions}
-              selectedItem={selectedImpoundType}
-              setSelectedItem={handleImpoundTypeSelect}
-            />
-            {errors.coverDetails?.impoundType && (
-              <span className={styles.errorMessage}>
-                {errors.coverDetails.impoundType.message}
-              </span>
-            )}
+        <div className={styles.formSection}>
+          <div className={styles.inputGroup}>
+            <Title title="Which type of impound insurance?" />
+            <div className={styles.selectionContainer}>
+              <p className={styles.label}>Please select</p>
+              <Selection4
+                options={impoundTypeOptions}
+                selectedItem={selectedImpoundType}
+                setSelectedItem={handleImpoundTypeSelect}
+              />
+              {errors.coverDetails?.impoundType && (
+                <span className={styles.errorMessage}>
+                  {errors.coverDetails.impoundType.message}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </div>

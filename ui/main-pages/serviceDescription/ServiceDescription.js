@@ -4,12 +4,14 @@ import styles from "./serviceDescription.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { useRouter } from "next/navigation";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700", "500"],
 });
 const ServiceDescription = ({ services, title, description, button, img }) => {
   const router = useRouter();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
   const words = title.split(" ");
   const lastWord = words[words.length - 1];
   const withoutLastWord = words.slice(0, -1).join(" ");
@@ -36,13 +38,12 @@ const ServiceDescription = ({ services, title, description, button, img }) => {
         <div className={styles.services}>
           {services.map((service, index) => (
             <div className={styles.service} key={index}>
-              <Image
-                // src="/svg/included.svg"
-                src={"/svg/gray-check.svg"}
-                alt="include"
-                width={24}
-                height={24}
-              />
+              <div className={styles.checkmarkWrapper}>
+                <svg className={styles.checkmark} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="11" fill="#0388ff" />
+                  <path d="M7.5 12.5L10 15L16.5 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
               <h3
                 className={`${styles.serviceTitle} ${plusJakartaSans.className}`}
               >
@@ -53,19 +54,9 @@ const ServiceDescription = ({ services, title, description, button, img }) => {
         </div>
         <button
           className={styles.confirmBtn}
-          onClick={() => {
-            title === "Impound Vehicle Insurance"
-              ? router.push("/impound/get-quote")
-              : router.push("/temporary/get-quote");
-          }}
+          onClick={() => setIsInsuranceModalOpen(true)}
         >
           Get a Quote
-          <Image
-            src="/svg/arrow-right.svg"
-            alt="arrow-right"
-            width={28}
-            height={14}
-          />
         </button>
       </div>
     </div>

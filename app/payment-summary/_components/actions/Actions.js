@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./actions.module.css";
 
-const Actions = ({ insuranceId, onPayClick }) => {
+const Actions = ({ insuranceId, insuranceType, onPayClick }) => {
   const router = useRouter();
 
   const handlePayment = () => {
@@ -15,7 +14,17 @@ const Actions = ({ insuranceId, onPayClick }) => {
   };
 
   const handleBack = () => {
-    router.back();
+    let backRoute = "/temporary/get-quote?step=4";
+
+    if (insuranceType === "Annual") {
+      backRoute = "/annual/get-quote?step=4";
+    } else if (insuranceType === "Impound") {
+      backRoute = "/impound/get-quote?step=4";
+    } else if (insuranceType === "Temp") {
+      backRoute = "/temporary/get-quote?step=4";
+    }
+
+    router.push(backRoute);
   };
 
   return (
@@ -24,14 +33,18 @@ const Actions = ({ insuranceId, onPayClick }) => {
         Back
       </button>
       <button className={styles.payButton} onClick={handlePayment}>
-        Pay
-        <Image
-          src="/svg/arrow-right.svg"
-          alt="arrow-right"
-          width={24}
-          height={24}
-        />
+        Continue to payment
       </button>
+
+      <div className={styles.rightToCancel}>
+        <h3 className={styles.rightToCancelTitle}>Right to Cancel</h3>
+        <p className={styles.rightToCancelText}>
+          If you cancel before your policy starts no charges will be made. If you cancel within <strong>14 days</strong> of purchasing your policy (the cooling off period) - we'll refund any money you've paid minus a charge for the number of days you've had cover. A refund will still be paid if you've made a claim. You won't have to pay cancellation fee.
+        </p>
+        <p className={styles.rightToCancelText}>
+          If you cancel after 14 days of purchasing your policy, we'll refund any money you've paid minus a charge for the number of days you've had cover and a cancellation charge of <strong>£40</strong>. A refund will not be paid if you've made a claim.
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,9 +1,21 @@
-import React from 'react'
+"use client";
+import React, { useState } from "react";
+import CourierLoadingOverlay from "./_components/CourierLoadingOverlay";
+import styles from "./page.module.css";
 
-const page = () => {
+const CourierPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <div>page</div>
-  )
-}
+    <div className={styles.container}>
+      <CourierLoadingOverlay isVisible={isLoading} />
 
-export default page
+      <div className={styles.content}>
+        <h1>Courier Insurance</h1>
+        <p>Coming soon...</p>
+      </div>
+    </div>
+  );
+};
+
+export default CourierPage;

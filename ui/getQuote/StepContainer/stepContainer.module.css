@@ -1,0 +1,124 @@
+/* Import shared get-quote utilities and animations */
+@import '../shared.module.css';
+@import '../animations.module.css';
+
+.container {
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--step-gap, 2.8rem);
+}
+
+.stepTitle {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border-primary);
+  margin-bottom: 2rem;
+}
+
+.stepTitleText {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: var(--max-width, 680px);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-right: var(--padding-right, 100px);
+  box-sizing: border-box;
+}
+
+/* ============================================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================================ */
+
+/* Tablet: 900px - 1200px */
+@media (max-width: 1200px) {
+  .contentWrapper {
+    padding-right: 50px;
+  }
+}
+
+/* Tablet: 768px - 900px */
+@media (max-width: 900px) {
+  .contentWrapper {
+    padding-right: 0;
+  }
+}
+
+/* Small tablet: 640px - 768px */
+@media (max-width: 768px) {
+  .container {
+    gap: 2rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.6rem;
+  }
+
+  .contentWrapper {
+    gap: 2rem;
+    padding-right: 0;
+  }
+}
+
+/* Mobile: 600px - 640px */
+@media (max-width: 640px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.6rem;
+  }
+
+  .contentWrapper {
+    gap: 1.6rem;
+    padding-right: 0;
+  }
+}
+
+/* Small mobile: <600px */
+@media (max-width: 600px) {
+  .container {
+    gap: 1.4rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.6rem;
+  }
+
+  .contentWrapper {
+    gap: 1.4rem;
+    padding-right: 0;
+  }
+}
+
+/* Extra small mobile: <400px */
+@media (max-width: 400px) {
+  .container {
+    gap: 1.2rem;
+  }
+
+  .contentWrapper {
+    gap: 1.2rem;
+  }
+}

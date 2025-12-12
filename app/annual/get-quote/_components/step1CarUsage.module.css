@@ -1,0 +1,203 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
+.container {
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitle {
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitleText {
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.contentWrapper {
+  composes: stepContentWrapper from '../../../../ui/getQuote/shared.module.css';
+}
+
+.section {
+  composes: stepSection from '../../../../ui/getQuote/shared.module.css';
+}
+
+.mainQuestion {
+  composes: mainQuestion from '../../../../ui/getQuote/shared.module.css';
+}
+
+.subText {
+  composes: subText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.questionHeader {
+  composes: questionHeader from '../../../../ui/getQuote/shared.module.css';
+}
+
+.dateInfoBox {
+  background: transparent;
+  margin: 0;
+}
+
+.dateLabel {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.dateValue {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.dateInputsWrapper {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+}
+
+.disabledDateInputs {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.disabledDateInputs :global(.customInput) {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border-secondary);
+  cursor: not-allowed;
+}
+
+.disabledDateInputs :global(.customInputLabel) {
+  color: var(--color-text-secondary);
+}
+
+.dateInputsWrapper :global(.customInput) {
+  min-height: 3.5rem;
+}
+
+@media (max-width: 640px) {
+  .dateInputsWrapper :global(.customInput) {
+    min-height: 3.125rem;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 0 0 auto;
+}
+
+.inputLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.checkbox {
+  composes: checkbox from '../../../../ui/getQuote/shared.module.css';
+}
+
+.checkboxLabel {
+  composes: checkboxLabel from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioGroup {
+  composes: radioGroup from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioOption {
+  composes: radioOption from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioInput {
+  composes: radioInput from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioContent {
+  composes: radioContent from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioLabel {
+  composes: radioLabel from '../../../../ui/getQuote/shared.module.css';
+}
+
+.radioDescription {
+  composes: radioDescription from '../../../../ui/getQuote/shared.module.css';
+}
+
+.helpLink {
+  composes: helpLink from '../../../../ui/getQuote/shared.module.css';
+}
+
+.mileageInputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  max-width: 320px;
+}
+
+.mileageInputWrapper :global(.customInputGroup) {
+  gap: 0.6rem;
+}
+
+.mileageInputWrapper :global(.customInputWithSuffix) {
+  padding: 1.2rem 7rem 1.5rem 1.6rem;
+}
+
+.mileageInputWrapper :global(.customInput) {
+  min-height: 5rem;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .dateLabel {
+    font-size: 1.3rem;
+  }
+
+  .mileageInputWrapper {
+    max-width: 100%;
+  }
+
+  .mileageInputWrapper :global(.customInputWithSuffix) {
+    padding: 1rem 6.8rem 1.15rem 1.4rem;
+  }
+
+  .mileageInputWrapper :global(.customInput) {
+    min-height: 4.8rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dateLabel {
+    font-size: 1.6rem;
+  }
+
+  .inputLabel {
+    font-size: 1.6rem;
+  }
+
+  .dateInputsWrapper {
+    gap: 1.2rem;
+    flex-direction: column;
+  }
+
+  .mileageInputWrapper {
+    max-width: 100%;
+  }
+
+  .mileageInputWrapper :global(.customInputWithSuffix) {
+    padding: 0.9rem 6.5rem 1.05rem 1.2rem;
+  }
+
+  .mileageInputWrapper :global(.customInput) {
+    min-height: 4.4rem;
+    font-size: 1.4rem;
+  }
+}

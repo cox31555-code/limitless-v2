@@ -1,0 +1,364 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
+.container {
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitle {
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitleText {
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.contentWrapper {
+  composes: stepContentWrapper from '../../../../ui/getQuote/shared.module.css';
+}
+
+.section {
+  composes: stepSection from '../../../../ui/getQuote/shared.module.css';
+}
+
+.section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.questionTitle {
+  font-size: 2.05rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.sectionDescription {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 0;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.radioInput {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 0.2rem;
+}
+
+.radioInput:checked {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.radioInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.radioInput:hover:not(:checked) {
+  border-color: var(--color-primary-dark);
+  background-color: #f0f6ff;
+}
+
+.radioLabel {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.dateInputsWrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  margin-top: 0.8rem;
+}
+
+.dateInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.dateInputGroup :global(.customInputGroup) {
+  margin: 0;
+}
+
+.dateInputGroup :global(.customInputLabel) {
+  display: none;
+}
+
+.inputLabel {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.expandableLink {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  text-align: left;
+  transition: color 0.2s ease;
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.expandableLink:hover {
+  color: var(--color-primary-darker);
+}
+
+.expandableLink:focus {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.expandableIcon {
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+  transform: rotate(0deg);
+}
+
+.expandableIcon.expandedIcon {
+  transform: rotate(90deg);
+}
+
+.expandableContent {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 1.2rem 0 0 0;
+  line-height: 1.65;
+  font-weight: 400;
+  padding-left: 1.6rem;
+  border-left: 3px solid var(--color-primary-dark);
+  padding-bottom: 26px;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.conditionalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2.4rem;
+  margin-top: 2.4rem;
+  border-top: 1px solid #f0f6ff;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: #d32f2f;
+  margin-top: -0.4rem;
+  font-weight: 500;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-end;
+  margin-top: 3.2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e8ecf1;
+}
+
+
+@media (max-width: 900px) {
+  .contentWrapper {
+    padding-right: 0;
+  }
+
+  .questionTitle {
+    font-size: 1.8rem;
+  }
+
+  .dateInputsWrapper {
+    gap: 0.8rem;
+  }
+
+  .inputLabel {
+    font-size: 1.15rem;
+  }
+
+  .expandableLink {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+  }
+
+  .expandableContent {
+    font-size: 1.3rem;
+    padding-left: 1.4rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 26px;
+  }
+
+  .mainQuestion {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .stepTitle {
+    margin-bottom: 1.6rem;
+  }
+
+  .stepTitleText {
+    font-size: var(--font-size-xl);
+  }
+
+  .contentWrapper {
+    gap: 2.4rem;
+  }
+
+  .section {
+    gap: 1.2rem;
+    padding-bottom: 2.4rem;
+  }
+
+  .questionTitle {
+    font-size: 2.2rem;
+  }
+
+  .sectionDescription {
+    font-size: var(--font-size-xl);
+  }
+
+  .radioDescription {
+    font-size: var(--font-size-xl);
+  }
+
+  .radioGroup {
+    gap: 1rem;
+  }
+
+  .dateInputsWrapper {
+    gap: 0.6rem;
+  }
+
+  .expandableContent {
+    font-size: 1.3rem;
+    padding-left: 1.2rem;
+    margin: 1rem 0 0 0;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .stepTitle {
+    padding-bottom: 26px;
+    margin-bottom: 1.2rem;
+  }
+
+  .stepTitleText {
+    font-size: 1.4rem;
+  }
+
+  .contentWrapper {
+    gap: 2rem;
+  }
+
+  .section {
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .questionTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .sectionDescription {
+    font-size: 1.3rem;
+  }
+
+  .radioLabel {
+    font-size: 1.4rem;
+  }
+
+  .inputLabel {
+    font-size: 1.1rem;
+  }
+
+  .expandableContent {
+    font-size: 1.3rem;
+    padding-left: 1.2rem;
+    margin: 1rem 0 0 0;
+  }
+
+}

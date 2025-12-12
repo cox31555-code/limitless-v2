@@ -1,231 +1,431 @@
 .container {
   display: flex;
-  gap: 1.8rem;
-  width: 100%;
-}
-.inputGroup {
+  flex-direction: column;
+  gap: 0.8rem;
   flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 0.1rem;
+  }
+}
+
+.inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 0.8rem;
   width: 100%;
-  position: relative;
+  flex: 1;
 }
+
+@media (max-width: 640px) {
+  .inputGroup {
+    gap: 0.1rem;
+  }
+}
+
 .label {
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  margin: 0;
 }
+
 .inputContainer {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 0.6rem;
+  gap: 0;
+  padding: 1.2rem 1.6rem;
   width: 100%;
-  border-radius: 1.2rem;
-  background: #ecf0fe;
-  /* height: 6.4rem; */
-  height: 5.73rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  height: 5.2rem;
   position: relative;
   cursor: pointer;
+  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.inputContainer:focus-within {
+  border: 1.5px solid #0388ff;
+  box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
+}
+
+.inputContainer:hover:not(.disabled) {
+  border: 1.5px solid rgba(3, 136, 255, 0.3);
+  background-color: #fff;
+}
+
+.inputContainer:focus-within:hover:not(.disabled) {
+  border: 1.5px solid #0388ff;
+  box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
+}
+
+.inputContainer.error {
+  border: 1.5px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.inputContainer.error:focus-within {
+  border: 1.5px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+}
+
+.inputContainer.error:hover {
+  border: 1.5px solid #dc2626;
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.inputContainer.disabled {
+  opacity: 0.65 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  background: rgba(107, 114, 128, 0.12) !important;
+  border: 1.5px solid rgba(107, 114, 128, 0.25) !important;
+  color: #9ca3af !important;
+  filter: grayscale(15%) !important;
+}
+
+.inputContainer.disabled:hover {
+  border: 1.5px solid rgba(107, 114, 128, 0.25) !important;
+  background: rgba(107, 114, 128, 0.12) !important;
+}
+
+.inputContainer.disabled:focus-within {
+  border: 1.5px solid rgba(107, 114, 128, 0.25) !important;
+  box-shadow: none !important;
+}
+
+.inputContainer.disabled .input,
+.inputContainer.disabled input {
+  color: #9ca3af !important;
+  opacity: 0.75 !important;
+}
+
+.inputGroup:has(.inputContainer.disabled) .label {
+  color: #9ca3af !important;
+  opacity: 0.75 !important;
+}
+
+.inputContainer.disabled .iconContainer,
+.inputContainer.disabled .arrowDown,
+.inputContainer.disabled svg {
+  opacity: 0.65 !important;
+  color: #9ca3af !important;
+}
+
 .iconContainer {
-  width: 4.4rem;
-  height: 4.4rem;
-  border-radius: 1rem;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
+}
+
+.inputContainer:hover:not(.disabled) .iconContainer {
+  background: rgba(3, 136, 255, 0.12);
+}
+
+.inputContainer:focus-within .iconContainer {
+  background: rgba(3, 136, 255, 0.15);
 }
 
 .arrowDown {
   position: absolute;
-  right: 2rem;
-  top: 2rem;
+  right: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #0388ff;
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
-.arrowUp {
-  transform: rotate(180deg);
-}
-
-.disabled {
-  opacity: 0.5;
-  cursor: not-allowed !important;
+.inputContainer:focus-within .arrowDown {
+  transform: translateY(-50%) rotate(180deg);
+  color: #0270cc;
 }
 
 .input {
   flex: 1;
   border: none;
   outline: none;
-  color: rgba(0, 8, 34, 0.4);
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: #6b7c8f;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
   background: transparent;
   cursor: pointer;
+  padding: 0;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.datePickerWrapper {
-  position: absolute;
-  top: 100%;
+.input::placeholder {
+  color: #a8b2bd;
+  font-weight: 400;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 99998;
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+.pickerContainer {
+  pointer-events: auto;
+  position: fixed;
+  z-index: 99999999;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  margin-top: 1.2rem;
-  border-radius: 1.6rem;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(79, 99, 215, 0.15),
-    0 4px 16px rgba(0, 8, 34, 0.08);
-  backdrop-filter: blur(16px);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
 }
 
-.timePickerWrapper {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  margin-top: 1.2rem;
-  width: 100%;
-  max-width: 32rem;
+@media screen and (max-width: 900px) {
+  .pickerContainer {
+    max-height: min(85vh, 100dvh - 100px);
+    overflow-y: auto;
+  }
 }
 
-.timePickerContainer {
-  background: #fff;
-  border-radius: 1.2rem;
-  box-shadow: 0 8px 32px rgba(79, 99, 215, 0.15),
-    0 4px 16px rgba(0, 8, 34, 0.08);
-  max-height: 32rem;
-  overflow-y: auto;
-  padding: 0.8rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.6rem;
+@media screen and (max-width: 600px) {
+  .pickerContainer {
+    max-height: min(80vh, 100dvh - 120px);
+    overflow-y: auto;
+  }
 }
 
-.timePickerContainer::-webkit-scrollbar {
-  width: 0.6rem;
+@media screen and (max-width: 400px) {
+  .pickerContainer {
+    max-height: min(75vh, 100dvh - 140px);
+    overflow-y: auto;
+  }
 }
 
-.timePickerContainer::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 1rem;
+.error {
+  color: #ef4444;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  display: block;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
 }
 
-.timePickerContainer::-webkit-scrollbar-thumb {
-  background: #0388ff;
-  border-radius: 1rem;
-}
-
-.timePickerContainer::-webkit-scrollbar-thumb:hover {
-  background: #0266cc;
-}
-
-.timeSlot {
-  padding: 1rem 0.8rem;
-  text-align: center;
-  border-radius: 0.8rem;
-  background: #ecf0fe;
-  color: #000822;
-  font-size: 1.3rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.timeSlot:hover:not(.timeSlotDisabled) {
-  background: #0388ff;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
-}
-
-.timeSlotSelected {
-  background: #0388ff;
-  color: #fff;
-  font-weight: 600;
-}
-
-.timeSlotDisabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-  background: #f5f5f5;
-  color: #999;
-}
-
-.timeSlotDisabled:hover {
-  transform: none;
-  box-shadow: none;
-  background: #f5f5f5;
-  color: #999;
-}
-
-/* Custom styling for react-datepicker */
-.customCalendar {
-  border: none !important;
-  border-radius: 1.2rem !important;
-  background: #fff !important;
-  font-family: inherit !important;
-}
-
-/* Override react-datepicker default styles */
 @media screen and (max-width: 900px) {
   .container {
-    flex-direction: column;
-    gap: 2.6rem;
-  }
-  .inputGroup {
-    flex-direction: column;
-    gap: 1.4rem;
-  }
-  .label {
-    font-size: 1.4rem;
-  }
-  .iconContainer {
-    width: 4.2rem;
-    height: 4.2rem;
-  }
-  .inputContainer {
-    gap: 1.4rem;
-    padding: 0.6rem 1.8rem 0.6rem 0.6rem;
-    height: 5.4rem;
-  }
-  .input {
-    font-size: 1.4rem;
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
-  .datePickerWrapper {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    margin-top: 1.2rem;
-    border-radius: 1.6rem;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(79, 99, 215, 0.15),
-      0 4px 16px rgba(0, 8, 34, 0.08);
-    backdrop-filter: blur(16px);
+  .inputGroup {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
-  
-  .timePickerWrapper {
-    max-width: 100%;
+
+  .inputContainer {
+    height: 5.8rem;
+    min-height: 5.8rem;
+    padding: 1.4rem 1.6rem 1.4rem 0.5rem;
   }
-  
-  .timePickerContainer {
-    grid-template-columns: repeat(3, 1fr);
-    max-height: 28rem;
+
+  .label {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0;
   }
-  
-  .timeSlot {
-    padding: 0.9rem 0.6rem;
-    font-size: 1.2rem;
+
+  .input {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .input::placeholder {
+    font-weight: 400;
+  }
+
+  .arrowDown {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    box-sizing: border-box;
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputGroup {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputContainer {
+    height: 3.125rem;
+    min-height: 3.125rem;
+    padding: 1.4rem 1.6rem 1.4rem 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-size: 1.6rem;
+  }
+
+  .inputContainer:active {
+    border: 1.5px solid #0388ff;
+    background: rgba(3, 136, 255, 0.02);
+  }
+
+  .iconContainer {
+    display: none;
+  }
+
+  .label {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .input {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .input::placeholder {
+    font-weight: 400;
+  }
+
+  .arrowDown {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .inputContainer {
+    height: 3.125rem;
+    min-height: 3.125rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputGroup {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputContainer {
+    height: 4.8rem;
+    min-height: 4.8rem;
+    padding: 1.2rem 1.4rem 1.2rem 0.5rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  .inputContainer:active {
+    border: 1.5px solid #0388ff;
+  }
+
+  .iconContainer {
+    display: none;
+  }
+
+  .label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .input {
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .input::placeholder {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .error {
+    font-size: 1.6rem;
+  }
+
+  .arrowDown {
+    right: 1.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputGroup {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .inputContainer {
+    height: 5.8rem;
+    min-height: 5.8rem;
+    padding: 1rem 1.2rem 1rem 0.5rem;
+  }
+
+  .iconContainer {
+    display: none;
+  }
+
+  .label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  .input {
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: inherit;
   }
 }

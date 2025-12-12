@@ -1,0 +1,194 @@
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 3rem 3.6rem;
+  background: linear-gradient(135deg, #fafbff 0%, #f8f9ff 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  margin-bottom: 2.8rem;
+  box-shadow: 0 8px 32px rgba(3, 136, 255, 0.04);
+  width: 100%;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stepInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.stepTitle {
+  color: #000822;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.3px;
+  margin: 0;
+  padding: 0;
+}
+
+.stepCounter {
+  color: #0388ff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  margin: 0;
+  padding: 0;
+}
+
+.progressBarWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(3, 136, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
+  border-radius: 12px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+}
+
+.stepIndicators {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.stepIndicator {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid rgba(3, 136, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.stepIndicator.active {
+  background: linear-gradient(135deg, #0388ff 0%, #049cff 100%);
+  border-color: #0388ff;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.25);
+}
+
+.stepIndicator.current {
+  border-color: #0388ff;
+  box-shadow: 0 0 0 4px rgba(3, 136, 255, 0.1);
+}
+
+.stepNumber {
+  color: rgba(3, 136, 255, 0.4);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stepIndicator.active .stepNumber {
+  color: #fff;
+}
+
+.stepIndicator.active::after {
+  content: "✓";
+  position: absolute;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  display: none;
+}
+
+.stepIndicator.active:not(.current)::after {
+  display: block;
+}
+
+.stepIndicator.current .stepNumber {
+  color: #0388ff;
+}
+
+@media screen and (max-width: 900px) {
+  .progressContainer {
+    gap: 2.4rem;
+    padding: 2rem 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .stepTitle {
+    font-size: 2rem;
+  }
+
+  .stepCounter {
+    font-size: 1.2rem;
+  }
+
+  .progressBar {
+    height: 6px;
+  }
+
+  .stepIndicators {
+    gap: 0.8rem;
+  }
+
+  .stepIndicator {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .stepNumber {
+    font-size: 1.4rem;
+  }
+
+  .stepIndicator.active::after {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .progressContainer {
+    padding: 1.6rem 1.6rem;
+    gap: 2rem;
+  }
+
+  .stepTitle {
+    font-size: 1.8rem;
+  }
+
+  .stepCounter {
+    font-size: 1.1rem;
+  }
+
+  .stepIndicators {
+    gap: 0.6rem;
+  }
+
+  .stepIndicator {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .stepNumber {
+    font-size: 1.2rem;
+  }
+}

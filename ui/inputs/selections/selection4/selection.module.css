@@ -1,40 +1,84 @@
 .container {
   display: flex;
-  gap: 1.8rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 .option {
   display: flex;
-  gap: 1.4rem;
+  gap: 1.6rem;
   cursor: pointer;
   align-items: flex-start;
-  transition: all 0.3s ease;
-  padding: 2.2rem 2.4rem;
-  border-radius: 12px;
-  background: #ecf0fe;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 2.4rem 2.6rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 8, 34, 0.04);
   flex: 1;
   min-width: 32rem;
 }
+
+.option:hover {
+  background: #f8fbff;
+  border-color: rgba(3, 136, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.option.selected {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border-color: #0388ff;
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+}
+
 .selectionSpan {
   display: flex;
-  min-width: 1.6rem;
-  min-height: 1.6rem;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #000822;
+  border: 2px solid rgba(3, 136, 255, 0.3);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
+
 .selectedSpan {
-  background: #0388ff;
-  border: 2px solid white;
-  outline: 1px solid #0388ff;
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: inset 0 0 0 4px #0388ff;
 }
+
+.option.selected .selectionSpan {
+  border-color: #fff;
+}
+
+.option.selected .selectedSpan {
+  box-shadow: inset 0 0 0 4px #fff;
+}
+
 .title {
   color: #000822;
   font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.2px;
 }
+
+.option.selected .title {
+  color: #fff;
+}
+
+.hiddenNativeSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
 @media screen and (max-width: 900px) {
   .container {
     gap: 1.8rem;
@@ -46,6 +90,6 @@
     flex-direction: row-reverse;
   }
   .title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }

@@ -1,22 +1,11 @@
 "use client";
 import React, { useState, useRef } from "react";
 import styles from "./form.module.css";
-import Image from "next/image";
-import ConfirmButton from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { forgotPasswordSchema } from "@/utils/authSchemas";
 import { useAuth } from "@/contexts/AuthContext";
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-});
 
 const Form = () => {
   const router = useRouter();
@@ -29,7 +18,6 @@ const Form = () => {
     clearSuccessStates,
   } = useAuth();
 
-  // Ref for input focus
   const emailInputRef = useRef(null);
 
   const {
@@ -55,132 +43,102 @@ const Form = () => {
 
   if (forgotPasswordSuccess) {
     return (
-      <div className={styles.container}>
-        <div className={styles.titleContainer}>
-          <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-            Check Your Email
-          </h2>
-          <p className={`${styles.description} ${manrope.className}`}>
-            {`We've sent you a password reset link. Please check your email and
-            follow the instructions to reset your password.`}
-          </p>
+      <div className={styles.cardWrapper}>
+        <div className={styles.card}>
+          <div className={styles.header}>
+            <h1 className={styles.title}>Check Your Email</h1>
+            <p className={styles.subtitle}>
+              We've sent you a password reset link. Please check your email and follow the instructions to reset your password.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            className={styles.submitButton}
+            onClick={() => {
+              clearSuccessStates();
+              router.push("/login");
+            }}
+          >
+            <span className={styles.buttonText}>Go to Login</span>
+            <svg className={styles.buttonIcon} width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
-        <ConfirmButton
-          style={{
-            justifyContent: "center",
-            width: "100%",
-            marginTop: "2.6rem",
-          }}
-          title="Go to Login"
-          onClick={() => {
-            clearSuccessStates();
-            router.push("/login");
-          }}
-          // className={styles.button}
-        />
       </div>
     );
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.titleContainer}>
-        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Forgot Password
-        </h2>
-        <p className={`${styles.description} ${manrope.className}`}>
-          Lost your password? Please enter your email address. You will receive
-          a link to create a new password via email
-        </p>
-      </div>
-
-      {/* Error Message */}
-      {(error || errors.root) && (
-        <div
-          className={styles.errorMessage}
-          style={{
-            backgroundColor: "#f8d7da",
-            color: "#721c24",
-            padding: "0.75rem",
-            marginBottom: "1rem",
-            borderRadius: "0.25rem",
-            border: "1px solid #f5c6cb",
-          }}
-        >
-          {error || errors.root?.message}
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.inputsContainer}>
-          <div className={styles.inputGroup}>
-            <label htmlFor="email" className={styles.label}>
-              Email Address
-            </label>
-            <div
-              className={styles.inputContainer}
-              onClick={() => emailInputRef.current?.focus()}
-            >
-              <div className={styles.iconWrapper}>
-                <Image
-                  src={"/svg/email.svg"}
-                  alt="email"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <input
-                type="email"
-                id="email"
-                placeholder="Enter Email Address"
-                className={`${styles.input} ${
-                  errors.email ? styles.error : ""
-                }`}
-                {...(() => {
-                  const { ref, ...rest } = register("email");
-                  return {
-                    ...rest,
-                    ref: (e) => {
-                      ref(e);
-                      emailInputRef.current = e;
-                    },
-                  };
-                })()}
-              />
-            </div>
-            {errors.email && (
-              <span className={styles.errorMessage}>
-                {errors.email.message}
-              </span>
-            )}
-          </div>
+    <div className={styles.cardWrapper}>
+      <div className={styles.card}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Reset Password</h1>
+          <p className={styles.subtitle}>Enter your email address and we'll send you a link to reset your password</p>
         </div>
 
-        {errors.root && (
-          <div
-            className={styles.errorMessage}
-            style={{ textAlign: "center", marginBottom: "1rem" }}
-          >
-            {errors.root.message}
+        {(error || errors.root) && (
+          <div className={styles.errorMessage}>
+            {error || errors.root?.message}
           </div>
         )}
 
-        <ConfirmButton
-          style={{ justifyContent: "center", width: "100%" }}
-          title={isLoading ? "Sending..." : "Reset Password"}
-          onClick={handleSubmit(onSubmit)}
-          disabled={isLoading}
-          // className={styles.button}
-        />
-      </form>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div className={styles.formGroup}>
+            <div className={styles.fieldWrapper}>
+              <label className={styles.fieldLabel}>Email Address</label>
+              <div
+                className={`${styles.inputField} ${errors.email ? styles.fieldError : ""}`}
+                onClick={() => emailInputRef.current?.focus()}
+              >
+                <svg className={styles.fieldIcon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 8L10.89 13.26C11.5475 13.7277 12.4525 13.7277 13.11 13.26L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  className={styles.input}
+                  {...(() => {
+                    const { ref, ...rest } = register("email");
+                    return {
+                      ...rest,
+                      ref: (e) => {
+                        ref(e);
+                        emailInputRef.current = e;
+                      },
+                    };
+                  })()}
+                />
+              </div>
+              {errors.email && (
+                <span className={styles.errorText}>{errors.email.message}</span>
+              )}
+            </div>
+          </div>
 
-      <button
-        className={styles.gotoLogin}
-        onClick={() => router.push("/login")}
-        disabled={isLoading}
-      >
-        {`Go back to login`}
-      </button>
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={isLoading}
+          >
+            <span className={styles.buttonText}>
+              {isLoading ? "Sending..." : "Send Reset Link"}
+            </span>
+            {!isLoading && (
+              <svg className={styles.buttonIcon} width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </button>
+        </form>
+
+        <div className={styles.footer}>
+          <p className={styles.footerText}>
+            Remember your password? <a href="/login" className={styles.signupLink}>Sign In</a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,52 +1,88 @@
 import React from "react";
-import PolicyDetails from "../_components/policyDetails/PolicyDetails";
+import PolicyDetailsReview from "../_components/PolicyDetailsReview";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
 import styles from "./page.module.css";
-import CoverDetails from "../_components/coverDetails/CoverDetails";
+import layoutStyles from "@/ui/dashboard/dashboardLayout.module.css";
 import { API_BASE_URL } from "@/utils/config";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { serverFetch } from "@/utils/serverFetch";
+import { mockPolicies } from "../../mockPoliciesData";
 
 const page = async ({ params }) => {
   const cookieStore = await cookies();
   const token = cookieStore.get("jwt")?.value;
+  const devMode = process.env.NEXT_PUBLIC_DEV_MODE === "true";
 
-  if (!token) {
+  if (!token && !devMode) {
     redirect("/login");
   }
 
   const { id } = await params;
   let insurance = null;
 
-  try {
-    const response = await serverFetch(`${API_BASE_URL}/api/insurance/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "no-store",
-    });
-
-    if (response.ok) {
-      const result = await response.json();
-      insurance = result.data?.data || null;
+  // Dev mode: return mock data
+  if (devMode && !token) {
+    // Check if ID matches mock policy IDs
+    if (mockPolicies[id]) {
+      insurance = mockPolicies[id];
+    } else {
+      // Default to first mock policy
+      insurance = mockPolicies["ANNUAL-001"];
     }
-  } catch (error) {
-    console.error("Error fetching insurance:", error);
+  } else {
+    try {
+      const response = await serverFetch(`${API_BASE_URL}/api/insurance/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-store",
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        insurance = result.data?.data || null;
+      }
+    } catch (error) {
+      console.error("Error fetching insurance:", error);
+      // Fallback to mock data on error in dev mode
+      if (devMode) {
+        insurance = mockPolicies[id] || mockPolicies["ANNUAL-001"];
+      }
+    }
   }
 
-
-  // Generate policy number
-  const policyNumber = `${insurance.type
-    .substring(0, 2)
-    .toUpperCase()}-${insurance._id.substring(insurance._id.length - 6)}`;
+  if (!insurance) {
+    redirect("/dashboard/policy");
+  }
 
   return (
-    <div className={styles.page}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{policyNumber}</h1>
+    <div className={layoutStyles.page}>
+      <div className={layoutStyles.heroSection}>
+        <div className={layoutStyles.heroBackground}>
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="106.238px" height="176.262px" viewBox="0 0 106.238 140.262" className={layoutStyles.heroBackgroundImage}>
+            <style>{`.st0{fill:#FFFFFF;}.st1{fill:#05AFFF;}.st2{fill:#0A0913;}`}</style>
+            <path className="st1" d="M86.515,75.233L44.398,94.136v25.204l-4.194-4.194l-13.187-13.187l-7.276-7.276l24.658-11.08l17.44-7.823l35.953-16.152c9.13-4.116,11.334-16.094,4.253-23.175L70.012,4.419C60.57,-5.023,44.398,1.669,44.398,15.012v20.171L0.115,55.081v19.098l17.44-7.823l39.484-17.713l4.916-2.204V27.302l-0.117,0.058v-6.457l24.677,24.677l-10.944,4.916l0.02,0.039l-46.682,21.01l-0.039-0.078L8.464,80.636c-0.351,0.156-0.683,0.312-0.995,0.488c-4.253,2.302-6.808,6.399-7.354,10.768c-0.527,4.175,0.741,8.583,4.077,11.919l32.051,32.032c9.442,9.442,25.594,2.751,25.594-10.612v-19.82l24.677-11.08l19.722-8.837V66.357L86.515,75.233z"/>
+          </svg>
+        </div>
+        <div className={layoutStyles.heroContent}>
+          <div className={layoutStyles.greetingArea}>
+            <h1 className={layoutStyles.greetingTitle}>Policy summary</h1>
+            <p className={layoutStyles.greetingSubtitle}>Policy no: {insurance.policyNumber}</p>
+          </div>
+        </div>
       </div>
-      <PolicyDetails insurance={insurance} />
-      <CoverDetails insurance={insurance} policyNumber={policyNumber} />
+
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Policy" },
+        { label: "Policy summary" }
+      ]} />
+
+      <div className={layoutStyles.contentWrapper}>
+        <PolicyDetailsReview policy={insurance} />
+      </div>
     </div>
   );
 };

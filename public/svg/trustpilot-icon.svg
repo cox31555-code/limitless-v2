@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#00B5A1" opacity="0.1" stroke="#00B5A1" stroke-width="1"/>
+  
+  <!-- Trustpilot checkmark -->
+  <path d="M32 12C21.5 12 13 20.5 13 31C13 41.5 21.5 50 32 50C42.5 50 51 41.5 51 31C51 20.5 42.5 12 32 12ZM42.5 27L30 40L21.5 31.5" 
+        stroke="#00B5A1" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

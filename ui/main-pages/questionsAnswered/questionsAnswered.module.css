@@ -1,167 +1,432 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 8.7rem;
-  padding: 7.6rem 3.4% 6rem;
-  margin: 0 1.1%;
-  width: 97.8%;
-  border-radius: 20px;
+  align-items: center;
+  gap: 7.6rem;
+  padding: 7.6rem 5% 10rem;
+  margin: 11rem calc(-50vw + 50%) 0 calc(-50vw + 50%);
+  width: 100vw;
+  max-width: 100vw;
   background: #000822;
-  margin-top: 11rem;
-}
-.header {
-  color: #fff;
-  text-align: center;
-  font-size: 5.8rem;
-  font-weight: 700;
-  line-height: 100%; /* 58px */
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-.header span {
-  color: #0388ff;
-}
-.wrapper {
-  display: flex;
-  /* flex-direction: column; */
-  gap: 2.6rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
-.question1 {
-  display: flex;
-  flex-direction: column;
-  gap: 12.7rem;
-  border-radius: 18.072px;
-  background: #07102d;
-  backdrop-filter: blur(16.566335678100586px);
-  padding: 10rem 2.5rem 2.5rem;
-  flex-basis: 50%;
-}
-.questions {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  width: 100%;
-  flex-basis: 50%;
-}
-.question {
-  display: flex;
-  flex-direction: column;
-  padding: 2.6rem 2.6rem 2.7rem 2.7rem;
-  gap: 5.3rem;
-  border-radius: 18.072px;
-  background: #07102d;
-}
-.contentContainer {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  max-width: 45rem;
+.backgroundShape {
+  position: absolute;
+  top: -44.1rem;
+  right: 10.55rem;
+  width: 58.5rem;
+  height: 77.6rem;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .title {
   color: #fff;
-  font-size: 2.8rem;
-  font-weight: 600;
-  line-height: 100%; /* 28px */
+  text-align: center;
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0;
 }
-.description {
-  color: rgba(255, 255, 255, 0.54);
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 124%; /* 17.36px */
-  letter-spacing: 0.56px;
+
+.title span {
+  color: #049CFF;
 }
-.iconWrapper {
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2.5rem;
+  max-width: 130rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.faqCard {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2.5rem;
+  background: #07102D;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  min-height: 593px;
+}
+
+.serviceCard,
+.supportCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2.7rem;
+  background: #07102D;
+  border-radius: 18px;
+  position: relative;
+  overflow: visible;
+  height: 284px;
+}
+
+.arrowButton {
+  position: absolute;
+  bottom: 2.7rem;
+  right: 2.7rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  background: #0388FF;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 4.4rem;
-  height: 4.4rem;
-  border-radius: 50%;
-  background: #0388ff;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 3;
+  padding: 0;
 }
-@media screen and (max-width: 1200) {
-  .contentContainer {
-    gap: 2.2rem;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-}
-@media screen and (max-width: 900px) {
-  .container {
-    gap: 5.4rem;
-    padding: 5.1rem 3.5%;
-    margin: 0 2%;
-    margin-top: 0;
-  }
-  .header {
-    font-size: 3.4rem;
-  }
-  .wrapper {
-    flex-direction: column;
-    gap: 2.2rem;
-  }
-  .questions {
-    gap: 2.2rem;
-    flex-basis: 100%;
-  }
-  .question,
-  .question1 {
-    padding: 4.1rem 2.6rem 2.6rem;
-    gap: 4rem;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
 
-  .question1 .image {
-    width: 40rem;
-    height: auto;
-  }
-  .question:first-child .image {
-    width: 116;
-    height: 97px;
-  }
-  .question:nth-child(2) .image {
-    width: 190px;
-    height: 110px;
-  }
-  /* .contentContainer {
-    gap: 2.2rem;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  } */
-  .content {
-    gap: 1.6rem;
-    max-width: 100%;
+.arrowButton:hover {
+  background: #049CFF;
+  transform: scale(1.05);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  max-width: 32.6rem;
+  z-index: 2;
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+.cardDescription {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 124%;
+  letter-spacing: 0.56px;
+  margin: 0;
+}
+
+.faqIllustration {
+  position: relative;
+  width: 469px;
+  height: 238px;
+  margin: 6.2rem 0 0 6.2rem;
+}
+
+.gradientBox1 {
+  position: absolute;
+  top: 79px;
+  left: 82px;
+  width: 359px;
+  height: 122px;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 50.27%, #0388FF 180.43%);
+}
+
+.gradientBox2 {
+  position: absolute;
+  top: 131px;
+  left: 103px;
+  width: 317px;
+  height: 107px;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 50.27%, #0388FF 180.43%);
+}
+
+.documentCard {
+  position: absolute;
+  top: 25px;
+  left: 54px;
+  width: 415px;
+  height: 141px;
+}
+
+.smallDocWrapper {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 150px;
+  height: 176px;
+}
+
+.smallDocBg {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 112px;
+  height: 134px;
+  transform: rotate(12.045deg);
+  background: linear-gradient(349deg, #07102D -6.94%, #0388FF 88.74%);
+}
+
+.smallDoc {
+  position: absolute;
+  top: 39px;
+  left: 0;
+  width: 122px;
+  height: 137px;
+  backdrop-filter: blur(24.35px);
+}
+
+.questionCircle {
+  position: absolute;
+  top: 113px;
+  left: 0;
+  width: 83px;
+  height: 83px;
+}
+
+.questionMark {
+  position: absolute;
+  top: 124px;
+  left: 61px;
+  width: 22px;
+  height: 37px;
+  fill: #000822;
+}
+
+.serviceIcon {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 4rem;
+}
+
+.serviceGradient {
+  position: absolute;
+  top: 27px;
+  left: 27px;
+  width: 61.31px;
+  height: 63.6px;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388FF 100%);
+  opacity: 0.48;
+}
+
+.checkBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(30%, -30%);
+}
+
+.supportIcon {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 4rem;
+}
+
+.supportGradient {
+  position: absolute;
+  top: 42px;
+  left: 77px;
+  width: 67.52px;
+  height: 69.85px;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388FF 100%);
+  opacity: 0.48;
+}
+
+.checkCircle {
+  position: absolute;
+  top: 21px;
+  left: 15px;
+}
+
+@media screen and (max-width: 1300px) {
+  .cardsGrid {
+    gap: 2rem;
   }
 
   .title {
-    font-size: 2.4rem;
+    font-size: 4.8rem;
   }
-  .description {
-    font-size: 1.3rem;
+
+  .faqCard {
+    min-height: 520px;
   }
-  .iconWrapper {
-    min-width: 4.4rem;
-    height: 4.4rem;
+
+  .serviceCard,
+  .supportCard {
+    height: 250px;
+  }
+
+  .faqIllustration {
+    transform: scale(0.85);
+    transform-origin: top left;
   }
 }
-@media screen and (max-width: 550px) {
-  .question1 .image {
-    width: max(70%, 27rem);
+
+@media screen and (max-width: 1100px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .faqCard {
+    grid-row: auto;
+    min-height: 400px;
+  }
+
+  .serviceCard,
+  .supportCard {
     height: auto;
-    height: auto;
+    min-height: 260px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 100%;
+    margin: 11rem 0 0 0;
+    padding: 6rem 4%;
+    gap: 4rem;
+    border-radius: 0;
+  }
+
+  .backgroundShape {
+    right: -10rem;
+    top: -35rem;
+    width: 45rem;
+    height: 60rem;
+  }
+
+  .title {
+    font-size: 4rem;
+    line-height: 110%;
+  }
+
+  .cardTitle {
+    font-size: 2.4rem;
+  }
+
+  .cardDescription {
+    font-size: 1.3rem;
+  }
+
+  .faqCard {
+    padding: 2rem;
+    min-height: 360px;
+  }
+
+  .serviceCard,
+  .supportCard {
+    padding: 2.4rem;
+  }
+
+  .faqIllustration {
+    transform: scale(0.7);
+  }
+
+  .cardContent {
+    max-width: 28rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: 11rem 0 0 0;
+    padding: 5rem 3%;
+    gap: 3rem;
+  }
+
+  .backgroundShape {
+    right: -15rem;
+    top: -30rem;
+    width: 35rem;
+    height: 50rem;
+  }
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .cardTitle {
+    font-size: 2rem;
+  }
+
+  .cardDescription {
+    font-size: 1.2rem;
+  }
+
+  .faqCard {
+    padding: 2rem;
+    min-height: 320px;
+  }
+
+  .serviceCard,
+  .supportCard {
+    padding: 2rem;
+    min-height: 240px;
+  }
+
+  .arrowButton {
+    width: 4rem;
+    height: 4rem;
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  .arrowButton svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cardContent {
+    max-width: 24rem;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  .faqIllustration {
+    transform: scale(0.5);
+    margin: 2rem 0 0 2rem;
+  }
+
+  .serviceIcon,
+  .supportIcon {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardDescription {
+    font-size: 1.1rem;
+  }
+
+  .faqCard {
+    min-height: 280px;
+  }
+
+  .faqIllustration {
+    transform: scale(0.4);
+    margin: 1rem 0 0 1rem;
   }
 }

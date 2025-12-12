@@ -1,0 +1,63 @@
+/* Import shared get-quote utilities and animations */
+@import '../shared.module.css';
+@import '../animations.module.css';
+
+.wrapper {
+  width: 100%;
+  max-width: var(--content-max-width, 680px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap, 3rem);
+  padding-right: var(--content-padding-right, 100px);
+  box-sizing: border-box;
+}
+
+/* ============================================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================================ */
+
+/* Tablet: 900px - 1200px */
+@media (max-width: 1200px) {
+  .wrapper {
+    padding-right: 50px;
+  }
+}
+
+/* Tablet: 768px - 900px */
+@media (max-width: 900px) {
+  .wrapper {
+    padding-right: 0;
+  }
+}
+
+/* Small tablet: 640px - 768px */
+@media (max-width: 768px) {
+  .wrapper {
+    gap: calc(var(--content-gap, 3rem) * 0.85);
+    padding-right: 0;
+  }
+}
+
+/* Mobile: 600px - 640px */
+@media (max-width: 640px) {
+  .wrapper {
+    gap: calc(var(--content-gap, 3rem) * 0.65);
+    padding-right: 0;
+  }
+}
+
+/* Small mobile: <600px */
+@media (max-width: 600px) {
+  .wrapper {
+    gap: calc(var(--content-gap, 3rem) * 0.55);
+    padding-right: 0;
+  }
+}
+
+/* Extra small mobile: <400px */
+@media (max-width: 400px) {
+  .wrapper {
+    gap: calc(var(--content-gap, 3rem) * 0.5);
+    padding-right: 0;
+  }
+}

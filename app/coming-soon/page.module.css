@@ -2,13 +2,14 @@
   /* position: relative;
   overflow: hidden; */
 }
+
 .cardsContainer {
   display: flex;
   align-items: stretch;
   justify-content: center;
   gap: 2.4rem;
   padding: 0 4.4%;
-  margin-top: -18.5rem;
+  margin-top: -34.8rem;
   margin-bottom: 8.2rem;
   position: relative;
   z-index: 2;

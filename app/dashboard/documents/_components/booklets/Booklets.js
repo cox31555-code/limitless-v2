@@ -3,13 +3,7 @@
 import React, { useState } from "react";
 import styles from "./booklets.module.css";
 import Image from "next/image";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import { downloadStaticPDF } from "@/lib/pdfDownload";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Booklets = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -26,13 +20,11 @@ const Booklets = () => {
       <span className={styles.blueBackground2}></span>
       <span className={styles.blueBackground3}></span>
       <div className={styles.first}>
-        <h4 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Insurance policy booklets
-        </h4>
+        <h4 className={styles.title}>Insurance policy booklets</h4>
         <p className={styles.description}>
           For RAC breakdown cover claims, please call 0345 168 5586.
         </p>
-      </div>{" "}
+      </div>
       <div
         className={styles.second}
         onClick={handleDownload}
@@ -45,8 +37,8 @@ const Booklets = () => {
             <Image
               src="/svg/download.svg"
               alt="download"
-              width={24}
-              height={24}
+              width={20}
+              height={20}
             />
           )}
         </div>

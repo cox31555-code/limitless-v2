@@ -1,0 +1,670 @@
+/* Replace Vehicle Client - Uses shared dashboard layout styles */
+/* Hero, breadcrumb, and content wrapper styling is centralized in dashboardLayout.module.css */
+
+.vehicleCard {
+  background: #ffffff;
+  border: 1px solid #e3e8ef;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  padding: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.sectionTitle {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0 0 1.3rem 0;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
+
+.sectionDescription {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin: 0 0 1.6rem 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.registrationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.alternativeOption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  margin: 1px 0 2rem;
+}
+
+.dividerText {
+  font-size: 1.3rem;
+  color: #6b7c8f;
+  font-weight: 400;
+  margin: 0;
+}
+
+.manualEntryBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.1rem 1.8rem;
+  background: #ffffff;
+  color: #0052a3;
+  border: 1px solid #0052a3;
+  border-radius: 25px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.manualEntryBtn:hover {
+  background: #f0f7ff;
+}
+
+.manualEntrySection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+}
+
+.manualEntryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.manualEntryTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.backToRegBtn {
+  font-size: 1.3rem;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+}
+
+.backToRegBtn:hover {
+  color: #003d7a;
+}
+
+.manualEntryHelper {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.manualEntryForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.header {
+  margin-bottom: 2.6rem;
+}
+
+.mainQuestion {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: -0.3px;
+}
+
+.subText {
+  font-size: 1.4rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.foundVehicleCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.foundVehicleIcon {
+  display: none;
+}
+
+.foundVehicleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin-top: 11px;
+}
+
+.foundVehicleTitle {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  line-height: 1.3;
+}
+
+.foundVehicleDetails {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1e293b;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.foundVehicleReg {
+  font-size: 1.7rem;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.changeVehicleBtn {
+  background: none;
+  border: none;
+  color: #0052a3;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  margin: 0.6rem 0 0 auto;
+  font-family: 'Arial', sans-serif;
+  transition: color 0.2s ease;
+}
+
+.changeVehicleBtn:hover {
+  color: #003d7a;
+}
+
+.vehicleQuestionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  margin-top: 2rem;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.detailsSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detailsSectionTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.changeLink {
+  font-size: 1.4rem;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+}
+
+.changeLink:hover {
+  color: #003d7a;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.detailLabel {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.detailValue {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.modificationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.modificationSectionInCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 1.2rem;
+}
+
+.modificationDetailsInCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 0.8rem;
+}
+
+.modificationDetailsHeading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.modificationQuestion {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.modificationHelper {
+  font-size: 1.3rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.8rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.radioInput {
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  accent-color: #0052a3;
+  background-color: #ffffff;
+  border: 2px solid #cbd5e1;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.radioInput:checked {
+  border-color: #0052a3;
+  background-color: #ffffff;
+}
+
+.radioInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: #0052a3;
+  border-radius: 50%;
+}
+
+.radioInput:hover:not(:disabled) {
+  border-color: #94a3b8;
+}
+
+.radioLabel {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.helpLink {
+  font-size: 1.3rem;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+  text-align: left;
+  margin-top: 0.4rem;
+}
+
+.helpLink:hover {
+  color: #003d7a;
+}
+
+.modificationsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.modificationsHeading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.modificationsTagsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.modificationCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  gap: 1.2rem;
+}
+
+.modificationName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e293b;
+  flex: 1;
+}
+
+.modificationActions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.removeTextBtn {
+  font-size: 1.3rem;
+  color: #ef4444;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+}
+
+.removeTextBtn:hover {
+  color: #dc2626;
+}
+
+.changeModificationBtn {
+  font-size: 1.3rem;
+  color: #0052a3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 0;
+}
+
+.changeModificationBtn:hover {
+  color: #003d7a;
+}
+
+.addModificationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem 1.8rem;
+  background: #ffffff;
+  color: #0052a3;
+  border: 1px solid #0052a3;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addModificationBtn p {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+}
+
+.addModificationBtn:hover {
+  background: #f0f7ff;
+}
+
+.infoBox {
+  display: flex;
+  gap: 1.6rem;
+  padding: 2rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.infoIcon {
+  flex-shrink: 0;
+}
+
+.infoContent {
+  flex: 1;
+}
+
+.infoTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0369a1;
+  margin: 0 0 0.8rem 0;
+}
+
+.infoText {
+  font-size: 1.3rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e8ecf0;
+  justify-content: flex-end;
+}
+
+.cancelBtn,
+.saveBtn {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelBtn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.saveBtn {
+  background: #0052a3;
+  color: #ffffff;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: #003d7a;
+}
+
+.cancelBtn:disabled,
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 900px) {
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .vehicleCard {
+    padding: 2rem 1.6rem;
+    gap: 2rem;
+  }
+
+  .cardHeader {
+    padding-bottom: 1.6rem;
+  }
+
+  .cardTitle {
+    font-size: 1.6rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .manualEntryTitle {
+    font-size: 1.5rem;
+  }
+
+  .foundVehicleCard {
+    padding: 1.6rem;
+  }
+
+  .foundVehicleTitle {
+    font-size: 1.4rem;
+  }
+
+  .foundVehicleDetails {
+    font-size: 1.6rem;
+  }
+
+  .foundVehicleReg {
+    font-size: 1.5rem;
+  }
+
+  .changeVehicleBtn {
+    font-size: 1.3rem;
+  }
+
+  .actionButtons {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.5rem;
+  }
+}

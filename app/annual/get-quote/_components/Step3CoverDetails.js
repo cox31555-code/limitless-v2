@@ -1,0 +1,483 @@
+"use client";
+import React, { useState, useEffect } from "react";
+import styles from "./step3CarOwner.module.css";
+import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+import FormDateInput from "@/ui/inputs/FormDateInput";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
+
+const Step3CoverDetails = ({
+  onBack = () => {},
+  onNext = () => {},
+  coverData = null,
+  showCoverOptions = true,
+  insuranceType = "Annual"
+}) => {
+  const [formData, setFormData] = useState(coverData || {
+    coverLevel: "",
+    minimumCoverLevel: "",
+    paymentFrequency: "",
+    startDate: "",
+    startTime: "",
+    endDate: "",
+    endTime: ""
+  });
+
+  const [errors, setErrors] = useState({});
+  const [expandedMinimumCover, setExpandedMinimumCover] = useState(false);
+  const [expandedStartDate, setExpandedStartDate] = useState(false);
+  const [expandedPaymentEffect, setExpandedPaymentEffect] = useState(false);
+
+  useEffect(() => {
+    if (insuranceType === "Impound" && formData.startDate && formData.startTime) {
+      const startDate = new Date(formData.startDate);
+      const endDate = new Date(startDate);
+      endDate.setDate(endDate.getDate() + 30);
+
+      const calculatedEndDate = endDate.toISOString().split('T')[0];
+
+      if (formData.endDate !== calculatedEndDate || formData.endTime !== formData.startTime) {
+        setFormData((prev) => ({
+          ...prev,
+          endDate: calculatedEndDate,
+          endTime: formData.startTime
+        }));
+      }
+    }
+  }, [formData.startDate, formData.startTime, insuranceType]);
+
+  const generateDateOptions = () => {
+    const options = [];
+    const today = new Date();
+
+    for (let i = 0; i < 30; i++) {
+      const date = new Date(today);
+      date.setDate(date.getDate() + i);
+
+      const dayName = date.toLocaleDateString('en-GB', { weekday: 'long' });
+      const dayNum = date.getDate();
+      const monthName = date.toLocaleDateString('en-GB', { month: 'long' });
+      const year = date.getFullYear();
+
+      const displayLabel = `${dayName}, ${dayNum} ${monthName} ${year}`;
+      const dateValue = date.toISOString().split('T')[0];
+
+      options.push(displayLabel);
+    }
+
+    return options;
+  };
+
+  const dateOptions = generateDateOptions();
+
+  const getSelectedDateLabel = () => {
+    if (!formData.startDate) return "";
+    const selectedDate = new Date(formData.startDate);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const daysFromToday = Math.floor((selectedDate - today) / (1000 * 60 * 60 * 24));
+
+    if (daysFromToday >= 0 && daysFromToday < dateOptions.length) {
+      return dateOptions[daysFromToday];
+    }
+    return "";
+  };
+
+  const coverLevels = [
+    {
+      id: "comprehensive",
+      title: "Comprehensive cover",
+      description: "The full package. Covers: accidental damage, damage caused by fire or theft, loss of your car from theft, accidents caused by you, injuries to other people, and property damage."
+    },
+    {
+      id: "tpft",
+      title: "Third Party Fire and Theft (TPFT)",
+      description: "Covers damage caused to your car by fire or theft, loss of your car from theft, accidents caused by you, and injuries to other people and property."
+    },
+    {
+      id: "tpo",
+      title: "Third Party Only (TPO)",
+      description: "Covers claims made by a third party in the event an accident caused by yourself, or any named drivers while using this car. There is no cover for you or your car."
+    }
+  ];
+
+  const minimumCoverOptions = [
+    "None",
+    "£50",
+    "£100",
+    "£150",
+    "£200",
+    "£250",
+    "£300",
+    "£350",
+    "£400",
+    "£450",
+    "£500",
+    "£600",
+    "£700",
+    "£800",
+    "£900",
+    "£1000"
+  ];
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (showCoverOptions) {
+      if (!formData.coverLevel) newErrors.coverLevel = "Please select a cover level";
+      if (formData.coverLevel === "comprehensive" && !formData.minimumCoverLevel) {
+        newErrors.minimumCoverLevel = "Please select a minimum level of cover";
+      }
+      if (!formData.paymentFrequency) newErrors.paymentFrequency = "Please select payment frequency";
+    }
+    if (!formData.startDate) newErrors.startDate = "Please select a start date";
+    if (!showCoverOptions) {
+      if (!formData.startTime) newErrors.startTime = "Please select a start time";
+      if (!formData.endDate) newErrors.endDate = "Please select an end date";
+      if (!formData.endTime) newErrors.endTime = "Please select an end time";
+    }
+    return newErrors;
+  };
+
+  const handleSubmit = () => {
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length === 0) {
+      onNext(formData);
+    } else {
+      setErrors(newErrors);
+    }
+  };
+
+  return (
+    <StepContainer title="Your policy - Your cover">
+      {showCoverOptions && (
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>What's the minimum level of cover you're looking for?</h3>
+          </div>
+
+          <button
+            type="button"
+            className={styles.expandableLink}
+            onClick={() => setExpandedMinimumCover(!expandedMinimumCover)}
+          >
+            <span className={`${styles.expandableIcon} ${expandedMinimumCover ? styles.expandedIcon : ''}`}>▼</span>
+            What does minimum level of cover mean?
+          </button>
+
+          {expandedMinimumCover && (
+            <div className={styles.expandableContent}>
+              Cover levels vary between insurance providers, which means some providers may show you more cover than you need if it's their cheapest price or they can't offer a lower level. Always check you're happy with the level of cover on the provider's website before you buy.
+            </div>
+          )}
+
+          <div className={styles.radioGroup}>
+            {coverLevels.map((level) => (
+              <label key={level.id} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+                <input
+                  type="radio"
+                  name="coverLevel"
+                  value={level.id}
+                  checked={formData.coverLevel === level.id}
+                  onChange={(e) => setFormData({ ...formData, coverLevel: e.target.value })}
+                  className={styles.radioInput}
+                  style={{
+                    marginTop: '0.3rem',
+                    flexShrink: 0,
+                    width: '24px',
+                    height: '24px',
+                    minWidth: '24px',
+                    minHeight: '24px'
+                  }}
+                />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', flex: 1 }}>
+                  <span className={styles.radioLabel}>{level.title}</span>
+                  <span style={{ fontSize: '1.3rem', color: '#6b7c8f', fontWeight: '400', lineHeight: '1.65', marginTop: '-0.2rem' }}>
+                    {level.description}
+                  </span>
+                </div>
+              </label>
+            ))}
+          </div>
+          {errors.coverLevel && <span className={styles.error}>{errors.coverLevel}</span>}
+        </div>
+      )}
+
+      {showCoverOptions && formData.coverLevel === "comprehensive" && (
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>What's the maximum voluntary excess you'd like on this policy?</h3>
+            <p className={sharedStyles.subText}>
+              Voluntary excess is the amount you're willing to pay on top of the compulsory excess. Compulsory excess varies between insurance providers. If you're a new driver, insurance providers may also apply young or inexperienced driver excess.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            className={styles.expandableLink}
+            onClick={() => setExpandedPaymentEffect(!expandedPaymentEffect)}
+          >
+            <span className={`${styles.expandableIcon} ${expandedPaymentEffect ? styles.expandedIcon : ''}`}>▼</span>
+            How does voluntary excess affect my quote?
+          </button>
+
+          {expandedPaymentEffect && (
+            <div className={styles.expandableContent}>
+              Choosing a higher voluntary excess may lower your premium, but make sure you're comfortable paying both the voluntary and compulsory excess amount in the event of a claim. You may find that some insurance providers quote with a lower voluntary excess than you've chosen. This won't affect the price of your policy but may save you money in the event of a claim.
+            </div>
+          )}
+
+          <Dropdown
+            label=""
+            selected={formData.minimumCoverLevel || ""}
+            options={minimumCoverOptions}
+            setSelected={(value) => setFormData({ ...formData, minimumCoverLevel: value })}
+            placeholder="Please select…"
+          />
+          {errors.minimumCoverLevel && <span className={styles.error}>{errors.minimumCoverLevel}</span>}
+        </div>
+      )}
+
+      {showCoverOptions && (
+        <div className={sharedStyles.stepSection}>
+          <div className={sharedStyles.questionHeader}>
+            <h3 className={sharedStyles.mainQuestion}>How do you want to pay for your car insurance?</h3>
+            <p className={sharedStyles.subText}>
+              One annual payment is typically the cheaper option, since paying monthly means you could be entering into a credit agreement and charged interest. Selecting monthly instalments may also reduce the amount of quotes shown.
+            </p>
+          </div>
+          <div className={styles.radioGroup}>
+            {["One annual payment", "Monthly instalments"].map((option) => (
+              <label key={option} className={styles.radioOption} style={{ cursor: 'pointer' }}>
+                <input
+                  type="radio"
+                  name="paymentFrequency"
+                  value={option}
+                  checked={formData.paymentFrequency === option}
+                  onChange={(e) => setFormData({ ...formData, paymentFrequency: e.target.value })}
+                  className={styles.radioInput}
+                  style={{
+                    width: '24px',
+                    height: '24px',
+                    minWidth: '24px',
+                    minHeight: '24px'
+                  }}
+                />
+                <span className={styles.radioLabel}>{option}</span>
+              </label>
+            ))}
+          </div>
+          {errors.paymentFrequency && <span className={styles.error}>{errors.paymentFrequency}</span>}
+        </div>
+      )}
+
+      <div className={sharedStyles.stepSection}>
+        <div className={sharedStyles.questionHeader}>
+          <h3 className={sharedStyles.mainQuestion}>When, within 30 days, would you like your cover to start?</h3>
+          <p className={sharedStyles.subText}>
+            If you already have a policy, check its expiry date on the renewal notice from your provider to avoid gaps in your cover.
+          </p>
+        </div>
+        {showCoverOptions ? (
+          <div className={styles.fieldWrapper}>
+            <Dropdown
+              label=""
+              selected={getSelectedDateLabel()}
+              options={dateOptions}
+              setSelected={(value) => {
+                const selectedIndex = dateOptions.indexOf(value);
+                if (selectedIndex >= 0) {
+                  const today = new Date();
+                  const selectedDate = new Date(today);
+                  selectedDate.setDate(selectedDate.getDate() + selectedIndex);
+                  const dateString = selectedDate.toISOString().split('T')[0];
+                  setFormData({ ...formData, startDate: dateString });
+                }
+              }}
+              placeholder="Please select…"
+            />
+            {errors.startDate && <span className={styles.error}>{errors.startDate}</span>}
+          </div>
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.6rem' }}>
+            <FormDateInput
+              type="date"
+              dateLabel="Date"
+              value={formData.startDate || ""}
+              onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+              error={errors.startDate}
+              minDate={new Date()}
+              maxDate={(() => {
+                const maxDate = new Date();
+                maxDate.setDate(maxDate.getDate() + 30);
+                return maxDate;
+              })()}
+            />
+            <FormDateInput
+              type="time"
+              timeLabel="Time"
+              value={formData.startTime || ""}
+              onChange={(e) => setFormData({ ...formData, startTime: e.target.value })}
+              error={errors.startTime}
+              relatedDateValue={formData.startDate}
+            />
+          </div>
+        )}
+
+        <button
+          type="button"
+          className={styles.expandableLink}
+          onClick={() => setExpandedStartDate(!expandedStartDate)}
+        >
+          <span className={`${styles.expandableIcon} ${expandedStartDate ? styles.expandedIcon : ''}`}>▼</span>
+          What if I don't have a start date yet?
+        </button>
+
+        {expandedStartDate && (
+          <div className={styles.expandableContent}>
+            You can select a start date up to 30 days in the future. If you don't have a specific date in mind, choose the date you'd like your cover to begin, or the earliest date that suits your needs.
+          </div>
+        )}
+
+        {showCoverOptions && (
+          <>
+            <button
+              type="button"
+              className={styles.expandableLink}
+              onClick={() => setExpandedPaymentEffect(!expandedPaymentEffect)}
+            >
+              <span className={`${styles.expandableIcon} ${expandedPaymentEffect ? styles.expandedIcon : ''}`}>▼</span>
+              How will this affect my quote?
+            </button>
+
+            {expandedPaymentEffect && (
+              <div className={styles.expandableContent}>
+                The start date you select may affect your insurance quote, as premiums can vary depending on when your cover begins. Different seasons and time periods may have different risk profiles, which could impact your final price.
+              </div>
+            )}
+          </>
+        )}
+      </div>
+
+      {!showCoverOptions && (
+        <div className={sharedStyles.stepSection} style={{ opacity: formData.startDate && formData.startTime ? 1 : 0.5, pointerEvents: formData.startDate && formData.startTime ? 'auto' : 'none', transition: 'opacity 0.3s ease' }}>
+          <div className={sharedStyles.questionHeader}>
+            {insuranceType === "Impound" ? (
+              <>
+                <h3 className={sharedStyles.mainQuestion}>Cover Duration</h3>
+                <p className={sharedStyles.subText}>
+                  Your impound coverage is automatically set for 30 days from the start date.
+                </p>
+              </>
+            ) : (
+              <>
+                <h3 className={sharedStyles.mainQuestion}>When would you like your cover to end?</h3>
+                <p className={sharedStyles.subText}>
+                  Select the date and time when your temporary coverage should expire. Minimum 12 hours from start, maximum 30 days.
+                </p>
+              </>
+            )}
+            {(!formData.startDate || !formData.startTime) && (
+              <p style={{ color: '#ef4444', fontSize: '1.3rem', marginTop: '1rem', fontWeight: '500' }}>
+                Please select a start date and time first.
+              </p>
+            )}
+          </div>
+          {formData.startDate && formData.startTime && (
+            <>
+              {insuranceType === "Impound" ? (
+                <div style={{
+                  background: '#f8fbff',
+                  border: '1.5px solid rgba(3, 136, 255, 0.15)',
+                  borderRadius: '1rem',
+                  padding: '2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1.8rem'
+                }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.4rem' }}>
+                    <div style={{ paddingRight: '2rem', borderRight: '2px solid rgba(3, 136, 255, 0.1)' }}>
+                      <div style={{ fontSize: '1.1rem', color: '#6b7280', fontWeight: '500', marginBottom: '0.8rem', letterSpacing: '0.5px' }}>Start date</div>
+                      <div style={{ fontSize: '1.5rem', color: '#0052a3', fontWeight: '700' }}>
+                        {new Date(formData.startDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
+                      </div>
+                      <div style={{ fontSize: '1.3rem', color: '#374151', fontWeight: '600', marginTop: '0.6rem' }}>
+                        {formData.startTime}
+                      </div>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '1.1rem', color: '#6b7280', fontWeight: '500', marginBottom: '0.8rem', letterSpacing: '0.5px' }}>End date</div>
+                      <div style={{ fontSize: '1.5rem', color: '#0052a3', fontWeight: '700' }}>
+                        {new Date(formData.endDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
+                      </div>
+                      <div style={{ fontSize: '1.3rem', color: '#374151', fontWeight: '600', marginTop: '0.6rem' }}>
+                        {formData.endTime}
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ paddingTop: '1.6rem', borderTop: '1.5px solid rgba(3, 136, 255, 0.1)', textAlign: 'center', background: 'rgba(3, 136, 255, 0.06)', borderRadius: '0.8rem', padding: '1.2rem' }}>
+                    <span style={{ fontSize: '1.3rem', color: '#0052a3', fontWeight: '700', letterSpacing: '0.5px' }}>30 days coverage</span>
+                  </div>
+                </div>
+              ) : (
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.6rem' }}>
+                  <FormDateInput
+                    type="date"
+                    dateLabel="End Date"
+                    value={formData.endDate || ""}
+                    onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+                    error={errors.endDate}
+                    minDate={(() => {
+                      const startDate = new Date(formData.startDate);
+                      const minDate = new Date(startDate);
+                      minDate.setHours(minDate.getHours() + 12);
+                      return minDate;
+                    })()}
+                    maxDate={(() => {
+                      const startDate = new Date(formData.startDate);
+                      const maxDate = new Date(startDate);
+                      maxDate.setDate(maxDate.getDate() + 30);
+                      return maxDate;
+                    })()}
+                  />
+                  <FormDateInput
+                    type="time"
+                    timeLabel="End Time"
+                    value={formData.endTime || ""}
+                    onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
+                    error={errors.endTime}
+                    relatedDateValue={formData.endDate}
+                    disabled={!formData.endDate}
+                    minTime={(() => {
+                      if (!formData.endDate || !formData.startDate || !formData.startTime) return null;
+
+                      const startDate = new Date(formData.startDate);
+                      const endDate = new Date(formData.endDate);
+
+                      if (startDate.toDateString() === endDate.toDateString()) {
+                        const [startHour, startMinute] = formData.startTime.split(":");
+                        let minHour = parseInt(startHour, 10) + 12;
+                        let minMinute = parseInt(startMinute, 10);
+
+                        if (minHour >= 24) {
+                          minHour = 23;
+                          minMinute = 59;
+                        }
+
+                        return `${String(minHour).padStart(2, "0")}:${String(minMinute).padStart(2, "0")}`;
+                      }
+
+                      return formData.startTime;
+                    })()}
+                  />
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      )}
+    </StepContainer>
+  );
+};
+
+export default Step3CoverDetails;

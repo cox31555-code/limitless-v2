@@ -128,6 +128,16 @@
     max-width: 50%;
   } */
 }
+@media screen and (max-width: 640px) {
+  .first {
+    padding-top: 0.1rem;
+  }
+  .second {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .squares {
     width: 485.816px;

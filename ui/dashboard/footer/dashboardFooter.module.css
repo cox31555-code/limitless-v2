@@ -1,0 +1,399 @@
+.footer {
+  background: rgba(0, 8, 34, 1);
+  border-top: 2px solid #0052a3;
+  padding: 26px 10% 0 10%;
+  margin-top: 0;
+}
+
+.footerContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+/* Top Section - Trust & Partnership Information */
+.topSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.brandingSvg {
+  height: 35px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .brandingSvg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 139px;
+  }
+}
+
+.trustSection {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.securityBadge {
+  flex-shrink: 0;
+}
+
+.sectigoImage {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0.95);
+}
+
+.securityInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .securityInfo {
+    text-align: center;
+  }
+}
+
+.securityTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.securityText {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.partnershipSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2.5rem;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .partnershipSection {
+    justify-content: center;
+    align-items: center;
+    margin-right: 9px;
+    padding-left: 59px;
+    gap: 0 !important;
+  }
+}
+
+.partnershipImage {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* Links Section */
+.linksSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footerLink {
+  color: #049cff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.footerLink:hover {
+  color: #0388ff;
+  text-decoration: underline;
+}
+
+.linkSeparator {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 1.25rem;
+}
+
+/* Disclaimer Section */
+.disclaimerSection {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.disclaimerText {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.75;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Bottom Section - Copyright */
+.bottomSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.copyrightSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyrightText {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .footer {
+    padding: 26px 8% 0 8%;
+  }
+
+  .footerContainer {
+    padding: 0;
+  }
+
+  .topSection {
+    padding: 3.2rem 0;
+    gap: 2.8rem;
+  }
+
+  .partnershipSection {
+    gap: 2rem;
+  }
+
+  .brandingSvg {
+    height: 32px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    padding: 26px 6% 0 6%;
+  }
+
+  .footerContainer {
+    padding: 0;
+  }
+
+  .topSection {
+    padding: 3rem 0;
+    gap: 2.5rem;
+  }
+
+  .partnershipSection {
+    gap: 1.8rem;
+  }
+
+  .brandingSvg {
+    height: 30px;
+  }
+
+  .trustSection {
+    gap: 1.5rem;
+  }
+
+  .sectigoImage {
+    height: 70px;
+  }
+
+  .securityTitle {
+    font-size: 1.6rem;
+  }
+
+  .securityText {
+    font-size: 1.2rem;
+  }
+
+  .partnershipImage {
+    height: 70px;
+  }
+
+  .linksSection {
+    padding: 2.5rem 0;
+    gap: 1.3rem;
+  }
+
+  .footerLink {
+    font-size: 1.2rem;
+  }
+
+  .disclaimerSection {
+    padding: 3rem 0;
+  }
+
+  .disclaimerText {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .topSection {
+    align-items: flex-start;
+  }
+
+  .trustSection {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    margin-top: 4rem;
+    padding: 26px 5% 0 5%;
+  }
+
+  .footerContainer {
+    padding: 0;
+  }
+
+  .topSection {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 0;
+    gap: 2rem;
+  }
+
+  .partnershipSection {
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .brandingSvg {
+    height: 28px;
+  }
+
+  .trustSection {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .sectigoImage {
+    height: 65px;
+  }
+
+  .securityInfo {
+    width: 100%;
+  }
+
+  .securityTitle {
+    font-size: 1.5rem;
+  }
+
+  .securityText {
+    font-size: 1.15rem;
+  }
+
+  .partnershipSection {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .partnershipImage {
+    height: 65px;
+  }
+
+  .linksSection {
+    padding: 1.5rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footerLink {
+    font-size: 1.15rem;
+  }
+
+  .linkSeparator {
+    font-size: 1.15rem;
+  }
+
+  .disclaimerSection {
+    padding: 2rem 0;
+  }
+
+  .disclaimerText {
+    font-size: 1.05rem;
+    text-align: left;
+  }
+
+  .bottomSection {
+    padding: 1.5rem 0;
+  }
+
+  .copyrightText {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .topSection {
+    padding: 2.5rem 0;
+  }
+
+  .sectigoImage {
+    height: 60px;
+  }
+
+  .partnershipImage {
+    height: 60px;
+  }
+
+  .securityTitle {
+    font-size: 1.4rem;
+  }
+
+  .securityText {
+    font-size: 1.1rem;
+  }
+
+  .disclaimerText {
+    font-size: 1rem;
+  }
+
+  .copyrightText {
+    font-size: 1.05rem;
+  }
+}

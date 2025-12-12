@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
-    "axios": "^1.11.0",
+    "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.22",
     "critters": "^0.0.23",
-    "flatpickr": "^4.6.13",
     "js-cookie": "^3.0.5",
     "next": "15.4.5",
     "react": "19.1.0",
@@ -21,6 +21,7 @@
     "react-hook-form": "^7.62.0",
     "react-icons": "^5.5.0",
     "react-toastify": "^11.0.5",
+    "tailwindcss": "^4.1.17",
     "zod": "^4.1.5"
   },
   "devDependencies": {

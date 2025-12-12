@@ -1,26 +1,96 @@
-.squares {
-  position: absolute;
-  top: -10rem;
-  right: 0rem;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-40px) rotate(3deg);
+  }
+  66% {
+    transform: translateY(20px) rotate(-3deg);
+  }
 }
+
+@keyframes floatContact {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05) rotateZ(2deg);
+  }
+}
+
+@keyframes gridPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 10px 20px rgba(3, 136, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 20px 40px rgba(3, 136, 255, 0.4));
+  }
+}
+
+@keyframes driftHorizontal {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+@keyframes driftDiagonal {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 150px 150px;
+  }
+}
+
+@keyframes driftVertical {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200px;
+  }
+}
+
+.squares {
+  display: none !important;
+}
+
 .contact {
   position: absolute;
   top: 3.5rem;
   right: 40rem;
 }
 .wrapper {
-  padding: 0 0 1.8rem;
+  padding-top: 20rem;
   display: flex;
   flex-direction: column;
-  gap: 8.5rem;
+  gap: 6rem;
   width: 100%;
+  max-width: 115rem;
+  margin: 0 auto;
+  position: relative;
+  align-items: flex-start;
+  justify-items: flex-start;
 }
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 5% 0 2.6%;
+  padding: 0 1%;
 }
 .content {
   display: flex;
@@ -44,7 +114,7 @@
 }
 .title {
   color: #fff;
-  font-size: 6.7rem;
+  font-size: 7.4rem;
   font-weight: 700;
   line-height: 94%; /* 69.56px */
   display: flex;
@@ -66,6 +136,17 @@
   letter-spacing: 0.64px;
   margin-bottom: 1rem;
 }
+@keyframes drawLine {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 100;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
 .curvedBorder {
   position: absolute;
   bottom: -10px;
@@ -73,21 +154,22 @@
   transform: translateX(-50%);
   width: 100%;
   height: auto;
+  animation: drawLine 1.5s ease-out forwards;
 }
 
 .features {
   display: flex;
   align-items: stretch;
   gap: 1.5rem;
-  margin: 0 1.3%;
+  margin: -18px 1.3% 0 0.8%;
 }
 .confirmBtn {
   display: flex;
   align-items: center;
   gap: 1.8rem;
-  display: flex;
   height: 4.8rem;
-  padding: 0 2.4rem;
+  width: 12.9rem;
+  padding: 0 3.6rem 0 2rem;
   align-items: center;
   border-radius: 1.2rem;
   background: #0388ff;
@@ -102,24 +184,76 @@
   white-space: nowrap;
 }
 
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.confirmBtn {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  height: 4.8rem;
+  width: 12.9rem;
+  padding: 0 3.6rem 0 2rem;
+  border-radius: 1.2rem;
+  background: #0388ff;
+  box-shadow: 0 4px 84px rgba(0, 8, 34, 0.04);
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 124%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
 .confirmBtn:hover {
   background: rgba(3, 137, 255, 0.8);
 }
+
+.retrieveBtn {
+  background: transparent;
+  border: none;
+  color: #0388ff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 124%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: #0388ff;
+  text-underline-offset: 0.5rem;
+  padding: 0;
+  margin-left: 2.4rem;
+}
+
+.retrieveBtn:hover {
+  color: #0270cc;
+  text-decoration-color: #0270cc;
+}
+
+@media screen and (max-width: 640px) {
+  .retrieveBtn {
+    margin-left: 0.1rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .squares {
-    width: 485.816px;
-    height: 246px;
-    top: -7.5rem;
-    right: -29rem;
+    display: none !important;
   }
   .contact {
     width: 378.906px;
     height: 502.617px;
     top: 35rem;
     right: -10rem;
+    animation: floatContact 5s ease-in-out infinite, glow 3s ease-in-out infinite;
   }
   .wrapper {
-    padding: 3.9rem 6% 3.4rem;
+    padding: 3.9rem 6% 0.5rem;
     gap: 3.5rem;
   }
   .container {
@@ -131,11 +265,12 @@
     padding: 0;
     position: relative;
     z-index: 1;
+    min-height: auto;
   }
   .content {
     gap: 2.8rem;
     flex-basis: 100%;
-    max-width: 85%;
+    max-width: 95%;
   }
 
   .subTitle {
@@ -143,7 +278,7 @@
     max-width: 90%;
   }
   .title {
-    font-size: 4.1rem;
+    font-size: 5.6rem;
     gap: 0.3rem;
   }
   .description {
@@ -151,9 +286,7 @@
     margin-bottom: 0;
   }
   .features {
-    flex-direction: column;
-    gap: 1.2rem;
-    margin: 0;
+    display: none;
   }
   .features > div {
     width: 100%;
@@ -164,5 +297,50 @@
     padding: 0 2.4rem;
     border-radius: 1.2rem;
     font-size: 1.5rem;
+  }
+
+  .retrieveBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .contact {
+    top: 11rem;
+    animation: none;
+    opacity: 0.4;
+  }
+
+  .description {
+    padding-top: 10px;
+    margin-bottom: -16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .subTitle {
+    display: none;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 4.8rem;
+    gap: 0.4rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 130%;
+  }
+
+  .confirmBtn {
+    display: none;
+  }
+
+  .retrieveBtn {
+    display: none;
   }
 }

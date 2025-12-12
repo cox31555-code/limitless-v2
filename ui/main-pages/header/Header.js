@@ -1,12 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./header.module.css";
 import Feature from "../../feature/Feature";
 import Image from "next/image";
 import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import GetQuote from "../../getQuote/getQuote";
-import GetQuoteImpound from "../getQuoteImpound/GetQuoteImpound";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -17,14 +15,20 @@ const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-const Header = ({ subTitle, title, description, features }) => {
+const Header = ({ subTitle, title, description, features, insuranceType = "annual" }) => {
   const router = useRouter();
+  const [isQuoteExpanded, setIsQuoteExpanded] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const words = title.split(" ");
   const lastWord = words[words.length - 1];
   const withoutLastWord = words.slice(0, -1).join(" ");
-  const pathname = usePathname();
   return (
-    <div className={"headerContainer"}>
+    <div className={`headerContainer ${isQuoteExpanded ? "expanded" : ""}`}>
       <div className="centeredContent">
         <Image
           src="/svg/squares-2.svg"
@@ -38,7 +42,7 @@ const Header = ({ subTitle, title, description, features }) => {
           src="/svg/contact.svg"
           alt="contact-us"
           width={585}
-          height={776}
+          height={900}
           className={styles.contact}
         />
 
@@ -63,24 +67,24 @@ const Header = ({ subTitle, title, description, features }) => {
                 </div>
               </div>
               <p className={`${styles.description} `}>{description}</p>
-              <button
-                className={styles.confirmBtn}
-                onClick={() => {
-                  title === "Impound Insurance"
-                    ? router.push("/impound/get-quote")
-                    : router.push("/temporary/get-quote");
-                }}
-              >
-                Get a Quote{" "}
-                <Image
-                  src="/svg/arrow-right.svg"
-                  alt="arrow-right"
-                  width={28}
-                  height={14}
-                />
-              </button>
+              <div className={styles.buttonWrapper}>
+                <button
+                  className={styles.confirmBtn}
+                  onClick={() => router.push(`/${insuranceType}/get-quote`)}
+                >
+                  Get a Quote
+                </button>
+                {isMounted && (
+                  <button
+                    className={styles.retrieveBtn}
+                    onClick={() => router.push("/retrieve-quote")}
+                  >
+                    Retrieve your quote
+                  </button>
+                )}
+              </div>
             </div>
-            {pathname === "/impound" ? <GetQuoteImpound /> : <GetQuote />}
+            <GetQuote onExpand={setIsQuoteExpanded} insuranceType={insuranceType} />
           </div>
           <div className={styles.features}>
             {features.map((feature) => (

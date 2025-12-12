@@ -1,0 +1,268 @@
+/* Base Button Styles */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-transform: none;
+  white-space: nowrap;
+  font-weight: 500;
+  text-decoration: none;
+  width: 100%;
+  height: 5.8rem;
+  padding: 1.3rem 2rem;
+  font-size: 1.3rem;
+  line-height: 120%;
+  letter-spacing: 0.3px;
+}
+
+/* Content and Icon Styling */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconLeft,
+.iconRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex-shrink: 0;
+}
+
+/* Variant: Primary */
+.primary {
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0270cc 0%, #025ab3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 136, 255, 0.35);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(3, 136, 255, 0.3);
+}
+
+/* Variant: Secondary */
+.secondary {
+  background: transparent;
+  border: 1.5px solid #0388ff;
+  color: #0388ff;
+}
+
+.secondary:hover:not(:disabled) {
+  background: rgba(3, 136, 255, 0.08);
+  border-color: #0270cc;
+  color: #0270cc;
+}
+
+.secondary:active:not(:disabled) {
+  background: rgba(3, 136, 255, 0.12);
+  border-color: #025ab3;
+  color: #025ab3;
+}
+
+/* Variant: Tertiary */
+.tertiary {
+  background: transparent;
+  color: #6b7c8f;
+  border: none;
+  padding: 0.6rem 0;
+  height: auto;
+  font-size: 1.3rem;
+  text-decoration: underline;
+  text-decoration-color: rgba(107, 124, 143, 0.4);
+  text-underline-offset: 0.4rem;
+  width: fit-content;
+}
+
+.tertiary:hover:not(:disabled) {
+  color: #0388ff;
+  text-decoration-color: rgba(3, 136, 255, 0.6);
+}
+
+.tertiary:active:not(:disabled) {
+  color: #0270cc;
+}
+
+/* Variant: Danger */
+.danger {
+  background: #0052a3;
+  color: #fff;
+}
+
+.danger:hover:not(:disabled) {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+}
+
+/* Variant: Ghost */
+.ghost {
+  background: transparent;
+  color: #333;
+  border: none;
+  padding: 1.2rem 2.4rem;
+}
+
+.ghost:hover:not(:disabled) {
+  background: #f0f1f3;
+}
+
+/* Size Variants */
+.sm {
+  height: 4.2rem;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.1rem;
+}
+
+.sm .iconLeft,
+.sm .iconRight {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.lg {
+  height: 6.4rem;
+  padding: 1.6rem 2.4rem;
+  font-size: 1.5rem;
+}
+
+.lg .iconLeft,
+.lg .iconRight {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Disabled State */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.loading {
+  position: relative;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Focus Styles */
+.button:focus-visible {
+  outline: 2px solid #0388ff;
+  outline-offset: 2px;
+}
+
+.secondary:focus-visible {
+  outline: 2px solid #0388ff;
+  outline-offset: 2px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .button {
+    height: 5.4rem;
+    font-size: 1.2rem;
+    padding: 1.2rem 1.8rem;
+    gap: 0.7rem;
+  }
+
+  .iconLeft,
+  .iconRight {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .button {
+    height: 5.2rem;
+    font-size: 1.15rem;
+    padding: 1rem 1.6rem;
+    border-radius: 10px;
+    gap: 0.6rem;
+  }
+
+  .iconLeft,
+  .iconRight {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .button {
+    height: 5.4rem;
+    font-size: 1.3rem;
+    padding: 1.1rem 1.8rem;
+    gap: 0.7rem;
+  }
+
+  .iconLeft,
+  .iconRight {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    height: 5.6rem;
+    font-size: 1.6rem;
+    padding: 1rem 1.6rem;
+    border-radius: 8px;
+    gap: 0.6rem;
+  }
+
+  .iconLeft,
+  .iconRight {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button {
+    height: 5.4rem;
+    font-size: 1.6rem;
+    padding: 0.95rem 1.4rem;
+    border-radius: 8px;
+    gap: 0.6rem;
+  }
+
+  .iconLeft,
+  .iconRight {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}

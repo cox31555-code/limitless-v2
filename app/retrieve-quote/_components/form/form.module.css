@@ -1,0 +1,358 @@
+.cardWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 4rem 4.5rem;
+  border: 1px solid rgba(0, 8, 34, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0 2px 20px rgba(0, 8, 34, 0.06);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+/* Form Group */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Field Wrapper */
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Input Field Container */
+.inputField {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 1.8rem 2.2rem;
+  background: #fafbfc;
+  border: 1.5px solid rgba(0, 8, 34, 0.12);
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  cursor: text;
+  height: 6rem;
+}
+
+.inputFieldWithPrefix {
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Input Prefix Styling */
+.inputPrefix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.8rem 1.4rem 1.8rem 1.8rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+  color: #495057;
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 100%;
+  border-right: 1.5px solid rgba(0, 8, 34, 0.08);
+  flex-shrink: 0;
+  user-select: none;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+}
+
+.inputWithPrefix {
+  padding: 1.8rem 2.2rem;
+  border-radius: 0;
+  background: transparent;
+  margin-left: 1.3rem;
+}
+
+.inputField:focus-within {
+  border-color: #0052a3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.08);
+}
+
+.inputFieldWithPrefix:focus-within {
+  background: #ffffff;
+}
+
+.inputFieldWithPrefix:focus-within .inputPrefix {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+  border-right-color: rgba(0, 82, 163, 0.3);
+  color: #0052a3;
+}
+
+.inputField.fieldError {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.inputFieldWithPrefix.fieldError {
+  background: #ffffff;
+}
+
+.inputFieldWithPrefix.fieldError .inputPrefix {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border-right-color: rgba(239, 68, 68, 0.3);
+  color: #dc2626;
+}
+
+.inputField.fieldError:focus-within {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08);
+}
+
+/* Input Element */
+.input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #000822;
+  font-size: 1.5rem;
+  font-weight: 400;
+  outline: none;
+  padding: 0;
+  font-family: inherit;
+  line-height: 1.4;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: rgba(0, 8, 34, 0.4);
+  font-weight: 400;
+}
+
+.input:autofill {
+  -webkit-autofill: none;
+  background-color: transparent !important;
+  color: #000822 !important;
+}
+
+/* Error Text */
+.errorText {
+  font-size: 1.2rem;
+  color: #ef4444;
+  font-weight: 500;
+  padding: 0 0.2rem;
+  line-height: 1.3;
+}
+
+/* Submit Button */
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  height: 5.5rem;
+  padding: 1.5rem 2.4rem;
+  margin-top: 0;
+  background: #0a7ea4;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  text-transform: none;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #086a8a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 126, 164, 0.3);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(10, 126, 164, 0.25);
+}
+
+.submitButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.submitButton:focus {
+  outline: none;
+}
+
+/* Button Text */
+.buttonText {
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(0, 8, 34, 0.08);
+  text-align: center;
+}
+
+.footerText {
+  font-size: 1.45rem;
+  color: #8a95a3;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.getQuoteLink {
+  color: #0388ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  margin-left: 0.4rem;
+}
+
+.getQuoteLink:hover {
+  color: #0052a3;
+  text-decoration: underline;
+}
+
+/* Responsive - Tablet */
+@media screen and (max-width: 900px) {
+  .card {
+    padding: 3.5rem 4rem;
+    max-width: 540px;
+  }
+
+  .inputField {
+    height: 5.8rem;
+    padding: 1.6rem 2rem;
+  }
+
+  .inputPrefix {
+    padding: 1.6rem 1.3rem 1.6rem 1.6rem;
+    font-size: 1.45rem;
+  }
+
+  .inputWithPrefix {
+    padding: 1.6rem 2rem;
+    margin-left: 1.2rem;
+  }
+
+  .input {
+    font-size: 1.45rem;
+  }
+
+  .submitButton {
+    height: 5.3rem;
+    font-size: 1.45rem;
+  }
+
+  .formGroup {
+    gap: 1.8rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media screen and (max-width: 600px) {
+  .cardWrapper {
+    padding: 0;
+  }
+
+  .card {
+    padding: 3rem 2.5rem;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(0, 8, 34, 0.05);
+  }
+
+  .form {
+    gap: 2rem;
+  }
+
+  .formGroup {
+    gap: 1.6rem;
+  }
+
+  .inputField {
+    height: 5.5rem;
+    padding: 1.4rem 1.8rem;
+    border-radius: 8px;
+  }
+
+  .inputPrefix {
+    padding: 1.4rem 1.2rem 1.4rem 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .inputWithPrefix {
+    padding: 1.4rem 1.8rem;
+    margin-left: 1.1rem;
+  }
+
+  .input {
+    font-size: 1.5rem;
+  }
+
+  .submitButton {
+    height: 5.2rem;
+    font-size: 1.4rem;
+    padding: 1.4rem 2rem;
+    border-radius: 8px;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media screen and (max-width: 400px) {
+  .card {
+    padding: 2.5rem 2rem;
+  }
+
+  .inputField {
+    height: 5.2rem;
+    padding: 1.3rem 1.6rem;
+  }
+
+  .inputPrefix {
+    padding: 1.3rem 1.1rem 1.3rem 1.4rem;
+    font-size: 1.4rem;
+  }
+
+  .inputWithPrefix {
+    padding: 1.3rem 1.6rem;
+    margin-left: 1rem;
+  }
+
+  .input {
+    font-size: 1.4rem;
+  }
+
+  .submitButton {
+    height: 5rem;
+    font-size: 1.35rem;
+  }
+}

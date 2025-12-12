@@ -1,130 +1,229 @@
 .container {
   display: flex;
-  width: 31.8rem;
-  padding: 1.8rem 1.2rem;
+  width: 280px;
+  padding: 1.5rem 1rem;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.8rem;
   flex-shrink: 0;
-  border-radius: 1.8rem;
-  background: #fff;
-  margin-top: 5.8rem;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: top;
+  background: #ffffff;
+  border: 1px solid #e8edf6;
+  border-radius: 16px;
+  margin: 1.6rem 0 1.6rem 1.6rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+  height: auto;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0, 61, 122, 0.08);
+}
+
+.container:hover {
+  border-color: #d4e0f0;
+  box-shadow: 0 4px 16px rgba(0, 61, 122, 0.12);
 }
 
 .sidebarOpen {
-  max-height: 600px;
+  max-height: 100vh;
   opacity: 1;
-  transform: scaleY(1);
+  transform: translateX(0);
 }
 
 .sidebarClosed {
   max-height: 0;
   opacity: 0;
-  transform: scaleY(0);
-  padding: 0 1.2rem;
-  margin-top: 0;
+  transform: translateX(-100%);
+  padding: 0 1rem;
 }
 
 .sidebarDesktop {
   max-height: none;
   opacity: 1;
-  transform: scaleY(1);
+  transform: translateX(0);
   transition: none;
+  height: auto;
 }
 
 .sidebarDesktop .navItem {
   opacity: 1;
   animation: none;
 }
+
 .navItems {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
   width: 100%;
-  gap: 0.3rem;
+  gap: 0;
+  padding: 0;
 }
+
 .navItem {
-  border: none;
-  background: none;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 1rem 1.4rem;
-  gap: 1.4rem;
-  color: rgba(0, 8, 34, 0.44);
-  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  gap: 0.9rem;
+  color: #7a8ba0;
+  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 124%;
-  border-radius: 8px;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  width: 100%;
-  transition: all 0.3s ease-in-out;
+  line-height: 140%;
+  letter-spacing: 0.2px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
   opacity: 0;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  text-decoration: none;
+}
+
+.navItem:hover {
+  background: #f8fafc;
+  color: #5a7a9e;
+}
+
+.navItem:hover .icon {
+  color: #5a7a9e;
 }
 
 .sidebarOpen .navItem {
-  animation: slideInUp 0.4s ease-out forwards;
+  animation: slideInLeft 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
+
 .activeNavItem {
-  background: #049cff;
-  color: #fff;
+  color: #ffffff;
+  background: #0052a3;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 52, 122, 0.2);
+  padding: 1.1rem 1.4rem;
 }
+
+.activeNavItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.3);
+  transform: translateY(-1px);
+}
+
 .activeNavItem .icon {
-  color: #fff;
+  color: #ffffff;
 }
-.navItem:hover {
-  background: #049cff;
-  color: #fff;
+
+.navItemIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
 }
-.navItem:hover .icon {
-  color: #fff;
+
+.navItemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex-grow: 1;
 }
+
+.navItemLabel {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 140%;
+  color: inherit;
+}
+
 .icon {
-  width: 2.4rem;
-  height: 2.5rem;
-  color: #00082270;
-  transition: all 0.3s ease-in-out;
+  width: 20px;
+  height: 20px;
+  color: #b0b8c8;
+  transition: color 0.25s ease;
+  flex-shrink: 0;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-@keyframes slideInUp {
+
+@keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
+}
+
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: rgba(0, 61, 122, 0.1);
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 61, 122, 0.2);
 }
 
 @media screen and (max-width: 900px) {
   .container {
-    width: 100%;
-    margin-top: 0;
-    background: white;
+    width: calc(100% - 2rem);
+    height: auto;
+    border: 1px solid #e8edf6;
+    border-radius: 14px;
+    padding: 1rem 0.8rem;
+    background: #ffffff;
+    margin: 0.8rem 1rem;
+    gap: 0.6rem;
+    box-shadow: 0 2px 12px rgba(0, 61, 122, 0.08);
   }
 
   .sidebarClosed {
-    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0.8rem;
+    margin: 0;
   }
 
   .sidebarOpen {
-    margin-top: 0;
+    max-height: 500px;
+    overflow-y: auto;
   }
 
-  /* On mobile, desktop class should behave like mobile */
+  .navItems {
+    padding: 0;
+    gap: 0.4rem;
+  }
+
+  .navItem {
+    padding: 0.9rem 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  .navItem:hover {
+    transform: translateX(2px);
+  }
+
   .sidebarDesktop {
     max-height: 0;
     opacity: 0;
-    transform: scaleY(0);
-    padding: 0 1.2rem;
-    margin-top: 0;
+    transform: translateY(-100%);
+    padding: 0;
+    margin: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    height: auto;
   }
 
   .sidebarDesktop .navItem {

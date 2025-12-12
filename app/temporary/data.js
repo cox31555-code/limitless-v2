@@ -1,39 +1,23 @@
 export const features = [
   {
-    img: {
-      src: "/svg/temp-feature-1.svg",
-      alt: "feature1",
-      width: 52,
-      height: 66,
-    },
+    icon: "clock",
     title: "Hourly Vehicle Insurance",
+    description: "From 1 to 23 hours",
   },
   {
-    img: {
-      src: "/svg/temp-feature-2.svg",
-      alt: "feature1",
-      width: 78,
-      height: 48,
-    },
+    icon: "sun",
     title: "Daily Vehicle Insurance",
+    description: "Up to 30 days",
   },
   {
-    img: {
-      src: "/svg/temp-feature-3.svg",
-      alt: "feature3",
-      width: 62,
-      height: 62,
-    },
+    icon: "calendar-week",
     title: "Weekly Vehicle Insurance",
+    description: "Flexible weekly cover",
   },
   {
-    img: {
-      src: "/svg/temp-feature-4.svg",
-      alt: "feature3",
-      width: 76,
-      height: 54,
-    },
+    icon: "calendar-month",
     title: "Monthly Vehicle Insurance",
+    description: "Up to 31 days maximum",
   },
 ];
 export const benifits = [
@@ -73,14 +57,14 @@ export const temporaryCoverDetails = {
       "Damage to third party property up to £2m",
       "Social domestic and pleasure (SDP), commuting, class 1 business use and carriage of own goods",
       "Fully comprehensive insurance on policies from 1 hour to 28 days",
-      "£150 for a child seat",
+      "Insuring rental cars",
       "Driving in the EU, plus Andorra, Iceland, Liechtenstein, Norway, Serbia and Switzerland. This is third party cover only (which covers damage to the other person's car), and policies must start and end in Britain",
     ],
   },
   unCovered: {
     title: "What's not covered",
     features: [
-      "Insuring rental cars",
+      "£150 for a child seat",
       "Putting the wrong type of fuel in your car",
       "Impounded car release",
       "Driving vehicles under fleet policies",

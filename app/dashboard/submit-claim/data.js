@@ -1,6 +1,6 @@
 export const steps = [
   {
-    title: "Claim",
+    title: "Select Type",
     img: {
       src: "/svg/claims-step-1.svg",
       width: 82,
@@ -8,7 +8,7 @@ export const steps = [
     },
   },
   {
-    title: "Situation",
+    title: "Provide Details",
     img: {
       src: "/svg/claims-step-2.svg",
       width: 68,
@@ -16,7 +16,7 @@ export const steps = [
     },
   },
   {
-    title: "Details",
+    title: "Review Info",
     img: {
       src: "/svg/claims-step-2.svg",
       width: 68,
@@ -24,7 +24,7 @@ export const steps = [
     },
   },
   {
-    title: "Submitted",
+    title: "Confirmation",
     img: {
       src: "/svg/claims-step-3.svg",
       width: 68,

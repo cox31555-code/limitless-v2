@@ -1,13 +1,27 @@
-import React from "react";
-import styles from "./personalDetails.module.css";
-import SelectedItem from "../selectedItem/SelectedItem";
-import CarUsage from "../carUsage/CarUsage";
-import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
-import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
+"use client";
 
-const PersonalDetails = ({ data, carUsage }) => {
+import React, { useState } from "react";
+import styles from "./personalDetails.module.css";
+import CarUsage from "../carUsage/CarUsage";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
+
+const PersonalDetails = ({ data, carUsage, insuranceType, optionalExtras }) => {
+  const [expandedSections, setExpandedSections] = useState({
+    personalInfo: false,
+    location: false,
+    carUsageInfo: false,
+    declarations: false,
+  });
+
+  const [expandedDrivers, setExpandedDrivers] = useState({});
+
   const formatDate = (dateString) => {
-    if (!dateString) return "";
+    if (!dateString) return "N/A";
     const date = new Date(dateString);
     const day = date.getDate().toString().padStart(2, "0");
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -15,91 +29,218 @@ const PersonalDetails = ({ data, carUsage }) => {
     return `${day}/${month}/${year}`;
   };
 
+  const formatBoolValue = (value) => {
+    if (value === null || value === undefined) return "N/A";
+    return value === true ? "Yes" : "No";
+  };
+
+  const toggleSection = (section) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
+  const toggleDriverSection = (driverIndex) => {
+    setExpandedDrivers((prev) => ({
+      ...prev,
+      [driverIndex]: !prev[driverIndex],
+    }));
+  };
+
   return (
-    <ComponentWrapper title="Personal Details" icon={{width: 62, height: 62}}>
-      <div className={styles.content}>
-        <div className={styles.row}>
-          <InputWithData2   
-            item={{
-              label: "First Name",
-              value: data?.firstName || "N/A",
-            }}
-          />
-          <InputWithData2
-            item={{
-              label: "Surname",
-              value: data?.surname || "N/A",
-            }}
-          />{" "}
-          <InputWithData2
-            item={{
-              label: "Date of Birth",
-              value: formatDate(data?.dateOfBirth) || "N/A",
-            }}
-          />
+    <div className={styles.container}>
+      <div className={styles.mainCard}>
+        <div className={styles.cardContent}>
+          <div className={styles.iconWrapper}>
+            <svg
+              className={styles.icon}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <div className={styles.mainInfo}>
+            <h3 className={`${styles.mainTitle} ${plusJakartaSans.className}`}>
+              {data?.firstName} {data?.surname}
+            </h3>
+            <p className={styles.mainDetail}>{data?.email}</p>
+            <p className={styles.mainDetail}>{data?.phone}</p>
+          </div>
         </div>
-        <div className={styles.row}>
-          <InputWithData2
-            item={{
-              label: "Email Address",
-              value: data?.email || "N/A",
-            }}
-          />
-          <InputWithData2
-            item={{
-              label: "Contact Number",
-              value: data?.phone || "N/A",
-            }}
-          />
-        </div>
-        <InputWithData2
-          item={{
-            label: "Post Code",
-            value: data?.postCode || "N/A",
-          }}
-        />
-        <InputWithData2
-          item={{
-            label: "Selected Address",
-            value: data?.address || "N/A",
-          }}
-        />
-        <InputWithData2
-          item={{
-            label: "Employment Status",
-            value: data?.employmentStatus || "N/A",
-          }}
-        />
-        <InputWithData2
-          item={{
-            label: "Occupation",
-            value: data?.occupation || "N/A",
-          }}
-        />
-        <InputWithData2
-          item={{
-            label: "Industry",
-            value: data?.industry || "N/A",
-          }}
-        />
       </div>
-      <div className={styles.selections}>
-        <SelectedItem
-          item={carUsage?.keepingCarDuringDay}
-          title="Where do you keep your car during the day?"
-          description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
-          img="/svg/day.svg"
-        />
-        
-        <SelectedItem
-          item={carUsage?.keepingCarDuringNight}
-          title="Where do you keep your car during the night?"
-          description="You can find the 'acquired vehicle on date in the V5C registration document, also known as the log book."
-          img="/svg/night.svg"
-        />
-      </div>
-      <CarUsage carUsage={carUsage}/>
-    </ComponentWrapper>
+
+
+      {(insuranceType === "Temp" || insuranceType === "Impound") && (
+        <>
+          {carUsage?.additionalDrivers && carUsage?.additionalDrivers.length > 0 && (
+            <div className={styles.driversSection}>
+              {carUsage.additionalDrivers.map((driver, index) => (
+                <div key={index} className={styles.driverMainCard}>
+                  <div className={styles.driverCardContent}>
+                    <div className={styles.driverIconWrapper}>
+                      <svg
+                        className={styles.driverIcon}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                      </svg>
+                    </div>
+                    <div className={styles.driverInfo}>
+                      <h4 className={`${styles.driverName} ${plusJakartaSans.className}`}>
+                        {driver?.firstName} {driver?.surname}
+                      </h4>
+                      <p className={styles.driverDetail}>
+                        Driver {index + 2}
+                      </p>
+                      <p className={styles.driverDetail}>
+                        DOB: {formatDate(driver?.dateOfBirth)}
+                      </p>
+                    </div>
+                  </div>
+                  <div className={styles.driverExpandableSection}>
+                    <button
+                      className={styles.driverExpandButton}
+                      onClick={() => toggleDriverSection(index)}
+                    >
+                      <span className={styles.buttonText}>Additional Details</span>
+                      <svg
+                        className={`${styles.expandIcon} ${expandedDrivers[index] ? styles.expanded : ""}`}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </button>
+                    {expandedDrivers[index] && (
+                      <div className={styles.driverAdditionalContent}>
+                        <div className={styles.detailsGrid}>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Employment Status</span>
+                            <span className={styles.value}>{driver?.employmentStatus || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Occupation</span>
+                            <span className={styles.value}>{driver?.occupation || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Industry</span>
+                            <span className={styles.value}>{driver?.industry || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>License Type</span>
+                            <span className={styles.value}>{driver?.licenseType || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>License Held Since</span>
+                            <span className={styles.value}>{driver?.licenseHeld || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>No Claims Bonus</span>
+                            <span className={styles.value}>{driver?.NCB || "N/A"}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Criminal Convictions</span>
+                            <span className={styles.value}>{formatBoolValue(driver?.criminalConvictions)}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Medical Conditions</span>
+                            <span className={styles.value}>{formatBoolValue(driver?.medicalConditions)}</span>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <span className={styles.label}>Uses Other Vehicles</span>
+                            <span className={styles.value}>{driver?.otherVehicles ? "Yes" : "No"}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+      )}
+
+      {insuranceType === "Annual" && (
+        <>
+
+          {(optionalExtras || carUsage?.criminalConvictions !== undefined || carUsage?.additionalDrivers?.length > 0) && (
+            <div className={styles.expandableSection}>
+              <button
+                className={styles.expandButton}
+                onClick={() => toggleSection("declarations")}
+              >
+                <span className={styles.buttonText}>Declarations & Extras</span>
+                <svg
+                  className={`${styles.expandIcon} ${expandedSections.declarations ? styles.expanded : ""}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              {expandedSections.declarations && (
+                <div className={styles.additionalContent}>
+                  <div className={styles.detailsGrid}>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Criminal Convictions</span>
+                      <span className={styles.value}>{formatBoolValue(carUsage?.criminalConvictions)}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Medical Conditions</span>
+                      <span className={styles.value}>{formatBoolValue(carUsage?.medicalConditions)}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <span className={styles.label}>Insurance Cancelled/Refused</span>
+                      <span className={styles.value}>{formatBoolValue(carUsage?.insuranceCancelledOrClaimRefusedOrPolicyVoided)}</span>
+                    </div>
+                    {optionalExtras && (
+                      <>
+                        <div className={styles.detailItem}>
+                          <span className={styles.label}>Courtesy Car</span>
+                          <span className={styles.value}>{optionalExtras?.courtesyCar ? "Yes" : "No"}</span>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <span className={styles.label}>Breakdown Cover</span>
+                          <span className={styles.value}>{optionalExtras?.breakdownCover ? "Yes" : "No"}</span>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <span className={styles.label}>Foreign Use Cover</span>
+                          <span className={styles.value}>{optionalExtras?.foreignUseCover ? "Yes" : "No"}</span>
+                        </div>
+                      </>
+                    )}
+                    {carUsage?.additionalDrivers && carUsage?.additionalDrivers.length > 0 && (
+                      <div className={styles.detailItem}>
+                        <span className={styles.label}>Additional Drivers</span>
+                        <span className={styles.value}>{carUsage.additionalDrivers.length}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </>
+      )}
+    </div>
   );
 };
 

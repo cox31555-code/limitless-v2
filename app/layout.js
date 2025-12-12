@@ -1,37 +1,42 @@
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "@/ui/layout/header/Header";
 import { Poppins } from "next/font/google";
 import Footer from "@/ui/layout/footer/Footer";
-import { AuthProvider } from "@/contexts/AuthContext";
-import { ToastContainer } from "react-toastify";
+import Providers from "./providers";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
+
+export const metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "manifest",
+        url: "/site.webmanifest",
+      },
+    ],
+  },
+};
+
+export const viewport = "width=device-width, initial-scale=1, viewport-fit=cover";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={poppins.className}>
-        <AuthProvider>
-          <Header />
+        <Providers>
           {children}
           <Footer />
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-          />
-        </AuthProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -1,0 +1,93 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
+.container {
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitle {
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitleText {
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.contentWrapper {
+  composes: stepContentWrapper from '../../../../ui/getQuote/shared.module.css';
+  gap: 1.5rem;
+}
+
+.questionHeader {
+  composes: questionHeader from '../../../../ui/getQuote/shared.module.css';
+  gap: 1.6rem;
+}
+
+.mainQuestion {
+  composes: mainQuestion from '../../../../ui/getQuote/shared.module.css';
+}
+
+.subText {
+  composes: subText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.helpLink {
+  composes: helpLink from '../../../../ui/getQuote/shared.module.css';
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.estimatedInfo {
+  margin: 0;
+}
+
+.estimatedLabel {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.estimatedAmount {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.inputWrapper {
+  max-width: 26rem;
+}
+
+@media (max-width: 768px) {
+  .estimatedLabel {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .estimatedLabel {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  .helpLink {
+    margin-top: 1.6rem;
+  }
+
+  .inputWrapper {
+    max-width: 100%;
+  }
+
+  .inputSection {
+    gap: 2rem;
+  }
+
+  .questionHeader {
+    gap: 1.4rem;
+  }
+}

@@ -1,57 +1,82 @@
 "use client";
 import React from "react";
 import styles from "./sideNavbar.module.css";
-import Link from "next/link";
+import LoadingLink from "@/ui/loadingSpinner/LoadingLink";
 import { usePathname, useRouter } from "next/navigation";
-import { RiHome2Line } from "react-icons/ri";
-import { HiOutlineLogout } from "react-icons/hi";
-import { TiDocumentAdd } from "react-icons/ti";
-import { IoSettingsOutline } from "react-icons/io5";
-import { MdOutlinePolicy } from "react-icons/md";
-import { HiOutlineDocumentText } from "react-icons/hi2";
 import { useAuth } from "@/contexts/AuthContext";
-// import { FaBriefcase } from "react-icons/fa";
-// <FaBriefcase />
+import { useLoading } from "@/contexts/LoadingContext";
 
 const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
   const pathname = usePathname();
   const router = useRouter();
   const { logout } = useAuth();
+  const { showLoading } = useLoading();
   const page = pathname.split("/")[2];
+
+  const DashboardIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <rect x="14" y="14" width="7" height="7" rx="1" />
+    </svg>
+  );
+
+  const PolicyIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="12" y1="13" x2="12" y2="17"></line>
+      <line x1="10" y1="15" x2="14" y2="15"></line>
+    </svg>
+  );
+
+  const DocumentsIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </svg>
+  );
+
+  const ClaimsIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M9 12l2 2 4-4m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+  );
+
+  const LogoutIcon = () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={styles.icon}>
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path>
+    </svg>
+  );
+
   const navItems = [
     {
       label: "Dashboard",
-      icon: <RiHome2Line className={styles.icon} />,
+      icon: <DashboardIcon />,
       href: "/dashboard",
     },
     {
       label: "Manage Policy",
-      icon: <MdOutlinePolicy className={styles.icon} />,
+      icon: <PolicyIcon />,
       href: "/dashboard/policy",
     },
     {
       label: "Documents",
-      icon: <HiOutlineDocumentText className={styles.icon} />,
+      icon: <DocumentsIcon />,
       href: "/dashboard/documents",
     },
     {
-      label: "Manage Claims",
-      icon: <IoSettingsOutline className={styles.icon} />,
+      label: "Claims",
+      icon: <ClaimsIcon />,
       href: "/dashboard/claims",
     },
     {
-      label: "Submit a Claim",
-      icon: <TiDocumentAdd className={styles.icon} />,
-      href: "/dashboard/submit-claim",
-    },
-    {
       label: "Logout",
-      icon: (
-        <HiOutlineLogout style={{ rotate: "180deg" }} className={styles.icon} />
-      ),
-      // href: "/dashboard",
+      icon: <LogoutIcon />,
     },
   ];
+
   return (
     <div
       className={`${styles.container} ${
@@ -71,21 +96,26 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
                   ? styles.activeNavItem
                   : ""
               }`}
-              // href={item.href}
               key={item.label}
               style={{
-                animationDelay: isOpen ? `${(index + 1) * 0.1}s` : "0s",
+                animationDelay: isOpen ? `${(index + 1) * 0.06}s` : "0s",
               }}
               onClick={async () => {
+                showLoading();
                 await logout();
                 router.push("/login");
               }}
+              title="Logout from your account"
             >
-              {item.icon}
-              {item.label}
+              <div className={styles.navItemIconWrapper}>
+                {item.icon}
+              </div>
+              <div className={styles.navItemContent}>
+                <span className={styles.navItemLabel}>{item.label}</span>
+              </div>
             </button>
           ) : (
-            <Link
+            <LoadingLink
               className={`${styles.navItem} ${
                 item.href && page === item.href.split("/")[2]
                   ? styles.activeNavItem
@@ -94,12 +124,17 @@ const SideNavbar = ({ isOpen = false, onToggle, isMobile = false }) => {
               href={item.href}
               key={item.label}
               style={{
-                animationDelay: isOpen ? `${(index + 1) * 0.1}s` : "0s",
+                animationDelay: isOpen ? `${(index + 1) * 0.06}s` : "0s",
               }}
+              title={item.label}
             >
-              {item.icon}
-              {item.label}
-            </Link>
+              <div className={styles.navItemIconWrapper}>
+                {item.icon}
+              </div>
+              <div className={styles.navItemContent}>
+                <span className={styles.navItemLabel}>{item.label}</span>
+              </div>
+            </LoadingLink>
           )
         )}
       </div>

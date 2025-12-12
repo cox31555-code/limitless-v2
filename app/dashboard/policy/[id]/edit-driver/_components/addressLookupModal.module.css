@@ -1,0 +1,549 @@
+.modalOverlay {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 2rem;
+  overflow: hidden;
+  height: calc(100vh - 72px);
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 52, 122, 0.2);
+  width: 100%;
+  max-width: 540px;
+  max-height: calc(100vh - 144px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e3e8ef;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.4rem 2.6rem 2rem;
+  border-bottom: 1px solid #e8ecf0;
+  flex-shrink: 0;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004284;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  color: #64748b;
+}
+
+.modalContent {
+  flex: 1;
+  padding: 2.4rem 2.6rem;
+}
+
+.addressGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.fieldLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #004284;
+  line-height: 1.4;
+}
+
+.foundAddressCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.foundAddressInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.foundAddressTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #004284;
+  line-height: 1.3;
+}
+
+.foundAddressDetails {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #1e293b;
+  line-height: 1.5;
+  font-family: 'Jaldi', sans-serif;
+}
+
+.changeLink {
+  background: none;
+  border: none;
+  color: #0052a3;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  margin-top: 0.6rem;
+  font-family: inherit;
+}
+
+.changeLink:hover {
+  color: #003d7a;
+}
+
+.findAddressBtn {
+  padding: 1.2rem 2rem;
+  background: #1976d2;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 4.8rem;
+}
+
+.findAddressBtn:hover:not(:disabled) {
+  background: #1565c0;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+}
+
+.findAddressBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1.6rem;
+}
+
+.orDivider::before,
+.orDivider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.orDivider span {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.switchBtn {
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.6rem 0;
+  text-decoration: underline;
+  font-family: inherit;
+}
+
+.switchBtn:hover {
+  color: #1565c0;
+}
+
+.modalFooter {
+  display: flex;
+  gap: 1.2rem;
+  padding: 2rem 2.6rem 2.4rem;
+  border-top: 1px solid #e8ecf0;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+.cancelBtn,
+.saveBtn {
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  min-height: 4.8rem;
+}
+
+.cancelBtn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.cancelBtn:hover {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.saveBtn {
+  background: #1976d2;
+  color: #ffffff;
+}
+
+.saveBtn:hover {
+  background: #1565c0;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
+}
+
+@media screen and (max-width: 640px) {
+  .modalOverlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: calc(100vh - 72px);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .modalHeader {
+    padding: 1.8rem 1.6rem 1.4rem;
+  }
+
+  .modalTitle {
+    font-size: 1.7rem;
+  }
+
+  .closeBtn {
+    font-size: 2.2rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .modalContent {
+    padding: 1.6rem 1.6rem;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .addressGroup {
+    gap: 1.6rem;
+  }
+
+  .fieldWrapper {
+    gap: 0.6rem;
+  }
+
+  .fieldLabel {
+    font-size: 1.3rem;
+  }
+
+  .foundAddressCard {
+    padding: 1.6rem;
+    border-radius: 8px;
+  }
+
+  .foundAddressTitle {
+    font-size: 1.3rem;
+  }
+
+  .foundAddressDetails {
+    font-size: 1.2rem;
+  }
+
+  .changeLink {
+    font-size: 1.2rem;
+  }
+
+  .findAddressBtn {
+    font-size: 1.4rem;
+    min-height: 4.8rem;
+    padding: 1.1rem 1.6rem;
+  }
+
+  .orSection {
+    gap: 1.2rem;
+  }
+
+  .orDivider span {
+    font-size: 1.1rem;
+  }
+
+  .switchBtn {
+    font-size: 1.2rem;
+  }
+
+  .modalFooter {
+    padding: 1.4rem 1.6rem 1.8rem;
+    flex-direction: column-reverse;
+    gap: 0.8rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+    font-size: 1.4rem;
+    min-height: 4.8rem;
+    padding: 1.1rem 1.6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    max-height: 75vh;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .modalHeader {
+    padding: 1.6rem 1.4rem 1.2rem;
+  }
+
+  .modalTitle {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  .closeBtn {
+    font-size: 2rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modalContent {
+    padding: 1.4rem 1.4rem;
+  }
+
+  .addressGroup {
+    gap: 1.4rem;
+  }
+
+  .fieldWrapper {
+    gap: 0.5rem;
+  }
+
+  .fieldLabel {
+    font-size: 1.2rem;
+  }
+
+  .foundAddressCard {
+    padding: 1.4rem;
+  }
+
+  .findAddressBtn {
+    font-size: 1.3rem;
+    min-height: 4.6rem;
+  }
+
+  .modalFooter {
+    padding: 1.2rem 1.4rem 1.6rem;
+    gap: 0.6rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    font-size: 1.3rem;
+    min-height: 4.6rem;
+  }
+}
+
+/* Error Modal */
+.errorModal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.3s ease;
+  text-align: center;
+  z-index: 2000;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  background: #fef2f2;
+  border-radius: 50%;
+}
+
+.errorIcon {
+  width: 40px;
+  height: 40px;
+  color: #dc2626;
+}
+
+.errorTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.3;
+}
+
+.errorMessage {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.errorContact {
+  font-size: 1.5rem;
+  color: #475569;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.errorActions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+@media screen and (max-width: 640px) {
+  .errorModal {
+    padding: 2.5rem 2rem;
+  }
+
+  .errorIconWrapper {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+  }
+
+  .errorIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .errorTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .errorMessage {
+    font-size: 1.4rem;
+  }
+
+  .errorContact {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .errorActions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .closeBtn {
+    width: 100%;
+    padding: 1.3rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .closeBtn:hover {
+    background: #e2e8f0;
+    color: #334155;
+  }
+}

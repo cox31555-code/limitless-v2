@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
-import styles from "./coverStart.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import styles from "./coverStart.module.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],

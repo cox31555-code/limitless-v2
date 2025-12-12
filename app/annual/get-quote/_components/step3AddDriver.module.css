@@ -1,0 +1,689 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
+.container {
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitle {
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
+}
+
+.stepTitleText {
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
+}
+
+.form {
+  width: 100%;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  max-width: 180px;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 450px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 1.6rem;
+  }
+
+  .stepTitle {
+    padding-bottom: 26px;
+  }
+
+  .stepTitleText {
+    font-size: var(--font-size-xl);
+  }
+
+  .fieldWrapper {
+    gap: 0.1rem;
+  }
+}
+
+.fieldLabel {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #004284;
+  margin: 0;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-right: 100px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 3.2rem;
+  border-bottom: 2px solid var(--color-border-primary);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.conditionalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2.4rem;
+  margin-top: 2.4rem;
+  border-top: 1px solid #f0f6ff;
+}
+
+.questionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.questionTitle {
+  font-size: 2.05rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.mainQuestion {
+  font-size: 2.05rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.subText {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 0.4rem 0 0 0;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.sectionDescription {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 0;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.noteBox {
+  padding: 1.2rem 1.6rem;
+  background-color: #f0f6ff;
+  border-left: 4px solid var(--color-primary-dark);
+  border-radius: 4px;
+  margin-top: 0.4rem;
+}
+
+.noteText {
+  font-size: 1.3rem;
+  color: #6b7c8f;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.infoBox {
+  padding: 1.2rem 1.6rem;
+  background-color: #e8f4ff;
+  border-radius: 4px;
+  margin-top: 0.8rem;
+}
+
+.infoText {
+  font-size: 1.3rem;
+  color: var(--color-primary-dark);
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+@media (max-width: 640px) {
+  .field {
+    gap: 0.1rem;
+  }
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.radioInput {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 0.2rem;
+}
+
+.radioInput:checked {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.radioInput:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.radioInput:hover:not(:checked) {
+  border-color: var(--color-primary-dark);
+  background-color: #f0f6ff;
+}
+
+.radioLabel {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dropdownWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 450px;
+  margin-top: 0.8rem;
+}
+
+.dateInputsWrapper {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.dateInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 0 1 100px;
+  max-width: 100px;
+}
+
+.dateInputGroup :global(.customInputGroup) {
+  margin: 0;
+}
+
+.dateInputGroup :global(.customInputLabel) {
+  display: none;
+}
+
+.inputLabel {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #004284;
+  margin: 0;
+}
+
+.licenseImageContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.4rem 0 0.8rem 0;
+}
+
+.licenseImage {
+  max-width: 234px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.licenseNumberFields {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0;
+}
+
+.licenseField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+  min-width: 180px;
+}
+
+.licenseFieldLabel {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #004284;
+  margin: 0;
+}
+
+.checkboxWrapper {
+  display: flex;
+  gap: 1rem;
+  margin: 0.4rem 0 0.8rem 0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid #cbd4dd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.checkbox:checked {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 9px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+.checkbox:hover:not(:checked) {
+  border-color: var(--color-primary-dark);
+  background-color: #f0f6ff;
+}
+
+.infoBox {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 0.8rem 0;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.qualificationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.dateFieldGroup {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.dateFieldLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #004284;
+  margin: 0;
+}
+
+.expandableLink {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  text-align: left;
+  transition: color 0.2s ease;
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.expandableLink:hover {
+  color: #003d7a;
+}
+
+.expandableLink:focus {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.expandableIcon {
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+  transform: rotate(0deg);
+}
+
+.expandableIcon.expandedIcon {
+  transform: rotate(90deg);
+}
+
+.expandableContent {
+  font-size: 1.4rem;
+  color: #6b7c8f;
+  margin: 1.2rem 0 0 0;
+  line-height: 1.65;
+  font-weight: 400;
+  padding-left: 1.6rem;
+  border-left: 3px solid var(--color-primary-dark);
+  padding-bottom: 26px;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error {
+  font-size: 1.2rem;
+  color: #d32f2f;
+  margin-top: -0.4rem;
+  font-weight: 500;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--color-border-primary);
+}
+
+
+@media (max-width: 900px) {
+  .contentWrapper {
+    padding-right: 0;
+  }
+
+  .mainQuestion {
+    font-size: 1.8rem;
+  }
+
+  .dropdownWrapper {
+    max-width: 100%;
+  }
+
+  .fieldWrapper {
+    max-width: 100%;
+  }
+
+  .dateInputsWrapper {
+    gap: 0.8rem;
+  }
+
+  .expandableLink {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+  }
+
+  .expandableContent {
+    font-size: 1.3rem;
+    padding-left: 1.4rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+
+  .licenseNumberFields {
+    flex-direction: column;
+  }
+
+  .licenseField {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .stepTitle {
+    margin-bottom: 1.6rem;
+  }
+
+  .stepTitleText {
+    font-size: var(--font-size-xl);
+  }
+
+  .contentWrapper {
+    gap: 2.4rem;
+  }
+
+  .section {
+    gap: 1.2rem;
+    padding-bottom: 2.4rem;
+  }
+
+  .mainQuestion {
+    font-size: var(--font-size-xl);
+  }
+
+  .subText {
+    font-size: var(--font-size-xl);
+  }
+
+  .sectionDescription {
+    font-size: var(--font-size-xl);
+  }
+
+  .infoText {
+    font-size: var(--font-size-xl);
+  }
+
+  .fieldGroup {
+    max-width: 100%;
+  }
+
+  .fieldWrapper {
+    max-width: 100%;
+  }
+
+  .radioGroup {
+    gap: 1rem;
+  }
+
+  .dateInputsWrapper {
+    gap: 1.6rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .dateInputGroup {
+    flex: 1 1 auto;
+    min-width: 80px;
+    max-width: 120px;
+  }
+
+  .dropdownWrapper {
+    max-width: 100%;
+  }
+
+  .licenseNumberFields {
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1.2rem 0;
+  }
+
+  .licenseField {
+    min-width: 100%;
+  }
+
+  .buttonGroup {
+    gap: 0.8rem;
+    margin-top: 2.4rem;
+    padding-top: 1.6rem;
+  }
+
+  .backBtn,
+  .nextBtn {
+    width: 100%;
+    font-size: var(--font-size-xl);
+    height: 5.6rem;
+    padding: 1.4rem 2.6rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .stepTitle {
+    padding-bottom: 26px;
+    margin-bottom: 1.2rem;
+  }
+
+  .stepTitleText {
+    font-size: var(--font-size-xl);
+  }
+
+  .contentWrapper {
+    gap: 2rem;
+  }
+
+  .section {
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .questionTitle {
+    font-size: 2rem;
+  }
+
+  .mainQuestion {
+    font-size: 2rem;
+  }
+
+  .sectionDescription {
+    font-size: var(--font-size-xl);
+  }
+
+  .radioLabel {
+    font-size: var(--font-size-xl);
+  }
+
+  .inputLabel {
+    font-size: var(--font-size-xl);
+  }
+
+  .noteText {
+    font-size: var(--font-size-xl);
+  }
+
+  .infoText {
+    font-size: var(--font-size-xl);
+  }
+
+  .expandableContent {
+    font-size: var(--font-size-xl);
+    padding-left: 1.2rem;
+    margin: 1rem 0 0 0;
+  }
+
+  .buttonGroup {
+    margin-top: 2rem;
+    padding-top: 1.4rem;
+    gap: 0.8rem;
+  }
+
+  .backBtn,
+  .dateInputsWrapper {
+    gap: 1.2rem;
+  }
+
+  .dateInputGroup {
+    flex: 1 1 auto;
+    min-width: 70px;
+    max-width: 100px;
+  }
+}

@@ -1,0 +1,1431 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 2.4rem !important;
+  }
+}
+
+.priceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .priceSection {
+    gap: 24px !important;
+  }
+}
+
+/* Price Card */
+.priceCard {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border: none;
+  border-radius: 15.6px;
+  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
+  padding: 3.25rem 3.25rem;
+}
+
+@media (max-width: 640px) {
+  .priceCard {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.8rem;
+  }
+}
+
+.priceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .priceContent {
+    gap: 0.8rem;
+  }
+}
+
+.priceLabel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.65px;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .priceLabel {
+    font-size: 1.3rem;
+  }
+}
+
+.priceAmount {
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .priceAmount {
+    font-size: 2.4rem;
+  }
+}
+
+.pricePeriod {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  margin-left: 0.5rem;
+}
+
+.priceMeta {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 640px) {
+  .priceMeta {
+    font-size: 1.3rem;
+  }
+}
+
+/* Next Instalment Info */
+.instalmentInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  padding: 1.6rem 2rem;
+  background: #e8f2fb;
+  border-radius: 13px;
+  border: 1px solid #d4e4f7;
+}
+
+@media (max-width: 640px) {
+  .instalmentInfo {
+    padding: 1.2rem 0;
+    gap: 1.7rem;
+    padding-left: 1.2rem;
+  }
+}
+
+.instalmentIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .instalmentIconWrapper {
+    width: 3.1rem;
+    height: 3.1rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.instalmentIcon {
+  width: 28px;
+  height: 28px;
+  color: #5a8fc4;
+}
+
+@media (max-width: 640px) {
+  .instalmentIcon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+}
+
+.instalmentText {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .instalmentText {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+}
+
+/* Payment Breakdown Card */
+.paymentBreakdownCard {
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 15.6px;
+  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
+  padding: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .paymentBreakdownCard {
+    padding: 1.6rem 1.5rem 1.5rem 1.6rem;
+  }
+}
+
+.breakdownTitle {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  letter-spacing: -0.35px;
+}
+
+@media (max-width: 640px) {
+  .breakdownTitle {
+    font-size: 1.6rem;
+  }
+}
+
+.breakdownContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.breakdownItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #f0f4f8;
+}
+
+.breakdownItem:last-child {
+  border-bottom: none;
+}
+
+.breakdownItem.totalRow {
+  border-top: none;
+  border-bottom: none;
+  padding: 0.8rem 0;
+}
+
+.breakdownLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.breakdownAmount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0052a3;
+}
+
+.breakdownItem.totalRow .breakdownAmount {
+  color: #0388ff;
+}
+
+/* Expandable Card */
+.expandableCard {
+  background: #ffffff;
+  border: 1px solid #e0e6f0;
+  border-radius: 15.6px;
+  box-shadow: 0 2.6px 10.4px rgba(0, 61, 122, 0.06);
+  overflow: hidden;
+}
+
+.cardHeader {
+  width: 100%;
+  padding: 2.6rem 2.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.cardHeader:hover {
+  background-color: #f8fafb;
+}
+
+.cardHeader:focus {
+  outline: none;
+}
+
+.cardHeader:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: -3px;
+  background-color: #f0f7ff;
+}
+
+.cardHeader:active {
+  background-color: #e8f2fb;
+}
+
+@media (max-width: 640px) {
+  .cardHeader {
+    font-size: 13.3px;
+  }
+}
+
+.headerContent {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .headerContent {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background: linear-gradient(135deg, #e8f2fb 0%, #dae8f7 100%);
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(0, 82, 163, 0.08);
+}
+
+@media (max-width: 640px) {
+  .iconWrapper {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.cardHeader:hover .iconWrapper {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 82, 163, 0.2);
+}
+
+.cardHeader:hover .icon {
+  color: #ffffff;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #0052a3;
+  transition: color 0.25s ease;
+}
+
+@media (max-width: 640px) {
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  letter-spacing: -0.35px;
+}
+
+@media (max-width: 640px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+.expandIcon {
+  width: 20px;
+  height: 20px;
+  color: #0388ff;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.expandIcon.expanded {
+  transform: rotate(180deg);
+}
+
+.cardHeader:hover .expandIcon {
+  color: #0275dd;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 2.6rem;
+  border-top: 1px solid #e0e6f0;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Details Grid */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.6rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.detailLabel {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.65px;
+}
+
+.detailValue {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0052a3;
+  line-height: 1.5;
+}
+
+.disclaimer {
+  font-size: 1.1rem;
+  color: #7a8fa3;
+  margin: 1.5rem 0 0 0;
+  line-height: 1.6;
+}
+
+/* Car Details */
+.carInfoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+@media (max-width: 640px) {
+  .carInfoBlock {
+    gap: 0.7rem;
+  }
+}
+
+.carTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  letter-spacing: -0.35px;
+}
+
+@media (max-width: 640px) {
+  .carTitle {
+    font-size: 1.5rem;
+  }
+}
+
+.carRegistration {
+  font-size: 1.3rem;
+  color: #7a8fa3;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .carRegistration {
+    font-size: 1.3rem;
+  }
+}
+
+.carMeta {
+  font-size: 1.3rem;
+  color: #999;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .carMeta {
+    font-size: 1.3rem;
+  }
+}
+
+.vehicleSubsection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e0e6f0;
+}
+
+.vehicleSubsection:first-of-type {
+  margin-top: 2.5rem;
+}
+
+.subsectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+@media (max-width: 640px) {
+  .subsectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .subsectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .subsectionTitle {
+    font-size: 1.6rem;
+  }
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.primaryBtn {
+  padding: 1rem 2rem;
+  background: #0052a3;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .primaryBtn {
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
+  }
+}
+
+.primaryBtn:hover {
+  background: #0275dd;
+}
+
+.primaryBtn:focus {
+  outline: none;
+}
+
+.primaryBtn:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: 2px;
+}
+
+.primaryBtn:active {
+  background: #0052a3;
+}
+
+.secondaryBtn {
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #0052a3;
+  border: 1.5px solid #0052a3;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .secondaryBtn {
+    font-size: 1.2rem;
+    padding: 1.2rem 0;
+  }
+}
+
+.secondaryBtn:hover {
+  background: rgba(3, 136, 255, 0.08);
+  border-color: #0275dd;
+  color: #0275dd;
+}
+
+.secondaryBtn:focus {
+  outline: none;
+}
+
+.secondaryBtn:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: 2px;
+}
+
+.secondaryBtn:active {
+  background: rgba(3, 136, 255, 0.12);
+}
+
+/* Excess Section */
+.excessSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.2rem 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.excessTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.excessContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.excessItem {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.excessNote {
+  font-size: 0.85rem;
+  color: #7a8fa3;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.excessGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  padding-top: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.excessItemBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.excessSubtitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.excessValue {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0.2rem 0;
+}
+
+.excessValueNote {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0.4rem 0 0 0;
+  line-height: 1.5;
+}
+
+/* Driver Items */
+.driverItem {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #003366;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.driverRole {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #7a8fa3;
+}
+
+/* Driver Card */
+.driverCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  background: #fff;
+  border: 1px solid #d4e4f7;
+  border-radius: 8px;
+}
+
+.driverName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003366;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.driverActionButtons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+/* Documents */
+.documentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.documentLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 0;
+  color: #0388ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.documentLink:hover {
+  color: #0275dd;
+  border-bottom-color: #0275dd;
+}
+
+.documentLink:focus {
+  outline: none;
+}
+
+.documentLink:focus-visible {
+  outline: 3px solid #0388ff;
+  outline-offset: 2px;
+  background-color: rgba(3, 136, 255, 0.05);
+}
+
+.fileSize {
+  color: #7a8fa3;
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.documentIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Action Buttons Container */
+.actionButtonsContainer {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 0 0 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid #e0e6f0;
+  justify-content: flex-end;
+}
+
+.cancelPolicyBtn {
+  padding: 1.3rem 2.4rem;
+  background: #f0f1f3;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cancelPolicyBtn:hover {
+  background: #e5e7eb;
+}
+
+.makeClaimBtn {
+  padding: 1.3rem 2.4rem;
+  background: #0052a3;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.makeClaimBtn:hover {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .excessGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    gap: 2.4rem;
+  }
+
+  .priceSection {
+    gap: 2.4rem;
+  }
+
+  .priceCard {
+    padding: 1.125rem 1rem;
+  }
+
+  .priceAmount {
+    font-size: 2.6rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1.6rem;
+  }
+
+  .breakdownLabel {
+    font-size: 1.2rem;
+  }
+
+  .breakdownAmount {
+    font-size: 1.3rem;
+  }
+
+  .cardHeader {
+    padding: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardContent {
+    padding: 1.8rem;
+    gap: 2.4rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+  }
+
+  .detailLabel {
+    font-size: 1.225rem;
+  }
+
+  .detailValue {
+    font-size: 1.525rem;
+  }
+
+  .carTitle {
+    font-size: 1.6rem;
+  }
+
+  .carRegistration {
+    font-size: 1.2rem;
+  }
+
+  .carMeta {
+    font-size: 1.2rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .instalmentText {
+    font-size: 1.45rem;
+    line-height: 1.7;
+  }
+
+  .instalmentIconWrapper {
+    width: 3.1rem;
+    height: 3.1rem;
+  }
+
+  .instalmentIcon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .instalmentInfo {
+    gap: 2.4rem;
+    padding: 1.2rem 0;
+  }
+
+  .paymentBreakdownCard {
+    padding: 1.6rem 1.5rem 1.5rem 1.6rem;
+  }
+
+  .breakdownContent {
+    gap: 2.4rem;
+  }
+
+  .excessSection {
+    padding: 1.2rem 0;
+  }
+
+  .excessContent {
+    gap: 2.4rem;
+  }
+
+  .excessGrid {
+    gap: 2.4rem;
+    padding-top: 1.2rem;
+  }
+
+  .driverCard {
+    padding: 1.2rem;
+    gap: 2.4rem;
+  }
+
+  .driverName {
+    font-size: 1.3rem;
+  }
+
+  .documentsList {
+    gap: 2.4rem;
+  }
+
+  .actionButtonsContainer {
+    flex-direction: column-reverse;
+    gap: 0.8rem;
+    padding: 1.2rem 0 0 0;
+    margin-top: 2rem;
+  }
+
+  .makeClaimBtn,
+  .cancelPolicyBtn {
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    gap: 1.5rem;
+  }
+
+  .priceSection {
+    gap: 1.5rem;
+  }
+
+  .priceCard {
+    padding: 2.4rem 2rem;
+  }
+
+  .priceAmount {
+    font-size: 2.6rem;
+  }
+
+  .instalmentInfo {
+    padding: 1.2rem 0;
+    gap: 1.7rem;
+    padding-left: 1.2rem;
+  }
+
+  .instalmentIconWrapper {
+    width: 3.1rem;
+    height: 3.1rem;
+    min-width: 3.1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .instalmentIcon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .instalmentText {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+
+  .paymentBreakdownCard {
+    padding: 1.6rem 1.5rem 1.5rem 1.6rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1.6rem;
+  }
+
+  .breakdownLabel {
+    font-size: 1.2rem;
+  }
+
+  .breakdownAmount {
+    font-size: 1.3rem;
+  }
+
+  .cardHeader {
+    padding: 1.8rem;
+  }
+
+  .headerContent {
+    gap: 1.2rem;
+  }
+
+  .iconWrapper {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 12px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardContent {
+    padding: 1.8rem;
+    gap: 1.8rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+
+  .detailLabel {
+    font-size: 1.225rem;
+  }
+
+  .detailValue {
+    font-size: 1.525rem;
+  }
+
+  .carTitle {
+    font-size: 1.6rem;
+  }
+
+  .actionButtons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: auto;
+    flex: 1;
+  }
+
+  .excessSection {
+    padding: 1.2rem 0;
+  }
+
+  .excessGrid {
+    gap: 1.2rem;
+    padding-top: 1.2rem;
+  }
+
+  .driverCard {
+    padding: 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .driverName {
+    font-size: 1.3rem;
+  }
+
+  .actionButtonsContainer {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .makeClaimBtn,
+  .cancelPolicyBtn {
+    width: auto;
+    flex: 1;
+    padding: 1.1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .driverName {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: 1.2rem;
+  }
+
+  .priceSection {
+    gap: 1.5rem;
+  }
+
+  .priceCard {
+    padding: 1.8rem 1.6rem;
+  }
+
+  .priceAmount {
+    font-size: 2.2rem;
+  }
+
+  .instalmentInfo {
+    padding: 1.2rem 0;
+    gap: 1.7rem;
+    padding-left: 1.2rem;
+  }
+
+  .instalmentIconWrapper {
+    width: 3.1rem;
+    height: 3.1rem;
+    min-width: 3.1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .instalmentIcon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .instalmentText {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+
+  .paymentBreakdownCard {
+    padding: 1.6rem 1.5rem 1.5rem 1.6rem;
+  }
+
+  .breakdownTitle {
+    font-size: 1.6rem;
+  }
+
+  .breakdownItem {
+    padding: 0.8rem 0;
+  }
+
+  .breakdownItem.totalRow {
+    padding: 0.8rem 0;
+  }
+
+  .breakdownLabel {
+    font-size: 1.2rem;
+  }
+
+  .breakdownAmount {
+    font-size: 1.3rem;
+  }
+
+  .cardHeader {
+    padding: 1.4rem;
+  }
+
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 10px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardContent {
+    padding: 1.4rem;
+    gap: 1.4rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .detailLabel {
+    font-size: 1.125rem;
+  }
+
+  .detailValue {
+    font-size: 1.325rem;
+  }
+
+  .carTitle {
+    font-size: 1.4rem;
+  }
+
+  .subsectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+  }
+
+  .excessSection {
+    padding: 1rem 0;
+  }
+
+  .vehicleSubsection {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+
+  .actionButtonsContainer {
+    flex-direction: column-reverse;
+    gap: 0.8rem;
+    padding: 1.2rem 0 0 0;
+    margin-top: 2rem;
+  }
+
+  .makeClaimBtn,
+  .cancelPolicyBtn {
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+  }
+}
+
+/* Cancel Policy Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cancelModal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.3s ease;
+  text-align: center;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cancelIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  background: #fef2f2;
+  border-radius: 50%;
+}
+
+.cancelIcon {
+  width: 40px;
+  height: 40px;
+  color: #dc2626;
+}
+
+.cancelTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.3;
+}
+
+.cancelMessage {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.cancelContact {
+  font-size: 1.5rem;
+  color: #475569;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.cancelActions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.contactBtn,
+.closeBtn {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.contactBtn {
+  background: #0052a3;
+  color: #ffffff;
+}
+
+.contactBtn:hover {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+}
+
+.closeBtn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.closeBtn:hover {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.cancelPolicyBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 640px) {
+  .modalOverlay {
+    padding: 1.5rem;
+  }
+
+  .cancelModal {
+    padding: 2.5rem 2rem;
+  }
+
+  .cancelIconWrapper {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+  }
+
+  .cancelIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .cancelTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cancelMessage {
+    font-size: 1.4rem;
+  }
+
+  .cancelContact {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .cancelActions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contactBtn,
+  .closeBtn {
+    width: 100%;
+    padding: 1.3rem 2rem;
+  }
+}

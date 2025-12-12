@@ -1,27 +1,35 @@
 export const menus = [
   {
-    title: "Product",
+    title: "Our Car Insurance",
     items: [
       {
+        title: "Annual Insurance",
+        link: "/annual",
+      },
+      {
         title: "Temporary Insurance",
-        link: "/temporary/get-quote",
+        link: "/temporary",
       },
       {
         title: "Impound Insurance",
-        link: "/impound/get-quote",
+        link: "/impound",
       },
       {
         title: "Courier Insurance",
-        link: "/coming-soon",
+        link: "/courier",
       },
       {
-        title: "1 Week Insurance",
-        link: "/temporary",
+        title: "New Customers",
+        link: "/annual",
+      },
+      {
+        title: "Existing Customers",
+        link: "/login",
       },
     ],
   },
   {
-    title: "Help",
+    title: "More from us",
     items: [
       {
         title: "FAQs",
@@ -32,29 +40,58 @@ export const menus = [
         link: "/dashboard/submit-claim",
       },
       {
-        title: "Complaints",
-        link: "/complaints",
+        title: "Support Services",
+        link: "/contact",
+      },
+      {
+        title: "Customer Hub",
+        link: "/dashboard",
+      },
+      {
+        title: "Contact Us",
+        link: "/contact",
       },
     ],
   },
   {
-    title: "Company",
+    title: "Other Information",
     items: [
       {
-        title: "About Us",
+        title: "About us",
         link: "/about-us",
+      },
+      {
+        title: "Cookie Policy",
+        link: "/cookies-policy",
       },
       {
         title: "Privacy Policy",
         link: "/privacy-policy",
       },
       {
-        title: "Terms & Conditions",
+        title: "Terms and Conditions",
         link: "/terms-and-conditions",
       },
       {
-        title: "Cookie Policy",
-        link: "/cookies-policy",
+        title: "Complaints",
+        link: "/complaints",
+      },
+    ],
+  },
+  {
+    title: "Contact us",
+    items: [
+      {
+        title: "Get in Touch",
+        link: "/contact",
+      },
+      {
+        title: "Make a Complaint",
+        link: "/complaints",
+      },
+      {
+        title: "Log in to Dashboard",
+        link: "/login",
       },
     ],
   },

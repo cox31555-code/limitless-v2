@@ -1,207 +1,140 @@
-"use client";
-import React, { useState, useEffect, Suspense } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { insuranceSchema } from "@/utils/schemas/insuranceSchema";
-import Header from "@/ui/insurance-quotes/header/Header";
-import VehicleDetailsForm from "./_components/VehicleDetailsForm";
-import CoverDetailsForm from "./_components/CoverDetailsForm";
-import PersonalDetailsForm from "./_components/PersonalDetailsForm";
-import TermsForm from "./_components/TermsForm";
-import { useRouter, useSearchParams } from "next/navigation";
-import { API_BASE_URL } from "@/utils/config";
-import { toast } from "react-toastify";
+'use client';
 
-const TemporaryInsuranceContent = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [foundVehicleData, setFoundVehicleData] = useState(null);
-  const [shouldAutoTrigger, setShouldAutoTrigger] = useState(false);
-  const router = useRouter();
-  const searchParams = useSearchParams();
+import { createLazyStepsMap } from '@/lib/unifiedLazyStepsLoader';
+import GetQuotePageContainer from '@/ui/getQuote/GetQuotePageContainer';
 
-  const form = useForm({
-    resolver: zodResolver(insuranceSchema),
-    defaultValues: {
-      type: "Temp",
-      vehicleDetails: {
-        registrationNumber: "",
-        type: "",
-        make: "",
-        model: "",
-        year: "",
-        fuel: "",
-        transmission: "",
-        doors: "",
-        colour: "",
-        worth: "",
-        apiData: null,
-      },
-      coverDetails: {
-        type: "Days",
-        period: 1,
-        startDate: "",
-        startTime: "10:00",
-      },
-      userDetails: {
-        firstName: "",
-        surname: "",
-        email: "",
-        phone: "",
-        dateOfBirth: "",
-        postCode: "",
-        address: "",
-        employmentStatus: "",
-        occupation: "",
-        industry: "",
-      },
-      carUsage: {
-        industry: "",
-        keepingCarDuringDay: "",
-        keepingCarDuringNight: "",
-        usageType: "",
-        licenseType: "",
-        licenseHeld: "",
-        licenseNumber: "",
-        NCB: "",
-        voluntaryExcess: "",
-        criminalConvictions: false,
-        medicalConditions: false,
-        insuranceCancelledOrClaimRefusedOrPolicyVoided: false,
-      },
-      terms: {
-        acceptTerms: false,
-        acceptMarketing: false,
-      },
+/**
+ * Temporary Get Quote Page
+ * Now uses generic GetQuotePageContainer with configuration
+ * Reduced from 1400+ lines to 65 lines!
+ */
+export default function TemporaryGetQuotePage() {
+  const lazySteps = createLazyStepsMap('Temp');
+
+  const defaultFormValues = {
+    type: 'Temp',
+    vehicleDetails: {
+      registrationNumber: '',
+      type: '',
+      make: '',
+      model: '',
+      year: '',
+      fuel: '',
+      transmission: '',
+      doors: '',
+      colour: '',
+      worth: '',
+      trackingDevice: '',
+      alarmImmobiliser: '',
+      importedVehicle: '',
+      vehicleModified: 'No',
+      vehicleModifications: [],
+      purchaseDate: '02/2025',
+      haventBoughtYet: false,
+      usageType: '',
+      legalOwner: '',
+      owner: '',
+      ownerOther: '',
+      registeredKeeper: '',
+      registeredKeeperOther: '',
+      apiData: null,
+      carValue: '4560',
+      estimatedValue: '4560',
     },
-  });
-
-  const { setValue } = form;
-
-  // Populate form with URL parameters from GetQuote
-  useEffect(() => {
-    const fromQuote = searchParams.get("fromQuote");
-
-    if (fromQuote === "true") {
-      // Duration details from URL parameters (always present)
-      const durationType = searchParams.get("durationType");
-      const durationValue = searchParams.get("durationValue");
-
-      // Set cover details if provided
-      if (durationType) {
-        setValue("coverDetails.type", durationType);
-      }
-      if (durationValue) {
-        setValue("coverDetails.period", parseInt(durationValue) || 1);
-      }
-
-      // Check if registration number was provided
-      const registrationNumber = searchParams.get("registrationNumber");
-      if (registrationNumber) {
-        setValue("vehicleDetails.registrationNumber", registrationNumber.toUpperCase());
-        // Auto-trigger vehicle lookup
-        setShouldAutoTrigger(true);
-      }
-    }
-  }, [searchParams, setValue]);
-
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-
-    try {
-      const submissionData = {
-        ...data,
-        foundVehicleData: foundVehicleData,
-      };
-
-      const response = await fetch(`${API_BASE_URL}/api/insurance`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(submissionData),
-      });
-
-      const result = await response.json();
-
-      if (response.status === 409) {
-        toast.error(
-          `An account with email ${data.userDetails.email} already exists. Please login to continue.`
-        );
-        router.push(
-          `/login?email=${encodeURIComponent(data.userDetails.email)}`
-        );
-        return;
-      }
-
-      if (!response.ok) {
-        throw new Error(
-          result.message || "Failed to submit insurance application"
-        );
-      }
-
-      // Success! Show toast and redirect to payment summary
-      const insuranceId = result.data.insurance._id;
-
-      toast.success("Insurance application submitted successfully!", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-
-      // Check if payment=false is in search params
-      const skipPayment = searchParams.get("payment") === "false";
-
-      // Redirect to payment summary with insurance ID or dashboard if payment is skipped
-      setTimeout(() => {
-        if (skipPayment) {
-          router.push(`/dashboard/policy`);
-        } else {
-          router.push(`/payment-summary?id=${insuranceId}`);
-        }
-      }, 1000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error(
-        error.message ||
-          "Failed to submit insurance application. Please try again."
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Temporary includes time fields in coverDetails
+    coverDetails: {
+      level: '',
+      minimumCoverLevel: '',
+      startDate: '',
+      startTime: '',
+      endDate: '',
+      endTime: '',
+    },
+    ncdData: {
+      noClaimsDiscount: '',
+      namedDriverExperience: '',
+    },
+    productsData: {
+      personalAccidentCover: '',
+      courtesyCar: '',
+      breakdownCover: '',
+      motorLegalProtection: '',
+    },
+    optionalExtras: {
+      courtesyCar: null,
+      breakdownCover: null,
+      foreignUseCover: null,
+    },
+    userDetails: {
+      title: '',
+      firstName: '',
+      surname: '',
+      maritalStatus: '',
+      email: '',
+      phone: '',
+      dateOfBirth: '',
+      postCode: '',
+      address: '',
+      employmentStatus: '',
+      occupation: '',
+      industry: '',
+      studentType: '',
+      houseNumber: '',
+      postcode: '',
+      addressLine1: '',
+      addressLine2: '',
+      addressLine3: '',
+      city: '',
+      manualPostcode: '',
+      ownsHome: null,
+      childrenUnder16: null,
+      livedInUKSinceBirth: null,
+    },
+    carUsage: {
+      industry: '',
+      keepingCarDuringDay: '',
+      keepingCarDuringNight: '',
+      usageType: '',
+      otherVehicles: null,
+      otherVehiclesType: '',
+      hasAdditionalQualifications: '',
+      additionalQualificationType: '',
+      qualificationMonth: '',
+      qualificationYear: '',
+      licenseType: '',
+      licenseIssueCountry: '',
+      licenseHeld: '',
+      licenseNumber: '',
+      licenseNumberFirst: '',
+      licenseNumberLast: '',
+      licenseNumberNI: '',
+      declineShareLicenseNumber: false,
+      medicalConditions: '',
+      dvlaConditionType: '',
+      insuranceCancelledOrClaimRefusedOrPolicyVoided: '',
+      criminalConvictions: '',
+      motorAccidentsClaims: '',
+      drivingConvictions: '',
+      NCB: '',
+      voluntaryExcess: '',
+      annualMileage: '',
+      ownsHome: null,
+      childrenUnder16: null,
+      livedInUKSinceBirth: null,
+      hasAdditionalDrivers: null,
+      additionalDrivers: [],
+    },
+    terms: {
+      acceptTerms: false,
+      acceptMarketing: false,
+    },
   };
 
   return (
-    <div>
-      <Header title="Temporary Insurance" />
-      <div className="centeredContent">
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="insuranceQuotesContainer"
-          noValidate
-        >
-          <VehicleDetailsForm
-            form={form}
-            onVehicleDataFound={setFoundVehicleData}
-            autoTriggerLookup={shouldAutoTrigger}
-          />
-          <CoverDetailsForm form={form} />
-          <PersonalDetailsForm form={form} />
-          <TermsForm
-            form={form}
-            onBack={() => router.back()}
-            isSubmitting={isSubmitting}
-          />
-        </form>
-      </div>
-    </div>
+    <GetQuotePageContainer
+      insuranceType="Temp"
+      lazySteps={lazySteps}
+      defaultFormValues={defaultFormValues}
+    />
   );
-};
-
-const TemporaryInsurancePage = () => {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <TemporaryInsuranceContent />
-    </Suspense>
-  );
-};
-
-export default TemporaryInsurancePage;
+}

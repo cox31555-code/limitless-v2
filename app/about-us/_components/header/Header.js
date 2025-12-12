@@ -6,6 +6,7 @@ import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
 import Feature from "@/ui/feature/Feature";
 import { features } from "./data";
 import { useRouter } from "next/navigation";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -17,6 +18,7 @@ const manrope = Manrope({
 });
 const Header = () => {
   const router = useRouter();
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
   return (
     <div className={styles.headerContainer}>
       <div className="centeredContent">
@@ -48,17 +50,9 @@ const Header = () => {
             </div>
             <button
               className={styles.confirmBtn}
-              onClick={() => {
-                router.push("/temporary-get-quote");
-              }}
+              onClick={() => setIsInsuranceModalOpen(true)}
             >
-              Get a Quote{" "}
-              <Image
-                src="/svg/arrow-right.svg"
-                alt="arrow-right"
-                width={28}
-                height={14}
-              />
+              Get a Quote
             </button>
           </div>
           <div className={styles.imageContainer}>

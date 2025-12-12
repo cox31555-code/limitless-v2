@@ -1,31 +1,56 @@
 .container {
   display: flex;
-  gap: 1.8rem;
+  gap: 1.6rem;
+  flex-direction: column;
 }
 .option {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
   cursor: pointer;
   align-items: flex-start;
-  transition: all 0.3s ease;
-  padding: 2.2rem 3.2rem 2.2rem;
-  border-radius: 12px;
-  background: #ecf0fe;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.8rem 2.2rem;
+  border-radius: 10px;
+  background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
   flex: 1;
 }
+
+.option:hover {
+  background: #fff;
+  border-color: rgba(3, 136, 255, 0.2);
+}
+
+.option.selected {
+  background: #fff;
+  border: 1px solid #0388ff;
+}
+
 .selectionSpan {
   display: flex;
-  min-width: 1.6rem;
-  min-height: 1.6rem;
+  min-width: 1.8rem;
+  min-height: 1.8rem;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #000822;
+  border: 2px solid rgba(3, 136, 255, 0.3);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
+
 .selectedSpan {
-  background: #0388ff;
-  border: 2px solid white;
-  outline: 1px solid #0388ff;
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: inset 0 0 0 4px #0388ff;
 }
+
+.option.selected .selectionSpan {
+  border-color: #0388ff;
+}
+
+.option.selected .selectedSpan {
+  box-shadow: inset 0 0 0 4px #0388ff;
+}
+
 .optionContent {
   display: flex;
   flex-direction: column;
@@ -33,33 +58,149 @@
 }
 .title {
   color: #000822;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.1px;
 }
 .description {
-  color: rgba(0, 8, 34, 0.64);
-  font-size: 1.4rem;
+  color: rgba(0, 8, 34, 0.6);
+  font-size: 1.2rem;
   font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 140%;
+  letter-spacing: 0.1px;
 }
+.optionTitle {
+  font-weight: 500;
+}
+.optionDescription {
+  font-weight: 400;
+}
+
+.option.selected .title,
+.option.selected .description {
+  color: #000822;
+}
+
+.option.selected .title {
+  color: #0388ff;
+}
+
+.hiddenNativeSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
 @media screen and (max-width: 900px) {
   .container {
-    gap: 1.8rem;
+    gap: 1.2rem;
     flex-direction: column;
   }
   .option {
-    padding: 1.7rem 1.2rem 1.4rem 2rem;
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    padding: 1.4rem 1.6rem;
+    flex-direction: column;
+    gap: 1.2rem;
+    min-height: 5.6rem;
+  }
+  .selectionSpan,
+  .selectedSpan {
+    min-width: 1.6rem;
+    min-height: 1.6rem;
+    flex-shrink: 0;
   }
   .optionContent {
-    gap: 0.8rem;
+    gap: 0.6rem;
+    display: flex;
+    flex-direction: column;
   }
-  .title,
+  .title {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
   .description {
     font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .option {
+    min-height: 4.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 1.2rem;
+    flex-direction: column;
+  }
+  .option {
+    padding: 1.4rem 1.6rem;
+    flex-direction: row;
+    gap: 1.2rem;
+    min-height: 4.8rem;
+    border: none;
+    align-items: flex-start;
+  }
+  .selectionSpan,
+  .selectedSpan {
+    min-width: 1.6rem;
+    min-height: 1.6rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  .optionContent {
+    gap: 0.6rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .description {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .option {
+    padding: 1.3rem 1.5rem;
+    flex-direction: row;
+    gap: 1rem;
+    min-height: 5.2rem;
+    border: none;
+    align-items: flex-start;
+  }
+  .selectionSpan,
+  .selectedSpan {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  .optionContent {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .description {
+    font-size: 1.6rem;
+    font-weight: 400;
   }
 }

@@ -1,148 +1,261 @@
 .container {
-  padding: 11.6rem 4.4% 5.3rem;
-  margin-bottom: 2.2rem;
+  background: #ffffff;
+  padding: 14.6rem 4.4% 16.2rem;
   display: flex;
   flex-direction: column;
-  background: #f2f5fe;
-}
-.title {
-  color: #000822;
-  font-size: 5.8rem;
-  font-weight: 700;
-  line-height: 100%; /* 58px */
-  text-align: center;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.3rem;
-}
-.title span {
-  color: #0388ff;
-}
-.content {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 2.3rem;
-  margin-top: 5.6rem;
-  margin-bottom: 5.2rem;
-}
-.covered,
-.unCovered {
-  display: flex;
-  flex-direction: column;
-  gap: 5.6rem;
-  padding: 3.7rem 3.2rem 4.9rem;
-  border-radius: 18px;
-  background: #fff;
-  flex: 1;
-}
-.header {
-  display: flex;
-  align-items: center;
-  gap: 3.9rem;
-}
-.coveredTitle,
-.unCoveredTitle {
-  color: #000822;
-  font-size: 2.6rem;
-  font-weight: 700;
-  line-height: 100%; /* 28px */
-}
-.features {
-  display: flex;
-  flex-direction: column;
-}
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 3.2rem;
-  padding: 1.6rem 0;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.24);
-}
-.feature:first-child {
-  padding-top: 0;
-}
-.feature:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-.featureText {
-  color: rgba(0, 8, 34, 0.7);
-  font-weight: 400;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
-  font-size: 1.3rem;
+  gap: 5rem;
 }
 
-.footer {
-  display: inline-flex;
-  padding: 3.5rem 0 4.2rem 0;
-  align-items: flex-start;
-  gap: 62px;
-  border-top: 1px solid rgba(0, 8, 34, 0.24);
+.headerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.description {
-  color: #4c5264;
-  font-size: 1.2rem;
+
+.title {
+  color: #000822;
+  text-align: center;
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 110%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.title span {
+  color: #049CFF;
+}
+
+.subtitle {
+  color: #5a6b7d;
+  text-align: center;
+  font-size: 1.7rem;
   font-weight: 400;
-  line-height: 114%; /* 18.24px */
-  letter-spacing: 0.64px;
+  line-height: 160%;
+  margin: 0;
+  max-width: 750px;
 }
-@media screen and (max-width: 900px) {
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding: 3.6rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 8, 34, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.iconWrapper {
+  width: 8.9rem;
+  height: 9.5rem;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.iconWrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cardTitle {
+  color: #000822;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 130%;
+  margin: 0;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  border-radius: 12px;
+  background: rgba(3, 136, 255, 0.05);
+  border: 1px solid rgba(3, 136, 255, 0.1);
+  position: relative;
+}
+
+
+.checkmarkIcon,
+.crossIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.checkmarkIcon svg,
+.crossIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.itemText {
+  color: #4c5264;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 0;
+  flex: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
   .container {
-    padding: 6.5rem 4.4% 8.1rem;
-    margin-bottom: 0;
+    padding: 7rem 4.4%;
+    gap: 4.4rem;
   }
+
   .title {
-    max-width: 37rem;
-    font-size: 3rem;
-    margin: 0 auto;
+    font-size: 4.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
   }
 
   .content {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2.2rem;
-    margin-top: 2.2rem;
-    margin-bottom: 2.7rem;
+    gap: 3.2rem;
   }
-  .covered,
-  .unCovered {
-    gap: 3.3rem;
-    padding: 2.1rem 1.8rem 1.8rem;
-    width: 100%;
+
+  .card {
+    padding: 3.2rem;
+    gap: 2.8rem;
   }
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3.3rem;
+
+  .iconWrapper {
+    width: 7.8rem;
+    height: 8.4rem;
+    margin-bottom: 0.6rem;
   }
-  .coveredTitle,
-  .unCoveredTitle {
-    font-size: 2.4rem;
+
+  .cardTitle {
+    font-size: 2.2rem;
   }
-  .feature {
+
+  .item {
+    padding: 1.4rem;
+  }
+
+  .itemText {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 5.5rem 4.4%;
+    gap: 3.8rem;
+  }
+
+  .title {
+    font-size: 3.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .card {
+    padding: 2.8rem;
+    gap: 2.4rem;
+  }
+
+  .iconWrapper {
+    width: 7rem;
+    height: 7.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .cardTitle {
+    font-size: 2rem;
+  }
+
+  .item {
+    padding: 1.2rem;
+    gap: 1.4rem;
+  }
+
+  .itemText {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 4rem 4.4%;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 2.6rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .content {
+    gap: 2.4rem;
+  }
+
+  .card {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .iconWrapper {
+    width: 6rem;
+    height: 6.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.8rem;
+  }
+
+  .item {
+    padding: 1rem;
     gap: 1.2rem;
-    padding: 1.2rem 0;
   }
-  .feature img {
-    width: 16px;
-    height: 16px;
-  }
-  .featureText {
-    font-size: 1.4rem;
-  }
-  .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 2.4rem 0 0;
-    gap: 22px;
-  }
-  .description {
-    font-size: 1.4rem;
+
+  .itemText {
+    font-size: 1.2rem;
   }
 }

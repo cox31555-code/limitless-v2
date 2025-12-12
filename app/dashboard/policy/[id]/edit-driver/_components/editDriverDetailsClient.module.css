@@ -1,0 +1,81 @@
+/* Edit Driver Details Client - Uses shared dashboard layout styles */
+/* Hero, breadcrumb, and content wrapper styling is centralized in dashboardLayout.module.css */
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e8ecf0;
+  justify-content: flex-end;
+}
+
+.cancelBtn,
+.saveBtn {
+  padding: 1.3rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.cancelBtn {
+  background: #f0f1f3;
+  color: #333;
+  border: none;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.saveBtn {
+  background: #0052a3;
+  color: #ffffff;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: #003d7a;
+  box-shadow: 0 4px 12px rgba(0, 52, 122, 0.15);
+}
+
+.cancelBtn:disabled,
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 900px) {
+  .actionButtons {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .actionButtons {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .cancelBtn,
+  .saveBtn {
+    width: 100%;
+  }
+}

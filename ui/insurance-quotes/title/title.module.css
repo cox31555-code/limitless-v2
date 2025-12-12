@@ -1,8 +1,45 @@
 .title {
   color: #000822;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  line-height: 124%;
-  letter-spacing: 0.72px;
-  /* margin-bottom: 3.2rem; */
+  line-height: 140%;
+  letter-spacing: 0.3px;
+  margin-bottom: 2.4rem;
+  text-transform: capitalize;
+}
+
+/* Beautiful Section Title Design */
+.sectionTitle {
+  position: relative;
+  color: #000822;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.1px;
+  margin: 0 0 2.2rem 0;
+  text-transform: capitalize;
+  padding-left: 1.6rem;
+  background: linear-gradient(135deg, transparent 0%, transparent 4px, rgba(3, 136, 255, 0.15) 4px, rgba(3, 136, 255, 0.15) 100%);
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #0388ff 0%, #0270cc 100%);
+  border-radius: 2px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 3.2rem;
+  height: 2px;
+  background: linear-gradient(90deg, #0388ff 0%, rgba(3, 136, 255, 0) 100%);
+  border-radius: 1px;
 }

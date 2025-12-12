@@ -1,0 +1,185 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../ui/getQuote/shared.module.css';
+@import '../../../ui/getQuote/animations.module.css';
+
+/* ============================================================================
+   PAGE-LEVEL LAYOUT COMPONENTS
+   Supports multi-column layout: main content + sidebar navigation
+   All step containers maintain consistent styling and spacing
+   ============================================================================ */
+
+.pageContainer {
+  width: 100%;
+  max-width: 100%;
+  background: var(--color-bg-primary);
+  min-height: calc(100vh - 78px);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Main content wrapper: centered grid with sidebar */
+.contentWrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2.1% 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 8rem;
+  align-items: start;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Main content area: hosts step containers */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  padding-right: 0;
+  max-width: 720px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sticky sidebar for navigation */
+.sidebarArea {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-primary) var(--color-bg-secondary);
+}
+
+.sidebarArea::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebarArea::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 3px;
+}
+
+.sidebarArea::-webkit-scrollbar-thumb {
+  background: var(--color-border-primary);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.sidebarArea::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Step content: each step container with fade-in animation */
+.stepContent {
+  width: 100%;
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .contentWrapper {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 5rem;
+    padding: 0 2% 3.2rem;
+  }
+
+  .mainContent {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    padding: 0 5% 2.4rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .mainContent {
+    padding-right: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sidebarArea {
+    position: relative;
+    top: 0;
+    order: -1;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--color-border-primary);
+    max-height: none;
+    overflow-y: visible;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageContainer {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .contentWrapper {
+    padding: 0;
+    gap: 0;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .mainContent {
+    padding: 0 5%;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sidebarArea {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    order: -1;
+  }
+
+  .stepContent {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 3.2rem 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebarArea {
+    background-color: var(--color-bg-secondary);
+  }
+}

@@ -1,108 +1,751 @@
+@font-face {
+  font-family: "UK Number Plate";
+  src: url("/fonts/UKNumberPlate.ttf") format("truetype");
+  font-display: swap;
+}
+
 .inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 0.8rem;
   width: 100%;
   flex: 1;
+  box-sizing: border-box;
 }
+
+@media (max-width: 640px) {
+  .inputGroup {
+    gap: 0.1rem;
+  }
+}
+
 .label {
   color: #000822;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
 }
+
 .wrapper {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1.6rem;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+.wrapper > button {
+  flex-shrink: 0;
+  width: auto;
+  min-width: 16rem;
+}
+
 .inputContainer.error {
-  border: 1px solid #ef4444;
+  border: 1.5px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.inputContainer.error:focus-within {
+  border: 1.5px solid #ef4444;
+  background: rgba(239, 68, 68, 0.04);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+}
+
+.inputContainer.error:hover {
+  border: 1.5px solid #dc2626;
+  background: rgba(239, 68, 68, 0.04);
 }
 
 .inputContainer {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 0.6rem;
+  align-items: flex-start;
+  gap: 0;
+  padding: 1.2rem 1.6rem;
   width: 100%;
-  border-radius: 1.2rem;
-  background: #ecf0fe;
-  /* height: 6.4rem; */
-  height: 5.73rem;
-}
-.inputSpan {
-  width: 4.4rem;
-  height: 4.4rem;
-  border-radius: 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
   background: #fff;
+  border: 1.5px solid rgba(3, 136, 255, 0.12);
+  height: 5.2rem;
+  justify-content: flex-start;
+  position: relative;
+  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: visible;
+}
+
+.inputContainer:focus-within {
+  border: 1.5px solid #0388ff;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
+}
+
+.inputContainer:hover {
+  border: 1.5px solid rgba(3, 136, 255, 0.3);
+  background: #fff;
+}
+
+.inputContainer:focus-within:hover {
+  border: 1.5px solid #0388ff;
+  box-shadow: 0 0 0 2px rgba(3, 136, 255, 0.1);
+}
+
+/* Registration Input Grey Border */
+.inputContainer:has(.input.reg) {
+  border: 1.5px solid #bcc5cf;
+  height: 6.2rem;
+}
+
+.inputContainer:has(.input.reg):hover {
+  border: 1.5px solid #a8b2bd;
+  background: #ffffff;
+}
+
+.inputContainer:has(.input.reg):focus-within {
+  border: 1.5px solid #7a8a9d;
+  box-shadow: none;
+}
+
+.inputContainer.disabled {
+  background: rgba(3, 136, 255, 0.04);
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  opacity: 0.6;
+}
+
+.inputContainer.disabled:hover,
+.inputContainer.disabled:focus-within {
+  border: 1.5px solid rgba(3, 136, 255, 0.08);
+  background: rgba(3, 136, 255, 0.04);
+  box-shadow: none;
+}
+
+.inputSpan {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6.5rem;
+  border-radius: 10px 0 0 10px;
+  background: #ffffff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #000822;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  gap: 0.4rem;
+  color: #000;
+  flex-shrink: 0;
+  border: none;
+  margin-right: 0;
+  border-right: 1.5px solid #bcc5cf;
+  pointer-events: none;
 }
+
+.ukFlag {
+  width: 3.2rem;
+  height: 2rem;
+  object-fit: contain;
+  border-radius: 2px;
+  display: none;
+}
+
+.gbText {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  color: #30373f;
+  text-transform: uppercase;
+  font-family: "UK Number Plate", monospace;
+}
+
 .input {
   flex: 1;
   border: none;
   outline: none;
-  color: #000822;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: #6b7c8f;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.2px;
   background: transparent;
-  padding: 2.4rem;
+  padding: 0 0.1rem;
   width: 100%;
   height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
+
 .input::placeholder {
-  color: rgba(0, 8, 34, 0.4);
-  font-size: 1.4rem;
+  color: #a8b2bd;
+  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 130%;
+  letter-spacing: 0.2px;
 }
+
+.input:disabled {
+  color: #7a8a9d;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .input.reg {
-  letter-spacing: 0.8px;
-  font-weight: 700;
-  color: black;
-  font-size: 1.8rem;
-}
-.input.reg::placeholder {
-  color: rgba(0, 8, 34, 0.4);
-  font-size: 1.3rem;
+  letter-spacing: 1px;
   font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  color: #6b7c8f;
+  font-size: 2.4rem;
+  font-family: "UK Number Plate", monospace;
+  text-transform: uppercase;
+  padding: 0 1.6rem;
+  padding-left: 8.2rem;
+  font-family: "UK Number Plate", monospace;
 }
+
+.input.reg::placeholder {
+  color: #a8b2bd;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.2px;
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  display: block;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
 @media screen and (max-width: 900px) {
   .inputGroup {
-    gap: 1.4rem;
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
-  .inputSpan {
-    min-width: 4.2rem;
-    min-height: 4.2rem;
-    max-width: 4.2rem;
-    max-height: 4.2rem;
-  }
+
   .label {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0;
   }
+
+  .inputContainer {
+    height: 5.8rem;
+    padding: 1.2rem 1.6rem 1.2rem 0.2rem;
+    border-radius: 10px;
+  }
+
+  .inputSpan {
+    width: 6.5rem;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .input {
+    font-size: 1.6rem;
+    padding-left: 0.5rem;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .input::placeholder {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  .input.reg {
+    font-size: 2.6rem;
+    padding-left: 7.8rem;
+  }
+
+  .input.reg::placeholder {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
   .wrapper {
     flex-direction: column;
     gap: 1.2rem;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .inputGroup {
+    gap: 0.8rem;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
   .inputContainer {
-    gap: 1.2rem;
+    height: 6rem;
+    padding: 1.2rem 1.6rem 1.2rem 0.2rem;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .inputSpan {
+    width: 6.5rem;
+    border-radius: 10px 0 0 10px;
   }
 
   .input {
+    font-size: 1.6rem;
+    padding-left: 0.5rem;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .input::placeholder {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  .input.reg {
+    font-size: 2.6rem;
+    padding-left: 8rem;
+  }
+
+  .input.reg::placeholder {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .inputContainer {
+    height: 4.8rem;
+  }
+
+  .customInput {
+    min-height: 4.8rem;
+  }
+
+  .formInput {
+    min-height: 4.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .inputGroup {
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .label {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .inputContainer {
+    height: 4.8rem;
+    padding: 1rem 1.4rem 1rem 0.2rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  .inputSpan {
+    width: 6rem;
+  }
+
+  .input {
+    font-size: 1.6rem;
+    padding-left: 0.5rem;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .input::placeholder {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  .input.reg {
+    font-size: 2.6rem;
+    padding-left: 7.6rem;
+  }
+
+  .input.reg::placeholder {
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .inputGroup {
+    gap: 0.8rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .label {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .inputContainer {
+    height: 5.8rem;
+    padding: 1rem 1.2rem 1rem 0.2rem;
+  }
+
+  .inputSpan {
+    width: 5.6rem;
+  }
+
+  .input {
+    font-size: 1.6rem;
+    padding-left: 0.5rem;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .input::placeholder {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .input.reg {
+    font-size: 2.4rem;
+    padding-left: 7rem;
+  }
+}
+
+/* Custom Text Input Styles */
+.customInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .customInputGroup {
+    gap: 0.1rem;
+  }
+}
+
+.customInputLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0052a3;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.customInput {
+  width: 100%;
+  min-height: 5rem;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  background: #ffffff;
+  border: 2px solid #0052a3;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.customInput::placeholder {
+  color: #a8b2bd;
+  font-weight: 400;
+}
+
+.customInput:hover:not(:disabled):not(.customInputError) {
+  border-color: #0052a3;
+  background: #f0f6ff;
+  box-shadow: none;
+}
+
+.customInput:focus {
+  border-color: #003d7a;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.12);
+}
+
+.customInput:disabled,
+.customInputDisabled {
+  opacity: 1;
+  cursor: not-allowed;
+  background: #ffffff;
+  border-color: #cbd4dd;
+  color: #a8b2bd;
+}
+
+.customInputError {
+  border-color: #d32f2f !important;
+}
+
+.customInputError:focus {
+  border-color: #d32f2f !important;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.08) !important;
+}
+
+.customInputError:hover {
+  border-color: #d32f2f !important;
+}
+
+.customInputErrorMsg {
+  font-size: 1.2rem;
+  color: #d32f2f;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+.customInputWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.customInputPrefix {
+  position: absolute;
+  left: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0052a3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.customInputWithPrefix {
+  padding: 1.2rem 1.6rem 1.5rem 3.2rem;
+}
+
+.customInputSuffix {
+  position: absolute;
+  right: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0052a3;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.customInputWithSuffix {
+  padding: 1.2rem 4.4rem 1.5rem 1.6rem;
+}
+
+.customInput[type="number"]::-webkit-outer-spin-button,
+.customInput[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.customInput[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 768px) {
+  .customInput {
+    min-height: 3.125rem;
+    padding: 1rem 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .customInputWithPrefix {
+    padding: 1rem 1.4rem 1.15rem 3rem;
+  }
+
+  .customInputWithSuffix {
+    padding: 1rem 4.2rem 1.15rem 1.4rem;
+  }
+
+  .customInputSuffix {
+    right: 1.4rem;
+  }
+
+  .customInputPrefix {
+    left: 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .customInputLabel {
     font-size: 1.2rem;
-    padding: 1.5rem 1.5rem 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .customInput {
+    min-height: 3.125rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .customInput {
+    min-height: 3.125rem;
+    padding: 1.2rem 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  .customInput::placeholder {
+    font-size: 1.6rem;
+  }
+
+  .customInputWithPrefix {
+    padding: 1.2rem 1.6rem 1.2rem 3.6rem;
+  }
+
+  .customInputWithSuffix {
+    padding: 1.2rem 5rem 1.2rem 1.6rem;
+  }
+
+  .customInputSuffix {
+    right: 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  .customInputPrefix {
+    left: 1.6rem;
+    font-size: 1.6rem;
+  }
+
+  .customInputLabel {
+    font-size: 1.6rem;
+  }
+
+  .customInputErrorMsg {
+    font-size: 1.6rem;
+  }
+}
+
+/* Form Input Styles - Professional Design */
+.formInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .formInputGroup {
+    gap: 0.1rem;
+  }
+}
+
+.formInputLabel {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0052a3;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.formInputWrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.formInput {
+  flex: 1;
+  width: 100%;
+  min-height: 5rem;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  background: #ffffff;
+  border: 2px solid #0052a3;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.formInput::placeholder {
+  color: #a8b2bd;
+  font-weight: 400;
+}
+
+.formInput:hover:not(:disabled):not(.formInputError) {
+  border-color: #003d7a;
+  box-shadow: 0 2px 6px rgba(0, 82, 163, 0.15);
+}
+
+.formInput:focus {
+  border-color: #003d7a;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.12);
+}
+
+.formInput:disabled,
+.formInputDisabled {
+  opacity: 1;
+  cursor: not-allowed;
+  background: #ffffff;
+  border-color: #cbd4dd;
+  color: #a8b2bd;
+}
+
+.formInputError {
+  border-color: #d32f2f !important;
+}
+
+.formInputError:focus {
+  border-color: #d32f2f !important;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.08) !important;
+}
+
+.formInputError:hover {
+  border-color: #d32f2f !important;
+}
+
+.formInputErrorMsg {
+  font-size: 1.2rem;
+  color: #d32f2f;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .formInput {
+    min-height: 4.8rem;
+    padding: 1rem 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .formInputLabel {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .formInput {
+    min-height: 5.6rem;
+    padding: 1.2rem 1.6rem;
+    font-size: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .formInput::placeholder {
+    font-size: 1.6rem;
+  }
+
+  .formInputLabel {
+    font-size: 1.6rem;
+  }
+
+  .formInputErrorMsg {
+    font-size: 1.6rem;
+  }
+
+  .formInputWrapper {
+    gap: 1.2rem;
+    flex-direction: column;
   }
 }

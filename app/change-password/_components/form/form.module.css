@@ -1,175 +1,526 @@
-.container {
+.cardWrapper {
   display: flex;
-  width: 49.73rem;
-  padding: 3.74rem 3.06rem;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  border-radius: 15px;
-  background: #fff;
-  flex: 1;
-  margin: auto;
-}
-.container > * {
+  justify-content: center;
   width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
-.titleContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.36rem;
-  width: 90%;
-  margin: 0 auto;
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 4.8rem 4.2rem;
+  border: 1px solid rgba(3, 136, 255, 0.08);
+  box-sizing: border-box;
+  box-shadow: 0 4px 24px rgba(3, 136, 255, 0.12), 0 2px 8px rgba(0, 8, 34, 0.04);
 }
+
+/* Header Section */
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
 .title {
-  color: #000822;
-  text-align: center;
-  font-size: 2.38rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  line-height: 100%;
-}
-.description {
-  color: rgba(0, 8, 34, 0.54);
-  text-align: center;
-  font-size: 9px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 124%; /* 17.36px */
-  letter-spacing: 0.47px;
-}
-.inputsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.53rem;
-  margin: 2.89rem 0 5.53rem;
-}
-.inputGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 1.36rem;
-}
-
-.label {
   color: #000822;
-  font-size: 1.36rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.54px;
-}
-.inputContainer {
-  display: flex;
-  padding: 0.51rem;
-  align-items: center;
-  gap: 1.36rem;
-  border-radius: 9px;
-  background: #ecf0fe;
-  padding: 0.51rem;
-}
-.iconWrapper {
-  width: 44px;
-  height: 44px;
-  border-radius: 9px;
-  background: linear-gradient(0deg, #fff 0%, #fff 100%),
-    linear-gradient(52deg, rgba(255, 255, 255, 0.3) 18.09%, #0388ff 88.9%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
 }
 
-.input {
+.subtitle {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #6b7c8f;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+.userEmail {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #0388ff;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Messages */
+.errorMessage {
   width: 100%;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 2.8rem;
+}
+
+/* Form Group */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  width: 100%;
+}
+
+/* Field Wrapper */
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+/* Field Label */
+.fieldLabel {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000822;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Input Field Container */
+.inputField {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 2rem 2.6rem;
+  background: #ffffff;
+  border: 1.5px solid rgba(3, 136, 255, 0.1);
+  border-radius: 12px;
+  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: text;
+  height: 7.2rem;
+}
+
+.inputField:focus-within {
+  border-color: #0388ff;
+  background: #f8fbff;
+}
+
+.inputField.fieldError {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.inputField.fieldError:focus-within {
+  border-color: #ef4444;
+}
+
+/* Field Icon */
+.fieldIcon {
+  width: 2.2rem;
+  height: 2.2rem;
+  color: #6b7c8f;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.inputField:focus-within .fieldIcon {
+  color: #0388ff;
+}
+
+.inputField.fieldError .fieldIcon {
+  color: #ef4444;
+}
+
+/* Input Element */
+.input {
+  flex: 1;
   border: none;
   background: transparent;
-  color: rgba(0, 8, 34, 0.4);
-  font-size: 1.19rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.47px;
-}
-.errorMessage {
-  color: #ef4444;
-  font-size: 1.01.7rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.47px;
-  margin-top: 0.34rem;
-  text-align: start;
-}
-.input:focus {
+  color: #000822;
+  font-size: 1.5rem;
+  font-weight: 500;
   outline: none;
+  padding: 0;
+  font-family: inherit;
+  line-height: 1.4;
 }
+
+.input::placeholder {
+  color: rgba(0, 8, 34, 0.4);
+  font-weight: 400;
+}
+
+.input:autofill {
+  -webkit-autofill: none;
+  background-color: transparent !important;
+  color: #000822 !important;
+}
+
+/* Eye Button */
 .eyeButton {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.68rem;
+  padding: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
+  border-radius: 8px;
   transition: background-color 0.2s ease;
+  color: #6b7c8f;
+  flex-shrink: 0;
 }
 
 .eyeButton:hover {
-  background-color: rgba(3, 136, 255, 0.1);
+  background-color: rgba(3, 136, 255, 0.08);
 }
 
-/* .eyeButton:focus {
-  outline: 2px solid #0388ff;
-  outline-offset: 2px;
-} */
+.eyeButton:focus {
+  outline: none;
+}
 
+/* Eye Icon */
 .eyeIcon {
-  width: 1.7rem;
-  height: 1.7rem;
-  color: rgba(0, 8, 34, 0.6);
+  width: 2rem;
+  height: 2rem;
+  color: inherit;
   transition: color 0.2s ease;
 }
 
 .eyeButton:hover .eyeIcon {
   color: #0388ff;
 }
-@media screen and (max-width: 900px) {
-  .container {
-    width: 100%;
-    padding: 4.1rem 2rem 2.3rem;
-  }
-  .title {
-    font-size: 2.4rem;
-  }
-  .inputsContainer {
-    gap: 1.8rem;
-    margin: 3.9rem 0 2rem;
-  }
-  .inputGroup {
-    gap: 1.4rem;
+
+/* Error Text */
+.errorText {
+  font-size: 1.2rem;
+  color: #ef4444;
+  font-weight: 500;
+  padding: 0 0.2rem;
+  line-height: 1.3;
+}
+
+/* Submit Button */
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  width: 100%;
+  height: 7rem;
+  padding: 1.8rem 2.6rem;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+  text-transform: none;
+}
+
+.submitButton:hover:not(:disabled) {
+  opacity: 0.92;
+}
+
+.submitButton:active:not(:disabled) {
+  opacity: 0.88;
+}
+
+.submitButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.submitButton:focus {
+  outline: none;
+}
+
+/* Button Text & Icon */
+.buttonText {
+  font-weight: 700;
+}
+
+.buttonIcon {
+  width: 2.2rem;
+  height: 2.2rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) .buttonIcon {
+  transform: translateX(2px);
+}
+
+/* Footer */
+.footer {
+  padding-top: 3.2rem;
+  border-top: 1px solid rgba(3, 136, 255, 0.06);
+  text-align: center;
+}
+
+.footerText {
+  font-size: 1.45rem;
+  color: #6b7c8f;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.signupLink {
+  color: #0388ff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.28s ease;
+  margin-left: 0.8rem;
+}
+
+.signupLink:hover {
+  color: #0270cc;
+}
+
+/* Responsive - Small Mobile */
+@media screen and (max-width: 640px) {
+  .cardWrapper {
+    padding: 1rem 0.6rem;
   }
 
-  .label {
-    font-size: 1.4rem;
-    line-height: 100%;
-    letter-spacing: 0.56px;
+  .card {
+    padding: 3.2rem 1.4rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
   }
-  .inputContainer {
+
+  .header {
+    margin-bottom: 3.2rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .formGroup {
     gap: 1.8rem;
   }
-  .iconWrapper {
-    width: 42px;
-    height: 42px;
+
+  .fieldLabel {
+    font-size: 1.2rem;
+  }
+
+  .inputField {
+    height: 5.8rem;
+    padding: 1.4rem 1.2rem;
+    gap: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .fieldIcon {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .input {
+    font-size: 1.6rem;
+  }
+
+  .submitButton {
+    height: 5.8rem;
+    font-size: 1.3rem;
+    padding: 1.4rem 1.6rem;
+    margin-top: 1.4rem;
+    border-radius: 10px;
+  }
+
+  .buttonIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .errorMessage {
+    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    padding-top: 1.8rem;
+  }
+
+  .footerText {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive - Tablet */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 4.8rem 4.2rem;
+    border-radius: 14px;
+    max-width: 520px;
+    box-shadow: 0 3px 16px rgba(3, 136, 255, 0.1), 0 1px 4px rgba(0, 8, 34, 0.03);
+  }
+
+  .header {
+    margin-bottom: 4rem;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .subtitle {
     font-size: 1.4rem;
   }
 
-  .eyeButton {
-    padding: 0.8rem;
-    border-radius: 8px;
+  .formGroup {
+    gap: 3rem;
   }
 
-  .eyeIcon {
-    width: 2rem;
-    height: 2rem;
-    color: rgba(0, 8, 34, 0.6);
-    transition: color 0.2s ease;
+  .fieldIcon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .inputField {
+    height: 6.8rem;
+    padding: 1.9rem 2.4rem;
+    gap: 1.4rem;
+  }
+
+  .input {
+    font-size: 1.45rem;
+  }
+
+  .submitButton {
+    height: 6.8rem;
+    font-size: 1.48rem;
+    padding: 1.8rem 2.6rem;
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  .buttonIcon {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media screen and (max-width: 600px) {
+  .cardWrapper {
+    padding: 1rem 0.6rem;
+  }
+
+  .card {
+    padding: 3.2rem 1.4rem;
+    border-radius: 12px;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(3, 136, 255, 0.08), 0 1px 3px rgba(0, 8, 34, 0.02);
+  }
+
+  .header {
+    margin-bottom: 3.2rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .formGroup {
+    gap: 1.8rem;
+  }
+
+  .fieldWrapper {
+    gap: 0.8rem;
+  }
+
+  .fieldLabel {
+    font-size: 1.2rem;
+  }
+
+  .inputField {
+    height: 5.8rem;
+    padding: 1.4rem 1.2rem;
+    gap: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .fieldIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .input {
+    font-size: 1.6rem;
+  }
+
+  .submitButton {
+    height: 5.8rem;
+    font-size: 1.3rem;
+    padding: 1.4rem 1.6rem;
+    gap: 0.8rem;
+    border-radius: 10px;
+    margin-top: 1.4rem;
+  }
+
+  .buttonIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .errorMessage {
+    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .footer {
+    padding-top: 1.8rem;
+  }
+
+  .footerText {
+    font-size: 1.2rem;
   }
 }

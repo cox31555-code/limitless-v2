@@ -1,89 +1,111 @@
-import React from "react";
-import styles from "./policyDetails.module.css";
-import InputWithData2 from "@/ui/inputs/InputWithData2/InputWithData2";
-import { Plus_Jakarta_Sans } from "next/font/google";
+'use client';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+import React from "react";
+import ExpandableSection from "../ExpandableSection";
+import styles from "./policyDetails.module.css";
+
+const ReadOnlyField = ({ label, value }) => (
+  <div className={styles.readOnlyField}>
+    <label className={styles.fieldLabel}>{label}</label>
+    <div className={styles.fieldValue}>{value || "Not provided"}</div>
+  </div>
+);
 
 const PolicyDetails = ({ claimData }) => {
+  const formatDate = (dateString) => {
+    if (!dateString) return "Not provided";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    });
+  };
+
+  const formatClaimReason = (reason) => {
+    if (!reason) return "Not provided";
+    return reason
+      .split("-")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   return (
-    <div className={styles.container}>
-      <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-        Policy Details
-      </h2>
-      <div className={styles.body}>
-        <div className={styles.row}>
-          <InputWithData2
-            item={{
-              label: "Claim Type",
-              value: claimData?.claimreason || "N/A",
-            }}
+    <>
+      {/* Claim Type & Incident Details Section */}
+      <ExpandableSection title="Claim Type & Incident Details" defaultOpen={true}>
+        <div className={styles.body}>
+          <ReadOnlyField
+            label="Claim reason*"
+            value={formatClaimReason(claimData?.claimreason)}
           />
-          <InputWithData2
-            item={{
-              label: "Policyholder Name",
-              value:
-                claimData?.claimDetails?.placeHolderFirstName &&
-                claimData?.claimDetails?.placeHolderLastName
-                  ? `${claimData.claimDetails.placeHolderFirstName} ${claimData.claimDetails.placeHolderLastName}`
-                  : "N/A",
-            }}
+
+          <ReadOnlyField
+            label="Incident description*"
+            value={claimData?.claimDetails?.incidentDescription}
           />
-        </div>
-        <div className={styles.row}>
-          <InputWithData2
-            item={{
-              label: "Claimant's Name",
-              value: claimData?.claimDetails?.claimentsName || "N/A",
-            }}
-          />
-          <InputWithData2
-            item={{
-              label: "Email Address",
-              value: claimData?.claimDetails?.emailAddress || "N/A",
-            }}
+
+          <div className={styles.row}>
+            <ReadOnlyField
+              label="Date of incident (Or estimate the date)*"
+              value={formatDate(claimData?.claimDetails?.incidentDate)}
+            />
+            <ReadOnlyField
+              label="Do you take responsibility for the incident?*"
+              value={claimData?.claimDetails?.responsible ? "Yes" : "No"}
+            />
+          </div>
+
+          <ReadOnlyField
+            label="If not, please give details"
+            value={claimData?.claimDetails?.detailsIfNotResponsible}
           />
         </div>
-        <InputWithData2
-          item={{
-            label: "Incident Description",
-            value: claimData.claimDetails?.incidentDescription || "N/A",
-          }}
-        />
-        <div className={styles.row}>
-          <InputWithData2
-            item={{
-              label: "Date of Incident",
-              value: claimData.claimDetails?.incidentDate || "N/A",
-              type: "date",
-            }}
+      </ExpandableSection>
+
+      {/* Policy & Vehicle Information Section */}
+      <ExpandableSection title="Policy & Vehicle Information">
+        <div className={styles.body}>
+          <ReadOnlyField
+            label="Enter your policy no.*"
+            value={claimData?.policyNumber || "DEV-POL-001"}
           />
-          <InputWithData2
-            item={{
-              label: "Responsible?",
-              value: claimData.claimDetails?.responsible ? "Yes" : "No",
-            }}
-          />
+
+          <div className={styles.row}>
+            <ReadOnlyField
+              label="Policyholder first name*"
+              value={claimData?.claimDetails?.placeHolderFirstName}
+            />
+            <ReadOnlyField
+              label="Policyholder last name*"
+              value={claimData?.claimDetails?.placeHolderLastName}
+            />
+          </div>
+
+          <div className={styles.row}>
+            <ReadOnlyField
+              label="Your name (if you are not the policyholder)"
+              value={claimData?.claimDetails?.claimentsName}
+            />
+            <ReadOnlyField
+              label="Email address"
+              value={claimData?.claimDetails?.emailAddress}
+            />
+          </div>
+
+          <div className={styles.row}>
+            <ReadOnlyField
+              label="Where is the vehicle currently?*"
+              value={claimData?.claimDetails?.vehicleLocation}
+            />
+            <ReadOnlyField
+              label="Is the vehicle drivable?*"
+              value={claimData?.claimDetails?.drivable || "Not provided"}
+            />
+          </div>
         </div>
-        <div className={styles.row}>
-          <InputWithData2
-            item={{
-              label: "If not, give details",
-              value: claimData.claimDetails?.detailsIfNotResponsible || "N/A",
-            }}
-          />
-          <InputWithData2
-            item={{
-              label: "Vehicle location",
-              value: claimData.claimDetails?.vehicleLocation || "N/A",
-            }}
-          />
-        </div>
-      </div>
-    </div>
+      </ExpandableSection>
+    </>
   );
 };
 

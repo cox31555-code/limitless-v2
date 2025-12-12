@@ -1,30 +1,5 @@
-.page {
-  display: flex;
-  flex-direction: column;
-  gap: 2.8rem;
-  margin: 5.8rem 0;
-  width: 100%;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.title {
-  color: #000822;
-  font-size: 4.4rem;
-  font-weight: 700;
-  line-height: 100%;
-}
-@media screen and (max-width: 900px) {
-  .page {
-    margin: 3.8rem 0;
-  }
-  .header {
-    margin: 0 0.6rem;
-  }
-  .title {
-    font-size: 2.4rem;
-  }
-}
+/* Policy Detail Page - Uses shared dashboard layout styles */
+/* Import shared layout styles from dashboardLayout.module.css */
+/* All hero, breadcrumb, and content wrapper styling is now centralized */
+
+/* Override-specific styles for this page can be added here if needed */

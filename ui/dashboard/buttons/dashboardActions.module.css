@@ -1,0 +1,73 @@
+/* Dashboard Actions - Back/Cancel Pattern */
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+.backLink {
+  flex: 1;
+  text-decoration: none;
+}
+
+.backButton {
+  background: #f0f1f3 !important;
+  color: #333 !important;
+  border: none !important;
+  width: 100%;
+  padding: 1.2rem 2.4rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.backButton:hover {
+  background: #e5e7eb !important;
+}
+
+.cancelButton {
+  flex: 1;
+  width: 100%;
+  padding: 1.2rem 2.4rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .actions {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .backLink,
+  .backButton,
+  .cancelButton {
+    width: 100%;
+  }
+
+  .backButton {
+    padding: 1.3rem 2rem !important;
+    font-size: 1.15rem !important;
+  }
+
+  .cancelButton {
+    padding: 1.3rem 2rem !important;
+    font-size: 1.15rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .backButton,
+  .cancelButton {
+    padding: 1.2rem 1.8rem !important;
+    font-size: 1.1rem !important;
+  }
+}

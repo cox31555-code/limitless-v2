@@ -1,31 +1,31 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./form.module.css";
-import Image from "next/image";
-import ConfirmButton from "@/ui/buttons/confirmBtn/ConfirmBtn";
-import { Plus_Jakarta_Sans } from "next/font/google";
-import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { useAuth } from "@/contexts/AuthContext";
-import { loginSchema } from "@/utils/authSchemas";
+import { z } from "zod";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
+const emailSchema = z.object({
+  email: z.string().email("Please enter a valid email address"),
+});
+
+const passwordSchema = z.object({
+  email: z.string().email("Please enter a valid email address"),
+  password: z.string().min(1, "Password is required"),
 });
 
 const Form = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { login, error, isAuthenticated, clearError } = useAuth();
-  const [showPassword, setShowPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false); // Local loading state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [step, setStep] = useState("email");
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  // Refs for input focus
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
 
@@ -34,43 +34,41 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
     setError,
+    watch,
+    reset,
   } = useForm({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(step === "email" ? emailSchema : passwordSchema),
     defaultValues: {
-      email: "",
+      email: enteredEmail,
       password: "",
     },
   });
 
-  // Check for message from URL params
+  const emailValue = watch("email");
+
   useEffect(() => {
     const message = searchParams.get("message");
     if (message) {
-      // Check if it's an error message (e.g., from middleware redirect)
       if (
         message.toLowerCase().includes("login") ||
         message.toLowerCase().includes("error") ||
         message.toLowerCase().includes("authentication")
       ) {
-        // Clear any success message and let the error appear naturally on next attempt
         setSuccessMessage("");
       } else {
         setSuccessMessage(message);
       }
-      // Clear the message from URL after showing it
       const newUrl = window.location.pathname;
       window.history.replaceState(null, "", newUrl);
     }
   }, [searchParams]);
 
-  // Redirect if already authenticated
   useEffect(() => {
     if (isAuthenticated) {
       router.push("/dashboard");
     }
   }, [isAuthenticated, router]);
 
-  // Clear error when component mounts or when user starts typing
   useEffect(() => {
     if (error) {
       const timer = setTimeout(() => {
@@ -80,193 +78,180 @@ const Form = () => {
     }
   }, [error, clearError]);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const onSubmit = async (data) => {
+  const handleEmailSubmit = async (data) => {
     clearError();
     setSuccessMessage("");
-    setIsSubmitting(true); // Start loading
+    setEnteredEmail(data.email);
+    setStep("password");
+    setTimeout(() => {
+      passwordInputRef.current?.focus();
+    }, 100);
+  };
+
+  const handlePasswordSubmit = async (data) => {
+    // In dev mode, bypass login and go straight to dashboard
+    if (process.env.NEXT_PUBLIC_DEV_MODE === "true") {
+      router.push("/dashboard");
+      return;
+    }
+
+    clearError();
+    setSuccessMessage("");
+    setIsSubmitting(true);
 
     try {
       const result = await login(data.email, data.password);
 
       if (result.success) {
-        // Redirect to dashboard after successful login
         router.push("/dashboard");
       } else {
         setError("root", { message: result.message });
-        setIsSubmitting(false); // Stop loading on error
+        setIsSubmitting(false);
       }
     } catch (error) {
       console.error("Login error:", error);
       setError("root", {
         message: "An unexpected error occurred. Please try again.",
       });
-      setIsSubmitting(false); // Stop loading on error
+      setIsSubmitting(false);
     }
   };
+
+  const onSubmit = async (data) => {
+    if (step === "email") {
+      await handleEmailSubmit(data);
+    } else {
+      await handlePasswordSubmit(data);
+    }
+  };
+
+  const handleBackToEmail = () => {
+    setStep("email");
+    setShowPassword(false);
+    clearError();
+    setSuccessMessage("");
+  };
+
   return (
-    <div className={styles.container}>
-      <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-        Welcome back
-      </h2>
+    <div className={styles.cardWrapper}>
+      <div className={styles.card}>
+        {successMessage && (
+          <div className={styles.successMessage}>{successMessage}</div>
+        )}
 
-      {/* Success Message */}
-      {successMessage && (
-        <div
-          className={styles.successMessage}
-          style={{
-            backgroundColor: "#d4edda",
-            color: "#155724",
-            padding: "0.75rem",
-            marginBottom: "1rem",
-            borderRadius: "0.25rem",
-            border: "1px solid #c3e6cb",
-          }}
-        >
-          {successMessage}
-        </div>
-      )}
-
-      {/* Error Message */}
-      {(error || errors.root) && (
-        <div
-          className={styles.errorMessage}
-          style={{
-            backgroundColor: "#f8d7da",
-            color: "#721c24",
-            padding: "0.75rem",
-            marginBottom: "1rem",
-            borderRadius: "0.25rem",
-            border: "1px solid #f5c6cb",
-          }}
-        >
-          {error || errors.root?.message}
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.inputsContainer}>
-          <div className={styles.inputGroup}>
-            <label htmlFor="email" className={styles.label}>
-              Email Address
-            </label>
-            <div
-              className={styles.inputContainer}
-              onClick={() => emailInputRef.current?.focus()}
-            >
-              <div className={styles.iconWrapper}>
-                <Image
-                  src={"/svg/email.svg"}
-                  alt="email"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <input
-                type="email"
-                id="email"
-                placeholder="Enter Email Address"
-                className={`${styles.input} ${
-                  errors.email ? styles.error : ""
-                }`}
-                {...(() => {
-                  const { ref, ...rest } = register("email");
-                  return {
-                    ...rest,
-                    ref: (e) => {
-                      ref(e);
-                      emailInputRef.current = e;
-                    },
-                  };
-                })()}
-              />
-            </div>
-            {errors.email && (
-              <span
-                className={styles.errorMessage}
-                style={{ color: "#dc3545", fontSize: "0.875rem" }}
-              >
-                {errors.email.message}
-              </span>
-            )}
+        {(error || errors.root) && (
+          <div className={styles.errorMessage}>
+            {error || errors.root?.message}
           </div>
-          <div className={styles.inputGroup}>
-            <label htmlFor="password" className={styles.label}>
-              Password
-            </label>
-            <div
-              className={styles.inputContainer}
-              onClick={() => passwordInputRef.current?.focus()}
-            >
-              <div className={styles.iconWrapper}>
-                <Image
-                  src={"/svg/password.svg"}
-                  alt="password"
-                  width={24}
-                  height={24}
-                />
-              </div>
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                placeholder="Enter your password.."
-                className={`${styles.input} ${
-                  errors.password ? styles.error : ""
-                }`}
-                {...(() => {
-                  const { ref, ...rest } = register("password");
-                  return {
-                    ...rest,
-                    ref: (e) => {
-                      ref(e);
-                      passwordInputRef.current = e;
-                    },
-                  };
-                })()}
-              />
-              <button
-                type="button"
-                className={styles.eyeButton}
-                onClick={togglePasswordVisibility}
-                aria-label={showPassword ? "Hide password" : "Show password"}
-              >
-                {showPassword ? (
-                  <IoEyeOffOutline className={styles.eyeIcon} />
-                ) : (
-                  <IoEyeOutline className={styles.eyeIcon} />
+        )}
+
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          {step === "email" ? (
+            <div className={styles.formGroup}>
+              <div className={styles.fieldWrapper}>
+                <div
+                  className={`${styles.inputField} ${errors.email ? styles.fieldError : ""}`}
+                  onClick={() => emailInputRef.current?.focus()}
+                >
+                  <input
+                    type="email"
+                    placeholder="Enter email address"
+                    className={styles.input}
+                    {...(() => {
+                      const { ref, ...rest } = register("email");
+                      return {
+                        ...rest,
+                        ref: (e) => {
+                          ref(e);
+                          emailInputRef.current = e;
+                        },
+                      };
+                    })()}
+                  />
+                </div>
+                {errors.email && (
+                  <span className={styles.errorText}>{errors.email.message}</span>
                 )}
-              </button>
+              </div>
             </div>
-            {errors.password && (
-              <span
-                className={styles.errorMessage}
-                style={{ color: "#dc3545", fontSize: "0.875rem" }}
-              >
-                {errors.password.message}
-              </span>
-            )}
-          </div>
-        </div>
+          ) : (
+            <div className={styles.formGroup}>
+              <div className={styles.emailDisplay}>
+                <div className={styles.emailLabel}>Email</div>
+                <div className={styles.emailValue}>{enteredEmail}</div>
+              </div>
+              <div className={styles.fieldWrapper}>
+                <div
+                  className={`${styles.inputField} ${errors.password ? styles.fieldError : ""}`}
+                  onClick={() => passwordInputRef.current?.focus()}
+                >
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Enter password"
+                    className={styles.input}
+                    {...(() => {
+                      const { ref, ...rest } = register("password");
+                      return {
+                        ...rest,
+                        ref: (e) => {
+                          ref(e);
+                          passwordInputRef.current = e;
+                        },
+                      };
+                    })()}
+                  />
+                  <button
+                    type="button"
+                    className={styles.togglePasswordButton}
+                    onClick={() => setShowPassword(!showPassword)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                  >
+                    {showPassword ? (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    ) : (
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                        <line x1="1" y1="1" x2="23" y2="23" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
+                {errors.password && (
+                  <span className={styles.errorText}>{errors.password.message}</span>
+                )}
+              </div>
+            </div>
+          )}
 
-        <button
-          type="button"
-          className={styles.dontKnow}
-          onClick={() => router.push("/forget-password")}
-        >
-          {`Forgot your password?`}
-        </button>
+          <a href="/forget-password" className={styles.forgotLink}>
+            Forgot your password?
+          </a>
 
-        <ConfirmButton
-          style={{ justifyContent: "center", width: "100%" }}
-          title={isSubmitting ? "Logging in..." : "Login"}
-          onClick={handleSubmit(onSubmit)}
-          disabled={isSubmitting}
-          // className={styles.button}
-        />
-      </form>
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={isSubmitting}
+          >
+            <span className={styles.buttonText}>
+              {isSubmitting ? "Processing..." : step === "email" ? "Continue" : "Login"}
+            </span>
+          </button>
+
+          {step === "password" && (
+            <button
+              type="button"
+              className={styles.backButton}
+              onClick={handleBackToEmail}
+              disabled={isSubmitting}
+            >
+              Back
+            </button>
+          )}
+        </form>
+      </div>
     </div>
   );
 };

@@ -3,18 +3,41 @@ import Image from "next/image";
 import styles from "./autocomplete/autocomplete.module.css";
 
 const FormAutocomplete = forwardRef(
-  ({ label, options, placeholder, error, onChange, value, ...props }, ref) => {
-    const [inputValue, setInputValue] = useState(value || "");
+  ({ label, options, placeholder = "Type or select option", error, onChange, value, disabled, inputStyle, ...props }, ref) => {
+    const [inputValue, setInputValue] = useState(() => {
+      // Handle string or object values
+      if (typeof value === "string") {
+        return value || "";
+      }
+      if (value && typeof value === "object" && value.target && value.target.value) {
+        return value.target.value;
+      }
+      return "";
+    });
     const [isOpen, setIsOpen] = useState(false);
     const [filteredOptions, setFilteredOptions] = useState(options);
+    const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef(null);
     const inputRef = useRef(null);
 
     useEffect(() => {
-      if (value !== undefined) {
-        setInputValue(value);
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 900);
+      };
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    useEffect(() => {
+      if (value !== undefined && value !== null) {
+        // Handle string or object values
+        const stringValue = typeof value === "string" ? value : "";
+        if (stringValue !== inputValue) {
+          setInputValue(stringValue);
+        }
       }
-    }, [value]);
+    }, [value, inputValue]);
 
     useEffect(() => {
       const handleClickOutside = (event) => {
@@ -30,6 +53,8 @@ const FormAutocomplete = forwardRef(
     }, []);
 
     const handleInputChange = (e) => {
+      if (disabled) return;
+
       const value = e.target.value;
       setInputValue(value);
       setIsOpen(true);
@@ -47,6 +72,8 @@ const FormAutocomplete = forwardRef(
     };
 
     const handleOptionClick = (option) => {
+      if (disabled) return;
+
       setInputValue(option);
       setIsOpen(false);
 
@@ -64,14 +91,57 @@ const FormAutocomplete = forwardRef(
     };
 
     const handleInputFocus = () => {
+      if (disabled) return;
       setIsOpen(true);
       setFilteredOptions(options);
+    };
+
+    const handleNativeChange = (e) => {
+      if (disabled) return;
+      setInputValue(e.target.value);
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
+    const handleInputClick = () => {
+      if (isMobile) {
+        // On mobile, trigger the hidden native select
+        const nativeSelect = containerRef.current?.querySelector('select');
+        if (nativeSelect) {
+          nativeSelect.focus();
+          nativeSelect.click();
+        }
+      }
     };
 
     return (
       <div className={styles.container} ref={containerRef}>
         {label && <p className={styles.label}>{label}</p>}
-        <div className={styles.inputWrapper}>
+
+        {/* Hidden native select for mobile */}
+        {isMobile && (
+          <select
+            className={styles.hiddenNativeSelect}
+            value={inputValue || ""}
+            onChange={handleNativeChange}
+            disabled={disabled}
+            style={{ colorScheme: 'dark' }}
+          >
+            <option value="" disabled>
+              {placeholder}
+            </option>
+            {options.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        )}
+        <div
+          className={`${styles.inputWrapper} ${error ? styles.error : ""}`}
+          onClick={handleInputClick}
+        >
           <input
             ref={(e) => {
               inputRef.current = e;
@@ -82,11 +152,14 @@ const FormAutocomplete = forwardRef(
               }
             }}
             type="text"
-            className={`${styles.input} ${error ? styles.error : ""}`}
+            className={styles.input}
             placeholder={placeholder}
             value={inputValue}
             onChange={handleInputChange}
             onFocus={handleInputFocus}
+            disabled={disabled}
+            style={inputStyle}
+            readOnly={isMobile}
             {...props}
           />
           <div className={styles.arrowContainer}>
@@ -95,7 +168,7 @@ const FormAutocomplete = forwardRef(
               alt="arrow-down"
               width={24}
               height={24}
-              className={`${styles.arrowDown} ${isOpen ? styles.arrowUp : ""}`}
+              className={`${styles.arrowDown} ${isOpen && !disabled ? styles.arrowUp : ""}`}
             />
           </div>
         </div>
@@ -112,11 +185,6 @@ const FormAutocomplete = forwardRef(
                 }
                 onClick={() => handleOptionClick(option)}
               >
-                <span
-                  className={`${styles.selectionSpan} ${
-                    inputValue === option ? styles.selectedSpan : ""
-                  }`}
-                />
                 {option}
               </div>
             ))}

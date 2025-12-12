@@ -1,39 +1,46 @@
 .content {
-  margin: 2.5rem 0 1.4rem;
-  padding: 3.4rem 3.6rem;
+  margin: 2.8rem 0 1.8rem;
+  padding: 3.6rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.8rem;
   width: 100%;
-  border-radius: 16px;
-  background: #fff;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fafbff 0%, #f8f9ff 100%);
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
 .terms {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding-bottom: 2.3rem;
-  border-bottom: 1px solid #0008223d;
+  gap: 1.8rem;
+  padding-bottom: 2.8rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
 }
 .termItem {
   color: #000822;
   font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.2px;
 }
 .selection {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding-top: 2.3rem;
+  gap: 1.4rem;
+  padding-top: 2.8rem;
 }
 .customCheckbox {
   display: flex;
   align-items: flex-start;
   cursor: pointer;
   user-select: none;
-  gap: 1.4rem;
+  gap: 1.2rem;
+  padding: 0.8rem 0;
+  transition: all 0.2s ease;
+}
+
+.customCheckbox:hover {
+  opacity: 0.9;
 }
 
 .customCheckbox input {
@@ -41,28 +48,30 @@
 }
 
 .checkboxStyle {
-  width: 16px;
-  height: 16px;
-  border: 1px solid #000822;
-  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(3, 136, 255, 0.4);
+  border-radius: 6px;
   position: relative;
   flex-shrink: 0;
   box-sizing: border-box;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fff;
 }
 
 .customCheckbox input:checked + .checkboxStyle {
-  background-color: #27a2ff;
-  border-color: #27a2ff;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  border-color: #0388ff;
+  box-shadow: 0 4px 12px rgba(3, 136, 255, 0.3);
 }
 
 .customCheckbox input:checked + .checkboxStyle::after {
   content: "";
   position: absolute;
-  top: 1.5px;
+  top: 2px;
   left: 5px;
-  width: 3.5px;
-  height: 8px;
+  width: 4px;
+  height: 9px;
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
@@ -71,36 +80,61 @@
   color: #000822;
   font-size: 1.4rem;
   font-weight: 600;
-  line-height: 124%;
-  letter-spacing: 0.56px;
+  line-height: 140%;
+  letter-spacing: 0.2px;
 }
 .actions {
   width: 100%;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
 }
 .back,
 .next {
   flex: 1;
   display: flex;
-  height: 6.2rem;
+  height: 5.8rem;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
-  border-radius: 12px;
-  background: #0388ff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  gap: 1.2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.25);
   color: #fff;
   font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.2px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(3, 136, 255, 0.3);
+}
+
+.next:active {
+  transform: translateY(0);
+}
+
 .back {
   background: #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.1);
   color: #0388ff;
+  border: 1.5px solid rgba(3, 136, 255, 0.2);
+}
+
+.back:hover {
+  background: #f8fbff;
+  border-color: #0388ff;
+  box-shadow: 0 8px 20px rgba(3, 136, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.back:active {
+  transform: translateY(0);
 }
 @media screen and (max-width: 900px) {
   .content {

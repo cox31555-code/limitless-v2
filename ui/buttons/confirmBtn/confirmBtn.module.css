@@ -1,40 +1,15 @@
+/* ConfirmBtn - minimal overrides, base styles inherited from Button */
+
 .confirmBtn {
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-  display: flex;
-  /* height: 6.4rem; */
-  height: 5.73rem;
-  padding: 1rem 2.4rem;
-  align-items: center;
-  border-radius: 1.2rem;
-  background: #0388ff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 124%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
+  /* Base button styles are inherited from Button component */
+  /* This module is kept for backward compatibility and any ConfirmBtn-specific overrides */
 }
 
-.confirmBtn:hover {
-  background: rgba(3, 137, 255, 0.8);
+.arrowRight {
+  display: inline-flex;
+  transition: none;
+  filter: brightness(0) invert(1);
 }
-@media screen and (max-width: 900px) {
-  .arrowRight {
-    display: none;
-  }
-  .confirmBtn {
-    height: 5.4rem;
-    padding: 0;
-    font-size: 1.4rem;
-    line-height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
+
+/* Secondary variant override - if needed */
+/* Base secondary styling is handled by Button component */

@@ -1,0 +1,1059 @@
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 3.7rem 6.4rem 10rem;
+  background: #fff;
+  position: relative;
+}
+
+.headerWrapper {
+  margin-bottom: 8rem;
+  text-align: center;
+}
+
+.heading {
+  max-width: 652px;
+  margin: 0 auto 1.6rem;
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  color: #000822;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: rgba(0, 8, 34, 0.6);
+  margin: 0;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.highlight {
+  color: #0388ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.8rem;
+  max-width: 130rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem 2.8rem;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0, 8, 34, 0.12), 0 2px 8px rgba(0, 8, 34, 0.08) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  min-height: 460px;
+  border: 1px solid rgba(3, 136, 255, 0);
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #0388ff, #0270cc);
+  border-radius: 20px 20px 0 0;
+}
+
+.card:hover {
+  box-shadow: 0 16px 48px rgba(0, 8, 34, 0.16), 0 4px 12px rgba(0, 8, 34, 0.1) !important;
+  transform: translateY(-6px);
+  border-color: rgba(3, 136, 255, 0.1);
+}
+
+.iconContainer {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 2.4rem;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .subtitle {
+    margin-bottom: 5rem;
+  }
+
+  .grid {
+    gap: 3rem;
+  }
+
+  .card {
+    margin: 0 12px 0 13px;
+    padding: 25px 22px 24px 0;
+  }
+
+  .iconContainer {
+    width: 156px;
+    height: 86px;
+  }
+
+  .iconContainer:has(.carWrapper) {
+    margin-top: -11px;
+    padding-bottom: 29px;
+  }
+
+  .iconContainer:has(.convictedSvg) {
+    margin-bottom: 26px;
+  }
+
+  .featureList {
+    gap: 11px;
+  }
+
+  .convictedSvg {
+    width: 97px !important;
+    height: 101px !important;
+  }
+}
+
+.iconWrapper {
+  position: relative;
+  width: 90px;
+  height: 121px;
+}
+
+.gradientBars {
+  position: absolute;
+  width: 90px;
+  height: 121px;
+  top: 0;
+  left: 0;
+}
+
+.bar {
+  position: absolute;
+  width: 30px;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 60%);
+}
+
+.bar1 {
+  height: 62px;
+  left: 0;
+  top: 41px;
+}
+
+.bar2 {
+  height: 86px;
+  left: 30px;
+  top: 17px;
+}
+
+.bar3 {
+  height: 103px;
+  left: 60px;
+  top: 0;
+}
+
+.lBadge {
+  position: absolute;
+  width: 7.5rem;
+  height: 6rem;
+  left: -1.5rem;
+  top: -1rem;
+}
+
+.motorcycleWrapper {
+  position: relative;
+  width: 96px;
+  height: 101px;
+}
+
+.checkBadge {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 86px;
+  top: 98px;
+}
+
+.carWrapper {
+  position: relative;
+  width: 128px;
+  height: 117px;
+}
+
+.carCheck {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.carVehicle {
+  position: absolute;
+  width: 93px;
+  height: 68px;
+  left: 0;
+  top: 38px;
+}
+
+@media screen and (max-width: 640px) {
+  .carVehicle {
+    width: 6.2rem;
+    height: 5rem;
+    top: 2px;
+  }
+
+  .gradientEffect {
+    width: 28px;
+    height: 46px;
+  }
+}
+
+.gradientEffect {
+  position: absolute;
+  width: 72px;
+  height: 114px;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 136, 255, 0) 0%,
+    rgba(3, 136, 255, 0.48) 100%
+  );
+  left: 45px;
+  top: 3px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  flex: 1;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  color: #000822;
+  margin: 0;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: auto;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.feature svg {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-top: 0;
+}
+
+.feature span {
+  color: rgba(0, 8, 34, 0.70);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 124%;
+  letter-spacing: 0.56px;
+}
+
+.checkIcon {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+  }
+
+  .heading {
+    font-size: 4.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    min-height: 440px;
+    padding: 2.8rem;
+  }
+
+  .iconContainer {
+    height: 140px;
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .featureList {
+    gap: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 8rem 4.4rem;
+  }
+
+  .heading {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 6rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 2.4rem 2.4rem 24px 2.4rem;
+    margin: 0 12px 0 13px;
+  }
+
+  .iconContainer {
+    height: 80px;
+    margin-bottom: 1.6rem;
+  }
+
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .iconContainer:has(.carWrapper) {
+    margin-top: -11px;
+    padding-bottom: 29px;
+  }
+
+  .convictedSvg {
+    width: 97px !important;
+    height: 101px !important;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 70px;
+  }
+
+  .motorcycleWrapper {
+    width: 80px;
+    height: 60px;
+  }
+
+  .carWrapper {
+    width: 70px;
+    height: 60px;
+  }
+
+  .gradientBars {
+    width: 50px;
+    height: 70px;
+  }
+
+  .bar {
+    width: 17px;
+  }
+
+  .bar1 {
+    height: 35px;
+  }
+
+  .bar2 {
+    height: 50px;
+    left: 17px;
+  }
+
+  .bar3 {
+    height: 60px;
+    left: 34px;
+  }
+
+  .lBadge {
+    width: 7.5rem;
+    height: 6rem;
+    left: -1.5rem;
+    top: -1rem;
+  }
+
+  .checkBadge {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carCheck {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carVehicle {
+    width: 55px;
+    height: 40px;
+  }
+
+  .gradientEffect {
+    width: 50px;
+    height: 80px;
+  }
+
+  .content {
+    gap: 1.6rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+
+  .featureList {
+    gap: 1rem;
+  }
+
+  .feature {
+    gap: 1.4rem;
+  }
+
+  .feature svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .feature span {
+    font-size: 0.875rem !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 4rem 1.6rem;
+  }
+
+  .heading {
+    font-size: 3.2rem;
+    line-height: 120%;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 2.8rem;
+  }
+
+  .grid {
+    gap: 0.75rem;
+  }
+
+  .card {
+    padding: 3.9rem 2.3rem 3.2rem 2.2rem;
+    margin: 0 0.4rem;
+    min-height: auto;
+  }
+
+  .iconContainer {
+    height: 1.9rem;
+    margin-bottom: 5.6rem;
+    align-items: flex-start;
+    width: 8rem;
+  }
+
+  .iconWrapper {
+    width: 7rem;
+    height: 8.6rem;
+  }
+
+  .motorcycleWrapper {
+    width: 4.75rem;
+    height: 2.875rem;
+    top: 0.8125rem;
+  }
+
+  .carWrapper {
+    width: 6.656rem;
+    height: 5.438rem;
+    top: -0.179rem;
+  }
+
+  .gradientBars {
+    width: 13.1rem;
+    height: 8.6rem;
+  }
+
+  .bar {
+    width: 2.6rem;
+  }
+
+  .bar1 {
+    height: 1.8125rem;
+    width: 1rem;
+    top: 1.5rem;
+  }
+
+  .bar2 {
+    height: 3.6rem;
+    left: 2.6rem;
+  }
+
+  .bar3 {
+    height: 4.4rem;
+    left: 5.2rem;
+  }
+
+  .lBadge {
+    width: 7.5rem;
+    height: 6rem;
+    top: -1rem;
+    left: -1.5rem;
+  }
+
+  .checkBadge {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .carCheck {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .carVehicle {
+    width: 6.2rem;
+    height: 5rem;
+    top: 2px;
+  }
+
+  .gradientEffect {
+    width: 28px;
+    height: 46px;
+  }
+
+  .content {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  .featureList {
+    gap: 1.6rem;
+    margin-top: auto;
+  }
+
+  .feature {
+    gap: 1.9rem;
+  }
+
+  .feature svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .feature span {
+    font-size: 1.4rem !important;
+    line-height: 130%;
+  }
+
+  .checkIcon {
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 4rem 1.6rem;
+  }
+
+  .heading {
+    font-size: 3.2rem;
+    line-height: 120%;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 2.8rem;
+  }
+
+  .grid {
+    gap: 3rem;
+  }
+
+  .card {
+    padding: 3.9rem 2.3rem 24px 2.2rem;
+    margin: 0 12px 0 13px;
+    min-height: auto;
+  }
+
+  .iconContainer {
+    height: 5rem;
+    margin-bottom: 1.4rem;
+    align-items: center;
+  }
+
+  .iconContainer:has(.carWrapper) {
+    margin-top: -11px;
+    padding-bottom: 29px;
+  }
+
+  .convictedSvg {
+    width: 97px !important;
+    height: 101px !important;
+  }
+
+  .iconWrapper {
+    width: 3rem;
+    height: 4.2rem;
+  }
+
+  .motorcycleWrapper {
+    width: 4.75rem;
+    height: 2.875rem;
+    top: 0.8125rem;
+  }
+
+  .carWrapper {
+    width: 4.75rem;
+    height: 2.875rem;
+    top: 0.8125rem;
+  }
+
+  .gradientBars {
+    width: 3rem;
+    height: 4.2rem;
+  }
+
+  .bar {
+    width: 1rem;
+  }
+
+  .bar1 {
+    height: 1.8125rem;
+    width: 1rem;
+    top: 1.5rem;
+  }
+
+  .bar2 {
+    height: 3.4rem;
+    left: 1rem;
+  }
+
+  .bar3 {
+    height: 4.2rem;
+    left: 2rem;
+  }
+
+  .lBadge {
+    width: 7.5rem;
+    height: 6rem;
+    left: -1.5rem;
+    top: -1rem;
+  }
+
+  .checkBadge {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .carCheck {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .carVehicle {
+    width: 6.2rem;
+    height: 5rem;
+    top: 2px;
+  }
+
+  .gradientEffect {
+    width: 28px;
+    height: 46px;
+  }
+
+  .content {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  .featureList {
+    gap: 1.6rem;
+  }
+
+  .feature {
+    gap: 1.9rem;
+  }
+
+  .feature svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  .feature span {
+    font-size: 1.4rem !important;
+    line-height: 130%;
+  }
+
+  .checkIcon {
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 3.2rem 1.4rem;
+  }
+
+  .heading {
+    font-size: 3.2rem;
+    line-height: 120%;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 2.4rem;
+  }
+
+  .grid {
+    gap: 3rem;
+  }
+
+  .card {
+    padding: 3.9rem 2.3rem 24px 2.2rem;
+    margin: 0 12px 0 13px;
+    min-height: auto;
+  }
+
+  .iconContainer {
+    height: 4.6rem;
+    margin-bottom: 1.2rem;
+    align-items: center;
+  }
+
+  .iconContainer:has(.carWrapper) {
+    margin-top: -11px;
+    padding-bottom: 29px;
+  }
+
+  .convictedSvg {
+    width: 97px !important;
+    height: 101px !important;
+  }
+
+  .iconWrapper {
+    width: 2.8rem;
+    height: 3.8rem;
+  }
+
+  .motorcycleWrapper {
+    width: 4.75rem;
+    height: 2.875rem;
+    top: 0.8125rem;
+  }
+
+  .carWrapper {
+    width: 4.75rem;
+    height: 2.875rem;
+    top: 0.8125rem;
+  }
+
+  .gradientBars {
+    width: 2.8rem;
+    height: 3.8rem;
+  }
+
+  .bar {
+    width: 0.9rem;
+  }
+
+  .bar1 {
+    height: 1.8125rem;
+    width: 1rem;
+    top: 1.5rem;
+  }
+
+  .bar2 {
+    height: 3rem;
+    left: 0.9rem;
+  }
+
+  .bar3 {
+    height: 3.8rem;
+    left: 1.8rem;
+  }
+
+  .lBadge {
+    width: 7.5rem;
+    height: 6rem;
+    left: -1.5rem;
+    top: -1rem;
+  }
+
+  .checkBadge {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .carCheck {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .carVehicle {
+    width: 6.2rem;
+    height: 5rem;
+    top: 2px;
+  }
+
+  .gradientEffect {
+    width: 28px;
+    height: 46px;
+  }
+
+  .content {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  .featureList {
+    gap: 1.6rem;
+  }
+
+  .feature {
+    gap: 1.9rem;
+  }
+
+  .feature svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .feature span {
+    font-size: 1.4rem !important;
+    line-height: 130%;
+  }
+
+  .checkIcon {
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 3.2rem 1.2rem;
+  }
+
+  .heading {
+    font-size: 3.2rem;
+    line-height: 120%;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 2.2rem;
+  }
+
+  .grid {
+    gap: 3rem;
+  }
+
+  .card {
+    padding: 3.9rem 2.3rem 24px 2.2rem;
+    margin: 0 12px 0 13px;
+    min-height: auto;
+  }
+
+  .iconContainer {
+    height: 4.4rem;
+    margin-bottom: 1.2rem;
+    align-items: center;
+  }
+
+  .iconContainer:has(.carWrapper) {
+    margin-top: -11px;
+    padding-bottom: 29px;
+  }
+
+  .convictedSvg {
+    width: 97px !important;
+    height: 101px !important;
+  }
+
+  .iconWrapper {
+    width: 2.6rem;
+    height: 3.6rem;
+  }
+
+  .motorcycleWrapper {
+    width: 4.75rem;
+    height: 2.875rem;
+    top: 0.8125rem;
+  }
+
+  .carWrapper {
+    width: 4.75rem;
+    height: 2.875rem;
+    top: 0.8125rem;
+  }
+
+  .gradientBars {
+    width: 2.6rem;
+    height: 3.6rem;
+  }
+
+  .bar {
+    width: 0.8rem;
+  }
+
+  .bar1 {
+    height: 1.8125rem;
+    width: 1rem;
+    top: 1.5rem;
+  }
+
+  .bar2 {
+    height: 2.8rem;
+    left: 0.8rem;
+  }
+
+  .bar3 {
+    height: 3.6rem;
+    left: 1.6rem;
+  }
+
+  .lBadge {
+    width: 7.5rem;
+    height: 6rem;
+    left: -1.5rem;
+    top: -1rem;
+  }
+
+  .checkBadge {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .carCheck {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .carVehicle {
+    width: 6.2rem;
+    height: 5rem;
+    top: 2px;
+  }
+
+  .gradientEffect {
+    width: 28px;
+    height: 46px;
+  }
+
+  .content {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  .featureList {
+    gap: 1.6rem;
+  }
+
+  .feature {
+    gap: 1.9rem;
+  }
+
+  .feature svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .feature span {
+    font-size: 1.4rem !important;
+    line-height: 125%;
+  }
+
+  .checkIcon {
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+  }
+}

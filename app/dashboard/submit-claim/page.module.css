@@ -1,63 +1,259 @@
 .page {
-  margin: 6rem 0 11.5rem;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 0;
+  padding: 0;
+  max-width: 100%;
+  margin: -1.5625rem 0 1.75rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Loading Container */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: none;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 0;
+  margin-bottom: 6.5rem;
+  padding: 7.8rem calc(50vw - 50%) 7.8rem;
 }
-.page > div {
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroBackground {
+  position: absolute;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 399px;
+  opacity: 0.3;
+}
+
+.heroBackgroundImage {
   width: 100%;
+  height: 100%;
 }
-.claims {
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  gap: 3.9rem;
+}
+
+.greetingArea {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6rem;
-  margin-top: 7.5rem;
+  gap: 1.04rem;
 }
-.claimsTitle {
-  color: #000822;
-  font-size: 4.4rem;
+
+.greetingTitle {
+  font-size: 3.9rem;
   font-weight: 700;
-  line-height: 100%;
+  color: #ffffff;
+  margin: 0;
+  line-height: 110%;
+  letter-spacing: -0.65px;
 }
-.claimsContainer {
+
+.greetingSubtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+}
+
+
+/* Content Wrapper */
+.contentWrapper {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 55px 5% 1.6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
-.fullWidthContainer{
+
+/* Page Header */
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.pageTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0052a3;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: -0.5px;
+}
+
+.pageSubtitle {
+  font-size: 1.35rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+/* Claims Grid */
+.claimsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
   width: 100%;
 }
-.fullWidthContainer > form{
+
+.fullWidthContainer {
   width: 100%;
 }
+
+.fullWidthContainer > form {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .heroSection {
+    padding: 7rem calc(50vw - 50%) 7rem;
+  }
+
+  .greetingTitle {
+    font-size: 3.5rem;
+  }
+
+  .pageTitle {
+    font-size: 2.6rem;
+  }
+
+  .pageSubtitle {
+    font-size: 1.3rem;
+  }
+
+  .claimsGrid {
+    gap: 1.6rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
-  .page {
-    margin: 3.8rem 0 3.9rem;
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 3.5rem calc(50vw - 50%);
+    gap: 2rem;
+  }
+
+  .heroBackground {
+    display: none;
+  }
+
+  .heroContent {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    margin-left: 0;
+  }
+
+  .greetingArea {
+    align-items: center;
     width: 100%;
   }
-  .claims {
-    gap: 2.5rem;
-    margin-top: 4.8rem;
+
+  .greetingTitle {
+    font-size: 2.8rem;
   }
-  .claimsTitle {
-    font-size: 2.4rem;
+
+  .greetingSubtitle {
+    font-size: 1.25rem;
   }
-  .claimsContainer {
-    gap: 2.4rem;
-    flex-direction: column;
+
+  .contentWrapper {
+    padding: 0 5%;
+    gap: 2rem;
   }
-  /* .claimsContainer :first-child .img {
-    width: 63px;
-    height: 60px;
+
+  .pageTitle {
+    font-size: 2.3rem;
   }
-  .claimsContainer :nth-child(2).img {
-    width: 69px;
-    height: 67px;
-  } */
+
+  .pageSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .claimsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heroSection {
+    padding: 2.5rem calc(50vw - 50%);
+    gap: 1.5rem;
+  }
+
+  .greetingTitle {
+    font-size: 2.3rem;
+  }
+
+  .greetingSubtitle {
+    font-size: 1.15rem;
+  }
+
+  .contentWrapper {
+    padding: 0 4%;
+    gap: 1.5rem;
+  }
+
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .pageSubtitle {
+    font-size: 1.15rem;
+  }
+
+  .claimsGrid {
+    gap: 1.6rem;
+  }
 }

@@ -1,0 +1,43 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main body - angular, sporty shape -->
+  <path d="M16 32L20 20C21 16 26 14 32 14C38 14 43 16 44 20L48 32C49 35 48 42 46 46H18C16 42 15 35 16 32Z" fill="#0388ff"/>
+  
+  <!-- Hood - angled aggressive windshield -->
+  <polygon points="21,20 28,16 36,16 43,20" fill="#e8f2ff" opacity="0.5"/>
+  
+  <!-- Windshield - angular design -->
+  <polygon points="23,20 26,15 38,15 41,20" fill="#e8f2ff" opacity="0.6" stroke="#0388ff" stroke-width="0.5"/>
+  
+  <!-- Left headlight - angular -->
+  <polygon points="18,28 21,25 23,28 21,30" fill="#ffd700" opacity="0.7"/>
+  <polygon points="18,28 21,25 23,28 21,30" fill="none" stroke="#0388ff" stroke-width="1"/>
+  
+  <!-- Right headlight - angular -->
+  <polygon points="41,28 44,25 46,28 44,30" fill="#ffd700" opacity="0.7"/>
+  <polygon points="41,28 44,25 46,28 44,30" fill="none" stroke="#0388ff" stroke-width="1"/>
+  
+  <!-- Front bumper - aggressive lines -->
+  <line x1="19" y1="35" x2="29" y2="35" stroke="#0388ff" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="35" y1="35" x2="45" y2="35" stroke="#0388ff" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Speed lines - abstract sporty element -->
+  <line x1="14" y1="30" x2="12" y2="30" stroke="#0388ff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="15" y1="35" x2="12" y2="35" stroke="#0388ff" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <line x1="16" y1="40" x2="12" y2="40" stroke="#0388ff" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+  
+  <!-- Right speed lines -->
+  <line x1="50" y1="30" x2="52" y2="30" stroke="#0388ff" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  <line x1="49" y1="35" x2="52" y2="35" stroke="#0388ff" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+  <line x1="48" y1="40" x2="52" y2="40" stroke="#0388ff" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+  
+  <!-- Left tire - minimal abstract circle -->
+  <circle cx="22" cy="48" r="4.5" fill="none" stroke="#0388ff" stroke-width="2.5"/>
+  <circle cx="22" cy="48" r="2" fill="#0388ff" opacity="0.3"/>
+  
+  <!-- Right tire - minimal abstract circle -->
+  <circle cx="42" cy="48" r="4.5" fill="none" stroke="#0388ff" stroke-width="2.5"/>
+  <circle cx="42" cy="48" r="2" fill="#0388ff" opacity="0.3"/>
+  
+  <!-- Bottom accent line - modern asymmetrical design -->
+  <path d="M18 46C20 48 24 50 32 50C40 50 44 48 46 46" stroke="#0388ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>

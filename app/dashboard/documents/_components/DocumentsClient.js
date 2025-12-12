@@ -1,16 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
 import styles from "../page.module.css";
-import Table from "./table/Table";
-import Booklets from "./booklets/Booklets";
 import Dropdown from "./dropdown/Dropdown";
-import DownloadButton from "./DownloadButton";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import PolicyDocumentsSection from "./PolicyDocumentsSection";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
+// Lazy load heavy sections
+const Booklets = dynamic(() => import("./booklets/Booklets"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const NcdInfoSection = dynamic(() => import("./NcdInfoSection"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const ReceiveDocumentsSection = dynamic(() => import("./ReceiveDocumentsSection"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const DownloadedDocumentsInfo = dynamic(() => import("./DownloadedDocumentsInfo"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
+});
+
+const OlderDocuments = dynamic(() => import("./OlderDocuments"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>,
+  ssr: false,
 });
 
 export default function DocumentsClient({ insurances }) {
@@ -27,80 +46,66 @@ export default function DocumentsClient({ insurances }) {
     (ins) => ins._id === selectedInsuranceId
   );
 
-  // Format data for table - 3 documents per insurance
-  const tableData = selectedInsurance
-    ? [
-        {
-          document: "Certificate of Motor Insurance",
-          documentNumber: new Date(
-            selectedInsurance.createdAt
-          ).toLocaleDateString("en-GB"),
-          documentType: (
-            <DownloadButton
-              insuranceId={selectedInsurance._id}
-              pdfType="certificate"
-              label="Download"
-            />
-          ),
-        },
-        {
-          document: "Policy Schedule",
-          documentNumber: new Date(
-            selectedInsurance.createdAt
-          ).toLocaleDateString("en-GB"),
-          documentType: (
-            <DownloadButton
-              insuranceId={selectedInsurance._id}
-              pdfType="product-info"
-              label="Download"
-            />
-          ),
-        },
-        {
-          document: "Statement of Fact",
-          documentNumber: new Date(
-            selectedInsurance.createdAt
-          ).toLocaleDateString("en-GB"),
-          documentType: (
-            <DownloadButton
-              insuranceId={selectedInsurance._id}
-              pdfType="statement"
-              label="Download"
-            />
-          ),
-        },
-      ]
-    : [];
-
   return (
-    <div className={styles.page}>
-      <div className={styles.top}>
-        <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Your Policy documents
-        </h3>
-        <Dropdown
-          insurances={insurances}
-          selectedInsuranceId={selectedInsuranceId}
-          onInsuranceChange={handleInsuranceChange}
-        />
-      </div>
-
-      {tableData.length > 0 ? (
-        <Table
-          title="Policy documents"
-          columns={["Policy Number", "Document number", "Document type"]}
-          data={tableData}
-        />
-      ) : (
-        <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
-          <p>No insurance policies found.</p>
-          <p style={{ fontSize: "14px", marginTop: "8px" }}>
-            Please complete your insurance application to view your documents.
-          </p>
+    <div className={styles.contentWrapper}>
+      <section className={styles.policiesSection}>
+        <div className={styles.sectionHeaderWrapper}>
+          <div className={styles.policyContainer}>
+            <label className={styles.policyLabel}>Selected Policy</label>
+            <div className={styles.dropdownWrapper}>
+              <Dropdown
+                insurances={insurances}
+                selectedInsuranceId={selectedInsuranceId}
+                onInsuranceChange={handleInsuranceChange}
+              />
+            </div>
+          </div>
+          <h2 className={styles.documentsTitle}>Your Motor Insurance Documents</h2>
         </div>
-      )}
 
-      <Booklets />
+        {selectedInsurance ? (
+          <div className={styles.sectionsContainer}>
+            <PolicyDocumentsSection selectedInsurance={selectedInsurance} />
+          </div>
+        ) : (
+          <div style={{ padding: "40px", textAlign: "center", color: "#6b7280" }}>
+            <p>No insurance policies found.</p>
+            <p style={{ fontSize: "14px", marginTop: "8px" }}>
+              Please complete your insurance application to view your documents.
+            </p>
+          </div>
+        )}
+      </section>
+
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <Booklets />
+        </section>
+      </Suspense>
+
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <NcdInfoSection />
+        </section>
+      </Suspense>
+
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <ReceiveDocumentsSection />
+        </section>
+      </Suspense>
+
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <DownloadedDocumentsInfo />
+        </section>
+      </Suspense>
+
+      <Suspense fallback={<div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading...</div>}>
+        <section>
+          <OlderDocuments />
+        </section>
+      </Suspense>
     </div>
   );
 }

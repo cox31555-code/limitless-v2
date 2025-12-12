@@ -2,9 +2,8 @@
 import React from "react";
 import ComponentWrapper from "@/ui/insurance-quotes/componentWrapper/ComponentWrapper";
 import styles from "./components.module.css";
-import ActionBtns from "@/ui/insurance-quotes/actionBtns/ActionBtns";
 
-const TermsForm = ({ form, onBack, isSubmitting }) => {
+const TermsForm = ({ form }) => {
   const {
     register,
     formState: { errors },
@@ -60,12 +59,6 @@ const TermsForm = ({ form, onBack, isSubmitting }) => {
           </label>
         </div>
       </div>
-      <ActionBtns
-        onBack={onBack}
-        nextLabel="Submit"
-        nextType="submit"
-        isSubmitting={isSubmitting}
-      />
     </ComponentWrapper>
   );
 };

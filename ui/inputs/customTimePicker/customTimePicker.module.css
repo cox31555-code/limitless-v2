@@ -1,0 +1,277 @@
+.timePicker {
+  background: #1a1f2e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0;
+  width: 100%;
+  max-width: 24rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  z-index: 99999;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.15s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.timePicker.slideUp {
+  animation: slideUp 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header {
+  padding: 1.2rem 1.4rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.timeColumns {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0.8rem 0.6rem;
+  min-height: 22rem;
+  max-height: 32vh;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.columnHeader {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.2rem;
+}
+
+.scrollContainer {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-height: 24rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.timeOption {
+  padding: 0.8rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.timeOption:hover {
+  background: rgba(3, 136, 255, 0.08);
+  color: #ffffff;
+}
+
+.timeOptionSelected {
+  background: #0388ff;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.timeOptionSelected:hover {
+  background: #0270cc;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.3rem;
+  margin-top: 2.8rem;
+  flex-shrink: 0;
+}
+
+.footer {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.4rem 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nowButton {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nowButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.okButton {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background: #0388ff;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.okButton:hover {
+  background: #0270cc;
+}
+
+.okButton:active {
+  transform: scale(0.98);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .timePicker {
+    max-width: min(90vw, 26rem);
+    width: 90vw;
+  }
+
+  .timeColumns {
+    min-height: 20rem;
+  }
+
+  .scrollContainer {
+    max-height: 22rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timePicker {
+    max-width: min(92vw, 24rem);
+    width: 92vw;
+  }
+
+  .header {
+    padding: 1rem 1.2rem 0.8rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .timeColumns {
+    padding: 0.8rem 0.5rem;
+    min-height: 18rem;
+  }
+
+  .columnHeader {
+    font-size: 1.6rem;
+  }
+
+  .timeOption {
+    padding: 1.2rem 0.8rem;
+    font-size: 1.6rem;
+  }
+
+  .scrollContainer {
+    max-height: 20rem;
+  }
+
+  .footer {
+    padding: 1rem 1.2rem;
+  }
+
+  .nowButton,
+  .okButton {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.6rem;
+    min-height: 5.6rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .timePicker {
+    max-width: min(95vw, 22rem);
+    width: 95vw;
+  }
+
+  .timeColumns {
+    min-height: 16rem;
+  }
+
+  .timeOption {
+    padding: 0.8rem 0.4rem;
+    font-size: 1.6rem;
+  }
+
+  .scrollContainer {
+    max-height: 18rem;
+  }
+}

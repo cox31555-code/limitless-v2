@@ -1,0 +1,35 @@
+/* Plus Jakarta Sans font - applied globally to all dashboard content */
+:where([class*="plus_jakarta_sans"]) {
+  font-family: var(--font-plus-jakarta-sans);
+}
+
+/* Override global body padding-top for dashboard pages on mobile */
+@media (max-width: 900px) {
+  body {
+    padding-top: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 0 !important;
+  }
+}
+
+/* Main element margin adjustment - matches header height of 72px */
+.dashboard-main {
+  margin-top: 72px;
+}
+
+/* Ensure consistent margin on all breakpoints */
+@media (max-width: 900px) {
+  .dashboard-main {
+    margin-top: 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-main {
+    margin-top: 72px;
+  }
+}

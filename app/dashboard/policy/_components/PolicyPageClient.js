@@ -1,121 +1,135 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Table from "./table/Table";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import DashboardHero from "@/ui/dashboard/DashboardHero";
+import Breadcrumb from "@/ui/dashboard/breadcrumb/Breadcrumb";
+import styles from "./policyPageClient.module.css";
+import { useInsuranceModal } from "@/contexts/InsuranceModalContext";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 const PolicyPageClient = ({
   activePolicies,
   expiredPolicies,
-  styles,
-  plusJakartaSans,
+  pageStyles,
 }) => {
-  const router = useRouter();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const { setIsInsuranceModalOpen } = useInsuranceModal();
+  const [activeTab, setActiveTab] = useState("active");
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const handleOptionClick = (path) => {
-    setIsDropdownOpen(false);
-    router.push(path);
+  const handleCreatePolicy = () => {
+    setIsInsuranceModalOpen(true);
   };
 
+  const totalExpired = expiredPolicies?.length || 0;
+  const totalActive = activePolicies?.length || 0;
+
   return (
-    <>
-      <div className={styles.header}>
-        <h2 className={`${styles.title} ${plusJakartaSans.className}`}>
-          Your Policy
-        </h2>
-        <div style={{ position: "relative" }} ref={dropdownRef}>
+    <div className={styles.container} suppressHydrationWarning>
+      <DashboardHero
+        title="Manage your policies"
+        subtitle="Review, update and manage all your insurance policies in one secure place"
+      />
+
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb items={[
+        { label: "Dashboard" },
+        { label: "Manage Policy" }
+      ]} />
+
+      {/* Content Wrapper */}
+      <div className={styles.contentWrapper}>
+        {/* Header with Create Button */}
+        <div className={styles.contentHeader}>
+          <div className={styles.contentHeaderText}>
+            <h2 className={styles.contentTitle}>Your Policies</h2>
+            <p className={styles.contentSubtitle}>Manage and review all your insurance policies</p>
+          </div>
           <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className={styles.button}
+            onClick={handleCreatePolicy}
+            className={styles.createButton}
           >
-            <Image src="/svg/plus.svg" alt="plus" width={24} height={24} />
+            <svg className={styles.plusIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
             <span>Create a new policy</span>
-            {/* <Image
-              src="/svg/arrow-down-2.svg"
-              alt="dropdown"
-              width={20}
-              height={20}
-              style={{
-                transform: isDropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
-                transition: "transform 0.2s ease",
-              }}
-            /> */}
           </button>
-          {isDropdownOpen && (
-            <div className={styles.dropdown}>
-              <div
-                className={styles.dropdownOption}
-                onClick={() =>
-                  handleOptionClick("/impound/get-quote?payment=false")
-                }
-              >
-                <span>Impound Insurance</span>
-              </div>
-              <div
-                className={styles.dropdownOption}
-                onClick={() =>
-                  handleOptionClick("/temporary/get-quote?payment=false")
-                }
-              >
-                <span>Temporary Insurance</span>
-              </div>
+        </div>
+
+        {/* Tabs Navigation */}
+        <div className={styles.tabsContainer}>
+          <button
+            className={`${styles.tab} ${activeTab === "active" ? styles.tabActive : ""}`}
+            onClick={() => setActiveTab("active")}
+          >
+            <span className={styles.tabNumber}>01</span>
+            <span className={styles.tabLabel}>Active Policies</span>
+            <span className={styles.tabBadge}>{totalActive}</span>
+          </button>
+          <button
+            className={`${styles.tab} ${activeTab === "expired" ? styles.tabActive : ""}`}
+            onClick={() => setActiveTab("expired")}
+          >
+            <span className={styles.tabNumber}>02</span>
+            <span className={styles.tabLabel}>Expired Policies</span>
+            <span className={styles.tabBadge}>{totalExpired}</span>
+          </button>
+        </div>
+
+        {/* Active Policies Tab Content */}
+        {activeTab === "active" && activePolicies && activePolicies.length > 0 && (
+          <section className={styles.policiesSection}>
+            <div className={styles.sectionHeaderWrapper}>
+              <div className={styles.sectionHeader} />
+              <p className={styles.sectionDescription}>
+                Your policies are currently active and providing coverage
+              </p>
             </div>
-          )}
-        </div>
+            <Table
+              title="Active Policies"
+              tableType="active"
+              columns={[
+                "Policy Number",
+                "Remaining",
+                "Name",
+                "Vehicle Reg",
+                "Details",
+              ]}
+              data={activePolicies}
+              showTitle={false}
+            />
+          </section>
+        )}
+
+        {/* Expired Policies Tab Content */}
+        {activeTab === "expired" && expiredPolicies && expiredPolicies.length > 0 && (
+          <section className={styles.policiesSection}>
+            <div className={styles.sectionHeaderWrapper}>
+              <div className={styles.sectionHeader} />
+            </div>
+            <Table
+              title="Expired Policies"
+              tableType="inactive"
+              columns={[
+                "Policy Number",
+                "Status",
+                "Name",
+                "Vehicle Reg",
+                "Details",
+              ]}
+              data={expiredPolicies}
+              showViewButton={true}
+              theme="default"
+              showTitle={false}
+            />
+          </section>
+        )}
       </div>
-
-      {activePolicies.length > 0 && (
-        <Table
-          title="Active Policies"
-          tableType="active"
-          columns={[
-            "Policy Number",
-            "Remaining",
-            "Name",
-            "Vehicle Reg",
-            "Details",
-          ]}
-          data={activePolicies}
-        />
-      )}
-
-      {expiredPolicies.length > 0 && (
-        <Table
-          title="Expired/Unpaid Policies"
-          tableType="inactive"
-          columns={[
-            "Policy Number",
-            "Status",
-            "Name",
-            "Vehicle Reg",
-            "Details",
-          ]}
-          data={expiredPolicies}
-        />
-      )}
-
-      {activePolicies.length === 0 && expiredPolicies.length === 0 && (
-        <div style={{ padding: "40px", textAlign: "center" }}>
-          <p style={{ fontSize: "16px", color: "#666" }}>
-            No policies found. Create your first policy to get started.
-          </p>
-        </div>
-      )}
-    </>
+    </div>
   );
 };
 

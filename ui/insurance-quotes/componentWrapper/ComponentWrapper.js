@@ -8,18 +8,65 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const ComponentWrapper = ({ children, title, icon }) => {
+const getIconForTitle = (title) => {
+  const titleLower = title?.toLowerCase() || "";
+
+  if (titleLower.includes("vehicle")) {
+    return "/svg/vehicle.svg";
+  } else if (titleLower.includes("cover")) {
+    return "/svg/quote.svg";
+  } else if (titleLower.includes("personal")) {
+    return "/svg/contact-details.svg";
+  } else if (titleLower.includes("terms")) {
+    return "/svg/check.svg";
+  } else if (titleLower.includes("car usage")) {
+    return "/svg/vehicle.svg";
+  }
+
+  return "/svg/insurance-quote.svg";
+};
+
+const ComponentWrapper = ({ children, title, icon, isPaymentPage = false }) => {
+  const titleLower = title?.toLowerCase() || "";
+  const isVehicleIcon = titleLower.includes("vehicle");
+  const isCoverIcon = titleLower.includes("cover");
+  const isPersonalIcon = titleLower.includes("personal");
+  const isTermsIcon = titleLower.includes("terms");
+  const iconSrc = getIconForTitle(title);
+
+  let iconContent = null;
+
+  if (isCoverIcon) {
+    iconContent = null;
+  } else if (isPersonalIcon) {
+    iconContent = null;
+  } else if (isTermsIcon) {
+    iconContent = null;
+  } else if (titleLower.includes("optional")) {
+    iconContent = null;
+  } else if (titleLower.includes("declarations")) {
+    iconContent = null;
+  } else if (titleLower.includes("additional drivers")) {
+    iconContent = null;
+  } else if (titleLower.includes("car usage")) {
+    iconContent = null;
+  } else if (!isVehicleIcon) {
+    iconContent = (
+      <Image
+        className={`${styles.icon} ${isPaymentPage ? styles.greyed : ""}`}
+        src={iconSrc}
+        alt={title || "section-icon"}
+        width={icon?.width || 48}
+        height={icon?.height || 48}
+      />
+    );
+  }
+
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <Image
-          className={styles.icon}
-          src="/svg/insurance-quote.svg"
-          alt="terms-and-conditions"
-          width={icon?.width || 50}
-          height={icon?.height || 50}
-        />
-        <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+      <div className={`${styles.header} ${isVehicleIcon ? styles.vehicleHeader : ""}`}>
+        {iconContent}
+        <h3 className={`${styles.title} ${isPaymentPage ? styles.greyed : ""} ${plusJakartaSans.className}`}>
           {title}
         </h3>
       </div>

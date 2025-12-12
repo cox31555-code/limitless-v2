@@ -1,13 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
 import ComponentWrapper from "../componentWrapper/ComponentWrapper";
 import styles from "./personalDetails.module.css";
 import TextInput from "../../inputs/textInput/TextInput";
-import DataAndTime from "../../inputs/selections/dataAndTime/DataAndTime";
 import ConfirmBtn from "@/ui/buttons/confirmBtn/ConfirmBtn";
 import Selection2 from "@/ui/inputs/selections/selection2/Selection2";
 import CarUsage from "../carUsage/CarUsage";
 import Dropdown from "@/ui/inputs/dropdown/Dropdown";
+
+const DataAndTime = dynamic(() => import("../../inputs/selections/dataAndTime/DataAndTime"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading date picker...</div>,
+  ssr: false,
+});
 
 const PersonalDetails = () => {
   const [data, setData] = useState({

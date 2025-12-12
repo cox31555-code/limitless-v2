@@ -1,11 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
 import styles from "./coverDetails.module.css";
 import Selection1 from "@/ui/inputs/selections/selection1/Selection1";
-import DataAndTime from "@/ui/inputs/selections/dataAndTime/DataAndTime";
 import FormDropdown from "@/ui/inputs/FormDropdown";
 import Title from "../title/Title";
 import ComponentWrapper from "../componentWrapper/ComponentWrapper";
+
+const DataAndTime = dynamic(() => import("@/ui/inputs/selections/dataAndTime/DataAndTime"), {
+  loading: () => <div style={{ padding: "20px", textAlign: "center", color: "#999" }}>Loading date picker...</div>,
+  ssr: false,
+});
 const CoverDetails = () => {
   const [data, setData] = useState({
     type: "days",

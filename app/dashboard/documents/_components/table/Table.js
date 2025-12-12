@@ -1,17 +1,12 @@
 import React from "react";
 import styles from "./table.module.css";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import Image from "next/image";
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 const Table = ({ title, columns, data }) => {
   return (
     <>
       <div className={styles.container}>
-        <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
+        <h3 className={styles.title}>
           {title}
         </h3>
         <table className={styles.table}>
@@ -27,20 +22,14 @@ const Table = ({ title, columns, data }) => {
           <tbody className={styles.tableBody}>
             {data.map((row, index) => (
               <tr key={index} className={styles.tableRow}>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Document">
                   <span className={styles.datacell}>{row.document}</span>
                 </td>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Last updated">
                   <span className={styles.datacell}>{row.documentNumber}</span>
                 </td>
-                <td className={styles.tableCell}>
+                <td className={styles.tableCell} data-label="Action">
                   <div className={styles.documentType}>
-                    {/* <Image
-                      src="/svg/pdf.svg"
-                      alt="pdf"
-                      width={24}
-                      height={24}
-                    /> */}
                     <span className={styles.datacell}>{row.documentType}</span>
                   </div>
                 </td>
@@ -59,10 +48,7 @@ const Table = ({ title, columns, data }) => {
               <p className={styles.date}>{row.documentNumber}</p>
             </div>
             <div className={styles.documentType}>
-              {/* <Image src="/svg/pdf.svg" alt="pdf" width={30} height={30} /> */}
-              <span className={styles.documentTypeValue}>
-                {row.documentType}
-              </span>
+              {row.documentType}
             </div>
           </div>
         ))}

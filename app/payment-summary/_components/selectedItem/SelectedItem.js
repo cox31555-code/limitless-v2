@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./selectedItem.module.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { FaCheck } from "react-icons/fa6";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -13,7 +14,7 @@ const SelectedItem = ({ item, title, description, img }) => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.imgContainer}>
-          <Image src={img} alt={title} height={70} width={50} />
+          <Image src={img} alt={title} height={70} width={50} className={styles.headerImg} />
         </div>
         <div className={styles.headerContent}>
           <h3 className={`${styles.title} ${plusJakartaSans.className}`}>
@@ -23,8 +24,10 @@ const SelectedItem = ({ item, title, description, img }) => {
         </div>
       </div>
       <div className={`${styles.selectionItem} ${styles.selectedItem}`}>
-        <Image src="/svg/included.svg" alt="check" width={18} height={18} />
-        {item}
+        <div className={styles.checkIcon}>
+          <FaCheck className={styles.icon} />
+        </div>
+        <span className={styles.itemText}>{item}</span>
       </div>
     </div>
   );

@@ -1,0 +1,200 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.infoBanner {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem 1.6rem;
+  background: #e8f2fb;
+  border-radius: 8px;
+  border: 1px solid #d4e4f7;
+  align-items: flex-start;
+}
+
+.infoIcon {
+  width: 20px;
+  height: 20px;
+  color: #0052a3;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.infoBannerText {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #0052a3;
+  line-height: 1.4;
+}
+
+.infoBannerText strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 640px) {
+  .infoBannerText {
+    font-size: 1.35rem;
+    line-height: 1.8;
+  }
+}
+
+.driverCard {
+  border: 1px solid #e0e6f0;
+  border-radius: 12px;
+  padding: 2.6rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  background: #f0f4fb;
+  border-radius: 50%;
+}
+
+.userIcon {
+  width: 32px;
+  height: 32px;
+  color: #0052a3;
+}
+
+.nameArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+@media screen and (max-width: 640px) {
+  .nameArea {
+    gap: 0.8rem;
+  }
+}
+
+.driverName {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0052a3;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.dateOfBirth {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.addressSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #f0f1f3;
+}
+
+.addressTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #004284;
+  line-height: 1.2;
+}
+
+.addressValue {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #1f2937;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.changeAddressBtn {
+  align-self: flex-start;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid #0052a3;
+  background: transparent;
+  color: #0052a3;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-decoration: underline;
+}
+
+.changeAddressBtn:hover {
+  background: #f0f4fb;
+}
+
+.changeAddressBtn:active {
+  transform: scale(0.98);
+}
+
+@media screen and (max-width: 900px) {
+  .driverCard {
+    padding: 2.2rem;
+  }
+
+  .header {
+    gap: 1.6rem;
+  }
+
+  .driverName {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .driverCard {
+    padding: 1.8rem;
+  }
+
+  .header {
+    gap: 1.4rem;
+  }
+
+  .driverName {
+    font-size: 1.7rem;
+  }
+
+  .dateOfBirth {
+    font-size: 1.5rem;
+  }
+
+  .addressSection {
+    gap: 1.7rem;
+  }
+
+  .addressTitle {
+    font-size: 1.4rem;
+  }
+
+  .addressValue {
+    font-size: 1.6rem;
+  }
+
+  .changeAddressBtn {
+    font-size: 1.5rem;
+    padding: 1rem 1.3rem;
+    margin-top: -0.1rem;
+  }
+}

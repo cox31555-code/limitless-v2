@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useReducer, useEffect } from "react";
+import React, { createContext, useContext, useReducer, useEffect, useMemo } from "react";
 import { API_BASE_URL } from "@/utils/config";
 import { usePathname } from "next/navigation";
 // Initial state
@@ -378,13 +378,32 @@ export const AuthProvider = ({ children }) => {
 
   // Check auth status once on mount if on dashboard
   useEffect(() => {
+    // If dev mode is enabled, auto-authenticate with a test user
+    if (process.env.NEXT_PUBLIC_DEV_MODE === "true" && pathname.startsWith("/dashboard")) {
+      const devUser = {
+        id: "dev-user-123",
+        email: "dev@test.com",
+        name: "Dev User",
+        role: "user"
+      };
+
+      dispatch({
+        type: AUTH_ACTIONS.SET_USER,
+        payload: {
+          user: devUser,
+          token: "dev-token-bypass",
+        },
+      });
+      return;
+    }
+
     if (pathname.startsWith("/dashboard")) {
       checkAuthStatus();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Only run once on mount
 
-  const value = {
+  const value = useMemo(() => ({
     ...state,
     login,
     logout,
@@ -395,7 +414,7 @@ export const AuthProvider = ({ children }) => {
     clearError,
     clearSuccessStates,
     checkAuthStatus,
-  };
+  }), [state, login, logout, forgotPassword, resetPassword, setPassword, getUserInfo, clearError, clearSuccessStates, checkAuthStatus]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

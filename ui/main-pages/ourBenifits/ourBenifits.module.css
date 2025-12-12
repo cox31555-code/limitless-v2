@@ -1,134 +1,319 @@
 .container {
-  width: 100%;
-  margin: 0 1.1%;
-  padding: 7.3rem 5% 5rem;
-  border-radius: 20px;
-  background: linear-gradient(
-    180deg,
-    #0168ff -345.34%,
-    rgba(1, 104, 255, 0) 76.17%
-  );
+  width: 100vw;
+  padding: 7.9rem 5% 13.1rem;
+  margin: 0 calc(-50vw + 50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7rem;
+  gap: 8rem;
+  position: relative;
+  overflow: hidden;
 }
+
+.container::before {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(3, 136, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .top {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2.4rem;
-  max-width: 78rem;
+  max-width: 80rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
+
 .title {
+  font-size: 5.6rem;
+  font-weight: 800;
+  line-height: 120%;
+  letter-spacing: -1.2px;
   color: #000822;
-  text-align: center;
-  font-size: 58px;
-  font-weight: 700;
-  line-height: 100%; /* 58px */
-  /* text-transform: uppercase; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.3rem;
 }
+
 .title span {
-  color: #049cff;
+  display: none;
 }
+
 .description {
-  color: rgba(0, 8, 34, 0.7);
-  text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 400;
-  line-height: 124%; /* 19.84px */
-  letter-spacing: 0.64px;
+  line-height: 160%;
+  color: rgba(0, 8, 34, 0.7);
+  max-width: 70rem;
 }
 
 .benifits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-content: center;
-  width: 100%;
   gap: 3.6rem;
+  width: 100%;
+  max-width: 110rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
+
 .benifit {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-  padding: 2.9rem;
+  gap: 2.2rem;
+  padding: 3.2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  border: 2px solid #f0f4ff;
+  position: relative;
+  box-shadow: none !important;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
 }
+
+.benifit:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+  border: 2px solid #0388ff;
+}
+
+.benifit,
+.benifit * {
+  box-shadow: none !important;
+}
+
 .imgContainer {
-  width: 100%;
-  height: 150px;
+  width: 6.8rem;
+  height: 6.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e8f1ff 0%, #dce7fd 100%);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+.benifit:hover .imgContainer {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .benifitTitle {
-  color: #000822;
-  text-align: center;
   font-size: 1.8rem;
-  font-weight: 500;
-  line-height: 125%; /* 18px */
-  max-width: 33rem;
-  /* font-family: "poppins"; */
+  font-weight: 700;
+  line-height: 130%;
+  color: #000822;
+  letter-spacing: -0.4px;
 }
-.benifit:nth-child(1),
-.benifit:nth-child(2),
-.benifit:nth-child(5),
-.benifit:nth-child(4) {
-  border-right: 1px solid rgba(0, 0, 0, 0.43);
+
+.benifitDescription {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 155%;
+  color: rgba(0, 8, 34, 0.65);
+  letter-spacing: 0.1px;
 }
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 1200px) {
   .container {
-    width: 100%;
-    margin: 0 2%;
-    padding: 6.1rem 0 1rem;
-    gap: 3.5rem;
-  }
-  .imgContainer {
-    height: auto;
-  }
-  .top {
-    gap: 1.8rem;
-    max-width: 35rem;
-  }
-  .title {
-    font-size: 3rem;
-  }
-  .description {
-    font-size: 1.4rem;
+    padding: 0 6.2%;
   }
 
   .benifits {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 0;
-    width: 75%;
-    margin: 0 14%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.8rem;
   }
+
+  .title {
+    font-size: 4.4rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    margin: 0 -3px 0 -4px;
+  }
+
   .benifit {
-    gap: 1.3rem;
-    padding: 2.5rem 0 3rem;
-    width: 100%;
-    border-right: none !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.43);
+    padding: 2.8rem;
   }
-  .benifit:last-child {
-    border-bottom: none;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 5rem 4.5%;
   }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.38rem;
+  }
+
+  .benifit {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .imgContainer {
+    width: 6.8rem;
+    height: 6.8rem;
+  }
+
   .benifitTitle {
-    font-size: 1.6rem;
-    max-width: 29rem;
-    line-height: 100%;
+    font-size: 1.9rem;
+    text-align: center;
   }
-  .img {
-    width: 10rem;
-    height: auto;
+
+  .benifitDescription {
+    font-size: 1.32rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 8rem 4%;
+    gap: 6rem;
+  }
+
+  .top {
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 3.8rem;
+    letter-spacing: -0.8px;
+  }
+
+  .description {
+    font-size: 1.4rem;
+    margin: 0 -3px 0 -4px;
+  }
+
+  .benifits {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .benifit {
+    padding: 2.6rem;
+    gap: 1.8rem;
+  }
+
+  .imgContainer {
+    width: 7.4rem;
+    height: 7.4rem;
+  }
+
+  .benifitTitle {
+    font-size: 1.85rem;
+  }
+
+  .benifitDescription {
+    font-size: 1.35rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 0 6.2%;
+  }
+
+  .description {
+    margin: 0 -3px 0 -4px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 6rem 3.2%;
+    gap: 4rem;
+  }
+
+  .title {
+    font-size: 2.9rem;
+    letter-spacing: -0.6px;
+  }
+
+  .description {
+    font-size: 1.32rem;
+    margin: 0 -3px 0 -4px;
+  }
+
+  .benifits {
+    gap: 1.6rem;
+  }
+
+  .benifit {
+    padding: 2.2rem;
+    gap: 1.6rem;
+  }
+
+  .imgContainer {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+
+  .benifitTitle {
+    font-size: 1.7rem;
+  }
+
+  .benifitDescription {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 6rem 5.8%;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    margin: 0 -3px 0 -4px;
+  }
+
+  .benifit {
+    padding: 1.8rem;
+    gap: 1.4rem;
+  }
+
+  .imgContainer {
+    width: 5.8rem;
+    height: 5.8rem;
+  }
+
+  .benifitTitle {
+    font-size: 1.5rem;
+  }
+
+  .benifitDescription {
+    font-size: 1.1rem;
   }
 }

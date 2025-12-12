@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ratesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0388ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#049cff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded square container -->
+  <path d="M12 16C12 13 14 12 18 12L46 12C50 12 52 14 52 18L52 46C52 50 50 52 46 52L18 52C14 52 12 50 12 46L12 18Z" fill="url(#ratesGrad)" stroke="url(#ratesGrad)" stroke-width="1.5"/>
+  
+  <!-- Main £ symbol centered -->
+  <text x="32" y="42" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">£</text>
+</svg>

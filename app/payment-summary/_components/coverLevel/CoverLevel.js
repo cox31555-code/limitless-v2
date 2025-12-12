@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./coverLevel.module.css";
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { FaCheck, FaReceipt } from "react-icons/fa6";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -39,16 +40,13 @@ const CoverLevel = ({ data, insuranceType }) => {
         Current level of cover
       </h3>
       <div className={styles.coverType}>
-        <p className={styles.coverTypeTitle}>Type of Insurance</p>
+        <p className={styles.coverTypeTitle}>Type</p>
         <p className={`${styles.coverTypeValue} ${plusJakartaSans.className}`}>
           {getInsuranceTypeName(insuranceType)}
         </p>
       </div>
 
       <div className={styles.summery}>
-        {/* <span className={styles.background}></span>
-        <span className={styles.background2}></span>
-        <span className={styles.background3}></span> */}
 
         <div className={styles.content}>
           <div className={styles.total}>
@@ -78,13 +76,8 @@ const CoverLevel = ({ data, insuranceType }) => {
       </div>
       <div className={styles.header}>
         <div className={styles.headerItem}>
-          <Image
-            src="/svg/insurance-quote.svg"
-            alt="order-summary"
-            width={22}
-            height={22}
-          />
-          <p className={styles.headerItemTitle}>Order Reference</p>
+          <FaReceipt className={styles.headerItemIcon} />
+          <p className={styles.headerItemTitle}>Quote Reference</p>
         </div>
         <p className={styles.headerItemValue}>
           #{data?._id?.slice(-10).toUpperCase() || "N/A"}
@@ -93,12 +86,9 @@ const CoverLevel = ({ data, insuranceType }) => {
       <div className={styles.features}>
         {features.map((feature, index) => (
           <div className={styles.featureItem} key={index}>
-            <Image
-              src="/svg/included.svg"
-              alt="included"
-              width={26}
-              height={26}
-            />
+            <div className={styles.iconWrapper}>
+              <FaCheck className={styles.checkIcon} />
+            </div>
             <p className={styles.featureItemTitle}>{feature}</p>
           </div>
         ))}

@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "./actionBtns.module.css";
 import Image from "next/image";
+import Button from "@/ui/buttons/Button/Button";
+import styles from "./actionBtns.module.css";
 
 const ActionBtns = ({
   onBack,
@@ -9,31 +10,38 @@ const ActionBtns = ({
   isSubmitting = false,
   nextType = "button",
 }) => {
+  const arrowIcon = (
+    <Image
+      src="/svg/arrow-right.svg"
+      alt="arrow-right"
+      width={28}
+      height={14}
+    />
+  );
+
   return (
     <div className={styles.actions}>
-      <button type="button" className={styles.back} onClick={onBack}>
+      <Button
+        variant="secondary"
+        type="button"
+        onClick={onBack}
+        className={styles.back}
+      >
         Back
-      </button>
-      <button
+      </Button>
+      <Button
+        variant="primary"
         type={nextType}
-        className={styles.next}
         onClick={nextType === "button" && onNext ? onNext : undefined}
         disabled={isSubmitting}
-        style={{
-          background: isSubmitting ? "#ccc" : "#0388ff",
-          cursor: isSubmitting ? "not-allowed" : "pointer",
-        }}
+        isLoading={isSubmitting}
+        loadingText="Submitting..."
+        icon={arrowIcon}
+        iconPosition="right"
+        className={styles.next}
       >
-        {isSubmitting ? "Submitting..." : nextLabel}
-        {!isSubmitting && (
-          <Image
-            src="/svg/arrow-right.svg"
-            alt="arrow-right"
-            width={28}
-            height={14}
-          />
-        )}
-      </button>
+        {nextLabel}
+      </Button>
     </div>
   );
 };

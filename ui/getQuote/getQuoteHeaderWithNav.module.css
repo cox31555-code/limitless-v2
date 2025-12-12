@@ -1,0 +1,698 @@
+.headerContainer {
+  width: 100%;
+  max-width: 100%;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 1000;
+  background: #000822;
+}
+
+.headerElement {
+  display: flex;
+  align-items: flex-start;
+  background-color: #000822;
+  font-weight: 400;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  z-index: 2;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  right: 13%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 526px;
+  height: 385px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+}
+
+.headerContent {
+  width: 100%;
+  max-width: 130rem;
+  padding: 1.8rem 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: 0 auto 0.9rem;
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.navigationBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  width: 30.4rem;
+  flex-shrink: 0;
+}
+
+.logo {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 66px;
+  height: 66px;
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+/* Help Button */
+.helpBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.2rem;
+  height: 5.2rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(3, 136, 255, 0.25);
+  background: rgba(3, 136, 255, 0.1);
+  color: #0388ff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.helpBtn:hover {
+  border-color: rgba(3, 136, 255, 0.5);
+  background: rgba(3, 136, 255, 0.15);
+}
+
+/* Title Section */
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin: 3rem -0.1rem 2.5rem;
+  padding-left: 25rem;
+  padding-top: 2rem;
+  border-style: none;
+  border-width: 1px;
+}
+
+.titleContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 23rem;
+}
+
+.title {
+  color: #ffffff;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 120%;
+  margin: 0 -8.56rem 0 -0.125rem;
+  letter-spacing: -0.72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 0.8rem;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  width: auto;
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    white-space: normal;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -0.3rem 0 -0.2rem;
+  }
+}
+
+.titleSpan {
+  color: #0388ff;
+  font-weight: 700;
+  display: inline;
+  white-space: nowrap;
+}
+
+/* Progress Section */
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 100%;
+  width: 100%;
+}
+
+.stepLabel {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.progressBar {
+  width: 100%;
+  max-width: 77.3rem;
+  height: 6px;
+  background: #e8ecf1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #0388ff 0%, #049cff 100%);
+  border-radius: 8px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12px rgba(3, 136, 255, 0.4);
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1200px) {
+  .headerElement {
+    width: 100%;
+    margin-right: 0;
+    padding: 18px 3.2rem;
+  }
+
+  .menu {
+    margin-left: -2rem;
+  }
+
+  .logoContainer {
+    width: auto;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .menuLink {
+    padding: 1rem 1.8rem;
+    font-size: 1.4rem;
+  }
+
+  .titleSection {
+    margin: 2rem -0.1rem 2rem;
+    padding-left: 20rem;
+    padding-top: 1.6rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .headerElement {
+    padding: 16px 2.4rem;
+  }
+
+  .navigationBar {
+    gap: 1.4rem;
+  }
+
+  .helpBtn {
+    width: 4.8rem;
+    height: 4.8rem;
+    font-size: 1.4rem;
+  }
+
+  .titleSection {
+    gap: 1.6rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .progressSection {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .headerElement {
+    width: 100%;
+    padding: 1.6rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .navigationBar {
+    flex-direction: row;
+    width: 100%;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+  }
+
+  .logoContainer {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .helpBtn {
+    width: 4.6rem;
+    height: 4.6rem;
+  }
+
+  .titleSection {
+    margin: 0;
+    padding: 2.2rem 1.6rem 0;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .titleContent {
+    width: 100%;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 3rem;
+    width: 100%;
+    white-space: normal;
+    text-wrap: wrap;
+    margin: 0;
+    flex-wrap: wrap;
+    line-height: 1.2;
+  }
+
+  .progressSection {
+    margin: 0;
+    padding: 0 1.6rem 1.8rem;
+    gap: 1.4rem;
+  }
+
+  .stepLabel {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .progressBar {
+    height: 7px;
+    width: 100%;
+  }
+
+  .progressFill {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navigationBar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #000822;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    display: none;
+  }
+
+  .helpBtn {
+    width: 4.6rem;
+    height: 4.6rem;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .headerContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .headerElement {
+    padding: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navigationBar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #000822;
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    border-bottom: 1px solid rgba(3, 136, 255, 0.1);
+    display: none;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .headerContent {
+    width: 100%;
+    max-width: 100%;
+    padding: 2.4rem 1.6rem;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    display: none;
+  }
+
+  .helpBtn {
+    width: 4.6rem;
+    height: 4.6rem;
+    display: none;
+  }
+
+  .titleSection {
+    margin: 0;
+    padding: 2.4rem 1.6rem 0;
+    gap: 2.4rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .titleContent {
+    width: 100%;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 3.2rem;
+    width: 100%;
+    white-space: normal;
+    text-wrap: wrap;
+    margin: 0;
+    flex-wrap: wrap;
+    line-height: 1.2;
+  }
+
+  .progressSection {
+    margin: 0;
+    padding: 0 1.6rem 2.4rem;
+    gap: 1.6rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .stepLabel {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .helpModalTitle {
+    font-size: 1.8rem;
+  }
+
+  .helpModalMessage {
+    font-size: 1.6rem;
+  }
+
+  .helpContactLink,
+  .helpModalCloseAction {
+    font-size: 1.6rem;
+  }
+
+  .progressBar {
+    height: 8px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .progressFill {
+    height: 100%;
+  }
+}
+
+/* Help Modal Popup */
+.helpModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.helpModalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 1.6rem;
+}
+
+.helpModal {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.4rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.helpModalCloseBtn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #5a6b7d;
+  cursor: pointer;
+  padding: 0.4rem;
+  transition: color 0.25s ease;
+}
+
+.helpModalCloseBtn:hover {
+  color: #000822;
+}
+
+.helpModalTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000822;
+  margin: 0 0 1.2rem 0;
+  padding-right: 2rem;
+}
+
+.helpModalMessage {
+  font-size: 1.1rem;
+  color: #5a6b7d;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+}
+
+.helpModalActions {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.helpContactLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.6rem;
+  background: linear-gradient(135deg, #0388ff 0%, #0270cc 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.helpContactLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(3, 136, 255, 0.3);
+}
+
+.helpModalCloseAction {
+  padding: 1rem 1.6rem;
+  background: rgba(3, 136, 255, 0.08);
+  color: #0388ff;
+  border: 1px solid rgba(3, 136, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.helpModalCloseAction:hover {
+  background: rgba(3, 136, 255, 0.12);
+  border-color: rgba(3, 136, 255, 0.3);
+}
+
+/* Responsive Help Modal */
+@media (max-width: 900px) {
+  .helpModal {
+    padding: 2rem;
+    max-width: 88%;
+  }
+
+  .helpModalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .helpModalMessage {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2.4rem;
+  }
+
+  .helpContactLink,
+  .helpModalCloseAction {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.1rem;
+    min-height: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .helpModal {
+    padding: 2.4rem;
+    max-width: 92%;
+  }
+
+  .helpModalCloseBtn {
+    top: 1.4rem;
+    right: 1.4rem;
+    font-size: 1.8rem;
+  }
+
+  .helpModalTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.4rem;
+    padding-right: 2.4rem;
+  }
+
+  .helpModalMessage {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 2.8rem;
+  }
+
+  .helpContactLink,
+  .helpModalCloseAction {
+    padding: 1.4rem 2rem;
+    font-size: 1.2rem;
+    min-height: 5.4rem;
+    border-radius: 10px;
+  }
+
+  .helpContactLink:active {
+    transform: scale(0.98);
+  }
+
+  .helpModalCloseAction:active {
+    transform: scale(0.98);
+  }
+}
+
+@media (max-width: 400px) {
+  .helpModal {
+    padding: 2rem;
+    max-width: 94%;
+  }
+
+  .helpModalCloseBtn {
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 1.6rem;
+  }
+
+  .helpModalTitle {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    padding-right: 2rem;
+  }
+
+  .helpModalMessage {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2.4rem;
+  }
+
+  .helpContactLink,
+  .helpModalCloseAction {
+    padding: 1.2rem 1.8rem;
+    font-size: 1.1rem;
+    min-height: 5rem;
+  }
+}

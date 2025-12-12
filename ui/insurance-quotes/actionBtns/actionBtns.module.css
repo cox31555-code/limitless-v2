@@ -1,40 +1,27 @@
+/* ActionBtns Layout - minimal overrides */
+
 .actions {
   width: 100%;
   display: flex;
   gap: 1.5rem;
   margin-top: 1.2rem;
 }
+
 .back,
 .next {
   flex: 1;
-  display: flex;
+  /* Base button styles inherited from Button component */
   height: 6.2rem;
-  justify-content: center;
-  align-items: center;
-  gap: 1.8rem;
-  border-radius: 12px;
-  background: #0388ff;
   box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 124%;
-  border: none;
-  cursor: pointer;
 }
-.back {
-  background: #fff;
-  box-shadow: 0 4px 84px 0 rgba(0, 8, 34, 0.04);
-  color: #0388ff;
-}
+
 @media screen and (max-width: 900px) {
   .actions {
     gap: 1.2rem;
   }
+
   .back,
   .next {
     height: 4.8rem;
-    gap: 1.8rem;
-    font-size: 1 4rem;
   }
 }

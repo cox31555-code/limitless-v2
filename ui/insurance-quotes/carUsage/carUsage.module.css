@@ -1,9 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  border-radius: 16px;
-  background: #fff;
-  padding: 3.4rem 3.4rem 4.1rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fafbff 0%, #f8f9ff 100%);
+  padding: 3.6rem;
+  border: 1px solid rgba(3, 136, 255, 0.08);
 }
 .firstSection,
 .secondSection,
@@ -11,15 +12,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 3.8rem;
-  border-bottom: 1px solid rgba(0, 8, 34, 0.24);
+  padding-bottom: 3.6rem;
+  border-bottom: 1px solid rgba(3, 136, 255, 0.1);
 }
 .selections {
   margin-top: 3.2rem;
 }
 .secondSection,
 .thirdSection {
-  padding-top: 3.8rem;
+  padding-top: 3.6rem;
 }
 .thirdSection {
   border-bottom: none;
@@ -29,23 +30,23 @@
   gap: 3.6rem;
 }
 .thirdSection {
-  gap: 5.4rem;
+  gap: 4.8rem;
 }
 .row {
   display: flex;
-  gap: 1.8rem;
+  gap: 2rem;
 }
 .yesNo {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.8rem;
 }
 .yesNoTitle {
   color: #000822;
   font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 124%;
-  letter-spacing: 0.64px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0.2px;
 }
 @media screen and (max-width: 900px) {
   .container {

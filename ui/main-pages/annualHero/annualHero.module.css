@@ -1,0 +1,438 @@
+.container {
+  width: 100vw;
+  min-height: 729px;
+  margin: 0 calc(-50vw + 50%);
+  padding: 0.1rem 6.4rem 10rem 14.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper {
+  max-width: 130rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: center;
+  position: relative;
+  padding-top: 2.9rem;
+}
+
+.illustrationCard {
+  width: 100%;
+  max-width: 641px;
+  height: 565px;
+  border-radius: 19.757px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 8, 34, 0.08);
+}
+
+.gradientBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gradient1 {
+  position: absolute;
+  width: 235px;
+  height: 1072px;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 136, 255, 0) 0%,
+    #0388ff 184.11%
+  );
+  transform: rotate(-45deg);
+  left: -190px;
+  top: 333px;
+}
+
+.gradient2 {
+  position: absolute;
+  width: 279px;
+  height: 933px;
+  background: linear-gradient(180deg, rgba(3, 136, 255, 0) 0%, #0388ff 136.72%);
+  transform: rotate(45deg);
+  opacity: 0.82;
+  left: -25px;
+  top: -128px;
+}
+
+.illustration {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.documentIcon {
+  position: absolute;
+  width: 322px;
+  height: 320px;
+  left: 22px;
+  top: 21px;
+}
+
+.carIcon {
+  position: absolute;
+  width: 466px;
+  height: 342px;
+  left: 205px;
+  top: 223px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4.7rem;
+  max-width: 508px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.7rem;
+}
+
+.label {
+  color: #049cff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 124%;
+  letter-spacing: 0.56px;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  color: #000822;
+}
+
+.highlight {
+  color: #0388ff;
+}
+
+.actionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 3.4rem;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 1rem 2.4rem;
+  height: 4.8rem;
+  border-radius: 8px;
+  background: linear-gradient(0deg, #0388ff 0%, #0388ff 100%);
+  box-shadow: 0 4px 84px rgba(0, 8, 34, 0.04);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  background: linear-gradient(0deg, #0277e3 0%, #0277e3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(3, 136, 255, 0.3);
+}
+
+.primaryBtn svg {
+  flex-shrink: 0;
+}
+
+.secondaryBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn span {
+  color: #0388ff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 124%;
+  letter-spacing: 0.56px;
+}
+
+.underline {
+  width: 100%;
+  height: 1px;
+  background: #0388ff;
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover .underline {
+  transform: scaleX(1.1);
+}
+
+.disclaimer {
+  color: #494f64;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 124%;
+  letter-spacing: 0.64px;
+  max-width: 380px;
+}
+
+.trustStats {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.trustStat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statIcon {
+  width: 4.8rem;
+  height: 4.8rem;
+  background: rgba(3, 136, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statIcon svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statNumber {
+  color: #000822;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+.statLabel {
+  color: #717584;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 100%;
+  margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 6rem;
+    justify-items: center;
+  }
+
+  .illustrationCard {
+    max-width: 100%;
+    height: 500px;
+  }
+
+  .carIcon {
+    width: 400px;
+    height: 294px;
+    left: 170px;
+    top: 200px;
+  }
+
+  .documentIcon {
+    width: 280px;
+    height: 280px;
+    left: 20px;
+    top: 30px;
+  }
+
+  .content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 4.8rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 7rem 4.4rem 8rem;
+    min-height: auto;
+  }
+
+  .wrapper {
+    gap: 5rem;
+  }
+
+  .illustrationCard {
+    height: 420px;
+  }
+
+  .carIcon {
+    width: 340px;
+    height: 250px;
+    left: 140px;
+    top: 170px;
+  }
+
+  .documentIcon {
+    width: 240px;
+    height: 240px;
+    left: 15px;
+    top: 40px;
+  }
+
+  .heading {
+    font-size: 4rem;
+  }
+
+  .content {
+    gap: 3.5rem;
+  }
+
+  .actionsContainer {
+    gap: 2.8rem;
+  }
+
+  .buttons {
+    gap: 2.4rem;
+  }
+
+  .trustStat:last-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 5rem 2.4rem 6rem;
+  }
+
+  .wrapper {
+    gap: 4rem;
+  }
+
+  .illustrationCard {
+    height: 350px;
+  }
+
+  .carIcon {
+    width: 280px;
+    height: 206px;
+    left: 100px;
+    top: 140px;
+  }
+
+  .documentIcon {
+    width: 200px;
+    height: 200px;
+    left: 10px;
+    top: 30px;
+  }
+
+  .heading {
+    font-size: 3.2rem;
+    line-height: 110%;
+  }
+
+  .label {
+    font-size: 1.2rem;
+  }
+
+  .primaryBtn {
+    font-size: 1.4rem;
+    padding: 0.8rem 2rem;
+    height: 4.2rem;
+    width: 100%;
+  }
+
+  .secondaryBtn span {
+    font-size: 1.2rem;
+  }
+
+  .disclaimer {
+    font-size: 1.4rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .content {
+    gap: 3rem;
+  }
+
+  .actionsContainer {
+    gap: 2.4rem;
+  }
+
+  .statNumber {
+    font-size: 1.6rem;
+  }
+
+  .statLabel {
+    font-size: 1.1rem;
+  }
+
+  .trustStats {
+    gap: 1.6rem;
+  }
+
+  .trustStat {
+    gap: 0.8rem;
+  }
+
+  .statIcon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .statIcon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
