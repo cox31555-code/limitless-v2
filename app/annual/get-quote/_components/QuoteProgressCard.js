@@ -48,10 +48,10 @@ const QuoteProgressCard = ({ currentStep, vehicleSubStep, personalSubStep, cover
     if (stepNumber === STEPS.COVER) {
       // For temporary/impound, skip "additionalDrivers" and "additionalProducts" in the mapping
       if (isTemporaryOrImpound) {
-        const subStepMap = { "carOwner": 0, "cover": 1, "ncd": 2, "contactInformation": 3 };
+        const subStepMap = { "carOwner": 0, "details": 1, "ncd": 2, "contactInformation": 3 };
         return subStepMap[coverSubStep] ?? -1;
       } else {
-        const subStepMap = { "additionalDrivers": 0, "carOwner": 1, "cover": 2, "ncd": 3, "additionalProducts": 4, "contactInformation": 5 };
+        const subStepMap = { "additionalDrivers": 0, "carOwner": 1, "details": 2, "ncd": 3, "additionalProducts": 4, "contactInformation": 5 };
         return subStepMap[coverSubStep] ?? -1;
       }
     }
