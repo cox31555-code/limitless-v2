@@ -879,6 +879,24 @@ const Step3AddDriver = ({ onBack, onAddDriver, editingDriver = null }) => {
         </div>
 
       </div>
+
+      {/* Action Buttons */}
+      <div className={styles.actionButtons}>
+        <button
+          type="button"
+          className={styles.backBtn}
+          onClick={onBack}
+        >
+          Back
+        </button>
+        <button
+          type="button"
+          className={styles.saveBtn}
+          onClick={() => onAddDriver(formData)}
+        >
+          Save Driver
+        </button>
+      </div>
     </div>
   );
 };
