@@ -155,21 +155,15 @@ const Step3AdditionalProducts = ({
             </p>
           </div>
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedBreakdownOptions(!expandedBreakdownOptions)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedBreakdownOptions ? styles.expandedIcon : ''}`}>▼</span>
-            What are my breakdown cover options?
-          </button>
-
-          {expandedBreakdownOptions && (
-            <div className={styles.expandableContent}>
-              <p style={{ marginTop: '0' }}>You can usually upgrade your breakdown cover at any time with your insurance provider if you want to add extras such as home starting services, European breakdown cover and more. Compare the Market also offers a stand-alone Breakdown Cover comparison service.</p>
-              <p style={{ marginBottom: '0' }}>Check you don't already have breakdown cover elsewhere, e.g. as part of a bank account package.</p>
-            </div>
-          )}
+          <ExpandableQuestion
+            question="What are my breakdown cover options?"
+            answer={
+              <>
+                <p style={{ marginTop: '0' }}>You can usually upgrade your breakdown cover at any time with your insurance provider if you want to add extras such as home starting services, European breakdown cover and more. Compare the Market also offers a stand-alone Breakdown Cover comparison service.</p>
+                <p style={{ marginBottom: '0' }}>Check you don't already have breakdown cover elsewhere, e.g. as part of a bank account package.</p>
+              </>
+            }
+          />
 
           <div className={styles.radioGroup}>
             {["Yes", "I'll decide later"].map((option) => (
