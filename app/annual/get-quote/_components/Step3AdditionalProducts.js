@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./step3CarOwner.module.css";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 
 const Step3AdditionalProducts = ({
   onBack = () => {},
@@ -15,12 +16,6 @@ const Step3AdditionalProducts = ({
   });
 
   const [errors, setErrors] = useState({});
-  const [expandedPersonalAccident, setExpandedPersonalAccident] = useState(false);
-  const [expandedCourtesyCar, setExpandedCourtesyCar] = useState(false);
-  const [expandedBreakdown, setExpandedBreakdown] = useState(false);
-  const [expandedBreakdownOptions, setExpandedBreakdownOptions] = useState(false);
-  const [expandedMotorLegal, setExpandedMotorLegal] = useState(false);
-  const [expandedMotorLegalDetails, setExpandedMotorLegalDetails] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
