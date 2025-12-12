@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step1CarValue.module.css";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 
 const Step1CarValue = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
@@ -53,9 +54,10 @@ const Step1CarValue = ({ form }) => {
             />
           </div>
 
-          <button type="button" className={styles.helpLink}>
-            Why do we ask this?
-          </button>
+          <ExpandableQuestion
+            question="Why do we ask this?"
+            answer="The car's estimated value is used to calculate the level of cover needed and to price the policy accurately. Being underinsured can mean higher out-of-pocket costs if your car is written off. If you're unsure, use online valuation tools, dealer trade-in estimates, or recent sale prices for similar cars to guide your entry."
+          />
         </div>
       </div>
     </div>
