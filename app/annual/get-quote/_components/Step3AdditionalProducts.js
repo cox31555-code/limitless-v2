@@ -218,21 +218,15 @@ const Step3AdditionalProducts = ({
             </p>
           </div>
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedMotorLegal(!expandedMotorLegal)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedMotorLegal ? styles.expandedIcon : ''}`}>▼</span>
-            What's covered?
-          </button>
-
-          {expandedMotorLegal && (
-            <div className={styles.expandableContent}>
-              <p style={{ marginTop: '0' }}>Cover varies between providers. You can claim up to a minimum of £50,000 in case of personal injury, excess recovery, loss of earnings, and more.</p>
-              <p style={{ marginBottom: '0' }}>This should cover the cost of your legal expenses in pursuit of compensation if there is a reasonable prospect of success against the third party.</p>
-            </div>
-          )}
+          <ExpandableQuestion
+            question="What's covered?"
+            answer={
+              <>
+                <p style={{ marginTop: '0' }}>Cover varies between providers. You can claim up to a minimum of £50,000 in case of personal injury, excess recovery, loss of earnings, and more.</p>
+                <p style={{ marginBottom: '0' }}>This should cover the cost of your legal expenses in pursuit of compensation if there is a reasonable prospect of success against the third party.</p>
+              </>
+            }
+          />
 
           <div className={styles.radioGroup}>
             {["Yes", "I'll decide later"].map((option) => (
