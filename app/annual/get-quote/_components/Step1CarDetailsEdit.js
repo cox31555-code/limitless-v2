@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
 import styles from "./step1CarDetailsEdit.module.css";
 
 const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
@@ -88,9 +89,10 @@ const Step1CarDetailsEdit = ({ form, onUpdate, onCancel }) => {
         {/* Import Section */}
         <div className={styles.section}>
           <h3 className={styles.questionTitle}>Is the car an import?</h3>
-          <button type="button" className={styles.helpLink}>
-            What's an import?
-          </button>
+          <ExpandableQuestion
+            question="What's an import?"
+            answer="An imported car is a vehicle that was manufactured outside the UK and imported into the UK, rather than being sold new through the manufacturer's official UK dealership. Imports can affect insurance pricing and cover options, so it's important to let your insurer know."
+          />
           
           <div className={styles.radioGroup}>
             {["Yes", "No"].map((option) => (
