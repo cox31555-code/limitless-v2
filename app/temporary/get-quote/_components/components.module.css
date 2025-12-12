@@ -12,14 +12,14 @@
   border: none;
   box-shadow: none;
   width: 100%;
-  gap: 2rem;
+  gap: var(--spacing-2xl);
 }
 
 .first {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  padding: 3.2rem;
+  padding: var(--spacing-4xl);
   border-radius: 20px;
   background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
   border: 1px solid rgba(3, 136, 255, 0.12);
@@ -110,7 +110,7 @@
   flex-direction: column;
   gap: 1.6rem;
   margin-top: 0;
-  padding: 3.2rem;
+  padding: var(--spacing-4xl);
   border-radius: 20px;
   background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
   border: 1px solid rgba(3, 136, 255, 0.12);
@@ -132,7 +132,7 @@
 .cleanFormContent {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   width: 100%;
 }
 
@@ -255,13 +255,13 @@
 .cleanAdditionalInfoContainer {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-2xl);
 }
 
 .cleanDeclarationsContainer {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: var(--spacing-2xl);
 }
 
 .cleanDeclarationItem {
@@ -364,7 +364,7 @@
 
 /* Section Header for Vehicle Details */
 .vehicleDetailsSection {
-  padding: 2.4rem 3.2rem;
+  padding: var(--spacing-2xl) 3.2rem;
   background: linear-gradient(135deg, #f0f7ff 0%, var(--color-primary-lightest) 100%);
   border-bottom: 2px solid rgba(3, 136, 255, 0.15);
   margin-bottom: 1.6rem;
@@ -457,14 +457,14 @@
 
 /* cover details container */
 .coverDetailsContainer {
-  gap: 2.4rem;
+  gap: var(--spacing-2xl);
 }
 
 /* Spark Space Cover Details - Complete Styling */
 .sparkCoverDetails {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   width: 100%;
 }
 
@@ -1154,7 +1154,7 @@
   gap: 1.6rem;
   width: 100%;
   box-sizing: border-box;
-  padding: 2.4rem;
+  padding: var(--spacing-2xl);
   background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
   border: 1px solid rgba(3, 136, 255, 0.12);
   border-radius: 12px;
@@ -1345,7 +1345,7 @@
 .selections {
   display: flex;
   width: 100%;
-  gap: 2rem;
+  gap: var(--spacing-2xl);
 }
 .selections2 > div {
   flex: 1;
@@ -1391,17 +1391,17 @@
 }
 
 .secondSection {
-  gap: 2rem;
+  gap: var(--spacing-2xl);
 }
 
 .thirdSection {
-  gap: 2.4rem;
+  gap: var(--spacing-2xl);
 }
 
 .yesNoSection {
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
+  gap: var(--spacing-2xl);
   padding-top: 2.4rem;
   border-top: 1px solid rgba(3, 136, 255, 0.1);
   margin-top: 2.4rem;
@@ -1631,7 +1631,7 @@
   }
 
   .first {
-    padding: 2.4rem 2rem;
+    padding: var(--spacing-2xl) 2rem;
     margin-bottom: 0;
     flex-direction: column;
     gap: 1.6rem;
@@ -1639,7 +1639,7 @@
   }
 
   .rows {
-    padding: 2.4rem 2rem;
+    padding: var(--spacing-2xl) 2rem;
     gap: 0;
     border-radius: 16px;
   }
@@ -1748,7 +1748,7 @@
     }
 
     .formContent {
-      gap: 2.4rem;
+      gap: var(--spacing-2xl);
       width: 100%;
       box-sizing: border-box;
       padding: 0 1.6rem;
@@ -1886,7 +1886,7 @@
 
   /* Car Usage Mobile */
   .carUsageContainer {
-    padding: 2rem 2.6rem;
+    padding: var(--spacing-2xl) 2.6rem;
   }
 
   .firstSection,
@@ -1924,7 +1924,7 @@
 
   /* Terms Mobile */
   .terms {
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     padding-bottom: 2.6rem;
   }
 
@@ -1968,7 +1968,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  padding: 2rem;
+  padding: var(--spacing-2xl);
   background: linear-gradient(135deg, #ffffff 0%, var(--color-primary-lightest) 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   border-radius: 12px;
@@ -2032,7 +2032,7 @@
 .cleanFormGrid1Col {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   width: 100%;
 }
 
@@ -2047,14 +2047,14 @@
 .cleanFormGrid2Col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   width: 100%;
 }
 
 .cleanFormGrid3Col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: var(--spacing-2xl);
   width: 100%;
 }
 
@@ -2190,8 +2190,8 @@
 .cleanDriverCard {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2.4rem;
+  gap: var(--spacing-2xl);
+  padding: var(--spacing-2xl);
   background: linear-gradient(135deg, var(--color-primary-lightest) 0%, #ffffff 100%);
   border: 1.5px solid rgba(3, 136, 255, 0.12);
   border-radius: 12px;
@@ -2325,11 +2325,11 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: var(--spacing-2xl);
   }
 
   .cleanFormGrid1Col {
-    gap: 2rem;
+    gap: var(--spacing-2xl);
   }
 
   .cleanPostcodeRow {
@@ -2346,7 +2346,7 @@
   }
 
   .cleanFormContent {
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     padding: 0;
   }
 
@@ -2385,7 +2385,7 @@
   .formContent {
     width: 100%;
     box-sizing: border-box;
-    gap: 2.4rem;
+    gap: var(--spacing-2xl);
     padding: 0 1.2rem;
   }
 
@@ -2401,7 +2401,7 @@
   }
 
   .cleanFormContent {
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     width: 100%;
     box-sizing: border-box;
     padding: 0;
@@ -2424,7 +2424,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: var(--spacing-2xl);
   }
 
   .cleanFormGrid1Col > *,
@@ -2531,7 +2531,7 @@
   .cleanFormGrid2Col,
   .cleanFormGrid3Col {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: var(--spacing-2xl);
     width: 100%;
     box-sizing: border-box;
   }
