@@ -2,6 +2,12 @@
 @import '../../../ui/getQuote/shared.module.css';
 @import '../../../ui/getQuote/animations.module.css';
 
+/* ============================================================================
+   PAGE-LEVEL LAYOUT COMPONENTS
+   Supports multi-column layout: main content + sidebar navigation
+   All step containers maintain consistent styling and spacing
+   ============================================================================ */
+
 .pageContainer {
   width: 100%;
   max-width: 100%;
