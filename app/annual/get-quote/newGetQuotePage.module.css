@@ -41,7 +41,7 @@
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #cbd4dd #f5f7fa;
+  scrollbar-color: var(--color-border-primary) var(--color-bg-secondary);
 }
 
 .sidebarArea::-webkit-scrollbar {
@@ -49,18 +49,18 @@
 }
 
 .sidebarArea::-webkit-scrollbar-track {
-  background: #f5f7fa;
+  background: var(--color-bg-secondary);
   border-radius: 3px;
 }
 
 .sidebarArea::-webkit-scrollbar-thumb {
-  background: #cbd4dd;
+  background: var(--color-border-primary);
   border-radius: 3px;
   transition: background 0.3s ease;
 }
 
 .sidebarArea::-webkit-scrollbar-thumb:hover {
-  background: #0052a3;
+  background: var(--color-primary);
 }
 
 .stepContent {
