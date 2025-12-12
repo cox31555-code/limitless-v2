@@ -688,12 +688,6 @@
   }
 
   .backBtn,
-  .nextBtn {
-    font-size: var(--font-size-xl);
-    height: 5.6rem;
-    padding: 1.4rem 2.6rem;
-  }
-
   .dateInputsWrapper {
     gap: 1.2rem;
   }
