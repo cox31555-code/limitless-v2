@@ -144,8 +144,8 @@ export default function GetQuotePageContainer({
     } else if (stepNumber === STEP_ENUM.COVER) {
       const isTemporaryOrImpound = insuranceType === 'Temp' || insuranceType === 'Impound';
       const coverSubSteps = isTemporaryOrImpound
-        ? ['carOwner', 'cover', 'ncd', 'contactInformation']
-        : ['additionalDrivers', 'carOwner', 'cover', 'ncd', 'additionalProducts', 'contactInformation'];
+        ? ['carOwner', 'details', 'ncd', 'contactInformation']
+        : ['additionalDrivers', 'carOwner', 'details', 'ncd', 'additionalProducts', 'contactInformation'];
 
       substepKey = coverSubSteps[substepIndex];
       if (substepKey) {
