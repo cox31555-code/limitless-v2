@@ -17,14 +17,7 @@
   animation: fadeInOverlay 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes fadeInOverlay {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* @keyframes fadeInOverlay moved to animations.module.css */
 
 /* Modal Container */
 .modalContainer {
@@ -45,16 +38,7 @@
   overflow: visible !important;
 }
 
-@keyframes slideInModal {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -48%);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-}
+/* @keyframes slideInModal moved to animations.module.css */
 
 /* Modal Header */
 .modalHeader {
