@@ -473,7 +473,10 @@ export default function GetQuotePageContainer({
               </div>
 
               {/* Navigation Buttons - Hidden for substeps with their own buttons */}
-              {!(currentStep === STEP_ENUM.PERSONAL && (personalSubStep === 'addClaim' || personalSubStep === 'addConviction')) && (
+              {!(
+                (currentStep === STEP_ENUM.PERSONAL && (personalSubStep === 'addClaim' || personalSubStep === 'addConviction')) ||
+                (currentStep === STEP_ENUM.COVER && (coverSubStep === 'addDriver' || coverSubStep === 'addDriverClaim' || coverSubStep === 'addDriverConviction' || coverSubStep === 'addCarOwnerPerson'))
+              ) && (
                 <QuoteNavButtons
                   onBack={handlePreviousStep}
                   onSubmit={handleSubmit}
