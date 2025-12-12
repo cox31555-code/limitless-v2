@@ -5,7 +5,7 @@
 .pageContainer {
   width: 100%;
   max-width: 100%;
-  background: #ffffff;
+  background: var(--color-bg-primary);
   min-height: calc(100vh - 78px);
   overflow-x: hidden;
   box-sizing: border-box;
