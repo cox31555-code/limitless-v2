@@ -671,6 +671,22 @@ div[class^="cc-"] {
   font-size: 1.3rem !important;
 }
 
+/* ============================================================================
+   ACCESSIBILITY: REDUCED MOTION SUPPORT
+
+   Disable all animations for users with prefers-reduced-motion setting
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* RSuite Picker Menu Items - Larger sizing - High specificity for portals */
 .rs-picker-menu,
 .rs-picker-popup .rs-picker-menu,
