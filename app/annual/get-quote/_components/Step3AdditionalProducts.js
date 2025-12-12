@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import styles from "./step3CarOwner.module.css";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
 
 const Step3AdditionalProducts = ({
   onBack = () => {},
@@ -36,225 +38,213 @@ const Step3AdditionalProducts = ({
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Your policy - Additional products</h2>
+    <StepContainer title="Your policy - Additional products">
+      <div style={{
+        padding: '2rem',
+        backgroundColor: '#e8f4ff',
+        border: '2px solid #0388ff',
+        borderRadius: '10px',
+        marginBottom: '2rem'
+      }}>
+        <h3 style={{
+          fontSize: '1.5rem',
+          fontWeight: '600',
+          color: '#0052a3',
+          margin: '0 0 0.8rem 0'
+        }}>Want extra cover?</h3>
+        <p style={{
+          fontSize: '1.3rem',
+          color: '#1a1a2e',
+          margin: '0',
+          lineHeight: '1.6'
+        }}>
+          You can add as many extras as you need, however you may see fewer quotes. Please make sure you're not already covered from a policy you've purchased elsewhere.
+        </p>
       </div>
 
-      <div className={styles.contentWrapper}>
-        {/* Want extra cover info box */}
+      <div className={sharedStyles.stepSection}>
+        <div className={sharedStyles.questionHeader}>
+          <h3 className={sharedStyles.mainQuestion}>Would you like personal accident cover?</h3>
+          <p className={sharedStyles.subText}>
+            Financial help can be provided for you or your family in the event of an accident resulting in serious injury or death.
+          </p>
+        </div>
+
+        <ExpandableQuestion
+          question="What's covered?"
+          answer="Personal accident cover provides financial assistance to you or your family if you or your passengers suffer serious injury or death as a result of an accident involving the insured vehicle."
+        />
+
+        <div className={styles.radioGroup}>
+          {["Yes", "I'll decide later"].map((option) => (
+            <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+              <input
+                type="radio"
+                name="personalAccidentCover"
+                value={option}
+                checked={formData.personalAccidentCover === option}
+                onChange={(e) => setFormData({ ...formData, personalAccidentCover: e.target.value })}
+                className={styles.radioInput}
+                style={{
+                  marginTop: '0.3rem',
+                  flexShrink: 0,
+                  width: '20px',
+                  height: '20px',
+                  minWidth: '20px',
+                  minHeight: '20px'
+                }}
+              />
+              <span className={styles.radioLabel}>{option}</span>
+            </label>
+          ))}
+        </div>
+        {errors.personalAccidentCover && <span className={styles.error}>{errors.personalAccidentCover}</span>}
+      </div>
+
+      <div className={sharedStyles.stepSection}>
+        <div className={sharedStyles.questionHeader}>
+          <h3 className={sharedStyles.mainQuestion}>Would you like a courtesy car?</h3>
+          <p className={sharedStyles.subText}>
+            You get a courtesy car while your car is being repaired, subject to availability. Cover levels can vary depending on insurance provider.
+          </p>
+        </div>
+
+        <ExpandableQuestion
+          question="What if I need a replacement car?"
+          answer="A replacement car service may be available as an alternative if a courtesy car isn't available. This provides you with alternative transport while your vehicle is being repaired."
+        />
+
+        <div className={styles.radioGroup}>
+          {["Yes", "I'll decide later"].map((option) => (
+            <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+              <input
+                type="radio"
+                name="courtesyCar"
+                value={option}
+                checked={formData.courtesyCar === option}
+                onChange={(e) => setFormData({ ...formData, courtesyCar: e.target.value })}
+                className={styles.radioInput}
+                style={{
+                  marginTop: '0.3rem',
+                  flexShrink: 0,
+                  width: '20px',
+                  height: '20px',
+                  minWidth: '20px',
+                  minHeight: '20px'
+                }}
+              />
+              <span className={styles.radioLabel}>{option}</span>
+            </label>
+          ))}
+        </div>
+        {errors.courtesyCar && <span className={styles.error}>{errors.courtesyCar}</span>}
+      </div>
+
+      <div className={sharedStyles.stepSection}>
+        <div className={sharedStyles.questionHeader}>
+          <h3 className={sharedStyles.mainQuestion}>Would you like breakdown cover?</h3>
+          <p className={sharedStyles.subText}>
+            If you've broken down, this cover guarantees roadside assistance as a minimum. Please check with your insurance provider to see what's included.
+          </p>
+        </div>
+
+        <ExpandableQuestion
+          question="What are my breakdown cover options?"
+          answer={
+            <>
+              <p style={{ marginTop: '0' }}>You can usually upgrade your breakdown cover at any time with your insurance provider if you want to add extras such as home starting services, European breakdown cover and more. Compare the Market also offers a stand-alone Breakdown Cover comparison service.</p>
+              <p style={{ marginBottom: '0' }}>Check you don't already have breakdown cover elsewhere, e.g. as part of a bank account package.</p>
+            </>
+          }
+        />
+
+        <div className={styles.radioGroup}>
+          {["Yes", "I'll decide later"].map((option) => (
+            <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+              <input
+                type="radio"
+                name="breakdownCover"
+                value={option}
+                checked={formData.breakdownCover === option}
+                onChange={(e) => setFormData({ ...formData, breakdownCover: e.target.value })}
+                className={styles.radioInput}
+                style={{
+                  marginTop: '0.3rem',
+                  flexShrink: 0,
+                  width: '20px',
+                  height: '20px',
+                  minWidth: '20px',
+                  minHeight: '20px'
+                }}
+              />
+              <span className={styles.radioLabel}>{option}</span>
+            </label>
+          ))}
+        </div>
+        {errors.breakdownCover && <span className={styles.error}>{errors.breakdownCover}</span>}
+
         <div style={{
-          padding: '2rem',
-          backgroundColor: '#e8f4ff',
-          border: '2px solid #0388ff',
-          borderRadius: '10px',
-          marginBottom: '2rem'
+          padding: '1.2rem',
+          backgroundColor: '#fffaed',
+          border: '2px solid #fbbf24',
+          borderRadius: '8px',
+          marginTop: '1.6rem'
         }}>
-          <h3 style={{
-            fontSize: '1.5rem',
-            fontWeight: '600',
-            color: '#0052a3',
-            margin: '0 0 0.8rem 0'
-          }}>Want extra cover?</h3>
           <p style={{
             fontSize: '1.3rem',
             color: '#1a1a2e',
             margin: '0',
             lineHeight: '1.6'
           }}>
-            You can add as many extras as you need, however you may see fewer quotes. Please make sure you're not already covered from a policy you've purchased elsewhere.
+            Check you don't already have breakdown cover elsewhere, e.g. as part of a bank account package.
+          </p>
+        </div>
+      </div>
+
+      <div className={sharedStyles.stepSection}>
+        <div className={sharedStyles.questionHeader}>
+          <h3 className={sharedStyles.mainQuestion}>Would you like motor legal protection?</h3>
+          <p className={sharedStyles.subText}>
+            If you have an accident that wasn't your fault, you can claim for uninsured losses you might suffer.
           </p>
         </div>
 
-        {/* Personal Accident Cover */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>Would you like personal accident cover?</h3>
-            <p className={styles.subText}>
-              Financial help can be provided for you or your family in the event of an accident resulting in serious injury or death.
-            </p>
-          </div>
+        <ExpandableQuestion
+          question="What's covered?"
+          answer={
+            <>
+              <p style={{ marginTop: '0' }}>Cover varies between providers. You can claim up to a minimum of £50,000 in case of personal injury, excess recovery, loss of earnings, and more.</p>
+              <p style={{ marginBottom: '0' }}>This should cover the cost of your legal expenses in pursuit of compensation if there is a reasonable prospect of success against the third party.</p>
+            </>
+          }
+        />
 
-          <ExpandableQuestion
-            question="What's covered?"
-            answer="Personal accident cover provides financial assistance to you or your family if you or your passengers suffer serious injury or death as a result of an accident involving the insured vehicle."
-          />
-
-          <div className={styles.radioGroup}>
-            {["Yes", "I'll decide later"].map((option) => (
-              <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="personalAccidentCover"
-                  value={option}
-                  checked={formData.personalAccidentCover === option}
-                  onChange={(e) => setFormData({ ...formData, personalAccidentCover: e.target.value })}
-                  className={styles.radioInput}
-                  style={{
-                    marginTop: '0.3rem',
-                    flexShrink: 0,
-                    width: '20px',
-                    height: '20px',
-                    minWidth: '20px',
-                    minHeight: '20px'
-                  }}
-                />
-                <span className={styles.radioLabel}>{option}</span>
-              </label>
-            ))}
-          </div>
-          {errors.personalAccidentCover && <span className={styles.error}>{errors.personalAccidentCover}</span>}
+        <div className={styles.radioGroup}>
+          {["Yes", "I'll decide later"].map((option) => (
+            <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
+              <input
+                type="radio"
+                name="motorLegalProtection"
+                value={option}
+                checked={formData.motorLegalProtection === option}
+                onChange={(e) => setFormData({ ...formData, motorLegalProtection: e.target.value })}
+                className={styles.radioInput}
+                style={{
+                  marginTop: '0.3rem',
+                  flexShrink: 0,
+                  width: '20px',
+                  height: '20px',
+                  minWidth: '20px',
+                  minHeight: '20px'
+                }}
+              />
+              <span className={styles.radioLabel}>{option}</span>
+            </label>
+          ))}
         </div>
-
-        {/* Courtesy Car */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>Would you like a courtesy car?</h3>
-            <p className={styles.subText}>
-              You get a courtesy car while your car is being repaired, subject to availability. Cover levels can vary depending on insurance provider.
-            </p>
-          </div>
-
-          <ExpandableQuestion
-            question="What if I need a replacement car?"
-            answer="A replacement car service may be available as an alternative if a courtesy car isn't available. This provides you with alternative transport while your vehicle is being repaired."
-          />
-
-          <div className={styles.radioGroup}>
-            {["Yes", "I'll decide later"].map((option) => (
-              <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="courtesyCar"
-                  value={option}
-                  checked={formData.courtesyCar === option}
-                  onChange={(e) => setFormData({ ...formData, courtesyCar: e.target.value })}
-                  className={styles.radioInput}
-                  style={{
-                    marginTop: '0.3rem',
-                    flexShrink: 0,
-                    width: '20px',
-                    height: '20px',
-                    minWidth: '20px',
-                    minHeight: '20px'
-                  }}
-                />
-                <span className={styles.radioLabel}>{option}</span>
-              </label>
-            ))}
-          </div>
-          {errors.courtesyCar && <span className={styles.error}>{errors.courtesyCar}</span>}
-        </div>
-
-        {/* Breakdown Cover */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>Would you like breakdown cover?</h3>
-            <p className={styles.subText}>
-              If you've broken down, this cover guarantees roadside assistance as a minimum. Please check with your insurance provider to see what's included.
-            </p>
-          </div>
-
-          <ExpandableQuestion
-            question="What are my breakdown cover options?"
-            answer={
-              <>
-                <p style={{ marginTop: '0' }}>You can usually upgrade your breakdown cover at any time with your insurance provider if you want to add extras such as home starting services, European breakdown cover and more. Compare the Market also offers a stand-alone Breakdown Cover comparison service.</p>
-                <p style={{ marginBottom: '0' }}>Check you don't already have breakdown cover elsewhere, e.g. as part of a bank account package.</p>
-              </>
-            }
-          />
-
-          <div className={styles.radioGroup}>
-            {["Yes", "I'll decide later"].map((option) => (
-              <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="breakdownCover"
-                  value={option}
-                  checked={formData.breakdownCover === option}
-                  onChange={(e) => setFormData({ ...formData, breakdownCover: e.target.value })}
-                  className={styles.radioInput}
-                  style={{
-                    marginTop: '0.3rem',
-                    flexShrink: 0,
-                    width: '20px',
-                    height: '20px',
-                    minWidth: '20px',
-                    minHeight: '20px'
-                  }}
-                />
-                <span className={styles.radioLabel}>{option}</span>
-              </label>
-            ))}
-          </div>
-          {errors.breakdownCover && <span className={styles.error}>{errors.breakdownCover}</span>}
-
-          {/* Warning box about breakdown cover */}
-          <div style={{
-            padding: '1.2rem',
-            backgroundColor: '#fffaed',
-            border: '2px solid #fbbf24',
-            borderRadius: '8px',
-            marginTop: '1.6rem'
-          }}>
-            <p style={{
-              fontSize: '1.3rem',
-              color: '#1a1a2e',
-              margin: '0',
-              lineHeight: '1.6'
-            }}>
-              Check you don't already have breakdown cover elsewhere, e.g. as part of a bank account package.
-            </p>
-          </div>
-        </div>
-
-        {/* Motor Legal Protection */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>Would you like motor legal protection?</h3>
-            <p className={styles.subText}>
-              If you have an accident that wasn't your fault, you can claim for uninsured losses you might suffer.
-            </p>
-          </div>
-
-          <ExpandableQuestion
-            question="What's covered?"
-            answer={
-              <>
-                <p style={{ marginTop: '0' }}>Cover varies between providers. You can claim up to a minimum of £50,000 in case of personal injury, excess recovery, loss of earnings, and more.</p>
-                <p style={{ marginBottom: '0' }}>This should cover the cost of your legal expenses in pursuit of compensation if there is a reasonable prospect of success against the third party.</p>
-              </>
-            }
-          />
-
-          <div className={styles.radioGroup}>
-            {["Yes", "I'll decide later"].map((option) => (
-              <label key={option} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="motorLegalProtection"
-                  value={option}
-                  checked={formData.motorLegalProtection === option}
-                  onChange={(e) => setFormData({ ...formData, motorLegalProtection: e.target.value })}
-                  className={styles.radioInput}
-                  style={{
-                    marginTop: '0.3rem',
-                    flexShrink: 0,
-                    width: '20px',
-                    height: '20px',
-                    minWidth: '20px',
-                    minHeight: '20px'
-                  }}
-                />
-                <span className={styles.radioLabel}>{option}</span>
-              </label>
-            ))}
-          </div>
-          {errors.motorLegalProtection && <span className={styles.error}>{errors.motorLegalProtection}</span>}
-        </div>
+        {errors.motorLegalProtection && <span className={styles.error}>{errors.motorLegalProtection}</span>}
       </div>
-    </div>
+    </StepContainer>
   );
 };
 

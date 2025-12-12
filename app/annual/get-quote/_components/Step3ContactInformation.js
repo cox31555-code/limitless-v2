@@ -4,6 +4,8 @@ import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step3CarOwner.module.css";
 import personalDetailsStyles from "./step2PersonalDetails.module.css";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
 
 const Step3ContactInformation = ({
   onBack = () => {},
@@ -48,14 +50,12 @@ const Step3ContactInformation = ({
     let updated = [...formData.contactMethod];
 
     if (method === "Do not contact me about the above") {
-      // If "Do not contact" is being checked, deselect all others
       if (updated.includes(method)) {
         updated = updated.filter(m => m !== method);
       } else {
         updated = ["Do not contact me about the above"];
       }
     } else {
-      // If any other option is being checked, deselect "Do not contact"
       updated = updated.filter(m => m !== "Do not contact me about the above");
 
       if (updated.includes(method)) {
@@ -72,169 +72,157 @@ const Step3ContactInformation = ({
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Your policy - Contact information</h2>
-      </div>
-
-      <div className={styles.contentWrapper}>
-        {/* Email Field */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>Email</h3>
-            <p className={styles.subText}>
-              The insurance provider needs this to send you confirmation of your policy. If you opt-in to receive emails from us, we'll send you those too.
-            </p>
-          </div>
-
-          <div className={personalDetailsStyles.fieldWrapper}>
-            <label className={personalDetailsStyles.fieldLabel} style={{ display: 'none' }}>Email address</label>
-            <CustomTextInput
-              type="email"
-              placeholder=""
-              value={formData.email}
-              onChange={(e) => {
-                setFormData({ ...formData, email: e.target.value });
-                if (errors.email) {
-                  setErrors({ ...errors, email: "" });
-                }
-              }}
-              error={errors.email}
-            />
-          </div>
-        </div>
-
-        {/* Telephone Number Field */}
-        <div className={styles.section}>
-          <div className={styles.questionHeader}>
-            <h3 className={styles.mainQuestion}>Main telephone number (optional)</h3>
-          </div>
-
-          <div className={personalDetailsStyles.fieldWrapper}>
-            <label className={personalDetailsStyles.fieldLabel} style={{ display: 'none' }}>Telephone number</label>
-            <CustomTextInput
-              type="tel"
-              placeholder=""
-              value={formData.telephoneNumber || ""}
-              onChange={(e) => setFormData({ ...formData, telephoneNumber: e.target.value })}
-            />
-          </div>
-        </div>
-
-        {/* We'll do the work for you section */}
-        <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>We'll do the work for you</h3>
-
-          <div style={{ fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6' }}>
-            <p style={{ margin: '0 0 0.8rem 0', fontWeight: '600' }}>Make life simples.</p>
-            <p style={{ margin: '0 0 1.6rem 0' }}>We'll send you renewal reminders to help you stay on top of your bills, the latest deals, and more ways to save you money.</p>
-
-            <p style={{ margin: '0 0 0.4rem 0', fontWeight: '600' }}>We'll also send you...</p>
-            <p style={{ margin: '0' }}>The latest on how to claim Meerkat Rewards® like restaurant discounts, and 2 for 1 cinema tickets – plus offers from partners we collaborate with or sponsor.</p>
-          </div>
-        </div>
-
-        {/* Choose how we contact you */}
-        <div className={styles.section}>
-          <h3 className={styles.mainQuestion}>Choose how we contact you</h3>
-
-          <div className={styles.radioGroup}>
-            {["Email", "Phone", "Text", "Post", "Do not contact me about the above"].map((method) => (
-              <label key={method} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer', alignItems: 'flex-start' }}>
-                <div style={{ position: 'relative', marginTop: '0.3rem' }}>
-                  <input
-                    type="checkbox"
-                    checked={formData.contactMethod.includes(method)}
-                    onChange={() => handleContactMethodChange(method)}
-                    style={{
-                      appearance: 'none',
-                      width: '24px',
-                      height: '24px',
-                      minWidth: '24px',
-                      minHeight: '24px',
-                      border: '2px solid #0052a3',
-                      borderRadius: '4px',
-                      cursor: 'pointer',
-                      backgroundColor: formData.contactMethod.includes(method) ? '#0052a3' : 'white',
-                      position: 'relative',
-                      flexShrink: 0
-                    }}
-                  />
-                  {formData.contactMethod.includes(method) && (
-                    <svg
-                      style={{
-                        position: 'absolute',
-                        top: '4px',
-                        left: '4px',
-                        width: '16px',
-                        height: '16px',
-                        pointerEvents: 'none'
-                      }}
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.5 4L6 11.5L2.5 8"
-                        stroke="white"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <span className={styles.radioLabel}>{method}</span>
-              </label>
-            ))}
-          </div>
-          {errors.contactMethod && <span className={styles.error}>{errors.contactMethod}</span>}
-
-          {/* What else will we contact you about */}
-          <div style={{ marginTop: '2.4rem' }}>
-            <ExpandableQuestion
-              question="What else will we contact you about?"
-              answer="We will contact you when necessary, including, but not limited to, the provision of our services. This may include notification of any issues that may affect you, as well as quote confirmations or renewal quotes."
-            />
-          </div>
-        </div>
-
-        {/* Data usage information */}
-        <div className={styles.section}>
-          <p style={{ fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6', margin: '0 0 1.6rem 0' }}>
-            To find out more read our <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Privacy policy</a> and <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Terms and conditions</a>.
+    <StepContainer title="Your policy - Contact information">
+      <div className={sharedStyles.stepSection}>
+        <div className={sharedStyles.questionHeader}>
+          <h3 className={sharedStyles.mainQuestion}>Email</h3>
+          <p className={sharedStyles.subText}>
+            The insurance provider needs this to send you confirmation of your policy. If you opt-in to receive emails from us, we'll send you those too.
           </p>
+        </div>
 
-          <h4 style={{ fontSize: '1.3rem', fontWeight: '600', margin: '0 0 1.6rem 0', color: '#1a1a2e' }}>
-            What you need to know about how your data will be used:
-          </h4>
-
-          <ul style={{ margin: '0', paddingLeft: '2rem', fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6' }}>
-            <li style={{ marginBottom: '1.2rem' }}>
-              Full details of how your data will be used can be found in our <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Privacy policy</a>, including information about your rights.
-            </li>
-            <li style={{ marginBottom: '1.2rem' }}>
-              We will also check whether you fall within a market segment where additional price reductions are being offered at that time, due to specific arrangements with our partners. If you do fall within such a market segment, the reduced price will automatically be displayed for you.
-            </li>
-            <li style={{ marginBottom: '1.2rem' }}>
-              Some insurance providers carry out soft credit checks on your credit history, these will not affect your credit rating.
-            </li>
-            <li style={{ marginBottom: '1.2rem' }}>
-              If you are providing information about others, you must make sure they are aware of our <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Privacy policy</a>.
-            </li>
-            <li style={{ marginBottom: '1.2rem' }}>
-              In the future we will automatically check your <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>most relevant quote</a> with <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>some of our insurance providers</a> to see what your price could be for a future renewal. We'll use the data you have already provided and notify you of better quotes and more ways to save. Some insurance providers may carry out a soft credit search which does not impact your credit score.
-            </li>
-            <li style={{ marginBottom: '1.2rem' }}>
-              Checking for better car insurance deals before you need to renew is included automatically as part of the service we provide, but you can turn it off at any time by adjusting the settings under 'Service preferences'. You can access your preferences via your Compare the Market account or by following a link in any future emails. If you don't have an account, you can easily create one by registering for one after seeing your quotes.
-            </li>
-            <li style={{ marginBottom: '0' }}>
-              The latest on how to claim Meerkat Rewards® like restaurant discounts, and 2 for 1 cinema tickets – plus offers from partners we collaborate with or sponsor. Some insurance providers may carry out a soft credit search which does not impact your credit score.
-            </li>
-          </ul>
+        <div className={personalDetailsStyles.fieldWrapper}>
+          <label className={personalDetailsStyles.fieldLabel} style={{ display: 'none' }}>Email address</label>
+          <CustomTextInput
+            type="email"
+            placeholder=""
+            value={formData.email}
+            onChange={(e) => {
+              setFormData({ ...formData, email: e.target.value });
+              if (errors.email) {
+                setErrors({ ...errors, email: "" });
+              }
+            }}
+            error={errors.email}
+          />
         </div>
       </div>
-    </div>
+
+      <div className={sharedStyles.stepSection}>
+        <div className={sharedStyles.questionHeader}>
+          <h3 className={sharedStyles.mainQuestion}>Main telephone number (optional)</h3>
+        </div>
+
+        <div className={personalDetailsStyles.fieldWrapper}>
+          <label className={personalDetailsStyles.fieldLabel} style={{ display: 'none' }}>Telephone number</label>
+          <CustomTextInput
+            type="tel"
+            placeholder=""
+            value={formData.telephoneNumber || ""}
+            onChange={(e) => setFormData({ ...formData, telephoneNumber: e.target.value })}
+          />
+        </div>
+      </div>
+
+      <div className={sharedStyles.stepSection}>
+        <h3 className={sharedStyles.mainQuestion}>We'll do the work for you</h3>
+
+        <div style={{ fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6' }}>
+          <p style={{ margin: '0 0 0.8rem 0', fontWeight: '600' }}>Make life simples.</p>
+          <p style={{ margin: '0 0 1.6rem 0' }}>We'll send you renewal reminders to help you stay on top of your bills, the latest deals, and more ways to save you money.</p>
+
+          <p style={{ margin: '0 0 0.4rem 0', fontWeight: '600' }}>We'll also send you...</p>
+          <p style={{ margin: '0' }}>The latest on how to claim Meerkat Rewards® like restaurant discounts, and 2 for 1 cinema tickets – plus offers from partners we collaborate with or sponsor.</p>
+        </div>
+      </div>
+
+      <div className={sharedStyles.stepSection}>
+        <h3 className={sharedStyles.mainQuestion}>Choose how we contact you</h3>
+
+        <div className={styles.radioGroup}>
+          {["Email", "Phone", "Text", "Post", "Do not contact me about the above"].map((method) => (
+            <label key={method} style={{ display: 'flex', gap: '1.2rem', marginBottom: '1.6rem', cursor: 'pointer', alignItems: 'flex-start' }}>
+              <div style={{ position: 'relative', marginTop: '0.3rem' }}>
+                <input
+                  type="checkbox"
+                  checked={formData.contactMethod.includes(method)}
+                  onChange={() => handleContactMethodChange(method)}
+                  style={{
+                    appearance: 'none',
+                    width: '24px',
+                    height: '24px',
+                    minWidth: '24px',
+                    minHeight: '24px',
+                    border: '2px solid #0052a3',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    backgroundColor: formData.contactMethod.includes(method) ? '#0052a3' : 'white',
+                    position: 'relative',
+                    flexShrink: 0
+                  }}
+                />
+                {formData.contactMethod.includes(method) && (
+                  <svg
+                    style={{
+                      position: 'absolute',
+                      top: '4px',
+                      left: '4px',
+                      width: '16px',
+                      height: '16px',
+                      pointerEvents: 'none'
+                    }}
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.5 4L6 11.5L2.5 8"
+                      stroke="white"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+              </div>
+              <span className={styles.radioLabel}>{method}</span>
+            </label>
+          ))}
+        </div>
+        {errors.contactMethod && <span className={styles.error}>{errors.contactMethod}</span>}
+
+        <div style={{ marginTop: '2.4rem' }}>
+          <ExpandableQuestion
+            question="What else will we contact you about?"
+            answer="We will contact you when necessary, including, but not limited to, the provision of our services. This may include notification of any issues that may affect you, as well as quote confirmations or renewal quotes."
+          />
+        </div>
+      </div>
+
+      <div className={sharedStyles.stepSection}>
+        <p style={{ fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6', margin: '0 0 1.6rem 0' }}>
+          To find out more read our <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Privacy policy</a> and <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Terms and conditions</a>.
+        </p>
+
+        <h4 style={{ fontSize: '1.3rem', fontWeight: '600', margin: '0 0 1.6rem 0', color: '#1a1a2e' }}>
+          What you need to know about how your data will be used:
+        </h4>
+
+        <ul style={{ margin: '0', paddingLeft: '2rem', fontSize: '1.3rem', color: '#1a1a2e', lineHeight: '1.6' }}>
+          <li style={{ marginBottom: '1.2rem' }}>
+            Full details of how your data will be used can be found in our <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Privacy policy</a>, including information about your rights.
+          </li>
+          <li style={{ marginBottom: '1.2rem' }}>
+            We will also check whether you fall within a market segment where additional price reductions are being offered at that time, due to specific arrangements with our partners. If you do fall within such a market segment, the reduced price will automatically be displayed for you.
+          </li>
+          <li style={{ marginBottom: '1.2rem' }}>
+            Some insurance providers carry out soft credit checks on your credit history, these will not affect your credit rating.
+          </li>
+          <li style={{ marginBottom: '1.2rem' }}>
+            If you are providing information about others, you must make sure they are aware of our <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>Privacy policy</a>.
+          </li>
+          <li style={{ marginBottom: '1.2rem' }}>
+            In the future we will automatically check your <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>most relevant quote</a> with <a href="#" style={{ color: '#0052a3', textDecoration: 'underline' }}>some of our insurance providers</a> to see what your price could be for a future renewal. We'll use the data you have already provided and notify you of better quotes and more ways to save. Some insurance providers may carry out a soft credit search which does not impact your credit score.
+          </li>
+          <li style={{ marginBottom: '1.2rem' }}>
+            Checking for better car insurance deals before you need to renew is included automatically as part of the service we provide, but you can turn it off at any time by adjusting the settings under 'Service preferences'. You can access your preferences via your Compare the Market account or by following a link in any future emails. If you don't have an account, you can easily create one by registering for one after seeing your quotes.
+          </li>
+          <li style={{ marginBottom: '0' }}>
+            The latest on how to claim Meerkat Rewards® like restaurant discounts, and 2 for 1 cinema tickets – plus offers from partners we collaborate with or sponsor. Some insurance providers may carry out a soft credit search which does not impact your credit score.
+          </li>
+        </ul>
+      </div>
+    </StepContainer>
   );
 };
 
