@@ -311,25 +311,6 @@
     padding-left: 1.4rem;
   }
 
-  .buttonGroup {
-    flex-direction: column-reverse;
-    gap: 1rem;
-  }
-
-  .backBtn,
-  .nextBtn {
-    width: 100%;
-  }
-
-  .actionButtons {
-    flex-direction: column-reverse;
-    gap: 1rem;
-  }
-
-  .actionButtons .backBtn,
-  .actionButtons .saveBtn {
-    width: 100%;
-  }
 }
 
 @media (max-width: 640px) {
