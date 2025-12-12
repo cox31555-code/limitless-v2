@@ -1,41 +1,25 @@
+/* Import shared get-quote utilities and animations */
+@import '../../../../ui/getQuote/shared.module.css';
+@import '../../../../ui/getQuote/animations.module.css';
+
 .container {
-  width: 100%;
-  background: transparent;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2.8rem;
+  composes: stepContainer from '../../../../ui/getQuote/shared.module.css';
 }
 
 .stepTitle {
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #e8ecf1;
-  margin-bottom: 2rem;
+  composes: stepTitle from '../../../../ui/getQuote/shared.module.css';
 }
 
 .stepTitleText {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #004a94;
-  margin: 0;
-  line-height: 1.4;
+  composes: stepTitleText from '../../../../ui/getQuote/shared.module.css';
 }
 
 .contentWrapper {
-  width: 100%;
-  max-width: 680px;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding-right: 100px;
+  composes: stepContentWrapper from '../../../../ui/getQuote/shared.module.css';
 }
 
 .section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-bottom: 3.2rem;
-  border-bottom: 2px solid #e8ecf1;
+  composes: stepSection from '../../../../ui/getQuote/shared.module.css';
 }
 
 .section:last-of-type {
