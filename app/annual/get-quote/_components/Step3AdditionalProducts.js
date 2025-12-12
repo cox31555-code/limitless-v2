@@ -115,20 +115,10 @@ const Step3AdditionalProducts = ({
             </p>
           </div>
 
-          <button
-            type="button"
-            className={styles.expandableLink}
-            onClick={() => setExpandedCourtesyCar(!expandedCourtesyCar)}
-          >
-            <span className={`${styles.expandableIcon} ${expandedCourtesyCar ? styles.expandedIcon : ''}`}>▼</span>
-            What if I need a replacement car?
-          </button>
-
-          {expandedCourtesyCar && (
-            <div className={styles.expandableContent}>
-              A replacement car service may be available as an alternative if a courtesy car isn't available. This provides you with alternative transport while your vehicle is being repaired.
-            </div>
-          )}
+          <ExpandableQuestion
+            question="What if I need a replacement car?"
+            answer="A replacement car service may be available as an alternative if a courtesy car isn't available. This provides you with alternative transport while your vehicle is being repaired."
+          />
 
           <div className={styles.radioGroup}>
             {["Yes", "I'll decide later"].map((option) => (
