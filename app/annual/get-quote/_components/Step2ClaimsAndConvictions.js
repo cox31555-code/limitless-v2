@@ -2,7 +2,17 @@
 import React, { useState } from "react";
 import styles from "./step2ClaimsAndConvictions.module.css";
 
-const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddClaim = () => {}, onAddConviction = () => {} }) => {
+const Step2ClaimsAndConvictions = ({ 
+  form, 
+  claims = [], 
+  convictions = [],
+  onAddClaim,
+  onNavigateToAddClaim,
+  onAddConviction,
+  onNavigateToAddConviction,
+  onRemoveClaim,
+  onRemoveConviction
+}) => {
   const { register, formState: { errors }, watch } = form;
   const [expandedClaimsWhatIf, setExpandedClaimsWhatIf] = useState(false);
   const [expandedConvictionsHow, setExpandedConvictionsHow] = useState(false);
@@ -10,12 +20,18 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddC
   const motorAccidentsClaims = watch("carUsage.motorAccidentsClaims");
   const drivingConvictions = watch("carUsage.drivingConvictions");
 
+  // Prop resolution: support both old and new prop names
+  const handleAddClaimClick = onNavigateToAddClaim || onAddClaim || (() => {});
+  const handleAddConvictionClick = onNavigateToAddConviction || onAddConviction || (() => {});
+  const handleRemoveClaimClick = onRemoveClaim || (() => {});
+  const handleRemoveConvictionClick = onRemoveConviction || (() => {});
+
   const handleRemoveClaim = (index) => {
-    // This will be handled by parent component
+    handleRemoveClaimClick(index);
   };
 
   const handleRemoveConviction = (index) => {
-    // This will be handled by parent component
+    handleRemoveConvictionClick(index);
   };
 
   return (
@@ -77,7 +93,7 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddC
                 <button
                   type="button"
                   className={styles.addClaimBtn}
-                  onClick={() => onAddClaim()}
+                  onClick={() => handleAddClaimClick()}
                 >
                   Add claim
                 </button>
@@ -109,7 +125,7 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddC
                         <button
                           type="button"
                           className={styles.changeBtn}
-                          onClick={() => onAddClaim(index)}
+                          onClick={() => handleAddClaimClick(index)}
                         >
                           Change claim
                         </button>
@@ -171,7 +187,7 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddC
                 <button
                   type="button"
                   className={styles.addConvictionBtn}
-                  onClick={() => onAddConviction()}
+                  onClick={() => handleAddConvictionClick()}
                 >
                   Add conviction
                 </button>
@@ -186,7 +202,7 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddC
                           <span className={styles.convictionLabel}>Date:</span> {conviction.day}/{conviction.month}/{conviction.year}
                         </p>
                         <p className={styles.convictionDetail}>
-                          <span className={styles.convictionLabel}>Type:</span> {conviction.convictionType}
+                          <span className={styles.convictionLabel}>Type:</span> {conviction.type}
                         </p>
                         <p className={styles.convictionDetail}>
                           <span className={styles.convictionLabel}>Location:</span> {conviction.location}
@@ -203,7 +219,7 @@ const Step2ClaimsAndConvictions = ({ form, claims = [], convictions = [], onAddC
                         <button
                           type="button"
                           className={styles.changeConvictionBtn}
-                          onClick={() => onAddConviction(index)}
+                          onClick={() => handleAddConvictionClick(index)}
                         >
                           Change conviction
                         </button>
