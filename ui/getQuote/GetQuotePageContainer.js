@@ -337,12 +337,11 @@ export default function GetQuotePageContainer({
                 {currentStep === STEP_ENUM.PERSONAL && personalSubStep === 'addClaim' && (
                   <Suspense fallback={<StepFallback />}>
                     <lazySteps.addClaim
-                      form={form}
                       onBack={() => {
                         setEditingClaimIndex(null);
                         orchest.setPersonalSubStep('claims');
                       }}
-                      onAdd={handleAddClaim}
+                      onAddClaim={handleAddClaim}
                       editingClaim={editingClaimIndex !== null ? claims[editingClaimIndex] : null}
                     />
                   </Suspense>
