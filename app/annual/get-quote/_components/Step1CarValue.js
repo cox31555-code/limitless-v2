@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import CustomTextInput from "@/ui/inputs/textInput/CustomTextInput";
 import styles from "./step1CarValue.module.css";
 import ExpandableQuestion from "@/ui/getQuote/ExpandableQuestion/ExpandableQuestion";
+import StepContainer from "@/ui/getQuote/StepContainer/StepContainer";
+import sharedStyles from "@/ui/getQuote/shared.module.css";
 
 const Step1CarValue = ({ form }) => {
   const { register, formState: { errors }, watch, setValue } = form;
@@ -18,49 +20,43 @@ const Step1CarValue = ({ form }) => {
   }, [estimatedValue, carValue, setValue]);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.stepTitle}>
-        <h2 className={styles.stepTitleText}>Car details - Car value</h2>
+    <StepContainer title="Car details - Car value">
+      <div className={sharedStyles.questionHeader}>
+        <h3 className={sharedStyles.mainQuestion}>What's the current estimated value of the car?</h3>
+        <p className={sharedStyles.subText}>
+          We've estimated your car's current market value using an independent provider. If a value isn't shown or if it doesn't look right, feel free to change it.
+        </p>
       </div>
 
-      <div className={styles.contentWrapper}>
-        <div className={styles.questionHeader}>
-          <h3 className={styles.mainQuestion}>What's the current estimated value of the car?</h3>
-          <p className={styles.subText}>
-            We've estimated your car's current market value using an independent provider. If a value isn't shown or if it doesn't look right, feel free to change it.
+      <div className={styles.inputSection}>
+        <div className={styles.estimatedInfo}>
+          <p className={styles.estimatedLabel}>
+            Estimated value of <span className={styles.estimatedAmount}>£{estimatedValue || "4560"}</span>.
           </p>
         </div>
 
-        <div className={styles.inputSection}>
-          <div className={styles.estimatedInfo}>
-            <p className={styles.estimatedLabel}>
-              Estimated value of <span className={styles.estimatedAmount}>£{estimatedValue || "4560"}</span>.
-            </p>
-          </div>
-
-          <div className={styles.inputWrapper}>
-            <CustomTextInput
-              label=""
-              type="text"
-              inputMode="decimal"
-              placeholder="4560"
-              prefix="£"
-              value={carValue || ""}
-              onChange={(e) => {
-                const val = e.target.value.replace(/[^0-9.]/g, "");
-                setValue("vehicleDetails.carValue", val);
-              }}
-              error={errors?.vehicleDetails?.carValue?.message}
-            />
-          </div>
-
-          <ExpandableQuestion
-            question="Why do we ask this?"
-            answer="The car's estimated value is used to calculate the level of cover needed and to price the policy accurately. Being underinsured can mean higher out-of-pocket costs if your car is written off. If you're unsure, use online valuation tools, dealer trade-in estimates, or recent sale prices for similar cars to guide your entry."
+        <div className={styles.inputWrapper}>
+          <CustomTextInput
+            label=""
+            type="text"
+            inputMode="decimal"
+            placeholder="4560"
+            prefix="£"
+            value={carValue || ""}
+            onChange={(e) => {
+              const val = e.target.value.replace(/[^0-9.]/g, "");
+              setValue("vehicleDetails.carValue", val);
+            }}
+            error={errors?.vehicleDetails?.carValue?.message}
           />
         </div>
+
+        <ExpandableQuestion
+          question="Why do we ask this?"
+          answer="The car's estimated value is used to calculate the level of cover needed and to price the policy accurately. Being underinsured can mean higher out-of-pocket costs if your car is written off. If you're unsure, use online valuation tools, dealer trade-in estimates, or recent sale prices for similar cars to guide your entry."
+        />
       </div>
-    </div>
+    </StepContainer>
   );
 };
 
