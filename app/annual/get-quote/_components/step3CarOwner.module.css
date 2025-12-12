@@ -13,14 +13,14 @@
 
 .stepTitle {
   padding-bottom: 1rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
   margin-bottom: 2rem;
 }
 
 .stepTitleText {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #004a94;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.4;
 }
@@ -39,7 +39,7 @@
   flex-direction: column;
   gap: 1.5rem;
   padding-bottom: 3.2rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
 }
 
 .section:last-of-type {
@@ -56,7 +56,7 @@
 .mainQuestion {
   font-size: 2.05rem;
   font-weight: 600;
-  color: #004284;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.3;
   letter-spacing: -0.02em;
@@ -102,7 +102,7 @@
 
 .error {
   font-size: 1.3rem;
-  color: #dc2626;
+  color: var(--color-error);
   margin-top: 0.4rem;
 }
 
@@ -138,8 +138,8 @@
 }
 
 .radioInput:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .radioInput:checked::after {
@@ -155,7 +155,7 @@
 }
 
 .radioInput:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background-color: #f0f6ff;
 }
 
@@ -173,7 +173,7 @@
   border: none;
   padding: 0;
   font-size: 1.4rem;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   cursor: pointer;
   text-decoration: none;
   display: flex;
@@ -185,7 +185,7 @@
 }
 
 .expandableLink:hover {
-  color: #003d7a;
+  color: var(--color-primary-darker);
   text-decoration: underline;
 }
 
@@ -203,7 +203,7 @@
   margin-top: 1rem;
   padding: 1.2rem;
   background: #f0f6ff;
-  border-left: 3px solid #0052a3;
+  border-left: 3px solid var(--color-primary-dark);
   border-radius: 4px;
   font-size: 1.4rem;
   color: #1a1a2e;
@@ -216,7 +216,7 @@
   gap: 1rem;
   padding: 1.6rem;
   background: #f0f6ff;
-  border-left: 3px solid #0052a3;
+  border-left: 3px solid var(--color-primary-dark);
   border-radius: 4px;
   margin-top: 1rem;
 }
@@ -224,7 +224,7 @@
 .otherPersonTitle {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.4;
 }
@@ -233,9 +233,9 @@
   padding: 0.8rem 2rem;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -245,12 +245,12 @@
 
 .addPersonBtn:hover {
   background: #f0f6ff;
-  border-color: #003d7a;
-  color: #003d7a;
+  border-color: var(--color-primary-darker);
+  color: var(--color-primary-darker);
 }
 
 .addPersonBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 25px;
 }
@@ -277,7 +277,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: #ffffff;
-  background: #0052a3;
+  background: var(--color-primary-dark);
   border: none;
   border-radius: 110px;
   cursor: pointer;
@@ -288,12 +288,12 @@
 }
 
 .changePersonBtn:hover {
-  background: #003d7a;
+  background: var(--color-primary-darker);
   box-shadow: 0 2px 6px rgba(0, 82, 163, 0.25);
 }
 
 .changePersonBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 110px;
 }
@@ -309,7 +309,7 @@
   padding: 0;
   font-size: 1.4rem;
   font-weight: 500;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -320,12 +320,12 @@
 }
 
 .removePersonBtn:hover {
-  color: #003d7a;
+  color: var(--color-primary-darker);
   text-decoration: underline;
 }
 
 .removePersonBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -346,9 +346,9 @@
   padding: 1.3rem 2.6rem;
   font-size: 1.6rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -357,12 +357,12 @@
 
 .backBtn:hover {
   background: #f0f6ff;
-  border-color: #003d7a;
-  color: #003d7a;
+  border-color: var(--color-primary-darker);
+  color: var(--color-primary-darker);
 }
 
 .backBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
@@ -371,7 +371,7 @@
   font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-darker) 100%);
   border: none;
   border-radius: 110px;
   cursor: pointer;
@@ -380,11 +380,11 @@
 }
 
 .nextBtn:hover {
-  background: linear-gradient(135deg, #003d7a 0%, #002d5a 100%);
+  background: linear-gradient(135deg, var(--color-primary-darker) 0%, #002d5a 100%);
 }
 
 .nextBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
