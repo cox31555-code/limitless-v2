@@ -13,14 +13,14 @@
 
 .stepTitle {
   padding-bottom: 1rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
   margin-bottom: 2rem;
 }
 
 .stepTitleText {
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
-  color: #004a94;
+  color: var(--color-primary-dark);
   margin: 0;
   line-height: 1.4;
 }
@@ -39,7 +39,7 @@
   flex-direction: column;
   gap: 1.5rem;
   padding-bottom: 3.2rem;
-  border-bottom: 2px solid #e8ecf1;
+  border-bottom: 2px solid var(--color-border-primary);
 }
 
 .mainQuestion {
@@ -97,8 +97,8 @@
 }
 
 .radioInput:checked {
-  background-color: #0052a3;
-  border-color: #0052a3;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .radioInput:checked::after {
@@ -114,7 +114,7 @@
 }
 
 .radioInput:hover:not(:checked) {
-  border-color: #0052a3;
+  border-color: var(--color-primary-dark);
   background-color: #f0f6ff;
 }
 
@@ -137,7 +137,7 @@
 .expandableLink {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: none;
   border: none;
   cursor: pointer;
@@ -152,11 +152,11 @@
 }
 
 .expandableLink:hover {
-  color: #003d7a;
+  color: var(--color-primary-darker);
 }
 
 .expandableLink:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -179,7 +179,7 @@
   line-height: 1.65;
   font-weight: 400;
   padding-left: 1.6rem;
-  border-left: 3px solid #0052a3;
+  border-left: 3px solid var(--color-primary-dark);
   padding-bottom: 1.2rem;
 }
 
@@ -189,16 +189,16 @@
   gap: 2rem;
   margin-top: 2rem;
   padding-top: 3rem;
-  border-top: 2px solid #e8ecf1;
+  border-top: 2px solid var(--color-border-primary);
 }
 
 .backBtn {
   padding: 1.3rem 2.6rem;
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 110px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -207,8 +207,8 @@
 
 .backBtn:hover {
   background: #f0f6ff;
-  border-color: #003d7a;
-  color: #003d7a;
+  border-color: var(--color-primary-darker);
+  color: var(--color-primary-darker);
 }
 
 .backBtn:focus {
@@ -218,10 +218,10 @@
 
 .nextBtn {
   padding: 1.3rem 2.6rem;
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-darker) 100%);
   border: none;
   border-radius: 110px;
   cursor: pointer;
@@ -230,13 +230,13 @@
 }
 
 .nextBtn:hover {
-  background: #003d7a;
-  border-color: #003d7a;
+  background: var(--color-primary-darker);
+  border-color: var(--color-primary-darker);
   box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
 }
 
 .nextBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
@@ -250,7 +250,7 @@
   gap: 1.5rem;
   margin-top: 1.2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e8ecf1;
+  border-top: 1px solid var(--color-border-primary);
 }
 
 .claimsHeader {
@@ -261,7 +261,7 @@
 }
 
 .claimsTitle {
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
   color: #004284;
   margin: 0;
@@ -272,9 +272,9 @@
   padding: 0.8rem 2rem;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -284,12 +284,12 @@
 
 .addClaimBtn:hover {
   background: #f0f6ff;
-  border-color: #003d7a;
-  color: #003d7a;
+  border-color: var(--color-primary-darker);
+  color: var(--color-primary-darker);
 }
 
 .addClaimBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 25px;
 }
@@ -346,7 +346,7 @@
   padding: 0;
   font-size: 1.4rem;
   font-weight: 500;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -355,7 +355,7 @@
 }
 
 .removeBtn:hover {
-  color: #003d7a;
+  color: var(--color-primary-darker);
   text-decoration: underline;
 }
 
@@ -364,7 +364,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: #ffffff;
-  background: #0052a3;
+  background: var(--color-primary-dark);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -373,7 +373,7 @@
 }
 
 .changeBtn:hover {
-  background: #003d7a;
+  background: var(--color-primary-darker);
   box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
 }
 
@@ -383,7 +383,7 @@
   gap: 1.5rem;
   margin-top: 1.2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e8ecf1;
+  border-top: 1px solid var(--color-border-primary);
 }
 
 .convictionsHeader {
@@ -394,7 +394,7 @@
 }
 
 .convictionsTitle {
-  font-size: 1.6rem;
+  font-size: var(--font-size-xl);
   font-weight: 600;
   color: #004284;
   margin: 0;
@@ -405,9 +405,9 @@
   padding: 0.8rem 2rem;
   font-size: 1.4rem;
   font-weight: 600;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: #ffffff;
-  border: 2px solid #0052a3;
+  border: 2px solid var(--color-primary-dark);
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -417,12 +417,12 @@
 
 .addConvictionBtn:hover {
   background: #f0f6ff;
-  border-color: #003d7a;
-  color: #003d7a;
+  border-color: var(--color-primary-darker);
+  color: var(--color-primary-darker);
 }
 
 .addConvictionBtn:focus {
-  outline: 2px solid #0052a3;
+  outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
   border-radius: 25px;
 }
@@ -479,7 +479,7 @@
   padding: 0;
   font-size: 1.4rem;
   font-weight: 500;
-  color: #0052a3;
+  color: var(--color-primary-dark);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -488,7 +488,7 @@
 }
 
 .removeConvictionBtn:hover {
-  color: #003d7a;
+  color: var(--color-primary-darker);
   text-decoration: underline;
 }
 
@@ -497,7 +497,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   color: #ffffff;
-  background: #0052a3;
+  background: var(--color-primary-dark);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -506,7 +506,7 @@
 }
 
 .changeConvictionBtn:hover {
-  background: #003d7a;
+  background: var(--color-primary-darker);
   box-shadow: 0 2px 8px rgba(0, 82, 163, 0.2);
 }
 
@@ -520,7 +520,7 @@
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 }
 
@@ -557,12 +557,12 @@
 
   .backBtn {
     padding: 1.3rem 2.6rem;
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .nextBtn {
     padding: 1.3rem 2.6rem;
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 }
 
@@ -574,11 +574,11 @@
   }
 
   .stepTitleText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .mainQuestion {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .section {
@@ -592,16 +592,16 @@
   }
 
   .subText {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .expandableLink {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     margin-top: 1rem;
   }
 
   .expandableContent {
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
     margin-top: 1rem;
     padding-left: 1.2rem;
   }
@@ -616,13 +616,13 @@
     width: 100%;
     height: 5.6rem;
     padding: 1.4rem 2.6rem;
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 
   .nextBtn {
     width: 100%;
     height: 5.6rem;
     padding: 1.4rem 2.6rem;
-    font-size: 1.6rem;
+    font-size: var(--font-size-xl);
   }
 }
