@@ -143,19 +143,6 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0;
-    gap: 3.2rem;
-  }
-
-  .mainQuestion {
-    font-size: 2rem;
-  }
-
-  .subText {
-    font-size: 1.3rem;
-  }
-
   .dateInputsWrapper {
     gap: 1.2rem;
   }
@@ -165,39 +152,7 @@
   }
 }
 
-@media (max-width: 640px) {
-  .container {
-    gap: 1.6rem;
-  }
-
-  .stepTitle {
-    padding-bottom: 26px;
-  }
-
-  .mainQuestion {
-    font-size: var(--font-size-xl);
-  }
-}
-
 @media (max-width: 600px) {
-  .container {
-    padding: 0;
-    gap: 1.6rem;
-    margin: 0;
-  }
-
-  .stepTitleText {
-    font-size: var(--font-size-xl);
-  }
-
-  .mainQuestion {
-    font-size: var(--font-size-xl);
-  }
-
-  .subText {
-    font-size: var(--font-size-xl);
-  }
-
   .fieldLabel,
   .inputLabel {
     font-size: var(--font-size-xl);
@@ -212,7 +167,7 @@
   }
 
   .helpLink {
-    font-size: var(--font-size-xl);
+    font-size: 1.2rem;
   }
 
   .dateInputsWrapper {
@@ -225,10 +180,6 @@
     flex: 1 1 auto;
     min-width: 80px;
     max-width: 120px;
-  }
-
-  .helpLink {
-    font-size: 1.2rem;
   }
 
   .section {
